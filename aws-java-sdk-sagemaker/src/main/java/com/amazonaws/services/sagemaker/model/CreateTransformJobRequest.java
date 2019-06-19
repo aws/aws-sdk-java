@@ -40,9 +40,14 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
     private String modelName;
     /**
      * <p>
-     * The maximum number of parallel requests that can be sent to each instance in a transform job. The default value
-     * is <code>1</code>. To allow Amazon SageMaker to determine the appropriate number for
-     * <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.
+     * The maximum number of parallel requests that can be sent to each instance in a transform job. If
+     * <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the optional
+     * execution-parameters to determine the optimal settings for your chosen algorithm. If the execution-parameters
+     * endpoint is not enabled, the default value is <code>1</code>. For more information on execution-parameters, see
+     * <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests"
+     * >How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for
+     * <code>MaxConcurrentTransforms</code>.
      * </p>
      */
     private Integer maxConcurrentTransforms;
@@ -104,6 +109,14 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private TransformResources transformResources;
+    /**
+     * <p>
+     * The data structure used for combining the input data and inference in the output file. For more information, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     * Join</a>.
+     * </p>
+     */
+    private DataProcessing dataProcessing;
     /**
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
@@ -201,15 +214,25 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of parallel requests that can be sent to each instance in a transform job. The default value
-     * is <code>1</code>. To allow Amazon SageMaker to determine the appropriate number for
-     * <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.
+     * The maximum number of parallel requests that can be sent to each instance in a transform job. If
+     * <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the optional
+     * execution-parameters to determine the optimal settings for your chosen algorithm. If the execution-parameters
+     * endpoint is not enabled, the default value is <code>1</code>. For more information on execution-parameters, see
+     * <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests"
+     * >How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for
+     * <code>MaxConcurrentTransforms</code>.
      * </p>
      * 
      * @param maxConcurrentTransforms
-     *        The maximum number of parallel requests that can be sent to each instance in a transform job. The default
-     *        value is <code>1</code>. To allow Amazon SageMaker to determine the appropriate number for
-     *        <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.
+     *        The maximum number of parallel requests that can be sent to each instance in a transform job. If
+     *        <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the
+     *        optional execution-parameters to determine the optimal settings for your chosen algorithm. If the
+     *        execution-parameters endpoint is not enabled, the default value is <code>1</code>. For more information on
+     *        execution-parameters, see <a href=
+     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests"
+     *        >How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for
+     *        <code>MaxConcurrentTransforms</code>.
      */
 
     public void setMaxConcurrentTransforms(Integer maxConcurrentTransforms) {
@@ -218,14 +241,24 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of parallel requests that can be sent to each instance in a transform job. The default value
-     * is <code>1</code>. To allow Amazon SageMaker to determine the appropriate number for
-     * <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.
+     * The maximum number of parallel requests that can be sent to each instance in a transform job. If
+     * <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the optional
+     * execution-parameters to determine the optimal settings for your chosen algorithm. If the execution-parameters
+     * endpoint is not enabled, the default value is <code>1</code>. For more information on execution-parameters, see
+     * <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests"
+     * >How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for
+     * <code>MaxConcurrentTransforms</code>.
      * </p>
      * 
-     * @return The maximum number of parallel requests that can be sent to each instance in a transform job. The default
-     *         value is <code>1</code>. To allow Amazon SageMaker to determine the appropriate number for
-     *         <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.
+     * @return The maximum number of parallel requests that can be sent to each instance in a transform job. If
+     *         <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the
+     *         optional execution-parameters to determine the optimal settings for your chosen algorithm. If the
+     *         execution-parameters endpoint is not enabled, the default value is <code>1</code>. For more information
+     *         on execution-parameters, see <a href=
+     *         "http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests"
+     *         >How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for
+     *         <code>MaxConcurrentTransforms</code>.
      */
 
     public Integer getMaxConcurrentTransforms() {
@@ -234,15 +267,25 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of parallel requests that can be sent to each instance in a transform job. The default value
-     * is <code>1</code>. To allow Amazon SageMaker to determine the appropriate number for
-     * <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.
+     * The maximum number of parallel requests that can be sent to each instance in a transform job. If
+     * <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the optional
+     * execution-parameters to determine the optimal settings for your chosen algorithm. If the execution-parameters
+     * endpoint is not enabled, the default value is <code>1</code>. For more information on execution-parameters, see
+     * <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests"
+     * >How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for
+     * <code>MaxConcurrentTransforms</code>.
      * </p>
      * 
      * @param maxConcurrentTransforms
-     *        The maximum number of parallel requests that can be sent to each instance in a transform job. The default
-     *        value is <code>1</code>. To allow Amazon SageMaker to determine the appropriate number for
-     *        <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.
+     *        The maximum number of parallel requests that can be sent to each instance in a transform job. If
+     *        <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the
+     *        optional execution-parameters to determine the optimal settings for your chosen algorithm. If the
+     *        execution-parameters endpoint is not enabled, the default value is <code>1</code>. For more information on
+     *        execution-parameters, see <a href=
+     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests"
+     *        >How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for
+     *        <code>MaxConcurrentTransforms</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -691,6 +734,61 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * The data structure used for combining the input data and inference in the output file. For more information, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     * Join</a>.
+     * </p>
+     * 
+     * @param dataProcessing
+     *        The data structure used for combining the input data and inference in the output file. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     *        Join</a>.
+     */
+
+    public void setDataProcessing(DataProcessing dataProcessing) {
+        this.dataProcessing = dataProcessing;
+    }
+
+    /**
+     * <p>
+     * The data structure used for combining the input data and inference in the output file. For more information, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     * Join</a>.
+     * </p>
+     * 
+     * @return The data structure used for combining the input data and inference in the output file. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     *         Join</a>.
+     */
+
+    public DataProcessing getDataProcessing() {
+        return this.dataProcessing;
+    }
+
+    /**
+     * <p>
+     * The data structure used for combining the input data and inference in the output file. For more information, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     * Join</a>.
+     * </p>
+     * 
+     * @param dataProcessing
+     *        The data structure used for combining the input data and inference in the output file. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     *        Join</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTransformJobRequest withDataProcessing(DataProcessing dataProcessing) {
+        setDataProcessing(dataProcessing);
+        return this;
+    }
+
+    /**
+     * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
@@ -805,6 +903,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("TransformOutput: ").append(getTransformOutput()).append(",");
         if (getTransformResources() != null)
             sb.append("TransformResources: ").append(getTransformResources()).append(",");
+        if (getDataProcessing() != null)
+            sb.append("DataProcessing: ").append(getDataProcessing()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -857,6 +957,10 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getTransformResources() != null && other.getTransformResources().equals(this.getTransformResources()) == false)
             return false;
+        if (other.getDataProcessing() == null ^ this.getDataProcessing() == null)
+            return false;
+        if (other.getDataProcessing() != null && other.getDataProcessing().equals(this.getDataProcessing()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -878,6 +982,7 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getTransformInput() == null) ? 0 : getTransformInput().hashCode());
         hashCode = prime * hashCode + ((getTransformOutput() == null) ? 0 : getTransformOutput().hashCode());
         hashCode = prime * hashCode + ((getTransformResources() == null) ? 0 : getTransformResources().hashCode());
+        hashCode = prime * hashCode + ((getDataProcessing() == null) ? 0 : getDataProcessing().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

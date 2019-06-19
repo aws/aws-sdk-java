@@ -36,7 +36,9 @@ public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWeb
     private String applicationName;
     /**
      * <p>
-     * Information to get about the application revisions, including type and location.
+     * An array of <code>RevisionLocation</code> objects that specify information to get about the application
+     * revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can
+     * specify is 25.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RevisionLocation> revisions;
@@ -83,10 +85,14 @@ public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information to get about the application revisions, including type and location.
+     * An array of <code>RevisionLocation</code> objects that specify information to get about the application
+     * revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can
+     * specify is 25.
      * </p>
      * 
-     * @return Information to get about the application revisions, including type and location.
+     * @return An array of <code>RevisionLocation</code> objects that specify information to get about the application
+     *         revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you
+     *         can specify is 25.
      */
 
     public java.util.List<RevisionLocation> getRevisions() {
@@ -98,11 +104,15 @@ public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information to get about the application revisions, including type and location.
+     * An array of <code>RevisionLocation</code> objects that specify information to get about the application
+     * revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can
+     * specify is 25.
      * </p>
      * 
      * @param revisions
-     *        Information to get about the application revisions, including type and location.
+     *        An array of <code>RevisionLocation</code> objects that specify information to get about the application
+     *        revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you
+     *        can specify is 25.
      */
 
     public void setRevisions(java.util.Collection<RevisionLocation> revisions) {
@@ -116,7 +126,9 @@ public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information to get about the application revisions, including type and location.
+     * An array of <code>RevisionLocation</code> objects that specify information to get about the application
+     * revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can
+     * specify is 25.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,7 +137,9 @@ public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param revisions
-     *        Information to get about the application revisions, including type and location.
+     *        An array of <code>RevisionLocation</code> objects that specify information to get about the application
+     *        revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you
+     *        can specify is 25.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +155,15 @@ public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information to get about the application revisions, including type and location.
+     * An array of <code>RevisionLocation</code> objects that specify information to get about the application
+     * revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can
+     * specify is 25.
      * </p>
      * 
      * @param revisions
-     *        Information to get about the application revisions, including type and location.
+     *        An array of <code>RevisionLocation</code> objects that specify information to get about the application
+     *        revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you
+     *        can specify is 25.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

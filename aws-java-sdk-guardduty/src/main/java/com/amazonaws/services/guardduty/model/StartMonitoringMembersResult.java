@@ -23,11 +23,17 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StartMonitoringMembersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** A list of objects containing the unprocessed account and a result string explaining why it was unprocessed. */
+    /**
+     * <p>
+     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * </p>
+     */
     private java.util.List<UnprocessedAccount> unprocessedAccounts;
 
     /**
+     * <p>
      * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * </p>
      * 
      * @return A list of objects containing the unprocessed account and a result string explaining why it was
      *         unprocessed.
@@ -38,7 +44,9 @@ public class StartMonitoringMembersResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
      * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * </p>
      * 
      * @param unprocessedAccounts
      *        A list of objects containing the unprocessed account and a result string explaining why it was
@@ -55,7 +63,9 @@ public class StartMonitoringMembersResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
      * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUnprocessedAccounts(java.util.Collection)} or {@link #withUnprocessedAccounts(java.util.Collection)}
@@ -79,7 +89,9 @@ public class StartMonitoringMembersResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
      * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * </p>
      * 
      * @param unprocessedAccounts
      *        A list of objects containing the unprocessed account and a result string explaining why it was

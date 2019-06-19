@@ -17,19 +17,13 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, Elastic Beanstalk environment,
- * ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set that you're redirecting queries to. An
- * Elastic Beanstalk environment must have a regionalized subdomain.
+ * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an
+ * Amazon S3 bucket, that you want to route traffic to.
  * </p>
  * <p>
  * When creating resource record sets for a private hosted zone, note the following:
  * </p>
  * <ul>
- * <li>
- * <p>
- * Resource record sets can't be created for CloudFront distributions in a private hosted zone.
- * </p>
- * </li>
  * <li>
  * <p>
  * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is
@@ -56,6 +50,34 @@ public class AliasTarget implements Serializable, Cloneable {
      * <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:
      * </p>
      * <dl>
+     * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     * <dd>
+     * <p>
+     * Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For regional APIs, specify the value of <code>regionalHostedZoneId</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     * <dd>
+     * <p>
+     * Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using
+     * the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe
+     * -vpc-endpoints</a>.
+     * </p>
+     * </dd>
      * <dt>CloudFront distribution</dt>
      * <dd>
      * <p>
@@ -84,7 +106,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a> table in
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a> table in
      * the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use the value that
      * corresponds with the region that you created your load balancer in. Note that there are separate columns for
      * Application and Classic Load Balancers and for Network Load Balancers.
@@ -166,6 +188,42 @@ public class AliasTarget implements Serializable, Cloneable {
      * <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:
      * </p>
      * <dl>
+     * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     * <dd>
+     * <p>
+     * Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For regional APIs, specify the value of <code>regionalDomainName</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the
+     * associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The name of the record that you're creating must match a custom domain name for your API, such as
+     * <code>api.example.com</code>.
+     * </p>
+     * </note></dd>
+     * <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     * <dd>
+     * <p>
+     * Enter the API endpoint for the interface endpoint, such as
+     * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For
+     * edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value
+     * of <code>DnsName</code> using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
+     * >describe-vpc-endpoints</a>.
+     * </p>
+     * </dd>
      * <dt>CloudFront distribution</dt>
      * <dd>
      * <p>
@@ -177,6 +235,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names
      * (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.
      * </p>
      * <note>
      * <p>
@@ -385,7 +446,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * A target group that has no registered targets is considered healthy.
+     * A target group that has no registered targets is considered unhealthy.
      * </p>
      * </li>
      * </ul>
@@ -438,6 +499,35 @@ public class AliasTarget implements Serializable, Cloneable {
      * @param hostedZoneId
      *        <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
      *        <dl>
+     *        <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
+     *        href
+     *        ="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For regional APIs, specify the value of <code>regionalHostedZoneId</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     *        <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code>
+     *        using the AWS CLI command <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
+     *        >describe-vpc-endpoints</a>.
+     *        </p>
+     *        </dd>
      *        <dt>CloudFront distribution</dt>
      *        <dd>
      *        <p>
@@ -467,7 +557,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a>
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a>
      *        table in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use
      *        the value that corresponds with the region that you created your load balancer in. Note that there are
      *        separate columns for Application and Classic Load Balancers and for Network Load Balancers.
@@ -546,6 +636,44 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route
      *        queries:</p>
      *        <dl>
+     *        <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI
+     *        command <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain
+     *        -names</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For regional APIs, specify the value of <code>regionalDomainName</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the
+     *        associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The name of the record that you're creating must match a custom domain name for your API, such as
+     *        <code>api.example.com</code>.
+     *        </p>
+     *        </note></dd>
+     *        <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     *        <dd>
+     *        <p>
+     *        Enter the API endpoint for the interface endpoint, such as
+     *        <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+     *        For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can
+     *        get the value of <code>DnsName</code> using the AWS CLI command <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
+     *        >describe-vpc-endpoints</a>.
+     *        </p>
+     *        </dd>
      *        <dt>CloudFront distribution</dt>
      *        <dd>
      *        <p>
@@ -558,6 +686,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *        more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate
      *        Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        You can't create a resource record set in a private hosted zone to route traffic to a CloudFront
+     *        distribution.
      *        </p>
      *        <note>
      *        <p>
@@ -715,6 +847,34 @@ public class AliasTarget implements Serializable, Cloneable {
      * <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:
      * </p>
      * <dl>
+     * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     * <dd>
+     * <p>
+     * Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For regional APIs, specify the value of <code>regionalHostedZoneId</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     * <dd>
+     * <p>
+     * Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using
+     * the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe
+     * -vpc-endpoints</a>.
+     * </p>
+     * </dd>
      * <dt>CloudFront distribution</dt>
      * <dd>
      * <p>
@@ -743,7 +903,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a> table in
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a> table in
      * the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use the value that
      * corresponds with the region that you created your load balancer in. Note that there are separate columns for
      * Application and Classic Load Balancers and for Network Load Balancers.
@@ -822,6 +982,35 @@ public class AliasTarget implements Serializable, Cloneable {
      * @param hostedZoneId
      *        <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
      *        <dl>
+     *        <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
+     *        href
+     *        ="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For regional APIs, specify the value of <code>regionalHostedZoneId</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     *        <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code>
+     *        using the AWS CLI command <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
+     *        >describe-vpc-endpoints</a>.
+     *        </p>
+     *        </dd>
      *        <dt>CloudFront distribution</dt>
      *        <dd>
      *        <p>
@@ -851,7 +1040,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a>
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a>
      *        table in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use
      *        the value that corresponds with the region that you created your load balancer in. Note that there are
      *        separate columns for Application and Classic Load Balancers and for Network Load Balancers.
@@ -937,6 +1126,34 @@ public class AliasTarget implements Serializable, Cloneable {
      * <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:
      * </p>
      * <dl>
+     * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     * <dd>
+     * <p>
+     * Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For regional APIs, specify the value of <code>regionalHostedZoneId</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     * <dd>
+     * <p>
+     * Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using
+     * the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe
+     * -vpc-endpoints</a>.
+     * </p>
+     * </dd>
      * <dt>CloudFront distribution</dt>
      * <dd>
      * <p>
@@ -965,7 +1182,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a> table in
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a> table in
      * the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use the value that
      * corresponds with the region that you created your load balancer in. Note that there are separate columns for
      * Application and Classic Load Balancers and for Network Load Balancers.
@@ -1043,6 +1260,36 @@ public class AliasTarget implements Serializable, Cloneable {
      * 
      * @return <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
      *         <dl>
+     *         <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     *         <dd>
+     *         <p>
+     *         Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
+     *         href
+     *         ="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names<
+     *         /a>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For regional APIs, specify the value of <code>regionalHostedZoneId</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </dd>
+     *         <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     *         <dd>
+     *         <p>
+     *         Specify the hosted zone ID for your interface endpoint. You can get the value of
+     *         <code>HostedZoneId</code> using the AWS CLI command <a
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
+     *         >describe-vpc-endpoints</a>.
+     *         </p>
+     *         </dd>
      *         <dt>CloudFront distribution</dt>
      *         <dd>
      *         <p>
@@ -1072,7 +1319,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a>
+     *         <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a>
      *         table in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use
      *         the value that corresponds with the region that you created your load balancer in. Note that there are
      *         separate columns for Application and Classic Load Balancers and for Network Load Balancers.
@@ -1158,6 +1405,34 @@ public class AliasTarget implements Serializable, Cloneable {
      * <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:
      * </p>
      * <dl>
+     * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     * <dd>
+     * <p>
+     * Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For regional APIs, specify the value of <code>regionalHostedZoneId</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     * <dd>
+     * <p>
+     * Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using
+     * the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe
+     * -vpc-endpoints</a>.
+     * </p>
+     * </dd>
      * <dt>CloudFront distribution</dt>
      * <dd>
      * <p>
@@ -1186,7 +1461,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a> table in
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a> table in
      * the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use the value that
      * corresponds with the region that you created your load balancer in. Note that there are separate columns for
      * Application and Classic Load Balancers and for Network Load Balancers.
@@ -1265,6 +1540,35 @@ public class AliasTarget implements Serializable, Cloneable {
      * @param hostedZoneId
      *        <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
      *        <dl>
+     *        <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command <a
+     *        href
+     *        ="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For regional APIs, specify the value of <code>regionalHostedZoneId</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     *        <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code>
+     *        using the AWS CLI command <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
+     *        >describe-vpc-endpoints</a>.
+     *        </p>
+     *        </dd>
      *        <dt>CloudFront distribution</dt>
      *        <dd>
      *        <p>
@@ -1294,7 +1598,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a>
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a>
      *        table in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use
      *        the value that corresponds with the region that you created your load balancer in. Note that there are
      *        separate columns for Application and Classic Load Balancers and for Network Load Balancers.
@@ -1382,6 +1686,42 @@ public class AliasTarget implements Serializable, Cloneable {
      * <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:
      * </p>
      * <dl>
+     * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     * <dd>
+     * <p>
+     * Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For regional APIs, specify the value of <code>regionalDomainName</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the
+     * associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The name of the record that you're creating must match a custom domain name for your API, such as
+     * <code>api.example.com</code>.
+     * </p>
+     * </note></dd>
+     * <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     * <dd>
+     * <p>
+     * Enter the API endpoint for the interface endpoint, such as
+     * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For
+     * edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value
+     * of <code>DnsName</code> using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
+     * >describe-vpc-endpoints</a>.
+     * </p>
+     * </dd>
      * <dt>CloudFront distribution</dt>
      * <dd>
      * <p>
@@ -1393,6 +1733,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names
      * (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.
      * </p>
      * <note>
      * <p>
@@ -1542,6 +1885,44 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route
      *        queries:</p>
      *        <dl>
+     *        <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI
+     *        command <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain
+     *        -names</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For regional APIs, specify the value of <code>regionalDomainName</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the
+     *        associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The name of the record that you're creating must match a custom domain name for your API, such as
+     *        <code>api.example.com</code>.
+     *        </p>
+     *        </note></dd>
+     *        <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     *        <dd>
+     *        <p>
+     *        Enter the API endpoint for the interface endpoint, such as
+     *        <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+     *        For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can
+     *        get the value of <code>DnsName</code> using the AWS CLI command <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
+     *        >describe-vpc-endpoints</a>.
+     *        </p>
+     *        </dd>
      *        <dt>CloudFront distribution</dt>
      *        <dd>
      *        <p>
@@ -1554,6 +1935,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *        more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate
      *        Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        You can't create a resource record set in a private hosted zone to route traffic to a CloudFront
+     *        distribution.
      *        </p>
      *        <note>
      *        <p>
@@ -1711,6 +2096,42 @@ public class AliasTarget implements Serializable, Cloneable {
      * <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:
      * </p>
      * <dl>
+     * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     * <dd>
+     * <p>
+     * Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For regional APIs, specify the value of <code>regionalDomainName</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the
+     * associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The name of the record that you're creating must match a custom domain name for your API, such as
+     * <code>api.example.com</code>.
+     * </p>
+     * </note></dd>
+     * <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     * <dd>
+     * <p>
+     * Enter the API endpoint for the interface endpoint, such as
+     * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For
+     * edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value
+     * of <code>DnsName</code> using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
+     * >describe-vpc-endpoints</a>.
+     * </p>
+     * </dd>
      * <dt>CloudFront distribution</dt>
      * <dd>
      * <p>
@@ -1722,6 +2143,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names
      * (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.
      * </p>
      * <note>
      * <p>
@@ -1870,6 +2294,44 @@ public class AliasTarget implements Serializable, Cloneable {
      * @return <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route
      *         queries:</p>
      *         <dl>
+     *         <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     *         <dd>
+     *         <p>
+     *         Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI
+     *         command <a
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain
+     *         -names</a>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For regional APIs, specify the value of <code>regionalDomainName</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of
+     *         the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         The name of the record that you're creating must match a custom domain name for your API, such as
+     *         <code>api.example.com</code>.
+     *         </p>
+     *         </note></dd>
+     *         <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     *         <dd>
+     *         <p>
+     *         Enter the API endpoint for the interface endpoint, such as
+     *         <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+     *         For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can
+     *         get the value of <code>DnsName</code> using the AWS CLI command <a
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
+     *         >describe-vpc-endpoints</a>.
+     *         </p>
+     *         </dd>
      *         <dt>CloudFront distribution</dt>
      *         <dd>
      *         <p>
@@ -1882,6 +2344,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *         more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate
      *         Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         You can't create a resource record set in a private hosted zone to route traffic to a CloudFront
+     *         distribution.
      *         </p>
      *         <note>
      *         <p>
@@ -2041,6 +2507,42 @@ public class AliasTarget implements Serializable, Cloneable {
      * <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:
      * </p>
      * <dl>
+     * <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     * <dd>
+     * <p>
+     * Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For regional APIs, specify the value of <code>regionalDomainName</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the
+     * associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The name of the record that you're creating must match a custom domain name for your API, such as
+     * <code>api.example.com</code>.
+     * </p>
+     * </note></dd>
+     * <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     * <dd>
+     * <p>
+     * Enter the API endpoint for the interface endpoint, such as
+     * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For
+     * edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value
+     * of <code>DnsName</code> using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
+     * >describe-vpc-endpoints</a>.
+     * </p>
+     * </dd>
      * <dt>CloudFront distribution</dt>
      * <dd>
      * <p>
@@ -2052,6 +2554,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names
      * (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.
      * </p>
      * <note>
      * <p>
@@ -2201,6 +2706,44 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route
      *        queries:</p>
      *        <dl>
+     *        <dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI
+     *        command <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain
+     *        -names</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For regional APIs, specify the value of <code>regionalDomainName</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the
+     *        associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The name of the record that you're creating must match a custom domain name for your API, such as
+     *        <code>api.example.com</code>.
+     *        </p>
+     *        </note></dd>
+     *        <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+     *        <dd>
+     *        <p>
+     *        Enter the API endpoint for the interface endpoint, such as
+     *        <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+     *        For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can
+     *        get the value of <code>DnsName</code> using the AWS CLI command <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html"
+     *        >describe-vpc-endpoints</a>.
+     *        </p>
+     *        </dd>
      *        <dt>CloudFront distribution</dt>
      *        <dd>
      *        <p>
@@ -2213,6 +2756,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *        more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate
      *        Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        You can't create a resource record set in a private hosted zone to route traffic to a CloudFront
+     *        distribution.
      *        </p>
      *        <note>
      *        <p>
@@ -2429,7 +2976,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * A target group that has no registered targets is considered healthy.
+     * A target group that has no registered targets is considered unhealthy.
      * </p>
      * </li>
      * </ul>
@@ -2527,7 +3074,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        A target group that has no registered targets is considered healthy.
+     *        A target group that has no registered targets is considered unhealthy.
      *        </p>
      *        </li>
      *        </ul>
@@ -2630,7 +3177,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * A target group that has no registered targets is considered healthy.
+     * A target group that has no registered targets is considered unhealthy.
      * </p>
      * </li>
      * </ul>
@@ -2727,7 +3274,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         A target group that has no registered targets is considered healthy.
+     *         A target group that has no registered targets is considered unhealthy.
      *         </p>
      *         </li>
      *         </ul>
@@ -2830,7 +3377,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * A target group that has no registered targets is considered healthy.
+     * A target group that has no registered targets is considered unhealthy.
      * </p>
      * </li>
      * </ul>
@@ -2928,7 +3475,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        A target group that has no registered targets is considered healthy.
+     *        A target group that has no registered targets is considered unhealthy.
      *        </p>
      *        </li>
      *        </ul>
@@ -3033,7 +3580,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * A target group that has no registered targets is considered healthy.
+     * A target group that has no registered targets is considered unhealthy.
      * </p>
      * </li>
      * </ul>
@@ -3130,7 +3677,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         A target group that has no registered targets is considered healthy.
+     *         A target group that has no registered targets is considered unhealthy.
      *         </p>
      *         </li>
      *         </ul>

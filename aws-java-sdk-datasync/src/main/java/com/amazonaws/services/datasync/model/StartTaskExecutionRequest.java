@@ -36,6 +36,14 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
     private String taskArn;
 
     private Options overrideOptions;
+    /**
+     * <p/>
+     * <p>
+     * A filter that determines which files to include in the transfer during a task execution based on the specified
+     * pattern in the filter. When multiple include filters are set, they are interpreted as an OR.
+     * </p>
+     */
+    private java.util.List<FilterRule> includes;
 
     /**
      * <p>
@@ -104,6 +112,92 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p/>
+     * <p>
+     * A filter that determines which files to include in the transfer during a task execution based on the specified
+     * pattern in the filter. When multiple include filters are set, they are interpreted as an OR.
+     * </p>
+     * 
+     * @return <p>
+     *         A filter that determines which files to include in the transfer during a task execution based on the
+     *         specified pattern in the filter. When multiple include filters are set, they are interpreted as an OR.
+     */
+
+    public java.util.List<FilterRule> getIncludes() {
+        return includes;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * A filter that determines which files to include in the transfer during a task execution based on the specified
+     * pattern in the filter. When multiple include filters are set, they are interpreted as an OR.
+     * </p>
+     * 
+     * @param includes
+     *        <p>
+     *        A filter that determines which files to include in the transfer during a task execution based on the
+     *        specified pattern in the filter. When multiple include filters are set, they are interpreted as an OR.
+     */
+
+    public void setIncludes(java.util.Collection<FilterRule> includes) {
+        if (includes == null) {
+            this.includes = null;
+            return;
+        }
+
+        this.includes = new java.util.ArrayList<FilterRule>(includes);
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * A filter that determines which files to include in the transfer during a task execution based on the specified
+     * pattern in the filter. When multiple include filters are set, they are interpreted as an OR.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIncludes(java.util.Collection)} or {@link #withIncludes(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param includes
+     *        <p>
+     *        A filter that determines which files to include in the transfer during a task execution based on the
+     *        specified pattern in the filter. When multiple include filters are set, they are interpreted as an OR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskExecutionRequest withIncludes(FilterRule... includes) {
+        if (this.includes == null) {
+            setIncludes(new java.util.ArrayList<FilterRule>(includes.length));
+        }
+        for (FilterRule ele : includes) {
+            this.includes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * A filter that determines which files to include in the transfer during a task execution based on the specified
+     * pattern in the filter. When multiple include filters are set, they are interpreted as an OR.
+     * </p>
+     * 
+     * @param includes
+     *        <p>
+     *        A filter that determines which files to include in the transfer during a task execution based on the
+     *        specified pattern in the filter. When multiple include filters are set, they are interpreted as an OR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskExecutionRequest withIncludes(java.util.Collection<FilterRule> includes) {
+        setIncludes(includes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -118,7 +212,9 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
         if (getTaskArn() != null)
             sb.append("TaskArn: ").append(getTaskArn()).append(",");
         if (getOverrideOptions() != null)
-            sb.append("OverrideOptions: ").append(getOverrideOptions());
+            sb.append("OverrideOptions: ").append(getOverrideOptions()).append(",");
+        if (getIncludes() != null)
+            sb.append("Includes: ").append(getIncludes());
         sb.append("}");
         return sb.toString();
     }
@@ -141,6 +237,10 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getOverrideOptions() != null && other.getOverrideOptions().equals(this.getOverrideOptions()) == false)
             return false;
+        if (other.getIncludes() == null ^ this.getIncludes() == null)
+            return false;
+        if (other.getIncludes() != null && other.getIncludes().equals(this.getIncludes()) == false)
+            return false;
         return true;
     }
 
@@ -151,6 +251,7 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
         hashCode = prime * hashCode + ((getOverrideOptions() == null) ? 0 : getOverrideOptions().hashCode());
+        hashCode = prime * hashCode + ((getIncludes() == null) ? 0 : getIncludes().hashCode());
         return hashCode;
     }
 

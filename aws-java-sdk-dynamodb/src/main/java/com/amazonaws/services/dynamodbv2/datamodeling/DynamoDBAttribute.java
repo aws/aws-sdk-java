@@ -35,7 +35,7 @@ import java.lang.annotation.Target;
  * DynamoDB attribute "value". Similarly, a method isValid() maps to the
  * DynamoDB attribute "valid".
  * <p>
- * Even getter method not marked with this annotation are assumed to be modeled
+ * Getter methods not marked with this annotation are assumed to be modeled
  * properties, unless marked with {@link DynamoDBIgnore}.
  */
 @DynamoDB

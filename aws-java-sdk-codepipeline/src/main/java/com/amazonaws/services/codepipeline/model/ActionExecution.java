@@ -49,7 +49,7 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The system-generated token used to identify a unique approval request. The token for each open approval request
-     * can be obtained using the GetPipelineState command and is used to validate that the approval request
+     * can be obtained using the <code>GetPipelineState</code> command and is used to validate that the approval request
      * corresponding to this token is still valid.
      * </p>
      */
@@ -242,14 +242,14 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The system-generated token used to identify a unique approval request. The token for each open approval request
-     * can be obtained using the GetPipelineState command and is used to validate that the approval request
+     * can be obtained using the <code>GetPipelineState</code> command and is used to validate that the approval request
      * corresponding to this token is still valid.
      * </p>
      * 
      * @param token
      *        The system-generated token used to identify a unique approval request. The token for each open approval
-     *        request can be obtained using the GetPipelineState command and is used to validate that the approval
-     *        request corresponding to this token is still valid.
+     *        request can be obtained using the <code>GetPipelineState</code> command and is used to validate that the
+     *        approval request corresponding to this token is still valid.
      */
 
     public void setToken(String token) {
@@ -259,13 +259,13 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The system-generated token used to identify a unique approval request. The token for each open approval request
-     * can be obtained using the GetPipelineState command and is used to validate that the approval request
+     * can be obtained using the <code>GetPipelineState</code> command and is used to validate that the approval request
      * corresponding to this token is still valid.
      * </p>
      * 
      * @return The system-generated token used to identify a unique approval request. The token for each open approval
-     *         request can be obtained using the GetPipelineState command and is used to validate that the approval
-     *         request corresponding to this token is still valid.
+     *         request can be obtained using the <code>GetPipelineState</code> command and is used to validate that the
+     *         approval request corresponding to this token is still valid.
      */
 
     public String getToken() {
@@ -275,14 +275,14 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The system-generated token used to identify a unique approval request. The token for each open approval request
-     * can be obtained using the GetPipelineState command and is used to validate that the approval request
+     * can be obtained using the <code>GetPipelineState</code> command and is used to validate that the approval request
      * corresponding to this token is still valid.
      * </p>
      * 
      * @param token
      *        The system-generated token used to identify a unique approval request. The token for each open approval
-     *        request can be obtained using the GetPipelineState command and is used to validate that the approval
-     *        request corresponding to this token is still valid.
+     *        request can be obtained using the <code>GetPipelineState</code> command and is used to validate that the
+     *        approval request corresponding to this token is still valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -80,12 +80,30 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     private String lastSoftwareUpdate;
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name. Every tag
-     * is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * The ID of the Amazon EC2 instance that was used to launch the gateway.
+     * </p>
+     */
+    private String ec2InstanceId;
+    /**
+     * <p>
+     * The AWS Region where the Amazon EC2 instance is located.
+     * </p>
+     */
+    private String ec2InstanceRegion;
+    /**
+     * <p>
+     * A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     * </p>
+     */
+    private String vPCEndpoint;
 
     /**
      * @param gatewayARN
@@ -486,14 +504,94 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name. Every tag
-     * is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * The ID of the Amazon EC2 instance that was used to launch the gateway.
      * </p>
      * 
-     * @return A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name.
-     *         Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using
-     *         the <code>ListTagsForResource</code> API.
+     * @param ec2InstanceId
+     *        The ID of the Amazon EC2 instance that was used to launch the gateway.
+     */
+
+    public void setEc2InstanceId(String ec2InstanceId) {
+        this.ec2InstanceId = ec2InstanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Amazon EC2 instance that was used to launch the gateway.
+     * </p>
+     * 
+     * @return The ID of the Amazon EC2 instance that was used to launch the gateway.
+     */
+
+    public String getEc2InstanceId() {
+        return this.ec2InstanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Amazon EC2 instance that was used to launch the gateway.
+     * </p>
+     * 
+     * @param ec2InstanceId
+     *        The ID of the Amazon EC2 instance that was used to launch the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withEc2InstanceId(String ec2InstanceId) {
+        setEc2InstanceId(ec2InstanceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Region where the Amazon EC2 instance is located.
+     * </p>
+     * 
+     * @param ec2InstanceRegion
+     *        The AWS Region where the Amazon EC2 instance is located.
+     */
+
+    public void setEc2InstanceRegion(String ec2InstanceRegion) {
+        this.ec2InstanceRegion = ec2InstanceRegion;
+    }
+
+    /**
+     * <p>
+     * The AWS Region where the Amazon EC2 instance is located.
+     * </p>
+     * 
+     * @return The AWS Region where the Amazon EC2 instance is located.
+     */
+
+    public String getEc2InstanceRegion() {
+        return this.ec2InstanceRegion;
+    }
+
+    /**
+     * <p>
+     * The AWS Region where the Amazon EC2 instance is located.
+     * </p>
+     * 
+     * @param ec2InstanceRegion
+     *        The AWS Region where the Amazon EC2 instance is located.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withEc2InstanceRegion(String ec2InstanceRegion) {
+        setEc2InstanceRegion(ec2InstanceRegion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
+     * </p>
+     * 
+     * @return A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a
+     *         key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *         <code>ListTagsForResource</code> API operation.
      */
 
     public java.util.List<Tag> getTags() {
@@ -505,15 +603,15 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name. Every tag
-     * is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
      * </p>
      * 
      * @param tags
-     *        A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name.
-     *        Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using
-     *        the <code>ListTagsForResource</code> API.
+     *        A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a
+     *        key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *        <code>ListTagsForResource</code> API operation.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -527,9 +625,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name. Every tag
-     * is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -538,9 +636,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param tags
-     *        A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name.
-     *        Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using
-     *        the <code>ListTagsForResource</code> API.
+     *        A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a
+     *        key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *        <code>ListTagsForResource</code> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -556,20 +654,60 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name. Every tag
-     * is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
      * </p>
      * 
      * @param tags
-     *        A list of up to ten (10) tags assigned to the gateway are returned, sorted alphabetically by key name.
-     *        Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using
-     *        the <code>ListTagsForResource</code> API.
+     *        A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a
+     *        key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *        <code>ListTagsForResource</code> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeGatewayInformationResult withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     * </p>
+     * 
+     * @param vPCEndpoint
+     *        The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     */
+
+    public void setVPCEndpoint(String vPCEndpoint) {
+        this.vPCEndpoint = vPCEndpoint;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     * </p>
+     * 
+     * @return The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     */
+
+    public String getVPCEndpoint() {
+        return this.vPCEndpoint;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     * </p>
+     * 
+     * @param vPCEndpoint
+     *        The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withVPCEndpoint(String vPCEndpoint) {
+        setVPCEndpoint(vPCEndpoint);
         return this;
     }
 
@@ -603,8 +741,14 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
             sb.append("NextUpdateAvailabilityDate: ").append(getNextUpdateAvailabilityDate()).append(",");
         if (getLastSoftwareUpdate() != null)
             sb.append("LastSoftwareUpdate: ").append(getLastSoftwareUpdate()).append(",");
+        if (getEc2InstanceId() != null)
+            sb.append("Ec2InstanceId: ").append(getEc2InstanceId()).append(",");
+        if (getEc2InstanceRegion() != null)
+            sb.append("Ec2InstanceRegion: ").append(getEc2InstanceRegion()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getVPCEndpoint() != null)
+            sb.append("VPCEndpoint: ").append(getVPCEndpoint());
         sb.append("}");
         return sb.toString();
     }
@@ -655,9 +799,21 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getLastSoftwareUpdate() != null && other.getLastSoftwareUpdate().equals(this.getLastSoftwareUpdate()) == false)
             return false;
+        if (other.getEc2InstanceId() == null ^ this.getEc2InstanceId() == null)
+            return false;
+        if (other.getEc2InstanceId() != null && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false)
+            return false;
+        if (other.getEc2InstanceRegion() == null ^ this.getEc2InstanceRegion() == null)
+            return false;
+        if (other.getEc2InstanceRegion() != null && other.getEc2InstanceRegion().equals(this.getEc2InstanceRegion()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getVPCEndpoint() == null ^ this.getVPCEndpoint() == null)
+            return false;
+        if (other.getVPCEndpoint() != null && other.getVPCEndpoint().equals(this.getVPCEndpoint()) == false)
             return false;
         return true;
     }
@@ -676,7 +832,10 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getGatewayType() == null) ? 0 : getGatewayType().hashCode());
         hashCode = prime * hashCode + ((getNextUpdateAvailabilityDate() == null) ? 0 : getNextUpdateAvailabilityDate().hashCode());
         hashCode = prime * hashCode + ((getLastSoftwareUpdate() == null) ? 0 : getLastSoftwareUpdate().hashCode());
+        hashCode = prime * hashCode + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId().hashCode());
+        hashCode = prime * hashCode + ((getEc2InstanceRegion() == null) ? 0 : getEc2InstanceRegion().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVPCEndpoint() == null) ? 0 : getVPCEndpoint().hashCode());
         return hashCode;
     }
 

@@ -30,7 +30,8 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
+     * either a WAF policy or Shield Advanced policy.
      * </p>
      */
     private String type;
@@ -41,16 +42,21 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * <p>
      * <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      * </p>
+     * <p>
+     * If this is a Shield Advanced policy, this string will be empty.
+     * </p>
      */
     private String managedServiceData;
 
     /**
      * <p>
-     * The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
+     * either a WAF policy or Shield Advanced policy.
      * </p>
      * 
      * @param type
-     *        The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     *        The service that the policy is using to protect the resources. This specifies the type of policy that is
+     *        created, either a WAF policy or Shield Advanced policy.
      * @see SecurityServiceType
      */
 
@@ -60,10 +66,12 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
+     * either a WAF policy or Shield Advanced policy.
      * </p>
      * 
-     * @return The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     * @return The service that the policy is using to protect the resources. This specifies the type of policy that is
+     *         created, either a WAF policy or Shield Advanced policy.
      * @see SecurityServiceType
      */
 
@@ -73,11 +81,13 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
+     * either a WAF policy or Shield Advanced policy.
      * </p>
      * 
      * @param type
-     *        The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     *        The service that the policy is using to protect the resources. This specifies the type of policy that is
+     *        created, either a WAF policy or Shield Advanced policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityServiceType
      */
@@ -89,11 +99,13 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
+     * either a WAF policy or Shield Advanced policy.
      * </p>
      * 
      * @param type
-     *        The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     *        The service that the policy is using to protect the resources. This specifies the type of policy that is
+     *        created, either a WAF policy or Shield Advanced policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityServiceType
      */
@@ -110,12 +122,18 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * <p>
      * <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      * </p>
+     * <p>
+     * If this is a Shield Advanced policy, this string will be empty.
+     * </p>
      * 
      * @param managedServiceData
      *        Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following
      *        example:</p>
      *        <p>
      *        <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
+     *        </p>
+     *        <p>
+     *        If this is a Shield Advanced policy, this string will be empty.
      */
 
     public void setManagedServiceData(String managedServiceData) {
@@ -129,11 +147,17 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * <p>
      * <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      * </p>
+     * <p>
+     * If this is a Shield Advanced policy, this string will be empty.
+     * </p>
      * 
      * @return Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following
      *         example:</p>
      *         <p>
      *         <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
+     *         </p>
+     *         <p>
+     *         If this is a Shield Advanced policy, this string will be empty.
      */
 
     public String getManagedServiceData() {
@@ -147,12 +171,18 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * <p>
      * <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      * </p>
+     * <p>
+     * If this is a Shield Advanced policy, this string will be empty.
+     * </p>
      * 
      * @param managedServiceData
      *        Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following
      *        example:</p>
      *        <p>
      *        <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
+     *        </p>
+     *        <p>
+     *        If this is a Shield Advanced policy, this string will be empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

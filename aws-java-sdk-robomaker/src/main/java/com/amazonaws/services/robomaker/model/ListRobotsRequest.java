@@ -44,7 +44,7 @@ public class ListRobotsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The maximum number of deployment job results returned by <code>ListRobots</code> in paginated output. When this
      * parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along
      * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be
+     * sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be
      * between 1 and 100. If this parameter is not used, then <code>ListRobots</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
@@ -53,6 +53,12 @@ public class ListRobotsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Optional filters to limit results.
+     * </p>
+     * <p>
+     * The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the
+     * complete value of the filtered item. You can use up to three filters, but they must be for the same named item.
+     * For example, if you are looking for items with the status <code>Registered</code> or the status
+     * <code>Available</code>.
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -145,7 +151,7 @@ public class ListRobotsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The maximum number of deployment job results returned by <code>ListRobots</code> in paginated output. When this
      * parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along
      * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be
+     * sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be
      * between 1 and 100. If this parameter is not used, then <code>ListRobots</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
@@ -154,7 +160,7 @@ public class ListRobotsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The maximum number of deployment job results returned by <code>ListRobots</code> in paginated output. When
      *        this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single
      *        page along with a <code>nextToken</code> response element. The remaining results of the initial request
-     *        can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code>
+     *        can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code>
      *        value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobots</code>
      *        returns up to 100 results and a <code>nextToken</code> value if applicable.
      */
@@ -168,7 +174,7 @@ public class ListRobotsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The maximum number of deployment job results returned by <code>ListRobots</code> in paginated output. When this
      * parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along
      * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be
+     * sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be
      * between 1 and 100. If this parameter is not used, then <code>ListRobots</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
@@ -176,7 +182,7 @@ public class ListRobotsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @return The maximum number of deployment job results returned by <code>ListRobots</code> in paginated output.
      *         When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a
      *         single page along with a <code>nextToken</code> response element. The remaining results of the initial
-     *         request can be seen by sending another <code>ListFleets</code> request with the returned
+     *         request can be seen by sending another <code>ListRobots</code> request with the returned
      *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
      *         <code>ListRobots</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      */
@@ -190,7 +196,7 @@ public class ListRobotsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The maximum number of deployment job results returned by <code>ListRobots</code> in paginated output. When this
      * parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along
      * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be
+     * sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be
      * between 1 and 100. If this parameter is not used, then <code>ListRobots</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
@@ -199,7 +205,7 @@ public class ListRobotsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The maximum number of deployment job results returned by <code>ListRobots</code> in paginated output. When
      *        this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single
      *        page along with a <code>nextToken</code> response element. The remaining results of the initial request
-     *        can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code>
+     *        can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code>
      *        value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobots</code>
      *        returns up to 100 results and a <code>nextToken</code> value if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -214,8 +220,19 @@ public class ListRobotsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the
+     * complete value of the filtered item. You can use up to three filters, but they must be for the same named item.
+     * For example, if you are looking for items with the status <code>Registered</code> or the status
+     * <code>Available</code>.
+     * </p>
      * 
-     * @return Optional filters to limit results.
+     * @return Optional filters to limit results.</p>
+     *         <p>
+     *         The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must
+     *         use the complete value of the filtered item. You can use up to three filters, but they must be for the
+     *         same named item. For example, if you are looking for items with the status <code>Registered</code> or the
+     *         status <code>Available</code>.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -226,9 +243,20 @@ public class ListRobotsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the
+     * complete value of the filtered item. You can use up to three filters, but they must be for the same named item.
+     * For example, if you are looking for items with the status <code>Registered</code> or the status
+     * <code>Available</code>.
+     * </p>
      * 
      * @param filters
-     *        Optional filters to limit results.
+     *        Optional filters to limit results.</p>
+     *        <p>
+     *        The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must
+     *        use the complete value of the filtered item. You can use up to three filters, but they must be for the
+     *        same named item. For example, if you are looking for items with the status <code>Registered</code> or the
+     *        status <code>Available</code>.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -245,13 +273,24 @@ public class ListRobotsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Optional filters to limit results.
      * </p>
      * <p>
+     * The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the
+     * complete value of the filtered item. You can use up to three filters, but they must be for the same named item.
+     * For example, if you are looking for items with the status <code>Registered</code> or the status
+     * <code>Available</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param filters
-     *        Optional filters to limit results.
+     *        Optional filters to limit results.</p>
+     *        <p>
+     *        The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must
+     *        use the complete value of the filtered item. You can use up to three filters, but they must be for the
+     *        same named item. For example, if you are looking for items with the status <code>Registered</code> or the
+     *        status <code>Available</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,9 +308,20 @@ public class ListRobotsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the
+     * complete value of the filtered item. You can use up to three filters, but they must be for the same named item.
+     * For example, if you are looking for items with the status <code>Registered</code> or the status
+     * <code>Available</code>.
+     * </p>
      * 
      * @param filters
-     *        Optional filters to limit results.
+     *        Optional filters to limit results.</p>
+     *        <p>
+     *        The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must
+     *        use the complete value of the filtered item. You can use up to three filters, but they must be for the
+     *        same named item. For example, if you are looking for items with the status <code>Registered</code> or the
+     *        status <code>Available</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

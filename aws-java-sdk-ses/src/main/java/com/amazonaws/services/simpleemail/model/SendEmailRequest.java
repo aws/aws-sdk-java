@@ -20,7 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * Represents a request to send a single formatted email using Amazon SES. For more information, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer
+ * Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail" target="_top">AWS API
@@ -33,14 +34,14 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The email address that is sending the email. This email address must be either individually verified with Amazon
      * SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the
-     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
+     * <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
      * Developer Guide</a>.
      * </p>
      * <p>
      * If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy,
      * then you must also specify the <code>SourceArn</code> parameter. For more information about sending
      * authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * <note>
@@ -102,7 +103,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      */
@@ -122,7 +123,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      */
@@ -156,13 +157,13 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        The email address that is sending the email. This email address must be either individually verified with
      *        Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying
      *        identities, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
      *        Developer Guide</a>.</p>
      *        <p>
      *        If you are sending on behalf of another user and have been permitted to do so by a sending authorization
      *        policy, then you must also specify the <code>SourceArn</code> parameter. For more information about
      *        sending authorization, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *        Developer Guide</a>.
      *        </p>
      *        <note>
@@ -193,14 +194,14 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The email address that is sending the email. This email address must be either individually verified with Amazon
      * SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the
-     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
+     * <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
      * Developer Guide</a>.
      * </p>
      * <p>
      * If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy,
      * then you must also specify the <code>SourceArn</code> parameter. For more information about sending
      * authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * <note>
@@ -221,13 +222,13 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        The email address that is sending the email. This email address must be either individually verified with
      *        Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying
      *        identities, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
      *        Developer Guide</a>.</p>
      *        <p>
      *        If you are sending on behalf of another user and have been permitted to do so by a sending authorization
      *        policy, then you must also specify the <code>SourceArn</code> parameter. For more information about
      *        sending authorization, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *        Developer Guide</a>.
      *        </p>
      *        <note>
@@ -253,14 +254,14 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The email address that is sending the email. This email address must be either individually verified with Amazon
      * SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the
-     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
+     * <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
      * Developer Guide</a>.
      * </p>
      * <p>
      * If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy,
      * then you must also specify the <code>SourceArn</code> parameter. For more information about sending
      * authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * <note>
@@ -280,13 +281,13 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @return The email address that is sending the email. This email address must be either individually verified with
      *         Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying
      *         identities, see the <a
-     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
      *         Developer Guide</a>.</p>
      *         <p>
      *         If you are sending on behalf of another user and have been permitted to do so by a sending authorization
      *         policy, then you must also specify the <code>SourceArn</code> parameter. For more information about
      *         sending authorization, see the <a
-     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *         Developer Guide</a>.
      *         </p>
      *         <note>
@@ -312,14 +313,14 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The email address that is sending the email. This email address must be either individually verified with Amazon
      * SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the
-     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
+     * <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
      * Developer Guide</a>.
      * </p>
      * <p>
      * If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy,
      * then you must also specify the <code>SourceArn</code> parameter. For more information about sending
      * authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * <note>
@@ -340,13 +341,13 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        The email address that is sending the email. This email address must be either individually verified with
      *        Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying
      *        identities, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
      *        Developer Guide</a>.</p>
      *        <p>
      *        If you are sending on behalf of another user and have been permitted to do so by a sending authorization
      *        policy, then you must also specify the <code>SourceArn</code> parameter. For more information about
      *        sending authorization, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *        Developer Guide</a>.
      *        </p>
      *        <note>
@@ -613,7 +614,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * 
@@ -630,7 +631,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        <p>
      *        For more information about sending authorization, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *        Developer Guide</a>.
      */
 
@@ -653,7 +654,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * 
@@ -669,7 +670,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </p>
      *         <p>
      *         For more information about sending authorization, see the <a
-     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *         Developer Guide</a>.
      */
 
@@ -692,7 +693,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * 
@@ -709,7 +710,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        <p>
      *        For more information about sending authorization, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *        Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -734,7 +735,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * 
@@ -751,7 +752,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        <p>
      *        For more information about sending authorization, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *        Developer Guide</a>.
      */
 
@@ -774,7 +775,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * 
@@ -790,7 +791,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </p>
      *         <p>
      *         For more information about sending authorization, see the <a
-     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *         Developer Guide</a>.
      */
 
@@ -813,7 +814,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * 
@@ -830,7 +831,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        <p>
      *        For more information about sending authorization, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *        Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

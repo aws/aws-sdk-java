@@ -27,7 +27,8 @@ import com.amazonaws.services.iot1clickdevices.model.*;
  * </p>
  * <p>
  * <p>
- * Stub description
+ * Describes all of the AWS IoT 1-Click device-related API operations for the service. Also provides sample requests,
+ * responses, and errors for the supported web services protocols.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -223,6 +224,44 @@ public interface AWSIoT1ClickDevices {
 
     /**
      * <p>
+     * Lists the tags associated with the specified resource ARN.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         404 response
+     * @throws InternalFailureException
+     *         500 response
+     * @sample AWSIoT1ClickDevices.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Adds or updates the tags associated with the resource ARN. See <a
+     * href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT
+     * 1-Click Service Limits</a> for the maximum number of tags allowed per resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         404 response
+     * @throws InvalidRequestException
+     *         400 response
+     * @throws InternalFailureException
+     *         500 response
+     * @sample AWSIoT1ClickDevices.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
      * Disassociates a device from your AWS account using its device ID.
      * </p>
      * 
@@ -239,6 +278,25 @@ public interface AWSIoT1ClickDevices {
      *      Documentation</a>
      */
     UnclaimDeviceResult unclaimDevice(UnclaimDeviceRequest unclaimDeviceRequest);
+
+    /**
+     * <p>
+     * Using tag keys, deletes the tags (key/value pairs) associated with the specified resource ARN.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         404 response
+     * @throws InvalidRequestException
+     *         400 response
+     * @throws InternalFailureException
+     *         500 response
+     * @sample AWSIoT1ClickDevices.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

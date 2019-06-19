@@ -36,7 +36,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications. For general information
- * about using ACM, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/"> <i>AWS Certificate Manager User
+ * about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/"> <i>AWS Certificate Manager User
  * Guide</i> </a>.
  * </p>
  */
@@ -532,6 +532,39 @@ public class AWSCertificateManagerAsyncClient extends AWSCertificateManagerClien
 
                 try {
                     result = executeRemoveTagsFromCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RenewCertificateResult> renewCertificateAsync(RenewCertificateRequest request) {
+
+        return renewCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RenewCertificateResult> renewCertificateAsync(final RenewCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RenewCertificateRequest, RenewCertificateResult> asyncHandler) {
+        final RenewCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RenewCertificateResult>() {
+            @Override
+            public RenewCertificateResult call() throws Exception {
+                RenewCertificateResult result = null;
+
+                try {
+                    result = executeRenewCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

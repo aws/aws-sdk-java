@@ -119,6 +119,8 @@ public enum DevicefarmActions implements Action {
     ListSamples("devicefarm:ListSamples"),
     /** Action for the ListSuites operation. */
     ListSuites("devicefarm:ListSuites"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("devicefarm:ListTagsForResource"),
     /** Action for the ListTests operation. */
     ListTests("devicefarm:ListTests"),
     /** Action for the ListUniqueProblems operation. */
@@ -139,6 +141,10 @@ public enum DevicefarmActions implements Action {
     StopRemoteAccessSession("devicefarm:StopRemoteAccessSession"),
     /** Action for the StopRun operation. */
     StopRun("devicefarm:StopRun"),
+    /** Action for the TagResource operation. */
+    TagResource("devicefarm:TagResource"),
+    /** Action for the UntagResource operation. */
+    UntagResource("devicefarm:UntagResource"),
     /** Action for the UpdateDeviceInstance operation. */
     UpdateDeviceInstance("devicefarm:UpdateDeviceInstance"),
     /** Action for the UpdateDevicePool operation. */

@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterSnapshots" target="_top">AWS
  *      API Documentation</a>
@@ -176,7 +175,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * @param dBClusterIdentifier
      *        The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in
      *        conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     *        case-sensitive. </p>
+     *        case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -210,7 +209,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * 
      * @return The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used
      *         in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     *         case-sensitive. </p>
+     *         case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -245,7 +244,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * @param dBClusterIdentifier
      *        The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in
      *        conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     *        case-sensitive. </p>
+     *        case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -286,7 +285,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param dBClusterSnapshotIdentifier
      *        A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with
-     *        the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string. </p>
+     *        the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -330,7 +329,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * </ul>
      * 
      * @return A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with
-     *         the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string. </p>
+     *         the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -375,7 +374,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param dBClusterSnapshotIdentifier
      *        A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with
-     *        the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string. </p>
+     *        the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -735,7 +734,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * @param maxRecords
      *        The maximum number of records to include in the response. If more records exist than the specified
      *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
-     *        remaining results can be retrieved. </p>
+     *        remaining results can be retrieved.</p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -762,7 +761,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * 
      * @return The maximum number of records to include in the response. If more records exist than the specified
      *         <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
-     *         remaining results can be retrieved. </p>
+     *         remaining results can be retrieved.</p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -790,7 +789,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * @param maxRecords
      *        The maximum number of records to include in the response. If more records exist than the specified
      *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
-     *        remaining results can be retrieved. </p>
+     *        remaining results can be retrieved.</p>
      *        <p>
      *        Default: 100
      *        </p>

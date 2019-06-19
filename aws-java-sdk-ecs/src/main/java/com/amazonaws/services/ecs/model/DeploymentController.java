@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The deployment controller to use for the service. For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
  * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * 
@@ -35,7 +35,7 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * The deployment controller type to use.
      * </p>
      * <p>
-     * There are two deployment controller types available:
+     * There are three deployment controller types available:
      * </p>
      * <dl>
      * <dt>ECS</dt>
@@ -51,10 +51,14 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * <dd>
      * <p>
      * The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model powered by AWS
-     * CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic to it. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
-     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic to it.
+     * </p>
+     * </dd>
+     * <dt>EXTERNAL</dt>
+     * <dd>
+     * <p>
+     * The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment controller for
+     * full control over the deployment process for an Amazon ECS service.
      * </p>
      * </dd>
      * </dl>
@@ -66,7 +70,7 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * The deployment controller type to use.
      * </p>
      * <p>
-     * There are two deployment controller types available:
+     * There are three deployment controller types available:
      * </p>
      * <dl>
      * <dt>ECS</dt>
@@ -82,10 +86,14 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * <dd>
      * <p>
      * The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model powered by AWS
-     * CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic to it. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
-     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic to it.
+     * </p>
+     * </dd>
+     * <dt>EXTERNAL</dt>
+     * <dd>
+     * <p>
+     * The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment controller for
+     * full control over the deployment process for an Amazon ECS service.
      * </p>
      * </dd>
      * </dl>
@@ -93,7 +101,7 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * @param type
      *        The deployment controller type to use.</p>
      *        <p>
-     *        There are two deployment controller types available:
+     *        There are three deployment controller types available:
      *        </p>
      *        <dl>
      *        <dt>ECS</dt>
@@ -110,9 +118,14 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      *        <p>
      *        The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model powered by
      *        AWS CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic
-     *        to it. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS
-     *        Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        to it.
+     *        </p>
+     *        </dd>
+     *        <dt>EXTERNAL</dt>
+     *        <dd>
+     *        <p>
+     *        The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment
+     *        controller for full control over the deployment process for an Amazon ECS service.
      *        </p>
      *        </dd>
      * @see DeploymentControllerType
@@ -127,7 +140,7 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * The deployment controller type to use.
      * </p>
      * <p>
-     * There are two deployment controller types available:
+     * There are three deployment controller types available:
      * </p>
      * <dl>
      * <dt>ECS</dt>
@@ -143,17 +156,21 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * <dd>
      * <p>
      * The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model powered by AWS
-     * CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic to it. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
-     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic to it.
+     * </p>
+     * </dd>
+     * <dt>EXTERNAL</dt>
+     * <dd>
+     * <p>
+     * The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment controller for
+     * full control over the deployment process for an Amazon ECS service.
      * </p>
      * </dd>
      * </dl>
      * 
      * @return The deployment controller type to use.</p>
      *         <p>
-     *         There are two deployment controller types available:
+     *         There are three deployment controller types available:
      *         </p>
      *         <dl>
      *         <dt>ECS</dt>
@@ -170,9 +187,14 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      *         <p>
      *         The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model powered by
      *         AWS CodeDeploy, which allows you to verify a new deployment of a service before sending production
-     *         traffic to it. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS
-     *         Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         traffic to it.
+     *         </p>
+     *         </dd>
+     *         <dt>EXTERNAL</dt>
+     *         <dd>
+     *         <p>
+     *         The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment
+     *         controller for full control over the deployment process for an Amazon ECS service.
      *         </p>
      *         </dd>
      * @see DeploymentControllerType
@@ -187,7 +209,7 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * The deployment controller type to use.
      * </p>
      * <p>
-     * There are two deployment controller types available:
+     * There are three deployment controller types available:
      * </p>
      * <dl>
      * <dt>ECS</dt>
@@ -203,10 +225,14 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * <dd>
      * <p>
      * The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model powered by AWS
-     * CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic to it. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
-     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic to it.
+     * </p>
+     * </dd>
+     * <dt>EXTERNAL</dt>
+     * <dd>
+     * <p>
+     * The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment controller for
+     * full control over the deployment process for an Amazon ECS service.
      * </p>
      * </dd>
      * </dl>
@@ -214,7 +240,7 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * @param type
      *        The deployment controller type to use.</p>
      *        <p>
-     *        There are two deployment controller types available:
+     *        There are three deployment controller types available:
      *        </p>
      *        <dl>
      *        <dt>ECS</dt>
@@ -231,9 +257,14 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      *        <p>
      *        The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model powered by
      *        AWS CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic
-     *        to it. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS
-     *        Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        to it.
+     *        </p>
+     *        </dd>
+     *        <dt>EXTERNAL</dt>
+     *        <dd>
+     *        <p>
+     *        The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment
+     *        controller for full control over the deployment process for an Amazon ECS service.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -250,7 +281,7 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * The deployment controller type to use.
      * </p>
      * <p>
-     * There are two deployment controller types available:
+     * There are three deployment controller types available:
      * </p>
      * <dl>
      * <dt>ECS</dt>
@@ -266,10 +297,14 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * <dd>
      * <p>
      * The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model powered by AWS
-     * CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic to it. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
-     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic to it.
+     * </p>
+     * </dd>
+     * <dt>EXTERNAL</dt>
+     * <dd>
+     * <p>
+     * The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment controller for
+     * full control over the deployment process for an Amazon ECS service.
      * </p>
      * </dd>
      * </dl>
@@ -277,7 +312,7 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      * @param type
      *        The deployment controller type to use.</p>
      *        <p>
-     *        There are two deployment controller types available:
+     *        There are three deployment controller types available:
      *        </p>
      *        <dl>
      *        <dt>ECS</dt>
@@ -294,9 +329,14 @@ public class DeploymentController implements Serializable, Cloneable, Structured
      *        <p>
      *        The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model powered by
      *        AWS CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic
-     *        to it. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS
-     *        Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        to it.
+     *        </p>
+     *        </dd>
+     *        <dt>EXTERNAL</dt>
+     *        <dd>
+     *        <p>
+     *        The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment
+     *        controller for full control over the deployment process for an Amazon ECS service.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.

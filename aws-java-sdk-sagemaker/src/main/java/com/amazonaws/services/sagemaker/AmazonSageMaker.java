@@ -45,7 +45,8 @@ public interface AmazonSageMaker {
     /**
      * <p>
      * Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You can add tags to notebook
-     * instances, training jobs, hyperparameter tuning jobs, models, endpoint configurations, and endpoints.
+     * instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models, labeling jobs, work teams,
+     * endpoint configurations, and endpoints.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information
@@ -173,6 +174,11 @@ public interface AmazonSageMaker {
      * <note>
      * <p>
      * Use this API only for hosting models using Amazon SageMaker hosting services.
+     * </p>
+     * <p>
+     * You must not delete an <code>EndpointConfig</code> in use by an endpoint that is live or while the
+     * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+     * update an endpoint, you must create a new <code>EndpointConfig</code>.
      * </p>
      * </note>
      * <p>
@@ -496,14 +502,20 @@ public interface AmazonSageMaker {
      * page.
      * </p>
      * <p>
-     * You can restrict access to this API and to the URL that it returns to a list of IP addresses that you specify. To
-     * restrict access, attach an IAM policy that denies access to this API unless the call comes from an IP address in
-     * the specified list to every AWS Identity and Access Management user, group, or role used to access the notebook
-     * instance. Use the <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code> condition
-     * context key to specify the list of IP addresses that you want to have access to the notebook instance. For more
-     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit Access to a
-     * Notebook Instance by IP Address</a>.
+     * IAM authorization policies for this API are also enforced for every HTTP request and WebSocket frame that
+     * attempts to connect to the notebook instance.For example, you can restrict access to this API and to the URL that
+     * it returns to a list of IP addresses that you specify. Use the <code>NotIpAddress</code> condition operator and
+     * the <code>aws:SourceIP</code> condition context key to specify the list of IP addresses that you want to have
+     * access to the notebook instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit Access to a Notebook Instance by
+     * IP Address</a>.
      * </p>
+     * <note>
+     * <p>
+     * The URL that you get from a call to is valid only for 5 minutes. If you try to use the URL after the 5-minute
+     * limit expires, you are directed to the AWS console sign-in page.
+     * </p>
+     * </note>
      * 
      * @param createPresignedNotebookInstanceUrlRequest
      * @return Result of the CreatePresignedNotebookInstanceUrl operation returned by the service.
@@ -535,8 +547,9 @@ public interface AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>HyperParameters</code> - Specify these algorithm-specific parameters to influence the quality of the final
-     * model. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
+     * <code>HyperParameters</code> - Specify these algorithm-specific parameters to enable the estimation of model
+     * parameters during training. Hyperparameters can be tuned to optimize this learning process. For a list of
+     * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * </li>
@@ -566,7 +579,7 @@ public interface AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>StoppingCondition</code> - Sets a duration for training. Use this parameter to cap model training costs.
+     * <code>StoppingCondition</code> - Sets a time limit for training. Use this parameter to cap model training costs.
      * </p>
      * </li>
      * </ul>
@@ -1435,7 +1448,8 @@ public interface AmazonSageMaker {
     /**
      * <p>
      * Terminates the ML compute instance. Before terminating the instance, Amazon SageMaker disconnects the ML storage
-     * volume from it. Amazon SageMaker preserves the ML storage volume.
+     * volume from it. Amazon SageMaker preserves the ML storage volume. Amazon SageMaker stops charging you for the ML
+     * compute instance when you call <code>StopNotebookInstance</code>.
      * </p>
      * <p>
      * To access data on the ML storage volume for a notebook instance that has been terminated, call the
@@ -1518,8 +1532,9 @@ public interface AmazonSageMaker {
      * </p>
      * <note>
      * <p>
-     * You cannot update an endpoint with the current <code>EndpointConfig</code>. To update an endpoint, you must
-     * create a new <code>EndpointConfig</code>.
+     * You must not delete an <code>EndpointConfig</code> in use by an endpoint that is live or while the
+     * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+     * update an endpoint, you must create a new <code>EndpointConfig</code>.
      * </p>
      * </note>
      * 
@@ -1558,8 +1573,7 @@ public interface AmazonSageMaker {
     /**
      * <p>
      * Updates a notebook instance. NotebookInstance updates include upgrading or downgrading the ML compute instance
-     * used for your notebook instance to accommodate changes in your workload requirements. You can also update the VPC
-     * security groups.
+     * used for your notebook instance to accommodate changes in your workload requirements.
      * </p>
      * 
      * @param updateNotebookInstanceRequest

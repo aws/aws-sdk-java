@@ -60,14 +60,14 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The last known status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.
      * </p>
      */
     private String lastStatus;
     /**
      * <p>
      * The desired status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.
      * </p>
      */
     private String desiredStatus;
@@ -516,13 +516,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The last known status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.
      * </p>
      * 
      * @param lastStatus
      *        The last known status of the task. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
-     *        Lifecycle</a>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.
      */
 
     public void setLastStatus(String lastStatus) {
@@ -532,11 +531,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The last known status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.
      * </p>
      * 
      * @return The last known status of the task. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      *         Lifecycle</a>.
      */
 
@@ -547,13 +546,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The last known status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.
      * </p>
      * 
      * @param lastStatus
      *        The last known status of the task. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
-     *        Lifecycle</a>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -565,13 +563,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The desired status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.
      * </p>
      * 
      * @param desiredStatus
      *        The desired status of the task. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
-     *        Lifecycle</a>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.
      */
 
     public void setDesiredStatus(String desiredStatus) {
@@ -581,11 +578,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The desired status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.
      * </p>
      * 
      * @return The desired status of the task. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      *         Lifecycle</a>.
      */
 
@@ -596,13 +593,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The desired status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.
      * </p>
      * 
      * @param desiredStatus
      *        The desired status of the task. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
-     *        Lifecycle</a>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

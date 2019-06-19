@@ -50,7 +50,7 @@ public class StackResourceDriftInformation implements Serializable, Cloneable {
      * <p>
      * Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      * </li>
@@ -92,7 +92,7 @@ public class StackResourceDriftInformation implements Serializable, Cloneable {
      * <p>
      * Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      * </li>
@@ -124,7 +124,7 @@ public class StackResourceDriftInformation implements Serializable, Cloneable {
      *        <p>
      *        Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      *        >Resources that Support Drift Detection</a>.
      *        </p>
      *        </li>
@@ -163,7 +163,7 @@ public class StackResourceDriftInformation implements Serializable, Cloneable {
      * <p>
      * Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      * </li>
@@ -194,7 +194,7 @@ public class StackResourceDriftInformation implements Serializable, Cloneable {
      *         <p>
      *         Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>.
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      *         >Resources that Support Drift Detection</a>.
      *         </p>
      *         </li>
@@ -233,7 +233,7 @@ public class StackResourceDriftInformation implements Serializable, Cloneable {
      * <p>
      * Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      * </li>
@@ -265,7 +265,7 @@ public class StackResourceDriftInformation implements Serializable, Cloneable {
      *        <p>
      *        Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      *        >Resources that Support Drift Detection</a>.
      *        </p>
      *        </li>
@@ -306,7 +306,7 @@ public class StackResourceDriftInformation implements Serializable, Cloneable {
      * <p>
      * Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      * </li>
@@ -338,7 +338,7 @@ public class StackResourceDriftInformation implements Serializable, Cloneable {
      *        <p>
      *        Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      *        >Resources that Support Drift Detection</a>.
      *        </p>
      *        </li>

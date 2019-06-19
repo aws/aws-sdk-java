@@ -96,6 +96,15 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                             new JsonErrorShapeMetadata().withErrorCode("ServiceAccountException").withModeledClass(
                                     com.amazonaws.services.devicefarm.model.ServiceAccountException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
+                                    com.amazonaws.services.devicefarm.model.TooManyTagsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagOperationException").withModeledClass(
+                                    com.amazonaws.services.devicefarm.model.TagOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagPolicyException").withModeledClass(
+                                    com.amazonaws.services.devicefarm.model.TagPolicyException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("IdempotencyException").withModeledClass(
                                     com.amazonaws.services.devicefarm.model.IdempotencyException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.devicefarm.model.AWSDeviceFarmException.class));
@@ -344,6 +353,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDevicePool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -404,6 +414,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstanceProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -465,6 +476,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetworkProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -497,6 +509,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @throws TagOperationException
+     *         The operation was not successful. Try again.
      * @sample AWSDeviceFarm.CreateProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject" target="_top">AWS API
      *      Documentation</a>
@@ -526,6 +540,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -588,6 +603,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRemoteAccessSession");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -650,6 +666,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUpload");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -709,6 +726,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVPCEConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -771,6 +789,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDevicePool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -831,6 +850,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInstanceProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -892,6 +912,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -956,6 +977,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1018,6 +1040,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRemoteAccessSession");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1083,6 +1106,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRun");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1144,6 +1168,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUpload");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1206,6 +1231,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVPCEConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1268,6 +1294,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1329,6 +1356,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevice");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1389,6 +1417,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1450,6 +1479,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevicePool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1512,6 +1542,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevicePoolCompatibility");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1573,6 +1604,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstanceProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1634,6 +1666,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1694,6 +1727,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNetworkProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1761,6 +1795,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOfferingStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1822,6 +1857,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1883,6 +1919,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRemoteAccessSession");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1945,6 +1982,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRun");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2006,6 +2044,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSuite");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2067,6 +2106,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTest");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2128,6 +2168,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUpload");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2186,6 +2227,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVPCEConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2250,6 +2292,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InstallToRemoteAccessSession");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2312,6 +2355,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListArtifacts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2372,6 +2416,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2433,6 +2478,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevicePools");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2494,6 +2540,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevices");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2554,6 +2601,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstanceProfiles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2615,6 +2663,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2675,6 +2724,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNetworkProfiles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2740,6 +2790,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferingPromotions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2809,6 +2860,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferingTransactions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2877,6 +2929,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2938,6 +2991,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjects");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3000,6 +3054,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRemoteAccessSessions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3062,6 +3117,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuns");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3123,6 +3179,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSamples");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3184,12 +3241,70 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSuites");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ListSuitesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSuitesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List the tags for an AWS Device Farm resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws TagOperationException
+     *         The operation was not successful. Try again.
+     * @sample AWSDeviceFarm.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3245,6 +3360,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTests");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3306,6 +3422,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUniqueProblems");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3367,6 +3484,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUploads");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3423,6 +3541,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVPCEConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3491,6 +3610,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseOffering");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3558,6 +3678,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RenewOffering");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3621,6 +3742,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ScheduleRun");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3684,6 +3806,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3746,6 +3869,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopRemoteAccessSession");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3811,12 +3935,135 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopRun");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<StopRunResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws TagOperationException
+     *         The operation was not successful. Try again.
+     * @throws TooManyTagsException
+     *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
+     *         repository is 50.
+     * @throws TagPolicyException
+     *         The request doesn't comply with the AWS Identity and Access Management (IAM) tag policy. Correct your
+     *         request and then retry it.
+     * @sample AWSDeviceFarm.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws TagOperationException
+     *         The operation was not successful. Try again.
+     * @sample AWSDeviceFarm.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3871,6 +4118,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3933,6 +4181,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDevicePool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3993,6 +4242,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInstanceProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4054,6 +4304,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNetworkProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4115,6 +4366,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4175,6 +4427,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUpload");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4237,6 +4490,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVPCEConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

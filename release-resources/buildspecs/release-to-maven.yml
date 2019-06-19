@@ -20,7 +20,7 @@ phases:
       if ! curl -f --head $SONATYPE_URL; then
         mkdir -p $CREDENTIALS
         aws s3 cp s3://aws-java-sdk-credentials/ $CREDENTIALS/ --recursive
-        mvn clean deploy -B -s $SETTINGS_XML -Dgpg.homedir=$GPG_HOME -Ppublishing -DperformRelease -Dfindbugs.skip -DskipTests -Dcheckstyle.skip -Ddoclint=none -DautoReleaseAfterClose=true -DstagingProgressTimeoutMinutes=30
+        mvn clean deploy -B -s $SETTINGS_XML -Dgpg.homedir=$GPG_HOME -Ppublishing -DperformRelease -Dfindbugs.skip -DskipTests -Dcheckstyle.skip -Ddoclint=none -Dadditionalparam=--allow-script-in-comments -DautoReleaseAfterClose=true -DstagingProgressTimeoutMinutes=30
       else
         echo "This version was already released."
       fi

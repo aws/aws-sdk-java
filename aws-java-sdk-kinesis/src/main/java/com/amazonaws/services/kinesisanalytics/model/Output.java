@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p/>
  * <p>
  * For limits on how many destinations an application can write and other limitations, see <a
- * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+ * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/Output" target="_top">AWS API
@@ -62,7 +62,7 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the data format when records are written to the destination. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      */
@@ -231,13 +231,13 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the data format when records are written to the destination. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @param destinationSchema
      *        Describes the data format when records are written to the destination. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      */
 
@@ -248,12 +248,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the data format when records are written to the destination. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @return Describes the data format when records are written to the destination. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *         Application Output</a>.
      */
 
@@ -264,13 +264,13 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the data format when records are written to the destination. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @param destinationSchema
      *        Describes the data format when records are written to the destination. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

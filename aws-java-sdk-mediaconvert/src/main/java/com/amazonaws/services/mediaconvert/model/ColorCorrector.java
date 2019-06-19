@@ -28,7 +28,11 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
 
     /** Brightness level. */
     private Integer brightness;
-
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed. If
+     * _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing colorspaces. An
+     * input's colorspace can be specified explicitly in the "Video Selector":#inputs-video_selector if necessary.
+     */
     private String colorSpaceConversion;
     /** Contrast level. */
     private Integer contrast;
@@ -77,7 +81,15 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed. If
+     * _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing colorspaces. An
+     * input's colorspace can be specified explicitly in the "Video Selector":#inputs-video_selector if necessary.
+     * 
      * @param colorSpaceConversion
+     *        Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed.
+     *        If _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing
+     *        colorspaces. An input's colorspace can be specified explicitly in the
+     *        "Video Selector":#inputs-video_selector if necessary.
      * @see ColorSpaceConversion
      */
 
@@ -86,7 +98,14 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed. If
+     * _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing colorspaces. An
+     * input's colorspace can be specified explicitly in the "Video Selector":#inputs-video_selector if necessary.
+     * 
+     * @return Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed.
+     *         If _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing
+     *         colorspaces. An input's colorspace can be specified explicitly in the
+     *         "Video Selector":#inputs-video_selector if necessary.
      * @see ColorSpaceConversion
      */
 
@@ -95,7 +114,15 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed. If
+     * _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing colorspaces. An
+     * input's colorspace can be specified explicitly in the "Video Selector":#inputs-video_selector if necessary.
+     * 
      * @param colorSpaceConversion
+     *        Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed.
+     *        If _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing
+     *        colorspaces. An input's colorspace can be specified explicitly in the
+     *        "Video Selector":#inputs-video_selector if necessary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorSpaceConversion
      */
@@ -106,7 +133,15 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed. If
+     * _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing colorspaces. An
+     * input's colorspace can be specified explicitly in the "Video Selector":#inputs-video_selector if necessary.
+     * 
      * @param colorSpaceConversion
+     *        Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed.
+     *        If _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing
+     *        colorspaces. An input's colorspace can be specified explicitly in the
+     *        "Video Selector":#inputs-video_selector if necessary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorSpaceConversion
      */

@@ -109,6 +109,8 @@ public enum SimpleEmailServiceActions implements Action {
     ListTemplates("ses:ListTemplates"),
     /** Action for the ListVerifiedEmailAddresses operation. */
     ListVerifiedEmailAddresses("ses:ListVerifiedEmailAddresses"),
+    /** Action for the PutConfigurationSetDeliveryOptions operation. */
+    PutConfigurationSetDeliveryOptions("ses:PutConfigurationSetDeliveryOptions"),
     /** Action for the PutIdentityPolicy operation. */
     PutIdentityPolicy("ses:PutIdentityPolicy"),
     /** Action for the ReorderReceiptRuleSet operation. */

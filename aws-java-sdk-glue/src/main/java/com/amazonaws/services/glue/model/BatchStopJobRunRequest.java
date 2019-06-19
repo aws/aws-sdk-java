@@ -33,7 +33,7 @@ public class BatchStopJobRunRequest extends com.amazonaws.AmazonWebServiceReques
     private String jobName;
     /**
      * <p>
-     * A list of the JobRunIds that should be stopped for that job definition.
+     * A list of the <code>JobRunIds</code> that should be stopped for that job definition.
      * </p>
      */
     private java.util.List<String> jobRunIds;
@@ -80,10 +80,10 @@ public class BatchStopJobRunRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the JobRunIds that should be stopped for that job definition.
+     * A list of the <code>JobRunIds</code> that should be stopped for that job definition.
      * </p>
      * 
-     * @return A list of the JobRunIds that should be stopped for that job definition.
+     * @return A list of the <code>JobRunIds</code> that should be stopped for that job definition.
      */
 
     public java.util.List<String> getJobRunIds() {
@@ -92,11 +92,11 @@ public class BatchStopJobRunRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the JobRunIds that should be stopped for that job definition.
+     * A list of the <code>JobRunIds</code> that should be stopped for that job definition.
      * </p>
      * 
      * @param jobRunIds
-     *        A list of the JobRunIds that should be stopped for that job definition.
+     *        A list of the <code>JobRunIds</code> that should be stopped for that job definition.
      */
 
     public void setJobRunIds(java.util.Collection<String> jobRunIds) {
@@ -110,7 +110,7 @@ public class BatchStopJobRunRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the JobRunIds that should be stopped for that job definition.
+     * A list of the <code>JobRunIds</code> that should be stopped for that job definition.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class BatchStopJobRunRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param jobRunIds
-     *        A list of the JobRunIds that should be stopped for that job definition.
+     *        A list of the <code>JobRunIds</code> that should be stopped for that job definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class BatchStopJobRunRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the JobRunIds that should be stopped for that job definition.
+     * A list of the <code>JobRunIds</code> that should be stopped for that job definition.
      * </p>
      * 
      * @param jobRunIds
-     *        A list of the JobRunIds that should be stopped for that job definition.
+     *        A list of the <code>JobRunIds</code> that should be stopped for that job definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

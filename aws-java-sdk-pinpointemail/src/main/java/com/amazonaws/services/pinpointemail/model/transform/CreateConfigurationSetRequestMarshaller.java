@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.pinpointemail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class CreateConfigurationSetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReputationOptions").build();
     private static final MarshallingInfo<StructuredPojo> SENDINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SendingOptions").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateConfigurationSetRequestMarshaller instance = new CreateConfigurationSetRequestMarshaller();
 
@@ -59,6 +62,7 @@ public class CreateConfigurationSetRequestMarshaller {
             protocolMarshaller.marshall(createConfigurationSetRequest.getDeliveryOptions(), DELIVERYOPTIONS_BINDING);
             protocolMarshaller.marshall(createConfigurationSetRequest.getReputationOptions(), REPUTATIONOPTIONS_BINDING);
             protocolMarshaller.marshall(createConfigurationSetRequest.getSendingOptions(), SENDINGOPTIONS_BINDING);
+            protocolMarshaller.marshall(createConfigurationSetRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -68,6 +68,10 @@ public class DirectConnectGatewayAttachmentJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     directConnectGatewayAttachment.setAttachmentState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("attachmentType", targetDepth)) {
+                    context.nextToken();
+                    directConnectGatewayAttachment.setAttachmentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("stateChangeError", targetDepth)) {
                     context.nextToken();
                     directConnectGatewayAttachment.setStateChangeError(context.getUnmarshaller(String.class).unmarshall(context));

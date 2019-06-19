@@ -76,6 +76,18 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> uris;
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * </p>
+     */
+    private java.util.List<AdditionalAuthenticationProvider> additionalAuthenticationProviders;
 
     /**
      * <p>
@@ -438,6 +450,137 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @return The tags.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public GraphqlApi addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * </p>
+     * 
+     * @return A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     */
+
+    public java.util.List<AdditionalAuthenticationProvider> getAdditionalAuthenticationProviders() {
+        return additionalAuthenticationProviders;
+    }
+
+    /**
+     * <p>
+     * A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * </p>
+     * 
+     * @param additionalAuthenticationProviders
+     *        A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     */
+
+    public void setAdditionalAuthenticationProviders(java.util.Collection<AdditionalAuthenticationProvider> additionalAuthenticationProviders) {
+        if (additionalAuthenticationProviders == null) {
+            this.additionalAuthenticationProviders = null;
+            return;
+        }
+
+        this.additionalAuthenticationProviders = new java.util.ArrayList<AdditionalAuthenticationProvider>(additionalAuthenticationProviders);
+    }
+
+    /**
+     * <p>
+     * A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalAuthenticationProviders(java.util.Collection)} or
+     * {@link #withAdditionalAuthenticationProviders(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalAuthenticationProviders
+     *        A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withAdditionalAuthenticationProviders(AdditionalAuthenticationProvider... additionalAuthenticationProviders) {
+        if (this.additionalAuthenticationProviders == null) {
+            setAdditionalAuthenticationProviders(new java.util.ArrayList<AdditionalAuthenticationProvider>(additionalAuthenticationProviders.length));
+        }
+        for (AdditionalAuthenticationProvider ele : additionalAuthenticationProviders) {
+            this.additionalAuthenticationProviders.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * </p>
+     * 
+     * @param additionalAuthenticationProviders
+     *        A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withAdditionalAuthenticationProviders(java.util.Collection<AdditionalAuthenticationProvider> additionalAuthenticationProviders) {
+        setAdditionalAuthenticationProviders(additionalAuthenticationProviders);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -464,7 +607,11 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getUris() != null)
-            sb.append("Uris: ").append(getUris());
+            sb.append("Uris: ").append(getUris()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAdditionalAuthenticationProviders() != null)
+            sb.append("AdditionalAuthenticationProviders: ").append(getAdditionalAuthenticationProviders());
         sb.append("}");
         return sb.toString();
     }
@@ -511,6 +658,15 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUris() != null && other.getUris().equals(this.getUris()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getAdditionalAuthenticationProviders() == null ^ this.getAdditionalAuthenticationProviders() == null)
+            return false;
+        if (other.getAdditionalAuthenticationProviders() != null
+                && other.getAdditionalAuthenticationProviders().equals(this.getAdditionalAuthenticationProviders()) == false)
+            return false;
         return true;
     }
 
@@ -527,6 +683,8 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOpenIDConnectConfig() == null) ? 0 : getOpenIDConnectConfig().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getUris() == null) ? 0 : getUris().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalAuthenticationProviders() == null) ? 0 : getAdditionalAuthenticationProviders().hashCode());
         return hashCode;
     }
 

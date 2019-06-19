@@ -19,11 +19,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The origin access identity's configuration information. For more information, see
- * <a>CloudFrontOriginAccessIdentityConfigComplexType</a>.
+ * The origin access identity's configuration information. For more information, see <a
+ * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CloudFrontOriginAccessIdentityConfig.html"
+ * >CloudFrontOriginAccessIdentityConfig</a>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetCloudFrontOriginAccessIdentityConfig"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentityConfig"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

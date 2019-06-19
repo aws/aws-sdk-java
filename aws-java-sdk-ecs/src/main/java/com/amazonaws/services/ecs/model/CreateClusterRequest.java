@@ -28,7 +28,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
      * </p>
      */
     private String clusterName;
@@ -44,13 +44,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
      * </p>
      * 
      * @param clusterName
      *        The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     *        <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     *        allowed.
+     *        <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
      */
 
     public void setClusterName(String clusterName) {
@@ -60,12 +59,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
      * </p>
      * 
      * @return The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     *         <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     *         allowed.
+     *         <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
      */
 
     public String getClusterName() {
@@ -75,13 +73,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
      * </p>
      * 
      * @param clusterName
      *        The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     *        <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     *        allowed.
+     *        <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

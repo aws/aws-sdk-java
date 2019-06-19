@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for HlsManifestCompression
+ * Hls Manifest Compression
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HlsManifestCompression {

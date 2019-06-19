@@ -53,9 +53,8 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * New name for the user. Include this parameter only if you're changing the user's name.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      */
     private String newUserName;
@@ -227,17 +226,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * New name for the user. Include this parameter only if you're changing the user's name.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param newUserName
      *        New name for the user. Include this parameter only if you're changing the user's name.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public void setNewUserName(String newUserName) {
@@ -249,16 +246,14 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * New name for the user. Include this parameter only if you're changing the user's name.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @return New name for the user. Include this parameter only if you're changing the user's name.</p>
      *         <p>
-     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *         include any of the following characters: _+=,.@-
+     *         IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *         case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public String getNewUserName() {
@@ -270,17 +265,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * New name for the user. Include this parameter only if you're changing the user's name.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param newUserName
      *        New name for the user. Include this parameter only if you're changing the user's name.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -45,7 +45,7 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      * >SetPlatformApplicationAttributes</a>
      * </p>
      */
@@ -146,12 +146,12 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      * >SetPlatformApplicationAttributes</a>
      * </p>
      * 
      * @return For a list of attributes, see <a
-     *         href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     *         href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      *         >SetPlatformApplicationAttributes</a>
      */
 
@@ -165,13 +165,13 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      * >SetPlatformApplicationAttributes</a>
      * </p>
      * 
      * @param attributes
      *        For a list of attributes, see <a
-     *        href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      *        >SetPlatformApplicationAttributes</a>
      */
 
@@ -182,13 +182,13 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      * >SetPlatformApplicationAttributes</a>
      * </p>
      * 
      * @param attributes
      *        For a list of attributes, see <a
-     *        href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      *        >SetPlatformApplicationAttributes</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

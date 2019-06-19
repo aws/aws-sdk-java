@@ -256,6 +256,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -305,6 +306,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -354,6 +356,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -394,6 +397,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -430,6 +434,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ReportName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ReportName",
           "uri" : false
@@ -498,6 +503,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ReportName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ReportName",
             "uri" : false
@@ -572,6 +578,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -601,6 +608,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ResponseMessage",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ResponseMessage",
           "uri" : false
@@ -669,6 +677,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ResponseMessage",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ResponseMessage",
             "uri" : false
@@ -746,6 +755,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -782,6 +792,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "MaxResults",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "MaxResults",
           "uri" : false
@@ -848,6 +859,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "NextToken",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "NextToken",
           "uri" : false
@@ -916,6 +928,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "MaxResults",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "MaxResults",
             "uri" : false
@@ -983,6 +996,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "NextToken",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "NextToken",
             "uri" : false
@@ -1057,6 +1071,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -1086,6 +1101,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ReportDefinitions",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ReportDefinitions",
           "uri" : false
@@ -1123,6 +1139,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -1233,6 +1250,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "NextToken",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "NextToken",
           "uri" : false
@@ -1301,6 +1319,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "NextToken",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "NextToken",
             "uri" : false
@@ -1368,6 +1387,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ReportDefinitions",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ReportDefinitions",
             "uri" : false
@@ -1405,6 +1425,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -1526,6 +1547,7 @@
       "errorCode" : "DuplicateReportNameException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -1563,6 +1585,7 @@
       "errorCode" : "InternalErrorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -1600,6 +1623,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -1636,6 +1660,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ReportDefinition",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ReportDefinition",
           "uri" : false
@@ -1704,6 +1729,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ReportDefinition",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ReportDefinition",
             "uri" : false
@@ -1778,6 +1804,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -1818,6 +1845,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -1847,6 +1875,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ReportName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ReportName",
           "uri" : false
@@ -1913,6 +1942,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "TimeUnit",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "TimeUnit",
           "uri" : false
@@ -1979,6 +2009,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Format",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Format",
           "uri" : false
@@ -2045,6 +2076,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Compression",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Compression",
           "uri" : false
@@ -2111,6 +2143,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "AdditionalSchemaElements",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AdditionalSchemaElements",
           "uri" : false
@@ -2148,6 +2181,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -2258,6 +2292,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "S3Bucket",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "S3Bucket",
           "uri" : false
@@ -2324,6 +2359,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "S3Prefix",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "S3Prefix",
           "uri" : false
@@ -2390,6 +2426,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "S3Region",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "S3Region",
           "uri" : false
@@ -2456,6 +2493,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "AdditionalArtifacts",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AdditionalArtifacts",
           "uri" : false
@@ -2493,6 +2531,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -2603,6 +2642,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RefreshClosedReports",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RefreshClosedReports",
           "uri" : false
@@ -2669,6 +2709,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ReportVersioning",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ReportVersioning",
           "uri" : false
@@ -2737,6 +2778,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "AdditionalArtifacts",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AdditionalArtifacts",
             "uri" : false
@@ -2774,6 +2816,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -2885,6 +2928,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "AdditionalSchemaElements",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AdditionalSchemaElements",
             "uri" : false
@@ -2922,6 +2966,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -3033,6 +3078,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Compression",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Compression",
             "uri" : false
@@ -3100,6 +3146,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Format",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Format",
             "uri" : false
@@ -3167,6 +3214,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RefreshClosedReports",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RefreshClosedReports",
             "uri" : false
@@ -3234,6 +3282,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ReportName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ReportName",
             "uri" : false
@@ -3301,6 +3350,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ReportVersioning",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ReportVersioning",
             "uri" : false
@@ -3368,6 +3418,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "S3Bucket",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "S3Bucket",
             "uri" : false
@@ -3435,6 +3486,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "S3Prefix",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "S3Prefix",
             "uri" : false
@@ -3502,6 +3554,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "S3Region",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "S3Region",
             "uri" : false
@@ -3569,6 +3622,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "TimeUnit",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "TimeUnit",
             "uri" : false
@@ -3652,6 +3706,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -3692,6 +3747,7 @@
       "errorCode" : "ReportLimitReachedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -3735,6 +3791,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -3778,6 +3835,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -3824,6 +3882,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -3864,6 +3923,7 @@
       "errorCode" : "ValidationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,

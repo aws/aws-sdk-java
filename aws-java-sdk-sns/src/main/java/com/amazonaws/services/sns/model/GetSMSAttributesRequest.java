@@ -34,7 +34,7 @@ public class GetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For all attribute names, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
      * </p>
      * <p>
      * If you don't use this parameter, Amazon SNS returns all SMS attributes.
@@ -48,7 +48,7 @@ public class GetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For all attribute names, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
      * </p>
      * <p>
      * If you don't use this parameter, Amazon SNS returns all SMS attributes.
@@ -58,7 +58,7 @@ public class GetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *         values.</p>
      *         <p>
      *         For all attribute names, see <a
-     *         href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
+     *         href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
      *         </p>
      *         <p>
      *         If you don't use this parameter, Amazon SNS returns all SMS attributes.
@@ -77,7 +77,7 @@ public class GetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For all attribute names, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
      * </p>
      * <p>
      * If you don't use this parameter, Amazon SNS returns all SMS attributes.
@@ -88,7 +88,7 @@ public class GetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *        values.</p>
      *        <p>
      *        For all attribute names, see <a
-     *        href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
      *        </p>
      *        <p>
      *        If you don't use this parameter, Amazon SNS returns all SMS attributes.
@@ -109,7 +109,7 @@ public class GetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For all attribute names, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
      * </p>
      * <p>
      * If you don't use this parameter, Amazon SNS returns all SMS attributes.
@@ -125,7 +125,7 @@ public class GetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *        values.</p>
      *        <p>
      *        For all attribute names, see <a
-     *        href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
      *        </p>
      *        <p>
      *        If you don't use this parameter, Amazon SNS returns all SMS attributes.
@@ -148,7 +148,7 @@ public class GetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For all attribute names, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
      * </p>
      * <p>
      * If you don't use this parameter, Amazon SNS returns all SMS attributes.
@@ -159,7 +159,7 @@ public class GetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *        values.</p>
      *        <p>
      *        For all attribute names, see <a
-     *        href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
      *        </p>
      *        <p>
      *        If you don't use this parameter, Amazon SNS returns all SMS attributes.

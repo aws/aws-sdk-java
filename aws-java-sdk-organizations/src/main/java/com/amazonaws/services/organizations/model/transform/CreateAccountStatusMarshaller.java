@@ -39,6 +39,8 @@ public class CreateAccountStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletedTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AccountId").build();
+    private static final MarshallingInfo<String> GOVCLOUDACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GovCloudAccountId").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
 
@@ -64,6 +66,7 @@ public class CreateAccountStatusMarshaller {
             protocolMarshaller.marshall(createAccountStatus.getRequestedTimestamp(), REQUESTEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(createAccountStatus.getCompletedTimestamp(), COMPLETEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(createAccountStatus.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(createAccountStatus.getGovCloudAccountId(), GOVCLOUDACCOUNTID_BINDING);
             protocolMarshaller.marshall(createAccountStatus.getFailureReason(), FAILUREREASON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

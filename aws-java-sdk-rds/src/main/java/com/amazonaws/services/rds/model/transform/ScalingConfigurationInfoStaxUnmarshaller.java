@@ -62,6 +62,11 @@ public class ScalingConfigurationInfoStaxUnmarshaller implements Unmarshaller<Sc
                     scalingConfigurationInfo.setSecondsUntilAutoPause(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("TimeoutAction", targetDepth)) {
+                    scalingConfigurationInfo.setTimeoutAction(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return scalingConfigurationInfo;

@@ -25,16 +25,29 @@ import com.amazonaws.services.guardduty.model.*;
  * {@link com.amazonaws.services.guardduty.AbstractAmazonGuardDutyAsync} instead.
  * </p>
  * <p>
- * Assess, monitor, manage, and remediate security issues across your AWS infrastructure, applications, and data.
+ * <p>
+ * Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following data sources:
+ * VPC Flow Logs, AWS CloudTrail event logs, and DNS logs. It uses threat intelligence feeds, such as lists of malicious
+ * IPs and domains, and machine learning to identify unexpected and potentially unauthorized and malicious activity
+ * within your AWS environment. This can include issues like escalations of privileges, uses of exposed credentials, or
+ * communication with malicious IPs, URLs, or domains. For example, GuardDuty can detect compromised EC2 instances
+ * serving malware or mining bitcoin. It also monitors AWS account access behavior for signs of compromise, such as
+ * unauthorized infrastructure deployments, like instances deployed in a region that has never been used, or unusual API
+ * calls, like a password policy change to reduce password strength. GuardDuty informs you of the status of your AWS
+ * environment by producing security findings that you can view in the GuardDuty console or through Amazon CloudWatch
+ * events. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">
+ * Amazon GuardDuty User Guide</a>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
+     * <p>
      * Accepts the invitation to be monitored by a master GuardDuty account.
+     * </p>
      * 
      * @param acceptInvitationRequest
-     *        AcceptInvitation request body.
      * @return A Java Future containing the result of the AcceptInvitation operation returned by the service.
      * @sample AmazonGuardDutyAsync.AcceptInvitation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation" target="_top">AWS API
@@ -43,10 +56,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<AcceptInvitationResult> acceptInvitationAsync(AcceptInvitationRequest acceptInvitationRequest);
 
     /**
+     * <p>
      * Accepts the invitation to be monitored by a master GuardDuty account.
+     * </p>
      * 
      * @param acceptInvitationRequest
-     *        AcceptInvitation request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -60,10 +74,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<AcceptInvitationRequest, AcceptInvitationResult> asyncHandler);
 
     /**
+     * <p>
      * Archives Amazon GuardDuty findings specified by the list of finding IDs.
+     * </p>
      * 
      * @param archiveFindingsRequest
-     *        ArchiveFindings request body.
      * @return A Java Future containing the result of the ArchiveFindings operation returned by the service.
      * @sample AmazonGuardDutyAsync.ArchiveFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings" target="_top">AWS API
@@ -72,10 +87,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<ArchiveFindingsResult> archiveFindingsAsync(ArchiveFindingsRequest archiveFindingsRequest);
 
     /**
+     * <p>
      * Archives Amazon GuardDuty findings specified by the list of finding IDs.
+     * </p>
      * 
      * @param archiveFindingsRequest
-     *        ArchiveFindings request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -89,11 +105,12 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<ArchiveFindingsRequest, ArchiveFindingsResult> asyncHandler);
 
     /**
+     * <p>
      * Creates a single Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A
      * detector must be created in order for GuardDuty to become operational.
+     * </p>
      * 
      * @param createDetectorRequest
-     *        CreateDetector request body.
      * @return A Java Future containing the result of the CreateDetector operation returned by the service.
      * @sample AmazonGuardDutyAsync.CreateDetector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector" target="_top">AWS API
@@ -102,11 +119,12 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<CreateDetectorResult> createDetectorAsync(CreateDetectorRequest createDetectorRequest);
 
     /**
+     * <p>
      * Creates a single Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A
      * detector must be created in order for GuardDuty to become operational.
+     * </p>
      * 
      * @param createDetectorRequest
-     *        CreateDetector request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -120,10 +138,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<CreateDetectorRequest, CreateDetectorResult> asyncHandler);
 
     /**
+     * <p>
      * Creates a filter using the specified finding criteria.
+     * </p>
      * 
      * @param createFilterRequest
-     *        CreateFilterRequest request body.
      * @return A Java Future containing the result of the CreateFilter operation returned by the service.
      * @sample AmazonGuardDutyAsync.CreateFilter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter" target="_top">AWS API
@@ -132,10 +151,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest createFilterRequest);
 
     /**
+     * <p>
      * Creates a filter using the specified finding criteria.
+     * </p>
      * 
      * @param createFilterRequest
-     *        CreateFilterRequest request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -149,11 +169,12 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<CreateFilterRequest, CreateFilterResult> asyncHandler);
 
     /**
+     * <p>
      * Creates a new IPSet - a list of trusted IP addresses that have been whitelisted for secure communication with AWS
      * infrastructure and applications.
+     * </p>
      * 
      * @param createIPSetRequest
-     *        CreateIPSet request body.
      * @return A Java Future containing the result of the CreateIPSet operation returned by the service.
      * @sample AmazonGuardDutyAsync.CreateIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet" target="_top">AWS API
@@ -162,11 +183,12 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<CreateIPSetResult> createIPSetAsync(CreateIPSetRequest createIPSetRequest);
 
     /**
+     * <p>
      * Creates a new IPSet - a list of trusted IP addresses that have been whitelisted for secure communication with AWS
      * infrastructure and applications.
+     * </p>
      * 
      * @param createIPSetRequest
-     *        CreateIPSet request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -180,11 +202,12 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<CreateIPSetRequest, CreateIPSetResult> asyncHandler);
 
     /**
+     * <p>
      * Creates member accounts of the current AWS account by specifying a list of AWS account IDs. The current AWS
      * account can then invite these members to manage GuardDuty in their accounts.
+     * </p>
      * 
      * @param createMembersRequest
-     *        CreateMembers request body.
      * @return A Java Future containing the result of the CreateMembers operation returned by the service.
      * @sample AmazonGuardDutyAsync.CreateMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers" target="_top">AWS API
@@ -193,11 +216,12 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<CreateMembersResult> createMembersAsync(CreateMembersRequest createMembersRequest);
 
     /**
+     * <p>
      * Creates member accounts of the current AWS account by specifying a list of AWS account IDs. The current AWS
      * account can then invite these members to manage GuardDuty in their accounts.
+     * </p>
      * 
      * @param createMembersRequest
-     *        CreateMembers request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -211,11 +235,12 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<CreateMembersRequest, CreateMembersResult> asyncHandler);
 
     /**
+     * <p>
      * Generates example findings of types specified by the list of finding types. If 'NULL' is specified for
      * findingTypes, the API generates example findings of all supported finding types.
+     * </p>
      * 
      * @param createSampleFindingsRequest
-     *        CreateSampleFindings request body.
      * @return A Java Future containing the result of the CreateSampleFindings operation returned by the service.
      * @sample AmazonGuardDutyAsync.CreateSampleFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateSampleFindings" target="_top">AWS
@@ -224,11 +249,12 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<CreateSampleFindingsResult> createSampleFindingsAsync(CreateSampleFindingsRequest createSampleFindingsRequest);
 
     /**
+     * <p>
      * Generates example findings of types specified by the list of finding types. If 'NULL' is specified for
      * findingTypes, the API generates example findings of all supported finding types.
+     * </p>
      * 
      * @param createSampleFindingsRequest
-     *        CreateSampleFindings request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -242,11 +268,12 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<CreateSampleFindingsRequest, CreateSampleFindingsResult> asyncHandler);
 
     /**
+     * <p>
      * Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates
      * findings based on ThreatIntelSets.
+     * </p>
      * 
      * @param createThreatIntelSetRequest
-     *        CreateThreatIntelSet request body.
      * @return A Java Future containing the result of the CreateThreatIntelSet operation returned by the service.
      * @sample AmazonGuardDutyAsync.CreateThreatIntelSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSet" target="_top">AWS
@@ -255,11 +282,12 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<CreateThreatIntelSetResult> createThreatIntelSetAsync(CreateThreatIntelSetRequest createThreatIntelSetRequest);
 
     /**
+     * <p>
      * Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates
      * findings based on ThreatIntelSets.
+     * </p>
      * 
      * @param createThreatIntelSetRequest
-     *        CreateThreatIntelSet request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -273,10 +301,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<CreateThreatIntelSetRequest, CreateThreatIntelSetResult> asyncHandler);
 
     /**
+     * <p>
      * Declines invitations sent to the current member account by AWS account specified by their account IDs.
+     * </p>
      * 
      * @param declineInvitationsRequest
-     *        DeclineInvitations request body.
      * @return A Java Future containing the result of the DeclineInvitations operation returned by the service.
      * @sample AmazonGuardDutyAsync.DeclineInvitations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeclineInvitations" target="_top">AWS
@@ -285,10 +314,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<DeclineInvitationsResult> declineInvitationsAsync(DeclineInvitationsRequest declineInvitationsRequest);
 
     /**
+     * <p>
      * Declines invitations sent to the current member account by AWS account specified by their account IDs.
+     * </p>
      * 
      * @param declineInvitationsRequest
-     *        DeclineInvitations request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -302,7 +332,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<DeclineInvitationsRequest, DeclineInvitationsResult> asyncHandler);
 
     /**
+     * <p>
      * Deletes a Amazon GuardDuty detector specified by the detector ID.
+     * </p>
      * 
      * @param deleteDetectorRequest
      * @return A Java Future containing the result of the DeleteDetector operation returned by the service.
@@ -313,7 +345,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<DeleteDetectorResult> deleteDetectorAsync(DeleteDetectorRequest deleteDetectorRequest);
 
     /**
+     * <p>
      * Deletes a Amazon GuardDuty detector specified by the detector ID.
+     * </p>
      * 
      * @param deleteDetectorRequest
      * @param asyncHandler
@@ -329,7 +363,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<DeleteDetectorRequest, DeleteDetectorResult> asyncHandler);
 
     /**
+     * <p>
      * Deletes the filter specified by the filter name.
+     * </p>
      * 
      * @param deleteFilterRequest
      * @return A Java Future containing the result of the DeleteFilter operation returned by the service.
@@ -340,7 +376,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(DeleteFilterRequest deleteFilterRequest);
 
     /**
+     * <p>
      * Deletes the filter specified by the filter name.
+     * </p>
      * 
      * @param deleteFilterRequest
      * @param asyncHandler
@@ -356,7 +394,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<DeleteFilterRequest, DeleteFilterResult> asyncHandler);
 
     /**
+     * <p>
      * Deletes the IPSet specified by the IPSet ID.
+     * </p>
      * 
      * @param deleteIPSetRequest
      * @return A Java Future containing the result of the DeleteIPSet operation returned by the service.
@@ -367,7 +407,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(DeleteIPSetRequest deleteIPSetRequest);
 
     /**
+     * <p>
      * Deletes the IPSet specified by the IPSet ID.
+     * </p>
      * 
      * @param deleteIPSetRequest
      * @param asyncHandler
@@ -383,10 +425,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<DeleteIPSetRequest, DeleteIPSetResult> asyncHandler);
 
     /**
+     * <p>
      * Deletes invitations sent to the current member account by AWS accounts specified by their account IDs.
+     * </p>
      * 
      * @param deleteInvitationsRequest
-     *        DeleteInvitations request body.
      * @return A Java Future containing the result of the DeleteInvitations operation returned by the service.
      * @sample AmazonGuardDutyAsync.DeleteInvitations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteInvitations" target="_top">AWS
@@ -395,10 +438,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<DeleteInvitationsResult> deleteInvitationsAsync(DeleteInvitationsRequest deleteInvitationsRequest);
 
     /**
+     * <p>
      * Deletes invitations sent to the current member account by AWS accounts specified by their account IDs.
+     * </p>
      * 
      * @param deleteInvitationsRequest
-     *        DeleteInvitations request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -412,10 +456,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<DeleteInvitationsRequest, DeleteInvitationsResult> asyncHandler);
 
     /**
+     * <p>
      * Deletes GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
+     * </p>
      * 
      * @param deleteMembersRequest
-     *        DeleteMembers request body.
      * @return A Java Future containing the result of the DeleteMembers operation returned by the service.
      * @sample AmazonGuardDutyAsync.DeleteMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMembers" target="_top">AWS API
@@ -424,10 +469,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<DeleteMembersResult> deleteMembersAsync(DeleteMembersRequest deleteMembersRequest);
 
     /**
+     * <p>
      * Deletes GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
+     * </p>
      * 
      * @param deleteMembersRequest
-     *        DeleteMembers request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -441,7 +487,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<DeleteMembersRequest, DeleteMembersResult> asyncHandler);
 
     /**
+     * <p>
      * Deletes ThreatIntelSet specified by the ThreatIntelSet ID.
+     * </p>
      * 
      * @param deleteThreatIntelSetRequest
      * @return A Java Future containing the result of the DeleteThreatIntelSet operation returned by the service.
@@ -452,7 +500,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<DeleteThreatIntelSetResult> deleteThreatIntelSetAsync(DeleteThreatIntelSetRequest deleteThreatIntelSetRequest);
 
     /**
+     * <p>
      * Deletes ThreatIntelSet specified by the ThreatIntelSet ID.
+     * </p>
      * 
      * @param deleteThreatIntelSetRequest
      * @param asyncHandler
@@ -468,7 +518,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<DeleteThreatIntelSetRequest, DeleteThreatIntelSetResult> asyncHandler);
 
     /**
+     * <p>
      * Disassociates the current GuardDuty member account from its master account.
+     * </p>
      * 
      * @param disassociateFromMasterAccountRequest
      * @return A Java Future containing the result of the DisassociateFromMasterAccount operation returned by the
@@ -481,7 +533,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             DisassociateFromMasterAccountRequest disassociateFromMasterAccountRequest);
 
     /**
+     * <p>
      * Disassociates the current GuardDuty member account from its master account.
+     * </p>
      * 
      * @param disassociateFromMasterAccountRequest
      * @param asyncHandler
@@ -499,10 +553,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<DisassociateFromMasterAccountRequest, DisassociateFromMasterAccountResult> asyncHandler);
 
     /**
+     * <p>
      * Disassociates GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
+     * </p>
      * 
      * @param disassociateMembersRequest
-     *        DisassociateMembers request body.
      * @return A Java Future containing the result of the DisassociateMembers operation returned by the service.
      * @sample AmazonGuardDutyAsync.DisassociateMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers" target="_top">AWS
@@ -511,10 +566,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<DisassociateMembersResult> disassociateMembersAsync(DisassociateMembersRequest disassociateMembersRequest);
 
     /**
+     * <p>
      * Disassociates GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
+     * </p>
      * 
      * @param disassociateMembersRequest
-     *        DisassociateMembers request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -528,7 +584,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<DisassociateMembersRequest, DisassociateMembersResult> asyncHandler);
 
     /**
+     * <p>
      * Retrieves an Amazon GuardDuty detector specified by the detectorId.
+     * </p>
      * 
      * @param getDetectorRequest
      * @return A Java Future containing the result of the GetDetector operation returned by the service.
@@ -539,7 +597,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<GetDetectorResult> getDetectorAsync(GetDetectorRequest getDetectorRequest);
 
     /**
+     * <p>
      * Retrieves an Amazon GuardDuty detector specified by the detectorId.
+     * </p>
      * 
      * @param getDetectorRequest
      * @param asyncHandler
@@ -555,7 +615,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<GetDetectorRequest, GetDetectorResult> asyncHandler);
 
     /**
+     * <p>
      * Returns the details of the filter specified by the filter name.
+     * </p>
      * 
      * @param getFilterRequest
      * @return A Java Future containing the result of the GetFilter operation returned by the service.
@@ -566,7 +628,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<GetFilterResult> getFilterAsync(GetFilterRequest getFilterRequest);
 
     /**
+     * <p>
      * Returns the details of the filter specified by the filter name.
+     * </p>
      * 
      * @param getFilterRequest
      * @param asyncHandler
@@ -582,10 +646,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<GetFilterRequest, GetFilterResult> asyncHandler);
 
     /**
+     * <p>
      * Describes Amazon GuardDuty findings specified by finding IDs.
+     * </p>
      * 
      * @param getFindingsRequest
-     *        GetFindings request body.
      * @return A Java Future containing the result of the GetFindings operation returned by the service.
      * @sample AmazonGuardDutyAsync.GetFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindings" target="_top">AWS API
@@ -594,10 +659,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<GetFindingsResult> getFindingsAsync(GetFindingsRequest getFindingsRequest);
 
     /**
+     * <p>
      * Describes Amazon GuardDuty findings specified by finding IDs.
+     * </p>
      * 
      * @param getFindingsRequest
-     *        GetFindings request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -611,10 +677,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<GetFindingsRequest, GetFindingsResult> asyncHandler);
 
     /**
+     * <p>
      * Lists Amazon GuardDuty findings' statistics for the specified detector ID.
+     * </p>
      * 
      * @param getFindingsStatisticsRequest
-     *        GetFindingsStatistics request body.
      * @return A Java Future containing the result of the GetFindingsStatistics operation returned by the service.
      * @sample AmazonGuardDutyAsync.GetFindingsStatistics
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindingsStatistics"
@@ -623,10 +690,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<GetFindingsStatisticsResult> getFindingsStatisticsAsync(GetFindingsStatisticsRequest getFindingsStatisticsRequest);
 
     /**
+     * <p>
      * Lists Amazon GuardDuty findings' statistics for the specified detector ID.
+     * </p>
      * 
      * @param getFindingsStatisticsRequest
-     *        GetFindingsStatistics request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -640,7 +708,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<GetFindingsStatisticsRequest, GetFindingsStatisticsResult> asyncHandler);
 
     /**
+     * <p>
      * Retrieves the IPSet specified by the IPSet ID.
+     * </p>
      * 
      * @param getIPSetRequest
      * @return A Java Future containing the result of the GetIPSet operation returned by the service.
@@ -651,7 +721,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<GetIPSetResult> getIPSetAsync(GetIPSetRequest getIPSetRequest);
 
     /**
+     * <p>
      * Retrieves the IPSet specified by the IPSet ID.
+     * </p>
      * 
      * @param getIPSetRequest
      * @param asyncHandler
@@ -667,8 +739,10 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<GetIPSetRequest, GetIPSetResult> asyncHandler);
 
     /**
+     * <p>
      * Returns the count of all GuardDuty membership invitations that were sent to the current member account except the
      * currently accepted invitation.
+     * </p>
      * 
      * @param getInvitationsCountRequest
      * @return A Java Future containing the result of the GetInvitationsCount operation returned by the service.
@@ -679,8 +753,10 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<GetInvitationsCountResult> getInvitationsCountAsync(GetInvitationsCountRequest getInvitationsCountRequest);
 
     /**
+     * <p>
      * Returns the count of all GuardDuty membership invitations that were sent to the current member account except the
      * currently accepted invitation.
+     * </p>
      * 
      * @param getInvitationsCountRequest
      * @param asyncHandler
@@ -696,7 +772,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<GetInvitationsCountRequest, GetInvitationsCountResult> asyncHandler);
 
     /**
+     * <p>
      * Provides the details for the GuardDuty master account to the current GuardDuty member account.
+     * </p>
      * 
      * @param getMasterAccountRequest
      * @return A Java Future containing the result of the GetMasterAccount operation returned by the service.
@@ -707,7 +785,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<GetMasterAccountResult> getMasterAccountAsync(GetMasterAccountRequest getMasterAccountRequest);
 
     /**
+     * <p>
      * Provides the details for the GuardDuty master account to the current GuardDuty member account.
+     * </p>
      * 
      * @param getMasterAccountRequest
      * @param asyncHandler
@@ -723,10 +803,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<GetMasterAccountRequest, GetMasterAccountResult> asyncHandler);
 
     /**
+     * <p>
      * Retrieves GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
+     * </p>
      * 
      * @param getMembersRequest
-     *        GetMembers request body.
      * @return A Java Future containing the result of the GetMembers operation returned by the service.
      * @sample AmazonGuardDutyAsync.GetMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMembers" target="_top">AWS API
@@ -735,10 +816,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<GetMembersResult> getMembersAsync(GetMembersRequest getMembersRequest);
 
     /**
+     * <p>
      * Retrieves GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
+     * </p>
      * 
      * @param getMembersRequest
-     *        GetMembers request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -752,7 +834,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<GetMembersRequest, GetMembersResult> asyncHandler);
 
     /**
+     * <p>
      * Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.
+     * </p>
      * 
      * @param getThreatIntelSetRequest
      * @return A Java Future containing the result of the GetThreatIntelSet operation returned by the service.
@@ -763,7 +847,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<GetThreatIntelSetResult> getThreatIntelSetAsync(GetThreatIntelSetRequest getThreatIntelSetRequest);
 
     /**
+     * <p>
      * Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.
+     * </p>
      * 
      * @param getThreatIntelSetRequest
      * @param asyncHandler
@@ -779,12 +865,13 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<GetThreatIntelSetRequest, GetThreatIntelSetResult> asyncHandler);
 
     /**
+     * <p>
      * Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty
      * and allow the current AWS account to view and manage these accounts' GuardDuty findings on their behalf as the
      * master account.
+     * </p>
      * 
      * @param inviteMembersRequest
-     *        InviteMembers request body.
      * @return A Java Future containing the result of the InviteMembers operation returned by the service.
      * @sample AmazonGuardDutyAsync.InviteMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers" target="_top">AWS API
@@ -793,12 +880,13 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<InviteMembersResult> inviteMembersAsync(InviteMembersRequest inviteMembersRequest);
 
     /**
+     * <p>
      * Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty
      * and allow the current AWS account to view and manage these accounts' GuardDuty findings on their behalf as the
      * master account.
+     * </p>
      * 
      * @param inviteMembersRequest
-     *        InviteMembers request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -812,7 +900,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<InviteMembersRequest, InviteMembersResult> asyncHandler);
 
     /**
+     * <p>
      * Lists detectorIds of all the existing Amazon GuardDuty detector resources.
+     * </p>
      * 
      * @param listDetectorsRequest
      * @return A Java Future containing the result of the ListDetectors operation returned by the service.
@@ -823,7 +913,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<ListDetectorsResult> listDetectorsAsync(ListDetectorsRequest listDetectorsRequest);
 
     /**
+     * <p>
      * Lists detectorIds of all the existing Amazon GuardDuty detector resources.
+     * </p>
      * 
      * @param listDetectorsRequest
      * @param asyncHandler
@@ -839,7 +931,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<ListDetectorsRequest, ListDetectorsResult> asyncHandler);
 
     /**
+     * <p>
      * Returns a paginated list of the current filters.
+     * </p>
      * 
      * @param listFiltersRequest
      * @return A Java Future containing the result of the ListFilters operation returned by the service.
@@ -850,7 +944,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<ListFiltersResult> listFiltersAsync(ListFiltersRequest listFiltersRequest);
 
     /**
+     * <p>
      * Returns a paginated list of the current filters.
+     * </p>
      * 
      * @param listFiltersRequest
      * @param asyncHandler
@@ -866,10 +962,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<ListFiltersRequest, ListFiltersResult> asyncHandler);
 
     /**
+     * <p>
      * Lists Amazon GuardDuty findings for the specified detector ID.
+     * </p>
      * 
      * @param listFindingsRequest
-     *        ListFindings request body.
      * @return A Java Future containing the result of the ListFindings operation returned by the service.
      * @sample AmazonGuardDutyAsync.ListFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFindings" target="_top">AWS API
@@ -878,10 +975,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<ListFindingsResult> listFindingsAsync(ListFindingsRequest listFindingsRequest);
 
     /**
+     * <p>
      * Lists Amazon GuardDuty findings for the specified detector ID.
+     * </p>
      * 
      * @param listFindingsRequest
-     *        ListFindings request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -895,7 +993,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<ListFindingsRequest, ListFindingsResult> asyncHandler);
 
     /**
+     * <p>
      * Lists the IPSets of the GuardDuty service specified by the detector ID.
+     * </p>
      * 
      * @param listIPSetsRequest
      * @return A Java Future containing the result of the ListIPSets operation returned by the service.
@@ -906,7 +1006,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<ListIPSetsResult> listIPSetsAsync(ListIPSetsRequest listIPSetsRequest);
 
     /**
+     * <p>
      * Lists the IPSets of the GuardDuty service specified by the detector ID.
+     * </p>
      * 
      * @param listIPSetsRequest
      * @param asyncHandler
@@ -922,7 +1024,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<ListIPSetsRequest, ListIPSetsResult> asyncHandler);
 
     /**
+     * <p>
      * Lists all GuardDuty membership invitations that were sent to the current AWS account.
+     * </p>
      * 
      * @param listInvitationsRequest
      * @return A Java Future containing the result of the ListInvitations operation returned by the service.
@@ -933,7 +1037,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<ListInvitationsResult> listInvitationsAsync(ListInvitationsRequest listInvitationsRequest);
 
     /**
+     * <p>
      * Lists all GuardDuty membership invitations that were sent to the current AWS account.
+     * </p>
      * 
      * @param listInvitationsRequest
      * @param asyncHandler
@@ -949,7 +1055,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<ListInvitationsRequest, ListInvitationsResult> asyncHandler);
 
     /**
+     * <p>
      * Lists details about all member accounts for the current GuardDuty master account.
+     * </p>
      * 
      * @param listMembersRequest
      * @return A Java Future containing the result of the ListMembers operation returned by the service.
@@ -960,7 +1068,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<ListMembersResult> listMembersAsync(ListMembersRequest listMembersRequest);
 
     /**
+     * <p>
      * Lists details about all member accounts for the current GuardDuty master account.
+     * </p>
      * 
      * @param listMembersRequest
      * @param asyncHandler
@@ -976,7 +1086,44 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<ListMembersRequest, ListMembersResult> asyncHandler);
 
     /**
+     * <p>
+     * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and Threat
+     * Intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
+     * given resource..
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonGuardDutyAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and Threat
+     * Intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
+     * given resource..
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.
+     * </p>
      * 
      * @param listThreatIntelSetsRequest
      * @return A Java Future containing the result of the ListThreatIntelSets operation returned by the service.
@@ -987,7 +1134,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<ListThreatIntelSetsResult> listThreatIntelSetsAsync(ListThreatIntelSetsRequest listThreatIntelSetsRequest);
 
     /**
+     * <p>
      * Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.
+     * </p>
      * 
      * @param listThreatIntelSetsRequest
      * @param asyncHandler
@@ -1003,12 +1152,13 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<ListThreatIntelSetsRequest, ListThreatIntelSetsResult> asyncHandler);
 
     /**
+     * <p>
      * Re-enables GuardDuty to monitor findings of the member accounts specified by the account IDs. A master GuardDuty
      * account can run this command after disabling GuardDuty from monitoring these members' findings by running
      * StopMonitoringMembers.
+     * </p>
      * 
      * @param startMonitoringMembersRequest
-     *        StartMonitoringMembers request body.
      * @return A Java Future containing the result of the StartMonitoringMembers operation returned by the service.
      * @sample AmazonGuardDutyAsync.StartMonitoringMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMonitoringMembers"
@@ -1017,12 +1167,13 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<StartMonitoringMembersResult> startMonitoringMembersAsync(StartMonitoringMembersRequest startMonitoringMembersRequest);
 
     /**
+     * <p>
      * Re-enables GuardDuty to monitor findings of the member accounts specified by the account IDs. A master GuardDuty
      * account can run this command after disabling GuardDuty from monitoring these members' findings by running
      * StopMonitoringMembers.
+     * </p>
      * 
      * @param startMonitoringMembersRequest
-     *        StartMonitoringMembers request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1036,12 +1187,13 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<StartMonitoringMembersRequest, StartMonitoringMembersResult> asyncHandler);
 
     /**
+     * <p>
      * Disables GuardDuty from monitoring findings of the member accounts specified by the account IDs. After running
      * this command, a master GuardDuty account can run StartMonitoringMembers to re-enable GuardDuty to monitor these
      * members’ findings.
+     * </p>
      * 
      * @param stopMonitoringMembersRequest
-     *        StopMonitoringMembers request body.
      * @return A Java Future containing the result of the StopMonitoringMembers operation returned by the service.
      * @sample AmazonGuardDutyAsync.StopMonitoringMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers"
@@ -1050,12 +1202,13 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<StopMonitoringMembersResult> stopMonitoringMembersAsync(StopMonitoringMembersRequest stopMonitoringMembersRequest);
 
     /**
+     * <p>
      * Disables GuardDuty from monitoring findings of the member accounts specified by the account IDs. After running
      * this command, a master GuardDuty account can run StartMonitoringMembers to re-enable GuardDuty to monitor these
      * members’ findings.
+     * </p>
      * 
      * @param stopMonitoringMembersRequest
-     *        StopMonitoringMembers request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1069,10 +1222,42 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<StopMonitoringMembersRequest, StopMonitoringMembersResult> asyncHandler);
 
     /**
+     * <p>
+     * Adds tags to a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonGuardDutyAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds tags to a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Unarchives Amazon GuardDuty findings specified by the list of finding IDs.
+     * </p>
      * 
      * @param unarchiveFindingsRequest
-     *        UnarchiveFindings request body.
      * @return A Java Future containing the result of the UnarchiveFindings operation returned by the service.
      * @sample AmazonGuardDutyAsync.UnarchiveFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnarchiveFindings" target="_top">AWS
@@ -1081,10 +1266,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<UnarchiveFindingsResult> unarchiveFindingsAsync(UnarchiveFindingsRequest unarchiveFindingsRequest);
 
     /**
+     * <p>
      * Unarchives Amazon GuardDuty findings specified by the list of finding IDs.
+     * </p>
      * 
      * @param unarchiveFindingsRequest
-     *        UnarchiveFindings request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1098,10 +1284,42 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<UnarchiveFindingsRequest, UnarchiveFindingsResult> asyncHandler);
 
     /**
+     * <p>
+     * Removes tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonGuardDutyAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates an Amazon GuardDuty detector specified by the detectorId.
+     * </p>
      * 
      * @param updateDetectorRequest
-     *        UpdateDetector request body.
      * @return A Java Future containing the result of the UpdateDetector operation returned by the service.
      * @sample AmazonGuardDutyAsync.UpdateDetector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetector" target="_top">AWS API
@@ -1110,10 +1328,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<UpdateDetectorResult> updateDetectorAsync(UpdateDetectorRequest updateDetectorRequest);
 
     /**
+     * <p>
      * Updates an Amazon GuardDuty detector specified by the detectorId.
+     * </p>
      * 
      * @param updateDetectorRequest
-     *        UpdateDetector request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1127,10 +1346,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<UpdateDetectorRequest, UpdateDetectorResult> asyncHandler);
 
     /**
+     * <p>
      * Updates the filter specified by the filter name.
+     * </p>
      * 
      * @param updateFilterRequest
-     *        UpdateFilterRequest request body.
      * @return A Java Future containing the result of the UpdateFilter operation returned by the service.
      * @sample AmazonGuardDutyAsync.UpdateFilter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter" target="_top">AWS API
@@ -1139,10 +1359,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<UpdateFilterResult> updateFilterAsync(UpdateFilterRequest updateFilterRequest);
 
     /**
+     * <p>
      * Updates the filter specified by the filter name.
+     * </p>
      * 
      * @param updateFilterRequest
-     *        UpdateFilterRequest request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1156,10 +1377,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<UpdateFilterRequest, UpdateFilterResult> asyncHandler);
 
     /**
+     * <p>
      * Marks specified Amazon GuardDuty findings as useful or not useful.
+     * </p>
      * 
      * @param updateFindingsFeedbackRequest
-     *        UpdateFindingsFeedback request body.
      * @return A Java Future containing the result of the UpdateFindingsFeedback operation returned by the service.
      * @sample AmazonGuardDutyAsync.UpdateFindingsFeedback
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFindingsFeedback"
@@ -1168,10 +1390,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<UpdateFindingsFeedbackResult> updateFindingsFeedbackAsync(UpdateFindingsFeedbackRequest updateFindingsFeedbackRequest);
 
     /**
+     * <p>
      * Marks specified Amazon GuardDuty findings as useful or not useful.
+     * </p>
      * 
      * @param updateFindingsFeedbackRequest
-     *        UpdateFindingsFeedback request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1185,10 +1408,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<UpdateFindingsFeedbackRequest, UpdateFindingsFeedbackResult> asyncHandler);
 
     /**
+     * <p>
      * Updates the IPSet specified by the IPSet ID.
+     * </p>
      * 
      * @param updateIPSetRequest
-     *        UpdateIPSet request body.
      * @return A Java Future containing the result of the UpdateIPSet operation returned by the service.
      * @sample AmazonGuardDutyAsync.UpdateIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateIPSet" target="_top">AWS API
@@ -1197,10 +1421,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(UpdateIPSetRequest updateIPSetRequest);
 
     /**
+     * <p>
      * Updates the IPSet specified by the IPSet ID.
+     * </p>
      * 
      * @param updateIPSetRequest
-     *        UpdateIPSet request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1214,10 +1439,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<UpdateIPSetRequest, UpdateIPSetResult> asyncHandler);
 
     /**
+     * <p>
      * Updates the ThreatIntelSet specified by ThreatIntelSet ID.
+     * </p>
      * 
      * @param updateThreatIntelSetRequest
-     *        UpdateThreatIntelSet request body.
      * @return A Java Future containing the result of the UpdateThreatIntelSet operation returned by the service.
      * @sample AmazonGuardDutyAsync.UpdateThreatIntelSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatIntelSet" target="_top">AWS
@@ -1226,10 +1452,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<UpdateThreatIntelSetResult> updateThreatIntelSetAsync(UpdateThreatIntelSetRequest updateThreatIntelSetRequest);
 
     /**
+     * <p>
      * Updates the ThreatIntelSet specified by ThreatIntelSet ID.
+     * </p>
      * 
      * @param updateThreatIntelSetRequest
-     *        UpdateThreatIntelSet request body.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

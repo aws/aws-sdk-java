@@ -68,6 +68,10 @@ public class LabelingJobForWorkteamSummaryJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     labelingJobForWorkteamSummary.setLabelCounters(LabelCountersForWorkteamJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("NumberOfHumanWorkersPerDataObject", targetDepth)) {
+                    context.nextToken();
+                    labelingJobForWorkteamSummary.setNumberOfHumanWorkersPerDataObject(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

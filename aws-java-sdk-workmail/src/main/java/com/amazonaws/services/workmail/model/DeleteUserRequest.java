@@ -27,7 +27,7 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The organization that contains the user.
+     * The organization that contains the user to be deleted.
      * </p>
      */
     private String organizationId;
@@ -40,11 +40,11 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The organization that contains the user.
+     * The organization that contains the user to be deleted.
      * </p>
      * 
      * @param organizationId
-     *        The organization that contains the user.
+     *        The organization that contains the user to be deleted.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -53,10 +53,10 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The organization that contains the user.
+     * The organization that contains the user to be deleted.
      * </p>
      * 
-     * @return The organization that contains the user.
+     * @return The organization that contains the user to be deleted.
      */
 
     public String getOrganizationId() {
@@ -65,11 +65,11 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The organization that contains the user.
+     * The organization that contains the user to be deleted.
      * </p>
      * 
      * @param organizationId
-     *        The organization that contains the user.
+     *        The organization that contains the user to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -94,7 +94,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You can use a Docker layer cache in the Linux enviornment only.
+     * You can use a Docker layer cache in the Linux environment only.
      * </p>
      * </li>
      * <li>
@@ -472,7 +472,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You can use a Docker layer cache in the Linux enviornment only.
+     * You can use a Docker layer cache in the Linux environment only.
      * </p>
      * </li>
      * <li>
@@ -538,7 +538,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         You can use a Docker layer cache in the Linux enviornment only.
+     *         You can use a Docker layer cache in the Linux environment only.
      *         </p>
      *         </li>
      *         <li>
@@ -612,7 +612,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You can use a Docker layer cache in the Linux enviornment only.
+     * You can use a Docker layer cache in the Linux environment only.
      * </p>
      * </li>
      * <li>
@@ -679,7 +679,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        You can use a Docker layer cache in the Linux enviornment only.
+     *        You can use a Docker layer cache in the Linux environment only.
      *        </p>
      *        </li>
      *        <li>
@@ -758,7 +758,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You can use a Docker layer cache in the Linux enviornment only.
+     * You can use a Docker layer cache in the Linux environment only.
      * </p>
      * </li>
      * <li>
@@ -830,7 +830,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        You can use a Docker layer cache in the Linux enviornment only.
+     *        You can use a Docker layer cache in the Linux environment only.
      *        </p>
      *        </li>
      *        <li>
@@ -911,7 +911,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You can use a Docker layer cache in the Linux enviornment only.
+     * You can use a Docker layer cache in the Linux environment only.
      * </p>
      * </li>
      * <li>
@@ -978,7 +978,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        You can use a Docker layer cache in the Linux enviornment only.
+     *        You can use a Docker layer cache in the Linux environment only.
      *        </p>
      *        </li>
      *        <li>
@@ -1054,7 +1054,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You can use a Docker layer cache in the Linux enviornment only.
+     * You can use a Docker layer cache in the Linux environment only.
      * </p>
      * </li>
      * <li>
@@ -1121,7 +1121,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        You can use a Docker layer cache in the Linux enviornment only.
+     *        You can use a Docker layer cache in the Linux environment only.
      *        </p>
      *        </li>
      *        <li>

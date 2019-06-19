@@ -38,7 +38,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String policyId;
     /**
      * <p>
-     * The unique identifier (ID) of the root, OU, or account from which you want to detach the policy. You can get the
+     * The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the
      * ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.
      * </p>
      * <p>
@@ -136,7 +136,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique identifier (ID) of the root, OU, or account from which you want to detach the policy. You can get the
+     * The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the
      * ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.
      * </p>
      * <p>
@@ -164,7 +164,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param targetId
-     *        The unique identifier (ID) of the root, OU, or account from which you want to detach the policy. You can
+     *        The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can
      *        get the ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
      *        operations.</p>
      *        <p>
@@ -197,7 +197,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique identifier (ID) of the root, OU, or account from which you want to detach the policy. You can get the
+     * The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the
      * ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.
      * </p>
      * <p>
@@ -224,7 +224,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * 
-     * @return The unique identifier (ID) of the root, OU, or account from which you want to detach the policy. You can
+     * @return The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can
      *         get the ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
      *         operations.</p>
      *         <p>
@@ -257,7 +257,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique identifier (ID) of the root, OU, or account from which you want to detach the policy. You can get the
+     * The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the
      * ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.
      * </p>
      * <p>
@@ -285,7 +285,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param targetId
-     *        The unique identifier (ID) of the root, OU, or account from which you want to detach the policy. You can
+     *        The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can
      *        get the ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
      *        operations.</p>
      *        <p>

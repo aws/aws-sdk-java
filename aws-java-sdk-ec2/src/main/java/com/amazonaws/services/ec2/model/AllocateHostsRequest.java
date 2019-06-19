@@ -27,31 +27,35 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
-     * Hosts, when you are launching instances without specifying a host ID.
+     * Indicates whether the host accepts any untargeted instance launches that match its instance type configuration,
+     * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: Enabled
+     * Default: <code>on</code>
      * </p>
      */
     private String autoPlacement;
     /**
      * <p>
-     * The Availability Zone for the Dedicated Hosts.
+     * The Availability Zone in which to allocate the Dedicated Host.
      * </p>
      */
     private String availabilityZone;
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
+     * Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
      * is the only instance type that you can launch onto that host.
      * </p>
      */
@@ -68,21 +72,40 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>off</code>
+     * </p>
+     */
+    private String hostRecovery;
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
-     * Hosts, when you are launching instances without specifying a host ID.
+     * Indicates whether the host accepts any untargeted instance launches that match its instance type configuration,
+     * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: Enabled
+     * Default: <code>on</code>
      * </p>
      * 
      * @param autoPlacement
-     *        This is enabled by default. This property allows instances to be automatically placed onto available
-     *        Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
+     *        Indicates whether the host accepts any untargeted instance launches that match its instance type
+     *        configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     *        > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
+     *        Instances</i>.</p>
      *        <p>
-     *        Default: Enabled
+     *        Default: <code>on</code>
      * @see AutoPlacement
      */
 
@@ -92,17 +115,24 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
-     * Hosts, when you are launching instances without specifying a host ID.
+     * Indicates whether the host accepts any untargeted instance launches that match its instance type configuration,
+     * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: Enabled
+     * Default: <code>on</code>
      * </p>
      * 
-     * @return This is enabled by default. This property allows instances to be automatically placed onto available
-     *         Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
+     * @return Indicates whether the host accepts any untargeted instance launches that match its instance type
+     *         configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     *         > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
+     *         Instances</i>.</p>
      *         <p>
-     *         Default: Enabled
+     *         Default: <code>on</code>
      * @see AutoPlacement
      */
 
@@ -112,18 +142,25 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
-     * Hosts, when you are launching instances without specifying a host ID.
+     * Indicates whether the host accepts any untargeted instance launches that match its instance type configuration,
+     * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: Enabled
+     * Default: <code>on</code>
      * </p>
      * 
      * @param autoPlacement
-     *        This is enabled by default. This property allows instances to be automatically placed onto available
-     *        Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
+     *        Indicates whether the host accepts any untargeted instance launches that match its instance type
+     *        configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     *        > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
+     *        Instances</i>.</p>
      *        <p>
-     *        Default: Enabled
+     *        Default: <code>on</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoPlacement
      */
@@ -135,18 +172,25 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
-     * Hosts, when you are launching instances without specifying a host ID.
+     * Indicates whether the host accepts any untargeted instance launches that match its instance type configuration,
+     * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: Enabled
+     * Default: <code>on</code>
      * </p>
      * 
      * @param autoPlacement
-     *        This is enabled by default. This property allows instances to be automatically placed onto available
-     *        Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
+     *        Indicates whether the host accepts any untargeted instance launches that match its instance type
+     *        configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     *        > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
+     *        Instances</i>.</p>
      *        <p>
-     *        Default: Enabled
+     *        Default: <code>on</code>
      * @see AutoPlacement
      */
 
@@ -156,18 +200,25 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
-     * Hosts, when you are launching instances without specifying a host ID.
+     * Indicates whether the host accepts any untargeted instance launches that match its instance type configuration,
+     * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: Enabled
+     * Default: <code>on</code>
      * </p>
      * 
      * @param autoPlacement
-     *        This is enabled by default. This property allows instances to be automatically placed onto available
-     *        Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
+     *        Indicates whether the host accepts any untargeted instance launches that match its instance type
+     *        configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     *        > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
+     *        Instances</i>.</p>
      *        <p>
-     *        Default: Enabled
+     *        Default: <code>on</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoPlacement
      */
@@ -179,11 +230,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The Availability Zone for the Dedicated Hosts.
+     * The Availability Zone in which to allocate the Dedicated Host.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone for the Dedicated Hosts.
+     *        The Availability Zone in which to allocate the Dedicated Host.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -192,10 +243,10 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The Availability Zone for the Dedicated Hosts.
+     * The Availability Zone in which to allocate the Dedicated Host.
      * </p>
      * 
-     * @return The Availability Zone for the Dedicated Hosts.
+     * @return The Availability Zone in which to allocate the Dedicated Host.
      */
 
     public String getAvailabilityZone() {
@@ -204,11 +255,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The Availability Zone for the Dedicated Hosts.
+     * The Availability Zone in which to allocate the Dedicated Host.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone for the Dedicated Hosts.
+     *        The Availability Zone in which to allocate the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,15 +271,16 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -238,14 +290,15 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      * 
      * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *         Idempotency</a>.
      */
 
     public String getClientToken() {
@@ -255,15 +308,16 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,13 +328,13 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
+     * Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
      * is the only instance type that you can launch onto that host.
      * </p>
      * 
      * @param instanceType
-     *        Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type,
-     *        that is the only instance type that you can launch onto that host.
+     *        Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance
+     *        type, that is the only instance type that you can launch onto that host.
      */
 
     public void setInstanceType(String instanceType) {
@@ -289,11 +343,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
+     * Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
      * is the only instance type that you can launch onto that host.
      * </p>
      * 
-     * @return Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance
+     * @return Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance
      *         type, that is the only instance type that you can launch onto that host.
      */
 
@@ -303,13 +357,13 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
+     * Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
      * is the only instance type that you can launch onto that host.
      * </p>
      * 
      * @param instanceType
-     *        Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type,
-     *        that is the only instance type that you can launch onto that host.
+     *        Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance
+     *        type, that is the only instance type that you can launch onto that host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -432,6 +486,134 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>off</code>
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
+     *        default. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        Default: <code>off</code>
+     * @see HostRecovery
+     */
+
+    public void setHostRecovery(String hostRecovery) {
+        this.hostRecovery = hostRecovery;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>off</code>
+     * </p>
+     * 
+     * @return Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
+     *         default. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *         Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         <p>
+     *         Default: <code>off</code>
+     * @see HostRecovery
+     */
+
+    public String getHostRecovery() {
+        return this.hostRecovery;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>off</code>
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
+     *        default. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        Default: <code>off</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostRecovery
+     */
+
+    public AllocateHostsRequest withHostRecovery(String hostRecovery) {
+        setHostRecovery(hostRecovery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>off</code>
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
+     *        default. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        Default: <code>off</code>
+     * @see HostRecovery
+     */
+
+    public void setHostRecovery(HostRecovery hostRecovery) {
+        withHostRecovery(hostRecovery);
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>off</code>
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
+     *        default. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        Default: <code>off</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostRecovery
+     */
+
+    public AllocateHostsRequest withHostRecovery(HostRecovery hostRecovery) {
+        this.hostRecovery = hostRecovery.toString();
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -465,7 +647,9 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
         if (getQuantity() != null)
             sb.append("Quantity: ").append(getQuantity()).append(",");
         if (getTagSpecifications() != null)
-            sb.append("TagSpecifications: ").append(getTagSpecifications());
+            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
+        if (getHostRecovery() != null)
+            sb.append("HostRecovery: ").append(getHostRecovery());
         sb.append("}");
         return sb.toString();
     }
@@ -504,6 +688,10 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
             return false;
+        if (other.getHostRecovery() == null ^ this.getHostRecovery() == null)
+            return false;
+        if (other.getHostRecovery() != null && other.getHostRecovery().equals(this.getHostRecovery()) == false)
+            return false;
         return true;
     }
 
@@ -518,6 +706,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getHostRecovery() == null) ? 0 : getHostRecovery().hashCode());
         return hashCode;
     }
 

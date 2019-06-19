@@ -505,6 +505,7 @@
     "GenericString":{"type":"string"},
     "GetCostAndUsageRequest":{
       "type":"structure",
+      "required":["TimePeriod"],
       "members":{
         "TimePeriod":{
           "shape":"DateInterval",

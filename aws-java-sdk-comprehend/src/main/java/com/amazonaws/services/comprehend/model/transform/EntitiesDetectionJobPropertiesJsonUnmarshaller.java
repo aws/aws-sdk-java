@@ -92,6 +92,14 @@ public class EntitiesDetectionJobPropertiesJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     entitiesDetectionJobProperties.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VolumeKmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    entitiesDetectionJobProperties.setVolumeKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VpcConfig", targetDepth)) {
+                    context.nextToken();
+                    entitiesDetectionJobProperties.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

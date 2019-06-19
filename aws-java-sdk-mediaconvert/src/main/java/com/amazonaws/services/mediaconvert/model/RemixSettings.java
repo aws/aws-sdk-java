@@ -27,6 +27,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel.
+     * Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the
+     * input channel unchanged to the output channel (no attenuation or amplification).
+     */
     private ChannelMapping channelMapping;
     /**
      * Specify the number of audio channels from your input that you want to use in your output. With remixing, you
@@ -38,7 +43,14 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     private Integer channelsOut;
 
     /**
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel.
+     * Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the
+     * input channel unchanged to the output channel (no attenuation or amplification).
+     * 
      * @param channelMapping
+     *        Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each
+     *        channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0
+     *        passes the input channel unchanged to the output channel (no attenuation or amplification).
      */
 
     public void setChannelMapping(ChannelMapping channelMapping) {
@@ -46,7 +58,13 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel.
+     * Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the
+     * input channel unchanged to the output channel (no attenuation or amplification).
+     * 
+     * @return Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each
+     *         channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of
+     *         0 passes the input channel unchanged to the output channel (no attenuation or amplification).
      */
 
     public ChannelMapping getChannelMapping() {
@@ -54,7 +72,14 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel.
+     * Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the
+     * input channel unchanged to the output channel (no attenuation or amplification).
+     * 
      * @param channelMapping
+     *        Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each
+     *        channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0
+     *        passes the input channel unchanged to the output channel (no attenuation or amplification).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

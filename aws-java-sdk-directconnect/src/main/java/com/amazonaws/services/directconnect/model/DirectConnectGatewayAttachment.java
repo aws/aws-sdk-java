@@ -83,6 +83,12 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
     private String attachmentState;
     /**
      * <p>
+     * The type of attachment.
+     * </p>
+     */
+    private String attachmentType;
+    /**
+     * <p>
      * The error message if the state of an object failed to advance.
      * </p>
      */
@@ -497,6 +503,65 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
 
     /**
      * <p>
+     * The type of attachment.
+     * </p>
+     * 
+     * @param attachmentType
+     *        The type of attachment.
+     * @see DirectConnectGatewayAttachmentType
+     */
+
+    public void setAttachmentType(String attachmentType) {
+        this.attachmentType = attachmentType;
+    }
+
+    /**
+     * <p>
+     * The type of attachment.
+     * </p>
+     * 
+     * @return The type of attachment.
+     * @see DirectConnectGatewayAttachmentType
+     */
+
+    public String getAttachmentType() {
+        return this.attachmentType;
+    }
+
+    /**
+     * <p>
+     * The type of attachment.
+     * </p>
+     * 
+     * @param attachmentType
+     *        The type of attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DirectConnectGatewayAttachmentType
+     */
+
+    public DirectConnectGatewayAttachment withAttachmentType(String attachmentType) {
+        setAttachmentType(attachmentType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of attachment.
+     * </p>
+     * 
+     * @param attachmentType
+     *        The type of attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DirectConnectGatewayAttachmentType
+     */
+
+    public DirectConnectGatewayAttachment withAttachmentType(DirectConnectGatewayAttachmentType attachmentType) {
+        this.attachmentType = attachmentType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The error message if the state of an object failed to advance.
      * </p>
      * 
@@ -557,6 +622,8 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
             sb.append("VirtualInterfaceOwnerAccount: ").append(getVirtualInterfaceOwnerAccount()).append(",");
         if (getAttachmentState() != null)
             sb.append("AttachmentState: ").append(getAttachmentState()).append(",");
+        if (getAttachmentType() != null)
+            sb.append("AttachmentType: ").append(getAttachmentType()).append(",");
         if (getStateChangeError() != null)
             sb.append("StateChangeError: ").append(getStateChangeError());
         sb.append("}");
@@ -593,6 +660,10 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
             return false;
         if (other.getAttachmentState() != null && other.getAttachmentState().equals(this.getAttachmentState()) == false)
             return false;
+        if (other.getAttachmentType() == null ^ this.getAttachmentType() == null)
+            return false;
+        if (other.getAttachmentType() != null && other.getAttachmentType().equals(this.getAttachmentType()) == false)
+            return false;
         if (other.getStateChangeError() == null ^ this.getStateChangeError() == null)
             return false;
         if (other.getStateChangeError() != null && other.getStateChangeError().equals(this.getStateChangeError()) == false)
@@ -610,6 +681,7 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getVirtualInterfaceRegion() == null) ? 0 : getVirtualInterfaceRegion().hashCode());
         hashCode = prime * hashCode + ((getVirtualInterfaceOwnerAccount() == null) ? 0 : getVirtualInterfaceOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getAttachmentState() == null) ? 0 : getAttachmentState().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentType() == null) ? 0 : getAttachmentType().hashCode());
         hashCode = prime * hashCode + ((getStateChangeError() == null) ? 0 : getStateChangeError().hashCode());
         return hashCode;
     }

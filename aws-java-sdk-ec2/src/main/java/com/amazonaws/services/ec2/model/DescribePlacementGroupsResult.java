@@ -25,17 +25,17 @@ public class DescribePlacementGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more placement groups.
+     * Information about the placement groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlacementGroup> placementGroups;
 
     /**
      * <p>
-     * One or more placement groups.
+     * Information about the placement groups.
      * </p>
      * 
-     * @return One or more placement groups.
+     * @return Information about the placement groups.
      */
 
     public java.util.List<PlacementGroup> getPlacementGroups() {
@@ -47,11 +47,11 @@ public class DescribePlacementGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more placement groups.
+     * Information about the placement groups.
      * </p>
      * 
      * @param placementGroups
-     *        One or more placement groups.
+     *        Information about the placement groups.
      */
 
     public void setPlacementGroups(java.util.Collection<PlacementGroup> placementGroups) {
@@ -65,7 +65,7 @@ public class DescribePlacementGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more placement groups.
+     * Information about the placement groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class DescribePlacementGroupsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param placementGroups
-     *        One or more placement groups.
+     *        Information about the placement groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DescribePlacementGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more placement groups.
+     * Information about the placement groups.
      * </p>
      * 
      * @param placementGroups
-     *        One or more placement groups.
+     *        Information about the placement groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

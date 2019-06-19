@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ApplyPendingMaintenanceAction"
  *      target="_top">AWS API Documentation</a>
@@ -30,7 +29,7 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * <p>
      * The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      */
@@ -76,14 +75,14 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * <p>
      * The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * 
      * @param resourceIdentifier
      *        The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For
      *        information about creating an ARN, see <a
-     *        href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     *        href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      *        Constructing an Amazon Resource Name (ARN)</a>.
      */
 
@@ -95,13 +94,13 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * <p>
      * The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For
      *         information about creating an ARN, see <a
-     *         href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     *         href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      *         Constructing an Amazon Resource Name (ARN)</a>.
      */
 
@@ -113,14 +112,14 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * <p>
      * The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * 
      * @param resourceIdentifier
      *        The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For
      *        information about creating an ARN, see <a
-     *        href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     *        href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      *        Constructing an Amazon Resource Name (ARN)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

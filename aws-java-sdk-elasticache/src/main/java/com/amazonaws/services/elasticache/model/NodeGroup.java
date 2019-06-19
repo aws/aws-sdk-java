@@ -31,7 +31,7 @@ public class NodeGroup implements Serializable, Cloneable {
      * <p>
      * The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node
      * group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15
-     * node groups numbered 0001 to 0015.
+     * node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node group.
      * </p>
      */
     private String nodeGroupId;
@@ -49,6 +49,12 @@ public class NodeGroup implements Serializable, Cloneable {
     private Endpoint primaryEndpoint;
     /**
      * <p>
+     * The endpoint of the replica nodes in this node group (shard).
+     * </p>
+     */
+    private Endpoint readerEndpoint;
+    /**
+     * <p>
      * The keyspace for this node group (shard).
      * </p>
      */
@@ -64,13 +70,14 @@ public class NodeGroup implements Serializable, Cloneable {
      * <p>
      * The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node
      * group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15
-     * node groups numbered 0001 to 0015.
+     * node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node group.
      * </p>
      * 
      * @param nodeGroupId
      *        The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only
      *        1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group
-     *        contains 1 to 15 node groups numbered 0001 to 0015.
+     *        contains 1 to 15 node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     *        group.
      */
 
     public void setNodeGroupId(String nodeGroupId) {
@@ -81,12 +88,13 @@ public class NodeGroup implements Serializable, Cloneable {
      * <p>
      * The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node
      * group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15
-     * node groups numbered 0001 to 0015.
+     * node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node group.
      * </p>
      * 
      * @return The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains
      *         only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group
-     *         contains 1 to 15 node groups numbered 0001 to 0015.
+     *         contains 1 to 15 node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     *         group.
      */
 
     public String getNodeGroupId() {
@@ -97,13 +105,14 @@ public class NodeGroup implements Serializable, Cloneable {
      * <p>
      * The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node
      * group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15
-     * node groups numbered 0001 to 0015.
+     * node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node group.
      * </p>
      * 
      * @param nodeGroupId
      *        The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only
      *        1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group
-     *        contains 1 to 15 node groups numbered 0001 to 0015.
+     *        contains 1 to 15 node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,6 +198,46 @@ public class NodeGroup implements Serializable, Cloneable {
 
     public NodeGroup withPrimaryEndpoint(Endpoint primaryEndpoint) {
         setPrimaryEndpoint(primaryEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The endpoint of the replica nodes in this node group (shard).
+     * </p>
+     * 
+     * @param readerEndpoint
+     *        The endpoint of the replica nodes in this node group (shard).
+     */
+
+    public void setReaderEndpoint(Endpoint readerEndpoint) {
+        this.readerEndpoint = readerEndpoint;
+    }
+
+    /**
+     * <p>
+     * The endpoint of the replica nodes in this node group (shard).
+     * </p>
+     * 
+     * @return The endpoint of the replica nodes in this node group (shard).
+     */
+
+    public Endpoint getReaderEndpoint() {
+        return this.readerEndpoint;
+    }
+
+    /**
+     * <p>
+     * The endpoint of the replica nodes in this node group (shard).
+     * </p>
+     * 
+     * @param readerEndpoint
+     *        The endpoint of the replica nodes in this node group (shard).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeGroup withReaderEndpoint(Endpoint readerEndpoint) {
+        setReaderEndpoint(readerEndpoint);
         return this;
     }
 
@@ -323,6 +372,8 @@ public class NodeGroup implements Serializable, Cloneable {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getPrimaryEndpoint() != null)
             sb.append("PrimaryEndpoint: ").append(getPrimaryEndpoint()).append(",");
+        if (getReaderEndpoint() != null)
+            sb.append("ReaderEndpoint: ").append(getReaderEndpoint()).append(",");
         if (getSlots() != null)
             sb.append("Slots: ").append(getSlots()).append(",");
         if (getNodeGroupMembers() != null)
@@ -353,6 +404,10 @@ public class NodeGroup implements Serializable, Cloneable {
             return false;
         if (other.getPrimaryEndpoint() != null && other.getPrimaryEndpoint().equals(this.getPrimaryEndpoint()) == false)
             return false;
+        if (other.getReaderEndpoint() == null ^ this.getReaderEndpoint() == null)
+            return false;
+        if (other.getReaderEndpoint() != null && other.getReaderEndpoint().equals(this.getReaderEndpoint()) == false)
+            return false;
         if (other.getSlots() == null ^ this.getSlots() == null)
             return false;
         if (other.getSlots() != null && other.getSlots().equals(this.getSlots()) == false)
@@ -372,6 +427,7 @@ public class NodeGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNodeGroupId() == null) ? 0 : getNodeGroupId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getPrimaryEndpoint() == null) ? 0 : getPrimaryEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getReaderEndpoint() == null) ? 0 : getReaderEndpoint().hashCode());
         hashCode = prime * hashCode + ((getSlots() == null) ? 0 : getSlots().hashCode());
         hashCode = prime * hashCode + ((getNodeGroupMembers() == null) ? 0 : getNodeGroupMembers().hashCode());
         return hashCode;

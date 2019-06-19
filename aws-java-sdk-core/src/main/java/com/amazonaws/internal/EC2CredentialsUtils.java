@@ -43,7 +43,7 @@ public final class EC2CredentialsUtils {
 
     private final ConnectionUtils connectionUtils;
 
-    private static final String USER_AGENT = String.format("aws-sdk-java/%s", VersionInfoUtils.getVersion());
+    private static final String USER_AGENT = VersionInfoUtils.getUserAgent();
 
     private EC2CredentialsUtils() {
         this(ConnectionUtils.getInstance());

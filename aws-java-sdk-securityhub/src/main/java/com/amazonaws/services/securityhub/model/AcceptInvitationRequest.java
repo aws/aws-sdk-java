@@ -27,24 +27,24 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The account ID of the master Security Hub account whose invitation you're accepting.
+     * The account ID of the Security Hub master account whose invitation you're accepting.
      * </p>
      */
     private String masterId;
     /**
      * <p>
-     * The ID of the invitation that is sent to the AWS account by the Security Hub master account.
+     * The ID of the invitation that the Security Hub master account sends to the AWS account.
      * </p>
      */
     private String invitationId;
 
     /**
      * <p>
-     * The account ID of the master Security Hub account whose invitation you're accepting.
+     * The account ID of the Security Hub master account whose invitation you're accepting.
      * </p>
      * 
      * @param masterId
-     *        The account ID of the master Security Hub account whose invitation you're accepting.
+     *        The account ID of the Security Hub master account whose invitation you're accepting.
      */
 
     public void setMasterId(String masterId) {
@@ -53,10 +53,10 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The account ID of the master Security Hub account whose invitation you're accepting.
+     * The account ID of the Security Hub master account whose invitation you're accepting.
      * </p>
      * 
-     * @return The account ID of the master Security Hub account whose invitation you're accepting.
+     * @return The account ID of the Security Hub master account whose invitation you're accepting.
      */
 
     public String getMasterId() {
@@ -65,11 +65,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The account ID of the master Security Hub account whose invitation you're accepting.
+     * The account ID of the Security Hub master account whose invitation you're accepting.
      * </p>
      * 
      * @param masterId
-     *        The account ID of the master Security Hub account whose invitation you're accepting.
+     *        The account ID of the Security Hub master account whose invitation you're accepting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the invitation that is sent to the AWS account by the Security Hub master account.
+     * The ID of the invitation that the Security Hub master account sends to the AWS account.
      * </p>
      * 
      * @param invitationId
-     *        The ID of the invitation that is sent to the AWS account by the Security Hub master account.
+     *        The ID of the invitation that the Security Hub master account sends to the AWS account.
      */
 
     public void setInvitationId(String invitationId) {
@@ -93,10 +93,10 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the invitation that is sent to the AWS account by the Security Hub master account.
+     * The ID of the invitation that the Security Hub master account sends to the AWS account.
      * </p>
      * 
-     * @return The ID of the invitation that is sent to the AWS account by the Security Hub master account.
+     * @return The ID of the invitation that the Security Hub master account sends to the AWS account.
      */
 
     public String getInvitationId() {
@@ -105,11 +105,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the invitation that is sent to the AWS account by the Security Hub master account.
+     * The ID of the invitation that the Security Hub master account sends to the AWS account.
      * </p>
      * 
      * @param invitationId
-     *        The ID of the invitation that is sent to the AWS account by the Security Hub master account.
+     *        The ID of the invitation that the Security Hub master account sends to the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

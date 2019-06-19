@@ -32,7 +32,7 @@ public class Subnet implements Serializable, Cloneable {
      * </p>
      */
     private String subnetIdentifier;
-
+    /** <p/> */
     private AvailabilityZone subnetAvailabilityZone;
     /**
      * <p>
@@ -82,6 +82,8 @@ public class Subnet implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param subnetAvailabilityZone
      */
 
@@ -90,6 +92,8 @@ public class Subnet implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -98,6 +102,8 @@ public class Subnet implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param subnetAvailabilityZone
      * @return Returns a reference to this object so that method calls can be chained together.
      */

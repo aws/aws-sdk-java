@@ -33,6 +33,13 @@ public class InputLambdaProcessor implements Serializable, Cloneable, Structured
      * <p>
      * The ARN of the AWS Lambda function that operates on records in the stream.
      * </p>
+     * <note>
+     * <p>
+     * To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the
+     * Lambda function ARN. For more information about Lambda ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     * </p>
+     * </note>
      */
     private String resourceARN;
 
@@ -40,9 +47,21 @@ public class InputLambdaProcessor implements Serializable, Cloneable, Structured
      * <p>
      * The ARN of the AWS Lambda function that operates on records in the stream.
      * </p>
+     * <note>
+     * <p>
+     * To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the
+     * Lambda function ARN. For more information about Lambda ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     * </p>
+     * </note>
      * 
      * @param resourceARN
-     *        The ARN of the AWS Lambda function that operates on records in the stream.
+     *        The ARN of the AWS Lambda function that operates on records in the stream.</p> <note>
+     *        <p>
+     *        To specify an earlier version of the Lambda function than the latest, include the Lambda function version
+     *        in the Lambda function ARN. For more information about Lambda ARNs, see <a
+     *        href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     *        </p>
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,8 +72,20 @@ public class InputLambdaProcessor implements Serializable, Cloneable, Structured
      * <p>
      * The ARN of the AWS Lambda function that operates on records in the stream.
      * </p>
+     * <note>
+     * <p>
+     * To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the
+     * Lambda function ARN. For more information about Lambda ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     * </p>
+     * </note>
      * 
-     * @return The ARN of the AWS Lambda function that operates on records in the stream.
+     * @return The ARN of the AWS Lambda function that operates on records in the stream.</p> <note>
+     *         <p>
+     *         To specify an earlier version of the Lambda function than the latest, include the Lambda function version
+     *         in the Lambda function ARN. For more information about Lambda ARNs, see <a
+     *         href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     *         </p>
      */
 
     public String getResourceARN() {
@@ -65,9 +96,21 @@ public class InputLambdaProcessor implements Serializable, Cloneable, Structured
      * <p>
      * The ARN of the AWS Lambda function that operates on records in the stream.
      * </p>
+     * <note>
+     * <p>
+     * To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the
+     * Lambda function ARN. For more information about Lambda ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     * </p>
+     * </note>
      * 
      * @param resourceARN
-     *        The ARN of the AWS Lambda function that operates on records in the stream.
+     *        The ARN of the AWS Lambda function that operates on records in the stream.</p> <note>
+     *        <p>
+     *        To specify an earlier version of the Lambda function than the latest, include the Lambda function version
+     *        in the Lambda function ARN. For more information about Lambda ARNs, see <a
+     *        href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

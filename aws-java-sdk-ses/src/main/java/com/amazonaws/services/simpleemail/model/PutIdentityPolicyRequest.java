@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to add or update a sending authorization policy for an identity. Sending authorization is an
  * Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 
@@ -58,7 +58,7 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For information about the syntax of sending authorization policies, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES
      * Developer Guide</a>.
      * </p>
      */
@@ -198,7 +198,7 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For information about the syntax of sending authorization policies, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES
      * Developer Guide</a>.
      * </p>
      * 
@@ -206,8 +206,8 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
      *        <p>
      *        For information about the syntax of sending authorization policies, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES
-     *        Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
+     *        SES Developer Guide</a>.
      */
 
     public void setPolicy(String policy) {
@@ -220,14 +220,14 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For information about the syntax of sending authorization policies, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES
      * Developer Guide</a>.
      * </p>
      * 
      * @return The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
      *         <p>
      *         For information about the syntax of sending authorization policies, see the <a
-     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
      *         SES Developer Guide</a>.
      */
 
@@ -241,7 +241,7 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For information about the syntax of sending authorization policies, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES
      * Developer Guide</a>.
      * </p>
      * 
@@ -249,8 +249,8 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
      *        <p>
      *        For information about the syntax of sending authorization policies, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES
-     *        Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
+     *        SES Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

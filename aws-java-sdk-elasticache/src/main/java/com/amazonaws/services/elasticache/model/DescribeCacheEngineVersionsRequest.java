@@ -48,8 +48,8 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * The name of a specific cache parameter group family to return details for.
      * </p>
      * <p>
-     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code>
+     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
      * </p>
      * <p>
      * Constraints:
@@ -203,8 +203,8 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * The name of a specific cache parameter group family to return details for.
      * </p>
      * <p>
-     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code>
+     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
      * </p>
      * <p>
      * Constraints:
@@ -230,8 +230,8 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * @param cacheParameterGroupFamily
      *        The name of a specific cache parameter group family to return details for.</p>
      *        <p>
-     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     *        <code>redis3.2</code> | <code>redis4.0</code>
+     *        Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
+     *        <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
      *        </p>
      *        <p>
      *        Constraints:
@@ -263,8 +263,8 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * The name of a specific cache parameter group family to return details for.
      * </p>
      * <p>
-     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code>
+     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
      * </p>
      * <p>
      * Constraints:
@@ -289,8 +289,8 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * 
      * @return The name of a specific cache parameter group family to return details for.</p>
      *         <p>
-     *         Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     *         <code>redis3.2</code> | <code>redis4.0</code>
+     *         Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
+     *         <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
      *         </p>
      *         <p>
      *         Constraints:
@@ -322,8 +322,8 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * The name of a specific cache parameter group family to return details for.
      * </p>
      * <p>
-     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code>
+     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
      * </p>
      * <p>
      * Constraints:
@@ -349,8 +349,8 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * @param cacheParameterGroupFamily
      *        The name of a specific cache parameter group family to return details for.</p>
      *        <p>
-     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     *        <code>redis3.2</code> | <code>redis4.0</code>
+     *        Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
+     *        <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
      *        </p>
      *        <p>
      *        Constraints:

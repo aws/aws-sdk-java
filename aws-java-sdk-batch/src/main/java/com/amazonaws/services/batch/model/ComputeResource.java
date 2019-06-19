@@ -30,7 +30,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of compute environment.
+     * The type of compute environment: EC2 or SPOT.
      * </p>
      */
     private String type;
@@ -58,7 +58,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * The instances types that may be launched. You can specify instance families to launch any instance type within
      * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
      * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
-     * the latest C, M, and R instance families) on the fly that match the demand of your job queues.
+     * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      */
     private java.util.List<String> instanceTypes;
@@ -89,16 +89,19 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
-     * short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code>ecsInstanceRole</code>
-     * or <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information, see
-     * <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance Role</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     * <code> <i>ecsInstanceRole</i> </code> or
+     * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
+     * Instance Role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private String instanceRole;
     /**
      * <p>
-     * Key-value pair tags to be applied to resources that are launched in the compute environment.
+     * Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS Batch, these
+     * take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value—for example, {
+     * "Name": "AWS Batch Instance - C4OnDemand" }.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -108,7 +111,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
      * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
      * a single Availability Zone with high network flow potential. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
@@ -126,7 +129,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute
-     * environment.
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private String spotIamFleetRole;
@@ -134,18 +139,20 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
      * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
-     * specify either the launch template ID or launch template name in the request, but not both.
+     * specify either the launch template ID or launch template name in the request, but not both. For more information,
+     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     * Support</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private LaunchTemplateSpecification launchTemplate;
 
     /**
      * <p>
-     * The type of compute environment.
+     * The type of compute environment: EC2 or SPOT.
      * </p>
      * 
      * @param type
-     *        The type of compute environment.
+     *        The type of compute environment: EC2 or SPOT.
      * @see CRType
      */
 
@@ -155,10 +162,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of compute environment.
+     * The type of compute environment: EC2 or SPOT.
      * </p>
      * 
-     * @return The type of compute environment.
+     * @return The type of compute environment: EC2 or SPOT.
      * @see CRType
      */
 
@@ -168,11 +175,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of compute environment.
+     * The type of compute environment: EC2 or SPOT.
      * </p>
      * 
      * @param type
-     *        The type of compute environment.
+     *        The type of compute environment: EC2 or SPOT.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRType
      */
@@ -184,11 +191,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of compute environment.
+     * The type of compute environment: EC2 or SPOT.
      * </p>
      * 
      * @param type
-     *        The type of compute environment.
+     *        The type of compute environment: EC2 or SPOT.
      * @see CRType
      */
 
@@ -198,11 +205,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of compute environment.
+     * The type of compute environment: EC2 or SPOT.
      * </p>
      * 
      * @param type
-     *        The type of compute environment.
+     *        The type of compute environment: EC2 or SPOT.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRType
      */
@@ -343,14 +350,14 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * The instances types that may be launched. You can specify instance families to launch any instance type within
      * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
      * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
-     * the latest C, M, and R instance families) on the fly that match the demand of your job queues.
+     * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * 
      * @return The instances types that may be launched. You can specify instance families to launch any instance type
      *         within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific
      *         sizes within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     *         instance types (from the latest C, M, and R instance families) on the fly that match the demand of your
-     *         job queues.
+     *         instance types (from the C, M, and R instance families) on the fly that match the demand of your job
+     *         queues.
      */
 
     public java.util.List<String> getInstanceTypes() {
@@ -362,15 +369,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * The instances types that may be launched. You can specify instance families to launch any instance type within
      * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
      * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
-     * the latest C, M, and R instance families) on the fly that match the demand of your job queues.
+     * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * 
      * @param instanceTypes
      *        The instances types that may be launched. You can specify instance families to launch any instance type
      *        within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes
      *        within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     *        instance types (from the latest C, M, and R instance families) on the fly that match the demand of your
-     *        job queues.
+     *        instance types (from the C, M, and R instance families) on the fly that match the demand of your job
+     *        queues.
      */
 
     public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
@@ -387,7 +394,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * The instances types that may be launched. You can specify instance families to launch any instance type within
      * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
      * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
-     * the latest C, M, and R instance families) on the fly that match the demand of your job queues.
+     * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -399,8 +406,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        The instances types that may be launched. You can specify instance families to launch any instance type
      *        within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes
      *        within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     *        instance types (from the latest C, M, and R instance families) on the fly that match the demand of your
-     *        job queues.
+     *        instance types (from the C, M, and R instance families) on the fly that match the demand of your job
+     *        queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,15 +426,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * The instances types that may be launched. You can specify instance families to launch any instance type within
      * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
      * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
-     * the latest C, M, and R instance families) on the fly that match the demand of your job queues.
+     * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * 
      * @param instanceTypes
      *        The instances types that may be launched. You can specify instance families to launch any instance type
      *        within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes
      *        within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     *        instance types (from the latest C, M, and R instance families) on the fly that match the demand of your
-     *        job queues.
+     *        instance types (from the C, M, and R instance families) on the fly that match the demand of your job
+     *        queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -659,18 +666,20 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
-     * short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code>ecsInstanceRole</code>
-     * or <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information, see
-     * <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance Role</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     * <code> <i>ecsInstanceRole</i> </code> or
+     * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
+     * Instance Role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param instanceRole
      *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
      *        the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     *        <code>ecsInstanceRole</code> or
-     *        <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information,
-     *        see <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance
+     *        <code> <i>ecsInstanceRole</i> </code> or
+     *        <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance
      *        Role</a> in the <i>AWS Batch User Guide</i>.
      */
 
@@ -681,18 +690,20 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
-     * short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code>ecsInstanceRole</code>
-     * or <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information, see
-     * <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance Role</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     * <code> <i>ecsInstanceRole</i> </code> or
+     * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
+     * Instance Role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
      *         the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     *         <code>ecsInstanceRole</code> or
-     *         <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information,
-     *         see <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
-     *         Instance Role</a> in the <i>AWS Batch User Guide</i>.
+     *         <code> <i>ecsInstanceRole</i> </code> or
+     *         <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance
+     *         Role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public String getInstanceRole() {
@@ -702,18 +713,20 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
-     * short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code>ecsInstanceRole</code>
-     * or <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information, see
-     * <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance Role</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     * <code> <i>ecsInstanceRole</i> </code> or
+     * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
+     * Instance Role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param instanceRole
      *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
      *        the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     *        <code>ecsInstanceRole</code> or
-     *        <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information,
-     *        see <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance
+     *        <code> <i>ecsInstanceRole</i> </code> or
+     *        <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance
      *        Role</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -725,10 +738,14 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Key-value pair tags to be applied to resources that are launched in the compute environment.
+     * Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS Batch, these
+     * take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value—for example, {
+     * "Name": "AWS Batch Instance - C4OnDemand" }.
      * </p>
      * 
-     * @return Key-value pair tags to be applied to resources that are launched in the compute environment.
+     * @return Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS
+     *         Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag
+     *         value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -737,11 +754,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Key-value pair tags to be applied to resources that are launched in the compute environment.
+     * Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS Batch, these
+     * take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value—for example, {
+     * "Name": "AWS Batch Instance - C4OnDemand" }.
      * </p>
      * 
      * @param tags
-     *        Key-value pair tags to be applied to resources that are launched in the compute environment.
+     *        Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS
+     *        Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag
+     *        value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -750,11 +771,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Key-value pair tags to be applied to resources that are launched in the compute environment.
+     * Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS Batch, these
+     * take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value—for example, {
+     * "Name": "AWS Batch Instance - C4OnDemand" }.
      * </p>
      * 
      * @param tags
-     *        Key-value pair tags to be applied to resources that are launched in the compute environment.
+     *        Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS
+     *        Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag
+     *        value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -790,7 +815,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
      * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
      * a single Availability Zone with high network flow potential. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -800,7 +825,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
      *        grouping of instances within a single Availability Zone with high network flow potential. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
      *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
@@ -814,7 +839,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
      * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
      * a single Availability Zone with high network flow potential. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -823,7 +848,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *         group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
      *         grouping of instances within a single Availability Zone with high network flow potential. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
      *         the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
@@ -837,7 +862,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
      * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
      * a single Availability Zone with high network flow potential. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -847,7 +872,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
      *        grouping of instances within a single Availability Zone with high network flow potential. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
      *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -924,12 +949,16 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute
-     * environment.
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param spotIamFleetRole
      *        The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code>
-     *        compute environment.
+     *        compute environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet
+     *        Role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setSpotIamFleetRole(String spotIamFleetRole) {
@@ -939,11 +968,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute
-     * environment.
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code>
-     *         compute environment.
+     *         compute environment. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet
+     *         Role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public String getSpotIamFleetRole() {
@@ -953,12 +986,16 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute
-     * environment.
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param spotIamFleetRole
      *        The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code>
-     *        compute environment.
+     *        compute environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet
+     *        Role</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -971,14 +1008,18 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
      * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
-     * specify either the launch template ID or launch template name in the request, but not both.
+     * specify either the launch template ID or launch template name in the request, but not both. For more information,
+     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     * Support</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param launchTemplate
      *        The launch template to use for your compute resources. Any other compute resource parameters that you
      *        specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
      *        template. You must specify either the launch template ID or launch template name in the request, but not
-     *        both.
+     *        both. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     *        Support</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
@@ -989,13 +1030,17 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
      * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
-     * specify either the launch template ID or launch template name in the request, but not both.
+     * specify either the launch template ID or launch template name in the request, but not both. For more information,
+     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     * Support</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return The launch template to use for your compute resources. Any other compute resource parameters that you
      *         specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
      *         template. You must specify either the launch template ID or launch template name in the request, but not
-     *         both.
+     *         both. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     *         Support</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public LaunchTemplateSpecification getLaunchTemplate() {
@@ -1006,14 +1051,18 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
      * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
-     * specify either the launch template ID or launch template name in the request, but not both.
+     * specify either the launch template ID or launch template name in the request, but not both. For more information,
+     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     * Support</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param launchTemplate
      *        The launch template to use for your compute resources. Any other compute resource parameters that you
      *        specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
      *        template. You must specify either the launch template ID or launch template name in the request, but not
-     *        both.
+     *        both. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     *        Support</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

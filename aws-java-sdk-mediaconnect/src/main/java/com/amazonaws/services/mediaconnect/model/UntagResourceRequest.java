@@ -25,16 +25,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The Amazon Resource Name (ARN) of the resource that you want to remove tags from. */
+    /**
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
+     */
     private String resourceArn;
     /** The keys of the tags to be removed. */
     private java.util.List<String> tagKeys;
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to remove tags from.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource that you want to remove tags from.
+     *        The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to
+     *        delete tags.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -42,9 +45,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to remove tags from.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
      * 
-     * @return The Amazon Resource Name (ARN) of the resource that you want to remove tags from.
+     * @return The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to
+     *         delete tags.
      */
 
     public String getResourceArn() {
@@ -52,10 +56,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to remove tags from.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource that you want to remove tags from.
+     *        The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to
+     *        delete tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

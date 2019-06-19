@@ -36,8 +36,8 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
     private String name;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no actionRoleArn, or to
-     * use to assume roles for actions with an actionRoleArn.
+     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
+     * <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      * </p>
      */
     private String roleArn;
@@ -49,12 +49,12 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
     private ArtifactStore artifactStore;
     /**
      * <p>
-     * A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for the
-     * pipeline region and for each cross-region action within the pipeline. You can only use either artifactStore or
-     * artifactStores, not both.
+     * A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact store
+     * for the pipeline region and for each cross-region action within the pipeline. You can only use either
+     * <code>artifactStore</code> or <code>artifactStores</code>, not both.
      * </p>
      * <p>
-     * If you create a cross-region action in your pipeline, you must use artifactStores.
+     * If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
      * </p>
      */
     private java.util.Map<String, ArtifactStore> artifactStores;
@@ -114,13 +114,13 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no actionRoleArn, or to
-     * use to assume roles for actions with an actionRoleArn.
+     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
+     * <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
-     *        actionRoleArn, or to use to assume roles for actions with an actionRoleArn.
+     *        <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -129,12 +129,12 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no actionRoleArn, or to
-     * use to assume roles for actions with an actionRoleArn.
+     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
+     * <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
-     *         actionRoleArn, or to use to assume roles for actions with an actionRoleArn.
+     *         <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      */
 
     public String getRoleArn() {
@@ -143,13 +143,13 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no actionRoleArn, or to
-     * use to assume roles for actions with an actionRoleArn.
+     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
+     * <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
-     *        actionRoleArn, or to use to assume roles for actions with an actionRoleArn.
+     *        <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,19 +200,19 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for the
-     * pipeline region and for each cross-region action within the pipeline. You can only use either artifactStore or
-     * artifactStores, not both.
+     * A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact store
+     * for the pipeline region and for each cross-region action within the pipeline. You can only use either
+     * <code>artifactStore</code> or <code>artifactStores</code>, not both.
      * </p>
      * <p>
-     * If you create a cross-region action in your pipeline, you must use artifactStores.
+     * If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
      * </p>
      * 
-     * @return A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for
-     *         the pipeline region and for each cross-region action within the pipeline. You can only use either
-     *         artifactStore or artifactStores, not both.</p>
+     * @return A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an
+     *         artifact store for the pipeline region and for each cross-region action within the pipeline. You can only
+     *         use either <code>artifactStore</code> or <code>artifactStores</code>, not both.</p>
      *         <p>
-     *         If you create a cross-region action in your pipeline, you must use artifactStores.
+     *         If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
      */
 
     public java.util.Map<String, ArtifactStore> getArtifactStores() {
@@ -221,20 +221,20 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for the
-     * pipeline region and for each cross-region action within the pipeline. You can only use either artifactStore or
-     * artifactStores, not both.
+     * A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact store
+     * for the pipeline region and for each cross-region action within the pipeline. You can only use either
+     * <code>artifactStore</code> or <code>artifactStores</code>, not both.
      * </p>
      * <p>
-     * If you create a cross-region action in your pipeline, you must use artifactStores.
+     * If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
      * </p>
      * 
      * @param artifactStores
-     *        A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for
-     *        the pipeline region and for each cross-region action within the pipeline. You can only use either
-     *        artifactStore or artifactStores, not both.</p>
+     *        A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact
+     *        store for the pipeline region and for each cross-region action within the pipeline. You can only use
+     *        either <code>artifactStore</code> or <code>artifactStores</code>, not both.</p>
      *        <p>
-     *        If you create a cross-region action in your pipeline, you must use artifactStores.
+     *        If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
      */
 
     public void setArtifactStores(java.util.Map<String, ArtifactStore> artifactStores) {
@@ -243,20 +243,20 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for the
-     * pipeline region and for each cross-region action within the pipeline. You can only use either artifactStore or
-     * artifactStores, not both.
+     * A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact store
+     * for the pipeline region and for each cross-region action within the pipeline. You can only use either
+     * <code>artifactStore</code> or <code>artifactStores</code>, not both.
      * </p>
      * <p>
-     * If you create a cross-region action in your pipeline, you must use artifactStores.
+     * If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
      * </p>
      * 
      * @param artifactStores
-     *        A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for
-     *        the pipeline region and for each cross-region action within the pipeline. You can only use either
-     *        artifactStore or artifactStores, not both.</p>
+     *        A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact
+     *        store for the pipeline region and for each cross-region action within the pipeline. You can only use
+     *        either <code>artifactStore</code> or <code>artifactStores</code>, not both.</p>
      *        <p>
-     *        If you create a cross-region action in your pipeline, you must use artifactStores.
+     *        If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

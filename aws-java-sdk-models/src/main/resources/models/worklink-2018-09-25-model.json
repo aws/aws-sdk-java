@@ -13,6 +13,42 @@
     "uid":"worklink-2018-09-25"
   },
   "operations":{
+    "AssociateDomain":{
+      "name":"AssociateDomain",
+      "http":{
+        "method":"POST",
+        "requestUri":"/associateDomain"
+      },
+      "input":{"shape":"AssociateDomainRequest"},
+      "output":{"shape":"AssociateDomainResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"TooManyRequestsException"}
+      ],
+      "documentation":"<p>Specifies a domain to be associated to Amazon WorkLink.</p>"
+    },
+    "AssociateWebsiteAuthorizationProvider":{
+      "name":"AssociateWebsiteAuthorizationProvider",
+      "http":{
+        "method":"POST",
+        "requestUri":"/associateWebsiteAuthorizationProvider"
+      },
+      "input":{"shape":"AssociateWebsiteAuthorizationProviderRequest"},
+      "output":{"shape":"AssociateWebsiteAuthorizationProviderResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"TooManyRequestsException"}
+      ],
+      "documentation":"<p>Associates a website authorization provider with a specified fleet. This is used to authorize users against associated websites in the company network.</p>"
+    },
     "AssociateWebsiteCertificateAuthority":{
       "name":"AssociateWebsiteCertificateAuthority",
       "http":{
@@ -134,6 +170,23 @@
       ],
       "documentation":"<p>Describes the device policy configuration for the specified fleet.</p>"
     },
+    "DescribeDomain":{
+      "name":"DescribeDomain",
+      "http":{
+        "method":"POST",
+        "requestUri":"/describeDomain"
+      },
+      "input":{"shape":"DescribeDomainRequest"},
+      "output":{"shape":"DescribeDomainResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"TooManyRequestsException"}
+      ],
+      "documentation":"<p>Provides information about the domain.</p>"
+    },
     "DescribeFleetMetadata":{
       "name":"DescribeFleetMetadata",
       "http":{
@@ -185,6 +238,41 @@
       ],
       "documentation":"<p>Provides information about the certificate authority.</p>"
     },
+    "DisassociateDomain":{
+      "name":"DisassociateDomain",
+      "http":{
+        "method":"POST",
+        "requestUri":"/disassociateDomain"
+      },
+      "input":{"shape":"DisassociateDomainRequest"},
+      "output":{"shape":"DisassociateDomainResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"TooManyRequestsException"}
+      ],
+      "documentation":"<p>Disassociates a domain from Amazon WorkLink. End users lose the ability to access the domain with Amazon WorkLink. </p>"
+    },
+    "DisassociateWebsiteAuthorizationProvider":{
+      "name":"DisassociateWebsiteAuthorizationProvider",
+      "http":{
+        "method":"POST",
+        "requestUri":"/disassociateWebsiteAuthorizationProvider"
+      },
+      "input":{"shape":"DisassociateWebsiteAuthorizationProviderRequest"},
+      "output":{"shape":"DisassociateWebsiteAuthorizationProviderResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"TooManyRequestsException"}
+      ],
+      "documentation":"<p>Disassociates a website authorization provider from a specified fleet. After the disassociation, users can't load any associated websites that require this authorization provider.</p>"
+    },
     "DisassociateWebsiteCertificateAuthority":{
       "name":"DisassociateWebsiteCertificateAuthority",
       "http":{
@@ -219,6 +307,22 @@
       ],
       "documentation":"<p>Retrieves a list of devices registered with the specified fleet.</p>"
     },
+    "ListDomains":{
+      "name":"ListDomains",
+      "http":{
+        "method":"POST",
+        "requestUri":"/listDomains"
+      },
+      "input":{"shape":"ListDomainsRequest"},
+      "output":{"shape":"ListDomainsResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"TooManyRequestsException"}
+      ],
+      "documentation":"<p>Retrieves a list of domains associated to a specified fleet.</p>"
+    },
     "ListFleets":{
       "name":"ListFleets",
       "http":{
@@ -235,6 +339,23 @@
       ],
       "documentation":"<p>Retrieves a list of fleets for the current account and Region.</p>"
     },
+    "ListWebsiteAuthorizationProviders":{
+      "name":"ListWebsiteAuthorizationProviders",
+      "http":{
+        "method":"POST",
+        "requestUri":"/listWebsiteAuthorizationProviders"
+      },
+      "input":{"shape":"ListWebsiteAuthorizationProvidersRequest"},
+      "output":{"shape":"ListWebsiteAuthorizationProvidersResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"TooManyRequestsException"}
+      ],
+      "documentation":"<p>Retrieves a list of website authorization providers associated with a specified fleet.</p>"
+    },
     "ListWebsiteCertificateAuthorities":{
       "name":"ListWebsiteCertificateAuthorities",
       "http":{
@@ -250,6 +371,40 @@
         {"shape":"TooManyRequestsException"}
       ],
       "documentation":"<p>Retrieves a list of certificate authorities added for the current account and Region.</p>"
+    },
+    "RestoreDomainAccess":{
+      "name":"RestoreDomainAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/restoreDomainAccess"
+      },
+      "input":{"shape":"RestoreDomainAccessRequest"},
+      "output":{"shape":"RestoreDomainAccessResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"TooManyRequestsException"}
+      ],
+      "documentation":"<p>Moves a domain to ACTIVE status if it was in the INACTIVE status.</p>"
+    },
+    "RevokeDomainAccess":{
+      "name":"RevokeDomainAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/revokeDomainAccess"
+      },
+      "input":{"shape":"RevokeDomainAccessRequest"},
+      "output":{"shape":"RevokeDomainAccessResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"TooManyRequestsException"}
+      ],
+      "documentation":"<p>Moves a domain to INACTIVE status if it was in the ACTIVE status.</p>"
     },
     "SignOutUser":{
       "name":"SignOutUser",
@@ -319,6 +474,23 @@
       ],
       "documentation":"<p>Updates the device policy configuration for the fleet.</p>"
     },
+    "UpdateDomainMetadata":{
+      "name":"UpdateDomainMetadata",
+      "http":{
+        "method":"POST",
+        "requestUri":"/updateDomainMetadata"
+      },
+      "input":{"shape":"UpdateDomainMetadataRequest"},
+      "output":{"shape":"UpdateDomainMetadataResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"TooManyRequestsException"}
+      ],
+      "documentation":"<p>Updates domain metadata, such as DisplayName.</p>"
+    },
     "UpdateFleetMetadata":{
       "name":"UpdateFleetMetadata",
       "http":{
@@ -355,6 +527,71 @@
     }
   },
   "shapes":{
+    "AcmCertificateArn":{
+      "type":"string",
+      "pattern":"arn:[\\w+=/,.@-]+:[\\w+=/,.@-]+:[\\w+=/,.@-]*:[0-9]+:[\\w+=,.@-]+(/[\\w+=/,.@-]+)*"
+    },
+    "AssociateDomainRequest":{
+      "type":"structure",
+      "required":[
+        "FleetArn",
+        "DomainName",
+        "AcmCertificateArn"
+      ],
+      "members":{
+        "FleetArn":{
+          "shape":"FleetArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the fleet.</p>"
+        },
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The fully qualified domain name (FQDN).</p>"
+        },
+        "DisplayName":{
+          "shape":"DisplayName",
+          "documentation":"<p>The name to display.</p>"
+        },
+        "AcmCertificateArn":{
+          "shape":"AcmCertificateArn",
+          "documentation":"<p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>"
+        }
+      }
+    },
+    "AssociateDomainResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "AssociateWebsiteAuthorizationProviderRequest":{
+      "type":"structure",
+      "required":[
+        "FleetArn",
+        "AuthorizationProviderType"
+      ],
+      "members":{
+        "FleetArn":{
+          "shape":"FleetArn",
+          "documentation":"<p>The ARN of the fleet.</p>"
+        },
+        "AuthorizationProviderType":{
+          "shape":"AuthorizationProviderType",
+          "documentation":"<p>The authorization provider type.</p>"
+        },
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>"
+        }
+      }
+    },
+    "AssociateWebsiteAuthorizationProviderResponse":{
+      "type":"structure",
+      "members":{
+        "AuthorizationProviderId":{
+          "shape":"Id",
+          "documentation":"<p>A unique identifier for the authorization provider.</p>"
+        }
+      }
+    },
     "AssociateWebsiteCertificateAuthorityRequest":{
       "type":"structure",
       "required":[
@@ -386,6 +623,10 @@
       }
     },
     "AuditStreamArn":{"type":"string"},
+    "AuthorizationProviderType":{
+      "type":"string",
+      "enum":["SAML"]
+    },
     "Boolean":{"type":"boolean"},
     "Certificate":{
       "type":"string",
@@ -570,6 +811,48 @@
         }
       }
     },
+    "DescribeDomainRequest":{
+      "type":"structure",
+      "required":[
+        "FleetArn",
+        "DomainName"
+      ],
+      "members":{
+        "FleetArn":{
+          "shape":"FleetArn",
+          "documentation":"<p>The ARN of the fleet.</p>"
+        },
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>"
+        }
+      }
+    },
+    "DescribeDomainResponse":{
+      "type":"structure",
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>"
+        },
+        "DisplayName":{
+          "shape":"DisplayName",
+          "documentation":"<p>The name to display.</p>"
+        },
+        "CreatedTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time that the domain was added.</p>"
+        },
+        "DomainStatus":{
+          "shape":"DomainStatus",
+          "documentation":"<p>The current state for the domain.</p>"
+        },
+        "AcmCertificateArn":{
+          "shape":"AcmCertificateArn",
+          "documentation":"<p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>"
+        }
+      }
+    },
     "DescribeFleetMetadataRequest":{
       "type":"structure",
       "required":["FleetArn"],
@@ -724,6 +1007,50 @@
       "type":"list",
       "member":{"shape":"DeviceSummary"}
     },
+    "DisassociateDomainRequest":{
+      "type":"structure",
+      "required":[
+        "FleetArn",
+        "DomainName"
+      ],
+      "members":{
+        "FleetArn":{
+          "shape":"FleetArn",
+          "documentation":"<p>The ARN of the fleet.</p>"
+        },
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>"
+        }
+      }
+    },
+    "DisassociateDomainResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DisassociateWebsiteAuthorizationProviderRequest":{
+      "type":"structure",
+      "required":[
+        "FleetArn",
+        "AuthorizationProviderId"
+      ],
+      "members":{
+        "FleetArn":{
+          "shape":"FleetArn",
+          "documentation":"<p>The ARN of the fleet.</p>"
+        },
+        "AuthorizationProviderId":{
+          "shape":"Id",
+          "documentation":"<p>A unique identifier for the authorization provider.</p>"
+        }
+      }
+    },
+    "DisassociateWebsiteAuthorizationProviderResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DisassociateWebsiteCertificateAuthorityRequest":{
       "type":"structure",
       "required":[
@@ -749,6 +1076,56 @@
     "DisplayName":{
       "type":"string",
       "max":100
+    },
+    "DomainName":{
+      "type":"string",
+      "max":253,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\\.)+[a-zA-Z0-9]+$"
+    },
+    "DomainStatus":{
+      "type":"string",
+      "enum":[
+        "PENDING_VALIDATION",
+        "ASSOCIATING",
+        "ACTIVE",
+        "INACTIVE",
+        "DISASSOCIATING",
+        "DISASSOCIATED",
+        "FAILED_TO_ASSOCIATE",
+        "FAILED_TO_DISASSOCIATE"
+      ]
+    },
+    "DomainSummary":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "CreatedTime",
+        "DomainStatus"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>"
+        },
+        "DisplayName":{
+          "shape":"DisplayName",
+          "documentation":"<p>The name to display.</p>"
+        },
+        "CreatedTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time that the domain was created.</p>"
+        },
+        "DomainStatus":{
+          "shape":"DomainStatus",
+          "documentation":"<p>The status of the domain.</p>"
+        }
+      },
+      "documentation":"<p>The summary of the domain.</p>"
+    },
+    "DomainSummaryList":{
+      "type":"list",
+      "member":{"shape":"DomainSummary"}
     },
     "ExceptionMessage":{"type":"string"},
     "FleetArn":{
@@ -869,6 +1246,37 @@
         }
       }
     },
+    "ListDomainsRequest":{
+      "type":"structure",
+      "required":["FleetArn"],
+      "members":{
+        "FleetArn":{
+          "shape":"FleetArn",
+          "documentation":"<p>The ARN of the fleet.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of results to be included in the next page.</p>"
+        }
+      }
+    },
+    "ListDomainsResponse":{
+      "type":"structure",
+      "members":{
+        "Domains":{
+          "shape":"DomainSummaryList",
+          "documentation":"<p>Information about the domains.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>"
+        }
+      }
+    },
     "ListFleetsRequest":{
       "type":"structure",
       "members":{
@@ -892,6 +1300,37 @@
         "NextToken":{
           "shape":"NextToken",
           "documentation":"<p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>"
+        }
+      }
+    },
+    "ListWebsiteAuthorizationProvidersRequest":{
+      "type":"structure",
+      "required":["FleetArn"],
+      "members":{
+        "FleetArn":{
+          "shape":"FleetArn",
+          "documentation":"<p>The ARN of the fleet.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of results to be included in the next page.</p>"
+        }
+      }
+    },
+    "ListWebsiteAuthorizationProvidersResponse":{
+      "type":"structure",
+      "members":{
+        "WebsiteAuthorizationProviders":{
+          "shape":"WebsiteAuthorizationProvidersSummaryList",
+          "documentation":"<p>The website authorization providers.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
         }
       }
     },
@@ -954,6 +1393,50 @@
       "error":{"httpStatusCode":404},
       "exception":true
     },
+    "RestoreDomainAccessRequest":{
+      "type":"structure",
+      "required":[
+        "FleetArn",
+        "DomainName"
+      ],
+      "members":{
+        "FleetArn":{
+          "shape":"FleetArn",
+          "documentation":"<p>The ARN of the fleet.</p>"
+        },
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>"
+        }
+      }
+    },
+    "RestoreDomainAccessResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "RevokeDomainAccessRequest":{
+      "type":"structure",
+      "required":[
+        "FleetArn",
+        "DomainName"
+      ],
+      "members":{
+        "FleetArn":{
+          "shape":"FleetArn",
+          "documentation":"<p>The ARN of the fleet.</p>"
+        },
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>"
+        }
+      }
+    },
+    "RevokeDomainAccessResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "SamlMetadata":{
       "type":"string",
       "max":204800,
@@ -965,7 +1448,8 @@
     },
     "SecurityGroupIds":{
       "type":"list",
-      "member":{"shape":"SecurityGroupId"}
+      "member":{"shape":"SecurityGroupId"},
+      "max":5
     },
     "SignOutUserRequest":{
       "type":"structure",
@@ -1085,6 +1569,32 @@
       "members":{
       }
     },
+    "UpdateDomainMetadataRequest":{
+      "type":"structure",
+      "required":[
+        "FleetArn",
+        "DomainName"
+      ],
+      "members":{
+        "FleetArn":{
+          "shape":"FleetArn",
+          "documentation":"<p>The ARN of the fleet.</p>"
+        },
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain.</p>"
+        },
+        "DisplayName":{
+          "shape":"DisplayName",
+          "documentation":"<p>The name to display.</p>"
+        }
+      }
+    },
+    "UpdateDomainMetadataResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "UpdateFleetMetadataRequest":{
       "type":"structure",
       "required":["FleetArn"],
@@ -1142,6 +1652,33 @@
     "VpcId":{
       "type":"string",
       "pattern":"^vpc-([0-9a-f]{8}|[0-9a-f]{17})$"
+    },
+    "WebsiteAuthorizationProviderSummary":{
+      "type":"structure",
+      "required":["AuthorizationProviderType"],
+      "members":{
+        "AuthorizationProviderId":{
+          "shape":"Id",
+          "documentation":"<p>A unique identifier for the authorization provider.</p>"
+        },
+        "AuthorizationProviderType":{
+          "shape":"AuthorizationProviderType",
+          "documentation":"<p>The authorization provider type.</p>"
+        },
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>"
+        },
+        "CreatedTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time of creation.</p>"
+        }
+      },
+      "documentation":"<p>The summary of the website authorization provider.</p>"
+    },
+    "WebsiteAuthorizationProvidersSummaryList":{
+      "type":"list",
+      "member":{"shape":"WebsiteAuthorizationProviderSummary"}
     },
     "WebsiteCaSummary":{
       "type":"structure",

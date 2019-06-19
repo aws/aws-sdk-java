@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The minimum protocol version specified is not valid.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidMinimumProtocolVersionException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {

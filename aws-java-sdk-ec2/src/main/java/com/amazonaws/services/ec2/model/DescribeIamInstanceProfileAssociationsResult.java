@@ -26,7 +26,7 @@ public class DescribeIamInstanceProfileAssociationsResult extends com.amazonaws.
 
     /**
      * <p>
-     * Information about one or more IAM instance profile associations.
+     * Information about the IAM instance profile associations.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IamInstanceProfileAssociation> iamInstanceProfileAssociations;
@@ -40,10 +40,10 @@ public class DescribeIamInstanceProfileAssociationsResult extends com.amazonaws.
 
     /**
      * <p>
-     * Information about one or more IAM instance profile associations.
+     * Information about the IAM instance profile associations.
      * </p>
      * 
-     * @return Information about one or more IAM instance profile associations.
+     * @return Information about the IAM instance profile associations.
      */
 
     public java.util.List<IamInstanceProfileAssociation> getIamInstanceProfileAssociations() {
@@ -55,11 +55,11 @@ public class DescribeIamInstanceProfileAssociationsResult extends com.amazonaws.
 
     /**
      * <p>
-     * Information about one or more IAM instance profile associations.
+     * Information about the IAM instance profile associations.
      * </p>
      * 
      * @param iamInstanceProfileAssociations
-     *        Information about one or more IAM instance profile associations.
+     *        Information about the IAM instance profile associations.
      */
 
     public void setIamInstanceProfileAssociations(java.util.Collection<IamInstanceProfileAssociation> iamInstanceProfileAssociations) {
@@ -73,7 +73,7 @@ public class DescribeIamInstanceProfileAssociationsResult extends com.amazonaws.
 
     /**
      * <p>
-     * Information about one or more IAM instance profile associations.
+     * Information about the IAM instance profile associations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeIamInstanceProfileAssociationsResult extends com.amazonaws.
      * </p>
      * 
      * @param iamInstanceProfileAssociations
-     *        Information about one or more IAM instance profile associations.
+     *        Information about the IAM instance profile associations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeIamInstanceProfileAssociationsResult extends com.amazonaws.
 
     /**
      * <p>
-     * Information about one or more IAM instance profile associations.
+     * Information about the IAM instance profile associations.
      * </p>
      * 
      * @param iamInstanceProfileAssociations
-     *        Information about one or more IAM instance profile associations.
+     *        Information about the IAM instance profile associations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

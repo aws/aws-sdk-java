@@ -325,6 +325,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Commerce Analytics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateDataSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -386,6 +387,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Commerce Analytics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSupportDataExport");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * Your request contains too many origin custom headers.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyOriginCustomHeadersException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a Spot Fleet event.
+ * Describes an EC2 Fleet or Spot Fleet event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EventInformation" target="_top">AWS API
@@ -42,8 +42,8 @@ public class EventInformation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the required permissions either to launch or
-     * terminate an instance.
+     * <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet did not have the required permissions either to
+     * launch or terminate an instance.
      * </p>
      * </li>
      * <li>
@@ -65,41 +65,43 @@ public class EventInformation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - The Spot Fleet has been validated and Amazon EC2 is attempting to maintain the target
-     * number of running Spot Instances.
+     * <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and Amazon EC2 is attempting to
+     * maintain the target number of running Spot Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Spot Fleet is canceled and has no running Spot Instances. The Spot Fleet will be
-     * deleted two days after its instances were terminated.
+     * <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running Spot Instances. The
+     * EC2 Fleet or Spot Fleet will be deleted two days after its instances were terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot Instances.
-     * Existing Spot Instances continue to run until they are interrupted or terminated.
+     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch additional
+     * Spot Instances. Existing Spot Instances continue to run until they are interrupted or terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_terminating</code> - The Spot Fleet is canceled and its Spot Instances are terminating.
+     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its Spot Instances are
+     * terminating.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>expired</code> - The Spot Fleet request has expired. A subsequent event indicates that the instances were
-     * terminated, if the request was created with <code>TerminateInstancesWithExpiration</code> set.
+     * <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. A subsequent event indicates that the
+     * instances were terminated, if the request was created with <code>TerminateInstancesWithExpiration</code> set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modify_in_progress</code> - A request to modify the Spot Fleet request was accepted and is in progress.
+     * <code>modify_in_progress</code> - A request to modify the EC2 Fleet or Spot Fleet request was accepted and is in
+     * progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modify_successful</code> - The Spot Fleet request was modified.
+     * <code>modify_successful</code> - The EC2 Fleet or Spot Fleet request was modified.
      * </p>
      * </li>
      * <li>
@@ -110,8 +112,8 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>submitted</code> - The Spot Fleet request is being evaluated and Amazon EC2 is preparing to launch the
-     * target number of Spot Instances.
+     * <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and Amazon EC2 is preparing to
+     * launch the target number of Spot Instances.
      * </p>
      * </li>
      * </ul>
@@ -212,8 +214,8 @@ public class EventInformation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the required permissions either to launch or
-     * terminate an instance.
+     * <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet did not have the required permissions either to
+     * launch or terminate an instance.
      * </p>
      * </li>
      * <li>
@@ -235,41 +237,43 @@ public class EventInformation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - The Spot Fleet has been validated and Amazon EC2 is attempting to maintain the target
-     * number of running Spot Instances.
+     * <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and Amazon EC2 is attempting to
+     * maintain the target number of running Spot Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Spot Fleet is canceled and has no running Spot Instances. The Spot Fleet will be
-     * deleted two days after its instances were terminated.
+     * <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running Spot Instances. The
+     * EC2 Fleet or Spot Fleet will be deleted two days after its instances were terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot Instances.
-     * Existing Spot Instances continue to run until they are interrupted or terminated.
+     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch additional
+     * Spot Instances. Existing Spot Instances continue to run until they are interrupted or terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_terminating</code> - The Spot Fleet is canceled and its Spot Instances are terminating.
+     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its Spot Instances are
+     * terminating.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>expired</code> - The Spot Fleet request has expired. A subsequent event indicates that the instances were
-     * terminated, if the request was created with <code>TerminateInstancesWithExpiration</code> set.
+     * <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. A subsequent event indicates that the
+     * instances were terminated, if the request was created with <code>TerminateInstancesWithExpiration</code> set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modify_in_progress</code> - A request to modify the Spot Fleet request was accepted and is in progress.
+     * <code>modify_in_progress</code> - A request to modify the EC2 Fleet or Spot Fleet request was accepted and is in
+     * progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modify_successful</code> - The Spot Fleet request was modified.
+     * <code>modify_successful</code> - The EC2 Fleet or Spot Fleet request was modified.
      * </p>
      * </li>
      * <li>
@@ -280,8 +284,8 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>submitted</code> - The Spot Fleet request is being evaluated and Amazon EC2 is preparing to launch the
-     * target number of Spot Instances.
+     * <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and Amazon EC2 is preparing to
+     * launch the target number of Spot Instances.
      * </p>
      * </li>
      * </ul>
@@ -332,8 +336,8 @@ public class EventInformation implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the required permissions either to launch
-     *        or terminate an instance.
+     *        <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet did not have the required permissions
+     *        either to launch or terminate an instance.
      *        </p>
      *        </li>
      *        <li>
@@ -355,42 +359,45 @@ public class EventInformation implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>active</code> - The Spot Fleet has been validated and Amazon EC2 is attempting to maintain the
-     *        target number of running Spot Instances.
+     *        <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and Amazon EC2 is attempting
+     *        to maintain the target number of running Spot Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Spot Fleet is canceled and has no running Spot Instances. The Spot Fleet will
-     *        be deleted two days after its instances were terminated.
+     *        <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running Spot
+     *        Instances. The EC2 Fleet or Spot Fleet will be deleted two days after its instances were terminated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot Instances.
-     *        Existing Spot Instances continue to run until they are interrupted or terminated.
+     *        <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch
+     *        additional Spot Instances. Existing Spot Instances continue to run until they are interrupted or
+     *        terminated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled_terminating</code> - The Spot Fleet is canceled and its Spot Instances are terminating.
+     *        <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its Spot
+     *        Instances are terminating.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>expired</code> - The Spot Fleet request has expired. A subsequent event indicates that the instances
-     *        were terminated, if the request was created with <code>TerminateInstancesWithExpiration</code> set.
+     *        <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. A subsequent event indicates that
+     *        the instances were terminated, if the request was created with
+     *        <code>TerminateInstancesWithExpiration</code> set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modify_in_progress</code> - A request to modify the Spot Fleet request was accepted and is in
-     *        progress.
+     *        <code>modify_in_progress</code> - A request to modify the EC2 Fleet or Spot Fleet request was accepted and
+     *        is in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modify_successful</code> - The Spot Fleet request was modified.
+     *        <code>modify_successful</code> - The EC2 Fleet or Spot Fleet request was modified.
      *        </p>
      *        </li>
      *        <li>
@@ -401,8 +408,8 @@ public class EventInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>submitted</code> - The Spot Fleet request is being evaluated and Amazon EC2 is preparing to launch
-     *        the target number of Spot Instances.
+     *        <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and Amazon EC2 is
+     *        preparing to launch the target number of Spot Instances.
      *        </p>
      *        </li>
      *        </ul>
@@ -459,8 +466,8 @@ public class EventInformation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the required permissions either to launch or
-     * terminate an instance.
+     * <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet did not have the required permissions either to
+     * launch or terminate an instance.
      * </p>
      * </li>
      * <li>
@@ -482,41 +489,43 @@ public class EventInformation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - The Spot Fleet has been validated and Amazon EC2 is attempting to maintain the target
-     * number of running Spot Instances.
+     * <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and Amazon EC2 is attempting to
+     * maintain the target number of running Spot Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Spot Fleet is canceled and has no running Spot Instances. The Spot Fleet will be
-     * deleted two days after its instances were terminated.
+     * <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running Spot Instances. The
+     * EC2 Fleet or Spot Fleet will be deleted two days after its instances were terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot Instances.
-     * Existing Spot Instances continue to run until they are interrupted or terminated.
+     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch additional
+     * Spot Instances. Existing Spot Instances continue to run until they are interrupted or terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_terminating</code> - The Spot Fleet is canceled and its Spot Instances are terminating.
+     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its Spot Instances are
+     * terminating.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>expired</code> - The Spot Fleet request has expired. A subsequent event indicates that the instances were
-     * terminated, if the request was created with <code>TerminateInstancesWithExpiration</code> set.
+     * <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. A subsequent event indicates that the
+     * instances were terminated, if the request was created with <code>TerminateInstancesWithExpiration</code> set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modify_in_progress</code> - A request to modify the Spot Fleet request was accepted and is in progress.
+     * <code>modify_in_progress</code> - A request to modify the EC2 Fleet or Spot Fleet request was accepted and is in
+     * progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modify_successful</code> - The Spot Fleet request was modified.
+     * <code>modify_successful</code> - The EC2 Fleet or Spot Fleet request was modified.
      * </p>
      * </li>
      * <li>
@@ -527,8 +536,8 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>submitted</code> - The Spot Fleet request is being evaluated and Amazon EC2 is preparing to launch the
-     * target number of Spot Instances.
+     * <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and Amazon EC2 is preparing to
+     * launch the target number of Spot Instances.
      * </p>
      * </li>
      * </ul>
@@ -578,8 +587,8 @@ public class EventInformation implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the required permissions either to launch
-     *         or terminate an instance.
+     *         <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet did not have the required permissions
+     *         either to launch or terminate an instance.
      *         </p>
      *         </li>
      *         <li>
@@ -601,43 +610,45 @@ public class EventInformation implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>active</code> - The Spot Fleet has been validated and Amazon EC2 is attempting to maintain the
-     *         target number of running Spot Instances.
+     *         <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and Amazon EC2 is attempting
+     *         to maintain the target number of running Spot Instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cancelled</code> - The Spot Fleet is canceled and has no running Spot Instances. The Spot Fleet
-     *         will be deleted two days after its instances were terminated.
+     *         <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running Spot
+     *         Instances. The EC2 Fleet or Spot Fleet will be deleted two days after its instances were terminated.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot
-     *         Instances. Existing Spot Instances continue to run until they are interrupted or terminated.
+     *         <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch
+     *         additional Spot Instances. Existing Spot Instances continue to run until they are interrupted or
+     *         terminated.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cancelled_terminating</code> - The Spot Fleet is canceled and its Spot Instances are terminating.
+     *         <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its Spot
+     *         Instances are terminating.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>expired</code> - The Spot Fleet request has expired. A subsequent event indicates that the
-     *         instances were terminated, if the request was created with <code>TerminateInstancesWithExpiration</code>
-     *         set.
+     *         <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. A subsequent event indicates that
+     *         the instances were terminated, if the request was created with
+     *         <code>TerminateInstancesWithExpiration</code> set.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>modify_in_progress</code> - A request to modify the Spot Fleet request was accepted and is in
-     *         progress.
+     *         <code>modify_in_progress</code> - A request to modify the EC2 Fleet or Spot Fleet request was accepted
+     *         and is in progress.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>modify_successful</code> - The Spot Fleet request was modified.
+     *         <code>modify_successful</code> - The EC2 Fleet or Spot Fleet request was modified.
      *         </p>
      *         </li>
      *         <li>
@@ -648,8 +659,8 @@ public class EventInformation implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>submitted</code> - The Spot Fleet request is being evaluated and Amazon EC2 is preparing to launch
-     *         the target number of Spot Instances.
+     *         <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and Amazon EC2 is
+     *         preparing to launch the target number of Spot Instances.
      *         </p>
      *         </li>
      *         </ul>
@@ -706,8 +717,8 @@ public class EventInformation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the required permissions either to launch or
-     * terminate an instance.
+     * <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet did not have the required permissions either to
+     * launch or terminate an instance.
      * </p>
      * </li>
      * <li>
@@ -729,41 +740,43 @@ public class EventInformation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - The Spot Fleet has been validated and Amazon EC2 is attempting to maintain the target
-     * number of running Spot Instances.
+     * <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and Amazon EC2 is attempting to
+     * maintain the target number of running Spot Instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Spot Fleet is canceled and has no running Spot Instances. The Spot Fleet will be
-     * deleted two days after its instances were terminated.
+     * <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running Spot Instances. The
+     * EC2 Fleet or Spot Fleet will be deleted two days after its instances were terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot Instances.
-     * Existing Spot Instances continue to run until they are interrupted or terminated.
+     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch additional
+     * Spot Instances. Existing Spot Instances continue to run until they are interrupted or terminated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_terminating</code> - The Spot Fleet is canceled and its Spot Instances are terminating.
+     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its Spot Instances are
+     * terminating.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>expired</code> - The Spot Fleet request has expired. A subsequent event indicates that the instances were
-     * terminated, if the request was created with <code>TerminateInstancesWithExpiration</code> set.
+     * <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. A subsequent event indicates that the
+     * instances were terminated, if the request was created with <code>TerminateInstancesWithExpiration</code> set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modify_in_progress</code> - A request to modify the Spot Fleet request was accepted and is in progress.
+     * <code>modify_in_progress</code> - A request to modify the EC2 Fleet or Spot Fleet request was accepted and is in
+     * progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>modify_successful</code> - The Spot Fleet request was modified.
+     * <code>modify_successful</code> - The EC2 Fleet or Spot Fleet request was modified.
      * </p>
      * </li>
      * <li>
@@ -774,8 +787,8 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>submitted</code> - The Spot Fleet request is being evaluated and Amazon EC2 is preparing to launch the
-     * target number of Spot Instances.
+     * <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and Amazon EC2 is preparing to
+     * launch the target number of Spot Instances.
      * </p>
      * </li>
      * </ul>
@@ -826,8 +839,8 @@ public class EventInformation implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the required permissions either to launch
-     *        or terminate an instance.
+     *        <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet did not have the required permissions
+     *        either to launch or terminate an instance.
      *        </p>
      *        </li>
      *        <li>
@@ -849,42 +862,45 @@ public class EventInformation implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>active</code> - The Spot Fleet has been validated and Amazon EC2 is attempting to maintain the
-     *        target number of running Spot Instances.
+     *        <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and Amazon EC2 is attempting
+     *        to maintain the target number of running Spot Instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Spot Fleet is canceled and has no running Spot Instances. The Spot Fleet will
-     *        be deleted two days after its instances were terminated.
+     *        <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running Spot
+     *        Instances. The EC2 Fleet or Spot Fleet will be deleted two days after its instances were terminated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot Instances.
-     *        Existing Spot Instances continue to run until they are interrupted or terminated.
+     *        <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does not launch
+     *        additional Spot Instances. Existing Spot Instances continue to run until they are interrupted or
+     *        terminated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled_terminating</code> - The Spot Fleet is canceled and its Spot Instances are terminating.
+     *        <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and its Spot
+     *        Instances are terminating.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>expired</code> - The Spot Fleet request has expired. A subsequent event indicates that the instances
-     *        were terminated, if the request was created with <code>TerminateInstancesWithExpiration</code> set.
+     *        <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. A subsequent event indicates that
+     *        the instances were terminated, if the request was created with
+     *        <code>TerminateInstancesWithExpiration</code> set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modify_in_progress</code> - A request to modify the Spot Fleet request was accepted and is in
-     *        progress.
+     *        <code>modify_in_progress</code> - A request to modify the EC2 Fleet or Spot Fleet request was accepted and
+     *        is in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>modify_successful</code> - The Spot Fleet request was modified.
+     *        <code>modify_successful</code> - The EC2 Fleet or Spot Fleet request was modified.
      *        </p>
      *        </li>
      *        <li>
@@ -895,8 +911,8 @@ public class EventInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>submitted</code> - The Spot Fleet request is being evaluated and Amazon EC2 is preparing to launch
-     *        the target number of Spot Instances.
+     *        <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and Amazon EC2 is
+     *        preparing to launch the target number of Spot Instances.
      *        </p>
      *        </li>
      *        </ul>

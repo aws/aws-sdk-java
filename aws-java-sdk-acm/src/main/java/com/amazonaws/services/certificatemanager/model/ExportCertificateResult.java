@@ -37,7 +37,8 @@ public class ExportCertificateResult extends com.amazonaws.AmazonWebServiceResul
     private String certificateChain;
     /**
      * <p>
-     * The PEM-encoded private key associated with the public key in the certificate.
+     * The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format
+     * and is base64 PEM-encoded.
      * </p>
      */
     private String privateKey;
@@ -124,11 +125,13 @@ public class ExportCertificateResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The PEM-encoded private key associated with the public key in the certificate.
+     * The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format
+     * and is base64 PEM-encoded.
      * </p>
      * 
      * @param privateKey
-     *        The PEM-encoded private key associated with the public key in the certificate.
+     *        The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8
+     *        format and is base64 PEM-encoded.
      */
 
     public void setPrivateKey(String privateKey) {
@@ -137,10 +140,12 @@ public class ExportCertificateResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The PEM-encoded private key associated with the public key in the certificate.
+     * The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format
+     * and is base64 PEM-encoded.
      * </p>
      * 
-     * @return The PEM-encoded private key associated with the public key in the certificate.
+     * @return The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8
+     *         format and is base64 PEM-encoded.
      */
 
     public String getPrivateKey() {
@@ -149,11 +154,13 @@ public class ExportCertificateResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The PEM-encoded private key associated with the public key in the certificate.
+     * The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format
+     * and is base64 PEM-encoded.
      * </p>
      * 
      * @param privateKey
-     *        The PEM-encoded private key associated with the public key in the certificate.
+     *        The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8
+     *        format and is base64 PEM-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

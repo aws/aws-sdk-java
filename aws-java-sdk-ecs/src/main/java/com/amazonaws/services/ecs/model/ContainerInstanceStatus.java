@@ -21,7 +21,10 @@ import javax.annotation.Generated;
 public enum ContainerInstanceStatus {
 
     ACTIVE("ACTIVE"),
-    DRAINING("DRAINING");
+    DRAINING("DRAINING"),
+    REGISTERING("REGISTERING"),
+    DEREGISTERING("DEREGISTERING"),
+    REGISTRATION_FAILED("REGISTRATION_FAILED");
 
     private String value;
 

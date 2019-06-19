@@ -159,6 +159,26 @@ public class AbstractDynamoDBMapper implements IDynamoDBMapper {
     }
 
     @Override
+    public void transactionWrite(TransactionWriteRequest transactionWriteRequest) {
+        transactionWrite(transactionWriteRequest, (DynamoDBMapperConfig) null);
+    }
+
+    @Override
+    public void transactionWrite(TransactionWriteRequest transactionWriteRequest, DynamoDBMapperConfig config) {
+        throw new UnsupportedOperationException("operation not supported in " + getClass());
+    }
+
+    @Override
+    public List<Object> transactionLoad(TransactionLoadRequest transactionLoadRequest) {
+        return transactionLoad(transactionLoadRequest, (DynamoDBMapperConfig) null);
+    }
+
+    @Override
+    public List<Object> transactionLoad(TransactionLoadRequest transactionLoadRequest, DynamoDBMapperConfig config) {
+        throw new UnsupportedOperationException("operation not supported in " + getClass());
+    }
+
+    @Override
     public List<FailedBatch> batchDelete(Iterable<? extends Object> objectsToDelete) {
         return batchWrite(Collections.emptyList(), objectsToDelete, config);
     }

@@ -48,6 +48,10 @@ public class ReservationResourceSpecificationJsonUnmarshaller implements Unmarsh
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("channelClass", targetDepth)) {
+                    context.nextToken();
+                    reservationResourceSpecification.setChannelClass(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("codec", targetDepth)) {
                     context.nextToken();
                     reservationResourceSpecification.setCodec(context.getUnmarshaller(String.class).unmarshall(context));

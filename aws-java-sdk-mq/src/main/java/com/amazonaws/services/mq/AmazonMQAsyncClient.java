@@ -326,6 +326,73 @@ public class AmazonMQAsyncClient extends AmazonMQClient implements AmazonMQAsync
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeBrokerEngineTypesResult> describeBrokerEngineTypesAsync(DescribeBrokerEngineTypesRequest request) {
+
+        return describeBrokerEngineTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBrokerEngineTypesResult> describeBrokerEngineTypesAsync(final DescribeBrokerEngineTypesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeBrokerEngineTypesRequest, DescribeBrokerEngineTypesResult> asyncHandler) {
+        final DescribeBrokerEngineTypesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeBrokerEngineTypesResult>() {
+            @Override
+            public DescribeBrokerEngineTypesResult call() throws Exception {
+                DescribeBrokerEngineTypesResult result = null;
+
+                try {
+                    result = executeDescribeBrokerEngineTypes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBrokerInstanceOptionsResult> describeBrokerInstanceOptionsAsync(DescribeBrokerInstanceOptionsRequest request) {
+
+        return describeBrokerInstanceOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBrokerInstanceOptionsResult> describeBrokerInstanceOptionsAsync(
+            final DescribeBrokerInstanceOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeBrokerInstanceOptionsRequest, DescribeBrokerInstanceOptionsResult> asyncHandler) {
+        final DescribeBrokerInstanceOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeBrokerInstanceOptionsResult>() {
+            @Override
+            public DescribeBrokerInstanceOptionsResult call() throws Exception {
+                DescribeBrokerInstanceOptionsResult result = null;
+
+                try {
+                    result = executeDescribeBrokerInstanceOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeConfigurationResult> describeConfigurationAsync(DescribeConfigurationRequest request) {
 
         return describeConfigurationAsync(request, null);

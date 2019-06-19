@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for M2tsScte35Control
+ * M2ts Scte35 Control
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M2tsScte35Control {

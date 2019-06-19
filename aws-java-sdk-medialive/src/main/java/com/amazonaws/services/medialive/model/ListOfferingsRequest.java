@@ -27,6 +27,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+     */
+    private String channelClass;
+    /**
      * Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
      */
     private String channelConfiguration;
@@ -54,6 +58,40 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
      */
     private String videoQuality;
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+     * 
+     * @param channelClass
+     *        Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+     */
+
+    public void setChannelClass(String channelClass) {
+        this.channelClass = channelClass;
+    }
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+     * 
+     * @return Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+     */
+
+    public String getChannelClass() {
+        return this.channelClass;
+    }
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+     * 
+     * @param channelClass
+     *        Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListOfferingsRequest withChannelClass(String channelClass) {
+        setChannelClass(channelClass);
+        return this;
+    }
 
     /**
      * Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
@@ -391,6 +429,8 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getChannelClass() != null)
+            sb.append("ChannelClass: ").append(getChannelClass()).append(",");
         if (getChannelConfiguration() != null)
             sb.append("ChannelConfiguration: ").append(getChannelConfiguration()).append(",");
         if (getCodec() != null)
@@ -425,6 +465,10 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof ListOfferingsRequest == false)
             return false;
         ListOfferingsRequest other = (ListOfferingsRequest) obj;
+        if (other.getChannelClass() == null ^ this.getChannelClass() == null)
+            return false;
+        if (other.getChannelClass() != null && other.getChannelClass().equals(this.getChannelClass()) == false)
+            return false;
         if (other.getChannelConfiguration() == null ^ this.getChannelConfiguration() == null)
             return false;
         if (other.getChannelConfiguration() != null && other.getChannelConfiguration().equals(this.getChannelConfiguration()) == false)
@@ -473,6 +517,7 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getChannelClass() == null) ? 0 : getChannelClass().hashCode());
         hashCode = prime * hashCode + ((getChannelConfiguration() == null) ? 0 : getChannelConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCodec() == null) ? 0 : getCodec().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());

@@ -34,6 +34,12 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private HttpRoute httpRoute;
+    /**
+     * <p>
+     * The TCP routing information for the route.
+     * </p>
+     */
+    private TcpRoute tcpRoute;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The TCP routing information for the route.
+     * </p>
+     * 
+     * @param tcpRoute
+     *        The TCP routing information for the route.
+     */
+
+    public void setTcpRoute(TcpRoute tcpRoute) {
+        this.tcpRoute = tcpRoute;
+    }
+
+    /**
+     * <p>
+     * The TCP routing information for the route.
+     * </p>
+     * 
+     * @return The TCP routing information for the route.
+     */
+
+    public TcpRoute getTcpRoute() {
+        return this.tcpRoute;
+    }
+
+    /**
+     * <p>
+     * The TCP routing information for the route.
+     * </p>
+     * 
+     * @param tcpRoute
+     *        The TCP routing information for the route.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RouteSpec withTcpRoute(TcpRoute tcpRoute) {
+        setTcpRoute(tcpRoute);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHttpRoute() != null)
-            sb.append("HttpRoute: ").append(getHttpRoute());
+            sb.append("HttpRoute: ").append(getHttpRoute()).append(",");
+        if (getTcpRoute() != null)
+            sb.append("TcpRoute: ").append(getTcpRoute());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHttpRoute() != null && other.getHttpRoute().equals(this.getHttpRoute()) == false)
             return false;
+        if (other.getTcpRoute() == null ^ this.getTcpRoute() == null)
+            return false;
+        if (other.getTcpRoute() != null && other.getTcpRoute().equals(this.getTcpRoute()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getHttpRoute() == null) ? 0 : getHttpRoute().hashCode());
+        hashCode = prime * hashCode + ((getTcpRoute() == null) ? 0 : getTcpRoute().hashCode());
         return hashCode;
     }
 

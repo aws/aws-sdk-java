@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteDirectConnectGatewayAssociationRequestMarshaller {
 
+    private static final MarshallingInfo<String> ASSOCIATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associationId").build();
     private static final MarshallingInfo<String> DIRECTCONNECTGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("directConnectGatewayId").build();
     private static final MarshallingInfo<String> VIRTUALGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class DeleteDirectConnectGatewayAssociationRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(deleteDirectConnectGatewayAssociationRequest.getAssociationId(), ASSOCIATIONID_BINDING);
             protocolMarshaller.marshall(deleteDirectConnectGatewayAssociationRequest.getDirectConnectGatewayId(), DIRECTCONNECTGATEWAYID_BINDING);
             protocolMarshaller.marshall(deleteDirectConnectGatewayAssociationRequest.getVirtualGatewayId(), VIRTUALGATEWAYID_BINDING);
         } catch (Exception e) {

@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBInstance" target="_top">AWS API
  *      Documentation</a>
@@ -28,10 +27,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The database name.
-     * </p>
-     * <p>
-     * Type: String
+     * Not supported.
      * </p>
      */
     private String dBName;
@@ -132,7 +128,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private java.util.List<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The EC2 Availability Zone that the DB instance is created in.
+     * The EC2 Availability Zone that the DB instance is created in
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
@@ -314,12 +310,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String characterSetName;
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      */
     @Deprecated
     private Boolean publiclyAccessible;
-
+    /**
+     * <p>
+     * The tags to assign to the new instance.
+     * </p>
+     */
     private java.util.List<Tag> tags;
     /**
      * <p>
@@ -482,16 +482,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The database name.
-     * </p>
-     * <p>
-     * Type: String
+     * Not supported.
      * </p>
      * 
      * @param dBName
-     *        The database name. </p>
-     *        <p>
-     *        Type: String
+     *        Not supported.
      */
 
     public void setDBName(String dBName) {
@@ -500,15 +495,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The database name.
-     * </p>
-     * <p>
-     * Type: String
+     * Not supported.
      * </p>
      * 
-     * @return The database name. </p>
-     *         <p>
-     *         Type: String
+     * @return Not supported.
      */
 
     public String getDBName() {
@@ -517,16 +507,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The database name.
-     * </p>
-     * <p>
-     * Type: String
+     * Not supported.
      * </p>
      * 
      * @param dBName
-     *        The database name. </p>
-     *        <p>
-     *        Type: String
+     *        Not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -844,7 +829,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param engine
-     *        The name of the database engine to be used for this instance. </p>
+     *        The name of the database engine to be used for this instance.</p>
      *        <p>
      *        Valid Values: <code>neptune</code>
      */
@@ -861,7 +846,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Valid Values: <code>neptune</code>
      * </p>
      * 
-     * @return The name of the database engine to be used for this instance. </p>
+     * @return The name of the database engine to be used for this instance.</p>
      *         <p>
      *         Valid Values: <code>neptune</code>
      */
@@ -879,7 +864,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param engine
-     *        The name of the database engine to be used for this instance. </p>
+     *        The name of the database engine to be used for this instance.</p>
      *        <p>
      *        Valid Values: <code>neptune</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1202,7 +1187,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The EC2 Availability Zone that the DB instance is created in.
+     * The EC2 Availability Zone that the DB instance is created in
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
@@ -1216,7 +1201,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the DB instance is created in. </p>
+     *        The EC2 Availability Zone that the DB instance is created in</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
      *        </p>
@@ -1234,7 +1219,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The EC2 Availability Zone that the DB instance is created in.
+     * The EC2 Availability Zone that the DB instance is created in
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
@@ -1247,7 +1232,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
      * </p>
      * 
-     * @return The EC2 Availability Zone that the DB instance is created in. </p>
+     * @return The EC2 Availability Zone that the DB instance is created in</p>
      *         <p>
      *         Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
      *         </p>
@@ -1266,7 +1251,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The EC2 Availability Zone that the DB instance is created in.
+     * The EC2 Availability Zone that the DB instance is created in
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
@@ -1280,7 +1265,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the DB instance is created in. </p>
+     *        The EC2 Availability Zone that the DB instance is created in</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
      *        </p>
@@ -1372,8 +1357,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).
-     *        </p>
+     *        The time range each week during which system maintenance can occur, in Universal Coordinated Time
+     *        (UTC).</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
@@ -1410,8 +1395,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Constraints: Minimum 30-minute window.
      * </p>
      * 
-     * @return The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).
-     *         </p>
+     * @return The time range each week during which system maintenance can occur, in Universal Coordinated Time
+     *         (UTC).</p>
      *         <p>
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
@@ -1449,8 +1434,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).
-     *        </p>
+     *        The time range each week during which system maintenance can occur, in Universal Coordinated Time
+     *        (UTC).</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
@@ -1813,7 +1798,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param preferredBackupWindow
-     *        The daily time range during which automated backups are created. </p>
+     *        The daily time range during which automated backups are created.</p>
      *        <p>
      *        Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more
      *        information, see <a>CreateDBCluster</a>.
@@ -1832,7 +1817,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * information, see <a>CreateDBCluster</a>.
      * </p>
      * 
-     * @return The daily time range during which automated backups are created. </p>
+     * @return The daily time range during which automated backups are created.</p>
      *         <p>
      *         Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For
      *         more information, see <a>CreateDBCluster</a>.
@@ -1852,7 +1837,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param preferredBackupWindow
-     *        The daily time range during which automated backups are created. </p>
+     *        The daily time range during which automated backups are created.</p>
      *        <p>
      *        Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more
      *        information, see <a>CreateDBCluster</a>.
@@ -2362,11 +2347,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      * 
      * @param publiclyAccessible
-     *        This parameter is not supported.
+     *        This flag should no longer be used.
      */
     @Deprecated
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -2375,10 +2360,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      * 
-     * @return This parameter is not supported.
+     * @return This flag should no longer be used.
      */
     @Deprecated
     public Boolean getPubliclyAccessible() {
@@ -2387,11 +2372,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      * 
      * @param publiclyAccessible
-     *        This parameter is not supported.
+     *        This flag should no longer be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -2402,10 +2387,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      * 
-     * @return This parameter is not supported.
+     * @return This flag should no longer be used.
      */
     @Deprecated
     public Boolean isPubliclyAccessible() {
@@ -2413,7 +2398,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The tags to assign to the new instance.
+     * </p>
+     * 
+     * @return The tags to assign to the new instance.
      */
 
     public java.util.List<Tag> getTags() {
@@ -2421,7 +2410,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The tags to assign to the new instance.
+     * </p>
+     * 
      * @param tags
+     *        The tags to assign to the new instance.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -2435,12 +2429,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * The tags to assign to the new instance.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        The tags to assign to the new instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2455,7 +2453,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The tags to assign to the new instance.
+     * </p>
+     * 
      * @param tags
+     *        The tags to assign to the new instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

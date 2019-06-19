@@ -113,6 +113,11 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListVirtualNodesResult listVirtualNodes(ListVirtualNodesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +129,21 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
 
     @Override
     public ListVirtualServicesResult listVirtualServices(ListVirtualServicesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMeshResult updateMesh(UpdateMeshRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

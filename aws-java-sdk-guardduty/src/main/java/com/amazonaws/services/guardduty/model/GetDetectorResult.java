@@ -23,18 +23,50 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Detector creation timestamp.
+     * </p>
+     */
     private String createdAt;
-
+    /**
+     * <p>
+     * Finding publishing frequency.
+     * </p>
+     */
     private String findingPublishingFrequency;
-
+    /**
+     * <p>
+     * The GuardDuty service role.
+     * </p>
+     */
     private String serviceRole;
-
+    /**
+     * <p>
+     * The detector status.
+     * </p>
+     */
     private String status;
-
+    /**
+     * <p>
+     * Detector last update timestamp.
+     * </p>
+     */
     private String updatedAt;
+    /**
+     * <p>
+     * The tags of the detector resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
+     * <p>
+     * Detector creation timestamp.
+     * </p>
+     * 
      * @param createdAt
+     *        Detector creation timestamp.
      */
 
     public void setCreatedAt(String createdAt) {
@@ -42,7 +74,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * Detector creation timestamp.
+     * </p>
+     * 
+     * @return Detector creation timestamp.
      */
 
     public String getCreatedAt() {
@@ -50,7 +86,12 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Detector creation timestamp.
+     * </p>
+     * 
      * @param createdAt
+     *        Detector creation timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +101,12 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Finding publishing frequency.
+     * </p>
+     * 
      * @param findingPublishingFrequency
+     *        Finding publishing frequency.
      * @see FindingPublishingFrequency
      */
 
@@ -69,7 +115,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * Finding publishing frequency.
+     * </p>
+     * 
+     * @return Finding publishing frequency.
      * @see FindingPublishingFrequency
      */
 
@@ -78,7 +128,12 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Finding publishing frequency.
+     * </p>
+     * 
      * @param findingPublishingFrequency
+     *        Finding publishing frequency.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -89,7 +144,12 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Finding publishing frequency.
+     * </p>
+     * 
      * @param findingPublishingFrequency
+     *        Finding publishing frequency.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -100,7 +160,12 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The GuardDuty service role.
+     * </p>
+     * 
      * @param serviceRole
+     *        The GuardDuty service role.
      */
 
     public void setServiceRole(String serviceRole) {
@@ -108,7 +173,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * The GuardDuty service role.
+     * </p>
+     * 
+     * @return The GuardDuty service role.
      */
 
     public String getServiceRole() {
@@ -116,7 +185,12 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The GuardDuty service role.
+     * </p>
+     * 
      * @param serviceRole
+     *        The GuardDuty service role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +200,12 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The detector status.
+     * </p>
+     * 
      * @param status
+     *        The detector status.
      * @see DetectorStatus
      */
 
@@ -135,7 +214,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * The detector status.
+     * </p>
+     * 
+     * @return The detector status.
      * @see DetectorStatus
      */
 
@@ -144,7 +227,12 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The detector status.
+     * </p>
+     * 
      * @param status
+     *        The detector status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DetectorStatus
      */
@@ -155,7 +243,12 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The detector status.
+     * </p>
+     * 
      * @param status
+     *        The detector status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DetectorStatus
      */
@@ -166,7 +259,12 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Detector last update timestamp.
+     * </p>
+     * 
      * @param updatedAt
+     *        Detector last update timestamp.
      */
 
     public void setUpdatedAt(String updatedAt) {
@@ -174,7 +272,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * Detector last update timestamp.
+     * </p>
+     * 
+     * @return Detector last update timestamp.
      */
 
     public String getUpdatedAt() {
@@ -182,12 +284,78 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Detector last update timestamp.
+     * </p>
+     * 
      * @param updatedAt
+     *        Detector last update timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDetectorResult withUpdatedAt(String updatedAt) {
         setUpdatedAt(updatedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags of the detector resource.
+     * </p>
+     * 
+     * @return The tags of the detector resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags of the detector resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of the detector resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags of the detector resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of the detector resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDetectorResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public GetDetectorResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDetectorResult clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -212,7 +380,9 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -247,6 +417,10 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -260,6 +434,7 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

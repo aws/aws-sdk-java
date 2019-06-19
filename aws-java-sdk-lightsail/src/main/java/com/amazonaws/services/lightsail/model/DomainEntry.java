@@ -61,8 +61,49 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
     private Boolean isAlias;
     /**
      * <p>
-     * The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     * The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
+     * start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
+     * <p>
+     * The following domain entry types can be used:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CNAME</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MX</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SOA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SRV</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TXT</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
     /**
@@ -296,11 +337,92 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     * The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
+     * start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
+     * <p>
+     * The following domain entry types can be used:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CNAME</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MX</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SOA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SRV</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TXT</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     *        The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server
+     *        (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
+     *        <p>
+     *        The following domain entry types can be used:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CNAME</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MX</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SOA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SRV</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TXT</code>
+     *        </p>
+     *        </li>
      */
 
     public void setType(String type) {
@@ -309,10 +431,91 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     * The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
+     * start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
+     * <p>
+     * The following domain entry types can be used:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CNAME</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MX</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SOA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SRV</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TXT</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     * @return The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server
+     *         (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
+     *         <p>
+     *         The following domain entry types can be used:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>A</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CNAME</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MX</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SOA</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SRV</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TXT</code>
+     *         </p>
+     *         </li>
      */
 
     public String getType() {
@@ -321,11 +524,92 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     * The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
+     * start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
+     * <p>
+     * The following domain entry types can be used:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CNAME</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MX</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SOA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SRV</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TXT</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     *        The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server
+     *        (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
+     *        <p>
+     *        The following domain entry types can be used:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CNAME</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MX</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SOA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SRV</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TXT</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

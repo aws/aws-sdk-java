@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.kafka.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class ZookeeperNodeInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attachedENIId").build();
     private static final MarshallingInfo<String> CLIENTVPCIPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientVpcIpAddress").build();
+    private static final MarshallingInfo<List> ENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("endpoints").build();
     private static final MarshallingInfo<Double> ZOOKEEPERID_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("zookeeperId").build();
     private static final MarshallingInfo<String> ZOOKEEPERVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +57,7 @@ public class ZookeeperNodeInfoMarshaller {
         try {
             protocolMarshaller.marshall(zookeeperNodeInfo.getAttachedENIId(), ATTACHEDENIID_BINDING);
             protocolMarshaller.marshall(zookeeperNodeInfo.getClientVpcIpAddress(), CLIENTVPCIPADDRESS_BINDING);
+            protocolMarshaller.marshall(zookeeperNodeInfo.getEndpoints(), ENDPOINTS_BINDING);
             protocolMarshaller.marshall(zookeeperNodeInfo.getZookeeperId(), ZOOKEEPERID_BINDING);
             protocolMarshaller.marshall(zookeeperNodeInfo.getZookeeperVersion(), ZOOKEEPERVERSION_BINDING);
         } catch (Exception e) {

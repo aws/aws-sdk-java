@@ -64,6 +64,13 @@ public class ServiceConfiguration implements Serializable, Cloneable {
     private Boolean acceptanceRequired;
     /**
      * <p>
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
+     * </p>
+     */
+    private Boolean managesVpcEndpoints;
+    /**
+     * <p>
      * The Amazon Resource Names (ARNs) of the Network Load Balancers for the service.
      * </p>
      */
@@ -80,6 +87,12 @@ public class ServiceConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private String privateDnsName;
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -424,6 +437,66 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
+     * </p>
+     * 
+     * @param managesVpcEndpoints
+     *        Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     *        the VPC endpoint API is restricted.
+     */
+
+    public void setManagesVpcEndpoints(Boolean managesVpcEndpoints) {
+        this.managesVpcEndpoints = managesVpcEndpoints;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
+     * </p>
+     * 
+     * @return Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     *         the VPC endpoint API is restricted.
+     */
+
+    public Boolean getManagesVpcEndpoints() {
+        return this.managesVpcEndpoints;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
+     * </p>
+     * 
+     * @param managesVpcEndpoints
+     *        Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     *        the VPC endpoint API is restricted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceConfiguration withManagesVpcEndpoints(Boolean managesVpcEndpoints) {
+        setManagesVpcEndpoints(managesVpcEndpoints);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
+     * </p>
+     * 
+     * @return Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     *         the VPC endpoint API is restricted.
+     */
+
+    public Boolean isManagesVpcEndpoints() {
+        return this.managesVpcEndpoints;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Names (ARNs) of the Network Load Balancers for the service.
      * </p>
      * 
@@ -609,6 +682,79 @@ public class ServiceConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     * 
+     * @return Any tags assigned to the service.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the service.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceConfiguration withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceConfiguration withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -632,12 +778,16 @@ public class ServiceConfiguration implements Serializable, Cloneable {
             sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getAcceptanceRequired() != null)
             sb.append("AcceptanceRequired: ").append(getAcceptanceRequired()).append(",");
+        if (getManagesVpcEndpoints() != null)
+            sb.append("ManagesVpcEndpoints: ").append(getManagesVpcEndpoints()).append(",");
         if (getNetworkLoadBalancerArns() != null)
             sb.append("NetworkLoadBalancerArns: ").append(getNetworkLoadBalancerArns()).append(",");
         if (getBaseEndpointDnsNames() != null)
             sb.append("BaseEndpointDnsNames: ").append(getBaseEndpointDnsNames()).append(",");
         if (getPrivateDnsName() != null)
-            sb.append("PrivateDnsName: ").append(getPrivateDnsName());
+            sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -676,6 +826,10 @@ public class ServiceConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getAcceptanceRequired() != null && other.getAcceptanceRequired().equals(this.getAcceptanceRequired()) == false)
             return false;
+        if (other.getManagesVpcEndpoints() == null ^ this.getManagesVpcEndpoints() == null)
+            return false;
+        if (other.getManagesVpcEndpoints() != null && other.getManagesVpcEndpoints().equals(this.getManagesVpcEndpoints()) == false)
+            return false;
         if (other.getNetworkLoadBalancerArns() == null ^ this.getNetworkLoadBalancerArns() == null)
             return false;
         if (other.getNetworkLoadBalancerArns() != null && other.getNetworkLoadBalancerArns().equals(this.getNetworkLoadBalancerArns()) == false)
@@ -687,6 +841,10 @@ public class ServiceConfiguration implements Serializable, Cloneable {
         if (other.getPrivateDnsName() == null ^ this.getPrivateDnsName() == null)
             return false;
         if (other.getPrivateDnsName() != null && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -702,9 +860,11 @@ public class ServiceConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getServiceState() == null) ? 0 : getServiceState().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         hashCode = prime * hashCode + ((getAcceptanceRequired() == null) ? 0 : getAcceptanceRequired().hashCode());
+        hashCode = prime * hashCode + ((getManagesVpcEndpoints() == null) ? 0 : getManagesVpcEndpoints().hashCode());
         hashCode = prime * hashCode + ((getNetworkLoadBalancerArns() == null) ? 0 : getNetworkLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getBaseEndpointDnsNames() == null) ? 0 : getBaseEndpointDnsNames().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

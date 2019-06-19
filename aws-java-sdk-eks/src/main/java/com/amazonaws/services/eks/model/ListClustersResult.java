@@ -32,7 +32,7 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a
-     * <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next
+     * <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next
      * page of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      */
@@ -111,13 +111,13 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a
-     * <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next
+     * <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next
      * page of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the
-     *        results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to
+     *        results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to
      *        retrieve the next page of results. This value is <code>null</code> when there are no more results to
      *        return.
      */
@@ -129,12 +129,12 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a
-     * <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next
+     * <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next
      * page of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
      * @return The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the
-     *         results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to
+     *         results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to
      *         retrieve the next page of results. This value is <code>null</code> when there are no more results to
      *         return.
      */
@@ -146,13 +146,13 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a
-     * <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next
+     * <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next
      * page of results. This value is <code>null</code> when there are no more results to return.
      * </p>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the
-     *        results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to
+     *        results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to
      *        retrieve the next page of results. This value is <code>null</code> when there are no more results to
      *        return.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -28,27 +28,35 @@ public class GetTagValuesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a PaginationToken, use that string for this value to request an additional page of data.
+     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
+     * page of data.
      * </p>
      */
     private String paginationToken;
     /**
      * <p>
-     * The key for which you want to list all existing values in the specified region for the AWS account.
+     * The key for which you want to list all existing values in the specified Region for the AWS account.
      * </p>
      */
     private String key;
+    /**
+     * <p>
+     * A limit that restricts the number of results that are returned per page.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * <p>
      * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a PaginationToken, use that string for this value to request an additional page of data.
+     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
+     * page of data.
      * </p>
      * 
      * @param paginationToken
      *        A string that indicates that additional data is available. Leave this value empty for your initial
-     *        request. If the response includes a PaginationToken, use that string for this value to request an
-     *        additional page of data.
+     *        request. If the response includes a <code>PaginationToken</code>, use that string for this value to
+     *        request an additional page of data.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -58,12 +66,13 @@ public class GetTagValuesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a PaginationToken, use that string for this value to request an additional page of data.
+     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
+     * page of data.
      * </p>
      * 
      * @return A string that indicates that additional data is available. Leave this value empty for your initial
-     *         request. If the response includes a PaginationToken, use that string for this value to request an
-     *         additional page of data.
+     *         request. If the response includes a <code>PaginationToken</code>, use that string for this value to
+     *         request an additional page of data.
      */
 
     public String getPaginationToken() {
@@ -73,13 +82,14 @@ public class GetTagValuesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a PaginationToken, use that string for this value to request an additional page of data.
+     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
+     * page of data.
      * </p>
      * 
      * @param paginationToken
      *        A string that indicates that additional data is available. Leave this value empty for your initial
-     *        request. If the response includes a PaginationToken, use that string for this value to request an
-     *        additional page of data.
+     *        request. If the response includes a <code>PaginationToken</code>, use that string for this value to
+     *        request an additional page of data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +100,11 @@ public class GetTagValuesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The key for which you want to list all existing values in the specified region for the AWS account.
+     * The key for which you want to list all existing values in the specified Region for the AWS account.
      * </p>
      * 
      * @param key
-     *        The key for which you want to list all existing values in the specified region for the AWS account.
+     *        The key for which you want to list all existing values in the specified Region for the AWS account.
      */
 
     public void setKey(String key) {
@@ -103,10 +113,10 @@ public class GetTagValuesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The key for which you want to list all existing values in the specified region for the AWS account.
+     * The key for which you want to list all existing values in the specified Region for the AWS account.
      * </p>
      * 
-     * @return The key for which you want to list all existing values in the specified region for the AWS account.
+     * @return The key for which you want to list all existing values in the specified Region for the AWS account.
      */
 
     public String getKey() {
@@ -115,16 +125,56 @@ public class GetTagValuesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The key for which you want to list all existing values in the specified region for the AWS account.
+     * The key for which you want to list all existing values in the specified Region for the AWS account.
      * </p>
      * 
      * @param key
-     *        The key for which you want to list all existing values in the specified region for the AWS account.
+     *        The key for which you want to list all existing values in the specified Region for the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetTagValuesRequest withKey(String key) {
         setKey(key);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A limit that restricts the number of results that are returned per page.
+     * </p>
+     * 
+     * @param maxResults
+     *        A limit that restricts the number of results that are returned per page.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * A limit that restricts the number of results that are returned per page.
+     * </p>
+     * 
+     * @return A limit that restricts the number of results that are returned per page.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * A limit that restricts the number of results that are returned per page.
+     * </p>
+     * 
+     * @param maxResults
+     *        A limit that restricts the number of results that are returned per page.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTagValuesRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -143,7 +193,9 @@ public class GetTagValuesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getPaginationToken() != null)
             sb.append("PaginationToken: ").append(getPaginationToken()).append(",");
         if (getKey() != null)
-            sb.append("Key: ").append(getKey());
+            sb.append("Key: ").append(getKey()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -166,6 +218,10 @@ public class GetTagValuesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
             return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         return true;
     }
 
@@ -176,6 +232,7 @@ public class GetTagValuesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getPaginationToken() == null) ? 0 : getPaginationToken().hashCode());
         hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

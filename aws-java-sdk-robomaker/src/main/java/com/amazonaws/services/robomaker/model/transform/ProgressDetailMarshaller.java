@@ -29,6 +29,10 @@ public class ProgressDetailMarshaller {
 
     private static final MarshallingInfo<String> CURRENTPROGRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("currentProgress").build();
+    private static final MarshallingInfo<Float> PERCENTDONE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("percentDone").build();
+    private static final MarshallingInfo<Integer> ESTIMATEDTIMEREMAININGSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("estimatedTimeRemainingSeconds").build();
     private static final MarshallingInfo<String> TARGETRESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetResource").build();
 
@@ -49,6 +53,8 @@ public class ProgressDetailMarshaller {
 
         try {
             protocolMarshaller.marshall(progressDetail.getCurrentProgress(), CURRENTPROGRESS_BINDING);
+            protocolMarshaller.marshall(progressDetail.getPercentDone(), PERCENTDONE_BINDING);
+            protocolMarshaller.marshall(progressDetail.getEstimatedTimeRemainingSeconds(), ESTIMATEDTIMEREMAININGSECONDS_BINDING);
             protocolMarshaller.marshall(progressDetail.getTargetResource(), TARGETRESOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

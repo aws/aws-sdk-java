@@ -22,6 +22,7 @@ public enum ConfigurationSetAttribute {
 
     EventDestinations("eventDestinations"),
     TrackingOptions("trackingOptions"),
+    DeliveryOptions("deliveryOptions"),
     ReputationOptions("reputationOptions");
 
     private String value;

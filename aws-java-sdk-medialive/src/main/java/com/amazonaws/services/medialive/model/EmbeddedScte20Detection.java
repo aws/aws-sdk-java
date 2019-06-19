@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for EmbeddedScte20Detection
+ * Embedded Scte20 Detection
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EmbeddedScte20Detection {

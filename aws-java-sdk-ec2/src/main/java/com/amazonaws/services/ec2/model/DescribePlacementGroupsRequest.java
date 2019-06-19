@@ -28,7 +28,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -53,7 +53,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more placement group names.
+     * The names of the placement groups.
      * </p>
      * <p>
      * Default: Describes all your placement groups, or only those otherwise specified.
@@ -63,7 +63,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -85,7 +85,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -115,7 +115,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -138,7 +138,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -170,7 +170,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -198,7 +198,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -232,7 +232,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -255,7 +255,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -284,13 +284,13 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more placement group names.
+     * The names of the placement groups.
      * </p>
      * <p>
      * Default: Describes all your placement groups, or only those otherwise specified.
      * </p>
      * 
-     * @return One or more placement group names.</p>
+     * @return The names of the placement groups.</p>
      *         <p>
      *         Default: Describes all your placement groups, or only those otherwise specified.
      */
@@ -304,14 +304,14 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more placement group names.
+     * The names of the placement groups.
      * </p>
      * <p>
      * Default: Describes all your placement groups, or only those otherwise specified.
      * </p>
      * 
      * @param groupNames
-     *        One or more placement group names.</p>
+     *        The names of the placement groups.</p>
      *        <p>
      *        Default: Describes all your placement groups, or only those otherwise specified.
      */
@@ -327,7 +327,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more placement group names.
+     * The names of the placement groups.
      * </p>
      * <p>
      * Default: Describes all your placement groups, or only those otherwise specified.
@@ -339,7 +339,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </p>
      * 
      * @param groupNames
-     *        One or more placement group names.</p>
+     *        The names of the placement groups.</p>
      *        <p>
      *        Default: Describes all your placement groups, or only those otherwise specified.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -357,14 +357,14 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more placement group names.
+     * The names of the placement groups.
      * </p>
      * <p>
      * Default: Describes all your placement groups, or only those otherwise specified.
      * </p>
      * 
      * @param groupNames
-     *        One or more placement group names.</p>
+     *        The names of the placement groups.</p>
      *        <p>
      *        Default: Describes all your placement groups, or only those otherwise specified.
      * @return Returns a reference to this object so that method calls can be chained together.

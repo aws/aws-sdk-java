@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.workspaces.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class ImportWorkspaceImageRequestMarshaller {
             .marshallLocationName("ImageName").build();
     private static final MarshallingInfo<String> IMAGEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageDescription").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final ImportWorkspaceImageRequestMarshaller instance = new ImportWorkspaceImageRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class ImportWorkspaceImageRequestMarshaller {
             protocolMarshaller.marshall(importWorkspaceImageRequest.getIngestionProcess(), INGESTIONPROCESS_BINDING);
             protocolMarshaller.marshall(importWorkspaceImageRequest.getImageName(), IMAGENAME_BINDING);
             protocolMarshaller.marshall(importWorkspaceImageRequest.getImageDescription(), IMAGEDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(importWorkspaceImageRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

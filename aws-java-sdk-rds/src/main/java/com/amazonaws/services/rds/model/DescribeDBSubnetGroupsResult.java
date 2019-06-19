@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the <a>DescribeDBSubnetGroups</a> action.
+ * Contains the result of a successful invocation of the <code>DescribeDBSubnetGroups</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups" target="_top">AWS API
@@ -35,7 +35,7 @@ public class DescribeDBSubnetGroupsResult extends com.amazonaws.AmazonWebService
     private String marker;
     /**
      * <p>
-     * A list of <a>DBSubnetGroup</a> instances.
+     * A list of <code>DBSubnetGroup</code> instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBSubnetGroup> dBSubnetGroups;
@@ -88,10 +88,10 @@ public class DescribeDBSubnetGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of <a>DBSubnetGroup</a> instances.
+     * A list of <code>DBSubnetGroup</code> instances.
      * </p>
      * 
-     * @return A list of <a>DBSubnetGroup</a> instances.
+     * @return A list of <code>DBSubnetGroup</code> instances.
      */
 
     public java.util.List<DBSubnetGroup> getDBSubnetGroups() {
@@ -103,11 +103,11 @@ public class DescribeDBSubnetGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of <a>DBSubnetGroup</a> instances.
+     * A list of <code>DBSubnetGroup</code> instances.
      * </p>
      * 
      * @param dBSubnetGroups
-     *        A list of <a>DBSubnetGroup</a> instances.
+     *        A list of <code>DBSubnetGroup</code> instances.
      */
 
     public void setDBSubnetGroups(java.util.Collection<DBSubnetGroup> dBSubnetGroups) {
@@ -121,7 +121,7 @@ public class DescribeDBSubnetGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of <a>DBSubnetGroup</a> instances.
+     * A list of <code>DBSubnetGroup</code> instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,7 +130,7 @@ public class DescribeDBSubnetGroupsResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param dBSubnetGroups
-     *        A list of <a>DBSubnetGroup</a> instances.
+     *        A list of <code>DBSubnetGroup</code> instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +146,11 @@ public class DescribeDBSubnetGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of <a>DBSubnetGroup</a> instances.
+     * A list of <code>DBSubnetGroup</code> instances.
      * </p>
      * 
      * @param dBSubnetGroups
-     *        A list of <a>DBSubnetGroup</a> instances.
+     *        A list of <code>DBSubnetGroup</code> instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,9 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A
- * command invocation applies to one instance. For example, if a user executes SendCommand against three instances, then
- * a command invocation is created for each requested instance ID. A command invocation returns status and detail
- * information about a command you executed.
+ * command invocation applies to one instance. For example, if a user runs SendCommand against three instances, then a
+ * command invocation is created for each requested instance ID. A command invocation returns status and detail
+ * information about a command you ran.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CommandInvocation" target="_top">AWS API

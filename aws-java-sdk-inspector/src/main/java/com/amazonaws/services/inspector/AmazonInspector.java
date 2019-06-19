@@ -30,7 +30,7 @@ import com.amazonaws.services.inspector.model.*;
  * <p>
  * Amazon Inspector enables you to analyze the behavior of your AWS resources and to identify potential security issues.
  * For more information, see <a
- * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html"> Amazon Inspector User
+ * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html"> Amazon Inspector User
  * Guide</a>.
  * </p>
  */
@@ -130,7 +130,7 @@ public interface AmazonInspector {
      * already registered, this action also creates and registers a service-linked role to grant Amazon Inspector access
      * to AWS Services needed to perform security assessments. You can create up to 50 assessment targets per AWS
      * account. You can run up to 500 concurrent agents per AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html"> Amazon Inspector
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html"> Amazon Inspector
      * Assessment Targets</a>.
      * </p>
      * 
@@ -578,7 +578,7 @@ public interface AmazonInspector {
     /**
      * <p>
      * Lists the ARNs of the assessment targets within this AWS account. For more information about assessment targets,
-     * see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon Inspector
+     * see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon Inspector
      * Assessment Targets</a>.
      * </p>
      * 

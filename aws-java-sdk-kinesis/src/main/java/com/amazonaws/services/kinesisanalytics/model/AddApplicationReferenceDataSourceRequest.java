@@ -34,8 +34,9 @@ public class AddApplicationReferenceDataSourceRequest extends com.amazonaws.Amaz
     private String applicationName;
     /**
      * <p>
-     * Version of the application for which you are adding the reference data source. You can use the
-     * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * Version of the application for which you are adding the reference data source. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      */
@@ -92,15 +93,17 @@ public class AddApplicationReferenceDataSourceRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Version of the application for which you are adding the reference data source. You can use the
-     * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * Version of the application for which you are adding the reference data source. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Version of the application for which you are adding the reference data source. You can use the
-     *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
-     *        not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *        Version of the application for which you are adding the reference data source. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get the current application version. If the version specified is not
+     *        the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -109,13 +112,15 @@ public class AddApplicationReferenceDataSourceRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Version of the application for which you are adding the reference data source. You can use the
-     * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * Version of the application for which you are adding the reference data source. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
-     * @return Version of the application for which you are adding the reference data source. You can use the
-     *         <a>DescribeApplication</a> operation to get the current application version. If the version specified is
+     * @return Version of the application for which you are adding the reference data source. You can use the <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *         >DescribeApplication</a> operation to get the current application version. If the version specified is
      *         not the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
@@ -125,15 +130,17 @@ public class AddApplicationReferenceDataSourceRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Version of the application for which you are adding the reference data source. You can use the
-     * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * Version of the application for which you are adding the reference data source. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Version of the application for which you are adding the reference data source. You can use the
-     *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
-     *        not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *        Version of the application for which you are adding the reference data source. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get the current application version. If the version specified is not
+     *        the current version, the <code>ConcurrentModificationException</code> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

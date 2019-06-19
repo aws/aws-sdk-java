@@ -52,6 +52,14 @@ public class ProgressDetailJsonUnmarshaller implements Unmarshaller<ProgressDeta
                     context.nextToken();
                     progressDetail.setCurrentProgress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("percentDone", targetDepth)) {
+                    context.nextToken();
+                    progressDetail.setPercentDone(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (context.testExpression("estimatedTimeRemainingSeconds", targetDepth)) {
+                    context.nextToken();
+                    progressDetail.setEstimatedTimeRemainingSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("targetResource", targetDepth)) {
                     context.nextToken();
                     progressDetail.setTargetResource(context.getUnmarshaller(String.class).unmarshall(context));

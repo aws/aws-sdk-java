@@ -31,11 +31,12 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
      * <p>
      * The temporary security credentials, which include an access key ID, a secret access key, and a security token.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that you
-     * make no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but
-     * that can vary. Also, future updates to AWS might require larger sizes.
+     * The size of the security token that STS API operations return is not fixed. We strongly recommend that you make
+     * no assumptions about the maximum size.
      * </p>
+     * </note>
      */
     private Credentials credentials;
     /**
@@ -66,7 +67,7 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
     private Integer packedPolicySize;
     /**
      * <p>
-     * The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the value
+     * The issuing authority of the web identity token presented. For OpenID Connect ID tokens, this contains the value
      * of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the
      * <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.
      * </p>
@@ -84,19 +85,20 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
      * <p>
      * The temporary security credentials, which include an access key ID, a secret access key, and a security token.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that you
-     * make no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but
-     * that can vary. Also, future updates to AWS might require larger sizes.
+     * The size of the security token that STS API operations return is not fixed. We strongly recommend that you make
+     * no assumptions about the maximum size.
      * </p>
+     * </note>
      * 
      * @param credentials
      *        The temporary security credentials, which include an access key ID, a secret access key, and a security
-     *        token.</p>
+     *        token.</p> <note>
      *        <p>
-     *        <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that
-     *        you make no assumptions about the maximum size. As of this writing, the typical size is less than 4096
-     *        bytes, but that can vary. Also, future updates to AWS might require larger sizes.
+     *        The size of the security token that STS API operations return is not fixed. We strongly recommend that you
+     *        make no assumptions about the maximum size.
+     *        </p>
      */
 
     public void setCredentials(Credentials credentials) {
@@ -107,18 +109,19 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
      * <p>
      * The temporary security credentials, which include an access key ID, a secret access key, and a security token.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that you
-     * make no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but
-     * that can vary. Also, future updates to AWS might require larger sizes.
+     * The size of the security token that STS API operations return is not fixed. We strongly recommend that you make
+     * no assumptions about the maximum size.
      * </p>
+     * </note>
      * 
      * @return The temporary security credentials, which include an access key ID, a secret access key, and a security
-     *         token.</p>
+     *         token.</p> <note>
      *         <p>
-     *         <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that
-     *         you make no assumptions about the maximum size. As of this writing, the typical size is less than 4096
-     *         bytes, but that can vary. Also, future updates to AWS might require larger sizes.
+     *         The size of the security token that STS API operations return is not fixed. We strongly recommend that
+     *         you make no assumptions about the maximum size.
+     *         </p>
      */
 
     public Credentials getCredentials() {
@@ -129,19 +132,20 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
      * <p>
      * The temporary security credentials, which include an access key ID, a secret access key, and a security token.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that you
-     * make no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but
-     * that can vary. Also, future updates to AWS might require larger sizes.
+     * The size of the security token that STS API operations return is not fixed. We strongly recommend that you make
+     * no assumptions about the maximum size.
      * </p>
+     * </note>
      * 
      * @param credentials
      *        The temporary security credentials, which include an access key ID, a secret access key, and a security
-     *        token.</p>
+     *        token.</p> <note>
      *        <p>
-     *        <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that
-     *        you make no assumptions about the maximum size. As of this writing, the typical size is less than 4096
-     *        bytes, but that can vary. Also, future updates to AWS might require larger sizes.
+     *        The size of the security token that STS API operations return is not fixed. We strongly recommend that you
+     *        make no assumptions about the maximum size.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,13 +324,13 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the value
+     * The issuing authority of the web identity token presented. For OpenID Connect ID tokens, this contains the value
      * of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the
      * <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.
      * </p>
      * 
      * @param provider
-     *        The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the
+     *        The issuing authority of the web identity token presented. For OpenID Connect ID tokens, this contains the
      *        value of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the
      *        <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.
      */
@@ -337,13 +341,13 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the value
+     * The issuing authority of the web identity token presented. For OpenID Connect ID tokens, this contains the value
      * of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the
      * <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.
      * </p>
      * 
-     * @return The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the
-     *         value of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the
+     * @return The issuing authority of the web identity token presented. For OpenID Connect ID tokens, this contains
+     *         the value of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the
      *         <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.
      */
 
@@ -353,13 +357,13 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the value
+     * The issuing authority of the web identity token presented. For OpenID Connect ID tokens, this contains the value
      * of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the
      * <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.
      * </p>
      * 
      * @param provider
-     *        The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the
+     *        The issuing authority of the web identity token presented. For OpenID Connect ID tokens, this contains the
      *        value of the <code>iss</code> field. For OAuth 2.0 access tokens, this contains the value of the
      *        <code>ProviderId</code> parameter that was passed in the <code>AssumeRoleWithWebIdentity</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.

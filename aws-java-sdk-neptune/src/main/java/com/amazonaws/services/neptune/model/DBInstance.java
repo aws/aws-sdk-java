@@ -215,7 +215,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String secondaryAvailabilityZone;
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      */
     @Deprecated
@@ -254,13 +254,13 @@ public class DBInstance implements Serializable, Cloneable {
     private String dBClusterIdentifier;
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Not supported: The encryption for DB instances is managed by the DB cluster.
      * </p>
      */
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     * Not supported: The encryption for DB instances is managed by the DB cluster.
      * </p>
      */
     private String kmsKeyId;
@@ -1792,11 +1792,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      * 
      * @param publiclyAccessible
-     *        This parameter is not supported.
+     *        This flag should no longer be used.
      */
     @Deprecated
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -1805,10 +1805,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      * 
-     * @return This parameter is not supported.
+     * @return This flag should no longer be used.
      */
     @Deprecated
     public Boolean getPubliclyAccessible() {
@@ -1817,11 +1817,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      * 
      * @param publiclyAccessible
-     *        This parameter is not supported.
+     *        This flag should no longer be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -1832,10 +1832,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      * 
-     * @return This parameter is not supported.
+     * @return This flag should no longer be used.
      */
     @Deprecated
     public Boolean isPubliclyAccessible() {
@@ -2086,11 +2086,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Not supported: The encryption for DB instances is managed by the DB cluster.
      * </p>
      * 
      * @param storageEncrypted
-     *        Specifies whether the DB instance is encrypted.
+     *        Not supported: The encryption for DB instances is managed by the DB cluster.
      */
 
     public void setStorageEncrypted(Boolean storageEncrypted) {
@@ -2099,10 +2099,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Not supported: The encryption for DB instances is managed by the DB cluster.
      * </p>
      * 
-     * @return Specifies whether the DB instance is encrypted.
+     * @return Not supported: The encryption for DB instances is managed by the DB cluster.
      */
 
     public Boolean getStorageEncrypted() {
@@ -2111,11 +2111,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Not supported: The encryption for DB instances is managed by the DB cluster.
      * </p>
      * 
      * @param storageEncrypted
-     *        Specifies whether the DB instance is encrypted.
+     *        Not supported: The encryption for DB instances is managed by the DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2126,10 +2126,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Not supported: The encryption for DB instances is managed by the DB cluster.
      * </p>
      * 
-     * @return Specifies whether the DB instance is encrypted.
+     * @return Not supported: The encryption for DB instances is managed by the DB cluster.
      */
 
     public Boolean isStorageEncrypted() {
@@ -2138,11 +2138,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     * Not supported: The encryption for DB instances is managed by the DB cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     *        Not supported: The encryption for DB instances is managed by the DB cluster.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2151,10 +2151,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     * Not supported: The encryption for DB instances is managed by the DB cluster.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     * @return Not supported: The encryption for DB instances is managed by the DB cluster.
      */
 
     public String getKmsKeyId() {
@@ -2163,11 +2163,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     * Not supported: The encryption for DB instances is managed by the DB cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     *        Not supported: The encryption for DB instances is managed by the DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

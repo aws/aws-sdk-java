@@ -42,8 +42,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The event pattern of the rule. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      */
     private String eventPattern;
@@ -162,13 +162,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The event pattern of the rule. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @param eventPattern
      *        The event pattern of the rule. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
      *        >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
@@ -179,12 +179,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The event pattern of the rule. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @return The event pattern of the rule. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
      *         >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
@@ -195,13 +195,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The event pattern of the rule. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @param eventPattern
      *        The event pattern of the rule. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
      *        >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

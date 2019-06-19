@@ -33,7 +33,7 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
     private String organizationId;
     /**
      * <p>
-     * The identifier for the group to which the members are associated.
+     * The identifier for the group to which the members (users or groups) are associated.
      * </p>
      */
     private String groupId;
@@ -92,11 +92,11 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the group to which the members are associated.
+     * The identifier for the group to which the members (users or groups) are associated.
      * </p>
      * 
      * @param groupId
-     *        The identifier for the group to which the members are associated.
+     *        The identifier for the group to which the members (users or groups) are associated.
      */
 
     public void setGroupId(String groupId) {
@@ -105,10 +105,10 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the group to which the members are associated.
+     * The identifier for the group to which the members (users or groups) are associated.
      * </p>
      * 
-     * @return The identifier for the group to which the members are associated.
+     * @return The identifier for the group to which the members (users or groups) are associated.
      */
 
     public String getGroupId() {
@@ -117,11 +117,11 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the group to which the members are associated.
+     * The identifier for the group to which the members (users or groups) are associated.
      * </p>
      * 
      * @param groupId
-     *        The identifier for the group to which the members are associated.
+     *        The identifier for the group to which the members (users or groups) are associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

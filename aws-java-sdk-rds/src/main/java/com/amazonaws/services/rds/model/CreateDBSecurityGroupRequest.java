@@ -66,7 +66,11 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String dBSecurityGroupDescription;
-
+    /**
+     * <p>
+     * Tags to assign to the DB security group.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
@@ -363,7 +367,11 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * Tags to assign to the DB security group.
+     * </p>
+     * 
+     * @return Tags to assign to the DB security group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -374,7 +382,12 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Tags to assign to the DB security group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the DB security group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -388,12 +401,16 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * Tags to assign to the DB security group.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        Tags to assign to the DB security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -408,7 +425,12 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Tags to assign to the DB security group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the DB security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

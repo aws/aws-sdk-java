@@ -42,13 +42,13 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     private String classification;
     /**
      * <p>
-     * The time this classifier was registered.
+     * The time that this classifier was registered.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The time this classifier was last updated.
+     * The time that this classifier was last updated.
      * </p>
      */
     private java.util.Date lastUpdated;
@@ -61,14 +61,14 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a>.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      */
     private String grokPattern;
     /**
      * <p>
      * Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a>.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      */
     private String customPatterns;
@@ -158,11 +158,11 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was registered.
+     * The time that this classifier was registered.
      * </p>
      * 
      * @param creationTime
-     *        The time this classifier was registered.
+     *        The time that this classifier was registered.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -171,10 +171,10 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was registered.
+     * The time that this classifier was registered.
      * </p>
      * 
-     * @return The time this classifier was registered.
+     * @return The time that this classifier was registered.
      */
 
     public java.util.Date getCreationTime() {
@@ -183,11 +183,11 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was registered.
+     * The time that this classifier was registered.
      * </p>
      * 
      * @param creationTime
-     *        The time this classifier was registered.
+     *        The time that this classifier was registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,11 +198,11 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was last updated.
+     * The time that this classifier was last updated.
      * </p>
      * 
      * @param lastUpdated
-     *        The time this classifier was last updated.
+     *        The time that this classifier was last updated.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -211,10 +211,10 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was last updated.
+     * The time that this classifier was last updated.
      * </p>
      * 
-     * @return The time this classifier was last updated.
+     * @return The time that this classifier was last updated.
      */
 
     public java.util.Date getLastUpdated() {
@@ -223,11 +223,11 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was last updated.
+     * The time that this classifier was last updated.
      * </p>
      * 
      * @param lastUpdated
-     *        The time this classifier was last updated.
+     *        The time that this classifier was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,13 +279,13 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a>.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      * 
      * @param grokPattern
      *        The grok pattern applied to a data store by this classifier. For more information, see built-in patterns
      *        in <a href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom
-     *        Classifers</a>.
+     *        Classifiers</a>.
      */
 
     public void setGrokPattern(String grokPattern) {
@@ -295,12 +295,12 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a>.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      * 
      * @return The grok pattern applied to a data store by this classifier. For more information, see built-in patterns
      *         in <a href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom
-     *         Classifers</a>.
+     *         Classifiers</a>.
      */
 
     public String getGrokPattern() {
@@ -310,13 +310,13 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a>.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      * 
      * @param grokPattern
      *        The grok pattern applied to a data store by this classifier. For more information, see built-in patterns
      *        in <a href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom
-     *        Classifers</a>.
+     *        Classifiers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,12 +328,12 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a>.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      * 
      * @param customPatterns
      *        Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a>.
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      */
 
     public void setCustomPatterns(String customPatterns) {
@@ -343,11 +343,11 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a>.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      * 
      * @return Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a>.
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      */
 
     public String getCustomPatterns() {
@@ -357,12 +357,12 @@ public class GrokClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a>.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * </p>
      * 
      * @param customPatterns
      *        Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a>.
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

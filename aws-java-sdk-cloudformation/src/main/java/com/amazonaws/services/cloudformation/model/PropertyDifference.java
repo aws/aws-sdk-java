@@ -20,8 +20,8 @@ import javax.annotation.Generated;
  * Information about a resource property whose actual value differs from its expected value, as defined in the stack
  * template and any values specified as template parameters. These will be present only for resources whose
  * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated
- * Configuration Changes to Stacks and Resources</a>.
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+ * Unregulated Configuration Changes to Stacks and Resources</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PropertyDifference" target="_top">AWS

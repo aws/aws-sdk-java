@@ -25,7 +25,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For information about setting up receipt rule sets, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
  * Developer Guide</a>.
  * </p>
  * 

@@ -55,6 +55,10 @@ public class DescribeSubnetsResultStaxUnmarshaller implements Unmarshaller<Descr
                     continue;
                 }
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeSubnetsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeSubnetsResult;

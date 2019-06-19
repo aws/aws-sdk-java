@@ -27,25 +27,25 @@ public class ThingConnectivity implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the thing is connected to the AWS IoT service, false if it is not connected.
+     * True if the thing is connected to the AWS IoT service; false if it is not connected.
      * </p>
      */
     private Boolean connected;
     /**
      * <p>
-     * The epoch time (in milliseconds) when the thing last connected or disconnected. Note that if the thing has been
-     * disconnected for more than a few weeks, the time value can be missing.
+     * The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been
+     * disconnected for more than a few weeks, the time value might be missing.
      * </p>
      */
     private Long timestamp;
 
     /**
      * <p>
-     * True if the thing is connected to the AWS IoT service, false if it is not connected.
+     * True if the thing is connected to the AWS IoT service; false if it is not connected.
      * </p>
      * 
      * @param connected
-     *        True if the thing is connected to the AWS IoT service, false if it is not connected.
+     *        True if the thing is connected to the AWS IoT service; false if it is not connected.
      */
 
     public void setConnected(Boolean connected) {
@@ -54,10 +54,10 @@ public class ThingConnectivity implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the thing is connected to the AWS IoT service, false if it is not connected.
+     * True if the thing is connected to the AWS IoT service; false if it is not connected.
      * </p>
      * 
-     * @return True if the thing is connected to the AWS IoT service, false if it is not connected.
+     * @return True if the thing is connected to the AWS IoT service; false if it is not connected.
      */
 
     public Boolean getConnected() {
@@ -66,11 +66,11 @@ public class ThingConnectivity implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the thing is connected to the AWS IoT service, false if it is not connected.
+     * True if the thing is connected to the AWS IoT service; false if it is not connected.
      * </p>
      * 
      * @param connected
-     *        True if the thing is connected to the AWS IoT service, false if it is not connected.
+     *        True if the thing is connected to the AWS IoT service; false if it is not connected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +81,10 @@ public class ThingConnectivity implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the thing is connected to the AWS IoT service, false if it is not connected.
+     * True if the thing is connected to the AWS IoT service; false if it is not connected.
      * </p>
      * 
-     * @return True if the thing is connected to the AWS IoT service, false if it is not connected.
+     * @return True if the thing is connected to the AWS IoT service; false if it is not connected.
      */
 
     public Boolean isConnected() {
@@ -93,13 +93,13 @@ public class ThingConnectivity implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The epoch time (in milliseconds) when the thing last connected or disconnected. Note that if the thing has been
-     * disconnected for more than a few weeks, the time value can be missing.
+     * The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been
+     * disconnected for more than a few weeks, the time value might be missing.
      * </p>
      * 
      * @param timestamp
-     *        The epoch time (in milliseconds) when the thing last connected or disconnected. Note that if the thing has
-     *        been disconnected for more than a few weeks, the time value can be missing.
+     *        The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been
+     *        disconnected for more than a few weeks, the time value might be missing.
      */
 
     public void setTimestamp(Long timestamp) {
@@ -108,12 +108,12 @@ public class ThingConnectivity implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The epoch time (in milliseconds) when the thing last connected or disconnected. Note that if the thing has been
-     * disconnected for more than a few weeks, the time value can be missing.
+     * The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been
+     * disconnected for more than a few weeks, the time value might be missing.
      * </p>
      * 
-     * @return The epoch time (in milliseconds) when the thing last connected or disconnected. Note that if the thing
-     *         has been disconnected for more than a few weeks, the time value can be missing.
+     * @return The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been
+     *         disconnected for more than a few weeks, the time value might be missing.
      */
 
     public Long getTimestamp() {
@@ -122,13 +122,13 @@ public class ThingConnectivity implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The epoch time (in milliseconds) when the thing last connected or disconnected. Note that if the thing has been
-     * disconnected for more than a few weeks, the time value can be missing.
+     * The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been
+     * disconnected for more than a few weeks, the time value might be missing.
      * </p>
      * 
      * @param timestamp
-     *        The epoch time (in milliseconds) when the thing last connected or disconnected. Note that if the thing has
-     *        been disconnected for more than a few weeks, the time value can be missing.
+     *        The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been
+     *        disconnected for more than a few weeks, the time value might be missing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

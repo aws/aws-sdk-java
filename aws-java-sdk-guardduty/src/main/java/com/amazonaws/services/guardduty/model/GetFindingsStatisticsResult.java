@@ -23,11 +23,17 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetFindingsStatisticsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Finding statistics object. */
+    /**
+     * <p>
+     * Finding statistics object.
+     * </p>
+     */
     private FindingStatistics findingStatistics;
 
     /**
+     * <p>
      * Finding statistics object.
+     * </p>
      * 
      * @param findingStatistics
      *        Finding statistics object.
@@ -38,7 +44,9 @@ public class GetFindingsStatisticsResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * Finding statistics object.
+     * </p>
      * 
      * @return Finding statistics object.
      */
@@ -48,7 +56,9 @@ public class GetFindingsStatisticsResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * Finding statistics object.
+     * </p>
      * 
      * @param findingStatistics
      *        Finding statistics object.

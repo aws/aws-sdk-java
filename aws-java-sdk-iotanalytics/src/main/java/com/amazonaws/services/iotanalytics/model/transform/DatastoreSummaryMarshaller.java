@@ -29,6 +29,8 @@ public class DatastoreSummaryMarshaller {
 
     private static final MarshallingInfo<String> DATASTORENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("datastoreName").build();
+    private static final MarshallingInfo<StructuredPojo> DATASTORESTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("datastoreStorage").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -53,6 +55,7 @@ public class DatastoreSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(datastoreSummary.getDatastoreName(), DATASTORENAME_BINDING);
+            protocolMarshaller.marshall(datastoreSummary.getDatastoreStorage(), DATASTORESTORAGE_BINDING);
             protocolMarshaller.marshall(datastoreSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(datastoreSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(datastoreSummary.getLastUpdateTime(), LASTUPDATETIME_BINDING);

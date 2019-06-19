@@ -198,6 +198,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTerminology");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -261,6 +262,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTerminology");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -332,6 +334,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportTerminology");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -392,6 +395,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTerminologies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -584,6 +588,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TranslateText");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

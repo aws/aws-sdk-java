@@ -39,10 +39,22 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Date endTime;
     /**
      * <p>
+     * A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * </p>
+     */
+    private String timeRangeType;
+    /**
+     * <p>
      * Set to <code>true</code> to get summaries for only a subset of available traces.
      * </p>
      */
     private Boolean sampling;
+    /**
+     * <p>
+     * A paramater to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.
+     * </p>
+     */
+    private SamplingStrategy samplingStrategy;
     /**
      * <p>
      * Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.
@@ -138,6 +150,65 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * </p>
+     * 
+     * @param timeRangeType
+     *        A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * @see TimeRangeType
+     */
+
+    public void setTimeRangeType(String timeRangeType) {
+        this.timeRangeType = timeRangeType;
+    }
+
+    /**
+     * <p>
+     * A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * </p>
+     * 
+     * @return A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * @see TimeRangeType
+     */
+
+    public String getTimeRangeType() {
+        return this.timeRangeType;
+    }
+
+    /**
+     * <p>
+     * A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * </p>
+     * 
+     * @param timeRangeType
+     *        A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimeRangeType
+     */
+
+    public GetTraceSummariesRequest withTimeRangeType(String timeRangeType) {
+        setTimeRangeType(timeRangeType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * </p>
+     * 
+     * @param timeRangeType
+     *        A parameter to indicate whether to query trace summaries by TraceId or Event time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimeRangeType
+     */
+
+    public GetTraceSummariesRequest withTimeRangeType(TimeRangeType timeRangeType) {
+        this.timeRangeType = timeRangeType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Set to <code>true</code> to get summaries for only a subset of available traces.
      * </p>
      * 
@@ -186,6 +257,49 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public Boolean isSampling() {
         return this.sampling;
+    }
+
+    /**
+     * <p>
+     * A paramater to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.
+     * </p>
+     * 
+     * @param samplingStrategy
+     *        A paramater to indicate whether to enable sampling on trace summaries. Input parameters are Name and
+     *        Value.
+     */
+
+    public void setSamplingStrategy(SamplingStrategy samplingStrategy) {
+        this.samplingStrategy = samplingStrategy;
+    }
+
+    /**
+     * <p>
+     * A paramater to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.
+     * </p>
+     * 
+     * @return A paramater to indicate whether to enable sampling on trace summaries. Input parameters are Name and
+     *         Value.
+     */
+
+    public SamplingStrategy getSamplingStrategy() {
+        return this.samplingStrategy;
+    }
+
+    /**
+     * <p>
+     * A paramater to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.
+     * </p>
+     * 
+     * @param samplingStrategy
+     *        A paramater to indicate whether to enable sampling on trace summaries. Input parameters are Name and
+     *        Value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTraceSummariesRequest withSamplingStrategy(SamplingStrategy samplingStrategy) {
+        setSamplingStrategy(samplingStrategy);
+        return this;
     }
 
     /**
@@ -287,8 +401,12 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getTimeRangeType() != null)
+            sb.append("TimeRangeType: ").append(getTimeRangeType()).append(",");
         if (getSampling() != null)
             sb.append("Sampling: ").append(getSampling()).append(",");
+        if (getSamplingStrategy() != null)
+            sb.append("SamplingStrategy: ").append(getSamplingStrategy()).append(",");
         if (getFilterExpression() != null)
             sb.append("FilterExpression: ").append(getFilterExpression()).append(",");
         if (getNextToken() != null)
@@ -315,9 +433,17 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
+        if (other.getTimeRangeType() == null ^ this.getTimeRangeType() == null)
+            return false;
+        if (other.getTimeRangeType() != null && other.getTimeRangeType().equals(this.getTimeRangeType()) == false)
+            return false;
         if (other.getSampling() == null ^ this.getSampling() == null)
             return false;
         if (other.getSampling() != null && other.getSampling().equals(this.getSampling()) == false)
+            return false;
+        if (other.getSamplingStrategy() == null ^ this.getSamplingStrategy() == null)
+            return false;
+        if (other.getSamplingStrategy() != null && other.getSamplingStrategy().equals(this.getSamplingStrategy()) == false)
             return false;
         if (other.getFilterExpression() == null ^ this.getFilterExpression() == null)
             return false;
@@ -337,7 +463,9 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getTimeRangeType() == null) ? 0 : getTimeRangeType().hashCode());
         hashCode = prime * hashCode + ((getSampling() == null) ? 0 : getSampling().hashCode());
+        hashCode = prime * hashCode + ((getSamplingStrategy() == null) ? 0 : getSamplingStrategy().hashCode());
         hashCode = prime * hashCode + ((getFilterExpression() == null) ? 0 : getFilterExpression().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

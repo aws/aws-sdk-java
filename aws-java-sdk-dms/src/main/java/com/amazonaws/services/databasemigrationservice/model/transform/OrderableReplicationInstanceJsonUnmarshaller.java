@@ -76,6 +76,10 @@ public class OrderableReplicationInstanceJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     orderableReplicationInstance.setIncludedAllocatedStorage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    context.nextToken();
+                    orderableReplicationInstance.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

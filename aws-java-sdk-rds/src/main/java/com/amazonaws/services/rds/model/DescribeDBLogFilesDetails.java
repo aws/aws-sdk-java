@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a response element to <a>DescribeDBLogFiles</a>.
+ * This data type is used as a response element to <code>DescribeDBLogFiles</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFilesDetails" target="_top">AWS API

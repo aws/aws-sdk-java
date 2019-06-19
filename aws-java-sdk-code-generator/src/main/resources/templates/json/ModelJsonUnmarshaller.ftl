@@ -64,7 +64,7 @@ public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.
     <#else>
         <@PayloadUnmarshallerMacro.content shape />
      </#if>
-<#elseif shape.unboundMembers?has_content>
+<#elseif shape.unboundMembers?has_content || (shape.hasNoMembers() && shape.shapeType != "Response") >
     <@PayloadUnmarshallerMacro.content shape />
 </#if>
 

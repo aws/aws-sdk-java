@@ -25,14 +25,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The Amazon Resource Name (ARN) of the resource that you want to view tags for. */
+    /**
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the
+     * tags.
+     */
     private String resourceArn;
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to view tags for.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the
+     * tags.
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource that you want to view tags for.
+     *        The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list
+     *        the tags.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -40,9 +45,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to view tags for.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the
+     * tags.
      * 
-     * @return The Amazon Resource Name (ARN) of the resource that you want to view tags for.
+     * @return The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list
+     *         the tags.
      */
 
     public String getResourceArn() {
@@ -50,10 +57,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to view tags for.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the
+     * tags.
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource that you want to view tags for.
+     *        The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list
+     *        the tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

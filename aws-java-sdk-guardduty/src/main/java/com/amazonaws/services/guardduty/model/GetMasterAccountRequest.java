@@ -25,11 +25,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetMasterAccountRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID of the detector of the GuardDuty member account. */
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty member account.
+     * </p>
+     */
     private String detectorId;
 
     /**
+     * <p>
      * The unique ID of the detector of the GuardDuty member account.
+     * </p>
      * 
      * @param detectorId
      *        The unique ID of the detector of the GuardDuty member account.
@@ -40,7 +46,9 @@ public class GetMasterAccountRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
      * The unique ID of the detector of the GuardDuty member account.
+     * </p>
      * 
      * @return The unique ID of the detector of the GuardDuty member account.
      */
@@ -50,7 +58,9 @@ public class GetMasterAccountRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
      * The unique ID of the detector of the GuardDuty member account.
+     * </p>
      * 
      * @param detectorId
      *        The unique ID of the detector of the GuardDuty member account.

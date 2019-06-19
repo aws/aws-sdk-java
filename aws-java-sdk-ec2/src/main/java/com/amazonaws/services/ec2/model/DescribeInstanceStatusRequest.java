@@ -28,7 +28,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -114,7 +114,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * <p>
      * Default: Describes all your instances.
@@ -151,7 +151,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -234,7 +234,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -328,7 +328,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -412,7 +412,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -508,7 +508,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -597,7 +597,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -695,7 +695,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -779,7 +779,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -872,7 +872,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * <p>
      * Default: Describes all your instances.
@@ -881,7 +881,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * Constraints: Maximum 100 explicitly specified instance IDs.
      * </p>
      * 
-     * @return One or more instance IDs.</p>
+     * @return The instance IDs.</p>
      *         <p>
      *         Default: Describes all your instances.
      *         </p>
@@ -898,7 +898,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * <p>
      * Default: Describes all your instances.
@@ -908,7 +908,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.</p>
+     *        The instance IDs.</p>
      *        <p>
      *        Default: Describes all your instances.
      *        </p>
@@ -927,7 +927,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * <p>
      * Default: Describes all your instances.
@@ -942,7 +942,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.</p>
+     *        The instance IDs.</p>
      *        <p>
      *        Default: Describes all your instances.
      *        </p>
@@ -963,7 +963,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * <p>
      * Default: Describes all your instances.
@@ -973,7 +973,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.</p>
+     *        The instance IDs.</p>
      *        <p>
      *        Default: Describes all your instances.
      *        </p>

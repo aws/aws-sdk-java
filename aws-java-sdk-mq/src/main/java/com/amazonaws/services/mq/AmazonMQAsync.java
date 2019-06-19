@@ -180,7 +180,7 @@ public interface AmazonMQAsync extends AmazonMQ {
             com.amazonaws.handlers.AsyncHandler<DeleteBrokerRequest, DeleteBrokerResult> asyncHandler);
 
     /**
-     * Remove a tag from a resource.
+     * Removes a tag from a resource.
      * 
      * @param deleteTagsRequest
      * @return A Java Future containing the result of the DeleteTags operation returned by the service.
@@ -191,7 +191,7 @@ public interface AmazonMQAsync extends AmazonMQ {
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest);
 
     /**
-     * Remove a tag from a resource.
+     * Removes a tag from a resource.
      * 
      * @param deleteTagsRequest
      * @param asyncHandler
@@ -259,6 +259,66 @@ public interface AmazonMQAsync extends AmazonMQ {
      */
     java.util.concurrent.Future<DescribeBrokerResult> describeBrokerAsync(DescribeBrokerRequest describeBrokerRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeBrokerRequest, DescribeBrokerResult> asyncHandler);
+
+    /**
+     * Describe available engine types and versions.
+     * 
+     * @param describeBrokerEngineTypesRequest
+     * @return A Java Future containing the result of the DescribeBrokerEngineTypes operation returned by the service.
+     * @sample AmazonMQAsync.DescribeBrokerEngineTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBrokerEngineTypesResult> describeBrokerEngineTypesAsync(
+            DescribeBrokerEngineTypesRequest describeBrokerEngineTypesRequest);
+
+    /**
+     * Describe available engine types and versions.
+     * 
+     * @param describeBrokerEngineTypesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeBrokerEngineTypes operation returned by the service.
+     * @sample AmazonMQAsyncHandler.DescribeBrokerEngineTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBrokerEngineTypesResult> describeBrokerEngineTypesAsync(
+            DescribeBrokerEngineTypesRequest describeBrokerEngineTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeBrokerEngineTypesRequest, DescribeBrokerEngineTypesResult> asyncHandler);
+
+    /**
+     * Describe available broker instance options.
+     * 
+     * @param describeBrokerInstanceOptionsRequest
+     * @return A Java Future containing the result of the DescribeBrokerInstanceOptions operation returned by the
+     *         service.
+     * @sample AmazonMQAsync.DescribeBrokerInstanceOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBrokerInstanceOptionsResult> describeBrokerInstanceOptionsAsync(
+            DescribeBrokerInstanceOptionsRequest describeBrokerInstanceOptionsRequest);
+
+    /**
+     * Describe available broker instance options.
+     * 
+     * @param describeBrokerInstanceOptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeBrokerInstanceOptions operation returned by the
+     *         service.
+     * @sample AmazonMQAsyncHandler.DescribeBrokerInstanceOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBrokerInstanceOptionsResult> describeBrokerInstanceOptionsAsync(
+            DescribeBrokerInstanceOptionsRequest describeBrokerInstanceOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeBrokerInstanceOptionsRequest, DescribeBrokerInstanceOptionsResult> asyncHandler);
 
     /**
      * Returns information about the specified configuration.

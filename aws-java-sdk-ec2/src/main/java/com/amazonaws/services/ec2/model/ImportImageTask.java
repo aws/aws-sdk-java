@@ -31,7 +31,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * The architecture of the virtual machine.
      * </p>
      * <p>
-     * Valid values: <code>i386</code> | <code>x86_64</code>
+     * Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
      * </p>
      */
     private String architecture;
@@ -117,13 +117,13 @@ public class ImportImageTask implements Serializable, Cloneable {
      * The architecture of the virtual machine.
      * </p>
      * <p>
-     * Valid values: <code>i386</code> | <code>x86_64</code>
+     * Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
      * </p>
      * 
      * @param architecture
      *        The architecture of the virtual machine.</p>
      *        <p>
-     *        Valid values: <code>i386</code> | <code>x86_64</code>
+     *        Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
      */
 
     public void setArchitecture(String architecture) {
@@ -135,12 +135,12 @@ public class ImportImageTask implements Serializable, Cloneable {
      * The architecture of the virtual machine.
      * </p>
      * <p>
-     * Valid values: <code>i386</code> | <code>x86_64</code>
+     * Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
      * </p>
      * 
      * @return The architecture of the virtual machine.</p>
      *         <p>
-     *         Valid values: <code>i386</code> | <code>x86_64</code>
+     *         Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
      */
 
     public String getArchitecture() {
@@ -152,13 +152,13 @@ public class ImportImageTask implements Serializable, Cloneable {
      * The architecture of the virtual machine.
      * </p>
      * <p>
-     * Valid values: <code>i386</code> | <code>x86_64</code>
+     * Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
      * </p>
      * 
      * @param architecture
      *        The architecture of the virtual machine.</p>
      *        <p>
-     *        Valid values: <code>i386</code> | <code>x86_64</code>
+     *        Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -23,10 +23,19 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdatePresetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the
+     * output during the conversion process.
+     */
     private Preset preset;
 
     /**
+     * A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the
+     * output during the conversion process.
+     * 
      * @param preset
+     *        A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to
+     *        the output during the conversion process.
      */
 
     public void setPreset(Preset preset) {
@@ -34,7 +43,11 @@ public class UpdatePresetResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * @return
+     * A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the
+     * output during the conversion process.
+     * 
+     * @return A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply
+     *         to the output during the conversion process.
      */
 
     public Preset getPreset() {
@@ -42,7 +55,12 @@ public class UpdatePresetResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the
+     * output during the conversion process.
+     * 
      * @param preset
+     *        A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to
+     *        the output during the conversion process.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

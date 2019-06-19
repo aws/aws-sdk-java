@@ -34,7 +34,7 @@ import com.amazonaws.services.ecs.waiters.AmazonECSWaiters;
  * infrastructure that is managed by Amazon ECS by launching your services or tasks using the Fargate launch type. For
  * more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you
  * manage by using the EC2 launch type. For more information about launch types, see <a
- * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.
  * </p>
  * <p>
  * Amazon ECS lets you launch and stop container-based applications with simple API calls, allows you to get the state
@@ -121,7 +121,7 @@ public interface AmazonECS {
      * your account so that required resources in other AWS services can be managed on your behalf. However, if the IAM
      * user that makes the call does not have permissions to create the service-linked role, it is not created. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
@@ -152,7 +152,7 @@ public interface AmazonECS {
     /**
      * <p>
      * Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in
-     * a service drops below <code>desiredCount</code>, Amazon ECS spawns another copy of the task in the specified
+     * a service drops below the <code>desiredCount</code>, Amazon ECS spawns another copy of the task in the specified
      * cluster. To update an existing service, see <a>UpdateService</a>.
      * </p>
      * <p>
@@ -163,21 +163,52 @@ public interface AmazonECS {
      * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * You can optionally specify a deployment configuration for your service. The deployment is triggered by changing
-     * properties, such as the task definition or the desired count of a service, with an <a>UpdateService</a>
-     * operation.
+     * Tasks for services that <i>do not</i> use a load balancer are considered healthy if they're in the
+     * <code>RUNNING</code> state. Tasks for services that <i>do</i> use a load balancer are considered healthy if
+     * they're in the <code>RUNNING</code> state and the container instance that they're hosted on is reported as
+     * healthy by the load balancer.
      * </p>
      * <p>
-     * If a service is using the <code>ECS</code> deployment controller, the <b>minimum healthy percent</b> represents a
-     * lower limit on the number of tasks in a service that must remain in the <code>RUNNING</code> state during a
-     * deployment, as a percentage of the desired number of tasks (rounded up to the nearest integer), and while any
-     * container instances are in the <code>DRAINING</code> state if the service contains tasks using the EC2 launch
-     * type. This parameter enables you to deploy without using additional cluster capacity. For example, if your
-     * service has a desired number of four tasks and a minimum healthy percent of 50%, the scheduler may stop two
-     * existing tasks to free up cluster capacity before starting two new tasks. Tasks for services that <i>do not</i>
-     * use a load balancer are considered healthy if they are in the <code>RUNNING</code> state; tasks for services that
-     * <i>do</i> use a load balancer are considered healthy if they are in the <code>RUNNING</code> state and they are
-     * reported as healthy by the load balancer. The default value for minimum healthy percent is 100%.
+     * There are two service scheduler strategies available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>REPLICA</code> - The replica scheduling strategy places and maintains the desired number of tasks across
+     * your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task
+     * placement strategies and constraints to customize task placement decisions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler
+     * Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DAEMON</code> - The daemon scheduling strategy deploys exactly one task on each active container instance
+     * that meets all of the task placement constraints that you specify in your cluster. When using this strategy, you
+     * don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler
+     * Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can optionally specify a deployment configuration for your service. The deployment is triggered by changing
+     * properties, such as the task definition or the desired count of a service, with an <a>UpdateService</a>
+     * operation. The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     * value for a daemon service for <code>minimumHealthyPercent</code> is 0%.
+     * </p>
+     * <p>
+     * If a service is using the <code>ECS</code> deployment controller, the minimum healthy percent represents a lower
+     * limit on the number of tasks in a service that must remain in the <code>RUNNING</code> state during a deployment,
+     * as a percentage of the desired number of tasks (rounded up to the nearest integer), and while any container
+     * instances are in the <code>DRAINING</code> state if the service contains tasks using the EC2 launch type. This
+     * parameter enables you to deploy without using additional cluster capacity. For example, if your service has a
+     * desired number of four tasks and a minimum healthy percent of 50%, the scheduler might stop two existing tasks to
+     * free up cluster capacity before starting two new tasks. Tasks for services that <i>do not</i> use a load balancer
+     * are considered healthy if they're in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a load
+     * balancer are considered healthy if they're in the <code>RUNNING</code> state and they're reported as healthy by
+     * the load balancer. The default value for minimum healthy percent is 100%.
      * </p>
      * <p>
      * If a service is using the <code>ECS</code> deployment controller, the <b>maximum percent</b> parameter represents
@@ -190,19 +221,19 @@ public interface AmazonECS {
      * this are available). The default value for maximum percent is 200%.
      * </p>
      * <p>
-     * If a service is using the <code>CODE_DEPLOY</code> deployment controller and tasks that use the EC2 launch type,
-     * the <b>minimum healthy percent</b> and <b>maximum percent</b> values are only used to define the lower and upper
-     * limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container
-     * instances are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate launch type, the
-     * minimum healthy percent and maximum percent values are not used, although they are currently visible when
-     * describing your service.
+     * If a service is using either the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
+     * and tasks that use the EC2 launch type, the <b>minimum healthy percent</b> and <b>maximum percent</b> values are
+     * used only to define the lower and upper limit on the number of the tasks in the service that remain in the
+     * <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If the tasks in
+     * the service use the Fargate launch type, the minimum healthy percent and maximum percent values aren't used,
+     * although they're currently visible when describing your service.
      * </p>
      * <p>
-     * Tasks for services that <i>do not</i> use a load balancer are considered healthy if they are in the
-     * <code>RUNNING</code> state. Tasks for services that <i>do</i> use a load balancer are considered healthy if they
-     * are in the <code>RUNNING</code> state and the container instance they are hosted on is reported as healthy by the
-     * load balancer. The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The
-     * default value for a daemon service for <code>minimumHealthyPercent</code> is 0%.
+     * When creating a service that uses the <code>EXTERNAL</code> deployment controller, you can specify only
+     * parameters that aren't controlled at the task set level. The only required parameter is the service name. You
+     * control your services using the <a>CreateTaskSet</a> operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * When the service scheduler launches new tasks, it determines task placement in your cluster using the following
@@ -267,9 +298,48 @@ public interface AmazonECS {
 
     /**
      * <p>
-     * Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an
-     * account. You can specify whether the new ARN and resource ID format are disabled for new resources that are
-     * created.
+     * Create a task set in the specified cluster and service. This is used when a service uses the
+     * <code>EXTERNAL</code> deployment controller type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param createTaskSetRequest
+     * @return Result of the CreateTaskSet operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws UnsupportedFeatureException
+     *         The specified task is not supported in this Region.
+     * @throws PlatformUnknownException
+     *         The specified platform version does not exist.
+     * @throws PlatformTaskDefinitionIncompatibilityException
+     *         The specified platform version does not satisfy the task definition's required capabilities.
+     * @throws AccessDeniedException
+     *         You do not have authorization to perform the requested action.
+     * @throws ServiceNotFoundException
+     *         The specified service could not be found. You can view your available services with <a>ListServices</a>.
+     *         Amazon ECS services are cluster-specific and Region-specific.
+     * @throws ServiceNotActiveException
+     *         The specified service is not active. You can't update a service that is inactive. If you have previously
+     *         deleted a service, you can re-create it with <a>CreateService</a>.
+     * @sample AmazonECS.CreateTaskSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateTaskSetResult createTaskSet(CreateTaskSetRequest createTaskSetRequest);
+
+    /**
+     * <p>
+     * Disables an account setting for a specified IAM user, IAM role, or the root user for an account.
      * </p>
      * 
      * @param deleteAccountSettingRequest
@@ -389,6 +459,46 @@ public interface AmazonECS {
      *      Documentation</a>
      */
     DeleteServiceResult deleteService(DeleteServiceRequest deleteServiceRequest);
+
+    /**
+     * <p>
+     * Deletes a specified task set within a service. This is used when a service uses the <code>EXTERNAL</code>
+     * deployment controller type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteTaskSetRequest
+     * @return Result of the DeleteTaskSet operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws UnsupportedFeatureException
+     *         The specified task is not supported in this Region.
+     * @throws AccessDeniedException
+     *         You do not have authorization to perform the requested action.
+     * @throws ServiceNotFoundException
+     *         The specified service could not be found. You can view your available services with <a>ListServices</a>.
+     *         Amazon ECS services are cluster-specific and Region-specific.
+     * @throws ServiceNotActiveException
+     *         The specified service is not active. You can't update a service that is inactive. If you have previously
+     *         deleted a service, you can re-create it with <a>CreateService</a>.
+     * @throws TaskSetNotFoundException
+     *         The specified task set could not be found. You can view your available container instances with
+     *         <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and Region.
+     * @sample AmazonECS.DeleteTaskSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteTaskSetResult deleteTaskSet(DeleteTaskSetRequest deleteTaskSetRequest);
 
     /**
      * <p>
@@ -575,6 +685,43 @@ public interface AmazonECS {
 
     /**
      * <p>
+     * Describes the task sets in the specified cluster and service. This is used when a service uses the
+     * <code>EXTERNAL</code> deployment controller type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeTaskSetsRequest
+     * @return Result of the DescribeTaskSets operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws UnsupportedFeatureException
+     *         The specified task is not supported in this Region.
+     * @throws AccessDeniedException
+     *         You do not have authorization to perform the requested action.
+     * @throws ServiceNotFoundException
+     *         The specified service could not be found. You can view your available services with <a>ListServices</a>.
+     *         Amazon ECS services are cluster-specific and Region-specific.
+     * @throws ServiceNotActiveException
+     *         The specified service is not active. You can't update a service that is inactive. If you have previously
+     *         deleted a service, you can re-create it with <a>CreateService</a>.
+     * @sample AmazonECS.DescribeTaskSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeTaskSetsResult describeTaskSets(DescribeTaskSetsRequest describeTaskSetsRequest);
+
+    /**
+     * <p>
      * Describes a specified task or tasks.
      * </p>
      * 
@@ -630,7 +777,7 @@ public interface AmazonECS {
 
     /**
      * <p>
-     * Lists the account settings for an Amazon ECS resource for a specified principal.
+     * Lists the account settings for a specified principal.
      * </p>
      * 
      * @param listAccountSettingsRequest
@@ -894,14 +1041,27 @@ public interface AmazonECS {
 
     /**
      * <p>
-     * Modifies the ARN and resource ID format of a resource type for a specified IAM user, IAM role, or the root user
-     * for an account. If the account setting for the root user is changed, it sets the default setting for all of the
-     * IAM users and roles for which no individual account setting has been set. The opt-in and opt-out account setting
-     * can be set for each Amazon ECS resource separately. The ARN and resource ID format of a resource will be defined
-     * by the opt-in status of the IAM user or role that created the resource. Enabling this setting is required to use
-     * new Amazon ECS features such as resource tagging. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon Resource Names
-     * (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Modifies an account setting. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account Settings</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
+     * <code>containerInstanceLongArnFormat</code> are specified, the ARN and resource ID format of the resource type
+     * for a specified IAM user, IAM role, or the root user for an account is changed. If you change the account setting
+     * for the root user, the default settings for all of the IAM users and roles for which no individual account
+     * setting has been specified are reset. The opt-in and opt-out account setting can be specified for each Amazon ECS
+     * resource separately. The ARN and resource ID format of a resource will be defined by the opt-in status of the IAM
+     * user or role that created the resource. You must enable this setting to use Amazon ECS features such as resource
+     * tagging.
+     * </p>
+     * <p>
+     * When <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for any new container
+     * instances that support the feature is changed. If <code>awsvpcTrunking</code> is enabled, any new container
+     * instances that support the feature are launched have the increased ENI limits available to them. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic Network
+     * Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param putAccountSettingRequest
@@ -922,9 +1082,8 @@ public interface AmazonECS {
 
     /**
      * <p>
-     * Modifies the ARN and resource ID format of a resource type for all IAM users on an account for which no
-     * individual account setting has been set. Enabling this setting is required to use new Amazon ECS features such as
-     * resource tagging.
+     * Modifies an account setting for all IAM users on an account for whom no individual account setting has been
+     * specified.
      * </p>
      * 
      * @param putAccountSettingDefaultRequest
@@ -1019,8 +1178,8 @@ public interface AmazonECS {
      * reference. If you specify the <code>awsvpc</code> network mode, the task is allocated an elastic network
      * interface, and you must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param registerTaskDefinitionRequest
@@ -1177,6 +1336,34 @@ public interface AmazonECS {
      *      Documentation</a>
      */
     StopTaskResult stopTask(StopTaskRequest stopTaskRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Sent to acknowledge that an attachment changed states.
+     * </p>
+     * 
+     * @param submitAttachmentStateChangesRequest
+     * @return Result of the SubmitAttachmentStateChanges operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws AccessDeniedException
+     *         You do not have authorization to perform the requested action.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.SubmitAttachmentStateChanges
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SubmitAttachmentStateChangesResult submitAttachmentStateChanges(SubmitAttachmentStateChangesRequest submitAttachmentStateChangesRequest);
 
     /**
      * <note>
@@ -1344,9 +1531,16 @@ public interface AmazonECS {
      * Modifies the status of an Amazon ECS container instance.
      * </p>
      * <p>
-     * You can change the status of a container instance to <code>DRAINING</code> to manually remove an instance from a
-     * cluster, for example to perform system updates, update the Docker daemon, or scale down the cluster size.
+     * Once a container instance has reached an <code>ACTIVE</code> state, you can change the status of a container
+     * instance to <code>DRAINING</code> to manually remove an instance from a cluster, for example to perform system
+     * updates, update the Docker daemon, or scale down the cluster size.
      * </p>
+     * <important>
+     * <p>
+     * A container instance cannot be changed to <code>DRAINING</code> until it has reached an <code>ACTIVE</code>
+     * status. If the instance is in any other status, an error will be received.
+     * </p>
+     * </important>
      * <p>
      * When you set a container instance to <code>DRAINING</code>, Amazon ECS prevents new tasks from being scheduled
      * for placement on the container instance and replacement service tasks are started on other container instances in
@@ -1390,8 +1584,8 @@ public interface AmazonECS {
      * using <a>ListTasks</a>.
      * </p>
      * <p>
-     * When you set a container instance to <code>ACTIVE</code>, the Amazon ECS scheduler can begin scheduling tasks on
-     * the instance again.
+     * When a container instance has been drained, you can set a container instance to <code>ACTIVE</code> status and
+     * once it has reached that status the Amazon ECS scheduler can begin scheduling tasks on the instance again.
      * </p>
      * 
      * @param updateContainerInstancesStateRequest
@@ -1428,6 +1622,11 @@ public interface AmazonECS {
      * created. For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
      * in the <i>AWS CodeDeploy API Reference</i>.
+     * </p>
+     * <p>
+     * For services using an external deployment controller, you can update only the desired count and health check
+     * grace period using this API. If the launch type, load balancer, network configuration, platform version, or task
+     * definition need to be updated, you should create a new task set. For more information, see <a>CreateTaskSet</a>.
      * </p>
      * <p>
      * You can add to or subtract from the number of instantiations of a task definition in a service by specifying the
@@ -1560,6 +1759,89 @@ public interface AmazonECS {
      *      Documentation</a>
      */
     UpdateServiceResult updateService(UpdateServiceRequest updateServiceRequest);
+
+    /**
+     * <p>
+     * Modifies which task set in a service is the primary task set. Any parameters that are updated on the primary task
+     * set in a service will transition to the service. This is used when a service uses the <code>EXTERNAL</code>
+     * deployment controller type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateServicePrimaryTaskSetRequest
+     * @return Result of the UpdateServicePrimaryTaskSet operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws UnsupportedFeatureException
+     *         The specified task is not supported in this Region.
+     * @throws AccessDeniedException
+     *         You do not have authorization to perform the requested action.
+     * @throws ServiceNotFoundException
+     *         The specified service could not be found. You can view your available services with <a>ListServices</a>.
+     *         Amazon ECS services are cluster-specific and Region-specific.
+     * @throws ServiceNotActiveException
+     *         The specified service is not active. You can't update a service that is inactive. If you have previously
+     *         deleted a service, you can re-create it with <a>CreateService</a>.
+     * @throws TaskSetNotFoundException
+     *         The specified task set could not be found. You can view your available container instances with
+     *         <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and Region.
+     * @throws AccessDeniedException
+     *         You do not have authorization to perform the requested action.
+     * @sample AmazonECS.UpdateServicePrimaryTaskSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateServicePrimaryTaskSetResult updateServicePrimaryTaskSet(UpdateServicePrimaryTaskSetRequest updateServicePrimaryTaskSetRequest);
+
+    /**
+     * <p>
+     * Modifies a task set. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateTaskSetRequest
+     * @return Result of the UpdateTaskSet operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws UnsupportedFeatureException
+     *         The specified task is not supported in this Region.
+     * @throws AccessDeniedException
+     *         You do not have authorization to perform the requested action.
+     * @throws ServiceNotFoundException
+     *         The specified service could not be found. You can view your available services with <a>ListServices</a>.
+     *         Amazon ECS services are cluster-specific and Region-specific.
+     * @throws ServiceNotActiveException
+     *         The specified service is not active. You can't update a service that is inactive. If you have previously
+     *         deleted a service, you can re-create it with <a>CreateService</a>.
+     * @throws TaskSetNotFoundException
+     *         The specified task set could not be found. You can view your available container instances with
+     *         <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and Region.
+     * @sample AmazonECS.UpdateTaskSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateTaskSetResult updateTaskSet(UpdateTaskSetRequest updateTaskSetRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

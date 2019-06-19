@@ -40,9 +40,8 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
     private Boolean assignIpv6AddressOnCreation;
     /**
      * <p>
-     * Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned
-     * a public IPv4 address. This includes a network interface that's created when launching an instance into the
-     * subnet (the instance therefore receives a public IPv4 address).
+     * Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet should be
+     * assigned a public IPv4 address.
      * </p>
      */
     private Boolean mapPublicIpOnLaunch;
@@ -155,15 +154,13 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned
-     * a public IPv4 address. This includes a network interface that's created when launching an instance into the
-     * subnet (the instance therefore receives a public IPv4 address).
+     * Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet should be
+     * assigned a public IPv4 address.
      * </p>
      * 
      * @param mapPublicIpOnLaunch
-     *        Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be
-     *        assigned a public IPv4 address. This includes a network interface that's created when launching an
-     *        instance into the subnet (the instance therefore receives a public IPv4 address).
+     *        Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet
+     *        should be assigned a public IPv4 address.
      */
 
     public void setMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
@@ -172,14 +169,12 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned
-     * a public IPv4 address. This includes a network interface that's created when launching an instance into the
-     * subnet (the instance therefore receives a public IPv4 address).
+     * Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet should be
+     * assigned a public IPv4 address.
      * </p>
      * 
-     * @return Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be
-     *         assigned a public IPv4 address. This includes a network interface that's created when launching an
-     *         instance into the subnet (the instance therefore receives a public IPv4 address).
+     * @return Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet
+     *         should be assigned a public IPv4 address.
      */
 
     public Boolean getMapPublicIpOnLaunch() {
@@ -188,15 +183,13 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned
-     * a public IPv4 address. This includes a network interface that's created when launching an instance into the
-     * subnet (the instance therefore receives a public IPv4 address).
+     * Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet should be
+     * assigned a public IPv4 address.
      * </p>
      * 
      * @param mapPublicIpOnLaunch
-     *        Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be
-     *        assigned a public IPv4 address. This includes a network interface that's created when launching an
-     *        instance into the subnet (the instance therefore receives a public IPv4 address).
+     *        Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet
+     *        should be assigned a public IPv4 address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,14 +200,12 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned
-     * a public IPv4 address. This includes a network interface that's created when launching an instance into the
-     * subnet (the instance therefore receives a public IPv4 address).
+     * Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet should be
+     * assigned a public IPv4 address.
      * </p>
      * 
-     * @return Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be
-     *         assigned a public IPv4 address. This includes a network interface that's created when launching an
-     *         instance into the subnet (the instance therefore receives a public IPv4 address).
+     * @return Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet
+     *         should be assigned a public IPv4 address.
      */
 
     public Boolean isMapPublicIpOnLaunch() {

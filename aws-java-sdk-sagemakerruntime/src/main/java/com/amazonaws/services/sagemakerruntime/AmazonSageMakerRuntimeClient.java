@@ -201,6 +201,7 @@ public class AmazonSageMakerRuntimeClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker Runtime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InvokeEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -119,6 +119,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutDashboardResult putDashboard(PutDashboardRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -135,6 +140,16 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
 
     @Override
     public SetAlarmStateResult setAlarmState(SetAlarmStateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

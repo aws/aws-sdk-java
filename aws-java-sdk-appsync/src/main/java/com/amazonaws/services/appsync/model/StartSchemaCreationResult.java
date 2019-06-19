@@ -25,21 +25,21 @@ public class StartSchemaCreationResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The current state of the schema (PROCESSING, ACTIVE, or DELETING). When the schema is in the ACTIVE state, you
-     * can add data.
+     * The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the
+     * ACTIVE state, you can add data.
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * The current state of the schema (PROCESSING, ACTIVE, or DELETING). When the schema is in the ACTIVE state, you
-     * can add data.
+     * The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the
+     * ACTIVE state, you can add data.
      * </p>
      * 
      * @param status
-     *        The current state of the schema (PROCESSING, ACTIVE, or DELETING). When the schema is in the ACTIVE state,
-     *        you can add data.
+     *        The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in
+     *        the ACTIVE state, you can add data.
      * @see SchemaStatus
      */
 
@@ -49,12 +49,12 @@ public class StartSchemaCreationResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The current state of the schema (PROCESSING, ACTIVE, or DELETING). When the schema is in the ACTIVE state, you
-     * can add data.
+     * The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the
+     * ACTIVE state, you can add data.
      * </p>
      * 
-     * @return The current state of the schema (PROCESSING, ACTIVE, or DELETING). When the schema is in the ACTIVE
-     *         state, you can add data.
+     * @return The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in
+     *         the ACTIVE state, you can add data.
      * @see SchemaStatus
      */
 
@@ -64,13 +64,13 @@ public class StartSchemaCreationResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The current state of the schema (PROCESSING, ACTIVE, or DELETING). When the schema is in the ACTIVE state, you
-     * can add data.
+     * The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the
+     * ACTIVE state, you can add data.
      * </p>
      * 
      * @param status
-     *        The current state of the schema (PROCESSING, ACTIVE, or DELETING). When the schema is in the ACTIVE state,
-     *        you can add data.
+     *        The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in
+     *        the ACTIVE state, you can add data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SchemaStatus
      */
@@ -82,13 +82,13 @@ public class StartSchemaCreationResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The current state of the schema (PROCESSING, ACTIVE, or DELETING). When the schema is in the ACTIVE state, you
-     * can add data.
+     * The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the
+     * ACTIVE state, you can add data.
      * </p>
      * 
      * @param status
-     *        The current state of the schema (PROCESSING, ACTIVE, or DELETING). When the schema is in the ACTIVE state,
-     *        you can add data.
+     *        The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in
+     *        the ACTIVE state, you can add data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SchemaStatus
      */

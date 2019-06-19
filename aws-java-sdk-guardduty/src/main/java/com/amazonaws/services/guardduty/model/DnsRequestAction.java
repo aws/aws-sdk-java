@@ -18,7 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information about the DNS_REQUEST action described in this finding.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DnsRequestAction" target="_top">AWS API
  *      Documentation</a>
@@ -26,11 +25,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo {
 
-    /** Domain information for the DNS request. */
+    /**
+     * <p>
+     * Domain information for the DNS request.
+     * </p>
+     */
     private String domain;
 
     /**
+     * <p>
      * Domain information for the DNS request.
+     * </p>
      * 
      * @param domain
      *        Domain information for the DNS request.
@@ -41,7 +46,9 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Domain information for the DNS request.
+     * </p>
      * 
      * @return Domain information for the DNS request.
      */
@@ -51,7 +58,9 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Domain information for the DNS request.
+     * </p>
      * 
      * @param domain
      *        Domain information for the DNS request.

@@ -79,19 +79,128 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Associates a phone number with the specified Amazon Chime user.
+     * </p>
+     * 
+     * @param associatePhoneNumberWithUserRequest
+     * @return A Java Future containing the result of the AssociatePhoneNumberWithUser operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.AssociatePhoneNumberWithUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AssociatePhoneNumberWithUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociatePhoneNumberWithUserResult> associatePhoneNumberWithUserAsync(
+            AssociatePhoneNumberWithUserRequest associatePhoneNumberWithUserRequest);
+
+    /**
+     * <p>
+     * Associates a phone number with the specified Amazon Chime user.
+     * </p>
+     * 
+     * @param associatePhoneNumberWithUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociatePhoneNumberWithUser operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.AssociatePhoneNumberWithUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AssociatePhoneNumberWithUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociatePhoneNumberWithUserResult> associatePhoneNumberWithUserAsync(
+            AssociatePhoneNumberWithUserRequest associatePhoneNumberWithUserRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociatePhoneNumberWithUserRequest, AssociatePhoneNumberWithUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a phone number with the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param associatePhoneNumbersWithVoiceConnectorRequest
+     * @return A Java Future containing the result of the AssociatePhoneNumbersWithVoiceConnector operation returned by
+     *         the service.
+     * @sample AmazonChimeAsync.AssociatePhoneNumbersWithVoiceConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AssociatePhoneNumbersWithVoiceConnector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociatePhoneNumbersWithVoiceConnectorResult> associatePhoneNumbersWithVoiceConnectorAsync(
+            AssociatePhoneNumbersWithVoiceConnectorRequest associatePhoneNumbersWithVoiceConnectorRequest);
+
+    /**
+     * <p>
+     * Associates a phone number with the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param associatePhoneNumbersWithVoiceConnectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociatePhoneNumbersWithVoiceConnector operation returned by
+     *         the service.
+     * @sample AmazonChimeAsyncHandler.AssociatePhoneNumbersWithVoiceConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AssociatePhoneNumbersWithVoiceConnector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociatePhoneNumbersWithVoiceConnectorResult> associatePhoneNumbersWithVoiceConnectorAsync(
+            AssociatePhoneNumbersWithVoiceConnectorRequest associatePhoneNumbersWithVoiceConnectorRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociatePhoneNumbersWithVoiceConnectorRequest, AssociatePhoneNumbersWithVoiceConnectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be disassociated from any users or Amazon
+     * Chime Voice Connectors before they can be deleted.
+     * </p>
+     * <p>
+     * Phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently.
+     * </p>
+     * 
+     * @param batchDeletePhoneNumberRequest
+     * @return A Java Future containing the result of the BatchDeletePhoneNumber operation returned by the service.
+     * @sample AmazonChimeAsync.BatchDeletePhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchDeletePhoneNumber" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeletePhoneNumberResult> batchDeletePhoneNumberAsync(BatchDeletePhoneNumberRequest batchDeletePhoneNumberRequest);
+
+    /**
+     * <p>
+     * Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be disassociated from any users or Amazon
+     * Chime Voice Connectors before they can be deleted.
+     * </p>
+     * <p>
+     * Phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently.
+     * </p>
+     * 
+     * @param batchDeletePhoneNumberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDeletePhoneNumber operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.BatchDeletePhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchDeletePhoneNumber" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeletePhoneNumberResult> batchDeletePhoneNumberAsync(BatchDeletePhoneNumberRequest batchDeletePhoneNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeletePhoneNumberRequest, BatchDeletePhoneNumberResult> asyncHandler);
+
+    /**
+     * <p>
      * Suspends up to 50 users from a <code>Team</code> or <code>EnterpriseLWA</code> Amazon Chime account. For more
      * information about different account types, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are dissociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are dissasociated from the account, but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
      * <p>
-     * Users suspended from an <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime and are no
-     * longer able to sign in. To remove the suspension from suspended <code>EnterpriseLWA</code> account users, use the
+     * Users suspended from an <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime and can no
+     * longer sign in. To remove the suspension from suspended <code>EnterpriseLWA</code> account users, use the
      * <a>BatchUnsuspendUser</a> action.
      * </p>
      * <p>
@@ -114,13 +223,13 @@ public interface AmazonChimeAsync extends AmazonChime {
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are dissociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are dissasociated from the account, but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
      * <p>
-     * Users suspended from an <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime and are no
-     * longer able to sign in. To remove the suspension from suspended <code>EnterpriseLWA</code> account users, use the
+     * Users suspended from an <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime and can no
+     * longer sign in. To remove the suspension from suspended <code>EnterpriseLWA</code> account users, use the
      * <a>BatchUnsuspendUser</a> action.
      * </p>
      * <p>
@@ -186,6 +295,39 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<BatchUnsuspendUserResult> batchUnsuspendUserAsync(BatchUnsuspendUserRequest batchUnsuspendUserRequest,
             com.amazonaws.handlers.AsyncHandler<BatchUnsuspendUserRequest, BatchUnsuspendUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates phone number product types. Choose from Amazon Chime Business Calling and Amazon Chime Voice Connector
+     * product types. For toll-free numbers, you can use only the Amazon Chime Voice Connector product type.
+     * </p>
+     * 
+     * @param batchUpdatePhoneNumberRequest
+     * @return A Java Future containing the result of the BatchUpdatePhoneNumber operation returned by the service.
+     * @sample AmazonChimeAsync.BatchUpdatePhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdatePhoneNumber" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdatePhoneNumberResult> batchUpdatePhoneNumberAsync(BatchUpdatePhoneNumberRequest batchUpdatePhoneNumberRequest);
+
+    /**
+     * <p>
+     * Updates phone number product types. Choose from Amazon Chime Business Calling and Amazon Chime Voice Connector
+     * product types. For toll-free numbers, you can use only the Amazon Chime Voice Connector product type.
+     * </p>
+     * 
+     * @param batchUpdatePhoneNumberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchUpdatePhoneNumber operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.BatchUpdatePhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdatePhoneNumber" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdatePhoneNumberResult> batchUpdatePhoneNumberAsync(BatchUpdatePhoneNumberRequest batchUpdatePhoneNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchUpdatePhoneNumberRequest, BatchUpdatePhoneNumberResult> asyncHandler);
 
     /**
      * <p>
@@ -259,6 +401,109 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Creates a bot for an Amazon Chime Enterprise account.
+     * </p>
+     * 
+     * @param createBotRequest
+     * @return A Java Future containing the result of the CreateBot operation returned by the service.
+     * @sample AmazonChimeAsync.CreateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBotResult> createBotAsync(CreateBotRequest createBotRequest);
+
+    /**
+     * <p>
+     * Creates a bot for an Amazon Chime Enterprise account.
+     * </p>
+     * 
+     * @param createBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBot operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBotResult> createBotAsync(CreateBotRequest createBotRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBotRequest, CreateBotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
+     * Voice Connector product types. For toll-free numbers, you can use only the Amazon Chime Voice Connector product
+     * type.
+     * </p>
+     * 
+     * @param createPhoneNumberOrderRequest
+     * @return A Java Future containing the result of the CreatePhoneNumberOrder operation returned by the service.
+     * @sample AmazonChimeAsync.CreatePhoneNumberOrder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreatePhoneNumberOrder" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePhoneNumberOrderResult> createPhoneNumberOrderAsync(CreatePhoneNumberOrderRequest createPhoneNumberOrderRequest);
+
+    /**
+     * <p>
+     * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
+     * Voice Connector product types. For toll-free numbers, you can use only the Amazon Chime Voice Connector product
+     * type.
+     * </p>
+     * 
+     * @param createPhoneNumberOrderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePhoneNumberOrder operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreatePhoneNumberOrder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreatePhoneNumberOrder" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePhoneNumberOrderResult> createPhoneNumberOrderAsync(CreatePhoneNumberOrderRequest createPhoneNumberOrderRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePhoneNumberOrderRequest, CreatePhoneNumberOrderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon Chime Voice Connector under the administrator's AWS account. Enabling
+     * <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon Chime Voice Connector to use TLS
+     * transport for SIP signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and unencrypted
+     * outbound calls are blocked.
+     * </p>
+     * 
+     * @param createVoiceConnectorRequest
+     * @return A Java Future containing the result of the CreateVoiceConnector operation returned by the service.
+     * @sample AmazonChimeAsync.CreateVoiceConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateVoiceConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVoiceConnectorResult> createVoiceConnectorAsync(CreateVoiceConnectorRequest createVoiceConnectorRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Chime Voice Connector under the administrator's AWS account. Enabling
+     * <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon Chime Voice Connector to use TLS
+     * transport for SIP signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and unencrypted
+     * outbound calls are blocked.
+     * </p>
+     * 
+     * @param createVoiceConnectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVoiceConnector operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateVoiceConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateVoiceConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVoiceConnectorResult> createVoiceConnectorAsync(CreateVoiceConnectorRequest createVoiceConnectorRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVoiceConnectorRequest, CreateVoiceConnectorResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified Amazon Chime account. You must suspend all users before deleting a <code>Team</code>
      * account. You can use the <a>BatchSuspendUser</a> action to do so.
      * </p>
@@ -313,6 +558,286 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<DeleteAccountResult> deleteAccountAsync(DeleteAccountRequest deleteAccountRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAccountRequest, DeleteAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the events configuration that allows a bot to receive outgoing events.
+     * </p>
+     * 
+     * @param deleteEventsConfigurationRequest
+     * @return A Java Future containing the result of the DeleteEventsConfiguration operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventsConfigurationResult> deleteEventsConfigurationAsync(
+            DeleteEventsConfigurationRequest deleteEventsConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the events configuration that allows a bot to receive outgoing events.
+     * </p>
+     * 
+     * @param deleteEventsConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEventsConfiguration operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventsConfigurationResult> deleteEventsConfigurationAsync(
+            DeleteEventsConfigurationRequest deleteEventsConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventsConfigurationRequest, DeleteEventsConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Moves the specified phone number into the <b>Deletion queue</b>. A phone number must be disassociated from any
+     * users or Amazon Chime Voice Connectors before it can be deleted.
+     * </p>
+     * <p>
+     * Deleted phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently.
+     * </p>
+     * 
+     * @param deletePhoneNumberRequest
+     * @return A Java Future containing the result of the DeletePhoneNumber operation returned by the service.
+     * @sample AmazonChimeAsync.DeletePhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeletePhoneNumber" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePhoneNumberResult> deletePhoneNumberAsync(DeletePhoneNumberRequest deletePhoneNumberRequest);
+
+    /**
+     * <p>
+     * Moves the specified phone number into the <b>Deletion queue</b>. A phone number must be disassociated from any
+     * users or Amazon Chime Voice Connectors before it can be deleted.
+     * </p>
+     * <p>
+     * Deleted phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently.
+     * </p>
+     * 
+     * @param deletePhoneNumberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePhoneNumber operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeletePhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeletePhoneNumber" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePhoneNumberResult> deletePhoneNumberAsync(DeletePhoneNumberRequest deletePhoneNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePhoneNumberRequest, DeletePhoneNumberResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified Amazon Chime Voice Connector. Any phone numbers assigned to the Amazon Chime Voice
+     * Connector must be unassigned from it before it can be deleted.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorRequest
+     * @return A Java Future containing the result of the DeleteVoiceConnector operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteVoiceConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorResult> deleteVoiceConnectorAsync(DeleteVoiceConnectorRequest deleteVoiceConnectorRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Amazon Chime Voice Connector. Any phone numbers assigned to the Amazon Chime Voice
+     * Connector must be unassigned from it before it can be deleted.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVoiceConnector operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteVoiceConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorResult> deleteVoiceConnectorAsync(DeleteVoiceConnectorRequest deleteVoiceConnectorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorRequest, DeleteVoiceConnectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the origination settings for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorOriginationRequest
+     * @return A Java Future containing the result of the DeleteVoiceConnectorOrigination operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.DeleteVoiceConnectorOrigination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorOrigination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorOriginationResult> deleteVoiceConnectorOriginationAsync(
+            DeleteVoiceConnectorOriginationRequest deleteVoiceConnectorOriginationRequest);
+
+    /**
+     * <p>
+     * Deletes the origination settings for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorOriginationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVoiceConnectorOrigination operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.DeleteVoiceConnectorOrigination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorOrigination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorOriginationResult> deleteVoiceConnectorOriginationAsync(
+            DeleteVoiceConnectorOriginationRequest deleteVoiceConnectorOriginationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorOriginationRequest, DeleteVoiceConnectorOriginationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the termination settings for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorTerminationRequest
+     * @return A Java Future containing the result of the DeleteVoiceConnectorTermination operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.DeleteVoiceConnectorTermination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorTermination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorTerminationResult> deleteVoiceConnectorTerminationAsync(
+            DeleteVoiceConnectorTerminationRequest deleteVoiceConnectorTerminationRequest);
+
+    /**
+     * <p>
+     * Deletes the termination settings for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorTerminationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVoiceConnectorTermination operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.DeleteVoiceConnectorTermination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorTermination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorTerminationResult> deleteVoiceConnectorTerminationAsync(
+            DeleteVoiceConnectorTerminationRequest deleteVoiceConnectorTerminationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorTerminationRequest, DeleteVoiceConnectorTerminationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified SIP credentials used by your equipment to authenticate during call termination.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorTerminationCredentialsRequest
+     * @return A Java Future containing the result of the DeleteVoiceConnectorTerminationCredentials operation returned
+     *         by the service.
+     * @sample AmazonChimeAsync.DeleteVoiceConnectorTerminationCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorTerminationCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorTerminationCredentialsResult> deleteVoiceConnectorTerminationCredentialsAsync(
+            DeleteVoiceConnectorTerminationCredentialsRequest deleteVoiceConnectorTerminationCredentialsRequest);
+
+    /**
+     * <p>
+     * Deletes the specified SIP credentials used by your equipment to authenticate during call termination.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorTerminationCredentialsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVoiceConnectorTerminationCredentials operation returned
+     *         by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteVoiceConnectorTerminationCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorTerminationCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorTerminationCredentialsResult> deleteVoiceConnectorTerminationCredentialsAsync(
+            DeleteVoiceConnectorTerminationCredentialsRequest deleteVoiceConnectorTerminationCredentialsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorTerminationCredentialsRequest, DeleteVoiceConnectorTerminationCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates the primary provisioned phone number from the specified Amazon Chime user.
+     * </p>
+     * 
+     * @param disassociatePhoneNumberFromUserRequest
+     * @return A Java Future containing the result of the DisassociatePhoneNumberFromUser operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.DisassociatePhoneNumberFromUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociatePhoneNumberFromUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociatePhoneNumberFromUserResult> disassociatePhoneNumberFromUserAsync(
+            DisassociatePhoneNumberFromUserRequest disassociatePhoneNumberFromUserRequest);
+
+    /**
+     * <p>
+     * Disassociates the primary provisioned phone number from the specified Amazon Chime user.
+     * </p>
+     * 
+     * @param disassociatePhoneNumberFromUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociatePhoneNumberFromUser operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.DisassociatePhoneNumberFromUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociatePhoneNumberFromUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociatePhoneNumberFromUserResult> disassociatePhoneNumberFromUserAsync(
+            DisassociatePhoneNumberFromUserRequest disassociatePhoneNumberFromUserRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociatePhoneNumberFromUserRequest, DisassociatePhoneNumberFromUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates the specified phone number from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param disassociatePhoneNumbersFromVoiceConnectorRequest
+     * @return A Java Future containing the result of the DisassociatePhoneNumbersFromVoiceConnector operation returned
+     *         by the service.
+     * @sample AmazonChimeAsync.DisassociatePhoneNumbersFromVoiceConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociatePhoneNumbersFromVoiceConnector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociatePhoneNumbersFromVoiceConnectorResult> disassociatePhoneNumbersFromVoiceConnectorAsync(
+            DisassociatePhoneNumbersFromVoiceConnectorRequest disassociatePhoneNumbersFromVoiceConnectorRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified phone number from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param disassociatePhoneNumbersFromVoiceConnectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociatePhoneNumbersFromVoiceConnector operation returned
+     *         by the service.
+     * @sample AmazonChimeAsyncHandler.DisassociatePhoneNumbersFromVoiceConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociatePhoneNumbersFromVoiceConnector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociatePhoneNumbersFromVoiceConnectorResult> disassociatePhoneNumbersFromVoiceConnectorAsync(
+            DisassociatePhoneNumbersFromVoiceConnectorRequest disassociatePhoneNumbersFromVoiceConnectorRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociatePhoneNumbersFromVoiceConnectorRequest, DisassociatePhoneNumbersFromVoiceConnectorResult> asyncHandler);
 
     /**
      * <p>
@@ -384,6 +909,167 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Retrieves details for the specified bot, such as bot email address, bot type, status, and display name.
+     * </p>
+     * 
+     * @param getBotRequest
+     * @return A Java Future containing the result of the GetBot operation returned by the service.
+     * @sample AmazonChimeAsync.GetBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetBotResult> getBotAsync(GetBotRequest getBotRequest);
+
+    /**
+     * <p>
+     * Retrieves details for the specified bot, such as bot email address, bot type, status, and display name.
+     * </p>
+     * 
+     * @param getBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBot operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetBotResult> getBotAsync(GetBotRequest getBotRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBotRequest, GetBotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets details for an events configuration that allows a bot to receive outgoing events, such as an HTTPS endpoint
+     * or Lambda function ARN.
+     * </p>
+     * 
+     * @param getEventsConfigurationRequest
+     * @return A Java Future containing the result of the GetEventsConfiguration operation returned by the service.
+     * @sample AmazonChimeAsync.GetEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventsConfigurationResult> getEventsConfigurationAsync(GetEventsConfigurationRequest getEventsConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets details for an events configuration that allows a bot to receive outgoing events, such as an HTTPS endpoint
+     * or Lambda function ARN.
+     * </p>
+     * 
+     * @param getEventsConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEventsConfiguration operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventsConfigurationResult> getEventsConfigurationAsync(GetEventsConfigurationRequest getEventsConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEventsConfigurationRequest, GetEventsConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon
+     * Chime Voice Connector settings.
+     * </p>
+     * 
+     * @param getGlobalSettingsRequest
+     * @return A Java Future containing the result of the GetGlobalSettings operation returned by the service.
+     * @sample AmazonChimeAsync.GetGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetGlobalSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetGlobalSettingsResult> getGlobalSettingsAsync(GetGlobalSettingsRequest getGlobalSettingsRequest);
+
+    /**
+     * <p>
+     * Retrieves global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon
+     * Chime Voice Connector settings.
+     * </p>
+     * 
+     * @param getGlobalSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGlobalSettings operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetGlobalSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetGlobalSettingsResult> getGlobalSettingsAsync(GetGlobalSettingsRequest getGlobalSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGlobalSettingsRequest, GetGlobalSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details for the specified phone number ID, such as associations, capabilities, and product type.
+     * </p>
+     * 
+     * @param getPhoneNumberRequest
+     * @return A Java Future containing the result of the GetPhoneNumber operation returned by the service.
+     * @sample AmazonChimeAsync.GetPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetPhoneNumber" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPhoneNumberResult> getPhoneNumberAsync(GetPhoneNumberRequest getPhoneNumberRequest);
+
+    /**
+     * <p>
+     * Retrieves details for the specified phone number ID, such as associations, capabilities, and product type.
+     * </p>
+     * 
+     * @param getPhoneNumberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPhoneNumber operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetPhoneNumber" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPhoneNumberResult> getPhoneNumberAsync(GetPhoneNumberRequest getPhoneNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPhoneNumberRequest, GetPhoneNumberResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details for the specified phone number order, such as order creation timestamp, phone numbers in E.164
+     * format, product type, and order status.
+     * </p>
+     * 
+     * @param getPhoneNumberOrderRequest
+     * @return A Java Future containing the result of the GetPhoneNumberOrder operation returned by the service.
+     * @sample AmazonChimeAsync.GetPhoneNumberOrder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetPhoneNumberOrder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPhoneNumberOrderResult> getPhoneNumberOrderAsync(GetPhoneNumberOrderRequest getPhoneNumberOrderRequest);
+
+    /**
+     * <p>
+     * Retrieves details for the specified phone number order, such as order creation timestamp, phone numbers in E.164
+     * format, product type, and order status.
+     * </p>
+     * 
+     * @param getPhoneNumberOrderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPhoneNumberOrder operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetPhoneNumberOrder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetPhoneNumberOrder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPhoneNumberOrderResult> getPhoneNumberOrderAsync(GetPhoneNumberOrderRequest getPhoneNumberOrderRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPhoneNumberOrderRequest, GetPhoneNumberOrderResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves details for the specified user ID, such as primary email address, license type, and personal meeting
      * PIN.
      * </p>
@@ -422,6 +1108,177 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<GetUserResult> getUserAsync(GetUserRequest getUserRequest,
             com.amazonaws.handlers.AsyncHandler<GetUserRequest, GetUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves settings for the specified user ID, such as any associated phone number settings.
+     * </p>
+     * 
+     * @param getUserSettingsRequest
+     * @return A Java Future containing the result of the GetUserSettings operation returned by the service.
+     * @sample AmazonChimeAsync.GetUserSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetUserSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetUserSettingsResult> getUserSettingsAsync(GetUserSettingsRequest getUserSettingsRequest);
+
+    /**
+     * <p>
+     * Retrieves settings for the specified user ID, such as any associated phone number settings.
+     * </p>
+     * 
+     * @param getUserSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUserSettings operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetUserSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetUserSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetUserSettingsResult> getUserSettingsAsync(GetUserSettingsRequest getUserSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUserSettingsRequest, GetUserSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps, name, outbound host, and
+     * encryption requirements.
+     * </p>
+     * 
+     * @param getVoiceConnectorRequest
+     * @return A Java Future containing the result of the GetVoiceConnector operation returned by the service.
+     * @sample AmazonChimeAsync.GetVoiceConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorResult> getVoiceConnectorAsync(GetVoiceConnectorRequest getVoiceConnectorRequest);
+
+    /**
+     * <p>
+     * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps, name, outbound host, and
+     * encryption requirements.
+     * </p>
+     * 
+     * @param getVoiceConnectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVoiceConnector operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetVoiceConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorResult> getVoiceConnectorAsync(GetVoiceConnectorRequest getVoiceConnectorRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorRequest, GetVoiceConnectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves origination setting details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorOriginationRequest
+     * @return A Java Future containing the result of the GetVoiceConnectorOrigination operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.GetVoiceConnectorOrigination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorOrigination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorOriginationResult> getVoiceConnectorOriginationAsync(
+            GetVoiceConnectorOriginationRequest getVoiceConnectorOriginationRequest);
+
+    /**
+     * <p>
+     * Retrieves origination setting details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorOriginationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVoiceConnectorOrigination operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.GetVoiceConnectorOrigination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorOrigination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorOriginationResult> getVoiceConnectorOriginationAsync(
+            GetVoiceConnectorOriginationRequest getVoiceConnectorOriginationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorOriginationRequest, GetVoiceConnectorOriginationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves termination setting details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorTerminationRequest
+     * @return A Java Future containing the result of the GetVoiceConnectorTermination operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.GetVoiceConnectorTermination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorTermination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorTerminationResult> getVoiceConnectorTerminationAsync(
+            GetVoiceConnectorTerminationRequest getVoiceConnectorTerminationRequest);
+
+    /**
+     * <p>
+     * Retrieves termination setting details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorTerminationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVoiceConnectorTermination operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.GetVoiceConnectorTermination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorTermination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorTerminationResult> getVoiceConnectorTerminationAsync(
+            GetVoiceConnectorTerminationRequest getVoiceConnectorTerminationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorTerminationRequest, GetVoiceConnectorTerminationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about the last time a SIP <code>OPTIONS</code> ping was received from your SIP
+     * infrastructure for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorTerminationHealthRequest
+     * @return A Java Future containing the result of the GetVoiceConnectorTerminationHealth operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.GetVoiceConnectorTerminationHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorTerminationHealth"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorTerminationHealthResult> getVoiceConnectorTerminationHealthAsync(
+            GetVoiceConnectorTerminationHealthRequest getVoiceConnectorTerminationHealthRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the last time a SIP <code>OPTIONS</code> ping was received from your SIP
+     * infrastructure for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorTerminationHealthRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVoiceConnectorTerminationHealth operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.GetVoiceConnectorTerminationHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorTerminationHealth"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorTerminationHealthResult> getVoiceConnectorTerminationHealthAsync(
+            GetVoiceConnectorTerminationHealthRequest getVoiceConnectorTerminationHealthRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorTerminationHealthRequest, GetVoiceConnectorTerminationHealthResult> asyncHandler);
 
     /**
      * <p>
@@ -493,6 +1350,101 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Lists the bots associated with the administrator's Amazon Chime Enterprise account ID.
+     * </p>
+     * 
+     * @param listBotsRequest
+     * @return A Java Future containing the result of the ListBots operation returned by the service.
+     * @sample AmazonChimeAsync.ListBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest listBotsRequest);
+
+    /**
+     * <p>
+     * Lists the bots associated with the administrator's Amazon Chime Enterprise account ID.
+     * </p>
+     * 
+     * @param listBotsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBots operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest listBotsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBotsRequest, ListBotsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the phone number orders for the administrator's Amazon Chime account.
+     * </p>
+     * 
+     * @param listPhoneNumberOrdersRequest
+     * @return A Java Future containing the result of the ListPhoneNumberOrders operation returned by the service.
+     * @sample AmazonChimeAsync.ListPhoneNumberOrders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListPhoneNumberOrders" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPhoneNumberOrdersResult> listPhoneNumberOrdersAsync(ListPhoneNumberOrdersRequest listPhoneNumberOrdersRequest);
+
+    /**
+     * <p>
+     * Lists the phone number orders for the administrator's Amazon Chime account.
+     * </p>
+     * 
+     * @param listPhoneNumberOrdersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPhoneNumberOrders operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListPhoneNumberOrders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListPhoneNumberOrders" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPhoneNumberOrdersResult> listPhoneNumberOrdersAsync(ListPhoneNumberOrdersRequest listPhoneNumberOrdersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPhoneNumberOrdersRequest, ListPhoneNumberOrdersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the phone numbers for the specified Amazon Chime account, Amazon Chime user, or Amazon Chime Voice
+     * Connector.
+     * </p>
+     * 
+     * @param listPhoneNumbersRequest
+     * @return A Java Future containing the result of the ListPhoneNumbers operation returned by the service.
+     * @sample AmazonChimeAsync.ListPhoneNumbers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListPhoneNumbers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListPhoneNumbersResult> listPhoneNumbersAsync(ListPhoneNumbersRequest listPhoneNumbersRequest);
+
+    /**
+     * <p>
+     * Lists the phone numbers for the specified Amazon Chime account, Amazon Chime user, or Amazon Chime Voice
+     * Connector.
+     * </p>
+     * 
+     * @param listPhoneNumbersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPhoneNumbers operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListPhoneNumbers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListPhoneNumbers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListPhoneNumbersResult> listPhoneNumbersAsync(ListPhoneNumbersRequest listPhoneNumbersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPhoneNumbersRequest, ListPhoneNumbersResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the users that belong to the specified Amazon Chime account. You can specify an email address to list only
      * the user that the email address belongs to.
      * </p>
@@ -523,6 +1475,72 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest listUsersRequest,
             com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the SIP credentials for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param listVoiceConnectorTerminationCredentialsRequest
+     * @return A Java Future containing the result of the ListVoiceConnectorTerminationCredentials operation returned by
+     *         the service.
+     * @sample AmazonChimeAsync.ListVoiceConnectorTerminationCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListVoiceConnectorTerminationCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVoiceConnectorTerminationCredentialsResult> listVoiceConnectorTerminationCredentialsAsync(
+            ListVoiceConnectorTerminationCredentialsRequest listVoiceConnectorTerminationCredentialsRequest);
+
+    /**
+     * <p>
+     * Lists the SIP credentials for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param listVoiceConnectorTerminationCredentialsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListVoiceConnectorTerminationCredentials operation returned by
+     *         the service.
+     * @sample AmazonChimeAsyncHandler.ListVoiceConnectorTerminationCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListVoiceConnectorTerminationCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVoiceConnectorTerminationCredentialsResult> listVoiceConnectorTerminationCredentialsAsync(
+            ListVoiceConnectorTerminationCredentialsRequest listVoiceConnectorTerminationCredentialsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListVoiceConnectorTerminationCredentialsRequest, ListVoiceConnectorTerminationCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the Amazon Chime Voice Connectors for the administrator's AWS account.
+     * </p>
+     * 
+     * @param listVoiceConnectorsRequest
+     * @return A Java Future containing the result of the ListVoiceConnectors operation returned by the service.
+     * @sample AmazonChimeAsync.ListVoiceConnectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListVoiceConnectors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListVoiceConnectorsResult> listVoiceConnectorsAsync(ListVoiceConnectorsRequest listVoiceConnectorsRequest);
+
+    /**
+     * <p>
+     * Lists the Amazon Chime Voice Connectors for the administrator's AWS account.
+     * </p>
+     * 
+     * @param listVoiceConnectorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListVoiceConnectors operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListVoiceConnectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListVoiceConnectors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListVoiceConnectorsResult> listVoiceConnectorsAsync(ListVoiceConnectorsRequest listVoiceConnectorsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListVoiceConnectorsRequest, ListVoiceConnectorsResult> asyncHandler);
 
     /**
      * <p>
@@ -557,6 +1575,175 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Creates an events configuration that allows a bot to receive outgoing events sent by Amazon Chime. Choose either
+     * an HTTPS endpoint or a Lambda function ARN. For more information, see <a>Bot</a>.
+     * </p>
+     * 
+     * @param putEventsConfigurationRequest
+     * @return A Java Future containing the result of the PutEventsConfiguration operation returned by the service.
+     * @sample AmazonChimeAsync.PutEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutEventsConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEventsConfigurationResult> putEventsConfigurationAsync(PutEventsConfigurationRequest putEventsConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates an events configuration that allows a bot to receive outgoing events sent by Amazon Chime. Choose either
+     * an HTTPS endpoint or a Lambda function ARN. For more information, see <a>Bot</a>.
+     * </p>
+     * 
+     * @param putEventsConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutEventsConfiguration operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.PutEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutEventsConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEventsConfigurationResult> putEventsConfigurationAsync(PutEventsConfigurationRequest putEventsConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutEventsConfigurationRequest, PutEventsConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds origination settings for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param putVoiceConnectorOriginationRequest
+     * @return A Java Future containing the result of the PutVoiceConnectorOrigination operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.PutVoiceConnectorOrigination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorOrigination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutVoiceConnectorOriginationResult> putVoiceConnectorOriginationAsync(
+            PutVoiceConnectorOriginationRequest putVoiceConnectorOriginationRequest);
+
+    /**
+     * <p>
+     * Adds origination settings for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param putVoiceConnectorOriginationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutVoiceConnectorOrigination operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.PutVoiceConnectorOrigination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorOrigination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutVoiceConnectorOriginationResult> putVoiceConnectorOriginationAsync(
+            PutVoiceConnectorOriginationRequest putVoiceConnectorOriginationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorOriginationRequest, PutVoiceConnectorOriginationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds termination settings for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param putVoiceConnectorTerminationRequest
+     * @return A Java Future containing the result of the PutVoiceConnectorTermination operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.PutVoiceConnectorTermination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorTermination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutVoiceConnectorTerminationResult> putVoiceConnectorTerminationAsync(
+            PutVoiceConnectorTerminationRequest putVoiceConnectorTerminationRequest);
+
+    /**
+     * <p>
+     * Adds termination settings for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param putVoiceConnectorTerminationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutVoiceConnectorTermination operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.PutVoiceConnectorTermination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorTermination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutVoiceConnectorTerminationResult> putVoiceConnectorTerminationAsync(
+            PutVoiceConnectorTerminationRequest putVoiceConnectorTerminationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorTerminationRequest, PutVoiceConnectorTerminationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds termination SIP credentials for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param putVoiceConnectorTerminationCredentialsRequest
+     * @return A Java Future containing the result of the PutVoiceConnectorTerminationCredentials operation returned by
+     *         the service.
+     * @sample AmazonChimeAsync.PutVoiceConnectorTerminationCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorTerminationCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutVoiceConnectorTerminationCredentialsResult> putVoiceConnectorTerminationCredentialsAsync(
+            PutVoiceConnectorTerminationCredentialsRequest putVoiceConnectorTerminationCredentialsRequest);
+
+    /**
+     * <p>
+     * Adds termination SIP credentials for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param putVoiceConnectorTerminationCredentialsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutVoiceConnectorTerminationCredentials operation returned by
+     *         the service.
+     * @sample AmazonChimeAsyncHandler.PutVoiceConnectorTerminationCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorTerminationCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutVoiceConnectorTerminationCredentialsResult> putVoiceConnectorTerminationCredentialsAsync(
+            PutVoiceConnectorTerminationCredentialsRequest putVoiceConnectorTerminationCredentialsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorTerminationCredentialsRequest, PutVoiceConnectorTerminationCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Regenerates the security token for a bot.
+     * </p>
+     * 
+     * @param regenerateSecurityTokenRequest
+     * @return A Java Future containing the result of the RegenerateSecurityToken operation returned by the service.
+     * @sample AmazonChimeAsync.RegenerateSecurityToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RegenerateSecurityTokenResult> regenerateSecurityTokenAsync(RegenerateSecurityTokenRequest regenerateSecurityTokenRequest);
+
+    /**
+     * <p>
+     * Regenerates the security token for a bot.
+     * </p>
+     * 
+     * @param regenerateSecurityTokenRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegenerateSecurityToken operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.RegenerateSecurityToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RegenerateSecurityTokenResult> regenerateSecurityTokenAsync(RegenerateSecurityTokenRequest regenerateSecurityTokenRequest,
+            com.amazonaws.handlers.AsyncHandler<RegenerateSecurityTokenRequest, RegenerateSecurityTokenResult> asyncHandler);
+
+    /**
+     * <p>
      * Resets the personal meeting PIN for the specified user on an Amazon Chime account. Returns the <a>User</a> object
      * with the updated personal meeting PIN.
      * </p>
@@ -587,6 +1774,70 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<ResetPersonalPINResult> resetPersonalPINAsync(ResetPersonalPINRequest resetPersonalPINRequest,
             com.amazonaws.handlers.AsyncHandler<ResetPersonalPINRequest, ResetPersonalPINResult> asyncHandler);
+
+    /**
+     * <p>
+     * Moves a phone number from the <b>Deletion queue</b> back into the phone number <b>Inventory</b>.
+     * </p>
+     * 
+     * @param restorePhoneNumberRequest
+     * @return A Java Future containing the result of the RestorePhoneNumber operation returned by the service.
+     * @sample AmazonChimeAsync.RestorePhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RestorePhoneNumber" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RestorePhoneNumberResult> restorePhoneNumberAsync(RestorePhoneNumberRequest restorePhoneNumberRequest);
+
+    /**
+     * <p>
+     * Moves a phone number from the <b>Deletion queue</b> back into the phone number <b>Inventory</b>.
+     * </p>
+     * 
+     * @param restorePhoneNumberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestorePhoneNumber operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.RestorePhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RestorePhoneNumber" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RestorePhoneNumberResult> restorePhoneNumberAsync(RestorePhoneNumberRequest restorePhoneNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<RestorePhoneNumberRequest, RestorePhoneNumberResult> asyncHandler);
+
+    /**
+     * <p>
+     * Searches phone numbers that can be ordered.
+     * </p>
+     * 
+     * @param searchAvailablePhoneNumbersRequest
+     * @return A Java Future containing the result of the SearchAvailablePhoneNumbers operation returned by the service.
+     * @sample AmazonChimeAsync.SearchAvailablePhoneNumbers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SearchAvailablePhoneNumbers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchAvailablePhoneNumbersResult> searchAvailablePhoneNumbersAsync(
+            SearchAvailablePhoneNumbersRequest searchAvailablePhoneNumbersRequest);
+
+    /**
+     * <p>
+     * Searches phone numbers that can be ordered.
+     * </p>
+     * 
+     * @param searchAvailablePhoneNumbersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchAvailablePhoneNumbers operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.SearchAvailablePhoneNumbers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SearchAvailablePhoneNumbers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchAvailablePhoneNumbersResult> searchAvailablePhoneNumbersAsync(
+            SearchAvailablePhoneNumbersRequest searchAvailablePhoneNumbersRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchAvailablePhoneNumbersRequest, SearchAvailablePhoneNumbersResult> asyncHandler);
 
     /**
      * <p>
@@ -660,6 +1911,105 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Updates the status of the specified bot, such as starting or stopping the bot from running in your Amazon Chime
+     * Enterprise account.
+     * </p>
+     * 
+     * @param updateBotRequest
+     * @return A Java Future containing the result of the UpdateBot operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBotResult> updateBotAsync(UpdateBotRequest updateBotRequest);
+
+    /**
+     * <p>
+     * Updates the status of the specified bot, such as starting or stopping the bot from running in your Amazon Chime
+     * Enterprise account.
+     * </p>
+     * 
+     * @param updateBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBot operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBotResult> updateBotAsync(UpdateBotRequest updateBotRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBotRequest, UpdateBotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon
+     * Chime Voice Connector settings.
+     * </p>
+     * 
+     * @param updateGlobalSettingsRequest
+     * @return A Java Future containing the result of the UpdateGlobalSettings operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateGlobalSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGlobalSettingsResult> updateGlobalSettingsAsync(UpdateGlobalSettingsRequest updateGlobalSettingsRequest);
+
+    /**
+     * <p>
+     * Updates global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon
+     * Chime Voice Connector settings.
+     * </p>
+     * 
+     * @param updateGlobalSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGlobalSettings operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateGlobalSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGlobalSettingsResult> updateGlobalSettingsAsync(UpdateGlobalSettingsRequest updateGlobalSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGlobalSettingsRequest, UpdateGlobalSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates phone number details, such as product type, for the specified phone number ID. For toll-free numbers, you
+     * can use only the Amazon Chime Voice Connector product type.
+     * </p>
+     * 
+     * @param updatePhoneNumberRequest
+     * @return A Java Future containing the result of the UpdatePhoneNumber operation returned by the service.
+     * @sample AmazonChimeAsync.UpdatePhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumber" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePhoneNumberResult> updatePhoneNumberAsync(UpdatePhoneNumberRequest updatePhoneNumberRequest);
+
+    /**
+     * <p>
+     * Updates phone number details, such as product type, for the specified phone number ID. For toll-free numbers, you
+     * can use only the Amazon Chime Voice Connector product type.
+     * </p>
+     * 
+     * @param updatePhoneNumberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePhoneNumber operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdatePhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumber" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePhoneNumberResult> updatePhoneNumberAsync(UpdatePhoneNumberRequest updatePhoneNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePhoneNumberRequest, UpdatePhoneNumberResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates user details for a specified user ID. Currently, only <code>LicenseType</code> updates are supported for
      * this action.
      * </p>
@@ -690,5 +2040,67 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest updateUserRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, UpdateUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the settings for the specified user, such as phone number settings.
+     * </p>
+     * 
+     * @param updateUserSettingsRequest
+     * @return A Java Future containing the result of the UpdateUserSettings operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateUserSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateUserSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUserSettingsResult> updateUserSettingsAsync(UpdateUserSettingsRequest updateUserSettingsRequest);
+
+    /**
+     * <p>
+     * Updates the settings for the specified user, such as phone number settings.
+     * </p>
+     * 
+     * @param updateUserSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateUserSettings operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateUserSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateUserSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUserSettingsResult> updateUserSettingsAsync(UpdateUserSettingsRequest updateUserSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateUserSettingsRequest, UpdateUserSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param updateVoiceConnectorRequest
+     * @return A Java Future containing the result of the UpdateVoiceConnector operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateVoiceConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateVoiceConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVoiceConnectorResult> updateVoiceConnectorAsync(UpdateVoiceConnectorRequest updateVoiceConnectorRequest);
+
+    /**
+     * <p>
+     * Updates details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param updateVoiceConnectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateVoiceConnector operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateVoiceConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateVoiceConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVoiceConnectorResult> updateVoiceConnectorAsync(UpdateVoiceConnectorRequest updateVoiceConnectorRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateVoiceConnectorRequest, UpdateVoiceConnectorResult> asyncHandler);
 
 }

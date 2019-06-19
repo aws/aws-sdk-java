@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DisassociateCertificateRequestProtocolMarshaller implements Marshaller<Request<DisassociateCertificateRequest>, DisassociateCertificateRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/2017-08-29/certificates/{arn}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(true)
+            .requestUri("/2017-08-29/certificates/{arn}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false)
             .serviceName("AWSMediaConvert").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

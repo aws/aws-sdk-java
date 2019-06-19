@@ -34,18 +34,22 @@ public class DeleteApplicationOutputRequest extends com.amazonaws.AmazonWebServi
     private String applicationName;
     /**
      * <p>
-     * Amazon Kinesis Analytics application version. You can use the <a>DescribeApplication</a> operation to get the
-     * current application version. If the version specified is not the current version, the
-     * <code>ConcurrentModificationException</code> is returned.
+     * Amazon Kinesis Analytics application version. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      */
     private Long currentApplicationVersionId;
     /**
      * <p>
      * The ID of the configuration to delete. Each output configuration that is added to the application, either when
-     * the application is created or later using the <a>AddApplicationOutput</a> operation, has a unique ID. You need to
-     * provide the ID to uniquely identify the output configuration that you want to delete from the application
-     * configuration. You can use the <a>DescribeApplication</a> operation to get the specific <code>OutputId</code>.
+     * the application is created or later using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html"
+     * >AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output
+     * configuration that you want to delete from the application configuration. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the specific <code>OutputId</code>.
      * </p>
      */
     private String outputId;
@@ -92,15 +96,17 @@ public class DeleteApplicationOutputRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Amazon Kinesis Analytics application version. You can use the <a>DescribeApplication</a> operation to get the
-     * current application version. If the version specified is not the current version, the
-     * <code>ConcurrentModificationException</code> is returned.
+     * Amazon Kinesis Analytics application version. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Amazon Kinesis Analytics application version. You can use the <a>DescribeApplication</a> operation to get
-     *        the current application version. If the version specified is not the current version, the
-     *        <code>ConcurrentModificationException</code> is returned.
+     *        Amazon Kinesis Analytics application version. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get the current application version. If the version specified is not
+     *        the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -109,14 +115,16 @@ public class DeleteApplicationOutputRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Amazon Kinesis Analytics application version. You can use the <a>DescribeApplication</a> operation to get the
-     * current application version. If the version specified is not the current version, the
-     * <code>ConcurrentModificationException</code> is returned.
+     * Amazon Kinesis Analytics application version. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
-     * @return Amazon Kinesis Analytics application version. You can use the <a>DescribeApplication</a> operation to get
-     *         the current application version. If the version specified is not the current version, the
-     *         <code>ConcurrentModificationException</code> is returned.
+     * @return Amazon Kinesis Analytics application version. You can use the <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *         >DescribeApplication</a> operation to get the current application version. If the version specified is
+     *         not the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -125,15 +133,17 @@ public class DeleteApplicationOutputRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Amazon Kinesis Analytics application version. You can use the <a>DescribeApplication</a> operation to get the
-     * current application version. If the version specified is not the current version, the
-     * <code>ConcurrentModificationException</code> is returned.
+     * Amazon Kinesis Analytics application version. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Amazon Kinesis Analytics application version. You can use the <a>DescribeApplication</a> operation to get
-     *        the current application version. If the version specified is not the current version, the
-     *        <code>ConcurrentModificationException</code> is returned.
+     *        Amazon Kinesis Analytics application version. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get the current application version. If the version specified is not
+     *        the current version, the <code>ConcurrentModificationException</code> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,17 +155,22 @@ public class DeleteApplicationOutputRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ID of the configuration to delete. Each output configuration that is added to the application, either when
-     * the application is created or later using the <a>AddApplicationOutput</a> operation, has a unique ID. You need to
-     * provide the ID to uniquely identify the output configuration that you want to delete from the application
-     * configuration. You can use the <a>DescribeApplication</a> operation to get the specific <code>OutputId</code>.
+     * the application is created or later using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html"
+     * >AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output
+     * configuration that you want to delete from the application configuration. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the specific <code>OutputId</code>.
      * </p>
      * 
      * @param outputId
      *        The ID of the configuration to delete. Each output configuration that is added to the application, either
-     *        when the application is created or later using the <a>AddApplicationOutput</a> operation, has a unique ID.
-     *        You need to provide the ID to uniquely identify the output configuration that you want to delete from the
-     *        application configuration. You can use the <a>DescribeApplication</a> operation to get the specific
-     *        <code>OutputId</code>.
+     *        when the application is created or later using the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html"
+     *        >AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the
+     *        output configuration that you want to delete from the application configuration. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get the specific <code>OutputId</code>.
      */
 
     public void setOutputId(String outputId) {
@@ -165,16 +180,21 @@ public class DeleteApplicationOutputRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ID of the configuration to delete. Each output configuration that is added to the application, either when
-     * the application is created or later using the <a>AddApplicationOutput</a> operation, has a unique ID. You need to
-     * provide the ID to uniquely identify the output configuration that you want to delete from the application
-     * configuration. You can use the <a>DescribeApplication</a> operation to get the specific <code>OutputId</code>.
+     * the application is created or later using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html"
+     * >AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output
+     * configuration that you want to delete from the application configuration. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the specific <code>OutputId</code>.
      * </p>
      * 
      * @return The ID of the configuration to delete. Each output configuration that is added to the application, either
-     *         when the application is created or later using the <a>AddApplicationOutput</a> operation, has a unique
-     *         ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from
-     *         the application configuration. You can use the <a>DescribeApplication</a> operation to get the specific
-     *         <code>OutputId</code>.
+     *         when the application is created or later using the <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html"
+     *         >AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the
+     *         output configuration that you want to delete from the application configuration. You can use the <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *         >DescribeApplication</a> operation to get the specific <code>OutputId</code>.
      */
 
     public String getOutputId() {
@@ -184,17 +204,22 @@ public class DeleteApplicationOutputRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ID of the configuration to delete. Each output configuration that is added to the application, either when
-     * the application is created or later using the <a>AddApplicationOutput</a> operation, has a unique ID. You need to
-     * provide the ID to uniquely identify the output configuration that you want to delete from the application
-     * configuration. You can use the <a>DescribeApplication</a> operation to get the specific <code>OutputId</code>.
+     * the application is created or later using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html"
+     * >AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output
+     * configuration that you want to delete from the application configuration. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the specific <code>OutputId</code>.
      * </p>
      * 
      * @param outputId
      *        The ID of the configuration to delete. Each output configuration that is added to the application, either
-     *        when the application is created or later using the <a>AddApplicationOutput</a> operation, has a unique ID.
-     *        You need to provide the ID to uniquely identify the output configuration that you want to delete from the
-     *        application configuration. You can use the <a>DescribeApplication</a> operation to get the specific
-     *        <code>OutputId</code>.
+     *        when the application is created or later using the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html"
+     *        >AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the
+     *        output configuration that you want to delete from the application configuration. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get the specific <code>OutputId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

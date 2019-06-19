@@ -15,13 +15,19 @@ package com.amazonaws.services.guardduty.model;
 import javax.annotation.Generated;
 
 /**
- * Error response object.
+ * <p>
+ * Internal server error exception object.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalServerErrorException extends com.amazonaws.services.guardduty.model.AmazonGuardDutyException {
     private static final long serialVersionUID = 1L;
 
-    /** The error type. */
+    /**
+     * <p>
+     * The error type.
+     * </p>
+     */
     private String type;
 
     /**
@@ -35,7 +41,9 @@ public class InternalServerErrorException extends com.amazonaws.services.guarddu
     }
 
     /**
+     * <p>
      * The error type.
+     * </p>
      * 
      * @param type
      *        The error type.
@@ -47,7 +55,9 @@ public class InternalServerErrorException extends com.amazonaws.services.guarddu
     }
 
     /**
+     * <p>
      * The error type.
+     * </p>
      * 
      * @return The error type.
      */
@@ -58,7 +68,9 @@ public class InternalServerErrorException extends com.amazonaws.services.guarddu
     }
 
     /**
+     * <p>
      * The error type.
+     * </p>
      * 
      * @param type
      *        The error type.

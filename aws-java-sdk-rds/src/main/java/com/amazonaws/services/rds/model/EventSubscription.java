@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.
+ * Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EventSubscription" target="_top">AWS API

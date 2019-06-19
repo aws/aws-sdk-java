@@ -41,8 +41,9 @@ public class StartDocumentTextDetectionRequest extends com.amazonaws.AmazonWebSe
     private String clientRequestToken;
     /**
      * <p>
-     * A unique identifier you specify to identify the job in the completion status that's published to the Amazon
-     * Simple Notification Service (Amazon SNS) topic.
+     * An identifier you specify that's included in the completion notification that's published to the Amazon SNS
+     * topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.
      * </p>
      */
     private String jobTag;
@@ -147,13 +148,15 @@ public class StartDocumentTextDetectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A unique identifier you specify to identify the job in the completion status that's published to the Amazon
-     * Simple Notification Service (Amazon SNS) topic.
+     * An identifier you specify that's included in the completion notification that's published to the Amazon SNS
+     * topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.
      * </p>
      * 
      * @param jobTag
-     *        A unique identifier you specify to identify the job in the completion status that's published to the
-     *        Amazon Simple Notification Service (Amazon SNS) topic.
+     *        An identifier you specify that's included in the completion notification that's published to the Amazon
+     *        SNS topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax
+     *        form or a receipt, that the completion notification corresponds to.
      */
 
     public void setJobTag(String jobTag) {
@@ -162,12 +165,14 @@ public class StartDocumentTextDetectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A unique identifier you specify to identify the job in the completion status that's published to the Amazon
-     * Simple Notification Service (Amazon SNS) topic.
+     * An identifier you specify that's included in the completion notification that's published to the Amazon SNS
+     * topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.
      * </p>
      * 
-     * @return A unique identifier you specify to identify the job in the completion status that's published to the
-     *         Amazon Simple Notification Service (Amazon SNS) topic.
+     * @return An identifier you specify that's included in the completion notification that's published to the Amazon
+     *         SNS topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax
+     *         form or a receipt, that the completion notification corresponds to.
      */
 
     public String getJobTag() {
@@ -176,13 +181,15 @@ public class StartDocumentTextDetectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A unique identifier you specify to identify the job in the completion status that's published to the Amazon
-     * Simple Notification Service (Amazon SNS) topic.
+     * An identifier you specify that's included in the completion notification that's published to the Amazon SNS
+     * topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.
      * </p>
      * 
      * @param jobTag
-     *        A unique identifier you specify to identify the job in the completion status that's published to the
-     *        Amazon Simple Notification Service (Amazon SNS) topic.
+     *        An identifier you specify that's included in the completion notification that's published to the Amazon
+     *        SNS topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax
+     *        form or a receipt, that the completion notification corresponds to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,21 +27,21 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The ARN of the resource for which you want a list of tags. The resource must exist within the account you are
-     * using.
+     * The ARN of the resource group for which you want a list of tags. The resource must exist within the account you
+     * are using.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The ARN of the resource for which you want a list of tags. The resource must exist within the account you are
-     * using.
+     * The ARN of the resource group for which you want a list of tags. The resource must exist within the account you
+     * are using.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource for which you want a list of tags. The resource must exist within the account you
-     *        are using.
+     *        The ARN of the resource group for which you want a list of tags. The resource must exist within the
+     *        account you are using.
      */
 
     public void setArn(String arn) {
@@ -50,12 +50,12 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The ARN of the resource for which you want a list of tags. The resource must exist within the account you are
-     * using.
+     * The ARN of the resource group for which you want a list of tags. The resource must exist within the account you
+     * are using.
      * </p>
      * 
-     * @return The ARN of the resource for which you want a list of tags. The resource must exist within the account you
-     *         are using.
+     * @return The ARN of the resource group for which you want a list of tags. The resource must exist within the
+     *         account you are using.
      */
 
     public String getArn() {
@@ -64,13 +64,13 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The ARN of the resource for which you want a list of tags. The resource must exist within the account you are
-     * using.
+     * The ARN of the resource group for which you want a list of tags. The resource must exist within the account you
+     * are using.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource for which you want a list of tags. The resource must exist within the account you
-     *        are using.
+     *        The ARN of the resource group for which you want a list of tags. The resource must exist within the
+     *        account you are using.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

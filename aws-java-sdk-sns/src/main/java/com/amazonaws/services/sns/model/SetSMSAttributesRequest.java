@@ -139,7 +139,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS
      * Developer Guide</i>.
      * </p>
      */
@@ -256,7 +256,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS
      * Developer Guide</i>.
      * </p>
      * 
@@ -369,7 +369,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         For an example bucket policy and usage report, see <a
-     *         href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the
      *         <i>Amazon SNS Developer Guide</i>.
      */
 
@@ -491,7 +491,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS
      * Developer Guide</i>.
      * </p>
      * 
@@ -605,7 +605,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        For an example bucket policy and usage report, see <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the
      *        <i>Amazon SNS Developer Guide</i>.
      */
 
@@ -724,7 +724,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS
      * Developer Guide</i>.
      * </p>
      * 
@@ -838,7 +838,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        For an example bucket policy and usage report, see <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the
      *        <i>Amazon SNS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

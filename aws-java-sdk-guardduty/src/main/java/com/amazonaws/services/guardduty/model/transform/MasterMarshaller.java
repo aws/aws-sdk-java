@@ -31,10 +31,10 @@ public class MasterMarshaller {
             .marshallLocationName("accountId").build();
     private static final MarshallingInfo<String> INVITATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("invitationId").build();
-    private static final MarshallingInfo<String> INVITEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("invitedAt").build();
     private static final MarshallingInfo<String> RELATIONSHIPSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relationshipStatus").build();
+    private static final MarshallingInfo<String> INVITEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("invitedAt").build();
 
     private static final MasterMarshaller instance = new MasterMarshaller();
 
@@ -54,8 +54,8 @@ public class MasterMarshaller {
         try {
             protocolMarshaller.marshall(master.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(master.getInvitationId(), INVITATIONID_BINDING);
-            protocolMarshaller.marshall(master.getInvitedAt(), INVITEDAT_BINDING);
             protocolMarshaller.marshall(master.getRelationshipStatus(), RELATIONSHIPSTATUS_BINDING);
+            protocolMarshaller.marshall(master.getInvitedAt(), INVITEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

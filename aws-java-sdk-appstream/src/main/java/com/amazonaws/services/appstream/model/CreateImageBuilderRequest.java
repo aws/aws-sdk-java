@@ -93,6 +93,13 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * Environment=Test. If you do not specify a value, Environment=.
      * </p>
      * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
+     * <p>
      * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
@@ -533,6 +540,13 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * Environment=Test. If you do not specify a value, Environment=.
      * </p>
      * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
+     * <p>
      * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
@@ -543,6 +557,13 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @return The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For
      *         example, Environment=Test. If you do not specify a value, Environment=. </p>
+     *         <p>
+     *         Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+     *         special characters:
+     *         </p>
+     *         <p>
+     *         _ . : / = + \ - @
+     *         </p>
      *         <p>
      *         If you do not specify a value, the value is set to an empty string.
      *         </p>
@@ -562,6 +583,13 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * Environment=Test. If you do not specify a value, Environment=.
      * </p>
      * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
+     * <p>
      * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
@@ -573,6 +601,13 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * @param tags
      *        The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For
      *        example, Environment=Test. If you do not specify a value, Environment=. </p>
+     *        <p>
+     *        Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+     *        special characters:
+     *        </p>
+     *        <p>
+     *        _ . : / = + \ - @
+     *        </p>
      *        <p>
      *        If you do not specify a value, the value is set to an empty string.
      *        </p>
@@ -592,6 +627,13 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * Environment=Test. If you do not specify a value, Environment=.
      * </p>
      * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
+     * <p>
      * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
@@ -603,6 +645,13 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * @param tags
      *        The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For
      *        example, Environment=Test. If you do not specify a value, Environment=. </p>
+     *        <p>
+     *        Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+     *        special characters:
+     *        </p>
+     *        <p>
+     *        _ . : / = + \ - @
+     *        </p>
      *        <p>
      *        If you do not specify a value, the value is set to an empty string.
      *        </p>

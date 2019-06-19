@@ -23,10 +23,14 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /** The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource. */
     private ResourceTags resourceTags;
 
     /**
+     * The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
+     * 
      * @param resourceTags
+     *        The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
      */
 
     public void setResourceTags(ResourceTags resourceTags) {
@@ -34,7 +38,9 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * @return
+     * The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
+     * 
+     * @return The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
      */
 
     public ResourceTags getResourceTags() {
@@ -42,7 +48,10 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
+     * 
      * @param resourceTags
+     *        The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * You no longer need to specify the anti-alias filter. It's now automatically applied to all outputs. This property is
- * deprecated.
+ * The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the value
+ * DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AntiAlias {

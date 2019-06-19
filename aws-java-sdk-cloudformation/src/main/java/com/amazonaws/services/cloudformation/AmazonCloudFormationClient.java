@@ -70,7 +70,7 @@ import com.amazonaws.services.cloudformation.model.transform.*;
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific
  * AWS product, you can find the product's technical documentation at <a
- * href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
+ * href="https://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
  * </p>
  */
 @ThreadSafe
@@ -360,6 +360,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelUpdateStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -380,7 +381,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * For a specified stack that is in the <code>UPDATE_ROLLBACK_FAILED</code> state, continues rolling it back to the
      * <code>UPDATE_ROLLBACK_COMPLETE</code> state. Depending on the cause of the failure, you can manually <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > fix the error</a> and continue the rollback. By continuing the rollback, you can return your stack to a working
      * state (the <code>UPDATE_ROLLBACK_COMPLETE</code> state), and then try to update the stack again.
      * </p>
@@ -426,6 +427,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ContinueUpdateRollback");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -474,9 +476,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @throws LimitExceededException
      *         The quota for the resource has already been reached.</p>
      *         <p>
-     *         For information on stack set limitations, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html"
-     *         >Limitations of StackSets</a>.
+     *         For information on resource and stack limitations, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html"
+     *         >Limits</a> in the <i>AWS CloudFormation User Guide</i>.
      * @sample AmazonCloudFormation.CreateChangeSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet" target="_top">AWS
      *      API Documentation</a>
@@ -506,6 +508,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChangeSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -534,9 +537,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @throws LimitExceededException
      *         The quota for the resource has already been reached.</p>
      *         <p>
-     *         For information on stack set limitations, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html"
-     *         >Limitations of StackSets</a>.
+     *         For information on resource and stack limitations, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html"
+     *         >Limits</a> in the <i>AWS CloudFormation User Guide</i>.
      * @throws AlreadyExistsException
      *         The resource with the name requested already exists.
      * @throws TokenAlreadyExistsException
@@ -572,6 +575,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -610,9 +614,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @throws LimitExceededException
      *         The quota for the resource has already been reached.</p>
      *         <p>
-     *         For information on stack set limitations, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html"
-     *         >Limitations of StackSets</a>.
+     *         For information on resource and stack limitations, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html"
+     *         >Limits</a> in the <i>AWS CloudFormation User Guide</i>.
      * @sample AmazonCloudFormation.CreateStackInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances"
      *      target="_top">AWS API Documentation</a>
@@ -642,6 +646,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStackInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -672,9 +677,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @throws LimitExceededException
      *         The quota for the resource has already been reached.</p>
      *         <p>
-     *         For information on stack set limitations, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html"
-     *         >Limitations of StackSets</a>.
+     *         For information on resource and stack limitations, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html"
+     *         >Limits</a> in the <i>AWS CloudFormation User Guide</i>.
      * @sample AmazonCloudFormation.CreateStackSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet" target="_top">AWS
      *      API Documentation</a>
@@ -704,6 +709,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStackSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -763,6 +769,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChangeSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -819,6 +826,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -881,6 +889,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStackInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -940,6 +949,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStackSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -959,7 +969,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     /**
      * <p>
      * Retrieves your account's AWS CloudFormation limits, such as the maximum number of stacks that you can create in
-     * your account.
+     * your account. For more information about account limits, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS
+     * CloudFormation Limits</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param describeAccountLimitsRequest
@@ -994,6 +1006,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountLimits");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1014,7 +1027,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * Returns the inputs for the change set and a list of changes that AWS CloudFormation will make if you execute the
      * change set. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html"
      * >Updating Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.
      * </p>
      * 
@@ -1053,6 +1066,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChangeSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1075,7 +1089,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the
      * stack template and any values specified as template parameters. A stack is considered to have drifted if one or
      * more of its resources have drifted. For more information on stack and resource drift, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      * <p>
@@ -1117,6 +1131,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackDriftDetectionStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1137,7 +1152,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * Returns all stack related events for a specified stack in reverse chronological order. For more information about
      * a stack's event history, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the AWS
      * CloudFormation User Guide.
      * </p>
      * <note>
@@ -1179,6 +1194,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1238,6 +1254,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1295,6 +1312,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1322,7 +1340,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * checked for drift. Resources that have not yet been checked for drift are not included. Resources that do not
      * currently support drift detection are not checked, and so not included. For a list of resources that support
      * drift detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      * <p>
@@ -1361,6 +1379,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackResourceDrifts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1397,7 +1416,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>, but not both. In addition, you
      * can specify <code>LogicalResourceId</code> to filter the returned result. For more information about resources,
      * the <code>LogicalResourceId</code> and <code>PhysicalResourceId</code>, go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS CloudFormation User Guide</a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS CloudFormation User Guide</a>.
      * </p>
      * <note>
      * <p>
@@ -1438,6 +1457,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1492,6 +1512,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1548,6 +1569,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackSetOperation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1607,6 +1629,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStacks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1636,7 +1659,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * expected template configuration. Only resource properties explicitly defined in the stack template are checked
      * for drift. A stack is considered to have drifted if one or more of its resources differ from their expected
      * template configurations. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      * <p>
@@ -1645,7 +1668,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * </p>
      * <p>
      * For a list of stack resources that currently support drift detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      * <p>
@@ -1690,6 +1713,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectStackDrift");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1713,7 +1737,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * information includes actual and expected property values for resources in which AWS CloudFormation detects drift.
      * Only resource properties explicitly defined in the stack template are checked for drift. For more information
      * about stack and resource drift, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      * <p>
@@ -1723,7 +1747,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * Resources that do not currently support drift detection cannot be checked. For a list of resources that support
      * drift detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      * 
@@ -1758,6 +1782,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectStackResourceDrift");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1812,6 +1837,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EstimateTemplateCost");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1890,6 +1916,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteChangeSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1943,6 +1970,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStackPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2007,6 +2035,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTemplate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2071,6 +2100,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTemplateSummary");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2130,6 +2160,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChangeSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2150,12 +2181,12 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * Lists all exported output values in the account and region in which you call this action. Use this action to see
      * the exported output values that you can import into other stacks. To import values, use the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
      * <code>Fn::ImportValue</code> </a> function.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html"> AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html"> AWS
      * CloudFormation Export Stack Output Values</a>.
      * </p>
      * 
@@ -2190,6 +2221,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExports");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2213,7 +2245,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * </p>
      * <p>
      * For more information about importing an exported output value, see the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
      * <code>Fn::ImportValue</code> </a> function.
      * </p>
      * 
@@ -2248,6 +2280,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImports");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2302,6 +2335,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2359,6 +2393,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2415,6 +2450,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSetOperationResults");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2469,6 +2505,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSetOperations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2521,6 +2558,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2576,6 +2614,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStacks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2633,6 +2672,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetStackPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2690,6 +2730,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SignalResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2748,6 +2789,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopStackSetOperation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2775,7 +2817,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * For more information about creating an update template, updating a stack, and monitoring the progress of the
      * update, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating a
      * Stack</a>.
      * </p>
      * 
@@ -2815,6 +2857,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2838,7 +2881,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * You can only update stack instances in regions and accounts where they already exist; to create additional stack
      * instances, use <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html"
      * >CreateStackInstances</a>.
      * </p>
      * <p>
@@ -2848,10 +2891,10 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * You can only update the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter
      * itself, use <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet
      * </a> to update the stack set template. If you add a parameter to a template, before you can override the
      * parameter value specified in the stack set you must first use <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
      * >UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the
      * stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter
      * value using <code>UpdateStackInstances</code>.
@@ -2901,6 +2944,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStackInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2971,6 +3015,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStackSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3030,6 +3075,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTerminationProtection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3085,6 +3131,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ValidateTemplate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

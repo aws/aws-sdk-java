@@ -18,7 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Finding attribute (for example, accountId) for which conditions and values must be specified when querying findings.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Condition" target="_top">AWS API
  *      Documentation</a>
@@ -26,36 +25,98 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Condition implements Serializable, Cloneable, StructuredPojo {
 
-    /** Represents the equal condition to be applied to a single field when querying for findings. */
+    /**
+     * <p>
+     * Represents the equal condition to be applied to a single field when querying for findings.
+     * </p>
+     */
+    @Deprecated
     private java.util.List<String> eq;
-    /** Represents the greater than condition to be applied to a single field when querying for findings. */
-    private Integer gt;
-    /** Represents the greater than equal condition to be applied to a single field when querying for findings. */
-    private Integer gte;
-    /** Represents the less than condition to be applied to a single field when querying for findings. */
-    private Integer lt;
-    /** Represents the less than equal condition to be applied to a single field when querying for findings. */
-    private Integer lte;
-    /** Represents the not equal condition to be applied to a single field when querying for findings. */
+    /**
+     * <p>
+     * Represents the not equal condition to be applied to a single field when querying for findings.
+     * </p>
+     */
+    @Deprecated
     private java.util.List<String> neq;
+    /**
+     * <p>
+     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * </p>
+     */
+    @Deprecated
+    private Integer gt;
+    /**
+     * <p>
+     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     */
+    @Deprecated
+    private Integer gte;
+    /**
+     * <p>
+     * Represents a less than condition to be applied to a single field when querying for findings.
+     * </p>
+     */
+    @Deprecated
+    private Integer lt;
+    /**
+     * <p>
+     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     */
+    @Deprecated
+    private Integer lte;
+
+    private java.util.List<String> equals;
+
+    private java.util.List<String> notEquals;
+    /**
+     * <p>
+     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * </p>
+     */
+    private Long greaterThan;
+    /**
+     * <p>
+     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     */
+    private Long greaterThanOrEqual;
+    /**
+     * <p>
+     * Represents a less than condition to be applied to a single field when querying for findings.
+     * </p>
+     */
+    private Long lessThan;
+    /**
+     * <p>
+     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     */
+    private Long lessThanOrEqual;
 
     /**
+     * <p>
      * Represents the equal condition to be applied to a single field when querying for findings.
+     * </p>
      * 
      * @return Represents the equal condition to be applied to a single field when querying for findings.
      */
-
+    @Deprecated
     public java.util.List<String> getEq() {
         return eq;
     }
 
     /**
+     * <p>
      * Represents the equal condition to be applied to a single field when querying for findings.
+     * </p>
      * 
      * @param eq
      *        Represents the equal condition to be applied to a single field when querying for findings.
      */
-
+    @Deprecated
     public void setEq(java.util.Collection<String> eq) {
         if (eq == null) {
             this.eq = null;
@@ -66,7 +127,9 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Represents the equal condition to be applied to a single field when querying for findings.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEq(java.util.Collection)} or {@link #withEq(java.util.Collection)} if you want to override the
@@ -77,7 +140,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      *        Represents the equal condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Condition withEq(String... eq) {
         if (this.eq == null) {
             setEq(new java.util.ArrayList<String>(eq.length));
@@ -89,171 +152,41 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Represents the equal condition to be applied to a single field when querying for findings.
+     * </p>
      * 
      * @param eq
      *        Represents the equal condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Condition withEq(java.util.Collection<String> eq) {
         setEq(eq);
         return this;
     }
 
     /**
-     * Represents the greater than condition to be applied to a single field when querying for findings.
-     * 
-     * @param gt
-     *        Represents the greater than condition to be applied to a single field when querying for findings.
-     */
-
-    public void setGt(Integer gt) {
-        this.gt = gt;
-    }
-
-    /**
-     * Represents the greater than condition to be applied to a single field when querying for findings.
-     * 
-     * @return Represents the greater than condition to be applied to a single field when querying for findings.
-     */
-
-    public Integer getGt() {
-        return this.gt;
-    }
-
-    /**
-     * Represents the greater than condition to be applied to a single field when querying for findings.
-     * 
-     * @param gt
-     *        Represents the greater than condition to be applied to a single field when querying for findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Condition withGt(Integer gt) {
-        setGt(gt);
-        return this;
-    }
-
-    /**
-     * Represents the greater than equal condition to be applied to a single field when querying for findings.
-     * 
-     * @param gte
-     *        Represents the greater than equal condition to be applied to a single field when querying for findings.
-     */
-
-    public void setGte(Integer gte) {
-        this.gte = gte;
-    }
-
-    /**
-     * Represents the greater than equal condition to be applied to a single field when querying for findings.
-     * 
-     * @return Represents the greater than equal condition to be applied to a single field when querying for findings.
-     */
-
-    public Integer getGte() {
-        return this.gte;
-    }
-
-    /**
-     * Represents the greater than equal condition to be applied to a single field when querying for findings.
-     * 
-     * @param gte
-     *        Represents the greater than equal condition to be applied to a single field when querying for findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Condition withGte(Integer gte) {
-        setGte(gte);
-        return this;
-    }
-
-    /**
-     * Represents the less than condition to be applied to a single field when querying for findings.
-     * 
-     * @param lt
-     *        Represents the less than condition to be applied to a single field when querying for findings.
-     */
-
-    public void setLt(Integer lt) {
-        this.lt = lt;
-    }
-
-    /**
-     * Represents the less than condition to be applied to a single field when querying for findings.
-     * 
-     * @return Represents the less than condition to be applied to a single field when querying for findings.
-     */
-
-    public Integer getLt() {
-        return this.lt;
-    }
-
-    /**
-     * Represents the less than condition to be applied to a single field when querying for findings.
-     * 
-     * @param lt
-     *        Represents the less than condition to be applied to a single field when querying for findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Condition withLt(Integer lt) {
-        setLt(lt);
-        return this;
-    }
-
-    /**
-     * Represents the less than equal condition to be applied to a single field when querying for findings.
-     * 
-     * @param lte
-     *        Represents the less than equal condition to be applied to a single field when querying for findings.
-     */
-
-    public void setLte(Integer lte) {
-        this.lte = lte;
-    }
-
-    /**
-     * Represents the less than equal condition to be applied to a single field when querying for findings.
-     * 
-     * @return Represents the less than equal condition to be applied to a single field when querying for findings.
-     */
-
-    public Integer getLte() {
-        return this.lte;
-    }
-
-    /**
-     * Represents the less than equal condition to be applied to a single field when querying for findings.
-     * 
-     * @param lte
-     *        Represents the less than equal condition to be applied to a single field when querying for findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Condition withLte(Integer lte) {
-        setLte(lte);
-        return this;
-    }
-
-    /**
+     * <p>
      * Represents the not equal condition to be applied to a single field when querying for findings.
+     * </p>
      * 
      * @return Represents the not equal condition to be applied to a single field when querying for findings.
      */
-
+    @Deprecated
     public java.util.List<String> getNeq() {
         return neq;
     }
 
     /**
+     * <p>
      * Represents the not equal condition to be applied to a single field when querying for findings.
+     * </p>
      * 
      * @param neq
      *        Represents the not equal condition to be applied to a single field when querying for findings.
      */
-
+    @Deprecated
     public void setNeq(java.util.Collection<String> neq) {
         if (neq == null) {
             this.neq = null;
@@ -264,7 +197,9 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Represents the not equal condition to be applied to a single field when querying for findings.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNeq(java.util.Collection)} or {@link #withNeq(java.util.Collection)} if you want to override the
@@ -275,7 +210,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      *        Represents the not equal condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Condition withNeq(String... neq) {
         if (this.neq == null) {
             setNeq(new java.util.ArrayList<String>(neq.length));
@@ -287,15 +222,441 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Represents the not equal condition to be applied to a single field when querying for findings.
+     * </p>
      * 
      * @param neq
      *        Represents the not equal condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Condition withNeq(java.util.Collection<String> neq) {
         setNeq(neq);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param gt
+     *        Represents a greater than condition to be applied to a single field when querying for findings.
+     */
+    @Deprecated
+    public void setGt(Integer gt) {
+        this.gt = gt;
+    }
+
+    /**
+     * <p>
+     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @return Represents a greater than condition to be applied to a single field when querying for findings.
+     */
+    @Deprecated
+    public Integer getGt() {
+        return this.gt;
+    }
+
+    /**
+     * <p>
+     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param gt
+     *        Represents a greater than condition to be applied to a single field when querying for findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public Condition withGt(Integer gt) {
+        setGt(gt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param gte
+     *        Represents a greater than equal condition to be applied to a single field when querying for findings.
+     */
+    @Deprecated
+    public void setGte(Integer gte) {
+        this.gte = gte;
+    }
+
+    /**
+     * <p>
+     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @return Represents a greater than equal condition to be applied to a single field when querying for findings.
+     */
+    @Deprecated
+    public Integer getGte() {
+        return this.gte;
+    }
+
+    /**
+     * <p>
+     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param gte
+     *        Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public Condition withGte(Integer gte) {
+        setGte(gte);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a less than condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param lt
+     *        Represents a less than condition to be applied to a single field when querying for findings.
+     */
+    @Deprecated
+    public void setLt(Integer lt) {
+        this.lt = lt;
+    }
+
+    /**
+     * <p>
+     * Represents a less than condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @return Represents a less than condition to be applied to a single field when querying for findings.
+     */
+    @Deprecated
+    public Integer getLt() {
+        return this.lt;
+    }
+
+    /**
+     * <p>
+     * Represents a less than condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param lt
+     *        Represents a less than condition to be applied to a single field when querying for findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public Condition withLt(Integer lt) {
+        setLt(lt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param lte
+     *        Represents a less than equal condition to be applied to a single field when querying for findings.
+     */
+    @Deprecated
+    public void setLte(Integer lte) {
+        this.lte = lte;
+    }
+
+    /**
+     * <p>
+     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @return Represents a less than equal condition to be applied to a single field when querying for findings.
+     */
+    @Deprecated
+    public Integer getLte() {
+        return this.lte;
+    }
+
+    /**
+     * <p>
+     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param lte
+     *        Represents a less than equal condition to be applied to a single field when querying for findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public Condition withLte(Integer lte) {
+        setLte(lte);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.List<String> getEquals() {
+        return equals;
+    }
+
+    /**
+     * @param equals
+     */
+
+    public void setEquals(java.util.Collection<String> equals) {
+        if (equals == null) {
+            this.equals = null;
+            return;
+        }
+
+        this.equals = new java.util.ArrayList<String>(equals);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEquals(java.util.Collection)} or {@link #withEquals(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param equals
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Condition withEquals(String... equals) {
+        if (this.equals == null) {
+            setEquals(new java.util.ArrayList<String>(equals.length));
+        }
+        for (String ele : equals) {
+            this.equals.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param equals
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Condition withEquals(java.util.Collection<String> equals) {
+        setEquals(equals);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.List<String> getNotEquals() {
+        return notEquals;
+    }
+
+    /**
+     * @param notEquals
+     */
+
+    public void setNotEquals(java.util.Collection<String> notEquals) {
+        if (notEquals == null) {
+            this.notEquals = null;
+            return;
+        }
+
+        this.notEquals = new java.util.ArrayList<String>(notEquals);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNotEquals(java.util.Collection)} or {@link #withNotEquals(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param notEquals
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Condition withNotEquals(String... notEquals) {
+        if (this.notEquals == null) {
+            setNotEquals(new java.util.ArrayList<String>(notEquals.length));
+        }
+        for (String ele : notEquals) {
+            this.notEquals.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param notEquals
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Condition withNotEquals(java.util.Collection<String> notEquals) {
+        setNotEquals(notEquals);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param greaterThan
+     *        Represents a greater than condition to be applied to a single field when querying for findings.
+     */
+
+    public void setGreaterThan(Long greaterThan) {
+        this.greaterThan = greaterThan;
+    }
+
+    /**
+     * <p>
+     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @return Represents a greater than condition to be applied to a single field when querying for findings.
+     */
+
+    public Long getGreaterThan() {
+        return this.greaterThan;
+    }
+
+    /**
+     * <p>
+     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param greaterThan
+     *        Represents a greater than condition to be applied to a single field when querying for findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Condition withGreaterThan(Long greaterThan) {
+        setGreaterThan(greaterThan);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param greaterThanOrEqual
+     *        Represents a greater than equal condition to be applied to a single field when querying for findings.
+     */
+
+    public void setGreaterThanOrEqual(Long greaterThanOrEqual) {
+        this.greaterThanOrEqual = greaterThanOrEqual;
+    }
+
+    /**
+     * <p>
+     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @return Represents a greater than equal condition to be applied to a single field when querying for findings.
+     */
+
+    public Long getGreaterThanOrEqual() {
+        return this.greaterThanOrEqual;
+    }
+
+    /**
+     * <p>
+     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param greaterThanOrEqual
+     *        Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Condition withGreaterThanOrEqual(Long greaterThanOrEqual) {
+        setGreaterThanOrEqual(greaterThanOrEqual);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a less than condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param lessThan
+     *        Represents a less than condition to be applied to a single field when querying for findings.
+     */
+
+    public void setLessThan(Long lessThan) {
+        this.lessThan = lessThan;
+    }
+
+    /**
+     * <p>
+     * Represents a less than condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @return Represents a less than condition to be applied to a single field when querying for findings.
+     */
+
+    public Long getLessThan() {
+        return this.lessThan;
+    }
+
+    /**
+     * <p>
+     * Represents a less than condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param lessThan
+     *        Represents a less than condition to be applied to a single field when querying for findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Condition withLessThan(Long lessThan) {
+        setLessThan(lessThan);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param lessThanOrEqual
+     *        Represents a less than equal condition to be applied to a single field when querying for findings.
+     */
+
+    public void setLessThanOrEqual(Long lessThanOrEqual) {
+        this.lessThanOrEqual = lessThanOrEqual;
+    }
+
+    /**
+     * <p>
+     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @return Represents a less than equal condition to be applied to a single field when querying for findings.
+     */
+
+    public Long getLessThanOrEqual() {
+        return this.lessThanOrEqual;
+    }
+
+    /**
+     * <p>
+     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * </p>
+     * 
+     * @param lessThanOrEqual
+     *        Represents a less than equal condition to be applied to a single field when querying for findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Condition withLessThanOrEqual(Long lessThanOrEqual) {
+        setLessThanOrEqual(lessThanOrEqual);
         return this;
     }
 
@@ -313,6 +674,8 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getEq() != null)
             sb.append("Eq: ").append(getEq()).append(",");
+        if (getNeq() != null)
+            sb.append("Neq: ").append(getNeq()).append(",");
         if (getGt() != null)
             sb.append("Gt: ").append(getGt()).append(",");
         if (getGte() != null)
@@ -321,8 +684,18 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
             sb.append("Lt: ").append(getLt()).append(",");
         if (getLte() != null)
             sb.append("Lte: ").append(getLte()).append(",");
-        if (getNeq() != null)
-            sb.append("Neq: ").append(getNeq());
+        if (getEquals() != null)
+            sb.append("Equals: ").append(getEquals()).append(",");
+        if (getNotEquals() != null)
+            sb.append("NotEquals: ").append(getNotEquals()).append(",");
+        if (getGreaterThan() != null)
+            sb.append("GreaterThan: ").append(getGreaterThan()).append(",");
+        if (getGreaterThanOrEqual() != null)
+            sb.append("GreaterThanOrEqual: ").append(getGreaterThanOrEqual()).append(",");
+        if (getLessThan() != null)
+            sb.append("LessThan: ").append(getLessThan()).append(",");
+        if (getLessThanOrEqual() != null)
+            sb.append("LessThanOrEqual: ").append(getLessThanOrEqual());
         sb.append("}");
         return sb.toString();
     }
@@ -341,6 +714,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEq() != null && other.getEq().equals(this.getEq()) == false)
             return false;
+        if (other.getNeq() == null ^ this.getNeq() == null)
+            return false;
+        if (other.getNeq() != null && other.getNeq().equals(this.getNeq()) == false)
+            return false;
         if (other.getGt() == null ^ this.getGt() == null)
             return false;
         if (other.getGt() != null && other.getGt().equals(this.getGt()) == false)
@@ -357,9 +734,29 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLte() != null && other.getLte().equals(this.getLte()) == false)
             return false;
-        if (other.getNeq() == null ^ this.getNeq() == null)
+        if (other.getEquals() == null ^ this.getEquals() == null)
             return false;
-        if (other.getNeq() != null && other.getNeq().equals(this.getNeq()) == false)
+        if (other.getEquals() != null && other.getEquals().equals(this.getEquals()) == false)
+            return false;
+        if (other.getNotEquals() == null ^ this.getNotEquals() == null)
+            return false;
+        if (other.getNotEquals() != null && other.getNotEquals().equals(this.getNotEquals()) == false)
+            return false;
+        if (other.getGreaterThan() == null ^ this.getGreaterThan() == null)
+            return false;
+        if (other.getGreaterThan() != null && other.getGreaterThan().equals(this.getGreaterThan()) == false)
+            return false;
+        if (other.getGreaterThanOrEqual() == null ^ this.getGreaterThanOrEqual() == null)
+            return false;
+        if (other.getGreaterThanOrEqual() != null && other.getGreaterThanOrEqual().equals(this.getGreaterThanOrEqual()) == false)
+            return false;
+        if (other.getLessThan() == null ^ this.getLessThan() == null)
+            return false;
+        if (other.getLessThan() != null && other.getLessThan().equals(this.getLessThan()) == false)
+            return false;
+        if (other.getLessThanOrEqual() == null ^ this.getLessThanOrEqual() == null)
+            return false;
+        if (other.getLessThanOrEqual() != null && other.getLessThanOrEqual().equals(this.getLessThanOrEqual()) == false)
             return false;
         return true;
     }
@@ -370,11 +767,17 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEq() == null) ? 0 : getEq().hashCode());
+        hashCode = prime * hashCode + ((getNeq() == null) ? 0 : getNeq().hashCode());
         hashCode = prime * hashCode + ((getGt() == null) ? 0 : getGt().hashCode());
         hashCode = prime * hashCode + ((getGte() == null) ? 0 : getGte().hashCode());
         hashCode = prime * hashCode + ((getLt() == null) ? 0 : getLt().hashCode());
         hashCode = prime * hashCode + ((getLte() == null) ? 0 : getLte().hashCode());
-        hashCode = prime * hashCode + ((getNeq() == null) ? 0 : getNeq().hashCode());
+        hashCode = prime * hashCode + ((getEquals() == null) ? 0 : getEquals().hashCode());
+        hashCode = prime * hashCode + ((getNotEquals() == null) ? 0 : getNotEquals().hashCode());
+        hashCode = prime * hashCode + ((getGreaterThan() == null) ? 0 : getGreaterThan().hashCode());
+        hashCode = prime * hashCode + ((getGreaterThanOrEqual() == null) ? 0 : getGreaterThanOrEqual().hashCode());
+        hashCode = prime * hashCode + ((getLessThan() == null) ? 0 : getLessThan().hashCode());
+        hashCode = prime * hashCode + ((getLessThanOrEqual() == null) ? 0 : getLessThanOrEqual().hashCode());
         return hashCode;
     }
 

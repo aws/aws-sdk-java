@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for M2tsAudioBufferModel
+ * M2ts Audio Buffer Model
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M2tsAudioBufferModel {

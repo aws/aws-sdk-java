@@ -73,7 +73,11 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String optionGroupDescription;
-
+    /**
+     * <p>
+     * Tags to assign to the option group.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
@@ -372,7 +376,11 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * Tags to assign to the option group.
+     * </p>
+     * 
+     * @return Tags to assign to the option group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -383,7 +391,12 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Tags to assign to the option group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the option group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -397,12 +410,16 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * Tags to assign to the option group.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        Tags to assign to the option group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,7 +434,12 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Tags to assign to the option group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the option group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * UpdateDetector request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetector" target="_top">AWS API
  *      Documentation</a>
@@ -26,15 +25,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID of the detector that you want to update. */
+    /**
+     * <p>
+     * The unique ID of the detector that you want to update.
+     * </p>
+     */
     private String detectorId;
-    /** Updated boolean value for the detector that specifies whether the detector is enabled. */
+    /**
+     * <p>
+     * Updated boolean value for the detector that specifies whether the detector is enabled.
+     * </p>
+     */
     private Boolean enable;
-    /** A enum value that specifies how frequently customer got Finding updates published. */
+    /**
+     * <p>
+     * A enum value that specifies how frequently customer got Finding updates published.
+     * </p>
+     */
     private String findingPublishingFrequency;
 
     /**
+     * <p>
      * The unique ID of the detector that you want to update.
+     * </p>
      * 
      * @param detectorId
      *        The unique ID of the detector that you want to update.
@@ -45,7 +58,9 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * The unique ID of the detector that you want to update.
+     * </p>
      * 
      * @return The unique ID of the detector that you want to update.
      */
@@ -55,7 +70,9 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * The unique ID of the detector that you want to update.
+     * </p>
      * 
      * @param detectorId
      *        The unique ID of the detector that you want to update.
@@ -68,7 +85,9 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * Updated boolean value for the detector that specifies whether the detector is enabled.
+     * </p>
      * 
      * @param enable
      *        Updated boolean value for the detector that specifies whether the detector is enabled.
@@ -79,7 +98,9 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * Updated boolean value for the detector that specifies whether the detector is enabled.
+     * </p>
      * 
      * @return Updated boolean value for the detector that specifies whether the detector is enabled.
      */
@@ -89,7 +110,9 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * Updated boolean value for the detector that specifies whether the detector is enabled.
+     * </p>
      * 
      * @param enable
      *        Updated boolean value for the detector that specifies whether the detector is enabled.
@@ -102,7 +125,9 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * Updated boolean value for the detector that specifies whether the detector is enabled.
+     * </p>
      * 
      * @return Updated boolean value for the detector that specifies whether the detector is enabled.
      */
@@ -112,7 +137,9 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A enum value that specifies how frequently customer got Finding updates published.
+     * </p>
      * 
      * @param findingPublishingFrequency
      *        A enum value that specifies how frequently customer got Finding updates published.
@@ -124,7 +151,9 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A enum value that specifies how frequently customer got Finding updates published.
+     * </p>
      * 
      * @return A enum value that specifies how frequently customer got Finding updates published.
      * @see FindingPublishingFrequency
@@ -135,7 +164,9 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A enum value that specifies how frequently customer got Finding updates published.
+     * </p>
      * 
      * @param findingPublishingFrequency
      *        A enum value that specifies how frequently customer got Finding updates published.
@@ -149,7 +180,9 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A enum value that specifies how frequently customer got Finding updates published.
+     * </p>
      * 
      * @param findingPublishingFrequency
      *        A enum value that specifies how frequently customer got Finding updates published.

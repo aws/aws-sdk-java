@@ -33,21 +33,40 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For example, a <code>TaskExecution</code> value with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
-     * executed the task with the ARN <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     * executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      * </p>
      */
     private String taskExecutionArn;
     /**
      * <p>
-     * The status of the task. For detailed information about sync statuses, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html">Understanding
-     * Sync Task Statuses</a>.
+     * The status of the task execution.
+     * </p>
+     * <p>
+     * For detailed information about task execution statuses, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     * (Understanding Task Statuses).
      * </p>
      */
     private String status;
 
     private Options options;
+    /**
+     * <p/>
+     * <p>
+     * Specifies that the task execution excludes files from the transfer based on the specified pattern in the filter.
+     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * </p>
+     */
+    private java.util.List<FilterRule> excludes;
+    /**
+     * <p/>
+     * <p>
+     * Specifies that the task execution excludes files in the transfer based on the specified pattern in the filter.
+     * When multiple include filters are set, they are interpreted as an OR.
+     * </p>
+     */
+    private java.util.List<FilterRule> includes;
     /**
      * <p>
      * The time that the task execution was started.
@@ -109,8 +128,8 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For example, a <code>TaskExecution</code> value with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
-     * executed the task with the ARN <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     * executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      * </p>
      * 
      * @param taskExecutionArn
@@ -118,9 +137,9 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      *        hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
      *        <p>
      *        For example, a <code>TaskExecution</code> value with the ARN
-     *        <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     *        <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
      *        executed the task with the ARN
-     *        <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     *        <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      */
 
     public void setTaskExecutionArn(String taskExecutionArn) {
@@ -134,17 +153,17 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For example, a <code>TaskExecution</code> value with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
-     * executed the task with the ARN <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     * executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is
      *         hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
      *         <p>
      *         For example, a <code>TaskExecution</code> value with the ARN
-     *         <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     *         <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
      *         executed the task with the ARN
-     *         <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     *         <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      */
 
     public String getTaskExecutionArn() {
@@ -158,8 +177,8 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For example, a <code>TaskExecution</code> value with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
-     * executed the task with the ARN <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     * executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      * </p>
      * 
      * @param taskExecutionArn
@@ -167,9 +186,9 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      *        hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
      *        <p>
      *        For example, a <code>TaskExecution</code> value with the ARN
-     *        <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     *        <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
      *        executed the task with the ARN
-     *        <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     *        <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,15 +199,20 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status of the task. For detailed information about sync statuses, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html">Understanding
-     * Sync Task Statuses</a>.
+     * The status of the task execution.
+     * </p>
+     * <p>
+     * For detailed information about task execution statuses, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     * (Understanding Task Statuses).
      * </p>
      * 
      * @param status
-     *        The status of the task. For detailed information about sync statuses, see <a
-     *        href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html"
-     *        >Understanding Sync Task Statuses</a>.
+     *        The status of the task execution. </p>
+     *        <p>
+     *        For detailed information about task execution statuses, see
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     *        (Understanding Task Statuses).
      * @see TaskExecutionStatus
      */
 
@@ -198,14 +222,19 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status of the task. For detailed information about sync statuses, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html">Understanding
-     * Sync Task Statuses</a>.
+     * The status of the task execution.
+     * </p>
+     * <p>
+     * For detailed information about task execution statuses, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     * (Understanding Task Statuses).
      * </p>
      * 
-     * @return The status of the task. For detailed information about sync statuses, see <a
-     *         href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html"
-     *         >Understanding Sync Task Statuses</a>.
+     * @return The status of the task execution. </p>
+     *         <p>
+     *         For detailed information about task execution statuses, see
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     *         (Understanding Task Statuses).
      * @see TaskExecutionStatus
      */
 
@@ -215,15 +244,20 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status of the task. For detailed information about sync statuses, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html">Understanding
-     * Sync Task Statuses</a>.
+     * The status of the task execution.
+     * </p>
+     * <p>
+     * For detailed information about task execution statuses, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     * (Understanding Task Statuses).
      * </p>
      * 
      * @param status
-     *        The status of the task. For detailed information about sync statuses, see <a
-     *        href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html"
-     *        >Understanding Sync Task Statuses</a>.
+     *        The status of the task execution. </p>
+     *        <p>
+     *        For detailed information about task execution statuses, see
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     *        (Understanding Task Statuses).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskExecutionStatus
      */
@@ -235,15 +269,20 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status of the task. For detailed information about sync statuses, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html">Understanding
-     * Sync Task Statuses</a>.
+     * The status of the task execution.
+     * </p>
+     * <p>
+     * For detailed information about task execution statuses, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     * (Understanding Task Statuses).
      * </p>
      * 
      * @param status
-     *        The status of the task. For detailed information about sync statuses, see <a
-     *        href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html"
-     *        >Understanding Sync Task Statuses</a>.
+     *        The status of the task execution. </p>
+     *        <p>
+     *        For detailed information about task execution statuses, see
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     *        (Understanding Task Statuses).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskExecutionStatus
      */
@@ -276,6 +315,178 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     public DescribeTaskExecutionResult withOptions(Options options) {
         setOptions(options);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * Specifies that the task execution excludes files from the transfer based on the specified pattern in the filter.
+     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * </p>
+     * 
+     * @return <p>
+     *         Specifies that the task execution excludes files from the transfer based on the specified pattern in the
+     *         filter. Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     */
+
+    public java.util.List<FilterRule> getExcludes() {
+        return excludes;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * Specifies that the task execution excludes files from the transfer based on the specified pattern in the filter.
+     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * </p>
+     * 
+     * @param excludes
+     *        <p>
+     *        Specifies that the task execution excludes files from the transfer based on the specified pattern in the
+     *        filter. Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     */
+
+    public void setExcludes(java.util.Collection<FilterRule> excludes) {
+        if (excludes == null) {
+            this.excludes = null;
+            return;
+        }
+
+        this.excludes = new java.util.ArrayList<FilterRule>(excludes);
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * Specifies that the task execution excludes files from the transfer based on the specified pattern in the filter.
+     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExcludes(java.util.Collection)} or {@link #withExcludes(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param excludes
+     *        <p>
+     *        Specifies that the task execution excludes files from the transfer based on the specified pattern in the
+     *        filter. Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTaskExecutionResult withExcludes(FilterRule... excludes) {
+        if (this.excludes == null) {
+            setExcludes(new java.util.ArrayList<FilterRule>(excludes.length));
+        }
+        for (FilterRule ele : excludes) {
+            this.excludes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * Specifies that the task execution excludes files from the transfer based on the specified pattern in the filter.
+     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * </p>
+     * 
+     * @param excludes
+     *        <p>
+     *        Specifies that the task execution excludes files from the transfer based on the specified pattern in the
+     *        filter. Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTaskExecutionResult withExcludes(java.util.Collection<FilterRule> excludes) {
+        setExcludes(excludes);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * Specifies that the task execution excludes files in the transfer based on the specified pattern in the filter.
+     * When multiple include filters are set, they are interpreted as an OR.
+     * </p>
+     * 
+     * @return <p>
+     *         Specifies that the task execution excludes files in the transfer based on the specified pattern in the
+     *         filter. When multiple include filters are set, they are interpreted as an OR.
+     */
+
+    public java.util.List<FilterRule> getIncludes() {
+        return includes;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * Specifies that the task execution excludes files in the transfer based on the specified pattern in the filter.
+     * When multiple include filters are set, they are interpreted as an OR.
+     * </p>
+     * 
+     * @param includes
+     *        <p>
+     *        Specifies that the task execution excludes files in the transfer based on the specified pattern in the
+     *        filter. When multiple include filters are set, they are interpreted as an OR.
+     */
+
+    public void setIncludes(java.util.Collection<FilterRule> includes) {
+        if (includes == null) {
+            this.includes = null;
+            return;
+        }
+
+        this.includes = new java.util.ArrayList<FilterRule>(includes);
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * Specifies that the task execution excludes files in the transfer based on the specified pattern in the filter.
+     * When multiple include filters are set, they are interpreted as an OR.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIncludes(java.util.Collection)} or {@link #withIncludes(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param includes
+     *        <p>
+     *        Specifies that the task execution excludes files in the transfer based on the specified pattern in the
+     *        filter. When multiple include filters are set, they are interpreted as an OR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTaskExecutionResult withIncludes(FilterRule... includes) {
+        if (this.includes == null) {
+            setIncludes(new java.util.ArrayList<FilterRule>(includes.length));
+        }
+        for (FilterRule ele : includes) {
+            this.includes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * Specifies that the task execution excludes files in the transfer based on the specified pattern in the filter.
+     * When multiple include filters are set, they are interpreted as an OR.
+     * </p>
+     * 
+     * @param includes
+     *        <p>
+     *        Specifies that the task execution excludes files in the transfer based on the specified pattern in the
+     *        filter. When multiple include filters are set, they are interpreted as an OR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTaskExecutionResult withIncludes(java.util.Collection<FilterRule> includes) {
+        setIncludes(includes);
         return this;
     }
 
@@ -640,6 +851,10 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
             sb.append("Status: ").append(getStatus()).append(",");
         if (getOptions() != null)
             sb.append("Options: ").append(getOptions()).append(",");
+        if (getExcludes() != null)
+            sb.append("Excludes: ").append(getExcludes()).append(",");
+        if (getIncludes() != null)
+            sb.append("Includes: ").append(getIncludes()).append(",");
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEstimatedFilesToTransfer() != null)
@@ -680,6 +895,14 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
             return false;
+        if (other.getExcludes() == null ^ this.getExcludes() == null)
+            return false;
+        if (other.getExcludes() != null && other.getExcludes().equals(this.getExcludes()) == false)
+            return false;
+        if (other.getIncludes() == null ^ this.getIncludes() == null)
+            return false;
+        if (other.getIncludes() != null && other.getIncludes().equals(this.getIncludes()) == false)
+            return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
         if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
@@ -719,6 +942,8 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getTaskExecutionArn() == null) ? 0 : getTaskExecutionArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
+        hashCode = prime * hashCode + ((getExcludes() == null) ? 0 : getExcludes().hashCode());
+        hashCode = prime * hashCode + ((getIncludes() == null) ? 0 : getIncludes().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEstimatedFilesToTransfer() == null) ? 0 : getEstimatedFilesToTransfer().hashCode());
         hashCode = prime * hashCode + ((getEstimatedBytesToTransfer() == null) ? 0 : getEstimatedBytesToTransfer().hashCode());

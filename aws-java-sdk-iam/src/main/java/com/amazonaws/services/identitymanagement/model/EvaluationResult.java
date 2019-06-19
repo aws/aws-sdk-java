@@ -79,7 +79,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
      * grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
      * Differ from Resource-based Policies</a>
      * </p>
      */
@@ -498,7 +498,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
      * grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
      * Differ from Resource-based Policies</a>
      * </p>
      * 
@@ -506,7 +506,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         resource policies, this parameter explains how each set of policies contributes to the final evaluation
      *         decision. When simulating cross-account access to a resource, both the resource-based policy and the
      *         caller's IAM policy must grant access. See <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
      *         Roles Differ from Resource-based Policies</a>
      */
 
@@ -523,7 +523,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
      * grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
      * Differ from Resource-based Policies</a>
      * </p>
      * 
@@ -532,7 +532,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        resource policies, this parameter explains how each set of policies contributes to the final evaluation
      *        decision. When simulating cross-account access to a resource, both the resource-based policy and the
      *        caller's IAM policy must grant access. See <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
      *        Roles Differ from Resource-based Policies</a>
      */
 
@@ -546,7 +546,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
      * grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
      * Differ from Resource-based Policies</a>
      * </p>
      * 
@@ -555,7 +555,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        resource policies, this parameter explains how each set of policies contributes to the final evaluation
      *        decision. When simulating cross-account access to a resource, both the resource-based policy and the
      *        caller's IAM policy must grant access. See <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
      *        Roles Differ from Resource-based Policies</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

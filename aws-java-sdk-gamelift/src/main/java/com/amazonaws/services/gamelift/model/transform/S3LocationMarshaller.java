@@ -33,6 +33,8 @@ public class S3LocationMarshaller {
             .marshallLocationName("Key").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
+    private static final MarshallingInfo<String> OBJECTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ObjectVersion").build();
 
     private static final S3LocationMarshaller instance = new S3LocationMarshaller();
 
@@ -53,6 +55,7 @@ public class S3LocationMarshaller {
             protocolMarshaller.marshall(s3Location.getBucket(), BUCKET_BINDING);
             protocolMarshaller.marshall(s3Location.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(s3Location.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(s3Location.getObjectVersion(), OBJECTVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

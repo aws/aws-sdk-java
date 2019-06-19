@@ -27,18 +27,18 @@ public class GetCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Name of the crawler to retrieve metadata for.
+     * The name of the crawler to retrieve metadata for.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * Name of the crawler to retrieve metadata for.
+     * The name of the crawler to retrieve metadata for.
      * </p>
      * 
      * @param name
-     *        Name of the crawler to retrieve metadata for.
+     *        The name of the crawler to retrieve metadata for.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class GetCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Name of the crawler to retrieve metadata for.
+     * The name of the crawler to retrieve metadata for.
      * </p>
      * 
-     * @return Name of the crawler to retrieve metadata for.
+     * @return The name of the crawler to retrieve metadata for.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class GetCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Name of the crawler to retrieve metadata for.
+     * The name of the crawler to retrieve metadata for.
      * </p>
      * 
      * @param name
-     *        Name of the crawler to retrieve metadata for.
+     *        The name of the crawler to retrieve metadata for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

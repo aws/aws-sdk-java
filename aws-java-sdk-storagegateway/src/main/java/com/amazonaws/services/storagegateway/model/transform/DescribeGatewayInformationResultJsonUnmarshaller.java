@@ -85,9 +85,21 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     describeGatewayInformationResult.setLastSoftwareUpdate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Ec2InstanceId", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setEc2InstanceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Ec2InstanceRegion", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setEc2InstanceRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     describeGatewayInformationResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("VPCEndpoint", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setVPCEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

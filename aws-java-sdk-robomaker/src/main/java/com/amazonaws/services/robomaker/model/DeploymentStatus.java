@@ -24,7 +24,8 @@ public enum DeploymentStatus {
     Preparing("Preparing"),
     InProgress("InProgress"),
     Failed("Failed"),
-    Succeeded("Succeeded");
+    Succeeded("Succeeded"),
+    Canceled("Canceled");
 
     private String value;
 

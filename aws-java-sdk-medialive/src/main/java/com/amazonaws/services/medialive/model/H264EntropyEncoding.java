@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for H264EntropyEncoding
+ * H264 Entropy Encoding
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264EntropyEncoding {

@@ -23,7 +23,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HyperParameterTuningJobStrategyType {
 
-    Bayesian("Bayesian");
+    Bayesian("Bayesian"),
+    Random("Random");
 
     private String value;
 

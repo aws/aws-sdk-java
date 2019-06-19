@@ -52,6 +52,11 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * information, see <code>hostPort</code>. Port mappings that are automatically assigned in this way do not count
      * toward the 100 reserved ports limit of a container instance.
      * </p>
+     * <important>
+     * <p>
+     * You cannot expose the same container port for multiple protocols. An error will be returned if this is attempted.
+     * </p>
+     * </important>
      */
     private Integer containerPort;
     /**
@@ -112,6 +117,11 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * information, see <code>hostPort</code>. Port mappings that are automatically assigned in this way do not count
      * toward the 100 reserved ports limit of a container instance.
      * </p>
+     * <important>
+     * <p>
+     * You cannot expose the same container port for multiple protocols. An error will be returned if this is attempted.
+     * </p>
+     * </important>
      * 
      * @param containerPort
      *        The port number on the container that is bound to the user-specified or automatically assigned host
@@ -125,6 +135,12 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        container port and not a host port, your container automatically receives a host port in the ephemeral
      *        port range. For more information, see <code>hostPort</code>. Port mappings that are automatically assigned
      *        in this way do not count toward the 100 reserved ports limit of a container instance.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        You cannot expose the same container port for multiple protocols. An error will be returned if this is
+     *        attempted.
+     *        </p>
      */
 
     public void setContainerPort(Integer containerPort) {
@@ -145,6 +161,11 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * information, see <code>hostPort</code>. Port mappings that are automatically assigned in this way do not count
      * toward the 100 reserved ports limit of a container instance.
      * </p>
+     * <important>
+     * <p>
+     * You cannot expose the same container port for multiple protocols. An error will be returned if this is attempted.
+     * </p>
+     * </important>
      * 
      * @return The port number on the container that is bound to the user-specified or automatically assigned host
      *         port.</p>
@@ -157,6 +178,12 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *         container port and not a host port, your container automatically receives a host port in the ephemeral
      *         port range. For more information, see <code>hostPort</code>. Port mappings that are automatically
      *         assigned in this way do not count toward the 100 reserved ports limit of a container instance.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         You cannot expose the same container port for multiple protocols. An error will be returned if this is
+     *         attempted.
+     *         </p>
      */
 
     public Integer getContainerPort() {
@@ -177,6 +204,11 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * information, see <code>hostPort</code>. Port mappings that are automatically assigned in this way do not count
      * toward the 100 reserved ports limit of a container instance.
      * </p>
+     * <important>
+     * <p>
+     * You cannot expose the same container port for multiple protocols. An error will be returned if this is attempted.
+     * </p>
+     * </important>
      * 
      * @param containerPort
      *        The port number on the container that is bound to the user-specified or automatically assigned host
@@ -190,6 +222,12 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        container port and not a host port, your container automatically receives a host port in the ephemeral
      *        port range. For more information, see <code>hostPort</code>. Port mappings that are automatically assigned
      *        in this way do not count toward the 100 reserved ports limit of a container instance.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        You cannot expose the same container port for multiple protocols. An error will be returned if this is
+     *        attempted.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

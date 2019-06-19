@@ -20,8 +20,8 @@ import javax.annotation.Generated;
  * Contains the details of an Amazon Aurora DB cluster.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>DescribeDBClusters</a>, <a>StopDBCluster</a>, and
- * <a>StartDBCluster</a> actions.
+ * This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and
+ * <code>StartDBCluster</code> actions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBCluster" target="_top">AWS API
@@ -40,7 +40,7 @@ public class DBCluster implements Serializable, Cloneable {
     private Integer allocatedStorage;
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.
+     * Provides the list of Availability Zones (AZs) where instances in the DB cluster can be created.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> availabilityZones;
@@ -219,7 +219,7 @@ public class DBCluster implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
      */
     private String kmsKeyId;
@@ -246,8 +246,8 @@ public class DBCluster implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DBClusterRole> associatedRoles;
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -315,32 +315,51 @@ public class DBCluster implements Serializable, Cloneable {
     private ScalingConfigurationInfo scalingConfigurationInfo;
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
-     * to true.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
+     * protection is enabled.
      * </p>
      */
     private Boolean deletionProtection;
     /**
-     * <note>
      * <p>
-     * HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     * </p>
-     * </note>
-     * <p>
-     * Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
-     * <code>false</code> otherwise.
+     * A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
      * </p>
      * <p>
      * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
      * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
      * </p>
      * <p>
-     * For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      */
     private Boolean httpEndpointEnabled;
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. The database session can handle these events either synchronously or asynchronously.
+     * </p>
+     */
+    private String activityStreamMode;
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     */
+    private String activityStreamStatus;
+    /**
+     * <p>
+     * The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * </p>
+     */
+    private String activityStreamKmsKeyId;
+    /**
+     * <p>
+     * The name of the Amazon Kinesis data stream used for the database activity stream.
+     * </p>
+     */
+    private String activityStreamKinesisStreamName;
     /**
      * <p>
      * Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
@@ -402,10 +421,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.
+     * Provides the list of Availability Zones (AZs) where instances in the DB cluster can be created.
      * </p>
      * 
-     * @return Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.
+     * @return Provides the list of Availability Zones (AZs) where instances in the DB cluster can be created.
      */
 
     public java.util.List<String> getAvailabilityZones() {
@@ -417,11 +436,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.
+     * Provides the list of Availability Zones (AZs) where instances in the DB cluster can be created.
      * </p>
      * 
      * @param availabilityZones
-     *        Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.
+     *        Provides the list of Availability Zones (AZs) where instances in the DB cluster can be created.
      */
 
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
@@ -435,7 +454,7 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.
+     * Provides the list of Availability Zones (AZs) where instances in the DB cluster can be created.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -444,7 +463,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param availabilityZones
-     *        Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.
+     *        Provides the list of Availability Zones (AZs) where instances in the DB cluster can be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,11 +479,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.
+     * Provides the list of Availability Zones (AZs) where instances in the DB cluster can be created.
      * </p>
      * 
      * @param availabilityZones
-     *        Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.
+     *        Provides the list of Availability Zones (AZs) where instances in the DB cluster can be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1816,11 +1835,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     *        If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1829,10 +1848,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     * @return If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
      */
 
     public String getKmsKeyId() {
@@ -1841,11 +1860,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     *        If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2031,13 +2050,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *        otherwise false.
+     *        A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to
+     *        database accounts is enabled.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -2046,12 +2065,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *         otherwise false.
+     * @return A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to
+     *         database accounts is enabled.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -2060,13 +2079,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *        otherwise false.
+     *        A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to
+     *        database accounts is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2077,12 +2096,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *         otherwise false.
+     * @return A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to
+     *         database accounts is enabled.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {
@@ -2548,13 +2567,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
-     * to true.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
+     * protection is enabled.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value
-     *        is set to true.
+     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
+     *        protection is enabled.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -2563,12 +2582,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
-     * to true.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
+     * protection is enabled.
      * </p>
      * 
-     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this
-     *         value is set to true.
+     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
+     *         protection is enabled.
      */
 
     public Boolean getDeletionProtection() {
@@ -2577,13 +2596,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
-     * to true.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
+     * protection is enabled.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value
-     *        is set to true.
+     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
+     *        protection is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2594,12 +2613,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
-     * to true.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
+     * protection is enabled.
      * </p>
      * 
-     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this
-     *         value is set to true.
+     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
+     *         protection is enabled.
      */
 
     public Boolean isDeletionProtection() {
@@ -2607,42 +2626,29 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
-     * <note>
      * <p>
-     * HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     * </p>
-     * </note>
-     * <p>
-     * Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
-     * <code>false</code> otherwise.
+     * A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
      * </p>
      * <p>
      * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
      * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
      * </p>
      * <p>
-     * For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param httpEndpointEnabled
-     *        <p>
-     *        HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
-     *        <code>false</code> otherwise.
-     *        </p>
+     *        A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
      *        <p>
      *        When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
      *        Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query
      *        editor.
      *        </p>
      *        <p>
-     *        For more information about Aurora Serverless, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for
      *        Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
@@ -2651,41 +2657,28 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
-     * <note>
      * <p>
-     * HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     * </p>
-     * </note>
-     * <p>
-     * Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
-     * <code>false</code> otherwise.
+     * A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
      * </p>
      * <p>
      * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
      * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
      * </p>
      * <p>
-     * For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
-     * @return <p>
-     *         HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
-     *         <code>false</code> otherwise.
-     *         </p>
+     * @return A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
      *         <p>
      *         When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
      *         Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query
      *         editor.
      *         </p>
      *         <p>
-     *         For more information about Aurora Serverless, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for
      *         Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
@@ -2694,42 +2687,29 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
-     * <note>
      * <p>
-     * HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     * </p>
-     * </note>
-     * <p>
-     * Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
-     * <code>false</code> otherwise.
+     * A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
      * </p>
      * <p>
      * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
      * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
      * </p>
      * <p>
-     * For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param httpEndpointEnabled
-     *        <p>
-     *        HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
-     *        <code>false</code> otherwise.
-     *        </p>
+     *        A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
      *        <p>
      *        When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
      *        Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query
      *        editor.
      *        </p>
      *        <p>
-     *        For more information about Aurora Serverless, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for
      *        Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2740,46 +2720,239 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
-     * <note>
      * <p>
-     * HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     * </p>
-     * </note>
-     * <p>
-     * Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
-     * <code>false</code> otherwise.
+     * A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
      * </p>
      * <p>
      * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
      * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
      * </p>
      * <p>
-     * For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
-     * @return <p>
-     *         HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
-     *         <code>false</code> otherwise.
-     *         </p>
+     * @return A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
      *         <p>
      *         When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
      *         Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query
      *         editor.
      *         </p>
      *         <p>
-     *         For more information about Aurora Serverless, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for
      *         Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public Boolean isHttpEndpointEnabled() {
         return this.httpEndpointEnabled;
+    }
+
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. The database session can handle these events either synchronously or asynchronously.
+     * </p>
+     * 
+     * @param activityStreamMode
+     *        The mode of the database activity stream. Database events such as a change or access generate an activity
+     *        stream event. The database session can handle these events either synchronously or asynchronously.
+     * @see ActivityStreamMode
+     */
+
+    public void setActivityStreamMode(String activityStreamMode) {
+        this.activityStreamMode = activityStreamMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. The database session can handle these events either synchronously or asynchronously.
+     * </p>
+     * 
+     * @return The mode of the database activity stream. Database events such as a change or access generate an activity
+     *         stream event. The database session can handle these events either synchronously or asynchronously.
+     * @see ActivityStreamMode
+     */
+
+    public String getActivityStreamMode() {
+        return this.activityStreamMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. The database session can handle these events either synchronously or asynchronously.
+     * </p>
+     * 
+     * @param activityStreamMode
+     *        The mode of the database activity stream. Database events such as a change or access generate an activity
+     *        stream event. The database session can handle these events either synchronously or asynchronously.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamMode
+     */
+
+    public DBCluster withActivityStreamMode(String activityStreamMode) {
+        setActivityStreamMode(activityStreamMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. The database session can handle these events either synchronously or asynchronously.
+     * </p>
+     * 
+     * @param activityStreamMode
+     *        The mode of the database activity stream. Database events such as a change or access generate an activity
+     *        stream event. The database session can handle these events either synchronously or asynchronously.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamMode
+     */
+
+    public DBCluster withActivityStreamMode(ActivityStreamMode activityStreamMode) {
+        this.activityStreamMode = activityStreamMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamStatus
+     *        The status of the database activity stream.
+     * @see ActivityStreamStatus
+     */
+
+    public void setActivityStreamStatus(String activityStreamStatus) {
+        this.activityStreamStatus = activityStreamStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     * 
+     * @return The status of the database activity stream.
+     * @see ActivityStreamStatus
+     */
+
+    public String getActivityStreamStatus() {
+        return this.activityStreamStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamStatus
+     *        The status of the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamStatus
+     */
+
+    public DBCluster withActivityStreamStatus(String activityStreamStatus) {
+        setActivityStreamStatus(activityStreamStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamStatus
+     *        The status of the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamStatus
+     */
+
+    public DBCluster withActivityStreamStatus(ActivityStreamStatus activityStreamStatus) {
+        this.activityStreamStatus = activityStreamStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamKmsKeyId
+     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     */
+
+    public void setActivityStreamKmsKeyId(String activityStreamKmsKeyId) {
+        this.activityStreamKmsKeyId = activityStreamKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * </p>
+     * 
+     * @return The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     */
+
+    public String getActivityStreamKmsKeyId() {
+        return this.activityStreamKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamKmsKeyId
+     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withActivityStreamKmsKeyId(String activityStreamKmsKeyId) {
+        setActivityStreamKmsKeyId(activityStreamKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Kinesis data stream used for the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamKinesisStreamName
+     *        The name of the Amazon Kinesis data stream used for the database activity stream.
+     */
+
+    public void setActivityStreamKinesisStreamName(String activityStreamKinesisStreamName) {
+        this.activityStreamKinesisStreamName = activityStreamKinesisStreamName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Kinesis data stream used for the database activity stream.
+     * </p>
+     * 
+     * @return The name of the Amazon Kinesis data stream used for the database activity stream.
+     */
+
+    public String getActivityStreamKinesisStreamName() {
+        return this.activityStreamKinesisStreamName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Kinesis data stream used for the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamKinesisStreamName
+     *        The name of the Amazon Kinesis data stream used for the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withActivityStreamKinesisStreamName(String activityStreamKinesisStreamName) {
+        setActivityStreamKinesisStreamName(activityStreamKinesisStreamName);
+        return this;
     }
 
     /**
@@ -2936,6 +3109,14 @@ public class DBCluster implements Serializable, Cloneable {
             sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
         if (getHttpEndpointEnabled() != null)
             sb.append("HttpEndpointEnabled: ").append(getHttpEndpointEnabled()).append(",");
+        if (getActivityStreamMode() != null)
+            sb.append("ActivityStreamMode: ").append(getActivityStreamMode()).append(",");
+        if (getActivityStreamStatus() != null)
+            sb.append("ActivityStreamStatus: ").append(getActivityStreamStatus()).append(",");
+        if (getActivityStreamKmsKeyId() != null)
+            sb.append("ActivityStreamKmsKeyId: ").append(getActivityStreamKmsKeyId()).append(",");
+        if (getActivityStreamKinesisStreamName() != null)
+            sb.append("ActivityStreamKinesisStreamName: ").append(getActivityStreamKinesisStreamName()).append(",");
         if (getCopyTagsToSnapshot() != null)
             sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot());
         sb.append("}");
@@ -3135,6 +3316,23 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getHttpEndpointEnabled() != null && other.getHttpEndpointEnabled().equals(this.getHttpEndpointEnabled()) == false)
             return false;
+        if (other.getActivityStreamMode() == null ^ this.getActivityStreamMode() == null)
+            return false;
+        if (other.getActivityStreamMode() != null && other.getActivityStreamMode().equals(this.getActivityStreamMode()) == false)
+            return false;
+        if (other.getActivityStreamStatus() == null ^ this.getActivityStreamStatus() == null)
+            return false;
+        if (other.getActivityStreamStatus() != null && other.getActivityStreamStatus().equals(this.getActivityStreamStatus()) == false)
+            return false;
+        if (other.getActivityStreamKmsKeyId() == null ^ this.getActivityStreamKmsKeyId() == null)
+            return false;
+        if (other.getActivityStreamKmsKeyId() != null && other.getActivityStreamKmsKeyId().equals(this.getActivityStreamKmsKeyId()) == false)
+            return false;
+        if (other.getActivityStreamKinesisStreamName() == null ^ this.getActivityStreamKinesisStreamName() == null)
+            return false;
+        if (other.getActivityStreamKinesisStreamName() != null
+                && other.getActivityStreamKinesisStreamName().equals(this.getActivityStreamKinesisStreamName()) == false)
+            return false;
         if (other.getCopyTagsToSnapshot() == null ^ this.getCopyTagsToSnapshot() == null)
             return false;
         if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
@@ -3192,6 +3390,10 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getScalingConfigurationInfo() == null) ? 0 : getScalingConfigurationInfo().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getHttpEndpointEnabled() == null) ? 0 : getHttpEndpointEnabled().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamMode() == null) ? 0 : getActivityStreamMode().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamStatus() == null) ? 0 : getActivityStreamStatus().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamKmsKeyId() == null) ? 0 : getActivityStreamKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamKinesisStreamName() == null) ? 0 : getActivityStreamKinesisStreamName().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         return hashCode;
     }

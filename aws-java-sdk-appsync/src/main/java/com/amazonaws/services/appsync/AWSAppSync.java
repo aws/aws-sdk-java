@@ -280,6 +280,8 @@ public interface AWSAppSync {
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You do not have access to perform this operation on this resource.
      * @sample AWSAppSync.DeleteGraphqlApi
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteGraphqlApi" target="_top">AWS API
      *      Documentation</a>
@@ -390,6 +392,8 @@ public interface AWSAppSync {
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You do not have access to perform this operation on this resource.
      * @sample AWSAppSync.GetGraphqlApi
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApi" target="_top">AWS API
      *      Documentation</a>
@@ -621,6 +625,32 @@ public interface AWSAppSync {
 
     /**
      * <p>
+     * Lists the tags for a resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You do not have access to perform this operation on this resource.
+     * @sample AWSAppSync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Lists the types for a given API.
      * </p>
      * 
@@ -669,6 +699,58 @@ public interface AWSAppSync {
      *      API Documentation</a>
      */
     StartSchemaCreationResult startSchemaCreation(StartSchemaCreationRequest startSchemaCreationRequest);
+
+    /**
+     * <p>
+     * Tags a resource with user-supplied tags.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You do not have access to perform this operation on this resource.
+     * @sample AWSAppSync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Untags a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You do not have access to perform this operation on this resource.
+     * @sample AWSAppSync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>
@@ -760,6 +842,8 @@ public interface AWSAppSync {
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You do not have access to perform this operation on this resource.
      * @sample AWSAppSync.UpdateGraphqlApi
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateGraphqlApi" target="_top">AWS API
      *      Documentation</a>

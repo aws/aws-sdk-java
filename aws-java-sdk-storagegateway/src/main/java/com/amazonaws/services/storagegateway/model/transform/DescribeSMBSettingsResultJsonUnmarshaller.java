@@ -60,6 +60,10 @@ public class DescribeSMBSettingsResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeSMBSettingsResult.setSMBGuestPasswordSet(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("SMBSecurityStrategy", targetDepth)) {
+                    context.nextToken();
+                    describeSMBSettingsResult.setSMBSecurityStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

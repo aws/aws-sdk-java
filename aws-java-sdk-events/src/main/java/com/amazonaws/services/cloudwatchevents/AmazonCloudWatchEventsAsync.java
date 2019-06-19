@@ -52,7 +52,7 @@ import com.amazonaws.services.cloudwatchevents.model.*;
  * </ul>
  * <p>
  * For more information about the features of Amazon CloudWatch Events, see the <a
- * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon CloudWatch Events User Guide</a>.
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon CloudWatch Events User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -345,6 +345,37 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Displays the tags associated with a CloudWatch Events resource. In CloudWatch Events, rules can be tagged.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Displays the tags associated with a CloudWatch Events resource. In CloudWatch Events, rules can be tagged.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the targets assigned to the specified rule.
      * </p>
      * 
@@ -425,7 +456,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * If you grant permissions using an organization, then accounts in that organization must specify a
      * <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code> to add your account's event bus
      * as a target. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html"
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html"
      * >Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * <p>
@@ -460,7 +491,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * If you grant permissions using an organization, then accounts in that organization must specify a
      * <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code> to add your account's event bus
      * as a target. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html"
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html"
      * >Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * <p>
@@ -501,6 +532,16 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * on a schedule.
      * </p>
      * <p>
+     * When you initially create a rule, you can optionally assign one or more tags to the rule. Tags can help you
+     * organize and categorize your resources. You can also use them to scope user permissions, by granting a user
+     * permission to access or change only rules with certain tag values. To use the <code>PutRule</code> operation and
+     * assign tags, you must have both the <code>events:PutRule</code> and <code>events:TagResource</code> permissions.
+     * </p>
+     * <p>
+     * If you are updating an existing rule, any tags you specify in the <code>PutRule</code> operation are ignored. To
+     * update the tags of an existing rule, use <a>TagResource</a> and <a>UntagResource</a>.
+     * </p>
+     * <p>
      * Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch
      * Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating
      * event patterns so that they match the ARN syntax in the event you want to match.
@@ -518,7 +559,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * <p>
      * An infinite loop can quickly cause higher than expected charges. We recommend that you use budgeting, which
      * alerts you when charges exceed your specified limit. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing Your
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing Your
      * Costs with Budgets</a>.
      * </p>
      * 
@@ -551,6 +592,16 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * on a schedule.
      * </p>
      * <p>
+     * When you initially create a rule, you can optionally assign one or more tags to the rule. Tags can help you
+     * organize and categorize your resources. You can also use them to scope user permissions, by granting a user
+     * permission to access or change only rules with certain tag values. To use the <code>PutRule</code> operation and
+     * assign tags, you must have both the <code>events:PutRule</code> and <code>events:TagResource</code> permissions.
+     * </p>
+     * <p>
+     * If you are updating an existing rule, any tags you specify in the <code>PutRule</code> operation are ignored. To
+     * update the tags of an existing rule, use <a>TagResource</a> and <a>UntagResource</a>.
+     * </p>
+     * <p>
      * Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch
      * Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating
      * event patterns so that they match the ARN syntax in the event you want to match.
@@ -568,7 +619,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * <p>
      * An infinite loop can quickly cause higher than expected charges. We recommend that you use budgeting, which
      * alerts you when charges exceed your specified limit. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing Your
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing Your
      * Costs with Budgets</a>.
      * </p>
      * 
@@ -689,7 +740,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
      * EC2 instances, Kinesis data streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles
      * that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
      * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * <p>
@@ -705,7 +756,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * If you are setting the event bus of another account as the target, and that account granted permission to your
      * account through an organization instead of directly by the account ID, then you must specify a
      * <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">
      * Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * <p>
@@ -868,7 +920,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
      * EC2 instances, Kinesis data streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles
      * that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
      * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * <p>
@@ -884,7 +936,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * If you are setting the event bus of another account as the target, and that account granted permission to your
      * account through an organization instead of directly by the account ID, then you must specify a
      * <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">
      * Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * <p>
@@ -1038,6 +1091,63 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Assigns one or more tags (key-value pairs) to the specified CloudWatch Events resource. Tags can help you
+     * organize and categorize your resources. You can also use them to scope user permissions by granting a user
+     * permission to access or change only resources with certain tag values. In CloudWatch Events, rules can be tagged.
+     * </p>
+     * <p>
+     * Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.
+     * </p>
+     * <p>
+     * You can use the <code>TagResource</code> action with a rule that already has tags. If you specify a new tag key
+     * for the rule, this tag is appended to the list of tags associated with the rule. If you specify a tag key that is
+     * already associated with the rule, the new tag value that you specify replaces the previous value for that tag.
+     * </p>
+     * <p>
+     * You can associate as many as 50 tags with a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified CloudWatch Events resource. Tags can help you
+     * organize and categorize your resources. You can also use them to scope user permissions by granting a user
+     * permission to access or change only resources with certain tag values. In CloudWatch Events, rules can be tagged.
+     * </p>
+     * <p>
+     * Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.
+     * </p>
+     * <p>
+     * You can use the <code>TagResource</code> action with a rule that already has tags. If you specify a new tag key
+     * for the rule, this tag is appended to the list of tags associated with the rule. If you specify a tag key that is
+     * already associated with the rule, the new tag value that you specify replaces the previous value for that tag.
+     * </p>
+     * <p>
+     * You can associate as many as 50 tags with a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Tests whether the specified event pattern matches the provided event.
      * </p>
      * <p>
@@ -1076,5 +1186,38 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      */
     java.util.concurrent.Future<TestEventPatternResult> testEventPatternAsync(TestEventPatternRequest testEventPatternRequest,
             com.amazonaws.handlers.AsyncHandler<TestEventPatternRequest, TestEventPatternResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified CloudWatch Events resource. In CloudWatch Events, rules can be
+     * tagged.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified CloudWatch Events resource. In CloudWatch Events, rules can be
+     * tagged.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

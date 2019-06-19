@@ -18,7 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * The network interface information of the EC2 instance.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/NetworkInterface" target="_top">AWS API
  *      Documentation</a>
@@ -26,29 +25,71 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NetworkInterface implements Serializable, Cloneable, StructuredPojo {
 
-    /** A list of EC2 instance IPv6 address information. */
+    /**
+     * <p>
+     * A list of EC2 instance IPv6 address information.
+     * </p>
+     */
     private java.util.List<String> ipv6Addresses;
-    /** The ID of the network interface */
+    /**
+     * <p>
+     * The ID of the network interface
+     * </p>
+     */
     private String networkInterfaceId;
-    /** Private DNS name of the EC2 instance. */
+    /**
+     * <p>
+     * Private DNS name of the EC2 instance.
+     * </p>
+     */
     private String privateDnsName;
-    /** Private IP address of the EC2 instance. */
+    /**
+     * <p>
+     * Private IP address of the EC2 instance.
+     * </p>
+     */
     private String privateIpAddress;
-    /** Other private IP address information of the EC2 instance. */
+    /**
+     * <p>
+     * Other private IP address information of the EC2 instance.
+     * </p>
+     */
     private java.util.List<PrivateIpAddressDetails> privateIpAddresses;
-    /** Public DNS name of the EC2 instance. */
+    /**
+     * <p>
+     * Public DNS name of the EC2 instance.
+     * </p>
+     */
     private String publicDnsName;
-    /** Public IP address of the EC2 instance. */
+    /**
+     * <p>
+     * Public IP address of the EC2 instance.
+     * </p>
+     */
     private String publicIp;
-    /** Security groups associated with the EC2 instance. */
+    /**
+     * <p>
+     * Security groups associated with the EC2 instance.
+     * </p>
+     */
     private java.util.List<SecurityGroup> securityGroups;
-    /** The subnet ID of the EC2 instance. */
+    /**
+     * <p>
+     * The subnet ID of the EC2 instance.
+     * </p>
+     */
     private String subnetId;
-    /** The VPC ID of the EC2 instance. */
+    /**
+     * <p>
+     * The VPC ID of the EC2 instance.
+     * </p>
+     */
     private String vpcId;
 
     /**
+     * <p>
      * A list of EC2 instance IPv6 address information.
+     * </p>
      * 
      * @return A list of EC2 instance IPv6 address information.
      */
@@ -58,7 +99,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * A list of EC2 instance IPv6 address information.
+     * </p>
      * 
      * @param ipv6Addresses
      *        A list of EC2 instance IPv6 address information.
@@ -74,7 +117,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * A list of EC2 instance IPv6 address information.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setIpv6Addresses(java.util.Collection)} or {@link #withIpv6Addresses(java.util.Collection)} if you want
@@ -97,7 +142,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * A list of EC2 instance IPv6 address information.
+     * </p>
      * 
      * @param ipv6Addresses
      *        A list of EC2 instance IPv6 address information.
@@ -110,7 +157,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The ID of the network interface
+     * </p>
      * 
      * @param networkInterfaceId
      *        The ID of the network interface
@@ -121,7 +170,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The ID of the network interface
+     * </p>
      * 
      * @return The ID of the network interface
      */
@@ -131,7 +182,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The ID of the network interface
+     * </p>
      * 
      * @param networkInterfaceId
      *        The ID of the network interface
@@ -144,7 +197,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Private DNS name of the EC2 instance.
+     * </p>
      * 
      * @param privateDnsName
      *        Private DNS name of the EC2 instance.
@@ -155,7 +210,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Private DNS name of the EC2 instance.
+     * </p>
      * 
      * @return Private DNS name of the EC2 instance.
      */
@@ -165,7 +222,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Private DNS name of the EC2 instance.
+     * </p>
      * 
      * @param privateDnsName
      *        Private DNS name of the EC2 instance.
@@ -178,7 +237,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Private IP address of the EC2 instance.
+     * </p>
      * 
      * @param privateIpAddress
      *        Private IP address of the EC2 instance.
@@ -189,7 +250,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Private IP address of the EC2 instance.
+     * </p>
      * 
      * @return Private IP address of the EC2 instance.
      */
@@ -199,7 +262,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Private IP address of the EC2 instance.
+     * </p>
      * 
      * @param privateIpAddress
      *        Private IP address of the EC2 instance.
@@ -212,7 +277,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Other private IP address information of the EC2 instance.
+     * </p>
      * 
      * @return Other private IP address information of the EC2 instance.
      */
@@ -222,7 +289,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Other private IP address information of the EC2 instance.
+     * </p>
      * 
      * @param privateIpAddresses
      *        Other private IP address information of the EC2 instance.
@@ -238,7 +307,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Other private IP address information of the EC2 instance.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPrivateIpAddresses(java.util.Collection)} or {@link #withPrivateIpAddresses(java.util.Collection)} if
@@ -261,7 +332,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Other private IP address information of the EC2 instance.
+     * </p>
      * 
      * @param privateIpAddresses
      *        Other private IP address information of the EC2 instance.
@@ -274,7 +347,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Public DNS name of the EC2 instance.
+     * </p>
      * 
      * @param publicDnsName
      *        Public DNS name of the EC2 instance.
@@ -285,7 +360,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Public DNS name of the EC2 instance.
+     * </p>
      * 
      * @return Public DNS name of the EC2 instance.
      */
@@ -295,7 +372,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Public DNS name of the EC2 instance.
+     * </p>
      * 
      * @param publicDnsName
      *        Public DNS name of the EC2 instance.
@@ -308,7 +387,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Public IP address of the EC2 instance.
+     * </p>
      * 
      * @param publicIp
      *        Public IP address of the EC2 instance.
@@ -319,7 +400,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Public IP address of the EC2 instance.
+     * </p>
      * 
      * @return Public IP address of the EC2 instance.
      */
@@ -329,7 +412,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Public IP address of the EC2 instance.
+     * </p>
      * 
      * @param publicIp
      *        Public IP address of the EC2 instance.
@@ -342,7 +427,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Security groups associated with the EC2 instance.
+     * </p>
      * 
      * @return Security groups associated with the EC2 instance.
      */
@@ -352,7 +439,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Security groups associated with the EC2 instance.
+     * </p>
      * 
      * @param securityGroups
      *        Security groups associated with the EC2 instance.
@@ -368,7 +457,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Security groups associated with the EC2 instance.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
@@ -391,7 +482,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Security groups associated with the EC2 instance.
+     * </p>
      * 
      * @param securityGroups
      *        Security groups associated with the EC2 instance.
@@ -404,7 +497,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The subnet ID of the EC2 instance.
+     * </p>
      * 
      * @param subnetId
      *        The subnet ID of the EC2 instance.
@@ -415,7 +510,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The subnet ID of the EC2 instance.
+     * </p>
      * 
      * @return The subnet ID of the EC2 instance.
      */
@@ -425,7 +522,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The subnet ID of the EC2 instance.
+     * </p>
      * 
      * @param subnetId
      *        The subnet ID of the EC2 instance.
@@ -438,7 +537,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The VPC ID of the EC2 instance.
+     * </p>
      * 
      * @param vpcId
      *        The VPC ID of the EC2 instance.
@@ -449,7 +550,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The VPC ID of the EC2 instance.
+     * </p>
      * 
      * @return The VPC ID of the EC2 instance.
      */
@@ -459,7 +562,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The VPC ID of the EC2 instance.
+     * </p>
      * 
      * @param vpcId
      *        The VPC ID of the EC2 instance.

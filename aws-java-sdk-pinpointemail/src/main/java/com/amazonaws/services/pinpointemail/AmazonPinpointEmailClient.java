@@ -54,29 +54,21 @@ import com.amazonaws.services.pinpointemail.model.transform.*;
  * <p>
  * This document contains reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon Pinpoint</a>
  * Email API, version 1.0. This document is best used in conjunction with the <a
- * href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
  * </p>
  * <p>
- * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon) and the EU (Ireland)
- * Regions at the following endpoints:
+ * The Amazon Pinpoint Email API is available in several AWS Regions and it provides an endpoint for each of these
+ * Regions. For a list of all the Regions and endpoints where the API is currently available, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region">AWS Regions and Endpoints</a> in the
+ * <i>Amazon Web Services General Reference</i>.
  * </p>
- * <ul>
- * <li>
  * <p>
- * <b>US East (N. Virginia)</b>: <code>email.us-east-1.amazonaws.com</code>
+ * In each Region, AWS maintains multiple Availability Zones. These Availability Zones are physically isolated from each
+ * other, but are united by private, low-latency, high-throughput, and highly redundant network connections. These
+ * Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing
+ * latency. To learn more about the number of Availability Zones that are available in each Region, see <a
+ * href="http://aws.amazon.com/about-aws/global-infrastructure/">AWS Global Infrastructure</a>.
  * </p>
- * </li>
- * <li>
- * <p>
- * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code>
- * </p>
- * </li>
- * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -101,6 +93,9 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
+                                    com.amazonaws.services.pinpointemail.model.ConcurrentModificationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MessageRejected").withModeledClass(
                                     com.amazonaws.services.pinpointemail.model.MessageRejectedException.class))
@@ -197,6 +192,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         There are too many instances of the specified resource type.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.CreateConfigurationSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSet"
      *      target="_top">AWS API Documentation</a>
@@ -226,6 +223,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -299,6 +297,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSetEventDestination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -335,6 +334,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.CreateDedicatedIpPool
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDedicatedIpPool"
      *      target="_top">AWS API Documentation</a>
@@ -364,6 +365,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDedicatedIpPool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -415,6 +417,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         There are too many instances of the specified resource type.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.CreateDeliverabilityTestReport
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport"
      *      target="_top">AWS API Documentation</a>
@@ -445,6 +449,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeliverabilityTestReport");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -489,6 +494,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.CreateEmailIdentity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateEmailIdentity"
      *      target="_top">AWS API Documentation</a>
@@ -518,6 +525,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEmailIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -554,6 +562,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.DeleteConfigurationSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSet"
      *      target="_top">AWS API Documentation</a>
@@ -583,6 +593,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -652,6 +663,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSetEventDestination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -683,6 +695,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.DeleteDedicatedIpPool
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteDedicatedIpPool"
      *      target="_top">AWS API Documentation</a>
@@ -712,6 +726,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDedicatedIpPool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -746,6 +761,8 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
      *         Too many requests have been made to the operation.
      * @throws BadRequestException
      *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
      * @sample AmazonPinpointEmail.DeleteEmailIdentity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteEmailIdentity"
      *      target="_top">AWS API Documentation</a>
@@ -775,6 +792,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEmailIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -833,6 +851,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -892,6 +911,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBlacklistReports");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -958,6 +978,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfigurationSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1026,6 +1047,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfigurationSetEventDestinations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1087,6 +1109,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDedicatedIp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1146,6 +1169,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDedicatedIps");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1164,26 +1188,27 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Show the status of the Deliverability dashboard. When the Deliverability dashboard is enabled, you gain access to
-     * reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to
-     * perform predictive inbox placement tests.
+     * Retrieve information about the status of the Deliverability dashboard for your Amazon Pinpoint account. When the
+     * Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the
+     * domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox
+     * placement tests.
      * </p>
      * <p>
-     * When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
-     * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of
-     * a calendar month, AWS prorates the monthly charge based on how many days have elapsed in the current calendar
-     * month.
+     * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees
+     * that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability
+     * dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.
      * </p>
      * 
      * @param getDeliverabilityDashboardOptionsRequest
-     *        A request to retrieve the status of the Deliverability dashboard for your account. When the Deliverability
-     *        dashboard is enabled, you gain access to reputation metrics for the domains that you use to send email
-     *        using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p>
+     *        Retrieve information about the status of the Deliverability dashboard for your Amazon Pinpoint account.
+     *        When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other
+     *        metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to
+     *        perform predictive inbox placement tests.</p>
      *        <p>
-     *        When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any
-     *        other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the
-     *        first day of a calendar month, AWS prorates the monthly charge based on how many days have elapsed in the
-     *        current calendar month.
+     *        When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other
+     *        fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a
+     *        Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon
+     *        Pinpoint Pricing</a>.
      * @return Result of the GetDeliverabilityDashboardOptions operation returned by the service.
      * @throws TooManyRequestsException
      *         Too many requests have been made to the operation.
@@ -1222,6 +1247,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeliverabilityDashboardOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1283,6 +1309,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeliverabilityTestReport");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1290,6 +1317,73 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<GetDeliverabilityTestReportResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetDeliverabilityTestReportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the
+     * campaign sent email by using a domain that the Deliverability dashboard is enabled for (
+     * <code>PutDeliverabilityDashboardOption</code> operation).
+     * </p>
+     * 
+     * @param getDomainDeliverabilityCampaignRequest
+     *        Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only
+     *        if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (
+     *        <code>PutDeliverabilityDashboardOption</code> operation).
+     * @return Result of the GetDomainDeliverabilityCampaign operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @sample AmazonPinpointEmail.GetDomainDeliverabilityCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainDeliverabilityCampaign"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDomainDeliverabilityCampaignResult getDomainDeliverabilityCampaign(GetDomainDeliverabilityCampaignRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDomainDeliverabilityCampaign(request);
+    }
+
+    @SdkInternalApi
+    final GetDomainDeliverabilityCampaignResult executeGetDomainDeliverabilityCampaign(
+            GetDomainDeliverabilityCampaignRequest getDomainDeliverabilityCampaignRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDomainDeliverabilityCampaignRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDomainDeliverabilityCampaignRequest> request = null;
+        Response<GetDomainDeliverabilityCampaignResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDomainDeliverabilityCampaignRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDomainDeliverabilityCampaignRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainDeliverabilityCampaign");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDomainDeliverabilityCampaignResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDomainDeliverabilityCampaignResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1344,6 +1438,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainStatisticsReport");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1405,6 +1500,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEmailIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1469,6 +1565,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurationSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1527,6 +1624,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDedicatedIpPools");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1589,6 +1687,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeliverabilityTestReports");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1596,6 +1695,73 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<ListDeliverabilityTestReportsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListDeliverabilityTestReportsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified
+     * time range. This data is available for a domain only if you enabled the Deliverability dashboard (
+     * <code>PutDeliverabilityDashboardOption</code> operation) for the domain.
+     * </p>
+     * 
+     * @param listDomainDeliverabilityCampaignsRequest
+     *        Retrieve deliverability data for all the campaigns that used a specific domain to send email during a
+     *        specified time range. This data is available for a domain only if you enabled the Deliverability dashboard
+     *        (<code>PutDeliverabilityDashboardOption</code> operation) for the domain.
+     * @return Result of the ListDomainDeliverabilityCampaigns operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @sample AmazonPinpointEmail.ListDomainDeliverabilityCampaigns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDomainDeliverabilityCampaigns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDomainDeliverabilityCampaignsResult listDomainDeliverabilityCampaigns(ListDomainDeliverabilityCampaignsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDomainDeliverabilityCampaigns(request);
+    }
+
+    @SdkInternalApi
+    final ListDomainDeliverabilityCampaignsResult executeListDomainDeliverabilityCampaigns(
+            ListDomainDeliverabilityCampaignsRequest listDomainDeliverabilityCampaignsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDomainDeliverabilityCampaignsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDomainDeliverabilityCampaignsRequest> request = null;
+        Response<ListDomainDeliverabilityCampaignsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDomainDeliverabilityCampaignsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDomainDeliverabilityCampaignsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomainDeliverabilityCampaigns");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDomainDeliverabilityCampaignsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDomainDeliverabilityCampaignsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1651,12 +1817,75 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEmailIdentities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ListEmailIdentitiesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListEmailIdentitiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieve a list of the tags (keys and values) that are associated with a specified resource. A <i>tag</i> is a
+     * label that you optionally define and associate with a resource in Amazon Pinpoint. Each tag consists of a
+     * required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a
+     * category for more specific tag values. A tag value acts as a descriptor within a tag key.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonPinpointEmail.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1711,6 +1940,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountDedicatedIpWarmupAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1770,6 +2000,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountSendingAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1834,6 +2065,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetDeliveryOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1898,6 +2130,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetReputationOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1961,6 +2194,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetSendingOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2024,6 +2258,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetTrackingOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2094,6 +2329,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDedicatedIpInPool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2153,6 +2389,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDedicatedIpWarmupAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2172,26 +2409,27 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to
-     * reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to
-     * perform predictive inbox placement tests.
+     * Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the
+     * Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that
+     * you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement
+     * tests.
      * </p>
      * <p>
-     * When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
-     * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of
-     * a calendar month, we prorate the monthly charge based on how many days have elapsed in the current calendar
-     * month.
+     * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees
+     * that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability
+     * dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.
      * </p>
      * 
      * @param putDeliverabilityDashboardOptionRequest
-     *        A request to enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard,
-     *        you gain access to reputation metrics for the domains that you use to send email using Amazon Pinpoint.
-     *        You also gain the ability to perform predictive inbox placement tests.</p>
+     *        Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the
+     *        Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains
+     *        that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox
+     *        placement tests.</p>
      *        <p>
-     *        When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any
-     *        other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the
-     *        first day of a calendar month, we prorate the monthly charge based on how many days have elapsed in the
-     *        current calendar month.
+     *        When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other
+     *        fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a
+     *        Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon
+     *        Pinpoint Pricing</a>.
      * @return Result of the PutDeliverabilityDashboardOption operation returned by the service.
      * @throws AlreadyExistsException
      *         The resource specified in your request already exists.
@@ -2234,6 +2472,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDeliverabilityDashboardOption");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2295,6 +2534,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEmailIdentityDkimAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2370,6 +2610,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEmailIdentityFeedbackAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2433,6 +2674,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEmailIdentityMailFromAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2518,12 +2760,143 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendEmail");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<SendEmailResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendEmailResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Add one or more tags (keys and values) to a specified resource. A <i>tag</i> is a label that you optionally
+     * define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage resources in
+     * different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50
+     * tags.
+     * </p>
+     * <p>
+     * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A
+     * tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor
+     * within a tag key.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonPinpointEmail.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove one or more tags (keys and values) from a specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonPinpointEmail.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2586,6 +2959,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationSetEventDestination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

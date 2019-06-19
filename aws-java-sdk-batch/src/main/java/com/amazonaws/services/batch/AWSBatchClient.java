@@ -340,6 +340,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -364,7 +365,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * <p>
      * In a managed compute environment, AWS Batch manages the capacity and instance types of the compute resources
      * within the environment. This is based on the compute resource specification that you define or the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch template</a> that you
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch template</a> that you
      * specify when you create the compute environment. You can choose to use Amazon EC2 On-Demand Instances or Spot
      * Instances in your managed compute environment. You can optionally set a maximum price so that Spot Instances only
      * launch when the Spot Instance price is below a specified percentage of the On-Demand price.
@@ -378,12 +379,12 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * In an unmanaged compute environment, you can manage your own compute resources. This provides more compute
      * resource configuration options, such as using a custom AMI, but you must ensure that your AMI meets the Amazon
      * ECS container instance AMI specification. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container Instance
-     * AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you have created your unmanaged
-     * compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon ECS cluster
-     * that is associated with it. Then, manually launch your container instances into that Amazon ECS cluster. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container
+     * Instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you have created your
+     * unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon
+     * ECS cluster that is associated with it. Then, manually launch your container instances into that Amazon ECS
+     * cluster. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an
      * Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -455,6 +456,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComputeEnvironment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -521,6 +523,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJobQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -585,6 +588,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteComputeEnvironment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -649,6 +653,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJobQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -708,6 +713,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterJobDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -773,6 +779,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComputeEnvironments");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -833,6 +840,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobDefinitions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -892,6 +900,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobQueues");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -950,6 +959,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1032,6 +1042,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1090,6 +1101,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterJobDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1150,6 +1162,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1210,6 +1223,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1269,6 +1283,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateComputeEnvironment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1328,6 +1343,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJobQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

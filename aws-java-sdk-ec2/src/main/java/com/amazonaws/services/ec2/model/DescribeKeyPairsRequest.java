@@ -27,7 +27,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -45,7 +45,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more key pair names.
+     * The key pair names.
      * </p>
      * <p>
      * Default: Describes all your key pairs.
@@ -55,7 +55,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -70,7 +70,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -93,7 +93,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -109,7 +109,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -134,7 +134,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -155,7 +155,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -182,7 +182,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -198,7 +198,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -220,13 +220,13 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * One or more key pair names.
+     * The key pair names.
      * </p>
      * <p>
      * Default: Describes all your key pairs.
      * </p>
      * 
-     * @return One or more key pair names.</p>
+     * @return The key pair names.</p>
      *         <p>
      *         Default: Describes all your key pairs.
      */
@@ -240,14 +240,14 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * One or more key pair names.
+     * The key pair names.
      * </p>
      * <p>
      * Default: Describes all your key pairs.
      * </p>
      * 
      * @param keyNames
-     *        One or more key pair names.</p>
+     *        The key pair names.</p>
      *        <p>
      *        Default: Describes all your key pairs.
      */
@@ -263,7 +263,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * One or more key pair names.
+     * The key pair names.
      * </p>
      * <p>
      * Default: Describes all your key pairs.
@@ -275,7 +275,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * </p>
      * 
      * @param keyNames
-     *        One or more key pair names.</p>
+     *        The key pair names.</p>
      *        <p>
      *        Default: Describes all your key pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -293,14 +293,14 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * One or more key pair names.
+     * The key pair names.
      * </p>
      * <p>
      * Default: Describes all your key pairs.
      * </p>
      * 
      * @param keyNames
-     *        One or more key pair names.</p>
+     *        The key pair names.</p>
      *        <p>
      *        Default: Describes all your key pairs.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -388,6 +388,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDRTLogBucket");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -492,6 +493,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDRTRole");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -577,6 +579,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProtection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -644,6 +647,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -704,6 +708,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProtection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -767,6 +772,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -825,6 +831,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAttack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -883,6 +890,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDRTAccess");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -942,6 +950,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEmergencyContactSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1002,6 +1011,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProtection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1059,6 +1069,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1137,6 +1148,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDRTLogBucket");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1207,6 +1219,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDRTRole");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1262,6 +1275,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSubscriptionState");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1321,6 +1335,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttacks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1381,6 +1396,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProtections");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1444,6 +1460,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEmergencyContactSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1512,6 +1529,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

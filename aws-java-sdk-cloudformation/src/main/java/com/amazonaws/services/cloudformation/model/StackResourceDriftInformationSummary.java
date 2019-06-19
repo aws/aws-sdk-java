@@ -50,11 +50,11 @@ public class StackResourceDriftInformationSummary implements Serializable, Clone
      * <p>
      * Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation on a
      * stack, any resources included in <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>
      * . For more information on skipping resources during rollback operations, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
      * >Continue Rolling Back an Update</a> in the AWS CloudFormation User Guide.
      * </p>
      * </li>
@@ -96,11 +96,11 @@ public class StackResourceDriftInformationSummary implements Serializable, Clone
      * <p>
      * Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation on a
      * stack, any resources included in <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>
      * . For more information on skipping resources during rollback operations, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
      * >Continue Rolling Back an Update</a> in the AWS CloudFormation User Guide.
      * </p>
      * </li>
@@ -132,12 +132,12 @@ public class StackResourceDriftInformationSummary implements Serializable, Clone
      *        <p>
      *        Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      *        >Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation
      *        on a stack, any resources included in <code>ResourcesToSkip</code> will also have a status of
      *        <code>NOT_CHECKED</code>. For more information on skipping resources during rollback operations, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
      *        >Continue Rolling Back an Update</a> in the AWS CloudFormation User Guide.
      *        </p>
      *        </li>
@@ -176,11 +176,11 @@ public class StackResourceDriftInformationSummary implements Serializable, Clone
      * <p>
      * Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation on a
      * stack, any resources included in <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>
      * . For more information on skipping resources during rollback operations, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
      * >Continue Rolling Back an Update</a> in the AWS CloudFormation User Guide.
      * </p>
      * </li>
@@ -211,12 +211,12 @@ public class StackResourceDriftInformationSummary implements Serializable, Clone
      *         <p>
      *         Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>.
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      *         >Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation
      *         on a stack, any resources included in <code>ResourcesToSkip</code> will also have a status of
      *         <code>NOT_CHECKED</code>. For more information on skipping resources during rollback operations, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
      *         >Continue Rolling Back an Update</a> in the AWS CloudFormation User Guide.
      *         </p>
      *         </li>
@@ -255,11 +255,11 @@ public class StackResourceDriftInformationSummary implements Serializable, Clone
      * <p>
      * Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation on a
      * stack, any resources included in <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>
      * . For more information on skipping resources during rollback operations, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
      * >Continue Rolling Back an Update</a> in the AWS CloudFormation User Guide.
      * </p>
      * </li>
@@ -291,12 +291,12 @@ public class StackResourceDriftInformationSummary implements Serializable, Clone
      *        <p>
      *        Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      *        >Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation
      *        on a stack, any resources included in <code>ResourcesToSkip</code> will also have a status of
      *        <code>NOT_CHECKED</code>. For more information on skipping resources during rollback operations, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
      *        >Continue Rolling Back an Update</a> in the AWS CloudFormation User Guide.
      *        </p>
      *        </li>
@@ -337,11 +337,11 @@ public class StackResourceDriftInformationSummary implements Serializable, Clone
      * <p>
      * Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation on a
      * stack, any resources included in <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>
      * . For more information on skipping resources during rollback operations, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
      * >Continue Rolling Back an Update</a> in the AWS CloudFormation User Guide.
      * </p>
      * </li>
@@ -373,12 +373,12 @@ public class StackResourceDriftInformationSummary implements Serializable, Clone
      *        <p>
      *        Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      *        >Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation
      *        on a stack, any resources included in <code>ResourcesToSkip</code> will also have a status of
      *        <code>NOT_CHECKED</code>. For more information on skipping resources during rollback operations, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html"
      *        >Continue Rolling Back an Update</a> in the AWS CloudFormation User Guide.
      *        </p>
      *        </li>

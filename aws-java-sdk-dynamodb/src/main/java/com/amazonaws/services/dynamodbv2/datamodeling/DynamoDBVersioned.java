@@ -46,6 +46,10 @@ import java.util.Arrays;
  * {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)}
  * API.</p>
  *
+ * <p>Note that for transactionWrite, <b>no version checks are performed</b>.
+ * An {@link com.amazonaws.SdkClientException} exception is thrown, if class of
+ * any input object is annotated with {@link DynamoDBVersioned}.</p>
+ *
  * <p>May be used as a meta-annotation.</p>
  *
  * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBVersionAttribute

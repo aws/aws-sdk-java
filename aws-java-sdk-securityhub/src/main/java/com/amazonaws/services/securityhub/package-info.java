@@ -13,11 +13,18 @@
 
 /**
  * <p>
- * AWS Security Hub provides you with a comprehensive view of your security state within AWS and your compliance with
- * the security industry standards and best practices. Security Hub collects security data from across AWS accounts,
+ * AWS Security Hub provides you with a comprehensive view of your security state in AWS and your compliance with the
+ * security industry standards and best practices. Security Hub collects security data from across AWS accounts,
  * services, and supported third-party partners and helps you analyze your security trends and identify the highest
- * priority security issues. For more information, see <a href="">AWS Security Hub User Guide</a>.
+ * priority security issues. For more information, see <a
+ * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS Security Hub User
+ * Guide</a>.
  * </p>
+ * <important>
+ * <p>
+ * Important: AWS Security Hub is currently in Preview release.
+ * </p>
+ * </important>
  */
 package com.amazonaws.services.securityhub;
 

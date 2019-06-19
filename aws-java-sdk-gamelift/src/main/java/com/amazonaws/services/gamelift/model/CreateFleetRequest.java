@@ -42,12 +42,19 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * Unique identifier for a build to be deployed on the new fleet. The build must have been successfully uploaded to
-     * Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be changed once the fleet is
-     * created.
+     * Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been
+     * successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be
+     * changed once the fleet is created.
      * </p>
      */
     private String buildId;
+    /**
+     * <p>
+     * Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have been
+     * successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is created.
+     * </p>
+     */
+    private String scriptId;
     /**
      * <p>
      * This parameter is no longer used. Instead, specify a server launch path using the
@@ -85,9 +92,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String eC2InstanceType;
     /**
      * <p>
-     * Range of IP addresses and port settings that permit inbound traffic to access server processes running on the
-     * fleet. If no inbound permissions are set, including both IP address range and port range, the server processes in
-     * the fleet cannot accept connections. You can specify one or more sets of permissions for a fleet.
+     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that running on the
+     * fleet. For fleets using a custom game build, this parameter is required before game sessions running on the fleet
+     * can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for
+     * use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
      * </p>
      */
     private java.util.List<IpPermission> eC2InboundPermissions;
@@ -115,14 +123,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String newGameSessionProtectionPolicy;
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. The run-time configuration for a fleet
-     * has a collection of server process configurations, one for each type of server process to run on an instance. A
-     * server process configuration specifies the location of the server executable, launch parameters, and the number
-     * of concurrent processes with that configuration to maintain on each instance. A CreateFleet request must include
-     * a run-time configuration with at least one server process configuration; otherwise the request fails with an
-     * invalid request exception. (This parameter replaces the parameters <code>ServerLaunchPath</code> and
-     * <code>ServerLaunchParameters</code>; requests that contain values for these parameters instead of a run-time
-     * configuration will continue to work.)
+     * Instructions for launching server processes on each instance in the fleet. Server processes run either a custom
+     * game build executable or a Realtime Servers script. The run-time configuration lists the types of server
+     * processes to run on an instance and includes the following configuration settings: the server executable or
+     * launch script file, launch parameters, and the number of processes to run concurrently on each instance. A
+     * CreateFleet request must include a run-time configuration with at least one server process configuration.
      * </p>
      */
     private RuntimeConfiguration runtimeConfiguration;
@@ -161,22 +166,21 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     * ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance type
-     * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
-     * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
-     * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html"> Set up
-     * Access to External Services</a>.
+     * ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type
+     * selected for this fleet. Learn more about <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>.
      * </p>
      */
     private String fleetType;
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
-     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
-     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * any application that runs on an instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
+     * using on-box credentials for your game servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
      * external resources from a game server</a>.
      * </p>
      */
@@ -264,15 +268,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a build to be deployed on the new fleet. The build must have been successfully uploaded to
-     * Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be changed once the fleet is
-     * created.
+     * Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been
+     * successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be
+     * changed once the fleet is created.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for a build to be deployed on the new fleet. The build must have been successfully
-     *        uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be changed
-     *        once the fleet is created.
+     *        Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been
+     *        successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot
+     *        be changed once the fleet is created.
      */
 
     public void setBuildId(String buildId) {
@@ -281,14 +285,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a build to be deployed on the new fleet. The build must have been successfully uploaded to
-     * Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be changed once the fleet is
-     * created.
+     * Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been
+     * successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be
+     * changed once the fleet is created.
      * </p>
      * 
-     * @return Unique identifier for a build to be deployed on the new fleet. The build must have been successfully
-     *         uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be changed
-     *         once the fleet is created.
+     * @return Unique identifier for a build to be deployed on the new fleet. The custom game server build must have
+     *         been successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting
+     *         cannot be changed once the fleet is created.
      */
 
     public String getBuildId() {
@@ -297,20 +301,69 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a build to be deployed on the new fleet. The build must have been successfully uploaded to
-     * Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be changed once the fleet is
-     * created.
+     * Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been
+     * successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be
+     * changed once the fleet is created.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for a build to be deployed on the new fleet. The build must have been successfully
-     *        uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be changed
-     *        once the fleet is created.
+     *        Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been
+     *        successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot
+     *        be changed once the fleet is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFleetRequest withBuildId(String buildId) {
         setBuildId(buildId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have been
+     * successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is created.
+     * </p>
+     * 
+     * @param scriptId
+     *        Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have
+     *        been successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is
+     *        created.
+     */
+
+    public void setScriptId(String scriptId) {
+        this.scriptId = scriptId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have been
+     * successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is created.
+     * </p>
+     * 
+     * @return Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have
+     *         been successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is
+     *         created.
+     */
+
+    public String getScriptId() {
+        return this.scriptId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have been
+     * successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is created.
+     * </p>
+     * 
+     * @param scriptId
+     *        Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have
+     *        been successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is
+     *        created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withScriptId(String scriptId) {
+        setScriptId(scriptId);
         return this;
     }
 
@@ -625,15 +678,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Range of IP addresses and port settings that permit inbound traffic to access server processes running on the
-     * fleet. If no inbound permissions are set, including both IP address range and port range, the server processes in
-     * the fleet cannot accept connections. You can specify one or more sets of permissions for a fleet.
+     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that running on the
+     * fleet. For fleets using a custom game build, this parameter is required before game sessions running on the fleet
+     * can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for
+     * use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
      * </p>
      * 
-     * @return Range of IP addresses and port settings that permit inbound traffic to access server processes running on
-     *         the fleet. If no inbound permissions are set, including both IP address range and port range, the server
-     *         processes in the fleet cannot accept connections. You can specify one or more sets of permissions for a
-     *         fleet.
+     * @return Range of IP addresses and port settings that permit inbound traffic to access game sessions that running
+     *         on the fleet. For fleets using a custom game build, this parameter is required before game sessions
+     *         running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically
+     *         sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple permission settings or
+     *         add more by updating the fleet.
      */
 
     public java.util.List<IpPermission> getEC2InboundPermissions() {
@@ -642,16 +697,18 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Range of IP addresses and port settings that permit inbound traffic to access server processes running on the
-     * fleet. If no inbound permissions are set, including both IP address range and port range, the server processes in
-     * the fleet cannot accept connections. You can specify one or more sets of permissions for a fleet.
+     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that running on the
+     * fleet. For fleets using a custom game build, this parameter is required before game sessions running on the fleet
+     * can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for
+     * use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
      * </p>
      * 
      * @param eC2InboundPermissions
-     *        Range of IP addresses and port settings that permit inbound traffic to access server processes running on
-     *        the fleet. If no inbound permissions are set, including both IP address range and port range, the server
-     *        processes in the fleet cannot accept connections. You can specify one or more sets of permissions for a
-     *        fleet.
+     *        Range of IP addresses and port settings that permit inbound traffic to access game sessions that running
+     *        on the fleet. For fleets using a custom game build, this parameter is required before game sessions
+     *        running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically
+     *        sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple permission settings or
+     *        add more by updating the fleet.
      */
 
     public void setEC2InboundPermissions(java.util.Collection<IpPermission> eC2InboundPermissions) {
@@ -665,9 +722,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Range of IP addresses and port settings that permit inbound traffic to access server processes running on the
-     * fleet. If no inbound permissions are set, including both IP address range and port range, the server processes in
-     * the fleet cannot accept connections. You can specify one or more sets of permissions for a fleet.
+     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that running on the
+     * fleet. For fleets using a custom game build, this parameter is required before game sessions running on the fleet
+     * can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for
+     * use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -676,10 +734,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param eC2InboundPermissions
-     *        Range of IP addresses and port settings that permit inbound traffic to access server processes running on
-     *        the fleet. If no inbound permissions are set, including both IP address range and port range, the server
-     *        processes in the fleet cannot accept connections. You can specify one or more sets of permissions for a
-     *        fleet.
+     *        Range of IP addresses and port settings that permit inbound traffic to access game sessions that running
+     *        on the fleet. For fleets using a custom game build, this parameter is required before game sessions
+     *        running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically
+     *        sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple permission settings or
+     *        add more by updating the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -695,16 +754,18 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Range of IP addresses and port settings that permit inbound traffic to access server processes running on the
-     * fleet. If no inbound permissions are set, including both IP address range and port range, the server processes in
-     * the fleet cannot accept connections. You can specify one or more sets of permissions for a fleet.
+     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that running on the
+     * fleet. For fleets using a custom game build, this parameter is required before game sessions running on the fleet
+     * can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for
+     * use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
      * </p>
      * 
      * @param eC2InboundPermissions
-     *        Range of IP addresses and port settings that permit inbound traffic to access server processes running on
-     *        the fleet. If no inbound permissions are set, including both IP address range and port range, the server
-     *        processes in the fleet cannot accept connections. You can specify one or more sets of permissions for a
-     *        fleet.
+     *        Range of IP addresses and port settings that permit inbound traffic to access game sessions that running
+     *        on the fleet. For fleets using a custom game build, this parameter is required before game sessions
+     *        running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically
+     *        sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple permission settings or
+     *        add more by updating the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -943,25 +1004,20 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. The run-time configuration for a fleet
-     * has a collection of server process configurations, one for each type of server process to run on an instance. A
-     * server process configuration specifies the location of the server executable, launch parameters, and the number
-     * of concurrent processes with that configuration to maintain on each instance. A CreateFleet request must include
-     * a run-time configuration with at least one server process configuration; otherwise the request fails with an
-     * invalid request exception. (This parameter replaces the parameters <code>ServerLaunchPath</code> and
-     * <code>ServerLaunchParameters</code>; requests that contain values for these parameters instead of a run-time
-     * configuration will continue to work.)
+     * Instructions for launching server processes on each instance in the fleet. Server processes run either a custom
+     * game build executable or a Realtime Servers script. The run-time configuration lists the types of server
+     * processes to run on an instance and includes the following configuration settings: the server executable or
+     * launch script file, launch parameters, and the number of processes to run concurrently on each instance. A
+     * CreateFleet request must include a run-time configuration with at least one server process configuration.
      * </p>
      * 
      * @param runtimeConfiguration
-     *        Instructions for launching server processes on each instance in the fleet. The run-time configuration for
-     *        a fleet has a collection of server process configurations, one for each type of server process to run on
-     *        an instance. A server process configuration specifies the location of the server executable, launch
-     *        parameters, and the number of concurrent processes with that configuration to maintain on each instance. A
-     *        CreateFleet request must include a run-time configuration with at least one server process configuration;
-     *        otherwise the request fails with an invalid request exception. (This parameter replaces the parameters
-     *        <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>; requests that contain values for
-     *        these parameters instead of a run-time configuration will continue to work.)
+     *        Instructions for launching server processes on each instance in the fleet. Server processes run either a
+     *        custom game build executable or a Realtime Servers script. The run-time configuration lists the types of
+     *        server processes to run on an instance and includes the following configuration settings: the server
+     *        executable or launch script file, launch parameters, and the number of processes to run concurrently on
+     *        each instance. A CreateFleet request must include a run-time configuration with at least one server
+     *        process configuration.
      */
 
     public void setRuntimeConfiguration(RuntimeConfiguration runtimeConfiguration) {
@@ -970,24 +1026,19 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. The run-time configuration for a fleet
-     * has a collection of server process configurations, one for each type of server process to run on an instance. A
-     * server process configuration specifies the location of the server executable, launch parameters, and the number
-     * of concurrent processes with that configuration to maintain on each instance. A CreateFleet request must include
-     * a run-time configuration with at least one server process configuration; otherwise the request fails with an
-     * invalid request exception. (This parameter replaces the parameters <code>ServerLaunchPath</code> and
-     * <code>ServerLaunchParameters</code>; requests that contain values for these parameters instead of a run-time
-     * configuration will continue to work.)
+     * Instructions for launching server processes on each instance in the fleet. Server processes run either a custom
+     * game build executable or a Realtime Servers script. The run-time configuration lists the types of server
+     * processes to run on an instance and includes the following configuration settings: the server executable or
+     * launch script file, launch parameters, and the number of processes to run concurrently on each instance. A
+     * CreateFleet request must include a run-time configuration with at least one server process configuration.
      * </p>
      * 
-     * @return Instructions for launching server processes on each instance in the fleet. The run-time configuration for
-     *         a fleet has a collection of server process configurations, one for each type of server process to run on
-     *         an instance. A server process configuration specifies the location of the server executable, launch
-     *         parameters, and the number of concurrent processes with that configuration to maintain on each instance.
-     *         A CreateFleet request must include a run-time configuration with at least one server process
-     *         configuration; otherwise the request fails with an invalid request exception. (This parameter replaces
-     *         the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>; requests that
-     *         contain values for these parameters instead of a run-time configuration will continue to work.)
+     * @return Instructions for launching server processes on each instance in the fleet. Server processes run either a
+     *         custom game build executable or a Realtime Servers script. The run-time configuration lists the types of
+     *         server processes to run on an instance and includes the following configuration settings: the server
+     *         executable or launch script file, launch parameters, and the number of processes to run concurrently on
+     *         each instance. A CreateFleet request must include a run-time configuration with at least one server
+     *         process configuration.
      */
 
     public RuntimeConfiguration getRuntimeConfiguration() {
@@ -996,25 +1047,20 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. The run-time configuration for a fleet
-     * has a collection of server process configurations, one for each type of server process to run on an instance. A
-     * server process configuration specifies the location of the server executable, launch parameters, and the number
-     * of concurrent processes with that configuration to maintain on each instance. A CreateFleet request must include
-     * a run-time configuration with at least one server process configuration; otherwise the request fails with an
-     * invalid request exception. (This parameter replaces the parameters <code>ServerLaunchPath</code> and
-     * <code>ServerLaunchParameters</code>; requests that contain values for these parameters instead of a run-time
-     * configuration will continue to work.)
+     * Instructions for launching server processes on each instance in the fleet. Server processes run either a custom
+     * game build executable or a Realtime Servers script. The run-time configuration lists the types of server
+     * processes to run on an instance and includes the following configuration settings: the server executable or
+     * launch script file, launch parameters, and the number of processes to run concurrently on each instance. A
+     * CreateFleet request must include a run-time configuration with at least one server process configuration.
      * </p>
      * 
      * @param runtimeConfiguration
-     *        Instructions for launching server processes on each instance in the fleet. The run-time configuration for
-     *        a fleet has a collection of server process configurations, one for each type of server process to run on
-     *        an instance. A server process configuration specifies the location of the server executable, launch
-     *        parameters, and the number of concurrent processes with that configuration to maintain on each instance. A
-     *        CreateFleet request must include a run-time configuration with at least one server process configuration;
-     *        otherwise the request fails with an invalid request exception. (This parameter replaces the parameters
-     *        <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>; requests that contain values for
-     *        these parameters instead of a run-time configuration will continue to work.)
+     *        Instructions for launching server processes on each instance in the fleet. Server processes run either a
+     *        custom game build executable or a Realtime Servers script. The run-time configuration lists the types of
+     *        server processes to run on an instance and includes the following configuration settings: the server
+     *        executable or launch script file, launch parameters, and the number of processes to run concurrently on
+     *        each instance. A CreateFleet request must include a run-time configuration with at least one server
+     *        process configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1271,23 +1317,18 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     * ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance type
-     * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
-     * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
-     * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html"> Set up
-     * Access to External Services</a>.
+     * ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type
+     * selected for this fleet. Learn more about <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>.
      * </p>
      * 
      * @param fleetType
      *        Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     *        ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance
-     *        type selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep
-     *        them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
-     *        in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
-     *        instances with at <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
-     *        Set up Access to External Services</a>.
+     *        ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance
+     *        type selected for this fleet. Learn more about <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *        > On-Demand versus Spot Instances</a>.
      * @see FleetType
      */
 
@@ -1298,22 +1339,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     * ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance type
-     * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
-     * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
-     * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html"> Set up
-     * Access to External Services</a>.
+     * ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type
+     * selected for this fleet. Learn more about <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>.
      * </p>
      * 
      * @return Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     *         ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance
-     *         type selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep
-     *         them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
-     *         in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
-     *         instances with at <a
-     *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
-     *         Set up Access to External Services</a>.
+     *         ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance
+     *         type selected for this fleet. Learn more about <a href=
+     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *         > On-Demand versus Spot Instances</a>.
      * @see FleetType
      */
 
@@ -1324,23 +1360,18 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     * ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance type
-     * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
-     * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
-     * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html"> Set up
-     * Access to External Services</a>.
+     * ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type
+     * selected for this fleet. Learn more about <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>.
      * </p>
      * 
      * @param fleetType
      *        Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     *        ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance
-     *        type selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep
-     *        them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
-     *        in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
-     *        instances with at <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
-     *        Set up Access to External Services</a>.
+     *        ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance
+     *        type selected for this fleet. Learn more about <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *        > On-Demand versus Spot Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -1353,23 +1384,18 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     * ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance type
-     * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
-     * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
-     * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html"> Set up
-     * Access to External Services</a>.
+     * ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type
+     * selected for this fleet. Learn more about <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>.
      * </p>
      * 
      * @param fleetType
      *        Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     *        ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance
-     *        type selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep
-     *        them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
-     *        in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
-     *        instances with at <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
-     *        Set up Access to External Services</a>.
+     *        ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance
+     *        type selected for this fleet. Learn more about <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *        > On-Demand versus Spot Instances</a>.
      * @see FleetType
      */
 
@@ -1380,23 +1406,18 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     * ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance type
-     * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
-     * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
-     * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html"> Set up
-     * Access to External Services</a>.
+     * ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type
+     * selected for this fleet. Learn more about <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>.
      * </p>
      * 
      * @param fleetType
      *        Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     *        ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance
-     *        type selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep
-     *        them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
-     *        in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
-     *        instances with at <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
-     *        Set up Access to External Services</a>.
+     *        ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance
+     *        type selected for this fleet. Learn more about <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *        > On-Demand versus Spot Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -1408,19 +1429,20 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
-     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
-     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * any application that runs on an instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
+     * using on-box credentials for your game servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
      * external resources from a game server</a>.
      * </p>
      * 
      * @param instanceRoleArn
-     *        Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs
-     *        on an instance in this fleet can assume the role, including install scripts, server processs, daemons
-     *        (background processes). Create a role or look up a role's ARN using the <a
-     *        href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
+     *        Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN
+     *        set, any application that runs on an instance in this fleet can assume the role, including install
+     *        scripts, server processes, daemons (background processes). Create a role or look up a role's ARN using the
+     *        <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
      *        about using on-box credentials for your game servers at <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      *        Access external resources from a game server</a>.
@@ -1432,19 +1454,20 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
-     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
-     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * any application that runs on an instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
+     * using on-box credentials for your game servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
      * external resources from a game server</a>.
      * </p>
      * 
-     * @return Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs
-     *         on an instance in this fleet can assume the role, including install scripts, server processs, daemons
-     *         (background processes). Create a role or look up a role's ARN using the <a
-     *         href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
-     *         about using on-box credentials for your game servers at <a
+     * @return Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN
+     *         set, any application that runs on an instance in this fleet can assume the role, including install
+     *         scripts, server processes, daemons (background processes). Create a role or look up a role's ARN using
+     *         the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn
+     *         more about using on-box credentials for your game servers at <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      *         Access external resources from a game server</a>.
      */
@@ -1455,19 +1478,20 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
-     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
-     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * any application that runs on an instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
+     * using on-box credentials for your game servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
      * external resources from a game server</a>.
      * </p>
      * 
      * @param instanceRoleArn
-     *        Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs
-     *        on an instance in this fleet can assume the role, including install scripts, server processs, daemons
-     *        (background processes). Create a role or look up a role's ARN using the <a
-     *        href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
+     *        Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN
+     *        set, any application that runs on an instance in this fleet can assume the role, including install
+     *        scripts, server processes, daemons (background processes). Create a role or look up a role's ARN using the
+     *        <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
      *        about using on-box credentials for your game servers at <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      *        Access external resources from a game server</a>.
@@ -1497,6 +1521,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("Description: ").append(getDescription()).append(",");
         if (getBuildId() != null)
             sb.append("BuildId: ").append(getBuildId()).append(",");
+        if (getScriptId() != null)
+            sb.append("ScriptId: ").append(getScriptId()).append(",");
         if (getServerLaunchPath() != null)
             sb.append("ServerLaunchPath: ").append(getServerLaunchPath()).append(",");
         if (getServerLaunchParameters() != null)
@@ -1548,6 +1574,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getBuildId() == null ^ this.getBuildId() == null)
             return false;
         if (other.getBuildId() != null && other.getBuildId().equals(this.getBuildId()) == false)
+            return false;
+        if (other.getScriptId() == null ^ this.getScriptId() == null)
+            return false;
+        if (other.getScriptId() != null && other.getScriptId().equals(this.getScriptId()) == false)
             return false;
         if (other.getServerLaunchPath() == null ^ this.getServerLaunchPath() == null)
             return false;
@@ -1613,6 +1643,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getBuildId() == null) ? 0 : getBuildId().hashCode());
+        hashCode = prime * hashCode + ((getScriptId() == null) ? 0 : getScriptId().hashCode());
         hashCode = prime * hashCode + ((getServerLaunchPath() == null) ? 0 : getServerLaunchPath().hashCode());
         hashCode = prime * hashCode + ((getServerLaunchParameters() == null) ? 0 : getServerLaunchParameters().hashCode());
         hashCode = prime * hashCode + ((getLogPaths() == null) ? 0 : getLogPaths().hashCode());

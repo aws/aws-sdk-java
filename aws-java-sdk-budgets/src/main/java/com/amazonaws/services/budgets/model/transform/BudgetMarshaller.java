@@ -33,6 +33,8 @@ public class BudgetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BudgetName").build();
     private static final MarshallingInfo<StructuredPojo> BUDGETLIMIT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BudgetLimit").build();
+    private static final MarshallingInfo<Map> PLANNEDBUDGETLIMITS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlannedBudgetLimits").build();
     private static final MarshallingInfo<Map> COSTFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("CostFilters").build();
     private static final MarshallingInfo<StructuredPojo> COSTTYPES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -66,6 +68,7 @@ public class BudgetMarshaller {
         try {
             protocolMarshaller.marshall(budget.getBudgetName(), BUDGETNAME_BINDING);
             protocolMarshaller.marshall(budget.getBudgetLimit(), BUDGETLIMIT_BINDING);
+            protocolMarshaller.marshall(budget.getPlannedBudgetLimits(), PLANNEDBUDGETLIMITS_BINDING);
             protocolMarshaller.marshall(budget.getCostFilters(), COSTFILTERS_BINDING);
             protocolMarshaller.marshall(budget.getCostTypes(), COSTTYPES_BINDING);
             protocolMarshaller.marshall(budget.getTimeUnit(), TIMEUNIT_BINDING);

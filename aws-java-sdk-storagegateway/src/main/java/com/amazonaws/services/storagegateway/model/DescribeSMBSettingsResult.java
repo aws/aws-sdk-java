@@ -36,6 +36,22 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private Boolean sMBGuestPasswordSet;
+    /**
+     * <p>
+     * The type of security strategy that was specified for file gateway.
+     * </p>
+     * <p>
+     * ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required, SMB encryption is offered but not
+     * required.
+     * </p>
+     * <p>
+     * MandatorySigning: SMBv1 is disabled, SMB signing is required, SMB encryption is offered but not required.
+     * </p>
+     * <p>
+     * MandatoryEncryption: SMBv1 is disabled, SMB signing is offered but not required, SMB encryption is required.
+     * </p>
+     */
+    private String sMBSecurityStrategy;
 
     /**
      * @param gatewayARN
@@ -156,6 +172,145 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The type of security strategy that was specified for file gateway.
+     * </p>
+     * <p>
+     * ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required, SMB encryption is offered but not
+     * required.
+     * </p>
+     * <p>
+     * MandatorySigning: SMBv1 is disabled, SMB signing is required, SMB encryption is offered but not required.
+     * </p>
+     * <p>
+     * MandatoryEncryption: SMBv1 is disabled, SMB signing is offered but not required, SMB encryption is required.
+     * </p>
+     * 
+     * @param sMBSecurityStrategy
+     *        The type of security strategy that was specified for file gateway.</p>
+     *        <p>
+     *        ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required, SMB encryption is offered but
+     *        not required.
+     *        </p>
+     *        <p>
+     *        MandatorySigning: SMBv1 is disabled, SMB signing is required, SMB encryption is offered but not required.
+     *        </p>
+     *        <p>
+     *        MandatoryEncryption: SMBv1 is disabled, SMB signing is offered but not required, SMB encryption is
+     *        required.
+     * @see SMBSecurityStrategy
+     */
+
+    public void setSMBSecurityStrategy(String sMBSecurityStrategy) {
+        this.sMBSecurityStrategy = sMBSecurityStrategy;
+    }
+
+    /**
+     * <p>
+     * The type of security strategy that was specified for file gateway.
+     * </p>
+     * <p>
+     * ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required, SMB encryption is offered but not
+     * required.
+     * </p>
+     * <p>
+     * MandatorySigning: SMBv1 is disabled, SMB signing is required, SMB encryption is offered but not required.
+     * </p>
+     * <p>
+     * MandatoryEncryption: SMBv1 is disabled, SMB signing is offered but not required, SMB encryption is required.
+     * </p>
+     * 
+     * @return The type of security strategy that was specified for file gateway.</p>
+     *         <p>
+     *         ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required, SMB encryption is offered but
+     *         not required.
+     *         </p>
+     *         <p>
+     *         MandatorySigning: SMBv1 is disabled, SMB signing is required, SMB encryption is offered but not required.
+     *         </p>
+     *         <p>
+     *         MandatoryEncryption: SMBv1 is disabled, SMB signing is offered but not required, SMB encryption is
+     *         required.
+     * @see SMBSecurityStrategy
+     */
+
+    public String getSMBSecurityStrategy() {
+        return this.sMBSecurityStrategy;
+    }
+
+    /**
+     * <p>
+     * The type of security strategy that was specified for file gateway.
+     * </p>
+     * <p>
+     * ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required, SMB encryption is offered but not
+     * required.
+     * </p>
+     * <p>
+     * MandatorySigning: SMBv1 is disabled, SMB signing is required, SMB encryption is offered but not required.
+     * </p>
+     * <p>
+     * MandatoryEncryption: SMBv1 is disabled, SMB signing is offered but not required, SMB encryption is required.
+     * </p>
+     * 
+     * @param sMBSecurityStrategy
+     *        The type of security strategy that was specified for file gateway.</p>
+     *        <p>
+     *        ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required, SMB encryption is offered but
+     *        not required.
+     *        </p>
+     *        <p>
+     *        MandatorySigning: SMBv1 is disabled, SMB signing is required, SMB encryption is offered but not required.
+     *        </p>
+     *        <p>
+     *        MandatoryEncryption: SMBv1 is disabled, SMB signing is offered but not required, SMB encryption is
+     *        required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SMBSecurityStrategy
+     */
+
+    public DescribeSMBSettingsResult withSMBSecurityStrategy(String sMBSecurityStrategy) {
+        setSMBSecurityStrategy(sMBSecurityStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of security strategy that was specified for file gateway.
+     * </p>
+     * <p>
+     * ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required, SMB encryption is offered but not
+     * required.
+     * </p>
+     * <p>
+     * MandatorySigning: SMBv1 is disabled, SMB signing is required, SMB encryption is offered but not required.
+     * </p>
+     * <p>
+     * MandatoryEncryption: SMBv1 is disabled, SMB signing is offered but not required, SMB encryption is required.
+     * </p>
+     * 
+     * @param sMBSecurityStrategy
+     *        The type of security strategy that was specified for file gateway.</p>
+     *        <p>
+     *        ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required, SMB encryption is offered but
+     *        not required.
+     *        </p>
+     *        <p>
+     *        MandatorySigning: SMBv1 is disabled, SMB signing is required, SMB encryption is offered but not required.
+     *        </p>
+     *        <p>
+     *        MandatoryEncryption: SMBv1 is disabled, SMB signing is offered but not required, SMB encryption is
+     *        required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SMBSecurityStrategy
+     */
+
+    public DescribeSMBSettingsResult withSMBSecurityStrategy(SMBSecurityStrategy sMBSecurityStrategy) {
+        this.sMBSecurityStrategy = sMBSecurityStrategy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -172,7 +327,9 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getSMBGuestPasswordSet() != null)
-            sb.append("SMBGuestPasswordSet: ").append(getSMBGuestPasswordSet());
+            sb.append("SMBGuestPasswordSet: ").append(getSMBGuestPasswordSet()).append(",");
+        if (getSMBSecurityStrategy() != null)
+            sb.append("SMBSecurityStrategy: ").append(getSMBSecurityStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -199,6 +356,10 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getSMBGuestPasswordSet() != null && other.getSMBGuestPasswordSet().equals(this.getSMBGuestPasswordSet()) == false)
             return false;
+        if (other.getSMBSecurityStrategy() == null ^ this.getSMBSecurityStrategy() == null)
+            return false;
+        if (other.getSMBSecurityStrategy() != null && other.getSMBSecurityStrategy().equals(this.getSMBSecurityStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -210,6 +371,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getSMBGuestPasswordSet() == null) ? 0 : getSMBGuestPasswordSet().hashCode());
+        hashCode = prime * hashCode + ((getSMBSecurityStrategy() == null) ? 0 : getSMBSecurityStrategy().hashCode());
         return hashCode;
     }
 

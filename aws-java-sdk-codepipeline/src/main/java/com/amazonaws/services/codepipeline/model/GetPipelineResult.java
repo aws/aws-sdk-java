@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a GetPipeline action.
+ * Represents the output of a <code>GetPipeline</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline" target="_top">AWS API
@@ -34,7 +34,7 @@ public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.
     private PipelineDeclaration pipeline;
     /**
      * <p>
-     * Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     * Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.
      * </p>
      */
     private PipelineMetadata metadata;
@@ -81,11 +81,12 @@ public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     * Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.
      * </p>
      * 
      * @param metadata
-     *        Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     *        Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code>
+     *        action.
      */
 
     public void setMetadata(PipelineMetadata metadata) {
@@ -94,10 +95,11 @@ public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     * Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.
      * </p>
      * 
-     * @return Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     * @return Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code>
+     *         action.
      */
 
     public PipelineMetadata getMetadata() {
@@ -106,11 +108,12 @@ public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     * Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.
      * </p>
      * 
      * @param metadata
-     *        Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     *        Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code>
+     *        action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

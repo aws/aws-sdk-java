@@ -47,6 +47,12 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The principal ID of the group.
+     * </p>
+     */
+    private String principalId;
 
     /**
      * <p>
@@ -169,6 +175,46 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The principal ID of the group.
+     * </p>
+     * 
+     * @param principalId
+     *        The principal ID of the group.
+     */
+
+    public void setPrincipalId(String principalId) {
+        this.principalId = principalId;
+    }
+
+    /**
+     * <p>
+     * The principal ID of the group.
+     * </p>
+     * 
+     * @return The principal ID of the group.
+     */
+
+    public String getPrincipalId() {
+        return this.principalId;
+    }
+
+    /**
+     * <p>
+     * The principal ID of the group.
+     * </p>
+     * 
+     * @param principalId
+     *        The principal ID of the group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Group withPrincipalId(String principalId) {
+        setPrincipalId(principalId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +231,9 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
         if (getGroupName() != null)
             sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getPrincipalId() != null)
+            sb.append("PrincipalId: ").append(getPrincipalId());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +260,10 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getPrincipalId() == null ^ this.getPrincipalId() == null)
+            return false;
+        if (other.getPrincipalId() != null && other.getPrincipalId().equals(this.getPrincipalId()) == false)
+            return false;
         return true;
     }
 
@@ -223,6 +275,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getPrincipalId() == null) ? 0 : getPrincipalId().hashCode());
         return hashCode;
     }
 

@@ -30,10 +30,200 @@ public class NodeOverrides implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are
+     * specified in the job definition. To use this override:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * There must be at least one node range in your job definition that has an open upper boundary (such as
+     * <code>:</code> or <code>n:</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The lower boundary of the node range specified in the job definition must be fewer than the number of nodes
+     * specified in the override.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The main node index specified in the job definition must be fewer than the number of nodes specified in the
+     * override.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Integer numNodes;
+    /**
+     * <p>
      * The node property overrides for the job.
      * </p>
      */
     private java.util.List<NodePropertyOverride> nodePropertyOverrides;
+
+    /**
+     * <p>
+     * The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are
+     * specified in the job definition. To use this override:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * There must be at least one node range in your job definition that has an open upper boundary (such as
+     * <code>:</code> or <code>n:</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The lower boundary of the node range specified in the job definition must be fewer than the number of nodes
+     * specified in the override.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The main node index specified in the job definition must be fewer than the number of nodes specified in the
+     * override.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param numNodes
+     *        The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that
+     *        are specified in the job definition. To use this override:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        There must be at least one node range in your job definition that has an open upper boundary (such as
+     *        <code>:</code> or <code>n:</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The lower boundary of the node range specified in the job definition must be fewer than the number of
+     *        nodes specified in the override.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The main node index specified in the job definition must be fewer than the number of nodes specified in
+     *        the override.
+     *        </p>
+     *        </li>
+     */
+
+    public void setNumNodes(Integer numNodes) {
+        this.numNodes = numNodes;
+    }
+
+    /**
+     * <p>
+     * The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are
+     * specified in the job definition. To use this override:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * There must be at least one node range in your job definition that has an open upper boundary (such as
+     * <code>:</code> or <code>n:</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The lower boundary of the node range specified in the job definition must be fewer than the number of nodes
+     * specified in the override.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The main node index specified in the job definition must be fewer than the number of nodes specified in the
+     * override.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that
+     *         are specified in the job definition. To use this override:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         There must be at least one node range in your job definition that has an open upper boundary (such as
+     *         <code>:</code> or <code>n:</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The lower boundary of the node range specified in the job definition must be fewer than the number of
+     *         nodes specified in the override.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The main node index specified in the job definition must be fewer than the number of nodes specified in
+     *         the override.
+     *         </p>
+     *         </li>
+     */
+
+    public Integer getNumNodes() {
+        return this.numNodes;
+    }
+
+    /**
+     * <p>
+     * The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are
+     * specified in the job definition. To use this override:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * There must be at least one node range in your job definition that has an open upper boundary (such as
+     * <code>:</code> or <code>n:</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The lower boundary of the node range specified in the job definition must be fewer than the number of nodes
+     * specified in the override.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The main node index specified in the job definition must be fewer than the number of nodes specified in the
+     * override.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param numNodes
+     *        The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that
+     *        are specified in the job definition. To use this override:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        There must be at least one node range in your job definition that has an open upper boundary (such as
+     *        <code>:</code> or <code>n:</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The lower boundary of the node range specified in the job definition must be fewer than the number of
+     *        nodes specified in the override.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The main node index specified in the job definition must be fewer than the number of nodes specified in
+     *        the override.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeOverrides withNumNodes(Integer numNodes) {
+        setNumNodes(numNodes);
+        return this;
+    }
 
     /**
      * <p>
@@ -117,6 +307,8 @@ public class NodeOverrides implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getNumNodes() != null)
+            sb.append("NumNodes: ").append(getNumNodes()).append(",");
         if (getNodePropertyOverrides() != null)
             sb.append("NodePropertyOverrides: ").append(getNodePropertyOverrides());
         sb.append("}");
@@ -133,6 +325,10 @@ public class NodeOverrides implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof NodeOverrides == false)
             return false;
         NodeOverrides other = (NodeOverrides) obj;
+        if (other.getNumNodes() == null ^ this.getNumNodes() == null)
+            return false;
+        if (other.getNumNodes() != null && other.getNumNodes().equals(this.getNumNodes()) == false)
+            return false;
         if (other.getNodePropertyOverrides() == null ^ this.getNodePropertyOverrides() == null)
             return false;
         if (other.getNodePropertyOverrides() != null && other.getNodePropertyOverrides().equals(this.getNodePropertyOverrides()) == false)
@@ -145,6 +341,7 @@ public class NodeOverrides implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getNumNodes() == null) ? 0 : getNumNodes().hashCode());
         hashCode = prime * hashCode + ((getNodePropertyOverrides() == null) ? 0 : getNodePropertyOverrides().hashCode());
         return hashCode;
     }

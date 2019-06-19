@@ -101,6 +101,10 @@ public class DescribeDBEngineVersionsRequestMarshaller implements Marshaller<Req
             request.addParameter("ListSupportedTimezones", StringUtils.fromBoolean(describeDBEngineVersionsRequest.getListSupportedTimezones()));
         }
 
+        if (describeDBEngineVersionsRequest.getIncludeAll() != null) {
+            request.addParameter("IncludeAll", StringUtils.fromBoolean(describeDBEngineVersionsRequest.getIncludeAll()));
+        }
+
         return request;
     }
 

@@ -65,8 +65,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -346,8 +346,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -361,8 +361,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The network configuration for the service. This parameter is required for task definitions that use the
      *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *        for other network modes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
      *        Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment.
      *        For example, if your network configuration change is to keep the existing subnets and simply add another
@@ -379,8 +379,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -393,7 +393,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return The network configuration for the service. This parameter is required for task definitions that use the
      *         <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *         for other network modes. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *         <p>
      *         Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment.
@@ -411,8 +411,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -426,8 +426,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The network configuration for the service. This parameter is required for task definitions that use the
      *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *        for other network modes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
      *        Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment.
      *        For example, if your network configuration change is to keep the existing subnets and simply add another

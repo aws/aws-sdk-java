@@ -28,6 +28,34 @@ public class AbstractAmazonWorkLinkAsync extends AbstractAmazonWorkLink implemen
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateDomainResult> associateDomainAsync(AssociateDomainRequest request) {
+
+        return associateDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateDomainResult> associateDomainAsync(AssociateDomainRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateDomainRequest, AssociateDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateWebsiteAuthorizationProviderResult> associateWebsiteAuthorizationProviderAsync(
+            AssociateWebsiteAuthorizationProviderRequest request) {
+
+        return associateWebsiteAuthorizationProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateWebsiteAuthorizationProviderResult> associateWebsiteAuthorizationProviderAsync(
+            AssociateWebsiteAuthorizationProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateWebsiteAuthorizationProviderRequest, AssociateWebsiteAuthorizationProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateWebsiteCertificateAuthorityResult> associateWebsiteCertificateAuthorityAsync(
             AssociateWebsiteCertificateAuthorityRequest request) {
 
@@ -127,6 +155,19 @@ public class AbstractAmazonWorkLinkAsync extends AbstractAmazonWorkLink implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDomainResult> describeDomainAsync(DescribeDomainRequest request) {
+
+        return describeDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainResult> describeDomainAsync(DescribeDomainRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainRequest, DescribeDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFleetMetadataResult> describeFleetMetadataAsync(DescribeFleetMetadataRequest request) {
 
         return describeFleetMetadataAsync(request, null);
@@ -170,6 +211,34 @@ public class AbstractAmazonWorkLinkAsync extends AbstractAmazonWorkLink implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateDomainResult> disassociateDomainAsync(DisassociateDomainRequest request) {
+
+        return disassociateDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateDomainResult> disassociateDomainAsync(DisassociateDomainRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateDomainRequest, DisassociateDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateWebsiteAuthorizationProviderResult> disassociateWebsiteAuthorizationProviderAsync(
+            DisassociateWebsiteAuthorizationProviderRequest request) {
+
+        return disassociateWebsiteAuthorizationProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateWebsiteAuthorizationProviderResult> disassociateWebsiteAuthorizationProviderAsync(
+            DisassociateWebsiteAuthorizationProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateWebsiteAuthorizationProviderRequest, DisassociateWebsiteAuthorizationProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateWebsiteCertificateAuthorityResult> disassociateWebsiteCertificateAuthorityAsync(
             DisassociateWebsiteCertificateAuthorityRequest request) {
 
@@ -198,6 +267,19 @@ public class AbstractAmazonWorkLinkAsync extends AbstractAmazonWorkLink implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest request) {
+
+        return listDomainsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFleetsResult> listFleetsAsync(ListFleetsRequest request) {
 
         return listFleetsAsync(request, null);
@@ -206,6 +288,21 @@ public class AbstractAmazonWorkLinkAsync extends AbstractAmazonWorkLink implemen
     @Override
     public java.util.concurrent.Future<ListFleetsResult> listFleetsAsync(ListFleetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFleetsRequest, ListFleetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWebsiteAuthorizationProvidersResult> listWebsiteAuthorizationProvidersAsync(
+            ListWebsiteAuthorizationProvidersRequest request) {
+
+        return listWebsiteAuthorizationProvidersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWebsiteAuthorizationProvidersResult> listWebsiteAuthorizationProvidersAsync(
+            ListWebsiteAuthorizationProvidersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWebsiteAuthorizationProvidersRequest, ListWebsiteAuthorizationProvidersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -221,6 +318,32 @@ public class AbstractAmazonWorkLinkAsync extends AbstractAmazonWorkLink implemen
     public java.util.concurrent.Future<ListWebsiteCertificateAuthoritiesResult> listWebsiteCertificateAuthoritiesAsync(
             ListWebsiteCertificateAuthoritiesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListWebsiteCertificateAuthoritiesRequest, ListWebsiteCertificateAuthoritiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreDomainAccessResult> restoreDomainAccessAsync(RestoreDomainAccessRequest request) {
+
+        return restoreDomainAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreDomainAccessResult> restoreDomainAccessAsync(RestoreDomainAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<RestoreDomainAccessRequest, RestoreDomainAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeDomainAccessResult> revokeDomainAccessAsync(RevokeDomainAccessRequest request) {
+
+        return revokeDomainAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeDomainAccessResult> revokeDomainAccessAsync(RevokeDomainAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<RevokeDomainAccessRequest, RevokeDomainAccessResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -277,6 +400,19 @@ public class AbstractAmazonWorkLinkAsync extends AbstractAmazonWorkLink implemen
     public java.util.concurrent.Future<UpdateDevicePolicyConfigurationResult> updateDevicePolicyConfigurationAsync(
             UpdateDevicePolicyConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDevicePolicyConfigurationRequest, UpdateDevicePolicyConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainMetadataResult> updateDomainMetadataAsync(UpdateDomainMetadataRequest request) {
+
+        return updateDomainMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainMetadataResult> updateDomainMetadataAsync(UpdateDomainMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDomainMetadataRequest, UpdateDomainMetadataResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

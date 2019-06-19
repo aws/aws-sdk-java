@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * DeclineInvitations request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeclineInvitations" target="_top">AWS API
  *      Documentation</a>
@@ -27,14 +26,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <p>
      * A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to
      * decline invitations from.
+     * </p>
      */
     private java.util.List<String> accountIds;
 
     /**
+     * <p>
      * A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to
      * decline invitations from.
+     * </p>
      * 
      * @return A list of account IDs of the AWS accounts that sent invitations to the current member account that you
      *         want to decline invitations from.
@@ -45,8 +48,10 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to
      * decline invitations from.
+     * </p>
      * 
      * @param accountIds
      *        A list of account IDs of the AWS accounts that sent invitations to the current member account that you
@@ -63,8 +68,10 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to
      * decline invitations from.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to
@@ -88,8 +95,10 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to
      * decline invitations from.
+     * </p>
      * 
      * @param accountIds
      *        A list of account IDs of the AWS accounts that sent invitations to the current member account that you

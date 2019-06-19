@@ -25,8 +25,7 @@ public class ListKeyPoliciesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of key policy names. Currently, there is only one key policy per CMK and it is always named
-     * <code>default</code>.
+     * A list of key policy names. The only valid value is <code>default</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyNames;
@@ -40,7 +39,7 @@ public class ListKeyPoliciesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * A flag that indicates whether there are more items in the list. When this value is true, the list in this
-     * response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in this response
+     * response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse
      * to the <code>Marker</code> parameter in a subsequent request.
      * </p>
      */
@@ -48,12 +47,10 @@ public class ListKeyPoliciesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of key policy names. Currently, there is only one key policy per CMK and it is always named
-     * <code>default</code>.
+     * A list of key policy names. The only valid value is <code>default</code>.
      * </p>
      * 
-     * @return A list of key policy names. Currently, there is only one key policy per CMK and it is always named
-     *         <code>default</code>.
+     * @return A list of key policy names. The only valid value is <code>default</code>.
      */
 
     public java.util.List<String> getPolicyNames() {
@@ -65,13 +62,11 @@ public class ListKeyPoliciesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of key policy names. Currently, there is only one key policy per CMK and it is always named
-     * <code>default</code>.
+     * A list of key policy names. The only valid value is <code>default</code>.
      * </p>
      * 
      * @param policyNames
-     *        A list of key policy names. Currently, there is only one key policy per CMK and it is always named
-     *        <code>default</code>.
+     *        A list of key policy names. The only valid value is <code>default</code>.
      */
 
     public void setPolicyNames(java.util.Collection<String> policyNames) {
@@ -85,8 +80,7 @@ public class ListKeyPoliciesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of key policy names. Currently, there is only one key policy per CMK and it is always named
-     * <code>default</code>.
+     * A list of key policy names. The only valid value is <code>default</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -95,8 +89,7 @@ public class ListKeyPoliciesResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param policyNames
-     *        A list of key policy names. Currently, there is only one key policy per CMK and it is always named
-     *        <code>default</code>.
+     *        A list of key policy names. The only valid value is <code>default</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +105,11 @@ public class ListKeyPoliciesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of key policy names. Currently, there is only one key policy per CMK and it is always named
-     * <code>default</code>.
+     * A list of key policy names. The only valid value is <code>default</code>.
      * </p>
      * 
      * @param policyNames
-     *        A list of key policy names. Currently, there is only one key policy per CMK and it is always named
-     *        <code>default</code>.
+     *        A list of key policy names. The only valid value is <code>default</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,14 +167,14 @@ public class ListKeyPoliciesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * A flag that indicates whether there are more items in the list. When this value is true, the list in this
-     * response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in this response
+     * response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse
      * to the <code>Marker</code> parameter in a subsequent request.
      * </p>
      * 
      * @param truncated
      *        A flag that indicates whether there are more items in the list. When this value is true, the list in this
-     *        response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in this
-     *        response to the <code>Marker</code> parameter in a subsequent request.
+     *        response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in
+     *        thisresponse to the <code>Marker</code> parameter in a subsequent request.
      */
 
     public void setTruncated(Boolean truncated) {
@@ -193,13 +184,13 @@ public class ListKeyPoliciesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * A flag that indicates whether there are more items in the list. When this value is true, the list in this
-     * response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in this response
+     * response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse
      * to the <code>Marker</code> parameter in a subsequent request.
      * </p>
      * 
      * @return A flag that indicates whether there are more items in the list. When this value is true, the list in this
-     *         response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in this
-     *         response to the <code>Marker</code> parameter in a subsequent request.
+     *         response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in
+     *         thisresponse to the <code>Marker</code> parameter in a subsequent request.
      */
 
     public Boolean getTruncated() {
@@ -209,14 +200,14 @@ public class ListKeyPoliciesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * A flag that indicates whether there are more items in the list. When this value is true, the list in this
-     * response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in this response
+     * response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse
      * to the <code>Marker</code> parameter in a subsequent request.
      * </p>
      * 
      * @param truncated
      *        A flag that indicates whether there are more items in the list. When this value is true, the list in this
-     *        response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in this
-     *        response to the <code>Marker</code> parameter in a subsequent request.
+     *        response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in
+     *        thisresponse to the <code>Marker</code> parameter in a subsequent request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,13 +219,13 @@ public class ListKeyPoliciesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * A flag that indicates whether there are more items in the list. When this value is true, the list in this
-     * response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in this response
+     * response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse
      * to the <code>Marker</code> parameter in a subsequent request.
      * </p>
      * 
      * @return A flag that indicates whether there are more items in the list. When this value is true, the list in this
-     *         response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in this
-     *         response to the <code>Marker</code> parameter in a subsequent request.
+     *         response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in
+     *         thisresponse to the <code>Marker</code> parameter in a subsequent request.
      */
 
     public Boolean isTruncated() {

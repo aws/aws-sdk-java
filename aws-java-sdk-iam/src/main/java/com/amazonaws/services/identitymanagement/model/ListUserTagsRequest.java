@@ -39,8 +39,8 @@ public class ListUserTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Use this parameter only when paginating results and only after you receive a response indicating that the results
-     * are truncated. Set it to the value of the <code>Marker</code> element in the response to indicate where the next
-     * call should start.
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      */
     private String marker;
@@ -129,14 +129,14 @@ public class ListUserTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Use this parameter only when paginating results and only after you receive a response indicating that the results
-     * are truncated. Set it to the value of the <code>Marker</code> element in the response to indicate where the next
-     * call should start.
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      * 
      * @param marker
      *        Use this parameter only when paginating results and only after you receive a response indicating that the
-     *        results are truncated. Set it to the value of the <code>Marker</code> element in the response to indicate
-     *        where the next call should start.
+     *        results are truncated. Set it to the value of the <code>Marker</code> element in the response that you
+     *        received to indicate where the next call should start.
      */
 
     public void setMarker(String marker) {
@@ -146,13 +146,13 @@ public class ListUserTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Use this parameter only when paginating results and only after you receive a response indicating that the results
-     * are truncated. Set it to the value of the <code>Marker</code> element in the response to indicate where the next
-     * call should start.
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      * 
      * @return Use this parameter only when paginating results and only after you receive a response indicating that the
-     *         results are truncated. Set it to the value of the <code>Marker</code> element in the response to indicate
-     *         where the next call should start.
+     *         results are truncated. Set it to the value of the <code>Marker</code> element in the response that you
+     *         received to indicate where the next call should start.
      */
 
     public String getMarker() {
@@ -162,14 +162,14 @@ public class ListUserTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Use this parameter only when paginating results and only after you receive a response indicating that the results
-     * are truncated. Set it to the value of the <code>Marker</code> element in the response to indicate where the next
-     * call should start.
+     * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
+     * indicate where the next call should start.
      * </p>
      * 
      * @param marker
      *        Use this parameter only when paginating results and only after you receive a response indicating that the
-     *        results are truncated. Set it to the value of the <code>Marker</code> element in the response to indicate
-     *        where the next call should start.
+     *        results are truncated. Set it to the value of the <code>Marker</code> element in the response that you
+     *        received to indicate where the next call should start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

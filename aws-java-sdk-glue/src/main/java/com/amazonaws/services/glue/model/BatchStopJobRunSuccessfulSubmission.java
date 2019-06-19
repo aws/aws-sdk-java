@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Records a successful request to stop a specified JobRun.
+ * Records a successful request to stop a specified <code>JobRun</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRunSuccessfulSubmission"
@@ -36,7 +36,7 @@ public class BatchStopJobRunSuccessfulSubmission implements Serializable, Clonea
     private String jobName;
     /**
      * <p>
-     * The JobRunId of the job run that was stopped.
+     * The <code>JobRunId</code> of the job run that was stopped.
      * </p>
      */
     private String jobRunId;
@@ -83,11 +83,11 @@ public class BatchStopJobRunSuccessfulSubmission implements Serializable, Clonea
 
     /**
      * <p>
-     * The JobRunId of the job run that was stopped.
+     * The <code>JobRunId</code> of the job run that was stopped.
      * </p>
      * 
      * @param jobRunId
-     *        The JobRunId of the job run that was stopped.
+     *        The <code>JobRunId</code> of the job run that was stopped.
      */
 
     public void setJobRunId(String jobRunId) {
@@ -96,10 +96,10 @@ public class BatchStopJobRunSuccessfulSubmission implements Serializable, Clonea
 
     /**
      * <p>
-     * The JobRunId of the job run that was stopped.
+     * The <code>JobRunId</code> of the job run that was stopped.
      * </p>
      * 
-     * @return The JobRunId of the job run that was stopped.
+     * @return The <code>JobRunId</code> of the job run that was stopped.
      */
 
     public String getJobRunId() {
@@ -108,11 +108,11 @@ public class BatchStopJobRunSuccessfulSubmission implements Serializable, Clonea
 
     /**
      * <p>
-     * The JobRunId of the job run that was stopped.
+     * The <code>JobRunId</code> of the job run that was stopped.
      * </p>
      * 
      * @param jobRunId
-     *        The JobRunId of the job run that was stopped.
+     *        The <code>JobRunId</code> of the job run that was stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

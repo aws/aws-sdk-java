@@ -42,13 +42,13 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
     private String classification;
     /**
      * <p>
-     * The time this classifier was registered.
+     * The time that this classifier was registered.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The time this classifier was last updated.
+     * The time that this classifier was last updated.
      * </p>
      */
     private java.util.Date lastUpdated;
@@ -60,8 +60,8 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
     private Long version;
     /**
      * <p>
-     * The XML tag designating the element that contains each record in an XML document being parsed. Note that this
-     * cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     * The XML tag designating the element that contains each record in an XML document being parsed. This can't
+     * identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
      * attributes can be parsed as long as it ends with a closing tag (for example,
      * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
@@ -151,11 +151,11 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was registered.
+     * The time that this classifier was registered.
      * </p>
      * 
      * @param creationTime
-     *        The time this classifier was registered.
+     *        The time that this classifier was registered.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -164,10 +164,10 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was registered.
+     * The time that this classifier was registered.
      * </p>
      * 
-     * @return The time this classifier was registered.
+     * @return The time that this classifier was registered.
      */
 
     public java.util.Date getCreationTime() {
@@ -176,11 +176,11 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was registered.
+     * The time that this classifier was registered.
      * </p>
      * 
      * @param creationTime
-     *        The time this classifier was registered.
+     *        The time that this classifier was registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,11 +191,11 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was last updated.
+     * The time that this classifier was last updated.
      * </p>
      * 
      * @param lastUpdated
-     *        The time this classifier was last updated.
+     *        The time that this classifier was last updated.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -204,10 +204,10 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was last updated.
+     * The time that this classifier was last updated.
      * </p>
      * 
-     * @return The time this classifier was last updated.
+     * @return The time that this classifier was last updated.
      */
 
     public java.util.Date getLastUpdated() {
@@ -216,11 +216,11 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was last updated.
+     * The time that this classifier was last updated.
      * </p>
      * 
      * @param lastUpdated
-     *        The time this classifier was last updated.
+     *        The time that this classifier was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,17 +271,17 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The XML tag designating the element that contains each record in an XML document being parsed. Note that this
-     * cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     * The XML tag designating the element that contains each record in an XML document being parsed. This can't
+     * identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
      * attributes can be parsed as long as it ends with a closing tag (for example,
      * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * </p>
      * 
      * @param rowTag
-     *        The XML tag designating the element that contains each record in an XML document being parsed. Note that
-     *        this cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that
-     *        contains only attributes can be parsed as long as it ends with a closing tag (for example,
+     *        The XML tag designating the element that contains each record in an XML document being parsed. This can't
+     *        identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     *        attributes can be parsed as long as it ends with a closing tag (for example,
      *        <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      *        <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      */
@@ -292,16 +292,16 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The XML tag designating the element that contains each record in an XML document being parsed. Note that this
-     * cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     * The XML tag designating the element that contains each record in an XML document being parsed. This can't
+     * identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
      * attributes can be parsed as long as it ends with a closing tag (for example,
      * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * </p>
      * 
-     * @return The XML tag designating the element that contains each record in an XML document being parsed. Note that
-     *         this cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that
-     *         contains only attributes can be parsed as long as it ends with a closing tag (for example,
+     * @return The XML tag designating the element that contains each record in an XML document being parsed. This can't
+     *         identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     *         attributes can be parsed as long as it ends with a closing tag (for example,
      *         <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      *         <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      */
@@ -312,17 +312,17 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The XML tag designating the element that contains each record in an XML document being parsed. Note that this
-     * cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     * The XML tag designating the element that contains each record in an XML document being parsed. This can't
+     * identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
      * attributes can be parsed as long as it ends with a closing tag (for example,
      * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * </p>
      * 
      * @param rowTag
-     *        The XML tag designating the element that contains each record in an XML document being parsed. Note that
-     *        this cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that
-     *        contains only attributes can be parsed as long as it ends with a closing tag (for example,
+     *        The XML tag designating the element that contains each record in an XML document being parsed. This can't
+     *        identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     *        attributes can be parsed as long as it ends with a closing tag (for example,
      *        <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      *        <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * @return Returns a reference to this object so that method calls can be chained together.

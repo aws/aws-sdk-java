@@ -33,9 +33,9 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May
      * 23, 2018 14:08 PDT. This affects <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates
      * shown in the IAM console and password last used dates in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
      * report</a>, and returned by this GetUser API. If users signed in during the affected time, the password last used
      * date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May
      * 23, 2018 14:08 PDT, the returned password last used date is accurate.
@@ -59,9 +59,9 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May
      * 23, 2018 14:08 PDT. This affects <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates
      * shown in the IAM console and password last used dates in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
      * report</a>, and returned by this GetUser API. If users signed in during the affected time, the password last used
      * date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May
      * 23, 2018 14:08 PDT, the returned password last used date is accurate.
@@ -80,9 +80,9 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *        <p>
      *        Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT
      *        to May 23, 2018 14:08 PDT. This affects <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a>
-     *        dates shown in the IAM console and password last used dates in the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last
+     *        sign-in</a> dates shown in the IAM console and password last used dates in the <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
      *        report</a>, and returned by this GetUser API. If users signed in during the affected time, the password
      *        last used date that is returned is the date the user last signed in before May 3, 2018. For users that
      *        signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.
@@ -108,9 +108,9 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May
      * 23, 2018 14:08 PDT. This affects <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates
      * shown in the IAM console and password last used dates in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
      * report</a>, and returned by this GetUser API. If users signed in during the affected time, the password last used
      * date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May
      * 23, 2018 14:08 PDT, the returned password last used date is accurate.
@@ -128,9 +128,9 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *         <p>
      *         Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT
      *         to May 23, 2018 14:08 PDT. This affects <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last
      *         sign-in</a> dates shown in the IAM console and password last used dates in the <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
      *         report</a>, and returned by this GetUser API. If users signed in during the affected time, the password
      *         last used date that is returned is the date the user last signed in before May 3, 2018. For users that
      *         signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.
@@ -156,9 +156,9 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May
      * 23, 2018 14:08 PDT. This affects <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates
      * shown in the IAM console and password last used dates in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
      * report</a>, and returned by this GetUser API. If users signed in during the affected time, the password last used
      * date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May
      * 23, 2018 14:08 PDT, the returned password last used date is accurate.
@@ -177,9 +177,9 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *        <p>
      *        Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT
      *        to May 23, 2018 14:08 PDT. This affects <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a>
-     *        dates shown in the IAM console and password last used dates in the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last
+     *        sign-in</a> dates shown in the IAM console and password last used dates in the <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
      *        report</a>, and returned by this GetUser API. If users signed in during the affected time, the password
      *        last used date that is returned is the date the user last signed in before May 3, 2018. For users that
      *        signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.

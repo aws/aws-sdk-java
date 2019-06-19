@@ -23,6 +23,8 @@ import javax.annotation.Generated;
 public class ResourceAlreadyExistsException extends com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException {
     private static final long serialVersionUID = 1L;
 
+    private String resourceArn;
+
     /**
      * Constructs a new ResourceAlreadyExistsException with the specified error message.
      *
@@ -31,6 +33,34 @@ public class ResourceAlreadyExistsException extends com.amazonaws.services.datab
      */
     public ResourceAlreadyExistsException(String message) {
         super(message);
+    }
+
+    /**
+     * @param resourceArn
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceArn")
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceArn")
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * @param resourceArn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceAlreadyExistsException withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
+        return this;
     }
 
 }

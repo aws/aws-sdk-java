@@ -25,7 +25,8 @@ public enum BlockType {
     LINE("LINE"),
     WORD("WORD"),
     TABLE("TABLE"),
-    CELL("CELL");
+    CELL("CELL"),
+    SELECTION_ELEMENT("SELECTION_ELEMENT");
 
     private String value;
 

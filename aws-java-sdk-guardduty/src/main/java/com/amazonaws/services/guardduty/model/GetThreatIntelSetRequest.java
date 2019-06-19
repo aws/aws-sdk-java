@@ -25,16 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to describe. */
+    /**
+     * <p>
+     * The unique ID of the detector the threatIntelSet is associated with.
+     * </p>
+     */
     private String detectorId;
-    /** The unique ID that specifies the ThreatIntelSet that you want to describe. */
+    /**
+     * <p>
+     * The unique ID of the threatIntelSet you want to get.
+     * </p>
+     */
     private String threatIntelSetId;
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to describe.
+     * <p>
+     * The unique ID of the detector the threatIntelSet is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to describe.
+     *        The unique ID of the detector the threatIntelSet is associated with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -42,9 +52,11 @@ public class GetThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to describe.
+     * <p>
+     * The unique ID of the detector the threatIntelSet is associated with.
+     * </p>
      * 
-     * @return The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to describe.
+     * @return The unique ID of the detector the threatIntelSet is associated with.
      */
 
     public String getDetectorId() {
@@ -52,10 +64,12 @@ public class GetThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to describe.
+     * <p>
+     * The unique ID of the detector the threatIntelSet is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to describe.
+     *        The unique ID of the detector the threatIntelSet is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +79,12 @@ public class GetThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to describe.
+     * <p>
+     * The unique ID of the threatIntelSet you want to get.
+     * </p>
      * 
      * @param threatIntelSetId
-     *        The unique ID that specifies the ThreatIntelSet that you want to describe.
+     *        The unique ID of the threatIntelSet you want to get.
      */
 
     public void setThreatIntelSetId(String threatIntelSetId) {
@@ -76,9 +92,11 @@ public class GetThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to describe.
+     * <p>
+     * The unique ID of the threatIntelSet you want to get.
+     * </p>
      * 
-     * @return The unique ID that specifies the ThreatIntelSet that you want to describe.
+     * @return The unique ID of the threatIntelSet you want to get.
      */
 
     public String getThreatIntelSetId() {
@@ -86,10 +104,12 @@ public class GetThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to describe.
+     * <p>
+     * The unique ID of the threatIntelSet you want to get.
+     * </p>
      * 
      * @param threatIntelSetId
-     *        The unique ID that specifies the ThreatIntelSet that you want to describe.
+     *        The unique ID of the threatIntelSet you want to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a ListPipelineExecutions action.
+ * Represents the input of a <code>ListPipelineExecutions</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions"
@@ -37,15 +37,15 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned nextToken value. The available pipeline execution history is limited to the most recent 12
-     * months, based on pipeline execution start times. Default value is 100.
+     * with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline
+     * execution start times. Default value is 100.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next
-     * set of pipeline executions in the list.
+     * The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to
+     * return the next set of pipeline executions in the list.
      * </p>
      */
     private String nextToken;
@@ -93,14 +93,14 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned nextToken value. The available pipeline execution history is limited to the most recent 12
-     * months, based on pipeline execution start times. Default value is 100.
+     * with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline
+     * execution start times. Default value is 100.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned nextToken value. The available pipeline execution history is limited to the most
-     *        recent 12 months, based on pipeline execution start times. Default value is 100.
+     *        call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on
+     *        pipeline execution start times. Default value is 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -110,13 +110,13 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned nextToken value. The available pipeline execution history is limited to the most recent 12
-     * months, based on pipeline execution start times. Default value is 100.
+     * with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline
+     * execution start times. Default value is 100.
      * </p>
      * 
      * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned nextToken value. The available pipeline execution history is limited to the most
-     *         recent 12 months, based on pipeline execution start times. Default value is 100.
+     *         call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based
+     *         on pipeline execution start times. Default value is 100.
      */
 
     public Integer getMaxResults() {
@@ -126,14 +126,14 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned nextToken value. The available pipeline execution history is limited to the most recent 12
-     * months, based on pipeline execution start times. Default value is 100.
+     * with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline
+     * execution start times. Default value is 100.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned nextToken value. The available pipeline execution history is limited to the most
-     *        recent 12 months, based on pipeline execution start times. Default value is 100.
+     *        call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on
+     *        pipeline execution start times. Default value is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,13 +144,13 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next
-     * set of pipeline executions in the list.
+     * The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to
+     * return the next set of pipeline executions in the list.
      * </p>
      * 
      * @param nextToken
-     *        The token that was returned from the previous ListPipelineExecutions call, which can be used to return the
-     *        next set of pipeline executions in the list.
+     *        The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used
+     *        to return the next set of pipeline executions in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -159,12 +159,12 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next
-     * set of pipeline executions in the list.
+     * The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to
+     * return the next set of pipeline executions in the list.
      * </p>
      * 
-     * @return The token that was returned from the previous ListPipelineExecutions call, which can be used to return
-     *         the next set of pipeline executions in the list.
+     * @return The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used
+     *         to return the next set of pipeline executions in the list.
      */
 
     public String getNextToken() {
@@ -173,13 +173,13 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next
-     * set of pipeline executions in the list.
+     * The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to
+     * return the next set of pipeline executions in the list.
      * </p>
      * 
      * @param nextToken
-     *        The token that was returned from the previous ListPipelineExecutions call, which can be used to return the
-     *        next set of pipeline executions in the list.
+     *        The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used
+     *        to return the next set of pipeline executions in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

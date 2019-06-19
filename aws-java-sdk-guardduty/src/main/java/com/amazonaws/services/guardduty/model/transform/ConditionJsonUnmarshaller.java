@@ -52,6 +52,10 @@ public class ConditionJsonUnmarshaller implements Unmarshaller<Condition, JsonUn
                     context.nextToken();
                     condition.setEq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("neq", targetDepth)) {
+                    context.nextToken();
+                    condition.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("gt", targetDepth)) {
                     context.nextToken();
                     condition.setGt(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -68,9 +72,29 @@ public class ConditionJsonUnmarshaller implements Unmarshaller<Condition, JsonUn
                     context.nextToken();
                     condition.setLte(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context.testExpression("neq", targetDepth)) {
+                if (context.testExpression("equals", targetDepth)) {
                     context.nextToken();
-                    condition.setNeq(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    condition.setEquals(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("notEquals", targetDepth)) {
+                    context.nextToken();
+                    condition.setNotEquals(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("greaterThan", targetDepth)) {
+                    context.nextToken();
+                    condition.setGreaterThan(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("greaterThanOrEqual", targetDepth)) {
+                    context.nextToken();
+                    condition.setGreaterThanOrEqual(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("lessThan", targetDepth)) {
+                    context.nextToken();
+                    condition.setLessThan(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("lessThanOrEqual", targetDepth)) {
+                    context.nextToken();
+                    condition.setLessThanOrEqual(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

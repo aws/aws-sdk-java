@@ -44,8 +44,10 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param nextToken
+     *        <p>
      *        The paginated results marker. When the result of a ListNodes operation is truncated, the call returns
      *        NextToken in the response. To get another batch of nodes, provide this token in your next request.
+     *        </p>
      */
 
     public void setNextToken(String nextToken) {
@@ -58,8 +60,10 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * in the response. To get another batch of nodes, provide this token in your next request.
      * </p>
      * 
-     * @return The paginated results marker. When the result of a ListNodes operation is truncated, the call returns
+     * @return <p>
+     *         The paginated results marker. When the result of a ListNodes operation is truncated, the call returns
      *         NextToken in the response. To get another batch of nodes, provide this token in your next request.
+     *         </p>
      */
 
     public String getNextToken() {
@@ -73,8 +77,10 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param nextToken
+     *        <p>
      *        The paginated results marker. When the result of a ListNodes operation is truncated, the call returns
      *        NextToken in the response. To get another batch of nodes, provide this token in your next request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,7 +94,9 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * List containing a NodeInfo object.
      * </p>
      * 
-     * @return List containing a NodeInfo object.
+     * @return <p>
+     *         List containing a NodeInfo object.
+     *         </p>
      */
 
     public java.util.List<NodeInfo> getNodeInfoList() {
@@ -101,7 +109,9 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param nodeInfoList
+     *        <p>
      *        List containing a NodeInfo object.
+     *        </p>
      */
 
     public void setNodeInfoList(java.util.Collection<NodeInfo> nodeInfoList) {
@@ -117,6 +127,7 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <p>
      * List containing a NodeInfo object.
      * </p>
+     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNodeInfoList(java.util.Collection)} or {@link #withNodeInfoList(java.util.Collection)} if you want to
@@ -124,7 +135,9 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param nodeInfoList
+     *        <p>
      *        List containing a NodeInfo object.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,7 +157,9 @@ public class ListNodesResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param nodeInfoList
+     *        <p>
      *        List containing a NodeInfo object.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

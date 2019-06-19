@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private
- * gateways.
+ * gateway or transit gateways.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DirectConnectGateway" target="_top">AWS

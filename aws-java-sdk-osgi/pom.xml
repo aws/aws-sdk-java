@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.516-SNAPSHOT</version>
+    <version>1.11.576-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,60 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-personalizeevents</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-personalize</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-personalizeruntime</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-ioteventsdata</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-iotevents</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-iotthingsgraph</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-groundstation</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-mediapackagevod</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-managedblockchain</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-textract</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1083,7 +1137,7 @@
         <configuration>
           <instructions>
             <Export-Package>com.amazonaws.*</Export-Package>
-            <Import-Package>!org.junit.*,!org.springframework.*,!org.apache.avalon.*,!org.apache.log.*,!org.aspectj.*,org.apache.http.conn.routing,com.sun.org.apache.xerces.internal.jaxp.*;resolution:=optional,com.sun.org.apache.xml.internal.dtm.*;resolution:=optional,com.sun.org.apache.xml.internal.dtm.ref.*;resolution:=optional,com.sun.org.apache.xpath.internal.*;resolution:=optional,*</Import-Package>
+            <Import-Package>!org.junit.*,!org.springframework.*,!org.apache.avalon.*,!org.apache.log.*,!org.aspectj.*,org.apache.http.conn.routing,com.sun.org.apache.xerces.internal.jaxp.*;resolution:=optional,com.sun.org.apache.xml.internal.dtm.*;resolution:=optional,com.sun.org.apache.xml.internal.dtm.ref.*;resolution:=optional,com.sun.org.apache.xpath.internal.*;resolution:=optional,javax.mail;resolution:=optional,*</Import-Package>
             <Embed-Dependency>*;scope=compile;inline=true</Embed-Dependency>
             <Embed-Transitive>false</Embed-Transitive>
           </instructions>
@@ -1160,6 +1214,42 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>Amazon Personalize Events</title>
+                                  <packages>com.amazonaws.services.personalizeevents*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Personalize</title>
+                                  <packages>com.amazonaws.services.personalize*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Personalize Runtime</title>
+                                  <packages>com.amazonaws.services.personalizeruntime*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS IoT Events Data</title>
+                                  <packages>com.amazonaws.services.ioteventsdata*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS IoT Events</title>
+                                  <packages>com.amazonaws.services.iotevents*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS IoT Things Graph</title>
+                                  <packages>com.amazonaws.services.iotthingsgraph*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Ground Station</title>
+                                  <packages>com.amazonaws.services.groundstation*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Elemental MediaPackage VOD</title>
+                                  <packages>com.amazonaws.services.mediapackagevod*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Managed Blockchain</title>
+                                  <packages>com.amazonaws.services.managedblockchain*</packages>
+                              </group>
                               <group>
                                   <title>Amazon Textract</title>
                                   <packages>com.amazonaws.services.textract*</packages>

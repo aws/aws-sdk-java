@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the <a>DescribeDBInstanceAutomatedBackups</a> action.
+ * Contains the result of a successful invocation of the <code>DescribeDBInstanceAutomatedBackups</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstanceAutomatedBackups"
@@ -36,7 +36,7 @@ public class DescribeDBInstanceAutomatedBackupsResult extends com.amazonaws.Amaz
     private String marker;
     /**
      * <p>
-     * A list of <a>DBInstanceAutomatedBackup</a> instances.
+     * A list of <code>DBInstanceAutomatedBackup</code> instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackup> dBInstanceAutomatedBackups;
@@ -89,10 +89,10 @@ public class DescribeDBInstanceAutomatedBackupsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A list of <a>DBInstanceAutomatedBackup</a> instances.
+     * A list of <code>DBInstanceAutomatedBackup</code> instances.
      * </p>
      * 
-     * @return A list of <a>DBInstanceAutomatedBackup</a> instances.
+     * @return A list of <code>DBInstanceAutomatedBackup</code> instances.
      */
 
     public java.util.List<DBInstanceAutomatedBackup> getDBInstanceAutomatedBackups() {
@@ -104,11 +104,11 @@ public class DescribeDBInstanceAutomatedBackupsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A list of <a>DBInstanceAutomatedBackup</a> instances.
+     * A list of <code>DBInstanceAutomatedBackup</code> instances.
      * </p>
      * 
      * @param dBInstanceAutomatedBackups
-     *        A list of <a>DBInstanceAutomatedBackup</a> instances.
+     *        A list of <code>DBInstanceAutomatedBackup</code> instances.
      */
 
     public void setDBInstanceAutomatedBackups(java.util.Collection<DBInstanceAutomatedBackup> dBInstanceAutomatedBackups) {
@@ -122,7 +122,7 @@ public class DescribeDBInstanceAutomatedBackupsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A list of <a>DBInstanceAutomatedBackup</a> instances.
+     * A list of <code>DBInstanceAutomatedBackup</code> instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -131,7 +131,7 @@ public class DescribeDBInstanceAutomatedBackupsResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @param dBInstanceAutomatedBackups
-     *        A list of <a>DBInstanceAutomatedBackup</a> instances.
+     *        A list of <code>DBInstanceAutomatedBackup</code> instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class DescribeDBInstanceAutomatedBackupsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A list of <a>DBInstanceAutomatedBackup</a> instances.
+     * A list of <code>DBInstanceAutomatedBackup</code> instances.
      * </p>
      * 
      * @param dBInstanceAutomatedBackups
-     *        A list of <a>DBInstanceAutomatedBackup</a> instances.
+     *        A list of <code>DBInstanceAutomatedBackup</code> instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

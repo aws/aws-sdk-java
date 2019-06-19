@@ -88,6 +88,14 @@ public class SentimentDetectionJobPropertiesJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     sentimentDetectionJobProperties.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VolumeKmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    sentimentDetectionJobProperties.setVolumeKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VpcConfig", targetDepth)) {
+                    context.nextToken();
+                    sentimentDetectionJobProperties.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

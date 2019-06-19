@@ -40,6 +40,8 @@ public class StartBulkDeploymentRequest extends com.amazonaws.AmazonWebServiceRe
      * MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
      */
     private String inputFileUri;
+    /** Tag(s) to add to the new resource */
+    private java.util.Map<String, String> tags;
 
     /**
      * A client token used to correlate requests and responses.
@@ -174,6 +176,61 @@ public class StartBulkDeploymentRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * Tag(s) to add to the new resource
+     * 
+     * @return Tag(s) to add to the new resource
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * Tag(s) to add to the new resource
+     * 
+     * @param tags
+     *        Tag(s) to add to the new resource
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * Tag(s) to add to the new resource
+     * 
+     * @param tags
+     *        Tag(s) to add to the new resource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBulkDeploymentRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public StartBulkDeploymentRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBulkDeploymentRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -190,7 +247,9 @@ public class StartBulkDeploymentRequest extends com.amazonaws.AmazonWebServiceRe
         if (getExecutionRoleArn() != null)
             sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn()).append(",");
         if (getInputFileUri() != null)
-            sb.append("InputFileUri: ").append(getInputFileUri());
+            sb.append("InputFileUri: ").append(getInputFileUri()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -217,6 +276,10 @@ public class StartBulkDeploymentRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getInputFileUri() != null && other.getInputFileUri().equals(this.getInputFileUri()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -228,6 +291,7 @@ public class StartBulkDeploymentRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getAmznClientToken() == null) ? 0 : getAmznClientToken().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getInputFileUri() == null) ? 0 : getInputFileUri().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

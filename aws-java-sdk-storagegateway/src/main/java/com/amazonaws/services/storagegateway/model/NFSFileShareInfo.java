@@ -83,16 +83,23 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     private Boolean guessMIMETypeEnabled;
     /**
      * <p>
-     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket.
+     * If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
+     * bucket owner always pays the cost of storing data.
      * </p>
+     * <note>
+     * <p>
+     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the
+     * configuration on the file share is the same as the S3 bucket configuration.
+     * </p>
+     * </note>
      */
     private Boolean requesterPays;
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key name.
-     * Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a
+     * key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -686,13 +693,25 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket.
+     * If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
+     * bucket owner always pays the cost of storing data.
      * </p>
+     * <note>
+     * <p>
+     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the
+     * configuration on the file share is the same as the S3 bucket configuration.
+     * </p>
+     * </note>
      * 
      * @param requesterPays
-     *        A value that sets the access control list permission for objects in the Amazon S3 bucket that a file
-     *        gateway puts objects into. The default value is <code>private</code>.
+     *        A value that sets who pays the cost of the request and the cost associated with data download from the S3
+     *        bucket. If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays.
+     *        However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+     *        <p>
+     *        <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure
+     *        that the configuration on the file share is the same as the S3 bucket configuration.
+     *        </p>
      */
 
     public void setRequesterPays(Boolean requesterPays) {
@@ -701,12 +720,24 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket.
+     * If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
+     * bucket owner always pays the cost of storing data.
      * </p>
+     * <note>
+     * <p>
+     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the
+     * configuration on the file share is the same as the S3 bucket configuration.
+     * </p>
+     * </note>
      * 
-     * @return A value that sets the access control list permission for objects in the Amazon S3 bucket that a file
-     *         gateway puts objects into. The default value is <code>private</code>.
+     * @return A value that sets who pays the cost of the request and the cost associated with data download from the S3
+     *         bucket. If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays.
+     *         However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+     *         <p>
+     *         <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure
+     *         that the configuration on the file share is the same as the S3 bucket configuration.
+     *         </p>
      */
 
     public Boolean getRequesterPays() {
@@ -715,13 +746,25 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket.
+     * If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
+     * bucket owner always pays the cost of storing data.
      * </p>
+     * <note>
+     * <p>
+     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the
+     * configuration on the file share is the same as the S3 bucket configuration.
+     * </p>
+     * </note>
      * 
      * @param requesterPays
-     *        A value that sets the access control list permission for objects in the Amazon S3 bucket that a file
-     *        gateway puts objects into. The default value is <code>private</code>.
+     *        A value that sets who pays the cost of the request and the cost associated with data download from the S3
+     *        bucket. If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays.
+     *        However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+     *        <p>
+     *        <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure
+     *        that the configuration on the file share is the same as the S3 bucket configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -732,12 +775,24 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket.
+     * If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
+     * bucket owner always pays the cost of storing data.
      * </p>
+     * <note>
+     * <p>
+     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the
+     * configuration on the file share is the same as the S3 bucket configuration.
+     * </p>
+     * </note>
      * 
-     * @return A value that sets the access control list permission for objects in the Amazon S3 bucket that a file
-     *         gateway puts objects into. The default value is <code>private</code>.
+     * @return A value that sets who pays the cost of the request and the cost associated with data download from the S3
+     *         bucket. If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays.
+     *         However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+     *         <p>
+     *         <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure
+     *         that the configuration on the file share is the same as the S3 bucket configuration.
+     *         </p>
      */
 
     public Boolean isRequesterPays() {
@@ -746,14 +801,14 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key name.
-     * Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a
+     * key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API operation.
      * </p>
      * 
-     * @return A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key
-     *         name. Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags
-     *         using the <code>ListTagsForResource</code> API.
+     * @return A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a
+     *         key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *         <code>ListTagsForResource</code> API operation.
      */
 
     public java.util.List<Tag> getTags() {
@@ -765,15 +820,15 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key name.
-     * Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a
+     * key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API operation.
      * </p>
      * 
      * @param tags
-     *        A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key
-     *        name. Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags
-     *        using the <code>ListTagsForResource</code> API.
+     *        A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a
+     *        key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *        <code>ListTagsForResource</code> API operation.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -787,9 +842,9 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key name.
-     * Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a
+     * key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -798,9 +853,9 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param tags
-     *        A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key
-     *        name. Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags
-     *        using the <code>ListTagsForResource</code> API.
+     *        A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a
+     *        key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *        <code>ListTagsForResource</code> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -816,15 +871,15 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key name.
-     * Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.
+     * A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a
+     * key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API operation.
      * </p>
      * 
      * @param tags
-     *        A list of up to ten (10) tags assigned to the NFS file share are returned, sorted alphabetically by key
-     *        name. Every tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags
-     *        using the <code>ListTagsForResource</code> API.
+     *        A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a
+     *        key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *        <code>ListTagsForResource</code> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

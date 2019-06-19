@@ -44,15 +44,21 @@ public class ListSimulationJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * The maximum number of deployment job results returned by <code>ListSimulationJobs</code> in paginated output.
      * When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a
      * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
-     * can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-     * This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationJobs</code> returns
-     * up to 100 results and a <code>nextToken</code> value if applicable.
+     * can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationJobs</code>
+     * returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
      * Optional filters to limit results.
+     * </p>
+     * <p>
+     * The filter names <code>status</code> and <code>simulationApplicationName</code> and
+     * <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters, but they must be for the same named item. For example, if you are looking
+     * for items with the status <code>Preparing</code> or the status <code>Running</code>.
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -147,18 +153,18 @@ public class ListSimulationJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * The maximum number of deployment job results returned by <code>ListSimulationJobs</code> in paginated output.
      * When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a
      * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
-     * can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-     * This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationJobs</code> returns
-     * up to 100 results and a <code>nextToken</code> value if applicable.
+     * can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationJobs</code>
+     * returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of deployment job results returned by <code>ListSimulationJobs</code> in paginated
      *        output. When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code>
      *        results in a single page along with a <code>nextToken</code> response element. The remaining results of
-     *        the initial request can be seen by sending another <code>ListFleets</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
-     *        <code>ListSimulationJobs</code> returns up to 100 results and a <code>nextToken</code> value if
+     *        the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the
+     *        returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used,
+     *        then <code>ListSimulationJobs</code> returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      */
 
@@ -171,18 +177,18 @@ public class ListSimulationJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * The maximum number of deployment job results returned by <code>ListSimulationJobs</code> in paginated output.
      * When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a
      * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
-     * can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-     * This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationJobs</code> returns
-     * up to 100 results and a <code>nextToken</code> value if applicable.
+     * can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationJobs</code>
+     * returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @return The maximum number of deployment job results returned by <code>ListSimulationJobs</code> in paginated
      *         output. When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code>
      *         results in a single page along with a <code>nextToken</code> response element. The remaining results of
-     *         the initial request can be seen by sending another <code>ListFleets</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
-     *         <code>ListSimulationJobs</code> returns up to 100 results and a <code>nextToken</code> value if
-     *         applicable.
+     *         the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the
+     *         returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not
+     *         used, then <code>ListSimulationJobs</code> returns up to 100 results and a <code>nextToken</code> value
+     *         if applicable.
      */
 
     public Integer getMaxResults() {
@@ -194,18 +200,18 @@ public class ListSimulationJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * The maximum number of deployment job results returned by <code>ListSimulationJobs</code> in paginated output.
      * When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a
      * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
-     * can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-     * This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationJobs</code> returns
-     * up to 100 results and a <code>nextToken</code> value if applicable.
+     * can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationJobs</code>
+     * returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of deployment job results returned by <code>ListSimulationJobs</code> in paginated
      *        output. When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code>
      *        results in a single page along with a <code>nextToken</code> response element. The remaining results of
-     *        the initial request can be seen by sending another <code>ListFleets</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
-     *        <code>ListSimulationJobs</code> returns up to 100 results and a <code>nextToken</code> value if
+     *        the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the
+     *        returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used,
+     *        then <code>ListSimulationJobs</code> returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -219,8 +225,19 @@ public class ListSimulationJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter names <code>status</code> and <code>simulationApplicationName</code> and
+     * <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters, but they must be for the same named item. For example, if you are looking
+     * for items with the status <code>Preparing</code> or the status <code>Running</code>.
+     * </p>
      * 
-     * @return Optional filters to limit results.
+     * @return Optional filters to limit results.</p>
+     *         <p>
+     *         The filter names <code>status</code> and <code>simulationApplicationName</code> and
+     *         <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the
+     *         filtered item. You can use up to three filters, but they must be for the same named item. For example, if
+     *         you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -231,9 +248,20 @@ public class ListSimulationJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter names <code>status</code> and <code>simulationApplicationName</code> and
+     * <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters, but they must be for the same named item. For example, if you are looking
+     * for items with the status <code>Preparing</code> or the status <code>Running</code>.
+     * </p>
      * 
      * @param filters
-     *        Optional filters to limit results.
+     *        Optional filters to limit results.</p>
+     *        <p>
+     *        The filter names <code>status</code> and <code>simulationApplicationName</code> and
+     *        <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the
+     *        filtered item. You can use up to three filters, but they must be for the same named item. For example, if
+     *        you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -250,13 +278,24 @@ public class ListSimulationJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * Optional filters to limit results.
      * </p>
      * <p>
+     * The filter names <code>status</code> and <code>simulationApplicationName</code> and
+     * <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters, but they must be for the same named item. For example, if you are looking
+     * for items with the status <code>Preparing</code> or the status <code>Running</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param filters
-     *        Optional filters to limit results.
+     *        Optional filters to limit results.</p>
+     *        <p>
+     *        The filter names <code>status</code> and <code>simulationApplicationName</code> and
+     *        <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the
+     *        filtered item. You can use up to three filters, but they must be for the same named item. For example, if
+     *        you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,9 +313,20 @@ public class ListSimulationJobsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Optional filters to limit results.
      * </p>
+     * <p>
+     * The filter names <code>status</code> and <code>simulationApplicationName</code> and
+     * <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters, but they must be for the same named item. For example, if you are looking
+     * for items with the status <code>Preparing</code> or the status <code>Running</code>.
+     * </p>
      * 
      * @param filters
-     *        Optional filters to limit results.
+     *        Optional filters to limit results.</p>
+     *        <p>
+     *        The filter names <code>status</code> and <code>simulationApplicationName</code> and
+     *        <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the
+     *        filtered item. You can use up to three filters, but they must be for the same named item. For example, if
+     *        you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

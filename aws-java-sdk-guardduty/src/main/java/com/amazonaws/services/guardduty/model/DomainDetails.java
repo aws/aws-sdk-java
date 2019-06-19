@@ -18,13 +18,59 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Domain information for the AWS API call.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DomainDetails" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DomainDetails implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * Domain information for the AWS API call.
+     * </p>
+     */
+    private String domain;
+
+    /**
+     * <p>
+     * Domain information for the AWS API call.
+     * </p>
+     * 
+     * @param domain
+     *        Domain information for the AWS API call.
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * <p>
+     * Domain information for the AWS API call.
+     * </p>
+     * 
+     * @return Domain information for the AWS API call.
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * <p>
+     * Domain information for the AWS API call.
+     * </p>
+     * 
+     * @param domain
+     *        Domain information for the AWS API call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainDetails withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
 
     /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
@@ -38,6 +84,8 @@ public class DomainDetails implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain());
         sb.append("}");
         return sb.toString();
     }
@@ -52,6 +100,10 @@ public class DomainDetails implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof DomainDetails == false)
             return false;
         DomainDetails other = (DomainDetails) obj;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
+            return false;
         return true;
     }
 
@@ -60,6 +112,7 @@ public class DomainDetails implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         return hashCode;
     }
 

@@ -23,12 +23,25 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A list of detector Ids.
+     * </p>
+     */
     private java.util.List<String> detectorIds;
-
+    /**
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * A list of detector Ids.
+     * </p>
+     * 
+     * @return A list of detector Ids.
      */
 
     public java.util.List<String> getDetectorIds() {
@@ -36,7 +49,12 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * A list of detector Ids.
+     * </p>
+     * 
      * @param detectorIds
+     *        A list of detector Ids.
      */
 
     public void setDetectorIds(java.util.Collection<String> detectorIds) {
@@ -50,12 +68,16 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
+     * A list of detector Ids.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDetectorIds(java.util.Collection)} or {@link #withDetectorIds(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param detectorIds
+     *        A list of detector Ids.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +92,12 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * A list of detector Ids.
+     * </p>
+     * 
      * @param detectorIds
+     *        A list of detector Ids.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +107,12 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     * 
      * @param nextToken
+     *        Pagination parameter to be used on the next list operation to retrieve more items.
      */
 
     public void setNextToken(String nextToken) {
@@ -88,7 +120,11 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     * 
+     * @return Pagination parameter to be used on the next list operation to retrieve more items.
      */
 
     public String getNextToken() {
@@ -96,7 +132,12 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     * 
      * @param nextToken
+     *        Pagination parameter to be used on the next list operation to retrieve more items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

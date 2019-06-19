@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBSubnetGroup" target="_top">AWS API
  *      Documentation</a>
@@ -51,7 +50,11 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.List<String> subnetIds;
-
+    /**
+     * <p>
+     * The tags to be assigned to the new DB subnet group.
+     * </p>
+     */
     private java.util.List<Tag> tags;
 
     /**
@@ -244,7 +247,11 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The tags to be assigned to the new DB subnet group.
+     * </p>
+     * 
+     * @return The tags to be assigned to the new DB subnet group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -252,7 +259,12 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The tags to be assigned to the new DB subnet group.
+     * </p>
+     * 
      * @param tags
+     *        The tags to be assigned to the new DB subnet group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -266,12 +278,16 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The tags to be assigned to the new DB subnet group.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        The tags to be assigned to the new DB subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,7 +302,12 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The tags to be assigned to the new DB subnet group.
+     * </p>
+     * 
      * @param tags
+     *        The tags to be assigned to the new DB subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

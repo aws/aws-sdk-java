@@ -42,6 +42,7 @@ public class ShapeModel extends DocumentationModel {
     private boolean hasHeaderMember;
     private boolean hasStatusCodeMember;
     private boolean hasStreamingMember;
+    private boolean hasRequiresLengthMember;
     private boolean wrapper;
     // For APIG generated requests
     private String requestSignerClassFqcn;
@@ -194,6 +195,19 @@ public class ShapeModel extends DocumentationModel {
         return this;
     }
 
+    public boolean isHasRequiresLengthMember() {
+        return hasRequiresLengthMember;
+    }
+
+    public void setHasRequiresLengthMember(boolean hasRequiresLengthMember) {
+        this.hasRequiresLengthMember = hasRequiresLengthMember;
+    }
+
+    public ShapeModel withHasRequiresLengthMember(boolean hasRequiresLengthMember) {
+        setHasRequiresLengthMember(hasRequiresLengthMember);
+        return this;
+    }
+
     public boolean isHasHeaderMember() {
         return hasHeaderMember;
     }
@@ -267,6 +281,13 @@ public class ShapeModel extends DocumentationModel {
             this.members = new ArrayList<MemberModel>();
         }
         members.add(member);
+    }
+
+    /**
+     * Returns true if the shape is empty (ie, there are no members in the shape)
+     */
+    public boolean hasNoMembers() {
+        return members == null || members.isEmpty();
     }
 
     @JsonIgnore
@@ -458,4 +479,6 @@ public class ShapeModel extends DocumentationModel {
     public void setRequestSignerClassFqcn(String authorizerClass) {
         this.requestSignerClassFqcn = authorizerClass;
     }
+
+
 }

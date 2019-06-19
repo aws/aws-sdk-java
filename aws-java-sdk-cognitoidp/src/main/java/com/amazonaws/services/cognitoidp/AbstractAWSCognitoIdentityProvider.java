@@ -143,6 +143,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public AdminSetUserPasswordResult adminSetUserPassword(AdminSetUserPasswordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AdminSetUserSettingsResult adminSetUserSettings(AdminSetUserSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -388,6 +393,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListUserImportJobsResult listUserImportJobs(ListUserImportJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -459,6 +469,16 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public StopUserImportJobResult stopUserImportJob(StopUserImportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

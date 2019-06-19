@@ -60,6 +60,10 @@ public class ClassifierJsonUnmarshaller implements Unmarshaller<Classifier, Json
                     context.nextToken();
                     classifier.setJsonClassifier(JsonClassifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CsvClassifier", targetDepth)) {
+                    context.nextToken();
+                    classifier.setCsvClassifier(CsvClassifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

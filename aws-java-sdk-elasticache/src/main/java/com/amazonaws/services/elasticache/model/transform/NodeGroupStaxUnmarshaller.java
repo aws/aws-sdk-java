@@ -60,6 +60,11 @@ public class NodeGroupStaxUnmarshaller implements Unmarshaller<NodeGroup, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("ReaderEndpoint", targetDepth)) {
+                    nodeGroup.setReaderEndpoint(EndpointStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Slots", targetDepth)) {
                     nodeGroup.setSlots(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

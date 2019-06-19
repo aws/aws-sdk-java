@@ -261,7 +261,13 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * The condition under which to stop the training job.
+     * Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon SageMaker
+     * ends the training job. Use this API to cap model training costs.
+     * </p>
+     * <p>
+     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
+     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
+     * training are not lost.
      * </p>
      */
     private StoppingCondition stoppingCondition;
@@ -2144,11 +2150,22 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition under which to stop the training job.
+     * Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon SageMaker
+     * ends the training job. Use this API to cap model training costs.
+     * </p>
+     * <p>
+     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
+     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
+     * training are not lost.
      * </p>
      * 
      * @param stoppingCondition
-     *        The condition under which to stop the training job.
+     *        Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon
+     *        SageMaker ends the training job. Use this API to cap model training costs.</p>
+     *        <p>
+     *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
+     *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
+     *        results of training are not lost.
      */
 
     public void setStoppingCondition(StoppingCondition stoppingCondition) {
@@ -2157,10 +2174,21 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition under which to stop the training job.
+     * Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon SageMaker
+     * ends the training job. Use this API to cap model training costs.
+     * </p>
+     * <p>
+     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
+     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
+     * training are not lost.
      * </p>
      * 
-     * @return The condition under which to stop the training job.
+     * @return Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon
+     *         SageMaker ends the training job. Use this API to cap model training costs.</p>
+     *         <p>
+     *         To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
+     *         termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so
+     *         the results of training are not lost.
      */
 
     public StoppingCondition getStoppingCondition() {
@@ -2169,11 +2197,22 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition under which to stop the training job.
+     * Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon SageMaker
+     * ends the training job. Use this API to cap model training costs.
+     * </p>
+     * <p>
+     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
+     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
+     * training are not lost.
      * </p>
      * 
      * @param stoppingCondition
-     *        The condition under which to stop the training job.
+     *        Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon
+     *        SageMaker ends the training job. Use this API to cap model training costs.</p>
+     *        <p>
+     *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
+     *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
+     *        results of training are not lost.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

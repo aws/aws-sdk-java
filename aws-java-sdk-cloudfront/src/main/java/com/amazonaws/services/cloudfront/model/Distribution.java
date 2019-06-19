@@ -17,10 +17,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The distribution's information.
+ * A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and
+ * manage content delivery.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Distribution" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Distribution" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -83,6 +84,19 @@ public class Distribution implements Serializable, Cloneable {
      * </p>
      */
     private DistributionConfig distributionConfig;
+    /**
+     * <p>
+     * AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve
+     * content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
+     * </p>
+     * <p>
+     * For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and
+     * Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AliasICPRecordal> aliasICPRecordals;
 
     /**
      * Default constructor for Distribution object. Callers should use the setter or fluent setter (with...) methods to
@@ -495,6 +509,135 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve
+     * content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
+     * </p>
+     * <p>
+     * For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and
+     * Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     * </p>
+     * 
+     * @return AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to
+     *         serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
+     *         CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     *         distributions.</p>
+     *         <p>
+     *         For more information about ICP recordals, see <a
+     *         href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup,
+     *         Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     */
+
+    public java.util.List<AliasICPRecordal> getAliasICPRecordals() {
+        if (aliasICPRecordals == null) {
+            aliasICPRecordals = new com.amazonaws.internal.SdkInternalList<AliasICPRecordal>();
+        }
+        return aliasICPRecordals;
+    }
+
+    /**
+     * <p>
+     * AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve
+     * content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
+     * </p>
+     * <p>
+     * For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and
+     * Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     * </p>
+     * 
+     * @param aliasICPRecordals
+     *        AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to
+     *        serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
+     *        CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     *        distributions.</p>
+     *        <p>
+     *        For more information about ICP recordals, see <a
+     *        href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup,
+     *        Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     */
+
+    public void setAliasICPRecordals(java.util.Collection<AliasICPRecordal> aliasICPRecordals) {
+        if (aliasICPRecordals == null) {
+            this.aliasICPRecordals = null;
+            return;
+        }
+
+        this.aliasICPRecordals = new com.amazonaws.internal.SdkInternalList<AliasICPRecordal>(aliasICPRecordals);
+    }
+
+    /**
+     * <p>
+     * AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve
+     * content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
+     * </p>
+     * <p>
+     * For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and
+     * Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAliasICPRecordals(java.util.Collection)} or {@link #withAliasICPRecordals(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param aliasICPRecordals
+     *        AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to
+     *        serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
+     *        CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     *        distributions.</p>
+     *        <p>
+     *        For more information about ICP recordals, see <a
+     *        href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup,
+     *        Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Distribution withAliasICPRecordals(AliasICPRecordal... aliasICPRecordals) {
+        if (this.aliasICPRecordals == null) {
+            setAliasICPRecordals(new com.amazonaws.internal.SdkInternalList<AliasICPRecordal>(aliasICPRecordals.length));
+        }
+        for (AliasICPRecordal ele : aliasICPRecordals) {
+            this.aliasICPRecordals.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve
+     * content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront.
+     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
+     * </p>
+     * <p>
+     * For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and
+     * Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     * </p>
+     * 
+     * @param aliasICPRecordals
+     *        AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to
+     *        serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
+     *        CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     *        distributions.</p>
+     *        <p>
+     *        For more information about ICP recordals, see <a
+     *        href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup,
+     *        Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Distribution withAliasICPRecordals(java.util.Collection<AliasICPRecordal> aliasICPRecordals) {
+        setAliasICPRecordals(aliasICPRecordals);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -521,7 +664,9 @@ public class Distribution implements Serializable, Cloneable {
         if (getActiveTrustedSigners() != null)
             sb.append("ActiveTrustedSigners: ").append(getActiveTrustedSigners()).append(",");
         if (getDistributionConfig() != null)
-            sb.append("DistributionConfig: ").append(getDistributionConfig());
+            sb.append("DistributionConfig: ").append(getDistributionConfig()).append(",");
+        if (getAliasICPRecordals() != null)
+            sb.append("AliasICPRecordals: ").append(getAliasICPRecordals());
         sb.append("}");
         return sb.toString();
     }
@@ -569,6 +714,10 @@ public class Distribution implements Serializable, Cloneable {
             return false;
         if (other.getDistributionConfig() != null && other.getDistributionConfig().equals(this.getDistributionConfig()) == false)
             return false;
+        if (other.getAliasICPRecordals() == null ^ this.getAliasICPRecordals() == null)
+            return false;
+        if (other.getAliasICPRecordals() != null && other.getAliasICPRecordals().equals(this.getAliasICPRecordals()) == false)
+            return false;
         return true;
     }
 
@@ -585,6 +734,7 @@ public class Distribution implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getActiveTrustedSigners() == null) ? 0 : getActiveTrustedSigners().hashCode());
         hashCode = prime * hashCode + ((getDistributionConfig() == null) ? 0 : getDistributionConfig().hashCode());
+        hashCode = prime * hashCode + ((getAliasICPRecordals() == null) ? 0 : getAliasICPRecordals().hashCode());
         return hashCode;
     }
 

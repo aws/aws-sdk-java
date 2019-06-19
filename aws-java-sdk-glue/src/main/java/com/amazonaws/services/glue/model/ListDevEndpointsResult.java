@@ -25,7 +25,8 @@ public class ListDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The names of all DevEndpoints in the account, or the DevEndpoints with the specified tags.
+     * The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the
+     * specified tags.
      * </p>
      */
     private java.util.List<String> devEndpointNames;
@@ -38,10 +39,12 @@ public class ListDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The names of all DevEndpoints in the account, or the DevEndpoints with the specified tags.
+     * The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the
+     * specified tags.
      * </p>
      * 
-     * @return The names of all DevEndpoints in the account, or the DevEndpoints with the specified tags.
+     * @return The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the
+     *         specified tags.
      */
 
     public java.util.List<String> getDevEndpointNames() {
@@ -50,11 +53,13 @@ public class ListDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The names of all DevEndpoints in the account, or the DevEndpoints with the specified tags.
+     * The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the
+     * specified tags.
      * </p>
      * 
      * @param devEndpointNames
-     *        The names of all DevEndpoints in the account, or the DevEndpoints with the specified tags.
+     *        The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the
+     *        specified tags.
      */
 
     public void setDevEndpointNames(java.util.Collection<String> devEndpointNames) {
@@ -68,7 +73,8 @@ public class ListDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The names of all DevEndpoints in the account, or the DevEndpoints with the specified tags.
+     * The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the
+     * specified tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +83,8 @@ public class ListDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param devEndpointNames
-     *        The names of all DevEndpoints in the account, or the DevEndpoints with the specified tags.
+     *        The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the
+     *        specified tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +100,13 @@ public class ListDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The names of all DevEndpoints in the account, or the DevEndpoints with the specified tags.
+     * The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the
+     * specified tags.
      * </p>
      * 
      * @param devEndpointNames
-     *        The names of all DevEndpoints in the account, or the DevEndpoints with the specified tags.
+     *        The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the
+     *        specified tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

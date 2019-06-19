@@ -34,6 +34,12 @@ public class ServiceDetail implements Serializable, Cloneable {
     private String serviceName;
     /**
      * <p>
+     * The ID of the endpoint service.
+     * </p>
+     */
+    private String serviceId;
+    /**
+     * <p>
      * The type of service.
      * </p>
      */
@@ -74,6 +80,19 @@ public class ServiceDetail implements Serializable, Cloneable {
      * </p>
      */
     private Boolean acceptanceRequired;
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
+     * </p>
+     */
+    private Boolean managesVpcEndpoints;
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -112,6 +131,46 @@ public class ServiceDetail implements Serializable, Cloneable {
 
     public ServiceDetail withServiceName(String serviceName) {
         setServiceName(serviceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the endpoint service.
+     * </p>
+     * 
+     * @param serviceId
+     *        The ID of the endpoint service.
+     */
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the endpoint service.
+     * </p>
+     * 
+     * @return The ID of the endpoint service.
+     */
+
+    public String getServiceId() {
+        return this.serviceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the endpoint service.
+     * </p>
+     * 
+     * @param serviceId
+     *        The ID of the endpoint service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceDetail withServiceId(String serviceId) {
+        setServiceId(serviceId);
         return this;
     }
 
@@ -519,6 +578,139 @@ public class ServiceDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
+     * </p>
+     * 
+     * @param managesVpcEndpoints
+     *        Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     *        the VPC endpoint API is restricted.
+     */
+
+    public void setManagesVpcEndpoints(Boolean managesVpcEndpoints) {
+        this.managesVpcEndpoints = managesVpcEndpoints;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
+     * </p>
+     * 
+     * @return Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     *         the VPC endpoint API is restricted.
+     */
+
+    public Boolean getManagesVpcEndpoints() {
+        return this.managesVpcEndpoints;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
+     * </p>
+     * 
+     * @param managesVpcEndpoints
+     *        Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     *        the VPC endpoint API is restricted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceDetail withManagesVpcEndpoints(Boolean managesVpcEndpoints) {
+        setManagesVpcEndpoints(managesVpcEndpoints);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
+     * </p>
+     * 
+     * @return Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     *         the VPC endpoint API is restricted.
+     */
+
+    public Boolean isManagesVpcEndpoints() {
+        return this.managesVpcEndpoints;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     * 
+     * @return Any tags assigned to the service.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the service.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceDetail withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceDetail withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -532,6 +724,8 @@ public class ServiceDetail implements Serializable, Cloneable {
         sb.append("{");
         if (getServiceName() != null)
             sb.append("ServiceName: ").append(getServiceName()).append(",");
+        if (getServiceId() != null)
+            sb.append("ServiceId: ").append(getServiceId()).append(",");
         if (getServiceType() != null)
             sb.append("ServiceType: ").append(getServiceType()).append(",");
         if (getAvailabilityZones() != null)
@@ -545,7 +739,11 @@ public class ServiceDetail implements Serializable, Cloneable {
         if (getVpcEndpointPolicySupported() != null)
             sb.append("VpcEndpointPolicySupported: ").append(getVpcEndpointPolicySupported()).append(",");
         if (getAcceptanceRequired() != null)
-            sb.append("AcceptanceRequired: ").append(getAcceptanceRequired());
+            sb.append("AcceptanceRequired: ").append(getAcceptanceRequired()).append(",");
+        if (getManagesVpcEndpoints() != null)
+            sb.append("ManagesVpcEndpoints: ").append(getManagesVpcEndpoints()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -563,6 +761,10 @@ public class ServiceDetail implements Serializable, Cloneable {
         if (other.getServiceName() == null ^ this.getServiceName() == null)
             return false;
         if (other.getServiceName() != null && other.getServiceName().equals(this.getServiceName()) == false)
+            return false;
+        if (other.getServiceId() == null ^ this.getServiceId() == null)
+            return false;
+        if (other.getServiceId() != null && other.getServiceId().equals(this.getServiceId()) == false)
             return false;
         if (other.getServiceType() == null ^ this.getServiceType() == null)
             return false;
@@ -592,6 +794,14 @@ public class ServiceDetail implements Serializable, Cloneable {
             return false;
         if (other.getAcceptanceRequired() != null && other.getAcceptanceRequired().equals(this.getAcceptanceRequired()) == false)
             return false;
+        if (other.getManagesVpcEndpoints() == null ^ this.getManagesVpcEndpoints() == null)
+            return false;
+        if (other.getManagesVpcEndpoints() != null && other.getManagesVpcEndpoints().equals(this.getManagesVpcEndpoints()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -601,6 +811,7 @@ public class ServiceDetail implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
+        hashCode = prime * hashCode + ((getServiceId() == null) ? 0 : getServiceId().hashCode());
         hashCode = prime * hashCode + ((getServiceType() == null) ? 0 : getServiceType().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
@@ -608,6 +819,8 @@ public class ServiceDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
         hashCode = prime * hashCode + ((getVpcEndpointPolicySupported() == null) ? 0 : getVpcEndpointPolicySupported().hashCode());
         hashCode = prime * hashCode + ((getAcceptanceRequired() == null) ? 0 : getAcceptanceRequired().hashCode());
+        hashCode = prime * hashCode + ((getManagesVpcEndpoints() == null) ? 0 : getManagesVpcEndpoints().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

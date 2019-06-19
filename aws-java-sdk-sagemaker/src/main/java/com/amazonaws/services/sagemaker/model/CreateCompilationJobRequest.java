@@ -33,7 +33,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
     private String compilationJobName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.
      * </p>
      * <p>
      * During model compilation, Amazon SageMaker needs your permission to:
@@ -82,7 +82,8 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
     private OutputConfig outputConfig;
     /**
      * <p>
-     * The duration allowed for model compilation.
+     * Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
+     * SageMaker ends the compilation job. Use this API to cap model training costs.
      * </p>
      */
     private StoppingCondition stoppingCondition;
@@ -132,7 +133,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.
      * </p>
      * <p>
      * During model compilation, Amazon SageMaker needs your permission to:
@@ -166,7 +167,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your
+     *        The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your
      *        behalf. </p>
      *        <p>
      *        During model compilation, Amazon SageMaker needs your permission to:
@@ -205,7 +206,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.
      * </p>
      * <p>
      * During model compilation, Amazon SageMaker needs your permission to:
@@ -238,7 +239,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a>
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your
+     * @return The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your
      *         behalf. </p>
      *         <p>
      *         During model compilation, Amazon SageMaker needs your permission to:
@@ -277,7 +278,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.
      * </p>
      * <p>
      * During model compilation, Amazon SageMaker needs your permission to:
@@ -311,7 +312,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your
+     *        The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your
      *        behalf. </p>
      *        <p>
      *        During model compilation, Amazon SageMaker needs your permission to:
@@ -441,11 +442,13 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The duration allowed for model compilation.
+     * Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
+     * SageMaker ends the compilation job. Use this API to cap model training costs.
      * </p>
      * 
      * @param stoppingCondition
-     *        The duration allowed for model compilation.
+     *        Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
+     *        SageMaker ends the compilation job. Use this API to cap model training costs.
      */
 
     public void setStoppingCondition(StoppingCondition stoppingCondition) {
@@ -454,10 +457,12 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The duration allowed for model compilation.
+     * Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
+     * SageMaker ends the compilation job. Use this API to cap model training costs.
      * </p>
      * 
-     * @return The duration allowed for model compilation.
+     * @return Specifies a limit to how long a model compilation job can run. When the job reaches the time limit,
+     *         Amazon SageMaker ends the compilation job. Use this API to cap model training costs.
      */
 
     public StoppingCondition getStoppingCondition() {
@@ -466,11 +471,13 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The duration allowed for model compilation.
+     * Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
+     * SageMaker ends the compilation job. Use this API to cap model training costs.
      * </p>
      * 
      * @param stoppingCondition
-     *        The duration allowed for model compilation.
+     *        Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
+     *        SageMaker ends the compilation job. Use this API to cap model training costs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateEventSubscription" target="_top">AWS
  *      API Documentation</a>
@@ -106,7 +105,11 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private Boolean enabled;
-
+    /**
+     * <p>
+     * The tags to be applied to the new event subscription.
+     * </p>
+     */
     private java.util.List<Tag> tags;
 
     /**
@@ -744,7 +747,11 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The tags to be applied to the new event subscription.
+     * </p>
+     * 
+     * @return The tags to be applied to the new event subscription.
      */
 
     public java.util.List<Tag> getTags() {
@@ -752,7 +759,12 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The tags to be applied to the new event subscription.
+     * </p>
+     * 
      * @param tags
+     *        The tags to be applied to the new event subscription.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -766,12 +778,16 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * The tags to be applied to the new event subscription.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        The tags to be applied to the new event subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -786,7 +802,12 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The tags to be applied to the new event subscription.
+     * </p>
+     * 
      * @param tags
+     *        The tags to be applied to the new event subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

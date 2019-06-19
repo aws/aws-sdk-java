@@ -27,6 +27,8 @@ public class Member {
 
     private boolean streaming;
 
+    private boolean requiresLength;
+
     private boolean jsonvalue;
 
     private String documentation;
@@ -83,6 +85,14 @@ public class Member {
 
     public void setStreaming(boolean streaming) {
         this.streaming = streaming;
+    }
+
+    public boolean isRequiresLength() {
+        return requiresLength;
+    }
+
+    public void setRequiresLength(boolean requiresLength) {
+        this.requiresLength = requiresLength;
     }
 
     public boolean isJsonvalue() {

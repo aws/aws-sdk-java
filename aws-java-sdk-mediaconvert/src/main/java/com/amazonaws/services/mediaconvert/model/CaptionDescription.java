@@ -39,7 +39,10 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
      * language for rendering the captions text.
      */
     private String customLanguageCode;
-
+    /**
+     * Specific settings required by destination type. Note that burnin_destination_settings are not available if the
+     * source of the caption data is Embedded or Teletext.
+     */
     private CaptionDestinationSettings destinationSettings;
     /**
      * Specify the language of this captions output track. For most captions output formats, the encoder puts this
@@ -152,7 +155,12 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Specific settings required by destination type. Note that burnin_destination_settings are not available if the
+     * source of the caption data is Embedded or Teletext.
+     * 
      * @param destinationSettings
+     *        Specific settings required by destination type. Note that burnin_destination_settings are not available if
+     *        the source of the caption data is Embedded or Teletext.
      */
 
     public void setDestinationSettings(CaptionDestinationSettings destinationSettings) {
@@ -160,7 +168,11 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * Specific settings required by destination type. Note that burnin_destination_settings are not available if the
+     * source of the caption data is Embedded or Teletext.
+     * 
+     * @return Specific settings required by destination type. Note that burnin_destination_settings are not available
+     *         if the source of the caption data is Embedded or Teletext.
      */
 
     public CaptionDestinationSettings getDestinationSettings() {
@@ -168,7 +180,12 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Specific settings required by destination type. Note that burnin_destination_settings are not available if the
+     * source of the caption data is Embedded or Teletext.
+     * 
      * @param destinationSettings
+     *        Specific settings required by destination type. Note that burnin_destination_settings are not available if
+     *        the source of the caption data is Embedded or Teletext.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -92,6 +92,10 @@ public class BlockJsonUnmarshaller implements Unmarshaller<Block, JsonUnmarshall
                     context.nextToken();
                     block.setEntityTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("SelectionStatus", targetDepth)) {
+                    context.nextToken();
+                    block.setSelectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Page", targetDepth)) {
                     context.nextToken();
                     block.setPage(context.getUnmarshaller(Integer.class).unmarshall(context));

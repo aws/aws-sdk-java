@@ -15,7 +15,7 @@ package com.amazonaws.services.guardduty.model;
 import javax.annotation.Generated;
 
 /**
- * The action associated with a filter.
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FilterAction {

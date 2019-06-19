@@ -27,18 +27,18 @@ public class GetMaintenanceWindowRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the desired Maintenance Window.
+     * The ID of the maintenance window for which you want to retrieve information.
      * </p>
      */
     private String windowId;
 
     /**
      * <p>
-     * The ID of the desired Maintenance Window.
+     * The ID of the maintenance window for which you want to retrieve information.
      * </p>
      * 
      * @param windowId
-     *        The ID of the desired Maintenance Window.
+     *        The ID of the maintenance window for which you want to retrieve information.
      */
 
     public void setWindowId(String windowId) {
@@ -47,10 +47,10 @@ public class GetMaintenanceWindowRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the desired Maintenance Window.
+     * The ID of the maintenance window for which you want to retrieve information.
      * </p>
      * 
-     * @return The ID of the desired Maintenance Window.
+     * @return The ID of the maintenance window for which you want to retrieve information.
      */
 
     public String getWindowId() {
@@ -59,11 +59,11 @@ public class GetMaintenanceWindowRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the desired Maintenance Window.
+     * The ID of the maintenance window for which you want to retrieve information.
      * </p>
      * 
      * @param windowId
-     *        The ID of the desired Maintenance Window.
+     *        The ID of the maintenance window for which you want to retrieve information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

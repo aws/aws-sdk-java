@@ -25,7 +25,7 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The number of findings that cannot be imported.
+     * The number of findings that failed to import.
      * </p>
      */
     private Integer failedCount;
@@ -37,18 +37,18 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
     private Integer successCount;
     /**
      * <p>
-     * The list of the findings that cannot be imported.
+     * The list of the findings that failed to import.
      * </p>
      */
     private java.util.List<ImportFindingsError> failedFindings;
 
     /**
      * <p>
-     * The number of findings that cannot be imported.
+     * The number of findings that failed to import.
      * </p>
      * 
      * @param failedCount
-     *        The number of findings that cannot be imported.
+     *        The number of findings that failed to import.
      */
 
     public void setFailedCount(Integer failedCount) {
@@ -57,10 +57,10 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The number of findings that cannot be imported.
+     * The number of findings that failed to import.
      * </p>
      * 
-     * @return The number of findings that cannot be imported.
+     * @return The number of findings that failed to import.
      */
 
     public Integer getFailedCount() {
@@ -69,11 +69,11 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The number of findings that cannot be imported.
+     * The number of findings that failed to import.
      * </p>
      * 
      * @param failedCount
-     *        The number of findings that cannot be imported.
+     *        The number of findings that failed to import.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,10 +124,10 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of the findings that cannot be imported.
+     * The list of the findings that failed to import.
      * </p>
      * 
-     * @return The list of the findings that cannot be imported.
+     * @return The list of the findings that failed to import.
      */
 
     public java.util.List<ImportFindingsError> getFailedFindings() {
@@ -136,11 +136,11 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of the findings that cannot be imported.
+     * The list of the findings that failed to import.
      * </p>
      * 
      * @param failedFindings
-     *        The list of the findings that cannot be imported.
+     *        The list of the findings that failed to import.
      */
 
     public void setFailedFindings(java.util.Collection<ImportFindingsError> failedFindings) {
@@ -154,7 +154,7 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of the findings that cannot be imported.
+     * The list of the findings that failed to import.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -163,7 +163,7 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param failedFindings
-     *        The list of the findings that cannot be imported.
+     *        The list of the findings that failed to import.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +179,11 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of the findings that cannot be imported.
+     * The list of the findings that failed to import.
      * </p>
      * 
      * @param failedFindings
-     *        The list of the findings that cannot be imported.
+     *        The list of the findings that failed to import.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

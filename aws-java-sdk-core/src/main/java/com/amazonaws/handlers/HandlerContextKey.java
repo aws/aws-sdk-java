@@ -66,6 +66,17 @@ public class HandlerContextKey<T> {
     public static final HandlerContextKey<String> SERVICE_ID = new HandlerContextKey<String>("ServiceId");
 
     /**
+     * A boolean value indicating if Content-Length header is required by the operation
+     */
+    public static final HandlerContextKey<Boolean> REQUIRES_LENGTH = new HandlerContextKey<Boolean>("RequiresLength");
+
+    /**
+     * A boolean value indicating if the input of the operation has a streaming member.
+     * If an input shape in operation has streaming trait, then it is a streaming op
+     */
+    public static final HandlerContextKey<Boolean> HAS_STREAMING_INPUT = new HandlerContextKey<Boolean>("HasStreamingInput");
+
+    /**
      * Advanced client configuration. Contents will be service specific.
      */
     public static final HandlerContextKey<AdvancedConfig> ADVANCED_CONFIG = new HandlerContextKey<AdvancedConfig>("AdvancedConfig");

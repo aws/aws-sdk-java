@@ -19,32 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The subnet and the security group that the target Amazon EFS file system uses. The subnet must have at least one
- * mount target for that file system. The security group that you provide needs to be able to communicate with the
+ * The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least
+ * one mount target for that file system. The security group that you provide needs to be able to communicate with the
  * security group on the mount target in the subnet specified.
  * </p>
- * <p>
- * The exact relationship between security group M (of the mount target) and security group S (which you provide for
- * DataSync to use at this stage) is as follows:
- * </p>
- * <ul>
- * <li>
- * <p>
- * Security group M (which you associate with the mount target) must allow inbound access for the Transmission Control
- * Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound connections either by IP address
- * (CIDR range) or security group.
- * </p>
- * </li>
- * <li>
- * <p>
- * Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections to the NFS
- * port on one of the file system’s mount targets. You can enable outbound connections either by IP address (CIDR range)
- * or security group. For information about security groups and mount targets, see <a
- * href="https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access">Security Groups for
- * Amazon EC2 Instances and Mount Targets</a> in the <i>Amazon EFS User Guide.</i>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/Ec2Config" target="_top">AWS API
  *      Documentation</a>
@@ -54,7 +32,7 @@ public class Ec2Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the subnet that the Amazon EC2 resource belongs in.
+     * The ARN of the subnet and the security group that DataSync uses to access the target EFS file system.
      * </p>
      */
     private String subnetArn;
@@ -67,11 +45,11 @@ public class Ec2Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the subnet that the Amazon EC2 resource belongs in.
+     * The ARN of the subnet and the security group that DataSync uses to access the target EFS file system.
      * </p>
      * 
      * @param subnetArn
-     *        The ARN of the subnet that the Amazon EC2 resource belongs in.
+     *        The ARN of the subnet and the security group that DataSync uses to access the target EFS file system.
      */
 
     public void setSubnetArn(String subnetArn) {
@@ -80,10 +58,10 @@ public class Ec2Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the subnet that the Amazon EC2 resource belongs in.
+     * The ARN of the subnet and the security group that DataSync uses to access the target EFS file system.
      * </p>
      * 
-     * @return The ARN of the subnet that the Amazon EC2 resource belongs in.
+     * @return The ARN of the subnet and the security group that DataSync uses to access the target EFS file system.
      */
 
     public String getSubnetArn() {
@@ -92,11 +70,11 @@ public class Ec2Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the subnet that the Amazon EC2 resource belongs in.
+     * The ARN of the subnet and the security group that DataSync uses to access the target EFS file system.
      * </p>
      * 
      * @param subnetArn
-     *        The ARN of the subnet that the Amazon EC2 resource belongs in.
+     *        The ARN of the subnet and the security group that DataSync uses to access the target EFS file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

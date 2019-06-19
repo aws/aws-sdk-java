@@ -45,7 +45,7 @@ public class UpdateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
     private AwsSecurityFindingFilters filters;
     /**
      * <p>
-     * The updated GroupBy attribute that defines this insight.
+     * The updated <code>GroupBy</code> attribute that defines this insight.
      * </p>
      */
     private String groupByAttribute;
@@ -172,11 +172,11 @@ public class UpdateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The updated GroupBy attribute that defines this insight.
+     * The updated <code>GroupBy</code> attribute that defines this insight.
      * </p>
      * 
      * @param groupByAttribute
-     *        The updated GroupBy attribute that defines this insight.
+     *        The updated <code>GroupBy</code> attribute that defines this insight.
      */
 
     public void setGroupByAttribute(String groupByAttribute) {
@@ -185,10 +185,10 @@ public class UpdateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The updated GroupBy attribute that defines this insight.
+     * The updated <code>GroupBy</code> attribute that defines this insight.
      * </p>
      * 
-     * @return The updated GroupBy attribute that defines this insight.
+     * @return The updated <code>GroupBy</code> attribute that defines this insight.
      */
 
     public String getGroupByAttribute() {
@@ -197,11 +197,11 @@ public class UpdateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The updated GroupBy attribute that defines this insight.
+     * The updated <code>GroupBy</code> attribute that defines this insight.
      * </p>
      * 
      * @param groupByAttribute
-     *        The updated GroupBy attribute that defines this insight.
+     *        The updated <code>GroupBy</code> attribute that defines this insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

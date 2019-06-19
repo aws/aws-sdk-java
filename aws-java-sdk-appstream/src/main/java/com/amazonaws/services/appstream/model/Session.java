@@ -83,9 +83,8 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date maxExpirationTime;
     /**
      * <p>
-     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
-     * federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
-     * authenticate users using a streaming URL.
+     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0
+     * federation (<code>SAML</code>).
      * </p>
      */
     private String authenticationType;
@@ -517,15 +516,13 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
-     * federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
-     * authenticate users using a streaming URL.
+     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0
+     * federation (<code>SAML</code>).
      * </p>
      * 
      * @param authenticationType
-     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
-     *        federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
-     *        authenticate users using a streaming URL.
+     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0
+     *        federation (<code>SAML</code>).
      * @see AuthenticationType
      */
 
@@ -535,14 +532,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
-     * federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
-     * authenticate users using a streaming URL.
+     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0
+     * federation (<code>SAML</code>).
      * </p>
      * 
-     * @return The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
-     *         federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
-     *         authenticate users using a streaming URL.
+     * @return The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0
+     *         federation (<code>SAML</code>).
      * @see AuthenticationType
      */
 
@@ -552,15 +547,13 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
-     * federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
-     * authenticate users using a streaming URL.
+     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0
+     * federation (<code>SAML</code>).
      * </p>
      * 
      * @param authenticationType
-     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
-     *        federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
-     *        authenticate users using a streaming URL.
+     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0
+     *        federation (<code>SAML</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationType
      */
@@ -572,15 +565,13 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
-     * federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
-     * authenticate users using a streaming URL.
+     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0
+     * federation (<code>SAML</code>).
      * </p>
      * 
      * @param authenticationType
-     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
-     *        federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
-     *        authenticate users using a streaming URL.
+     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0
+     *        federation (<code>SAML</code>).
      * @see AuthenticationType
      */
 
@@ -590,15 +581,13 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
-     * federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
-     * authenticate users using a streaming URL.
+     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0
+     * federation (<code>SAML</code>).
      * </p>
      * 
      * @param authenticationType
-     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
-     *        federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
-     *        authenticate users using a streaming URL.
+     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0
+     *        federation (<code>SAML</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationType
      */

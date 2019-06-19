@@ -36,8 +36,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
-     * Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-     * <code>64</code>, <code>128</code>, and <code>256</code>.
+     * Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     * <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      * </p>
      * <p>
      * The minimum capacity must be less than or equal to the maximum capacity.
@@ -49,8 +49,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
-     * Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-     * <code>64</code>, <code>128</code>, and <code>256</code>.
+     * Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     * <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      * </p>
      * <p>
      * The maximum capacity must be greater than or equal to the minimum capacity.
@@ -59,7 +59,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
     private Integer maxCapacity;
     /**
      * <p>
-     * A value that specifies whether to allow or disallow automatic pause for an Aurora DB cluster in
+     * A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
      * <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).
      * </p>
      * <note>
@@ -76,14 +76,39 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private Integer secondsUntilAutoPause;
+    /**
+     * <p>
+     * The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.
+     * </p>
+     * <p>
+     * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
+     * </p>
+     * <p>
+     * <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not found in
+     * the timeout period.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless from finding a
+     * scaling point might be dropped.
+     * </p>
+     * </important>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     * > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     */
+    private String timeoutAction;
 
     /**
      * <p>
      * The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
-     * Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-     * <code>64</code>, <code>128</code>, and <code>256</code>.
+     * Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     * <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      * </p>
      * <p>
      * The minimum capacity must be less than or equal to the maximum capacity.
@@ -92,7 +117,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * @param minCapacity
      *        The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
      *        <p>
-     *        Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
+     *        Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     *        <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      *        </p>
      *        <p>
      *        The minimum capacity must be less than or equal to the maximum capacity.
@@ -107,8 +133,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
-     * Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-     * <code>64</code>, <code>128</code>, and <code>256</code>.
+     * Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     * <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      * </p>
      * <p>
      * The minimum capacity must be less than or equal to the maximum capacity.
@@ -116,8 +142,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * 
      * @return The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
      *         <p>
-     *         Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
-     *         <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
+     *         Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      *         </p>
      *         <p>
      *         The minimum capacity must be less than or equal to the maximum capacity.
@@ -132,8 +157,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
-     * Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-     * <code>64</code>, <code>128</code>, and <code>256</code>.
+     * Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     * <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      * </p>
      * <p>
      * The minimum capacity must be less than or equal to the maximum capacity.
@@ -142,7 +167,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * @param minCapacity
      *        The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
      *        <p>
-     *        Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
+     *        Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     *        <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      *        </p>
      *        <p>
      *        The minimum capacity must be less than or equal to the maximum capacity.
@@ -159,8 +185,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
-     * Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-     * <code>64</code>, <code>128</code>, and <code>256</code>.
+     * Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     * <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      * </p>
      * <p>
      * The maximum capacity must be greater than or equal to the minimum capacity.
@@ -169,7 +195,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * @param maxCapacity
      *        The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
      *        <p>
-     *        Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
+     *        Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     *        <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      *        </p>
      *        <p>
      *        The maximum capacity must be greater than or equal to the minimum capacity.
@@ -184,8 +211,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
-     * Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-     * <code>64</code>, <code>128</code>, and <code>256</code>.
+     * Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     * <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      * </p>
      * <p>
      * The maximum capacity must be greater than or equal to the minimum capacity.
@@ -193,8 +220,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * 
      * @return The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
      *         <p>
-     *         Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
-     *         <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
+     *         Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      *         </p>
      *         <p>
      *         The maximum capacity must be greater than or equal to the minimum capacity.
@@ -209,8 +235,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.
      * </p>
      * <p>
-     * Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-     * <code>64</code>, <code>128</code>, and <code>256</code>.
+     * Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     * <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      * </p>
      * <p>
      * The maximum capacity must be greater than or equal to the minimum capacity.
@@ -219,7 +245,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * @param maxCapacity
      *        The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
      *        <p>
-     *        Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
+     *        Valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     *        <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
      *        </p>
      *        <p>
      *        The maximum capacity must be greater than or equal to the minimum capacity.
@@ -233,7 +260,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that specifies whether to allow or disallow automatic pause for an Aurora DB cluster in
+     * A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
      * <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).
      * </p>
      * <note>
@@ -244,7 +271,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * </note>
      * 
      * @param autoPause
-     *        A value that specifies whether to allow or disallow automatic pause for an Aurora DB cluster in
+     *        A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
      *        <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no
      *        connections).</p> <note>
      *        <p>
@@ -259,7 +286,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that specifies whether to allow or disallow automatic pause for an Aurora DB cluster in
+     * A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
      * <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).
      * </p>
      * <note>
@@ -269,7 +296,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * </p>
      * </note>
      * 
-     * @return A value that specifies whether to allow or disallow automatic pause for an Aurora DB cluster in
+     * @return A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
      *         <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no
      *         connections).</p> <note>
      *         <p>
@@ -284,7 +311,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that specifies whether to allow or disallow automatic pause for an Aurora DB cluster in
+     * A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
      * <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).
      * </p>
      * <note>
@@ -295,7 +322,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * </note>
      * 
      * @param autoPause
-     *        A value that specifies whether to allow or disallow automatic pause for an Aurora DB cluster in
+     *        A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
      *        <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no
      *        connections).</p> <note>
      *        <p>
@@ -312,7 +339,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that specifies whether to allow or disallow automatic pause for an Aurora DB cluster in
+     * A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
      * <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).
      * </p>
      * <note>
@@ -322,7 +349,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * </p>
      * </note>
      * 
-     * @return A value that specifies whether to allow or disallow automatic pause for an Aurora DB cluster in
+     * @return A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
      *         <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no
      *         connections).</p> <note>
      *         <p>
@@ -376,6 +403,157 @@ public class ScalingConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.
+     * </p>
+     * <p>
+     * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
+     * </p>
+     * <p>
+     * <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not found in
+     * the timeout period.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless from finding a
+     * scaling point might be dropped.
+     * </p>
+     * </important>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     * > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param timeoutAction
+     *        The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     *        <code>RollbackCapacityChange</code>.</p>
+     *        <p>
+     *        <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
+     *        </p>
+     *        <p>
+     *        <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not
+     *        found in the timeout period.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless from
+     *        finding a scaling point might be dropped.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     *        > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public void setTimeoutAction(String timeoutAction) {
+        this.timeoutAction = timeoutAction;
+    }
+
+    /**
+     * <p>
+     * The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.
+     * </p>
+     * <p>
+     * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
+     * </p>
+     * <p>
+     * <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not found in
+     * the timeout period.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless from finding a
+     * scaling point might be dropped.
+     * </p>
+     * </important>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     * > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @return The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     *         <code>RollbackCapacityChange</code>.</p>
+     *         <p>
+     *         <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
+     *         </p>
+     *         <p>
+     *         <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not
+     *         found in the timeout period.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless from
+     *         finding a scaling point might be dropped.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     *         > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public String getTimeoutAction() {
+        return this.timeoutAction;
+    }
+
+    /**
+     * <p>
+     * The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.
+     * </p>
+     * <p>
+     * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
+     * </p>
+     * <p>
+     * <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not found in
+     * the timeout period.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless from finding a
+     * scaling point might be dropped.
+     * </p>
+     * </important>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     * > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param timeoutAction
+     *        The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     *        <code>RollbackCapacityChange</code>.</p>
+     *        <p>
+     *        <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
+     *        </p>
+     *        <p>
+     *        <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not
+     *        found in the timeout period.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless from
+     *        finding a scaling point might be dropped.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     *        > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingConfiguration withTimeoutAction(String timeoutAction) {
+        setTimeoutAction(timeoutAction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -394,7 +572,9 @@ public class ScalingConfiguration implements Serializable, Cloneable {
         if (getAutoPause() != null)
             sb.append("AutoPause: ").append(getAutoPause()).append(",");
         if (getSecondsUntilAutoPause() != null)
-            sb.append("SecondsUntilAutoPause: ").append(getSecondsUntilAutoPause());
+            sb.append("SecondsUntilAutoPause: ").append(getSecondsUntilAutoPause()).append(",");
+        if (getTimeoutAction() != null)
+            sb.append("TimeoutAction: ").append(getTimeoutAction());
         sb.append("}");
         return sb.toString();
     }
@@ -425,6 +605,10 @@ public class ScalingConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getSecondsUntilAutoPause() != null && other.getSecondsUntilAutoPause().equals(this.getSecondsUntilAutoPause()) == false)
             return false;
+        if (other.getTimeoutAction() == null ^ this.getTimeoutAction() == null)
+            return false;
+        if (other.getTimeoutAction() != null && other.getTimeoutAction().equals(this.getTimeoutAction()) == false)
+            return false;
         return true;
     }
 
@@ -437,6 +621,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getAutoPause() == null) ? 0 : getAutoPause().hashCode());
         hashCode = prime * hashCode + ((getSecondsUntilAutoPause() == null) ? 0 : getSecondsUntilAutoPause().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutAction() == null) ? 0 : getTimeoutAction().hashCode());
         return hashCode;
     }
 

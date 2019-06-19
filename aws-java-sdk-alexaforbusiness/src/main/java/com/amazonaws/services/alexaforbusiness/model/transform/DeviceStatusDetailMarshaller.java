@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeviceStatusDetailMarshaller {
 
+    private static final MarshallingInfo<String> FEATURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Feature").build();
     private static final MarshallingInfo<String> CODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Code").build();
 
@@ -46,6 +48,7 @@ public class DeviceStatusDetailMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(deviceStatusDetail.getFeature(), FEATURE_BINDING);
             protocolMarshaller.marshall(deviceStatusDetail.getCode(), CODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

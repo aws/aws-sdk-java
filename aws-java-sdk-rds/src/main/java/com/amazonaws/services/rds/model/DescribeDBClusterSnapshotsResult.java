@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Provides a list of DB cluster snapshots for the user as the result of a call to the <a>DescribeDBClusterSnapshots</a>
- * action.
+ * Provides a list of DB cluster snapshots for the user as the result of a call to the
+ * <code>DescribeDBClusterSnapshots</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots" target="_top">AWS API
@@ -29,8 +29,8 @@ public class DescribeDBClusterSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter
-     * is specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      */
@@ -44,15 +44,15 @@ public class DescribeDBClusterSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter
-     * is specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this
-     *        parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     *        <code>MaxRecords</code>.
+     *        An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If
+     *        this parameter is specified, the response includes only records beyond the marker, up to the value
+     *        specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -61,14 +61,14 @@ public class DescribeDBClusterSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter
-     * is specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this
-     *         parameter is specified, the response includes only records beyond the marker, up to the value specified
-     *         by <code>MaxRecords</code>.
+     * @return An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If
+     *         this parameter is specified, the response includes only records beyond the marker, up to the value
+     *         specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -77,15 +77,15 @@ public class DescribeDBClusterSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this parameter
-     * is specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a> request. If this
-     *        parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     *        <code>MaxRecords</code>.
+     *        An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If
+     *        this parameter is specified, the response includes only records beyond the marker, up to the value
+     *        specified by <code>MaxRecords</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -78,6 +78,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public DescribeProductsResult describeProducts(DescribeProductsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisableImportFindingsForProductResult disableImportFindingsForProduct(DisableImportFindingsForProductRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -159,6 +164,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
 
     @Override
     public ListMembersResult listMembers(ListMembersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListProductSubscribersResult listProductSubscribers(ListProductSubscribersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The specified geo restriction parameter is not valid.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidGeoRestrictionParameterException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {

@@ -31,8 +31,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this parameter. Any
      * resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The policies cannot be
      * "scope-down" policies, such as you could include in a call to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
-     * one of the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
+     * one of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
      * operations. In other words, do not use policies designed to restrict what a user can do while using the temporary
      * credentials.
      * </p>
@@ -62,7 +62,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
-     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>.
+     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation
+     * does not support using wildcards (*) in an action name.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> actionNames;
@@ -84,8 +85,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceArns;
@@ -120,12 +121,12 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not identify
-     * its owner in the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is
-     * also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
-     * <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource policy
-     * defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required only if
-     * you specify a resource-based policy and account that owns the resource is different from the account that owns
-     * the simulated calling user <code>CallerArn</code>.
+     * its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of any <code>ResourcePolicy</code>
+     * included in the simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>.
+     * This parameter is required only if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user <code>CallerArn</code>.
      * </p>
      * <p>
      * The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For
@@ -149,7 +150,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ContextEntry> contextEntries;
@@ -166,8 +167,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
      * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>Amazon EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -250,8 +251,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this parameter. Any
      * resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The policies cannot be
      * "scope-down" policies, such as you could include in a call to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
-     * one of the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
+     * one of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
      * operations. In other words, do not use policies designed to restrict what a user can do while using the temporary
      * credentials.
      * </p>
@@ -281,9 +282,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         containing the complete, valid JSON text of an IAM policy. Do not include any resource-based policies in
      *         this parameter. Any resource-based policy must be submitted with the <code>ResourcePolicy</code>
      *         parameter. The policies cannot be "scope-down" policies, such as you could include in a call to <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
+     *         href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
      *         >GetFederationToken</a> or one of the <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     *         href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
      *         operations. In other words, do not use policies designed to restrict what a user can do while using the
      *         temporary credentials.</p>
      *         <p>
@@ -322,8 +323,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this parameter. Any
      * resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The policies cannot be
      * "scope-down" policies, such as you could include in a call to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
-     * one of the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
+     * one of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
      * operations. In other words, do not use policies designed to restrict what a user can do while using the temporary
      * credentials.
      * </p>
@@ -354,9 +355,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        the complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this
      *        parameter. Any resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      *        policies cannot be "scope-down" policies, such as you could include in a call to <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
      *        >GetFederationToken</a> or one of the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
      *        operations. In other words, do not use policies designed to restrict what a user can do while using the
      *        temporary credentials.</p>
      *        <p>
@@ -397,8 +398,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this parameter. Any
      * resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The policies cannot be
      * "scope-down" policies, such as you could include in a call to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
-     * one of the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
+     * one of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
      * operations. In other words, do not use policies designed to restrict what a user can do while using the temporary
      * credentials.
      * </p>
@@ -434,9 +435,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        the complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this
      *        parameter. Any resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      *        policies cannot be "scope-down" policies, such as you could include in a call to <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
      *        >GetFederationToken</a> or one of the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
      *        operations. In other words, do not use policies designed to restrict what a user can do while using the
      *        temporary credentials.</p>
      *        <p>
@@ -479,8 +480,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this parameter. Any
      * resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The policies cannot be
      * "scope-down" policies, such as you could include in a call to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
-     * one of the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
+     * one of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
      * operations. In other words, do not use policies designed to restrict what a user can do while using the temporary
      * credentials.
      * </p>
@@ -511,9 +512,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        the complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this
      *        parameter. Any resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      *        policies cannot be "scope-down" policies, such as you could include in a call to <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
      *        >GetFederationToken</a> or one of the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
      *        operations. In other words, do not use policies designed to restrict what a user can do while using the
      *        temporary credentials.</p>
      *        <p>
@@ -548,11 +549,13 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
-     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>.
+     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation
+     * does not support using wildcards (*) in an action name.
      * </p>
      * 
      * @return A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
-     *         resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>.
+     *         resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This
+     *         operation does not support using wildcards (*) in an action name.
      */
 
     public java.util.List<String> getActionNames() {
@@ -565,12 +568,14 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
-     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>.
+     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation
+     * does not support using wildcards (*) in an action name.
      * </p>
      * 
      * @param actionNames
      *        A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
-     *        resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>.
+     *        resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This
+     *        operation does not support using wildcards (*) in an action name.
      */
 
     public void setActionNames(java.util.Collection<String> actionNames) {
@@ -585,7 +590,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
-     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>.
+     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation
+     * does not support using wildcards (*) in an action name.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -595,7 +601,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param actionNames
      *        A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
-     *        resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>.
+     *        resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This
+     *        operation does not support using wildcards (*) in an action name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -612,12 +619,14 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
-     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>.
+     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation
+     * does not support using wildcards (*) in an action name.
      * </p>
      * 
      * @param actionNames
      *        A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
-     *        resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>.
+     *        resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This
+     *        operation does not support using wildcards (*) in an action name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -644,8 +653,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
@@ -663,7 +672,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         </p>
      *         <p>
      *         For more information about ARNs, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
@@ -692,8 +701,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param resourceArns
@@ -712,7 +721,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
@@ -743,8 +752,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -768,7 +777,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -801,8 +810,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param resourceArns
@@ -821,7 +830,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1009,12 +1018,12 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not identify
-     * its owner in the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is
-     * also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
-     * <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource policy
-     * defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required only if
-     * you specify a resource-based policy and account that owns the resource is different from the account that owns
-     * the simulated calling user <code>CallerArn</code>.
+     * its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of any <code>ResourcePolicy</code>
+     * included in the simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>.
+     * This parameter is required only if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user <code>CallerArn</code>.
      * </p>
      * <p>
      * The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For
@@ -1024,12 +1033,13 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param resourceOwner
      *        An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not
-     *        identify its owner in the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is
-     *        specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the
-     *        simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources
-     *        and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>. This
-     *        parameter is required only if you specify a resource-based policy and account that owns the resource is
-     *        different from the account that owns the simulated calling user <code>CallerArn</code>.</p>
+     *        identify its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     *        <code>ResourceOwner</code> is specified, it is also used as the account owner of any
+     *        <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code> parameter is not
+     *        specified, then the owner of the resources and the resource policy defaults to the account of the identity
+     *        provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based policy
+     *        and account that owns the resource is different from the account that owns the simulated calling user
+     *        <code>CallerArn</code>.</p>
      *        <p>
      *        The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>.
      *        For example, to represent the account with the 112233445566 ID, use the following ARN:
@@ -1043,12 +1053,12 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not identify
-     * its owner in the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is
-     * also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
-     * <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource policy
-     * defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required only if
-     * you specify a resource-based policy and account that owns the resource is different from the account that owns
-     * the simulated calling user <code>CallerArn</code>.
+     * its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of any <code>ResourcePolicy</code>
+     * included in the simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>.
+     * This parameter is required only if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user <code>CallerArn</code>.
      * </p>
      * <p>
      * The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For
@@ -1057,12 +1067,13 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @return An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not
-     *         identify its owner in the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is
-     *         specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the
-     *         simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources
-     *         and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>. This
-     *         parameter is required only if you specify a resource-based policy and account that owns the resource is
-     *         different from the account that owns the simulated calling user <code>CallerArn</code>.</p>
+     *         identify its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     *         <code>ResourceOwner</code> is specified, it is also used as the account owner of any
+     *         <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code> parameter is
+     *         not specified, then the owner of the resources and the resource policy defaults to the account of the
+     *         identity provided in <code>CallerArn</code>. This parameter is required only if you specify a
+     *         resource-based policy and account that owns the resource is different from the account that owns the
+     *         simulated calling user <code>CallerArn</code>.</p>
      *         <p>
      *         The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>.
      *         For example, to represent the account with the 112233445566 ID, use the following ARN:
@@ -1076,12 +1087,12 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not identify
-     * its owner in the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is
-     * also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
-     * <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource policy
-     * defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required only if
-     * you specify a resource-based policy and account that owns the resource is different from the account that owns
-     * the simulated calling user <code>CallerArn</code>.
+     * its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of any <code>ResourcePolicy</code>
+     * included in the simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>.
+     * This parameter is required only if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user <code>CallerArn</code>.
      * </p>
      * <p>
      * The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For
@@ -1091,12 +1102,13 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param resourceOwner
      *        An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not
-     *        identify its owner in the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is
-     *        specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the
-     *        simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources
-     *        and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>. This
-     *        parameter is required only if you specify a resource-based policy and account that owns the resource is
-     *        different from the account that owns the simulated calling user <code>CallerArn</code>.</p>
+     *        identify its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     *        <code>ResourceOwner</code> is specified, it is also used as the account owner of any
+     *        <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code> parameter is not
+     *        specified, then the owner of the resources and the resource policy defaults to the account of the identity
+     *        provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based policy
+     *        and account that owns the resource is different from the account that owns the simulated calling user
+     *        <code>CallerArn</code>.</p>
      *        <p>
      *        The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>.
      *        For example, to represent the account with the 112233445566 ID, use the following ARN:
@@ -1185,11 +1197,11 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      * 
      * @return A list of context keys and corresponding values for the simulation to use. Whenever a context key is
-     *         evaluated in one of the simulated IAM permission policies, the corresponding value is supplied.
+     *         evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.
      */
 
     public java.util.List<ContextEntry> getContextEntries() {
@@ -1202,12 +1214,12 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      * 
      * @param contextEntries
      *        A list of context keys and corresponding values for the simulation to use. Whenever a context key is
-     *        evaluated in one of the simulated IAM permission policies, the corresponding value is supplied.
+     *        evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.
      */
 
     public void setContextEntries(java.util.Collection<ContextEntry> contextEntries) {
@@ -1222,7 +1234,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1232,7 +1244,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param contextEntries
      *        A list of context keys and corresponding values for the simulation to use. Whenever a context key is
-     *        evaluated in one of the simulated IAM permission policies, the corresponding value is supplied.
+     *        evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1249,12 +1261,12 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      * 
      * @param contextEntries
      *        A list of context keys and corresponding values for the simulation to use. Whenever a context key is
-     *        evaluated in one of the simulated IAM permission policies, the corresponding value is supplied.
+     *        evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1276,8 +1288,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
      * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>Amazon EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1342,7 +1354,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario
      *        includes VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you
      *        must specify the subnet resource. For more information on the EC2 scenario options, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *        Platforms</a> in the <i>Amazon EC2 User Guide</i>.
      *        </p>
      *        <ul>
@@ -1413,8 +1425,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
      * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>Amazon EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1478,7 +1490,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         your scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2
      *         scenario includes VPC, then you must supply the network-interface resource. If it includes an IP subnet,
      *         then you must specify the subnet resource. For more information on the EC2 scenario options, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *         Platforms</a> in the <i>Amazon EC2 User Guide</i>.
      *         </p>
      *         <ul>
@@ -1549,8 +1561,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
      * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>Amazon EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1615,7 +1627,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario
      *        includes VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you
      *        must specify the subnet resource. For more information on the EC2 scenario options, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *        Platforms</a> in the <i>Amazon EC2 User Guide</i>.
      *        </p>
      *        <ul>

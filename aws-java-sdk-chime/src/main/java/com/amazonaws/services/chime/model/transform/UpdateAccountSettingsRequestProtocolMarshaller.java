@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class UpdateAccountSettingsRequestProtocolMarshaller implements Marshaller<Request<UpdateAccountSettingsRequest>, UpdateAccountSettingsRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/console/accounts/{accountId}/settings").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true)
+            .requestUri("/accounts/{accountId}/settings").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true)
             .serviceName("AmazonChime").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

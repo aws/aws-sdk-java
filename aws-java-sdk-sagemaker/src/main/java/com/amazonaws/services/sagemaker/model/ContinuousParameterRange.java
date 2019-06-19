@@ -48,6 +48,47 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * </p>
      */
     private String maxValue;
+    /**
+     * <p>
+     * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
+     * hyperparameter scale, see <a
+     * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * >Hyperparameter Scaling</a>. One of the following values:
+     * </p>
+     * <dl>
+     * <dt>Auto</dt>
+     * <dd>
+     * <p>
+     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * </p>
+     * </dd>
+     * <dt>Linear</dt>
+     * <dd>
+     * <p>
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.
+     * </p>
+     * </dd>
+     * <dt>Logarithmic</dt>
+     * <dd>
+     * <p>
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     * </p>
+     * <p>
+     * Logarithmic scaling works only for ranges that have only values greater than 0.
+     * </p>
+     * </dd>
+     * <dt>ReverseLogarithmic</dt>
+     * <dd>
+     * <p>
+     * Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
+     * </p>
+     * <p>
+     * Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private String scalingType;
 
     /**
      * <p>
@@ -182,6 +223,345 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
+     * hyperparameter scale, see <a
+     * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * >Hyperparameter Scaling</a>. One of the following values:
+     * </p>
+     * <dl>
+     * <dt>Auto</dt>
+     * <dd>
+     * <p>
+     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * </p>
+     * </dd>
+     * <dt>Linear</dt>
+     * <dd>
+     * <p>
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.
+     * </p>
+     * </dd>
+     * <dt>Logarithmic</dt>
+     * <dd>
+     * <p>
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     * </p>
+     * <p>
+     * Logarithmic scaling works only for ranges that have only values greater than 0.
+     * </p>
+     * </dd>
+     * <dt>ReverseLogarithmic</dt>
+     * <dd>
+     * <p>
+     * Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
+     * </p>
+     * <p>
+     * Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param scalingType
+     *        The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
+     *        choosing a hyperparameter scale, see <a href=
+     *        "http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     *        >Hyperparameter Scaling</a>. One of the following values:</p>
+     *        <dl>
+     *        <dt>Auto</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     *        </p>
+     *        </dd>
+     *        <dt>Linear</dt>
+     *        <dd>
+     *        <p>
+     *        Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.
+     *        </p>
+     *        </dd>
+     *        <dt>Logarithmic</dt>
+     *        <dd>
+     *        <p>
+     *        Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     *        </p>
+     *        <p>
+     *        Logarithmic scaling works only for ranges that have only values greater than 0.
+     *        </p>
+     *        </dd>
+     *        <dt>ReverseLogarithmic</dt>
+     *        <dd>
+     *        <p>
+     *        Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic
+     *        scale.
+     *        </p>
+     *        <p>
+     *        Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
+     *        </p>
+     *        </dd>
+     * @see HyperParameterScalingType
+     */
+
+    public void setScalingType(String scalingType) {
+        this.scalingType = scalingType;
+    }
+
+    /**
+     * <p>
+     * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
+     * hyperparameter scale, see <a
+     * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * >Hyperparameter Scaling</a>. One of the following values:
+     * </p>
+     * <dl>
+     * <dt>Auto</dt>
+     * <dd>
+     * <p>
+     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * </p>
+     * </dd>
+     * <dt>Linear</dt>
+     * <dd>
+     * <p>
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.
+     * </p>
+     * </dd>
+     * <dt>Logarithmic</dt>
+     * <dd>
+     * <p>
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     * </p>
+     * <p>
+     * Logarithmic scaling works only for ranges that have only values greater than 0.
+     * </p>
+     * </dd>
+     * <dt>ReverseLogarithmic</dt>
+     * <dd>
+     * <p>
+     * Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
+     * </p>
+     * <p>
+     * Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
+     *         choosing a hyperparameter scale, see <a href=
+     *         "http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     *         >Hyperparameter Scaling</a>. One of the following values:</p>
+     *         <dl>
+     *         <dt>Auto</dt>
+     *         <dd>
+     *         <p>
+     *         Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     *         </p>
+     *         </dd>
+     *         <dt>Linear</dt>
+     *         <dd>
+     *         <p>
+     *         Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.
+     *         </p>
+     *         </dd>
+     *         <dt>Logarithmic</dt>
+     *         <dd>
+     *         <p>
+     *         Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     *         </p>
+     *         <p>
+     *         Logarithmic scaling works only for ranges that have only values greater than 0.
+     *         </p>
+     *         </dd>
+     *         <dt>ReverseLogarithmic</dt>
+     *         <dd>
+     *         <p>
+     *         Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic
+     *         scale.
+     *         </p>
+     *         <p>
+     *         Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
+     *         </p>
+     *         </dd>
+     * @see HyperParameterScalingType
+     */
+
+    public String getScalingType() {
+        return this.scalingType;
+    }
+
+    /**
+     * <p>
+     * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
+     * hyperparameter scale, see <a
+     * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * >Hyperparameter Scaling</a>. One of the following values:
+     * </p>
+     * <dl>
+     * <dt>Auto</dt>
+     * <dd>
+     * <p>
+     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * </p>
+     * </dd>
+     * <dt>Linear</dt>
+     * <dd>
+     * <p>
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.
+     * </p>
+     * </dd>
+     * <dt>Logarithmic</dt>
+     * <dd>
+     * <p>
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     * </p>
+     * <p>
+     * Logarithmic scaling works only for ranges that have only values greater than 0.
+     * </p>
+     * </dd>
+     * <dt>ReverseLogarithmic</dt>
+     * <dd>
+     * <p>
+     * Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
+     * </p>
+     * <p>
+     * Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param scalingType
+     *        The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
+     *        choosing a hyperparameter scale, see <a href=
+     *        "http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     *        >Hyperparameter Scaling</a>. One of the following values:</p>
+     *        <dl>
+     *        <dt>Auto</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     *        </p>
+     *        </dd>
+     *        <dt>Linear</dt>
+     *        <dd>
+     *        <p>
+     *        Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.
+     *        </p>
+     *        </dd>
+     *        <dt>Logarithmic</dt>
+     *        <dd>
+     *        <p>
+     *        Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     *        </p>
+     *        <p>
+     *        Logarithmic scaling works only for ranges that have only values greater than 0.
+     *        </p>
+     *        </dd>
+     *        <dt>ReverseLogarithmic</dt>
+     *        <dd>
+     *        <p>
+     *        Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic
+     *        scale.
+     *        </p>
+     *        <p>
+     *        Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HyperParameterScalingType
+     */
+
+    public ContinuousParameterRange withScalingType(String scalingType) {
+        setScalingType(scalingType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
+     * hyperparameter scale, see <a
+     * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * >Hyperparameter Scaling</a>. One of the following values:
+     * </p>
+     * <dl>
+     * <dt>Auto</dt>
+     * <dd>
+     * <p>
+     * Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     * </p>
+     * </dd>
+     * <dt>Linear</dt>
+     * <dd>
+     * <p>
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.
+     * </p>
+     * </dd>
+     * <dt>Logarithmic</dt>
+     * <dd>
+     * <p>
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     * </p>
+     * <p>
+     * Logarithmic scaling works only for ranges that have only values greater than 0.
+     * </p>
+     * </dd>
+     * <dt>ReverseLogarithmic</dt>
+     * <dd>
+     * <p>
+     * Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
+     * </p>
+     * <p>
+     * Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param scalingType
+     *        The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
+     *        choosing a hyperparameter scale, see <a href=
+     *        "http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     *        >Hyperparameter Scaling</a>. One of the following values:</p>
+     *        <dl>
+     *        <dt>Auto</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+     *        </p>
+     *        </dd>
+     *        <dt>Linear</dt>
+     *        <dd>
+     *        <p>
+     *        Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.
+     *        </p>
+     *        </dd>
+     *        <dt>Logarithmic</dt>
+     *        <dd>
+     *        <p>
+     *        Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     *        </p>
+     *        <p>
+     *        Logarithmic scaling works only for ranges that have only values greater than 0.
+     *        </p>
+     *        </dd>
+     *        <dt>ReverseLogarithmic</dt>
+     *        <dd>
+     *        <p>
+     *        Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic
+     *        scale.
+     *        </p>
+     *        <p>
+     *        Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HyperParameterScalingType
+     */
+
+    public ContinuousParameterRange withScalingType(HyperParameterScalingType scalingType) {
+        this.scalingType = scalingType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,7 +578,9 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
         if (getMinValue() != null)
             sb.append("MinValue: ").append(getMinValue()).append(",");
         if (getMaxValue() != null)
-            sb.append("MaxValue: ").append(getMaxValue());
+            sb.append("MaxValue: ").append(getMaxValue()).append(",");
+        if (getScalingType() != null)
+            sb.append("ScalingType: ").append(getScalingType());
         sb.append("}");
         return sb.toString();
     }
@@ -225,6 +607,10 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
             return false;
         if (other.getMaxValue() != null && other.getMaxValue().equals(this.getMaxValue()) == false)
             return false;
+        if (other.getScalingType() == null ^ this.getScalingType() == null)
+            return false;
+        if (other.getScalingType() != null && other.getScalingType().equals(this.getScalingType()) == false)
+            return false;
         return true;
     }
 
@@ -236,6 +622,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getMinValue() == null) ? 0 : getMinValue().hashCode());
         hashCode = prime * hashCode + ((getMaxValue() == null) ? 0 : getMaxValue().hashCode());
+        hashCode = prime * hashCode + ((getScalingType() == null) ? 0 : getScalingType().hashCode());
         return hashCode;
     }
 

@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for HlsManifestDurationFormat
+ * Hls Manifest Duration Format
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HlsManifestDurationFormat {

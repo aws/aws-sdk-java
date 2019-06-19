@@ -78,6 +78,11 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequestStaxUnmar
                     continue;
                 }
 
+                if (context.testExpression("InterfaceType", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecificationRequest.setInterfaceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Ipv6AddressCount", targetDepth)) {
                     launchTemplateInstanceNetworkInterfaceSpecificationRequest.setIpv6AddressCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -26,7 +26,7 @@ public class DeregisterTargetFromMaintenanceWindowResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The ID of the Maintenance Window the target was removed from.
+     * The ID of the maintenance window the target was removed from.
      * </p>
      */
     private String windowId;
@@ -39,11 +39,11 @@ public class DeregisterTargetFromMaintenanceWindowResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The ID of the Maintenance Window the target was removed from.
+     * The ID of the maintenance window the target was removed from.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window the target was removed from.
+     *        The ID of the maintenance window the target was removed from.
      */
 
     public void setWindowId(String windowId) {
@@ -52,10 +52,10 @@ public class DeregisterTargetFromMaintenanceWindowResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The ID of the Maintenance Window the target was removed from.
+     * The ID of the maintenance window the target was removed from.
      * </p>
      * 
-     * @return The ID of the Maintenance Window the target was removed from.
+     * @return The ID of the maintenance window the target was removed from.
      */
 
     public String getWindowId() {
@@ -64,11 +64,11 @@ public class DeregisterTargetFromMaintenanceWindowResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The ID of the Maintenance Window the target was removed from.
+     * The ID of the maintenance window the target was removed from.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window the target was removed from.
+     *        The ID of the maintenance window the target was removed from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

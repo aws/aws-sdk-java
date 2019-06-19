@@ -45,7 +45,7 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
      * <p>
      * The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums
      * on provisioned throughput decreases, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -150,14 +150,14 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
      * <p>
      * The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums
      * on provisioned throughput decreases, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param numberOfDecreasesToday
      *        The number of provisioned throughput decreases for this table during this UTC calendar day. For current
      *        maximums on provisioned throughput decreases, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
      *        <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -169,13 +169,13 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
      * <p>
      * The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums
      * on provisioned throughput decreases, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return The number of provisioned throughput decreases for this table during this UTC calendar day. For current
      *         maximums on provisioned throughput decreases, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
      *         <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -187,14 +187,14 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
      * <p>
      * The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums
      * on provisioned throughput decreases, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param numberOfDecreasesToday
      *        The number of provisioned throughput decreases for this table during this UTC calendar day. For current
      *        maximums on provisioned throughput decreases, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
      *        <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

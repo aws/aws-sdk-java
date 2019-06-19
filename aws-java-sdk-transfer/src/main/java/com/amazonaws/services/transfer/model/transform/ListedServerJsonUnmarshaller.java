@@ -56,6 +56,10 @@ public class ListedServerJsonUnmarshaller implements Unmarshaller<ListedServer, 
                     context.nextToken();
                     listedServer.setIdentityProviderType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EndpointType", targetDepth)) {
+                    context.nextToken();
+                    listedServer.setEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LoggingRole", targetDepth)) {
                     context.nextToken();
                     listedServer.setLoggingRole(context.getUnmarshaller(String.class).unmarshall(context));

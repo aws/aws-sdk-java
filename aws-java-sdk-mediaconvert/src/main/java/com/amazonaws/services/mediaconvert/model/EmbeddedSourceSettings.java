@@ -26,6 +26,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EmbeddedSourceSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
+     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     */
     private String convert608To708;
     /**
      * Specifies the 608/708 channel number within the video track from which to extract captions. Unused for
@@ -39,7 +43,12 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
     private Integer source608TrackNumber;
 
     /**
+     * When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
+     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * 
      * @param convert608To708
+     *        When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
+     *        wrapper as well as translated into 708. 708 data present in the source content will be discarded.
      * @see EmbeddedConvert608To708
      */
 
@@ -48,7 +57,11 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
+     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * 
+     * @return When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the
+     *         708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
      * @see EmbeddedConvert608To708
      */
 
@@ -57,7 +70,12 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
+     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * 
      * @param convert608To708
+     *        When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
+     *        wrapper as well as translated into 708. 708 data present in the source content will be discarded.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EmbeddedConvert608To708
      */
@@ -68,7 +86,12 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
+     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * 
      * @param convert608To708
+     *        When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
+     *        wrapper as well as translated into 708. 708 data present in the source content will be discarded.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EmbeddedConvert608To708
      */

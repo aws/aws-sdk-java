@@ -31,7 +31,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     /**
      * <p>
      * The name of the SSM document that contains the configuration information for the instance. You can specify
-     * Command, Policy, or Automation documents.
+     * Command or Automation documents.
      * </p>
      * <p>
      * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
@@ -128,7 +128,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency
+     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
      * associations, the association is allowed to run. During the next association interval, the new instance will
      * process its association within the limit specified for MaxConcurrency.
      * </p>
@@ -144,7 +144,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     /**
      * <p>
      * The name of the SSM document that contains the configuration information for the instance. You can specify
-     * Command, Policy, or Automation documents.
+     * Command or Automation documents.
      * </p>
      * <p>
      * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
@@ -170,7 +170,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * 
      * @param name
      *        The name of the SSM document that contains the configuration information for the instance. You can specify
-     *        Command, Policy, or Automation documents.</p>
+     *        Command or Automation documents.</p>
      *        <p>
      *        You can specify AWS-predefined documents, documents you created, or a document that is shared with you
      *        from another account.
@@ -200,7 +200,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     /**
      * <p>
      * The name of the SSM document that contains the configuration information for the instance. You can specify
-     * Command, Policy, or Automation documents.
+     * Command or Automation documents.
      * </p>
      * <p>
      * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
@@ -225,7 +225,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * </p>
      * 
      * @return The name of the SSM document that contains the configuration information for the instance. You can
-     *         specify Command, Policy, or Automation documents.</p>
+     *         specify Command or Automation documents.</p>
      *         <p>
      *         You can specify AWS-predefined documents, documents you created, or a document that is shared with you
      *         from another account.
@@ -255,7 +255,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     /**
      * <p>
      * The name of the SSM document that contains the configuration information for the instance. You can specify
-     * Command, Policy, or Automation documents.
+     * Command or Automation documents.
      * </p>
      * <p>
      * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
@@ -281,7 +281,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * 
      * @param name
      *        The name of the SSM document that contains the configuration information for the instance. You can specify
-     *        Command, Policy, or Automation documents.</p>
+     *        Command or Automation documents.</p>
      *        <p>
      *        You can specify AWS-predefined documents, documents you created, or a document that is shared with you
      *        from another account.
@@ -794,7 +794,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency
+     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
      * associations, the association is allowed to run. During the next association interval, the new instance will
      * process its association within the limit specified for MaxConcurrency.
      * </p>
@@ -804,7 +804,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *        for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means
      *        all targets run the association at the same time.</p>
      *        <p>
-     *        If a new instance starts and attempts to execute an association while Systems Manager is executing
+     *        If a new instance starts and attempts to run an association while Systems Manager is running
      *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
      *        new instance will process its association within the limit specified for MaxConcurrency.
      */
@@ -820,7 +820,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency
+     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
      * associations, the association is allowed to run. During the next association interval, the new instance will
      * process its association within the limit specified for MaxConcurrency.
      * </p>
@@ -829,7 +829,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *         for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which
      *         means all targets run the association at the same time.</p>
      *         <p>
-     *         If a new instance starts and attempts to execute an association while Systems Manager is executing
+     *         If a new instance starts and attempts to run an association while Systems Manager is running
      *         MaxConcurrency associations, the association is allowed to run. During the next association interval, the
      *         new instance will process its association within the limit specified for MaxConcurrency.
      */
@@ -845,7 +845,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency
+     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
      * associations, the association is allowed to run. During the next association interval, the new instance will
      * process its association within the limit specified for MaxConcurrency.
      * </p>
@@ -855,7 +855,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *        for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means
      *        all targets run the association at the same time.</p>
      *        <p>
-     *        If a new instance starts and attempts to execute an association while Systems Manager is executing
+     *        If a new instance starts and attempts to run an association while Systems Manager is running
      *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
      *        new instance will process its association within the limit specified for MaxConcurrency.
      * @return Returns a reference to this object so that method calls can be chained together.

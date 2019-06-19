@@ -351,6 +351,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB Streams");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -448,6 +449,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB Streams");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRecords");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -532,6 +534,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB Streams");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetShardIterator");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -595,6 +598,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB Streams");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStreams");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBCluster" target="_top">AWS API
  *      Documentation</a>
@@ -209,7 +208,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
      * time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
@@ -249,7 +248,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
      * on a random day of the week. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
@@ -267,7 +266,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String replicationSourceIdentifier;
-
+    /**
+     * <p>
+     * The tags to assign to the new DB cluster.
+     * </p>
+     */
     private java.util.List<Tag> tags;
     /**
      * <p>
@@ -314,46 +317,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String kmsKeyId;
     /**
      * <p>
-     * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
-     * in the source AWS Region where the DB cluster is replicated from. You only need to specify
-     * <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.
-     * </p>
-     * <p>
-     * The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed
-     * in the source AWS Region that contains the encrypted DB cluster to be copied.
-     * </p>
-     * <p>
-     * The pre-signed URL request must contain the following parameter values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB cluster in
-     * the destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
-     * action that is called in the destination AWS Region, and the action contained in the pre-signed URL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that Read Replica will be created in.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
-     * This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
-     * are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     * <code>ReplicationSourceIdentifier</code> would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
-     * Process</a>.
+     * This parameter is not currently supported.
      * </p>
      */
     private String preSignedUrl;
@@ -367,6 +331,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
+    /**
+     * <p>
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * </p>
+     */
+    private java.util.List<String> enableCloudwatchLogsExports;
 
     /**
      * <p>
@@ -832,7 +802,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     *        the default is used. </p>
+     *        the default is used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -865,7 +835,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @return The name of the DB cluster parameter group to associate with this DB cluster. If this argument is
-     *         omitted, the default is used. </p>
+     *         omitted, the default is used.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -899,7 +869,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     *        the default is used. </p>
+     *        the default is used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1512,7 +1482,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
      * time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
@@ -1543,12 +1513,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param preferredBackupWindow
      *        The daily time range during which automated backups are created if automated backups are enabled using the
-     *        <code>BackupRetentionPeriod</code> parameter. </p>
+     *        <code>BackupRetentionPeriod</code> parameter.</p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
      *        see the time blocks available, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
-     *        the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     *        Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints:
@@ -1588,7 +1558,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
      * time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
@@ -1618,11 +1588,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @return The daily time range during which automated backups are created if automated backups are enabled using
-     *         the <code>BackupRetentionPeriod</code> parameter. </p>
+     *         the <code>BackupRetentionPeriod</code> parameter.</p>
      *         <p>
      *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
      *         see the time blocks available, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *         </p>
      *         <p>
@@ -1663,7 +1633,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
      * time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
@@ -1694,12 +1664,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param preferredBackupWindow
      *        The daily time range during which automated backups are created if automated backups are enabled using the
-     *        <code>BackupRetentionPeriod</code> parameter. </p>
+     *        <code>BackupRetentionPeriod</code> parameter.</p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
      *        see the time blocks available, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
-     *        the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     *        Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints:
@@ -1743,7 +1713,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
      * on a random day of the week. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
@@ -1761,8 +1731,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
      *        occurring on a random day of the week. To see the time blocks available, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
-     *        the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     *        Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *        </p>
      *        <p>
      *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1785,7 +1755,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
      * on a random day of the week. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
@@ -1802,7 +1772,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
      *         occurring on a random day of the week. To see the time blocks available, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *         </p>
      *         <p>
@@ -1826,7 +1796,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
      * on a random day of the week. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
      * <p>
@@ -1844,8 +1814,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
      *        occurring on a random day of the week. To see the time blocks available, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
-     *        the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     *        Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *        </p>
      *        <p>
      *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1907,7 +1877,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * The tags to assign to the new DB cluster.
+     * </p>
+     * 
+     * @return The tags to assign to the new DB cluster.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1915,7 +1889,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The tags to assign to the new DB cluster.
+     * </p>
+     * 
      * @param tags
+     *        The tags to assign to the new DB cluster.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1929,12 +1908,16 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The tags to assign to the new DB cluster.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        The tags to assign to the new DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1949,7 +1932,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The tags to assign to the new DB cluster.
+     * </p>
+     * 
      * @param tags
+     *        The tags to assign to the new DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2238,90 +2226,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
-     * in the source AWS Region where the DB cluster is replicated from. You only need to specify
-     * <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.
-     * </p>
-     * <p>
-     * The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed
-     * in the source AWS Region that contains the encrypted DB cluster to be copied.
-     * </p>
-     * <p>
-     * The pre-signed URL request must contain the following parameter values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB cluster in
-     * the destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
-     * action that is called in the destination AWS Region, and the action contained in the pre-signed URL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that Read Replica will be created in.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
-     * This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
-     * are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     * <code>ReplicationSourceIdentifier</code> would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
-     * Process</a>.
+     * This parameter is not currently supported.
      * </p>
      * 
      * @param preSignedUrl
-     *        A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be
-     *        called in the source AWS Region where the DB cluster is replicated from. You only need to specify
-     *        <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB
-     *        cluster.</p>
-     *        <p>
-     *        The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be
-     *        executed in the source AWS Region that contains the encrypted DB cluster to be copied.
-     *        </p>
-     *        <p>
-     *        The pre-signed URL request must contain the following parameter values:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB
-     *        cluster in the destination AWS Region. This should refer to the same KMS key for both the
-     *        <code>CreateDBCluster</code> action that is called in the destination AWS Region, and the action contained
-     *        in the pre-signed URL.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DestinationRegion</code> - The name of the AWS Region that Read Replica will be created in.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be
-     *        copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
-     *        example, if you are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     *        <code>ReplicationSourceIdentifier</code> would look like Example:
-     *        <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        To learn how to generate a Signature Version 4 signed request, see <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating
-     *        Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
-     *        Process</a>.
+     *        This parameter is not currently supported.
      */
 
     public void setPreSignedUrl(String preSignedUrl) {
@@ -2330,89 +2239,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
-     * in the source AWS Region where the DB cluster is replicated from. You only need to specify
-     * <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.
-     * </p>
-     * <p>
-     * The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed
-     * in the source AWS Region that contains the encrypted DB cluster to be copied.
-     * </p>
-     * <p>
-     * The pre-signed URL request must contain the following parameter values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB cluster in
-     * the destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
-     * action that is called in the destination AWS Region, and the action contained in the pre-signed URL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that Read Replica will be created in.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
-     * This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
-     * are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     * <code>ReplicationSourceIdentifier</code> would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
-     * Process</a>.
+     * This parameter is not currently supported.
      * </p>
      * 
-     * @return A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to
-     *         be called in the source AWS Region where the DB cluster is replicated from. You only need to specify
-     *         <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB
-     *         cluster.</p>
-     *         <p>
-     *         The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be
-     *         executed in the source AWS Region that contains the encrypted DB cluster to be copied.
-     *         </p>
-     *         <p>
-     *         The pre-signed URL request must contain the following parameter values:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB
-     *         cluster in the destination AWS Region. This should refer to the same KMS key for both the
-     *         <code>CreateDBCluster</code> action that is called in the destination AWS Region, and the action
-     *         contained in the pre-signed URL.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>DestinationRegion</code> - The name of the AWS Region that Read Replica will be created in.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be
-     *         copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
-     *         example, if you are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     *         <code>ReplicationSourceIdentifier</code> would look like Example:
-     *         <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         To learn how to generate a Signature Version 4 signed request, see <a
-     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating
-     *         Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
-     *         Process</a>.
+     * @return This parameter is not currently supported.
      */
 
     public String getPreSignedUrl() {
@@ -2421,90 +2251,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
-     * in the source AWS Region where the DB cluster is replicated from. You only need to specify
-     * <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.
-     * </p>
-     * <p>
-     * The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed
-     * in the source AWS Region that contains the encrypted DB cluster to be copied.
-     * </p>
-     * <p>
-     * The pre-signed URL request must contain the following parameter values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB cluster in
-     * the destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
-     * action that is called in the destination AWS Region, and the action contained in the pre-signed URL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that Read Replica will be created in.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
-     * This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
-     * are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     * <code>ReplicationSourceIdentifier</code> would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
-     * Process</a>.
+     * This parameter is not currently supported.
      * </p>
      * 
      * @param preSignedUrl
-     *        A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be
-     *        called in the source AWS Region where the DB cluster is replicated from. You only need to specify
-     *        <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB
-     *        cluster.</p>
-     *        <p>
-     *        The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be
-     *        executed in the source AWS Region that contains the encrypted DB cluster to be copied.
-     *        </p>
-     *        <p>
-     *        The pre-signed URL request must contain the following parameter values:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB
-     *        cluster in the destination AWS Region. This should refer to the same KMS key for both the
-     *        <code>CreateDBCluster</code> action that is called in the destination AWS Region, and the action contained
-     *        in the pre-signed URL.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DestinationRegion</code> - The name of the AWS Region that Read Replica will be created in.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be
-     *        copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
-     *        example, if you are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     *        <code>ReplicationSourceIdentifier</code> would look like Example:
-     *        <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        To learn how to generate a Signature Version 4 signed request, see <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating
-     *        Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
-     *        Process</a>.
+     *        This parameter is not currently supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2594,6 +2345,76 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * </p>
+     * 
+     * @return The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     */
+
+    public java.util.List<String> getEnableCloudwatchLogsExports() {
+        return enableCloudwatchLogsExports;
+    }
+
+    /**
+     * <p>
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * </p>
+     * 
+     * @param enableCloudwatchLogsExports
+     *        The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     */
+
+    public void setEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
+        if (enableCloudwatchLogsExports == null) {
+            this.enableCloudwatchLogsExports = null;
+            return;
+        }
+
+        this.enableCloudwatchLogsExports = new java.util.ArrayList<String>(enableCloudwatchLogsExports);
+    }
+
+    /**
+     * <p>
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnableCloudwatchLogsExports(java.util.Collection)} or
+     * {@link #withEnableCloudwatchLogsExports(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param enableCloudwatchLogsExports
+     *        The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withEnableCloudwatchLogsExports(String... enableCloudwatchLogsExports) {
+        if (this.enableCloudwatchLogsExports == null) {
+            setEnableCloudwatchLogsExports(new java.util.ArrayList<String>(enableCloudwatchLogsExports.length));
+        }
+        for (String ele : enableCloudwatchLogsExports) {
+            this.enableCloudwatchLogsExports.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * </p>
+     * 
+     * @param enableCloudwatchLogsExports
+     *        The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
+        setEnableCloudwatchLogsExports(enableCloudwatchLogsExports);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2648,7 +2469,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getPreSignedUrl() != null)
             sb.append("PreSignedUrl: ").append(getPreSignedUrl()).append(",");
         if (getEnableIAMDatabaseAuthentication() != null)
-            sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication());
+            sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication()).append(",");
+        if (getEnableCloudwatchLogsExports() != null)
+            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports());
         sb.append("}");
         return sb.toString();
     }
@@ -2752,6 +2575,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getEnableIAMDatabaseAuthentication() != null
                 && other.getEnableIAMDatabaseAuthentication().equals(this.getEnableIAMDatabaseAuthentication()) == false)
             return false;
+        if (other.getEnableCloudwatchLogsExports() == null ^ this.getEnableCloudwatchLogsExports() == null)
+            return false;
+        if (other.getEnableCloudwatchLogsExports() != null && other.getEnableCloudwatchLogsExports().equals(this.getEnableCloudwatchLogsExports()) == false)
+            return false;
         return true;
     }
 
@@ -2782,6 +2609,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getPreSignedUrl() == null) ? 0 : getPreSignedUrl().hashCode());
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
+        hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
         return hashCode;
     }
 

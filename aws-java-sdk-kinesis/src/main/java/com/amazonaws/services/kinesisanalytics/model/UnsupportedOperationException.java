@@ -15,7 +15,10 @@ package com.amazonaws.services.kinesisanalytics.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
+ * operation.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnsupportedOperationException extends com.amazonaws.services.kinesisanalytics.model.AmazonKinesisAnalyticsException {

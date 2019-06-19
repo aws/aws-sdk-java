@@ -32,6 +32,8 @@ public class VirtualNodeSpecMarshaller {
             .marshallLocationName("backends").build();
     private static final MarshallingInfo<List> LISTENERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("listeners").build();
+    private static final MarshallingInfo<StructuredPojo> LOGGING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logging").build();
     private static final MarshallingInfo<StructuredPojo> SERVICEDISCOVERY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceDiscovery").build();
 
@@ -53,6 +55,7 @@ public class VirtualNodeSpecMarshaller {
         try {
             protocolMarshaller.marshall(virtualNodeSpec.getBackends(), BACKENDS_BINDING);
             protocolMarshaller.marshall(virtualNodeSpec.getListeners(), LISTENERS_BINDING);
+            protocolMarshaller.marshall(virtualNodeSpec.getLogging(), LOGGING_BINDING);
             protocolMarshaller.marshall(virtualNodeSpec.getServiceDiscovery(), SERVICEDISCOVERY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -28,14 +28,14 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of <a>Certificate</a> objects for the AWS account.
+     * The list of <code>Certificate</code> objects for the AWS account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Certificate> certificates;
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code> .
      * </p>
      */
@@ -43,10 +43,10 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of <a>Certificate</a> objects for the AWS account.
+     * The list of <code>Certificate</code> objects for the AWS account.
      * </p>
      * 
-     * @return The list of <a>Certificate</a> objects for the AWS account.
+     * @return The list of <code>Certificate</code> objects for the AWS account.
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -58,11 +58,11 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of <a>Certificate</a> objects for the AWS account.
+     * The list of <code>Certificate</code> objects for the AWS account.
      * </p>
      * 
      * @param certificates
-     *        The list of <a>Certificate</a> objects for the AWS account.
+     *        The list of <code>Certificate</code> objects for the AWS account.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -76,7 +76,7 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of <a>Certificate</a> objects for the AWS account.
+     * The list of <code>Certificate</code> objects for the AWS account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +85,7 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param certificates
-     *        The list of <a>Certificate</a> objects for the AWS account.
+     *        The list of <code>Certificate</code> objects for the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of <a>Certificate</a> objects for the AWS account.
+     * The list of <code>Certificate</code> objects for the AWS account.
      * </p>
      * 
      * @param certificates
-     *        The list of <a>Certificate</a> objects for the AWS account.
+     *        The list of <code>Certificate</code> objects for the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,14 +116,14 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code> .
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter
-     *        is specified, the response includes only records beyond the marker, up to the value specified by
+     *        An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this
+     *        parameter is specified, the response includes only records beyond the marker, up to the value specified by
      *        <code>MaxRecords</code> .
      */
 
@@ -133,12 +133,12 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code> .
      * </p>
      * 
-     * @return An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this
+     * @return An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this
      *         parameter is specified, the response includes only records beyond the marker, up to the value specified
      *         by <code>MaxRecords</code> .
      */
@@ -149,14 +149,14 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code> .
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter
-     *        is specified, the response includes only records beyond the marker, up to the value specified by
+     *        An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this
+     *        parameter is specified, the response includes only records beyond the marker, up to the value specified by
      *        <code>MaxRecords</code> .
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -41,6 +41,14 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     private String dataAccessRoleArn;
     /**
      * <p>
+     * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
+     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
+     * to indicate its use by the sales department.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
+    /**
+     * <p>
      * Specifies the format and location of the input data. The S3 bucket containing the input data must be located in
      * the same region as the entity recognizer being created.
      * </p>
@@ -59,6 +67,35 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String languageCode;
+    /**
+     * <p>
+     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
+     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
+     * following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String volumeKmsKeyId;
+    /**
+     * <p>
+     * Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are
+     * using for your custom entity recognizer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * </p>
+     */
+    private VpcConfig vpcConfig;
 
     /**
      * <p>
@@ -152,6 +189,92 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     public CreateEntityRecognizerRequest withDataAccessRoleArn(String dataAccessRoleArn) {
         setDataAccessRoleArn(dataAccessRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
+     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
+     * to indicate its use by the sales department.
+     * </p>
+     * 
+     * @return Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a
+     *         metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *         added to a resource to indicate its use by the sales department.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
+     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
+     * to indicate its use by the sales department.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a
+     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *        added to a resource to indicate its use by the sales department.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
+     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
+     * to indicate its use by the sales department.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a
+     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *        added to a resource to indicate its use by the sales department.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEntityRecognizerRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
+     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
+     * to indicate its use by the sales department.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a
+     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
+     *        added to a resource to indicate its use by the sales department.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEntityRecognizerRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -312,6 +435,185 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
+     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
+     * following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param volumeKmsKeyId
+     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
+     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
+     *        either of the following formats:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Resource Name (ARN) of a KMS Key:
+     *        <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setVolumeKmsKeyId(String volumeKmsKeyId) {
+        this.volumeKmsKeyId = volumeKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
+     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
+     * following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the
+     *         storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId
+     *         can be either of the following formats:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Resource Name (ARN) of a KMS Key:
+     *         <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getVolumeKmsKeyId() {
+        return this.volumeKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
+     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
+     * following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param volumeKmsKeyId
+     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
+     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
+     *        either of the following formats:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Resource Name (ARN) of a KMS Key:
+     *        <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEntityRecognizerRequest withVolumeKmsKeyId(String volumeKmsKeyId) {
+        setVolumeKmsKeyId(volumeKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are
+     * using for your custom entity recognizer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you
+     *        are using for your custom entity recognizer. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are
+     * using for your custom entity recognizer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * </p>
+     * 
+     * @return Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you
+     *         are using for your custom entity recognizer. For more information, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are
+     * using for your custom entity recognizer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you
+     *        are using for your custom entity recognizer. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEntityRecognizerRequest withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -327,12 +629,18 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
             sb.append("RecognizerName: ").append(getRecognizerName()).append(",");
         if (getDataAccessRoleArn() != null)
             sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getInputDataConfig() != null)
             sb.append("InputDataConfig: ").append(getInputDataConfig()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getLanguageCode() != null)
-            sb.append("LanguageCode: ").append(getLanguageCode());
+            sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
+        if (getVolumeKmsKeyId() != null)
+            sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -355,6 +663,10 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getDataAccessRoleArn() != null && other.getDataAccessRoleArn().equals(this.getDataAccessRoleArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getInputDataConfig() == null ^ this.getInputDataConfig() == null)
             return false;
         if (other.getInputDataConfig() != null && other.getInputDataConfig().equals(this.getInputDataConfig()) == false)
@@ -367,6 +679,14 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getLanguageCode() != null && other.getLanguageCode().equals(this.getLanguageCode()) == false)
             return false;
+        if (other.getVolumeKmsKeyId() == null ^ this.getVolumeKmsKeyId() == null)
+            return false;
+        if (other.getVolumeKmsKeyId() != null && other.getVolumeKmsKeyId().equals(this.getVolumeKmsKeyId()) == false)
+            return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         return true;
     }
 
@@ -377,9 +697,12 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getRecognizerName() == null) ? 0 : getRecognizerName().hashCode());
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
+        hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;
     }
 

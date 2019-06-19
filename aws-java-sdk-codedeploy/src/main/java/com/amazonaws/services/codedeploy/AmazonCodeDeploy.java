@@ -215,7 +215,8 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more application revisions.
+     * Gets information about one or more application revisions. The maximum number of application revisions that can be
+     * returned is 25.
      * </p>
      * 
      * @param batchGetApplicationRevisionsRequest
@@ -241,7 +242,7 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more applications.
+     * Gets information about one or more applications. The maximum number of applications that can be returned is 25.
      * </p>
      * 
      * @param batchGetApplicationsRequest
@@ -303,8 +304,9 @@ public interface AmazonCodeDeploy {
      * </p>
      * </note>
      * <p>
-     * Returns an array of instances associated with a deployment. This method works with EC2/On-premises and AWS Lambda
-     * compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms.
+     * Returns an array of one or more instances associated with a deployment. This method works with EC2/On-premises
+     * and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute
+     * platforms. The maximum number of instances that can be returned is 25.
      * </p>
      * 
      * @param batchGetDeploymentInstancesRequest
@@ -333,8 +335,9 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Returns an array of targets associated with a deployment. This method works with all compute types and should be
-     * used instead of the deprecated <code>BatchGetDeploymentInstances</code>.
+     * Returns an array of one or more targets associated with a deployment. This method works with all compute types
+     * and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>. The maximum number of
+     * targets that can be returned is 25.
      * </p>
      * <p>
      * The type of targets returned depends on the deployment's compute platform:
@@ -365,6 +368,8 @@ public interface AmazonCodeDeploy {
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
      *         The deployment with the IAM user or AWS account does not exist.
+     * @throws DeploymentNotStartedException
+     *         The specified deployment has not started.
      * @throws DeploymentTargetIdRequiredException
      *         A deployment target ID was not provided.
      * @throws InvalidDeploymentTargetIdException
@@ -383,7 +388,7 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more deployments.
+     * Gets information about one or more deployments. The maximum number of deployments that can be returned is 25.
      * </p>
      * 
      * @param batchGetDeploymentsRequest
@@ -410,7 +415,8 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more on-premises instances.
+     * Gets information about one or more on-premises instances. The maximum number of on-premises instances that can be
+     * returned is 25.
      * </p>
      * 
      * @param batchGetOnPremisesInstancesRequest
@@ -485,6 +491,8 @@ public interface AmazonCodeDeploy {
      *         More applications were attempted to be created than are allowed.
      * @throws InvalidComputePlatformException
      *         The computePlatform is invalid. The computePlatform should be <code>Lambda</code> or <code>Server</code>.
+     * @throws InvalidTagsToAddException
+     *         The specified tags are not valid.
      * @sample AmazonCodeDeploy.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication" target="_top">AWS
      *      API Documentation</a>
@@ -709,6 +717,8 @@ public interface AmazonCodeDeploy {
      * @throws ECSServiceMappingLimitExceededException
      *         The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be
      *         associated with only one deployment group.
+     * @throws InvalidTagsToAddException
+     *         The specified tags are not valid.
      * @sample AmazonCodeDeploy.CreateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"
      *      target="_top">AWS API Documentation</a>
@@ -727,6 +737,9 @@ public interface AmazonCodeDeploy {
      *         The minimum number of required application names was not specified.
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
+     * @throws InvalidRoleException
+     *         The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the
+     *         specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.
      * @sample AmazonCodeDeploy.DeleteApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication" target="_top">AWS
      *      API Documentation</a>
@@ -993,6 +1006,8 @@ public interface AmazonCodeDeploy {
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
      *         The deployment with the IAM user or AWS account does not exist.
+     * @throws DeploymentNotStartedException
+     *         The specified deployment has not started.
      * @throws DeploymentTargetIdRequiredException
      *         A deployment target ID was not provided.
      * @throws InvalidDeploymentTargetIdException
@@ -1296,6 +1311,26 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
+     * Returns a list of tags for the resource identified by a specified ARN. Tags are used to organize and categorize
+     * your CodeDeploy resources.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ArnNotSupportedException
+     *         The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected.
+     * @throws InvalidArnException
+     *         The specified ARN is not in a valid format.
+     * @throws ResourceArnRequiredException
+     *         The ARN of a resource is required, but was not found.
+     * @sample AmazonCodeDeploy.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Sets the result of a Lambda validation function. The function validates one or both lifecycle events (
      * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
      * <code>Failed</code>.
@@ -1470,6 +1505,66 @@ public interface AmazonCodeDeploy {
      *      Documentation</a>
      */
     StopDeploymentResult stopDeployment(StopDeploymentRequest stopDeploymentRequest);
+
+    /**
+     * <p>
+     * Associates the list of tags in the input <code>Tags</code> parameter with the resource identified by the
+     * <code>ResourceArn</code> input parameter.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceArnRequiredException
+     *         The ARN of a resource is required, but was not found.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the IAM user or AWS account.
+     * @throws DeploymentGroupDoesNotExistException
+     *         The named deployment group with the IAM user or AWS account does not exist.
+     * @throws DeploymentConfigDoesNotExistException
+     *         The deployment configuration does not exist with the IAM user or AWS account.
+     * @throws TagRequiredException
+     *         A tag was not specified.
+     * @throws InvalidTagsToAddException
+     *         The specified tags are not valid.
+     * @throws ArnNotSupportedException
+     *         The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected.
+     * @throws InvalidArnException
+     *         The specified ARN is not in a valid format.
+     * @sample AmazonCodeDeploy.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Disassociates a resource from a list of tags. The resource is identified by the <code>ResourceArn</code> input
+     * parameter. The tags are identfied by the list of keys in the <code>TagKeys</code> input parameter.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceArnRequiredException
+     *         The ARN of a resource is required, but was not found.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the IAM user or AWS account.
+     * @throws DeploymentGroupDoesNotExistException
+     *         The named deployment group with the IAM user or AWS account does not exist.
+     * @throws DeploymentConfigDoesNotExistException
+     *         The deployment configuration does not exist with the IAM user or AWS account.
+     * @throws TagRequiredException
+     *         A tag was not specified.
+     * @throws InvalidTagsToAddException
+     *         The specified tags are not valid.
+     * @throws ArnNotSupportedException
+     *         The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected.
+     * @throws InvalidArnException
+     *         The specified ARN is not in a valid format.
+     * @sample AmazonCodeDeploy.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

@@ -29,6 +29,8 @@ public class ChannelSummaryMarshaller {
 
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelName").build();
+    private static final MarshallingInfo<StructuredPojo> CHANNELSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelStorage").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -53,6 +55,7 @@ public class ChannelSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(channelSummary.getChannelName(), CHANNELNAME_BINDING);
+            protocolMarshaller.marshall(channelSummary.getChannelStorage(), CHANNELSTORAGE_BINDING);
             protocolMarshaller.marshall(channelSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(channelSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(channelSummary.getLastUpdateTime(), LASTUPDATETIME_BINDING);

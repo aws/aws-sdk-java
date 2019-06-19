@@ -57,8 +57,9 @@ import com.amazonaws.services.acmpca.model.*;
  * <note>
  * <p>
  * Each ACM PCA API operation has a throttling limit which determines the number of times the operation can be called
- * per second. For more information, see <a href="acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Limits
- * in ACM PCA</a> in the ACM PCA user guide.
+ * per second. For more information, see <a
+ * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Limits in ACM
+ * PCA</a> in the ACM PCA user guide.
  * </p>
  * </note>
  */
@@ -112,9 +113,9 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
 
     /**
      * <p>
-     * Creates an audit report that lists every time that the your CA private key is used. The report is saved in the
-     * Amazon S3 bucket that you specify on input. The <a>IssueCertificate</a> and <a>RevokeCertificate</a> operations
-     * use the private key. You can generate a new report every 30 minutes.
+     * Creates an audit report that lists every time that your CA private key is used. The report is saved in the Amazon
+     * S3 bucket that you specify on input. The <a>IssueCertificate</a> and <a>RevokeCertificate</a> operations use the
+     * private key. You can generate a new report every 30 minutes.
      * </p>
      * 
      * @param createCertificateAuthorityAuditReportRequest
@@ -129,9 +130,9 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
 
     /**
      * <p>
-     * Creates an audit report that lists every time that the your CA private key is used. The report is saved in the
-     * Amazon S3 bucket that you specify on input. The <a>IssueCertificate</a> and <a>RevokeCertificate</a> operations
-     * use the private key. You can generate a new report every 30 minutes.
+     * Creates an audit report that lists every time that your CA private key is used. The report is saved in the Amazon
+     * S3 bucket that you specify on input. The <a>IssueCertificate</a> and <a>RevokeCertificate</a> operations use the
+     * private key. You can generate a new report every 30 minutes.
      * </p>
      * 
      * @param createCertificateAuthorityAuditReportRequest
@@ -151,6 +152,53 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
 
     /**
      * <p>
+     * Assigns permissions from a private CA to a designated AWS service. Services are specified by their service
+     * principals and can be given permission to create and retrieve certificates on a private CA. Services can also be
+     * given permission to list the active permissions that the private CA has granted. For ACM to automatically renew
+     * your private CA's certificates, you must assign all possible permissions from the CA to the ACM service
+     * principal.
+     * </p>
+     * <p>
+     * At this time, you can only assign permissions to ACM (<code>acm.amazonaws.com</code>). Permissions can be revoked
+     * with the <a>DeletePermission</a> operation and listed with the <a>ListPermissions</a> operation.
+     * </p>
+     * 
+     * @param createPermissionRequest
+     * @return A Java Future containing the result of the CreatePermission operation returned by the service.
+     * @sample AWSACMPCAAsync.CreatePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(CreatePermissionRequest createPermissionRequest);
+
+    /**
+     * <p>
+     * Assigns permissions from a private CA to a designated AWS service. Services are specified by their service
+     * principals and can be given permission to create and retrieve certificates on a private CA. Services can also be
+     * given permission to list the active permissions that the private CA has granted. For ACM to automatically renew
+     * your private CA's certificates, you must assign all possible permissions from the CA to the ACM service
+     * principal.
+     * </p>
+     * <p>
+     * At this time, you can only assign permissions to ACM (<code>acm.amazonaws.com</code>). Permissions can be revoked
+     * with the <a>DeletePermission</a> operation and listed with the <a>ListPermissions</a> operation.
+     * </p>
+     * 
+     * @param createPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePermission operation returned by the service.
+     * @sample AWSACMPCAAsyncHandler.CreatePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(CreatePermissionRequest createPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePermissionRequest, CreatePermissionResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a private certificate authority (CA). You must provide the ARN (Amazon Resource Name) of the private CA
      * that you want to delete. You can find the ARN by calling the <a>ListCertificateAuthorities</a> operation. Before
      * you can delete a CA, you must disable it. Call the <a>UpdateCertificateAuthority</a> operation and set the
@@ -162,12 +210,12 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * haven't yet imported the signed certificate (the <b>Status</b> is <code>PENDING_CERTIFICATE</code>) into ACM PCA.
      * </p>
      * <p>
-     * If the CA is in one of the aforementioned states and you call <a>DeleteCertificateAuthority</a>, the CA's status
-     * changes to <code>DELETED</code>. However, the CA won't be permentantly deleted until the restoration period has
-     * passed. By default, if you do not set the <code>PermanentDeletionTimeInDays</code> parameter, the CA remains
+     * If the CA is in one of the previously mentioned states and you call <a>DeleteCertificateAuthority</a>, the CA's
+     * status changes to <code>DELETED</code>. However, the CA won't be permanently deleted until the restoration period
+     * has passed. By default, if you do not set the <code>PermanentDeletionTimeInDays</code> parameter, the CA remains
      * restorable for 30 days. You can set the parameter from 7 to 30 days. The <a>DescribeCertificateAuthority</a>
      * operation returns the time remaining in the restoration window of a Private CA in the <code>DELETED</code> state.
-     * To restore an eligable CA, call the <a>RestoreCertificateAuthority</a> operation.
+     * To restore an eligible CA, call the <a>RestoreCertificateAuthority</a> operation.
      * </p>
      * 
      * @param deleteCertificateAuthorityRequest
@@ -192,12 +240,12 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * haven't yet imported the signed certificate (the <b>Status</b> is <code>PENDING_CERTIFICATE</code>) into ACM PCA.
      * </p>
      * <p>
-     * If the CA is in one of the aforementioned states and you call <a>DeleteCertificateAuthority</a>, the CA's status
-     * changes to <code>DELETED</code>. However, the CA won't be permentantly deleted until the restoration period has
-     * passed. By default, if you do not set the <code>PermanentDeletionTimeInDays</code> parameter, the CA remains
+     * If the CA is in one of the previously mentioned states and you call <a>DeleteCertificateAuthority</a>, the CA's
+     * status changes to <code>DELETED</code>. However, the CA won't be permanently deleted until the restoration period
+     * has passed. By default, if you do not set the <code>PermanentDeletionTimeInDays</code> parameter, the CA remains
      * restorable for 30 days. You can set the parameter from 7 to 30 days. The <a>DescribeCertificateAuthority</a>
      * operation returns the time remaining in the restoration window of a Private CA in the <code>DELETED</code> state.
-     * To restore an eligable CA, call the <a>RestoreCertificateAuthority</a> operation.
+     * To restore an eligible CA, call the <a>RestoreCertificateAuthority</a> operation.
      * </p>
      * 
      * @param deleteCertificateAuthorityRequest
@@ -213,6 +261,39 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
     java.util.concurrent.Future<DeleteCertificateAuthorityResult> deleteCertificateAuthorityAsync(
             DeleteCertificateAuthorityRequest deleteCertificateAuthorityRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteCertificateAuthorityRequest, DeleteCertificateAuthorityResult> asyncHandler);
+
+    /**
+     * <p>
+     * Revokes permissions that a private CA assigned to a designated AWS service. Permissions can be created with the
+     * <a>CreatePermission</a> operation and listed with the <a>ListPermissions</a> operation.
+     * </p>
+     * 
+     * @param deletePermissionRequest
+     * @return A Java Future containing the result of the DeletePermission operation returned by the service.
+     * @sample AWSACMPCAAsync.DeletePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(DeletePermissionRequest deletePermissionRequest);
+
+    /**
+     * <p>
+     * Revokes permissions that a private CA assigned to a designated AWS service. Permissions can be created with the
+     * <a>CreatePermission</a> operation and listed with the <a>ListPermissions</a> operation.
+     * </p>
+     * 
+     * @param deletePermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePermission operation returned by the service.
+     * @sample AWSACMPCAAsyncHandler.DeletePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(DeletePermissionRequest deletePermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePermissionRequest, DeletePermissionResult> asyncHandler);
 
     /**
      * <p>
@@ -645,6 +726,39 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
     java.util.concurrent.Future<ListCertificateAuthoritiesResult> listCertificateAuthoritiesAsync(
             ListCertificateAuthoritiesRequest listCertificateAuthoritiesRequest,
             com.amazonaws.handlers.AsyncHandler<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the permissions, if any, that have been assigned by a private CA. Permissions can be granted with the
+     * <a>CreatePermission</a> operation and revoked with the <a>DeletePermission</a> operation.
+     * </p>
+     * 
+     * @param listPermissionsRequest
+     * @return A Java Future containing the result of the ListPermissions operation returned by the service.
+     * @sample AWSACMPCAAsync.ListPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest listPermissionsRequest);
+
+    /**
+     * <p>
+     * Lists all the permissions, if any, that have been assigned by a private CA. Permissions can be granted with the
+     * <a>CreatePermission</a> operation and revoked with the <a>DeletePermission</a> operation.
+     * </p>
+     * 
+     * @param listPermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPermissions operation returned by the service.
+     * @sample AWSACMPCAAsyncHandler.ListPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest listPermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPermissionsRequest, ListPermissionsResult> asyncHandler);
 
     /**
      * <p>

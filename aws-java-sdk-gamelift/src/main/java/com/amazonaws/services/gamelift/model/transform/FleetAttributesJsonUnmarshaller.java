@@ -88,6 +88,10 @@ public class FleetAttributesJsonUnmarshaller implements Unmarshaller<FleetAttrib
                     context.nextToken();
                     fleetAttributes.setBuildId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ScriptId", targetDepth)) {
+                    context.nextToken();
+                    fleetAttributes.setScriptId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ServerLaunchPath", targetDepth)) {
                     context.nextToken();
                     fleetAttributes.setServerLaunchPath(context.getUnmarshaller(String.class).unmarshall(context));

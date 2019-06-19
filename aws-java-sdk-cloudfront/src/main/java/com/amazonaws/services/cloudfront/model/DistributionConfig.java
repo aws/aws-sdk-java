@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A distribution configuration.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DistributionConfig" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DistributionConfig" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -70,7 +70,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about the default root object, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a
      * Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -120,7 +120,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about custom error pages, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -147,7 +147,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about logging, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the
      * <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -165,10 +165,10 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about price classes, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
-     * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
+     * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
      * scroll down to see the table at the bottom of the page.
      * </p>
      */
@@ -179,9 +179,19 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      */
     private Boolean enabled;
-    /** <p/> */
+    /**
+     * <p>
+     * A complex type that specifies whether you want viewers to use HTTP or HTTPS to request your objects, whether
+     * you're using an alternate domain name with HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a
+     * third-party certificate authority.
+     * </p>
+     */
     private ViewerCertificate viewerCertificate;
-    /** <p/> */
+    /**
+     * <p>
+     * A complex type that identifies ways in which you want to restrict distribution of your content.
+     * </p>
+     */
     private Restrictions restrictions;
     /**
      * <p>
@@ -227,7 +237,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access
      * to other content (or restrict access but not by IP address), you can create two distributions. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
      * >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
@@ -248,7 +258,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Amazon Route 53
      * Developer Guide</i>.
      * </p>
@@ -440,7 +450,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about the default root object, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a
      * Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -466,8 +476,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information about the default root object, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a
-     *        Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+     *        a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setDefaultRootObject(String defaultRootObject) {
@@ -498,7 +508,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about the default root object, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a
      * Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -523,7 +533,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information about the default root object, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
      *         a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -555,7 +565,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about the default root object, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a
      * Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -581,8 +591,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information about the default root object, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a
-     *        Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+     *        a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -782,7 +792,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about custom error pages, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -803,7 +813,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information about custom error pages, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html"
      *        >Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -830,7 +840,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about custom error pages, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -850,7 +860,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         </ul>
      *         <p>
      *         For more information about custom error pages, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html"
      *         >Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -877,7 +887,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about custom error pages, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -898,7 +908,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information about custom error pages, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html"
      *        >Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1011,7 +1021,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about logging, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the
      * <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -1019,7 +1029,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        A complex type that controls whether access logs are written for the distribution.</p>
      *        <p>
      *        For more information about logging, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a>
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a>
      *        in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -1033,14 +1043,14 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about logging, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the
      * <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @return A complex type that controls whether access logs are written for the distribution.</p>
      *         <p>
      *         For more information about logging, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a>
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a>
      *         in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -1054,7 +1064,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about logging, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a> in the
      * <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -1062,7 +1072,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        A complex type that controls whether access logs are written for the distribution.</p>
      *        <p>
      *        For more information about logging, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a>
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access Logs</a>
      *        in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1085,10 +1095,10 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about price classes, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
-     * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
+     * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
      * scroll down to see the table at the bottom of the page.
      * </p>
      * 
@@ -1104,11 +1114,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information about price classes, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
-     *        CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
-     *        Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
+     *        CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *        For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
 
@@ -1129,10 +1139,10 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about price classes, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
-     * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
+     * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
      * scroll down to see the table at the bottom of the page.
      * </p>
      * 
@@ -1147,10 +1157,10 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information about price classes, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *         Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *         information about CloudFront pricing, including how price classes (such as Price Class 100) map to
-     *         CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     *         CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
      *         Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
@@ -1172,10 +1182,10 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about price classes, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
-     * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
+     * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
      * scroll down to see the table at the bottom of the page.
      * </p>
      * 
@@ -1191,11 +1201,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information about price classes, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
-     *        CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
-     *        Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
+     *        CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *        For price class information, scroll down to see the table at the bottom of the page.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */
@@ -1218,10 +1228,10 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about price classes, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
-     * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
+     * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
      * scroll down to see the table at the bottom of the page.
      * </p>
      * 
@@ -1237,11 +1247,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information about price classes, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
-     *        CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
-     *        Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
+     *        CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *        For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
 
@@ -1262,10 +1272,10 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about price classes, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
-     * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
+     * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
      * scroll down to see the table at the bottom of the page.
      * </p>
      * 
@@ -1281,11 +1291,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information about price classes, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
-     *        CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
-     *        Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
+     *        CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *        For price class information, scroll down to see the table at the bottom of the page.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */
@@ -1348,9 +1358,16 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A complex type that specifies whether you want viewers to use HTTP or HTTPS to request your objects, whether
+     * you're using an alternate domain name with HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a
+     * third-party certificate authority.
+     * </p>
      * 
      * @param viewerCertificate
+     *        A complex type that specifies whether you want viewers to use HTTP or HTTPS to request your objects,
+     *        whether you're using an alternate domain name with HTTPS, and if so, if you're using AWS Certificate
+     *        Manager (ACM) or a third-party certificate authority.
      */
 
     public void setViewerCertificate(ViewerCertificate viewerCertificate) {
@@ -1358,9 +1375,15 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A complex type that specifies whether you want viewers to use HTTP or HTTPS to request your objects, whether
+     * you're using an alternate domain name with HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a
+     * third-party certificate authority.
+     * </p>
      * 
-     * @return
+     * @return A complex type that specifies whether you want viewers to use HTTP or HTTPS to request your objects,
+     *         whether you're using an alternate domain name with HTTPS, and if so, if you're using AWS Certificate
+     *         Manager (ACM) or a third-party certificate authority.
      */
 
     public ViewerCertificate getViewerCertificate() {
@@ -1368,9 +1391,16 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A complex type that specifies whether you want viewers to use HTTP or HTTPS to request your objects, whether
+     * you're using an alternate domain name with HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a
+     * third-party certificate authority.
+     * </p>
      * 
      * @param viewerCertificate
+     *        A complex type that specifies whether you want viewers to use HTTP or HTTPS to request your objects,
+     *        whether you're using an alternate domain name with HTTPS, and if so, if you're using AWS Certificate
+     *        Manager (ACM) or a third-party certificate authority.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1380,9 +1410,12 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A complex type that identifies ways in which you want to restrict distribution of your content.
+     * </p>
      * 
      * @param restrictions
+     *        A complex type that identifies ways in which you want to restrict distribution of your content.
      */
 
     public void setRestrictions(Restrictions restrictions) {
@@ -1390,9 +1423,11 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A complex type that identifies ways in which you want to restrict distribution of your content.
+     * </p>
      * 
-     * @return
+     * @return A complex type that identifies ways in which you want to restrict distribution of your content.
      */
 
     public Restrictions getRestrictions() {
@@ -1400,9 +1435,12 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A complex type that identifies ways in which you want to restrict distribution of your content.
+     * </p>
      * 
      * @param restrictions
+     *        A complex type that identifies ways in which you want to restrict distribution of your content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1687,7 +1725,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access
      * to other content (or restrict access but not by IP address), you can create two distributions. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
      * >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
@@ -1708,7 +1746,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Amazon Route 53
      * Developer Guide</i>.
      * </p>
@@ -1730,7 +1768,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        can access your content, don't enable IPv6. If you want to restrict access to some content by IP address
      *        and not restrict access to other content (or restrict access but not by IP address), you can create two
      *        distributions. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
      *        >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
@@ -1751,7 +1789,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html"
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html"
      *        >Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Amazon
      *        Route 53 Developer Guide</i>.
      *        </p>
@@ -1779,7 +1817,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access
      * to other content (or restrict access but not by IP address), you can create two distributions. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
      * >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
@@ -1800,7 +1838,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Amazon Route 53
      * Developer Guide</i>.
      * </p>
@@ -1821,7 +1859,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         that can access your content, don't enable IPv6. If you want to restrict access to some content by IP
      *         address and not restrict access to other content (or restrict access but not by IP address), you can
      *         create two distributions. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
      *         >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         <p>
@@ -1841,8 +1879,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html"
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html"
      *         >Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Amazon
      *         Route 53 Developer Guide</i>.
      *         </p>
@@ -1870,7 +1908,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access
      * to other content (or restrict access but not by IP address), you can create two distributions. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
      * >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
@@ -1891,7 +1929,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Amazon Route 53
      * Developer Guide</i>.
      * </p>
@@ -1913,7 +1951,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        can access your content, don't enable IPv6. If you want to restrict access to some content by IP address
      *        and not restrict access to other content (or restrict access but not by IP address), you can create two
      *        distributions. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
      *        >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
@@ -1934,7 +1972,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html"
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html"
      *        >Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Amazon
      *        Route 53 Developer Guide</i>.
      *        </p>
@@ -1964,7 +2002,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access
      * to other content (or restrict access but not by IP address), you can create two distributions. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
      * >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
@@ -1985,7 +2023,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Amazon Route 53
      * Developer Guide</i>.
      * </p>
@@ -2006,7 +2044,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         that can access your content, don't enable IPv6. If you want to restrict access to some content by IP
      *         address and not restrict access to other content (or restrict access but not by IP address), you can
      *         create two distributions. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
      *         >Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         <p>
@@ -2026,8 +2064,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html"
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html"
      *         >Routing Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Amazon
      *         Route 53 Developer Guide</i>.
      *         </p>
@@ -2070,7 +2108,7 @@ public class DistributionConfig implements Serializable, Cloneable {
         if (getCustomErrorResponses() != null)
             sb.append("CustomErrorResponses: ").append(getCustomErrorResponses()).append(",");
         if (getComment() != null)
-            sb.append("Comment: ").append(getComment()).append(",");
+            sb.append("Comment: ").append("***Sensitive Data Redacted***").append(",");
         if (getLogging() != null)
             sb.append("Logging: ").append(getLogging()).append(",");
         if (getPriceClass() != null)

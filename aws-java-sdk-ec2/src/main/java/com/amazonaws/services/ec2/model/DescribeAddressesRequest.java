@@ -100,10 +100,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> publicIps;
     /**
      * <p>
-     * [EC2-VPC] One or more allocation IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Elastic IP addresses.
+     * [EC2-VPC] Information about the allocation IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> allocationIds;
@@ -737,15 +734,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-VPC] One or more allocation IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Elastic IP addresses.
+     * [EC2-VPC] Information about the allocation IDs.
      * </p>
      * 
-     * @return [EC2-VPC] One or more allocation IDs.</p>
-     *         <p>
-     *         Default: Describes all your Elastic IP addresses.
+     * @return [EC2-VPC] Information about the allocation IDs.
      */
 
     public java.util.List<String> getAllocationIds() {
@@ -757,16 +749,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-VPC] One or more allocation IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Elastic IP addresses.
+     * [EC2-VPC] Information about the allocation IDs.
      * </p>
      * 
      * @param allocationIds
-     *        [EC2-VPC] One or more allocation IDs.</p>
-     *        <p>
-     *        Default: Describes all your Elastic IP addresses.
+     *        [EC2-VPC] Information about the allocation IDs.
      */
 
     public void setAllocationIds(java.util.Collection<String> allocationIds) {
@@ -780,10 +767,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-VPC] One or more allocation IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Elastic IP addresses.
+     * [EC2-VPC] Information about the allocation IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -792,9 +776,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param allocationIds
-     *        [EC2-VPC] One or more allocation IDs.</p>
-     *        <p>
-     *        Default: Describes all your Elastic IP addresses.
+     *        [EC2-VPC] Information about the allocation IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -810,16 +792,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-VPC] One or more allocation IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Elastic IP addresses.
+     * [EC2-VPC] Information about the allocation IDs.
      * </p>
      * 
      * @param allocationIds
-     *        [EC2-VPC] One or more allocation IDs.</p>
-     *        <p>
-     *        Default: Describes all your Elastic IP addresses.
+     *        [EC2-VPC] Information about the allocation IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,7 +25,7 @@ public class DescribeInstanceStatusResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more instance status descriptions.
+     * Information about the status of the instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceStatus> instanceStatuses;
@@ -39,10 +39,10 @@ public class DescribeInstanceStatusResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more instance status descriptions.
+     * Information about the status of the instances.
      * </p>
      * 
-     * @return One or more instance status descriptions.
+     * @return Information about the status of the instances.
      */
 
     public java.util.List<InstanceStatus> getInstanceStatuses() {
@@ -54,11 +54,11 @@ public class DescribeInstanceStatusResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more instance status descriptions.
+     * Information about the status of the instances.
      * </p>
      * 
      * @param instanceStatuses
-     *        One or more instance status descriptions.
+     *        Information about the status of the instances.
      */
 
     public void setInstanceStatuses(java.util.Collection<InstanceStatus> instanceStatuses) {
@@ -72,7 +72,7 @@ public class DescribeInstanceStatusResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more instance status descriptions.
+     * Information about the status of the instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeInstanceStatusResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param instanceStatuses
-     *        One or more instance status descriptions.
+     *        Information about the status of the instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeInstanceStatusResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more instance status descriptions.
+     * Information about the status of the instances.
      * </p>
      * 
      * @param instanceStatuses
-     *        One or more instance status descriptions.
+     *        Information about the status of the instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

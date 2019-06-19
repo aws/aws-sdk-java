@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum UpdateType {
 
-    VersionUpdate("VersionUpdate");
+    VersionUpdate("VersionUpdate"),
+    EndpointAccessUpdate("EndpointAccessUpdate"),
+    LoggingUpdate("LoggingUpdate");
 
     private String value;
 

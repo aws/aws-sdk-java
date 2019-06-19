@@ -19,14 +19,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain
- * access to reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the
- * ability to perform predictive inbox placement tests.
+ * Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the Deliverability
+ * dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send
+ * email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.
  * </p>
  * <p>
- * When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other fees
- * that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of a
- * calendar month, we prorate the monthly charge based on how many days have elapsed in the current calendar month.
+ * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that
+ * you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard
+ * subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption"
@@ -37,21 +37,28 @@ public class PutDeliverabilityDashboardOptionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Indicates whether the Deliverability dashboard is enabled. If the value is <code>true</code>, then the dashboard
-     * is enabled.
+     * Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the
+     * dashboard, set this value to <code>true</code>.
      * </p>
      */
     private Boolean dashboardEnabled;
+    /**
+     * <p>
+     * An array of objects, one for each verified domain that you use to send email and enabled the Deliverability
+     * dashboard for.
+     * </p>
+     */
+    private java.util.List<DomainDeliverabilityTrackingOption> subscribedDomains;
 
     /**
      * <p>
-     * Indicates whether the Deliverability dashboard is enabled. If the value is <code>true</code>, then the dashboard
-     * is enabled.
+     * Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the
+     * dashboard, set this value to <code>true</code>.
      * </p>
      * 
      * @param dashboardEnabled
-     *        Indicates whether the Deliverability dashboard is enabled. If the value is <code>true</code>, then the
-     *        dashboard is enabled.
+     *        Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the
+     *        dashboard, set this value to <code>true</code>.
      */
 
     public void setDashboardEnabled(Boolean dashboardEnabled) {
@@ -60,12 +67,12 @@ public class PutDeliverabilityDashboardOptionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Indicates whether the Deliverability dashboard is enabled. If the value is <code>true</code>, then the dashboard
-     * is enabled.
+     * Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the
+     * dashboard, set this value to <code>true</code>.
      * </p>
      * 
-     * @return Indicates whether the Deliverability dashboard is enabled. If the value is <code>true</code>, then the
-     *         dashboard is enabled.
+     * @return Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the
+     *         dashboard, set this value to <code>true</code>.
      */
 
     public Boolean getDashboardEnabled() {
@@ -74,13 +81,13 @@ public class PutDeliverabilityDashboardOptionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Indicates whether the Deliverability dashboard is enabled. If the value is <code>true</code>, then the dashboard
-     * is enabled.
+     * Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the
+     * dashboard, set this value to <code>true</code>.
      * </p>
      * 
      * @param dashboardEnabled
-     *        Indicates whether the Deliverability dashboard is enabled. If the value is <code>true</code>, then the
-     *        dashboard is enabled.
+     *        Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the
+     *        dashboard, set this value to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,16 +98,94 @@ public class PutDeliverabilityDashboardOptionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Indicates whether the Deliverability dashboard is enabled. If the value is <code>true</code>, then the dashboard
-     * is enabled.
+     * Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the
+     * dashboard, set this value to <code>true</code>.
      * </p>
      * 
-     * @return Indicates whether the Deliverability dashboard is enabled. If the value is <code>true</code>, then the
-     *         dashboard is enabled.
+     * @return Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the
+     *         dashboard, set this value to <code>true</code>.
      */
 
     public Boolean isDashboardEnabled() {
         return this.dashboardEnabled;
+    }
+
+    /**
+     * <p>
+     * An array of objects, one for each verified domain that you use to send email and enabled the Deliverability
+     * dashboard for.
+     * </p>
+     * 
+     * @return An array of objects, one for each verified domain that you use to send email and enabled the
+     *         Deliverability dashboard for.
+     */
+
+    public java.util.List<DomainDeliverabilityTrackingOption> getSubscribedDomains() {
+        return subscribedDomains;
+    }
+
+    /**
+     * <p>
+     * An array of objects, one for each verified domain that you use to send email and enabled the Deliverability
+     * dashboard for.
+     * </p>
+     * 
+     * @param subscribedDomains
+     *        An array of objects, one for each verified domain that you use to send email and enabled the
+     *        Deliverability dashboard for.
+     */
+
+    public void setSubscribedDomains(java.util.Collection<DomainDeliverabilityTrackingOption> subscribedDomains) {
+        if (subscribedDomains == null) {
+            this.subscribedDomains = null;
+            return;
+        }
+
+        this.subscribedDomains = new java.util.ArrayList<DomainDeliverabilityTrackingOption>(subscribedDomains);
+    }
+
+    /**
+     * <p>
+     * An array of objects, one for each verified domain that you use to send email and enabled the Deliverability
+     * dashboard for.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubscribedDomains(java.util.Collection)} or {@link #withSubscribedDomains(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param subscribedDomains
+     *        An array of objects, one for each verified domain that you use to send email and enabled the
+     *        Deliverability dashboard for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutDeliverabilityDashboardOptionRequest withSubscribedDomains(DomainDeliverabilityTrackingOption... subscribedDomains) {
+        if (this.subscribedDomains == null) {
+            setSubscribedDomains(new java.util.ArrayList<DomainDeliverabilityTrackingOption>(subscribedDomains.length));
+        }
+        for (DomainDeliverabilityTrackingOption ele : subscribedDomains) {
+            this.subscribedDomains.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects, one for each verified domain that you use to send email and enabled the Deliverability
+     * dashboard for.
+     * </p>
+     * 
+     * @param subscribedDomains
+     *        An array of objects, one for each verified domain that you use to send email and enabled the
+     *        Deliverability dashboard for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutDeliverabilityDashboardOptionRequest withSubscribedDomains(java.util.Collection<DomainDeliverabilityTrackingOption> subscribedDomains) {
+        setSubscribedDomains(subscribedDomains);
+        return this;
     }
 
     /**
@@ -116,7 +201,9 @@ public class PutDeliverabilityDashboardOptionRequest extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDashboardEnabled() != null)
-            sb.append("DashboardEnabled: ").append(getDashboardEnabled());
+            sb.append("DashboardEnabled: ").append(getDashboardEnabled()).append(",");
+        if (getSubscribedDomains() != null)
+            sb.append("SubscribedDomains: ").append(getSubscribedDomains());
         sb.append("}");
         return sb.toString();
     }
@@ -135,6 +222,10 @@ public class PutDeliverabilityDashboardOptionRequest extends com.amazonaws.Amazo
             return false;
         if (other.getDashboardEnabled() != null && other.getDashboardEnabled().equals(this.getDashboardEnabled()) == false)
             return false;
+        if (other.getSubscribedDomains() == null ^ this.getSubscribedDomains() == null)
+            return false;
+        if (other.getSubscribedDomains() != null && other.getSubscribedDomains().equals(this.getSubscribedDomains()) == false)
+            return false;
         return true;
     }
 
@@ -144,6 +235,7 @@ public class PutDeliverabilityDashboardOptionRequest extends com.amazonaws.Amazo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDashboardEnabled() == null) ? 0 : getDashboardEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSubscribedDomains() == null) ? 0 : getSubscribedDomains().hashCode());
         return hashCode;
     }
 

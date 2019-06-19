@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for M2tsCcDescriptor
+ * M2ts Cc Descriptor
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M2tsCcDescriptor {

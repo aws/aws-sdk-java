@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * This property corresponds to the <i>AWS CloudFormation <a
- * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i> Data
- * Type.
+ * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i>
+ * Data Type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/RollbackTrigger" target="_top">AWS API
@@ -33,7 +33,7 @@ public class RollbackTrigger implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i>
      * Data Type.
      * </p>
      */
@@ -41,7 +41,7 @@ public class RollbackTrigger implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i>
      * Data Type.
      * </p>
      */
@@ -50,14 +50,14 @@ public class RollbackTrigger implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i>
      * Data Type.
      * </p>
      * 
      * @param arn
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger"
-     *        >RollbackTrigger</a></i> Data Type.
+     *        >RollbackTrigger</a> </i> Data Type.
      */
 
     public void setArn(String arn) {
@@ -67,13 +67,13 @@ public class RollbackTrigger implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i>
      * Data Type.
      * </p>
      * 
      * @return This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
      *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger"
-     *         >RollbackTrigger</a></i> Data Type.
+     *         >RollbackTrigger</a> </i> Data Type.
      */
 
     public String getArn() {
@@ -83,14 +83,14 @@ public class RollbackTrigger implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i>
      * Data Type.
      * </p>
      * 
      * @param arn
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger"
-     *        >RollbackTrigger</a></i> Data Type.
+     *        >RollbackTrigger</a> </i> Data Type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,14 +102,14 @@ public class RollbackTrigger implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i>
      * Data Type.
      * </p>
      * 
      * @param type
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger"
-     *        >RollbackTrigger</a></i> Data Type.
+     *        >RollbackTrigger</a> </i> Data Type.
      */
 
     public void setType(String type) {
@@ -119,13 +119,13 @@ public class RollbackTrigger implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i>
      * Data Type.
      * </p>
      * 
      * @return This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
      *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger"
-     *         >RollbackTrigger</a></i> Data Type.
+     *         >RollbackTrigger</a> </i> Data Type.
      */
 
     public String getType() {
@@ -135,14 +135,14 @@ public class RollbackTrigger implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i>
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i>
      * Data Type.
      * </p>
      * 
      * @param type
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
      *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger"
-     *        >RollbackTrigger</a></i> Data Type.
+     *        >RollbackTrigger</a> </i> Data Type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -444,6 +444,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScalingPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -508,6 +509,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScheduledAction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -580,6 +582,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterScalableTarget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -650,6 +653,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalableTargets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -723,6 +727,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingActivities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -800,6 +805,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingPolicies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -871,6 +877,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScheduledActions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -973,6 +980,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutScalingPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1060,6 +1068,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutScheduledAction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1133,6 +1142,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterScalableTarget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

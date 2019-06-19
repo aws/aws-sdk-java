@@ -44,7 +44,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String comment;
     /**
      * <p>
-     * The name of the document that was executed. For example, AWS-RunShellScript.
+     * The name of the document that was run. For example, AWS-RunShellScript.
      * </p>
      */
     private String documentName;
@@ -63,21 +63,21 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The error level response code for the plugin script. If the response code is -1, then the command has not started
-     * executing on the instance, or it was not received by the instance.
+     * running on the instance, or it was not received by the instance.
      * </p>
      */
     private Integer responseCode;
     /**
      * <p>
-     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, June
-     * 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
+     * The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7,
+     * 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
      * filter.
      * </p>
      * <p>
      * <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
      * </p>
      * <p>
-     * If the plugin has not started to execute, the string is empty.
+     * If the plugin has not started to run, the string is empty.
      * </p>
      */
     private String executionStartDateTime;
@@ -89,7 +89,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String executionElapsedTime;
     /**
      * <p>
-     * The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example,
+     * The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For example,
      * June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedAfter</code>
      * filter.
      * </p>
@@ -97,7 +97,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
      * </p>
      * <p>
-     * If the plugin has not started to execute, the string is empty.
+     * If the plugin has not started to run, the string is empty.
      * </p>
      */
     private String executionEndDateTime;
@@ -135,7 +135,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Success: The command or plugin was executed successfully. This is a terminal state.
+     * Success: The command or plugin was run successfully. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -147,16 +147,16 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out: The command started to execute on the instance, but the execution was not complete before
-     * the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
-     * terminal state.
+     * Execution Timed Out: The command started to run on the instance, but the execution was not complete before the
+     * timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a terminal
+     * state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The command wasn't executed successfully on the instance. For a plugin, this indicates that the result
-     * code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not
-     * zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
+     * Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result code
+     * was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -182,7 +182,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String statusDetails;
     /**
      * <p>
-     * The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if
+     * The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
      * ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      * </p>
      */
@@ -196,15 +196,15 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String standardOutputUrl;
     /**
      * <p>
-     * The first 8,000 characters written by the plugin to stderr. If the command has not finished executing, then this
+     * The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then this
      * string is empty.
      * </p>
      */
     private String standardErrorContent;
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stderr. If the command has not finished executing, then
-     * this string is empty.
+     * The URL for the complete text written by the plugin to stderr. If the command has not finished running, then this
+     * string is empty.
      * </p>
      */
     private String standardErrorUrl;
@@ -343,11 +343,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the document that was executed. For example, AWS-RunShellScript.
+     * The name of the document that was run. For example, AWS-RunShellScript.
      * </p>
      * 
      * @param documentName
-     *        The name of the document that was executed. For example, AWS-RunShellScript.
+     *        The name of the document that was run. For example, AWS-RunShellScript.
      */
 
     public void setDocumentName(String documentName) {
@@ -356,10 +356,10 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the document that was executed. For example, AWS-RunShellScript.
+     * The name of the document that was run. For example, AWS-RunShellScript.
      * </p>
      * 
-     * @return The name of the document that was executed. For example, AWS-RunShellScript.
+     * @return The name of the document that was run. For example, AWS-RunShellScript.
      */
 
     public String getDocumentName() {
@@ -368,11 +368,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the document that was executed. For example, AWS-RunShellScript.
+     * The name of the document that was run. For example, AWS-RunShellScript.
      * </p>
      * 
      * @param documentName
-     *        The name of the document that was executed. For example, AWS-RunShellScript.
+     *        The name of the document that was run. For example, AWS-RunShellScript.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -464,12 +464,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The error level response code for the plugin script. If the response code is -1, then the command has not started
-     * executing on the instance, or it was not received by the instance.
+     * running on the instance, or it was not received by the instance.
      * </p>
      * 
      * @param responseCode
      *        The error level response code for the plugin script. If the response code is -1, then the command has not
-     *        started executing on the instance, or it was not received by the instance.
+     *        started running on the instance, or it was not received by the instance.
      */
 
     public void setResponseCode(Integer responseCode) {
@@ -479,11 +479,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The error level response code for the plugin script. If the response code is -1, then the command has not started
-     * executing on the instance, or it was not received by the instance.
+     * running on the instance, or it was not received by the instance.
      * </p>
      * 
      * @return The error level response code for the plugin script. If the response code is -1, then the command has not
-     *         started executing on the instance, or it was not received by the instance.
+     *         started running on the instance, or it was not received by the instance.
      */
 
     public Integer getResponseCode() {
@@ -493,12 +493,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The error level response code for the plugin script. If the response code is -1, then the command has not started
-     * executing on the instance, or it was not received by the instance.
+     * running on the instance, or it was not received by the instance.
      * </p>
      * 
      * @param responseCode
      *        The error level response code for the plugin script. If the response code is -1, then the command has not
-     *        started executing on the instance, or it was not received by the instance.
+     *        started running on the instance, or it was not received by the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,26 +509,26 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, June
-     * 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
+     * The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7,
+     * 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
      * filter.
      * </p>
      * <p>
      * <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
      * </p>
      * <p>
-     * If the plugin has not started to execute, the string is empty.
+     * If the plugin has not started to run, the string is empty.
      * </p>
      * 
      * @param executionStartDateTime
-     *        The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example,
+     *        The date and time the plugin started running. Date and time are written in ISO 8601 format. For example,
      *        June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
      *        <code>InvokedBefore</code> filter.</p>
      *        <p>
      *        <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
      *        </p>
      *        <p>
-     *        If the plugin has not started to execute, the string is empty.
+     *        If the plugin has not started to run, the string is empty.
      */
 
     public void setExecutionStartDateTime(String executionStartDateTime) {
@@ -537,25 +537,25 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, June
-     * 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
+     * The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7,
+     * 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
      * filter.
      * </p>
      * <p>
      * <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
      * </p>
      * <p>
-     * If the plugin has not started to execute, the string is empty.
+     * If the plugin has not started to run, the string is empty.
      * </p>
      * 
-     * @return The date and time the plugin started executing. Date and time are written in ISO 8601 format. For
-     *         example, June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     * @return The date and time the plugin started running. Date and time are written in ISO 8601 format. For example,
+     *         June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
      *         <code>InvokedBefore</code> filter.</p>
      *         <p>
      *         <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
      *         </p>
      *         <p>
-     *         If the plugin has not started to execute, the string is empty.
+     *         If the plugin has not started to run, the string is empty.
      */
 
     public String getExecutionStartDateTime() {
@@ -564,26 +564,26 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, June
-     * 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
+     * The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7,
+     * 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
      * filter.
      * </p>
      * <p>
      * <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
      * </p>
      * <p>
-     * If the plugin has not started to execute, the string is empty.
+     * If the plugin has not started to run, the string is empty.
      * </p>
      * 
      * @param executionStartDateTime
-     *        The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example,
+     *        The date and time the plugin started running. Date and time are written in ISO 8601 format. For example,
      *        June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
      *        <code>InvokedBefore</code> filter.</p>
      *        <p>
      *        <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
      *        </p>
      *        <p>
-     *        If the plugin has not started to execute, the string is empty.
+     *        If the plugin has not started to run, the string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -634,7 +634,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example,
+     * The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For example,
      * June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedAfter</code>
      * filter.
      * </p>
@@ -642,18 +642,18 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
      * </p>
      * <p>
-     * If the plugin has not started to execute, the string is empty.
+     * If the plugin has not started to run, the string is empty.
      * </p>
      * 
      * @param executionEndDateTime
-     *        The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For
+     *        The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For
      *        example, June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
      *        <code>InvokedAfter</code> filter.</p>
      *        <p>
      *        <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
      *        </p>
      *        <p>
-     *        If the plugin has not started to execute, the string is empty.
+     *        If the plugin has not started to run, the string is empty.
      */
 
     public void setExecutionEndDateTime(String executionEndDateTime) {
@@ -662,7 +662,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example,
+     * The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For example,
      * June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedAfter</code>
      * filter.
      * </p>
@@ -670,17 +670,17 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
      * </p>
      * <p>
-     * If the plugin has not started to execute, the string is empty.
+     * If the plugin has not started to run, the string is empty.
      * </p>
      * 
-     * @return The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For
+     * @return The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For
      *         example, June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
      *         <code>InvokedAfter</code> filter.</p>
      *         <p>
      *         <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
      *         </p>
      *         <p>
-     *         If the plugin has not started to execute, the string is empty.
+     *         If the plugin has not started to run, the string is empty.
      */
 
     public String getExecutionEndDateTime() {
@@ -689,7 +689,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example,
+     * The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For example,
      * June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedAfter</code>
      * filter.
      * </p>
@@ -697,18 +697,18 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
      * </p>
      * <p>
-     * If the plugin has not started to execute, the string is empty.
+     * If the plugin has not started to run, the string is empty.
      * </p>
      * 
      * @param executionEndDateTime
-     *        The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For
+     *        The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For
      *        example, June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
      *        <code>InvokedAfter</code> filter.</p>
      *        <p>
      *        <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
      *        </p>
      *        <p>
-     *        If the plugin has not started to execute, the string is empty.
+     *        If the plugin has not started to run, the string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -818,7 +818,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Success: The command or plugin was executed successfully. This is a terminal state.
+     * Success: The command or plugin was run successfully. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -830,16 +830,16 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out: The command started to execute on the instance, but the execution was not complete before
-     * the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
-     * terminal state.
+     * Execution Timed Out: The command started to run on the instance, but the execution was not complete before the
+     * timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a terminal
+     * state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The command wasn't executed successfully on the instance. For a plugin, this indicates that the result
-     * code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not
-     * zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
+     * Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result code
+     * was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -889,7 +889,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        Success: The command or plugin was executed successfully. This is a terminal state.
+     *        Success: The command or plugin was run successfully. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
@@ -901,17 +901,17 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        Execution Timed Out: The command started to execute on the instance, but the execution was not complete
-     *        before the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command.
-     *        This is a terminal state.
+     *        Execution Timed Out: The command started to run on the instance, but the execution was not complete before
+     *        the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
+     *        terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The command wasn't executed successfully on the instance. For a plugin, this indicates that the
-     *        result code was not zero. For a command invocation, this indicates that the result code for one or more
-     *        plugins was not zero. Invocation failures count against the MaxErrors limit of the parent command. This is
-     *        a terminal state.
+     *        Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result
+     *        code was not zero. For a command invocation, this indicates that the result code for one or more plugins
+     *        was not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a
+     *        terminal state.
      *        </p>
      *        </li>
      *        <li>
@@ -966,7 +966,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Success: The command or plugin was executed successfully. This is a terminal state.
+     * Success: The command or plugin was run successfully. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -978,16 +978,16 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out: The command started to execute on the instance, but the execution was not complete before
-     * the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
-     * terminal state.
+     * Execution Timed Out: The command started to run on the instance, but the execution was not complete before the
+     * timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a terminal
+     * state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The command wasn't executed successfully on the instance. For a plugin, this indicates that the result
-     * code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not
-     * zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
+     * Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result code
+     * was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -1036,7 +1036,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         Success: The command or plugin was executed successfully. This is a terminal state.
+     *         Success: The command or plugin was run successfully. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
@@ -1048,17 +1048,17 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         Execution Timed Out: The command started to execute on the instance, but the execution was not complete
+     *         Execution Timed Out: The command started to run on the instance, but the execution was not complete
      *         before the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command.
      *         This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Failed: The command wasn't executed successfully on the instance. For a plugin, this indicates that the
-     *         result code was not zero. For a command invocation, this indicates that the result code for one or more
-     *         plugins was not zero. Invocation failures count against the MaxErrors limit of the parent command. This
-     *         is a terminal state.
+     *         Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result
+     *         code was not zero. For a command invocation, this indicates that the result code for one or more plugins
+     *         was not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a
+     *         terminal state.
      *         </p>
      *         </li>
      *         <li>
@@ -1113,7 +1113,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Success: The command or plugin was executed successfully. This is a terminal state.
+     * Success: The command or plugin was run successfully. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -1125,16 +1125,16 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out: The command started to execute on the instance, but the execution was not complete before
-     * the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
-     * terminal state.
+     * Execution Timed Out: The command started to run on the instance, but the execution was not complete before the
+     * timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a terminal
+     * state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The command wasn't executed successfully on the instance. For a plugin, this indicates that the result
-     * code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not
-     * zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
+     * Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result code
+     * was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -1184,7 +1184,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        Success: The command or plugin was executed successfully. This is a terminal state.
+     *        Success: The command or plugin was run successfully. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
@@ -1196,17 +1196,17 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        Execution Timed Out: The command started to execute on the instance, but the execution was not complete
-     *        before the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command.
-     *        This is a terminal state.
+     *        Execution Timed Out: The command started to run on the instance, but the execution was not complete before
+     *        the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
+     *        terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The command wasn't executed successfully on the instance. For a plugin, this indicates that the
-     *        result code was not zero. For a command invocation, this indicates that the result code for one or more
-     *        plugins was not zero. Invocation failures count against the MaxErrors limit of the parent command. This is
-     *        a terminal state.
+     *        Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result
+     *        code was not zero. For a command invocation, this indicates that the result code for one or more plugins
+     *        was not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a
+     *        terminal state.
      *        </p>
      *        </li>
      *        <li>
@@ -1237,12 +1237,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if
+     * The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
      * ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      * </p>
      * 
      * @param standardOutputContent
-     *        The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if
+     *        The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
      *        ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      */
 
@@ -1252,12 +1252,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if
+     * The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
      * ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      * </p>
      * 
-     * @return The first 24,000 characters written by the plugin to stdout. If the command has not finished executing,
-     *         if ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
+     * @return The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
+     *         ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      */
 
     public String getStandardOutputContent() {
@@ -1266,12 +1266,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if
+     * The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
      * ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      * </p>
      * 
      * @param standardOutputContent
-     *        The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if
+     *        The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
      *        ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1329,13 +1329,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The first 8,000 characters written by the plugin to stderr. If the command has not finished executing, then this
+     * The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then this
      * string is empty.
      * </p>
      * 
      * @param standardErrorContent
-     *        The first 8,000 characters written by the plugin to stderr. If the command has not finished executing,
-     *        then this string is empty.
+     *        The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then
+     *        this string is empty.
      */
 
     public void setStandardErrorContent(String standardErrorContent) {
@@ -1344,12 +1344,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The first 8,000 characters written by the plugin to stderr. If the command has not finished executing, then this
+     * The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then this
      * string is empty.
      * </p>
      * 
-     * @return The first 8,000 characters written by the plugin to stderr. If the command has not finished executing,
-     *         then this string is empty.
+     * @return The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then
+     *         this string is empty.
      */
 
     public String getStandardErrorContent() {
@@ -1358,13 +1358,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The first 8,000 characters written by the plugin to stderr. If the command has not finished executing, then this
+     * The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then this
      * string is empty.
      * </p>
      * 
      * @param standardErrorContent
-     *        The first 8,000 characters written by the plugin to stderr. If the command has not finished executing,
-     *        then this string is empty.
+     *        The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then
+     *        this string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1375,12 +1375,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stderr. If the command has not finished executing, then
-     * this string is empty.
+     * The URL for the complete text written by the plugin to stderr. If the command has not finished running, then this
+     * string is empty.
      * </p>
      * 
      * @param standardErrorUrl
-     *        The URL for the complete text written by the plugin to stderr. If the command has not finished executing,
+     *        The URL for the complete text written by the plugin to stderr. If the command has not finished running,
      *        then this string is empty.
      */
 
@@ -1390,11 +1390,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stderr. If the command has not finished executing, then
-     * this string is empty.
+     * The URL for the complete text written by the plugin to stderr. If the command has not finished running, then this
+     * string is empty.
      * </p>
      * 
-     * @return The URL for the complete text written by the plugin to stderr. If the command has not finished executing,
+     * @return The URL for the complete text written by the plugin to stderr. If the command has not finished running,
      *         then this string is empty.
      */
 
@@ -1404,12 +1404,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stderr. If the command has not finished executing, then
-     * this string is empty.
+     * The URL for the complete text written by the plugin to stderr. If the command has not finished running, then this
+     * string is empty.
      * </p>
      * 
      * @param standardErrorUrl
-     *        The URL for the complete text written by the plugin to stderr. If the command has not finished executing,
+     *        The URL for the complete text written by the plugin to stderr. If the command has not finished running,
      *        then this string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

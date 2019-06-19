@@ -28,7 +28,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -47,19 +47,19 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
-     * </p>
-     * <p>
-     * Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     * "prodrole".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      */
     private String roleName;
     /**
      * <p>
      * The trust relationship policy document that grants an entity permission to assume the role.
+     * </p>
+     * <p>
+     * in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -82,6 +82,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     * </p>
      */
     private String assumeRolePolicyDocument;
     /**
@@ -103,7 +106,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      */
@@ -118,8 +121,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -133,7 +136,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -148,7 +151,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param path
      *        The path to the role. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -167,7 +170,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -181,7 +184,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @return The path to the role. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>IAM User Guide</i>.</p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -200,7 +203,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -215,7 +218,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param path
      *        The path to the role. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -238,25 +241,15 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
-     * </p>
-     * <p>
-     * Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     * "prodrole".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param roleName
      *        The name of the role to create.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-
-     *        </p>
-     *        <p>
-     *        Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     *        "prodrole".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public void setRoleName(String roleName) {
@@ -268,24 +261,14 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
-     * </p>
-     * <p>
-     * Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     * "prodrole".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @return The name of the role to create.</p>
      *         <p>
-     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *         include any of the following characters: _+=,.@-
-     *         </p>
-     *         <p>
-     *         Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     *         "prodrole".
+     *         IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *         case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public String getRoleName() {
@@ -297,25 +280,15 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
-     * </p>
-     * <p>
-     * Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     * "prodrole".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param roleName
      *        The name of the role to create.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-
-     *        </p>
-     *        <p>
-     *        Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     *        "prodrole".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,6 +300,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The trust relationship policy document that grants an entity permission to assume the role.
+     * </p>
+     * <p>
+     * in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -349,9 +327,17 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     * </p>
      * 
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
+     *        <p>
+     *        in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
+     *        CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
+     *        CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:
@@ -373,6 +359,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The special characters tab ( ), line feed ( ), and carriage return ( )
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Upon success, the response includes the same trust policy as a URL-encoded JSON string.
      */
 
     public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
@@ -382,6 +371,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The trust relationship policy document that grants an entity permission to assume the role.
+     * </p>
+     * <p>
+     * in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -404,8 +398,16 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     * </p>
      * 
      * @return The trust relationship policy document that grants an entity permission to assume the role.</p>
+     *         <p>
+     *         in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
+     *         CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
+     *         CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.
+     *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *         string of characters consisting of the following:
@@ -427,6 +429,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         The special characters tab ( ), line feed ( ), and carriage return ( )
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Upon success, the response includes the same trust policy as a URL-encoded JSON string.
      */
 
     public String getAssumeRolePolicyDocument() {
@@ -436,6 +441,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The trust relationship policy document that grants an entity permission to assume the role.
+     * </p>
+     * <p>
+     * in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -458,9 +468,17 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     * </p>
      * 
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
+     *        <p>
+     *        in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
+     *        CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
+     *        CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:
@@ -482,6 +500,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The special characters tab ( ), line feed ( ), and carriage return ( )
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Upon success, the response includes the same trust policy as a URL-encoded JSON string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -543,7 +564,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -559,8 +580,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
      *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
      *        operations but does not apply when you use those operations to create a console URL. For more information,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in the
-     *        <i>IAM User Guide</i>.
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in
+     *        the <i>IAM User Guide</i>.
      */
 
     public void setMaxSessionDuration(Integer maxSessionDuration) {
@@ -580,7 +601,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -595,7 +616,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default.
      *         This applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code>
      *         CLI operations but does not apply when you use those operations to create a console URL. For more
-     *         information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+     *         information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
      *         Roles</a> in the <i>IAM User Guide</i>.
      */
 
@@ -616,7 +637,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -632,8 +653,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
      *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
      *        operations but does not apply when you use those operations to create a console URL. For more information,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in the
-     *        <i>IAM User Guide</i>.
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in
+     *        the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -686,8 +707,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -698,7 +719,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @return A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      *         associated value. For more information about tagging, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
      *         <i>IAM User Guide</i>.</p> <note>
      *         <p>
      *         If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
@@ -717,8 +738,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -730,7 +751,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param tags
      *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      *        associated value. For more information about tagging, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
      *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
@@ -751,8 +772,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -769,7 +790,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param tags
      *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      *        associated value. For more information about tagging, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
      *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
@@ -792,8 +813,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -805,7 +826,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param tags
      *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
      *        associated value. For more information about tagging, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
      *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire

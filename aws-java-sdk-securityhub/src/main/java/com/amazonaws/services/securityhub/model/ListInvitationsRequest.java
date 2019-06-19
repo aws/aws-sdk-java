@@ -27,26 +27,26 @@ public class ListInvitationsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Indicates the maximum number of items that you want in the response.
+     * The maximum number of items that you want in the response.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Paginates results. Set the value of this parameter to NULL on your first call to the ListInvitations operation.
-     * For subsequent calls to the operation, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.
+     * Paginates results. On your first call to the <code>ListInvitations</code> operation, set the value of this
+     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request
+     * with the value of <code>NextToken</code> from the previous response to continue listing data.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Indicates the maximum number of items that you want in the response.
+     * The maximum number of items that you want in the response.
      * </p>
      * 
      * @param maxResults
-     *        Indicates the maximum number of items that you want in the response.
+     *        The maximum number of items that you want in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -55,10 +55,10 @@ public class ListInvitationsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Indicates the maximum number of items that you want in the response.
+     * The maximum number of items that you want in the response.
      * </p>
      * 
-     * @return Indicates the maximum number of items that you want in the response.
+     * @return The maximum number of items that you want in the response.
      */
 
     public Integer getMaxResults() {
@@ -67,11 +67,11 @@ public class ListInvitationsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Indicates the maximum number of items that you want in the response.
+     * The maximum number of items that you want in the response.
      * </p>
      * 
      * @param maxResults
-     *        Indicates the maximum number of items that you want in the response.
+     *        The maximum number of items that you want in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,15 +82,15 @@ public class ListInvitationsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Paginates results. Set the value of this parameter to NULL on your first call to the ListInvitations operation.
-     * For subsequent calls to the operation, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.
+     * Paginates results. On your first call to the <code>ListInvitations</code> operation, set the value of this
+     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request
+     * with the value of <code>NextToken</code> from the previous response to continue listing data.
      * </p>
      * 
      * @param nextToken
-     *        Paginates results. Set the value of this parameter to NULL on your first call to the ListInvitations
-     *        operation. For subsequent calls to the operation, fill nextToken in the request with the value of
-     *        NextToken from the previous response to continue listing data.
+     *        Paginates results. On your first call to the <code>ListInvitations</code> operation, set the value of this
+     *        parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the
+     *        request with the value of <code>NextToken</code> from the previous response to continue listing data.
      */
 
     public void setNextToken(String nextToken) {
@@ -99,14 +99,15 @@ public class ListInvitationsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Paginates results. Set the value of this parameter to NULL on your first call to the ListInvitations operation.
-     * For subsequent calls to the operation, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.
+     * Paginates results. On your first call to the <code>ListInvitations</code> operation, set the value of this
+     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request
+     * with the value of <code>NextToken</code> from the previous response to continue listing data.
      * </p>
      * 
-     * @return Paginates results. Set the value of this parameter to NULL on your first call to the ListInvitations
-     *         operation. For subsequent calls to the operation, fill nextToken in the request with the value of
-     *         NextToken from the previous response to continue listing data.
+     * @return Paginates results. On your first call to the <code>ListInvitations</code> operation, set the value of
+     *         this parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code>
+     *         in the request with the value of <code>NextToken</code> from the previous response to continue listing
+     *         data.
      */
 
     public String getNextToken() {
@@ -115,15 +116,15 @@ public class ListInvitationsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Paginates results. Set the value of this parameter to NULL on your first call to the ListInvitations operation.
-     * For subsequent calls to the operation, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.
+     * Paginates results. On your first call to the <code>ListInvitations</code> operation, set the value of this
+     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request
+     * with the value of <code>NextToken</code> from the previous response to continue listing data.
      * </p>
      * 
      * @param nextToken
-     *        Paginates results. Set the value of this parameter to NULL on your first call to the ListInvitations
-     *        operation. For subsequent calls to the operation, fill nextToken in the request with the value of
-     *        NextToken from the previous response to continue listing data.
+     *        Paginates results. On your first call to the <code>ListInvitations</code> operation, set the value of this
+     *        parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the
+     *        request with the value of <code>NextToken</code> from the previous response to continue listing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

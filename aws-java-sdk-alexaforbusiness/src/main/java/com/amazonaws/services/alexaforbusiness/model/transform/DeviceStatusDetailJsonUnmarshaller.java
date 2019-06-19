@@ -48,6 +48,10 @@ public class DeviceStatusDetailJsonUnmarshaller implements Unmarshaller<DeviceSt
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Feature", targetDepth)) {
+                    context.nextToken();
+                    deviceStatusDetail.setFeature(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Code", targetDepth)) {
                     context.nextToken();
                     deviceStatusDetail.setCode(context.getUnmarshaller(String.class).unmarshall(context));

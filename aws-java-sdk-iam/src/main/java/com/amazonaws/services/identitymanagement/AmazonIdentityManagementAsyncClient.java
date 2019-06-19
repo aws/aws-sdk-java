@@ -35,7 +35,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * AWS Identity and Access Management (IAM) is a web service that you can use to manage users and user permissions under
  * your AWS account. This guide provides descriptions of IAM actions that you can call programmatically. For general
  * information about IAM, see <a href="http://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a>. For the
- * user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using IAM</a>.
+ * user guide for IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/">Using IAM</a>.
  * </p>
  * <note>
  * <p>
@@ -49,7 +49,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However, you can also use the IAM Query
  * API to make direct calls to the IAM web service. To learn more about the IAM Query API, see <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
  * <i>Using IAM</i> guide. IAM supports GET and POST requests for all actions. That is, the API does not require you to
  * use GET for some actions and POST for others. However, GET requests are subject to the limitation size of a URL.
  * Therefore, for operations that require larger sizes, use a POST request.
@@ -65,7 +65,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * To sign requests, we recommend that you use <a
- * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. If you have an
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. If you have an
  * existing application that uses Signature Version 2, you do not have to update it to use Signature Version 4. However,
  * some operations now require Signature Version 4. The documentation for operations that require version 4 indicate
  * this requirement.
@@ -79,19 +79,19 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a>.
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a>.
  * This topic provides general information about the types of credentials used for accessing AWS.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM Best Practices</a>. This topic
+ * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM Best Practices</a>. This topic
  * presents a list of suggestions for using the IAM service to help secure your AWS resources.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a>.
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a>.
  * This set of topics walk you through the process of signing a request using an access key ID and secret access key.
  * </p>
  * </li>
@@ -4583,6 +4583,41 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeSetDefaultPolicyVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetSecurityTokenServicePreferencesResult> setSecurityTokenServicePreferencesAsync(
+            SetSecurityTokenServicePreferencesRequest request) {
+
+        return setSecurityTokenServicePreferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetSecurityTokenServicePreferencesResult> setSecurityTokenServicePreferencesAsync(
+            final SetSecurityTokenServicePreferencesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetSecurityTokenServicePreferencesRequest, SetSecurityTokenServicePreferencesResult> asyncHandler) {
+        final SetSecurityTokenServicePreferencesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetSecurityTokenServicePreferencesResult>() {
+            @Override
+            public SetSecurityTokenServicePreferencesResult call() throws Exception {
+                SetSecurityTokenServicePreferencesResult result = null;
+
+                try {
+                    result = executeSetSecurityTokenServicePreferences(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

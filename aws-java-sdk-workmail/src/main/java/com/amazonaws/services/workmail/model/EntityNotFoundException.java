@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The identifier supplied for the entity is valid, but it does not exist in your organization.
+ * The identifier supplied for the user, group, or resource does not exist in your organization.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

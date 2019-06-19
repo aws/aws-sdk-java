@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the <a>DescribeDBSecurityGroups</a> action.
+ * Contains the result of a successful invocation of the <code>DescribeDBSecurityGroups</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups" target="_top">AWS API
@@ -35,7 +35,7 @@ public class DescribeDBSecurityGroupsResult extends com.amazonaws.AmazonWebServi
     private String marker;
     /**
      * <p>
-     * A list of <a>DBSecurityGroup</a> instances.
+     * A list of <code>DBSecurityGroup</code> instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBSecurityGroup> dBSecurityGroups;
@@ -88,10 +88,10 @@ public class DescribeDBSecurityGroupsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of <a>DBSecurityGroup</a> instances.
+     * A list of <code>DBSecurityGroup</code> instances.
      * </p>
      * 
-     * @return A list of <a>DBSecurityGroup</a> instances.
+     * @return A list of <code>DBSecurityGroup</code> instances.
      */
 
     public java.util.List<DBSecurityGroup> getDBSecurityGroups() {
@@ -103,11 +103,11 @@ public class DescribeDBSecurityGroupsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of <a>DBSecurityGroup</a> instances.
+     * A list of <code>DBSecurityGroup</code> instances.
      * </p>
      * 
      * @param dBSecurityGroups
-     *        A list of <a>DBSecurityGroup</a> instances.
+     *        A list of <code>DBSecurityGroup</code> instances.
      */
 
     public void setDBSecurityGroups(java.util.Collection<DBSecurityGroup> dBSecurityGroups) {
@@ -121,7 +121,7 @@ public class DescribeDBSecurityGroupsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of <a>DBSecurityGroup</a> instances.
+     * A list of <code>DBSecurityGroup</code> instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,7 +130,7 @@ public class DescribeDBSecurityGroupsResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param dBSecurityGroups
-     *        A list of <a>DBSecurityGroup</a> instances.
+     *        A list of <code>DBSecurityGroup</code> instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +146,11 @@ public class DescribeDBSecurityGroupsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of <a>DBSecurityGroup</a> instances.
+     * A list of <code>DBSecurityGroup</code> instances.
      * </p>
      * 
      * @param dBSecurityGroups
-     *        A list of <a>DBSecurityGroup</a> instances.
+     *        A list of <code>DBSecurityGroup</code> instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

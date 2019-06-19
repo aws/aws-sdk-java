@@ -26,11 +26,18 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * AWS Security Hub provides you with a comprehensive view of your security state within AWS and your compliance with
- * the security industry standards and best practices. Security Hub collects security data from across AWS accounts,
+ * AWS Security Hub provides you with a comprehensive view of your security state in AWS and your compliance with the
+ * security industry standards and best practices. Security Hub collects security data from across AWS accounts,
  * services, and supported third-party partners and helps you analyze your security trends and identify the highest
- * priority security issues. For more information, see <a href="">AWS Security Hub User Guide</a>.
+ * priority security issues. For more information, see <a
+ * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS Security Hub User
+ * Guide</a>.
  * </p>
+ * <important>
+ * <p>
+ * Important: AWS Security Hub is currently in Preview release.
+ * </p>
+ * </important>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -379,6 +386,39 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
 
                 try {
                     result = executeDeleteMembers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProductsResult> describeProductsAsync(DescribeProductsRequest request) {
+
+        return describeProductsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProductsResult> describeProductsAsync(final DescribeProductsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeProductsRequest, DescribeProductsResult> asyncHandler) {
+        final DescribeProductsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeProductsResult>() {
+            @Override
+            public DescribeProductsResult call() throws Exception {
+                DescribeProductsResult result = null;
+
+                try {
+                    result = executeDescribeProducts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -944,6 +984,39 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
 
                 try {
                     result = executeListMembers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProductSubscribersResult> listProductSubscribersAsync(ListProductSubscribersRequest request) {
+
+        return listProductSubscribersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProductSubscribersResult> listProductSubscribersAsync(final ListProductSubscribersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListProductSubscribersRequest, ListProductSubscribersResult> asyncHandler) {
+        final ListProductSubscribersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListProductSubscribersResult>() {
+            @Override
+            public ListProductSubscribersResult call() throws Exception {
+                ListProductSubscribersResult result = null;
+
+                try {
+                    result = executeListProductSubscribers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

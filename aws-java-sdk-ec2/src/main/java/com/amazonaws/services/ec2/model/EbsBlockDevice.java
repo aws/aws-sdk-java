@@ -42,9 +42,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for <code>io1</code>
-     * volumes, in most Regions. The maximum IOPS for <code>io1</code> of 64,000 is guaranteed only on <a
+     * volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in requests
@@ -63,21 +65,20 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The size of the volume, in GiB.
      * </p>
      * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * <p>
      * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
      * size must be equal to or larger than the snapshot size.
      * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
      */
     private Integer volumeSize;
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
      * </p>
      * <p>
      * Default: <code>standard</code>
@@ -86,14 +87,24 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     private String volumeType;
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support
-     * Amazon EBS encryption.
+     * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
+     * The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through the console, API,
+     * or CLI depends on the volume's origin (new or from a snapshot), starting encryption state, ownership, and whether
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
+     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
+     * complete list of possible encryption cases, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank
-     * volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot
-     * specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption
-     * value from the block device mappings when creating an image from an instance.
+     * In no case can you remove encryption from an encrypted volume.
+     * </p>
+     * <p>
+     * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * >Supported Instance Types</a>.
      * </p>
      */
     private Boolean encrypted;
@@ -174,9 +185,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for <code>io1</code>
-     * volumes, in most Regions. The maximum IOPS for <code>io1</code> of 64,000 is guaranteed only on <a
+     * volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in requests
@@ -192,10 +205,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for
-     *        <code>io1</code> volumes, in most Regions. The maximum IOPS for <code>io1</code> of 64,000 is guaranteed
-     *        only on <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Nitro-based instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     *        <code>io1</code> volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-
+     *        based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *        EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *        </p>
      *        <p>
      *        Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in
@@ -216,9 +230,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for <code>io1</code>
-     * volumes, in most Regions. The maximum IOPS for <code>io1</code> of 64,000 is guaranteed only on <a
+     * volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in requests
@@ -233,10 +249,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
      *         Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for
-     *         <code>io1</code> volumes, in most Regions. The maximum IOPS for <code>io1</code> of 64,000 is guaranteed
-     *         only on <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *         >Nitro-based instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     *         <code>io1</code> volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on
+     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
+     *         Nitro-based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *         information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *         </p>
      *         <p>
      *         Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in
@@ -258,9 +275,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for <code>io1</code>
-     * volumes, in most Regions. The maximum IOPS for <code>io1</code> of 64,000 is guaranteed only on <a
+     * volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in requests
@@ -276,10 +295,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for
-     *        <code>io1</code> volumes, in most Regions. The maximum IOPS for <code>io1</code> of 64,000 is guaranteed
-     *        only on <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Nitro-based instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     *        <code>io1</code> volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-
+     *        based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *        EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *        </p>
      *        <p>
      *        Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in
@@ -337,27 +357,27 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The size of the volume, in GiB.
      * </p>
      * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * <p>
      * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
      * size must be equal to or larger than the snapshot size.
      * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
      * 
      * @param volumeSize
      *        The size of the volume, in GiB.</p>
+     *        <p>
+     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     *        snapshot size.
+     *        </p>
      *        <p>
      *        Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      *        <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      *        <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the
      *        volume size must be equal to or larger than the snapshot size.
-     *        </p>
-     *        <p>
-     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     *        snapshot size.
      */
 
     public void setVolumeSize(Integer volumeSize) {
@@ -369,26 +389,26 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The size of the volume, in GiB.
      * </p>
      * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * <p>
      * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
      * size must be equal to or larger than the snapshot size.
      * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
      * 
      * @return The size of the volume, in GiB.</p>
+     *         <p>
+     *         Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is
+     *         the snapshot size.
+     *         </p>
      *         <p>
      *         Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      *         <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      *         <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot,
      *         the volume size must be equal to or larger than the snapshot size.
-     *         </p>
-     *         <p>
-     *         Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is
-     *         the snapshot size.
      */
 
     public Integer getVolumeSize() {
@@ -400,27 +420,27 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The size of the volume, in GiB.
      * </p>
      * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * <p>
      * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
      * size must be equal to or larger than the snapshot size.
      * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
      * 
      * @param volumeSize
      *        The size of the volume, in GiB.</p>
+     *        <p>
+     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     *        snapshot size.
+     *        </p>
      *        <p>
      *        Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      *        <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      *        <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the
      *        volume size must be equal to or larger than the snapshot size.
-     *        </p>
-     *        <p>
-     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     *        snapshot size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -431,16 +451,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code>.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
      *        <p>
      *        Default: <code>standard</code>
      * @see VolumeType
@@ -452,15 +470,13 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
-     * @return The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *         <code>standard</code>.</p>
+     * @return The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
      *         <p>
      *         Default: <code>standard</code>
      * @see VolumeType
@@ -472,16 +488,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code>.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
      *        <p>
      *        Default: <code>standard</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -495,16 +509,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code>.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
      *        <p>
      *        Default: <code>standard</code>
      * @see VolumeType
@@ -516,16 +528,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code>.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
      *        <p>
      *        Default: <code>standard</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -539,24 +549,45 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support
-     * Amazon EBS encryption.
+     * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
+     * The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through the console, API,
+     * or CLI depends on the volume's origin (new or from a snapshot), starting encryption state, ownership, and whether
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
+     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
+     * complete list of possible encryption cases, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank
-     * volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot
-     * specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption
-     * value from the block device mappings when creating an image from an instance.
+     * In no case can you remove encryption from an encrypted volume.
+     * </p>
+     * <p>
+     * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * >Supported Instance Types</a>.
      * </p>
      * 
      * @param encrypted
-     *        Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that
-     *        support Amazon EBS encryption.</p>
+     *        Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
+     *        snapshot. The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through
+     *        the console, API, or CLI depends on the volume's origin (new or from a snapshot), starting encryption
+     *        state, ownership, and whether <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     *        encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK)
+     *        with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to
+     *        <code>true</code>. For a complete list of possible encryption cases, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
+     *        EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
-     *        If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only
-     *        blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume,
-     *        you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you
-     *        omit the encryption value from the block device mappings when creating an image from an instance.
+     *        In no case can you remove encryption from an encrypted volume.
+     *        </p>
+     *        <p>
+     *        Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     *        >Supported Instance Types</a>.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -565,24 +596,44 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support
-     * Amazon EBS encryption.
+     * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
+     * The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through the console, API,
+     * or CLI depends on the volume's origin (new or from a snapshot), starting encryption state, ownership, and whether
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
+     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
+     * complete list of possible encryption cases, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank
-     * volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot
-     * specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption
-     * value from the block device mappings when creating an image from an instance.
+     * In no case can you remove encryption from an encrypted volume.
+     * </p>
+     * <p>
+     * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * >Supported Instance Types</a>.
      * </p>
      * 
-     * @return Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that
-     *         support Amazon EBS encryption.</p>
+     * @return Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
+     *         snapshot. The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through
+     *         the console, API, or CLI depends on the volume's origin (new or from a snapshot), starting encryption
+     *         state, ownership, and whether <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     *         encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK)
+     *         with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to
+     *         <code>true</code>. For a complete list of possible encryption cases, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters"
+     *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
-     *         If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because
-     *         only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS
-     *         volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend
-     *         that you omit the encryption value from the block device mappings when creating an image from an
-     *         instance.
+     *         In no case can you remove encryption from an encrypted volume.
+     *         </p>
+     *         <p>
+     *         Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     *         >Supported Instance Types</a>.
      */
 
     public Boolean getEncrypted() {
@@ -591,24 +642,45 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support
-     * Amazon EBS encryption.
+     * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
+     * The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through the console, API,
+     * or CLI depends on the volume's origin (new or from a snapshot), starting encryption state, ownership, and whether
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
+     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
+     * complete list of possible encryption cases, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank
-     * volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot
-     * specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption
-     * value from the block device mappings when creating an image from an instance.
+     * In no case can you remove encryption from an encrypted volume.
+     * </p>
+     * <p>
+     * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * >Supported Instance Types</a>.
      * </p>
      * 
      * @param encrypted
-     *        Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that
-     *        support Amazon EBS encryption.</p>
+     *        Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
+     *        snapshot. The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through
+     *        the console, API, or CLI depends on the volume's origin (new or from a snapshot), starting encryption
+     *        state, ownership, and whether <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     *        encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK)
+     *        with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to
+     *        <code>true</code>. For a complete list of possible encryption cases, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
+     *        EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
-     *        If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only
-     *        blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume,
-     *        you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you
-     *        omit the encryption value from the block device mappings when creating an image from an instance.
+     *        In no case can you remove encryption from an encrypted volume.
+     *        </p>
+     *        <p>
+     *        Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     *        >Supported Instance Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -619,24 +691,44 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support
-     * Amazon EBS encryption.
+     * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
+     * The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through the console, API,
+     * or CLI depends on the volume's origin (new or from a snapshot), starting encryption state, ownership, and whether
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
+     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
+     * complete list of possible encryption cases, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank
-     * volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot
-     * specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption
-     * value from the block device mappings when creating an image from an instance.
+     * In no case can you remove encryption from an encrypted volume.
+     * </p>
+     * <p>
+     * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * >Supported Instance Types</a>.
      * </p>
      * 
-     * @return Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that
-     *         support Amazon EBS encryption.</p>
+     * @return Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
+     *         snapshot. The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through
+     *         the console, API, or CLI depends on the volume's origin (new or from a snapshot), starting encryption
+     *         state, ownership, and whether <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     *         encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK)
+     *         with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to
+     *         <code>true</code>. For a complete list of possible encryption cases, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters"
+     *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
-     *         If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because
-     *         only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS
-     *         volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend
-     *         that you omit the encryption value from the block device mappings when creating an image from an
-     *         instance.
+     *         In no case can you remove encryption from an encrypted volume.
+     *         </p>
+     *         <p>
+     *         Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     *         >Supported Instance Types</a>.
      */
 
     public Boolean isEncrypted() {

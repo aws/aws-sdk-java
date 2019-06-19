@@ -34,6 +34,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<InputDestination> destinations;
     /** The generated ID of the input (unique for user account, immutable). */
     private String id;
+    /**
+     * STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both
+     * sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second
+     * source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source
+     * to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD,
+     * this value is not valid because the channel requires two sources in the input.
+     */
+    private String inputClass;
     /** A list of MediaConnect Flows for this input. */
     private java.util.List<MediaConnectFlow> mediaConnectFlows;
     /** The user-assigned name (This is a mutable value). */
@@ -244,6 +252,93 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     public Input withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both
+     * sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second
+     * source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source
+     * to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD,
+     * this value is not valid because the channel requires two sources in the input.
+     * 
+     * @param inputClass
+     *        STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD,
+     *        both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested;
+     *        the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can
+     *        connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid.
+     *        If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the
+     *        input.
+     * @see InputClass
+     */
+
+    public void setInputClass(String inputClass) {
+        this.inputClass = inputClass;
+    }
+
+    /**
+     * STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both
+     * sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second
+     * source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source
+     * to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD,
+     * this value is not valid because the channel requires two sources in the input.
+     * 
+     * @return STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD,
+     *         both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested;
+     *         the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can
+     *         connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid.
+     *         If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the
+     *         input.
+     * @see InputClass
+     */
+
+    public String getInputClass() {
+        return this.inputClass;
+    }
+
+    /**
+     * STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both
+     * sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second
+     * source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source
+     * to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD,
+     * this value is not valid because the channel requires two sources in the input.
+     * 
+     * @param inputClass
+     *        STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD,
+     *        both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested;
+     *        the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can
+     *        connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid.
+     *        If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the
+     *        input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputClass
+     */
+
+    public Input withInputClass(String inputClass) {
+        setInputClass(inputClass);
+        return this;
+    }
+
+    /**
+     * STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both
+     * sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second
+     * source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source
+     * to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD,
+     * this value is not valid because the channel requires two sources in the input.
+     * 
+     * @param inputClass
+     *        STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD,
+     *        both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested;
+     *        the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can
+     *        connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid.
+     *        If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the
+     *        input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputClass
+     */
+
+    public Input withInputClass(InputClass inputClass) {
+        this.inputClass = inputClass.toString();
         return this;
     }
 
@@ -656,6 +751,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             sb.append("Destinations: ").append(getDestinations()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getInputClass() != null)
+            sb.append("InputClass: ").append(getInputClass()).append(",");
         if (getMediaConnectFlows() != null)
             sb.append("MediaConnectFlows: ").append(getMediaConnectFlows()).append(",");
         if (getName() != null)
@@ -702,6 +799,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getInputClass() == null ^ this.getInputClass() == null)
+            return false;
+        if (other.getInputClass() != null && other.getInputClass().equals(this.getInputClass()) == false)
+            return false;
         if (other.getMediaConnectFlows() == null ^ this.getMediaConnectFlows() == null)
             return false;
         if (other.getMediaConnectFlows() != null && other.getMediaConnectFlows().equals(this.getMediaConnectFlows()) == false)
@@ -746,6 +847,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAttachedChannels() == null) ? 0 : getAttachedChannels().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getInputClass() == null) ? 0 : getInputClass().hashCode());
         hashCode = prime * hashCode + ((getMediaConnectFlows() == null) ? 0 : getMediaConnectFlows().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());

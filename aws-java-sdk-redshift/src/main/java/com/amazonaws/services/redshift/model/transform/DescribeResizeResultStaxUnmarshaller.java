@@ -134,6 +134,11 @@ public class DescribeResizeResultStaxUnmarshaller implements Unmarshaller<Descri
                     describeResizeResult.setTargetEncryptionType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("DataTransferProgressPercent", targetDepth)) {
+                    describeResizeResult.setDataTransferProgressPercent(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeResizeResult;

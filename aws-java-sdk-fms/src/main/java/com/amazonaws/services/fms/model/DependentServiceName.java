@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum DependentServiceName {
 
     AWSCONFIG("AWSCONFIG"),
-    AWSWAF("AWSWAF");
+    AWSWAF("AWSWAF"),
+    AWSSHIELD_ADVANCED("AWSSHIELD_ADVANCED");
 
     private String value;
 

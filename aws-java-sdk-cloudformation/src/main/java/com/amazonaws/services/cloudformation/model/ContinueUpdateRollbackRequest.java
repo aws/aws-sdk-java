@@ -67,7 +67,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified resources
      * to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is complete, the state
      * of the skipped resources will be inconsistent with the state of the resources in the stack template. Before
@@ -91,7 +91,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example
      * of a continue update rollback operation with nested stacks, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
      * >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
      * </p>
      * </note>
@@ -283,7 +283,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified resources
      * to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is complete, the state
      * of the skipped resources will be inconsistent with the state of the resources in the stack template. Before
@@ -307,7 +307,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example
      * of a continue update rollback operation with nested stacks, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
      * >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
      * </p>
      * </note>
@@ -320,7 +320,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll
      *         back. We recommend that you <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      *         > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified
      *         resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is
      *         complete, the state of the skipped resources will be inconsistent with the state of the resources in the
@@ -345,7 +345,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an
      *         example of a continue update rollback operation with nested stacks, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
      *         >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
      *         </p>
      */
@@ -369,7 +369,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified resources
      * to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is complete, the state
      * of the skipped resources will be inconsistent with the state of the resources in the stack template. Before
@@ -393,7 +393,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example
      * of a continue update rollback operation with nested stacks, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
      * >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
      * </p>
      * </note>
@@ -407,7 +407,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back.
      *        We recommend that you <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      *        > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified
      *        resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is
      *        complete, the state of the skipped resources will be inconsistent with the state of the resources in the
@@ -432,7 +432,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an
      *        example of a continue update rollback operation with nested stacks, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
      *        >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
      *        </p>
      */
@@ -458,7 +458,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified resources
      * to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is complete, the state
      * of the skipped resources will be inconsistent with the state of the resources in the stack template. Before
@@ -482,7 +482,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example
      * of a continue update rollback operation with nested stacks, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
      * >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
      * </p>
      * </note>
@@ -501,7 +501,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back.
      *        We recommend that you <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      *        > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified
      *        resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is
      *        complete, the state of the skipped resources will be inconsistent with the state of the resources in the
@@ -526,7 +526,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an
      *        example of a continue update rollback operation with nested stacks, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
      *        >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -554,7 +554,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified resources
      * to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is complete, the state
      * of the skipped resources will be inconsistent with the state of the resources in the stack template. Before
@@ -578,7 +578,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example
      * of a continue update rollback operation with nested stacks, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
      * >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
      * </p>
      * </note>
@@ -592,7 +592,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back.
      *        We recommend that you <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      *        > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified
      *        resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is
      *        complete, the state of the skipped resources will be inconsistent with the state of the resources in the
@@ -617,7 +617,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an
      *        example of a continue update rollback operation with nested stacks, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
      *        >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

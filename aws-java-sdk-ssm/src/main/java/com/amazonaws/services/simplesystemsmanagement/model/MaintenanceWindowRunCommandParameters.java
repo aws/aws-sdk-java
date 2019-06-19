@@ -30,12 +30,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
  * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
  * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for
- * the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+ * the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
  * </p>
  * <p>
  * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use
  * the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how
- * Systems Manager handles these options for the supported Maintenance Window task types, see
+ * Systems Manager handles these options for the supported maintenance window task types, see
  * <a>MaintenanceWindowTaskInvocationParameters</a>.
  * </p>
  * <p>
@@ -52,7 +52,7 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Information about the command(s) to execute.
+     * Information about the commands to run.
      * </p>
      */
     private String comment;
@@ -94,24 +94,25 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
     private java.util.Map<String, java.util.List<String>> parameters;
     /**
      * <p>
-     * The IAM service role to assume during task execution.
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for maintenance window Run Command tasks.
      * </p>
      */
     private String serviceRoleArn;
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it doesn't run.
+     * If this time is reached and the command has not already started running, it doesn't run.
      * </p>
      */
     private Integer timeoutSeconds;
 
     /**
      * <p>
-     * Information about the command(s) to execute.
+     * Information about the commands to run.
      * </p>
      * 
      * @param comment
-     *        Information about the command(s) to execute.
+     *        Information about the commands to run.
      */
 
     public void setComment(String comment) {
@@ -120,10 +121,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Information about the command(s) to execute.
+     * Information about the commands to run.
      * </p>
      * 
-     * @return Information about the command(s) to execute.
+     * @return Information about the commands to run.
      */
 
     public String getComment() {
@@ -132,11 +133,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Information about the command(s) to execute.
+     * Information about the commands to run.
      * </p>
      * 
      * @param comment
-     *        Information about the command(s) to execute.
+     *        Information about the commands to run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,11 +431,13 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The IAM service role to assume during task execution.
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for maintenance window Run Command tasks.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM service role to assume during task execution.
+     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     *        notifications for maintenance window Run Command tasks.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -443,10 +446,12 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The IAM service role to assume during task execution.
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for maintenance window Run Command tasks.
      * </p>
      * 
-     * @return The IAM service role to assume during task execution.
+     * @return The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     *         notifications for maintenance window Run Command tasks.
      */
 
     public String getServiceRoleArn() {
@@ -455,11 +460,13 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The IAM service role to assume during task execution.
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for maintenance window Run Command tasks.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM service role to assume during task execution.
+     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     *        notifications for maintenance window Run Command tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,11 +477,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it doesn't run.
+     * If this time is reached and the command has not already started running, it doesn't run.
      * </p>
      * 
      * @param timeoutSeconds
-     *        If this time is reached and the command has not already started executing, it doesn't run.
+     *        If this time is reached and the command has not already started running, it doesn't run.
      */
 
     public void setTimeoutSeconds(Integer timeoutSeconds) {
@@ -483,10 +490,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it doesn't run.
+     * If this time is reached and the command has not already started running, it doesn't run.
      * </p>
      * 
-     * @return If this time is reached and the command has not already started executing, it doesn't run.
+     * @return If this time is reached and the command has not already started running, it doesn't run.
      */
 
     public Integer getTimeoutSeconds() {
@@ -495,11 +502,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it doesn't run.
+     * If this time is reached and the command has not already started running, it doesn't run.
      * </p>
      * 
      * @param timeoutSeconds
-     *        If this time is reached and the command has not already started executing, it doesn't run.
+     *        If this time is reached and the command has not already started running, it doesn't run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

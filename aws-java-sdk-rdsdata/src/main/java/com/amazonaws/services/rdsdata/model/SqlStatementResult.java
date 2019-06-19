@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * SQL statement execution result
+ * <p>
+ * The result of a SQL statement.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/SqlStatementResult" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SqlStatementResult implements Serializable, Cloneable, StructuredPojo {
 
-    /** Number of rows updated. */
+    /**
+     * <p>
+     * The number of records updated by a SQL statement.
+     * </p>
+     */
     private Long numberOfRecordsUpdated;
-    /** ResultFrame returned by executing the sql statement */
+    /**
+     * <p>
+     * The result set of the SQL statement.
+     * </p>
+     */
     private ResultFrame resultFrame;
 
     /**
-     * Number of rows updated.
+     * <p>
+     * The number of records updated by a SQL statement.
+     * </p>
      * 
      * @param numberOfRecordsUpdated
-     *        Number of rows updated.
+     *        The number of records updated by a SQL statement.
      */
 
     public void setNumberOfRecordsUpdated(Long numberOfRecordsUpdated) {
@@ -43,9 +55,11 @@ public class SqlStatementResult implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Number of rows updated.
+     * <p>
+     * The number of records updated by a SQL statement.
+     * </p>
      * 
-     * @return Number of rows updated.
+     * @return The number of records updated by a SQL statement.
      */
 
     public Long getNumberOfRecordsUpdated() {
@@ -53,10 +67,12 @@ public class SqlStatementResult implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Number of rows updated.
+     * <p>
+     * The number of records updated by a SQL statement.
+     * </p>
      * 
      * @param numberOfRecordsUpdated
-     *        Number of rows updated.
+     *        The number of records updated by a SQL statement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +82,12 @@ public class SqlStatementResult implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * ResultFrame returned by executing the sql statement
+     * <p>
+     * The result set of the SQL statement.
+     * </p>
      * 
      * @param resultFrame
-     *        ResultFrame returned by executing the sql statement
+     *        The result set of the SQL statement.
      */
 
     public void setResultFrame(ResultFrame resultFrame) {
@@ -77,9 +95,11 @@ public class SqlStatementResult implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * ResultFrame returned by executing the sql statement
+     * <p>
+     * The result set of the SQL statement.
+     * </p>
      * 
-     * @return ResultFrame returned by executing the sql statement
+     * @return The result set of the SQL statement.
      */
 
     public ResultFrame getResultFrame() {
@@ -87,10 +107,12 @@ public class SqlStatementResult implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * ResultFrame returned by executing the sql statement
+     * <p>
+     * The result set of the SQL statement.
+     * </p>
      * 
      * @param resultFrame
-     *        ResultFrame returned by executing the sql statement
+     *        The result set of the SQL statement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

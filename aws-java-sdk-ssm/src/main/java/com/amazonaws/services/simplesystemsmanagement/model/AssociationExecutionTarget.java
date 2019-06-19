@@ -42,8 +42,7 @@ public class AssociationExecutionTarget implements Serializable, Cloneable, Stru
     private String associationVersion;
     /**
      * <p>
-     * The execution ID. If the association does not run at intervals or according to a schedule, then the ExecutionID
-     * is the same as the AssociationID.
+     * The execution ID.
      * </p>
      */
     private String executionId;
@@ -166,13 +165,11 @@ public class AssociationExecutionTarget implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The execution ID. If the association does not run at intervals or according to a schedule, then the ExecutionID
-     * is the same as the AssociationID.
+     * The execution ID.
      * </p>
      * 
      * @param executionId
-     *        The execution ID. If the association does not run at intervals or according to a schedule, then the
-     *        ExecutionID is the same as the AssociationID.
+     *        The execution ID.
      */
 
     public void setExecutionId(String executionId) {
@@ -181,12 +178,10 @@ public class AssociationExecutionTarget implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The execution ID. If the association does not run at intervals or according to a schedule, then the ExecutionID
-     * is the same as the AssociationID.
+     * The execution ID.
      * </p>
      * 
-     * @return The execution ID. If the association does not run at intervals or according to a schedule, then the
-     *         ExecutionID is the same as the AssociationID.
+     * @return The execution ID.
      */
 
     public String getExecutionId() {
@@ -195,13 +190,11 @@ public class AssociationExecutionTarget implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The execution ID. If the association does not run at intervals or according to a schedule, then the ExecutionID
-     * is the same as the AssociationID.
+     * The execution ID.
      * </p>
      * 
      * @param executionId
-     *        The execution ID. If the association does not run at intervals or according to a schedule, then the
-     *        ExecutionID is the same as the AssociationID.
+     *        The execution ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

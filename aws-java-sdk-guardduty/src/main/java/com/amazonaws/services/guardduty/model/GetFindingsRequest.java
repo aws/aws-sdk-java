@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * GetFindings request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindings" target="_top">AWS API
  *      Documentation</a>
@@ -26,15 +25,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve. */
+    /**
+     * <p>
+     * The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
+     * </p>
+     */
     private String detectorId;
-    /** IDs of the findings that you want to retrieve. */
+    /**
+     * <p>
+     * IDs of the findings that you want to retrieve.
+     * </p>
+     */
     private java.util.List<String> findingIds;
-    /** Represents the criteria used for sorting findings. */
+    /**
+     * <p>
+     * Represents the criteria used for sorting findings.
+     * </p>
+     */
     private SortCriteria sortCriteria;
 
     /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
+     * </p>
      * 
      * @param detectorId
      *        The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
@@ -45,7 +58,9 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
+     * </p>
      * 
      * @return The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
      */
@@ -55,7 +70,9 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
+     * </p>
      * 
      * @param detectorId
      *        The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
@@ -68,7 +85,9 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * IDs of the findings that you want to retrieve.
+     * </p>
      * 
      * @return IDs of the findings that you want to retrieve.
      */
@@ -78,7 +97,9 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * IDs of the findings that you want to retrieve.
+     * </p>
      * 
      * @param findingIds
      *        IDs of the findings that you want to retrieve.
@@ -94,7 +115,9 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * IDs of the findings that you want to retrieve.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFindingIds(java.util.Collection)} or {@link #withFindingIds(java.util.Collection)} if you want to
@@ -117,7 +140,9 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * IDs of the findings that you want to retrieve.
+     * </p>
      * 
      * @param findingIds
      *        IDs of the findings that you want to retrieve.
@@ -130,7 +155,9 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * Represents the criteria used for sorting findings.
+     * </p>
      * 
      * @param sortCriteria
      *        Represents the criteria used for sorting findings.
@@ -141,7 +168,9 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * Represents the criteria used for sorting findings.
+     * </p>
      * 
      * @return Represents the criteria used for sorting findings.
      */
@@ -151,7 +180,9 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * Represents the criteria used for sorting findings.
+     * </p>
      * 
      * @param sortCriteria
      *        Represents the criteria used for sorting findings.

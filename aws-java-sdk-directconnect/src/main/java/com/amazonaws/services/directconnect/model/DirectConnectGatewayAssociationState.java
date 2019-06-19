@@ -23,7 +23,8 @@ public enum DirectConnectGatewayAssociationState {
     Associating("associating"),
     Associated("associated"),
     Disassociating("disassociating"),
-    Disassociated("disassociated");
+    Disassociated("disassociated"),
+    Updating("updating");
 
     private String value;
 

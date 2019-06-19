@@ -36,6 +36,10 @@ public class UpdateProjectRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("source").build();
     private static final MarshallingInfo<List> SECONDARYSOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secondarySources").build();
+    private static final MarshallingInfo<String> SOURCEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceVersion").build();
+    private static final MarshallingInfo<List> SECONDARYSOURCEVERSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secondarySourceVersions").build();
     private static final MarshallingInfo<StructuredPojo> ARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifacts").build();
     private static final MarshallingInfo<List> SECONDARYARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -81,6 +85,8 @@ public class UpdateProjectRequestMarshaller {
             protocolMarshaller.marshall(updateProjectRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateProjectRequest.getSource(), SOURCE_BINDING);
             protocolMarshaller.marshall(updateProjectRequest.getSecondarySources(), SECONDARYSOURCES_BINDING);
+            protocolMarshaller.marshall(updateProjectRequest.getSourceVersion(), SOURCEVERSION_BINDING);
+            protocolMarshaller.marshall(updateProjectRequest.getSecondarySourceVersions(), SECONDARYSOURCEVERSIONS_BINDING);
             protocolMarshaller.marshall(updateProjectRequest.getArtifacts(), ARTIFACTS_BINDING);
             protocolMarshaller.marshall(updateProjectRequest.getSecondaryArtifacts(), SECONDARYARTIFACTS_BINDING);
             protocolMarshaller.marshall(updateProjectRequest.getCache(), CACHE_BINDING);

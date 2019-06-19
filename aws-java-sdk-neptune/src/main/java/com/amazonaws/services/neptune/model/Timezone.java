@@ -17,8 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A time zone associated with a <a>DBInstance</a>. This data type is an element in the response to the
- * <a>DescribeDBInstances</a>, and the <a>DescribeDBEngineVersions</a> actions.
+ * A time zone associated with a <a>DBInstance</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/Timezone" target="_top">AWS API

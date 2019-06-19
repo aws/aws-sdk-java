@@ -46,7 +46,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
     private String platform;
     /**
      * <p>
-     * One or more volumes.
+     * The volumes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ImportInstanceVolumeDetailItem> volumes;
@@ -206,10 +206,10 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more volumes.
+     * The volumes.
      * </p>
      * 
-     * @return One or more volumes.
+     * @return The volumes.
      */
 
     public java.util.List<ImportInstanceVolumeDetailItem> getVolumes() {
@@ -221,11 +221,11 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more volumes.
+     * The volumes.
      * </p>
      * 
      * @param volumes
-     *        One or more volumes.
+     *        The volumes.
      */
 
     public void setVolumes(java.util.Collection<ImportInstanceVolumeDetailItem> volumes) {
@@ -239,7 +239,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more volumes.
+     * The volumes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -248,7 +248,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * </p>
      * 
      * @param volumes
-     *        One or more volumes.
+     *        The volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,11 +264,11 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more volumes.
+     * The volumes.
      * </p>
      * 
      * @param volumes
-     *        One or more volumes.
+     *        The volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

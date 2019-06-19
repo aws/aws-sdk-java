@@ -56,6 +56,11 @@ public class BudgetJsonUnmarshaller implements Unmarshaller<Budget, JsonUnmarsha
                     context.nextToken();
                     budget.setBudgetLimit(SpendJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("PlannedBudgetLimits", targetDepth)) {
+                    context.nextToken();
+                    budget.setPlannedBudgetLimits(new MapUnmarshaller<String, Spend>(context.getUnmarshaller(String.class), SpendJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("CostFilters", targetDepth)) {
                     context.nextToken();
                     budget.setCostFilters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),

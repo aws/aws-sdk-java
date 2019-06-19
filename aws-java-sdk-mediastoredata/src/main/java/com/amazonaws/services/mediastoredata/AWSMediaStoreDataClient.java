@@ -180,6 +180,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteObject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -238,6 +239,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeObject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -256,7 +258,8 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Downloads the object at the specified path.
+     * Downloads the object at the specified path. If the object’s upload availability is set to <code>streaming</code>,
+     * AWS Elemental MediaStore downloads the object even if it’s still uploading the object.
      * </p>
      * 
      * @param getObjectRequest
@@ -298,6 +301,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetObject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -354,6 +358,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListItems");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -372,7 +377,8 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Uploads an object to the specified path. Object sizes are limited to 25 MB.
+     * Uploads an object to the specified path. Object sizes are limited to 25 MB for standard upload availability and
+     * 10 MB for streaming upload availability.
      * </p>
      * 
      * @param putObjectRequest
@@ -410,6 +416,8 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutObject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

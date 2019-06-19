@@ -194,6 +194,11 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTopicsResult listTopics(ListTopicsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -285,6 +290,11 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UnsubscribeResult unsubscribe(UnsubscribeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -292,6 +302,11 @@ public class AbstractAmazonSNS implements AmazonSNS {
     @Override
     public UnsubscribeResult unsubscribe(String subscriptionArn) {
         return unsubscribe(new UnsubscribeRequest().withSubscriptionArn(subscriptionArn));
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

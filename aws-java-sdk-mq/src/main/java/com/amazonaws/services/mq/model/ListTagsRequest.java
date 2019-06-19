@@ -24,14 +24,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** the Amazon Resource Name (ARN) */
+    /** The Amazon Resource Name (ARN) of the resource tag. */
     private String resourceArn;
 
     /**
-     * the Amazon Resource Name (ARN)
+     * The Amazon Resource Name (ARN) of the resource tag.
      * 
      * @param resourceArn
-     *        the Amazon Resource Name (ARN)
+     *        The Amazon Resource Name (ARN) of the resource tag.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -39,9 +39,9 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * the Amazon Resource Name (ARN)
+     * The Amazon Resource Name (ARN) of the resource tag.
      * 
-     * @return the Amazon Resource Name (ARN)
+     * @return The Amazon Resource Name (ARN) of the resource tag.
      */
 
     public String getResourceArn() {
@@ -49,10 +49,10 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * the Amazon Resource Name (ARN)
+     * The Amazon Resource Name (ARN) of the resource tag.
      * 
      * @param resourceArn
-     *        the Amazon Resource Name (ARN)
+     *        The Amazon Resource Name (ARN) of the resource tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

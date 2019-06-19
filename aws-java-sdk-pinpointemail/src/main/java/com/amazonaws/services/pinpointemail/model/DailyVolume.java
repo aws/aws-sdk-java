@@ -42,7 +42,7 @@ public class DailyVolume implements Serializable, Cloneable, StructuredPojo {
     private VolumeStatistics volumeStatistics;
     /**
      * <p>
-     * An object that contains inbox placement metrics for a specifid day in the analysis period, broken out by the
+     * An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the
      * recipient's email provider.
      * </p>
      */
@@ -130,11 +130,11 @@ public class DailyVolume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that contains inbox placement metrics for a specifid day in the analysis period, broken out by the
+     * An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the
      * recipient's email provider.
      * </p>
      * 
-     * @return An object that contains inbox placement metrics for a specifid day in the analysis period, broken out by
+     * @return An object that contains inbox placement metrics for a specified day in the analysis period, broken out by
      *         the recipient's email provider.
      */
 
@@ -144,12 +144,12 @@ public class DailyVolume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that contains inbox placement metrics for a specifid day in the analysis period, broken out by the
+     * An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the
      * recipient's email provider.
      * </p>
      * 
      * @param domainIspPlacements
-     *        An object that contains inbox placement metrics for a specifid day in the analysis period, broken out by
+     *        An object that contains inbox placement metrics for a specified day in the analysis period, broken out by
      *        the recipient's email provider.
      */
 
@@ -164,7 +164,7 @@ public class DailyVolume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that contains inbox placement metrics for a specifid day in the analysis period, broken out by the
+     * An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the
      * recipient's email provider.
      * </p>
      * <p>
@@ -174,7 +174,7 @@ public class DailyVolume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param domainIspPlacements
-     *        An object that contains inbox placement metrics for a specifid day in the analysis period, broken out by
+     *        An object that contains inbox placement metrics for a specified day in the analysis period, broken out by
      *        the recipient's email provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -191,12 +191,12 @@ public class DailyVolume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that contains inbox placement metrics for a specifid day in the analysis period, broken out by the
+     * An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the
      * recipient's email provider.
      * </p>
      * 
      * @param domainIspPlacements
-     *        An object that contains inbox placement metrics for a specifid day in the analysis period, broken out by
+     *        An object that contains inbox placement metrics for a specified day in the analysis period, broken out by
      *        the recipient's email provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

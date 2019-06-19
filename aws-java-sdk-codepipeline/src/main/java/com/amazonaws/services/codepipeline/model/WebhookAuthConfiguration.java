@@ -30,27 +30,28 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the AllowedIPRange
-     * property must be set, and this property must be set to a valid CIDR range.
+     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
+     * <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
      * </p>
      */
     private String allowedIPRange;
     /**
      * <p>
-     * The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must be set.
+     * The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property
+     * must be set.
      * </p>
      */
     private String secretToken;
 
     /**
      * <p>
-     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the AllowedIPRange
-     * property must be set, and this property must be set to a valid CIDR range.
+     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
+     * <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
      * </p>
      * 
      * @param allowedIPRange
      *        The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
-     *        AllowedIPRange property must be set, and this property must be set to a valid CIDR range.
+     *        <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
      */
 
     public void setAllowedIPRange(String allowedIPRange) {
@@ -59,12 +60,12 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the AllowedIPRange
-     * property must be set, and this property must be set to a valid CIDR range.
+     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
+     * <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
      * </p>
      * 
      * @return The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
-     *         AllowedIPRange property must be set, and this property must be set to a valid CIDR range.
+     *         <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
      */
 
     public String getAllowedIPRange() {
@@ -73,13 +74,13 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the AllowedIPRange
-     * property must be set, and this property must be set to a valid CIDR range.
+     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
+     * <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
      * </p>
      * 
      * @param allowedIPRange
      *        The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
-     *        AllowedIPRange property must be set, and this property must be set to a valid CIDR range.
+     *        <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,12 +91,13 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must be set.
+     * The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property
+     * must be set.
      * </p>
      * 
      * @param secretToken
-     *        The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must
-     *        be set.
+     *        The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code>
+     *        property must be set.
      */
 
     public void setSecretToken(String secretToken) {
@@ -104,11 +106,12 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must be set.
+     * The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property
+     * must be set.
      * </p>
      * 
-     * @return The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must
-     *         be set.
+     * @return The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code>
+     *         property must be set.
      */
 
     public String getSecretToken() {
@@ -117,12 +120,13 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must be set.
+     * The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property
+     * must be set.
      * </p>
      * 
      * @param secretToken
-     *        The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must
-     *        be set.
+     *        The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code>
+     *        property must be set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -21,6 +21,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * CreateClientVpnRouteRequest Marshaller
@@ -55,6 +56,8 @@ public class CreateClientVpnRouteRequestMarshaller implements Marshaller<Request
         if (createClientVpnRouteRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(createClientVpnRouteRequest.getDescription()));
         }
+
+        request.addParameter("ClientToken", IdempotentUtils.resolveString(createClientVpnRouteRequest.getClientToken()));
 
         return request;
     }

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -387,6 +387,62 @@
         "documentation" : null
       },
       "syncReturnType" : "DeleteUserResult"
+    },
+    "DeleteUserByPrincipalId" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteUserByPrincipalIdResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteUserByPrincipalIdResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserByPrincipalIdRequest, DeleteUserByPrincipalIdResult>",
+      "asyncReturnType" : "DeleteUserByPrincipalIdResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes a user after locating the user by its principal ID.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>You don't have access to this. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "InvalidParameterValueException",
+        "documentation" : "<p>One or more parameters don't have a valid value.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>One or more resources can't be found.</p>",
+        "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>Access is throttled.</p>",
+        "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "InternalFailureException",
+        "documentation" : "<p>An internal failure occurred.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ResourceUnavailableException",
+        "documentation" : "<p>This resource is currently unavailable.</p>",
+        "httpStatusCode" : 503
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteUserByPrincipalIdRequest",
+        "variableName" : "deleteUserByPrincipalIdRequest",
+        "variableType" : "DeleteUserByPrincipalIdRequest",
+        "documentation" : "",
+        "simpleType" : "DeleteUserByPrincipalIdRequest",
+        "variableSetterType" : "DeleteUserByPrincipalIdRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "deleteUserByPrincipalId",
+      "operationName" : "DeleteUserByPrincipalId",
+      "returnType" : {
+        "returnType" : "DeleteUserByPrincipalIdResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DeleteUserByPrincipalIdResult"
     },
     "DescribeGroup" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeGroupResult>",
@@ -1032,6 +1088,7 @@
       "errorCode" : "AccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -1061,6 +1118,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -1129,6 +1187,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -1203,6 +1262,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -1239,6 +1299,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "MemberName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "MemberName",
           "uri" : true
@@ -1305,6 +1366,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "GroupName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "GroupName",
           "uri" : true
@@ -1371,6 +1433,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -1437,6 +1500,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -1505,6 +1569,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -1572,6 +1637,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "GroupName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "GroupName",
             "uri" : true
@@ -1639,6 +1705,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "MemberName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "MemberName",
             "uri" : true
@@ -1706,6 +1773,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -1780,6 +1848,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -1809,6 +1878,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "GroupMember",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "GroupMember",
           "uri" : false
@@ -1875,6 +1945,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -1941,6 +2012,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -2009,6 +2081,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "GroupMember",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "GroupMember",
             "uri" : false
@@ -2076,6 +2149,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -2143,6 +2217,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -2220,6 +2295,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -2256,6 +2332,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "GroupName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "GroupName",
           "uri" : false
@@ -2322,6 +2399,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Description",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Description",
           "uri" : false
@@ -2388,6 +2466,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -2454,6 +2533,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -2522,6 +2602,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -2589,6 +2670,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Description",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Description",
             "uri" : false
@@ -2656,6 +2738,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "GroupName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "GroupName",
             "uri" : false
@@ -2723,6 +2806,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -2797,6 +2881,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -2826,6 +2911,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Group",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Group",
           "uri" : false
@@ -2892,6 +2978,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -2958,6 +3045,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -3026,6 +3114,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Group",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Group",
             "uri" : false
@@ -3093,6 +3182,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -3160,6 +3250,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -3237,6 +3328,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -3273,6 +3365,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "MemberName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "MemberName",
           "uri" : true
@@ -3339,6 +3432,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "GroupName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "GroupName",
           "uri" : true
@@ -3405,6 +3499,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -3471,6 +3566,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -3539,6 +3635,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -3606,6 +3703,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "GroupName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "GroupName",
             "uri" : true
@@ -3673,6 +3771,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "MemberName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "MemberName",
             "uri" : true
@@ -3740,6 +3839,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -3814,6 +3914,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -3843,6 +3944,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -3909,6 +4011,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -3977,6 +4080,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -4044,6 +4148,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -4121,6 +4226,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -4157,6 +4263,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "GroupName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "GroupName",
           "uri" : true
@@ -4223,6 +4330,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -4289,6 +4397,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -4357,6 +4466,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -4424,6 +4534,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "GroupName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "GroupName",
             "uri" : true
@@ -4491,6 +4602,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -4565,6 +4677,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -4594,6 +4707,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -4660,6 +4774,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -4728,6 +4843,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -4795,6 +4911,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -4858,8 +4975,8 @@
       },
       "wrapper" : false
     },
-    "DeleteUserRequest" : {
-      "c2jName" : "DeleteUserRequest",
+    "DeleteUserByPrincipalIdRequest" : {
+      "c2jName" : "DeleteUserByPrincipalIdRequest",
       "customization" : {
         "artificialResultWrapper" : null,
         "skipGeneratingMarshaller" : false,
@@ -4872,26 +4989,27 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
-        "action" : "DeleteUser",
+        "action" : "DeleteUserByPrincipalId",
         "locationName" : null,
-        "requestUri" : "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}",
+        "requestUri" : "/accounts/{AwsAccountId}/namespaces/{Namespace}/user-principals/{PrincipalId}",
         "target" : null,
         "verb" : "DELETE",
         "xmlNameSpaceUri" : null
       },
       "members" : [ {
-        "c2jName" : "UserName",
-        "c2jShape" : "UserName",
+        "c2jName" : "PrincipalId",
+        "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The name of the user that you want to delete.</p>",
+        "documentation" : "<p>The principal ID of the user.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The name of the user that you want to delete.</p>\n@param userName The name of the user that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "fluentSetterMethodName" : "withUserName",
-        "getterDocumentation" : "/**<p>The name of the user that you want to delete.</p>\n@return The name of the user that you want to delete.*/",
-        "getterMethodName" : "getUserName",
+        "fluentSetterDocumentation" : "/**<p>The principal ID of the user.</p>\n@param principalId The principal ID of the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withPrincipalId",
+        "getterDocumentation" : "/**<p>The principal ID of the user.</p>\n@return The principal ID of the user.*/",
+        "getterMethodName" : "getPrincipalId",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -4906,10 +5024,11 @@
           "isStreaming" : false,
           "location" : "uri",
           "marshallLocation" : "PATH",
-          "marshallLocationName" : "UserName",
+          "marshallLocationName" : "PrincipalId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
-          "unmarshallLocationName" : "UserName",
+          "unmarshallLocationName" : "PrincipalId",
           "uri" : true
         },
         "idempotencyToken" : false,
@@ -4921,14 +5040,14 @@
         "mapModel" : null,
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
-        "name" : "UserName",
+        "name" : "PrincipalId",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The name of the user that you want to delete.</p>\n@param userName The name of the user that you want to delete.*/",
-        "setterMethodName" : "setUserName",
+        "setterDocumentation" : "/**<p>The principal ID of the user.</p>\n@param principalId The principal ID of the user.*/",
+        "setterMethodName" : "setPrincipalId",
         "setterModel" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
-          "variableName" : "userName",
+          "variableName" : "principalId",
           "variableType" : "String",
           "documentation" : "",
           "simpleType" : "String",
@@ -4937,13 +5056,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name of the user that you want to delete.</p>\n@param userName The name of the user that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The principal ID of the user.</p>\n@param principalId The principal ID of the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
-          "variableName" : "userName",
+          "variableName" : "principalId",
           "variableType" : "String",
-          "documentation" : "<p>The name of the user that you want to delete.</p>",
+          "documentation" : "<p>The principal ID of the user.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4974,6 +5093,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -5040,6 +5160,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -5108,6 +5229,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -5175,6 +5297,770 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Namespace",
+            "uri" : true
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Namespace",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The namespace. Currently, you should set this to <code>default</code>.</p>\n@param namespace The namespace. Currently, you should set this to <code>default</code>.*/",
+          "setterMethodName" : "setNamespace",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "namespace",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The namespace. Currently, you should set this to <code>default</code>.</p>\n@param namespace The namespace. Currently, you should set this to <code>default</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "namespace",
+            "variableType" : "String",
+            "documentation" : "<p>The namespace. Currently, you should set this to <code>default</code>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "PrincipalId" : {
+          "c2jName" : "PrincipalId",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The principal ID of the user.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The principal ID of the user.</p>\n@param principalId The principal ID of the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withPrincipalId",
+          "getterDocumentation" : "/**<p>The principal ID of the user.</p>\n@return The principal ID of the user.*/",
+          "getterMethodName" : "getPrincipalId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "marshallLocation" : "PATH",
+            "marshallLocationName" : "PrincipalId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "PrincipalId",
+            "uri" : true
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "PrincipalId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The principal ID of the user.</p>\n@param principalId The principal ID of the user.*/",
+          "setterMethodName" : "setPrincipalId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "principalId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The principal ID of the user.</p>\n@param principalId The principal ID of the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "principalId",
+            "variableType" : "String",
+            "documentation" : "<p>The principal ID of the user.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "PrincipalId", "AwsAccountId", "Namespace" ],
+      "shapeName" : "DeleteUserByPrincipalIdRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteUserByPrincipalIdRequest",
+        "variableName" : "deleteUserByPrincipalIdRequest",
+        "variableType" : "DeleteUserByPrincipalIdRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteUserByPrincipalIdRequest",
+        "variableSetterType" : "DeleteUserByPrincipalIdRequest"
+      },
+      "wrapper" : false
+    },
+    "DeleteUserByPrincipalIdResult" : {
+      "c2jName" : "DeleteUserByPrincipalIdResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : true,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "RequestId",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The AWS request ID for this operation.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The AWS request ID for this operation.</p>\n@param requestId The AWS request ID for this operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withRequestId",
+        "getterDocumentation" : "/**<p>The AWS request ID for this operation.</p>\n@return The AWS request ID for this operation.*/",
+        "getterMethodName" : "getRequestId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "RequestId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "RequestId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "RequestId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The AWS request ID for this operation.</p>\n@param requestId The AWS request ID for this operation.*/",
+        "setterMethodName" : "setRequestId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "requestId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The AWS request ID for this operation.</p>\n@param requestId The AWS request ID for this operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "requestId",
+          "variableType" : "String",
+          "documentation" : "<p>The AWS request ID for this operation.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Status",
+        "c2jShape" : "StatusCode",
+        "deprecated" : false,
+        "documentation" : "<p>The http status of the request.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The http status of the request.</p>\n@param status The http status of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withStatus",
+        "getterDocumentation" : "/**<p>The http status of the request.</p>\n@return The http status of the request.*/",
+        "getterMethodName" : "getStatus",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "statusCode",
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Status",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : true,
+          "unmarshallLocationName" : "Status",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
+        "name" : "Status",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The http status of the request.</p>\n@param status The http status of the request.*/",
+        "setterMethodName" : "setStatus",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Integer",
+          "variableName" : "status",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The http status of the request.</p>\n@param status The http status of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Integer",
+          "variableName" : "status",
+          "variableType" : "Integer",
+          "documentation" : "<p>The http status of the request.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "RequestId" : {
+          "c2jName" : "RequestId",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The AWS request ID for this operation.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The AWS request ID for this operation.</p>\n@param requestId The AWS request ID for this operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withRequestId",
+          "getterDocumentation" : "/**<p>The AWS request ID for this operation.</p>\n@return The AWS request ID for this operation.*/",
+          "getterMethodName" : "getRequestId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "RequestId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "RequestId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "RequestId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The AWS request ID for this operation.</p>\n@param requestId The AWS request ID for this operation.*/",
+          "setterMethodName" : "setRequestId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "requestId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The AWS request ID for this operation.</p>\n@param requestId The AWS request ID for this operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "requestId",
+            "variableType" : "String",
+            "documentation" : "<p>The AWS request ID for this operation.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Status" : {
+          "c2jName" : "Status",
+          "c2jShape" : "StatusCode",
+          "deprecated" : false,
+          "documentation" : "<p>The http status of the request.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The http status of the request.</p>\n@param status The http status of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withStatus",
+          "getterDocumentation" : "/**<p>The http status of the request.</p>\n@return The http status of the request.*/",
+          "getterMethodName" : "getStatus",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "statusCode",
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Status",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : true,
+            "unmarshallLocationName" : "Status",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
+          "name" : "Status",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The http status of the request.</p>\n@param status The http status of the request.*/",
+          "setterMethodName" : "setStatus",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Integer",
+            "variableName" : "status",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The http status of the request.</p>\n@param status The http status of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Integer",
+            "variableName" : "status",
+            "variableType" : "Integer",
+            "documentation" : "<p>The http status of the request.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeleteUserByPrincipalIdResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteUserByPrincipalIdResult",
+        "variableName" : "deleteUserByPrincipalIdResult",
+        "variableType" : "DeleteUserByPrincipalIdResult",
+        "documentation" : null,
+        "simpleType" : "DeleteUserByPrincipalIdResult",
+        "variableSetterType" : "DeleteUserByPrincipalIdResult"
+      },
+      "wrapper" : false
+    },
+    "DeleteUserRequest" : {
+      "c2jName" : "DeleteUserRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DeleteUser",
+        "locationName" : null,
+        "requestUri" : "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}",
+        "target" : null,
+        "verb" : "DELETE",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "UserName",
+        "c2jShape" : "UserName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the user that you want to delete.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the user that you want to delete.</p>\n@param userName The name of the user that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withUserName",
+        "getterDocumentation" : "/**<p>The name of the user that you want to delete.</p>\n@return The name of the user that you want to delete.*/",
+        "getterMethodName" : "getUserName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "marshallLocation" : "PATH",
+          "marshallLocationName" : "UserName",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "UserName",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "UserName",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The name of the user that you want to delete.</p>\n@param userName The name of the user that you want to delete.*/",
+        "setterMethodName" : "setUserName",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "userName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the user that you want to delete.</p>\n@param userName The name of the user that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "userName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the user that you want to delete.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "AwsAccountId",
+        "c2jShape" : "AwsAccountId",
+        "deprecated" : false,
+        "documentation" : "<p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.</p>\n@param awsAccountId The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAwsAccountId",
+        "getterDocumentation" : "/**<p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.</p>\n@return The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.*/",
+        "getterMethodName" : "getAwsAccountId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "marshallLocation" : "PATH",
+          "marshallLocationName" : "AwsAccountId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "AwsAccountId",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "AwsAccountId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.</p>\n@param awsAccountId The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.*/",
+        "setterMethodName" : "setAwsAccountId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "awsAccountId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.</p>\n@param awsAccountId The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "awsAccountId",
+          "variableType" : "String",
+          "documentation" : "<p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Namespace",
+        "c2jShape" : "Namespace",
+        "deprecated" : false,
+        "documentation" : "<p>The namespace. Currently, you should set this to <code>default</code>.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The namespace. Currently, you should set this to <code>default</code>.</p>\n@param namespace The namespace. Currently, you should set this to <code>default</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withNamespace",
+        "getterDocumentation" : "/**<p>The namespace. Currently, you should set this to <code>default</code>.</p>\n@return The namespace. Currently, you should set this to <code>default</code>.*/",
+        "getterMethodName" : "getNamespace",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "marshallLocation" : "PATH",
+          "marshallLocationName" : "Namespace",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Namespace",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Namespace",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The namespace. Currently, you should set this to <code>default</code>.</p>\n@param namespace The namespace. Currently, you should set this to <code>default</code>.*/",
+        "setterMethodName" : "setNamespace",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "namespace",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The namespace. Currently, you should set this to <code>default</code>.</p>\n@param namespace The namespace. Currently, you should set this to <code>default</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "namespace",
+          "variableType" : "String",
+          "documentation" : "<p>The namespace. Currently, you should set this to <code>default</code>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "AwsAccountId" : {
+          "c2jName" : "AwsAccountId",
+          "c2jShape" : "AwsAccountId",
+          "deprecated" : false,
+          "documentation" : "<p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.</p>\n@param awsAccountId The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAwsAccountId",
+          "getterDocumentation" : "/**<p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.</p>\n@return The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.*/",
+          "getterMethodName" : "getAwsAccountId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "marshallLocation" : "PATH",
+            "marshallLocationName" : "AwsAccountId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "AwsAccountId",
+            "uri" : true
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "AwsAccountId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.</p>\n@param awsAccountId The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.*/",
+          "setterMethodName" : "setAwsAccountId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "awsAccountId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.</p>\n@param awsAccountId The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "awsAccountId",
+            "variableType" : "String",
+            "documentation" : "<p>The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Namespace" : {
+          "c2jName" : "Namespace",
+          "c2jShape" : "Namespace",
+          "deprecated" : false,
+          "documentation" : "<p>The namespace. Currently, you should set this to <code>default</code>.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The namespace. Currently, you should set this to <code>default</code>.</p>\n@param namespace The namespace. Currently, you should set this to <code>default</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withNamespace",
+          "getterDocumentation" : "/**<p>The namespace. Currently, you should set this to <code>default</code>.</p>\n@return The namespace. Currently, you should set this to <code>default</code>.*/",
+          "getterMethodName" : "getNamespace",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "marshallLocation" : "PATH",
+            "marshallLocationName" : "Namespace",
+            "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -5242,6 +6128,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "UserName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "UserName",
             "uri" : true
@@ -5316,6 +6203,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -5345,6 +6233,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -5411,6 +6300,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -5479,6 +6369,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -5546,6 +6437,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -5623,6 +6515,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -5659,6 +6552,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "GroupName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "GroupName",
           "uri" : true
@@ -5725,6 +6619,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -5791,6 +6686,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -5859,6 +6755,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -5926,6 +6823,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "GroupName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "GroupName",
             "uri" : true
@@ -5993,6 +6891,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -6067,6 +6966,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -6096,6 +6996,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Group",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Group",
           "uri" : false
@@ -6162,6 +7063,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -6228,6 +7130,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -6296,6 +7199,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Group",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Group",
             "uri" : false
@@ -6363,6 +7267,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -6430,6 +7335,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -6507,6 +7413,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -6543,6 +7450,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "UserName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "UserName",
           "uri" : true
@@ -6609,6 +7517,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -6675,6 +7584,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -6743,6 +7653,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -6810,6 +7721,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -6877,6 +7789,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "UserName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "UserName",
             "uri" : true
@@ -6951,6 +7864,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -6980,6 +7894,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "User",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "User",
           "uri" : false
@@ -7046,6 +7961,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -7112,6 +8028,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -7180,6 +8097,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -7247,6 +8165,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -7314,6 +8233,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "User",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "User",
             "uri" : false
@@ -7391,6 +8311,7 @@
       "errorCode" : "DomainNotWhitelistedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -7420,6 +8341,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -7488,6 +8410,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -7583,6 +8506,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -7623,6 +8547,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -7659,6 +8584,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -7725,6 +8651,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "DashboardId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "DashboardId",
           "uri" : true
@@ -7791,6 +8718,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "creds-type",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "creds-type",
           "uri" : false
@@ -7857,6 +8785,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "session-lifetime",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "session-lifetime",
           "uri" : false
@@ -7923,6 +8852,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "undo-redo-disabled",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "undo-redo-disabled",
           "uri" : false
@@ -7989,6 +8919,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "reset-disabled",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "reset-disabled",
           "uri" : false
@@ -8057,6 +8988,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -8124,6 +9056,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "DashboardId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "DashboardId",
             "uri" : true
@@ -8191,6 +9124,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "creds-type",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "creds-type",
             "uri" : false
@@ -8258,6 +9192,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "reset-disabled",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "reset-disabled",
             "uri" : false
@@ -8325,6 +9260,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "session-lifetime",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "session-lifetime",
             "uri" : false
@@ -8392,6 +9328,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "undo-redo-disabled",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "undo-redo-disabled",
             "uri" : false
@@ -8466,6 +9403,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -8495,6 +9433,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "EmbedUrl",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "EmbedUrl",
           "uri" : false
@@ -8561,6 +9500,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -8627,6 +9567,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -8695,6 +9636,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "EmbedUrl",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "EmbedUrl",
             "uri" : false
@@ -8762,6 +9704,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -8829,6 +9772,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -8906,6 +9850,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -8935,6 +9880,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Arn",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Arn",
           "uri" : false
@@ -9001,6 +9947,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "GroupName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "GroupName",
           "uri" : false
@@ -9067,6 +10014,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Description",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Description",
           "uri" : false
@@ -9107,6 +10055,73 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "PrincipalId",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The principal ID of the group.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The principal ID of the group.</p>\n@param principalId The principal ID of the group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withPrincipalId",
+        "getterDocumentation" : "/**<p>The principal ID of the group.</p>\n@return The principal ID of the group.*/",
+        "getterMethodName" : "getPrincipalId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "PrincipalId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "PrincipalId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "PrincipalId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The principal ID of the group.</p>\n@param principalId The principal ID of the group.*/",
+        "setterMethodName" : "setPrincipalId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "principalId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The principal ID of the group.</p>\n@param principalId The principal ID of the group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "principalId",
+          "variableType" : "String",
+          "documentation" : "<p>The principal ID of the group.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Arn" : {
@@ -9135,6 +10150,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Arn",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Arn",
             "uri" : false
@@ -9202,6 +10218,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Description",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Description",
             "uri" : false
@@ -9269,6 +10286,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "GroupName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "GroupName",
             "uri" : false
@@ -9305,6 +10323,74 @@
             "variableName" : "groupName",
             "variableType" : "String",
             "documentation" : "<p>The name of the group.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "PrincipalId" : {
+          "c2jName" : "PrincipalId",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The principal ID of the group.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The principal ID of the group.</p>\n@param principalId The principal ID of the group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withPrincipalId",
+          "getterDocumentation" : "/**<p>The principal ID of the group.</p>\n@return The principal ID of the group.*/",
+          "getterMethodName" : "getPrincipalId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "PrincipalId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "PrincipalId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "PrincipalId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The principal ID of the group.</p>\n@param principalId The principal ID of the group.*/",
+          "setterMethodName" : "setPrincipalId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "principalId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The principal ID of the group.</p>\n@param principalId The principal ID of the group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "principalId",
+            "variableType" : "String",
+            "documentation" : "<p>The principal ID of the group.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9346,6 +10432,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -9375,6 +10462,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Arn",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Arn",
           "uri" : false
@@ -9441,6 +10529,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "MemberName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "MemberName",
           "uri" : false
@@ -9509,6 +10598,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Arn",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Arn",
             "uri" : false
@@ -9576,6 +10666,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "MemberName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "MemberName",
             "uri" : false
@@ -9659,6 +10750,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -9699,6 +10791,7 @@
       "errorCode" : "IdentityTypeNotSupportedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -9728,6 +10821,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -9796,6 +10890,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -9870,6 +10965,7 @@
       "errorCode" : "InternalFailureException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -9899,6 +10995,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -9967,6 +11064,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -10041,6 +11139,7 @@
       "errorCode" : "InvalidNextTokenException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -10070,6 +11169,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -10138,6 +11238,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -10212,6 +11313,7 @@
       "errorCode" : "InvalidParameterValueException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -10241,6 +11343,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -10309,6 +11412,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -10383,6 +11487,7 @@
       "errorCode" : "LimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -10412,6 +11517,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ResourceType",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ResourceType",
           "uri" : false
@@ -10478,6 +11584,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -10546,6 +11653,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -10613,6 +11721,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ResourceType",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ResourceType",
             "uri" : false
@@ -10687,6 +11796,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -10723,6 +11833,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "GroupName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "GroupName",
           "uri" : true
@@ -10789,6 +11900,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "next-token",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "next-token",
           "uri" : false
@@ -10855,6 +11967,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "max-results",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "max-results",
           "uri" : false
@@ -10921,6 +12034,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -10987,6 +12101,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -11055,6 +12170,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -11122,6 +12238,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "GroupName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "GroupName",
             "uri" : true
@@ -11189,6 +12306,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "max-results",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "max-results",
             "uri" : false
@@ -11256,6 +12374,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -11323,6 +12442,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "next-token",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "next-token",
             "uri" : false
@@ -11397,6 +12517,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -11426,6 +12547,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "GroupMemberList",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "GroupMemberList",
           "uri" : false
@@ -11463,6 +12585,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -11573,6 +12696,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "NextToken",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "NextToken",
           "uri" : false
@@ -11639,6 +12763,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -11705,6 +12830,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -11773,6 +12899,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "GroupMemberList",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "GroupMemberList",
             "uri" : false
@@ -11810,6 +12937,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -11921,6 +13049,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "NextToken",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "NextToken",
             "uri" : false
@@ -11988,6 +13117,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -12055,6 +13185,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -12132,6 +13263,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -12168,6 +13300,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -12234,6 +13367,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "next-token",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "next-token",
           "uri" : false
@@ -12300,6 +13434,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "max-results",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "max-results",
           "uri" : false
@@ -12366,6 +13501,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -12434,6 +13570,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -12501,6 +13638,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "max-results",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "max-results",
             "uri" : false
@@ -12568,6 +13706,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -12635,6 +13774,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "next-token",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "next-token",
             "uri" : false
@@ -12709,6 +13849,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -12738,6 +13879,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "GroupList",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "GroupList",
           "uri" : false
@@ -12775,6 +13917,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -12885,6 +14028,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "NextToken",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "NextToken",
           "uri" : false
@@ -12951,6 +14095,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -13017,6 +14162,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -13085,6 +14231,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "GroupList",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "GroupList",
             "uri" : false
@@ -13122,6 +14269,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -13233,6 +14381,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "NextToken",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "NextToken",
             "uri" : false
@@ -13300,6 +14449,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -13367,6 +14517,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -13444,6 +14595,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -13480,6 +14632,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "UserName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "UserName",
           "uri" : true
@@ -13546,6 +14699,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -13612,6 +14766,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -13678,6 +14833,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "next-token",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "next-token",
           "uri" : false
@@ -13744,6 +14900,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "max-results",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "max-results",
           "uri" : false
@@ -13812,6 +14969,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -13879,6 +15037,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "max-results",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "max-results",
             "uri" : false
@@ -13946,6 +15105,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -14013,6 +15173,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "next-token",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "next-token",
             "uri" : false
@@ -14080,6 +15241,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "UserName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "UserName",
             "uri" : true
@@ -14154,6 +15316,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -14183,6 +15346,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "GroupList",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "GroupList",
           "uri" : false
@@ -14220,6 +15384,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -14330,6 +15495,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "NextToken",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "NextToken",
           "uri" : false
@@ -14396,6 +15562,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -14462,6 +15629,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -14530,6 +15698,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "GroupList",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "GroupList",
             "uri" : false
@@ -14567,6 +15736,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -14678,6 +15848,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "NextToken",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "NextToken",
             "uri" : false
@@ -14745,6 +15916,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -14812,6 +15984,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -14889,6 +16062,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -14925,6 +16099,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -14991,6 +16166,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "next-token",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "next-token",
           "uri" : false
@@ -15057,6 +16233,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "max-results",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "max-results",
           "uri" : false
@@ -15123,6 +16300,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -15191,6 +16369,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -15258,6 +16437,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "max-results",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "max-results",
             "uri" : false
@@ -15325,6 +16505,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -15392,6 +16573,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "next-token",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "next-token",
             "uri" : false
@@ -15466,6 +16648,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -15495,6 +16678,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "UserList",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "UserList",
           "uri" : false
@@ -15532,6 +16716,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -15642,6 +16827,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "NextToken",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "NextToken",
           "uri" : false
@@ -15708,6 +16894,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -15774,6 +16961,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -15842,6 +17030,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "NextToken",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "NextToken",
             "uri" : false
@@ -15909,6 +17098,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -15976,6 +17166,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -16043,6 +17234,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "UserList",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "UserList",
             "uri" : false
@@ -16080,6 +17272,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -16201,6 +17394,7 @@
       "errorCode" : "PreconditionNotMetException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -16230,6 +17424,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -16298,6 +17493,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -16372,6 +17568,7 @@
       "errorCode" : "QuickSightUserNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -16401,6 +17598,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -16469,6 +17667,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -16543,6 +17742,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -16579,6 +17779,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "IdentityType",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "IdentityType",
           "uri" : false
@@ -16645,6 +17846,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Email",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Email",
           "uri" : false
@@ -16711,6 +17913,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "UserRole",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "UserRole",
           "uri" : false
@@ -16777,6 +17980,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "IamArn",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "IamArn",
           "uri" : false
@@ -16819,7 +18023,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "SessionName",
-        "c2jShape" : "String",
+        "c2jShape" : "RoleSessionName",
         "deprecated" : false,
         "documentation" : "<p>The name of the session with the assumed IAM role. By using this parameter, you can register multiple users with the same IAM role, provided that each has a different session name. For more information on assuming IAM roles, see <a href=\"https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html\"> <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>",
         "enumType" : null,
@@ -16843,6 +18047,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "SessionName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "SessionName",
           "uri" : false
@@ -16909,6 +18114,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -16975,6 +18181,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -17041,6 +18248,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "UserName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "UserName",
           "uri" : false
@@ -17109,6 +18317,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -17176,6 +18385,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Email",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Email",
             "uri" : false
@@ -17243,6 +18453,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "IamArn",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "IamArn",
             "uri" : false
@@ -17310,6 +18521,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "IdentityType",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "IdentityType",
             "uri" : false
@@ -17377,6 +18589,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -17420,7 +18633,7 @@
         },
         "SessionName" : {
           "c2jName" : "SessionName",
-          "c2jShape" : "String",
+          "c2jShape" : "RoleSessionName",
           "deprecated" : false,
           "documentation" : "<p>The name of the session with the assumed IAM role. By using this parameter, you can register multiple users with the same IAM role, provided that each has a different session name. For more information on assuming IAM roles, see <a href=\"https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html\"> <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>",
           "enumType" : null,
@@ -17444,6 +18657,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "SessionName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "SessionName",
             "uri" : false
@@ -17511,6 +18725,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "UserName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "UserName",
             "uri" : false
@@ -17578,6 +18793,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "UserRole",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "UserRole",
             "uri" : false
@@ -17652,6 +18868,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -17681,6 +18898,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "User",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "User",
           "uri" : false
@@ -17747,6 +18965,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "UserInvitationUrl",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "UserInvitationUrl",
           "uri" : false
@@ -17813,6 +19032,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -17879,6 +19099,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -17947,6 +19168,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -18014,6 +19236,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -18081,6 +19304,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "User",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "User",
             "uri" : false
@@ -18148,6 +19372,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "UserInvitationUrl",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "UserInvitationUrl",
             "uri" : false
@@ -18225,6 +19450,7 @@
       "errorCode" : "ResourceExistsException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -18254,6 +19480,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ResourceType",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ResourceType",
           "uri" : false
@@ -18320,6 +19547,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -18388,6 +19616,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -18455,6 +19684,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ResourceType",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ResourceType",
             "uri" : false
@@ -18529,6 +19759,7 @@
       "errorCode" : "ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -18558,6 +19789,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ResourceType",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ResourceType",
           "uri" : false
@@ -18624,6 +19856,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -18692,6 +19925,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -18759,6 +19993,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ResourceType",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ResourceType",
             "uri" : false
@@ -18833,6 +20068,7 @@
       "errorCode" : "ResourceUnavailableException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -18862,6 +20098,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ResourceType",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ResourceType",
           "uri" : false
@@ -18928,6 +20165,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -18996,6 +20234,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -19063,6 +20302,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ResourceType",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ResourceType",
             "uri" : false
@@ -19137,6 +20377,7 @@
       "errorCode" : "SessionLifetimeInMinutesInvalidException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -19166,6 +20407,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -19234,6 +20476,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -19308,6 +20551,7 @@
       "errorCode" : "ThrottlingException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -19337,6 +20581,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -19405,6 +20650,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -19479,6 +20725,7 @@
       "errorCode" : "UnsupportedUserEditionException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -19508,6 +20755,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -19576,6 +20824,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -19650,6 +20899,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -19686,6 +20936,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "GroupName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "GroupName",
           "uri" : true
@@ -19752,6 +21003,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Description",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Description",
           "uri" : false
@@ -19818,6 +21070,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -19884,6 +21137,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -19952,6 +21206,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -20019,6 +21274,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Description",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Description",
             "uri" : false
@@ -20086,6 +21342,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "GroupName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "GroupName",
             "uri" : true
@@ -20153,6 +21410,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -20227,6 +21485,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -20256,6 +21515,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Group",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Group",
           "uri" : false
@@ -20322,6 +21582,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -20388,6 +21649,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -20456,6 +21718,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Group",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Group",
             "uri" : false
@@ -20523,6 +21786,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -20590,6 +21854,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -20667,6 +21932,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -20703,6 +21969,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "UserName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "UserName",
           "uri" : true
@@ -20769,6 +22036,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "AwsAccountId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "AwsAccountId",
           "uri" : true
@@ -20835,6 +22103,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "Namespace",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Namespace",
           "uri" : true
@@ -20901,6 +22170,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Email",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Email",
           "uri" : false
@@ -20967,6 +22237,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Role",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Role",
           "uri" : false
@@ -21035,6 +22306,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "AwsAccountId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "AwsAccountId",
             "uri" : true
@@ -21102,6 +22374,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Email",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Email",
             "uri" : false
@@ -21169,6 +22442,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "Namespace",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Namespace",
             "uri" : true
@@ -21236,6 +22510,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Role",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Role",
             "uri" : false
@@ -21303,6 +22578,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "UserName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "UserName",
             "uri" : true
@@ -21377,6 +22653,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -21406,6 +22683,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "User",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "User",
           "uri" : false
@@ -21472,6 +22750,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequestId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequestId",
           "uri" : false
@@ -21538,6 +22817,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : true,
           "unmarshallLocationName" : "Status",
           "uri" : false
@@ -21606,6 +22886,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequestId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequestId",
             "uri" : false
@@ -21673,6 +22954,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : true,
             "unmarshallLocationName" : "Status",
             "uri" : false
@@ -21740,6 +23022,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "User",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "User",
             "uri" : false
@@ -21817,6 +23100,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -21846,6 +23130,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Arn",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Arn",
           "uri" : false
@@ -21912,6 +23197,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "UserName",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "UserName",
           "uri" : false
@@ -21978,6 +23264,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Email",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Email",
           "uri" : false
@@ -22044,6 +23331,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Role",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Role",
           "uri" : false
@@ -22110,6 +23398,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "IdentityType",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "IdentityType",
           "uri" : false
@@ -22176,6 +23465,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Active",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Active",
           "uri" : false
@@ -22216,6 +23506,73 @@
           "variableSetterType" : "Boolean"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "PrincipalId",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The principal ID of the user.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The principal ID of the user.</p>\n@param principalId The principal ID of the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withPrincipalId",
+        "getterDocumentation" : "/**<p>The principal ID of the user.</p>\n@return The principal ID of the user.*/",
+        "getterMethodName" : "getPrincipalId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "PrincipalId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "PrincipalId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "PrincipalId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The principal ID of the user.</p>\n@param principalId The principal ID of the user.*/",
+        "setterMethodName" : "setPrincipalId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "principalId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The principal ID of the user.</p>\n@param principalId The principal ID of the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "principalId",
+          "variableType" : "String",
+          "documentation" : "<p>The principal ID of the user.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Active" : {
@@ -22244,6 +23601,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Active",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Active",
             "uri" : false
@@ -22311,6 +23669,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Arn",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Arn",
             "uri" : false
@@ -22378,6 +23737,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Email",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Email",
             "uri" : false
@@ -22445,6 +23805,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "IdentityType",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "IdentityType",
             "uri" : false
@@ -22486,6 +23847,74 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "PrincipalId" : {
+          "c2jName" : "PrincipalId",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The principal ID of the user.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The principal ID of the user.</p>\n@param principalId The principal ID of the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withPrincipalId",
+          "getterDocumentation" : "/**<p>The principal ID of the user.</p>\n@return The principal ID of the user.*/",
+          "getterMethodName" : "getPrincipalId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "PrincipalId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "PrincipalId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "PrincipalId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The principal ID of the user.</p>\n@param principalId The principal ID of the user.*/",
+          "setterMethodName" : "setPrincipalId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "principalId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The principal ID of the user.</p>\n@param principalId The principal ID of the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "principalId",
+            "variableType" : "String",
+            "documentation" : "<p>The principal ID of the user.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Role" : {
           "c2jName" : "Role",
           "c2jShape" : "UserRole",
@@ -22512,6 +23941,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Role",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Role",
             "uri" : false
@@ -22579,6 +24009,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "UserName",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "UserName",
             "uri" : false
@@ -22671,6 +24102,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,

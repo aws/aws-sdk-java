@@ -24,6 +24,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <ul>
  * <li>
  * <p>
+ * <a>UpdateMaintenanceStartTimeInput$DayOfMonth</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a>
  * </p>
  * </li>
@@ -62,11 +67,23 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
     private Integer minuteOfHour;
     /**
      * <p>
-     * The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents
-     * Sunday and 6 Saturday.
+     * The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6,
+     * where 0 represents Sunday and 6 Saturday.
      * </p>
      */
     private Integer dayOfWeek;
+    /**
+     * <p>
+     * The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where
+     * 1 represents the first day of the month and 28 represents the last day of the month.
+     * </p>
+     * <note>
+     * <p>
+     * This value is only available for tape and volume gateways.
+     * </p>
+     * </note>
+     */
+    private Integer dayOfMonth;
 
     /**
      * @param gatewayARN
@@ -188,13 +205,13 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents
-     * Sunday and 6 Saturday.
+     * The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6,
+     * where 0 represents Sunday and 6 Saturday.
      * </p>
      * 
      * @param dayOfWeek
-     *        The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0
-     *        represents Sunday and 6 Saturday.
+     *        The day of the week component of the maintenance start time week represented as an ordinal number from 0
+     *        to 6, where 0 represents Sunday and 6 Saturday.
      */
 
     public void setDayOfWeek(Integer dayOfWeek) {
@@ -203,12 +220,12 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents
-     * Sunday and 6 Saturday.
+     * The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6,
+     * where 0 represents Sunday and 6 Saturday.
      * </p>
      * 
-     * @return The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0
-     *         represents Sunday and 6 Saturday.
+     * @return The day of the week component of the maintenance start time week represented as an ordinal number from 0
+     *         to 6, where 0 represents Sunday and 6 Saturday.
      */
 
     public Integer getDayOfWeek() {
@@ -217,18 +234,88 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents
-     * Sunday and 6 Saturday.
+     * The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6,
+     * where 0 represents Sunday and 6 Saturday.
      * </p>
      * 
      * @param dayOfWeek
-     *        The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0
-     *        represents Sunday and 6 Saturday.
+     *        The day of the week component of the maintenance start time week represented as an ordinal number from 0
+     *        to 6, where 0 represents Sunday and 6 Saturday.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateMaintenanceStartTimeRequest withDayOfWeek(Integer dayOfWeek) {
         setDayOfWeek(dayOfWeek);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where
+     * 1 represents the first day of the month and 28 represents the last day of the month.
+     * </p>
+     * <note>
+     * <p>
+     * This value is only available for tape and volume gateways.
+     * </p>
+     * </note>
+     * 
+     * @param dayOfMonth
+     *        The day of the month component of the maintenance start time represented as an ordinal number from 1 to
+     *        28, where 1 represents the first day of the month and 28 represents the last day of the month.</p> <note>
+     *        <p>
+     *        This value is only available for tape and volume gateways.
+     *        </p>
+     */
+
+    public void setDayOfMonth(Integer dayOfMonth) {
+        this.dayOfMonth = dayOfMonth;
+    }
+
+    /**
+     * <p>
+     * The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where
+     * 1 represents the first day of the month and 28 represents the last day of the month.
+     * </p>
+     * <note>
+     * <p>
+     * This value is only available for tape and volume gateways.
+     * </p>
+     * </note>
+     * 
+     * @return The day of the month component of the maintenance start time represented as an ordinal number from 1 to
+     *         28, where 1 represents the first day of the month and 28 represents the last day of the month.</p> <note>
+     *         <p>
+     *         This value is only available for tape and volume gateways.
+     *         </p>
+     */
+
+    public Integer getDayOfMonth() {
+        return this.dayOfMonth;
+    }
+
+    /**
+     * <p>
+     * The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where
+     * 1 represents the first day of the month and 28 represents the last day of the month.
+     * </p>
+     * <note>
+     * <p>
+     * This value is only available for tape and volume gateways.
+     * </p>
+     * </note>
+     * 
+     * @param dayOfMonth
+     *        The day of the month component of the maintenance start time represented as an ordinal number from 1 to
+     *        28, where 1 represents the first day of the month and 28 represents the last day of the month.</p> <note>
+     *        <p>
+     *        This value is only available for tape and volume gateways.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMaintenanceStartTimeRequest withDayOfMonth(Integer dayOfMonth) {
+        setDayOfMonth(dayOfMonth);
         return this;
     }
 
@@ -251,7 +338,9 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
         if (getMinuteOfHour() != null)
             sb.append("MinuteOfHour: ").append(getMinuteOfHour()).append(",");
         if (getDayOfWeek() != null)
-            sb.append("DayOfWeek: ").append(getDayOfWeek());
+            sb.append("DayOfWeek: ").append(getDayOfWeek()).append(",");
+        if (getDayOfMonth() != null)
+            sb.append("DayOfMonth: ").append(getDayOfMonth());
         sb.append("}");
         return sb.toString();
     }
@@ -282,6 +371,10 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getDayOfWeek() != null && other.getDayOfWeek().equals(this.getDayOfWeek()) == false)
             return false;
+        if (other.getDayOfMonth() == null ^ this.getDayOfMonth() == null)
+            return false;
+        if (other.getDayOfMonth() != null && other.getDayOfMonth().equals(this.getDayOfMonth()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +387,7 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getHourOfDay() == null) ? 0 : getHourOfDay().hashCode());
         hashCode = prime * hashCode + ((getMinuteOfHour() == null) ? 0 : getMinuteOfHour().hashCode());
         hashCode = prime * hashCode + ((getDayOfWeek() == null) ? 0 : getDayOfWeek().hashCode());
+        hashCode = prime * hashCode + ((getDayOfMonth() == null) ? 0 : getDayOfMonth().hashCode());
         return hashCode;
     }
 

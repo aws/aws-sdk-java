@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.pinpointemail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class PutDeliverabilityDashboardOptionRequestMarshaller {
 
     private static final MarshallingInfo<Boolean> DASHBOARDENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DashboardEnabled").build();
+    private static final MarshallingInfo<List> SUBSCRIBEDDOMAINS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubscribedDomains").build();
 
     private static final PutDeliverabilityDashboardOptionRequestMarshaller instance = new PutDeliverabilityDashboardOptionRequestMarshaller();
 
@@ -47,6 +50,7 @@ public class PutDeliverabilityDashboardOptionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(putDeliverabilityDashboardOptionRequest.getDashboardEnabled(), DASHBOARDENABLED_BINDING);
+            protocolMarshaller.marshall(putDeliverabilityDashboardOptionRequest.getSubscribedDomains(), SUBSCRIBEDDOMAINS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for H264TimecodeInsertionBehavior
+ * H264 Timecode Insertion Behavior
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264TimecodeInsertionBehavior {

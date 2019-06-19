@@ -48,7 +48,7 @@ public class CreateStreamingDistributionWithTagsRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2018-11-05/streaming-distribution?WithTags";
+        String uriResourcePath = "/2019-03-26/streaming-distribution?WithTags";
 
         uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
 
@@ -56,7 +56,7 @@ public class CreateStreamingDistributionWithTagsRequestMarshaller implements
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2018-11-05/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2019-03-26/");
 
             StreamingDistributionConfigWithTags streamingDistributionConfigWithTags = createStreamingDistributionWithTagsRequest
                     .getStreamingDistributionConfigWithTags();

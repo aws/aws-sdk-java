@@ -48,6 +48,12 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
+     * The time, in milliseconds since the epoch, when the simulation job was last started.
+     * </p>
+     */
+    private java.util.Date lastStartedAt;
+    /**
+     * <p>
      * The time, in milliseconds since the epoch, when the simulation job was last updated.
      * </p>
      */
@@ -111,9 +117,7 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated
-     * policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=
-     * "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     * >specify AWS security credentials for your application</a>.
+     * policies on your behalf. This is how credentials are passed in to your simulation job.
      * </p>
      */
     private String iamRole;
@@ -278,6 +282,46 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
 
     public SimulationJob withStatus(SimulationJobStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the simulation job was last started.
+     * </p>
+     * 
+     * @param lastStartedAt
+     *        The time, in milliseconds since the epoch, when the simulation job was last started.
+     */
+
+    public void setLastStartedAt(java.util.Date lastStartedAt) {
+        this.lastStartedAt = lastStartedAt;
+    }
+
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the simulation job was last started.
+     * </p>
+     * 
+     * @return The time, in milliseconds since the epoch, when the simulation job was last started.
+     */
+
+    public java.util.Date getLastStartedAt() {
+        return this.lastStartedAt;
+    }
+
+    /**
+     * <p>
+     * The time, in milliseconds since the epoch, when the simulation job was last started.
+     * </p>
+     * 
+     * @param lastStartedAt
+     *        The time, in milliseconds since the epoch, when the simulation job was last started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimulationJob withLastStartedAt(java.util.Date lastStartedAt) {
+        setLastStartedAt(lastStartedAt);
         return this;
     }
 
@@ -750,16 +794,12 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated
-     * policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=
-     * "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     * >specify AWS security credentials for your application</a>.
+     * policies on your behalf. This is how credentials are passed in to your simulation job.
      * </p>
      * 
      * @param iamRole
      *        The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated
-     *        policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=
-     *        "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     *        >specify AWS security credentials for your application</a>.
+     *        policies on your behalf. This is how credentials are passed in to your simulation job.
      */
 
     public void setIamRole(String iamRole) {
@@ -769,16 +809,11 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated
-     * policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=
-     * "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     * >specify AWS security credentials for your application</a>.
+     * policies on your behalf. This is how credentials are passed in to your simulation job.
      * </p>
      * 
      * @return The IAM role that allows the simulation instance to call the AWS APIs that are specified in its
-     *         associated policies on your behalf. This is how credentials are passed in to your simulation job. See how
-     *         to <a href=
-     *         "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     *         >specify AWS security credentials for your application</a>.
+     *         associated policies on your behalf. This is how credentials are passed in to your simulation job.
      */
 
     public String getIamRole() {
@@ -788,16 +823,12 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated
-     * policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=
-     * "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     * >specify AWS security credentials for your application</a>.
+     * policies on your behalf. This is how credentials are passed in to your simulation job.
      * </p>
      * 
      * @param iamRole
      *        The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated
-     *        policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=
-     *        "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     *        >specify AWS security credentials for your application</a>.
+     *        policies on your behalf. This is how credentials are passed in to your simulation job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1065,6 +1096,8 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
             sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getLastStartedAt() != null)
+            sb.append("LastStartedAt: ").append(getLastStartedAt()).append(",");
         if (getLastUpdatedAt() != null)
             sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getFailureBehavior() != null)
@@ -1116,6 +1149,10 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getLastStartedAt() == null ^ this.getLastStartedAt() == null)
+            return false;
+        if (other.getLastStartedAt() != null && other.getLastStartedAt().equals(this.getLastStartedAt()) == false)
             return false;
         if (other.getLastUpdatedAt() == null ^ this.getLastUpdatedAt() == null)
             return false;
@@ -1180,6 +1217,7 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastStartedAt() == null) ? 0 : getLastStartedAt().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getFailureBehavior() == null) ? 0 : getFailureBehavior().hashCode());
         hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());

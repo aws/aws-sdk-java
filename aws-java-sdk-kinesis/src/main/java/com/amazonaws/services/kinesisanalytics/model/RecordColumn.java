@@ -40,7 +40,10 @@ public class RecordColumn implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Reference to the data element in the streaming input of the reference data source.
+     * Reference to the data element in the streaming input or the reference data source. This element is required if
+     * the <a href=
+     * "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel"
+     * >RecordFormatType</a> is <code>JSON</code>.
      * </p>
      */
     private String mapping;
@@ -93,11 +96,17 @@ public class RecordColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reference to the data element in the streaming input of the reference data source.
+     * Reference to the data element in the streaming input or the reference data source. This element is required if
+     * the <a href=
+     * "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel"
+     * >RecordFormatType</a> is <code>JSON</code>.
      * </p>
      * 
      * @param mapping
-     *        Reference to the data element in the streaming input of the reference data source.
+     *        Reference to the data element in the streaming input or the reference data source. This element is
+     *        required if the <a href=
+     *        "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel"
+     *        >RecordFormatType</a> is <code>JSON</code>.
      */
 
     public void setMapping(String mapping) {
@@ -106,10 +115,16 @@ public class RecordColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reference to the data element in the streaming input of the reference data source.
+     * Reference to the data element in the streaming input or the reference data source. This element is required if
+     * the <a href=
+     * "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel"
+     * >RecordFormatType</a> is <code>JSON</code>.
      * </p>
      * 
-     * @return Reference to the data element in the streaming input of the reference data source.
+     * @return Reference to the data element in the streaming input or the reference data source. This element is
+     *         required if the <a href=
+     *         "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel"
+     *         >RecordFormatType</a> is <code>JSON</code>.
      */
 
     public String getMapping() {
@@ -118,11 +133,17 @@ public class RecordColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reference to the data element in the streaming input of the reference data source.
+     * Reference to the data element in the streaming input or the reference data source. This element is required if
+     * the <a href=
+     * "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel"
+     * >RecordFormatType</a> is <code>JSON</code>.
      * </p>
      * 
      * @param mapping
-     *        Reference to the data element in the streaming input of the reference data source.
+     *        Reference to the data element in the streaming input or the reference data source. This element is
+     *        required if the <a href=
+     *        "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel"
+     *        >RecordFormatType</a> is <code>JSON</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

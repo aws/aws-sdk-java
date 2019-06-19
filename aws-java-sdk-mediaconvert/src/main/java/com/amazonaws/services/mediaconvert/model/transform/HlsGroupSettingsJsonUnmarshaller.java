@@ -77,6 +77,10 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
                     context.nextToken();
                     hlsGroupSettings.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("destinationSettings", targetDepth)) {
+                    context.nextToken();
+                    hlsGroupSettings.setDestinationSettings(DestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("directoryStructure", targetDepth)) {
                     context.nextToken();
                     hlsGroupSettings.setDirectoryStructure(context.getUnmarshaller(String.class).unmarshall(context));

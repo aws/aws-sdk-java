@@ -50,6 +50,12 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * Configures notification of workers regarding available or expiring work items.
+     * </p>
+     */
+    private NotificationConfiguration notificationConfiguration;
     /** <p/> */
     private java.util.List<Tag> tags;
 
@@ -256,6 +262,46 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Configures notification of workers regarding available or expiring work items.
+     * </p>
+     * 
+     * @param notificationConfiguration
+     *        Configures notification of workers regarding available or expiring work items.
+     */
+
+    public void setNotificationConfiguration(NotificationConfiguration notificationConfiguration) {
+        this.notificationConfiguration = notificationConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configures notification of workers regarding available or expiring work items.
+     * </p>
+     * 
+     * @return Configures notification of workers regarding available or expiring work items.
+     */
+
+    public NotificationConfiguration getNotificationConfiguration() {
+        return this.notificationConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configures notification of workers regarding available or expiring work items.
+     * </p>
+     * 
+     * @param notificationConfiguration
+     *        Configures notification of workers regarding available or expiring work items.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkteamRequest withNotificationConfiguration(NotificationConfiguration notificationConfiguration) {
+        setNotificationConfiguration(notificationConfiguration);
+        return this;
+    }
+
+    /**
      * <p/>
      * 
      * @return
@@ -332,6 +378,8 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("MemberDefinitions: ").append(getMemberDefinitions()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getNotificationConfiguration() != null)
+            sb.append("NotificationConfiguration: ").append(getNotificationConfiguration()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -360,6 +408,10 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getNotificationConfiguration() == null ^ this.getNotificationConfiguration() == null)
+            return false;
+        if (other.getNotificationConfiguration() != null && other.getNotificationConfiguration().equals(this.getNotificationConfiguration()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -375,6 +427,7 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getWorkteamName() == null) ? 0 : getWorkteamName().hashCode());
         hashCode = prime * hashCode + ((getMemberDefinitions() == null) ? 0 : getMemberDefinitions().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getNotificationConfiguration() == null) ? 0 : getNotificationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

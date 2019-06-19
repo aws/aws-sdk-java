@@ -118,6 +118,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public GetMailboxDetailsResult getMailboxDetails(GetMailboxDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAliasesResult listAliases(ListAliasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -169,6 +174,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public ResetPasswordResult resetPassword(ResetPasswordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMailboxQuotaResult updateMailboxQuota(UpdateMailboxQuotaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

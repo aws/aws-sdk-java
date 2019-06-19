@@ -25,17 +25,17 @@ public class TerminateInstancesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about one or more terminated instances.
+     * Information about the terminated instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceStateChange> terminatingInstances;
 
     /**
      * <p>
-     * Information about one or more terminated instances.
+     * Information about the terminated instances.
      * </p>
      * 
-     * @return Information about one or more terminated instances.
+     * @return Information about the terminated instances.
      */
 
     public java.util.List<InstanceStateChange> getTerminatingInstances() {
@@ -47,11 +47,11 @@ public class TerminateInstancesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about one or more terminated instances.
+     * Information about the terminated instances.
      * </p>
      * 
      * @param terminatingInstances
-     *        Information about one or more terminated instances.
+     *        Information about the terminated instances.
      */
 
     public void setTerminatingInstances(java.util.Collection<InstanceStateChange> terminatingInstances) {
@@ -65,7 +65,7 @@ public class TerminateInstancesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about one or more terminated instances.
+     * Information about the terminated instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class TerminateInstancesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param terminatingInstances
-     *        Information about one or more terminated instances.
+     *        Information about the terminated instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class TerminateInstancesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about one or more terminated instances.
+     * Information about the terminated instances.
      * </p>
      * 
      * @param terminatingInstances
-     *        Information about one or more terminated instances.
+     *        Information about the terminated instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

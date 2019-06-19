@@ -25,18 +25,18 @@ public class CreateInsightResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN Of the created insight.
+     * The ARN of the insight created.
      * </p>
      */
     private String insightArn;
 
     /**
      * <p>
-     * The ARN Of the created insight.
+     * The ARN of the insight created.
      * </p>
      * 
      * @param insightArn
-     *        The ARN Of the created insight.
+     *        The ARN of the insight created.
      */
 
     public void setInsightArn(String insightArn) {
@@ -45,10 +45,10 @@ public class CreateInsightResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN Of the created insight.
+     * The ARN of the insight created.
      * </p>
      * 
-     * @return The ARN Of the created insight.
+     * @return The ARN of the insight created.
      */
 
     public String getInsightArn() {
@@ -57,11 +57,11 @@ public class CreateInsightResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN Of the created insight.
+     * The ARN of the insight created.
      * </p>
      * 
      * @param insightArn
-     *        The ARN Of the created insight.
+     *        The ARN of the insight created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

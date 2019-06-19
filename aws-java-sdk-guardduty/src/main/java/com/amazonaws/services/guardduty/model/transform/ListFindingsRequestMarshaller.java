@@ -31,12 +31,12 @@ public class ListFindingsRequestMarshaller {
             .marshallLocationName("detectorId").build();
     private static final MarshallingInfo<StructuredPojo> FINDINGCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingCriteria").build();
+    private static final MarshallingInfo<StructuredPojo> SORTCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sortCriteria").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
-    private static final MarshallingInfo<StructuredPojo> SORTCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sortCriteria").build();
 
     private static final ListFindingsRequestMarshaller instance = new ListFindingsRequestMarshaller();
 
@@ -56,9 +56,9 @@ public class ListFindingsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listFindingsRequest.getDetectorId(), DETECTORID_BINDING);
             protocolMarshaller.marshall(listFindingsRequest.getFindingCriteria(), FINDINGCRITERIA_BINDING);
+            protocolMarshaller.marshall(listFindingsRequest.getSortCriteria(), SORTCRITERIA_BINDING);
             protocolMarshaller.marshall(listFindingsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listFindingsRequest.getNextToken(), NEXTTOKEN_BINDING);
-            protocolMarshaller.marshall(listFindingsRequest.getSortCriteria(), SORTCRITERIA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

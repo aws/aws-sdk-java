@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appmesh.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -34,6 +35,10 @@ public class CreateMeshRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> MESHNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("meshName").build();
+    private static final MarshallingInfo<StructuredPojo> SPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spec").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateMeshRequestMarshaller instance = new CreateMeshRequestMarshaller();
 
@@ -53,6 +58,8 @@ public class CreateMeshRequestMarshaller {
         try {
             protocolMarshaller.marshall(createMeshRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createMeshRequest.getMeshName(), MESHNAME_BINDING);
+            protocolMarshaller.marshall(createMeshRequest.getSpec(), SPEC_BINDING);
+            protocolMarshaller.marshall(createMeshRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

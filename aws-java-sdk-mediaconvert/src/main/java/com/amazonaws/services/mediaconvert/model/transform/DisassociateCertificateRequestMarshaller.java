@@ -27,7 +27,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DisassociateCertificateRequestMarshaller {
 
-    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("arn").build();
 
     private static final DisassociateCertificateRequestMarshaller instance = new DisassociateCertificateRequestMarshaller();

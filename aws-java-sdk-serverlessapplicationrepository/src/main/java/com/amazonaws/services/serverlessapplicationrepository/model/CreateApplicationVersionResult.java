@@ -49,7 +49,8 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * specifying this parameter.
      * </p>
      * <p>
-     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     * CAPABILITY_AUTO_EXPAND.
      * </p>
      * <p>
      * The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -80,12 +81,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * >AWS::SNS::TopicPolicy</a>.
      * </p>
      * <p>
+     * Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     * </p>
+     * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
      * associated with the application before deploying. If you don't specify this parameter for an application that
      * requires capabilities, the call will fail.
-     * </p>
-     * <p>
-     * Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * </p>
      */
     private java.util.List<String> requiredCapabilities;
@@ -107,7 +108,17 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     private String semanticVersion;
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to the S3 object that contains the ZIP archive of the source code for this version of your application.
+     * </p>
+     * <p>
+     * Maximum size 50 MB
+     * </p>
+     */
+    private String sourceCodeArchiveUrl;
+    /**
+     * <p>
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      */
     private String sourceCodeUrl;
@@ -276,7 +287,8 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * specifying this parameter.
      * </p>
      * <p>
-     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     * CAPABILITY_AUTO_EXPAND.
      * </p>
      * <p>
      * The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -307,12 +319,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * >AWS::SNS::TopicPolicy</a>.
      * </p>
      * <p>
+     * Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     * </p>
+     * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
      * associated with the application before deploying. If you don't specify this parameter for an application that
      * requires capabilities, the call will fail.
-     * </p>
-     * <p>
-     * Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * </p>
      * 
      * @return A list of values that you must specify before you can deploy certain applications. Some applications
@@ -320,7 +332,8 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *         Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their
      *         capabilities by specifying this parameter.</p>
      *         <p>
-     *         The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     *         The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     *         CAPABILITY_AUTO_EXPAND.
      *         </p>
      *         <p>
      *         The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -351,12 +364,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *         >AWS::SNS::TopicPolicy</a>.
      *         </p>
      *         <p>
+     *         Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     *         </p>
+     *         <p>
      *         If your application template contains any of the above resources, we recommend that you review all
      *         permissions associated with the application before deploying. If you don't specify this parameter for an
      *         application that requires capabilities, the call will fail.
-     *         </p>
-     *         <p>
-     *         Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * @see Capability
      */
 
@@ -372,7 +385,8 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * specifying this parameter.
      * </p>
      * <p>
-     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     * CAPABILITY_AUTO_EXPAND.
      * </p>
      * <p>
      * The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -403,12 +417,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * >AWS::SNS::TopicPolicy</a>.
      * </p>
      * <p>
+     * Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     * </p>
+     * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
      * associated with the application before deploying. If you don't specify this parameter for an application that
      * requires capabilities, the call will fail.
-     * </p>
-     * <p>
-     * Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * </p>
      * 
      * @param requiredCapabilities
@@ -417,7 +431,8 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their
      *        capabilities by specifying this parameter.</p>
      *        <p>
-     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     *        CAPABILITY_AUTO_EXPAND.
      *        </p>
      *        <p>
      *        The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -448,12 +463,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        >AWS::SNS::TopicPolicy</a>.
      *        </p>
      *        <p>
+     *        Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     *        </p>
+     *        <p>
      *        If your application template contains any of the above resources, we recommend that you review all
      *        permissions associated with the application before deploying. If you don't specify this parameter for an
      *        application that requires capabilities, the call will fail.
-     *        </p>
-     *        <p>
-     *        Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * @see Capability
      */
 
@@ -474,7 +489,8 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * specifying this parameter.
      * </p>
      * <p>
-     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     * CAPABILITY_AUTO_EXPAND.
      * </p>
      * <p>
      * The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -505,12 +521,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * >AWS::SNS::TopicPolicy</a>.
      * </p>
      * <p>
+     * Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     * </p>
+     * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
      * associated with the application before deploying. If you don't specify this parameter for an application that
      * requires capabilities, the call will fail.
-     * </p>
-     * <p>
-     * Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -524,7 +540,8 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their
      *        capabilities by specifying this parameter.</p>
      *        <p>
-     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     *        CAPABILITY_AUTO_EXPAND.
      *        </p>
      *        <p>
      *        The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -555,12 +572,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        >AWS::SNS::TopicPolicy</a>.
      *        </p>
      *        <p>
+     *        Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     *        </p>
+     *        <p>
      *        If your application template contains any of the above resources, we recommend that you review all
      *        permissions associated with the application before deploying. If you don't specify this parameter for an
      *        application that requires capabilities, the call will fail.
-     *        </p>
-     *        <p>
-     *        Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -583,7 +600,8 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * specifying this parameter.
      * </p>
      * <p>
-     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     * CAPABILITY_AUTO_EXPAND.
      * </p>
      * <p>
      * The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -614,12 +632,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * >AWS::SNS::TopicPolicy</a>.
      * </p>
      * <p>
+     * Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     * </p>
+     * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
      * associated with the application before deploying. If you don't specify this parameter for an application that
      * requires capabilities, the call will fail.
-     * </p>
-     * <p>
-     * Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * </p>
      * 
      * @param requiredCapabilities
@@ -628,7 +646,8 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their
      *        capabilities by specifying this parameter.</p>
      *        <p>
-     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     *        CAPABILITY_AUTO_EXPAND.
      *        </p>
      *        <p>
      *        The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -659,12 +678,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        >AWS::SNS::TopicPolicy</a>.
      *        </p>
      *        <p>
+     *        Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     *        </p>
+     *        <p>
      *        If your application template contains any of the above resources, we recommend that you review all
      *        permissions associated with the application before deploying. If you don't specify this parameter for an
      *        application that requires capabilities, the call will fail.
-     *        </p>
-     *        <p>
-     *        Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -682,7 +701,8 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * specifying this parameter.
      * </p>
      * <p>
-     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     * The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     * CAPABILITY_AUTO_EXPAND.
      * </p>
      * <p>
      * The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -713,12 +733,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * >AWS::SNS::TopicPolicy</a>.
      * </p>
      * <p>
+     * Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     * </p>
+     * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
      * associated with the application before deploying. If you don't specify this parameter for an application that
      * requires capabilities, the call will fail.
-     * </p>
-     * <p>
-     * Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * </p>
      * 
      * @param requiredCapabilities
@@ -727,7 +747,8 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their
      *        capabilities by specifying this parameter.</p>
      *        <p>
-     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+     *        The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and
+     *        CAPABILITY_AUTO_EXPAND.
      *        </p>
      *        <p>
      *        The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a
@@ -758,12 +779,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        >AWS::SNS::TopicPolicy</a>.
      *        </p>
      *        <p>
+     *        Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+     *        </p>
+     *        <p>
      *        If your application template contains any of the above resources, we recommend that you review all
      *        permissions associated with the application before deploying. If you don't specify this parameter for an
      *        application that requires capabilities, the call will fail.
-     *        </p>
-     *        <p>
-     *        Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -898,11 +919,71 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to the S3 object that contains the ZIP archive of the source code for this version of your application.
+     * </p>
+     * <p>
+     * Maximum size 50 MB
+     * </p>
+     * 
+     * @param sourceCodeArchiveUrl
+     *        A link to the S3 object that contains the ZIP archive of the source code for this version of your
+     *        application.</p>
+     *        <p>
+     *        Maximum size 50 MB
+     */
+
+    public void setSourceCodeArchiveUrl(String sourceCodeArchiveUrl) {
+        this.sourceCodeArchiveUrl = sourceCodeArchiveUrl;
+    }
+
+    /**
+     * <p>
+     * A link to the S3 object that contains the ZIP archive of the source code for this version of your application.
+     * </p>
+     * <p>
+     * Maximum size 50 MB
+     * </p>
+     * 
+     * @return A link to the S3 object that contains the ZIP archive of the source code for this version of your
+     *         application.</p>
+     *         <p>
+     *         Maximum size 50 MB
+     */
+
+    public String getSourceCodeArchiveUrl() {
+        return this.sourceCodeArchiveUrl;
+    }
+
+    /**
+     * <p>
+     * A link to the S3 object that contains the ZIP archive of the source code for this version of your application.
+     * </p>
+     * <p>
+     * Maximum size 50 MB
+     * </p>
+     * 
+     * @param sourceCodeArchiveUrl
+     *        A link to the S3 object that contains the ZIP archive of the source code for this version of your
+     *        application.</p>
+     *        <p>
+     *        Maximum size 50 MB
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationVersionResult withSourceCodeArchiveUrl(String sourceCodeArchiveUrl) {
+        setSourceCodeArchiveUrl(sourceCodeArchiveUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      * 
      * @param sourceCodeUrl
-     *        A link to a public repository for the source code of your application.
+     *        A link to a public repository for the source code of your application, for example the URL of a specific
+     *        GitHub commit.
      */
 
     public void setSourceCodeUrl(String sourceCodeUrl) {
@@ -911,10 +992,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      * 
-     * @return A link to a public repository for the source code of your application.
+     * @return A link to a public repository for the source code of your application, for example the URL of a specific
+     *         GitHub commit.
      */
 
     public String getSourceCodeUrl() {
@@ -923,11 +1006,13 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      * 
      * @param sourceCodeUrl
-     *        A link to a public repository for the source code of your application.
+     *        A link to a public repository for the source code of your application, for example the URL of a specific
+     *        GitHub commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1000,6 +1085,8 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
             sb.append("ResourcesSupported: ").append(getResourcesSupported()).append(",");
         if (getSemanticVersion() != null)
             sb.append("SemanticVersion: ").append(getSemanticVersion()).append(",");
+        if (getSourceCodeArchiveUrl() != null)
+            sb.append("SourceCodeArchiveUrl: ").append(getSourceCodeArchiveUrl()).append(",");
         if (getSourceCodeUrl() != null)
             sb.append("SourceCodeUrl: ").append(getSourceCodeUrl()).append(",");
         if (getTemplateUrl() != null)
@@ -1042,6 +1129,10 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getSemanticVersion() != null && other.getSemanticVersion().equals(this.getSemanticVersion()) == false)
             return false;
+        if (other.getSourceCodeArchiveUrl() == null ^ this.getSourceCodeArchiveUrl() == null)
+            return false;
+        if (other.getSourceCodeArchiveUrl() != null && other.getSourceCodeArchiveUrl().equals(this.getSourceCodeArchiveUrl()) == false)
+            return false;
         if (other.getSourceCodeUrl() == null ^ this.getSourceCodeUrl() == null)
             return false;
         if (other.getSourceCodeUrl() != null && other.getSourceCodeUrl().equals(this.getSourceCodeUrl()) == false)
@@ -1064,6 +1155,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getRequiredCapabilities() == null) ? 0 : getRequiredCapabilities().hashCode());
         hashCode = prime * hashCode + ((getResourcesSupported() == null) ? 0 : getResourcesSupported().hashCode());
         hashCode = prime * hashCode + ((getSemanticVersion() == null) ? 0 : getSemanticVersion().hashCode());
+        hashCode = prime * hashCode + ((getSourceCodeArchiveUrl() == null) ? 0 : getSourceCodeArchiveUrl().hashCode());
         hashCode = prime * hashCode + ((getSourceCodeUrl() == null) ? 0 : getSourceCodeUrl().hashCode());
         hashCode = prime * hashCode + ((getTemplateUrl() == null) ? 0 : getTemplateUrl().hashCode());
         return hashCode;

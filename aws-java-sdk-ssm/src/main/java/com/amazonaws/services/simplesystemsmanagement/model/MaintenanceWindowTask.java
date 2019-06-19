@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a task defined for a Maintenance Window.
+ * Information about a task defined for a maintenance window.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowTask" target="_top">AWS API
@@ -30,7 +30,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Maintenance Window ID where the task is registered.
+     * The ID of the maintenance window where the task is registered.
      * </p>
      */
     private String windowId;
@@ -64,13 +64,13 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
@@ -78,7 +78,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     private java.util.Map<String, MaintenanceWindowTaskParameterValueExpression> taskParameters;
     /**
      * <p>
-     * The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks that
+     * The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks that
      * have the same priority are scheduled in parallel.
      * </p>
      */
@@ -92,20 +92,21 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      */
     private LoggingInfo loggingInfo;
     /**
      * <p>
-     * The role that should be assumed when executing the task
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for maintenance window Run Command tasks.
      * </p>
      */
     private String serviceRoleArn;
     /**
      * <p>
-     * The maximum number of targets this task can be run for in parallel.
+     * The maximum number of targets this task can be run for, in parallel.
      * </p>
      */
     private String maxConcurrency;
@@ -130,11 +131,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Maintenance Window ID where the task is registered.
+     * The ID of the maintenance window where the task is registered.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID where the task is registered.
+     *        The ID of the maintenance window where the task is registered.
      */
 
     public void setWindowId(String windowId) {
@@ -143,10 +144,10 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Maintenance Window ID where the task is registered.
+     * The ID of the maintenance window where the task is registered.
      * </p>
      * 
-     * @return The Maintenance Window ID where the task is registered.
+     * @return The ID of the maintenance window where the task is registered.
      */
 
     public String getWindowId() {
@@ -155,11 +156,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Maintenance Window ID where the task is registered.
+     * The ID of the maintenance window where the task is registered.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID where the task is registered.
+     *        The ID of the maintenance window where the task is registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -425,22 +426,22 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
-     * @return The parameters that should be passed to the task when it is executed.</p> <note>
+     * @return The parameters that should be passed to the task when it is run.</p> <note>
      *         <p>
      *         <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *         instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure.
-     *         For information about how Systems Manager handles these options for the supported Maintenance Window task
+     *         For information about how Systems Manager handles these options for the supported maintenance window task
      *         types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *         </p>
      */
@@ -451,23 +452,23 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @param taskParameters
-     *        The parameters that should be passed to the task when it is executed.</p> <note>
+     *        The parameters that should be passed to the task when it is run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
-     *        information about how Systems Manager handles these options for the supported Maintenance Window task
+     *        information about how Systems Manager handles these options for the supported maintenance window task
      *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      */
@@ -478,23 +479,23 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @param taskParameters
-     *        The parameters that should be passed to the task when it is executed.</p> <note>
+     *        The parameters that should be passed to the task when it is run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
-     *        information about how Systems Manager handles these options for the supported Maintenance Window task
+     *        information about how Systems Manager handles these options for the supported maintenance window task
      *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -528,12 +529,12 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks that
+     * The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks that
      * have the same priority are scheduled in parallel.
      * </p>
      * 
      * @param priority
-     *        The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks
+     *        The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks
      *        that have the same priority are scheduled in parallel.
      */
 
@@ -543,11 +544,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks that
+     * The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks that
      * have the same priority are scheduled in parallel.
      * </p>
      * 
-     * @return The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks
+     * @return The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks
      *         that have the same priority are scheduled in parallel.
      */
 
@@ -557,12 +558,12 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks that
+     * The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks that
      * have the same priority are scheduled in parallel.
      * </p>
      * 
      * @param priority
-     *        The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks
+     *        The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks
      *        that have the same priority are scheduled in parallel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -581,7 +582,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
@@ -591,7 +592,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported Maintenance Window task types, see
+     *        options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      */
@@ -609,7 +610,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
@@ -618,7 +619,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      *         <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      *         <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      *         <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *         options for the supported Maintenance Window task types, see
+     *         options for the supported maintenance window task types, see
      *         <a>MaintenanceWindowTaskInvocationParameters</a>.
      *         </p>
      */
@@ -636,7 +637,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
@@ -646,7 +647,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported Maintenance Window task types, see
+     *        options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -659,11 +660,13 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The role that should be assumed when executing the task
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for maintenance window Run Command tasks.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The role that should be assumed when executing the task
+     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     *        notifications for maintenance window Run Command tasks.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -672,10 +675,12 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The role that should be assumed when executing the task
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for maintenance window Run Command tasks.
      * </p>
      * 
-     * @return The role that should be assumed when executing the task
+     * @return The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     *         notifications for maintenance window Run Command tasks.
      */
 
     public String getServiceRoleArn() {
@@ -684,11 +689,13 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The role that should be assumed when executing the task
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for maintenance window Run Command tasks.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The role that should be assumed when executing the task
+     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     *        notifications for maintenance window Run Command tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -699,11 +706,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum number of targets this task can be run for in parallel.
+     * The maximum number of targets this task can be run for, in parallel.
      * </p>
      * 
      * @param maxConcurrency
-     *        The maximum number of targets this task can be run for in parallel.
+     *        The maximum number of targets this task can be run for, in parallel.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -712,10 +719,10 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum number of targets this task can be run for in parallel.
+     * The maximum number of targets this task can be run for, in parallel.
      * </p>
      * 
-     * @return The maximum number of targets this task can be run for in parallel.
+     * @return The maximum number of targets this task can be run for, in parallel.
      */
 
     public String getMaxConcurrency() {
@@ -724,11 +731,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum number of targets this task can be run for in parallel.
+     * The maximum number of targets this task can be run for, in parallel.
      * </p>
      * 
      * @param maxConcurrency
-     *        The maximum number of targets this task can be run for in parallel.
+     *        The maximum number of targets this task can be run for, in parallel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

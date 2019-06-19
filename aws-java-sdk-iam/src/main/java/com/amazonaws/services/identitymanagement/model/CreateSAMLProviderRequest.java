@@ -34,7 +34,7 @@ public class CreateSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
      * Federation</a> in the <i>IAM User Guide</i>
      * </p>
      */
@@ -60,7 +60,7 @@ public class CreateSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
      * Federation</a> in the <i>IAM User Guide</i>
      * </p>
      * 
@@ -71,7 +71,7 @@ public class CreateSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
      *        identity management software that is used as your organization's IdP.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
      *        Federation</a> in the <i>IAM User Guide</i>
      */
 
@@ -88,7 +88,7 @@ public class CreateSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
      * Federation</a> in the <i>IAM User Guide</i>
      * </p>
      * 
@@ -98,7 +98,7 @@ public class CreateSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
      *         identity management software that is used as your organization's IdP.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
      *         Federation</a> in the <i>IAM User Guide</i>
      */
 
@@ -115,7 +115,7 @@ public class CreateSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
      * Federation</a> in the <i>IAM User Guide</i>
      * </p>
      * 
@@ -126,7 +126,7 @@ public class CreateSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
      *        identity management software that is used as your organization's IdP.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
      *        Federation</a> in the <i>IAM User Guide</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

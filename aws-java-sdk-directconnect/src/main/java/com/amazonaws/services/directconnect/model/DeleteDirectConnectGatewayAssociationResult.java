@@ -26,18 +26,18 @@ public class DeleteDirectConnectGatewayAssociationResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The association to be deleted.
+     * Information about the deleted association.
      * </p>
      */
     private DirectConnectGatewayAssociation directConnectGatewayAssociation;
 
     /**
      * <p>
-     * The association to be deleted.
+     * Information about the deleted association.
      * </p>
      * 
      * @param directConnectGatewayAssociation
-     *        The association to be deleted.
+     *        Information about the deleted association.
      */
 
     public void setDirectConnectGatewayAssociation(DirectConnectGatewayAssociation directConnectGatewayAssociation) {
@@ -46,10 +46,10 @@ public class DeleteDirectConnectGatewayAssociationResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The association to be deleted.
+     * Information about the deleted association.
      * </p>
      * 
-     * @return The association to be deleted.
+     * @return Information about the deleted association.
      */
 
     public DirectConnectGatewayAssociation getDirectConnectGatewayAssociation() {
@@ -58,11 +58,11 @@ public class DeleteDirectConnectGatewayAssociationResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The association to be deleted.
+     * Information about the deleted association.
      * </p>
      * 
      * @param directConnectGatewayAssociation
-     *        The association to be deleted.
+     *        Information about the deleted association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

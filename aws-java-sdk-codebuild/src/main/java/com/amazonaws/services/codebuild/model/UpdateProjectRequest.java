@@ -56,6 +56,57 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<ProjectSource> secondarySources;
     /**
      * <p>
+     * A version of the build input to be built for this project. If not specified, the latest version is used. If
+     * specified, it must be one of:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit: the commit ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
+     * source code you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
+     * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
+     * branch's HEAD commit ID is used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
+     * file to use.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * </p>
+     */
+    private String sourceVersion;
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at
+     * the build level, then they take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     */
+    private java.util.List<ProjectSourceVersion> secondarySourceVersions;
+    /**
+     * <p>
      * Information to be changed about the build output artifacts for the build project.
      * </p>
      */
@@ -355,6 +406,353 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public UpdateProjectRequest withSecondarySources(java.util.Collection<ProjectSource> secondarySources) {
         setSecondarySources(secondarySources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A version of the build input to be built for this project. If not specified, the latest version is used. If
+     * specified, it must be one of:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit: the commit ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
+     * source code you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
+     * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
+     * branch's HEAD commit ID is used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
+     * file to use.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * </p>
+     * 
+     * @param sourceVersion
+     *        A version of the build input to be built for this project. If not specified, the latest version is used.
+     *        If specified, it must be one of: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For AWS CodeCommit: the commit ID to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of
+     *        the source code you want to build. If a pull request ID is specified, it must use the format
+     *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
+     *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code
+     *        you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     *        the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
+     *        input ZIP file to use.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over
+     *        this <code>sourceVersion</code> (at the project level).
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
+     *        Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     */
+
+    public void setSourceVersion(String sourceVersion) {
+        this.sourceVersion = sourceVersion;
+    }
+
+    /**
+     * <p>
+     * A version of the build input to be built for this project. If not specified, the latest version is used. If
+     * specified, it must be one of:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit: the commit ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
+     * source code you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
+     * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
+     * branch's HEAD commit ID is used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
+     * file to use.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * </p>
+     * 
+     * @return A version of the build input to be built for this project. If not specified, the latest version is used.
+     *         If specified, it must be one of: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For AWS CodeCommit: the commit ID to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of
+     *         the source code you want to build. If a pull request ID is specified, it must use the format
+     *         <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
+     *         branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code
+     *         you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     *         the default branch's HEAD commit ID is used.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
+     *         input ZIP file to use.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over
+     *         this <code>sourceVersion</code> (at the project level).
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
+     *         Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     */
+
+    public String getSourceVersion() {
+        return this.sourceVersion;
+    }
+
+    /**
+     * <p>
+     * A version of the build input to be built for this project. If not specified, the latest version is used. If
+     * specified, it must be one of:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit: the commit ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
+     * source code you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
+     * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
+     * branch's HEAD commit ID is used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
+     * file to use.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * </p>
+     * 
+     * @param sourceVersion
+     *        A version of the build input to be built for this project. If not specified, the latest version is used.
+     *        If specified, it must be one of: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For AWS CodeCommit: the commit ID to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of
+     *        the source code you want to build. If a pull request ID is specified, it must use the format
+     *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
+     *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code
+     *        you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     *        the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
+     *        input ZIP file to use.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over
+     *        this <code>sourceVersion</code> (at the project level).
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
+     *        Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withSourceVersion(String sourceVersion) {
+        setSourceVersion(sourceVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at
+     * the build level, then they take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     * 
+     * @return An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is
+     *         specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the
+     *         project level).
+     */
+
+    public java.util.List<ProjectSourceVersion> getSecondarySourceVersions() {
+        return secondarySourceVersions;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at
+     * the build level, then they take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     * 
+     * @param secondarySourceVersions
+     *        An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is
+     *        specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the
+     *        project level).
+     */
+
+    public void setSecondarySourceVersions(java.util.Collection<ProjectSourceVersion> secondarySourceVersions) {
+        if (secondarySourceVersions == null) {
+            this.secondarySourceVersions = null;
+            return;
+        }
+
+        this.secondarySourceVersions = new java.util.ArrayList<ProjectSourceVersion>(secondarySourceVersions);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at
+     * the build level, then they take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecondarySourceVersions(java.util.Collection)} or
+     * {@link #withSecondarySourceVersions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param secondarySourceVersions
+     *        An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is
+     *        specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the
+     *        project level).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withSecondarySourceVersions(ProjectSourceVersion... secondarySourceVersions) {
+        if (this.secondarySourceVersions == null) {
+            setSecondarySourceVersions(new java.util.ArrayList<ProjectSourceVersion>(secondarySourceVersions.length));
+        }
+        for (ProjectSourceVersion ele : secondarySourceVersions) {
+            this.secondarySourceVersions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at
+     * the build level, then they take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     * 
+     * @param secondarySourceVersions
+     *        An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is
+     *        specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the
+     *        project level).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withSecondarySourceVersions(java.util.Collection<ProjectSourceVersion> secondarySourceVersions) {
+        setSecondarySourceVersions(secondarySourceVersions);
         return this;
     }
 
@@ -1028,6 +1426,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("Source: ").append(getSource()).append(",");
         if (getSecondarySources() != null)
             sb.append("SecondarySources: ").append(getSecondarySources()).append(",");
+        if (getSourceVersion() != null)
+            sb.append("SourceVersion: ").append(getSourceVersion()).append(",");
+        if (getSecondarySourceVersions() != null)
+            sb.append("SecondarySourceVersions: ").append(getSecondarySourceVersions()).append(",");
         if (getArtifacts() != null)
             sb.append("Artifacts: ").append(getArtifacts()).append(",");
         if (getSecondaryArtifacts() != null)
@@ -1081,6 +1483,14 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getSecondarySources() == null ^ this.getSecondarySources() == null)
             return false;
         if (other.getSecondarySources() != null && other.getSecondarySources().equals(this.getSecondarySources()) == false)
+            return false;
+        if (other.getSourceVersion() == null ^ this.getSourceVersion() == null)
+            return false;
+        if (other.getSourceVersion() != null && other.getSourceVersion().equals(this.getSourceVersion()) == false)
+            return false;
+        if (other.getSecondarySourceVersions() == null ^ this.getSecondarySourceVersions() == null)
+            return false;
+        if (other.getSecondarySourceVersions() != null && other.getSecondarySourceVersions().equals(this.getSecondarySourceVersions()) == false)
             return false;
         if (other.getArtifacts() == null ^ this.getArtifacts() == null)
             return false;
@@ -1142,6 +1552,8 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
         hashCode = prime * hashCode + ((getSecondarySources() == null) ? 0 : getSecondarySources().hashCode());
+        hashCode = prime * hashCode + ((getSourceVersion() == null) ? 0 : getSourceVersion().hashCode());
+        hashCode = prime * hashCode + ((getSecondarySourceVersions() == null) ? 0 : getSecondarySourceVersions().hashCode());
         hashCode = prime * hashCode + ((getArtifacts() == null) ? 0 : getArtifacts().hashCode());
         hashCode = prime * hashCode + ((getSecondaryArtifacts() == null) ? 0 : getSecondaryArtifacts().hashCode());
         hashCode = prime * hashCode + ((getCache() == null) ? 0 : getCache().hashCode());

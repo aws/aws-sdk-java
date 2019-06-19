@@ -27,6 +27,12 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
 
     /**
      * <p>
+     * The ID of the Direct Connect gateway association.
+     * </p>
+     */
+    private String associationId;
+    /**
+     * <p>
      * The ID of the Direct Connect gateway.
      * </p>
      */
@@ -37,6 +43,46 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * </p>
      */
     private String virtualGatewayId;
+
+    /**
+     * <p>
+     * The ID of the Direct Connect gateway association.
+     * </p>
+     * 
+     * @param associationId
+     *        The ID of the Direct Connect gateway association.
+     */
+
+    public void setAssociationId(String associationId) {
+        this.associationId = associationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Direct Connect gateway association.
+     * </p>
+     * 
+     * @return The ID of the Direct Connect gateway association.
+     */
+
+    public String getAssociationId() {
+        return this.associationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Direct Connect gateway association.
+     * </p>
+     * 
+     * @param associationId
+     *        The ID of the Direct Connect gateway association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteDirectConnectGatewayAssociationRequest withAssociationId(String associationId) {
+        setAssociationId(associationId);
+        return this;
+    }
 
     /**
      * <p>
@@ -130,6 +176,8 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAssociationId() != null)
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getDirectConnectGatewayId() != null)
             sb.append("DirectConnectGatewayId: ").append(getDirectConnectGatewayId()).append(",");
         if (getVirtualGatewayId() != null)
@@ -148,6 +196,10 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
         if (obj instanceof DeleteDirectConnectGatewayAssociationRequest == false)
             return false;
         DeleteDirectConnectGatewayAssociationRequest other = (DeleteDirectConnectGatewayAssociationRequest) obj;
+        if (other.getAssociationId() == null ^ this.getAssociationId() == null)
+            return false;
+        if (other.getAssociationId() != null && other.getAssociationId().equals(this.getAssociationId()) == false)
+            return false;
         if (other.getDirectConnectGatewayId() == null ^ this.getDirectConnectGatewayId() == null)
             return false;
         if (other.getDirectConnectGatewayId() != null && other.getDirectConnectGatewayId().equals(this.getDirectConnectGatewayId()) == false)
@@ -164,6 +216,7 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
         hashCode = prime * hashCode + ((getDirectConnectGatewayId() == null) ? 0 : getDirectConnectGatewayId().hashCode());
         hashCode = prime * hashCode + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId().hashCode());
         return hashCode;

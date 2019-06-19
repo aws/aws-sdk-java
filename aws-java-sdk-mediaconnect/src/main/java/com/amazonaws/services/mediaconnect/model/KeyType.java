@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum KeyType {
 
+    Speke("speke"),
     StaticKey("static-key");
 
     private String value;

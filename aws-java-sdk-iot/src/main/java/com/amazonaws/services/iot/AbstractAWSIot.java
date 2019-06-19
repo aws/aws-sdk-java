@@ -470,6 +470,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public GetStatisticsResult getStatistics(GetStatisticsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTopicRuleResult getTopicRule(GetTopicRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

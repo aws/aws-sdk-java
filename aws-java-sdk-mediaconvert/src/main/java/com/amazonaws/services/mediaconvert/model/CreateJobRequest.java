@@ -25,9 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** This is a beta feature. If you are interested in using this feature, please contact AWS customer support. */
+    /**
+     * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use
+     * this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     * MediaConvert User Guide.
+     */
     private AccelerationSettings accelerationSettings;
-
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
+     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
+     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
+     * appear on the billing report unsorted.
+     */
     private String billingTagsSource;
     /** Idempotency token for CreateJob operation. */
     private String clientRequestToken;
@@ -44,14 +53,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     private String role;
-
+    /** JobSettings contains all the transcode settings for a job. */
     private JobSettings settings;
     /**
      * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
      * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
      * processing your job to the time it completes the transcode or encounters an error.
      */
-    private Long statusUpdateIntervalInSecs;
+    private String statusUpdateInterval;
     /**
      * User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value
      * pairs.
@@ -59,10 +68,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private java.util.Map<String, String> userMetadata;
 
     /**
-     * This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use
+     * this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     * MediaConvert User Guide.
      * 
      * @param accelerationSettings
-     *        This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     *        Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that
+     *        use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     *        MediaConvert User Guide.
      */
 
     public void setAccelerationSettings(AccelerationSettings accelerationSettings) {
@@ -70,9 +83,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use
+     * this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     * MediaConvert User Guide.
      * 
-     * @return This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     * @return Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that
+     *         use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     *         MediaConvert User Guide.
      */
 
     public AccelerationSettings getAccelerationSettings() {
@@ -80,10 +97,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use
+     * this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     * MediaConvert User Guide.
      * 
      * @param accelerationSettings
-     *        This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     *        Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that
+     *        use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     *        MediaConvert User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,7 +114,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
+     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
+     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
+     * appear on the billing report unsorted.
+     * 
      * @param billingTagsSource
+     *        Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental
+     *        MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an
+     *        associated tag will appear in your billing report unsorted. If you don't choose a valid value for this
+     *        field, your job outputs will appear on the billing report unsorted.
      * @see BillingTagsSource
      */
 
@@ -102,7 +132,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * @return
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
+     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
+     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
+     * appear on the billing report unsorted.
+     * 
+     * @return Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental
+     *         MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an
+     *         associated tag will appear in your billing report unsorted. If you don't choose a valid value for this
+     *         field, your job outputs will appear on the billing report unsorted.
      * @see BillingTagsSource
      */
 
@@ -111,7 +149,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
+     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
+     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
+     * appear on the billing report unsorted.
+     * 
      * @param billingTagsSource
+     *        Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental
+     *        MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an
+     *        associated tag will appear in your billing report unsorted. If you don't choose a valid value for this
+     *        field, your job outputs will appear on the billing report unsorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingTagsSource
      */
@@ -122,7 +169,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
+     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
+     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
+     * appear on the billing report unsorted.
+     * 
      * @param billingTagsSource
+     *        Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental
+     *        MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an
+     *        associated tag will appear in your billing report unsorted. If you don't choose a valid value for this
+     *        field, your job outputs will appear on the billing report unsorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingTagsSource
      */
@@ -290,7 +346,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * JobSettings contains all the transcode settings for a job.
+     * 
      * @param settings
+     *        JobSettings contains all the transcode settings for a job.
      */
 
     public void setSettings(JobSettings settings) {
@@ -298,7 +357,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * @return
+     * JobSettings contains all the transcode settings for a job.
+     * 
+     * @return JobSettings contains all the transcode settings for a job.
      */
 
     public JobSettings getSettings() {
@@ -306,7 +367,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * JobSettings contains all the transcode settings for a job.
+     * 
      * @param settings
+     *        JobSettings contains all the transcode settings for a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,14 +384,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
      * processing your job to the time it completes the transcode or encounters an error.
      * 
-     * @param statusUpdateIntervalInSecs
+     * @param statusUpdateInterval
      *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
      *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
      *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @see StatusUpdateInterval
      */
 
-    public void setStatusUpdateIntervalInSecs(Long statusUpdateIntervalInSecs) {
-        this.statusUpdateIntervalInSecs = statusUpdateIntervalInSecs;
+    public void setStatusUpdateInterval(String statusUpdateInterval) {
+        this.statusUpdateInterval = statusUpdateInterval;
     }
 
     /**
@@ -338,10 +403,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @return Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
      *         in seconds, between status updates. MediaConvert sends an update at this interval from the time the
      *         service begins processing your job to the time it completes the transcode or encounters an error.
+     * @see StatusUpdateInterval
      */
 
-    public Long getStatusUpdateIntervalInSecs() {
-        return this.statusUpdateIntervalInSecs;
+    public String getStatusUpdateInterval() {
+        return this.statusUpdateInterval;
     }
 
     /**
@@ -349,15 +415,34 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
      * processing your job to the time it completes the transcode or encounters an error.
      * 
-     * @param statusUpdateIntervalInSecs
+     * @param statusUpdateInterval
      *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
      *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
      *        service begins processing your job to the time it completes the transcode or encounters an error.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusUpdateInterval
      */
 
-    public CreateJobRequest withStatusUpdateIntervalInSecs(Long statusUpdateIntervalInSecs) {
-        setStatusUpdateIntervalInSecs(statusUpdateIntervalInSecs);
+    public CreateJobRequest withStatusUpdateInterval(String statusUpdateInterval) {
+        setStatusUpdateInterval(statusUpdateInterval);
+        return this;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateInterval
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusUpdateInterval
+     */
+
+    public CreateJobRequest withStatusUpdateInterval(StatusUpdateInterval statusUpdateInterval) {
+        this.statusUpdateInterval = statusUpdateInterval.toString();
         return this;
     }
 
@@ -448,8 +533,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("Role: ").append(getRole()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
-        if (getStatusUpdateIntervalInSecs() != null)
-            sb.append("StatusUpdateIntervalInSecs: ").append(getStatusUpdateIntervalInSecs()).append(",");
+        if (getStatusUpdateInterval() != null)
+            sb.append("StatusUpdateInterval: ").append(getStatusUpdateInterval()).append(",");
         if (getUserMetadata() != null)
             sb.append("UserMetadata: ").append(getUserMetadata());
         sb.append("}");
@@ -494,9 +579,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
-        if (other.getStatusUpdateIntervalInSecs() == null ^ this.getStatusUpdateIntervalInSecs() == null)
+        if (other.getStatusUpdateInterval() == null ^ this.getStatusUpdateInterval() == null)
             return false;
-        if (other.getStatusUpdateIntervalInSecs() != null && other.getStatusUpdateIntervalInSecs().equals(this.getStatusUpdateIntervalInSecs()) == false)
+        if (other.getStatusUpdateInterval() != null && other.getStatusUpdateInterval().equals(this.getStatusUpdateInterval()) == false)
             return false;
         if (other.getUserMetadata() == null ^ this.getUserMetadata() == null)
             return false;
@@ -517,7 +602,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
-        hashCode = prime * hashCode + ((getStatusUpdateIntervalInSecs() == null) ? 0 : getStatusUpdateIntervalInSecs().hashCode());
+        hashCode = prime * hashCode + ((getStatusUpdateInterval() == null) ? 0 : getStatusUpdateInterval().hashCode());
         hashCode = prime * hashCode + ((getUserMetadata() == null) ? 0 : getUserMetadata().hashCode());
         return hashCode;
     }

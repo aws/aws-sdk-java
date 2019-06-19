@@ -31,14 +31,14 @@ public class MemberMarshaller {
             .marshallLocationName("accountId").build();
     private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("detectorId").build();
-    private static final MarshallingInfo<String> EMAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("email").build();
-    private static final MarshallingInfo<String> INVITEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("invitedAt").build();
     private static final MarshallingInfo<String> MASTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("masterId").build();
+    private static final MarshallingInfo<String> EMAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("email").build();
     private static final MarshallingInfo<String> RELATIONSHIPSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relationshipStatus").build();
+    private static final MarshallingInfo<String> INVITEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("invitedAt").build();
     private static final MarshallingInfo<String> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("updatedAt").build();
 
@@ -60,10 +60,10 @@ public class MemberMarshaller {
         try {
             protocolMarshaller.marshall(member.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(member.getDetectorId(), DETECTORID_BINDING);
-            protocolMarshaller.marshall(member.getEmail(), EMAIL_BINDING);
-            protocolMarshaller.marshall(member.getInvitedAt(), INVITEDAT_BINDING);
             protocolMarshaller.marshall(member.getMasterId(), MASTERID_BINDING);
+            protocolMarshaller.marshall(member.getEmail(), EMAIL_BINDING);
             protocolMarshaller.marshall(member.getRelationshipStatus(), RELATIONSHIPSTATUS_BINDING);
+            protocolMarshaller.marshall(member.getInvitedAt(), INVITEDAT_BINDING);
             protocolMarshaller.marshall(member.getUpdatedAt(), UPDATEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

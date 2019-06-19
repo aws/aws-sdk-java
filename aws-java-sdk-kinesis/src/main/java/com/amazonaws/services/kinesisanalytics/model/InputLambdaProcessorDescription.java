@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that contains the Amazon Resource Name (ARN) of the <a
- * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used to preprocess records in the
- * stream, and the ARN of the IAM role that is used to access the AWS Lambda expression.
+ * An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS
+ * Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to
+ * access the AWS Lambda expression.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputLambdaProcessorDescription"
@@ -32,8 +32,8 @@ public class InputLambdaProcessorDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used to
-     * preprocess the records in the stream.
+     * The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess
+     * the records in the stream.
      * </p>
      */
     private String resourceARN;
@@ -46,13 +46,13 @@ public class InputLambdaProcessorDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used to
-     * preprocess the records in the stream.
+     * The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess
+     * the records in the stream.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used
-     *        to preprocess the records in the stream.
+     *        The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to
+     *        preprocess the records in the stream.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -61,12 +61,12 @@ public class InputLambdaProcessorDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used to
-     * preprocess the records in the stream.
+     * The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess
+     * the records in the stream.
      * </p>
      * 
-     * @return The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is
-     *         used to preprocess the records in the stream.
+     * @return The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to
+     *         preprocess the records in the stream.
      */
 
     public String getResourceARN() {
@@ -75,13 +75,13 @@ public class InputLambdaProcessorDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used to
-     * preprocess the records in the stream.
+     * The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess
+     * the records in the stream.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used
-     *        to preprocess the records in the stream.
+     *        The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to
+     *        preprocess the records in the stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

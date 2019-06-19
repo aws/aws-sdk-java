@@ -50,7 +50,19 @@ import com.amazonaws.services.guardduty.model.transform.*;
  * Client for accessing Amazon GuardDuty. All service calls made using this client are blocking, and will not return
  * until the service call completes.
  * <p>
- * Assess, monitor, manage, and remediate security issues across your AWS infrastructure, applications, and data.
+ * <p>
+ * Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following data sources:
+ * VPC Flow Logs, AWS CloudTrail event logs, and DNS logs. It uses threat intelligence feeds, such as lists of malicious
+ * IPs and domains, and machine learning to identify unexpected and potentially unauthorized and malicious activity
+ * within your AWS environment. This can include issues like escalations of privileges, uses of exposed credentials, or
+ * communication with malicious IPs, URLs, or domains. For example, GuardDuty can detect compromised EC2 instances
+ * serving malware or mining bitcoin. It also monitors AWS account access behavior for signs of compromise, such as
+ * unauthorized infrastructure deployments, like instances deployed in a region that has never been used, or unusual API
+ * calls, like a password policy change to reduce password strength. GuardDuty informs you of the status of your AWS
+ * environment by producing security findings that you can view in the GuardDuty console or through Amazon CloudWatch
+ * events. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">
+ * Amazon GuardDuty User Guide</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -130,15 +142,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Accepts the invitation to be monitored by a master GuardDuty account.
+     * </p>
      * 
      * @param acceptInvitationRequest
-     *        AcceptInvitation request body.
      * @return Result of the AcceptInvitation operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.AcceptInvitation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation" target="_top">AWS API
      *      Documentation</a>
@@ -168,6 +181,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptInvitation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -185,15 +199,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Archives Amazon GuardDuty findings specified by the list of finding IDs.
+     * </p>
      * 
      * @param archiveFindingsRequest
-     *        ArchiveFindings request body.
      * @return Result of the ArchiveFindings operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.ArchiveFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings" target="_top">AWS API
      *      Documentation</a>
@@ -223,6 +238,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ArchiveFindings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -240,16 +256,17 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Creates a single Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A
      * detector must be created in order for GuardDuty to become operational.
+     * </p>
      * 
      * @param createDetectorRequest
-     *        CreateDetector request body.
      * @return Result of the CreateDetector operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.CreateDetector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector" target="_top">AWS API
      *      Documentation</a>
@@ -279,6 +296,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDetector");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -296,15 +314,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Creates a filter using the specified finding criteria.
+     * </p>
      * 
      * @param createFilterRequest
-     *        CreateFilterRequest request body.
      * @return Result of the CreateFilter operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.CreateFilter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter" target="_top">AWS API
      *      Documentation</a>
@@ -334,6 +353,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFilter");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -351,16 +371,17 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Creates a new IPSet - a list of trusted IP addresses that have been whitelisted for secure communication with AWS
      * infrastructure and applications.
+     * </p>
      * 
      * @param createIPSetRequest
-     *        CreateIPSet request body.
      * @return Result of the CreateIPSet operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.CreateIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet" target="_top">AWS API
      *      Documentation</a>
@@ -390,6 +411,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIPSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -407,16 +429,17 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Creates member accounts of the current AWS account by specifying a list of AWS account IDs. The current AWS
      * account can then invite these members to manage GuardDuty in their accounts.
+     * </p>
      * 
      * @param createMembersRequest
-     *        CreateMembers request body.
      * @return Result of the CreateMembers operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.CreateMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers" target="_top">AWS API
      *      Documentation</a>
@@ -446,6 +469,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -463,16 +487,17 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Generates example findings of types specified by the list of finding types. If 'NULL' is specified for
      * findingTypes, the API generates example findings of all supported finding types.
+     * </p>
      * 
      * @param createSampleFindingsRequest
-     *        CreateSampleFindings request body.
      * @return Result of the CreateSampleFindings operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.CreateSampleFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateSampleFindings" target="_top">AWS
      *      API Documentation</a>
@@ -502,6 +527,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSampleFindings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -519,16 +545,17 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates
      * findings based on ThreatIntelSets.
+     * </p>
      * 
      * @param createThreatIntelSetRequest
-     *        CreateThreatIntelSet request body.
      * @return Result of the CreateThreatIntelSet operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.CreateThreatIntelSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSet" target="_top">AWS
      *      API Documentation</a>
@@ -558,6 +585,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateThreatIntelSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -575,15 +603,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Declines invitations sent to the current member account by AWS account specified by their account IDs.
+     * </p>
      * 
      * @param declineInvitationsRequest
-     *        DeclineInvitations request body.
      * @return Result of the DeclineInvitations operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.DeclineInvitations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeclineInvitations" target="_top">AWS
      *      API Documentation</a>
@@ -613,6 +642,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeclineInvitations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -630,14 +660,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Deletes a Amazon GuardDuty detector specified by the detector ID.
+     * </p>
      * 
      * @param deleteDetectorRequest
      * @return Result of the DeleteDetector operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.DeleteDetector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteDetector" target="_top">AWS API
      *      Documentation</a>
@@ -667,6 +699,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDetector");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -684,14 +717,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Deletes the filter specified by the filter name.
+     * </p>
      * 
      * @param deleteFilterRequest
      * @return Result of the DeleteFilter operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.DeleteFilter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter" target="_top">AWS API
      *      Documentation</a>
@@ -721,6 +756,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFilter");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -738,14 +774,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Deletes the IPSet specified by the IPSet ID.
+     * </p>
      * 
      * @param deleteIPSetRequest
      * @return Result of the DeleteIPSet operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.DeleteIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteIPSet" target="_top">AWS API
      *      Documentation</a>
@@ -775,6 +813,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIPSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -792,15 +831,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Deletes invitations sent to the current member account by AWS accounts specified by their account IDs.
+     * </p>
      * 
      * @param deleteInvitationsRequest
-     *        DeleteInvitations request body.
      * @return Result of the DeleteInvitations operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.DeleteInvitations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteInvitations" target="_top">AWS
      *      API Documentation</a>
@@ -830,6 +870,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInvitations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -847,15 +888,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Deletes GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
+     * </p>
      * 
      * @param deleteMembersRequest
-     *        DeleteMembers request body.
      * @return Result of the DeleteMembers operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.DeleteMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMembers" target="_top">AWS API
      *      Documentation</a>
@@ -885,6 +927,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -902,14 +945,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Deletes ThreatIntelSet specified by the ThreatIntelSet ID.
+     * </p>
      * 
      * @param deleteThreatIntelSetRequest
      * @return Result of the DeleteThreatIntelSet operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.DeleteThreatIntelSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatIntelSet" target="_top">AWS
      *      API Documentation</a>
@@ -939,6 +984,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThreatIntelSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -956,14 +1002,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Disassociates the current GuardDuty member account from its master account.
+     * </p>
      * 
      * @param disassociateFromMasterAccountRequest
      * @return Result of the DisassociateFromMasterAccount operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.DisassociateFromMasterAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount"
      *      target="_top">AWS API Documentation</a>
@@ -994,6 +1042,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFromMasterAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1012,15 +1061,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Disassociates GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
+     * </p>
      * 
      * @param disassociateMembersRequest
-     *        DisassociateMembers request body.
      * @return Result of the DisassociateMembers operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.DisassociateMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers" target="_top">AWS
      *      API Documentation</a>
@@ -1050,6 +1100,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1067,14 +1118,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Retrieves an Amazon GuardDuty detector specified by the detectorId.
+     * </p>
      * 
      * @param getDetectorRequest
      * @return Result of the GetDetector operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.GetDetector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetDetector" target="_top">AWS API
      *      Documentation</a>
@@ -1104,6 +1157,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDetector");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1121,14 +1175,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Returns the details of the filter specified by the filter name.
+     * </p>
      * 
      * @param getFilterRequest
      * @return Result of the GetFilter operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.GetFilter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter" target="_top">AWS API
      *      Documentation</a>
@@ -1158,6 +1214,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFilter");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1175,15 +1232,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Describes Amazon GuardDuty findings specified by finding IDs.
+     * </p>
      * 
      * @param getFindingsRequest
-     *        GetFindings request body.
      * @return Result of the GetFindings operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.GetFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindings" target="_top">AWS API
      *      Documentation</a>
@@ -1213,6 +1271,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFindings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1230,15 +1289,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Lists Amazon GuardDuty findings' statistics for the specified detector ID.
+     * </p>
      * 
      * @param getFindingsStatisticsRequest
-     *        GetFindingsStatistics request body.
      * @return Result of the GetFindingsStatistics operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.GetFindingsStatistics
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindingsStatistics"
      *      target="_top">AWS API Documentation</a>
@@ -1268,6 +1328,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFindingsStatistics");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1286,14 +1347,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Retrieves the IPSet specified by the IPSet ID.
+     * </p>
      * 
      * @param getIPSetRequest
      * @return Result of the GetIPSet operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.GetIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetIPSet" target="_top">AWS API
      *      Documentation</a>
@@ -1323,6 +1386,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIPSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1340,15 +1404,17 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Returns the count of all GuardDuty membership invitations that were sent to the current member account except the
      * currently accepted invitation.
+     * </p>
      * 
      * @param getInvitationsCountRequest
      * @return Result of the GetInvitationsCount operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.GetInvitationsCount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetInvitationsCount" target="_top">AWS
      *      API Documentation</a>
@@ -1378,6 +1444,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInvitationsCount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1395,14 +1462,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Provides the details for the GuardDuty master account to the current GuardDuty member account.
+     * </p>
      * 
      * @param getMasterAccountRequest
      * @return Result of the GetMasterAccount operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.GetMasterAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount" target="_top">AWS API
      *      Documentation</a>
@@ -1432,6 +1501,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMasterAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1449,15 +1519,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Retrieves GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
+     * </p>
      * 
      * @param getMembersRequest
-     *        GetMembers request body.
      * @return Result of the GetMembers operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.GetMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMembers" target="_top">AWS API
      *      Documentation</a>
@@ -1487,6 +1558,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1504,14 +1576,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.
+     * </p>
      * 
      * @param getThreatIntelSetRequest
      * @return Result of the GetThreatIntelSet operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.GetThreatIntelSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatIntelSet" target="_top">AWS
      *      API Documentation</a>
@@ -1541,6 +1615,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetThreatIntelSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1558,17 +1633,18 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty
      * and allow the current AWS account to view and manage these accounts' GuardDuty findings on their behalf as the
      * master account.
+     * </p>
      * 
      * @param inviteMembersRequest
-     *        InviteMembers request body.
      * @return Result of the InviteMembers operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.InviteMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers" target="_top">AWS API
      *      Documentation</a>
@@ -1598,6 +1674,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InviteMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1615,14 +1692,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Lists detectorIds of all the existing Amazon GuardDuty detector resources.
+     * </p>
      * 
      * @param listDetectorsRequest
      * @return Result of the ListDetectors operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.ListDetectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListDetectors" target="_top">AWS API
      *      Documentation</a>
@@ -1652,6 +1731,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDetectors");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1669,14 +1749,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Returns a paginated list of the current filters.
+     * </p>
      * 
      * @param listFiltersRequest
      * @return Result of the ListFilters operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.ListFilters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters" target="_top">AWS API
      *      Documentation</a>
@@ -1706,6 +1788,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFilters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1723,15 +1806,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Lists Amazon GuardDuty findings for the specified detector ID.
+     * </p>
      * 
      * @param listFindingsRequest
-     *        ListFindings request body.
      * @return Result of the ListFindings operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.ListFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFindings" target="_top">AWS API
      *      Documentation</a>
@@ -1761,6 +1845,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFindings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1778,14 +1863,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Lists the IPSets of the GuardDuty service specified by the detector ID.
+     * </p>
      * 
      * @param listIPSetsRequest
      * @return Result of the ListIPSets operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.ListIPSets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListIPSets" target="_top">AWS API
      *      Documentation</a>
@@ -1815,6 +1902,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIPSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1832,14 +1920,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Lists all GuardDuty membership invitations that were sent to the current AWS account.
+     * </p>
      * 
      * @param listInvitationsRequest
      * @return Result of the ListInvitations operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.ListInvitations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvitations" target="_top">AWS API
      *      Documentation</a>
@@ -1869,6 +1959,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInvitations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1886,14 +1977,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Lists details about all member accounts for the current GuardDuty master account.
+     * </p>
      * 
      * @param listMembersRequest
      * @return Result of the ListMembers operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.ListMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers" target="_top">AWS API
      *      Documentation</a>
@@ -1923,6 +2016,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1940,14 +2034,75 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
+     * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and Threat
+     * Intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
+     * given resource..
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         Bad request exception object.
+     * @throws InternalServerErrorException
+     *         Internal server error exception object.
+     * @sample AmazonGuardDuty.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.
+     * </p>
      * 
      * @param listThreatIntelSetsRequest
      * @return Result of the ListThreatIntelSets operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.ListThreatIntelSets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets" target="_top">AWS
      *      API Documentation</a>
@@ -1977,6 +2132,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThreatIntelSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1994,17 +2150,18 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Re-enables GuardDuty to monitor findings of the member accounts specified by the account IDs. A master GuardDuty
      * account can run this command after disabling GuardDuty from monitoring these members' findings by running
      * StopMonitoringMembers.
+     * </p>
      * 
      * @param startMonitoringMembersRequest
-     *        StartMonitoringMembers request body.
      * @return Result of the StartMonitoringMembers operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.StartMonitoringMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMonitoringMembers"
      *      target="_top">AWS API Documentation</a>
@@ -2034,6 +2191,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMonitoringMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2052,17 +2210,18 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Disables GuardDuty from monitoring findings of the member accounts specified by the account IDs. After running
      * this command, a master GuardDuty account can run StartMonitoringMembers to re-enable GuardDuty to monitor these
      * members’ findings.
+     * </p>
      * 
      * @param stopMonitoringMembersRequest
-     *        StopMonitoringMembers request body.
      * @return Result of the StopMonitoringMembers operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.StopMonitoringMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers"
      *      target="_top">AWS API Documentation</a>
@@ -2092,6 +2251,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopMonitoringMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2110,15 +2270,73 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
+     * Adds tags to a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         Bad request exception object.
+     * @throws InternalServerErrorException
+     *         Internal server error exception object.
+     * @sample AmazonGuardDuty.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Unarchives Amazon GuardDuty findings specified by the list of finding IDs.
+     * </p>
      * 
      * @param unarchiveFindingsRequest
-     *        UnarchiveFindings request body.
      * @return Result of the UnarchiveFindings operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.UnarchiveFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnarchiveFindings" target="_top">AWS
      *      API Documentation</a>
@@ -2148,6 +2366,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnarchiveFindings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2165,15 +2384,73 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
+     * Removes tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         Bad request exception object.
+     * @throws InternalServerErrorException
+     *         Internal server error exception object.
+     * @sample AmazonGuardDuty.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an Amazon GuardDuty detector specified by the detectorId.
+     * </p>
      * 
      * @param updateDetectorRequest
-     *        UpdateDetector request body.
      * @return Result of the UpdateDetector operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.UpdateDetector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetector" target="_top">AWS API
      *      Documentation</a>
@@ -2203,6 +2480,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDetector");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2220,15 +2498,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Updates the filter specified by the filter name.
+     * </p>
      * 
      * @param updateFilterRequest
-     *        UpdateFilterRequest request body.
      * @return Result of the UpdateFilter operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.UpdateFilter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter" target="_top">AWS API
      *      Documentation</a>
@@ -2258,6 +2537,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFilter");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2275,15 +2555,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Marks specified Amazon GuardDuty findings as useful or not useful.
+     * </p>
      * 
      * @param updateFindingsFeedbackRequest
-     *        UpdateFindingsFeedback request body.
      * @return Result of the UpdateFindingsFeedback operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.UpdateFindingsFeedback
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFindingsFeedback"
      *      target="_top">AWS API Documentation</a>
@@ -2313,6 +2594,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFindingsFeedback");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2331,15 +2613,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Updates the IPSet specified by the IPSet ID.
+     * </p>
      * 
      * @param updateIPSetRequest
-     *        UpdateIPSet request body.
      * @return Result of the UpdateIPSet operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.UpdateIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateIPSet" target="_top">AWS API
      *      Documentation</a>
@@ -2369,6 +2652,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIPSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2386,15 +2670,16 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
      * Updates the ThreatIntelSet specified by ThreatIntelSet ID.
+     * </p>
      * 
      * @param updateThreatIntelSetRequest
-     *        UpdateThreatIntelSet request body.
      * @return Result of the UpdateThreatIntelSet operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Bad request exception object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Internal server error exception object.
      * @sample AmazonGuardDuty.UpdateThreatIntelSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatIntelSet" target="_top">AWS
      *      API Documentation</a>
@@ -2424,6 +2709,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThreatIntelSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

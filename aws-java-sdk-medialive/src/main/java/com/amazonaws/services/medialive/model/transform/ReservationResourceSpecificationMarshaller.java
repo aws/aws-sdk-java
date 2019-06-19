@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ReservationResourceSpecificationMarshaller {
 
+    private static final MarshallingInfo<String> CHANNELCLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelClass").build();
     private static final MarshallingInfo<String> CODEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("codec").build();
     private static final MarshallingInfo<String> MAXIMUMBITRATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +60,7 @@ public class ReservationResourceSpecificationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(reservationResourceSpecification.getChannelClass(), CHANNELCLASS_BINDING);
             protocolMarshaller.marshall(reservationResourceSpecification.getCodec(), CODEC_BINDING);
             protocolMarshaller.marshall(reservationResourceSpecification.getMaximumBitrate(), MAXIMUMBITRATE_BINDING);
             protocolMarshaller.marshall(reservationResourceSpecification.getMaximumFramerate(), MAXIMUMFRAMERATE_BINDING);

@@ -57,6 +57,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -77,6 +80,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
      * </p>
      * </li>
      * <li>
@@ -99,6 +105,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -119,6 +128,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
      * </p>
      * </li>
      * </ul>
@@ -159,6 +171,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -179,6 +194,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
      * </p>
      * </li>
      * <li>
@@ -201,6 +219,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -221,6 +242,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
      * </p>
      * </li>
      * </ul>
@@ -257,6 +281,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <p>
      *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -277,6 +304,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </p>
      *        <p>
      *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
      *        </p>
      *        </li>
      *        <li>
@@ -299,6 +329,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <p>
      *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -319,6 +352,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </p>
      *        <p>
      *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -361,6 +397,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -381,6 +420,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
      * </p>
      * </li>
      * <li>
@@ -403,6 +445,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -423,6 +468,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
      * </p>
      * </li>
      * </ul>
@@ -459,6 +507,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <p>
      *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     *         </p>
      *         </li>
      *         <li>
      *         <p>
@@ -479,6 +530,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         </p>
      *         <p>
      *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
      *         </p>
      *         </li>
      *         <li>
@@ -501,6 +555,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <p>
      *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     *         </p>
      *         </li>
      *         <li>
      *         <p>
@@ -521,6 +578,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         </p>
      *         <p>
      *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -563,6 +623,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -583,6 +646,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
      * </p>
      * </li>
      * <li>
@@ -605,6 +671,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -625,6 +694,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
      * </p>
      * </li>
      * </ul>
@@ -661,6 +733,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <p>
      *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -681,6 +756,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </p>
      *        <p>
      *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
      *        </p>
      *        </li>
      *        <li>
@@ -703,6 +781,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <p>
      *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -723,6 +804,9 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </p>
      *        <p>
      *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
      *        </p>
      *        </li>
      *        </ul>

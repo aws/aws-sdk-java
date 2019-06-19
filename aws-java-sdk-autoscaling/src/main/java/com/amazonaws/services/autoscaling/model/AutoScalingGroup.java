@@ -100,7 +100,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> targetGroupARNs;
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
+     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
+     * configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it fails either
+     * the EC2 status checks or the load balancer health checks.
      * </p>
      */
     private String healthCheckType;
@@ -764,11 +766,15 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
+     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
+     * configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it fails either
+     * the EC2 status checks or the load balancer health checks.
      * </p>
      * 
      * @param healthCheckType
-     *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
+     *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If
+     *        you configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it
+     *        fails either the EC2 status checks or the load balancer health checks.
      */
 
     public void setHealthCheckType(String healthCheckType) {
@@ -777,10 +783,14 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
+     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
+     * configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it fails either
+     * the EC2 status checks or the load balancer health checks.
      * </p>
      * 
-     * @return The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
+     * @return The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If
+     *         you configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it
+     *         fails either the EC2 status checks or the load balancer health checks.
      */
 
     public String getHealthCheckType() {
@@ -789,11 +799,15 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
+     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
+     * configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it fails either
+     * the EC2 status checks or the load balancer health checks.
      * </p>
      * 
      * @param healthCheckType
-     *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>.
+     *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If
+     *        you configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it
+     *        fails either the EC2 status checks or the load balancer health checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

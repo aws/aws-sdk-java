@@ -25,14 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDetectorRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID of the detector that you want to retrieve. */
+    /**
+     * <p>
+     * The unique ID of the detector that you want to get.
+     * </p>
+     */
     private String detectorId;
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>
+     * The unique ID of the detector that you want to get.
+     * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector that you want to retrieve.
+     *        The unique ID of the detector that you want to get.
      */
 
     public void setDetectorId(String detectorId) {
@@ -40,9 +46,11 @@ public class GetDetectorRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>
+     * The unique ID of the detector that you want to get.
+     * </p>
      * 
-     * @return The unique ID of the detector that you want to retrieve.
+     * @return The unique ID of the detector that you want to get.
      */
 
     public String getDetectorId() {
@@ -50,10 +58,12 @@ public class GetDetectorRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>
+     * The unique ID of the detector that you want to get.
+     * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector that you want to retrieve.
+     *        The unique ID of the detector that you want to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

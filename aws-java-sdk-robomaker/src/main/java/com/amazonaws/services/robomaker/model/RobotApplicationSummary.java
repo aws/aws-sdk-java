@@ -52,6 +52,12 @@ public class RobotApplicationSummary implements Serializable, Cloneable, Structu
      * </p>
      */
     private java.util.Date lastUpdatedAt;
+    /**
+     * <p>
+     * Information about a robot software suite.
+     * </p>
+     */
+    private RobotSoftwareSuite robotSoftwareSuite;
 
     /**
      * <p>
@@ -214,6 +220,46 @@ public class RobotApplicationSummary implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Information about a robot software suite.
+     * </p>
+     * 
+     * @param robotSoftwareSuite
+     *        Information about a robot software suite.
+     */
+
+    public void setRobotSoftwareSuite(RobotSoftwareSuite robotSoftwareSuite) {
+        this.robotSoftwareSuite = robotSoftwareSuite;
+    }
+
+    /**
+     * <p>
+     * Information about a robot software suite.
+     * </p>
+     * 
+     * @return Information about a robot software suite.
+     */
+
+    public RobotSoftwareSuite getRobotSoftwareSuite() {
+        return this.robotSoftwareSuite;
+    }
+
+    /**
+     * <p>
+     * Information about a robot software suite.
+     * </p>
+     * 
+     * @param robotSoftwareSuite
+     *        Information about a robot software suite.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RobotApplicationSummary withRobotSoftwareSuite(RobotSoftwareSuite robotSoftwareSuite) {
+        setRobotSoftwareSuite(robotSoftwareSuite);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +278,9 @@ public class RobotApplicationSummary implements Serializable, Cloneable, Structu
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
         if (getLastUpdatedAt() != null)
-            sb.append("LastUpdatedAt: ").append(getLastUpdatedAt());
+            sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
+        if (getRobotSoftwareSuite() != null)
+            sb.append("RobotSoftwareSuite: ").append(getRobotSoftwareSuite());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +311,10 @@ public class RobotApplicationSummary implements Serializable, Cloneable, Structu
             return false;
         if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
             return false;
+        if (other.getRobotSoftwareSuite() == null ^ this.getRobotSoftwareSuite() == null)
+            return false;
+        if (other.getRobotSoftwareSuite() != null && other.getRobotSoftwareSuite().equals(this.getRobotSoftwareSuite()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +327,7 @@ public class RobotApplicationSummary implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getRobotSoftwareSuite() == null) ? 0 : getRobotSoftwareSuite().hashCode());
         return hashCode;
     }
 

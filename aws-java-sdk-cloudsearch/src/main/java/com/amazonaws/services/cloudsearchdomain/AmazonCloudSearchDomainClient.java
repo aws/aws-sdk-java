@@ -351,6 +351,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch Domain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Search");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -419,6 +420,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch Domain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Suggest");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -491,6 +493,8 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch Domain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadDocuments");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

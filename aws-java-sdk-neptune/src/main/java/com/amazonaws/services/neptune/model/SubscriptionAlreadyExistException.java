@@ -15,7 +15,9 @@ package com.amazonaws.services.neptune.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * This subscription already exists.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SubscriptionAlreadyExistException extends com.amazonaws.services.neptune.model.AmazonNeptuneException {

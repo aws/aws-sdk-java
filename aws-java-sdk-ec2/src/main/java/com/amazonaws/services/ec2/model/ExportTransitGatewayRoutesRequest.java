@@ -39,7 +39,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.
      * </p>
      * </li>
      * <li>
@@ -83,7 +83,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     * <code>type</code> - The type of route (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * </ul>
@@ -143,7 +143,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.
      * </p>
      * </li>
      * <li>
@@ -187,7 +187,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     * <code>type</code> - The type of route (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * </ul>
@@ -196,7 +196,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     *         <code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.
      *         </p>
      *         </li>
      *         <li>
@@ -241,7 +241,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     *         <code>type</code> - The type of route (<code>active</code> | <code>blackhole</code>).
      *         </p>
      *         </li>
      */
@@ -260,7 +260,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.
      * </p>
      * </li>
      * <li>
@@ -304,7 +304,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     * <code>type</code> - The type of route (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * </ul>
@@ -314,7 +314,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     *        <code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.
      *        </p>
      *        </li>
      *        <li>
@@ -358,7 +358,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     *        <code>type</code> - The type of route (<code>active</code> | <code>blackhole</code>).
      *        </p>
      *        </li>
      */
@@ -379,7 +379,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.
      * </p>
      * </li>
      * <li>
@@ -423,7 +423,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     * <code>type</code> - The type of route (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * </ul>
@@ -438,7 +438,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     *        <code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.
      *        </p>
      *        </li>
      *        <li>
@@ -482,7 +482,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     *        <code>type</code> - The type of route (<code>active</code> | <code>blackhole</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -505,7 +505,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.
      * </p>
      * </li>
      * <li>
@@ -549,7 +549,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     * <code>type</code> - The type of route (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * </ul>
@@ -559,7 +559,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     *        <code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.
      *        </p>
      *        </li>
      *        <li>
@@ -603,7 +603,7 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     *        <code>type</code> - The type of route (<code>active</code> | <code>blackhole</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

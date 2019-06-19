@@ -16,78 +16,7 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The container element for all Public Access Block configuration options. You can enable the configuration options in
- * any combination.
- * </p>
- * <p>
- * Amazon S3 considers a bucket policy public unless at least one of the following conditions is true:
- * </p>
- * <ol>
- * <li>
- * <p>
- * The policy limits access to a set of CIDRs using <code>aws:SourceIp</code>. For more information on CIDR, see <a
- * href="http://www.rfc-editor.org/rfc/rfc4632.txt">http://www.rfc-editor.org/rfc/rfc4632.txt</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * The policy grants permissions, not including any "bad actions," to one of the following:
- * </p>
- * <ul>
- * <li>
- * <p>
- * A fixed AWS principal, user, role, or service principal
- * </p>
- * </li>
- * <li>
- * <p>
- * A fixed <code>aws:SourceArn</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * A fixed <code>aws:SourceVpc</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * A fixed <code>aws:SourceVpce</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * A fixed <code>aws:SourceOwner</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * A fixed <code>aws:SourceAccount</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * A fixed value of <code>s3:x-amz-server-side-encryption-aws-kms-key-id</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * A fixed value of <code>aws:userid</code> outside the pattern "<code>AROLEID:*</code>"
- * </p>
- * </li>
- * </ul>
- * </li>
- * </ol>
- * <p>
- * "Bad actions" are those that could expose the data inside a bucket to reads or writes by the public. These actions
- * are <code>s3:Get*</code>, <code>s3:List*</code>, <code>s3:AbortMultipartUpload</code>, <code>s3:Delete*</code>,
- * <code>s3:Put*</code>, and <code>s3:RestoreObject</code>.
- * </p>
- * <p>
- * The star notation for bad actions indicates that all matching operations are considered bad actions. For example,
- * because <code>s3:Get*</code> is a bad action, <code>s3:GetObject</code>, <code>s3:GetObjectVersion</code>, and
- * <code>s3:GetObjectAcl</code> are all bad actions.
- * </p>
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PublicAccessBlockConfiguration"
  *      target="_top">AWS API Documentation</a>
@@ -95,102 +24,19 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to
-     * <code>TRUE</code> causes the following behavior:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PUT Object calls will fail if the request includes an object ACL.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Note that enabling this setting doesn't affect existing policies or ACLs.
-     * </p>
-     */
+    /** <p/> */
     private Boolean blockPublicAcls;
-    /**
-     * <p>
-     * Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to
-     * <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they
-     * contain.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new
-     * public ACLs from being set.
-     * </p>
-     */
+    /** <p/> */
     private Boolean ignorePublicAcls;
-    /**
-     * <p>
-     * Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element
-     * to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows
-     * public access.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect existing bucket policies.
-     * </p>
-     */
+    /** <p/> */
     private Boolean blockPublicPolicy;
-    /**
-     * <p>
-     * Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this element
-     * is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with public policies.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect previously stored bucket policies, except that public and
-     * cross-account access within any public bucket policy, including non-public delegation to specific accounts, is
-     * blocked.
-     * </p>
-     */
+    /** <p/> */
     private Boolean restrictPublicBuckets;
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to
-     * <code>TRUE</code> causes the following behavior:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PUT Object calls will fail if the request includes an object ACL.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Note that enabling this setting doesn't affect existing policies or ACLs.
-     * </p>
+     * <p/>
      * 
      * @param blockPublicAcls
-     *        Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to
-     *        <code>TRUE</code> causes the following behavior:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PUT Object calls will fail if the request includes an object ACL.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Note that enabling this setting doesn't affect existing policies or ACLs.
      */
 
     public void setBlockPublicAcls(Boolean blockPublicAcls) {
@@ -198,42 +44,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to
-     * <code>TRUE</code> causes the following behavior:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PUT Object calls will fail if the request includes an object ACL.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Note that enabling this setting doesn't affect existing policies or ACLs.
-     * </p>
+     * <p/>
      * 
-     * @return Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to
-     *         <code>TRUE</code> causes the following behavior:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         PUT Object calls will fail if the request includes an object ACL.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         Note that enabling this setting doesn't affect existing policies or ACLs.
+     * @return
      */
 
     public Boolean getBlockPublicAcls() {
@@ -241,43 +54,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to
-     * <code>TRUE</code> causes the following behavior:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PUT Object calls will fail if the request includes an object ACL.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Note that enabling this setting doesn't affect existing policies or ACLs.
-     * </p>
+     * <p/>
      * 
      * @param blockPublicAcls
-     *        Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to
-     *        <code>TRUE</code> causes the following behavior:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PUT Object calls will fail if the request includes an object ACL.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Note that enabling this setting doesn't affect existing policies or ACLs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,42 +66,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to
-     * <code>TRUE</code> causes the following behavior:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PUT Object calls will fail if the request includes an object ACL.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Note that enabling this setting doesn't affect existing policies or ACLs.
-     * </p>
+     * <p/>
      * 
-     * @return Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to
-     *         <code>TRUE</code> causes the following behavior:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         PUT Object calls will fail if the request includes an object ACL.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         Note that enabling this setting doesn't affect existing policies or ACLs.
+     * @return
      */
 
     public Boolean isBlockPublicAcls() {
@@ -330,23 +76,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to
-     * <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they
-     * contain.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new
-     * public ACLs from being set.
-     * </p>
+     * <p/>
      * 
      * @param ignorePublicAcls
-     *        Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to
-     *        <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects
-     *        that they contain. </p>
-     *        <p>
-     *        Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent
-     *        new public ACLs from being set.
      */
 
     public void setIgnorePublicAcls(Boolean ignorePublicAcls) {
@@ -354,22 +86,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to
-     * <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they
-     * contain.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new
-     * public ACLs from being set.
-     * </p>
+     * <p/>
      * 
-     * @return Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element
-     *         to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any
-     *         objects that they contain. </p>
-     *         <p>
-     *         Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent
-     *         new public ACLs from being set.
+     * @return
      */
 
     public Boolean getIgnorePublicAcls() {
@@ -377,23 +96,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to
-     * <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they
-     * contain.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new
-     * public ACLs from being set.
-     * </p>
+     * <p/>
      * 
      * @param ignorePublicAcls
-     *        Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to
-     *        <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects
-     *        that they contain. </p>
-     *        <p>
-     *        Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent
-     *        new public ACLs from being set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -403,22 +108,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to
-     * <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they
-     * contain.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new
-     * public ACLs from being set.
-     * </p>
+     * <p/>
      * 
-     * @return Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element
-     *         to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any
-     *         objects that they contain. </p>
-     *         <p>
-     *         Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent
-     *         new public ACLs from being set.
+     * @return
      */
 
     public Boolean isIgnorePublicAcls() {
@@ -426,21 +118,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element
-     * to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows
-     * public access.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect existing bucket policies.
-     * </p>
+     * <p/>
      * 
      * @param blockPublicPolicy
-     *        Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this
-     *        element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket
-     *        policy allows public access. </p>
-     *        <p>
-     *        Note that enabling this setting doesn't affect existing bucket policies.
      */
 
     public void setBlockPublicPolicy(Boolean blockPublicPolicy) {
@@ -448,20 +128,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element
-     * to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows
-     * public access.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect existing bucket policies.
-     * </p>
+     * <p/>
      * 
-     * @return Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this
-     *         element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified
-     *         bucket policy allows public access. </p>
-     *         <p>
-     *         Note that enabling this setting doesn't affect existing bucket policies.
+     * @return
      */
 
     public Boolean getBlockPublicPolicy() {
@@ -469,21 +138,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element
-     * to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows
-     * public access.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect existing bucket policies.
-     * </p>
+     * <p/>
      * 
      * @param blockPublicPolicy
-     *        Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this
-     *        element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket
-     *        policy allows public access. </p>
-     *        <p>
-     *        Note that enabling this setting doesn't affect existing bucket policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -493,20 +150,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element
-     * to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows
-     * public access.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect existing bucket policies.
-     * </p>
+     * <p/>
      * 
-     * @return Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this
-     *         element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified
-     *         bucket policy allows public access. </p>
-     *         <p>
-     *         Note that enabling this setting doesn't affect existing bucket policies.
+     * @return
      */
 
     public Boolean isBlockPublicPolicy() {
@@ -514,24 +160,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this element
-     * is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with public policies.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect previously stored bucket policies, except that public and
-     * cross-account access within any public bucket policy, including non-public delegation to specific accounts, is
-     * blocked.
-     * </p>
+     * <p/>
      * 
      * @param restrictPublicBuckets
-     *        Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this
-     *        element is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with
-     *        public policies.</p>
-     *        <p>
-     *        Note that enabling this setting doesn't affect previously stored bucket policies, except that public and
-     *        cross-account access within any public bucket policy, including non-public delegation to specific
-     *        accounts, is blocked.
      */
 
     public void setRestrictPublicBuckets(Boolean restrictPublicBuckets) {
@@ -539,23 +170,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this element
-     * is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with public policies.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect previously stored bucket policies, except that public and
-     * cross-account access within any public bucket policy, including non-public delegation to specific accounts, is
-     * blocked.
-     * </p>
+     * <p/>
      * 
-     * @return Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this
-     *         element is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with
-     *         public policies.</p>
-     *         <p>
-     *         Note that enabling this setting doesn't affect previously stored bucket policies, except that public and
-     *         cross-account access within any public bucket policy, including non-public delegation to specific
-     *         accounts, is blocked.
+     * @return
      */
 
     public Boolean getRestrictPublicBuckets() {
@@ -563,24 +180,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this element
-     * is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with public policies.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect previously stored bucket policies, except that public and
-     * cross-account access within any public bucket policy, including non-public delegation to specific accounts, is
-     * blocked.
-     * </p>
+     * <p/>
      * 
      * @param restrictPublicBuckets
-     *        Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this
-     *        element is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with
-     *        public policies.</p>
-     *        <p>
-     *        Note that enabling this setting doesn't affect previously stored bucket policies, except that public and
-     *        cross-account access within any public bucket policy, including non-public delegation to specific
-     *        accounts, is blocked.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -590,23 +192,9 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this element
-     * is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with public policies.
-     * </p>
-     * <p>
-     * Note that enabling this setting doesn't affect previously stored bucket policies, except that public and
-     * cross-account access within any public bucket policy, including non-public delegation to specific accounts, is
-     * blocked.
-     * </p>
+     * <p/>
      * 
-     * @return Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this
-     *         element is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with
-     *         public policies.</p>
-     *         <p>
-     *         Note that enabling this setting doesn't affect previously stored bucket policies, except that public and
-     *         cross-account access within any public bucket policy, including non-public delegation to specific
-     *         accounts, is blocked.
+     * @return
      */
 
     public Boolean isRestrictPublicBuckets() {

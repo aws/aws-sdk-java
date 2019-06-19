@@ -98,6 +98,11 @@ public class AbstractAWSXRay implements AWSXRay {
     }
 
     @Override
+    public GetTimeSeriesServiceStatisticsResult getTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTraceGraphResult getTraceGraph(GetTraceGraphRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

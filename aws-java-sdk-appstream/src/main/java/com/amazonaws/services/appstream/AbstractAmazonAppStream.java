@@ -89,6 +89,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public CreateUsageReportSubscriptionResult createUsageReportSubscription(CreateUsageReportSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUserResult createUser(CreateUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -120,6 +125,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public DeleteStackResult deleteStack(DeleteStackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteUsageReportSubscriptionResult deleteUsageReportSubscription(DeleteUsageReportSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -160,6 +170,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public DescribeStacksResult describeStacks(DescribeStacksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeUsageReportSubscriptionsResult describeUsageReportSubscriptions(DescribeUsageReportSubscriptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

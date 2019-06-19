@@ -32,27 +32,27 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * <a>DescribeDBClusterBacktracks</a>
+ * <code>DescribeDBClusterBacktracks</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeDBClusterEndpoints</a>
+ * <code>DescribeDBClusterEndpoints</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeDBClusters</a>
+ * <code>DescribeDBClusters</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeDBInstances</a>
+ * <code>DescribeDBInstances</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribePendingMaintenanceActions</a>
+ * <code>DescribePendingMaintenanceActions</code>
  * </p>
  * </li>
  * </ul>

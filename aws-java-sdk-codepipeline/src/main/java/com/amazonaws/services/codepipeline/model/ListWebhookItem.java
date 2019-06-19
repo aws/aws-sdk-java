@@ -67,6 +67,12 @@ public class ListWebhookItem implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * Specifies the tags applied to the webhook.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -321,6 +327,76 @@ public class ListWebhookItem implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Specifies the tags applied to the webhook.
+     * </p>
+     * 
+     * @return Specifies the tags applied to the webhook.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the webhook.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the webhook.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the webhook.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the webhook.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListWebhookItem withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the webhook.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the webhook.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListWebhookItem withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -343,7 +419,9 @@ public class ListWebhookItem implements Serializable, Cloneable, StructuredPojo 
         if (getLastTriggered() != null)
             sb.append("LastTriggered: ").append(getLastTriggered()).append(",");
         if (getArn() != null)
-            sb.append("Arn: ").append(getArn());
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -382,6 +460,10 @@ public class ListWebhookItem implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -396,6 +478,7 @@ public class ListWebhookItem implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getLastTriggered() == null) ? 0 : getLastTriggered().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

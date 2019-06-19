@@ -32,15 +32,15 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
 
     /** Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. */
     private String codec;
-
+    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE. */
     private FrameCaptureSettings frameCaptureSettings;
-
+    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264. */
     private H264Settings h264Settings;
-
+    /** Settings for H265 codec */
     private H265Settings h265Settings;
-
+    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2. */
     private Mpeg2Settings mpeg2Settings;
-
+    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES. */
     private ProresSettings proresSettings;
 
     /**
@@ -95,7 +95,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+     * 
      * @param frameCaptureSettings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
      */
 
     public void setFrameCaptureSettings(FrameCaptureSettings frameCaptureSettings) {
@@ -103,7 +106,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+     * 
+     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
      */
 
     public FrameCaptureSettings getFrameCaptureSettings() {
@@ -111,7 +116,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+     * 
      * @param frameCaptureSettings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,7 +129,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+     * 
      * @param h264Settings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
      */
 
     public void setH264Settings(H264Settings h264Settings) {
@@ -129,7 +140,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+     * 
+     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
      */
 
     public H264Settings getH264Settings() {
@@ -137,7 +150,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+     * 
      * @param h264Settings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,7 +163,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Settings for H265 codec
+     * 
      * @param h265Settings
+     *        Settings for H265 codec
      */
 
     public void setH265Settings(H265Settings h265Settings) {
@@ -155,7 +174,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * Settings for H265 codec
+     * 
+     * @return Settings for H265 codec
      */
 
     public H265Settings getH265Settings() {
@@ -163,7 +184,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Settings for H265 codec
+     * 
      * @param h265Settings
+     *        Settings for H265 codec
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,7 +197,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+     * 
      * @param mpeg2Settings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
      */
 
     public void setMpeg2Settings(Mpeg2Settings mpeg2Settings) {
@@ -181,7 +208,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+     * 
+     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
      */
 
     public Mpeg2Settings getMpeg2Settings() {
@@ -189,7 +218,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+     * 
      * @param mpeg2Settings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,7 +231,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+     * 
      * @param proresSettings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
      */
 
     public void setProresSettings(ProresSettings proresSettings) {
@@ -207,7 +242,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+     * 
+     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
      */
 
     public ProresSettings getProresSettings() {
@@ -215,7 +252,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+     * 
      * @param proresSettings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

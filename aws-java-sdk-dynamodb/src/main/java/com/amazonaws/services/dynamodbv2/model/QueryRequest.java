@@ -103,7 +103,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -116,7 +116,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB reaches
      * this limit, it stops the operation and returns the matching values up to the limit, and a key in
      * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -135,7 +135,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      * >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -143,7 +143,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      * >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -151,7 +151,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -196,8 +196,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -219,7 +219,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -329,12 +329,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </ul>
      * <p>
      * For a list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -375,7 +375,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -403,8 +403,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -434,7 +434,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -1154,13 +1154,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *         >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1171,14 +1171,14 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributesToGet
      *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1194,7 +1194,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -1206,7 +1206,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * @param attributesToGet
      *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1224,14 +1224,14 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributesToGet
      *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1249,7 +1249,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB reaches
      * this limit, it stops the operation and returns the matching values up to the limit, and a key in
      * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1261,7 +1261,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up
      *        to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
      *        the operation. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      *        Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1277,7 +1277,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB reaches
      * this limit, it stops the operation and returns the matching values up to the limit, and a key in
      * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1288,7 +1288,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values
      *         up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to
      *         continue the operation. For more information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      *         Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1304,7 +1304,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB reaches
      * this limit, it stops the operation and returns the matching values up to the limit, and a key in
      * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1316,7 +1316,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up
      *        to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
      *        the operation. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      *        Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1421,13 +1421,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      * >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      *         >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1438,14 +1438,14 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      * >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param keyConditions
      *        This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      *        >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1456,14 +1456,14 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      * >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param keyConditions
      *        This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      *        >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1497,12 +1497,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      * >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      *         >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1513,13 +1513,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      * >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param queryFilter
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      *        >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1530,13 +1530,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      * >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param queryFilter
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      *        >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1570,13 +1570,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -1588,12 +1588,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *         >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -1605,13 +1605,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionalOperator
@@ -1625,13 +1625,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -1643,13 +1643,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionalOperator
@@ -1948,8 +1948,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1963,7 +1963,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1981,8 +1981,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1995,7 +1995,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2013,8 +2013,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2028,7 +2028,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2055,7 +2055,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2075,7 +2075,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </note>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
      *        >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2100,7 +2100,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2119,7 +2119,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         </note>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
      *         >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2144,7 +2144,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2164,7 +2164,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </note>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
      *        >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2279,12 +2279,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </ul>
      * <p>
      * For a list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2393,13 +2393,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </ul>
      *        <p>
      *        For a list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        <p>
      *        For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>,
      *        see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      *        Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2512,12 +2512,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </ul>
      * <p>
      * For a list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2625,13 +2625,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         </ul>
      *         <p>
      *         For a list of reserved words, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *         </p>
      *         <p>
      *         For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>,
      *         see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      *         Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2744,12 +2744,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </ul>
      * <p>
      * For a list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2858,13 +2858,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </ul>
      *        <p>
      *        For a list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        <p>
      *        For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>,
      *        see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      *        Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2910,7 +2910,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -2938,8 +2938,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2976,7 +2976,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         <p>
      *         The name of this attribute conflicts with a reserved word, so it cannot be used directly in an
      *         expression. (For the complete list of reserved words, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *         following for <code>ExpressionAttributeNames</code>:
      *         </p>
@@ -3005,7 +3005,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         </note>
      *         <p>
      *         For more information on expression attribute names, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -3049,7 +3049,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -3077,8 +3077,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -3116,7 +3116,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -3145,7 +3145,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </note>
      *        <p>
      *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -3189,7 +3189,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -3217,8 +3217,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -3256,7 +3256,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -3285,7 +3285,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </note>
      *        <p>
      *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3341,7 +3341,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -3368,7 +3368,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         </p>
      *         <p>
      *         For more information on expression attribute values, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -3401,7 +3401,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -3429,7 +3429,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </p>
      *        <p>
      *        For more information on expression attribute values, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -3462,7 +3462,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -3490,7 +3490,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </p>
      *        <p>
      *        For more information on expression attribute values, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

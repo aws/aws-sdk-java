@@ -39,7 +39,7 @@
  * </ul>
  * <p>
  * For more information about the features of Amazon CloudWatch Events, see the <a
- * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon CloudWatch Events User Guide</a>.
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon CloudWatch Events User Guide</a>.
  * </p>
  */
 package com.amazonaws.services.cloudwatchevents;

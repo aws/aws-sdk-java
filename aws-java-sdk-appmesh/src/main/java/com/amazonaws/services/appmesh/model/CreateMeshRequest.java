@@ -38,6 +38,20 @@ public class CreateMeshRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String meshName;
+    /**
+     * <p>
+     * The service mesh specification to apply.
+     * </p>
+     */
+    private MeshSpec spec;
+    /**
+     * <p>
+     * Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag
+     * consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length
+     * of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     */
+    private java.util.List<TagRef> tags;
 
     /**
      * <p>
@@ -126,6 +140,132 @@ public class CreateMeshRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The service mesh specification to apply.
+     * </p>
+     * 
+     * @param spec
+     *        The service mesh specification to apply.
+     */
+
+    public void setSpec(MeshSpec spec) {
+        this.spec = spec;
+    }
+
+    /**
+     * <p>
+     * The service mesh specification to apply.
+     * </p>
+     * 
+     * @return The service mesh specification to apply.
+     */
+
+    public MeshSpec getSpec() {
+        return this.spec;
+    }
+
+    /**
+     * <p>
+     * The service mesh specification to apply.
+     * </p>
+     * 
+     * @param spec
+     *        The service mesh specification to apply.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMeshRequest withSpec(MeshSpec spec) {
+        setSpec(spec);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag
+     * consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length
+     * of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @return Optional metadata that you can apply to the service mesh to assist with categorization and organization.
+     *         Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum
+     *         character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public java.util.List<TagRef> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag
+     * consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length
+     * of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you can apply to the service mesh to assist with categorization and organization.
+     *        Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum
+     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public void setTags(java.util.Collection<TagRef> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<TagRef>(tags);
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag
+     * consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length
+     * of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you can apply to the service mesh to assist with categorization and organization.
+     *        Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum
+     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMeshRequest withTags(TagRef... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<TagRef>(tags.length));
+        }
+        for (TagRef ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag
+     * consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length
+     * of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you can apply to the service mesh to assist with categorization and organization.
+     *        Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum
+     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMeshRequest withTags(java.util.Collection<TagRef> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -140,7 +280,11 @@ public class CreateMeshRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getMeshName() != null)
-            sb.append("MeshName: ").append(getMeshName());
+            sb.append("MeshName: ").append(getMeshName()).append(",");
+        if (getSpec() != null)
+            sb.append("Spec: ").append(getSpec()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -163,6 +307,14 @@ public class CreateMeshRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getMeshName() != null && other.getMeshName().equals(this.getMeshName()) == false)
             return false;
+        if (other.getSpec() == null ^ this.getSpec() == null)
+            return false;
+        if (other.getSpec() != null && other.getSpec().equals(this.getSpec()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +325,8 @@ public class CreateMeshRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getMeshName() == null) ? 0 : getMeshName().hashCode());
+        hashCode = prime * hashCode + ((getSpec() == null) ? 0 : getSpec().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

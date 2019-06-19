@@ -56,13 +56,13 @@ public class MasterJsonUnmarshaller implements Unmarshaller<Master, JsonUnmarsha
                     context.nextToken();
                     master.setInvitationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("invitedAt", targetDepth)) {
-                    context.nextToken();
-                    master.setInvitedAt(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("relationshipStatus", targetDepth)) {
                     context.nextToken();
                     master.setRelationshipStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("invitedAt", targetDepth)) {
+                    context.nextToken();
+                    master.setInvitedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

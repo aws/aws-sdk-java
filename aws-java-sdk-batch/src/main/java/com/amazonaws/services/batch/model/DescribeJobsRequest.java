@@ -27,17 +27,17 @@ public class DescribeJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A space-separated list of up to 100 job IDs.
+     * A list of up to 100 job IDs.
      * </p>
      */
     private java.util.List<String> jobs;
 
     /**
      * <p>
-     * A space-separated list of up to 100 job IDs.
+     * A list of up to 100 job IDs.
      * </p>
      * 
-     * @return A space-separated list of up to 100 job IDs.
+     * @return A list of up to 100 job IDs.
      */
 
     public java.util.List<String> getJobs() {
@@ -46,11 +46,11 @@ public class DescribeJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A space-separated list of up to 100 job IDs.
+     * A list of up to 100 job IDs.
      * </p>
      * 
      * @param jobs
-     *        A space-separated list of up to 100 job IDs.
+     *        A list of up to 100 job IDs.
      */
 
     public void setJobs(java.util.Collection<String> jobs) {
@@ -64,7 +64,7 @@ public class DescribeJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A space-separated list of up to 100 job IDs.
+     * A list of up to 100 job IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class DescribeJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param jobs
-     *        A space-separated list of up to 100 job IDs.
+     *        A list of up to 100 job IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class DescribeJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A space-separated list of up to 100 job IDs.
+     * A list of up to 100 job IDs.
      * </p>
      * 
      * @param jobs
-     *        A space-separated list of up to 100 job IDs.
+     *        A list of up to 100 job IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

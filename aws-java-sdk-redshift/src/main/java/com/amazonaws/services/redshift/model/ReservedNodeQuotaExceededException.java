@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Request would exceed the user's compute node quota. For information about increasing your quota, go to <a
- * href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in
+ * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in
  * the <i>Amazon Redshift Cluster Management Guide</i>.
  * </p>
  */

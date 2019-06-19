@@ -64,6 +64,14 @@ public class SimulationApplicationSummaryJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     simulationApplicationSummary.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("robotSoftwareSuite", targetDepth)) {
+                    context.nextToken();
+                    simulationApplicationSummary.setRobotSoftwareSuite(RobotSoftwareSuiteJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("simulationSoftwareSuite", targetDepth)) {
+                    context.nextToken();
+                    simulationApplicationSummary.setSimulationSoftwareSuite(SimulationSoftwareSuiteJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

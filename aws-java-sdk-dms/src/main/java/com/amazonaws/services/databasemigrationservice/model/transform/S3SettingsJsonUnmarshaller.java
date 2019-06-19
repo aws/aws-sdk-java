@@ -76,6 +76,46 @@ public class S3SettingsJsonUnmarshaller implements Unmarshaller<S3Settings, Json
                     context.nextToken();
                     s3Settings.setCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EncryptionMode", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setEncryptionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ServerSideEncryptionKmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setServerSideEncryptionKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DataFormat", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setDataFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EncodingType", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setEncodingType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DictPageSizeLimit", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setDictPageSizeLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("RowGroupLength", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setRowGroupLength(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("DataPageSize", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setDataPageSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ParquetVersion", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setParquetVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EnableStatistics", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setEnableStatistics(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("CdcInsertsOnly", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setCdcInsertsOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -32,8 +32,9 @@ public class ReferenceDataSourceUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * ID of the reference data source being updated. You can use the <a>DescribeApplication</a> operation to get this
-     * value.
+     * ID of the reference data source being updated. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get this value.
      * </p>
      */
     private String referenceId;
@@ -60,13 +61,15 @@ public class ReferenceDataSourceUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * ID of the reference data source being updated. You can use the <a>DescribeApplication</a> operation to get this
-     * value.
+     * ID of the reference data source being updated. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get this value.
      * </p>
      * 
      * @param referenceId
-     *        ID of the reference data source being updated. You can use the <a>DescribeApplication</a> operation to get
-     *        this value.
+     *        ID of the reference data source being updated. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get this value.
      */
 
     public void setReferenceId(String referenceId) {
@@ -75,12 +78,14 @@ public class ReferenceDataSourceUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * ID of the reference data source being updated. You can use the <a>DescribeApplication</a> operation to get this
-     * value.
+     * ID of the reference data source being updated. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get this value.
      * </p>
      * 
-     * @return ID of the reference data source being updated. You can use the <a>DescribeApplication</a> operation to
-     *         get this value.
+     * @return ID of the reference data source being updated. You can use the <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *         >DescribeApplication</a> operation to get this value.
      */
 
     public String getReferenceId() {
@@ -89,13 +94,15 @@ public class ReferenceDataSourceUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * ID of the reference data source being updated. You can use the <a>DescribeApplication</a> operation to get this
-     * value.
+     * ID of the reference data source being updated. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get this value.
      * </p>
      * 
      * @param referenceId
-     *        ID of the reference data source being updated. You can use the <a>DescribeApplication</a> operation to get
-     *        this value.
+     *        ID of the reference data source being updated. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

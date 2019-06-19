@@ -235,10 +235,14 @@ public enum RDSActions implements Action {
     RestoreDBInstanceToPointInTime("rds:RestoreDBInstanceToPointInTime"),
     /** Action for the RevokeDBSecurityGroupIngress operation. */
     RevokeDBSecurityGroupIngress("rds:RevokeDBSecurityGroupIngress"),
+    /** Action for the StartActivityStream operation. */
+    StartActivityStream("rds:StartActivityStream"),
     /** Action for the StartDBCluster operation. */
     StartDBCluster("rds:StartDBCluster"),
     /** Action for the StartDBInstance operation. */
     StartDBInstance("rds:StartDBInstance"),
+    /** Action for the StopActivityStream operation. */
+    StopActivityStream("rds:StopActivityStream"),
     /** Action for the StopDBCluster operation. */
     StopDBCluster("rds:StopDBCluster"),
     /** Action for the StopDBInstance operation. */

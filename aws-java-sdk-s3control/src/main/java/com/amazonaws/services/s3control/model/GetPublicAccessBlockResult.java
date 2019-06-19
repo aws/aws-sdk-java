@@ -24,20 +24,13 @@ import javax.annotation.Generated;
 public class GetPublicAccessBlockResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.s3control.S3ControlResponseMetadata> implements
         Serializable, Cloneable {
 
-    /**
-     * <p>
-     * The Public Access Block configuration currently in effect for this Amazon Web Services account.
-     * </p>
-     */
+    /** <p/> */
     private PublicAccessBlockConfiguration publicAccessBlockConfiguration;
 
     /**
-     * <p>
-     * The Public Access Block configuration currently in effect for this Amazon Web Services account.
-     * </p>
+     * <p/>
      * 
      * @param publicAccessBlockConfiguration
-     *        The Public Access Block configuration currently in effect for this Amazon Web Services account.
      */
 
     public void setPublicAccessBlockConfiguration(PublicAccessBlockConfiguration publicAccessBlockConfiguration) {
@@ -45,11 +38,9 @@ public class GetPublicAccessBlockResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p>
-     * The Public Access Block configuration currently in effect for this Amazon Web Services account.
-     * </p>
+     * <p/>
      * 
-     * @return The Public Access Block configuration currently in effect for this Amazon Web Services account.
+     * @return
      */
 
     public PublicAccessBlockConfiguration getPublicAccessBlockConfiguration() {
@@ -57,12 +48,9 @@ public class GetPublicAccessBlockResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p>
-     * The Public Access Block configuration currently in effect for this Amazon Web Services account.
-     * </p>
+     * <p/>
      * 
      * @param publicAccessBlockConfiguration
-     *        The Public Access Block configuration currently in effect for this Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

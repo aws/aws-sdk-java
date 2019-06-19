@@ -190,6 +190,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -255,6 +256,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBranch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -321,6 +323,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDomainAssociation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -385,6 +388,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -448,6 +452,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBranch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -512,6 +517,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDomainAssociation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -576,6 +582,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -637,6 +644,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -698,6 +706,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBranch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -759,6 +768,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainAssociation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -822,6 +832,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -881,6 +892,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApps");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -940,6 +952,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBranches");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -999,6 +1012,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomainAssociations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1061,6 +1075,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1124,6 +1139,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1187,6 +1203,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1248,6 +1265,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1311,6 +1329,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBranch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1375,6 +1394,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainAssociation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

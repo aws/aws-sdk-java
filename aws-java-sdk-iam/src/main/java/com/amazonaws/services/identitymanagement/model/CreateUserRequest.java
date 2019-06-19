@@ -28,7 +28,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path for the user name. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -47,10 +47,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the user to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users
-     * named both "TESTUSER" and "testuser".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      */
     private String userName;
@@ -64,8 +62,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -90,10 +88,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param userName
      *        The name of the user to create.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-. User names are not distinguished by case. For example,
-     *        you cannot create users named both "TESTUSER" and "testuser".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
     public CreateUserRequest(String userName) {
         setUserName(userName);
@@ -102,7 +98,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path for the user name. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -117,7 +113,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param path
      *        The path for the user name. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -136,7 +132,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path for the user name. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -150,7 +146,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @return The path for the user name. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>IAM User Guide</i>.</p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -169,7 +165,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path for the user name. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -184,7 +180,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param path
      *        The path for the user name. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -207,19 +203,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the user to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users
-     * named both "TESTUSER" and "testuser".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param userName
      *        The name of the user to create.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-. User names are not distinguished by case. For example,
-     *        you cannot create users named both "TESTUSER" and "testuser".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public void setUserName(String userName) {
@@ -231,18 +223,14 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the user to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users
-     * named both "TESTUSER" and "testuser".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @return The name of the user to create.</p>
      *         <p>
-     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *         include any of the following characters: _+=,.@-. User names are not distinguished by case. For example,
-     *         you cannot create users named both "TESTUSER" and "testuser".
+     *         IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *         case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public String getUserName() {
@@ -254,19 +242,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the user to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users
-     * named both "TESTUSER" and "testuser".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param userName
      *        The name of the user to create.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-. User names are not distinguished by case. For example,
-     *        you cannot create users named both "TESTUSER" and "testuser".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,8 +303,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -331,7 +315,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @return A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
      *         associated value. For more information about tagging, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
      *         <i>IAM User Guide</i>.</p> <note>
      *         <p>
      *         If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire
@@ -350,8 +334,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -363,7 +347,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param tags
      *        A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
      *        associated value. For more information about tagging, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
      *        If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire
@@ -384,8 +368,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -402,7 +386,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param tags
      *        A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
      *        associated value. For more information about tagging, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
      *        If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire
@@ -425,8 +409,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
      * associated value. For more information about tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -438,7 +422,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param tags
      *        A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
      *        associated value. For more information about tagging, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
      *        If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire

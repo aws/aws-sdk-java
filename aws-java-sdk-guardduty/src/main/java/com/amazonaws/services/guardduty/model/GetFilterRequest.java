@@ -25,17 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetFilterRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The detector ID that specifies the GuardDuty service where you want to list the details of the specified filter. */
+    /**
+     * <p>
+     * The unique ID of the detector the filter is associated with.
+     * </p>
+     */
     private String detectorId;
-    /** The name of the filter whose details you want to get. */
+    /**
+     * <p>
+     * The name of the filter you want to get.
+     * </p>
+     */
     private String filterName;
 
     /**
-     * The detector ID that specifies the GuardDuty service where you want to list the details of the specified filter.
+     * <p>
+     * The unique ID of the detector the filter is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The detector ID that specifies the GuardDuty service where you want to list the details of the specified
-     *        filter.
+     *        The unique ID of the detector the filter is associated with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -43,10 +52,11 @@ public class GetFilterRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * The detector ID that specifies the GuardDuty service where you want to list the details of the specified filter.
+     * <p>
+     * The unique ID of the detector the filter is associated with.
+     * </p>
      * 
-     * @return The detector ID that specifies the GuardDuty service where you want to list the details of the specified
-     *         filter.
+     * @return The unique ID of the detector the filter is associated with.
      */
 
     public String getDetectorId() {
@@ -54,11 +64,12 @@ public class GetFilterRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * The detector ID that specifies the GuardDuty service where you want to list the details of the specified filter.
+     * <p>
+     * The unique ID of the detector the filter is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The detector ID that specifies the GuardDuty service where you want to list the details of the specified
-     *        filter.
+     *        The unique ID of the detector the filter is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,10 +79,12 @@ public class GetFilterRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * The name of the filter whose details you want to get.
+     * <p>
+     * The name of the filter you want to get.
+     * </p>
      * 
      * @param filterName
-     *        The name of the filter whose details you want to get.
+     *        The name of the filter you want to get.
      */
 
     public void setFilterName(String filterName) {
@@ -79,9 +92,11 @@ public class GetFilterRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * The name of the filter whose details you want to get.
+     * <p>
+     * The name of the filter you want to get.
+     * </p>
      * 
-     * @return The name of the filter whose details you want to get.
+     * @return The name of the filter you want to get.
      */
 
     public String getFilterName() {
@@ -89,10 +104,12 @@ public class GetFilterRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * The name of the filter whose details you want to get.
+     * <p>
+     * The name of the filter you want to get.
+     * </p>
      * 
      * @param filterName
-     *        The name of the filter whose details you want to get.
+     *        The name of the filter you want to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

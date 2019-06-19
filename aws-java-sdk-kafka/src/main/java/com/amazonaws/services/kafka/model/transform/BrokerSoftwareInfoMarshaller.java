@@ -29,7 +29,7 @@ public class BrokerSoftwareInfoMarshaller {
 
     private static final MarshallingInfo<String> CONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationArn").build();
-    private static final MarshallingInfo<String> CONFIGURATIONREVISION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+    private static final MarshallingInfo<Long> CONFIGURATIONREVISION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationRevision").build();
     private static final MarshallingInfo<String> KAFKAVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kafkaVersion").build();

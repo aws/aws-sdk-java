@@ -27,17 +27,17 @@ public class BatchImportFindingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of findings that you want to import. Must be submitted in the AWSSecurityFinding format.
+     * A list of findings to import. You must submit them in the AwsSecurityFinding format.
      * </p>
      */
     private java.util.List<AwsSecurityFinding> findings;
 
     /**
      * <p>
-     * A list of findings that you want to import. Must be submitted in the AWSSecurityFinding format.
+     * A list of findings to import. You must submit them in the AwsSecurityFinding format.
      * </p>
      * 
-     * @return A list of findings that you want to import. Must be submitted in the AWSSecurityFinding format.
+     * @return A list of findings to import. You must submit them in the AwsSecurityFinding format.
      */
 
     public java.util.List<AwsSecurityFinding> getFindings() {
@@ -46,11 +46,11 @@ public class BatchImportFindingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of findings that you want to import. Must be submitted in the AWSSecurityFinding format.
+     * A list of findings to import. You must submit them in the AwsSecurityFinding format.
      * </p>
      * 
      * @param findings
-     *        A list of findings that you want to import. Must be submitted in the AWSSecurityFinding format.
+     *        A list of findings to import. You must submit them in the AwsSecurityFinding format.
      */
 
     public void setFindings(java.util.Collection<AwsSecurityFinding> findings) {
@@ -64,7 +64,7 @@ public class BatchImportFindingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of findings that you want to import. Must be submitted in the AWSSecurityFinding format.
+     * A list of findings to import. You must submit them in the AwsSecurityFinding format.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class BatchImportFindingsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param findings
-     *        A list of findings that you want to import. Must be submitted in the AWSSecurityFinding format.
+     *        A list of findings to import. You must submit them in the AwsSecurityFinding format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BatchImportFindingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of findings that you want to import. Must be submitted in the AWSSecurityFinding format.
+     * A list of findings to import. You must submit them in the AwsSecurityFinding format.
      * </p>
      * 
      * @param findings
-     *        A list of findings that you want to import. Must be submitted in the AWSSecurityFinding format.
+     *        A list of findings to import. You must submit them in the AwsSecurityFinding format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

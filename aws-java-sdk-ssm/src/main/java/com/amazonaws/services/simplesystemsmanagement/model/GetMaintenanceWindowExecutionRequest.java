@@ -27,18 +27,18 @@ public class GetMaintenanceWindowExecutionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      */
     private String windowExecutionId;
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that includes the task.
+     *        The ID of the maintenance window execution that includes the task.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -47,10 +47,10 @@ public class GetMaintenanceWindowExecutionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution that includes the task.
+     * @return The ID of the maintenance window execution that includes the task.
      */
 
     public String getWindowExecutionId() {
@@ -59,11 +59,11 @@ public class GetMaintenanceWindowExecutionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that includes the task.
+     *        The ID of the maintenance window execution that includes the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

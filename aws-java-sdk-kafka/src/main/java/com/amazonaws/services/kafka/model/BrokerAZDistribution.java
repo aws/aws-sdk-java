@@ -15,7 +15,8 @@ package com.amazonaws.services.kafka.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
+ * 
+ <p>
  * The distribution of broker nodes across Availability Zones. By default, broker nodes are distributed among three
  * Availability Zones. Currently, the only supported value is DEFAULT. You can either specify this value explicitly or
  * leave it out.

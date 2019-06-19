@@ -45,9 +45,10 @@ public class Host implements Serializable, Cloneable {
     private AvailableCapacity availableCapacity;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      */
     private String clientToken;
@@ -100,6 +101,12 @@ public class Host implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Indicates whether host recovery is enabled or disabled for the Dedicated Host.
+     * </p>
+     */
+    private String hostRecovery;
 
     /**
      * <p>
@@ -256,16 +263,17 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -274,15 +282,16 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *         Idempotency</a>.
      */
 
     public String getClientToken() {
@@ -291,16 +300,17 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -735,6 +745,79 @@ public class Host implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether host recovery is enabled or disabled for the Dedicated Host.
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether host recovery is enabled or disabled for the Dedicated Host.
+     * @see HostRecovery
+     */
+
+    public void setHostRecovery(String hostRecovery) {
+        this.hostRecovery = hostRecovery;
+    }
+
+    /**
+     * <p>
+     * Indicates whether host recovery is enabled or disabled for the Dedicated Host.
+     * </p>
+     * 
+     * @return Indicates whether host recovery is enabled or disabled for the Dedicated Host.
+     * @see HostRecovery
+     */
+
+    public String getHostRecovery() {
+        return this.hostRecovery;
+    }
+
+    /**
+     * <p>
+     * Indicates whether host recovery is enabled or disabled for the Dedicated Host.
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether host recovery is enabled or disabled for the Dedicated Host.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostRecovery
+     */
+
+    public Host withHostRecovery(String hostRecovery) {
+        setHostRecovery(hostRecovery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether host recovery is enabled or disabled for the Dedicated Host.
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether host recovery is enabled or disabled for the Dedicated Host.
+     * @see HostRecovery
+     */
+
+    public void setHostRecovery(HostRecovery hostRecovery) {
+        withHostRecovery(hostRecovery);
+    }
+
+    /**
+     * <p>
+     * Indicates whether host recovery is enabled or disabled for the Dedicated Host.
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether host recovery is enabled or disabled for the Dedicated Host.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostRecovery
+     */
+
+    public Host withHostRecovery(HostRecovery hostRecovery) {
+        this.hostRecovery = hostRecovery.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -769,7 +852,9 @@ public class Host implements Serializable, Cloneable {
         if (getReleaseTime() != null)
             sb.append("ReleaseTime: ").append(getReleaseTime()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getHostRecovery() != null)
+            sb.append("HostRecovery: ").append(getHostRecovery());
         sb.append("}");
         return sb.toString();
     }
@@ -832,6 +917,10 @@ public class Host implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getHostRecovery() == null ^ this.getHostRecovery() == null)
+            return false;
+        if (other.getHostRecovery() != null && other.getHostRecovery().equals(this.getHostRecovery()) == false)
+            return false;
         return true;
     }
 
@@ -852,6 +941,7 @@ public class Host implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAllocationTime() == null) ? 0 : getAllocationTime().hashCode());
         hashCode = prime * hashCode + ((getReleaseTime() == null) ? 0 : getReleaseTime().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getHostRecovery() == null) ? 0 : getHostRecovery().hashCode());
         return hashCode;
     }
 

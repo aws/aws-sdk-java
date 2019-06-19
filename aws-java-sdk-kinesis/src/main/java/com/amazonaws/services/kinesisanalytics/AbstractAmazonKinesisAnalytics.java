@@ -109,12 +109,27 @@ public class AbstractAmazonKinesisAnalytics implements AmazonKinesisAnalytics {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartApplicationResult startApplication(StartApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StopApplicationResult stopApplication(StopApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

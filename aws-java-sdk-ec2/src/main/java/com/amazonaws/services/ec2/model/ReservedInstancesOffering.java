@@ -116,7 +116,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<RecurringCharge> recurringCharges;
     /**
      * <p>
-     * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.
      * </p>
      */
     private String scope;
@@ -994,11 +994,11 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.
      * </p>
      * 
      * @param scope
-     *        Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     *        Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.
      * @see Scope
      */
 
@@ -1008,10 +1008,10 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.
      * </p>
      * 
-     * @return Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * @return Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.
      * @see Scope
      */
 
@@ -1021,11 +1021,11 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.
      * </p>
      * 
      * @param scope
-     *        Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     *        Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scope
      */
@@ -1037,11 +1037,11 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.
      * </p>
      * 
      * @param scope
-     *        Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     *        Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.
      * @see Scope
      */
 
@@ -1051,11 +1051,11 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.
      * </p>
      * 
      * @param scope
-     *        Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     *        Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scope
      */

@@ -22,7 +22,10 @@ public enum SchemaStatus {
 
     PROCESSING("PROCESSING"),
     ACTIVE("ACTIVE"),
-    DELETING("DELETING");
+    DELETING("DELETING"),
+    FAILED("FAILED"),
+    SUCCESS("SUCCESS"),
+    NOT_APPLICABLE("NOT_APPLICABLE");
 
     private String value;
 

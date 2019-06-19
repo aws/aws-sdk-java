@@ -73,7 +73,7 @@ public class DomainValidation implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain
      * Ownership</a>.
      * </p>
      */
@@ -482,14 +482,14 @@ public class DomainValidation implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain
      * Ownership</a>.
      * </p>
      * 
      * @param resourceRecord
      *        Contains the CNAME record that you add to your DNS database for domain validation. For more information,
-     *        see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate
-     *        Domain Ownership</a>.
+     *        see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to
+     *        Validate Domain Ownership</a>.
      */
 
     public void setResourceRecord(ResourceRecord resourceRecord) {
@@ -499,12 +499,12 @@ public class DomainValidation implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain
      * Ownership</a>.
      * </p>
      * 
      * @return Contains the CNAME record that you add to your DNS database for domain validation. For more information,
-     *         see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to
+     *         see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to
      *         Validate Domain Ownership</a>.
      */
 
@@ -515,14 +515,14 @@ public class DomainValidation implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain
      * Ownership</a>.
      * </p>
      * 
      * @param resourceRecord
      *        Contains the CNAME record that you add to your DNS database for domain validation. For more information,
-     *        see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate
-     *        Domain Ownership</a>.
+     *        see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to
+     *        Validate Domain Ownership</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

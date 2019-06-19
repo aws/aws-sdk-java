@@ -58,6 +58,8 @@ public class Reservation implements Serializable, Cloneable, StructuredPojo {
     private String start;
     /** Current state of reservation, e.g. 'ACTIVE' */
     private String state;
+    /** A collection of key-value pairs */
+    private java.util.Map<String, String> tags;
     /** Recurring usage charge for each reserved resource, e.g. '157.0' */
     private Double usagePrice;
 
@@ -657,6 +659,61 @@ public class Reservation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A collection of key-value pairs
+     * 
+     * @return A collection of key-value pairs
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * A collection of key-value pairs
+     * 
+     * @param tags
+     *        A collection of key-value pairs
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * A collection of key-value pairs
+     * 
+     * @param tags
+     *        A collection of key-value pairs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Reservation withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public Reservation addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Reservation clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Recurring usage charge for each reserved resource, e.g. '157.0'
      * 
      * @param usagePrice
@@ -734,6 +791,8 @@ public class Reservation implements Serializable, Cloneable, StructuredPojo {
             sb.append("Start: ").append(getStart()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getUsagePrice() != null)
             sb.append("UsagePrice: ").append(getUsagePrice());
         sb.append("}");
@@ -814,6 +873,10 @@ public class Reservation implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getUsagePrice() == null ^ this.getUsagePrice() == null)
             return false;
         if (other.getUsagePrice() != null && other.getUsagePrice().equals(this.getUsagePrice()) == false)
@@ -842,6 +905,7 @@ public class Reservation implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getResourceSpecification() == null) ? 0 : getResourceSpecification().hashCode());
         hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode());
         return hashCode;
     }

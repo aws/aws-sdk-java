@@ -52,6 +52,10 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                     context.nextToken();
                     channel.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("storage", targetDepth)) {
+                    context.nextToken();
+                    channel.setStorage(ChannelStorageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     channel.setArn(context.getUnmarshaller(String.class).unmarshall(context));

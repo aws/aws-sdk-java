@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ServiceDiscoveryMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> AWSCLOUDMAP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsCloudMap").build();
     private static final MarshallingInfo<StructuredPojo> DNS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dns").build();
 
@@ -46,6 +48,7 @@ public class ServiceDiscoveryMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(serviceDiscovery.getAwsCloudMap(), AWSCLOUDMAP_BINDING);
             protocolMarshaller.marshall(serviceDiscovery.getDns(), DNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

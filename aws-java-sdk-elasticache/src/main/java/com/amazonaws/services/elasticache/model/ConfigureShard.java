@@ -31,7 +31,7 @@ public class ConfigureShard implements Serializable, Cloneable {
      * <p>
      * The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the
      * node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.
      * </p>
      */
     private String nodeGroupId;
@@ -85,13 +85,13 @@ public class ConfigureShard implements Serializable, Cloneable {
      * <p>
      * The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the
      * node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.
      * </p>
      * 
      * @param nodeGroupId
      *        The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication
      *        groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's)
-     *        id, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a
+     *        id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a
      *        Shard's Id</a>.
      */
 
@@ -103,13 +103,13 @@ public class ConfigureShard implements Serializable, Cloneable {
      * <p>
      * The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the
      * node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.
      * </p>
      * 
      * @return The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication
      *         groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's)
-     *         id, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a
-     *         Shard's Id</a>.
+     *         id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
+     *         a Shard's Id</a>.
      */
 
     public String getNodeGroupId() {
@@ -120,13 +120,13 @@ public class ConfigureShard implements Serializable, Cloneable {
      * <p>
      * The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the
      * node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.
      * </p>
      * 
      * @param nodeGroupId
      *        The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication
      *        groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's)
-     *        id, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a
+     *        id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a
      *        Shard's Id</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

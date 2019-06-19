@@ -25,24 +25,24 @@ public class GetTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The ARN of the tagged resource.
+     * The ARN of the tagged resource group.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The tags associated with the specified resource.
+     * The tags associated with the specified resource group.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The ARN of the tagged resource.
+     * The ARN of the tagged resource group.
      * </p>
      * 
      * @param arn
-     *        The ARN of the tagged resource.
+     *        The ARN of the tagged resource group.
      */
 
     public void setArn(String arn) {
@@ -51,10 +51,10 @@ public class GetTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The ARN of the tagged resource.
+     * The ARN of the tagged resource group.
      * </p>
      * 
-     * @return The ARN of the tagged resource.
+     * @return The ARN of the tagged resource group.
      */
 
     public String getArn() {
@@ -63,11 +63,11 @@ public class GetTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The ARN of the tagged resource.
+     * The ARN of the tagged resource group.
      * </p>
      * 
      * @param arn
-     *        The ARN of the tagged resource.
+     *        The ARN of the tagged resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class GetTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The tags associated with the specified resource.
+     * The tags associated with the specified resource group.
      * </p>
      * 
-     * @return The tags associated with the specified resource.
+     * @return The tags associated with the specified resource group.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -90,11 +90,11 @@ public class GetTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The tags associated with the specified resource.
+     * The tags associated with the specified resource group.
      * </p>
      * 
      * @param tags
-     *        The tags associated with the specified resource.
+     *        The tags associated with the specified resource group.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -103,11 +103,11 @@ public class GetTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The tags associated with the specified resource.
+     * The tags associated with the specified resource group.
      * </p>
      * 
      * @param tags
-     *        The tags associated with the specified resource.
+     *        The tags associated with the specified resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

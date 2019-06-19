@@ -37,6 +37,12 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
+     * Where channel data is stored.
+     * </p>
+     */
+    private ChannelStorage storage;
+    /**
+     * <p>
      * The ARN of the channel.
      * </p>
      */
@@ -103,6 +109,46 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     public Channel withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Where channel data is stored.
+     * </p>
+     * 
+     * @param storage
+     *        Where channel data is stored.
+     */
+
+    public void setStorage(ChannelStorage storage) {
+        this.storage = storage;
+    }
+
+    /**
+     * <p>
+     * Where channel data is stored.
+     * </p>
+     * 
+     * @return Where channel data is stored.
+     */
+
+    public ChannelStorage getStorage() {
+        return this.storage;
+    }
+
+    /**
+     * <p>
+     * Where channel data is stored.
+     * </p>
+     * 
+     * @param storage
+     *        Where channel data is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withStorage(ChannelStorage storage) {
+        setStorage(storage);
         return this;
     }
 
@@ -339,6 +385,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getStorage() != null)
+            sb.append("Storage: ").append(getStorage()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getStatus() != null)
@@ -366,6 +414,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getStorage() == null ^ this.getStorage() == null)
+            return false;
+        if (other.getStorage() != null && other.getStorage().equals(this.getStorage()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
@@ -396,6 +448,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getStorage() == null) ? 0 : getStorage().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());

@@ -18,7 +18,6 @@ import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.s3.internal.FileLocks;
 import com.amazonaws.services.s3.transfer.Transfer;
 import java.io.File;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;

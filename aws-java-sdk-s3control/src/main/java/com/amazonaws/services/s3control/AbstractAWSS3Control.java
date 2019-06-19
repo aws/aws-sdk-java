@@ -28,7 +28,17 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public CreateJobResult createJob(CreateJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeletePublicAccessBlockResult deletePublicAccessBlock(DeletePublicAccessBlockRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeJobResult describeJob(DescribeJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -38,7 +48,22 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public ListJobsResult listJobs(ListJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutPublicAccessBlockResult putPublicAccessBlock(PutPublicAccessBlockRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateJobPriorityResult updateJobPriority(UpdateJobPriorityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateJobStatusResult updateJobStatus(UpdateJobStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

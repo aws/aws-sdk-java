@@ -30,6 +30,8 @@ public class ConditionMarshaller {
 
     private static final MarshallingInfo<List> EQ_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("eq").build();
+    private static final MarshallingInfo<List> NEQ_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("neq").build();
     private static final MarshallingInfo<Integer> GT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("gt").build();
     private static final MarshallingInfo<Integer> GTE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -38,8 +40,18 @@ public class ConditionMarshaller {
             .marshallLocationName("lt").build();
     private static final MarshallingInfo<Integer> LTE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("lte").build();
-    private static final MarshallingInfo<List> NEQ_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("neq").build();
+    private static final MarshallingInfo<List> EQUALS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("equals").build();
+    private static final MarshallingInfo<List> NOTEQUALS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("notEquals").build();
+    private static final MarshallingInfo<Long> GREATERTHAN_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("greaterThan").build();
+    private static final MarshallingInfo<Long> GREATERTHANOREQUAL_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("greaterThanOrEqual").build();
+    private static final MarshallingInfo<Long> LESSTHAN_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("lessThan").build();
+    private static final MarshallingInfo<Long> LESSTHANOREQUAL_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lessThanOrEqual").build();
 
     private static final ConditionMarshaller instance = new ConditionMarshaller();
 
@@ -58,11 +70,17 @@ public class ConditionMarshaller {
 
         try {
             protocolMarshaller.marshall(condition.getEq(), EQ_BINDING);
+            protocolMarshaller.marshall(condition.getNeq(), NEQ_BINDING);
             protocolMarshaller.marshall(condition.getGt(), GT_BINDING);
             protocolMarshaller.marshall(condition.getGte(), GTE_BINDING);
             protocolMarshaller.marshall(condition.getLt(), LT_BINDING);
             protocolMarshaller.marshall(condition.getLte(), LTE_BINDING);
-            protocolMarshaller.marshall(condition.getNeq(), NEQ_BINDING);
+            protocolMarshaller.marshall(condition.getEquals(), EQUALS_BINDING);
+            protocolMarshaller.marshall(condition.getNotEquals(), NOTEQUALS_BINDING);
+            protocolMarshaller.marshall(condition.getGreaterThan(), GREATERTHAN_BINDING);
+            protocolMarshaller.marshall(condition.getGreaterThanOrEqual(), GREATERTHANOREQUAL_BINDING);
+            protocolMarshaller.marshall(condition.getLessThan(), LESSTHAN_BINDING);
+            protocolMarshaller.marshall(condition.getLessThanOrEqual(), LESSTHANOREQUAL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

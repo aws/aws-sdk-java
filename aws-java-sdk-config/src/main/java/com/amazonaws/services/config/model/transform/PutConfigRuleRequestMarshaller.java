@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.config.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class PutConfigRuleRequestMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> CONFIGRULE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigRule").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final PutConfigRuleRequestMarshaller instance = new PutConfigRuleRequestMarshaller();
 
@@ -47,6 +50,7 @@ public class PutConfigRuleRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(putConfigRuleRequest.getConfigRule(), CONFIGRULE_BINDING);
+            protocolMarshaller.marshall(putConfigRuleRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

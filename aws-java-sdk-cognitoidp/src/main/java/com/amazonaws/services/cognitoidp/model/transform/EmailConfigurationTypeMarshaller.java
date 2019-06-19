@@ -31,6 +31,8 @@ public class EmailConfigurationTypeMarshaller {
             .marshallLocationName("SourceArn").build();
     private static final MarshallingInfo<String> REPLYTOEMAILADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplyToEmailAddress").build();
+    private static final MarshallingInfo<String> EMAILSENDINGACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailSendingAccount").build();
 
     private static final EmailConfigurationTypeMarshaller instance = new EmailConfigurationTypeMarshaller();
 
@@ -50,6 +52,7 @@ public class EmailConfigurationTypeMarshaller {
         try {
             protocolMarshaller.marshall(emailConfigurationType.getSourceArn(), SOURCEARN_BINDING);
             protocolMarshaller.marshall(emailConfigurationType.getReplyToEmailAddress(), REPLYTOEMAILADDRESS_BINDING);
+            protocolMarshaller.marshall(emailConfigurationType.getEmailSendingAccount(), EMAILSENDINGACCOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

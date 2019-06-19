@@ -41,6 +41,19 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateBudgetWithResourceResult> associateBudgetWithResourceAsync(AssociateBudgetWithResourceRequest request) {
+
+        return associateBudgetWithResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateBudgetWithResourceResult> associateBudgetWithResourceAsync(AssociateBudgetWithResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateBudgetWithResourceRequest, AssociateBudgetWithResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociatePrincipalWithPortfolioResult> associatePrincipalWithPortfolioAsync(
             AssociatePrincipalWithPortfolioRequest request) {
 
@@ -543,6 +556,19 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateBudgetFromResourceResult> disassociateBudgetFromResourceAsync(DisassociateBudgetFromResourceRequest request) {
+
+        return disassociateBudgetFromResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateBudgetFromResourceResult> disassociateBudgetFromResourceAsync(DisassociateBudgetFromResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateBudgetFromResourceRequest, DisassociateBudgetFromResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociatePrincipalFromPortfolioResult> disassociatePrincipalFromPortfolioAsync(
             DisassociatePrincipalFromPortfolioRequest request) {
 
@@ -667,6 +693,19 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     @Override
     public java.util.concurrent.Future<ListAcceptedPortfolioSharesResult> listAcceptedPortfolioSharesAsync(ListAcceptedPortfolioSharesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAcceptedPortfolioSharesRequest, ListAcceptedPortfolioSharesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBudgetsForResourceResult> listBudgetsForResourceAsync(ListBudgetsForResourceRequest request) {
+
+        return listBudgetsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBudgetsForResourceResult> listBudgetsForResourceAsync(ListBudgetsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListBudgetsForResourceRequest, ListBudgetsForResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -860,6 +899,21 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     }
 
     @Override
+    public java.util.concurrent.Future<ListStackInstancesForProvisionedProductResult> listStackInstancesForProvisionedProductAsync(
+            ListStackInstancesForProvisionedProductRequest request) {
+
+        return listStackInstancesForProvisionedProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackInstancesForProvisionedProductResult> listStackInstancesForProvisionedProductAsync(
+            ListStackInstancesForProvisionedProductRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStackInstancesForProvisionedProductRequest, ListStackInstancesForProvisionedProductResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagOptionsResult> listTagOptionsAsync(ListTagOptionsRequest request) {
 
         return listTagOptionsAsync(request, null);
@@ -1011,6 +1065,21 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     @Override
     public java.util.concurrent.Future<UpdateProvisionedProductResult> updateProvisionedProductAsync(UpdateProvisionedProductRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateProvisionedProductRequest, UpdateProvisionedProductResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProvisionedProductPropertiesResult> updateProvisionedProductPropertiesAsync(
+            UpdateProvisionedProductPropertiesRequest request) {
+
+        return updateProvisionedProductPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProvisionedProductPropertiesResult> updateProvisionedProductPropertiesAsync(
+            UpdateProvisionedProductPropertiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateProvisionedProductPropertiesRequest, UpdateProvisionedProductPropertiesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

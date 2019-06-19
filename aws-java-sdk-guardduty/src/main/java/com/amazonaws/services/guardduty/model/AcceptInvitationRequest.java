@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * AcceptInvitation request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation" target="_top">AWS API
  *      Documentation</a>
@@ -26,15 +25,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID of the detector of the GuardDuty member account. */
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty member account.
+     * </p>
+     */
     private String detectorId;
-    /** This value is used to validate the master account to the member account. */
-    private String invitationId;
-    /** The account ID of the master GuardDuty account whose invitation you're accepting. */
+    /**
+     * <p>
+     * The account ID of the master GuardDuty account whose invitation you're accepting.
+     * </p>
+     */
     private String masterId;
+    /**
+     * <p>
+     * This value is used to validate the master account to the member account.
+     * </p>
+     */
+    private String invitationId;
 
     /**
+     * <p>
      * The unique ID of the detector of the GuardDuty member account.
+     * </p>
      * 
      * @param detectorId
      *        The unique ID of the detector of the GuardDuty member account.
@@ -45,7 +58,9 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
      * The unique ID of the detector of the GuardDuty member account.
+     * </p>
      * 
      * @return The unique ID of the detector of the GuardDuty member account.
      */
@@ -55,7 +70,9 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
      * The unique ID of the detector of the GuardDuty member account.
+     * </p>
      * 
      * @param detectorId
      *        The unique ID of the detector of the GuardDuty member account.
@@ -68,41 +85,9 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * This value is used to validate the master account to the member account.
-     * 
-     * @param invitationId
-     *        This value is used to validate the master account to the member account.
-     */
-
-    public void setInvitationId(String invitationId) {
-        this.invitationId = invitationId;
-    }
-
-    /**
-     * This value is used to validate the master account to the member account.
-     * 
-     * @return This value is used to validate the master account to the member account.
-     */
-
-    public String getInvitationId() {
-        return this.invitationId;
-    }
-
-    /**
-     * This value is used to validate the master account to the member account.
-     * 
-     * @param invitationId
-     *        This value is used to validate the master account to the member account.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AcceptInvitationRequest withInvitationId(String invitationId) {
-        setInvitationId(invitationId);
-        return this;
-    }
-
-    /**
+     * <p>
      * The account ID of the master GuardDuty account whose invitation you're accepting.
+     * </p>
      * 
      * @param masterId
      *        The account ID of the master GuardDuty account whose invitation you're accepting.
@@ -113,7 +98,9 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
      * The account ID of the master GuardDuty account whose invitation you're accepting.
+     * </p>
      * 
      * @return The account ID of the master GuardDuty account whose invitation you're accepting.
      */
@@ -123,7 +110,9 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
      * The account ID of the master GuardDuty account whose invitation you're accepting.
+     * </p>
      * 
      * @param masterId
      *        The account ID of the master GuardDuty account whose invitation you're accepting.
@@ -132,6 +121,46 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     public AcceptInvitationRequest withMasterId(String masterId) {
         setMasterId(masterId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This value is used to validate the master account to the member account.
+     * </p>
+     * 
+     * @param invitationId
+     *        This value is used to validate the master account to the member account.
+     */
+
+    public void setInvitationId(String invitationId) {
+        this.invitationId = invitationId;
+    }
+
+    /**
+     * <p>
+     * This value is used to validate the master account to the member account.
+     * </p>
+     * 
+     * @return This value is used to validate the master account to the member account.
+     */
+
+    public String getInvitationId() {
+        return this.invitationId;
+    }
+
+    /**
+     * <p>
+     * This value is used to validate the master account to the member account.
+     * </p>
+     * 
+     * @param invitationId
+     *        This value is used to validate the master account to the member account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AcceptInvitationRequest withInvitationId(String invitationId) {
+        setInvitationId(invitationId);
         return this;
     }
 
@@ -149,10 +178,10 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getDetectorId() != null)
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
-        if (getInvitationId() != null)
-            sb.append("InvitationId: ").append(getInvitationId()).append(",");
         if (getMasterId() != null)
-            sb.append("MasterId: ").append(getMasterId());
+            sb.append("MasterId: ").append(getMasterId()).append(",");
+        if (getInvitationId() != null)
+            sb.append("InvitationId: ").append(getInvitationId());
         sb.append("}");
         return sb.toString();
     }
@@ -171,13 +200,13 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
             return false;
-        if (other.getInvitationId() == null ^ this.getInvitationId() == null)
-            return false;
-        if (other.getInvitationId() != null && other.getInvitationId().equals(this.getInvitationId()) == false)
-            return false;
         if (other.getMasterId() == null ^ this.getMasterId() == null)
             return false;
         if (other.getMasterId() != null && other.getMasterId().equals(this.getMasterId()) == false)
+            return false;
+        if (other.getInvitationId() == null ^ this.getInvitationId() == null)
+            return false;
+        if (other.getInvitationId() != null && other.getInvitationId().equals(this.getInvitationId()) == false)
             return false;
         return true;
     }
@@ -188,8 +217,8 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
-        hashCode = prime * hashCode + ((getInvitationId() == null) ? 0 : getInvitationId().hashCode());
         hashCode = prime * hashCode + ((getMasterId() == null) ? 0 : getMasterId().hashCode());
+        hashCode = prime * hashCode + ((getInvitationId() == null) ? 0 : getInvitationId().hashCode());
         return hashCode;
     }
 

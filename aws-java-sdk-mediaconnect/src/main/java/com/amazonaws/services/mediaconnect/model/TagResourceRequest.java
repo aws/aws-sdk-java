@@ -18,8 +18,8 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * The tags to add to the resource. Tag keys can have a maximum character length of 128 characters, and tag values can
- * have a maximum length of 256 characters.
+ * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length
+ * of 128 characters, and tag values can have a maximum length of 256 characters.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource" target="_top">AWS API
  *      Documentation</a>
@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The Amazon Resource Name (ARN) of the resource that you want to add tags to. */
+    /** The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags. */
     private String resourceArn;
     /**
      * A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can
@@ -36,10 +36,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.Map<String, String> tags;
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     *        The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add
+     *        tags.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,9 +48,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
      * 
-     * @return The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     * @return The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add
+     *         tags.
      */
 
     public String getResourceArn() {
@@ -57,10 +59,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     *        The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add
+     *        tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

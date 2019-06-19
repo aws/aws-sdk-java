@@ -42,6 +42,8 @@ public class ContainerInstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registeredResources").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusReason").build();
     private static final MarshallingInfo<Boolean> AGENTCONNECTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("agentConnected").build();
     private static final MarshallingInfo<Integer> RUNNINGTASKSCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -82,6 +84,7 @@ public class ContainerInstanceMarshaller {
             protocolMarshaller.marshall(containerInstance.getRemainingResources(), REMAININGRESOURCES_BINDING);
             protocolMarshaller.marshall(containerInstance.getRegisteredResources(), REGISTEREDRESOURCES_BINDING);
             protocolMarshaller.marshall(containerInstance.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(containerInstance.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(containerInstance.getAgentConnected(), AGENTCONNECTED_BINDING);
             protocolMarshaller.marshall(containerInstance.getRunningTasksCount(), RUNNINGTASKSCOUNT_BINDING);
             protocolMarshaller.marshall(containerInstance.getPendingTasksCount(), PENDINGTASKSCOUNT_BINDING);

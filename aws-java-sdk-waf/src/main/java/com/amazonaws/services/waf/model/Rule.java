@@ -70,8 +70,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
-     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change <code>MetricName</code> after you
-     * create the <code>Rule</code>.
+     * characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric
+     * names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after
+     * you create the <code>Rule</code>.
      * </p>
      */
     private String metricName;
@@ -205,13 +206,15 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
-     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change <code>MetricName</code> after you
-     * create the <code>Rule</code>.
+     * characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric
+     * names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after
+     * you create the <code>Rule</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only
-     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *        alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     *        whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change
      *        <code>MetricName</code> after you create the <code>Rule</code>.
      */
 
@@ -222,12 +225,14 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
-     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change <code>MetricName</code> after you
-     * create the <code>Rule</code>.
+     * characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric
+     * names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after
+     * you create the <code>Rule</code>.
      * </p>
      * 
      * @return A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only
-     *         alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *         alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     *         whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change
      *         <code>MetricName</code> after you create the <code>Rule</code>.
      */
 
@@ -238,13 +243,15 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
-     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change <code>MetricName</code> after you
-     * create the <code>Rule</code>.
+     * characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric
+     * names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after
+     * you create the <code>Rule</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only
-     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *        alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     *        whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change
      *        <code>MetricName</code> after you create the <code>Rule</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

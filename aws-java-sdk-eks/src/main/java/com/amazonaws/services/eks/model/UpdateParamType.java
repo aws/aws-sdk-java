@@ -21,7 +21,10 @@ import javax.annotation.Generated;
 public enum UpdateParamType {
 
     Version("Version"),
-    PlatformVersion("PlatformVersion");
+    PlatformVersion("PlatformVersion"),
+    EndpointPrivateAccess("EndpointPrivateAccess"),
+    EndpointPublicAccess("EndpointPublicAccess"),
+    ClusterLogging("ClusterLogging");
 
     private String value;
 

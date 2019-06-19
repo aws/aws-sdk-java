@@ -70,6 +70,39 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Associates the specified budget with the specified resource.
+     * </p>
+     * 
+     * @param associateBudgetWithResourceRequest
+     * @return A Java Future containing the result of the AssociateBudgetWithResource operation returned by the service.
+     * @sample AWSServiceCatalogAsync.AssociateBudgetWithResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateBudgetWithResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateBudgetWithResourceResult> associateBudgetWithResourceAsync(
+            AssociateBudgetWithResourceRequest associateBudgetWithResourceRequest);
+
+    /**
+     * <p>
+     * Associates the specified budget with the specified resource.
+     * </p>
+     * 
+     * @param associateBudgetWithResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateBudgetWithResource operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.AssociateBudgetWithResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateBudgetWithResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateBudgetWithResourceResult> associateBudgetWithResourceAsync(
+            AssociateBudgetWithResourceRequest associateBudgetWithResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateBudgetWithResourceRequest, AssociateBudgetWithResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates the specified principal ARN with the specified portfolio.
      * </p>
      * 
@@ -1284,6 +1317,14 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
      * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
      * </p>
+     * <note>
+     * <p>
+     * If a provisioned product was transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the new
+     * owner will be able to describe all past records for that product. The previous owner will no longer be able to
+     * describe the records, but will be able to use <a>ListRecordHistory</a> to see the product's history from when he
+     * was the owner.
+     * </p>
+     * </note>
      * 
      * @param describeRecordRequest
      * @return A Java Future containing the result of the DescribeRecord operation returned by the service.
@@ -1301,6 +1342,14 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
      * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
      * </p>
+     * <note>
+     * <p>
+     * If a provisioned product was transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the new
+     * owner will be able to describe all past records for that product. The previous owner will no longer be able to
+     * describe the records, but will be able to use <a>ListRecordHistory</a> to see the product's history from when he
+     * was the owner.
+     * </p>
+     * </note>
      * 
      * @param describeRecordRequest
      * @param asyncHandler
@@ -1417,6 +1466,41 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     java.util.concurrent.Future<DisableAWSOrganizationsAccessResult> disableAWSOrganizationsAccessAsync(
             DisableAWSOrganizationsAccessRequest disableAWSOrganizationsAccessRequest,
             com.amazonaws.handlers.AsyncHandler<DisableAWSOrganizationsAccessRequest, DisableAWSOrganizationsAccessResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates the specified budget from the specified resource.
+     * </p>
+     * 
+     * @param disassociateBudgetFromResourceRequest
+     * @return A Java Future containing the result of the DisassociateBudgetFromResource operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsync.DisassociateBudgetFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateBudgetFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateBudgetFromResourceResult> disassociateBudgetFromResourceAsync(
+            DisassociateBudgetFromResourceRequest disassociateBudgetFromResourceRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified budget from the specified resource.
+     * </p>
+     * 
+     * @param disassociateBudgetFromResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateBudgetFromResource operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsyncHandler.DisassociateBudgetFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateBudgetFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateBudgetFromResourceResult> disassociateBudgetFromResourceAsync(
+            DisassociateBudgetFromResourceRequest disassociateBudgetFromResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateBudgetFromResourceRequest, DisassociateBudgetFromResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -1750,6 +1834,37 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     java.util.concurrent.Future<ListAcceptedPortfolioSharesResult> listAcceptedPortfolioSharesAsync(
             ListAcceptedPortfolioSharesRequest listAcceptedPortfolioSharesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAcceptedPortfolioSharesRequest, ListAcceptedPortfolioSharesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the budgets associated to the specified resource.
+     * </p>
+     * 
+     * @param listBudgetsForResourceRequest
+     * @return A Java Future containing the result of the ListBudgetsForResource operation returned by the service.
+     * @sample AWSServiceCatalogAsync.ListBudgetsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListBudgetsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBudgetsForResourceResult> listBudgetsForResourceAsync(ListBudgetsForResourceRequest listBudgetsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists all the budgets associated to the specified resource.
+     * </p>
+     * 
+     * @param listBudgetsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBudgetsForResource operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.ListBudgetsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListBudgetsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBudgetsForResourceResult> listBudgetsForResourceAsync(ListBudgetsForResourceRequest listBudgetsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBudgetsForResourceRequest, ListBudgetsForResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -2219,6 +2334,47 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Returns summary information about stack instances that are associated with the specified
+     * <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances that are associated with a
+     * specific AWS account name or region.
+     * </p>
+     * 
+     * @param listStackInstancesForProvisionedProductRequest
+     * @return A Java Future containing the result of the ListStackInstancesForProvisionedProduct operation returned by
+     *         the service.
+     * @sample AWSServiceCatalogAsync.ListStackInstancesForProvisionedProduct
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStackInstancesForProvisionedProductResult> listStackInstancesForProvisionedProductAsync(
+            ListStackInstancesForProvisionedProductRequest listStackInstancesForProvisionedProductRequest);
+
+    /**
+     * <p>
+     * Returns summary information about stack instances that are associated with the specified
+     * <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances that are associated with a
+     * specific AWS account name or region.
+     * </p>
+     * 
+     * @param listStackInstancesForProvisionedProductRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStackInstancesForProvisionedProduct operation returned by
+     *         the service.
+     * @sample AWSServiceCatalogAsyncHandler.ListStackInstancesForProvisionedProduct
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStackInstancesForProvisionedProductResult> listStackInstancesForProvisionedProductAsync(
+            ListStackInstancesForProvisionedProductRequest listStackInstancesForProvisionedProductRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStackInstancesForProvisionedProductRequest, ListStackInstancesForProvisionedProductResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the specified TagOptions or all TagOptions.
      * </p>
      * 
@@ -2652,6 +2808,43 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      */
     java.util.concurrent.Future<UpdateProvisionedProductResult> updateProvisionedProductAsync(UpdateProvisionedProductRequest updateProvisionedProductRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateProvisionedProductRequest, UpdateProvisionedProductResult> asyncHandler);
+
+    /**
+     * <p>
+     * Requests updates to the properties of the specified provisioned product.
+     * </p>
+     * 
+     * @param updateProvisionedProductPropertiesRequest
+     * @return A Java Future containing the result of the UpdateProvisionedProductProperties operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsync.UpdateProvisionedProductProperties
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProductProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProvisionedProductPropertiesResult> updateProvisionedProductPropertiesAsync(
+            UpdateProvisionedProductPropertiesRequest updateProvisionedProductPropertiesRequest);
+
+    /**
+     * <p>
+     * Requests updates to the properties of the specified provisioned product.
+     * </p>
+     * 
+     * @param updateProvisionedProductPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateProvisionedProductProperties operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsyncHandler.UpdateProvisionedProductProperties
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProductProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProvisionedProductPropertiesResult> updateProvisionedProductPropertiesAsync(
+            UpdateProvisionedProductPropertiesRequest updateProvisionedProductPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateProvisionedProductPropertiesRequest, UpdateProvisionedProductPropertiesResult> asyncHandler);
 
     /**
      * <p>

@@ -48,6 +48,10 @@ public class DashIsoEncryptionSettingsJsonUnmarshaller implements Unmarshaller<D
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("playbackDeviceCompatibility", targetDepth)) {
+                    context.nextToken();
+                    dashIsoEncryptionSettings.setPlaybackDeviceCompatibility(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("spekeKeyProvider", targetDepth)) {
                     context.nextToken();
                     dashIsoEncryptionSettings.setSpekeKeyProvider(SpekeKeyProviderJsonUnmarshaller.getInstance().unmarshall(context));

@@ -27,7 +27,7 @@ import com.amazonaws.services.robomaker.model.*;
  * </p>
  * <p>
  * <p>
- * his section provides documentation for the AWS RoboMaker API operations.
+ * This section provides documentation for the AWS RoboMaker API operations.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -65,6 +65,28 @@ public interface AWSRoboMaker {
 
     /**
      * <p>
+     * Cancels the specified deployment job.
+     * </p>
+     * 
+     * @param cancelDeploymentJobRequest
+     * @return Result of the CancelDeploymentJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidParameterException
+     *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
+     *         provides an explanation of the error value.
+     * @throws InternalServerException
+     *         AWS RoboMaker experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         AWS RoboMaker is temporarily unable to process the request. Try your call again.
+     * @sample AWSRoboMaker.CancelDeploymentJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CancelDeploymentJobResult cancelDeploymentJob(CancelDeploymentJobRequest cancelDeploymentJobRequest);
+
+    /**
+     * <p>
      * Cancels the specified simulation job.
      * </p>
      * 
@@ -95,6 +117,11 @@ public interface AWSRoboMaker {
      * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot
      * Application Version</a>.
      * </p>
+     * <note>
+     * <p>
+     * After 90 days, deployment jobs expire and will be deleted. They will no longer be accessible.
+     * </p>
+     * </note>
      * 
      * @param createDeploymentJobRequest
      * @return Result of the CreateDeploymentJob operation returned by the service.
@@ -282,6 +309,11 @@ public interface AWSRoboMaker {
      * <p>
      * Creates a simulation job.
      * </p>
+     * <note>
+     * <p>
+     * After 90 days, simulation jobs expire and will be deleted. They will no longer be accessible.
+     * </p>
+     * </note>
      * 
      * @param createSimulationJobRequest
      * @return Result of the CreateSimulationJob operation returned by the service.
@@ -300,6 +332,8 @@ public interface AWSRoboMaker {
      * @throws IdempotentParameterMismatchException
      *         The request uses the same client token as a previous, but non-identical request. Do not reuse a client
      *         token with different requests, unless the requests are identical.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
      * @sample AWSRoboMaker.CreateSimulationJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationJob" target="_top">AWS
      *      API Documentation</a>
@@ -410,7 +444,7 @@ public interface AWSRoboMaker {
 
     /**
      * <p>
-     * Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]
+     * Describes a deployment job.
      * </p>
      * 
      * @param describeDeploymentJobRequest
@@ -545,6 +579,10 @@ public interface AWSRoboMaker {
      * Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment
      * jobs.
      * </p>
+     * <note>
+     * <p>
+     * </p>
+     * </note>
      * 
      * @param listDeploymentJobsRequest
      * @return Result of the ListDeploymentJobs operation returned by the service.
@@ -807,8 +845,7 @@ public interface AWSRoboMaker {
      * </p>
      * <p>
      * To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a
-     * href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
-     * <code>TagResource</code> </a>.
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html"> <code>TagResource</code> </a>.
      * </p>
      * 
      * @param untagResourceRequest

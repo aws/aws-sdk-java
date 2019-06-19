@@ -27,13 +27,13 @@ public class GetMaintenanceWindowExecutionTaskInvocationRequest extends com.amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution for which the task is a part.
+     * The ID of the maintenance window execution for which the task is a part.
      * </p>
      */
     private String windowExecutionId;
     /**
      * <p>
-     * The ID of the specific task in the Maintenance Window task that should be retrieved.
+     * The ID of the specific task in the maintenance window task that should be retrieved.
      * </p>
      */
     private String taskId;
@@ -46,11 +46,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationRequest extends com.amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution for which the task is a part.
+     * The ID of the maintenance window execution for which the task is a part.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution for which the task is a part.
+     *        The ID of the maintenance window execution for which the task is a part.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -59,10 +59,10 @@ public class GetMaintenanceWindowExecutionTaskInvocationRequest extends com.amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution for which the task is a part.
+     * The ID of the maintenance window execution for which the task is a part.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution for which the task is a part.
+     * @return The ID of the maintenance window execution for which the task is a part.
      */
 
     public String getWindowExecutionId() {
@@ -71,11 +71,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationRequest extends com.amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution for which the task is a part.
+     * The ID of the maintenance window execution for which the task is a part.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution for which the task is a part.
+     *        The ID of the maintenance window execution for which the task is a part.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationRequest extends com.amaz
 
     /**
      * <p>
-     * The ID of the specific task in the Maintenance Window task that should be retrieved.
+     * The ID of the specific task in the maintenance window task that should be retrieved.
      * </p>
      * 
      * @param taskId
-     *        The ID of the specific task in the Maintenance Window task that should be retrieved.
+     *        The ID of the specific task in the maintenance window task that should be retrieved.
      */
 
     public void setTaskId(String taskId) {
@@ -99,10 +99,10 @@ public class GetMaintenanceWindowExecutionTaskInvocationRequest extends com.amaz
 
     /**
      * <p>
-     * The ID of the specific task in the Maintenance Window task that should be retrieved.
+     * The ID of the specific task in the maintenance window task that should be retrieved.
      * </p>
      * 
-     * @return The ID of the specific task in the Maintenance Window task that should be retrieved.
+     * @return The ID of the specific task in the maintenance window task that should be retrieved.
      */
 
     public String getTaskId() {
@@ -111,11 +111,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationRequest extends com.amaz
 
     /**
      * <p>
-     * The ID of the specific task in the Maintenance Window task that should be retrieved.
+     * The ID of the specific task in the maintenance window task that should be retrieved.
      * </p>
      * 
      * @param taskId
-     *        The ID of the specific task in the Maintenance Window task that should be retrieved.
+     *        The ID of the specific task in the maintenance window task that should be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

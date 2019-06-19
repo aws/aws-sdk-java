@@ -52,6 +52,10 @@ public class DatastoreSummaryJsonUnmarshaller implements Unmarshaller<DatastoreS
                     context.nextToken();
                     datastoreSummary.setDatastoreName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("datastoreStorage", targetDepth)) {
+                    context.nextToken();
+                    datastoreSummary.setDatastoreStorage(DatastoreStorageSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     datastoreSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

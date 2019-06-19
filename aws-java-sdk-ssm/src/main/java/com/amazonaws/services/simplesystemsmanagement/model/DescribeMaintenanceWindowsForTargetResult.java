@@ -26,7 +26,7 @@ public class DescribeMaintenanceWindowsForTargetResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Information about the Maintenance Window targets and tasks an instance is associated with.
+     * Information about the maintenance window targets and tasks an instance is associated with.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MaintenanceWindowIdentityForTarget> windowIdentities;
@@ -39,10 +39,10 @@ public class DescribeMaintenanceWindowsForTargetResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Information about the Maintenance Window targets and tasks an instance is associated with.
+     * Information about the maintenance window targets and tasks an instance is associated with.
      * </p>
      * 
-     * @return Information about the Maintenance Window targets and tasks an instance is associated with.
+     * @return Information about the maintenance window targets and tasks an instance is associated with.
      */
 
     public java.util.List<MaintenanceWindowIdentityForTarget> getWindowIdentities() {
@@ -54,11 +54,11 @@ public class DescribeMaintenanceWindowsForTargetResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Information about the Maintenance Window targets and tasks an instance is associated with.
+     * Information about the maintenance window targets and tasks an instance is associated with.
      * </p>
      * 
      * @param windowIdentities
-     *        Information about the Maintenance Window targets and tasks an instance is associated with.
+     *        Information about the maintenance window targets and tasks an instance is associated with.
      */
 
     public void setWindowIdentities(java.util.Collection<MaintenanceWindowIdentityForTarget> windowIdentities) {
@@ -72,7 +72,7 @@ public class DescribeMaintenanceWindowsForTargetResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Information about the Maintenance Window targets and tasks an instance is associated with.
+     * Information about the maintenance window targets and tasks an instance is associated with.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeMaintenanceWindowsForTargetResult extends com.amazonaws.Ama
      * </p>
      * 
      * @param windowIdentities
-     *        Information about the Maintenance Window targets and tasks an instance is associated with.
+     *        Information about the maintenance window targets and tasks an instance is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeMaintenanceWindowsForTargetResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Information about the Maintenance Window targets and tasks an instance is associated with.
+     * Information about the maintenance window targets and tasks an instance is associated with.
      * </p>
      * 
      * @param windowIdentities
-     *        Information about the Maintenance Window targets and tasks an instance is associated with.
+     *        Information about the maintenance window targets and tasks an instance is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

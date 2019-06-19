@@ -17,25 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a response element in the following actions:
+ * Specifies a connection endpoint.
  * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateDBInstance</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeDBInstances</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteDBInstance</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/Endpoint" target="_top">AWS API
  *      Documentation</a>

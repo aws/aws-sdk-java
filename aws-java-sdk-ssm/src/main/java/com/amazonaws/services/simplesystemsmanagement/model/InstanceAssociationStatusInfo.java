@@ -42,7 +42,7 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
     private String name;
     /**
      * <p>
-     * The association document verions.
+     * The association document versions.
      * </p>
      */
     private String documentVersion;
@@ -60,7 +60,7 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
     private String instanceId;
     /**
      * <p>
-     * The date the instance association executed.
+     * The date the instance association ran.
      * </p>
      */
     private java.util.Date executionDate;
@@ -183,11 +183,11 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The association document verions.
+     * The association document versions.
      * </p>
      * 
      * @param documentVersion
-     *        The association document verions.
+     *        The association document versions.
      */
 
     public void setDocumentVersion(String documentVersion) {
@@ -196,10 +196,10 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The association document verions.
+     * The association document versions.
      * </p>
      * 
-     * @return The association document verions.
+     * @return The association document versions.
      */
 
     public String getDocumentVersion() {
@@ -208,11 +208,11 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The association document verions.
+     * The association document versions.
      * </p>
      * 
      * @param documentVersion
-     *        The association document verions.
+     *        The association document versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,11 +303,11 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The date the instance association executed.
+     * The date the instance association ran.
      * </p>
      * 
      * @param executionDate
-     *        The date the instance association executed.
+     *        The date the instance association ran.
      */
 
     public void setExecutionDate(java.util.Date executionDate) {
@@ -316,10 +316,10 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The date the instance association executed.
+     * The date the instance association ran.
      * </p>
      * 
-     * @return The date the instance association executed.
+     * @return The date the instance association ran.
      */
 
     public java.util.Date getExecutionDate() {
@@ -328,11 +328,11 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The date the instance association executed.
+     * The date the instance association ran.
      * </p>
      * 
      * @param executionDate
-     *        The date the instance association executed.
+     *        The date the instance association ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

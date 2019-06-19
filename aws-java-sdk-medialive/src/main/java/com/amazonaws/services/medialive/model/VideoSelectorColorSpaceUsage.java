@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for VideoSelectorColorSpaceUsage
+ * Video Selector Color Space Usage
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum VideoSelectorColorSpaceUsage {

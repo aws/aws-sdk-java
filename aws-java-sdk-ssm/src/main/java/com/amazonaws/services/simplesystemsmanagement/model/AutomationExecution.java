@@ -67,7 +67,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are executed in order.
+     * contains a list of steps that are run in order.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StepExecution> stepExecutions;
@@ -110,19 +110,19 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     private String parentAutomationExecutionId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user who executed the automation.
+     * The Amazon Resource Name (ARN) of the user who ran the automation.
      * </p>
      */
     private String executedBy;
     /**
      * <p>
-     * The name of the currently executing step.
+     * The name of the step that is currently running.
      * </p>
      */
     private String currentStepName;
     /**
      * <p>
-     * The action of the currently executing step.
+     * The action of the step that is currently running.
      * </p>
      */
     private String currentAction;
@@ -170,7 +170,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     private String target;
     /**
      * <p>
-     * The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TargetLocation> targetLocations;
@@ -458,11 +458,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are executed in order.
+     * contains a list of steps that are run in order.
      * </p>
      * 
      * @return A list of details about the current state of all steps that comprise an execution. An Automation document
-     *         contains a list of steps that are executed in order.
+     *         contains a list of steps that are run in order.
      */
 
     public java.util.List<StepExecution> getStepExecutions() {
@@ -475,12 +475,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are executed in order.
+     * contains a list of steps that are run in order.
      * </p>
      * 
      * @param stepExecutions
      *        A list of details about the current state of all steps that comprise an execution. An Automation document
-     *        contains a list of steps that are executed in order.
+     *        contains a list of steps that are run in order.
      */
 
     public void setStepExecutions(java.util.Collection<StepExecution> stepExecutions) {
@@ -495,7 +495,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are executed in order.
+     * contains a list of steps that are run in order.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -505,7 +505,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * 
      * @param stepExecutions
      *        A list of details about the current state of all steps that comprise an execution. An Automation document
-     *        contains a list of steps that are executed in order.
+     *        contains a list of steps that are run in order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -522,12 +522,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are executed in order.
+     * contains a list of steps that are run in order.
      * </p>
      * 
      * @param stepExecutions
      *        A list of details about the current state of all steps that comprise an execution. An Automation document
-     *        contains a list of steps that are executed in order.
+     *        contains a list of steps that are run in order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -873,11 +873,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user who executed the automation.
+     * The Amazon Resource Name (ARN) of the user who ran the automation.
      * </p>
      * 
      * @param executedBy
-     *        The Amazon Resource Name (ARN) of the user who executed the automation.
+     *        The Amazon Resource Name (ARN) of the user who ran the automation.
      */
 
     public void setExecutedBy(String executedBy) {
@@ -886,10 +886,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user who executed the automation.
+     * The Amazon Resource Name (ARN) of the user who ran the automation.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the user who executed the automation.
+     * @return The Amazon Resource Name (ARN) of the user who ran the automation.
      */
 
     public String getExecutedBy() {
@@ -898,11 +898,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user who executed the automation.
+     * The Amazon Resource Name (ARN) of the user who ran the automation.
      * </p>
      * 
      * @param executedBy
-     *        The Amazon Resource Name (ARN) of the user who executed the automation.
+     *        The Amazon Resource Name (ARN) of the user who ran the automation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -913,11 +913,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the currently executing step.
+     * The name of the step that is currently running.
      * </p>
      * 
      * @param currentStepName
-     *        The name of the currently executing step.
+     *        The name of the step that is currently running.
      */
 
     public void setCurrentStepName(String currentStepName) {
@@ -926,10 +926,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the currently executing step.
+     * The name of the step that is currently running.
      * </p>
      * 
-     * @return The name of the currently executing step.
+     * @return The name of the step that is currently running.
      */
 
     public String getCurrentStepName() {
@@ -938,11 +938,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the currently executing step.
+     * The name of the step that is currently running.
      * </p>
      * 
      * @param currentStepName
-     *        The name of the currently executing step.
+     *        The name of the step that is currently running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -953,11 +953,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The action of the currently executing step.
+     * The action of the step that is currently running.
      * </p>
      * 
      * @param currentAction
-     *        The action of the currently executing step.
+     *        The action of the step that is currently running.
      */
 
     public void setCurrentAction(String currentAction) {
@@ -966,10 +966,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The action of the currently executing step.
+     * The action of the step that is currently running.
      * </p>
      * 
-     * @return The action of the currently executing step.
+     * @return The action of the step that is currently running.
      */
 
     public String getCurrentAction() {
@@ -978,11 +978,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The action of the currently executing step.
+     * The action of the step that is currently running.
      * </p>
      * 
      * @param currentAction
-     *        The action of the currently executing step.
+     *        The action of the step that is currently running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1339,10 +1339,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
      * </p>
      * 
-     * @return The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * @return The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
      */
 
     public java.util.List<TargetLocation> getTargetLocations() {
@@ -1354,11 +1354,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
      * </p>
      * 
      * @param targetLocations
-     *        The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     *        The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
      */
 
     public void setTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
@@ -1372,7 +1372,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1381,7 +1381,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param targetLocations
-     *        The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     *        The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1397,11 +1397,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
      * </p>
      * 
      * @param targetLocations
-     *        The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     *        The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

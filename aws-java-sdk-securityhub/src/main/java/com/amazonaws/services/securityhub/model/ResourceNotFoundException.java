@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request was rejected because the specified resource cannot be found.
+ * The request was rejected because we can't find the specified resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

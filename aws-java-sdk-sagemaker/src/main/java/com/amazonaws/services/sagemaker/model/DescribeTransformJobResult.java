@@ -133,6 +133,8 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
      */
     private String labelingJobArn;
 
+    private DataProcessing dataProcessing;
+
     /**
      * <p>
      * The name of the transform job.
@@ -929,6 +931,32 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * @param dataProcessing
+     */
+
+    public void setDataProcessing(DataProcessing dataProcessing) {
+        this.dataProcessing = dataProcessing;
+    }
+
+    /**
+     * @return
+     */
+
+    public DataProcessing getDataProcessing() {
+        return this.dataProcessing;
+    }
+
+    /**
+     * @param dataProcessing
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTransformJobResult withDataProcessing(DataProcessing dataProcessing) {
+        setDataProcessing(dataProcessing);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -971,7 +999,9 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
         if (getTransformEndTime() != null)
             sb.append("TransformEndTime: ").append(getTransformEndTime()).append(",");
         if (getLabelingJobArn() != null)
-            sb.append("LabelingJobArn: ").append(getLabelingJobArn());
+            sb.append("LabelingJobArn: ").append(getLabelingJobArn()).append(",");
+        if (getDataProcessing() != null)
+            sb.append("DataProcessing: ").append(getDataProcessing());
         sb.append("}");
         return sb.toString();
     }
@@ -1050,6 +1080,10 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getLabelingJobArn() != null && other.getLabelingJobArn().equals(this.getLabelingJobArn()) == false)
             return false;
+        if (other.getDataProcessing() == null ^ this.getDataProcessing() == null)
+            return false;
+        if (other.getDataProcessing() != null && other.getDataProcessing().equals(this.getDataProcessing()) == false)
+            return false;
         return true;
     }
 
@@ -1074,6 +1108,7 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getTransformStartTime() == null) ? 0 : getTransformStartTime().hashCode());
         hashCode = prime * hashCode + ((getTransformEndTime() == null) ? 0 : getTransformEndTime().hashCode());
         hashCode = prime * hashCode + ((getLabelingJobArn() == null) ? 0 : getLabelingJobArn().hashCode());
+        hashCode = prime * hashCode + ((getDataProcessing() == null) ? 0 : getDataProcessing().hashCode());
         return hashCode;
     }
 

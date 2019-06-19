@@ -165,7 +165,7 @@ public interface AWSGlue {
      * <p>
      * Returns a list of resource metadata for a given list of crawler names. After calling the
      * <code>ListCrawlers</code> operation, you can call this operation to access the data to which you have been
-     * granted permissions to based on tags.
+     * granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
      * </p>
      * 
      * @param batchGetCrawlersRequest
@@ -289,9 +289,9 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>, an
-     * <code>XMLClassifier</code>, or abbrev <code>JsonClassifier</code>, depending on which field of the request is
-     * present.
+     * Creates a classifier in the user's account. This can be a <code>GrokClassifier</code>, an
+     * <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
+     * field of the request is present.
      * </p>
      * 
      * @param createClassifierRequest
@@ -334,8 +334,8 @@ public interface AWSGlue {
     /**
      * <p>
      * Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl
-     * target must be specified, in the <i>s3Targets</i> field, the <i>jdbcTargets</i> field, or the
-     * <i>DynamoDBTargets</i> field.
+     * target must be specified, in the <code>s3Targets</code> field, the <code>jdbcTargets</code> field, or the
+     * <code>DynamoDBTargets</code> field.
      * </p>
      * 
      * @param createCrawlerRequest
@@ -621,7 +621,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Removes a specified crawler from the Data Catalog, unless the crawler state is <code>RUNNING</code>.
+     * Removes a specified crawler from the AWS Glue Data Catalog, unless the crawler state is <code>RUNNING</code>.
      * </p>
      * 
      * @param deleteCrawlerRequest
@@ -1608,9 +1608,9 @@ public interface AWSGlue {
      * operation allows you to see which resources are available in your account, and their names.
      * </p>
      * <p>
-     * This operation takes the optional <code>Tags</code> field which you can use as a filter on the response so that
+     * This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that
      * tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag
-     * will be retrieved.
+     * are retrieved.
      * </p>
      * 
      * @param listCrawlersRequest
@@ -1625,13 +1625,13 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Retrieves the names of all DevEndpoint resources in this AWS account, or the resources with the specified tag.
-     * This operation allows you to see which resources are available in your account, and their names.
+     * Retrieves the names of all <code>DevEndpoint</code> resources in this AWS account, or the resources with the
+     * specified tag. This operation allows you to see which resources are available in your account, and their names.
      * </p>
      * <p>
-     * This operation takes the optional <code>Tags</code> field which you can use as a filter on the response so that
+     * This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that
      * tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag
-     * will be retrieved.
+     * are retrieved.
      * </p>
      * 
      * @param listDevEndpointsRequest
@@ -1656,9 +1656,9 @@ public interface AWSGlue {
      * operation allows you to see which resources are available in your account, and their names.
      * </p>
      * <p>
-     * This operation takes the optional <code>Tags</code> field which you can use as a filter on the response so that
+     * This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that
      * tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag
-     * will be retrieved.
+     * are retrieved.
      * </p>
      * 
      * @param listJobsRequest
@@ -1683,9 +1683,9 @@ public interface AWSGlue {
      * operation allows you to see which resources are available in your account, and their names.
      * </p>
      * <p>
-     * This operation takes the optional <code>Tags</code> field which you can use as a filter on the response so that
+     * This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that
      * tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag
-     * will be retrieved.
+     * are retrieved.
      * </p>
      * 
      * @param listTriggersRequest
@@ -1841,7 +1841,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Starts an existing trigger. See <a href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+     * Starts an existing trigger. See <a href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
      * Jobs</a> for information about how different types of trigger are started.
      * </p>
      * 
@@ -1935,7 +1935,7 @@ public interface AWSGlue {
      * <p>
      * Adds tags to a resource. A tag is a label you can assign to an AWS resource. In AWS Glue, you can tag only
      * certain resources. For information about what resources you can tag, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1977,8 +1977,8 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Modifies an existing classifier (a <code>GrokClassifier</code>, <code>XMLClassifier</code>, or
-     * <code>JsonClassifier</code>, depending on which field is present).
+     * Modifies an existing classifier (a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a
+     * <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which field is present).
      * </p>
      * 
      * @param updateClassifierRequest

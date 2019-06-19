@@ -33,6 +33,8 @@ public class IntegerParameterRangeMarshaller {
             .marshallLocationName("MinValue").build();
     private static final MarshallingInfo<String> MAXVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MaxValue").build();
+    private static final MarshallingInfo<String> SCALINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScalingType").build();
 
     private static final IntegerParameterRangeMarshaller instance = new IntegerParameterRangeMarshaller();
 
@@ -53,6 +55,7 @@ public class IntegerParameterRangeMarshaller {
             protocolMarshaller.marshall(integerParameterRange.getName(), NAME_BINDING);
             protocolMarshaller.marshall(integerParameterRange.getMinValue(), MINVALUE_BINDING);
             protocolMarshaller.marshall(integerParameterRange.getMaxValue(), MAXVALUE_BINDING);
+            protocolMarshaller.marshall(integerParameterRange.getScalingType(), SCALINGTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

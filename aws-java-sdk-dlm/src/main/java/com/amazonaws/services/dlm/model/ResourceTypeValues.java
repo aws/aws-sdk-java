@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ResourceTypeValues {
 
-    VOLUME("VOLUME");
+    VOLUME("VOLUME"),
+    INSTANCE("INSTANCE");
 
     private String value;
 

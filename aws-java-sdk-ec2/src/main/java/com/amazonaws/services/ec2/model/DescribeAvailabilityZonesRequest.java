@@ -28,7 +28,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -38,7 +38,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region for the Availability Zone (for example, <code>us-east-1</code>
+     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
      * ).
      * </p>
      * </li>
@@ -63,20 +63,20 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The names of one or more Availability Zones.
+     * The names of the Availability Zones.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> zoneNames;
     /**
      * <p>
-     * The IDs of one or more Availability Zones.
+     * The IDs of the Availability Zones.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> zoneIds;
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -86,7 +86,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region for the Availability Zone (for example, <code>us-east-1</code>
+     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
      * ).
      * </p>
      * </li>
@@ -108,7 +108,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -117,7 +117,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>region-name</code> - The name of the region for the Availability Zone (for example,
+     *         <code>region-name</code> - The name of the Region for the Availability Zone (for example,
      *         <code>us-east-1</code>).
      *         </p>
      *         </li>
@@ -148,7 +148,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -158,7 +158,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region for the Availability Zone (for example, <code>us-east-1</code>
+     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
      * ).
      * </p>
      * </li>
@@ -181,7 +181,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -190,7 +190,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the region for the Availability Zone (for example,
+     *        <code>region-name</code> - The name of the Region for the Availability Zone (for example,
      *        <code>us-east-1</code>).
      *        </p>
      *        </li>
@@ -223,7 +223,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -233,7 +233,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region for the Availability Zone (for example, <code>us-east-1</code>
+     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
      * ).
      * </p>
      * </li>
@@ -261,7 +261,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -270,7 +270,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the region for the Availability Zone (for example,
+     *        <code>region-name</code> - The name of the Region for the Availability Zone (for example,
      *        <code>us-east-1</code>).
      *        </p>
      *        </li>
@@ -305,7 +305,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -315,7 +315,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region for the Availability Zone (for example, <code>us-east-1</code>
+     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
      * ).
      * </p>
      * </li>
@@ -338,7 +338,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -347,7 +347,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the region for the Availability Zone (for example,
+     *        <code>region-name</code> - The name of the Region for the Availability Zone (for example,
      *        <code>us-east-1</code>).
      *        </p>
      *        </li>
@@ -377,10 +377,10 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The names of one or more Availability Zones.
+     * The names of the Availability Zones.
      * </p>
      * 
-     * @return The names of one or more Availability Zones.
+     * @return The names of the Availability Zones.
      */
 
     public java.util.List<String> getZoneNames() {
@@ -392,11 +392,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The names of one or more Availability Zones.
+     * The names of the Availability Zones.
      * </p>
      * 
      * @param zoneNames
-     *        The names of one or more Availability Zones.
+     *        The names of the Availability Zones.
      */
 
     public void setZoneNames(java.util.Collection<String> zoneNames) {
@@ -410,7 +410,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The names of one or more Availability Zones.
+     * The names of the Availability Zones.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -419,7 +419,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </p>
      * 
      * @param zoneNames
-     *        The names of one or more Availability Zones.
+     *        The names of the Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,11 +435,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The names of one or more Availability Zones.
+     * The names of the Availability Zones.
      * </p>
      * 
      * @param zoneNames
-     *        The names of one or more Availability Zones.
+     *        The names of the Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,10 +450,10 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of one or more Availability Zones.
+     * The IDs of the Availability Zones.
      * </p>
      * 
-     * @return The IDs of one or more Availability Zones.
+     * @return The IDs of the Availability Zones.
      */
 
     public java.util.List<String> getZoneIds() {
@@ -465,11 +465,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of one or more Availability Zones.
+     * The IDs of the Availability Zones.
      * </p>
      * 
      * @param zoneIds
-     *        The IDs of one or more Availability Zones.
+     *        The IDs of the Availability Zones.
      */
 
     public void setZoneIds(java.util.Collection<String> zoneIds) {
@@ -483,7 +483,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of one or more Availability Zones.
+     * The IDs of the Availability Zones.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -492,7 +492,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </p>
      * 
      * @param zoneIds
-     *        The IDs of one or more Availability Zones.
+     *        The IDs of the Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -508,11 +508,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of one or more Availability Zones.
+     * The IDs of the Availability Zones.
      * </p>
      * 
      * @param zoneIds
-     *        The IDs of one or more Availability Zones.
+     *        The IDs of the Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

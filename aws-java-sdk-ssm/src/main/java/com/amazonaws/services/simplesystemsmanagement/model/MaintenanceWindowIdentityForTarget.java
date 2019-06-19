@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Maintenance Window to which the specified target belongs.
+ * The maintenance window to which the specified target belongs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowIdentityForTarget"
@@ -30,24 +30,24 @@ public class MaintenanceWindowIdentityForTarget implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the Maintenance Window.
+     * The ID of the maintenance window.
      * </p>
      */
     private String windowId;
     /**
      * <p>
-     * The name of the Maintenance Window.
+     * The name of the maintenance window.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The ID of the Maintenance Window.
+     * The ID of the maintenance window.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window.
+     *        The ID of the maintenance window.
      */
 
     public void setWindowId(String windowId) {
@@ -56,10 +56,10 @@ public class MaintenanceWindowIdentityForTarget implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the Maintenance Window.
+     * The ID of the maintenance window.
      * </p>
      * 
-     * @return The ID of the Maintenance Window.
+     * @return The ID of the maintenance window.
      */
 
     public String getWindowId() {
@@ -68,11 +68,11 @@ public class MaintenanceWindowIdentityForTarget implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the Maintenance Window.
+     * The ID of the maintenance window.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window.
+     *        The ID of the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class MaintenanceWindowIdentityForTarget implements Serializable, Cloneab
 
     /**
      * <p>
-     * The name of the Maintenance Window.
+     * The name of the maintenance window.
      * </p>
      * 
      * @param name
-     *        The name of the Maintenance Window.
+     *        The name of the maintenance window.
      */
 
     public void setName(String name) {
@@ -96,10 +96,10 @@ public class MaintenanceWindowIdentityForTarget implements Serializable, Cloneab
 
     /**
      * <p>
-     * The name of the Maintenance Window.
+     * The name of the maintenance window.
      * </p>
      * 
-     * @return The name of the Maintenance Window.
+     * @return The name of the maintenance window.
      */
 
     public String getName() {
@@ -108,11 +108,11 @@ public class MaintenanceWindowIdentityForTarget implements Serializable, Cloneab
 
     /**
      * <p>
-     * The name of the Maintenance Window.
+     * The name of the maintenance window.
      * </p>
      * 
      * @param name
-     *        The name of the Maintenance Window.
+     *        The name of the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

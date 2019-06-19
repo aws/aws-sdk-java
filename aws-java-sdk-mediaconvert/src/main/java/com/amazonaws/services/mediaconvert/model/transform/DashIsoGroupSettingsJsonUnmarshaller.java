@@ -56,6 +56,10 @@ public class DashIsoGroupSettingsJsonUnmarshaller implements Unmarshaller<DashIs
                     context.nextToken();
                     dashIsoGroupSettings.setDestination(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("destinationSettings", targetDepth)) {
+                    context.nextToken();
+                    dashIsoGroupSettings.setDestinationSettings(DestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("encryption", targetDepth)) {
                     context.nextToken();
                     dashIsoGroupSettings.setEncryption(DashIsoEncryptionSettingsJsonUnmarshaller.getInstance().unmarshall(context));

@@ -28,7 +28,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -48,12 +48,26 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <code>active</code> | <code>retired</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filter;
     /**
      * <p>
-     * One or more host reservation IDs.
+     * The host reservation IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> hostReservationIdSet;
@@ -74,7 +88,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -94,9 +108,23 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <code>active</code> | <code>retired</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -115,6 +143,20 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *         <code>payment-failed</code> | <code>active</code> | <code>retired</code>).
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *         key in the filter name and the tag value as the filter value. For example, to find all resources that
+     *         have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     *         <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *         assigned a tag with a specific key, regardless of the tag value.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilter() {
@@ -126,7 +168,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -146,10 +188,24 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <code>active</code> | <code>retired</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -166,6 +222,20 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *        <p>
      *        <code>state</code> - The state of the reservation (<code>payment-pending</code> |
      *        <code>payment-failed</code> | <code>active</code> | <code>retired</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      */
@@ -181,7 +251,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -201,6 +271,20 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <code>active</code> | <code>retired</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -209,7 +293,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -226,6 +310,20 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *        <p>
      *        <code>state</code> - The state of the reservation (<code>payment-pending</code> |
      *        <code>payment-failed</code> | <code>active</code> | <code>retired</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -243,7 +341,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -263,10 +361,24 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <code>active</code> | <code>retired</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -285,6 +397,20 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *        <code>payment-failed</code> | <code>active</code> | <code>retired</code>).
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,10 +421,10 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more host reservation IDs.
+     * The host reservation IDs.
      * </p>
      * 
-     * @return One or more host reservation IDs.
+     * @return The host reservation IDs.
      */
 
     public java.util.List<String> getHostReservationIdSet() {
@@ -310,11 +436,11 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more host reservation IDs.
+     * The host reservation IDs.
      * </p>
      * 
      * @param hostReservationIdSet
-     *        One or more host reservation IDs.
+     *        The host reservation IDs.
      */
 
     public void setHostReservationIdSet(java.util.Collection<String> hostReservationIdSet) {
@@ -328,7 +454,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more host reservation IDs.
+     * The host reservation IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -337,7 +463,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param hostReservationIdSet
-     *        One or more host reservation IDs.
+     *        The host reservation IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,11 +479,11 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more host reservation IDs.
+     * The host reservation IDs.
      * </p>
      * 
      * @param hostReservationIdSet
-     *        One or more host reservation IDs.
+     *        The host reservation IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

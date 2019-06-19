@@ -48,6 +48,10 @@ public class ServiceDiscoveryJsonUnmarshaller implements Unmarshaller<ServiceDis
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("awsCloudMap", targetDepth)) {
+                    context.nextToken();
+                    serviceDiscovery.setAwsCloudMap(AwsCloudMapServiceDiscoveryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("dns", targetDepth)) {
                     context.nextToken();
                     serviceDiscovery.setDns(DnsServiceDiscoveryJsonUnmarshaller.getInstance().unmarshall(context));

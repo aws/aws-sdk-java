@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a ListPipelineExecutions action.
+ * Represents the output of a <code>ListPipelineExecutions</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions"
@@ -34,8 +34,8 @@ public class ListPipelineExecutionsResult extends com.amazonaws.AmazonWebService
     private java.util.List<PipelineExecutionSummary> pipelineExecutionSummaries;
     /**
      * <p>
-     * A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call
-     * this operation with each subsequent token until no more nextToken values are returned.
+     * A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list,
+     * continue to call this operation with each subsequent token until no more nextToken values are returned.
      * </p>
      */
     private String nextToken;
@@ -112,13 +112,14 @@ public class ListPipelineExecutionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call
-     * this operation with each subsequent token until no more nextToken values are returned.
+     * A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list,
+     * continue to call this operation with each subsequent token until no more nextToken values are returned.
      * </p>
      * 
      * @param nextToken
-     *        A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue
-     *        to call this operation with each subsequent token until no more nextToken values are returned.
+     *        A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the
+     *        list, continue to call this operation with each subsequent token until no more nextToken values are
+     *        returned.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,12 +128,13 @@ public class ListPipelineExecutionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call
-     * this operation with each subsequent token until no more nextToken values are returned.
+     * A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list,
+     * continue to call this operation with each subsequent token until no more nextToken values are returned.
      * </p>
      * 
-     * @return A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue
-     *         to call this operation with each subsequent token until no more nextToken values are returned.
+     * @return A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the
+     *         list, continue to call this operation with each subsequent token until no more nextToken values are
+     *         returned.
      */
 
     public String getNextToken() {
@@ -141,13 +143,14 @@ public class ListPipelineExecutionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call
-     * this operation with each subsequent token until no more nextToken values are returned.
+     * A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list,
+     * continue to call this operation with each subsequent token until no more nextToken values are returned.
      * </p>
      * 
      * @param nextToken
-     *        A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue
-     *        to call this operation with each subsequent token until no more nextToken values are returned.
+     *        A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the
+     *        list, continue to call this operation with each subsequent token until no more nextToken values are
+     *        returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

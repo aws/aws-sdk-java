@@ -60,6 +60,12 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private SendingOptions sendingOptions;
+    /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that you want to associate with the configuration set.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -280,6 +286,80 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that you want to associate with the configuration set.
+     * </p>
+     * 
+     * @return An array of objects that define the tags (keys and values) that you want to associate with the
+     *         configuration set.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that you want to associate with the configuration set.
+     * </p>
+     * 
+     * @param tags
+     *        An array of objects that define the tags (keys and values) that you want to associate with the
+     *        configuration set.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that you want to associate with the configuration set.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        An array of objects that define the tags (keys and values) that you want to associate with the
+     *        configuration set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfigurationSetRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that you want to associate with the configuration set.
+     * </p>
+     * 
+     * @param tags
+     *        An array of objects that define the tags (keys and values) that you want to associate with the
+     *        configuration set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfigurationSetRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -300,7 +380,9 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
         if (getReputationOptions() != null)
             sb.append("ReputationOptions: ").append(getReputationOptions()).append(",");
         if (getSendingOptions() != null)
-            sb.append("SendingOptions: ").append(getSendingOptions());
+            sb.append("SendingOptions: ").append(getSendingOptions()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -335,6 +417,10 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getSendingOptions() != null && other.getSendingOptions().equals(this.getSendingOptions()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -348,6 +434,7 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getDeliveryOptions() == null) ? 0 : getDeliveryOptions().hashCode());
         hashCode = prime * hashCode + ((getReputationOptions() == null) ? 0 : getReputationOptions().hashCode());
         hashCode = prime * hashCode + ((getSendingOptions() == null) ? 0 : getSendingOptions().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

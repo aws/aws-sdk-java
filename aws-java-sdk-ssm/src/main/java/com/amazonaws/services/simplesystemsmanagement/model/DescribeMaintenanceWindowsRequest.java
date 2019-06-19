@@ -27,7 +27,7 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys are
+     * Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are
      * <b>Name</b> and <b>Enabled</b>.
      * </p>
      */
@@ -48,11 +48,11 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys are
+     * Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are
      * <b>Name</b> and <b>Enabled</b>.
      * </p>
      * 
-     * @return Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys
+     * @return Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys
      *         are <b>Name</b> and <b>Enabled</b>.
      */
 
@@ -65,12 +65,12 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys are
+     * Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are
      * <b>Name</b> and <b>Enabled</b>.
      * </p>
      * 
      * @param filters
-     *        Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys
+     *        Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys
      *        are <b>Name</b> and <b>Enabled</b>.
      */
 
@@ -85,7 +85,7 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys are
+     * Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are
      * <b>Name</b> and <b>Enabled</b>.
      * </p>
      * <p>
@@ -95,7 +95,7 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param filters
-     *        Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys
+     *        Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys
      *        are <b>Name</b> and <b>Enabled</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -112,12 +112,12 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys are
+     * Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are
      * <b>Name</b> and <b>Enabled</b>.
      * </p>
      * 
      * @param filters
-     *        Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys
+     *        Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys
      *        are <b>Name</b> and <b>Enabled</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

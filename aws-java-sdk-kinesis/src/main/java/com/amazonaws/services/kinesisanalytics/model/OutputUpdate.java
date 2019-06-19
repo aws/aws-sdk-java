@@ -62,7 +62,7 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the data format when records are written to the destination. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      */
@@ -277,13 +277,13 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the data format when records are written to the destination. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @param destinationSchemaUpdate
      *        Describes the data format when records are written to the destination. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      */
 
@@ -294,12 +294,12 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the data format when records are written to the destination. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @return Describes the data format when records are written to the destination. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *         Application Output</a>.
      */
 
@@ -310,13 +310,13 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the data format when records are written to the destination. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @param destinationSchemaUpdate
      *        Describes the data format when records are written to the destination. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -26,6 +26,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one
+     * pipeline.
+     */
+    private String channelClass;
+
     private java.util.List<OutputDestination> destinations;
 
     private EncoderSettings encoderSettings;
@@ -48,6 +54,65 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String roleArn;
     /** A collection of key-value pairs. */
     private java.util.Map<String, String> tags;
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one
+     * pipeline.
+     * 
+     * @param channelClass
+     *        The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel
+     *        with one pipeline.
+     * @see ChannelClass
+     */
+
+    public void setChannelClass(String channelClass) {
+        this.channelClass = channelClass;
+    }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one
+     * pipeline.
+     * 
+     * @return The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel
+     *         with one pipeline.
+     * @see ChannelClass
+     */
+
+    public String getChannelClass() {
+        return this.channelClass;
+    }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one
+     * pipeline.
+     * 
+     * @param channelClass
+     *        The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel
+     *        with one pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ChannelClass
+     */
+
+    public CreateChannelRequest withChannelClass(String channelClass) {
+        setChannelClass(channelClass);
+        return this;
+    }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one
+     * pipeline.
+     * 
+     * @param channelClass
+     *        The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel
+     *        with one pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ChannelClass
+     */
+
+    public CreateChannelRequest withChannelClass(ChannelClass channelClass) {
+        this.channelClass = channelClass.toString();
+        return this;
+    }
 
     /**
      * @return
@@ -477,6 +542,8 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getChannelClass() != null)
+            sb.append("ChannelClass: ").append(getChannelClass()).append(",");
         if (getDestinations() != null)
             sb.append("Destinations: ").append(getDestinations()).append(",");
         if (getEncoderSettings() != null)
@@ -511,6 +578,10 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof CreateChannelRequest == false)
             return false;
         CreateChannelRequest other = (CreateChannelRequest) obj;
+        if (other.getChannelClass() == null ^ this.getChannelClass() == null)
+            return false;
+        if (other.getChannelClass() != null && other.getChannelClass().equals(this.getChannelClass()) == false)
+            return false;
         if (other.getDestinations() == null ^ this.getDestinations() == null)
             return false;
         if (other.getDestinations() != null && other.getDestinations().equals(this.getDestinations()) == false)
@@ -559,6 +630,7 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getChannelClass() == null) ? 0 : getChannelClass().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getEncoderSettings() == null) ? 0 : getEncoderSettings().hashCode());
         hashCode = prime * hashCode + ((getInputAttachments() == null) ? 0 : getInputAttachments().hashCode());

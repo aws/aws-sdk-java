@@ -52,8 +52,9 @@ public class ChangeInfo implements Serializable, Cloneable {
      * A complex type that describes change information about changes made to your hosted zone.
      * </p>
      * <p>
-     * This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information
-     * about the change.
+     * This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get
+     * detailed information about the change.
      * </p>
      */
     private String comment;
@@ -290,15 +291,17 @@ public class ChangeInfo implements Serializable, Cloneable {
      * A complex type that describes change information about changes made to your hosted zone.
      * </p>
      * <p>
-     * This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information
-     * about the change.
+     * This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get
+     * detailed information about the change.
      * </p>
      * 
      * @param comment
      *        A complex type that describes change information about changes made to your hosted zone.</p>
      *        <p>
-     *        This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed
-     *        information about the change.
+     *        This element contains an ID that you use when performing a <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to
+     *        get detailed information about the change.
      */
 
     public void setComment(String comment) {
@@ -310,14 +313,16 @@ public class ChangeInfo implements Serializable, Cloneable {
      * A complex type that describes change information about changes made to your hosted zone.
      * </p>
      * <p>
-     * This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information
-     * about the change.
+     * This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get
+     * detailed information about the change.
      * </p>
      * 
      * @return A complex type that describes change information about changes made to your hosted zone.</p>
      *         <p>
-     *         This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed
-     *         information about the change.
+     *         This element contains an ID that you use when performing a <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to
+     *         get detailed information about the change.
      */
 
     public String getComment() {
@@ -329,15 +334,17 @@ public class ChangeInfo implements Serializable, Cloneable {
      * A complex type that describes change information about changes made to your hosted zone.
      * </p>
      * <p>
-     * This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information
-     * about the change.
+     * This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get
+     * detailed information about the change.
      * </p>
      * 
      * @param comment
      *        A complex type that describes change information about changes made to your hosted zone.</p>
      *        <p>
-     *        This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed
-     *        information about the change.
+     *        This element contains an ID that you use when performing a <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to
+     *        get detailed information about the change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,19 +38,13 @@ import javax.annotation.Generated;
  * </important></li>
  * <li>
  * <p>
- * HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.
- * </p>
- * </li>
- * <li>
- * <p>
  * ALREADY_IN_AN_ORGANIZATION: The handshake request is invalid because the invited account is already a member of an
  * organization.
  * </p>
  * </li>
  * <li>
  * <p>
- * ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the organization has already enabled
- * all features.
+ * HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.
  * </p>
  * </li>
  * <li>
@@ -62,8 +56,8 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * PAYMENT_INSTRUMENT_REQUIRED: You can't complete the operation with an account that doesn't have a payment instrument,
- * such as a credit card, associated with it.
+ * ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the organization has already enabled
+ * all features.
  * </p>
  * </li>
  * <li>
@@ -77,6 +71,12 @@ import javax.annotation.Generated;
  * <p>
  * ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership of an account too quickly
  * after its previous change.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * PAYMENT_INSTRUMENT_REQUIRED: You can't complete the operation with an account that doesn't have a payment instrument,
+ * such as a credit card, associated with it.
  * </p>
  * </li>
  * </ul>

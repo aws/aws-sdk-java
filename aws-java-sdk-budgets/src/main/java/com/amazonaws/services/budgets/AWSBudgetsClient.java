@@ -376,6 +376,15 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * <p>
      * Creates a budget and, if included, notifications and subscribers.
      * </p>
+     * <important>
+     * <p>
+     * Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one
+     * time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code>
+     * syntax. For <code>PlannedBudgetLimits</code>, see the <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </important>
      * 
      * @param createBudgetRequest
      *        Request of CreateBudget
@@ -415,6 +424,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBudget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -476,6 +486,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotification");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -537,6 +548,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscriber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -599,6 +611,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBudget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -661,6 +674,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotification");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -723,6 +737,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscriber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -743,6 +758,14 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * <p>
      * Describes a budget.
      * </p>
+     * <important>
+     * <p>
+     * The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see
+     * the <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </important>
      * 
      * @param describeBudgetRequest
      *        Request of DescribeBudget
@@ -780,6 +803,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -843,6 +867,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudgetPerformanceHistory");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -864,6 +889,14 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * <p>
      * Lists the budgets that are associated with an account.
      * </p>
+     * <important>
+     * <p>
+     * The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see
+     * the <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </important>
      * 
      * @param describeBudgetsRequest
      *        Request of DescribeBudgets
@@ -905,6 +938,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudgets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -967,6 +1001,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotificationsForBudget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1031,6 +1066,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubscribersForNotification");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1054,6 +1090,15 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until AWS
      * has new usage data to use for forecasting.
      * </p>
+     * <important>
+     * <p>
+     * Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one
+     * time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code>
+     * syntax. For <code>PlannedBudgetLimits</code>, see the <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </important>
      * 
      * @param updateBudgetRequest
      *        Request of UpdateBudget
@@ -1091,6 +1136,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBudget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1150,6 +1196,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNotification");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1209,6 +1256,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscriber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

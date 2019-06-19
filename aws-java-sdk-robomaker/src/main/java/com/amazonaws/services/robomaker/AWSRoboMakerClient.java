@@ -51,7 +51,7 @@ import com.amazonaws.services.robomaker.model.transform.*;
  * service call completes.
  * <p>
  * <p>
- * his section provides documentation for the AWS RoboMaker API operations.
+ * This section provides documentation for the AWS RoboMaker API operations.
  * </p>
  */
 @ThreadSafe
@@ -98,6 +98,9 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withModeledClass(
                                     com.amazonaws.services.robomaker.model.IdempotentParameterMismatchException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
+                                    com.amazonaws.services.robomaker.model.ServiceUnavailableException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.robomaker.model.ResourceAlreadyExistsException.class))
@@ -195,6 +198,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDescribeSimulationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -202,6 +206,68 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
             HttpResponseHandler<AmazonWebServiceResponse<BatchDescribeSimulationJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new BatchDescribeSimulationJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels the specified deployment job.
+     * </p>
+     * 
+     * @param cancelDeploymentJobRequest
+     * @return Result of the CancelDeploymentJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidParameterException
+     *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
+     *         provides an explanation of the error value.
+     * @throws InternalServerException
+     *         AWS RoboMaker experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         AWS RoboMaker is temporarily unable to process the request. Try your call again.
+     * @sample AWSRoboMaker.CancelDeploymentJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CancelDeploymentJobResult cancelDeploymentJob(CancelDeploymentJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelDeploymentJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelDeploymentJobResult executeCancelDeploymentJob(CancelDeploymentJobRequest cancelDeploymentJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelDeploymentJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelDeploymentJobRequest> request = null;
+        Response<CancelDeploymentJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelDeploymentJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelDeploymentJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelDeploymentJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelDeploymentJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelDeploymentJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -257,6 +323,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelSimulationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -283,6 +350,11 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
      * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot
      * Application Version</a>.
      * </p>
+     * <note>
+     * <p>
+     * After 90 days, deployment jobs expire and will be deleted. They will no longer be accessible.
+     * </p>
+     * </note>
      * 
      * @param createDeploymentJobRequest
      * @return Result of the CreateDeploymentJob operation returned by the service.
@@ -332,6 +404,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeploymentJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -394,6 +467,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -458,6 +532,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRobot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -525,6 +600,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRobotApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -592,6 +668,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRobotApplicationVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -661,6 +738,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSimulationApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -729,6 +807,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSimulationApplicationVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -750,6 +829,11 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
      * <p>
      * Creates a simulation job.
      * </p>
+     * <note>
+     * <p>
+     * After 90 days, simulation jobs expire and will be deleted. They will no longer be accessible.
+     * </p>
+     * </note>
      * 
      * @param createSimulationJobRequest
      * @return Result of the CreateSimulationJob operation returned by the service.
@@ -768,6 +852,8 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
      * @throws IdempotentParameterMismatchException
      *         The request uses the same client token as a previous, but non-identical request. Do not reuse a client
      *         token with different requests, unless the requests are identical.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
      * @sample AWSRoboMaker.CreateSimulationJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationJob" target="_top">AWS
      *      API Documentation</a>
@@ -797,6 +883,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSimulationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -856,6 +943,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -915,6 +1003,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRobot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -974,6 +1063,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRobotApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1035,6 +1125,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSimulationApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1097,6 +1188,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterRobot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1115,7 +1207,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
 
     /**
      * <p>
-     * Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]
+     * Describes a deployment job.
      * </p>
      * 
      * @param describeDeploymentJobRequest
@@ -1158,6 +1250,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeploymentJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1220,6 +1313,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1281,6 +1375,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRobot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1343,6 +1438,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRobotApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1406,6 +1502,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSimulationApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1468,6 +1565,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSimulationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1490,6 +1588,10 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
      * Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment
      * jobs.
      * </p>
+     * <note>
+     * <p>
+     * </p>
+     * </note>
      * 
      * @param listDeploymentJobsRequest
      * @return Result of the ListDeploymentJobs operation returned by the service.
@@ -1531,6 +1633,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeploymentJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1592,6 +1695,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFleets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1651,6 +1755,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRobotApplications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1713,6 +1818,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRobots");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1774,6 +1880,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSimulationApplications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1834,6 +1941,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSimulationJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1895,6 +2003,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1959,6 +2068,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterRobot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2023,6 +2133,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestartSimulationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2092,6 +2203,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SyncDeploymentJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2162,6 +2274,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2184,8 +2297,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
      * </p>
      * <p>
      * To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a
-     * href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
-     * <code>TagResource</code> </a>.
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html"> <code>TagResource</code> </a>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2228,6 +2340,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2292,6 +2405,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRobotApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2358,6 +2472,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSimulationApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -37,6 +37,8 @@ public class PasswordPolicyTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequireNumbers").build();
     private static final MarshallingInfo<Boolean> REQUIRESYMBOLS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequireSymbols").build();
+    private static final MarshallingInfo<Integer> TEMPORARYPASSWORDVALIDITYDAYS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemporaryPasswordValidityDays").build();
 
     private static final PasswordPolicyTypeMarshaller instance = new PasswordPolicyTypeMarshaller();
 
@@ -59,6 +61,7 @@ public class PasswordPolicyTypeMarshaller {
             protocolMarshaller.marshall(passwordPolicyType.getRequireLowercase(), REQUIRELOWERCASE_BINDING);
             protocolMarshaller.marshall(passwordPolicyType.getRequireNumbers(), REQUIRENUMBERS_BINDING);
             protocolMarshaller.marshall(passwordPolicyType.getRequireSymbols(), REQUIRESYMBOLS_BINDING);
+            protocolMarshaller.marshall(passwordPolicyType.getTemporaryPasswordValidityDays(), TEMPORARYPASSWORDVALIDITYDAYS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

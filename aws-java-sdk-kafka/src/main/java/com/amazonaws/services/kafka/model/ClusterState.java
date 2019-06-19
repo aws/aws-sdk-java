@@ -15,7 +15,8 @@ package com.amazonaws.services.kafka.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
+ * 
+ <p>
  * The state of a Kafka cluster.
  * </p>
  */
@@ -24,6 +25,7 @@ public enum ClusterState {
 
     ACTIVE("ACTIVE"),
     CREATING("CREATING"),
+    UPDATING("UPDATING"),
     DELETING("DELETING"),
     FAILED("FAILED");
 

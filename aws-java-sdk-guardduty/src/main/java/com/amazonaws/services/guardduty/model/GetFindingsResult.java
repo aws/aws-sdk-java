@@ -23,10 +23,19 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A list of findings.
+     * </p>
+     */
     private java.util.List<Finding> findings;
 
     /**
-     * @return
+     * <p>
+     * A list of findings.
+     * </p>
+     * 
+     * @return A list of findings.
      */
 
     public java.util.List<Finding> getFindings() {
@@ -34,7 +43,12 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * A list of findings.
+     * </p>
+     * 
      * @param findings
+     *        A list of findings.
      */
 
     public void setFindings(java.util.Collection<Finding> findings) {
@@ -48,12 +62,16 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * A list of findings.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFindings(java.util.Collection)} or {@link #withFindings(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param findings
+     *        A list of findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +86,12 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * A list of findings.
+     * </p>
+     * 
      * @param findings
+     *        A list of findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

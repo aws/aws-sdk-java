@@ -34,6 +34,8 @@ public class ScheduleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopyTags").build();
     private static final MarshallingInfo<List> TAGSTOADD_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TagsToAdd").build();
+    private static final MarshallingInfo<List> VARIABLETAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VariableTags").build();
     private static final MarshallingInfo<StructuredPojo> CREATERULE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateRule").build();
     private static final MarshallingInfo<StructuredPojo> RETAINRULE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -58,6 +60,7 @@ public class ScheduleMarshaller {
             protocolMarshaller.marshall(schedule.getName(), NAME_BINDING);
             protocolMarshaller.marshall(schedule.getCopyTags(), COPYTAGS_BINDING);
             protocolMarshaller.marshall(schedule.getTagsToAdd(), TAGSTOADD_BINDING);
+            protocolMarshaller.marshall(schedule.getVariableTags(), VARIABLETAGS_BINDING);
             protocolMarshaller.marshall(schedule.getCreateRule(), CREATERULE_BINDING);
             protocolMarshaller.marshall(schedule.getRetainRule(), RETAINRULE_BINDING);
         } catch (Exception e) {

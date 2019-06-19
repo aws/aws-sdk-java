@@ -23,11 +23,17 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateFilterResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The name of the filter. */
+    /**
+     * <p>
+     * The name of the filter.
+     * </p>
+     */
     private String name;
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @param name
      *        The name of the filter.
@@ -38,7 +44,9 @@ public class UpdateFilterResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @return The name of the filter.
      */
@@ -48,7 +56,9 @@ public class UpdateFilterResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @param name
      *        The name of the filter.

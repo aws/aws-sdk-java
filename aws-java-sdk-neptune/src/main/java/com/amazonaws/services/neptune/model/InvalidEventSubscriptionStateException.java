@@ -15,7 +15,9 @@ package com.amazonaws.services.neptune.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The event subscription is in an invalid state.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidEventSubscriptionStateException extends com.amazonaws.services.neptune.model.AmazonNeptuneException {

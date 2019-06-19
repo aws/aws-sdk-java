@@ -58,7 +58,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
      * it becomes a multi-node parallel job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
      * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either <code>containerProperties</code> or
      * <code>nodeProperties</code>.
@@ -79,7 +79,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried. The minimum
      * value for the timeout is 60 seconds. Any timeout configuration that is specified during a <a>SubmitJob</a>
      * operation overrides the timeout configuration defined here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -333,7 +333,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
      * it becomes a multi-node parallel job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
      * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either <code>containerProperties</code> or
      * <code>nodeProperties</code>.
@@ -342,9 +342,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @param nodeProperties
      *        An object with various properties specific to multi-node parallel jobs. If you specify node properties for
      *        a job, it becomes a multi-node parallel job. For more information, see <a
-     *        href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
-     *        Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-     *        <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     *        Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
+     *        is <code>container</code>, then you must specify either <code>containerProperties</code> or
      *        <code>nodeProperties</code>.
      */
 
@@ -356,7 +356,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
      * it becomes a multi-node parallel job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
      * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either <code>containerProperties</code> or
      * <code>nodeProperties</code>.
@@ -364,7 +364,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * 
      * @return An object with various properties specific to multi-node parallel jobs. If you specify node properties
      *         for a job, it becomes a multi-node parallel job. For more information, see <a
-     *         href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
      *         Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
      *         is <code>container</code>, then you must specify either <code>containerProperties</code> or
      *         <code>nodeProperties</code>.
@@ -378,7 +378,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
      * it becomes a multi-node parallel job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
      * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either <code>containerProperties</code> or
      * <code>nodeProperties</code>.
@@ -387,9 +387,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @param nodeProperties
      *        An object with various properties specific to multi-node parallel jobs. If you specify node properties for
      *        a job, it becomes a multi-node parallel job. For more information, see <a
-     *        href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
-     *        Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-     *        <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     *        Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
+     *        is <code>container</code>, then you must specify either <code>containerProperties</code> or
      *        <code>nodeProperties</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -457,7 +457,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried. The minimum
      * value for the timeout is 60 seconds. Any timeout configuration that is specified during a <a>SubmitJob</a>
      * operation overrides the timeout configuration defined here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -467,7 +467,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      *        retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that is specified
      *        during a <a>SubmitJob</a> operation overrides the timeout configuration defined here. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
      *        the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -481,7 +481,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried. The minimum
      * value for the timeout is 60 seconds. Any timeout configuration that is specified during a <a>SubmitJob</a>
      * operation overrides the timeout configuration defined here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -490,7 +490,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      *         retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that is specified
      *         during a <a>SubmitJob</a> operation overrides the timeout configuration defined here. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
      *         the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -504,7 +504,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried. The minimum
      * value for the timeout is 60 seconds. Any timeout configuration that is specified during a <a>SubmitJob</a>
      * operation overrides the timeout configuration defined here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -514,7 +514,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      *        retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that is specified
      *        during a <a>SubmitJob</a> operation overrides the timeout configuration defined here. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
      *        the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -31,6 +31,7 @@ public class ParameterHttpMapping {
     private Location location;
     private boolean flattened;
     private boolean isGreedy;
+    private boolean requiresLength;
 
     public boolean getIsPayload() {
         return isPayload;
@@ -163,6 +164,19 @@ public class ParameterHttpMapping {
 
     public ParameterHttpMapping withIsGreedy(boolean greedy) {
         setIsGreedy(greedy);
+        return this;
+    }
+
+    public boolean isRequiresLength() {
+        return requiresLength;
+    }
+
+    public void setRequiresLength(boolean requiresLength) {
+        this.requiresLength = requiresLength;
+    }
+
+    public ParameterHttpMapping withRequiresLength(boolean requiresLength) {
+        setRequiresLength(requiresLength);
         return this;
     }
 

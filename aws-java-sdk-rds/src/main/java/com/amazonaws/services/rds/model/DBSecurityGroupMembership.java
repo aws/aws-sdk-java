@@ -22,22 +22,22 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * <a>ModifyDBInstance</a>
+ * <code>ModifyDBInstance</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>RebootDBInstance</a>
+ * <code>RebootDBInstance</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>RestoreDBInstanceFromDBSnapshot</a>
+ * <code>RestoreDBInstanceFromDBSnapshot</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>RestoreDBInstanceToPointInTime</a>
+ * <code>RestoreDBInstanceToPointInTime</code>
  * </p>
  * </li>
  * </ul>

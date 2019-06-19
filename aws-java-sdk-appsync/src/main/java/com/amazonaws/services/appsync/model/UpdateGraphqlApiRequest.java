@@ -61,6 +61,12 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private OpenIDConnectConfig openIDConnectConfig;
+    /**
+     * <p>
+     * A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * </p>
+     */
+    private java.util.List<AdditionalAuthenticationProvider> additionalAuthenticationProviders;
 
     /**
      * <p>
@@ -322,6 +328,77 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * </p>
+     * 
+     * @return A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     */
+
+    public java.util.List<AdditionalAuthenticationProvider> getAdditionalAuthenticationProviders() {
+        return additionalAuthenticationProviders;
+    }
+
+    /**
+     * <p>
+     * A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * </p>
+     * 
+     * @param additionalAuthenticationProviders
+     *        A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     */
+
+    public void setAdditionalAuthenticationProviders(java.util.Collection<AdditionalAuthenticationProvider> additionalAuthenticationProviders) {
+        if (additionalAuthenticationProviders == null) {
+            this.additionalAuthenticationProviders = null;
+            return;
+        }
+
+        this.additionalAuthenticationProviders = new java.util.ArrayList<AdditionalAuthenticationProvider>(additionalAuthenticationProviders);
+    }
+
+    /**
+     * <p>
+     * A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalAuthenticationProviders(java.util.Collection)} or
+     * {@link #withAdditionalAuthenticationProviders(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalAuthenticationProviders
+     *        A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGraphqlApiRequest withAdditionalAuthenticationProviders(AdditionalAuthenticationProvider... additionalAuthenticationProviders) {
+        if (this.additionalAuthenticationProviders == null) {
+            setAdditionalAuthenticationProviders(new java.util.ArrayList<AdditionalAuthenticationProvider>(additionalAuthenticationProviders.length));
+        }
+        for (AdditionalAuthenticationProvider ele : additionalAuthenticationProviders) {
+            this.additionalAuthenticationProviders.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * </p>
+     * 
+     * @param additionalAuthenticationProviders
+     *        A list of additional authentication providers for the <code>GraphqlApi</code> API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGraphqlApiRequest withAdditionalAuthenticationProviders(
+            java.util.Collection<AdditionalAuthenticationProvider> additionalAuthenticationProviders) {
+        setAdditionalAuthenticationProviders(additionalAuthenticationProviders);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -344,7 +421,9 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
         if (getUserPoolConfig() != null)
             sb.append("UserPoolConfig: ").append(getUserPoolConfig()).append(",");
         if (getOpenIDConnectConfig() != null)
-            sb.append("OpenIDConnectConfig: ").append(getOpenIDConnectConfig());
+            sb.append("OpenIDConnectConfig: ").append(getOpenIDConnectConfig()).append(",");
+        if (getAdditionalAuthenticationProviders() != null)
+            sb.append("AdditionalAuthenticationProviders: ").append(getAdditionalAuthenticationProviders());
         sb.append("}");
         return sb.toString();
     }
@@ -383,6 +462,11 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getOpenIDConnectConfig() != null && other.getOpenIDConnectConfig().equals(this.getOpenIDConnectConfig()) == false)
             return false;
+        if (other.getAdditionalAuthenticationProviders() == null ^ this.getAdditionalAuthenticationProviders() == null)
+            return false;
+        if (other.getAdditionalAuthenticationProviders() != null
+                && other.getAdditionalAuthenticationProviders().equals(this.getAdditionalAuthenticationProviders()) == false)
+            return false;
         return true;
     }
 
@@ -397,6 +481,7 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
         hashCode = prime * hashCode + ((getUserPoolConfig() == null) ? 0 : getUserPoolConfig().hashCode());
         hashCode = prime * hashCode + ((getOpenIDConnectConfig() == null) ? 0 : getOpenIDConnectConfig().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalAuthenticationProviders() == null) ? 0 : getAdditionalAuthenticationProviders().hashCode());
         return hashCode;
     }
 

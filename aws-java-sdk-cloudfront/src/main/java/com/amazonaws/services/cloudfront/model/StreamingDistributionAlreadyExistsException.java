@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The caller reference you attempted to create the streaming distribution with is associated with another distribution
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StreamingDistributionAlreadyExistsException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {

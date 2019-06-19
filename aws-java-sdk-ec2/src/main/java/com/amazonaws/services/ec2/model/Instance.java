@@ -217,7 +217,7 @@ public class Instance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<ElasticInferenceAcceleratorAssociation> elasticInferenceAcceleratorAssociations;
     /**
      * <p>
-     * [EC2-VPC] One or more network interfaces for the instance.
+     * [EC2-VPC] The network interfaces for the instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterface> networkInterfaces;
@@ -235,7 +235,7 @@ public class Instance implements Serializable, Cloneable {
     private String rootDeviceType;
     /**
      * <p>
-     * One or more security groups for the instance.
+     * The security groups for the instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> securityGroups;
@@ -1906,10 +1906,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC] One or more network interfaces for the instance.
+     * [EC2-VPC] The network interfaces for the instance.
      * </p>
      * 
-     * @return [EC2-VPC] One or more network interfaces for the instance.
+     * @return [EC2-VPC] The network interfaces for the instance.
      */
 
     public java.util.List<InstanceNetworkInterface> getNetworkInterfaces() {
@@ -1921,11 +1921,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC] One or more network interfaces for the instance.
+     * [EC2-VPC] The network interfaces for the instance.
      * </p>
      * 
      * @param networkInterfaces
-     *        [EC2-VPC] One or more network interfaces for the instance.
+     *        [EC2-VPC] The network interfaces for the instance.
      */
 
     public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterface> networkInterfaces) {
@@ -1939,7 +1939,7 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC] One or more network interfaces for the instance.
+     * [EC2-VPC] The network interfaces for the instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1948,7 +1948,7 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      * 
      * @param networkInterfaces
-     *        [EC2-VPC] One or more network interfaces for the instance.
+     *        [EC2-VPC] The network interfaces for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1964,11 +1964,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC] One or more network interfaces for the instance.
+     * [EC2-VPC] The network interfaces for the instance.
      * </p>
      * 
      * @param networkInterfaces
-     *        [EC2-VPC] One or more network interfaces for the instance.
+     *        [EC2-VPC] The network interfaces for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2092,10 +2092,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups for the instance.
+     * The security groups for the instance.
      * </p>
      * 
-     * @return One or more security groups for the instance.
+     * @return The security groups for the instance.
      */
 
     public java.util.List<GroupIdentifier> getSecurityGroups() {
@@ -2107,11 +2107,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups for the instance.
+     * The security groups for the instance.
      * </p>
      * 
      * @param securityGroups
-     *        One or more security groups for the instance.
+     *        The security groups for the instance.
      */
 
     public void setSecurityGroups(java.util.Collection<GroupIdentifier> securityGroups) {
@@ -2125,7 +2125,7 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups for the instance.
+     * The security groups for the instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2134,7 +2134,7 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      * 
      * @param securityGroups
-     *        One or more security groups for the instance.
+     *        The security groups for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2150,11 +2150,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups for the instance.
+     * The security groups for the instance.
      * </p>
      * 
      * @param securityGroups
-     *        One or more security groups for the instance.
+     *        The security groups for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

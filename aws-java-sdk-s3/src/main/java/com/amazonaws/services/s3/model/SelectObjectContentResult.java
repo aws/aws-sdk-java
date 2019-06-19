@@ -17,7 +17,6 @@ package com.amazonaws.services.s3.model;
 
 import java.io.Closeable;
 import java.io.IOException;
-import java.io.Serializable;
 
 public class SelectObjectContentResult implements Closeable {
     private SelectObjectContentEventStream payload;

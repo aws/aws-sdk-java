@@ -40,9 +40,9 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * <code>--target Id=123456789012,Type=ACCOUNT</code>
      * </p>
      * <p>
-     * If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must specify the email address that is
-     * associated with the account.
+     * If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the <code>Id</code>.
+     * If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the
+     * account.
      * </p>
      * <p>
      * <code>--target Id=diego@example.com,Type=EMAIL</code>
@@ -71,9 +71,9 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * <code>--target Id=123456789012,Type=ACCOUNT</code>
      * </p>
      * <p>
-     * If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must specify the email address that is
-     * associated with the account.
+     * If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the <code>Id</code>.
+     * If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the
+     * account.
      * </p>
      * <p>
      * <code>--target Id=diego@example.com,Type=EMAIL</code>
@@ -92,9 +92,9 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *        <code>--target Id=123456789012,Type=ACCOUNT</code>
      *        </p>
      *        <p>
-     *        If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     *        <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must specify the email address that
-     *        is associated with the account.
+     *        If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the
+     *        <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is
+     *        associated with the account.
      *        </p>
      *        <p>
      *        <code>--target Id=diego@example.com,Type=EMAIL</code>
@@ -119,9 +119,9 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * <code>--target Id=123456789012,Type=ACCOUNT</code>
      * </p>
      * <p>
-     * If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must specify the email address that is
-     * associated with the account.
+     * If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the <code>Id</code>.
+     * If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the
+     * account.
      * </p>
      * <p>
      * <code>--target Id=diego@example.com,Type=EMAIL</code>
@@ -139,9 +139,9 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *         <code>--target Id=123456789012,Type=ACCOUNT</code>
      *         </p>
      *         <p>
-     *         If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     *         <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must specify the email address
-     *         that is associated with the account.
+     *         If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the
+     *         <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is
+     *         associated with the account.
      *         </p>
      *         <p>
      *         <code>--target Id=diego@example.com,Type=EMAIL</code>
@@ -166,9 +166,9 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * <code>--target Id=123456789012,Type=ACCOUNT</code>
      * </p>
      * <p>
-     * If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must specify the email address that is
-     * associated with the account.
+     * If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the <code>Id</code>.
+     * If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the
+     * account.
      * </p>
      * <p>
      * <code>--target Id=diego@example.com,Type=EMAIL</code>
@@ -187,9 +187,9 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *        <code>--target Id=123456789012,Type=ACCOUNT</code>
      *        </p>
      *        <p>
-     *        If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     *        <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must specify the email address that
-     *        is associated with the account.
+     *        If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the
+     *        <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is
+     *        associated with the account.
      *        </p>
      *        <p>
      *        <code>--target Id=diego@example.com,Type=EMAIL</code>

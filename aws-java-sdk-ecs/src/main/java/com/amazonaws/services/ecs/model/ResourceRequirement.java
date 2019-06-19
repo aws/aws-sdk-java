@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The type and amount of a resource to assign to a container. The only supported resource is a GPU. For more
- * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working with GPUs
+ * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working with GPUs
  * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
  * </p>
  * 

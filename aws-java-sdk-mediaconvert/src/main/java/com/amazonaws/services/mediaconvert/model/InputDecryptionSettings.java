@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Specify the decryption settings used to decrypt encrypted input
+ * Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can
+ * decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt your
+ * content.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/InputDecryptionSettings"
  *      target="_top">AWS API Documentation</a>
@@ -26,16 +28,31 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InputDecryptionSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Specify the encryption mode that you used to encrypt your input files. */
     private String decryptionMode;
-    /** Decryption key either 128 or 192 or 256 bits encrypted with KMS */
+    /**
+     * Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making your
+     * encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt your
+     * content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or 256 bits.
+     */
     private String encryptedDecryptionKey;
-    /** Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits. */
+    /**
+     * Specify the initialization vector that you used when you encrypted your content before uploading it to Amazon S3.
+     * You can use a 16-byte initialization vector with any encryption mode. Or, you can use a 12-byte initialization
+     * vector with GCM or CTR. MediaConvert accepts only initialization vectors that are base64-encoded.
+     */
     private String initializationVector;
-    /** The AWS region in which decryption key was encrypted with KMS */
+    /**
+     * Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if that
+     * Region is different from the one you are using for AWS Elemental MediaConvert.
+     */
     private String kmsKeyRegion;
 
     /**
+     * Specify the encryption mode that you used to encrypt your input files.
+     * 
      * @param decryptionMode
+     *        Specify the encryption mode that you used to encrypt your input files.
      * @see DecryptionMode
      */
 
@@ -44,7 +61,9 @@ public class InputDecryptionSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * @return
+     * Specify the encryption mode that you used to encrypt your input files.
+     * 
+     * @return Specify the encryption mode that you used to encrypt your input files.
      * @see DecryptionMode
      */
 
@@ -53,7 +72,10 @@ public class InputDecryptionSettings implements Serializable, Cloneable, Structu
     }
 
     /**
+     * Specify the encryption mode that you used to encrypt your input files.
+     * 
      * @param decryptionMode
+     *        Specify the encryption mode that you used to encrypt your input files.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DecryptionMode
      */
@@ -64,7 +86,10 @@ public class InputDecryptionSettings implements Serializable, Cloneable, Structu
     }
 
     /**
+     * Specify the encryption mode that you used to encrypt your input files.
+     * 
      * @param decryptionMode
+     *        Specify the encryption mode that you used to encrypt your input files.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DecryptionMode
      */
@@ -75,10 +100,15 @@ public class InputDecryptionSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     * Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making your
+     * encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt your
+     * content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or 256 bits.
      * 
      * @param encryptedDecryptionKey
-     *        Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     *        Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making
+     *        your encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt
+     *        your content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192,
+     *        or 256 bits.
      */
 
     public void setEncryptedDecryptionKey(String encryptedDecryptionKey) {
@@ -86,9 +116,14 @@ public class InputDecryptionSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     * Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making your
+     * encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt your
+     * content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or 256 bits.
      * 
-     * @return Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     * @return Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making
+     *         your encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt
+     *         your content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128,
+     *         192, or 256 bits.
      */
 
     public String getEncryptedDecryptionKey() {
@@ -96,10 +131,15 @@ public class InputDecryptionSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     * Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making your
+     * encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt your
+     * content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or 256 bits.
      * 
      * @param encryptedDecryptionKey
-     *        Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     *        Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making
+     *        your encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt
+     *        your content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192,
+     *        or 256 bits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,10 +149,15 @@ public class InputDecryptionSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     * Specify the initialization vector that you used when you encrypted your content before uploading it to Amazon S3.
+     * You can use a 16-byte initialization vector with any encryption mode. Or, you can use a 12-byte initialization
+     * vector with GCM or CTR. MediaConvert accepts only initialization vectors that are base64-encoded.
      * 
      * @param initializationVector
-     *        Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     *        Specify the initialization vector that you used when you encrypted your content before uploading it to
+     *        Amazon S3. You can use a 16-byte initialization vector with any encryption mode. Or, you can use a 12-byte
+     *        initialization vector with GCM or CTR. MediaConvert accepts only initialization vectors that are
+     *        base64-encoded.
      */
 
     public void setInitializationVector(String initializationVector) {
@@ -120,9 +165,14 @@ public class InputDecryptionSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     * Specify the initialization vector that you used when you encrypted your content before uploading it to Amazon S3.
+     * You can use a 16-byte initialization vector with any encryption mode. Or, you can use a 12-byte initialization
+     * vector with GCM or CTR. MediaConvert accepts only initialization vectors that are base64-encoded.
      * 
-     * @return Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     * @return Specify the initialization vector that you used when you encrypted your content before uploading it to
+     *         Amazon S3. You can use a 16-byte initialization vector with any encryption mode. Or, you can use a
+     *         12-byte initialization vector with GCM or CTR. MediaConvert accepts only initialization vectors that are
+     *         base64-encoded.
      */
 
     public String getInitializationVector() {
@@ -130,10 +180,15 @@ public class InputDecryptionSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     * Specify the initialization vector that you used when you encrypted your content before uploading it to Amazon S3.
+     * You can use a 16-byte initialization vector with any encryption mode. Or, you can use a 12-byte initialization
+     * vector with GCM or CTR. MediaConvert accepts only initialization vectors that are base64-encoded.
      * 
      * @param initializationVector
-     *        Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     *        Specify the initialization vector that you used when you encrypted your content before uploading it to
+     *        Amazon S3. You can use a 16-byte initialization vector with any encryption mode. Or, you can use a 12-byte
+     *        initialization vector with GCM or CTR. MediaConvert accepts only initialization vectors that are
+     *        base64-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,10 +198,12 @@ public class InputDecryptionSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The AWS region in which decryption key was encrypted with KMS
+     * Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if that
+     * Region is different from the one you are using for AWS Elemental MediaConvert.
      * 
      * @param kmsKeyRegion
-     *        The AWS region in which decryption key was encrypted with KMS
+     *        Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if
+     *        that Region is different from the one you are using for AWS Elemental MediaConvert.
      */
 
     public void setKmsKeyRegion(String kmsKeyRegion) {
@@ -154,9 +211,11 @@ public class InputDecryptionSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The AWS region in which decryption key was encrypted with KMS
+     * Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if that
+     * Region is different from the one you are using for AWS Elemental MediaConvert.
      * 
-     * @return The AWS region in which decryption key was encrypted with KMS
+     * @return Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if
+     *         that Region is different from the one you are using for AWS Elemental MediaConvert.
      */
 
     public String getKmsKeyRegion() {
@@ -164,10 +223,12 @@ public class InputDecryptionSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The AWS region in which decryption key was encrypted with KMS
+     * Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if that
+     * Region is different from the one you are using for AWS Elemental MediaConvert.
      * 
      * @param kmsKeyRegion
-     *        The AWS region in which decryption key was encrypted with KMS
+     *        Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if
+     *        that Region is different from the one you are using for AWS Elemental MediaConvert.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

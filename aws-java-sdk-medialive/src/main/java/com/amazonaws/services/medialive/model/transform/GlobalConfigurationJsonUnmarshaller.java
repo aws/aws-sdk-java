@@ -60,6 +60,10 @@ public class GlobalConfigurationJsonUnmarshaller implements Unmarshaller<GlobalC
                     context.nextToken();
                     globalConfiguration.setInputLossBehavior(InputLossBehaviorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("outputLockingMode", targetDepth)) {
+                    context.nextToken();
+                    globalConfiguration.setOutputLockingMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("outputTimingSource", targetDepth)) {
                     context.nextToken();
                     globalConfiguration.setOutputTimingSource(context.getUnmarshaller(String.class).unmarshall(context));

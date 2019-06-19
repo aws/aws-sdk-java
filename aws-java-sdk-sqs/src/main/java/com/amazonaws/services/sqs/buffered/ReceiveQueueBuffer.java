@@ -498,8 +498,9 @@ public class ReceiveQueueBuffer {
 
             try {
                 visibilityDeadlineNano = System.nanoTime() + visibilityTimeoutNanos;
-                ReceiveMessageRequest request = new ReceiveMessageRequest(qUrl).withMaxNumberOfMessages(config
-                        .getMaxBatchSize());
+                ReceiveMessageRequest request = new ReceiveMessageRequest(qUrl)
+                        .withMaxNumberOfMessages(config.getMaxBatchSize())
+                        .withMessageAttributeNames(config.getReceiveMessageAttributeNames());
                 ResultConverter.appendUserAgent(request, AmazonSQSBufferedAsyncClient.USER_AGENT);
 
                 if (config.getVisibilityTimeoutSeconds() > 0) {

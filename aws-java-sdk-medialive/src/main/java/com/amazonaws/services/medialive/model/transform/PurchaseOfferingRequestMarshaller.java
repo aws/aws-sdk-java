@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.medialive.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +41,8 @@ public class PurchaseOfferingRequestMarshaller {
             .marshallLocationName("requestId").defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> START_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("start").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final PurchaseOfferingRequestMarshaller instance = new PurchaseOfferingRequestMarshaller();
 
@@ -61,6 +65,7 @@ public class PurchaseOfferingRequestMarshaller {
             protocolMarshaller.marshall(purchaseOfferingRequest.getOfferingId(), OFFERINGID_BINDING);
             protocolMarshaller.marshall(purchaseOfferingRequest.getRequestId(), REQUESTID_BINDING);
             protocolMarshaller.marshall(purchaseOfferingRequest.getStart(), START_BINDING);
+            protocolMarshaller.marshall(purchaseOfferingRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

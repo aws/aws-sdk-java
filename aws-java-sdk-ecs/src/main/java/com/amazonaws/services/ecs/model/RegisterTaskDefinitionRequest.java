@@ -29,7 +29,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the
      * same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters
-     * (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+     * (uppercase and lowercase), numbers, and hyphens are allowed.
      * </p>
      */
     private String family;
@@ -69,8 +69,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -272,7 +272,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -303,13 +303,13 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the
      * same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters
-     * (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+     * (uppercase and lowercase), numbers, and hyphens are allowed.
      * </p>
      * 
      * @param family
      *        You must specify a <code>family</code> for a task definition, which allows you to track multiple versions
      *        of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255
-     *        letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+     *        letters (uppercase and lowercase), numbers, and hyphens are allowed.
      */
 
     public void setFamily(String family) {
@@ -320,12 +320,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the
      * same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters
-     * (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+     * (uppercase and lowercase), numbers, and hyphens are allowed.
      * </p>
      * 
      * @return You must specify a <code>family</code> for a task definition, which allows you to track multiple versions
      *         of the same task definition. The <code>family</code> is used as a name for your task definition. Up to
-     *         255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+     *         255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
      */
 
     public String getFamily() {
@@ -336,13 +336,13 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the
      * same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters
-     * (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+     * (uppercase and lowercase), numbers, and hyphens are allowed.
      * </p>
      * 
      * @param family
      *        You must specify a <code>family</code> for a task definition, which allows you to track multiple versions
      *        of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255
-     *        letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+     *        letters (uppercase and lowercase), numbers, and hyphens are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -478,8 +478,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -520,8 +520,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *        definition. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -568,8 +568,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -609,7 +609,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *         must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *         definition. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <note>
@@ -659,8 +659,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -701,8 +701,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *        definition. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -751,8 +751,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -793,8 +793,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *        definition. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -841,8 +841,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -883,8 +883,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *        definition. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -2209,7 +2209,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2251,7 +2251,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2299,7 +2299,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2340,7 +2340,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *         the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *         Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <ul>
@@ -2388,7 +2388,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2430,7 +2430,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2480,7 +2480,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2522,7 +2522,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2570,7 +2570,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2612,7 +2612,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>

@@ -124,6 +124,11 @@ public class FpgaImageStaxUnmarshaller implements Unmarshaller<FpgaImage, StaxUn
                     fpgaImage.setPublic(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("dataRetentionSupport", targetDepth)) {
+                    fpgaImage.setDataRetentionSupport(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return fpgaImage;

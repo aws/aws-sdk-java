@@ -34,8 +34,8 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
     private String environmentName;
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a>
-     * of the environment. For example, <code>Ok</code>.
+     * The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * status</a> of the environment. For example, <code>Ok</code>.
      * </p>
      */
     private String healthStatus;
@@ -48,7 +48,7 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
     private String status;
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a>
+     * The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a>
      * of the environment.
      * </p>
      */
@@ -120,12 +120,12 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a>
-     * of the environment. For example, <code>Ok</code>.
+     * The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * status</a> of the environment. For example, <code>Ok</code>.
      * </p>
      * 
      * @param healthStatus
-     *        The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     *        The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      *        status</a> of the environment. For example, <code>Ok</code>.
      */
 
@@ -135,11 +135,11 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a>
-     * of the environment. For example, <code>Ok</code>.
+     * The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * status</a> of the environment. For example, <code>Ok</code>.
      * </p>
      * 
-     * @return The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * @return The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      *         status</a> of the environment. For example, <code>Ok</code>.
      */
 
@@ -149,12 +149,12 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a>
-     * of the environment. For example, <code>Ok</code>.
+     * The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * status</a> of the environment. For example, <code>Ok</code>.
      * </p>
      * 
      * @param healthStatus
-     *        The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     *        The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      *        status</a> of the environment. For example, <code>Ok</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -249,12 +249,12 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a>
+     * The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a>
      * of the environment.
      * </p>
      * 
      * @param color
-     *        The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     *        The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      *        color</a> of the environment.
      */
 
@@ -264,11 +264,11 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a>
+     * The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a>
      * of the environment.
      * </p>
      * 
-     * @return The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * @return The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      *         color</a> of the environment.
      */
 
@@ -278,12 +278,12 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a>
+     * The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a>
      * of the environment.
      * </p>
      * 
      * @param color
-     *        The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     *        The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      *        color</a> of the environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

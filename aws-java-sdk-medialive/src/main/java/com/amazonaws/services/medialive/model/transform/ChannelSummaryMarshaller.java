@@ -31,6 +31,8 @@ public class ChannelSummaryMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> CHANNELCLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelClass").build();
     private static final MarshallingInfo<List> DESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("destinations").build();
     private static final MarshallingInfo<List> EGRESSENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -71,6 +73,7 @@ public class ChannelSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(channelSummary.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(channelSummary.getChannelClass(), CHANNELCLASS_BINDING);
             protocolMarshaller.marshall(channelSummary.getDestinations(), DESTINATIONS_BINDING);
             protocolMarshaller.marshall(channelSummary.getEgressEndpoints(), EGRESSENDPOINTS_BINDING);
             protocolMarshaller.marshall(channelSummary.getId(), ID_BINDING);

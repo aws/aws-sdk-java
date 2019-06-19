@@ -60,6 +60,10 @@ public class CrawlerTargetsJsonUnmarshaller implements Unmarshaller<CrawlerTarge
                     context.nextToken();
                     crawlerTargets.setDynamoDBTargets(new ListUnmarshaller<DynamoDBTarget>(DynamoDBTargetJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("CatalogTargets", targetDepth)) {
+                    context.nextToken();
+                    crawlerTargets.setCatalogTargets(new ListUnmarshaller<CatalogTarget>(CatalogTargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -42,7 +42,9 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
      * Information on each of the MSK clusters in the response.
      * </p>
      * 
-     * @return Information on each of the MSK clusters in the response.
+     * @return <p>
+     *         Information on each of the MSK clusters in the response.
+     *         </p>
      */
 
     public java.util.List<ClusterInfo> getClusterInfoList() {
@@ -55,7 +57,9 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param clusterInfoList
+     *        <p>
      *        Information on each of the MSK clusters in the response.
+     *        </p>
      */
 
     public void setClusterInfoList(java.util.Collection<ClusterInfo> clusterInfoList) {
@@ -71,6 +75,7 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * Information on each of the MSK clusters in the response.
      * </p>
+     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setClusterInfoList(java.util.Collection)} or {@link #withClusterInfoList(java.util.Collection)} if you
@@ -78,7 +83,9 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param clusterInfoList
+     *        <p>
      *        Information on each of the MSK clusters in the response.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +105,9 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param clusterInfoList
+     *        <p>
      *        Information on each of the MSK clusters in the response.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,8 +123,10 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param nextToken
+     *        <p>
      *        The paginated results marker. When the result of a ListClusters operation is truncated, the call returns
      *        NextToken in the response. To get another batch of clusters, provide this token in your next request.
+     *        </p>
      */
 
     public void setNextToken(String nextToken) {
@@ -128,8 +139,10 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
      * NextToken in the response. To get another batch of clusters, provide this token in your next request.
      * </p>
      * 
-     * @return The paginated results marker. When the result of a ListClusters operation is truncated, the call returns
+     * @return <p>
+     *         The paginated results marker. When the result of a ListClusters operation is truncated, the call returns
      *         NextToken in the response. To get another batch of clusters, provide this token in your next request.
+     *         </p>
      */
 
     public String getNextToken() {
@@ -143,8 +156,10 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param nextToken
+     *        <p>
      *        The paginated results marker. When the result of a ListClusters operation is truncated, the call returns
      *        NextToken in the response. To get another batch of clusters, provide this token in your next request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

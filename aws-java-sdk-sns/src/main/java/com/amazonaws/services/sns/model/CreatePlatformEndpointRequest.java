@@ -53,7 +53,7 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
@@ -205,11 +205,11 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
      * </p>
      * 
      * @return For a list of attributes, see <a
-     *         href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
+     *         href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
      *         >SetEndpointAttributes</a>.
      */
 
@@ -223,12 +223,13 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
      * </p>
      * 
      * @param attributes
      *        For a list of attributes, see <a
-     *        href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
+     *        >SetEndpointAttributes</a>.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -238,12 +239,13 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
      * </p>
      * 
      * @param attributes
      *        For a list of attributes, see <a
-     *        href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
+     *        >SetEndpointAttributes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

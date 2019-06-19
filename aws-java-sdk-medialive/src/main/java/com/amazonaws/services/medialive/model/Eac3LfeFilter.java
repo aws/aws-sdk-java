@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for Eac3LfeFilter
+ * Eac3 Lfe Filter
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Eac3LfeFilter {

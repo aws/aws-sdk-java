@@ -65,8 +65,8 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * For information about routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
-     * in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      */
     private String nextRecordIdentifier;
@@ -371,8 +371,8 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * For information about routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
-     * in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param nextRecordIdentifier
@@ -381,7 +381,7 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      *        the current DNS name and type.</p>
      *        <p>
      *        For information about routing policies, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
      *        Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
@@ -397,8 +397,8 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * For information about routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
-     * in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @return <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a
@@ -406,7 +406,7 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      *         has the current DNS name and type.</p>
      *         <p>
      *         For information about routing policies, see <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *         href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
      *         Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
@@ -422,8 +422,8 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * For information about routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
-     * in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param nextRecordIdentifier
@@ -432,7 +432,7 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      *        the current DNS name and type.</p>
      *        <p>
      *        For information about routing policies, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
      *        Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

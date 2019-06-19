@@ -30,6 +30,13 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * This field determines the valid target resource types and actions a policy can manage. This field defaults to
+     * EBS_SNAPSHOT_MANAGEMENT if not present.
+     * </p>
+     */
+    private String policyType;
+    /**
+     * <p>
      * The resource type.
      * </p>
      */
@@ -46,6 +53,79 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Schedule> schedules;
+    /**
+     * <p>
+     * A set of optional parameters that can be provided by the policy.
+     * </p>
+     */
+    private Parameters parameters;
+
+    /**
+     * <p>
+     * This field determines the valid target resource types and actions a policy can manage. This field defaults to
+     * EBS_SNAPSHOT_MANAGEMENT if not present.
+     * </p>
+     * 
+     * @param policyType
+     *        This field determines the valid target resource types and actions a policy can manage. This field defaults
+     *        to EBS_SNAPSHOT_MANAGEMENT if not present.
+     * @see PolicyTypeValues
+     */
+
+    public void setPolicyType(String policyType) {
+        this.policyType = policyType;
+    }
+
+    /**
+     * <p>
+     * This field determines the valid target resource types and actions a policy can manage. This field defaults to
+     * EBS_SNAPSHOT_MANAGEMENT if not present.
+     * </p>
+     * 
+     * @return This field determines the valid target resource types and actions a policy can manage. This field
+     *         defaults to EBS_SNAPSHOT_MANAGEMENT if not present.
+     * @see PolicyTypeValues
+     */
+
+    public String getPolicyType() {
+        return this.policyType;
+    }
+
+    /**
+     * <p>
+     * This field determines the valid target resource types and actions a policy can manage. This field defaults to
+     * EBS_SNAPSHOT_MANAGEMENT if not present.
+     * </p>
+     * 
+     * @param policyType
+     *        This field determines the valid target resource types and actions a policy can manage. This field defaults
+     *        to EBS_SNAPSHOT_MANAGEMENT if not present.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PolicyTypeValues
+     */
+
+    public PolicyDetails withPolicyType(String policyType) {
+        setPolicyType(policyType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This field determines the valid target resource types and actions a policy can manage. This field defaults to
+     * EBS_SNAPSHOT_MANAGEMENT if not present.
+     * </p>
+     * 
+     * @param policyType
+     *        This field determines the valid target resource types and actions a policy can manage. This field defaults
+     *        to EBS_SNAPSHOT_MANAGEMENT if not present.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PolicyTypeValues
+     */
+
+    public PolicyDetails withPolicyType(PolicyTypeValues policyType) {
+        this.policyType = policyType.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -286,6 +366,46 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A set of optional parameters that can be provided by the policy.
+     * </p>
+     * 
+     * @param parameters
+     *        A set of optional parameters that can be provided by the policy.
+     */
+
+    public void setParameters(Parameters parameters) {
+        this.parameters = parameters;
+    }
+
+    /**
+     * <p>
+     * A set of optional parameters that can be provided by the policy.
+     * </p>
+     * 
+     * @return A set of optional parameters that can be provided by the policy.
+     */
+
+    public Parameters getParameters() {
+        return this.parameters;
+    }
+
+    /**
+     * <p>
+     * A set of optional parameters that can be provided by the policy.
+     * </p>
+     * 
+     * @param parameters
+     *        A set of optional parameters that can be provided by the policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyDetails withParameters(Parameters parameters) {
+        setParameters(parameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -297,12 +417,16 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPolicyType() != null)
+            sb.append("PolicyType: ").append(getPolicyType()).append(",");
         if (getResourceTypes() != null)
             sb.append("ResourceTypes: ").append(getResourceTypes()).append(",");
         if (getTargetTags() != null)
             sb.append("TargetTags: ").append(getTargetTags()).append(",");
         if (getSchedules() != null)
-            sb.append("Schedules: ").append(getSchedules());
+            sb.append("Schedules: ").append(getSchedules()).append(",");
+        if (getParameters() != null)
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -317,6 +441,10 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof PolicyDetails == false)
             return false;
         PolicyDetails other = (PolicyDetails) obj;
+        if (other.getPolicyType() == null ^ this.getPolicyType() == null)
+            return false;
+        if (other.getPolicyType() != null && other.getPolicyType().equals(this.getPolicyType()) == false)
+            return false;
         if (other.getResourceTypes() == null ^ this.getResourceTypes() == null)
             return false;
         if (other.getResourceTypes() != null && other.getResourceTypes().equals(this.getResourceTypes()) == false)
@@ -329,6 +457,10 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSchedules() != null && other.getSchedules().equals(this.getSchedules()) == false)
             return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
+            return false;
         return true;
     }
 
@@ -337,9 +469,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPolicyType() == null) ? 0 : getPolicyType().hashCode());
         hashCode = prime * hashCode + ((getResourceTypes() == null) ? 0 : getResourceTypes().hashCode());
         hashCode = prime * hashCode + ((getTargetTags() == null) ? 0 : getTargetTags().hashCode());
         hashCode = prime * hashCode + ((getSchedules() == null) ? 0 : getSchedules().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         return hashCode;
     }
 

@@ -15,7 +15,7 @@ package com.amazonaws.services.guardduty.model;
 import javax.annotation.Generated;
 
 /**
- * Finding Feedback Value
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Feedback {

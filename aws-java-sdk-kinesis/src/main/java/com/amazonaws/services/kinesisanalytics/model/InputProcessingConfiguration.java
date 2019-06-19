@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Provides a description of a processor that is used to preprocess the records in the stream before being processed by
  * your application code. Currently, the only input processor available is <a
- * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
+ * href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputProcessingConfiguration"
@@ -32,21 +32,24 @@ public class InputProcessingConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by
-     * your application code.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">
+     * InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by your
+     * application code.
      * </p>
      */
     private InputLambdaProcessor inputLambdaProcessor;
 
     /**
      * <p>
-     * The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by
-     * your application code.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">
+     * InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by your
+     * application code.
      * </p>
      * 
      * @param inputLambdaProcessor
-     *        The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being
-     *        processed by your application code.
+     *        The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">
+     *        InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by
+     *        your application code.
      */
 
     public void setInputLambdaProcessor(InputLambdaProcessor inputLambdaProcessor) {
@@ -55,12 +58,14 @@ public class InputProcessingConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by
-     * your application code.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">
+     * InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by your
+     * application code.
      * </p>
      * 
-     * @return The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being
-     *         processed by your application code.
+     * @return The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">
+     *         InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by
+     *         your application code.
      */
 
     public InputLambdaProcessor getInputLambdaProcessor() {
@@ -69,13 +74,15 @@ public class InputProcessingConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by
-     * your application code.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">
+     * InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by your
+     * application code.
      * </p>
      * 
      * @param inputLambdaProcessor
-     *        The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being
-     *        processed by your application code.
+     *        The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">
+     *        InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by
+     *        your application code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

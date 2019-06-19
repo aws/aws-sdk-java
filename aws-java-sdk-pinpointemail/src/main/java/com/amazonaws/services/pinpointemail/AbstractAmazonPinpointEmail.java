@@ -113,6 +113,11 @@ public class AbstractAmazonPinpointEmail implements AmazonPinpointEmail {
     }
 
     @Override
+    public GetDomainDeliverabilityCampaignResult getDomainDeliverabilityCampaign(GetDomainDeliverabilityCampaignRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDomainStatisticsReportResult getDomainStatisticsReport(GetDomainStatisticsReportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -138,7 +143,17 @@ public class AbstractAmazonPinpointEmail implements AmazonPinpointEmail {
     }
 
     @Override
+    public ListDomainDeliverabilityCampaignsResult listDomainDeliverabilityCampaigns(ListDomainDeliverabilityCampaignsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListEmailIdentitiesResult listEmailIdentities(ListEmailIdentitiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -204,6 +219,16 @@ public class AbstractAmazonPinpointEmail implements AmazonPinpointEmail {
 
     @Override
     public SendEmailResult sendEmail(SendEmailRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

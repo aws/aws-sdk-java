@@ -47,8 +47,8 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about the hosted domain and custom domains, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
-     * a User Pool Domain</a>.
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html"
+     * >Configuring a User Pool Domain</a>.
      * </p>
      */
     private CustomDomainConfigType customDomainConfig;
@@ -143,8 +143,8 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about the hosted domain and custom domains, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
-     * a User Pool Domain</a>.
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html"
+     * >Configuring a User Pool Domain</a>.
      * </p>
      * 
      * @param customDomainConfig
@@ -156,7 +156,7 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        For more information about the hosted domain and custom domains, see <a
-     *        href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html"
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html"
      *        >Configuring a User Pool Domain</a>.
      */
 
@@ -174,8 +174,8 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about the hosted domain and custom domains, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
-     * a User Pool Domain</a>.
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html"
+     * >Configuring a User Pool Domain</a>.
      * </p>
      * 
      * @return The configuration for a custom domain that hosts the sign-up and sign-in webpages for your
@@ -186,7 +186,7 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      *         </p>
      *         <p>
      *         For more information about the hosted domain and custom domains, see <a
-     *         href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html"
+     *         href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html"
      *         >Configuring a User Pool Domain</a>.
      */
 
@@ -204,8 +204,8 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about the hosted domain and custom domains, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
-     * a User Pool Domain</a>.
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html"
+     * >Configuring a User Pool Domain</a>.
      * </p>
      * 
      * @param customDomainConfig
@@ -217,7 +217,7 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        For more information about the hosted domain and custom domains, see <a
-     *        href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html"
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html"
      *        >Configuring a User Pool Domain</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

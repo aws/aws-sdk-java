@@ -123,7 +123,7 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     private String stepExecutionId;
     /**
      * <p>
-     * A user-specified list of parameters to override when executing a step.
+     * A user-specified list of parameters to override when running a step.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> overriddenParameters;
@@ -148,7 +148,7 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step
-     * fails. Continue will ignore the failure of current step and allow automation to execute the next step. With
+     * fails. Continue will ignore the failure of current step and allow automation to run the next step. With
      * conditional branching, we add step:stepName to support the automation to go to another specific step.
      * </p>
      */
@@ -865,10 +865,10 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A user-specified list of parameters to override when executing a step.
+     * A user-specified list of parameters to override when running a step.
      * </p>
      * 
-     * @return A user-specified list of parameters to override when executing a step.
+     * @return A user-specified list of parameters to override when running a step.
      */
 
     public java.util.Map<String, java.util.List<String>> getOverriddenParameters() {
@@ -877,11 +877,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A user-specified list of parameters to override when executing a step.
+     * A user-specified list of parameters to override when running a step.
      * </p>
      * 
      * @param overriddenParameters
-     *        A user-specified list of parameters to override when executing a step.
+     *        A user-specified list of parameters to override when running a step.
      */
 
     public void setOverriddenParameters(java.util.Map<String, java.util.List<String>> overriddenParameters) {
@@ -890,11 +890,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A user-specified list of parameters to override when executing a step.
+     * A user-specified list of parameters to override when running a step.
      * </p>
      * 
      * @param overriddenParameters
-     *        A user-specified list of parameters to override when executing a step.
+     *        A user-specified list of parameters to override when running a step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1075,14 +1075,14 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step
-     * fails. Continue will ignore the failure of current step and allow automation to execute the next step. With
+     * fails. Continue will ignore the failure of current step and allow automation to run the next step. With
      * conditional branching, we add step:stepName to support the automation to go to another specific step.
      * </p>
      * 
      * @return Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the
-     *         step fails. Continue will ignore the failure of current step and allow automation to execute the next
-     *         step. With conditional branching, we add step:stepName to support the automation to go to another
-     *         specific step.
+     *         step fails. Continue will ignore the failure of current step and allow automation to run the next step.
+     *         With conditional branching, we add step:stepName to support the automation to go to another specific
+     *         step.
      */
 
     public java.util.List<String> getValidNextSteps() {
@@ -1095,15 +1095,14 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step
-     * fails. Continue will ignore the failure of current step and allow automation to execute the next step. With
+     * fails. Continue will ignore the failure of current step and allow automation to run the next step. With
      * conditional branching, we add step:stepName to support the automation to go to another specific step.
      * </p>
      * 
      * @param validNextSteps
      *        Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the
-     *        step fails. Continue will ignore the failure of current step and allow automation to execute the next
-     *        step. With conditional branching, we add step:stepName to support the automation to go to another specific
-     *        step.
+     *        step fails. Continue will ignore the failure of current step and allow automation to run the next step.
+     *        With conditional branching, we add step:stepName to support the automation to go to another specific step.
      */
 
     public void setValidNextSteps(java.util.Collection<String> validNextSteps) {
@@ -1118,7 +1117,7 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step
-     * fails. Continue will ignore the failure of current step and allow automation to execute the next step. With
+     * fails. Continue will ignore the failure of current step and allow automation to run the next step. With
      * conditional branching, we add step:stepName to support the automation to go to another specific step.
      * </p>
      * <p>
@@ -1129,9 +1128,8 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param validNextSteps
      *        Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the
-     *        step fails. Continue will ignore the failure of current step and allow automation to execute the next
-     *        step. With conditional branching, we add step:stepName to support the automation to go to another specific
-     *        step.
+     *        step fails. Continue will ignore the failure of current step and allow automation to run the next step.
+     *        With conditional branching, we add step:stepName to support the automation to go to another specific step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1148,15 +1146,14 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step
-     * fails. Continue will ignore the failure of current step and allow automation to execute the next step. With
+     * fails. Continue will ignore the failure of current step and allow automation to run the next step. With
      * conditional branching, we add step:stepName to support the automation to go to another specific step.
      * </p>
      * 
      * @param validNextSteps
      *        Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the
-     *        step fails. Continue will ignore the failure of current step and allow automation to execute the next
-     *        step. With conditional branching, we add step:stepName to support the automation to go to another specific
-     *        step.
+     *        step fails. Continue will ignore the failure of current step and allow automation to run the next step.
+     *        With conditional branching, we add step:stepName to support the automation to go to another specific step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

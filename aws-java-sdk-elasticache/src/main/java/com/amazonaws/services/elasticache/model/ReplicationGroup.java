@@ -87,7 +87,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
      * </li>
      * <li>
@@ -586,7 +586,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
      * </li>
      * <li>
@@ -609,7 +609,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Redis (cluster mode disabled): T1 and T2 cache node types.
+     *        Redis (cluster mode disabled): T1 node types.
      *        </p>
      *        </li>
      *        <li>
@@ -639,7 +639,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
      * </li>
      * <li>
@@ -661,7 +661,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         Redis (cluster mode disabled): T1 and T2 cache node types.
+     *         Redis (cluster mode disabled): T1 node types.
      *         </p>
      *         </li>
      *         <li>
@@ -691,7 +691,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
      * </li>
      * <li>
@@ -714,7 +714,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Redis (cluster mode disabled): T1 and T2 cache node types.
+     *        Redis (cluster mode disabled): T1 node types.
      *        </p>
      *        </li>
      *        <li>
@@ -746,7 +746,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
      * </li>
      * <li>
@@ -769,7 +769,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Redis (cluster mode disabled): T1 and T2 cache node types.
+     *        Redis (cluster mode disabled): T1 node types.
      *        </p>
      *        </li>
      *        <li>
@@ -799,7 +799,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
      * </li>
      * <li>
@@ -822,7 +822,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Redis (cluster mode disabled): T1 and T2 cache node types.
+     *        Redis (cluster mode disabled): T1 node types.
      *        </p>
      *        </li>
      *        <li>

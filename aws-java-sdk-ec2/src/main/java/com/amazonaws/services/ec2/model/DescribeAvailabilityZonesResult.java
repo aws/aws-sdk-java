@@ -25,17 +25,17 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more Availability Zones.
+     * Information about the Availability Zones.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AvailabilityZone> availabilityZones;
 
     /**
      * <p>
-     * Information about one or more Availability Zones.
+     * Information about the Availability Zones.
      * </p>
      * 
-     * @return Information about one or more Availability Zones.
+     * @return Information about the Availability Zones.
      */
 
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
@@ -47,11 +47,11 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more Availability Zones.
+     * Information about the Availability Zones.
      * </p>
      * 
      * @param availabilityZones
-     *        Information about one or more Availability Zones.
+     *        Information about the Availability Zones.
      */
 
     public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
@@ -65,7 +65,7 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more Availability Zones.
+     * Information about the Availability Zones.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param availabilityZones
-     *        Information about one or more Availability Zones.
+     *        Information about the Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more Availability Zones.
+     * Information about the Availability Zones.
      * </p>
      * 
      * @param availabilityZones
-     *        Information about one or more Availability Zones.
+     *        Information about the Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

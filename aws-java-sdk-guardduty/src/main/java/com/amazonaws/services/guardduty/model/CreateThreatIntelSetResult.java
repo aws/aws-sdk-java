@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateThreatIntelSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the ThreatIntelSet resource.
+     * </p>
+     */
     private String threatIntelSetId;
 
     /**
+     * <p>
+     * The ID of the ThreatIntelSet resource.
+     * </p>
+     * 
      * @param threatIntelSetId
+     *        The ID of the ThreatIntelSet resource.
      */
 
     public void setThreatIntelSetId(String threatIntelSetId) {
@@ -34,7 +44,11 @@ public class CreateThreatIntelSetResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the ThreatIntelSet resource.
+     * </p>
+     * 
+     * @return The ID of the ThreatIntelSet resource.
      */
 
     public String getThreatIntelSetId() {
@@ -42,7 +56,12 @@ public class CreateThreatIntelSetResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The ID of the ThreatIntelSet resource.
+     * </p>
+     * 
      * @param threatIntelSetId
+     *        The ID of the ThreatIntelSet resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

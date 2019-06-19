@@ -39,7 +39,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String applicationDescription;
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>JAVA-8-FLINK-1.5</code>).
+     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
      * </p>
      */
     private String runtimeEnvironment;
@@ -62,6 +62,16 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.List<CloudWatchLoggingOption> cloudWatchLoggingOptions;
+    /**
+     * <p>
+     * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     * application. Note that the maximum number of application tags includes system tags. The maximum number of
+     * user-defined application tags is 50. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -145,11 +155,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>JAVA-8-FLINK-1.5</code>).
+     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>JAVA-8-FLINK-1.5</code>).
+     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
      * @see RuntimeEnvironment
      */
 
@@ -159,10 +169,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>JAVA-8-FLINK-1.5</code>).
+     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
      * </p>
      * 
-     * @return The runtime environment for the application (<code>SQL-1.0</code> or <code>JAVA-8-FLINK-1.5</code>).
+     * @return The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
      * @see RuntimeEnvironment
      */
 
@@ -172,11 +182,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>JAVA-8-FLINK-1.5</code>).
+     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>JAVA-8-FLINK-1.5</code>).
+     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -188,11 +198,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>JAVA-8-FLINK-1.5</code>).
+     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>JAVA-8-FLINK-1.5</code>).
+     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -363,6 +373,108 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     * application. Note that the maximum number of application tags includes system tags. The maximum number of
+     * user-defined application tags is 50. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * </p>
+     * 
+     * @return A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     *         application. Note that the maximum number of application tags includes system tags. The maximum number of
+     *         user-defined application tags is 50. For more information, see <a
+     *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *         Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     * application. Note that the maximum number of application tags includes system tags. The maximum number of
+     * user-defined application tags is 50. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     *        application. Note that the maximum number of application tags includes system tags. The maximum number of
+     *        user-defined application tags is 50. For more information, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     * application. Note that the maximum number of application tags includes system tags. The maximum number of
+     * user-defined application tags is 50. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     *        application. Note that the maximum number of application tags includes system tags. The maximum number of
+     *        user-defined application tags is 50. For more information, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     * application. Note that the maximum number of application tags includes system tags. The maximum number of
+     * user-defined application tags is 50. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     *        application. Note that the maximum number of application tags includes system tags. The maximum number of
+     *        user-defined application tags is 50. For more information, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -385,7 +497,9 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getApplicationConfiguration() != null)
             sb.append("ApplicationConfiguration: ").append(getApplicationConfiguration()).append(",");
         if (getCloudWatchLoggingOptions() != null)
-            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions());
+            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -424,6 +538,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getCloudWatchLoggingOptions() != null && other.getCloudWatchLoggingOptions().equals(this.getCloudWatchLoggingOptions()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -438,6 +556,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getServiceExecutionRole() == null) ? 0 : getServiceExecutionRole().hashCode());
         hashCode = prime * hashCode + ((getApplicationConfiguration() == null) ? 0 : getApplicationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

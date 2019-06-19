@@ -144,6 +144,12 @@ public class CancelResizeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private String targetEncryptionType;
+    /**
+     * <p>
+     * The percent of data transferred from source cluster to target cluster.
+     * </p>
+     */
+    private Double dataTransferProgressPercent;
 
     /**
      * <p>
@@ -1010,6 +1016,46 @@ public class CancelResizeResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The percent of data transferred from source cluster to target cluster.
+     * </p>
+     * 
+     * @param dataTransferProgressPercent
+     *        The percent of data transferred from source cluster to target cluster.
+     */
+
+    public void setDataTransferProgressPercent(Double dataTransferProgressPercent) {
+        this.dataTransferProgressPercent = dataTransferProgressPercent;
+    }
+
+    /**
+     * <p>
+     * The percent of data transferred from source cluster to target cluster.
+     * </p>
+     * 
+     * @return The percent of data transferred from source cluster to target cluster.
+     */
+
+    public Double getDataTransferProgressPercent() {
+        return this.dataTransferProgressPercent;
+    }
+
+    /**
+     * <p>
+     * The percent of data transferred from source cluster to target cluster.
+     * </p>
+     * 
+     * @param dataTransferProgressPercent
+     *        The percent of data transferred from source cluster to target cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CancelResizeResult withDataTransferProgressPercent(Double dataTransferProgressPercent) {
+        setDataTransferProgressPercent(dataTransferProgressPercent);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1050,7 +1096,9 @@ public class CancelResizeResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getMessage() != null)
             sb.append("Message: ").append(getMessage()).append(",");
         if (getTargetEncryptionType() != null)
-            sb.append("TargetEncryptionType: ").append(getTargetEncryptionType());
+            sb.append("TargetEncryptionType: ").append(getTargetEncryptionType()).append(",");
+        if (getDataTransferProgressPercent() != null)
+            sb.append("DataTransferProgressPercent: ").append(getDataTransferProgressPercent());
         sb.append("}");
         return sb.toString();
     }
@@ -1127,6 +1175,10 @@ public class CancelResizeResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getTargetEncryptionType() != null && other.getTargetEncryptionType().equals(this.getTargetEncryptionType()) == false)
             return false;
+        if (other.getDataTransferProgressPercent() == null ^ this.getDataTransferProgressPercent() == null)
+            return false;
+        if (other.getDataTransferProgressPercent() != null && other.getDataTransferProgressPercent().equals(this.getDataTransferProgressPercent()) == false)
+            return false;
         return true;
     }
 
@@ -1150,6 +1202,7 @@ public class CancelResizeResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getResizeType() == null) ? 0 : getResizeType().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getTargetEncryptionType() == null) ? 0 : getTargetEncryptionType().hashCode());
+        hashCode = prime * hashCode + ((getDataTransferProgressPercent() == null) ? 0 : getDataTransferProgressPercent().hashCode());
         return hashCode;
     }
 

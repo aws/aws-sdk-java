@@ -46,7 +46,7 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
      * all output groups.
      */
     private MotionImageInserter motionImageInserter;
-
+    /** Settings for Nielsen Configuration */
     private NielsenConfiguration nielsenConfiguration;
     /**
      * (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All
@@ -60,7 +60,11 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     private java.util.List<OutputGroup> outputGroups;
     /** Contains settings used to acquire and adjust timecode information from inputs. */
     private TimecodeConfig timecodeConfig;
-
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
+     * insertion (Id3Insertion) objects.
+     */
     private TimedMetadataInsertion timedMetadataInsertion;
 
     /**
@@ -282,7 +286,10 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Settings for Nielsen Configuration
+     * 
      * @param nielsenConfiguration
+     *        Settings for Nielsen Configuration
      */
 
     public void setNielsenConfiguration(NielsenConfiguration nielsenConfiguration) {
@@ -290,7 +297,9 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * Settings for Nielsen Configuration
+     * 
+     * @return Settings for Nielsen Configuration
      */
 
     public NielsenConfiguration getNielsenConfiguration() {
@@ -298,7 +307,10 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Settings for Nielsen Configuration
+     * 
      * @param nielsenConfiguration
+     *        Settings for Nielsen Configuration
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -452,7 +464,14 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
+     * insertion (Id3Insertion) objects.
+     * 
      * @param timedMetadataInsertion
+     *        Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     *        metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in
+     *        ID3 insertion (Id3Insertion) objects.
      */
 
     public void setTimedMetadataInsertion(TimedMetadataInsertion timedMetadataInsertion) {
@@ -460,7 +479,13 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
+     * insertion (Id3Insertion) objects.
+     * 
+     * @return Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include
+     *         timed metadata, you must enable it here, enable it in each output container, and specify tags and
+     *         timecodes in ID3 insertion (Id3Insertion) objects.
      */
 
     public TimedMetadataInsertion getTimedMetadataInsertion() {
@@ -468,7 +493,14 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
+     * insertion (Id3Insertion) objects.
+     * 
      * @param timedMetadataInsertion
+     *        Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     *        metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in
+     *        ID3 insertion (Id3Insertion) objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

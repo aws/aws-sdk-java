@@ -25,23 +25,23 @@ public class GetJobRunsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of job-run metatdata objects.
+     * A list of job-run metadata objects.
      * </p>
      */
     private java.util.List<JobRun> jobRuns;
     /**
      * <p>
-     * A continuation token, if not all reequested job runs have been returned.
+     * A continuation token, if not all requested job runs have been returned.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of job-run metatdata objects.
+     * A list of job-run metadata objects.
      * </p>
      * 
-     * @return A list of job-run metatdata objects.
+     * @return A list of job-run metadata objects.
      */
 
     public java.util.List<JobRun> getJobRuns() {
@@ -50,11 +50,11 @@ public class GetJobRunsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of job-run metatdata objects.
+     * A list of job-run metadata objects.
      * </p>
      * 
      * @param jobRuns
-     *        A list of job-run metatdata objects.
+     *        A list of job-run metadata objects.
      */
 
     public void setJobRuns(java.util.Collection<JobRun> jobRuns) {
@@ -68,7 +68,7 @@ public class GetJobRunsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of job-run metatdata objects.
+     * A list of job-run metadata objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class GetJobRunsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param jobRuns
-     *        A list of job-run metatdata objects.
+     *        A list of job-run metadata objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class GetJobRunsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of job-run metatdata objects.
+     * A list of job-run metadata objects.
      * </p>
      * 
      * @param jobRuns
-     *        A list of job-run metatdata objects.
+     *        A list of job-run metadata objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class GetJobRunsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A continuation token, if not all reequested job runs have been returned.
+     * A continuation token, if not all requested job runs have been returned.
      * </p>
      * 
      * @param nextToken
-     *        A continuation token, if not all reequested job runs have been returned.
+     *        A continuation token, if not all requested job runs have been returned.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class GetJobRunsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A continuation token, if not all reequested job runs have been returned.
+     * A continuation token, if not all requested job runs have been returned.
      * </p>
      * 
-     * @return A continuation token, if not all reequested job runs have been returned.
+     * @return A continuation token, if not all requested job runs have been returned.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class GetJobRunsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A continuation token, if not all reequested job runs have been returned.
+     * A continuation token, if not all requested job runs have been returned.
      * </p>
      * 
      * @param nextToken
-     *        A continuation token, if not all reequested job runs have been returned.
+     *        A continuation token, if not all requested job runs have been returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -186,6 +186,7 @@ public class AmazonApiGatewayManagementApiClient extends AmazonWebServiceClient 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayManagementApi");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PostToConnection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

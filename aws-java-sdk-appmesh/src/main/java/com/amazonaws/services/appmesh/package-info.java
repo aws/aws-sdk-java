@@ -13,19 +13,18 @@
 
 /**
  * <p>
- * AWS App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor and control containerized
- * microservices. App Mesh standardizes how your microservices communicate, giving you end-to-end visibility and helping
- * to ensure high-availability for your applications.
+ * AWS App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor and control microservices. App
+ * Mesh standardizes how your microservices communicate, giving you end-to-end visibility and helping to ensure high
+ * availability for your applications.
  * </p>
  * <p>
  * App Mesh gives you consistent visibility and network traffic controls for every microservice in an application. You
- * can use App Mesh with Amazon ECS (using the Amazon EC2 launch type), Amazon EKS, and Kubernetes on AWS.
+ * can use App Mesh with AWS Fargate, Amazon ECS, Amazon EKS, Kubernetes on AWS, and Amazon EC2.
  * </p>
  * <note>
  * <p>
- * App Mesh supports containerized microservice applications that use service discovery naming for their components. To
- * use App Mesh, you must have a containerized application running on Amazon EC2 instances, hosted in either Amazon ECS,
- * Amazon EKS, or Kubernetes on AWS. For more information about service discovery on Amazon ECS, see <a
+ * App Mesh supports microservice applications that use service discovery naming for their components. For more
+ * information about service discovery on Amazon ECS, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a> in the
  * <i>Amazon Elastic Container Service Developer Guide</i>. Kubernetes <code>kube-dns</code> and <code>coredns</code>
  * are supported. For more information, see <a

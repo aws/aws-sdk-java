@@ -30,7 +30,7 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * String that contains the alias.
+     * String that contains the alias. This value begins with <code>alias/</code>.
      * </p>
      */
     private String aliasName;
@@ -49,11 +49,11 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * String that contains the alias.
+     * String that contains the alias. This value begins with <code>alias/</code>.
      * </p>
      * 
      * @param aliasName
-     *        String that contains the alias.
+     *        String that contains the alias. This value begins with <code>alias/</code>.
      */
 
     public void setAliasName(String aliasName) {
@@ -62,10 +62,10 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * String that contains the alias.
+     * String that contains the alias. This value begins with <code>alias/</code>.
      * </p>
      * 
-     * @return String that contains the alias.
+     * @return String that contains the alias. This value begins with <code>alias/</code>.
      */
 
     public String getAliasName() {
@@ -74,11 +74,11 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * String that contains the alias.
+     * String that contains the alias. This value begins with <code>alias/</code>.
      * </p>
      * 
      * @param aliasName
-     *        String that contains the alias.
+     *        String that contains the alias. This value begins with <code>alias/</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

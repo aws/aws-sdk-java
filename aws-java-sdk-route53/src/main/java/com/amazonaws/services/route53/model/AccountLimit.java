@@ -68,7 +68,9 @@ public class AccountLimit implements Serializable, Cloneable {
     private String type;
     /**
      * <p>
-     * The current value for the limit that is specified by <a>AccountLimit$Type</a>.
+     * The current value for the limit that is specified by <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type"
+     * >Type</a>.
      * </p>
      */
     private Long value;
@@ -394,11 +396,15 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current value for the limit that is specified by <a>AccountLimit$Type</a>.
+     * The current value for the limit that is specified by <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type"
+     * >Type</a>.
      * </p>
      * 
      * @param value
-     *        The current value for the limit that is specified by <a>AccountLimit$Type</a>.
+     *        The current value for the limit that is specified by <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type"
+     *        >Type</a>.
      */
 
     public void setValue(Long value) {
@@ -407,10 +413,14 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current value for the limit that is specified by <a>AccountLimit$Type</a>.
+     * The current value for the limit that is specified by <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type"
+     * >Type</a>.
      * </p>
      * 
-     * @return The current value for the limit that is specified by <a>AccountLimit$Type</a>.
+     * @return The current value for the limit that is specified by <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type"
+     *         >Type</a>.
      */
 
     public Long getValue() {
@@ -419,11 +429,15 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current value for the limit that is specified by <a>AccountLimit$Type</a>.
+     * The current value for the limit that is specified by <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type"
+     * >Type</a>.
      * </p>
      * 
      * @param value
-     *        The current value for the limit that is specified by <a>AccountLimit$Type</a>.
+     *        The current value for the limit that is specified by <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type"
+     *        >Type</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

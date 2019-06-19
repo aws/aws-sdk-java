@@ -30,9 +30,7 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the group to associate the policy with.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
+     * &amp;regex-name;.
      * </p>
      */
     private String groupName;
@@ -50,6 +48,11 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The policy document.
+     * </p>
+     * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -89,9 +92,7 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param groupName
      *        The name of the group to associate the policy with.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-
+     *        &amp;regex-name;.
      * @param policyName
      *        The name of the policy document.
      *        </p>
@@ -101,6 +102,11 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      *        include any of the following characters: _+=,.@-
      * @param policyDocument
      *        The policy document.
+     *        </p>
+     *        <p>
+     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *        to JSON format before submitting it to IAM.
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -135,17 +141,13 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the group to associate the policy with.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
+     * &amp;regex-name;.
      * </p>
      * 
      * @param groupName
      *        The name of the group to associate the policy with.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-
+     *        &amp;regex-name;.
      */
 
     public void setGroupName(String groupName) {
@@ -157,16 +159,12 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the group to associate the policy with.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
+     * &amp;regex-name;.
      * </p>
      * 
      * @return The name of the group to associate the policy with.</p>
      *         <p>
-     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *         include any of the following characters: _+=,.@-
+     *         &amp;regex-name;.
      */
 
     public String getGroupName() {
@@ -178,17 +176,13 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the group to associate the policy with.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
+     * &amp;regex-name;.
      * </p>
      * 
      * @param groupName
      *        The name of the group to associate the policy with.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-
+     *        &amp;regex-name;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,6 +263,11 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * The policy document.
      * </p>
      * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -292,6 +291,11 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param policyDocument
      *        The policy document.</p>
+     *        <p>
+     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *        to JSON format before submitting it to IAM.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:
@@ -324,6 +328,11 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * The policy document.
      * </p>
      * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -346,6 +355,11 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @return The policy document.</p>
+     *         <p>
+     *         You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *         YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *         to JSON format before submitting it to IAM.
+     *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *         string of characters consisting of the following:
@@ -378,6 +392,11 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * The policy document.
      * </p>
      * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -401,6 +420,11 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param policyDocument
      *        The policy document.</p>
+     *        <p>
+     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *        to JSON format before submitting it to IAM.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:

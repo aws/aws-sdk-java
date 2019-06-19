@@ -33,10 +33,11 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.
+     * Timestamp, in UTC, for which the usage is being reported.
      * </p>
      * <p>
-     * Your application can meter usage for up to one hour in the past.
+     * Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the
+     * start of the software usage.
      * </p>
      */
     private java.util.Date timestamp;
@@ -56,24 +57,26 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
     private String dimension;
     /**
      * <p>
-     * The quantity of usage consumed by the customer for the given dimension and time.
+     * The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if
+     * not specified.
      * </p>
      */
     private Integer quantity;
 
     /**
      * <p>
-     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.
+     * Timestamp, in UTC, for which the usage is being reported.
      * </p>
      * <p>
-     * Your application can meter usage for up to one hour in the past.
+     * Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the
+     * start of the software usage.
      * </p>
      * 
      * @param timestamp
-     *        Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be
-     *        ignored.</p>
+     *        Timestamp, in UTC, for which the usage is being reported.</p>
      *        <p>
-     *        Your application can meter usage for up to one hour in the past.
+     *        Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not
+     *        before the start of the software usage.
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -82,16 +85,17 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.
+     * Timestamp, in UTC, for which the usage is being reported.
      * </p>
      * <p>
-     * Your application can meter usage for up to one hour in the past.
+     * Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the
+     * start of the software usage.
      * </p>
      * 
-     * @return Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be
-     *         ignored.</p>
+     * @return Timestamp, in UTC, for which the usage is being reported.</p>
      *         <p>
-     *         Your application can meter usage for up to one hour in the past.
+     *         Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not
+     *         before the start of the software usage.
      */
 
     public java.util.Date getTimestamp() {
@@ -100,17 +104,18 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.
+     * Timestamp, in UTC, for which the usage is being reported.
      * </p>
      * <p>
-     * Your application can meter usage for up to one hour in the past.
+     * Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the
+     * start of the software usage.
      * </p>
      * 
      * @param timestamp
-     *        Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be
-     *        ignored.</p>
+     *        Timestamp, in UTC, for which the usage is being reported.</p>
      *        <p>
-     *        Your application can meter usage for up to one hour in the past.
+     *        Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not
+     *        before the start of the software usage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,11 +218,13 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quantity of usage consumed by the customer for the given dimension and time.
+     * The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if
+     * not specified.
      * </p>
      * 
      * @param quantity
-     *        The quantity of usage consumed by the customer for the given dimension and time.
+     *        The quantity of usage consumed by the customer for the given dimension and time. Defaults to
+     *        <code>0</code> if not specified.
      */
 
     public void setQuantity(Integer quantity) {
@@ -226,10 +233,12 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quantity of usage consumed by the customer for the given dimension and time.
+     * The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if
+     * not specified.
      * </p>
      * 
-     * @return The quantity of usage consumed by the customer for the given dimension and time.
+     * @return The quantity of usage consumed by the customer for the given dimension and time. Defaults to
+     *         <code>0</code> if not specified.
      */
 
     public Integer getQuantity() {
@@ -238,11 +247,13 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quantity of usage consumed by the customer for the given dimension and time.
+     * The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if
+     * not specified.
      * </p>
      * 
      * @param quantity
-     *        The quantity of usage consumed by the customer for the given dimension and time.
+     *        The quantity of usage consumed by the customer for the given dimension and time. Defaults to
+     *        <code>0</code> if not specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

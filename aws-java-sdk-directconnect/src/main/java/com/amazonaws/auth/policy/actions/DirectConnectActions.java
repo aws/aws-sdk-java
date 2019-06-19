@@ -25,6 +25,8 @@ public enum DirectConnectActions implements Action {
     /** Represents any action executed on AWS Direct Connect. */
     AllDirectConnectActions("directconnect:*"),
 
+    /** Action for the AcceptDirectConnectGatewayAssociationProposal operation. */
+    AcceptDirectConnectGatewayAssociationProposal("directconnect:AcceptDirectConnectGatewayAssociationProposal"),
     /** Action for the AllocateConnectionOnInterconnect operation. */
     AllocateConnectionOnInterconnect("directconnect:AllocateConnectionOnInterconnect"),
     /** Action for the AllocateHostedConnection operation. */
@@ -33,6 +35,8 @@ public enum DirectConnectActions implements Action {
     AllocatePrivateVirtualInterface("directconnect:AllocatePrivateVirtualInterface"),
     /** Action for the AllocatePublicVirtualInterface operation. */
     AllocatePublicVirtualInterface("directconnect:AllocatePublicVirtualInterface"),
+    /** Action for the AllocateTransitVirtualInterface operation. */
+    AllocateTransitVirtualInterface("directconnect:AllocateTransitVirtualInterface"),
     /** Action for the AssociateConnectionWithLag operation. */
     AssociateConnectionWithLag("directconnect:AssociateConnectionWithLag"),
     /** Action for the AssociateHostedConnection operation. */
@@ -45,6 +49,8 @@ public enum DirectConnectActions implements Action {
     ConfirmPrivateVirtualInterface("directconnect:ConfirmPrivateVirtualInterface"),
     /** Action for the ConfirmPublicVirtualInterface operation. */
     ConfirmPublicVirtualInterface("directconnect:ConfirmPublicVirtualInterface"),
+    /** Action for the ConfirmTransitVirtualInterface operation. */
+    ConfirmTransitVirtualInterface("directconnect:ConfirmTransitVirtualInterface"),
     /** Action for the CreateBGPPeer operation. */
     CreateBGPPeer("directconnect:CreateBGPPeer"),
     /** Action for the CreateConnection operation. */
@@ -53,6 +59,8 @@ public enum DirectConnectActions implements Action {
     CreateDirectConnectGateway("directconnect:CreateDirectConnectGateway"),
     /** Action for the CreateDirectConnectGatewayAssociation operation. */
     CreateDirectConnectGatewayAssociation("directconnect:CreateDirectConnectGatewayAssociation"),
+    /** Action for the CreateDirectConnectGatewayAssociationProposal operation. */
+    CreateDirectConnectGatewayAssociationProposal("directconnect:CreateDirectConnectGatewayAssociationProposal"),
     /** Action for the CreateInterconnect operation. */
     CreateInterconnect("directconnect:CreateInterconnect"),
     /** Action for the CreateLag operation. */
@@ -61,6 +69,8 @@ public enum DirectConnectActions implements Action {
     CreatePrivateVirtualInterface("directconnect:CreatePrivateVirtualInterface"),
     /** Action for the CreatePublicVirtualInterface operation. */
     CreatePublicVirtualInterface("directconnect:CreatePublicVirtualInterface"),
+    /** Action for the CreateTransitVirtualInterface operation. */
+    CreateTransitVirtualInterface("directconnect:CreateTransitVirtualInterface"),
     /** Action for the DeleteBGPPeer operation. */
     DeleteBGPPeer("directconnect:DeleteBGPPeer"),
     /** Action for the DeleteConnection operation. */
@@ -69,6 +79,8 @@ public enum DirectConnectActions implements Action {
     DeleteDirectConnectGateway("directconnect:DeleteDirectConnectGateway"),
     /** Action for the DeleteDirectConnectGatewayAssociation operation. */
     DeleteDirectConnectGatewayAssociation("directconnect:DeleteDirectConnectGatewayAssociation"),
+    /** Action for the DeleteDirectConnectGatewayAssociationProposal operation. */
+    DeleteDirectConnectGatewayAssociationProposal("directconnect:DeleteDirectConnectGatewayAssociationProposal"),
     /** Action for the DeleteInterconnect operation. */
     DeleteInterconnect("directconnect:DeleteInterconnect"),
     /** Action for the DeleteLag operation. */
@@ -81,6 +93,8 @@ public enum DirectConnectActions implements Action {
     DescribeConnections("directconnect:DescribeConnections"),
     /** Action for the DescribeConnectionsOnInterconnect operation. */
     DescribeConnectionsOnInterconnect("directconnect:DescribeConnectionsOnInterconnect"),
+    /** Action for the DescribeDirectConnectGatewayAssociationProposals operation. */
+    DescribeDirectConnectGatewayAssociationProposals("directconnect:DescribeDirectConnectGatewayAssociationProposals"),
     /** Action for the DescribeDirectConnectGatewayAssociations operation. */
     DescribeDirectConnectGatewayAssociations("directconnect:DescribeDirectConnectGatewayAssociations"),
     /** Action for the DescribeDirectConnectGatewayAttachments operation. */
@@ -111,6 +125,8 @@ public enum DirectConnectActions implements Action {
     TagResource("directconnect:TagResource"),
     /** Action for the UntagResource operation. */
     UntagResource("directconnect:UntagResource"),
+    /** Action for the UpdateDirectConnectGatewayAssociation operation. */
+    UpdateDirectConnectGatewayAssociation("directconnect:UpdateDirectConnectGatewayAssociation"),
     /** Action for the UpdateLag operation. */
     UpdateLag("directconnect:UpdateLag"),
     /** Action for the UpdateVirtualInterfaceAttributes operation. */

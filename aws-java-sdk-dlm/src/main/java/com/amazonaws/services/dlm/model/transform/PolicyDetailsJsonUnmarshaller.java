@@ -48,6 +48,10 @@ public class PolicyDetailsJsonUnmarshaller implements Unmarshaller<PolicyDetails
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("PolicyType", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setPolicyType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ResourceTypes", targetDepth)) {
                     context.nextToken();
                     policyDetails.setResourceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
@@ -59,6 +63,10 @@ public class PolicyDetailsJsonUnmarshaller implements Unmarshaller<PolicyDetails
                 if (context.testExpression("Schedules", targetDepth)) {
                     context.nextToken();
                     policyDetails.setSchedules(new ListUnmarshaller<Schedule>(ScheduleJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("Parameters", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setParameters(ParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

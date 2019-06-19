@@ -27,13 +27,13 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more Elastic Graphics accelerator IDs.
+     * The Elastic Graphics accelerator IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> elasticGpuIds;
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -81,10 +81,10 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more Elastic Graphics accelerator IDs.
+     * The Elastic Graphics accelerator IDs.
      * </p>
      * 
-     * @return One or more Elastic Graphics accelerator IDs.
+     * @return The Elastic Graphics accelerator IDs.
      */
 
     public java.util.List<String> getElasticGpuIds() {
@@ -96,11 +96,11 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more Elastic Graphics accelerator IDs.
+     * The Elastic Graphics accelerator IDs.
      * </p>
      * 
      * @param elasticGpuIds
-     *        One or more Elastic Graphics accelerator IDs.
+     *        The Elastic Graphics accelerator IDs.
      */
 
     public void setElasticGpuIds(java.util.Collection<String> elasticGpuIds) {
@@ -114,7 +114,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more Elastic Graphics accelerator IDs.
+     * The Elastic Graphics accelerator IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,7 +123,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param elasticGpuIds
-     *        One or more Elastic Graphics accelerator IDs.
+     *        The Elastic Graphics accelerator IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more Elastic Graphics accelerator IDs.
+     * The Elastic Graphics accelerator IDs.
      * </p>
      * 
      * @param elasticGpuIds
-     *        One or more Elastic Graphics accelerator IDs.
+     *        The Elastic Graphics accelerator IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,7 +154,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -185,7 +185,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -226,7 +226,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -258,7 +258,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -300,7 +300,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -337,7 +337,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -381,7 +381,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -413,7 +413,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>

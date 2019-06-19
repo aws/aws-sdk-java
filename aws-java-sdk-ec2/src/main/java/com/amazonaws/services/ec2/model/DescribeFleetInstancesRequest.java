@@ -47,7 +47,7 @@ public class DescribeFleetInstancesRequest extends AmazonWebServiceRequest imple
     private String fleetId;
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -190,7 +190,7 @@ public class DescribeFleetInstancesRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -200,7 +200,7 @@ public class DescribeFleetInstancesRequest extends AmazonWebServiceRequest imple
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -218,7 +218,7 @@ public class DescribeFleetInstancesRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -229,7 +229,7 @@ public class DescribeFleetInstancesRequest extends AmazonWebServiceRequest imple
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -249,7 +249,7 @@ public class DescribeFleetInstancesRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -265,7 +265,7 @@ public class DescribeFleetInstancesRequest extends AmazonWebServiceRequest imple
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -287,7 +287,7 @@ public class DescribeFleetInstancesRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -298,7 +298,7 @@ public class DescribeFleetInstancesRequest extends AmazonWebServiceRequest imple
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>

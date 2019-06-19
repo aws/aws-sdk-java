@@ -50,7 +50,7 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
     private String acceptLanguage;
     /**
      * <p>
-     * The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
      * <code>ProvisionedProductId</code>.
      * </p>
      */
@@ -93,6 +93,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private UpdateProvisioningPreferences provisioningPreferences;
+    /**
+     * <p>
+     * One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
     /**
      * <p>
      * The idempotency token that uniquely identifies the provisioning update request.
@@ -241,13 +248,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
      * <code>ProvisionedProductId</code>.
      * </p>
      * 
      * @param provisionedProductName
-     *        The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
-     *        and <code>ProvisionedProductId</code>.
+     *        The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *        <code>ProvisionedProductId</code>.
      */
 
     public void setProvisionedProductName(String provisionedProductName) {
@@ -256,12 +263,12 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
      * <code>ProvisionedProductId</code>.
      * </p>
      * 
-     * @return The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
-     *         and <code>ProvisionedProductId</code>.
+     * @return The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *         <code>ProvisionedProductId</code>.
      */
 
     public String getProvisionedProductName() {
@@ -270,13 +277,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
      * <code>ProvisionedProductId</code>.
      * </p>
      * 
      * @param provisionedProductName
-     *        The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
-     *        and <code>ProvisionedProductId</code>.
+     *        The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *        <code>ProvisionedProductId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -569,6 +576,84 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
+     * One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.
+     * </p>
+     * 
+     * @return One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with
+     *         <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with
+     *        <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with
+     *        <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProvisionedProductRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with
+     *        <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProvisionedProductRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
      * The idempotency token that uniquely identifies the provisioning update request.
      * </p>
      * 
@@ -635,6 +720,8 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
             sb.append("ProvisioningParameters: ").append(getProvisioningParameters()).append(",");
         if (getProvisioningPreferences() != null)
             sb.append("ProvisioningPreferences: ").append(getProvisioningPreferences()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getUpdateToken() != null)
             sb.append("UpdateToken: ").append(getUpdateToken());
         sb.append("}");
@@ -683,6 +770,10 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getProvisioningPreferences() != null && other.getProvisioningPreferences().equals(this.getProvisioningPreferences()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getUpdateToken() == null ^ this.getUpdateToken() == null)
             return false;
         if (other.getUpdateToken() != null && other.getUpdateToken().equals(this.getUpdateToken()) == false)
@@ -703,6 +794,7 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getPathId() == null) ? 0 : getPathId().hashCode());
         hashCode = prime * hashCode + ((getProvisioningParameters() == null) ? 0 : getProvisioningParameters().hashCode());
         hashCode = prime * hashCode + ((getProvisioningPreferences() == null) ? 0 : getProvisioningPreferences().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getUpdateToken() == null) ? 0 : getUpdateToken().hashCode());
         return hashCode;
     }

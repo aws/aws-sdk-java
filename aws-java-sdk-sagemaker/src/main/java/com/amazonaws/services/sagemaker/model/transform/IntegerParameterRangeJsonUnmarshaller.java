@@ -60,6 +60,10 @@ public class IntegerParameterRangeJsonUnmarshaller implements Unmarshaller<Integ
                     context.nextToken();
                     integerParameterRange.setMaxValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ScalingType", targetDepth)) {
+                    context.nextToken();
+                    integerParameterRange.setScalingType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

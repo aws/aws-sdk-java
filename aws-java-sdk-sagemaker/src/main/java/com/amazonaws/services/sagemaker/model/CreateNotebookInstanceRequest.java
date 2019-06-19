@@ -68,10 +68,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     private String roleArn;
     /**
      * <p>
-     * If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume that
-     * is attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in
-     * the <i>AWS Key Management Service Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information,
+     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
+     * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private String kmsKeyId;
@@ -475,16 +475,17 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume that
-     * is attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in
-     * the <i>AWS Key Management Service Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information,
+     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
+     * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param kmsKeyId
-     *        If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume
-     *        that is attached to your notebook instance. The KMS key you provide must be enabled. For information, see
-     *        <a href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
+     *        The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
+     *        data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled.
+     *        For information, see <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
      *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
@@ -494,15 +495,15 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume that
-     * is attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in
-     * the <i>AWS Key Management Service Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information,
+     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
+     * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage
-     *         volume that is attached to your notebook instance. The KMS key you provide must be enabled. For
-     *         information, see <a
+     * @return The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
+     *         data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled.
+     *         For information, see <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
      *         Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
@@ -513,16 +514,17 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume that
-     * is attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in
-     * the <i>AWS Key Management Service Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information,
+     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
+     * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param kmsKeyId
-     *        If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume
-     *        that is attached to your notebook instance. The KMS key you provide must be enabled. For information, see
-     *        <a href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
+     *        The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
+     *        data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled.
+     *        For information, see <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
      *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

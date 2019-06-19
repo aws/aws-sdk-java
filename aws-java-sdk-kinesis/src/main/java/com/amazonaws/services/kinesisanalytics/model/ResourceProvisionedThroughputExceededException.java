@@ -18,8 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * Discovery failed to get a record from the streaming source because of the Amazon Kinesis Streams
  * ProvisionedThroughputExceededException. For more information, see <a
- * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the Amazon
- * Kinesis Streams API Reference.
+ * href="kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the Amazon Kinesis Streams API Reference.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

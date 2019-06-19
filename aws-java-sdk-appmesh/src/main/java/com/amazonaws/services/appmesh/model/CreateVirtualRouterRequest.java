@@ -46,6 +46,14 @@ public class CreateVirtualRouterRequest extends com.amazonaws.AmazonWebServiceRe
     private VirtualRouterSpec spec;
     /**
      * <p>
+     * Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each
+     * tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character
+     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     */
+    private java.util.List<TagRef> tags;
+    /**
+     * <p>
      * The name to use for the virtual router.
      * </p>
      */
@@ -179,6 +187,93 @@ public class CreateVirtualRouterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each
+     * tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character
+     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @return Optional metadata that you can apply to the virtual router to assist with categorization and
+     *         organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can
+     *         have a maximum character length of 128 characters, and tag values can have a maximum length of 256
+     *         characters.
+     */
+
+    public java.util.List<TagRef> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each
+     * tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character
+     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you can apply to the virtual router to assist with categorization and organization.
+     *        Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum
+     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public void setTags(java.util.Collection<TagRef> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<TagRef>(tags);
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each
+     * tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character
+     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you can apply to the virtual router to assist with categorization and organization.
+     *        Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum
+     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVirtualRouterRequest withTags(TagRef... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<TagRef>(tags.length));
+        }
+        for (TagRef ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each
+     * tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character
+     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you can apply to the virtual router to assist with categorization and organization.
+     *        Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum
+     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVirtualRouterRequest withTags(java.util.Collection<TagRef> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name to use for the virtual router.
      * </p>
      * 
@@ -235,6 +330,8 @@ public class CreateVirtualRouterRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("MeshName: ").append(getMeshName()).append(",");
         if (getSpec() != null)
             sb.append("Spec: ").append(getSpec()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getVirtualRouterName() != null)
             sb.append("VirtualRouterName: ").append(getVirtualRouterName());
         sb.append("}");
@@ -263,6 +360,10 @@ public class CreateVirtualRouterRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getSpec() != null && other.getSpec().equals(this.getSpec()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getVirtualRouterName() == null ^ this.getVirtualRouterName() == null)
             return false;
         if (other.getVirtualRouterName() != null && other.getVirtualRouterName().equals(this.getVirtualRouterName()) == false)
@@ -278,6 +379,7 @@ public class CreateVirtualRouterRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getMeshName() == null) ? 0 : getMeshName().hashCode());
         hashCode = prime * hashCode + ((getSpec() == null) ? 0 : getSpec().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVirtualRouterName() == null) ? 0 : getVirtualRouterName().hashCode());
         return hashCode;
     }

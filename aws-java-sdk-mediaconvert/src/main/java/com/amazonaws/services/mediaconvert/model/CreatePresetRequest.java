@@ -31,7 +31,7 @@ public class CreatePresetRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String description;
     /** The name of the preset you are creating. */
     private String name;
-
+    /** Settings for preset */
     private PresetSettings settings;
     /** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
     private java.util.Map<String, String> tags;
@@ -139,7 +139,10 @@ public class CreatePresetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * Settings for preset
+     * 
      * @param settings
+     *        Settings for preset
      */
 
     public void setSettings(PresetSettings settings) {
@@ -147,7 +150,9 @@ public class CreatePresetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * Settings for preset
+     * 
+     * @return Settings for preset
      */
 
     public PresetSettings getSettings() {
@@ -155,7 +160,10 @@ public class CreatePresetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * Settings for preset
+     * 
      * @param settings
+     *        Settings for preset
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

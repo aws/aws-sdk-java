@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ResetDBParameterGroup" target="_top">AWS API
  *      Documentation</a>
@@ -173,7 +172,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param resetAllParameters
      *        Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB
-     *        parameter group to default values. </p>
+     *        parameter group to default values.</p>
      *        <p>
      *        Default: <code>true</code>
      */
@@ -192,7 +191,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @return Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB
-     *         parameter group to default values. </p>
+     *         parameter group to default values.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -212,7 +211,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param resetAllParameters
      *        Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB
-     *        parameter group to default values. </p>
+     *        parameter group to default values.</p>
      *        <p>
      *        Default: <code>true</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -233,7 +232,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @return Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB
-     *         parameter group to default values. </p>
+     *         parameter group to default values.</p>
      *         <p>
      *         Default: <code>true</code>
      */

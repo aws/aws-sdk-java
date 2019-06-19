@@ -59,6 +59,17 @@ public class GetMetricDataResultStaxUnmarshaller implements Unmarshaller<GetMetr
                     getMetricDataResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Messages", targetDepth)) {
+                    getMetricDataResult.withMessages(new ArrayList<MessageData>());
+                    continue;
+                }
+
+                if (context.testExpression("Messages/member", targetDepth)) {
+                    getMetricDataResult.withMessages(MessageDataStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return getMetricDataResult;

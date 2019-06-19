@@ -58,7 +58,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * your instance will never change.
      * </p>
      * <p>
-     * For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName"
+     * >FullyQualifiedDomainName</a>.
      * </p>
      * <p>
      * Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private,
@@ -165,7 +167,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      */
@@ -343,7 +345,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <p>
      * After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you
      * configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop
-     * routing traffic to a resource, change the value of <a>UpdateHealthCheckRequest$Inverted</a>.
+     * routing traffic to a resource, change the value of <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted"
+     * >Inverted</a>.
      * </p>
      * <p>
      * Charges for a health check still apply when the health check is disabled. For more information, see <a
@@ -353,10 +357,11 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     private Boolean disabled;
     /**
      * <p>
-     * The number of child health checks that are associated with a <code>CALCULATED</code> health that Amazon Route 53
-     * must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child
-     * health checks that you want to associate with a <code>CALCULATED</code> health check, use the
-     * <a>HealthCheckConfig$ChildHealthChecks</a> and <a>HealthCheckConfig$ChildHealthChecks</a> elements.
+     * The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon
+     * Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify
+     * the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks"
+     * >ChildHealthChecks</a> element.
      * </p>
      * <p>
      * Note the following:
@@ -488,7 +493,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * your instance will never change.
      * </p>
      * <p>
-     * For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName"
+     * >FullyQualifiedDomainName</a>.
      * </p>
      * <p>
      * Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private,
@@ -547,7 +554,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        address of your instance will never change.
      *        </p>
      *        <p>
-     *        For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName"
+     *        >FullyQualifiedDomainName</a>.
      *        </p>
      *        <p>
      *        Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private,
@@ -613,7 +622,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * your instance will never change.
      * </p>
      * <p>
-     * For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName"
+     * >FullyQualifiedDomainName</a>.
      * </p>
      * <p>
      * Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private,
@@ -671,7 +682,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         IP address of your instance will never change.
      *         </p>
      *         <p>
-     *         For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName"
+     *         >FullyQualifiedDomainName</a>.
      *         </p>
      *         <p>
      *         Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private,
@@ -737,7 +750,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * your instance will never change.
      * </p>
      * <p>
-     * For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName"
+     * >FullyQualifiedDomainName</a>.
      * </p>
      * <p>
      * Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private,
@@ -796,7 +811,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        address of your instance will never change.
      *        </p>
      *        <p>
-     *        For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName"
+     *        >FullyQualifiedDomainName</a>.
      *        </p>
      *        <p>
      *        Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private,
@@ -948,7 +965,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -1019,7 +1036,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * @see HealthCheckType
      */
@@ -1098,7 +1115,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -1168,7 +1185,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         </ul>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *         >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      * @see HealthCheckType
@@ -1248,7 +1265,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -1319,7 +1336,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckType
@@ -1400,7 +1417,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -1471,7 +1488,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * @see HealthCheckType
      */
@@ -1550,7 +1567,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -1621,7 +1638,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckType
@@ -2602,7 +2619,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <p>
      * After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you
      * configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop
-     * routing traffic to a resource, change the value of <a>UpdateHealthCheckRequest$Inverted</a>.
+     * routing traffic to a resource, change the value of <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted"
+     * >Inverted</a>.
      * </p>
      * <p>
      * Charges for a health check still apply when the health check is disabled. For more information, see <a
@@ -2633,7 +2652,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        <p>
      *        After you disable a health check, Route 53 considers the status of the health check to always be healthy.
      *        If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you
-     *        want to stop routing traffic to a resource, change the value of <a>UpdateHealthCheckRequest$Inverted</a>.
+     *        want to stop routing traffic to a resource, change the value of <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted"
+     *        >Inverted</a>.
      *        </p>
      *        <p>
      *        Charges for a health check still apply when the health check is disabled. For more information, see <a
@@ -2670,7 +2691,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <p>
      * After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you
      * configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop
-     * routing traffic to a resource, change the value of <a>UpdateHealthCheckRequest$Inverted</a>.
+     * routing traffic to a resource, change the value of <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted"
+     * >Inverted</a>.
      * </p>
      * <p>
      * Charges for a health check still apply when the health check is disabled. For more information, see <a
@@ -2700,8 +2723,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         <p>
      *         After you disable a health check, Route 53 considers the status of the health check to always be healthy.
      *         If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If
-     *         you want to stop routing traffic to a resource, change the value of
-     *         <a>UpdateHealthCheckRequest$Inverted</a>.
+     *         you want to stop routing traffic to a resource, change the value of <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted"
+     *         >Inverted</a>.
      *         </p>
      *         <p>
      *         Charges for a health check still apply when the health check is disabled. For more information, see <a
@@ -2738,7 +2762,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <p>
      * After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you
      * configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop
-     * routing traffic to a resource, change the value of <a>UpdateHealthCheckRequest$Inverted</a>.
+     * routing traffic to a resource, change the value of <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted"
+     * >Inverted</a>.
      * </p>
      * <p>
      * Charges for a health check still apply when the health check is disabled. For more information, see <a
@@ -2769,7 +2795,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        <p>
      *        After you disable a health check, Route 53 considers the status of the health check to always be healthy.
      *        If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you
-     *        want to stop routing traffic to a resource, change the value of <a>UpdateHealthCheckRequest$Inverted</a>.
+     *        want to stop routing traffic to a resource, change the value of <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted"
+     *        >Inverted</a>.
      *        </p>
      *        <p>
      *        Charges for a health check still apply when the health check is disabled. For more information, see <a
@@ -2808,7 +2836,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <p>
      * After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you
      * configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop
-     * routing traffic to a resource, change the value of <a>UpdateHealthCheckRequest$Inverted</a>.
+     * routing traffic to a resource, change the value of <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted"
+     * >Inverted</a>.
      * </p>
      * <p>
      * Charges for a health check still apply when the health check is disabled. For more information, see <a
@@ -2838,8 +2868,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         <p>
      *         After you disable a health check, Route 53 considers the status of the health check to always be healthy.
      *         If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If
-     *         you want to stop routing traffic to a resource, change the value of
-     *         <a>UpdateHealthCheckRequest$Inverted</a>.
+     *         you want to stop routing traffic to a resource, change the value of <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted"
+     *         >Inverted</a>.
      *         </p>
      *         <p>
      *         Charges for a health check still apply when the health check is disabled. For more information, see <a
@@ -2852,10 +2883,11 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of child health checks that are associated with a <code>CALCULATED</code> health that Amazon Route 53
-     * must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child
-     * health checks that you want to associate with a <code>CALCULATED</code> health check, use the
-     * <a>HealthCheckConfig$ChildHealthChecks</a> and <a>HealthCheckConfig$ChildHealthChecks</a> elements.
+     * The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon
+     * Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify
+     * the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks"
+     * >ChildHealthChecks</a> element.
      * </p>
      * <p>
      * Note the following:
@@ -2875,11 +2907,12 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </ul>
      * 
      * @param healthThreshold
-     *        The number of child health checks that are associated with a <code>CALCULATED</code> health that Amazon
-     *        Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To
-     *        specify the child health checks that you want to associate with a <code>CALCULATED</code> health check,
-     *        use the <a>HealthCheckConfig$ChildHealthChecks</a> and <a>HealthCheckConfig$ChildHealthChecks</a>
-     *        elements.</p>
+     *        The number of child health checks that are associated with a <code>CALCULATED</code> health check that
+     *        Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered
+     *        healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code>
+     *        health check, use the <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks"
+     *        >ChildHealthChecks</a> element.</p>
      *        <p>
      *        Note the following:
      *        </p>
@@ -2903,10 +2936,11 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of child health checks that are associated with a <code>CALCULATED</code> health that Amazon Route 53
-     * must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child
-     * health checks that you want to associate with a <code>CALCULATED</code> health check, use the
-     * <a>HealthCheckConfig$ChildHealthChecks</a> and <a>HealthCheckConfig$ChildHealthChecks</a> elements.
+     * The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon
+     * Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify
+     * the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks"
+     * >ChildHealthChecks</a> element.
      * </p>
      * <p>
      * Note the following:
@@ -2925,11 +2959,12 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The number of child health checks that are associated with a <code>CALCULATED</code> health that Amazon
-     *         Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To
-     *         specify the child health checks that you want to associate with a <code>CALCULATED</code> health check,
-     *         use the <a>HealthCheckConfig$ChildHealthChecks</a> and <a>HealthCheckConfig$ChildHealthChecks</a>
-     *         elements.</p>
+     * @return The number of child health checks that are associated with a <code>CALCULATED</code> health check that
+     *         Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered
+     *         healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code>
+     *         health check, use the <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks"
+     *         >ChildHealthChecks</a> element.</p>
      *         <p>
      *         Note the following:
      *         </p>
@@ -2953,10 +2988,11 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of child health checks that are associated with a <code>CALCULATED</code> health that Amazon Route 53
-     * must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child
-     * health checks that you want to associate with a <code>CALCULATED</code> health check, use the
-     * <a>HealthCheckConfig$ChildHealthChecks</a> and <a>HealthCheckConfig$ChildHealthChecks</a> elements.
+     * The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon
+     * Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify
+     * the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks"
+     * >ChildHealthChecks</a> element.
      * </p>
      * <p>
      * Note the following:
@@ -2976,11 +3012,12 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </ul>
      * 
      * @param healthThreshold
-     *        The number of child health checks that are associated with a <code>CALCULATED</code> health that Amazon
-     *        Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To
-     *        specify the child health checks that you want to associate with a <code>CALCULATED</code> health check,
-     *        use the <a>HealthCheckConfig$ChildHealthChecks</a> and <a>HealthCheckConfig$ChildHealthChecks</a>
-     *        elements.</p>
+     *        The number of child health checks that are associated with a <code>CALCULATED</code> health check that
+     *        Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered
+     *        healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code>
+     *        health check, use the <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks"
+     *        >ChildHealthChecks</a> element.</p>
      *        <p>
      *        Note the following:
      *        </p>

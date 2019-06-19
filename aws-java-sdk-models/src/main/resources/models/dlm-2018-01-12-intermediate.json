@@ -328,6 +328,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -364,6 +365,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ExecutionRoleArn",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ExecutionRoleArn",
           "uri" : false
@@ -430,6 +432,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Description",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Description",
           "uri" : false
@@ -496,6 +499,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "State",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "State",
           "uri" : false
@@ -562,6 +566,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "PolicyDetails",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "PolicyDetails",
           "uri" : false
@@ -630,6 +635,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Description",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Description",
             "uri" : false
@@ -697,6 +703,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ExecutionRoleArn",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ExecutionRoleArn",
             "uri" : false
@@ -764,6 +771,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "PolicyDetails",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "PolicyDetails",
             "uri" : false
@@ -831,6 +839,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "State",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "State",
             "uri" : false
@@ -905,6 +914,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -934,6 +944,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "PolicyId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "PolicyId",
           "uri" : false
@@ -1002,6 +1013,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "PolicyId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "PolicyId",
             "uri" : false
@@ -1079,6 +1091,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -1086,11 +1099,11 @@
         "c2jName" : "Interval",
         "c2jShape" : "Interval",
         "deprecated" : false,
-        "documentation" : "<p>The interval. The supported values are 12 and 24.</p>",
+        "documentation" : "<p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@param interval The interval. The supported values are 12 and 24.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.</p>\n@param interval The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withInterval",
-        "getterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@return The interval. The supported values are 12 and 24.*/",
+        "getterDocumentation" : "/**<p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.</p>\n@return The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.*/",
         "getterMethodName" : "getInterval",
         "getterModel" : {
           "returnType" : "Integer",
@@ -1108,6 +1121,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Interval",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Interval",
           "uri" : false
@@ -1123,7 +1137,7 @@
         "marshallingType" : "INTEGER",
         "name" : "Interval",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@param interval The interval. The supported values are 12 and 24.*/",
+        "setterDocumentation" : "/**<p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.</p>\n@param interval The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.*/",
         "setterMethodName" : "setInterval",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1137,13 +1151,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@param interval The interval. The supported values are 12 and 24.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.</p>\n@param interval The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "interval",
           "variableType" : "Integer",
-          "documentation" : "<p>The interval. The supported values are 12 and 24.</p>",
+          "documentation" : "<p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -1174,6 +1188,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "IntervalUnit",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "IntervalUnit",
           "uri" : false
@@ -1218,11 +1233,11 @@
         "c2jName" : "Times",
         "c2jShape" : "TimesList",
         "deprecated" : false,
-        "documentation" : "<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>",
+        "documentation" : "<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@param times The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@param times The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTimes",
-        "getterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@return The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.*/",
+        "getterDocumentation" : "/**<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@return The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.*/",
         "getterMethodName" : "getTimes",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -1240,6 +1255,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Times",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Times",
           "uri" : false
@@ -1277,6 +1293,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -1336,7 +1353,7 @@
         "marshallingType" : "LIST",
         "name" : "Times",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@param times The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.*/",
+        "setterDocumentation" : "/**<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@param times The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.*/",
         "setterMethodName" : "setTimes",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1350,13 +1367,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTimes(java.util.Collection)} or {@link #withTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param times The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTimes(java.util.Collection)} or {@link #withTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param times The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "times",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>",
+          "documentation" : "<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -1367,11 +1384,11 @@
           "c2jName" : "Interval",
           "c2jShape" : "Interval",
           "deprecated" : false,
-          "documentation" : "<p>The interval. The supported values are 12 and 24.</p>",
+          "documentation" : "<p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@param interval The interval. The supported values are 12 and 24.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.</p>\n@param interval The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withInterval",
-          "getterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@return The interval. The supported values are 12 and 24.*/",
+          "getterDocumentation" : "/**<p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.</p>\n@return The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.*/",
           "getterMethodName" : "getInterval",
           "getterModel" : {
             "returnType" : "Integer",
@@ -1389,6 +1406,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Interval",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Interval",
             "uri" : false
@@ -1404,7 +1422,7 @@
           "marshallingType" : "INTEGER",
           "name" : "Interval",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@param interval The interval. The supported values are 12 and 24.*/",
+          "setterDocumentation" : "/**<p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.</p>\n@param interval The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.*/",
           "setterMethodName" : "setInterval",
           "setterModel" : {
             "timestampFormat" : null,
@@ -1418,13 +1436,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@param interval The interval. The supported values are 12 and 24.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.</p>\n@param interval The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "interval",
             "variableType" : "Integer",
-            "documentation" : "<p>The interval. The supported values are 12 and 24.</p>",
+            "documentation" : "<p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -1456,6 +1474,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "IntervalUnit",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "IntervalUnit",
             "uri" : false
@@ -1501,11 +1520,11 @@
           "c2jName" : "Times",
           "c2jShape" : "TimesList",
           "deprecated" : false,
-          "documentation" : "<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>",
+          "documentation" : "<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@param times The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@param times The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTimes",
-          "getterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@return The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.*/",
+          "getterDocumentation" : "/**<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@return The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.*/",
           "getterMethodName" : "getTimes",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -1523,6 +1542,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Times",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Times",
             "uri" : false
@@ -1560,6 +1580,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -1619,7 +1640,7 @@
           "marshallingType" : "LIST",
           "name" : "Times",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@param times The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.*/",
+          "setterDocumentation" : "/**<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@param times The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.*/",
           "setterMethodName" : "setTimes",
           "setterModel" : {
             "timestampFormat" : null,
@@ -1633,13 +1654,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTimes(java.util.Collection)} or {@link #withTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param times The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTimes(java.util.Collection)} or {@link #withTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param times The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "times",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>",
+            "documentation" : "<p>The time, in UTC, to start the operation. The supported format is hh:mm.</p> <p>The operation occurs within a one-hour window following the specified time.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -1681,6 +1702,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -1717,6 +1739,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "policyId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "policyId",
           "uri" : true
@@ -1785,6 +1808,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "policyId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "policyId",
             "uri" : true
@@ -1859,6 +1883,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -1899,6 +1924,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -1935,6 +1961,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "policyIds",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "policyIds",
           "uri" : false
@@ -1972,6 +1999,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -2082,6 +2110,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "state",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "state",
           "uri" : false
@@ -2148,6 +2177,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "resourceTypes",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "resourceTypes",
           "uri" : false
@@ -2185,6 +2215,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -2295,6 +2326,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "targetTags",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "targetTags",
           "uri" : false
@@ -2332,6 +2364,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -2442,6 +2475,7 @@
           "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "tagsToAdd",
           "queryString" : true,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "tagsToAdd",
           "uri" : false
@@ -2479,6 +2513,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -2591,6 +2626,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "policyIds",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "policyIds",
             "uri" : false
@@ -2628,6 +2664,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -2739,6 +2776,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "resourceTypes",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "resourceTypes",
             "uri" : false
@@ -2776,6 +2814,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -2887,6 +2926,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "state",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "state",
             "uri" : false
@@ -2954,6 +2994,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "tagsToAdd",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "tagsToAdd",
             "uri" : false
@@ -2991,6 +3032,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -3102,6 +3144,7 @@
             "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "targetTags",
             "queryString" : true,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "targetTags",
             "uri" : false
@@ -3139,6 +3182,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -3257,6 +3301,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -3286,6 +3331,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Policies",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Policies",
           "uri" : false
@@ -3323,6 +3369,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -3435,6 +3482,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Policies",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Policies",
             "uri" : false
@@ -3472,6 +3520,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -3593,6 +3642,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -3629,6 +3679,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "policyId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "policyId",
           "uri" : true
@@ -3697,6 +3748,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "policyId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "policyId",
             "uri" : true
@@ -3771,6 +3823,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -3800,6 +3853,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Policy",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Policy",
           "uri" : false
@@ -3868,6 +3922,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Policy",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Policy",
             "uri" : false
@@ -3954,6 +4009,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -3994,6 +4050,7 @@
       "errorCode" : "InternalServerException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -4023,6 +4080,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Code",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Code",
           "uri" : false
@@ -4091,6 +4149,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Code",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Code",
             "uri" : false
@@ -4168,6 +4227,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -4208,6 +4268,7 @@
       "errorCode" : "InvalidRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -4237,6 +4298,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Code",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Code",
           "uri" : false
@@ -4303,6 +4365,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RequiredParameters",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RequiredParameters",
           "uri" : false
@@ -4340,6 +4403,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -4450,6 +4514,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "MutuallyExclusiveParameters",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "MutuallyExclusiveParameters",
           "uri" : false
@@ -4487,6 +4552,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -4599,6 +4665,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Code",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Code",
             "uri" : false
@@ -4666,6 +4733,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "MutuallyExclusiveParameters",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "MutuallyExclusiveParameters",
             "uri" : false
@@ -4703,6 +4771,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -4814,6 +4883,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RequiredParameters",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RequiredParameters",
             "uri" : false
@@ -4851,6 +4921,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -4969,6 +5040,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -4998,6 +5070,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "PolicyId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "PolicyId",
           "uri" : false
@@ -5064,6 +5137,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Description",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Description",
           "uri" : false
@@ -5130,6 +5204,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "State",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "State",
           "uri" : false
@@ -5196,6 +5271,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ExecutionRoleArn",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ExecutionRoleArn",
           "uri" : false
@@ -5262,6 +5338,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "DateCreated",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "DateCreated",
           "uri" : false
@@ -5328,6 +5405,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "DateModified",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "DateModified",
           "uri" : false
@@ -5394,6 +5472,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "PolicyDetails",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "PolicyDetails",
           "uri" : false
@@ -5462,6 +5541,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "DateCreated",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "DateCreated",
             "uri" : false
@@ -5529,6 +5609,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "DateModified",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "DateModified",
             "uri" : false
@@ -5596,6 +5677,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Description",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Description",
             "uri" : false
@@ -5663,6 +5745,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ExecutionRoleArn",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ExecutionRoleArn",
             "uri" : false
@@ -5730,6 +5813,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "PolicyDetails",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "PolicyDetails",
             "uri" : false
@@ -5797,6 +5881,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "PolicyId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "PolicyId",
             "uri" : false
@@ -5864,6 +5949,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "State",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "State",
             "uri" : false
@@ -5941,6 +6027,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -5970,6 +6057,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "PolicyId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "PolicyId",
           "uri" : false
@@ -6036,6 +6124,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Description",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Description",
           "uri" : false
@@ -6102,6 +6191,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "State",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "State",
           "uri" : false
@@ -6170,6 +6260,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Description",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Description",
             "uri" : false
@@ -6237,6 +6328,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "PolicyId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "PolicyId",
             "uri" : false
@@ -6304,6 +6396,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "State",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "State",
             "uri" : false
@@ -6381,6 +6474,7 @@
       "errorCode" : "LimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -6410,6 +6504,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Code",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Code",
           "uri" : false
@@ -6476,6 +6571,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ResourceType",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ResourceType",
           "uri" : false
@@ -6544,6 +6640,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Code",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Code",
             "uri" : false
@@ -6611,6 +6708,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ResourceType",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ResourceType",
             "uri" : false
@@ -6671,6 +6769,183 @@
       },
       "wrapper" : false
     },
+    "Parameters" : {
+      "c2jName" : "Parameters",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Optional parameters that can be added to the policy. The set of valid parameters depends on the combination of <code>policyType</code> and <code>resourceType</code> values.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "ExcludeBootVolume",
+        "c2jShape" : "ExcludeBootVolume",
+        "deprecated" : false,
+        "documentation" : "<p>When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.</p>\n@param excludeBootVolume When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withExcludeBootVolume",
+        "getterDocumentation" : "/**<p>When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.</p>\n@return When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.*/",
+        "getterMethodName" : "getExcludeBootVolume",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ExcludeBootVolume",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ExcludeBootVolume",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "ExcludeBootVolume",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.</p>\n@param excludeBootVolume When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.*/",
+        "setterMethodName" : "setExcludeBootVolume",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "excludeBootVolume",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.</p>\n@param excludeBootVolume When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "excludeBootVolume",
+          "variableType" : "Boolean",
+          "documentation" : "<p>When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ExcludeBootVolume" : {
+          "c2jName" : "ExcludeBootVolume",
+          "c2jShape" : "ExcludeBootVolume",
+          "deprecated" : false,
+          "documentation" : "<p>When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.</p>\n@param excludeBootVolume When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withExcludeBootVolume",
+          "getterDocumentation" : "/**<p>When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.</p>\n@return When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.*/",
+          "getterMethodName" : "getExcludeBootVolume",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ExcludeBootVolume",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ExcludeBootVolume",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "ExcludeBootVolume",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.</p>\n@param excludeBootVolume When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.*/",
+          "setterMethodName" : "setExcludeBootVolume",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "excludeBootVolume",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.</p>\n@param excludeBootVolume When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "excludeBootVolume",
+            "variableType" : "Boolean",
+            "documentation" : "<p>When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot Management – Instance policies.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "Parameters",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "Parameters",
+        "variableName" : "parameters",
+        "variableType" : "Parameters",
+        "documentation" : null,
+        "simpleType" : "Parameters",
+        "variableSetterType" : "Parameters"
+      },
+      "wrapper" : false
+    },
     "PolicyDetails" : {
       "c2jName" : "PolicyDetails",
       "customization" : {
@@ -6685,10 +6960,78 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
       "members" : [ {
+        "c2jName" : "PolicyType",
+        "c2jShape" : "PolicyTypeValues",
+        "deprecated" : false,
+        "documentation" : "<p>This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>",
+        "enumType" : "PolicyTypeValues",
+        "fluentSetterDocumentation" : "/**<p>This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>\n@param policyType This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyTypeValues*/",
+        "fluentSetterMethodName" : "withPolicyType",
+        "getterDocumentation" : "/**<p>This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>\n@return This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.\n@see PolicyTypeValues*/",
+        "getterMethodName" : "getPolicyType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "PolicyType",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "PolicyType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "PolicyType",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>\n@param policyType This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.\n@see PolicyTypeValues*/",
+        "setterMethodName" : "setPolicyType",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "policyType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>\n@param policyType This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyTypeValues*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "policyType",
+          "variableType" : "String",
+          "documentation" : "<p>This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "ResourceTypes",
         "c2jShape" : "ResourceTypeValuesList",
         "deprecated" : false,
@@ -6714,6 +7057,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ResourceTypes",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ResourceTypes",
           "uri" : false
@@ -6751,6 +7095,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -6861,6 +7206,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "TargetTags",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "TargetTags",
           "uri" : false
@@ -6898,6 +7244,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -7008,6 +7355,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Schedules",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Schedules",
           "uri" : false
@@ -7045,6 +7393,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -7129,8 +7478,211 @@
           "variableSetterType" : "java.util.Collection<Schedule>"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Parameters",
+        "c2jShape" : "Parameters",
+        "deprecated" : false,
+        "documentation" : "<p>A set of optional parameters that can be provided by the policy. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A set of optional parameters that can be provided by the policy. </p>\n@param parameters A set of optional parameters that can be provided by the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withParameters",
+        "getterDocumentation" : "/**<p>A set of optional parameters that can be provided by the policy. </p>\n@return A set of optional parameters that can be provided by the policy.*/",
+        "getterMethodName" : "getParameters",
+        "getterModel" : {
+          "returnType" : "Parameters",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Parameters",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Parameters",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "Parameters",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>A set of optional parameters that can be provided by the policy. </p>\n@param parameters A set of optional parameters that can be provided by the policy.*/",
+        "setterMethodName" : "setParameters",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Parameters",
+          "variableName" : "parameters",
+          "variableType" : "Parameters",
+          "documentation" : "",
+          "simpleType" : "Parameters",
+          "variableSetterType" : "Parameters"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>A set of optional parameters that can be provided by the policy. </p>\n@param parameters A set of optional parameters that can be provided by the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Parameters",
+          "variableName" : "parameters",
+          "variableType" : "Parameters",
+          "documentation" : "<p>A set of optional parameters that can be provided by the policy. </p>",
+          "simpleType" : "Parameters",
+          "variableSetterType" : "Parameters"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "Parameters" : {
+          "c2jName" : "Parameters",
+          "c2jShape" : "Parameters",
+          "deprecated" : false,
+          "documentation" : "<p>A set of optional parameters that can be provided by the policy. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A set of optional parameters that can be provided by the policy. </p>\n@param parameters A set of optional parameters that can be provided by the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withParameters",
+          "getterDocumentation" : "/**<p>A set of optional parameters that can be provided by the policy. </p>\n@return A set of optional parameters that can be provided by the policy.*/",
+          "getterMethodName" : "getParameters",
+          "getterModel" : {
+            "returnType" : "Parameters",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Parameters",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Parameters",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "Parameters",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>A set of optional parameters that can be provided by the policy. </p>\n@param parameters A set of optional parameters that can be provided by the policy.*/",
+          "setterMethodName" : "setParameters",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Parameters",
+            "variableName" : "parameters",
+            "variableType" : "Parameters",
+            "documentation" : "",
+            "simpleType" : "Parameters",
+            "variableSetterType" : "Parameters"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>A set of optional parameters that can be provided by the policy. </p>\n@param parameters A set of optional parameters that can be provided by the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Parameters",
+            "variableName" : "parameters",
+            "variableType" : "Parameters",
+            "documentation" : "<p>A set of optional parameters that can be provided by the policy. </p>",
+            "simpleType" : "Parameters",
+            "variableSetterType" : "Parameters"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "PolicyType" : {
+          "c2jName" : "PolicyType",
+          "c2jShape" : "PolicyTypeValues",
+          "deprecated" : false,
+          "documentation" : "<p>This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>",
+          "enumType" : "PolicyTypeValues",
+          "fluentSetterDocumentation" : "/**<p>This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>\n@param policyType This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyTypeValues*/",
+          "fluentSetterMethodName" : "withPolicyType",
+          "getterDocumentation" : "/**<p>This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>\n@return This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.\n@see PolicyTypeValues*/",
+          "getterMethodName" : "getPolicyType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "PolicyType",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "PolicyType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "PolicyType",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>\n@param policyType This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.\n@see PolicyTypeValues*/",
+          "setterMethodName" : "setPolicyType",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "policyType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>\n@param policyType This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyTypeValues*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "policyType",
+            "variableType" : "String",
+            "documentation" : "<p>This field determines the valid target resource types and actions a policy can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "ResourceTypes" : {
           "c2jName" : "ResourceTypes",
           "c2jShape" : "ResourceTypeValuesList",
@@ -7157,6 +7709,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ResourceTypes",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ResourceTypes",
             "uri" : false
@@ -7194,6 +7747,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -7305,6 +7859,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Schedules",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Schedules",
             "uri" : false
@@ -7342,6 +7897,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -7453,6 +8009,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "TargetTags",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "TargetTags",
             "uri" : false
@@ -7490,6 +8047,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -7597,6 +8155,50 @@
       },
       "wrapper" : false
     },
+    "PolicyTypeValues" : {
+      "c2jName" : "PolicyTypeValues",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "EBS_SNAPSHOT_MANAGEMENT",
+        "value" : "EBS_SNAPSHOT_MANAGEMENT"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "PolicyTypeValues",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "PolicyTypeValues",
+        "variableName" : "policyTypeValues",
+        "variableType" : "PolicyTypeValues",
+        "documentation" : null,
+        "simpleType" : "PolicyTypeValues",
+        "variableSetterType" : "PolicyTypeValues"
+      },
+      "wrapper" : false
+    },
     "ResourceNotFoundException" : {
       "c2jName" : "ResourceNotFoundException",
       "customization" : {
@@ -7611,6 +8213,7 @@
       "errorCode" : "ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -7640,6 +8243,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Code",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Code",
           "uri" : false
@@ -7706,6 +8310,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ResourceType",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ResourceType",
           "uri" : false
@@ -7772,6 +8377,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ResourceIds",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ResourceIds",
           "uri" : false
@@ -7809,6 +8415,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -7921,6 +8528,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Code",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Code",
             "uri" : false
@@ -7988,6 +8596,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ResourceIds",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ResourceIds",
             "uri" : false
@@ -8025,6 +8634,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -8136,6 +8746,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ResourceType",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ResourceType",
             "uri" : false
@@ -8209,10 +8820,14 @@
       "enums" : [ {
         "name" : "VOLUME",
         "value" : "VOLUME"
+      }, {
+        "name" : "INSTANCE",
+        "value" : "INSTANCE"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -8253,6 +8868,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -8282,6 +8898,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Count",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Count",
           "uri" : false
@@ -8350,6 +8967,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Count",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Count",
             "uri" : false
@@ -8427,6 +9045,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -8456,6 +9075,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Name",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Name",
           "uri" : false
@@ -8500,11 +9120,11 @@
         "c2jName" : "CopyTags",
         "c2jShape" : "CopyTags",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param copyTags \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>\n@param copyTags Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withCopyTags",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>\n@return Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.*/",
         "getterMethodName" : "getCopyTags",
         "getterModel" : {
           "returnType" : "Boolean",
@@ -8522,6 +9142,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "CopyTags",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "CopyTags",
           "uri" : false
@@ -8537,7 +9158,7 @@
         "marshallingType" : "BOOLEAN",
         "name" : "CopyTags",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param copyTags */",
+        "setterDocumentation" : "/**<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>\n@param copyTags Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.*/",
         "setterMethodName" : "setCopyTags",
         "setterModel" : {
           "timestampFormat" : null,
@@ -8551,13 +9172,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param copyTags \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>\n@param copyTags Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "copyTags",
           "variableType" : "Boolean",
-          "documentation" : "",
+          "documentation" : "<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -8588,6 +9209,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "TagsToAdd",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "TagsToAdd",
           "uri" : false
@@ -8625,6 +9247,7 @@
               "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
+              "requiresLength" : false,
               "statusCode" : false,
               "unmarshallLocationName" : "member",
               "uri" : false
@@ -8710,6 +9333,155 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "VariableTags",
+        "c2jShape" : "VariableTagsList",
+        "deprecated" : false,
+        "documentation" : "<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>\n@param variableTags A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withVariableTags",
+        "getterDocumentation" : "/**<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>\n@return A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.*/",
+        "getterMethodName" : "getVariableTags",
+        "getterModel" : {
+          "returnType" : "java.util.List<Tag>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "VariableTags",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "VariableTags",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "Tag",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "Tag",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "requiresLength" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
+            "name" : "Member",
+            "sensitive" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : false,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "Tag",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "Tag",
+          "templateImplType" : "java.util.ArrayList<Tag>",
+          "templateType" : "java.util.List<Tag>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "VariableTags",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>\n@param variableTags A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.*/",
+        "setterMethodName" : "setVariableTags",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<Tag>",
+          "variableName" : "variableTags",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVariableTags(java.util.Collection)} or {@link #withVariableTags(java.util.Collection)} if you want to override the existing values.</p>\n@param variableTags A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<Tag>",
+          "variableName" : "variableTags",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "CreateRule",
         "c2jShape" : "CreateRule",
         "deprecated" : false,
@@ -8735,6 +9507,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "CreateRule",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "CreateRule",
           "uri" : false
@@ -8801,6 +9574,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RetainRule",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "RetainRule",
           "uri" : false
@@ -8847,11 +9621,11 @@
           "c2jName" : "CopyTags",
           "c2jShape" : "CopyTags",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param copyTags \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>\n@param copyTags Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withCopyTags",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>\n@return Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.*/",
           "getterMethodName" : "getCopyTags",
           "getterModel" : {
             "returnType" : "Boolean",
@@ -8869,6 +9643,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "CopyTags",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "CopyTags",
             "uri" : false
@@ -8884,7 +9659,7 @@
           "marshallingType" : "BOOLEAN",
           "name" : "CopyTags",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param copyTags */",
+          "setterDocumentation" : "/**<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>\n@param copyTags Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.*/",
           "setterMethodName" : "setCopyTags",
           "setterModel" : {
             "timestampFormat" : null,
@@ -8898,13 +9673,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param copyTags \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>\n@param copyTags Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "copyTags",
             "variableType" : "Boolean",
-            "documentation" : "",
+            "documentation" : "<p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -8936,6 +9711,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "CreateRule",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "CreateRule",
             "uri" : false
@@ -9003,6 +9779,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Name",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Name",
             "uri" : false
@@ -9070,6 +9847,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RetainRule",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "RetainRule",
             "uri" : false
@@ -9137,6 +9915,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "TagsToAdd",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "TagsToAdd",
             "uri" : false
@@ -9174,6 +9953,7 @@
                 "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
+                "requiresLength" : false,
                 "statusCode" : false,
                 "unmarshallLocationName" : "member",
                 "uri" : false
@@ -9258,6 +10038,156 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "xmlNameSpaceUri" : null
+        },
+        "VariableTags" : {
+          "c2jName" : "VariableTags",
+          "c2jShape" : "VariableTagsList",
+          "deprecated" : false,
+          "documentation" : "<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>\n@param variableTags A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withVariableTags",
+          "getterDocumentation" : "/**<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>\n@return A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.*/",
+          "getterMethodName" : "getVariableTags",
+          "getterModel" : {
+            "returnType" : "java.util.List<Tag>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "VariableTags",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "VariableTags",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "Tag",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "Tag",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "requiresLength" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
+              "name" : "Member",
+              "sensitive" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : false,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "Tag",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "Tag",
+            "templateImplType" : "java.util.ArrayList<Tag>",
+            "templateType" : "java.util.List<Tag>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "VariableTags",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>\n@param variableTags A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.*/",
+          "setterMethodName" : "setVariableTags",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<Tag>",
+            "variableName" : "variableTags",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVariableTags(java.util.Collection)} or {@link #withVariableTags(java.util.Collection)} if you want to override the existing values.</p>\n@param variableTags A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<Tag>",
+            "variableName" : "variableTags",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "<p>A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "xmlNameSpaceUri" : null
         }
       },
       "requestSignerAware" : false,
@@ -9301,6 +10231,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -9341,6 +10272,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
@@ -9370,6 +10302,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Key",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Key",
           "uri" : false
@@ -9436,6 +10369,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Value",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Value",
           "uri" : false
@@ -9504,6 +10438,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Key",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Key",
             "uri" : false
@@ -9571,6 +10506,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Value",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Value",
             "uri" : false
@@ -9648,6 +10584,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : {
@@ -9684,6 +10621,7 @@
           "marshallLocation" : "PATH",
           "marshallLocationName" : "policyId",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "policyId",
           "uri" : true
@@ -9750,6 +10688,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ExecutionRoleArn",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "ExecutionRoleArn",
           "uri" : false
@@ -9816,6 +10755,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "State",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "State",
           "uri" : false
@@ -9882,6 +10822,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Description",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "Description",
           "uri" : false
@@ -9948,6 +10889,7 @@
           "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "PolicyDetails",
           "queryString" : false,
+          "requiresLength" : false,
           "statusCode" : false,
           "unmarshallLocationName" : "PolicyDetails",
           "uri" : false
@@ -10016,6 +10958,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Description",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "Description",
             "uri" : false
@@ -10083,6 +11026,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ExecutionRoleArn",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "ExecutionRoleArn",
             "uri" : false
@@ -10150,6 +11094,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "PolicyDetails",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "PolicyDetails",
             "uri" : false
@@ -10217,6 +11162,7 @@
             "marshallLocation" : "PATH",
             "marshallLocationName" : "policyId",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "policyId",
             "uri" : true
@@ -10284,6 +11230,7 @@
             "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "State",
             "queryString" : false,
+            "requiresLength" : false,
             "statusCode" : false,
             "unmarshallLocationName" : "State",
             "uri" : false
@@ -10358,6 +11305,7 @@
       "errorCode" : null,
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,

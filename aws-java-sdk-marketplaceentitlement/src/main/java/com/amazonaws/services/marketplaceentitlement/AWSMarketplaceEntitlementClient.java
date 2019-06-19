@@ -196,6 +196,7 @@ public class AWSMarketplaceEntitlementClient extends AmazonWebServiceClient impl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Entitlement Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEntitlements");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

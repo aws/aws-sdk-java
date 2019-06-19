@@ -37,6 +37,8 @@ public class TapeInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TapeStatus").build();
     private static final MarshallingInfo<String> GATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
+    private static final MarshallingInfo<String> POOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PoolId").build();
 
     private static final TapeInfoMarshaller instance = new TapeInfoMarshaller();
 
@@ -59,6 +61,7 @@ public class TapeInfoMarshaller {
             protocolMarshaller.marshall(tapeInfo.getTapeSizeInBytes(), TAPESIZEINBYTES_BINDING);
             protocolMarshaller.marshall(tapeInfo.getTapeStatus(), TAPESTATUS_BINDING);
             protocolMarshaller.marshall(tapeInfo.getGatewayARN(), GATEWAYARN_BINDING);
+            protocolMarshaller.marshall(tapeInfo.getPoolId(), POOLID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

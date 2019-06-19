@@ -43,6 +43,12 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private UpdateJsonClassifierRequest jsonClassifier;
+    /**
+     * <p>
+     * A <code>CsvClassifier</code> object with updated fields.
+     * </p>
+     */
+    private UpdateCsvClassifierRequest csvClassifier;
 
     /**
      * <p>
@@ -165,6 +171,46 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A <code>CsvClassifier</code> object with updated fields.
+     * </p>
+     * 
+     * @param csvClassifier
+     *        A <code>CsvClassifier</code> object with updated fields.
+     */
+
+    public void setCsvClassifier(UpdateCsvClassifierRequest csvClassifier) {
+        this.csvClassifier = csvClassifier;
+    }
+
+    /**
+     * <p>
+     * A <code>CsvClassifier</code> object with updated fields.
+     * </p>
+     * 
+     * @return A <code>CsvClassifier</code> object with updated fields.
+     */
+
+    public UpdateCsvClassifierRequest getCsvClassifier() {
+        return this.csvClassifier;
+    }
+
+    /**
+     * <p>
+     * A <code>CsvClassifier</code> object with updated fields.
+     * </p>
+     * 
+     * @param csvClassifier
+     *        A <code>CsvClassifier</code> object with updated fields.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateClassifierRequest withCsvClassifier(UpdateCsvClassifierRequest csvClassifier) {
+        setCsvClassifier(csvClassifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +227,9 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
         if (getXMLClassifier() != null)
             sb.append("XMLClassifier: ").append(getXMLClassifier()).append(",");
         if (getJsonClassifier() != null)
-            sb.append("JsonClassifier: ").append(getJsonClassifier());
+            sb.append("JsonClassifier: ").append(getJsonClassifier()).append(",");
+        if (getCsvClassifier() != null)
+            sb.append("CsvClassifier: ").append(getCsvClassifier());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +256,10 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getJsonClassifier() != null && other.getJsonClassifier().equals(this.getJsonClassifier()) == false)
             return false;
+        if (other.getCsvClassifier() == null ^ this.getCsvClassifier() == null)
+            return false;
+        if (other.getCsvClassifier() != null && other.getCsvClassifier().equals(this.getCsvClassifier()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +271,7 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getGrokClassifier() == null) ? 0 : getGrokClassifier().hashCode());
         hashCode = prime * hashCode + ((getXMLClassifier() == null) ? 0 : getXMLClassifier().hashCode());
         hashCode = prime * hashCode + ((getJsonClassifier() == null) ? 0 : getJsonClassifier().hashCode());
+        hashCode = prime * hashCode + ((getCsvClassifier() == null) ? 0 : getCsvClassifier().hashCode());
         return hashCode;
     }
 

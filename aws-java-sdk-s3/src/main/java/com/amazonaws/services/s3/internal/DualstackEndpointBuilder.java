@@ -16,9 +16,6 @@ package com.amazonaws.services.s3.internal;
 
 import com.amazonaws.internal.ServiceEndpointBuilder;
 import com.amazonaws.regions.Region;
-import com.amazonaws.util.json.Jackson;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 import java.net.URI;
 import java.net.URISyntaxException;

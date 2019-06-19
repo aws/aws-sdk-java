@@ -33,6 +33,8 @@ public class UserMarshaller {
             .marshallLocationName("AccountId").build();
     private static final MarshallingInfo<String> PRIMARYEMAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrimaryEmail").build();
+    private static final MarshallingInfo<String> PRIMARYPROVISIONEDNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrimaryProvisionedNumber").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
     private static final MarshallingInfo<String> LICENSETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -67,6 +69,7 @@ public class UserMarshaller {
             protocolMarshaller.marshall(user.getUserId(), USERID_BINDING);
             protocolMarshaller.marshall(user.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(user.getPrimaryEmail(), PRIMARYEMAIL_BINDING);
+            protocolMarshaller.marshall(user.getPrimaryProvisionedNumber(), PRIMARYPROVISIONEDNUMBER_BINDING);
             protocolMarshaller.marshall(user.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(user.getLicenseType(), LICENSETYPE_BINDING);
             protocolMarshaller.marshall(user.getUserRegistrationStatus(), USERREGISTRATIONSTATUS_BINDING);

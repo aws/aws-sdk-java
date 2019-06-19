@@ -350,4 +350,8 @@ public class OperationModel extends DocumentationModel {
     public void setEndpointTrait(EndpointTrait endpointTrait) {
         this.endpointTrait = endpointTrait;
     }
+
+    public boolean hasRequiresLengthInInput() {
+        return inputShape != null && inputShape.isHasRequiresLengthMember();
+    }
 }

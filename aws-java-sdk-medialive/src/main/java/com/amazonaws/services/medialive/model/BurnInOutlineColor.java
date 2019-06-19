@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for BurnInOutlineColor
+ * Burn In Outline Color
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BurnInOutlineColor {

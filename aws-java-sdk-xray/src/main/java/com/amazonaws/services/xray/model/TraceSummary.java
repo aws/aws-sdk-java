@@ -145,6 +145,12 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer revision;
+    /**
+     * <p>
+     * The matched time stamp of a defined event.
+     * </p>
+     */
+    private java.util.Date matchedEventTime;
 
     /**
      * <p>
@@ -1234,6 +1240,46 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The matched time stamp of a defined event.
+     * </p>
+     * 
+     * @param matchedEventTime
+     *        The matched time stamp of a defined event.
+     */
+
+    public void setMatchedEventTime(java.util.Date matchedEventTime) {
+        this.matchedEventTime = matchedEventTime;
+    }
+
+    /**
+     * <p>
+     * The matched time stamp of a defined event.
+     * </p>
+     * 
+     * @return The matched time stamp of a defined event.
+     */
+
+    public java.util.Date getMatchedEventTime() {
+        return this.matchedEventTime;
+    }
+
+    /**
+     * <p>
+     * The matched time stamp of a defined event.
+     * </p>
+     * 
+     * @param matchedEventTime
+     *        The matched time stamp of a defined event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TraceSummary withMatchedEventTime(java.util.Date matchedEventTime) {
+        setMatchedEventTime(matchedEventTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1282,7 +1328,9 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
         if (getResponseTimeRootCauses() != null)
             sb.append("ResponseTimeRootCauses: ").append(getResponseTimeRootCauses()).append(",");
         if (getRevision() != null)
-            sb.append("Revision: ").append(getRevision());
+            sb.append("Revision: ").append(getRevision()).append(",");
+        if (getMatchedEventTime() != null)
+            sb.append("MatchedEventTime: ").append(getMatchedEventTime());
         sb.append("}");
         return sb.toString();
     }
@@ -1373,6 +1421,10 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRevision() != null && other.getRevision().equals(this.getRevision()) == false)
             return false;
+        if (other.getMatchedEventTime() == null ^ this.getMatchedEventTime() == null)
+            return false;
+        if (other.getMatchedEventTime() != null && other.getMatchedEventTime().equals(this.getMatchedEventTime()) == false)
+            return false;
         return true;
     }
 
@@ -1400,6 +1452,7 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getErrorRootCauses() == null) ? 0 : getErrorRootCauses().hashCode());
         hashCode = prime * hashCode + ((getResponseTimeRootCauses() == null) ? 0 : getResponseTimeRootCauses().hashCode());
         hashCode = prime * hashCode + ((getRevision() == null) ? 0 : getRevision().hashCode());
+        hashCode = prime * hashCode + ((getMatchedEventTime() == null) ? 0 : getMatchedEventTime().hashCode());
         return hashCode;
     }
 

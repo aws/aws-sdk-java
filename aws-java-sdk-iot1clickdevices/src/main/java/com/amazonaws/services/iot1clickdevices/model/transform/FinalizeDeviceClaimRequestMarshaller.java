@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.iot1clickdevices.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +31,8 @@ public class FinalizeDeviceClaimRequestMarshaller {
 
     private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("deviceId").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final FinalizeDeviceClaimRequestMarshaller instance = new FinalizeDeviceClaimRequestMarshaller();
 
@@ -47,6 +51,7 @@ public class FinalizeDeviceClaimRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(finalizeDeviceClaimRequest.getDeviceId(), DEVICEID_BINDING);
+            protocolMarshaller.marshall(finalizeDeviceClaimRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

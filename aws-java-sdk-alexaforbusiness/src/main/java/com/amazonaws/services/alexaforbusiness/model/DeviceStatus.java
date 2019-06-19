@@ -23,7 +23,8 @@ public enum DeviceStatus {
     READY("READY"),
     PENDING("PENDING"),
     WAS_OFFLINE("WAS_OFFLINE"),
-    DEREGISTERED("DEREGISTERED");
+    DEREGISTERED("DEREGISTERED"),
+    FAILED("FAILED");
 
     private String value;
 

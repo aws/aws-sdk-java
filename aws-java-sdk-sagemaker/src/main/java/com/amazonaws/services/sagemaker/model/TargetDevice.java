@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TargetDevice {
 
+    Lambda("lambda"),
     Ml_m4("ml_m4"),
     Ml_m5("ml_m5"),
     Ml_c4("ml_c4"),
@@ -28,10 +29,12 @@ public enum TargetDevice {
     Ml_p3("ml_p3"),
     Jetson_tx1("jetson_tx1"),
     Jetson_tx2("jetson_tx2"),
+    Jetson_nano("jetson_nano"),
     Rasp3b("rasp3b"),
     Deeplens("deeplens"),
     Rk3399("rk3399"),
-    Rk3288("rk3288");
+    Rk3288("rk3288"),
+    Sbe_c("sbe_c");
 
     private String value;
 

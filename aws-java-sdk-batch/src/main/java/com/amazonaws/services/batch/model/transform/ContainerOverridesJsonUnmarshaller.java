@@ -68,6 +68,11 @@ public class ContainerOverridesJsonUnmarshaller implements Unmarshaller<Containe
                     context.nextToken();
                     containerOverrides.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("resourceRequirements", targetDepth)) {
+                    context.nextToken();
+                    containerOverrides.setResourceRequirements(new ListUnmarshaller<ResourceRequirement>(ResourceRequirementJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -82,6 +82,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DeviceStatusInfo deviceStatusInfo;
+    /**
+     * <p>
+     * Detailed information about a device's network profile.
+     * </p>
+     */
+    private DeviceNetworkProfileInfo networkProfileInfo;
 
     /**
      * <p>
@@ -463,6 +469,46 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Detailed information about a device's network profile.
+     * </p>
+     * 
+     * @param networkProfileInfo
+     *        Detailed information about a device's network profile.
+     */
+
+    public void setNetworkProfileInfo(DeviceNetworkProfileInfo networkProfileInfo) {
+        this.networkProfileInfo = networkProfileInfo;
+    }
+
+    /**
+     * <p>
+     * Detailed information about a device's network profile.
+     * </p>
+     * 
+     * @return Detailed information about a device's network profile.
+     */
+
+    public DeviceNetworkProfileInfo getNetworkProfileInfo() {
+        return this.networkProfileInfo;
+    }
+
+    /**
+     * <p>
+     * Detailed information about a device's network profile.
+     * </p>
+     * 
+     * @param networkProfileInfo
+     *        Detailed information about a device's network profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Device withNetworkProfileInfo(DeviceNetworkProfileInfo networkProfileInfo) {
+        setNetworkProfileInfo(networkProfileInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -491,7 +537,9 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         if (getDeviceStatus() != null)
             sb.append("DeviceStatus: ").append(getDeviceStatus()).append(",");
         if (getDeviceStatusInfo() != null)
-            sb.append("DeviceStatusInfo: ").append(getDeviceStatusInfo());
+            sb.append("DeviceStatusInfo: ").append(getDeviceStatusInfo()).append(",");
+        if (getNetworkProfileInfo() != null)
+            sb.append("NetworkProfileInfo: ").append(getNetworkProfileInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -542,6 +590,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeviceStatusInfo() != null && other.getDeviceStatusInfo().equals(this.getDeviceStatusInfo()) == false)
             return false;
+        if (other.getNetworkProfileInfo() == null ^ this.getNetworkProfileInfo() == null)
+            return false;
+        if (other.getNetworkProfileInfo() != null && other.getNetworkProfileInfo().equals(this.getNetworkProfileInfo()) == false)
+            return false;
         return true;
     }
 
@@ -559,6 +611,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRoomArn() == null) ? 0 : getRoomArn().hashCode());
         hashCode = prime * hashCode + ((getDeviceStatus() == null) ? 0 : getDeviceStatus().hashCode());
         hashCode = prime * hashCode + ((getDeviceStatusInfo() == null) ? 0 : getDeviceStatusInfo().hashCode());
+        hashCode = prime * hashCode + ((getNetworkProfileInfo() == null) ? 0 : getNetworkProfileInfo().hashCode());
         return hashCode;
     }
 

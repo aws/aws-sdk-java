@@ -27,7 +27,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -44,11 +44,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
      * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>image</code> | <code>instance</code> | <code>internet-gateway</code> | <code>launch-template</code> |
-     * <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> | <code>security-group</code> | <code>snapshot</code>
-     * | <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> | <code>subnet</code> |
+     * <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
+     * <code>vpn-gateway</code>).
      * </p>
      * </li>
      * <li>
@@ -91,7 +92,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * initialize any additional object members.
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -107,12 +108,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
      *        <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *        <code>fpga-image</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     *        <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     *        <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *        <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *        <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> |
-     *        <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     *        <code>fpga-image</code> | <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     *        <code>internet-gateway</code> | <code>launch-template</code> | <code>natgateway</code> |
+     *        <code>network-acl</code> | <code>network-interface</code> | <code>reserved-instances</code> |
+     *        <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
+     *        <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     *        <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -133,7 +134,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -150,11 +151,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
      * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>image</code> | <code>instance</code> | <code>internet-gateway</code> | <code>launch-template</code> |
-     * <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> | <code>security-group</code> | <code>snapshot</code>
-     * | <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> | <code>subnet</code> |
+     * <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
+     * <code>vpn-gateway</code>).
      * </p>
      * </li>
      * <li>
@@ -170,7 +172,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -186,12 +188,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *         <p>
      *         <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
      *         <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *         <code>fpga-image</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     *         <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     *         <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *         <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *         <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> |
-     *         <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     *         <code>fpga-image</code> | <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     *         <code>internet-gateway</code> | <code>launch-template</code> | <code>natgateway</code> |
+     *         <code>network-acl</code> | <code>network-interface</code> | <code>reserved-instances</code> |
+     *         <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
+     *         <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     *         <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -216,7 +218,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -233,11 +235,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
      * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>image</code> | <code>instance</code> | <code>internet-gateway</code> | <code>launch-template</code> |
-     * <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> | <code>security-group</code> | <code>snapshot</code>
-     * | <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> | <code>subnet</code> |
+     * <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
+     * <code>vpn-gateway</code>).
      * </p>
      * </li>
      * <li>
@@ -254,7 +257,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -270,12 +273,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
      *        <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *        <code>fpga-image</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     *        <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     *        <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *        <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *        <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> |
-     *        <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     *        <code>fpga-image</code> | <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     *        <code>internet-gateway</code> | <code>launch-template</code> | <code>natgateway</code> |
+     *        <code>network-acl</code> | <code>network-interface</code> | <code>reserved-instances</code> |
+     *        <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
+     *        <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     *        <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -302,7 +305,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -319,11 +322,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
      * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>image</code> | <code>instance</code> | <code>internet-gateway</code> | <code>launch-template</code> |
-     * <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> | <code>security-group</code> | <code>snapshot</code>
-     * | <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> | <code>subnet</code> |
+     * <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
+     * <code>vpn-gateway</code>).
      * </p>
      * </li>
      * <li>
@@ -345,7 +349,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -361,12 +365,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
      *        <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *        <code>fpga-image</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     *        <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     *        <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *        <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *        <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> |
-     *        <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     *        <code>fpga-image</code> | <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     *        <code>internet-gateway</code> | <code>launch-template</code> | <code>natgateway</code> |
+     *        <code>network-acl</code> | <code>network-interface</code> | <code>reserved-instances</code> |
+     *        <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
+     *        <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     *        <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -395,7 +399,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -412,11 +416,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
      * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>image</code> | <code>instance</code> | <code>internet-gateway</code> | <code>launch-template</code> |
-     * <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> | <code>security-group</code> | <code>snapshot</code>
-     * | <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> | <code>subnet</code> |
+     * <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
+     * <code>vpn-gateway</code>).
      * </p>
      * </li>
      * <li>
@@ -433,7 +438,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -449,12 +454,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
      *        <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *        <code>fpga-image</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     *        <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     *        <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *        <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *        <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> |
-     *        <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     *        <code>fpga-image</code> | <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     *        <code>internet-gateway</code> | <code>launch-template</code> | <code>natgateway</code> |
+     *        <code>network-acl</code> | <code>network-interface</code> | <code>reserved-instances</code> |
+     *        <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
+     *        <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
+     *        <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>).
      *        </p>
      *        </li>
      *        <li>

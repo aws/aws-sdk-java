@@ -3747,7 +3747,11 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * Create the data firehose with a PUT source and in the region that you are operating. However, if you are
      * capturing logs for Amazon CloudFront, always create the firehose in US East (N. Virginia).
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * Do not create the data firehose using a <code>Kinesis stream</code> as your source.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code> request.
@@ -3785,7 +3789,11 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * Create the data firehose with a PUT source and in the region that you are operating. However, if you are
      * capturing logs for Amazon CloudFront, always create the firehose in US East (N. Virginia).
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * Do not create the data firehose using a <code>Kinesis stream</code> as your source.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code> request.

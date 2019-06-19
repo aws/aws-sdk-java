@@ -56,6 +56,18 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date creationTimestamp;
+    /**
+     * <p>
+     * The DNS entries for the VPC endpoint.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DnsEntry> dnsEntries;
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the network load balancers for the service.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> networkLoadBalancerArns;
 
     /**
      * <p>
@@ -277,6 +289,152 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS entries for the VPC endpoint.
+     * </p>
+     * 
+     * @return The DNS entries for the VPC endpoint.
+     */
+
+    public java.util.List<DnsEntry> getDnsEntries() {
+        if (dnsEntries == null) {
+            dnsEntries = new com.amazonaws.internal.SdkInternalList<DnsEntry>();
+        }
+        return dnsEntries;
+    }
+
+    /**
+     * <p>
+     * The DNS entries for the VPC endpoint.
+     * </p>
+     * 
+     * @param dnsEntries
+     *        The DNS entries for the VPC endpoint.
+     */
+
+    public void setDnsEntries(java.util.Collection<DnsEntry> dnsEntries) {
+        if (dnsEntries == null) {
+            this.dnsEntries = null;
+            return;
+        }
+
+        this.dnsEntries = new com.amazonaws.internal.SdkInternalList<DnsEntry>(dnsEntries);
+    }
+
+    /**
+     * <p>
+     * The DNS entries for the VPC endpoint.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDnsEntries(java.util.Collection)} or {@link #withDnsEntries(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dnsEntries
+     *        The DNS entries for the VPC endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpointConnection withDnsEntries(DnsEntry... dnsEntries) {
+        if (this.dnsEntries == null) {
+            setDnsEntries(new com.amazonaws.internal.SdkInternalList<DnsEntry>(dnsEntries.length));
+        }
+        for (DnsEntry ele : dnsEntries) {
+            this.dnsEntries.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The DNS entries for the VPC endpoint.
+     * </p>
+     * 
+     * @param dnsEntries
+     *        The DNS entries for the VPC endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpointConnection withDnsEntries(java.util.Collection<DnsEntry> dnsEntries) {
+        setDnsEntries(dnsEntries);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the network load balancers for the service.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARNs) of the network load balancers for the service.
+     */
+
+    public java.util.List<String> getNetworkLoadBalancerArns() {
+        if (networkLoadBalancerArns == null) {
+            networkLoadBalancerArns = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return networkLoadBalancerArns;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the network load balancers for the service.
+     * </p>
+     * 
+     * @param networkLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of the network load balancers for the service.
+     */
+
+    public void setNetworkLoadBalancerArns(java.util.Collection<String> networkLoadBalancerArns) {
+        if (networkLoadBalancerArns == null) {
+            this.networkLoadBalancerArns = null;
+            return;
+        }
+
+        this.networkLoadBalancerArns = new com.amazonaws.internal.SdkInternalList<String>(networkLoadBalancerArns);
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the network load balancers for the service.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkLoadBalancerArns(java.util.Collection)} or
+     * {@link #withNetworkLoadBalancerArns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param networkLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of the network load balancers for the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpointConnection withNetworkLoadBalancerArns(String... networkLoadBalancerArns) {
+        if (this.networkLoadBalancerArns == null) {
+            setNetworkLoadBalancerArns(new com.amazonaws.internal.SdkInternalList<String>(networkLoadBalancerArns.length));
+        }
+        for (String ele : networkLoadBalancerArns) {
+            this.networkLoadBalancerArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the network load balancers for the service.
+     * </p>
+     * 
+     * @param networkLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of the network load balancers for the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpointConnection withNetworkLoadBalancerArns(java.util.Collection<String> networkLoadBalancerArns) {
+        setNetworkLoadBalancerArns(networkLoadBalancerArns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -297,7 +455,11 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
         if (getVpcEndpointState() != null)
             sb.append("VpcEndpointState: ").append(getVpcEndpointState()).append(",");
         if (getCreationTimestamp() != null)
-            sb.append("CreationTimestamp: ").append(getCreationTimestamp());
+            sb.append("CreationTimestamp: ").append(getCreationTimestamp()).append(",");
+        if (getDnsEntries() != null)
+            sb.append("DnsEntries: ").append(getDnsEntries()).append(",");
+        if (getNetworkLoadBalancerArns() != null)
+            sb.append("NetworkLoadBalancerArns: ").append(getNetworkLoadBalancerArns());
         sb.append("}");
         return sb.toString();
     }
@@ -332,6 +494,14 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
             return false;
         if (other.getCreationTimestamp() != null && other.getCreationTimestamp().equals(this.getCreationTimestamp()) == false)
             return false;
+        if (other.getDnsEntries() == null ^ this.getDnsEntries() == null)
+            return false;
+        if (other.getDnsEntries() != null && other.getDnsEntries().equals(this.getDnsEntries()) == false)
+            return false;
+        if (other.getNetworkLoadBalancerArns() == null ^ this.getNetworkLoadBalancerArns() == null)
+            return false;
+        if (other.getNetworkLoadBalancerArns() != null && other.getNetworkLoadBalancerArns().equals(this.getNetworkLoadBalancerArns()) == false)
+            return false;
         return true;
     }
 
@@ -345,6 +515,8 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getVpcEndpointOwner() == null) ? 0 : getVpcEndpointOwner().hashCode());
         hashCode = prime * hashCode + ((getVpcEndpointState() == null) ? 0 : getVpcEndpointState().hashCode());
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getDnsEntries() == null) ? 0 : getDnsEntries().hashCode());
+        hashCode = prime * hashCode + ((getNetworkLoadBalancerArns() == null) ? 0 : getNetworkLoadBalancerArns().hashCode());
         return hashCode;
     }
 

@@ -52,7 +52,7 @@ public class AmazonCloudFrontWaiters {
 
         return new WaiterBuilder<GetDistributionRequest, GetDistributionResult>().withSdkFunction(new GetDistributionFunction(client))
                 .withAcceptors(new DistributionDeployed.IsDeployedMatcher())
-                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(25), new FixedDelayStrategy(60)))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(35), new FixedDelayStrategy(60)))
                 .withExecutorService(executorService).build();
     }
 

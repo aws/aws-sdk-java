@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported standard
- * (for example, AWS CIS Foundations). Contains compliance-related finding details.
+ * (for example, CIS AWS Foundations). Contains compliance-related finding details.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Compliance" target="_top">AWS API
@@ -31,18 +31,18 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the result of a compliance check.
+     * The result of a compliance check.
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * Indicates the result of a compliance check.
+     * The result of a compliance check.
      * </p>
      * 
      * @param status
-     *        Indicates the result of a compliance check.
+     *        The result of a compliance check.
      * @see ComplianceStatus
      */
 
@@ -52,10 +52,10 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the result of a compliance check.
+     * The result of a compliance check.
      * </p>
      * 
-     * @return Indicates the result of a compliance check.
+     * @return The result of a compliance check.
      * @see ComplianceStatus
      */
 
@@ -65,11 +65,11 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the result of a compliance check.
+     * The result of a compliance check.
      * </p>
      * 
      * @param status
-     *        Indicates the result of a compliance check.
+     *        The result of a compliance check.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceStatus
      */
@@ -81,11 +81,11 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the result of a compliance check.
+     * The result of a compliance check.
      * </p>
      * 
      * @param status
-     *        Indicates the result of a compliance check.
+     *        The result of a compliance check.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceStatus
      */

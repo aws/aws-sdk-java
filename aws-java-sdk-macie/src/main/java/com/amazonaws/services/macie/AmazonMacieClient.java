@@ -184,6 +184,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateMemberAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -249,6 +250,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateS3Resources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -306,6 +308,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateMemberAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -368,6 +371,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateS3Resources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -425,6 +429,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMemberAccounts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -485,6 +490,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListS3Resources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -546,6 +552,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateS3Resources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

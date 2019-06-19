@@ -38,6 +38,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The email address of the user.
      * </p>
+     * <note>
+     * <p>
+     * Users' email addresses are case-sensitive.
+     * </p>
+     * </note>
      */
     private String userName;
     /**
@@ -148,9 +153,17 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The email address of the user.
      * </p>
+     * <note>
+     * <p>
+     * Users' email addresses are case-sensitive.
+     * </p>
+     * </note>
      * 
      * @param userName
-     *        The email address of the user.
+     *        The email address of the user.</p> <note>
+     *        <p>
+     *        Users' email addresses are case-sensitive.
+     *        </p>
      */
 
     public void setUserName(String userName) {
@@ -161,8 +174,16 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The email address of the user.
      * </p>
+     * <note>
+     * <p>
+     * Users' email addresses are case-sensitive.
+     * </p>
+     * </note>
      * 
-     * @return The email address of the user.
+     * @return The email address of the user.</p> <note>
+     *         <p>
+     *         Users' email addresses are case-sensitive.
+     *         </p>
      */
 
     public String getUserName() {
@@ -173,9 +194,17 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The email address of the user.
      * </p>
+     * <note>
+     * <p>
+     * Users' email addresses are case-sensitive.
+     * </p>
+     * </note>
      * 
      * @param userName
-     *        The email address of the user.
+     *        The email address of the user.</p> <note>
+     *        <p>
+     *        Users' email addresses are case-sensitive.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

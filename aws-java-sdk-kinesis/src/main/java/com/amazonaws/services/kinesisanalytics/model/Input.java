@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * When you configure the application input, you specify the streaming source, the in-application stream name that is
  * created, and the mapping between the two. For more information, see <a
- * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+ * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
  * Input</a>.
  * </p>
  * 
@@ -42,9 +42,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     private String namePrefix;
     /**
      * <p>
-     * The <a>InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received
-     * from the stream, before the application's SQL code executes. Currently, the only input processing configuration
-     * available is <a>InputLambdaProcessor</a>.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received from
+     * the stream, before the application's SQL code executes. Currently, the only input processing configuration
+     * available is <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">
+     * InputLambdaProcessor</a>.
      * </p>
      */
     private InputProcessingConfiguration inputProcessingConfiguration;
@@ -76,7 +78,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * Data from your source is routed to these in-application input streams.
      * </p>
      * <p>
-     * (see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * (see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>.
      * </p>
      */
@@ -152,15 +154,21 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a>InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received
-     * from the stream, before the application's SQL code executes. Currently, the only input processing configuration
-     * available is <a>InputLambdaProcessor</a>.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received from
+     * the stream, before the application's SQL code executes. Currently, the only input processing configuration
+     * available is <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">
+     * InputLambdaProcessor</a>.
      * </p>
      * 
      * @param inputProcessingConfiguration
-     *        The <a>InputProcessingConfiguration</a> for the input. An input processor transforms records as they are
+     *        The <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html"
+     *        >InputProcessingConfiguration</a> for the input. An input processor transforms records as they are
      *        received from the stream, before the application's SQL code executes. Currently, the only input processing
-     *        configuration available is <a>InputLambdaProcessor</a>.
+     *        configuration available is <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html"
+     *        >InputLambdaProcessor</a>.
      */
 
     public void setInputProcessingConfiguration(InputProcessingConfiguration inputProcessingConfiguration) {
@@ -169,14 +177,20 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a>InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received
-     * from the stream, before the application's SQL code executes. Currently, the only input processing configuration
-     * available is <a>InputLambdaProcessor</a>.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received from
+     * the stream, before the application's SQL code executes. Currently, the only input processing configuration
+     * available is <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">
+     * InputLambdaProcessor</a>.
      * </p>
      * 
-     * @return The <a>InputProcessingConfiguration</a> for the input. An input processor transforms records as they are
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html"
+     *         >InputProcessingConfiguration</a> for the input. An input processor transforms records as they are
      *         received from the stream, before the application's SQL code executes. Currently, the only input
-     *         processing configuration available is <a>InputLambdaProcessor</a>.
+     *         processing configuration available is <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html"
+     *         >InputLambdaProcessor</a>.
      */
 
     public InputProcessingConfiguration getInputProcessingConfiguration() {
@@ -185,15 +199,21 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a>InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received
-     * from the stream, before the application's SQL code executes. Currently, the only input processing configuration
-     * available is <a>InputLambdaProcessor</a>.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received from
+     * the stream, before the application's SQL code executes. Currently, the only input processing configuration
+     * available is <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">
+     * InputLambdaProcessor</a>.
      * </p>
      * 
      * @param inputProcessingConfiguration
-     *        The <a>InputProcessingConfiguration</a> for the input. An input processor transforms records as they are
+     *        The <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html"
+     *        >InputProcessingConfiguration</a> for the input. An input processor transforms records as they are
      *        received from the stream, before the application's SQL code executes. Currently, the only input processing
-     *        configuration available is <a>InputLambdaProcessor</a>.
+     *        configuration available is <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html"
+     *        >InputLambdaProcessor</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,7 +352,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * Data from your source is routed to these in-application input streams.
      * </p>
      * <p>
-     * (see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * (see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>.
      * </p>
      * 
@@ -342,7 +362,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      *        Data from your source is routed to these in-application input streams.
      *        </p>
      *        <p>
-     *        (see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        (see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      */
 
@@ -358,7 +378,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * Data from your source is routed to these in-application input streams.
      * </p>
      * <p>
-     * (see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * (see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>.
      * </p>
      * 
@@ -367,7 +387,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      *         Data from your source is routed to these in-application input streams.
      *         </p>
      *         <p>
-     *         (see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *         (see <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *         Application Input</a>.
      */
 
@@ -383,7 +404,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * Data from your source is routed to these in-application input streams.
      * </p>
      * <p>
-     * (see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * (see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>.
      * </p>
      * 
@@ -393,7 +414,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      *        Data from your source is routed to these in-application input streams.
      *        </p>
      *        <p>
-     *        (see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        (see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

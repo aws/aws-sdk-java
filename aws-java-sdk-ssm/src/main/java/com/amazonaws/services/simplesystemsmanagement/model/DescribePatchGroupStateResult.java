@@ -72,6 +72,13 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Integer instancesWithNotApplicablePatches;
+    /**
+     * <p>
+     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     * reported by name to Systems Manager Inventory.
+     * </p>
+     */
+    private Integer instancesWithUnreportedNotApplicablePatches;
 
     /**
      * <p>
@@ -393,6 +400,52 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     * reported by name to Systems Manager Inventory.
+     * </p>
+     * 
+     * @param instancesWithUnreportedNotApplicablePatches
+     *        The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     *        reported by name to Systems Manager Inventory.
+     */
+
+    public void setInstancesWithUnreportedNotApplicablePatches(Integer instancesWithUnreportedNotApplicablePatches) {
+        this.instancesWithUnreportedNotApplicablePatches = instancesWithUnreportedNotApplicablePatches;
+    }
+
+    /**
+     * <p>
+     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     * reported by name to Systems Manager Inventory.
+     * </p>
+     * 
+     * @return The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     *         reported by name to Systems Manager Inventory.
+     */
+
+    public Integer getInstancesWithUnreportedNotApplicablePatches() {
+        return this.instancesWithUnreportedNotApplicablePatches;
+    }
+
+    /**
+     * <p>
+     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     * reported by name to Systems Manager Inventory.
+     * </p>
+     * 
+     * @param instancesWithUnreportedNotApplicablePatches
+     *        The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     *        reported by name to Systems Manager Inventory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePatchGroupStateResult withInstancesWithUnreportedNotApplicablePatches(Integer instancesWithUnreportedNotApplicablePatches) {
+        setInstancesWithUnreportedNotApplicablePatches(instancesWithUnreportedNotApplicablePatches);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -417,7 +470,9 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
         if (getInstancesWithFailedPatches() != null)
             sb.append("InstancesWithFailedPatches: ").append(getInstancesWithFailedPatches()).append(",");
         if (getInstancesWithNotApplicablePatches() != null)
-            sb.append("InstancesWithNotApplicablePatches: ").append(getInstancesWithNotApplicablePatches());
+            sb.append("InstancesWithNotApplicablePatches: ").append(getInstancesWithNotApplicablePatches()).append(",");
+        if (getInstancesWithUnreportedNotApplicablePatches() != null)
+            sb.append("InstancesWithUnreportedNotApplicablePatches: ").append(getInstancesWithUnreportedNotApplicablePatches());
         sb.append("}");
         return sb.toString();
     }
@@ -464,6 +519,11 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
         if (other.getInstancesWithNotApplicablePatches() != null
                 && other.getInstancesWithNotApplicablePatches().equals(this.getInstancesWithNotApplicablePatches()) == false)
             return false;
+        if (other.getInstancesWithUnreportedNotApplicablePatches() == null ^ this.getInstancesWithUnreportedNotApplicablePatches() == null)
+            return false;
+        if (other.getInstancesWithUnreportedNotApplicablePatches() != null
+                && other.getInstancesWithUnreportedNotApplicablePatches().equals(this.getInstancesWithUnreportedNotApplicablePatches()) == false)
+            return false;
         return true;
     }
 
@@ -479,6 +539,8 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getInstancesWithMissingPatches() == null) ? 0 : getInstancesWithMissingPatches().hashCode());
         hashCode = prime * hashCode + ((getInstancesWithFailedPatches() == null) ? 0 : getInstancesWithFailedPatches().hashCode());
         hashCode = prime * hashCode + ((getInstancesWithNotApplicablePatches() == null) ? 0 : getInstancesWithNotApplicablePatches().hashCode());
+        hashCode = prime * hashCode
+                + ((getInstancesWithUnreportedNotApplicablePatches() == null) ? 0 : getInstancesWithUnreportedNotApplicablePatches().hashCode());
         return hashCode;
     }
 

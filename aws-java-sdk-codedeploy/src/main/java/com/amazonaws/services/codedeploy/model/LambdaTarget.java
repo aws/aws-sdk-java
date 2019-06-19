@@ -64,6 +64,12 @@ public class LambdaTarget implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LifecycleEvent> lifecycleEvents;
+    /**
+     * <p>
+     * A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
+     * </p>
+     */
+    private LambdaFunctionInfo lambdaFunctionInfo;
 
     /**
      * <p>
@@ -358,6 +364,46 @@ public class LambdaTarget implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
+     * </p>
+     * 
+     * @param lambdaFunctionInfo
+     *        A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
+     */
+
+    public void setLambdaFunctionInfo(LambdaFunctionInfo lambdaFunctionInfo) {
+        this.lambdaFunctionInfo = lambdaFunctionInfo;
+    }
+
+    /**
+     * <p>
+     * A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
+     * </p>
+     * 
+     * @return A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
+     */
+
+    public LambdaFunctionInfo getLambdaFunctionInfo() {
+        return this.lambdaFunctionInfo;
+    }
+
+    /**
+     * <p>
+     * A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
+     * </p>
+     * 
+     * @param lambdaFunctionInfo
+     *        A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LambdaTarget withLambdaFunctionInfo(LambdaFunctionInfo lambdaFunctionInfo) {
+        setLambdaFunctionInfo(lambdaFunctionInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -380,7 +426,9 @@ public class LambdaTarget implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedAt() != null)
             sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getLifecycleEvents() != null)
-            sb.append("LifecycleEvents: ").append(getLifecycleEvents());
+            sb.append("LifecycleEvents: ").append(getLifecycleEvents()).append(",");
+        if (getLambdaFunctionInfo() != null)
+            sb.append("LambdaFunctionInfo: ").append(getLambdaFunctionInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +467,10 @@ public class LambdaTarget implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLifecycleEvents() != null && other.getLifecycleEvents().equals(this.getLifecycleEvents()) == false)
             return false;
+        if (other.getLambdaFunctionInfo() == null ^ this.getLambdaFunctionInfo() == null)
+            return false;
+        if (other.getLambdaFunctionInfo() != null && other.getLambdaFunctionInfo().equals(this.getLambdaFunctionInfo()) == false)
+            return false;
         return true;
     }
 
@@ -433,6 +485,7 @@ public class LambdaTarget implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getLifecycleEvents() == null) ? 0 : getLifecycleEvents().hashCode());
+        hashCode = prime * hashCode + ((getLambdaFunctionInfo() == null) ? 0 : getLambdaFunctionInfo().hashCode());
         return hashCode;
     }
 

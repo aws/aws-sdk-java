@@ -183,6 +183,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public DeleteKnownHostKeysResult deleteKnownHostKeys(DeleteKnownHostKeysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteLoadBalancerResult deleteLoadBalancer(DeleteLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

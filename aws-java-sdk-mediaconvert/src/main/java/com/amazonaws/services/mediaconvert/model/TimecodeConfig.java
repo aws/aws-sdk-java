@@ -38,7 +38,15 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
      * the first frame is the timecode value on the first input frame of the input.
      */
     private String anchor;
-
+    /**
+     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video,
+     * audio, captions, and markers are synchronized and that time-based features, such as image inserter, work
+     * correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with
+     * frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded
+     * timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the
+     * timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial
+     * frame to a value other than zero. You use Start timecode (Start) to provide this value.
+     */
     private String source;
     /**
      * Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode (Start) to
@@ -134,7 +142,23 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video,
+     * audio, captions, and markers are synchronized and that time-based features, such as image inserter, work
+     * correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with
+     * frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded
+     * timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the
+     * timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial
+     * frame to a value other than zero. You use Start timecode (Start) to provide this value.
+     * 
      * @param source
+     *        Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your
+     *        video, audio, captions, and markers are synchronized and that time-based features, such as image inserter,
+     *        work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour
+     *        format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input
+     *        video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. *
+     *        Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start
+     *        (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start
+     *        timecode (Start) to provide this value.
      * @see TimecodeSource
      */
 
@@ -143,7 +167,22 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video,
+     * audio, captions, and markers are synchronized and that time-based features, such as image inserter, work
+     * correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with
+     * frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded
+     * timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the
+     * timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial
+     * frame to a value other than zero. You use Start timecode (Start) to provide this value.
+     * 
+     * @return Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your
+     *         video, audio, captions, and markers are synchronized and that time-based features, such as image
+     *         inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are
+     *         in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in
+     *         the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED)
+     *         instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified
+     *         Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start
+     *         timecode (Start) to provide this value.
      * @see TimecodeSource
      */
 
@@ -152,7 +191,23 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video,
+     * audio, captions, and markers are synchronized and that time-based features, such as image inserter, work
+     * correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with
+     * frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded
+     * timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the
+     * timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial
+     * frame to a value other than zero. You use Start timecode (Start) to provide this value.
+     * 
      * @param source
+     *        Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your
+     *        video, audio, captions, and markers are synchronized and that time-based features, such as image inserter,
+     *        work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour
+     *        format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input
+     *        video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. *
+     *        Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start
+     *        (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start
+     *        timecode (Start) to provide this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimecodeSource
      */
@@ -163,7 +218,23 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video,
+     * audio, captions, and markers are synchronized and that time-based features, such as image inserter, work
+     * correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with
+     * frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded
+     * timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the
+     * timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial
+     * frame to a value other than zero. You use Start timecode (Start) to provide this value.
+     * 
      * @param source
+     *        Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your
+     *        video, audio, captions, and markers are synchronized and that time-based features, such as image inserter,
+     *        work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour
+     *        format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input
+     *        video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. *
+     *        Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start
+     *        (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start
+     *        timecode (Start) to provide this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimecodeSource
      */

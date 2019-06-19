@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The entity (user, group, or user) name isn't unique in Amazon WorkMail.
+ * The user, group, or resource name isn't unique in Amazon WorkMail.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

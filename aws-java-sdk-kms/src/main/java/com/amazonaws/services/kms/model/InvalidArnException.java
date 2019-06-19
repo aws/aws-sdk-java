@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request was rejected because a specified ARN was not valid.
+ * The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

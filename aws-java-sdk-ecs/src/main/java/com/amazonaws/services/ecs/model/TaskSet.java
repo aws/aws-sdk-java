@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details
- * such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.
+ * Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An
+ * Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the
+ * task set serves production traffic.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskSet" target="_top">AWS API Documentation</a>
@@ -42,14 +43,35 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     private String taskSetArn;
     /**
      * <p>
-     * The tag specified when a task set is started. If the task is started by an AWS CodeDeploy deployment, then the
-     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>.
+     * The Amazon Resource Name (ARN) of the service the task set exists in.
+     * </p>
+     */
+    private String serviceArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists in.
+     * </p>
+     */
+    private String clusterArn;
+    /**
+     * <p>
+     * The tag specified when a task set is started. If the task set is created by an AWS CodeDeploy deployment, the
+     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external deployment,
+     * the startedBy field isn't used.
      * </p>
      */
     private String startedBy;
     /**
      * <p>
-     * The deployment ID of the AWS CodeDeploy deployment.
+     * The external ID associated with the task set.
+     * </p>
+     * <p>
+     * If a task set is created by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains the AWS
+     * CodeDeploy deployment ID.
+     * </p>
+     * <p>
+     * If a task set is created for an external deployment and is associated with a service discovery registry, the
+     * <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.
      * </p>
      */
     private String externalId;
@@ -89,7 +111,8 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The computed desired count for the task set. This is calculated by multiplying the service's
-     * <code>desiredCount</code> by the task set's <code>scale</code> percentage.
+     * <code>desiredCount</code> by the task set's <code>scale</code> percentage. The result is always rounded up. For
+     * example, if the computed desired count is 1.2, it rounds up to 2 tasks.
      * </p>
      */
     private Integer computedDesiredCount;
@@ -97,7 +120,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A task in
      * the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the
-     * <code>PENDING</code> status when it launches for the first time, or when it is restarted after being in the
+     * <code>PENDING</code> status when it launches for the first time or when it is restarted after being in the
      * <code>STOPPED</code> state.
      * </p>
      */
@@ -153,7 +176,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
     /**
      * <p>
-     * A floating-point percentage of the desired number of tasks to place and keep running in the service.
+     * The details of the service discovery registries to assign to this task set. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
+    /**
+     * <p>
+     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      * </p>
      */
     private Scale scale;
@@ -182,7 +212,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
+     * until it expires.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -278,13 +314,95 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag specified when a task set is started. If the task is started by an AWS CodeDeploy deployment, then the
-     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>.
+     * The Amazon Resource Name (ARN) of the service the task set exists in.
+     * </p>
+     * 
+     * @param serviceArn
+     *        The Amazon Resource Name (ARN) of the service the task set exists in.
+     */
+
+    public void setServiceArn(String serviceArn) {
+        this.serviceArn = serviceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service the task set exists in.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the service the task set exists in.
+     */
+
+    public String getServiceArn() {
+        return this.serviceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service the task set exists in.
+     * </p>
+     * 
+     * @param serviceArn
+     *        The Amazon Resource Name (ARN) of the service the task set exists in.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskSet withServiceArn(String serviceArn) {
+        setServiceArn(serviceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists in.
+     * </p>
+     * 
+     * @param clusterArn
+     *        The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists in.
+     */
+
+    public void setClusterArn(String clusterArn) {
+        this.clusterArn = clusterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists in.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists in.
+     */
+
+    public String getClusterArn() {
+        return this.clusterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists in.
+     * </p>
+     * 
+     * @param clusterArn
+     *        The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists in.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskSet withClusterArn(String clusterArn) {
+        setClusterArn(clusterArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag specified when a task set is started. If the task set is created by an AWS CodeDeploy deployment, the
+     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external deployment,
+     * the startedBy field isn't used.
      * </p>
      * 
      * @param startedBy
-     *        The tag specified when a task set is started. If the task is started by an AWS CodeDeploy deployment, then
-     *        the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>.
+     *        The tag specified when a task set is started. If the task set is created by an AWS CodeDeploy deployment,
+     *        the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external
+     *        deployment, the startedBy field isn't used.
      */
 
     public void setStartedBy(String startedBy) {
@@ -293,12 +411,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag specified when a task set is started. If the task is started by an AWS CodeDeploy deployment, then the
-     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>.
+     * The tag specified when a task set is started. If the task set is created by an AWS CodeDeploy deployment, the
+     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external deployment,
+     * the startedBy field isn't used.
      * </p>
      * 
-     * @return The tag specified when a task set is started. If the task is started by an AWS CodeDeploy deployment,
-     *         then the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>.
+     * @return The tag specified when a task set is started. If the task set is created by an AWS CodeDeploy deployment,
+     *         the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external
+     *         deployment, the startedBy field isn't used.
      */
 
     public String getStartedBy() {
@@ -307,13 +427,15 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag specified when a task set is started. If the task is started by an AWS CodeDeploy deployment, then the
-     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>.
+     * The tag specified when a task set is started. If the task set is created by an AWS CodeDeploy deployment, the
+     * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external deployment,
+     * the startedBy field isn't used.
      * </p>
      * 
      * @param startedBy
-     *        The tag specified when a task set is started. If the task is started by an AWS CodeDeploy deployment, then
-     *        the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>.
+     *        The tag specified when a task set is started. If the task set is created by an AWS CodeDeploy deployment,
+     *        the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task set created for an external
+     *        deployment, the startedBy field isn't used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,11 +446,27 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment ID of the AWS CodeDeploy deployment.
+     * The external ID associated with the task set.
+     * </p>
+     * <p>
+     * If a task set is created by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains the AWS
+     * CodeDeploy deployment ID.
+     * </p>
+     * <p>
+     * If a task set is created for an external deployment and is associated with a service discovery registry, the
+     * <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.
      * </p>
      * 
      * @param externalId
-     *        The deployment ID of the AWS CodeDeploy deployment.
+     *        The external ID associated with the task set.</p>
+     *        <p>
+     *        If a task set is created by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains
+     *        the AWS CodeDeploy deployment ID.
+     *        </p>
+     *        <p>
+     *        If a task set is created for an external deployment and is associated with a service discovery registry,
+     *        the <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     *        attribute.
      */
 
     public void setExternalId(String externalId) {
@@ -337,10 +475,26 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment ID of the AWS CodeDeploy deployment.
+     * The external ID associated with the task set.
+     * </p>
+     * <p>
+     * If a task set is created by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains the AWS
+     * CodeDeploy deployment ID.
+     * </p>
+     * <p>
+     * If a task set is created for an external deployment and is associated with a service discovery registry, the
+     * <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.
      * </p>
      * 
-     * @return The deployment ID of the AWS CodeDeploy deployment.
+     * @return The external ID associated with the task set.</p>
+     *         <p>
+     *         If a task set is created by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains
+     *         the AWS CodeDeploy deployment ID.
+     *         </p>
+     *         <p>
+     *         If a task set is created for an external deployment and is associated with a service discovery registry,
+     *         the <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     *         attribute.
      */
 
     public String getExternalId() {
@@ -349,11 +503,27 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment ID of the AWS CodeDeploy deployment.
+     * The external ID associated with the task set.
+     * </p>
+     * <p>
+     * If a task set is created by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains the AWS
+     * CodeDeploy deployment ID.
+     * </p>
+     * <p>
+     * If a task set is created for an external deployment and is associated with a service discovery registry, the
+     * <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.
      * </p>
      * 
      * @param externalId
-     *        The deployment ID of the AWS CodeDeploy deployment.
+     *        The external ID associated with the task set.</p>
+     *        <p>
+     *        If a task set is created by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains
+     *        the AWS CodeDeploy deployment ID.
+     *        </p>
+     *        <p>
+     *        If a task set is created for an external deployment and is associated with a service discovery registry,
+     *        the <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     *        attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -568,12 +738,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The computed desired count for the task set. This is calculated by multiplying the service's
-     * <code>desiredCount</code> by the task set's <code>scale</code> percentage.
+     * <code>desiredCount</code> by the task set's <code>scale</code> percentage. The result is always rounded up. For
+     * example, if the computed desired count is 1.2, it rounds up to 2 tasks.
      * </p>
      * 
      * @param computedDesiredCount
      *        The computed desired count for the task set. This is calculated by multiplying the service's
-     *        <code>desiredCount</code> by the task set's <code>scale</code> percentage.
+     *        <code>desiredCount</code> by the task set's <code>scale</code> percentage. The result is always rounded
+     *        up. For example, if the computed desired count is 1.2, it rounds up to 2 tasks.
      */
 
     public void setComputedDesiredCount(Integer computedDesiredCount) {
@@ -583,11 +755,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The computed desired count for the task set. This is calculated by multiplying the service's
-     * <code>desiredCount</code> by the task set's <code>scale</code> percentage.
+     * <code>desiredCount</code> by the task set's <code>scale</code> percentage. The result is always rounded up. For
+     * example, if the computed desired count is 1.2, it rounds up to 2 tasks.
      * </p>
      * 
      * @return The computed desired count for the task set. This is calculated by multiplying the service's
-     *         <code>desiredCount</code> by the task set's <code>scale</code> percentage.
+     *         <code>desiredCount</code> by the task set's <code>scale</code> percentage. The result is always rounded
+     *         up. For example, if the computed desired count is 1.2, it rounds up to 2 tasks.
      */
 
     public Integer getComputedDesiredCount() {
@@ -597,12 +771,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The computed desired count for the task set. This is calculated by multiplying the service's
-     * <code>desiredCount</code> by the task set's <code>scale</code> percentage.
+     * <code>desiredCount</code> by the task set's <code>scale</code> percentage. The result is always rounded up. For
+     * example, if the computed desired count is 1.2, it rounds up to 2 tasks.
      * </p>
      * 
      * @param computedDesiredCount
      *        The computed desired count for the task set. This is calculated by multiplying the service's
-     *        <code>desiredCount</code> by the task set's <code>scale</code> percentage.
+     *        <code>desiredCount</code> by the task set's <code>scale</code> percentage. The result is always rounded
+     *        up. For example, if the computed desired count is 1.2, it rounds up to 2 tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -615,14 +791,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A task in
      * the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the
-     * <code>PENDING</code> status when it launches for the first time, or when it is restarted after being in the
+     * <code>PENDING</code> status when it launches for the first time or when it is restarted after being in the
      * <code>STOPPED</code> state.
      * </p>
      * 
      * @param pendingCount
      *        The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A
      *        task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set
-     *        enters the <code>PENDING</code> status when it launches for the first time, or when it is restarted after
+     *        enters the <code>PENDING</code> status when it launches for the first time or when it is restarted after
      *        being in the <code>STOPPED</code> state.
      */
 
@@ -634,13 +810,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A task in
      * the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the
-     * <code>PENDING</code> status when it launches for the first time, or when it is restarted after being in the
+     * <code>PENDING</code> status when it launches for the first time or when it is restarted after being in the
      * <code>STOPPED</code> state.
      * </p>
      * 
      * @return The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A
      *         task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set
-     *         enters the <code>PENDING</code> status when it launches for the first time, or when it is restarted after
+     *         enters the <code>PENDING</code> status when it launches for the first time or when it is restarted after
      *         being in the <code>STOPPED</code> state.
      */
 
@@ -652,14 +828,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A task in
      * the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the
-     * <code>PENDING</code> status when it launches for the first time, or when it is restarted after being in the
+     * <code>PENDING</code> status when it launches for the first time or when it is restarted after being in the
      * <code>STOPPED</code> state.
      * </p>
      * 
      * @param pendingCount
      *        The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A
      *        task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set
-     *        enters the <code>PENDING</code> status when it launches for the first time, or when it is restarted after
+     *        enters the <code>PENDING</code> status when it launches for the first time or when it is restarted after
      *        being in the <code>STOPPED</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1049,11 +1225,96 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A floating-point percentage of the desired number of tasks to place and keep running in the service.
+     * The details of the service discovery registries to assign to this task set. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * </p>
+     * 
+     * @return The details of the service discovery registries to assign to this task set. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *         Discovery</a>.
+     */
+
+    public java.util.List<ServiceRegistry> getServiceRegistries() {
+        if (serviceRegistries == null) {
+            serviceRegistries = new com.amazonaws.internal.SdkInternalList<ServiceRegistry>();
+        }
+        return serviceRegistries;
+    }
+
+    /**
+     * <p>
+     * The details of the service discovery registries to assign to this task set. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * </p>
+     * 
+     * @param serviceRegistries
+     *        The details of the service discovery registries to assign to this task set. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        Discovery</a>.
+     */
+
+    public void setServiceRegistries(java.util.Collection<ServiceRegistry> serviceRegistries) {
+        if (serviceRegistries == null) {
+            this.serviceRegistries = null;
+            return;
+        }
+
+        this.serviceRegistries = new com.amazonaws.internal.SdkInternalList<ServiceRegistry>(serviceRegistries);
+    }
+
+    /**
+     * <p>
+     * The details of the service discovery registries to assign to this task set. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setServiceRegistries(java.util.Collection)} or {@link #withServiceRegistries(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param serviceRegistries
+     *        The details of the service discovery registries to assign to this task set. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        Discovery</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskSet withServiceRegistries(ServiceRegistry... serviceRegistries) {
+        if (this.serviceRegistries == null) {
+            setServiceRegistries(new com.amazonaws.internal.SdkInternalList<ServiceRegistry>(serviceRegistries.length));
+        }
+        for (ServiceRegistry ele : serviceRegistries) {
+            this.serviceRegistries.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of the service discovery registries to assign to this task set. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * </p>
+     * 
+     * @param serviceRegistries
+     *        The details of the service discovery registries to assign to this task set. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        Discovery</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskSet withServiceRegistries(java.util.Collection<ServiceRegistry> serviceRegistries) {
+        setServiceRegistries(serviceRegistries);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      * </p>
      * 
      * @param scale
-     *        A floating-point percentage of the desired number of tasks to place and keep running in the service.
+     *        A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      */
 
     public void setScale(Scale scale) {
@@ -1062,10 +1323,10 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A floating-point percentage of the desired number of tasks to place and keep running in the service.
+     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      * </p>
      * 
-     * @return A floating-point percentage of the desired number of tasks to place and keep running in the service.
+     * @return A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      */
 
     public Scale getScale() {
@@ -1074,11 +1335,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A floating-point percentage of the desired number of tasks to place and keep running in the service.
+     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      * </p>
      * 
      * @param scale
-     *        A floating-point percentage of the desired number of tasks to place and keep running in the service.
+     *        A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1112,7 +1373,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
+     * until it expires.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1142,7 +1409,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        All tasks are reporting a healthy status from the load balancers, service discovery, and container health
      *        checks.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     *        <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be
+     *        ignored until it expires.
+     *        </p>
+     *        </note></li>
      *        </ul>
      *        <p>
      *        If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1178,7 +1451,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
+     * until it expires.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1207,7 +1486,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *         All tasks are reporting a healthy status from the load balancers, service discovery, and container health
      *         checks.
      *         </p>
-     *         </li>
+     *         <note>
+     *         <p>
+     *         If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     *         <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be
+     *         ignored until it expires.
+     *         </p>
+     *         </note></li>
      *         </ul>
      *         <p>
      *         If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1243,7 +1528,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
+     * until it expires.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1273,7 +1564,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        All tasks are reporting a healthy status from the load balancers, service discovery, and container health
      *        checks.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     *        <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be
+     *        ignored until it expires.
+     *        </p>
+     *        </note></li>
      *        </ul>
      *        <p>
      *        If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1311,7 +1608,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
+     * until it expires.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1341,7 +1644,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        All tasks are reporting a healthy status from the load balancers, service discovery, and container health
      *        checks.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     *        <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be
+     *        ignored until it expires.
+     *        </p>
+     *        </note></li>
      *        </ul>
      *        <p>
      *        If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1410,6 +1719,10 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
             sb.append("Id: ").append(getId()).append(",");
         if (getTaskSetArn() != null)
             sb.append("TaskSetArn: ").append(getTaskSetArn()).append(",");
+        if (getServiceArn() != null)
+            sb.append("ServiceArn: ").append(getServiceArn()).append(",");
+        if (getClusterArn() != null)
+            sb.append("ClusterArn: ").append(getClusterArn()).append(",");
         if (getStartedBy() != null)
             sb.append("StartedBy: ").append(getStartedBy()).append(",");
         if (getExternalId() != null)
@@ -1436,6 +1749,8 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
             sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
         if (getLoadBalancers() != null)
             sb.append("LoadBalancers: ").append(getLoadBalancers()).append(",");
+        if (getServiceRegistries() != null)
+            sb.append("ServiceRegistries: ").append(getServiceRegistries()).append(",");
         if (getScale() != null)
             sb.append("Scale: ").append(getScale()).append(",");
         if (getStabilityStatus() != null)
@@ -1463,6 +1778,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
         if (other.getTaskSetArn() == null ^ this.getTaskSetArn() == null)
             return false;
         if (other.getTaskSetArn() != null && other.getTaskSetArn().equals(this.getTaskSetArn()) == false)
+            return false;
+        if (other.getServiceArn() == null ^ this.getServiceArn() == null)
+            return false;
+        if (other.getServiceArn() != null && other.getServiceArn().equals(this.getServiceArn()) == false)
+            return false;
+        if (other.getClusterArn() == null ^ this.getClusterArn() == null)
+            return false;
+        if (other.getClusterArn() != null && other.getClusterArn().equals(this.getClusterArn()) == false)
             return false;
         if (other.getStartedBy() == null ^ this.getStartedBy() == null)
             return false;
@@ -1516,6 +1839,10 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLoadBalancers() != null && other.getLoadBalancers().equals(this.getLoadBalancers()) == false)
             return false;
+        if (other.getServiceRegistries() == null ^ this.getServiceRegistries() == null)
+            return false;
+        if (other.getServiceRegistries() != null && other.getServiceRegistries().equals(this.getServiceRegistries()) == false)
+            return false;
         if (other.getScale() == null ^ this.getScale() == null)
             return false;
         if (other.getScale() != null && other.getScale().equals(this.getScale()) == false)
@@ -1538,6 +1865,8 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getTaskSetArn() == null) ? 0 : getTaskSetArn().hashCode());
+        hashCode = prime * hashCode + ((getServiceArn() == null) ? 0 : getServiceArn().hashCode());
+        hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
         hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
@@ -1551,6 +1880,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancers() == null) ? 0 : getLoadBalancers().hashCode());
+        hashCode = prime * hashCode + ((getServiceRegistries() == null) ? 0 : getServiceRegistries().hashCode());
         hashCode = prime * hashCode + ((getScale() == null) ? 0 : getScale().hashCode());
         hashCode = prime * hashCode + ((getStabilityStatus() == null) ? 0 : getStabilityStatus().hashCode());
         hashCode = prime * hashCode + ((getStabilityStatusAt() == null) ? 0 : getStabilityStatusAt().hashCode());

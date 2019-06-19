@@ -324,6 +324,8 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Runtime Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PostContent");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -490,6 +492,7 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Runtime Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PostText");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

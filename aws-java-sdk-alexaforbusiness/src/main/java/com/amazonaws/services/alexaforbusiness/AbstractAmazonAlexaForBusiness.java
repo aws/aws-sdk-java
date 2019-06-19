@@ -38,6 +38,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
     }
 
     @Override
+    public AssociateDeviceWithNetworkProfileResult associateDeviceWithNetworkProfile(AssociateDeviceWithNetworkProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateDeviceWithRoomResult associateDeviceWithRoom(AssociateDeviceWithRoomRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,6 +79,16 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
 
     @Override
     public CreateContactResult createContact(CreateContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateGatewayGroupResult createGatewayGroup(CreateGatewayGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,6 +134,21 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
 
     @Override
     public DeleteDeviceResult deleteDevice(DeleteDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDeviceUsageDataResult deleteDeviceUsageData(DeleteDeviceUsageDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteGatewayGroupResult deleteGatewayGroup(DeleteGatewayGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteNetworkProfileResult deleteNetworkProfile(DeleteNetworkProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -208,7 +238,22 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
     }
 
     @Override
+    public GetGatewayResult getGateway(GetGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetGatewayGroupResult getGatewayGroup(GetGatewayGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetInvitationConfigurationResult getInvitationConfiguration(GetInvitationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetNetworkProfileResult getNetworkProfile(GetNetworkProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -244,6 +289,16 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
 
     @Override
     public ListDeviceEventsResult listDeviceEvents(ListDeviceEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListGatewayGroupsResult listGatewayGroups(ListGatewayGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListGatewaysResult listGateways(ListGatewaysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -328,6 +383,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
     }
 
     @Override
+    public SearchNetworkProfilesResult searchNetworkProfiles(SearchNetworkProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SearchProfilesResult searchProfiles(SearchProfilesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -344,6 +404,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
 
     @Override
     public SearchUsersResult searchUsers(SearchUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SendAnnouncementResult sendAnnouncement(SendAnnouncementRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -394,6 +459,21 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
 
     @Override
     public UpdateDeviceResult updateDevice(UpdateDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGatewayResult updateGateway(UpdateGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGatewayGroupResult updateGatewayGroup(UpdateGatewayGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateNetworkProfileResult updateNetworkProfile(UpdateNetworkProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

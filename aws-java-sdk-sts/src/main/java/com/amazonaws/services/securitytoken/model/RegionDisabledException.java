@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * STS is not activated in the requested region for the account that is being asked to generate credentials. The account
  * administrator must use the IAM console to activate STS in that region. For more information, see <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
  * Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
  * </p>
  */

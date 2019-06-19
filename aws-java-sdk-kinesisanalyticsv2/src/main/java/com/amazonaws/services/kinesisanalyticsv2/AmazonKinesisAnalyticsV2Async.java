@@ -26,7 +26,9 @@ import com.amazonaws.services.kinesisanalyticsv2.model.*;
  * </p>
  * <p>
  * <p>
- * Documentation for Kinesis Data Analytics API v2
+ * Amazon Kinesis Data Analytics is a fully managed service that you can use to process and analyze streaming data using
+ * SQL or Java. The service enables you to quickly author and run SQL or Java code against streaming sources to perform
+ * time series analytics, feed real-time dashboards, and create real-time metrics.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -270,15 +272,9 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
     /**
      * <p>
      * Creates an Amazon Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics
-     * application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/Java/creating-app.html">Creating an
-     * Application</a>.
+     * application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
+     * an Application</a>.
      * </p>
-     * <note>
-     * <p>
-     * SQL is not enabled for this private beta release. Using SQL parameters (such as
-     * <a>SqlApplicationConfiguration</a>) will result in an error.
-     * </p>
-     * </note>
      * 
      * @param createApplicationRequest
      * @return A Java Future containing the result of the CreateApplication operation returned by the service.
@@ -291,15 +287,9 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
     /**
      * <p>
      * Creates an Amazon Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics
-     * application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/Java/creating-app.html">Creating an
-     * Application</a>.
+     * application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
+     * an Application</a>.
      * </p>
-     * <note>
-     * <p>
-     * SQL is not enabled for this private beta release. Using SQL parameters (such as
-     * <a>SqlApplicationConfiguration</a>) will result in an error.
-     * </p>
-     * </note>
      * 
      * @param createApplicationRequest
      * @param asyncHandler
@@ -758,15 +748,40 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
 
     /**
      * <p>
+     * Retrieves the list of key-value tags assigned to the application.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonKinesisAnalyticsV2Async.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Retrieves the list of key-value tags assigned to the application.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonKinesisAnalyticsV2AsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts the specified Amazon Kinesis Data Analytics application. After creating an application, you must
      * exclusively call this operation to start your application.
      * </p>
-     * <note>
-     * <p>
-     * SQL is not enabled for this private beta. Using SQL parameters (such as
-     * <a>RunConfiguration$SqlRunConfigurations</a>) will result in an error.
-     * </p>
-     * </note>
      * 
      * @param startApplicationRequest
      * @return A Java Future containing the result of the StartApplication operation returned by the service.
@@ -781,12 +796,6 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
      * Starts the specified Amazon Kinesis Data Analytics application. After creating an application, you must
      * exclusively call this operation to start your application.
      * </p>
-     * <note>
-     * <p>
-     * SQL is not enabled for this private beta. Using SQL parameters (such as
-     * <a>RunConfiguration$SqlRunConfigurations</a>) will result in an error.
-     * </p>
-     * </note>
      * 
      * @param startApplicationRequest
      * @param asyncHandler
@@ -836,18 +845,76 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
 
     /**
      * <p>
+     * Adds one or more key-value tags to a Kinesis Analytics application. Note that the maximum number of application
+     * tags includes system tags. The maximum number of user-defined application tags is 50.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonKinesisAnalyticsV2Async.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds one or more key-value tags to a Kinesis Analytics application. Note that the maximum number of application
+     * tags includes system tags. The maximum number of user-defined application tags is 50.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonKinesisAnalyticsV2AsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags from a Kinesis Analytics application.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonKinesisAnalyticsV2Async.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from a Kinesis Analytics application.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonKinesisAnalyticsV2AsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates an existing Amazon Kinesis Data Analytics application. Using this operation, you can update application
      * code, input configuration, and output configuration.
      * </p>
      * <p>
      * Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update your application.
      * </p>
-     * <note>
-     * <p>
-     * SQL is not enabled for this private beta. Using SQL parameters (such as <a>SqlApplicationConfigurationUpdate</a>)
-     * will result in an error.
-     * </p>
-     * </note>
      * 
      * @param updateApplicationRequest
      * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
@@ -865,12 +932,6 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
      * <p>
      * Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update your application.
      * </p>
-     * <note>
-     * <p>
-     * SQL is not enabled for this private beta. Using SQL parameters (such as <a>SqlApplicationConfigurationUpdate</a>)
-     * will result in an error.
-     * </p>
-     * </note>
      * 
      * @param updateApplicationRequest
      * @param asyncHandler

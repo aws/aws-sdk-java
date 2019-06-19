@@ -88,15 +88,16 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
     private java.util.Date backtrackTo;
     /**
      * <p>
-     * A value that, if specified, forces the DB cluster to backtrack when binary logging is enabled. Otherwise, an
+     * A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an
      * error occurs when binary logging is enabled.
      * </p>
      */
     private Boolean force;
     /**
      * <p>
-     * If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, this value backtracks the
-     * DB cluster to the earliest possible backtrack time. Otherwise, an error occurs.
+     * A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when
+     * <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is
+     * disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.
      * </p>
      */
     private Boolean useEarliestTimeOnPointInTimeUnavailable;
@@ -468,13 +469,13 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that, if specified, forces the DB cluster to backtrack when binary logging is enabled. Otherwise, an
+     * A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an
      * error occurs when binary logging is enabled.
      * </p>
      * 
      * @param force
-     *        A value that, if specified, forces the DB cluster to backtrack when binary logging is enabled. Otherwise,
-     *        an error occurs when binary logging is enabled.
+     *        A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled.
+     *        Otherwise, an error occurs when binary logging is enabled.
      */
 
     public void setForce(Boolean force) {
@@ -483,12 +484,12 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that, if specified, forces the DB cluster to backtrack when binary logging is enabled. Otherwise, an
+     * A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an
      * error occurs when binary logging is enabled.
      * </p>
      * 
-     * @return A value that, if specified, forces the DB cluster to backtrack when binary logging is enabled. Otherwise,
-     *         an error occurs when binary logging is enabled.
+     * @return A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled.
+     *         Otherwise, an error occurs when binary logging is enabled.
      */
 
     public Boolean getForce() {
@@ -497,13 +498,13 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that, if specified, forces the DB cluster to backtrack when binary logging is enabled. Otherwise, an
+     * A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an
      * error occurs when binary logging is enabled.
      * </p>
      * 
      * @param force
-     *        A value that, if specified, forces the DB cluster to backtrack when binary logging is enabled. Otherwise,
-     *        an error occurs when binary logging is enabled.
+     *        A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled.
+     *        Otherwise, an error occurs when binary logging is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -514,12 +515,12 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that, if specified, forces the DB cluster to backtrack when binary logging is enabled. Otherwise, an
+     * A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an
      * error occurs when binary logging is enabled.
      * </p>
      * 
-     * @return A value that, if specified, forces the DB cluster to backtrack when binary logging is enabled. Otherwise,
-     *         an error occurs when binary logging is enabled.
+     * @return A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled.
+     *         Otherwise, an error occurs when binary logging is enabled.
      */
 
     public Boolean isForce() {
@@ -528,13 +529,16 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, this value backtracks the
-     * DB cluster to the earliest possible backtrack time. Otherwise, an error occurs.
+     * A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when
+     * <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is
+     * disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.
      * </p>
      * 
      * @param useEarliestTimeOnPointInTimeUnavailable
-     *        If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, this value
-     *        backtracks the DB cluster to the earliest possible backtrack time. Otherwise, an error occurs.
+     *        A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when
+     *        <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is
+     *        disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error
+     *        occurs.
      */
 
     public void setUseEarliestTimeOnPointInTimeUnavailable(Boolean useEarliestTimeOnPointInTimeUnavailable) {
@@ -543,12 +547,15 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, this value backtracks the
-     * DB cluster to the earliest possible backtrack time. Otherwise, an error occurs.
+     * A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when
+     * <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is
+     * disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.
      * </p>
      * 
-     * @return If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, this value
-     *         backtracks the DB cluster to the earliest possible backtrack time. Otherwise, an error occurs.
+     * @return A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when
+     *         <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is
+     *         disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error
+     *         occurs.
      */
 
     public Boolean getUseEarliestTimeOnPointInTimeUnavailable() {
@@ -557,13 +564,16 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, this value backtracks the
-     * DB cluster to the earliest possible backtrack time. Otherwise, an error occurs.
+     * A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when
+     * <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is
+     * disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.
      * </p>
      * 
      * @param useEarliestTimeOnPointInTimeUnavailable
-     *        If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, this value
-     *        backtracks the DB cluster to the earliest possible backtrack time. Otherwise, an error occurs.
+     *        A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when
+     *        <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is
+     *        disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error
+     *        occurs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,12 +584,15 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, this value backtracks the
-     * DB cluster to the earliest possible backtrack time. Otherwise, an error occurs.
+     * A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when
+     * <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is
+     * disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.
      * </p>
      * 
-     * @return If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, this value
-     *         backtracks the DB cluster to the earliest possible backtrack time. Otherwise, an error occurs.
+     * @return A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when
+     *         <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is
+     *         disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error
+     *         occurs.
      */
 
     public Boolean isUseEarliestTimeOnPointInTimeUnavailable() {

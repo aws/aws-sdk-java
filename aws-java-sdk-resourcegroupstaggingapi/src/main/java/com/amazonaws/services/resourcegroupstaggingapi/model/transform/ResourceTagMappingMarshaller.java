@@ -32,6 +32,8 @@ public class ResourceTagMappingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceARN").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> COMPLIANCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceDetails").build();
 
     private static final ResourceTagMappingMarshaller instance = new ResourceTagMappingMarshaller();
 
@@ -51,6 +53,7 @@ public class ResourceTagMappingMarshaller {
         try {
             protocolMarshaller.marshall(resourceTagMapping.getResourceARN(), RESOURCEARN_BINDING);
             protocolMarshaller.marshall(resourceTagMapping.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(resourceTagMapping.getComplianceDetails(), COMPLIANCEDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -34,7 +34,7 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a budget. The name must be unique within accounts. The <code>:</code> and <code>\</code> characters
+     * The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters
      * aren't allowed in <code>BudgetName</code>.
      * </p>
      */
@@ -46,13 +46,54 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI utilization or coverage
      * budgets. RI utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI
-     * utilization or coverage budgets.
+     * utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <code>CreateBudget</code> and <code>UpdateBudget</code> actions.
      * </p>
      */
     private Spend budgetLimit;
     /**
      * <p>
-     * The cost filters, such as service or region, that are applied to a budget.
+     * A map containing multiple <code>BudgetLimit</code>, including current or future limits.
+     * </p>
+     * <p>
+     * <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly
+     * <code>TimeUnit</code>.
+     * </p>
+     * <p>
+     * For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the
+     * current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in
+     * epoch seconds.
+     * </p>
+     * <p>
+     * For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar
+     * quarter increments. This must start from the current quarter and include the next 3 quarters. The
+     * <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds.
+     * </p>
+     * <p>
+     * If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.
+     * </p>
+     * <p>
+     * If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date
+     * of the budget.
+     * </p>
+     * <p>
+     * After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget
+     * continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the
+     * same experience as a fixed budget.
+     * </p>
+     * <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code>
+     * will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>.
+     * Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no
+     * <code>PlannedBudgetLimits</code>.
+     * </p>
+     */
+    private java.util.Map<String, Spend> plannedBudgetLimits;
+    /**
+     * <p>
+     * The cost filters, such as service or tag, that are applied to a budget.
      * </p>
      * <p>
      * AWS Budgets supports the following services as a filter for RI budgets:
@@ -132,7 +173,7 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
     private CalculatedSpend calculatedSpend;
     /**
      * <p>
-     * Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
+     * Whether this budget tracks costs, usage, RI utilization, or RI coverage.
      * </p>
      */
     private String budgetType;
@@ -145,12 +186,12 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a budget. The name must be unique within accounts. The <code>:</code> and <code>\</code> characters
+     * The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters
      * aren't allowed in <code>BudgetName</code>.
      * </p>
      * 
      * @param budgetName
-     *        The name of a budget. The name must be unique within accounts. The <code>:</code> and <code>\</code>
+     *        The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code>
      *        characters aren't allowed in <code>BudgetName</code>.
      */
 
@@ -160,11 +201,11 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a budget. The name must be unique within accounts. The <code>:</code> and <code>\</code> characters
+     * The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters
      * aren't allowed in <code>BudgetName</code>.
      * </p>
      * 
-     * @return The name of a budget. The name must be unique within accounts. The <code>:</code> and <code>\</code>
+     * @return The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code>
      *         characters aren't allowed in <code>BudgetName</code>.
      */
 
@@ -174,12 +215,12 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a budget. The name must be unique within accounts. The <code>:</code> and <code>\</code> characters
+     * The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters
      * aren't allowed in <code>BudgetName</code>.
      * </p>
      * 
      * @param budgetName
-     *        The name of a budget. The name must be unique within accounts. The <code>:</code> and <code>\</code>
+     *        The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code>
      *        characters aren't allowed in <code>BudgetName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -196,7 +237,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI utilization or coverage
      * budgets. RI utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI
-     * utilization or coverage budgets.
+     * utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <code>CreateBudget</code> and <code>UpdateBudget</code> actions.
      * </p>
      * 
      * @param budgetLimit
@@ -205,7 +247,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI utilization or
      *        coverage budgets. RI utilization or coverage budgets default to <code>100</code>, which is the only valid
-     *        value for RI utilization or coverage budgets.
+     *        value for RI utilization or coverage budgets. You can't use <code>BudgetLimit</code> with
+     *        <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions.
      */
 
     public void setBudgetLimit(Spend budgetLimit) {
@@ -219,7 +262,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI utilization or coverage
      * budgets. RI utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI
-     * utilization or coverage budgets.
+     * utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <code>CreateBudget</code> and <code>UpdateBudget</code> actions.
      * </p>
      * 
      * @return The total amount of cost, usage, RI utilization, or RI coverage that you want to track with your
@@ -227,7 +271,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI utilization or
      *         coverage budgets. RI utilization or coverage budgets default to <code>100</code>, which is the only valid
-     *         value for RI utilization or coverage budgets.
+     *         value for RI utilization or coverage budgets. You can't use <code>BudgetLimit</code> with
+     *         <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions.
      */
 
     public Spend getBudgetLimit() {
@@ -241,7 +286,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI utilization or coverage
      * budgets. RI utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI
-     * utilization or coverage budgets.
+     * utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <code>CreateBudget</code> and <code>UpdateBudget</code> actions.
      * </p>
      * 
      * @param budgetLimit
@@ -250,7 +296,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI utilization or
      *        coverage budgets. RI utilization or coverage budgets default to <code>100</code>, which is the only valid
-     *        value for RI utilization or coverage budgets.
+     *        value for RI utilization or coverage budgets. You can't use <code>BudgetLimit</code> with
+     *        <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,7 +308,269 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost filters, such as service or region, that are applied to a budget.
+     * A map containing multiple <code>BudgetLimit</code>, including current or future limits.
+     * </p>
+     * <p>
+     * <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly
+     * <code>TimeUnit</code>.
+     * </p>
+     * <p>
+     * For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the
+     * current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in
+     * epoch seconds.
+     * </p>
+     * <p>
+     * For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar
+     * quarter increments. This must start from the current quarter and include the next 3 quarters. The
+     * <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds.
+     * </p>
+     * <p>
+     * If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.
+     * </p>
+     * <p>
+     * If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date
+     * of the budget.
+     * </p>
+     * <p>
+     * After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget
+     * continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the
+     * same experience as a fixed budget.
+     * </p>
+     * <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code>
+     * will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>.
+     * Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no
+     * <code>PlannedBudgetLimits</code>.
+     * </p>
+     * 
+     * @return A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p>
+     *         <p>
+     *         <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly
+     *         <code>TimeUnit</code>.
+     *         </p>
+     *         <p>
+     *         For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from
+     *         the current month and include the next 11 months. The <code>key</code> is the start of the month,
+     *         <code>UTC</code> in epoch seconds.
+     *         </p>
+     *         <p>
+     *         For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard
+     *         calendar quarter increments. This must start from the current quarter and include the next 3 quarters.
+     *         The <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds.
+     *         </p>
+     *         <p>
+     *         If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the
+     *         <code>PlannedBudgetLimits</code> values only for the remaining periods.
+     *         </p>
+     *         <p>
+     *         If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the
+     *         start date of the budget.
+     *         </p>
+     *         <p>
+     *         After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget
+     *         continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     *         provides the same experience as a fixed budget.
+     *         </p>
+     *         <p>
+     *         <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     *         <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current
+     *         month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created
+     *         with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only
+     *         contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.
+     */
+
+    public java.util.Map<String, Spend> getPlannedBudgetLimits() {
+        return plannedBudgetLimits;
+    }
+
+    /**
+     * <p>
+     * A map containing multiple <code>BudgetLimit</code>, including current or future limits.
+     * </p>
+     * <p>
+     * <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly
+     * <code>TimeUnit</code>.
+     * </p>
+     * <p>
+     * For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the
+     * current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in
+     * epoch seconds.
+     * </p>
+     * <p>
+     * For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar
+     * quarter increments. This must start from the current quarter and include the next 3 quarters. The
+     * <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds.
+     * </p>
+     * <p>
+     * If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.
+     * </p>
+     * <p>
+     * If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date
+     * of the budget.
+     * </p>
+     * <p>
+     * After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget
+     * continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the
+     * same experience as a fixed budget.
+     * </p>
+     * <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code>
+     * will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>.
+     * Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no
+     * <code>PlannedBudgetLimits</code>.
+     * </p>
+     * 
+     * @param plannedBudgetLimits
+     *        A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p>
+     *        <p>
+     *        <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly
+     *        <code>TimeUnit</code>.
+     *        </p>
+     *        <p>
+     *        For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from
+     *        the current month and include the next 11 months. The <code>key</code> is the start of the month,
+     *        <code>UTC</code> in epoch seconds.
+     *        </p>
+     *        <p>
+     *        For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard
+     *        calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The
+     *        <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds.
+     *        </p>
+     *        <p>
+     *        If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the
+     *        <code>PlannedBudgetLimits</code> values only for the remaining periods.
+     *        </p>
+     *        <p>
+     *        If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the
+     *        start date of the budget.
+     *        </p>
+     *        <p>
+     *        After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget
+     *        continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     *        provides the same experience as a fixed budget.
+     *        </p>
+     *        <p>
+     *        <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     *        <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month
+     *        or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     *        <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only
+     *        contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.
+     */
+
+    public void setPlannedBudgetLimits(java.util.Map<String, Spend> plannedBudgetLimits) {
+        this.plannedBudgetLimits = plannedBudgetLimits;
+    }
+
+    /**
+     * <p>
+     * A map containing multiple <code>BudgetLimit</code>, including current or future limits.
+     * </p>
+     * <p>
+     * <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly
+     * <code>TimeUnit</code>.
+     * </p>
+     * <p>
+     * For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the
+     * current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in
+     * epoch seconds.
+     * </p>
+     * <p>
+     * For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar
+     * quarter increments. This must start from the current quarter and include the next 3 quarters. The
+     * <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds.
+     * </p>
+     * <p>
+     * If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.
+     * </p>
+     * <p>
+     * If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date
+     * of the budget.
+     * </p>
+     * <p>
+     * After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget
+     * continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the
+     * same experience as a fixed budget.
+     * </p>
+     * <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code>
+     * will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>.
+     * Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no
+     * <code>PlannedBudgetLimits</code>.
+     * </p>
+     * 
+     * @param plannedBudgetLimits
+     *        A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p>
+     *        <p>
+     *        <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly
+     *        <code>TimeUnit</code>.
+     *        </p>
+     *        <p>
+     *        For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from
+     *        the current month and include the next 11 months. The <code>key</code> is the start of the month,
+     *        <code>UTC</code> in epoch seconds.
+     *        </p>
+     *        <p>
+     *        For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard
+     *        calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The
+     *        <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds.
+     *        </p>
+     *        <p>
+     *        If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the
+     *        <code>PlannedBudgetLimits</code> values only for the remaining periods.
+     *        </p>
+     *        <p>
+     *        If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the
+     *        start date of the budget.
+     *        </p>
+     *        <p>
+     *        After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget
+     *        continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     *        provides the same experience as a fixed budget.
+     *        </p>
+     *        <p>
+     *        <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     *        <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month
+     *        or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     *        <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only
+     *        contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Budget withPlannedBudgetLimits(java.util.Map<String, Spend> plannedBudgetLimits) {
+        setPlannedBudgetLimits(plannedBudgetLimits);
+        return this;
+    }
+
+    public Budget addPlannedBudgetLimitsEntry(String key, Spend value) {
+        if (null == this.plannedBudgetLimits) {
+            this.plannedBudgetLimits = new java.util.HashMap<String, Spend>();
+        }
+        if (this.plannedBudgetLimits.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.plannedBudgetLimits.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into PlannedBudgetLimits.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Budget clearPlannedBudgetLimitsEntries() {
+        this.plannedBudgetLimits = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cost filters, such as service or tag, that are applied to a budget.
      * </p>
      * <p>
      * AWS Budgets supports the following services as a filter for RI budgets:
@@ -294,7 +603,7 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The cost filters, such as service or region, that are applied to a budget.</p>
+     * @return The cost filters, such as service or tag, that are applied to a budget.</p>
      *         <p>
      *         AWS Budgets supports the following services as a filter for RI budgets:
      *         </p>
@@ -332,7 +641,7 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost filters, such as service or region, that are applied to a budget.
+     * The cost filters, such as service or tag, that are applied to a budget.
      * </p>
      * <p>
      * AWS Budgets supports the following services as a filter for RI budgets:
@@ -366,7 +675,7 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param costFilters
-     *        The cost filters, such as service or region, that are applied to a budget.</p>
+     *        The cost filters, such as service or tag, that are applied to a budget.</p>
      *        <p>
      *        AWS Budgets supports the following services as a filter for RI budgets:
      *        </p>
@@ -404,7 +713,7 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost filters, such as service or region, that are applied to a budget.
+     * The cost filters, such as service or tag, that are applied to a budget.
      * </p>
      * <p>
      * AWS Budgets supports the following services as a filter for RI budgets:
@@ -438,7 +747,7 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param costFilters
-     *        The cost filters, such as service or region, that are applied to a budget.</p>
+     *        The cost filters, such as service or tag, that are applied to a budget.</p>
      *        <p>
      *        AWS Budgets supports the following services as a filter for RI budgets:
      *        </p>
@@ -813,11 +1122,11 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
+     * Whether this budget tracks costs, usage, RI utilization, or RI coverage.
      * </p>
      * 
      * @param budgetType
-     *        Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
+     *        Whether this budget tracks costs, usage, RI utilization, or RI coverage.
      * @see BudgetType
      */
 
@@ -827,10 +1136,10 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
+     * Whether this budget tracks costs, usage, RI utilization, or RI coverage.
      * </p>
      * 
-     * @return Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
+     * @return Whether this budget tracks costs, usage, RI utilization, or RI coverage.
      * @see BudgetType
      */
 
@@ -840,11 +1149,11 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
+     * Whether this budget tracks costs, usage, RI utilization, or RI coverage.
      * </p>
      * 
      * @param budgetType
-     *        Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
+     *        Whether this budget tracks costs, usage, RI utilization, or RI coverage.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BudgetType
      */
@@ -856,11 +1165,11 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
+     * Whether this budget tracks costs, usage, RI utilization, or RI coverage.
      * </p>
      * 
      * @param budgetType
-     *        Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
+     *        Whether this budget tracks costs, usage, RI utilization, or RI coverage.
      * @see BudgetType
      */
 
@@ -870,11 +1179,11 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
+     * Whether this budget tracks costs, usage, RI utilization, or RI coverage.
      * </p>
      * 
      * @param budgetType
-     *        Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
+     *        Whether this budget tracks costs, usage, RI utilization, or RI coverage.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BudgetType
      */
@@ -940,6 +1249,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
             sb.append("BudgetName: ").append(getBudgetName()).append(",");
         if (getBudgetLimit() != null)
             sb.append("BudgetLimit: ").append(getBudgetLimit()).append(",");
+        if (getPlannedBudgetLimits() != null)
+            sb.append("PlannedBudgetLimits: ").append(getPlannedBudgetLimits()).append(",");
         if (getCostFilters() != null)
             sb.append("CostFilters: ").append(getCostFilters()).append(",");
         if (getCostTypes() != null)
@@ -975,6 +1286,10 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
         if (other.getBudgetLimit() == null ^ this.getBudgetLimit() == null)
             return false;
         if (other.getBudgetLimit() != null && other.getBudgetLimit().equals(this.getBudgetLimit()) == false)
+            return false;
+        if (other.getPlannedBudgetLimits() == null ^ this.getPlannedBudgetLimits() == null)
+            return false;
+        if (other.getPlannedBudgetLimits() != null && other.getPlannedBudgetLimits().equals(this.getPlannedBudgetLimits()) == false)
             return false;
         if (other.getCostFilters() == null ^ this.getCostFilters() == null)
             return false;
@@ -1014,6 +1329,7 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getBudgetName() == null) ? 0 : getBudgetName().hashCode());
         hashCode = prime * hashCode + ((getBudgetLimit() == null) ? 0 : getBudgetLimit().hashCode());
+        hashCode = prime * hashCode + ((getPlannedBudgetLimits() == null) ? 0 : getPlannedBudgetLimits().hashCode());
         hashCode = prime * hashCode + ((getCostFilters() == null) ? 0 : getCostFilters().hashCode());
         hashCode = prime * hashCode + ((getCostTypes() == null) ? 0 : getCostTypes().hashCode());
         hashCode = prime * hashCode + ((getTimeUnit() == null) ? 0 : getTimeUnit().hashCode());

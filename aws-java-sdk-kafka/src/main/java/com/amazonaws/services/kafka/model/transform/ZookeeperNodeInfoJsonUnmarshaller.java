@@ -56,6 +56,10 @@ public class ZookeeperNodeInfoJsonUnmarshaller implements Unmarshaller<Zookeeper
                     context.nextToken();
                     zookeeperNodeInfo.setClientVpcIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("endpoints", targetDepth)) {
+                    context.nextToken();
+                    zookeeperNodeInfo.setEndpoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("zookeeperId", targetDepth)) {
                     context.nextToken();
                     zookeeperNodeInfo.setZookeeperId(context.getUnmarshaller(Double.class).unmarshall(context));

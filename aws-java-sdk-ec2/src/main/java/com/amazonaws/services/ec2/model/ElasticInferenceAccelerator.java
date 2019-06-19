@@ -28,19 +28,21 @@ public class ElasticInferenceAccelerator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of elastic inference accelerator. The possible values are eia1.small, eia1.medium, and eia1.large.
+     * The type of elastic inference accelerator. The possible values are <code>eia1.small</code>,
+     * <code>eia1.medium</code>, and <code>eia1.large</code>.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * The type of elastic inference accelerator. The possible values are eia1.small, eia1.medium, and eia1.large.
+     * The type of elastic inference accelerator. The possible values are <code>eia1.small</code>,
+     * <code>eia1.medium</code>, and <code>eia1.large</code>.
      * </p>
      * 
      * @param type
-     *        The type of elastic inference accelerator. The possible values are eia1.small, eia1.medium, and
-     *        eia1.large.
+     *        The type of elastic inference accelerator. The possible values are <code>eia1.small</code>,
+     *        <code>eia1.medium</code>, and <code>eia1.large</code>.
      */
 
     public void setType(String type) {
@@ -49,11 +51,12 @@ public class ElasticInferenceAccelerator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of elastic inference accelerator. The possible values are eia1.small, eia1.medium, and eia1.large.
+     * The type of elastic inference accelerator. The possible values are <code>eia1.small</code>,
+     * <code>eia1.medium</code>, and <code>eia1.large</code>.
      * </p>
      * 
-     * @return The type of elastic inference accelerator. The possible values are eia1.small, eia1.medium, and
-     *         eia1.large.
+     * @return The type of elastic inference accelerator. The possible values are <code>eia1.small</code>,
+     *         <code>eia1.medium</code>, and <code>eia1.large</code>.
      */
 
     public String getType() {
@@ -62,12 +65,13 @@ public class ElasticInferenceAccelerator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of elastic inference accelerator. The possible values are eia1.small, eia1.medium, and eia1.large.
+     * The type of elastic inference accelerator. The possible values are <code>eia1.small</code>,
+     * <code>eia1.medium</code>, and <code>eia1.large</code>.
      * </p>
      * 
      * @param type
-     *        The type of elastic inference accelerator. The possible values are eia1.small, eia1.medium, and
-     *        eia1.large.
+     *        The type of elastic inference accelerator. The possible values are <code>eia1.small</code>,
+     *        <code>eia1.medium</code>, and <code>eia1.large</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

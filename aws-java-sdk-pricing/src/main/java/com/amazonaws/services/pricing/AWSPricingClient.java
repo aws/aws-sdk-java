@@ -220,6 +220,7 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pricing");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServices");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -287,6 +288,7 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pricing");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAttributeValues");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -349,6 +351,7 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pricing");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProducts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

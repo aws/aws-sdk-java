@@ -88,6 +88,19 @@ public class InstanceGroupJsonUnmarshaller implements Unmarshaller<InstanceGroup
                     context.nextToken();
                     instanceGroup.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("ConfigurationsVersion", targetDepth)) {
+                    context.nextToken();
+                    instanceGroup.setConfigurationsVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("LastSuccessfullyAppliedConfigurations", targetDepth)) {
+                    context.nextToken();
+                    instanceGroup.setLastSuccessfullyAppliedConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("LastSuccessfullyAppliedConfigurationsVersion", targetDepth)) {
+                    context.nextToken();
+                    instanceGroup.setLastSuccessfullyAppliedConfigurationsVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("EbsBlockDevices", targetDepth)) {
                     context.nextToken();
                     instanceGroup.setEbsBlockDevices(new ListUnmarshaller<EbsBlockDevice>(EbsBlockDeviceJsonUnmarshaller.getInstance()).unmarshall(context));

@@ -52,9 +52,25 @@ public class UpdateEncryptionJsonUnmarshaller implements Unmarshaller<UpdateEncr
                     context.nextToken();
                     updateEncryption.setAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("constantInitializationVector", targetDepth)) {
+                    context.nextToken();
+                    updateEncryption.setConstantInitializationVector(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("deviceId", targetDepth)) {
+                    context.nextToken();
+                    updateEncryption.setDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("keyType", targetDepth)) {
                     context.nextToken();
                     updateEncryption.setKeyType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("region", targetDepth)) {
+                    context.nextToken();
+                    updateEncryption.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("resourceId", targetDepth)) {
+                    context.nextToken();
+                    updateEncryption.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
@@ -63,6 +79,10 @@ public class UpdateEncryptionJsonUnmarshaller implements Unmarshaller<UpdateEncr
                 if (context.testExpression("secretArn", targetDepth)) {
                     context.nextToken();
                     updateEncryption.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("url", targetDepth)) {
+                    context.nextToken();
+                    updateEncryption.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

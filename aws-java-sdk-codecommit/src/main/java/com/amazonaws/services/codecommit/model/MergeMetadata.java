@@ -41,6 +41,18 @@ public class MergeMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String mergedBy;
+    /**
+     * <p>
+     * The commit ID for the merge commit, if any.
+     * </p>
+     */
+    private String mergeCommitId;
+    /**
+     * <p>
+     * The merge strategy used in the merge.
+     * </p>
+     */
+    private String mergeOption;
 
     /**
      * <p>
@@ -135,6 +147,105 @@ public class MergeMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The commit ID for the merge commit, if any.
+     * </p>
+     * 
+     * @param mergeCommitId
+     *        The commit ID for the merge commit, if any.
+     */
+
+    public void setMergeCommitId(String mergeCommitId) {
+        this.mergeCommitId = mergeCommitId;
+    }
+
+    /**
+     * <p>
+     * The commit ID for the merge commit, if any.
+     * </p>
+     * 
+     * @return The commit ID for the merge commit, if any.
+     */
+
+    public String getMergeCommitId() {
+        return this.mergeCommitId;
+    }
+
+    /**
+     * <p>
+     * The commit ID for the merge commit, if any.
+     * </p>
+     * 
+     * @param mergeCommitId
+     *        The commit ID for the merge commit, if any.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MergeMetadata withMergeCommitId(String mergeCommitId) {
+        setMergeCommitId(mergeCommitId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The merge strategy used in the merge.
+     * </p>
+     * 
+     * @param mergeOption
+     *        The merge strategy used in the merge.
+     * @see MergeOptionTypeEnum
+     */
+
+    public void setMergeOption(String mergeOption) {
+        this.mergeOption = mergeOption;
+    }
+
+    /**
+     * <p>
+     * The merge strategy used in the merge.
+     * </p>
+     * 
+     * @return The merge strategy used in the merge.
+     * @see MergeOptionTypeEnum
+     */
+
+    public String getMergeOption() {
+        return this.mergeOption;
+    }
+
+    /**
+     * <p>
+     * The merge strategy used in the merge.
+     * </p>
+     * 
+     * @param mergeOption
+     *        The merge strategy used in the merge.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MergeOptionTypeEnum
+     */
+
+    public MergeMetadata withMergeOption(String mergeOption) {
+        setMergeOption(mergeOption);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The merge strategy used in the merge.
+     * </p>
+     * 
+     * @param mergeOption
+     *        The merge strategy used in the merge.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MergeOptionTypeEnum
+     */
+
+    public MergeMetadata withMergeOption(MergeOptionTypeEnum mergeOption) {
+        this.mergeOption = mergeOption.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -149,7 +260,11 @@ public class MergeMetadata implements Serializable, Cloneable, StructuredPojo {
         if (getIsMerged() != null)
             sb.append("IsMerged: ").append(getIsMerged()).append(",");
         if (getMergedBy() != null)
-            sb.append("MergedBy: ").append(getMergedBy());
+            sb.append("MergedBy: ").append(getMergedBy()).append(",");
+        if (getMergeCommitId() != null)
+            sb.append("MergeCommitId: ").append(getMergeCommitId()).append(",");
+        if (getMergeOption() != null)
+            sb.append("MergeOption: ").append(getMergeOption());
         sb.append("}");
         return sb.toString();
     }
@@ -172,6 +287,14 @@ public class MergeMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMergedBy() != null && other.getMergedBy().equals(this.getMergedBy()) == false)
             return false;
+        if (other.getMergeCommitId() == null ^ this.getMergeCommitId() == null)
+            return false;
+        if (other.getMergeCommitId() != null && other.getMergeCommitId().equals(this.getMergeCommitId()) == false)
+            return false;
+        if (other.getMergeOption() == null ^ this.getMergeOption() == null)
+            return false;
+        if (other.getMergeOption() != null && other.getMergeOption().equals(this.getMergeOption()) == false)
+            return false;
         return true;
     }
 
@@ -182,6 +305,8 @@ public class MergeMetadata implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getIsMerged() == null) ? 0 : getIsMerged().hashCode());
         hashCode = prime * hashCode + ((getMergedBy() == null) ? 0 : getMergedBy().hashCode());
+        hashCode = prime * hashCode + ((getMergeCommitId() == null) ? 0 : getMergeCommitId().hashCode());
+        hashCode = prime * hashCode + ((getMergeOption() == null) ? 0 : getMergeOption().hashCode());
         return hashCode;
     }
 

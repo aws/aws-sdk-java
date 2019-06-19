@@ -52,8 +52,8 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
     private S3Configuration s3Configuration;
     /**
      * <p>
-     * The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the
-     * records.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.
      * </p>
      */
     private InputProcessingConfiguration inputProcessingConfiguration;
@@ -226,13 +226,15 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the
-     * records.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.
      * </p>
      * 
      * @param inputProcessingConfiguration
-     *        The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of
-     *        the records.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html"
+     *        >InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the
+     *        records.
      */
 
     public void setInputProcessingConfiguration(InputProcessingConfiguration inputProcessingConfiguration) {
@@ -241,12 +243,14 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the
-     * records.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.
      * </p>
      * 
-     * @return The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of
-     *         the records.
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html"
+     *         >InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the
+     *         records.
      */
 
     public InputProcessingConfiguration getInputProcessingConfiguration() {
@@ -255,13 +259,15 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the
-     * records.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.
      * </p>
      * 
      * @param inputProcessingConfiguration
-     *        The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of
-     *        the records.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html"
+     *        >InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the
+     *        records.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

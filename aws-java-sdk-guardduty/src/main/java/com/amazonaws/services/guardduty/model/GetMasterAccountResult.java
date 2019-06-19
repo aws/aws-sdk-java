@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetMasterAccountResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Master account details.
+     * </p>
+     */
     private Master master;
 
     /**
+     * <p>
+     * Master account details.
+     * </p>
+     * 
      * @param master
+     *        Master account details.
      */
 
     public void setMaster(Master master) {
@@ -34,7 +44,11 @@ public class GetMasterAccountResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * @return
+     * <p>
+     * Master account details.
+     * </p>
+     * 
+     * @return Master account details.
      */
 
     public Master getMaster() {
@@ -42,7 +56,12 @@ public class GetMasterAccountResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * Master account details.
+     * </p>
+     * 
      * @param master
+     *        Master account details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

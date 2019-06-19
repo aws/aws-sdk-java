@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeliveryOptionsMarshaller {
 
+    private static final MarshallingInfo<String> TLSPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TlsPolicy").build();
     private static final MarshallingInfo<String> SENDINGPOOLNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SendingPoolName").build();
 
@@ -46,6 +48,7 @@ public class DeliveryOptionsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(deliveryOptions.getTlsPolicy(), TLSPOLICY_BINDING);
             protocolMarshaller.marshall(deliveryOptions.getSendingPoolName(), SENDINGPOOLNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -28,7 +28,8 @@ public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are
+     * describing were launched in any cluster other than the default cluster.
      * </p>
      */
     private String cluster;
@@ -49,12 +50,14 @@ public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are
+     * describing were launched in any cluster other than the default cluster.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do
-     *        not specify a cluster, the default cluster is assumed.
+     *        not specify a cluster, the default cluster is assumed. This parameter is required if the service or
+     *        services you are describing were launched in any cluster other than the default cluster.
      */
 
     public void setCluster(String cluster) {
@@ -64,11 +67,13 @@ public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are
+     * describing were launched in any cluster other than the default cluster.
      * </p>
      * 
      * @return The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you
-     *         do not specify a cluster, the default cluster is assumed.
+     *         do not specify a cluster, the default cluster is assumed. This parameter is required if the service or
+     *         services you are describing were launched in any cluster other than the default cluster.
      */
 
     public String getCluster() {
@@ -78,12 +83,14 @@ public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are
+     * describing were launched in any cluster other than the default cluster.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do
-     *        not specify a cluster, the default cluster is assumed.
+     *        not specify a cluster, the default cluster is assumed. This parameter is required if the service or
+     *        services you are describing were launched in any cluster other than the default cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

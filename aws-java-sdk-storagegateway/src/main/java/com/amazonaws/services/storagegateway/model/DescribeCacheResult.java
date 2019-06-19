@@ -58,7 +58,12 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private Double cacheHitPercentage;
-    /** <p/> */
+    /**
+     * <p>
+     * Percent of application read operations from the file shares that are not served from cache. The sample is taken
+     * at the end of the reporting period.
+     * </p>
+     */
     private Double cacheMissPercentage;
 
     /**
@@ -351,9 +356,14 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * <p/>
+     * <p>
+     * Percent of application read operations from the file shares that are not served from cache. The sample is taken
+     * at the end of the reporting period.
+     * </p>
      * 
      * @param cacheMissPercentage
+     *        Percent of application read operations from the file shares that are not served from cache. The sample is
+     *        taken at the end of the reporting period.
      */
 
     public void setCacheMissPercentage(Double cacheMissPercentage) {
@@ -361,9 +371,13 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * <p/>
+     * <p>
+     * Percent of application read operations from the file shares that are not served from cache. The sample is taken
+     * at the end of the reporting period.
+     * </p>
      * 
-     * @return
+     * @return Percent of application read operations from the file shares that are not served from cache. The sample is
+     *         taken at the end of the reporting period.
      */
 
     public Double getCacheMissPercentage() {
@@ -371,9 +385,14 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * <p/>
+     * <p>
+     * Percent of application read operations from the file shares that are not served from cache. The sample is taken
+     * at the end of the reporting period.
+     * </p>
      * 
      * @param cacheMissPercentage
+     *        Percent of application read operations from the file shares that are not served from cache. The sample is
+     *        taken at the end of the reporting period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

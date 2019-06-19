@@ -65,8 +65,30 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attribute applies only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
+     * more examples, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
+    /**
+     * <p>
+     * The list of tags to add to a new topic.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * Default constructor for CreateTopicRequest object. Callers should use the setter or fluent setter (with...)
@@ -177,6 +199,22 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attribute applies only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
+     * more examples, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A map of attributes with their corresponding values.</p>
      *         <p>
@@ -199,6 +237,23 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
      *         can publish or subscribe to the topic.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attribute applies only to <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
+     *         >server-side-encryption</a>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *         custom CMK. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+     *         Terms</a>. For more examples, see <a href=
+     *         "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *         >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      *         </p>
      *         </li>
      */
@@ -237,6 +292,22 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attribute applies only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
+     * more examples, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributes
      *        A map of attributes with their corresponding values.</p>
@@ -260,6 +331,23 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
      *        can publish or subscribe to the topic.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attribute applies only to <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
+     *        >server-side-encryption</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *        custom CMK. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+     *        Terms</a>. For more examples, see <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *        >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      *        </p>
      *        </li>
      */
@@ -295,6 +383,22 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attribute applies only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
+     * more examples, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributes
      *        A map of attributes with their corresponding values.</p>
@@ -318,6 +422,23 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
      *        can publish or subscribe to the topic.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attribute applies only to <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
+     *        >server-side-encryption</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *        custom CMK. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+     *        Terms</a>. For more examples, see <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *        >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -350,6 +471,79 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The list of tags to add to a new topic.
+     * </p>
+     * 
+     * @return The list of tags to add to a new topic.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The list of tags to add to a new topic.
+     * </p>
+     * 
+     * @param tags
+     *        The list of tags to add to a new topic.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The list of tags to add to a new topic.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The list of tags to add to a new topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTopicRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of tags to add to a new topic.
+     * </p>
+     * 
+     * @param tags
+     *        The list of tags to add to a new topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTopicRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -364,7 +558,9 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: ").append(getAttributes());
+            sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -387,6 +583,10 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -397,6 +597,7 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

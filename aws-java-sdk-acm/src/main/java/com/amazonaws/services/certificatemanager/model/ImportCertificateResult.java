@@ -25,7 +25,7 @@ public class ImportCertificateResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the imported certificate.
      * </p>
      */
@@ -33,12 +33,12 @@ public class ImportCertificateResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the imported certificate.
      * </p>
      * 
      * @param certificateArn
-     *        The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of the imported certificate.
      */
 
@@ -48,11 +48,11 @@ public class ImportCertificateResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the imported certificate.
      * </p>
      * 
-     * @return The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *         Name (ARN)</a> of the imported certificate.
      */
 
@@ -62,12 +62,12 @@ public class ImportCertificateResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the imported certificate.
      * </p>
      * 
      * @param certificateArn
-     *        The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of the imported certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

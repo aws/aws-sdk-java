@@ -31,6 +31,10 @@ public class MergeMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isMerged").build();
     private static final MarshallingInfo<String> MERGEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("mergedBy").build();
+    private static final MarshallingInfo<String> MERGECOMMITID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mergeCommitId").build();
+    private static final MarshallingInfo<String> MERGEOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mergeOption").build();
 
     private static final MergeMetadataMarshaller instance = new MergeMetadataMarshaller();
 
@@ -50,6 +54,8 @@ public class MergeMetadataMarshaller {
         try {
             protocolMarshaller.marshall(mergeMetadata.getIsMerged(), ISMERGED_BINDING);
             protocolMarshaller.marshall(mergeMetadata.getMergedBy(), MERGEDBY_BINDING);
+            protocolMarshaller.marshall(mergeMetadata.getMergeCommitId(), MERGECOMMITID_BINDING);
+            protocolMarshaller.marshall(mergeMetadata.getMergeOption(), MERGEOPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

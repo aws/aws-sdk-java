@@ -27,7 +27,7 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier associated with the organization for which the resource is deleted.
+     * The identifier associated with the organization from which the resource is deleted.
      * </p>
      */
     private String organizationId;
@@ -40,11 +40,11 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier associated with the organization for which the resource is deleted.
+     * The identifier associated with the organization from which the resource is deleted.
      * </p>
      * 
      * @param organizationId
-     *        The identifier associated with the organization for which the resource is deleted.
+     *        The identifier associated with the organization from which the resource is deleted.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -53,10 +53,10 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier associated with the organization for which the resource is deleted.
+     * The identifier associated with the organization from which the resource is deleted.
      * </p>
      * 
-     * @return The identifier associated with the organization for which the resource is deleted.
+     * @return The identifier associated with the organization from which the resource is deleted.
      */
 
     public String getOrganizationId() {
@@ -65,11 +65,11 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier associated with the organization for which the resource is deleted.
+     * The identifier associated with the organization from which the resource is deleted.
      * </p>
      * 
      * @param organizationId
-     *        The identifier associated with the organization for which the resource is deleted.
+     *        The identifier associated with the organization from which the resource is deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

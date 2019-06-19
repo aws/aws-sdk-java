@@ -55,8 +55,8 @@ import com.amazonaws.services.sns.model.transform.*;
  * Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled
  * applications. Applications can use Amazon SNS to easily push real-time notification messages to interested
  * subscribers over multiple delivery protocols. For more information about this product see <a
- * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. For detailed information about Amazon SNS features
- * and their associated API calls, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
+ * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. For detailed information about Amazon SNS features
+ * and their associated API calls, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
  * Guide</a>.
  * </p>
  * <p>
@@ -282,17 +282,22 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         exceptionUnmarshallers.add(new EndpointDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new FilterPolicyLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSOptInRequiredExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSAccessDeniedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSInvalidStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new StaleTagExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TopicLimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TagPolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TagLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ThrottledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PlatformApplicationDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InternalErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSThrottlingExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationErrorExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ConcurrentAccessExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSecurityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.sns.model.AmazonSNSException.class));
 
@@ -351,6 +356,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddPermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -421,6 +427,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckIfPhoneNumberIsOptedOut");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -458,6 +465,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *         Indicates an internal service error.
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
+     * @throws FilterPolicyLimitExceededException
+     *         Indicates that the number of filter polices in your AWS account exceeds the limit. To add more filter
+     *         polices, submit an SNS Limit Increase case in the AWS Support Center.
      * @sample AmazonSNS.ConfirmSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription" target="_top">AWS API
      *      Documentation</a>
@@ -487,6 +497,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -516,7 +527,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
-     * Creates a platform application object for one of the supported push notification services, such as APNS and GCM,
+     * Creates a platform application object for one of the supported push notification services, such as APNS and FCM,
      * to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential
      * attributes when using the <code>CreatePlatformApplication</code> action. The PlatformPrincipal is received from
      * the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM,
@@ -530,17 +541,17 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * is "private key". For Baidu, PlatformCredential is "secret key". The PlatformApplicationArn that is returned when
      * using <code>CreatePlatformApplication</code> is then used as an attribute for the
      * <code>CreatePlatformEndpoint</code> action. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>. For more information about obtaining the PlatformPrincipal and PlatformCredential for each of
      * the supported push notification services, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting Started with Apple Push
-     * Notification Service</a>, <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting Started
-     * with Amazon Device Messaging</a>, <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting Started with Baidu Cloud Push</a>,
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting Started with Google Cloud
-     * Messaging for Android</a>, <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
-     * Started with MPNS</a>, or <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting Started
-     * with WNS</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting Started with Apple Push
+     * Notification Service</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
+     * Started with Amazon Device Messaging</a>, <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting Started with Baidu Cloud
+     * Push</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting Started with Google
+     * Cloud Messaging for Android</a>, <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting Started with MPNS</a>, or <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting Started with WNS</a>.
      * </p>
      * 
      * @param createPlatformApplicationRequest
@@ -581,6 +592,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlatformApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -606,13 +618,13 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * mobile app or by the <code>Subscribe</code> action for subscription to a topic. The
      * <code>CreatePlatformEndpoint</code> action is idempotent, so if the requester already owns an endpoint with the
      * same device token and attributes, that endpoint's ARN is returned without creating a new endpoint. For more
-     * information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
+     * information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
      * Push Notifications</a>.
      * </p>
      * <p>
      * When using <code>CreatePlatformEndpoint</code> with Baidu, two attributes must be provided: ChannelId and UserId.
      * The token field must also contain the ChannelId. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating an Amazon SNS Endpoint
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating an Amazon SNS Endpoint
      * for Baidu</a>.
      * </p>
      * 
@@ -656,6 +668,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlatformEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -675,7 +688,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     /**
      * <p>
      * Creates a topic to which notifications can be published. Users can create at most 100,000 topics. For more
-     * information, see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is idempotent,
+     * information, see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent,
      * so if the requester already owns a topic with the specified name, that topic's ARN is returned without creating a
      * new topic.
      * </p>
@@ -694,6 +707,15 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @throws InvalidSecurityException
      *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
      *         Signature Version 4.
+     * @throws TagLimitExceededException
+     *         Can't add more than 50 tags to a topic.
+     * @throws StaleTagException
+     *         A tag has been added to a resource with the same ARN as a deleted resource. Wait a short while and then
+     *         retry the operation.
+     * @throws TagPolicyException
+     *         The request doesn't comply with the IAM tag policy. Correct your request and then retry it.
+     * @throws ConcurrentAccessException
+     *         Can't perform multiple operations on a tag simultaneously. Perform the operations sequentially.
      * @sample AmazonSNS.CreateTopic
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic" target="_top">AWS API
      *      Documentation</a>
@@ -723,6 +745,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTopic");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -746,7 +769,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     /**
      * <p>
      * Deletes the endpoint for a device and mobile app from Amazon SNS. This action is idempotent. For more
-     * information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
+     * information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
      * Push Notifications</a>.
      * </p>
      * <p>
@@ -792,6 +815,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -811,7 +835,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     /**
      * <p>
      * Deletes a platform application object for one of the supported push notification services, such as APNS and GCM.
-     * For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
+     * For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
      * Mobile Push Notifications</a>.
      * </p>
      * 
@@ -853,6 +877,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePlatformApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -886,6 +911,13 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *         Indicates that the user has been denied access to the requested resource.
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
+     * @throws StaleTagException
+     *         A tag has been added to a resource with the same ARN as a deleted resource. Wait a short while and then
+     *         retry the operation.
+     * @throws TagPolicyException
+     *         The request doesn't comply with the IAM tag policy. Correct your request and then retry it.
+     * @throws ConcurrentAccessException
+     *         Can't perform multiple operations on a tag simultaneously. Perform the operations sequentially.
      * @sample AmazonSNS.DeleteTopic
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic" target="_top">AWS API
      *      Documentation</a>
@@ -915,6 +947,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTopic");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -938,7 +971,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     /**
      * <p>
      * Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM
-     * and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
      * </p>
      * 
@@ -982,6 +1015,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEndpointAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1002,7 +1036,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * <p>
      * Retrieves the attributes of the platform application object for the supported push notification services, such as
      * APNS and GCM. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>.
      * </p>
      * 
@@ -1047,6 +1081,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPlatformApplicationAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1112,6 +1147,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSMSAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1173,6 +1209,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSubscriptionAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1243,6 +1280,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTopicAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1271,7 +1309,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * endpoints, up to 100. If additional records are available after the first page results, then a NextToken string
      * will be returned. To receive the next page, you call <code>ListEndpointsByPlatformApplication</code> again using
      * the NextToken string received from the previous call. When there are no more records to return, NextToken will be
-     * null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
      * </p>
      * <p>
@@ -1320,6 +1358,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEndpointsByPlatformApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1389,6 +1428,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPhoneNumbersOptedOut");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1412,7 +1452,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * 100. If additional records are available after the first page results, then a NextToken string will be returned.
      * To receive the next page, you call <code>ListPlatformApplications</code> using the NextToken string received from
      * the previous call. When there are no more records to return, NextToken will be null. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>.
      * </p>
      * <p>
@@ -1457,6 +1497,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPlatformApplications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1526,6 +1567,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscriptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1602,6 +1644,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscriptionsByTopic");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1626,6 +1669,71 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     @Override
     public ListSubscriptionsByTopicResult listSubscriptionsByTopic(String topicArn, String nextToken) {
         return listSubscriptionsByTopic(new ListSubscriptionsByTopicRequest().withTopicArn(topicArn).withNextToken(nextToken));
+    }
+
+    /**
+     * <p>
+     * List all tags added to the specified Amazon SNS topic. For an overview, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Can't tag resource. Verify that the topic exists.
+     * @throws TagPolicyException
+     *         The request doesn't comply with the IAM tag policy. Correct your request and then retry it.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws ConcurrentAccessException
+     *         Can't perform multiple operations on a tag simultaneously. Perform the operations sequentially.
+     * @sample AmazonSNS.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
+                    new ListTagsForResourceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1675,6 +1783,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTopics");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1750,6 +1859,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "OptInPhoneNumber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1785,8 +1895,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * </p>
      * <p>
      * For more information about formatting messages, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom Platform-Specific
-     * Payloads in Messages to Mobile Devices</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom
+     * Platform-Specific Payloads in Messages to Mobile Devices</a>.
      * </p>
      * 
      * @param publishRequest
@@ -1810,7 +1920,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *         The request was rejected because the specified customer master key (CMK) isn't enabled.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource isn't valid for this request. For
-     *         more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     *         more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      *         Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
      * @throws KMSNotFoundException
@@ -1819,8 +1929,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *         The AWS access key ID needs a subscription for the service.
      * @throws KMSThrottlingException
      *         The request was denied due to request throttling. For more information about throttling, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-     *         the <i>AWS Key Management Service Developer Guide.</i>
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+     *         in the <i>AWS Key Management Service Developer Guide.</i>
      * @throws KMSAccessDeniedException
      *         The ciphertext references a key that doesn't exist or that you don't have access to.
      * @throws InvalidSecurityException
@@ -1855,6 +1965,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Publish");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1925,6 +2036,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1949,7 +2061,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     /**
      * <p>
      * Sets the attributes for an endpoint for a device on one of the supported push notification services, such as GCM
-     * and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
      * </p>
      * 
@@ -1993,6 +2105,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetEndpointAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2012,9 +2125,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     /**
      * <p>
      * Sets the attributes of the platform application object for the supported push notification services, such as APNS
-     * and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * and GCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>. For information on configuring attributes for message delivery status,
-     * see <a href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application
+     * see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application
      * Attributes for Message Delivery Status</a>.
      * </p>
      * 
@@ -2059,6 +2172,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetPlatformApplicationAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2082,7 +2196,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * <p>
      * You can override some of these settings for a single message when you use the <code>Publish</code> action with
      * the <code>MessageAttributes.entry.N</code> parameter. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending an SMS Message</a> in the
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending an SMS Message</a> in the
      * <i>Amazon SNS Developer Guide</i>.
      * </p>
      * 
@@ -2127,6 +2241,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetSMSAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2191,6 +2306,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetSubscriptionAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2261,6 +2377,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetTopicAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2340,6 +2457,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Subscribe");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2358,6 +2476,112 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     @Override
     public SubscribeResult subscribe(String topicArn, String protocol, String endpoint) {
         return subscribe(new SubscribeRequest().withTopicArn(topicArn).withProtocol(protocol).withEndpoint(endpoint));
+    }
+
+    /**
+     * <p>
+     * Add tags to the specified Amazon SNS topic. For an overview, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon SNS Developer
+     * Guide</i>.
+     * </p>
+     * <p>
+     * When you use topic tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a topic isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SNS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tagging actions are limited to 10 TPS per AWS account. If your application requires a higher throughput, file a
+     * <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * request</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-limits.html#limits-topics">Limits Related to Topics</a> in
+     * the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Can't tag resource. Verify that the topic exists.
+     * @throws TagLimitExceededException
+     *         Can't add more than 50 tags to a topic.
+     * @throws StaleTagException
+     *         A tag has been added to a resource with the same ARN as a deleted resource. Wait a short while and then
+     *         retry the operation.
+     * @throws TagPolicyException
+     *         The request doesn't comply with the IAM tag policy. Correct your request and then retry it.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws ConcurrentAccessException
+     *         Can't perform multiple operations on a tag simultaneously. Perform the operations sequentially.
+     * @sample AmazonSNS.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestMarshaller().marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<TagResourceResult> responseHandler = new StaxResponseHandler<TagResourceResult>(new TagResourceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -2415,6 +2639,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Unsubscribe");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2433,6 +2658,75 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     @Override
     public UnsubscribeResult unsubscribe(String subscriptionArn) {
         return unsubscribe(new UnsubscribeRequest().withSubscriptionArn(subscriptionArn));
+    }
+
+    /**
+     * <p>
+     * Remove tags from the specified Amazon SNS topic. For an overview, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon SNS Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Can't tag resource. Verify that the topic exists.
+     * @throws TagLimitExceededException
+     *         Can't add more than 50 tags to a topic.
+     * @throws StaleTagException
+     *         A tag has been added to a resource with the same ARN as a deleted resource. Wait a short while and then
+     *         retry the operation.
+     * @throws TagPolicyException
+     *         The request doesn't comply with the IAM tag policy. Correct your request and then retry it.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws ConcurrentAccessException
+     *         Can't perform multiple operations on a tag simultaneously. Perform the operations sequentially.
+     * @sample AmazonSNS.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestMarshaller().marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UntagResourceResult> responseHandler = new StaxResponseHandler<UntagResourceResult>(new UntagResourceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**

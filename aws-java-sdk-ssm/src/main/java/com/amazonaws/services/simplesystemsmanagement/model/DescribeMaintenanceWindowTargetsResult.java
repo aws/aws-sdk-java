@@ -26,7 +26,7 @@ public class DescribeMaintenanceWindowTargetsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Information about the targets in the Maintenance Window.
+     * Information about the targets in the maintenance window.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MaintenanceWindowTarget> targets;
@@ -40,10 +40,10 @@ public class DescribeMaintenanceWindowTargetsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Information about the targets in the Maintenance Window.
+     * Information about the targets in the maintenance window.
      * </p>
      * 
-     * @return Information about the targets in the Maintenance Window.
+     * @return Information about the targets in the maintenance window.
      */
 
     public java.util.List<MaintenanceWindowTarget> getTargets() {
@@ -55,11 +55,11 @@ public class DescribeMaintenanceWindowTargetsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Information about the targets in the Maintenance Window.
+     * Information about the targets in the maintenance window.
      * </p>
      * 
      * @param targets
-     *        Information about the targets in the Maintenance Window.
+     *        Information about the targets in the maintenance window.
      */
 
     public void setTargets(java.util.Collection<MaintenanceWindowTarget> targets) {
@@ -73,7 +73,7 @@ public class DescribeMaintenanceWindowTargetsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Information about the targets in the Maintenance Window.
+     * Information about the targets in the maintenance window.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeMaintenanceWindowTargetsResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param targets
-     *        Information about the targets in the Maintenance Window.
+     *        Information about the targets in the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeMaintenanceWindowTargetsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Information about the targets in the Maintenance Window.
+     * Information about the targets in the maintenance window.
      * </p>
      * 
      * @param targets
-     *        Information about the targets in the Maintenance Window.
+     *        Information about the targets in the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

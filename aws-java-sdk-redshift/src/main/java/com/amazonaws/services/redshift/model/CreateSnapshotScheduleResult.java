@@ -29,7 +29,7 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of ScheduleDefinitions
+     * A list of ScheduleDefinitions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> scheduleDefinitions;
@@ -51,19 +51,27 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
-
+    /** <p/> */
     private com.amazonaws.internal.SdkInternalList<java.util.Date> nextInvocations;
-
+    /**
+     * <p>
+     * The number of clusters associated with the schedule.
+     * </p>
+     */
     private Integer associatedClusterCount;
-
+    /**
+     * <p>
+     * A list of clusters associated with the schedule. A maximum of 100 clusters is returned.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<ClusterAssociatedToSchedule> associatedClusters;
 
     /**
      * <p>
-     * A list of ScheduleDefinitions
+     * A list of ScheduleDefinitions.
      * </p>
      * 
-     * @return A list of ScheduleDefinitions
+     * @return A list of ScheduleDefinitions.
      */
 
     public java.util.List<String> getScheduleDefinitions() {
@@ -75,11 +83,11 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of ScheduleDefinitions
+     * A list of ScheduleDefinitions.
      * </p>
      * 
      * @param scheduleDefinitions
-     *        A list of ScheduleDefinitions
+     *        A list of ScheduleDefinitions.
      */
 
     public void setScheduleDefinitions(java.util.Collection<String> scheduleDefinitions) {
@@ -93,7 +101,7 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of ScheduleDefinitions
+     * A list of ScheduleDefinitions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -102,7 +110,7 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param scheduleDefinitions
-     *        A list of ScheduleDefinitions
+     *        A list of ScheduleDefinitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,11 +126,11 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of ScheduleDefinitions
+     * A list of ScheduleDefinitions.
      * </p>
      * 
      * @param scheduleDefinitions
-     *        A list of ScheduleDefinitions
+     *        A list of ScheduleDefinitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,6 +293,8 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -296,6 +306,8 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p/>
+     * 
      * @param nextInvocations
      */
 
@@ -309,6 +321,7 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNextInvocations(java.util.Collection)} or {@link #withNextInvocations(java.util.Collection)} if you
@@ -330,6 +343,8 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p/>
+     * 
      * @param nextInvocations
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -340,7 +355,12 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The number of clusters associated with the schedule.
+     * </p>
+     * 
      * @param associatedClusterCount
+     *        The number of clusters associated with the schedule.
      */
 
     public void setAssociatedClusterCount(Integer associatedClusterCount) {
@@ -348,7 +368,11 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The number of clusters associated with the schedule.
+     * </p>
+     * 
+     * @return The number of clusters associated with the schedule.
      */
 
     public Integer getAssociatedClusterCount() {
@@ -356,7 +380,12 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The number of clusters associated with the schedule.
+     * </p>
+     * 
      * @param associatedClusterCount
+     *        The number of clusters associated with the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -366,7 +395,11 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * A list of clusters associated with the schedule. A maximum of 100 clusters is returned.
+     * </p>
+     * 
+     * @return A list of clusters associated with the schedule. A maximum of 100 clusters is returned.
      */
 
     public java.util.List<ClusterAssociatedToSchedule> getAssociatedClusters() {
@@ -377,7 +410,12 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A list of clusters associated with the schedule. A maximum of 100 clusters is returned.
+     * </p>
+     * 
      * @param associatedClusters
+     *        A list of clusters associated with the schedule. A maximum of 100 clusters is returned.
      */
 
     public void setAssociatedClusters(java.util.Collection<ClusterAssociatedToSchedule> associatedClusters) {
@@ -391,12 +429,16 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * A list of clusters associated with the schedule. A maximum of 100 clusters is returned.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAssociatedClusters(java.util.Collection)} or {@link #withAssociatedClusters(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param associatedClusters
+     *        A list of clusters associated with the schedule. A maximum of 100 clusters is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -411,7 +453,12 @@ public class CreateSnapshotScheduleResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A list of clusters associated with the schedule. A maximum of 100 clusters is returned.
+     * </p>
+     * 
      * @param associatedClusters
+     *        A list of clusters associated with the schedule. A maximum of 100 clusters is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

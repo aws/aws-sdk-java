@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** the Amazon Resource Name (ARN) */
+    /** The Amazon Resource Name (ARN) of the resource tag. */
     private String resourceArn;
     /** An array of tag keys to delete */
     private java.util.List<String> tagKeys;
 
     /**
-     * the Amazon Resource Name (ARN)
+     * The Amazon Resource Name (ARN) of the resource tag.
      * 
      * @param resourceArn
-     *        the Amazon Resource Name (ARN)
+     *        The Amazon Resource Name (ARN) of the resource tag.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -42,9 +42,9 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * the Amazon Resource Name (ARN)
+     * The Amazon Resource Name (ARN) of the resource tag.
      * 
-     * @return the Amazon Resource Name (ARN)
+     * @return The Amazon Resource Name (ARN) of the resource tag.
      */
 
     public String getResourceArn() {
@@ -52,10 +52,10 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * the Amazon Resource Name (ARN)
+     * The Amazon Resource Name (ARN) of the resource tag.
      * 
      * @param resourceArn
-     *        the Amazon Resource Name (ARN)
+     *        The Amazon Resource Name (ARN) of the resource tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

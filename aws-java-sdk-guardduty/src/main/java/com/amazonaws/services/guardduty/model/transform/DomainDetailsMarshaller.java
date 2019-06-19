@@ -27,6 +27,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DomainDetailsMarshaller {
 
+    private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("domain").build();
+
     private static final DomainDetailsMarshaller instance = new DomainDetailsMarshaller();
 
     public static DomainDetailsMarshaller getInstance() {
@@ -43,6 +46,7 @@ public class DomainDetailsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(domainDetails.getDomain(), DOMAIN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

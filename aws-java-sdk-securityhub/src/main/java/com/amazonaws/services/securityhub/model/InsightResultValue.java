@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The insight result values returned by the GetInsightResults operation.
+ * The insight result values returned by the <code>GetInsightResults</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InsightResultValue" target="_top">AWS API
@@ -30,27 +30,27 @@ public class InsightResultValue implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The value of the attribute by which the findings are grouped for the insight's whose results are returned by the
-     * GetInsightResults operation.
+     * The value of the attribute that the findings are grouped by for the insight whose results are returned by the
+     * <code>GetInsightResults</code> operation.
      * </p>
      */
     private String groupByAttributeValue;
     /**
      * <p>
-     * The number of findings returned for each GroupByAttributeValue.
+     * The number of findings returned for each <code>GroupByAttributeValue</code>.
      * </p>
      */
     private Integer count;
 
     /**
      * <p>
-     * The value of the attribute by which the findings are grouped for the insight's whose results are returned by the
-     * GetInsightResults operation.
+     * The value of the attribute that the findings are grouped by for the insight whose results are returned by the
+     * <code>GetInsightResults</code> operation.
      * </p>
      * 
      * @param groupByAttributeValue
-     *        The value of the attribute by which the findings are grouped for the insight's whose results are returned
-     *        by the GetInsightResults operation.
+     *        The value of the attribute that the findings are grouped by for the insight whose results are returned by
+     *        the <code>GetInsightResults</code> operation.
      */
 
     public void setGroupByAttributeValue(String groupByAttributeValue) {
@@ -59,12 +59,12 @@ public class InsightResultValue implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The value of the attribute by which the findings are grouped for the insight's whose results are returned by the
-     * GetInsightResults operation.
+     * The value of the attribute that the findings are grouped by for the insight whose results are returned by the
+     * <code>GetInsightResults</code> operation.
      * </p>
      * 
-     * @return The value of the attribute by which the findings are grouped for the insight's whose results are returned
-     *         by the GetInsightResults operation.
+     * @return The value of the attribute that the findings are grouped by for the insight whose results are returned by
+     *         the <code>GetInsightResults</code> operation.
      */
 
     public String getGroupByAttributeValue() {
@@ -73,13 +73,13 @@ public class InsightResultValue implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The value of the attribute by which the findings are grouped for the insight's whose results are returned by the
-     * GetInsightResults operation.
+     * The value of the attribute that the findings are grouped by for the insight whose results are returned by the
+     * <code>GetInsightResults</code> operation.
      * </p>
      * 
      * @param groupByAttributeValue
-     *        The value of the attribute by which the findings are grouped for the insight's whose results are returned
-     *        by the GetInsightResults operation.
+     *        The value of the attribute that the findings are grouped by for the insight whose results are returned by
+     *        the <code>GetInsightResults</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class InsightResultValue implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of findings returned for each GroupByAttributeValue.
+     * The number of findings returned for each <code>GroupByAttributeValue</code>.
      * </p>
      * 
      * @param count
-     *        The number of findings returned for each GroupByAttributeValue.
+     *        The number of findings returned for each <code>GroupByAttributeValue</code>.
      */
 
     public void setCount(Integer count) {
@@ -103,10 +103,10 @@ public class InsightResultValue implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of findings returned for each GroupByAttributeValue.
+     * The number of findings returned for each <code>GroupByAttributeValue</code>.
      * </p>
      * 
-     * @return The number of findings returned for each GroupByAttributeValue.
+     * @return The number of findings returned for each <code>GroupByAttributeValue</code>.
      */
 
     public Integer getCount() {
@@ -115,11 +115,11 @@ public class InsightResultValue implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of findings returned for each GroupByAttributeValue.
+     * The number of findings returned for each <code>GroupByAttributeValue</code>.
      * </p>
      * 
      * @param count
-     *        The number of findings returned for each GroupByAttributeValue.
+     *        The number of findings returned for each <code>GroupByAttributeValue</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

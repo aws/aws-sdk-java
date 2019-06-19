@@ -33,7 +33,7 @@ public class PresetSettings implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<AudioDescription> audioDescriptions;
     /** Caption settings for this preset. There can be multiple caption settings in a single output. */
     private java.util.List<CaptionDescriptionPreset> captionDescriptions;
-
+    /** Container specific settings. */
     private ContainerSettings containerSettings;
     /**
      * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
@@ -179,7 +179,10 @@ public class PresetSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Container specific settings.
+     * 
      * @param containerSettings
+     *        Container specific settings.
      */
 
     public void setContainerSettings(ContainerSettings containerSettings) {
@@ -187,7 +190,9 @@ public class PresetSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Container specific settings.
+     * 
+     * @return Container specific settings.
      */
 
     public ContainerSettings getContainerSettings() {
@@ -195,7 +200,10 @@ public class PresetSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Container specific settings.
+     * 
      * @param containerSettings
+     *        Container specific settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

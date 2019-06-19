@@ -27,18 +27,18 @@ public class DeleteMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Maintenance Window to delete.
+     * The ID of the maintenance window to delete.
      * </p>
      */
     private String windowId;
 
     /**
      * <p>
-     * The ID of the Maintenance Window to delete.
+     * The ID of the maintenance window to delete.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window to delete.
+     *        The ID of the maintenance window to delete.
      */
 
     public void setWindowId(String windowId) {
@@ -47,10 +47,10 @@ public class DeleteMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Maintenance Window to delete.
+     * The ID of the maintenance window to delete.
      * </p>
      * 
-     * @return The ID of the Maintenance Window to delete.
+     * @return The ID of the maintenance window to delete.
      */
 
     public String getWindowId() {
@@ -59,11 +59,11 @@ public class DeleteMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Maintenance Window to delete.
+     * The ID of the maintenance window to delete.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window to delete.
+     *        The ID of the maintenance window to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

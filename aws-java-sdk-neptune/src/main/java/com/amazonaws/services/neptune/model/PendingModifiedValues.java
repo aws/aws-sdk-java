@@ -111,7 +111,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      */
     private String dBSubnetGroupName;
-
+    /**
+     * <p>
+     * Specifies the CloudWatch logs to be exported.
+     * </p>
+     */
     private PendingCloudwatchLogsExports pendingCloudwatchLogsExports;
 
     /**
@@ -689,7 +693,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the CloudWatch logs to be exported.
+     * </p>
+     * 
      * @param pendingCloudwatchLogsExports
+     *        Specifies the CloudWatch logs to be exported.
      */
 
     public void setPendingCloudwatchLogsExports(PendingCloudwatchLogsExports pendingCloudwatchLogsExports) {
@@ -697,7 +706,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the CloudWatch logs to be exported.
+     * </p>
+     * 
+     * @return Specifies the CloudWatch logs to be exported.
      */
 
     public PendingCloudwatchLogsExports getPendingCloudwatchLogsExports() {
@@ -705,7 +718,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the CloudWatch logs to be exported.
+     * </p>
+     * 
      * @param pendingCloudwatchLogsExports
+     *        Specifies the CloudWatch logs to be exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum NetworkInterfaceType {
 
     Interface("interface"),
-    NatGateway("natGateway");
+    NatGateway("natGateway"),
+    Efa("efa");
 
     private String value;
 

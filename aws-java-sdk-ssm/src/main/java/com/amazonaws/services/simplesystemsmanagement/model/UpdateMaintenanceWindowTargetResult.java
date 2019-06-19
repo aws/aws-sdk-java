@@ -26,7 +26,7 @@ public class UpdateMaintenanceWindowTargetResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Maintenance Window ID specified in the update request.
+     * The maintenance window ID specified in the update request.
      * </p>
      */
     private String windowId;
@@ -63,11 +63,11 @@ public class UpdateMaintenanceWindowTargetResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Maintenance Window ID specified in the update request.
+     * The maintenance window ID specified in the update request.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID specified in the update request.
+     *        The maintenance window ID specified in the update request.
      */
 
     public void setWindowId(String windowId) {
@@ -76,10 +76,10 @@ public class UpdateMaintenanceWindowTargetResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Maintenance Window ID specified in the update request.
+     * The maintenance window ID specified in the update request.
      * </p>
      * 
-     * @return The Maintenance Window ID specified in the update request.
+     * @return The maintenance window ID specified in the update request.
      */
 
     public String getWindowId() {
@@ -88,11 +88,11 @@ public class UpdateMaintenanceWindowTargetResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Maintenance Window ID specified in the update request.
+     * The maintenance window ID specified in the update request.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID specified in the update request.
+     *        The maintenance window ID specified in the update request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

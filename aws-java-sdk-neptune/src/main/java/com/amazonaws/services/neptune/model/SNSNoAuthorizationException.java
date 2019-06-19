@@ -15,7 +15,9 @@ package com.amazonaws.services.neptune.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * There is no SNS authorization.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SNSNoAuthorizationException extends com.amazonaws.services.neptune.model.AmazonNeptuneException {

@@ -18,7 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information about the activity described in a finding.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Action" target="_top">AWS API
  *      Documentation</a>
@@ -26,19 +25,41 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Action implements Serializable, Cloneable, StructuredPojo {
 
-    /** GuardDuty Finding activity type. */
+    /**
+     * <p>
+     * GuardDuty Finding activity type.
+     * </p>
+     */
     private String actionType;
-    /** Information about the AWS_API_CALL action described in this finding. */
+    /**
+     * <p>
+     * Information about the AWS_API_CALL action described in this finding.
+     * </p>
+     */
     private AwsApiCallAction awsApiCallAction;
-    /** Information about the DNS_REQUEST action described in this finding. */
+    /**
+     * <p>
+     * Information about the DNS_REQUEST action described in this finding.
+     * </p>
+     */
     private DnsRequestAction dnsRequestAction;
-    /** Information about the NETWORK_CONNECTION action described in this finding. */
+    /**
+     * <p>
+     * Information about the NETWORK_CONNECTION action described in this finding.
+     * </p>
+     */
     private NetworkConnectionAction networkConnectionAction;
-    /** Information about the PORT_PROBE action described in this finding. */
+    /**
+     * <p>
+     * Information about the PORT_PROBE action described in this finding.
+     * </p>
+     */
     private PortProbeAction portProbeAction;
 
     /**
+     * <p>
      * GuardDuty Finding activity type.
+     * </p>
      * 
      * @param actionType
      *        GuardDuty Finding activity type.
@@ -49,7 +70,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * GuardDuty Finding activity type.
+     * </p>
      * 
      * @return GuardDuty Finding activity type.
      */
@@ -59,7 +82,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * GuardDuty Finding activity type.
+     * </p>
      * 
      * @param actionType
      *        GuardDuty Finding activity type.
@@ -72,7 +97,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the AWS_API_CALL action described in this finding.
+     * </p>
      * 
      * @param awsApiCallAction
      *        Information about the AWS_API_CALL action described in this finding.
@@ -83,7 +110,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the AWS_API_CALL action described in this finding.
+     * </p>
      * 
      * @return Information about the AWS_API_CALL action described in this finding.
      */
@@ -93,7 +122,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the AWS_API_CALL action described in this finding.
+     * </p>
      * 
      * @param awsApiCallAction
      *        Information about the AWS_API_CALL action described in this finding.
@@ -106,7 +137,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the DNS_REQUEST action described in this finding.
+     * </p>
      * 
      * @param dnsRequestAction
      *        Information about the DNS_REQUEST action described in this finding.
@@ -117,7 +150,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the DNS_REQUEST action described in this finding.
+     * </p>
      * 
      * @return Information about the DNS_REQUEST action described in this finding.
      */
@@ -127,7 +162,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the DNS_REQUEST action described in this finding.
+     * </p>
      * 
      * @param dnsRequestAction
      *        Information about the DNS_REQUEST action described in this finding.
@@ -140,7 +177,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the NETWORK_CONNECTION action described in this finding.
+     * </p>
      * 
      * @param networkConnectionAction
      *        Information about the NETWORK_CONNECTION action described in this finding.
@@ -151,7 +190,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the NETWORK_CONNECTION action described in this finding.
+     * </p>
      * 
      * @return Information about the NETWORK_CONNECTION action described in this finding.
      */
@@ -161,7 +202,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the NETWORK_CONNECTION action described in this finding.
+     * </p>
      * 
      * @param networkConnectionAction
      *        Information about the NETWORK_CONNECTION action described in this finding.
@@ -174,7 +217,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the PORT_PROBE action described in this finding.
+     * </p>
      * 
      * @param portProbeAction
      *        Information about the PORT_PROBE action described in this finding.
@@ -185,7 +230,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the PORT_PROBE action described in this finding.
+     * </p>
      * 
      * @return Information about the PORT_PROBE action described in this finding.
      */
@@ -195,7 +242,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the PORT_PROBE action described in this finding.
+     * </p>
      * 
      * @param portProbeAction
      *        Information about the PORT_PROBE action described in this finding.

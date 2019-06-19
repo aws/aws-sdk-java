@@ -72,7 +72,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on
      * the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in
      * the <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </li>
@@ -82,7 +82,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need
      * to enforce a delay before including the new principal in a key policy because the new principal might not be
      * immediately visible to AWS KMS. For more information, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      * >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User
      * Guide</i>.
      * </p>
@@ -104,7 +104,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, refer to the scenario in the <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </important>
@@ -335,7 +335,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on
      * the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in
      * the <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </li>
@@ -345,7 +345,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need
      * to enforce a delay before including the new principal in a key policy because the new principal might not be
      * immediately visible to AWS KMS. For more information, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      * >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User
      * Guide</i>.
      * </p>
@@ -367,7 +367,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        principal that is making the <code>PutKeyPolicy</code> request to make a subsequent
      *        <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For
      *        more information, refer to the scenario in the <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     *        "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      *        >Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
      *        </li>
@@ -377,7 +377,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or
      *        role), you might need to enforce a delay before including the new principal in a key policy because the
      *        new principal might not be immediately visible to AWS KMS. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      *        >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management
      *        User Guide</i>.
      *        </p>
@@ -405,7 +405,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on
      * the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in
      * the <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </li>
@@ -415,7 +415,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need
      * to enforce a delay before including the new principal in a key policy because the new principal might not be
      * immediately visible to AWS KMS. For more information, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      * >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User
      * Guide</i>.
      * </p>
@@ -436,7 +436,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         principal that is making the <code>PutKeyPolicy</code> request to make a subsequent
      *         <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable.
      *         For more information, refer to the scenario in the <a href=
-     *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     *         "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      *         >Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>.
      *         </p>
      *         </li>
@@ -446,7 +446,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or
      *         role), you might need to enforce a delay before including the new principal in a key policy because the
      *         new principal might not be immediately visible to AWS KMS. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      *         >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management
      *         User Guide</i>.
      *         </p>
@@ -474,7 +474,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on
      * the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in
      * the <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </li>
@@ -484,7 +484,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need
      * to enforce a delay before including the new principal in a key policy because the new principal might not be
      * immediately visible to AWS KMS. For more information, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      * >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User
      * Guide</i>.
      * </p>
@@ -506,7 +506,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        principal that is making the <code>PutKeyPolicy</code> request to make a subsequent
      *        <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For
      *        more information, refer to the scenario in the <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     *        "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      *        >Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
      *        </li>
@@ -516,7 +516,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or
      *        role), you might need to enforce a delay before including the new principal in a key policy because the
      *        new principal might not be immediately visible to AWS KMS. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      *        >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management
      *        User Guide</i>.
      *        </p>
@@ -543,7 +543,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, refer to the scenario in the <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </important>
@@ -563,7 +563,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <p>
      *        For more information, refer to the scenario in the <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     *        "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      *        >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
      *        </important>
@@ -590,7 +590,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, refer to the scenario in the <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </important>
@@ -609,7 +609,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         <p>
      *         For more information, refer to the scenario in the <a href=
-     *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     *         "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      *         >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      *         </p>
      *         </important>
@@ -636,7 +636,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, refer to the scenario in the <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </important>
@@ -656,7 +656,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <p>
      *        For more information, refer to the scenario in the <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     *        "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      *        >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
      *        </important>
@@ -685,7 +685,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, refer to the scenario in the <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </important>
@@ -704,7 +704,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         <p>
      *         For more information, refer to the scenario in the <a href=
-     *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
+     *         "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      *         >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      *         </p>
      *         </important>

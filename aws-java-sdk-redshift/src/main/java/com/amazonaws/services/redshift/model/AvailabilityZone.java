@@ -32,7 +32,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * </p>
      */
     private String name;
-
+    /** <p/> */
     private com.amazonaws.internal.SdkInternalList<SupportedPlatform> supportedPlatforms;
 
     /**
@@ -76,6 +76,8 @@ public class AvailabilityZone implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -87,6 +89,8 @@ public class AvailabilityZone implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param supportedPlatforms
      */
 
@@ -100,6 +104,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSupportedPlatforms(java.util.Collection)} or {@link #withSupportedPlatforms(java.util.Collection)} if
@@ -121,6 +126,8 @@ public class AvailabilityZone implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param supportedPlatforms
      * @return Returns a reference to this object so that method calls can be chained together.
      */

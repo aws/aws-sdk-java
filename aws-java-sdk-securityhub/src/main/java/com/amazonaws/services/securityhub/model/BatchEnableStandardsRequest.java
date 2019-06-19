@@ -29,6 +29,14 @@ public class BatchEnableStandardsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The list of standards that you want to enable.
      * </p>
+     * <important>
+     * <p>
+     * In this release, Security Hub supports only the CIS AWS Foundations standard.
+     * </p>
+     * <p>
+     * Its ARN is <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.
+     * </p>
+     * </important>
      */
     private java.util.List<StandardsSubscriptionRequest> standardsSubscriptionRequests;
 
@@ -36,8 +44,22 @@ public class BatchEnableStandardsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The list of standards that you want to enable.
      * </p>
+     * <important>
+     * <p>
+     * In this release, Security Hub supports only the CIS AWS Foundations standard.
+     * </p>
+     * <p>
+     * Its ARN is <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.
+     * </p>
+     * </important>
      * 
-     * @return The list of standards that you want to enable.
+     * @return The list of standards that you want to enable.</p> <important>
+     *         <p>
+     *         In this release, Security Hub supports only the CIS AWS Foundations standard.
+     *         </p>
+     *         <p>
+     *         Its ARN is <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.
+     *         </p>
      */
 
     public java.util.List<StandardsSubscriptionRequest> getStandardsSubscriptionRequests() {
@@ -48,9 +70,23 @@ public class BatchEnableStandardsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The list of standards that you want to enable.
      * </p>
+     * <important>
+     * <p>
+     * In this release, Security Hub supports only the CIS AWS Foundations standard.
+     * </p>
+     * <p>
+     * Its ARN is <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.
+     * </p>
+     * </important>
      * 
      * @param standardsSubscriptionRequests
-     *        The list of standards that you want to enable.
+     *        The list of standards that you want to enable.</p> <important>
+     *        <p>
+     *        In this release, Security Hub supports only the CIS AWS Foundations standard.
+     *        </p>
+     *        <p>
+     *        Its ARN is <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.
+     *        </p>
      */
 
     public void setStandardsSubscriptionRequests(java.util.Collection<StandardsSubscriptionRequest> standardsSubscriptionRequests) {
@@ -66,6 +102,14 @@ public class BatchEnableStandardsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The list of standards that you want to enable.
      * </p>
+     * <important>
+     * <p>
+     * In this release, Security Hub supports only the CIS AWS Foundations standard.
+     * </p>
+     * <p>
+     * Its ARN is <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.
+     * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setStandardsSubscriptionRequests(java.util.Collection)} or
@@ -73,7 +117,13 @@ public class BatchEnableStandardsRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param standardsSubscriptionRequests
-     *        The list of standards that you want to enable.
+     *        The list of standards that you want to enable.</p> <important>
+     *        <p>
+     *        In this release, Security Hub supports only the CIS AWS Foundations standard.
+     *        </p>
+     *        <p>
+     *        Its ARN is <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,9 +141,23 @@ public class BatchEnableStandardsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The list of standards that you want to enable.
      * </p>
+     * <important>
+     * <p>
+     * In this release, Security Hub supports only the CIS AWS Foundations standard.
+     * </p>
+     * <p>
+     * Its ARN is <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.
+     * </p>
+     * </important>
      * 
      * @param standardsSubscriptionRequests
-     *        The list of standards that you want to enable.
+     *        The list of standards that you want to enable.</p> <important>
+     *        <p>
+     *        In this release, Security Hub supports only the CIS AWS Foundations standard.
+     *        </p>
+     *        <p>
+     *        Its ARN is <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

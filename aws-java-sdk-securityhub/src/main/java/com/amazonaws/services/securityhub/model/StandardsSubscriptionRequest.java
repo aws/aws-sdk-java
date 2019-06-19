@@ -32,6 +32,14 @@ public class StandardsSubscriptionRequest implements Serializable, Cloneable, St
      * <p>
      * The ARN of the standard that you want to enable.
      * </p>
+     * <important>
+     * <p>
+     * In this release, Security Hub only supports the CIS AWS Foundations standard.
+     * </p>
+     * <p>
+     * Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.
+     * </p>
+     * </important>
      */
     private String standardsArn;
     /** <p/> */
@@ -41,9 +49,23 @@ public class StandardsSubscriptionRequest implements Serializable, Cloneable, St
      * <p>
      * The ARN of the standard that you want to enable.
      * </p>
+     * <important>
+     * <p>
+     * In this release, Security Hub only supports the CIS AWS Foundations standard.
+     * </p>
+     * <p>
+     * Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.
+     * </p>
+     * </important>
      * 
      * @param standardsArn
-     *        The ARN of the standard that you want to enable.
+     *        The ARN of the standard that you want to enable.</p> <important>
+     *        <p>
+     *        In this release, Security Hub only supports the CIS AWS Foundations standard.
+     *        </p>
+     *        <p>
+     *        Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.
+     *        </p>
      */
 
     public void setStandardsArn(String standardsArn) {
@@ -54,8 +76,22 @@ public class StandardsSubscriptionRequest implements Serializable, Cloneable, St
      * <p>
      * The ARN of the standard that you want to enable.
      * </p>
+     * <important>
+     * <p>
+     * In this release, Security Hub only supports the CIS AWS Foundations standard.
+     * </p>
+     * <p>
+     * Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.
+     * </p>
+     * </important>
      * 
-     * @return The ARN of the standard that you want to enable.
+     * @return The ARN of the standard that you want to enable.</p> <important>
+     *         <p>
+     *         In this release, Security Hub only supports the CIS AWS Foundations standard.
+     *         </p>
+     *         <p>
+     *         Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.
+     *         </p>
      */
 
     public String getStandardsArn() {
@@ -66,9 +102,23 @@ public class StandardsSubscriptionRequest implements Serializable, Cloneable, St
      * <p>
      * The ARN of the standard that you want to enable.
      * </p>
+     * <important>
+     * <p>
+     * In this release, Security Hub only supports the CIS AWS Foundations standard.
+     * </p>
+     * <p>
+     * Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.
+     * </p>
+     * </important>
      * 
      * @param standardsArn
-     *        The ARN of the standard that you want to enable.
+     *        The ARN of the standard that you want to enable.</p> <important>
+     *        <p>
+     *        In this release, Security Hub only supports the CIS AWS Foundations standard.
+     *        </p>
+     *        <p>
+     *        Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

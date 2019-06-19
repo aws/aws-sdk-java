@@ -90,8 +90,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application
      * versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com
-     * /emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases versions 4.x and later.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.
+     * com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.
      * </p>
      */
@@ -210,7 +210,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
-     * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
      * </p>
      */
@@ -656,8 +656,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application
      * versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com
-     * /emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases versions 4.x and later.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.
+     * com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.
      * </p>
      * 
@@ -666,8 +666,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR
      *        release version, for example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      *        versions and included application versions and features, see <a
-     *        href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
-     *        >http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR
+     *        href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
+     *        >https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR
      *        releases versions 4.x and later. Earlier versions use <code>AmiVersion</code>.
      */
 
@@ -681,8 +681,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application
      * versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com
-     * /emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases versions 4.x and later.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.
+     * com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.
      * </p>
      * 
@@ -690,8 +690,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *         on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR
      *         release version, for example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      *         versions and included application versions and features, see <a
-     *         href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
-     *         >http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR
+     *         href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
+     *         >https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR
      *         releases versions 4.x and later. Earlier versions use <code>AmiVersion</code>.
      */
 
@@ -705,8 +705,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application
      * versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com
-     * /emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases versions 4.x and later.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.
+     * com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.
      * </p>
      * 
@@ -715,8 +715,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR
      *        release version, for example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      *        versions and included application versions and features, see <a
-     *        href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
-     *        >http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR
+     *        href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
+     *        >https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR
      *        releases versions 4.x and later. Earlier versions use <code>AmiVersion</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1710,14 +1710,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
-     * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
      * </p>
      * 
      * @param kerberosAttributes
      *        Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
      *        configuration. For more information see <a
-     *        href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+     *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
      *        Authentication</a> in the <i>EMR Management Guide</i>.
      */
 
@@ -1728,13 +1728,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
-     * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
      * </p>
      * 
      * @return Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
      *         configuration. For more information see <a
-     *         href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+     *         href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
      *         Authentication</a> in the <i>EMR Management Guide</i>.
      */
 
@@ -1745,14 +1745,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
-     * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
      * </p>
      * 
      * @param kerberosAttributes
      *        Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
      *        configuration. For more information see <a
-     *        href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+     *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
      *        Authentication</a> in the <i>EMR Management Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

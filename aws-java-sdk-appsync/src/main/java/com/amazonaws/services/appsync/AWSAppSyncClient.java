@@ -99,6 +99,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.appsync.model.LimitExceededException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
+                                    com.amazonaws.services.appsync.model.AccessDeniedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ApiKeyValidityOutOfBoundsException").withModeledClass(
                                     com.amazonaws.services.appsync.model.ApiKeyValidityOutOfBoundsException.class))
                     .addErrorMetadata(
@@ -209,6 +212,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApiKey");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -272,6 +276,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataSource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -335,6 +340,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -400,6 +406,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGraphqlApi");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -464,6 +471,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResolver");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -527,6 +535,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateType");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -588,6 +597,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApiKey");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -651,6 +661,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataSource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -711,6 +722,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -745,6 +757,8 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You do not have access to perform this operation on this resource.
      * @sample AWSAppSync.DeleteGraphqlApi
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteGraphqlApi" target="_top">AWS API
      *      Documentation</a>
@@ -774,6 +788,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGraphqlApi");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -834,6 +849,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResolver");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -897,6 +913,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteType");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -960,6 +977,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataSource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1018,6 +1036,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1050,6 +1069,8 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You do not have access to perform this operation on this resource.
      * @sample AWSAppSync.GetGraphqlApi
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApi" target="_top">AWS API
      *      Documentation</a>
@@ -1079,6 +1100,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGraphqlApi");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1139,6 +1161,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIntrospectionSchema");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1198,6 +1221,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResolver");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1260,6 +1284,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSchemaCreationStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1324,6 +1349,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetType");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1392,6 +1418,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApiKeys");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1453,6 +1480,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataSources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1514,6 +1542,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1573,6 +1602,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGraphqlApis");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1634,6 +1664,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResolvers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1696,6 +1727,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResolversByFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1703,6 +1735,72 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             HttpResponseHandler<AmazonWebServiceResponse<ListResolversByFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListResolversByFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the tags for a resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You do not have access to perform this operation on this resource.
+     * @sample AWSAppSync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1760,6 +1858,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTypes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1826,12 +1925,145 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSchemaCreation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<StartSchemaCreationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSchemaCreationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Tags a resource with user-supplied tags.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You do not have access to perform this operation on this resource.
+     * @sample AWSAppSync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Untags a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You do not have access to perform this operation on this resource.
+     * @sample AWSAppSync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1892,6 +2124,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApiKey");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1955,6 +2188,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2015,6 +2249,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2049,6 +2284,8 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You do not have access to perform this operation on this resource.
      * @sample AWSAppSync.UpdateGraphqlApi
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateGraphqlApi" target="_top">AWS API
      *      Documentation</a>
@@ -2078,6 +2315,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGraphqlApi");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2138,6 +2376,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResolver");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2201,6 +2440,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateType");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

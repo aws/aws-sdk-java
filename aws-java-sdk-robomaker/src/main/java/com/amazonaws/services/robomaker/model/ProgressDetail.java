@@ -32,8 +32,60 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current progress status.
      * </p>
+     * <dl>
+     * <dt>Validating</dt>
+     * <dd>
+     * <p>
+     * Validating the deployment.
+     * </p>
+     * </dd>
+     * <dt>DownloadingExtracting</dt>
+     * <dd>
+     * <p>
+     * Downloading and extracting the bundle on the robot.
+     * </p>
+     * </dd>
+     * <dt>ExecutingPreLaunch</dt>
+     * <dd>
+     * <p>
+     * Executing pre-launch script(s) if provided.
+     * </p>
+     * </dd>
+     * <dt>Launching</dt>
+     * <dd>
+     * <p>
+     * Launching the robot application.
+     * </p>
+     * </dd>
+     * <dt>ExecutingPostLaunch</dt>
+     * <dd>
+     * <p>
+     * Executing post-launch script(s) if provided.
+     * </p>
+     * </dd>
+     * <dt>Finished</dt>
+     * <dd>
+     * <p>
+     * Deployment is complete.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private String currentProgress;
+    /**
+     * <p>
+     * Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step
+     * of the deployment. It is empty for other steps.
+     * </p>
+     */
+    private Float percentDone;
+    /**
+     * <p>
+     * Estimated amount of time in seconds remaining in the step. This currently only applies to the
+     * <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.
+     * </p>
+     */
+    private Integer estimatedTimeRemainingSeconds;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the deployment job.
@@ -45,9 +97,85 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current progress status.
      * </p>
+     * <dl>
+     * <dt>Validating</dt>
+     * <dd>
+     * <p>
+     * Validating the deployment.
+     * </p>
+     * </dd>
+     * <dt>DownloadingExtracting</dt>
+     * <dd>
+     * <p>
+     * Downloading and extracting the bundle on the robot.
+     * </p>
+     * </dd>
+     * <dt>ExecutingPreLaunch</dt>
+     * <dd>
+     * <p>
+     * Executing pre-launch script(s) if provided.
+     * </p>
+     * </dd>
+     * <dt>Launching</dt>
+     * <dd>
+     * <p>
+     * Launching the robot application.
+     * </p>
+     * </dd>
+     * <dt>ExecutingPostLaunch</dt>
+     * <dd>
+     * <p>
+     * Executing post-launch script(s) if provided.
+     * </p>
+     * </dd>
+     * <dt>Finished</dt>
+     * <dd>
+     * <p>
+     * Deployment is complete.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param currentProgress
-     *        The current progress status.
+     *        The current progress status.</p>
+     *        <dl>
+     *        <dt>Validating</dt>
+     *        <dd>
+     *        <p>
+     *        Validating the deployment.
+     *        </p>
+     *        </dd>
+     *        <dt>DownloadingExtracting</dt>
+     *        <dd>
+     *        <p>
+     *        Downloading and extracting the bundle on the robot.
+     *        </p>
+     *        </dd>
+     *        <dt>ExecutingPreLaunch</dt>
+     *        <dd>
+     *        <p>
+     *        Executing pre-launch script(s) if provided.
+     *        </p>
+     *        </dd>
+     *        <dt>Launching</dt>
+     *        <dd>
+     *        <p>
+     *        Launching the robot application.
+     *        </p>
+     *        </dd>
+     *        <dt>ExecutingPostLaunch</dt>
+     *        <dd>
+     *        <p>
+     *        Executing post-launch script(s) if provided.
+     *        </p>
+     *        </dd>
+     *        <dt>Finished</dt>
+     *        <dd>
+     *        <p>
+     *        Deployment is complete.
+     *        </p>
+     *        </dd>
+     * @see RobotDeploymentStep
      */
 
     public void setCurrentProgress(String currentProgress) {
@@ -58,8 +186,84 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current progress status.
      * </p>
+     * <dl>
+     * <dt>Validating</dt>
+     * <dd>
+     * <p>
+     * Validating the deployment.
+     * </p>
+     * </dd>
+     * <dt>DownloadingExtracting</dt>
+     * <dd>
+     * <p>
+     * Downloading and extracting the bundle on the robot.
+     * </p>
+     * </dd>
+     * <dt>ExecutingPreLaunch</dt>
+     * <dd>
+     * <p>
+     * Executing pre-launch script(s) if provided.
+     * </p>
+     * </dd>
+     * <dt>Launching</dt>
+     * <dd>
+     * <p>
+     * Launching the robot application.
+     * </p>
+     * </dd>
+     * <dt>ExecutingPostLaunch</dt>
+     * <dd>
+     * <p>
+     * Executing post-launch script(s) if provided.
+     * </p>
+     * </dd>
+     * <dt>Finished</dt>
+     * <dd>
+     * <p>
+     * Deployment is complete.
+     * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return The current progress status.
+     * @return The current progress status.</p>
+     *         <dl>
+     *         <dt>Validating</dt>
+     *         <dd>
+     *         <p>
+     *         Validating the deployment.
+     *         </p>
+     *         </dd>
+     *         <dt>DownloadingExtracting</dt>
+     *         <dd>
+     *         <p>
+     *         Downloading and extracting the bundle on the robot.
+     *         </p>
+     *         </dd>
+     *         <dt>ExecutingPreLaunch</dt>
+     *         <dd>
+     *         <p>
+     *         Executing pre-launch script(s) if provided.
+     *         </p>
+     *         </dd>
+     *         <dt>Launching</dt>
+     *         <dd>
+     *         <p>
+     *         Launching the robot application.
+     *         </p>
+     *         </dd>
+     *         <dt>ExecutingPostLaunch</dt>
+     *         <dd>
+     *         <p>
+     *         Executing post-launch script(s) if provided.
+     *         </p>
+     *         </dd>
+     *         <dt>Finished</dt>
+     *         <dd>
+     *         <p>
+     *         Deployment is complete.
+     *         </p>
+     *         </dd>
+     * @see RobotDeploymentStep
      */
 
     public String getCurrentProgress() {
@@ -70,14 +274,273 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current progress status.
      * </p>
+     * <dl>
+     * <dt>Validating</dt>
+     * <dd>
+     * <p>
+     * Validating the deployment.
+     * </p>
+     * </dd>
+     * <dt>DownloadingExtracting</dt>
+     * <dd>
+     * <p>
+     * Downloading and extracting the bundle on the robot.
+     * </p>
+     * </dd>
+     * <dt>ExecutingPreLaunch</dt>
+     * <dd>
+     * <p>
+     * Executing pre-launch script(s) if provided.
+     * </p>
+     * </dd>
+     * <dt>Launching</dt>
+     * <dd>
+     * <p>
+     * Launching the robot application.
+     * </p>
+     * </dd>
+     * <dt>ExecutingPostLaunch</dt>
+     * <dd>
+     * <p>
+     * Executing post-launch script(s) if provided.
+     * </p>
+     * </dd>
+     * <dt>Finished</dt>
+     * <dd>
+     * <p>
+     * Deployment is complete.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param currentProgress
-     *        The current progress status.
+     *        The current progress status.</p>
+     *        <dl>
+     *        <dt>Validating</dt>
+     *        <dd>
+     *        <p>
+     *        Validating the deployment.
+     *        </p>
+     *        </dd>
+     *        <dt>DownloadingExtracting</dt>
+     *        <dd>
+     *        <p>
+     *        Downloading and extracting the bundle on the robot.
+     *        </p>
+     *        </dd>
+     *        <dt>ExecutingPreLaunch</dt>
+     *        <dd>
+     *        <p>
+     *        Executing pre-launch script(s) if provided.
+     *        </p>
+     *        </dd>
+     *        <dt>Launching</dt>
+     *        <dd>
+     *        <p>
+     *        Launching the robot application.
+     *        </p>
+     *        </dd>
+     *        <dt>ExecutingPostLaunch</dt>
+     *        <dd>
+     *        <p>
+     *        Executing post-launch script(s) if provided.
+     *        </p>
+     *        </dd>
+     *        <dt>Finished</dt>
+     *        <dd>
+     *        <p>
+     *        Deployment is complete.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RobotDeploymentStep
      */
 
     public ProgressDetail withCurrentProgress(String currentProgress) {
         setCurrentProgress(currentProgress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current progress status.
+     * </p>
+     * <dl>
+     * <dt>Validating</dt>
+     * <dd>
+     * <p>
+     * Validating the deployment.
+     * </p>
+     * </dd>
+     * <dt>DownloadingExtracting</dt>
+     * <dd>
+     * <p>
+     * Downloading and extracting the bundle on the robot.
+     * </p>
+     * </dd>
+     * <dt>ExecutingPreLaunch</dt>
+     * <dd>
+     * <p>
+     * Executing pre-launch script(s) if provided.
+     * </p>
+     * </dd>
+     * <dt>Launching</dt>
+     * <dd>
+     * <p>
+     * Launching the robot application.
+     * </p>
+     * </dd>
+     * <dt>ExecutingPostLaunch</dt>
+     * <dd>
+     * <p>
+     * Executing post-launch script(s) if provided.
+     * </p>
+     * </dd>
+     * <dt>Finished</dt>
+     * <dd>
+     * <p>
+     * Deployment is complete.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param currentProgress
+     *        The current progress status.</p>
+     *        <dl>
+     *        <dt>Validating</dt>
+     *        <dd>
+     *        <p>
+     *        Validating the deployment.
+     *        </p>
+     *        </dd>
+     *        <dt>DownloadingExtracting</dt>
+     *        <dd>
+     *        <p>
+     *        Downloading and extracting the bundle on the robot.
+     *        </p>
+     *        </dd>
+     *        <dt>ExecutingPreLaunch</dt>
+     *        <dd>
+     *        <p>
+     *        Executing pre-launch script(s) if provided.
+     *        </p>
+     *        </dd>
+     *        <dt>Launching</dt>
+     *        <dd>
+     *        <p>
+     *        Launching the robot application.
+     *        </p>
+     *        </dd>
+     *        <dt>ExecutingPostLaunch</dt>
+     *        <dd>
+     *        <p>
+     *        Executing post-launch script(s) if provided.
+     *        </p>
+     *        </dd>
+     *        <dt>Finished</dt>
+     *        <dd>
+     *        <p>
+     *        Deployment is complete.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RobotDeploymentStep
+     */
+
+    public ProgressDetail withCurrentProgress(RobotDeploymentStep currentProgress) {
+        this.currentProgress = currentProgress.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step
+     * of the deployment. It is empty for other steps.
+     * </p>
+     * 
+     * @param percentDone
+     *        Precentage of the step that is done. This currently only applies to the
+     *        <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.
+     */
+
+    public void setPercentDone(Float percentDone) {
+        this.percentDone = percentDone;
+    }
+
+    /**
+     * <p>
+     * Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step
+     * of the deployment. It is empty for other steps.
+     * </p>
+     * 
+     * @return Precentage of the step that is done. This currently only applies to the
+     *         <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.
+     */
+
+    public Float getPercentDone() {
+        return this.percentDone;
+    }
+
+    /**
+     * <p>
+     * Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step
+     * of the deployment. It is empty for other steps.
+     * </p>
+     * 
+     * @param percentDone
+     *        Precentage of the step that is done. This currently only applies to the
+     *        <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProgressDetail withPercentDone(Float percentDone) {
+        setPercentDone(percentDone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Estimated amount of time in seconds remaining in the step. This currently only applies to the
+     * <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.
+     * </p>
+     * 
+     * @param estimatedTimeRemainingSeconds
+     *        Estimated amount of time in seconds remaining in the step. This currently only applies to the
+     *        <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.
+     */
+
+    public void setEstimatedTimeRemainingSeconds(Integer estimatedTimeRemainingSeconds) {
+        this.estimatedTimeRemainingSeconds = estimatedTimeRemainingSeconds;
+    }
+
+    /**
+     * <p>
+     * Estimated amount of time in seconds remaining in the step. This currently only applies to the
+     * <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.
+     * </p>
+     * 
+     * @return Estimated amount of time in seconds remaining in the step. This currently only applies to the
+     *         <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.
+     */
+
+    public Integer getEstimatedTimeRemainingSeconds() {
+        return this.estimatedTimeRemainingSeconds;
+    }
+
+    /**
+     * <p>
+     * Estimated amount of time in seconds remaining in the step. This currently only applies to the
+     * <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.
+     * </p>
+     * 
+     * @param estimatedTimeRemainingSeconds
+     *        Estimated amount of time in seconds remaining in the step. This currently only applies to the
+     *        <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProgressDetail withEstimatedTimeRemainingSeconds(Integer estimatedTimeRemainingSeconds) {
+        setEstimatedTimeRemainingSeconds(estimatedTimeRemainingSeconds);
         return this;
     }
 
@@ -135,6 +598,10 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getCurrentProgress() != null)
             sb.append("CurrentProgress: ").append(getCurrentProgress()).append(",");
+        if (getPercentDone() != null)
+            sb.append("PercentDone: ").append(getPercentDone()).append(",");
+        if (getEstimatedTimeRemainingSeconds() != null)
+            sb.append("EstimatedTimeRemainingSeconds: ").append(getEstimatedTimeRemainingSeconds()).append(",");
         if (getTargetResource() != null)
             sb.append("TargetResource: ").append(getTargetResource());
         sb.append("}");
@@ -155,6 +622,15 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCurrentProgress() != null && other.getCurrentProgress().equals(this.getCurrentProgress()) == false)
             return false;
+        if (other.getPercentDone() == null ^ this.getPercentDone() == null)
+            return false;
+        if (other.getPercentDone() != null && other.getPercentDone().equals(this.getPercentDone()) == false)
+            return false;
+        if (other.getEstimatedTimeRemainingSeconds() == null ^ this.getEstimatedTimeRemainingSeconds() == null)
+            return false;
+        if (other.getEstimatedTimeRemainingSeconds() != null
+                && other.getEstimatedTimeRemainingSeconds().equals(this.getEstimatedTimeRemainingSeconds()) == false)
+            return false;
         if (other.getTargetResource() == null ^ this.getTargetResource() == null)
             return false;
         if (other.getTargetResource() != null && other.getTargetResource().equals(this.getTargetResource()) == false)
@@ -168,6 +644,8 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCurrentProgress() == null) ? 0 : getCurrentProgress().hashCode());
+        hashCode = prime * hashCode + ((getPercentDone() == null) ? 0 : getPercentDone().hashCode());
+        hashCode = prime * hashCode + ((getEstimatedTimeRemainingSeconds() == null) ? 0 : getEstimatedTimeRemainingSeconds().hashCode());
         hashCode = prime * hashCode + ((getTargetResource() == null) ? 0 : getTargetResource().hashCode());
         return hashCode;
     }

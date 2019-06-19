@@ -199,11 +199,6 @@ public class ResponseLaunchTemplateDataStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
-                if (context.testExpression("hibernationOptions", targetDepth)) {
-                    responseLaunchTemplateData.setHibernationOptions(LaunchTemplateHibernationOptionsStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("licenseSet", targetDepth)) {
                     responseLaunchTemplateData.withLicenseSpecifications(new ArrayList<LaunchTemplateLicenseConfiguration>());
                     continue;
@@ -214,6 +209,10 @@ public class ResponseLaunchTemplateDataStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("hibernationOptions", targetDepth)) {
+                    responseLaunchTemplateData.setHibernationOptions(LaunchTemplateHibernationOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return responseLaunchTemplateData;

@@ -283,6 +283,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateBudgetWithResourceResult> associateBudgetWithResourceAsync(AssociateBudgetWithResourceRequest request) {
+
+        return associateBudgetWithResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateBudgetWithResourceResult> associateBudgetWithResourceAsync(final AssociateBudgetWithResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateBudgetWithResourceRequest, AssociateBudgetWithResourceResult> asyncHandler) {
+        final AssociateBudgetWithResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateBudgetWithResourceResult>() {
+            @Override
+            public AssociateBudgetWithResourceResult call() throws Exception {
+                AssociateBudgetWithResourceResult result = null;
+
+                try {
+                    result = executeAssociateBudgetWithResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociatePrincipalWithPortfolioResult> associatePrincipalWithPortfolioAsync(
             AssociatePrincipalWithPortfolioRequest request) {
 
@@ -1550,6 +1583,40 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateBudgetFromResourceResult> disassociateBudgetFromResourceAsync(DisassociateBudgetFromResourceRequest request) {
+
+        return disassociateBudgetFromResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateBudgetFromResourceResult> disassociateBudgetFromResourceAsync(
+            final DisassociateBudgetFromResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateBudgetFromResourceRequest, DisassociateBudgetFromResourceResult> asyncHandler) {
+        final DisassociateBudgetFromResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateBudgetFromResourceResult>() {
+            @Override
+            public DisassociateBudgetFromResourceResult call() throws Exception {
+                DisassociateBudgetFromResourceResult result = null;
+
+                try {
+                    result = executeDisassociateBudgetFromResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociatePrincipalFromPortfolioResult> disassociatePrincipalFromPortfolioAsync(
             DisassociatePrincipalFromPortfolioRequest request) {
 
@@ -1844,6 +1911,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeListAcceptedPortfolioShares(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBudgetsForResourceResult> listBudgetsForResourceAsync(ListBudgetsForResourceRequest request) {
+
+        return listBudgetsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBudgetsForResourceResult> listBudgetsForResourceAsync(final ListBudgetsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBudgetsForResourceRequest, ListBudgetsForResourceResult> asyncHandler) {
+        final ListBudgetsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBudgetsForResourceResult>() {
+            @Override
+            public ListBudgetsForResourceResult call() throws Exception {
+                ListBudgetsForResourceResult result = null;
+
+                try {
+                    result = executeListBudgetsForResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2328,6 +2428,41 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListStackInstancesForProvisionedProductResult> listStackInstancesForProvisionedProductAsync(
+            ListStackInstancesForProvisionedProductRequest request) {
+
+        return listStackInstancesForProvisionedProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackInstancesForProvisionedProductResult> listStackInstancesForProvisionedProductAsync(
+            final ListStackInstancesForProvisionedProductRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListStackInstancesForProvisionedProductRequest, ListStackInstancesForProvisionedProductResult> asyncHandler) {
+        final ListStackInstancesForProvisionedProductRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListStackInstancesForProvisionedProductResult>() {
+            @Override
+            public ListStackInstancesForProvisionedProductResult call() throws Exception {
+                ListStackInstancesForProvisionedProductResult result = null;
+
+                try {
+                    result = executeListStackInstancesForProvisionedProduct(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagOptionsResult> listTagOptionsAsync(ListTagOptionsRequest request) {
 
         return listTagOptionsAsync(request, null);
@@ -2708,6 +2843,41 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeUpdateProvisionedProduct(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProvisionedProductPropertiesResult> updateProvisionedProductPropertiesAsync(
+            UpdateProvisionedProductPropertiesRequest request) {
+
+        return updateProvisionedProductPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProvisionedProductPropertiesResult> updateProvisionedProductPropertiesAsync(
+            final UpdateProvisionedProductPropertiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateProvisionedProductPropertiesRequest, UpdateProvisionedProductPropertiesResult> asyncHandler) {
+        final UpdateProvisionedProductPropertiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateProvisionedProductPropertiesResult>() {
+            @Override
+            public UpdateProvisionedProductPropertiesResult call() throws Exception {
+                UpdateProvisionedProductPropertiesResult result = null;
+
+                try {
+                    result = executeUpdateProvisionedProductProperties(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

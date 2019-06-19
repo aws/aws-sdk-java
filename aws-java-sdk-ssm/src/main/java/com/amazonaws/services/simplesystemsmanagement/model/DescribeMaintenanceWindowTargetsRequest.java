@@ -27,7 +27,7 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose targets should be retrieved.
+     * The ID of the maintenance window whose targets should be retrieved.
      * </p>
      */
     private String windowId;
@@ -54,11 +54,11 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose targets should be retrieved.
+     * The ID of the maintenance window whose targets should be retrieved.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window whose targets should be retrieved.
+     *        The ID of the maintenance window whose targets should be retrieved.
      */
 
     public void setWindowId(String windowId) {
@@ -67,10 +67,10 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose targets should be retrieved.
+     * The ID of the maintenance window whose targets should be retrieved.
      * </p>
      * 
-     * @return The ID of the Maintenance Window whose targets should be retrieved.
+     * @return The ID of the maintenance window whose targets should be retrieved.
      */
 
     public String getWindowId() {
@@ -79,11 +79,11 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose targets should be retrieved.
+     * The ID of the maintenance window whose targets should be retrieved.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window whose targets should be retrieved.
+     *        The ID of the maintenance window whose targets should be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

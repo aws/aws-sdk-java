@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/PromoteReadReplicaDBCluster"
  *      target="_top">AWS API Documentation</a>
@@ -28,56 +27,18 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive.
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Must match the identifier of an existing DBCluster Read Replica.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Example: <code>my-cluster-replica1</code>
+     * Not supported.
      * </p>
      */
     private String dBClusterIdentifier;
 
     /**
      * <p>
-     * The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive.
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Must match the identifier of an existing DBCluster Read Replica.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Example: <code>my-cluster-replica1</code>
+     * Not supported.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive. </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Must match the identifier of an existing DBCluster Read Replica.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Example: <code>my-cluster-replica1</code>
+     *        Not supported.
      */
 
     public void setDBClusterIdentifier(String dBClusterIdentifier) {
@@ -86,35 +47,10 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive.
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Must match the identifier of an existing DBCluster Read Replica.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Example: <code>my-cluster-replica1</code>
+     * Not supported.
      * </p>
      * 
-     * @return The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive. </p>
-     *         <p>
-     *         Constraints:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Must match the identifier of an existing DBCluster Read Replica.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         Example: <code>my-cluster-replica1</code>
+     * @return Not supported.
      */
 
     public String getDBClusterIdentifier() {
@@ -123,36 +59,11 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive.
-     * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Must match the identifier of an existing DBCluster Read Replica.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Example: <code>my-cluster-replica1</code>
+     * Not supported.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive. </p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Must match the identifier of an existing DBCluster Read Replica.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Example: <code>my-cluster-replica1</code>
+     *        Not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

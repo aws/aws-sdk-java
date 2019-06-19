@@ -58,7 +58,7 @@ public class NetworkInterface implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> groups;
     /**
      * <p>
-     * The type of interface.
+     * The type of network interface.
      * </p>
      */
     private String interfaceType;
@@ -383,11 +383,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of interface.
+     * The type of network interface.
      * </p>
      * 
      * @param interfaceType
-     *        The type of interface.
+     *        The type of network interface.
      * @see NetworkInterfaceType
      */
 
@@ -397,10 +397,10 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of interface.
+     * The type of network interface.
      * </p>
      * 
-     * @return The type of interface.
+     * @return The type of network interface.
      * @see NetworkInterfaceType
      */
 
@@ -410,11 +410,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of interface.
+     * The type of network interface.
      * </p>
      * 
      * @param interfaceType
-     *        The type of interface.
+     *        The type of network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkInterfaceType
      */
@@ -426,11 +426,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of interface.
+     * The type of network interface.
      * </p>
      * 
      * @param interfaceType
-     *        The type of interface.
+     *        The type of network interface.
      * @see NetworkInterfaceType
      */
 
@@ -440,11 +440,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of interface.
+     * The type of network interface.
      * </p>
      * 
      * @param interfaceType
-     *        The type of interface.
+     *        The type of network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkInterfaceType
      */

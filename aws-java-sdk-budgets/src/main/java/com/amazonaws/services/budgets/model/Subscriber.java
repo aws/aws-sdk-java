@@ -51,6 +51,9 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The address that AWS sends budget notifications to, either an SNS topic or an email.
      * </p>
+     * <p>
+     * AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
+     * </p>
      */
     private String address;
 
@@ -131,9 +134,14 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The address that AWS sends budget notifications to, either an SNS topic or an email.
      * </p>
+     * <p>
+     * AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
+     * </p>
      * 
      * @param address
-     *        The address that AWS sends budget notifications to, either an SNS topic or an email.
+     *        The address that AWS sends budget notifications to, either an SNS topic or an email.</p>
+     *        <p>
+     *        AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
      */
 
     public void setAddress(String address) {
@@ -144,8 +152,13 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The address that AWS sends budget notifications to, either an SNS topic or an email.
      * </p>
+     * <p>
+     * AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
+     * </p>
      * 
-     * @return The address that AWS sends budget notifications to, either an SNS topic or an email.
+     * @return The address that AWS sends budget notifications to, either an SNS topic or an email.</p>
+     *         <p>
+     *         AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
      */
 
     public String getAddress() {
@@ -156,9 +169,14 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The address that AWS sends budget notifications to, either an SNS topic or an email.
      * </p>
+     * <p>
+     * AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
+     * </p>
      * 
      * @param address
-     *        The address that AWS sends budget notifications to, either an SNS topic or an email.
+     *        The address that AWS sends budget notifications to, either an SNS topic or an email.</p>
+     *        <p>
+     *        AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

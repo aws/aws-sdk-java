@@ -150,6 +150,140 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Specifies a domain to be associated to Amazon WorkLink.
+     * </p>
+     * 
+     * @param associateDomainRequest
+     * @return Result of the AssociateDomain operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.AssociateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AssociateDomainResult associateDomain(AssociateDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateDomain(request);
+    }
+
+    @SdkInternalApi
+    final AssociateDomainResult executeAssociateDomain(AssociateDomainRequest associateDomainRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateDomainRequest> request = null;
+        Response<AssociateDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateDomainResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a website authorization provider with a specified fleet. This is used to authorize users against
+     * associated websites in the company network.
+     * </p>
+     * 
+     * @param associateWebsiteAuthorizationProviderRequest
+     * @return Result of the AssociateWebsiteAuthorizationProvider operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.AssociateWebsiteAuthorizationProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateWebsiteAuthorizationProviderResult associateWebsiteAuthorizationProvider(AssociateWebsiteAuthorizationProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateWebsiteAuthorizationProvider(request);
+    }
+
+    @SdkInternalApi
+    final AssociateWebsiteAuthorizationProviderResult executeAssociateWebsiteAuthorizationProvider(
+            AssociateWebsiteAuthorizationProviderRequest associateWebsiteAuthorizationProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateWebsiteAuthorizationProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateWebsiteAuthorizationProviderRequest> request = null;
+        Response<AssociateWebsiteAuthorizationProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateWebsiteAuthorizationProviderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateWebsiteAuthorizationProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateWebsiteAuthorizationProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateWebsiteAuthorizationProviderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateWebsiteAuthorizationProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates used by associated
      * websites within the company network.
      * </p>
@@ -199,6 +333,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateWebsiteCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -265,6 +400,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -327,6 +463,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -391,6 +528,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAuditStreamConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -456,6 +594,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCompanyNetworkConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -519,6 +658,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDevice");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -583,6 +723,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDevicePolicyConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -590,6 +731,69 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDevicePolicyConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeDevicePolicyConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides information about the domain.
+     * </p>
+     * 
+     * @param describeDomainRequest
+     * @return Result of the DescribeDomain operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.DescribeDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeDomainResult describeDomain(DescribeDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDomain(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDomainResult executeDescribeDomain(DescribeDomainRequest describeDomainRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDomainRequest> request = null;
+        Response<DescribeDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDomainResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -647,6 +851,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetMetadata");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -712,6 +917,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentityProviderConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -777,6 +983,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWebsiteCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -784,6 +991,140 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<DescribeWebsiteCertificateAuthorityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeWebsiteCertificateAuthorityResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates a domain from Amazon WorkLink. End users lose the ability to access the domain with Amazon
+     * WorkLink.
+     * </p>
+     * 
+     * @param disassociateDomainRequest
+     * @return Result of the DisassociateDomain operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.DisassociateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DisassociateDomainResult disassociateDomain(DisassociateDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateDomain(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateDomainResult executeDisassociateDomain(DisassociateDomainRequest disassociateDomainRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateDomainRequest> request = null;
+        Response<DisassociateDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateDomainResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisassociateDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates a website authorization provider from a specified fleet. After the disassociation, users can't load
+     * any associated websites that require this authorization provider.
+     * </p>
+     * 
+     * @param disassociateWebsiteAuthorizationProviderRequest
+     * @return Result of the DisassociateWebsiteAuthorizationProvider operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.DisassociateWebsiteAuthorizationProvider
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateWebsiteAuthorizationProviderResult disassociateWebsiteAuthorizationProvider(DisassociateWebsiteAuthorizationProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateWebsiteAuthorizationProvider(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateWebsiteAuthorizationProviderResult executeDisassociateWebsiteAuthorizationProvider(
+            DisassociateWebsiteAuthorizationProviderRequest disassociateWebsiteAuthorizationProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateWebsiteAuthorizationProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateWebsiteAuthorizationProviderRequest> request = null;
+        Response<DisassociateWebsiteAuthorizationProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateWebsiteAuthorizationProviderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateWebsiteAuthorizationProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateWebsiteAuthorizationProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateWebsiteAuthorizationProviderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DisassociateWebsiteAuthorizationProviderResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -842,6 +1183,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateWebsiteCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -905,12 +1247,74 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevices");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDevicesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDevicesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of domains associated to a specified fleet.
+     * </p>
+     * 
+     * @param listDomainsRequest
+     * @return Result of the ListDomains operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.ListDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListDomainsResult listDomains(ListDomainsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDomains(request);
+    }
+
+    @SdkInternalApi
+    final ListDomainsResult executeListDomains(ListDomainsRequest listDomainsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDomainsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDomainsRequest> request = null;
+        Response<ListDomainsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDomainsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDomainsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomains");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDomainsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDomainsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -965,12 +1369,79 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFleets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ListFleetsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFleetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of website authorization providers associated with a specified fleet.
+     * </p>
+     * 
+     * @param listWebsiteAuthorizationProvidersRequest
+     * @return Result of the ListWebsiteAuthorizationProviders operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.ListWebsiteAuthorizationProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListWebsiteAuthorizationProvidersResult listWebsiteAuthorizationProviders(ListWebsiteAuthorizationProvidersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWebsiteAuthorizationProviders(request);
+    }
+
+    @SdkInternalApi
+    final ListWebsiteAuthorizationProvidersResult executeListWebsiteAuthorizationProviders(
+            ListWebsiteAuthorizationProvidersRequest listWebsiteAuthorizationProvidersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWebsiteAuthorizationProvidersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWebsiteAuthorizationProvidersRequest> request = null;
+        Response<ListWebsiteAuthorizationProvidersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWebsiteAuthorizationProvidersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listWebsiteAuthorizationProvidersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebsiteAuthorizationProviders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWebsiteAuthorizationProvidersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListWebsiteAuthorizationProvidersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1027,6 +1498,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebsiteCertificateAuthorities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1034,6 +1506,132 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<ListWebsiteCertificateAuthoritiesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListWebsiteCertificateAuthoritiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Moves a domain to ACTIVE status if it was in the INACTIVE status.
+     * </p>
+     * 
+     * @param restoreDomainAccessRequest
+     * @return Result of the RestoreDomainAccess operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.RestoreDomainAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RestoreDomainAccessResult restoreDomainAccess(RestoreDomainAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreDomainAccess(request);
+    }
+
+    @SdkInternalApi
+    final RestoreDomainAccessResult executeRestoreDomainAccess(RestoreDomainAccessRequest restoreDomainAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(restoreDomainAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestoreDomainAccessRequest> request = null;
+        Response<RestoreDomainAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestoreDomainAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreDomainAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDomainAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RestoreDomainAccessResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RestoreDomainAccessResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Moves a domain to INACTIVE status if it was in the ACTIVE status.
+     * </p>
+     * 
+     * @param revokeDomainAccessRequest
+     * @return Result of the RevokeDomainAccess operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.RevokeDomainAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RevokeDomainAccessResult revokeDomainAccess(RevokeDomainAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeRevokeDomainAccess(request);
+    }
+
+    @SdkInternalApi
+    final RevokeDomainAccessResult executeRevokeDomainAccess(RevokeDomainAccessRequest revokeDomainAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(revokeDomainAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RevokeDomainAccessRequest> request = null;
+        Response<RevokeDomainAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RevokeDomainAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(revokeDomainAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeDomainAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RevokeDomainAccessResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RevokeDomainAccessResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1090,6 +1688,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SignOutUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1153,6 +1752,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAuditStreamConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1218,6 +1818,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCompanyNetworkConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1283,6 +1884,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDevicePolicyConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1290,6 +1892,69 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDevicePolicyConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateDevicePolicyConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates domain metadata, such as DisplayName.
+     * </p>
+     * 
+     * @param updateDomainMetadataRequest
+     * @return Result of the UpdateDomainMetadata operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.UpdateDomainMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateDomainMetadataResult updateDomainMetadata(UpdateDomainMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDomainMetadata(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDomainMetadataResult executeUpdateDomainMetadata(UpdateDomainMetadataRequest updateDomainMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDomainMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDomainMetadataRequest> request = null;
+        Response<UpdateDomainMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDomainMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDomainMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDomainMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1346,6 +2011,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFleetMetadata");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1410,6 +2076,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIdentityProviderConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

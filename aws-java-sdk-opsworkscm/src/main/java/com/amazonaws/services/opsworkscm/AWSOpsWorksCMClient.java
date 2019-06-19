@@ -73,7 +73,7 @@ import com.amazonaws.services.opsworkscm.model.transform.*;
  * <li>
  * <p>
  * <b>Engine</b>: The engine is the specific configuration manager that you want to use. Valid values in this release
- * include <code>Chef</code> and <code>Puppet</code>.
+ * include <code>ChefAutomate</code> and <code>Puppet</code>.
  * </p>
  * </li>
  * <li>
@@ -466,6 +466,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateNode");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -540,6 +541,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -628,6 +630,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateServer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -691,6 +694,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -762,6 +766,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -780,7 +785,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
 
     /**
      * <p>
-     * Describes your account attributes, and creates requests to increase limits before they are reached or exceeded.
+     * Describes your OpsWorks-CM account attributes.
      * </p>
      * <p>
      * This operation is synchronous.
@@ -818,6 +823,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -885,6 +891,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -950,6 +957,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1012,6 +1020,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNodeAssociationStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1079,6 +1088,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1144,6 +1154,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateNode");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1213,6 +1224,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportServerEngineAttribute");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1283,6 +1295,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreServer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1348,6 +1361,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMaintenance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1409,6 +1423,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1480,6 +1495,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServerEngineAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

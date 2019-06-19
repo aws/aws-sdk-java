@@ -47,7 +47,7 @@ public class TagResourceRequestMarshaller implements Marshaller<Request<TagResou
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2018-11-05/tagging?Operation=Tag";
+        String uriResourcePath = "/2019-03-26/tagging?Operation=Tag";
 
         uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
 
@@ -59,7 +59,7 @@ public class TagResourceRequestMarshaller implements Marshaller<Request<TagResou
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2018-11-05/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2019-03-26/");
 
             Tags tags = tagResourceRequest.getTags();
             if (tags != null) {

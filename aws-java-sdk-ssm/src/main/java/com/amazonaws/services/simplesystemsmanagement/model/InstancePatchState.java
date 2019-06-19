@@ -114,8 +114,16 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private Integer failedCount;
     /**
      * <p>
-     * The number of patches from the patch baseline that aren't applicable for the instance and hence aren't installed
-     * on the instance.
+     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported by name
+     * to Systems Manager Inventory.
+     * </p>
+     */
+    private Integer unreportedNotApplicableCount;
+    /**
+     * <p>
+     * The number of patches from the patch baseline that aren't applicable for the instance and therefore aren't
+     * installed on the instance. This number may be truncated if the list of patch names is very large. The number of
+     * patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      * </p>
      */
     private Integer notApplicableCount;
@@ -674,13 +682,61 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of patches from the patch baseline that aren't applicable for the instance and hence aren't installed
-     * on the instance.
+     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported by name
+     * to Systems Manager Inventory.
+     * </p>
+     * 
+     * @param unreportedNotApplicableCount
+     *        The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported
+     *        by name to Systems Manager Inventory.
+     */
+
+    public void setUnreportedNotApplicableCount(Integer unreportedNotApplicableCount) {
+        this.unreportedNotApplicableCount = unreportedNotApplicableCount;
+    }
+
+    /**
+     * <p>
+     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported by name
+     * to Systems Manager Inventory.
+     * </p>
+     * 
+     * @return The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported
+     *         by name to Systems Manager Inventory.
+     */
+
+    public Integer getUnreportedNotApplicableCount() {
+        return this.unreportedNotApplicableCount;
+    }
+
+    /**
+     * <p>
+     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported by name
+     * to Systems Manager Inventory.
+     * </p>
+     * 
+     * @param unreportedNotApplicableCount
+     *        The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported
+     *        by name to Systems Manager Inventory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancePatchState withUnreportedNotApplicableCount(Integer unreportedNotApplicableCount) {
+        setUnreportedNotApplicableCount(unreportedNotApplicableCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of patches from the patch baseline that aren't applicable for the instance and therefore aren't
+     * installed on the instance. This number may be truncated if the list of patch names is very large. The number of
+     * patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      * </p>
      * 
      * @param notApplicableCount
-     *        The number of patches from the patch baseline that aren't applicable for the instance and hence aren't
-     *        installed on the instance.
+     *        The number of patches from the patch baseline that aren't applicable for the instance and therefore aren't
+     *        installed on the instance. This number may be truncated if the list of patch names is very large. The
+     *        number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      */
 
     public void setNotApplicableCount(Integer notApplicableCount) {
@@ -689,12 +745,14 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of patches from the patch baseline that aren't applicable for the instance and hence aren't installed
-     * on the instance.
+     * The number of patches from the patch baseline that aren't applicable for the instance and therefore aren't
+     * installed on the instance. This number may be truncated if the list of patch names is very large. The number of
+     * patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      * </p>
      * 
-     * @return The number of patches from the patch baseline that aren't applicable for the instance and hence aren't
-     *         installed on the instance.
+     * @return The number of patches from the patch baseline that aren't applicable for the instance and therefore
+     *         aren't installed on the instance. This number may be truncated if the list of patch names is very large.
+     *         The number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      */
 
     public Integer getNotApplicableCount() {
@@ -703,13 +761,15 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of patches from the patch baseline that aren't applicable for the instance and hence aren't installed
-     * on the instance.
+     * The number of patches from the patch baseline that aren't applicable for the instance and therefore aren't
+     * installed on the instance. This number may be truncated if the list of patch names is very large. The number of
+     * patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      * </p>
      * 
      * @param notApplicableCount
-     *        The number of patches from the patch baseline that aren't applicable for the instance and hence aren't
-     *        installed on the instance.
+     *        The number of patches from the patch baseline that aren't applicable for the instance and therefore aren't
+     *        installed on the instance. This number may be truncated if the list of patch names is very large. The
+     *        number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -915,6 +975,8 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
             sb.append("MissingCount: ").append(getMissingCount()).append(",");
         if (getFailedCount() != null)
             sb.append("FailedCount: ").append(getFailedCount()).append(",");
+        if (getUnreportedNotApplicableCount() != null)
+            sb.append("UnreportedNotApplicableCount: ").append(getUnreportedNotApplicableCount()).append(",");
         if (getNotApplicableCount() != null)
             sb.append("NotApplicableCount: ").append(getNotApplicableCount()).append(",");
         if (getOperationStartTime() != null)
@@ -981,6 +1043,10 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getFailedCount() != null && other.getFailedCount().equals(this.getFailedCount()) == false)
             return false;
+        if (other.getUnreportedNotApplicableCount() == null ^ this.getUnreportedNotApplicableCount() == null)
+            return false;
+        if (other.getUnreportedNotApplicableCount() != null && other.getUnreportedNotApplicableCount().equals(this.getUnreportedNotApplicableCount()) == false)
+            return false;
         if (other.getNotApplicableCount() == null ^ this.getNotApplicableCount() == null)
             return false;
         if (other.getNotApplicableCount() != null && other.getNotApplicableCount().equals(this.getNotApplicableCount()) == false)
@@ -1016,6 +1082,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getInstalledRejectedCount() == null) ? 0 : getInstalledRejectedCount().hashCode());
         hashCode = prime * hashCode + ((getMissingCount() == null) ? 0 : getMissingCount().hashCode());
         hashCode = prime * hashCode + ((getFailedCount() == null) ? 0 : getFailedCount().hashCode());
+        hashCode = prime * hashCode + ((getUnreportedNotApplicableCount() == null) ? 0 : getUnreportedNotApplicableCount().hashCode());
         hashCode = prime * hashCode + ((getNotApplicableCount() == null) ? 0 : getNotApplicableCount().hashCode());
         hashCode = prime * hashCode + ((getOperationStartTime() == null) ? 0 : getOperationStartTime().hashCode());
         hashCode = prime * hashCode + ((getOperationEndTime() == null) ? 0 : getOperationEndTime().hashCode());

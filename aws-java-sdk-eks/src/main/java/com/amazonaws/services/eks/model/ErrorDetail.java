@@ -35,12 +35,12 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>SubnetNotFound</b>: One of the subnets associated with the cluster could not be found.
+     * <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SecurityGroupNotFound</b>: One of the security groups associated with the cluster could not be found.
+     * <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.
      * </p>
      * </li>
      * <li>
@@ -50,23 +50,23 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>IpNotAvailable</b>: A subnet associated with the cluster does not have any free IP addresses.
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: You do not have permissions to perform the specified operation.
+     * <b>AccessDenied</b>: You don't have permissions to perform the specified operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>OperationNotPermitted</b>: The service role associated with the cluster does not have the required access
+     * <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access
      * permissions for Amazon EKS.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be found.
+     * <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.
      * </p>
      * </li>
      * </ul>
@@ -92,12 +92,12 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>SubnetNotFound</b>: One of the subnets associated with the cluster could not be found.
+     * <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SecurityGroupNotFound</b>: One of the security groups associated with the cluster could not be found.
+     * <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.
      * </p>
      * </li>
      * <li>
@@ -107,23 +107,23 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>IpNotAvailable</b>: A subnet associated with the cluster does not have any free IP addresses.
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: You do not have permissions to perform the specified operation.
+     * <b>AccessDenied</b>: You don't have permissions to perform the specified operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>OperationNotPermitted</b>: The service role associated with the cluster does not have the required access
+     * <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access
      * permissions for Amazon EKS.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be found.
+     * <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.
      * </p>
      * </li>
      * </ul>
@@ -133,12 +133,12 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>SubnetNotFound</b>: One of the subnets associated with the cluster could not be found.
+     *        <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>SecurityGroupNotFound</b>: One of the security groups associated with the cluster could not be found.
+     *        <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.
      *        </p>
      *        </li>
      *        <li>
@@ -148,23 +148,23 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IpNotAvailable</b>: A subnet associated with the cluster does not have any free IP addresses.
+     *        <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AccessDenied</b>: You do not have permissions to perform the specified operation.
+     *        <b>AccessDenied</b>: You don't have permissions to perform the specified operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>OperationNotPermitted</b>: The service role associated with the cluster does not have the required
+     *        <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required
      *        access permissions for Amazon EKS.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be found.
+     *        <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.
      *        </p>
      *        </li>
      * @see ErrorCode
@@ -181,12 +181,12 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>SubnetNotFound</b>: One of the subnets associated with the cluster could not be found.
+     * <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SecurityGroupNotFound</b>: One of the security groups associated with the cluster could not be found.
+     * <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.
      * </p>
      * </li>
      * <li>
@@ -196,23 +196,23 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>IpNotAvailable</b>: A subnet associated with the cluster does not have any free IP addresses.
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: You do not have permissions to perform the specified operation.
+     * <b>AccessDenied</b>: You don't have permissions to perform the specified operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>OperationNotPermitted</b>: The service role associated with the cluster does not have the required access
+     * <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access
      * permissions for Amazon EKS.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be found.
+     * <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.
      * </p>
      * </li>
      * </ul>
@@ -221,12 +221,12 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>SubnetNotFound</b>: One of the subnets associated with the cluster could not be found.
+     *         <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>SecurityGroupNotFound</b>: One of the security groups associated with the cluster could not be found.
+     *         <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.
      *         </p>
      *         </li>
      *         <li>
@@ -236,23 +236,23 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>IpNotAvailable</b>: A subnet associated with the cluster does not have any free IP addresses.
+     *         <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AccessDenied</b>: You do not have permissions to perform the specified operation.
+     *         <b>AccessDenied</b>: You don't have permissions to perform the specified operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>OperationNotPermitted</b>: The service role associated with the cluster does not have the required
+     *         <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required
      *         access permissions for Amazon EKS.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be found.
+     *         <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.
      *         </p>
      *         </li>
      * @see ErrorCode
@@ -269,12 +269,12 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>SubnetNotFound</b>: One of the subnets associated with the cluster could not be found.
+     * <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SecurityGroupNotFound</b>: One of the security groups associated with the cluster could not be found.
+     * <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.
      * </p>
      * </li>
      * <li>
@@ -284,23 +284,23 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>IpNotAvailable</b>: A subnet associated with the cluster does not have any free IP addresses.
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: You do not have permissions to perform the specified operation.
+     * <b>AccessDenied</b>: You don't have permissions to perform the specified operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>OperationNotPermitted</b>: The service role associated with the cluster does not have the required access
+     * <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access
      * permissions for Amazon EKS.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be found.
+     * <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.
      * </p>
      * </li>
      * </ul>
@@ -310,12 +310,12 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>SubnetNotFound</b>: One of the subnets associated with the cluster could not be found.
+     *        <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>SecurityGroupNotFound</b>: One of the security groups associated with the cluster could not be found.
+     *        <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.
      *        </p>
      *        </li>
      *        <li>
@@ -325,23 +325,23 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IpNotAvailable</b>: A subnet associated with the cluster does not have any free IP addresses.
+     *        <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AccessDenied</b>: You do not have permissions to perform the specified operation.
+     *        <b>AccessDenied</b>: You don't have permissions to perform the specified operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>OperationNotPermitted</b>: The service role associated with the cluster does not have the required
+     *        <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required
      *        access permissions for Amazon EKS.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be found.
+     *        <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -360,12 +360,12 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>SubnetNotFound</b>: One of the subnets associated with the cluster could not be found.
+     * <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SecurityGroupNotFound</b>: One of the security groups associated with the cluster could not be found.
+     * <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.
      * </p>
      * </li>
      * <li>
@@ -375,23 +375,23 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>IpNotAvailable</b>: A subnet associated with the cluster does not have any free IP addresses.
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: You do not have permissions to perform the specified operation.
+     * <b>AccessDenied</b>: You don't have permissions to perform the specified operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>OperationNotPermitted</b>: The service role associated with the cluster does not have the required access
+     * <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access
      * permissions for Amazon EKS.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be found.
+     * <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.
      * </p>
      * </li>
      * </ul>
@@ -401,12 +401,12 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>SubnetNotFound</b>: One of the subnets associated with the cluster could not be found.
+     *        <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>SecurityGroupNotFound</b>: One of the security groups associated with the cluster could not be found.
+     *        <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.
      *        </p>
      *        </li>
      *        <li>
@@ -416,23 +416,23 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IpNotAvailable</b>: A subnet associated with the cluster does not have any free IP addresses.
+     *        <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AccessDenied</b>: You do not have permissions to perform the specified operation.
+     *        <b>AccessDenied</b>: You don't have permissions to perform the specified operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>OperationNotPermitted</b>: The service role associated with the cluster does not have the required
+     *        <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required
      *        access permissions for Amazon EKS.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be found.
+     *        <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

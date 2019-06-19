@@ -25,17 +25,17 @@ public class StartInstancesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Information about one or more started instances.
+     * Information about the started instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceStateChange> startingInstances;
 
     /**
      * <p>
-     * Information about one or more started instances.
+     * Information about the started instances.
      * </p>
      * 
-     * @return Information about one or more started instances.
+     * @return Information about the started instances.
      */
 
     public java.util.List<InstanceStateChange> getStartingInstances() {
@@ -47,11 +47,11 @@ public class StartInstancesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Information about one or more started instances.
+     * Information about the started instances.
      * </p>
      * 
      * @param startingInstances
-     *        Information about one or more started instances.
+     *        Information about the started instances.
      */
 
     public void setStartingInstances(java.util.Collection<InstanceStateChange> startingInstances) {
@@ -65,7 +65,7 @@ public class StartInstancesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Information about one or more started instances.
+     * Information about the started instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class StartInstancesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param startingInstances
-     *        Information about one or more started instances.
+     *        Information about the started instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class StartInstancesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Information about one or more started instances.
+     * Information about the started instances.
      * </p>
      * 
      * @param startingInstances
-     *        Information about one or more started instances.
+     *        Information about the started instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

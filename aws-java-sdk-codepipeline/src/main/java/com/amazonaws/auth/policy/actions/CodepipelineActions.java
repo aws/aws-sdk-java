@@ -55,12 +55,16 @@ public enum CodepipelineActions implements Action {
     GetPipelineState("codepipeline:GetPipelineState"),
     /** Action for the GetThirdPartyJobDetails operation. */
     GetThirdPartyJobDetails("codepipeline:GetThirdPartyJobDetails"),
+    /** Action for the ListActionExecutions operation. */
+    ListActionExecutions("codepipeline:ListActionExecutions"),
     /** Action for the ListActionTypes operation. */
     ListActionTypes("codepipeline:ListActionTypes"),
     /** Action for the ListPipelineExecutions operation. */
     ListPipelineExecutions("codepipeline:ListPipelineExecutions"),
     /** Action for the ListPipelines operation. */
     ListPipelines("codepipeline:ListPipelines"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("codepipeline:ListTagsForResource"),
     /** Action for the ListWebhooks operation. */
     ListWebhooks("codepipeline:ListWebhooks"),
     /** Action for the PollForJobs operation. */
@@ -87,6 +91,10 @@ public enum CodepipelineActions implements Action {
     RetryStageExecution("codepipeline:RetryStageExecution"),
     /** Action for the StartPipelineExecution operation. */
     StartPipelineExecution("codepipeline:StartPipelineExecution"),
+    /** Action for the TagResource operation. */
+    TagResource("codepipeline:TagResource"),
+    /** Action for the UntagResource operation. */
+    UntagResource("codepipeline:UntagResource"),
     /** Action for the UpdatePipeline operation. */
     UpdatePipeline("codepipeline:UpdatePipeline"),
 

@@ -52,6 +52,25 @@ public class GetDeliverabilityDashboardOptionsResultJsonUnmarshaller implements 
                     context.nextToken();
                     getDeliverabilityDashboardOptionsResult.setDashboardEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("SubscriptionExpiryDate", targetDepth)) {
+                    context.nextToken();
+                    getDeliverabilityDashboardOptionsResult.setSubscriptionExpiryDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(
+                            context));
+                }
+                if (context.testExpression("AccountStatus", targetDepth)) {
+                    context.nextToken();
+                    getDeliverabilityDashboardOptionsResult.setAccountStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ActiveSubscribedDomains", targetDepth)) {
+                    context.nextToken();
+                    getDeliverabilityDashboardOptionsResult.setActiveSubscribedDomains(new ListUnmarshaller<DomainDeliverabilityTrackingOption>(
+                            DomainDeliverabilityTrackingOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("PendingExpirationSubscribedDomains", targetDepth)) {
+                    context.nextToken();
+                    getDeliverabilityDashboardOptionsResult.setPendingExpirationSubscribedDomains(new ListUnmarshaller<DomainDeliverabilityTrackingOption>(
+                            DomainDeliverabilityTrackingOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

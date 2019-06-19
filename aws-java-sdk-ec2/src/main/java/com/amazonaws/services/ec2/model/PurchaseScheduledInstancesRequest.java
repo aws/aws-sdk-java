@@ -38,7 +38,7 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest i
     private String clientToken;
     /**
      * <p>
-     * One or more purchase requests.
+     * The purchase requests.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PurchaseRequest> purchaseRequests;
@@ -97,10 +97,10 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * One or more purchase requests.
+     * The purchase requests.
      * </p>
      * 
-     * @return One or more purchase requests.
+     * @return The purchase requests.
      */
 
     public java.util.List<PurchaseRequest> getPurchaseRequests() {
@@ -112,11 +112,11 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * One or more purchase requests.
+     * The purchase requests.
      * </p>
      * 
      * @param purchaseRequests
-     *        One or more purchase requests.
+     *        The purchase requests.
      */
 
     public void setPurchaseRequests(java.util.Collection<PurchaseRequest> purchaseRequests) {
@@ -130,7 +130,7 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * One or more purchase requests.
+     * The purchase requests.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -139,7 +139,7 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest i
      * </p>
      * 
      * @param purchaseRequests
-     *        One or more purchase requests.
+     *        The purchase requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,11 +155,11 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * One or more purchase requests.
+     * The purchase requests.
      * </p>
      * 
      * @param purchaseRequests
-     *        One or more purchase requests.
+     *        The purchase requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -187,6 +187,7 @@ public class AmazonDLMClient extends AmazonWebServiceClient implements AmazonDLM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DLM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLifecyclePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -246,6 +247,7 @@ public class AmazonDLMClient extends AmazonWebServiceClient implements AmazonDLM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DLM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLifecyclePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -310,6 +312,7 @@ public class AmazonDLMClient extends AmazonWebServiceClient implements AmazonDLM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DLM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLifecyclePolicies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -368,6 +371,7 @@ public class AmazonDLMClient extends AmazonWebServiceClient implements AmazonDLM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DLM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLifecyclePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -428,6 +432,7 @@ public class AmazonDLMClient extends AmazonWebServiceClient implements AmazonDLM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DLM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLifecyclePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

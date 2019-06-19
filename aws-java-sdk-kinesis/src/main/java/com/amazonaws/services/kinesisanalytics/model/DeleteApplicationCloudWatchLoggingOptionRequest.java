@@ -41,7 +41,9 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
     /**
      * <p>
      * The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the
-     * <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation.
+     * <code>CloudWatchLoggingOptionId</code> by using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation.
      * </p>
      */
     private String cloudWatchLoggingOptionId;
@@ -129,12 +131,16 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
     /**
      * <p>
      * The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the
-     * <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation.
+     * <code>CloudWatchLoggingOptionId</code> by using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation.
      * </p>
      * 
      * @param cloudWatchLoggingOptionId
      *        The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the
-     *        <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation.
+     *        <code>CloudWatchLoggingOptionId</code> by using the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation.
      */
 
     public void setCloudWatchLoggingOptionId(String cloudWatchLoggingOptionId) {
@@ -144,11 +150,15 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
     /**
      * <p>
      * The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the
-     * <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation.
+     * <code>CloudWatchLoggingOptionId</code> by using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation.
      * </p>
      * 
      * @return The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the
-     *         <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation.
+     *         <code>CloudWatchLoggingOptionId</code> by using the <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *         >DescribeApplication</a> operation.
      */
 
     public String getCloudWatchLoggingOptionId() {
@@ -158,12 +168,16 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
     /**
      * <p>
      * The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the
-     * <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation.
+     * <code>CloudWatchLoggingOptionId</code> by using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation.
      * </p>
      * 
      * @param cloudWatchLoggingOptionId
      *        The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the
-     *        <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation.
+     *        <code>CloudWatchLoggingOptionId</code> by using the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

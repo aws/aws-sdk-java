@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * his section provides documentation for the AWS RoboMaker API operations.
+ * This section provides documentation for the AWS RoboMaker API operations.
  * </p>
  */
 package com.amazonaws.services.robomaker;

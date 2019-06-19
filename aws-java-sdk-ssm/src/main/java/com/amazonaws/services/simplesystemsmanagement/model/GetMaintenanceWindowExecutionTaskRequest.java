@@ -27,24 +27,24 @@ public class GetMaintenanceWindowExecutionTaskRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      */
     private String windowExecutionId;
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window task that should be retrieved.
+     * The ID of the specific task execution in the maintenance window task that should be retrieved.
      * </p>
      */
     private String taskId;
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that includes the task.
+     *        The ID of the maintenance window execution that includes the task.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -53,10 +53,10 @@ public class GetMaintenanceWindowExecutionTaskRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution that includes the task.
+     * @return The ID of the maintenance window execution that includes the task.
      */
 
     public String getWindowExecutionId() {
@@ -65,11 +65,11 @@ public class GetMaintenanceWindowExecutionTaskRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that includes the task.
+     *        The ID of the maintenance window execution that includes the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetMaintenanceWindowExecutionTaskRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window task that should be retrieved.
+     * The ID of the specific task execution in the maintenance window task that should be retrieved.
      * </p>
      * 
      * @param taskId
-     *        The ID of the specific task execution in the Maintenance Window task that should be retrieved.
+     *        The ID of the specific task execution in the maintenance window task that should be retrieved.
      */
 
     public void setTaskId(String taskId) {
@@ -93,10 +93,10 @@ public class GetMaintenanceWindowExecutionTaskRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window task that should be retrieved.
+     * The ID of the specific task execution in the maintenance window task that should be retrieved.
      * </p>
      * 
-     * @return The ID of the specific task execution in the Maintenance Window task that should be retrieved.
+     * @return The ID of the specific task execution in the maintenance window task that should be retrieved.
      */
 
     public String getTaskId() {
@@ -105,11 +105,11 @@ public class GetMaintenanceWindowExecutionTaskRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window task that should be retrieved.
+     * The ID of the specific task execution in the maintenance window task that should be retrieved.
      * </p>
      * 
      * @param taskId
-     *        The ID of the specific task execution in the Maintenance Window task that should be retrieved.
+     *        The ID of the specific task execution in the maintenance window task that should be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

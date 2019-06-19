@@ -44,6 +44,8 @@ public class WorkteamMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> NOTIFICATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationConfiguration").build();
 
     private static final WorkteamMarshaller instance = new WorkteamMarshaller();
 
@@ -69,6 +71,7 @@ public class WorkteamMarshaller {
             protocolMarshaller.marshall(workteam.getSubDomain(), SUBDOMAIN_BINDING);
             protocolMarshaller.marshall(workteam.getCreateDate(), CREATEDATE_BINDING);
             protocolMarshaller.marshall(workteam.getLastUpdatedDate(), LASTUPDATEDDATE_BINDING);
+            protocolMarshaller.marshall(workteam.getNotificationConfiguration(), NOTIFICATIONCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

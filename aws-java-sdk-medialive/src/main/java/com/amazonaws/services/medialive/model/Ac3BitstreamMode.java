@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for Ac3BitstreamMode
+ * Ac3 Bitstream Mode
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Ac3BitstreamMode {

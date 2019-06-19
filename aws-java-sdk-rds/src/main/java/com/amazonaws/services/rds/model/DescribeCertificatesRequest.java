@@ -65,8 +65,8 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
     private Integer maxRecords;
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      */
@@ -335,14 +335,14 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter
-     *        is specified, the response includes only records beyond the marker, up to the value specified by
+     *        An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this
+     *        parameter is specified, the response includes only records beyond the marker, up to the value specified by
      *        <code>MaxRecords</code>.
      */
 
@@ -352,12 +352,12 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this
+     * @return An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this
      *         parameter is specified, the response includes only records beyond the marker, up to the value specified
      *         by <code>MaxRecords</code>.
      */
@@ -368,14 +368,14 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous <a>DescribeCertificates</a> request. If this parameter
-     *        is specified, the response includes only records beyond the marker, up to the value specified by
+     *        An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this
+     *        parameter is specified, the response includes only records beyond the marker, up to the value specified by
      *        <code>MaxRecords</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

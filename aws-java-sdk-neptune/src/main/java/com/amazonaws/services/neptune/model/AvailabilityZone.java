@@ -17,18 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains Availability Zone information.
+ * Specifies an Availability Zone.
  * </p>
- * <p>
- * This data type is used as an element in the following data type:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>OrderableDBInstanceOption</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AvailabilityZone" target="_top">AWS API
  *      Documentation</a>

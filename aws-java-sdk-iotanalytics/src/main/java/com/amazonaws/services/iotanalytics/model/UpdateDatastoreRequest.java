@@ -37,6 +37,12 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private RetentionPeriod retentionPeriod;
+    /**
+     * <p>
+     * Where data store data is stored.
+     * </p>
+     */
+    private DatastoreStorage datastoreStorage;
 
     /**
      * <p>
@@ -119,6 +125,46 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Where data store data is stored.
+     * </p>
+     * 
+     * @param datastoreStorage
+     *        Where data store data is stored.
+     */
+
+    public void setDatastoreStorage(DatastoreStorage datastoreStorage) {
+        this.datastoreStorage = datastoreStorage;
+    }
+
+    /**
+     * <p>
+     * Where data store data is stored.
+     * </p>
+     * 
+     * @return Where data store data is stored.
+     */
+
+    public DatastoreStorage getDatastoreStorage() {
+        return this.datastoreStorage;
+    }
+
+    /**
+     * <p>
+     * Where data store data is stored.
+     * </p>
+     * 
+     * @param datastoreStorage
+     *        Where data store data is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDatastoreRequest withDatastoreStorage(DatastoreStorage datastoreStorage) {
+        setDatastoreStorage(datastoreStorage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +179,9 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
         if (getDatastoreName() != null)
             sb.append("DatastoreName: ").append(getDatastoreName()).append(",");
         if (getRetentionPeriod() != null)
-            sb.append("RetentionPeriod: ").append(getRetentionPeriod());
+            sb.append("RetentionPeriod: ").append(getRetentionPeriod()).append(",");
+        if (getDatastoreStorage() != null)
+            sb.append("DatastoreStorage: ").append(getDatastoreStorage());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +204,10 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getRetentionPeriod() != null && other.getRetentionPeriod().equals(this.getRetentionPeriod()) == false)
             return false;
+        if (other.getDatastoreStorage() == null ^ this.getDatastoreStorage() == null)
+            return false;
+        if (other.getDatastoreStorage() != null && other.getDatastoreStorage().equals(this.getDatastoreStorage()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +218,7 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getDatastoreName() == null) ? 0 : getDatastoreName().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getDatastoreStorage() == null) ? 0 : getDatastoreStorage().hashCode());
         return hashCode;
     }
 

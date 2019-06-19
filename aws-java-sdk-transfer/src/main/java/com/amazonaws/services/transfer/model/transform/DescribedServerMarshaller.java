@@ -30,6 +30,12 @@ public class DescribedServerMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<StructuredPojo> ENDPOINTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointDetails").build();
+    private static final MarshallingInfo<String> ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointType").build();
+    private static final MarshallingInfo<String> HOSTKEYFINGERPRINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HostKeyFingerprint").build();
     private static final MarshallingInfo<StructuredPojo> IDENTITYPROVIDERDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityProviderDetails").build();
     private static final MarshallingInfo<String> IDENTITYPROVIDERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,6 +68,9 @@ public class DescribedServerMarshaller {
 
         try {
             protocolMarshaller.marshall(describedServer.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(describedServer.getEndpointDetails(), ENDPOINTDETAILS_BINDING);
+            protocolMarshaller.marshall(describedServer.getEndpointType(), ENDPOINTTYPE_BINDING);
+            protocolMarshaller.marshall(describedServer.getHostKeyFingerprint(), HOSTKEYFINGERPRINT_BINDING);
             protocolMarshaller.marshall(describedServer.getIdentityProviderDetails(), IDENTITYPROVIDERDETAILS_BINDING);
             protocolMarshaller.marshall(describedServer.getIdentityProviderType(), IDENTITYPROVIDERTYPE_BINDING);
             protocolMarshaller.marshall(describedServer.getLoggingRole(), LOGGINGROLE_BINDING);

@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for InputLossActionForUdpOut
+ * Input Loss Action For Udp Out
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InputLossActionForUdpOut {

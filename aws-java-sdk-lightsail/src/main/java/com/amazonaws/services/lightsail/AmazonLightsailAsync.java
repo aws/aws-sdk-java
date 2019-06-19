@@ -27,9 +27,9 @@ import com.amazonaws.services.lightsail.model.*;
  * <p>
  * <p>
  * Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers.
- * Lightsail includes everything you need to launch your project quickly - a virtual machine, SSD-based storage, data
- * transfer, DNS management, and a static IP - for a low, predictable price. You manage those Lightsail servers through
- * the Lightsail console or by using the API or command-line interface (CLI).
+ * Lightsail includes everything you need to launch your project quickly - a virtual machine, a managed database,
+ * SSD-based storage, data transfer, DNS management, and a static IP - for a low, predictable price. You manage those
+ * Lightsail servers through the Lightsail console or by using the API or command-line interface (CLI).
  * </p>
  * <p>
  * For more information about Lightsail concepts and tasks, see the <a
@@ -615,8 +615,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates one of the following entry records associated with the domain: A record, CNAME record, TXT record, or MX
-     * record.
+     * Creates one of the following entry records associated with the domain: Address (A), canonical name (CNAME), mail
+     * exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
      * <p>
      * The <code>create domain entry</code> operation supports tag-based access control via resource tags applied to the
@@ -635,8 +635,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates one of the following entry records associated with the domain: A record, CNAME record, TXT record, or MX
-     * record.
+     * Creates one of the following entry records associated with the domain: Address (A), canonical name (CNAME), mail
+     * exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
      * <p>
      * The <code>create domain entry</code> operation supports tag-based access control via resource tags applied to the
@@ -1427,6 +1427,57 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<DeleteKeyPairResult> deleteKeyPairAsync(DeleteKeyPairRequest deleteKeyPairRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteKeyPairRequest, DeleteKeyPairResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to
+     * authenticate an instance. This operation enables the Lightsail browser-based SSH or RDP clients to connect to the
+     * instance after a host key mismatch.
+     * </p>
+     * <important>
+     * <p>
+     * Perform this operation only if you were expecting the host key or certificate mismatch or if you are familiar
+     * with the new host key or certificate on the instance. For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection"
+     * >Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP client</a>.
+     * </p>
+     * </important>
+     * 
+     * @param deleteKnownHostKeysRequest
+     * @return A Java Future containing the result of the DeleteKnownHostKeys operation returned by the service.
+     * @sample AmazonLightsailAsync.DeleteKnownHostKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteKnownHostKeysResult> deleteKnownHostKeysAsync(DeleteKnownHostKeysRequest deleteKnownHostKeysRequest);
+
+    /**
+     * <p>
+     * Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to
+     * authenticate an instance. This operation enables the Lightsail browser-based SSH or RDP clients to connect to the
+     * instance after a host key mismatch.
+     * </p>
+     * <important>
+     * <p>
+     * Perform this operation only if you were expecting the host key or certificate mismatch or if you are familiar
+     * with the new host key or certificate on the instance. For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection"
+     * >Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP client</a>.
+     * </p>
+     * </important>
+     * 
+     * @param deleteKnownHostKeysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteKnownHostKeys operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.DeleteKnownHostKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteKnownHostKeysResult> deleteKnownHostKeysAsync(DeleteKnownHostKeysRequest deleteKnownHostKeysRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteKnownHostKeysRequest, DeleteKnownHostKeysResult> asyncHandler);
 
     /**
      * <p>

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The insight results returned by the GetInsightResults operation.
+ * The insight results returned by the <code>GetInsightResults</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InsightResults" target="_top">AWS API
@@ -30,31 +30,31 @@ public class InsightResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the insight whose results are returned by the GetInsightResults operation.
+     * The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.
      * </p>
      */
     private String insightArn;
     /**
      * <p>
-     * The attribute by which the findings are grouped for the insight's whose results are returned by the
-     * GetInsightResults operation.
+     * The attribute that the findings are grouped by for the insight whose results are returned by the
+     * <code>GetInsightResults</code> operation.
      * </p>
      */
     private String groupByAttribute;
     /**
      * <p>
-     * The list of insight result values returned by the GetInsightResults operation.
+     * The list of insight result values returned by the <code>GetInsightResults</code> operation.
      * </p>
      */
     private java.util.List<InsightResultValue> resultValues;
 
     /**
      * <p>
-     * The ARN of the insight whose results are returned by the GetInsightResults operation.
+     * The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.
      * </p>
      * 
      * @param insightArn
-     *        The ARN of the insight whose results are returned by the GetInsightResults operation.
+     *        The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.
      */
 
     public void setInsightArn(String insightArn) {
@@ -63,10 +63,10 @@ public class InsightResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the insight whose results are returned by the GetInsightResults operation.
+     * The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.
      * </p>
      * 
-     * @return The ARN of the insight whose results are returned by the GetInsightResults operation.
+     * @return The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.
      */
 
     public String getInsightArn() {
@@ -75,11 +75,11 @@ public class InsightResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the insight whose results are returned by the GetInsightResults operation.
+     * The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.
      * </p>
      * 
      * @param insightArn
-     *        The ARN of the insight whose results are returned by the GetInsightResults operation.
+     *        The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,13 +90,13 @@ public class InsightResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute by which the findings are grouped for the insight's whose results are returned by the
-     * GetInsightResults operation.
+     * The attribute that the findings are grouped by for the insight whose results are returned by the
+     * <code>GetInsightResults</code> operation.
      * </p>
      * 
      * @param groupByAttribute
-     *        The attribute by which the findings are grouped for the insight's whose results are returned by the
-     *        GetInsightResults operation.
+     *        The attribute that the findings are grouped by for the insight whose results are returned by the
+     *        <code>GetInsightResults</code> operation.
      */
 
     public void setGroupByAttribute(String groupByAttribute) {
@@ -105,12 +105,12 @@ public class InsightResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute by which the findings are grouped for the insight's whose results are returned by the
-     * GetInsightResults operation.
+     * The attribute that the findings are grouped by for the insight whose results are returned by the
+     * <code>GetInsightResults</code> operation.
      * </p>
      * 
-     * @return The attribute by which the findings are grouped for the insight's whose results are returned by the
-     *         GetInsightResults operation.
+     * @return The attribute that the findings are grouped by for the insight whose results are returned by the
+     *         <code>GetInsightResults</code> operation.
      */
 
     public String getGroupByAttribute() {
@@ -119,13 +119,13 @@ public class InsightResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute by which the findings are grouped for the insight's whose results are returned by the
-     * GetInsightResults operation.
+     * The attribute that the findings are grouped by for the insight whose results are returned by the
+     * <code>GetInsightResults</code> operation.
      * </p>
      * 
      * @param groupByAttribute
-     *        The attribute by which the findings are grouped for the insight's whose results are returned by the
-     *        GetInsightResults operation.
+     *        The attribute that the findings are grouped by for the insight whose results are returned by the
+     *        <code>GetInsightResults</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,10 +136,10 @@ public class InsightResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of insight result values returned by the GetInsightResults operation.
+     * The list of insight result values returned by the <code>GetInsightResults</code> operation.
      * </p>
      * 
-     * @return The list of insight result values returned by the GetInsightResults operation.
+     * @return The list of insight result values returned by the <code>GetInsightResults</code> operation.
      */
 
     public java.util.List<InsightResultValue> getResultValues() {
@@ -148,11 +148,11 @@ public class InsightResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of insight result values returned by the GetInsightResults operation.
+     * The list of insight result values returned by the <code>GetInsightResults</code> operation.
      * </p>
      * 
      * @param resultValues
-     *        The list of insight result values returned by the GetInsightResults operation.
+     *        The list of insight result values returned by the <code>GetInsightResults</code> operation.
      */
 
     public void setResultValues(java.util.Collection<InsightResultValue> resultValues) {
@@ -166,7 +166,7 @@ public class InsightResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of insight result values returned by the GetInsightResults operation.
+     * The list of insight result values returned by the <code>GetInsightResults</code> operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -175,7 +175,7 @@ public class InsightResults implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param resultValues
-     *        The list of insight result values returned by the GetInsightResults operation.
+     *        The list of insight result values returned by the <code>GetInsightResults</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,11 +191,11 @@ public class InsightResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of insight result values returned by the GetInsightResults operation.
+     * The list of insight result values returned by the <code>GetInsightResults</code> operation.
      * </p>
      * 
      * @param resultValues
-     *        The list of insight result values returned by the GetInsightResults operation.
+     *        The list of insight result values returned by the <code>GetInsightResults</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

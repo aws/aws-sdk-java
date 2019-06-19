@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For more information on maximum concurrent accounts and failure tolerance, see <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
  * >Stack set operation options</a>.
  * </p>
  * 

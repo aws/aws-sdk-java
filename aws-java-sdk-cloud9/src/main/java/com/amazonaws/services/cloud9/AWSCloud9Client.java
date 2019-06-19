@@ -259,6 +259,7 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEnvironmentEC2");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -326,6 +327,7 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEnvironmentMembership");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -394,6 +396,7 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEnvironment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -461,6 +464,7 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEnvironmentMembership");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -529,6 +533,7 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironmentMemberships");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -597,6 +602,7 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironmentStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -664,6 +670,7 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironments");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -730,6 +737,7 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEnvironments");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -796,6 +804,7 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEnvironment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -863,6 +872,7 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEnvironmentMembership");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

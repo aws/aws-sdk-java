@@ -60,6 +60,35 @@ public class RuleConditionStaxUnmarshaller implements Unmarshaller<RuleCondition
                     continue;
                 }
 
+                if (context.testExpression("HostHeaderConfig", targetDepth)) {
+                    ruleCondition.setHostHeaderConfig(HostHeaderConditionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PathPatternConfig", targetDepth)) {
+                    ruleCondition.setPathPatternConfig(PathPatternConditionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("HttpHeaderConfig", targetDepth)) {
+                    ruleCondition.setHttpHeaderConfig(HttpHeaderConditionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("QueryStringConfig", targetDepth)) {
+                    ruleCondition.setQueryStringConfig(QueryStringConditionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("HttpRequestMethodConfig", targetDepth)) {
+                    ruleCondition.setHttpRequestMethodConfig(HttpRequestMethodConditionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SourceIpConfig", targetDepth)) {
+                    ruleCondition.setSourceIpConfig(SourceIpConditionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return ruleCondition;

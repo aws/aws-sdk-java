@@ -27,7 +27,7 @@ public class DescribeMaintenanceWindowScheduleRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window to retrieve information about.
+     * The ID of the maintenance window to retrieve information about.
      * </p>
      */
     private String windowId;
@@ -45,7 +45,7 @@ public class DescribeMaintenanceWindowScheduleRequest extends com.amazonaws.Amaz
     private String resourceType;
     /**
      * <p>
-     * Filters used to limit the range of results. For example, you can limit Maintenance Window executions to only
+     * Filters used to limit the range of results. For example, you can limit maintenance window executions to only
      * those scheduled before or after a certain date and time.
      * </p>
      */
@@ -66,11 +66,11 @@ public class DescribeMaintenanceWindowScheduleRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window to retrieve information about.
+     * The ID of the maintenance window to retrieve information about.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window to retrieve information about.
+     *        The ID of the maintenance window to retrieve information about.
      */
 
     public void setWindowId(String windowId) {
@@ -79,10 +79,10 @@ public class DescribeMaintenanceWindowScheduleRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window to retrieve information about.
+     * The ID of the maintenance window to retrieve information about.
      * </p>
      * 
-     * @return The ID of the Maintenance Window to retrieve information about.
+     * @return The ID of the maintenance window to retrieve information about.
      */
 
     public String getWindowId() {
@@ -91,11 +91,11 @@ public class DescribeMaintenanceWindowScheduleRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window to retrieve information about.
+     * The ID of the maintenance window to retrieve information about.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window to retrieve information about.
+     *        The ID of the maintenance window to retrieve information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,11 +238,11 @@ public class DescribeMaintenanceWindowScheduleRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Filters used to limit the range of results. For example, you can limit Maintenance Window executions to only
+     * Filters used to limit the range of results. For example, you can limit maintenance window executions to only
      * those scheduled before or after a certain date and time.
      * </p>
      * 
-     * @return Filters used to limit the range of results. For example, you can limit Maintenance Window executions to
+     * @return Filters used to limit the range of results. For example, you can limit maintenance window executions to
      *         only those scheduled before or after a certain date and time.
      */
 
@@ -255,12 +255,12 @@ public class DescribeMaintenanceWindowScheduleRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Filters used to limit the range of results. For example, you can limit Maintenance Window executions to only
+     * Filters used to limit the range of results. For example, you can limit maintenance window executions to only
      * those scheduled before or after a certain date and time.
      * </p>
      * 
      * @param filters
-     *        Filters used to limit the range of results. For example, you can limit Maintenance Window executions to
+     *        Filters used to limit the range of results. For example, you can limit maintenance window executions to
      *        only those scheduled before or after a certain date and time.
      */
 
@@ -275,7 +275,7 @@ public class DescribeMaintenanceWindowScheduleRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Filters used to limit the range of results. For example, you can limit Maintenance Window executions to only
+     * Filters used to limit the range of results. For example, you can limit maintenance window executions to only
      * those scheduled before or after a certain date and time.
      * </p>
      * <p>
@@ -285,7 +285,7 @@ public class DescribeMaintenanceWindowScheduleRequest extends com.amazonaws.Amaz
      * </p>
      * 
      * @param filters
-     *        Filters used to limit the range of results. For example, you can limit Maintenance Window executions to
+     *        Filters used to limit the range of results. For example, you can limit maintenance window executions to
      *        only those scheduled before or after a certain date and time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -302,12 +302,12 @@ public class DescribeMaintenanceWindowScheduleRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Filters used to limit the range of results. For example, you can limit Maintenance Window executions to only
+     * Filters used to limit the range of results. For example, you can limit maintenance window executions to only
      * those scheduled before or after a certain date and time.
      * </p>
      * 
      * @param filters
-     *        Filters used to limit the range of results. For example, you can limit Maintenance Window executions to
+     *        Filters used to limit the range of results. For example, you can limit maintenance window executions to
      *        only those scheduled before or after a certain date and time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

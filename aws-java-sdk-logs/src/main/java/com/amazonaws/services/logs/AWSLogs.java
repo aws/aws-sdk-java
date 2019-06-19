@@ -776,7 +776,11 @@ public interface AWSLogs {
     /**
      * <p>
      * Returns the results from the specified query. If the query is in progress, partial results of that current
-     * execution are returned. Only the fields requested in the query are returned.
+     * execution are returned.
+     * </p>
+     * <p>
+     * Only the fields requested in the query are returned, along with a <code>@ptr</code> field which is the identifier
+     * for the log record. You can use the value of <code>@ptr</code> in a operation to get the full log record.
      * </p>
      * <p>
      * <code>GetQueryResults</code> does not start a query execution. To run a query, use .
@@ -844,7 +848,7 @@ public interface AWSLogs {
     /**
      * <p>
      * Creates or updates an access policy associated with an existing destination. An access policy is an <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM policy document</a> that is
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM policy document</a> that is
      * used to authorize claims to register a subscription filter against a given destination.
      * </p>
      * 
@@ -889,7 +893,8 @@ public interface AWSLogs {
      * </li>
      * <li>
      * <p>
-     * None of the log events in the batch can be older than 14 days or the retention period of the log group.
+     * None of the log events in the batch can be older than 14 days or older than the retention period of the log
+     * group.
      * </p>
      * </li>
      * <li>
@@ -1065,8 +1070,12 @@ public interface AWSLogs {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
      * Query Syntax</a>.
+     * </p>
+     * <p>
+     * Queries time out after 15 minutes of execution. If your queries are timing out, reduce the time range being
+     * searched, or partition your query into a number of queries.
      * </p>
      * 
      * @param startQueryRequest
@@ -1076,7 +1085,7 @@ public interface AWSLogs {
      *         object. For more information, see .</p>
      *         <p>
      *         For more information about valid query syntax, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
      *         Insights Query Syntax</a>.
      * @throws InvalidParameterException
      *         A parameter is specified incorrectly.
@@ -1121,7 +1130,7 @@ public interface AWSLogs {
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag Log Groups in Amazon
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag Log Groups in Amazon
      * CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
      * </p>
      * 

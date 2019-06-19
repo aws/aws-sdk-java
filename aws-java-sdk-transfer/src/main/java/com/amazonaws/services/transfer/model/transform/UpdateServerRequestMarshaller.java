@@ -27,6 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateServerRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> ENDPOINTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointDetails").build();
+    private static final MarshallingInfo<String> ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointType").build();
+    private static final MarshallingInfo<String> HOSTKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("HostKey").build();
     private static final MarshallingInfo<StructuredPojo> IDENTITYPROVIDERDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityProviderDetails").build();
     private static final MarshallingInfo<String> LOGGINGROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -50,6 +56,9 @@ public class UpdateServerRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateServerRequest.getEndpointDetails(), ENDPOINTDETAILS_BINDING);
+            protocolMarshaller.marshall(updateServerRequest.getEndpointType(), ENDPOINTTYPE_BINDING);
+            protocolMarshaller.marshall(updateServerRequest.getHostKey(), HOSTKEY_BINDING);
             protocolMarshaller.marshall(updateServerRequest.getIdentityProviderDetails(), IDENTITYPROVIDERDETAILS_BINDING);
             protocolMarshaller.marshall(updateServerRequest.getLoggingRole(), LOGGINGROLE_BINDING);
             protocolMarshaller.marshall(updateServerRequest.getServerId(), SERVERID_BINDING);

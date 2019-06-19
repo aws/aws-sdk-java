@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.securitytoken.model.transform;
 
+import java.util.List;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -46,6 +48,23 @@ public class AssumeRoleRequestMarshaller implements Marshaller<Request<AssumeRol
 
         if (assumeRoleRequest.getRoleSessionName() != null) {
             request.addParameter("RoleSessionName", StringUtils.fromString(assumeRoleRequest.getRoleSessionName()));
+        }
+
+        if (assumeRoleRequest.getPolicyArns() != null) {
+            java.util.List<PolicyDescriptorType> policyArnsList = assumeRoleRequest.getPolicyArns();
+            if (policyArnsList.isEmpty()) {
+                request.addParameter("PolicyArns", "");
+            } else {
+                int policyArnsListIndex = 1;
+
+                for (PolicyDescriptorType policyArnsListValue : policyArnsList) {
+
+                    if (policyArnsListValue.getArn() != null) {
+                        request.addParameter("PolicyArns.member." + policyArnsListIndex + ".arn", StringUtils.fromString(policyArnsListValue.getArn()));
+                    }
+                    policyArnsListIndex++;
+                }
+            }
         }
 
         if (assumeRoleRequest.getPolicy() != null) {

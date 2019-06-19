@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Includes details of the list of the findings that cannot be imported.
+ * Includes details of the list of the findings that can't be imported.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ImportFindingsError" target="_top">AWS
@@ -30,30 +30,30 @@ public class ImportFindingsError implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The id of the error made during the BatchImportFindings operation.
+     * The ID of the error made during the <code>BatchImportFindings</code> operation.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The code of the error made during the BatchImportFindings operation.
+     * The code of the error made during the <code>BatchImportFindings</code> operation.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * The message of the error made during the BatchImportFindings operation.
+     * The message of the error made during the <code>BatchImportFindings</code> operation.
      * </p>
      */
     private String errorMessage;
 
     /**
      * <p>
-     * The id of the error made during the BatchImportFindings operation.
+     * The ID of the error made during the <code>BatchImportFindings</code> operation.
      * </p>
      * 
      * @param id
-     *        The id of the error made during the BatchImportFindings operation.
+     *        The ID of the error made during the <code>BatchImportFindings</code> operation.
      */
 
     public void setId(String id) {
@@ -62,10 +62,10 @@ public class ImportFindingsError implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The id of the error made during the BatchImportFindings operation.
+     * The ID of the error made during the <code>BatchImportFindings</code> operation.
      * </p>
      * 
-     * @return The id of the error made during the BatchImportFindings operation.
+     * @return The ID of the error made during the <code>BatchImportFindings</code> operation.
      */
 
     public String getId() {
@@ -74,11 +74,11 @@ public class ImportFindingsError implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The id of the error made during the BatchImportFindings operation.
+     * The ID of the error made during the <code>BatchImportFindings</code> operation.
      * </p>
      * 
      * @param id
-     *        The id of the error made during the BatchImportFindings operation.
+     *        The ID of the error made during the <code>BatchImportFindings</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ImportFindingsError implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The code of the error made during the BatchImportFindings operation.
+     * The code of the error made during the <code>BatchImportFindings</code> operation.
      * </p>
      * 
      * @param errorCode
-     *        The code of the error made during the BatchImportFindings operation.
+     *        The code of the error made during the <code>BatchImportFindings</code> operation.
      */
 
     public void setErrorCode(String errorCode) {
@@ -102,10 +102,10 @@ public class ImportFindingsError implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The code of the error made during the BatchImportFindings operation.
+     * The code of the error made during the <code>BatchImportFindings</code> operation.
      * </p>
      * 
-     * @return The code of the error made during the BatchImportFindings operation.
+     * @return The code of the error made during the <code>BatchImportFindings</code> operation.
      */
 
     public String getErrorCode() {
@@ -114,11 +114,11 @@ public class ImportFindingsError implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The code of the error made during the BatchImportFindings operation.
+     * The code of the error made during the <code>BatchImportFindings</code> operation.
      * </p>
      * 
      * @param errorCode
-     *        The code of the error made during the BatchImportFindings operation.
+     *        The code of the error made during the <code>BatchImportFindings</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class ImportFindingsError implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The message of the error made during the BatchImportFindings operation.
+     * The message of the error made during the <code>BatchImportFindings</code> operation.
      * </p>
      * 
      * @param errorMessage
-     *        The message of the error made during the BatchImportFindings operation.
+     *        The message of the error made during the <code>BatchImportFindings</code> operation.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -142,10 +142,10 @@ public class ImportFindingsError implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The message of the error made during the BatchImportFindings operation.
+     * The message of the error made during the <code>BatchImportFindings</code> operation.
      * </p>
      * 
-     * @return The message of the error made during the BatchImportFindings operation.
+     * @return The message of the error made during the <code>BatchImportFindings</code> operation.
      */
 
     public String getErrorMessage() {
@@ -154,11 +154,11 @@ public class ImportFindingsError implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The message of the error made during the BatchImportFindings operation.
+     * The message of the error made during the <code>BatchImportFindings</code> operation.
      * </p>
      * 
      * @param errorMessage
-     *        The message of the error made during the BatchImportFindings operation.
+     *        The message of the error made during the <code>BatchImportFindings</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

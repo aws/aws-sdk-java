@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * List of columns and their types.
+ * <p>
+ * The metadata of the result set returned by a SQL statement.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ResultSetMetadata" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResultSetMetadata implements Serializable, Cloneable, StructuredPojo {
 
-    /** Number of columns */
+    /**
+     * <p>
+     * The number of columns in the result set.
+     * </p>
+     */
     private Long columnCount;
-    /** List of columns and their types */
+    /**
+     * <p>
+     * The metadata of the columns in the result set.
+     * </p>
+     */
     private java.util.List<ColumnMetadata> columnMetadata;
 
     /**
-     * Number of columns
+     * <p>
+     * The number of columns in the result set.
+     * </p>
      * 
      * @param columnCount
-     *        Number of columns
+     *        The number of columns in the result set.
      */
 
     public void setColumnCount(Long columnCount) {
@@ -43,9 +55,11 @@ public class ResultSetMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Number of columns
+     * <p>
+     * The number of columns in the result set.
+     * </p>
      * 
-     * @return Number of columns
+     * @return The number of columns in the result set.
      */
 
     public Long getColumnCount() {
@@ -53,10 +67,12 @@ public class ResultSetMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Number of columns
+     * <p>
+     * The number of columns in the result set.
+     * </p>
      * 
      * @param columnCount
-     *        Number of columns
+     *        The number of columns in the result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,9 +82,11 @@ public class ResultSetMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * List of columns and their types
+     * <p>
+     * The metadata of the columns in the result set.
+     * </p>
      * 
-     * @return List of columns and their types
+     * @return The metadata of the columns in the result set.
      */
 
     public java.util.List<ColumnMetadata> getColumnMetadata() {
@@ -76,10 +94,12 @@ public class ResultSetMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * List of columns and their types
+     * <p>
+     * The metadata of the columns in the result set.
+     * </p>
      * 
      * @param columnMetadata
-     *        List of columns and their types
+     *        The metadata of the columns in the result set.
      */
 
     public void setColumnMetadata(java.util.Collection<ColumnMetadata> columnMetadata) {
@@ -92,7 +112,9 @@ public class ResultSetMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * List of columns and their types
+     * <p>
+     * The metadata of the columns in the result set.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setColumnMetadata(java.util.Collection)} or {@link #withColumnMetadata(java.util.Collection)} if you want
@@ -100,7 +122,7 @@ public class ResultSetMetadata implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param columnMetadata
-     *        List of columns and their types
+     *        The metadata of the columns in the result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,10 +137,12 @@ public class ResultSetMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * List of columns and their types
+     * <p>
+     * The metadata of the columns in the result set.
+     * </p>
      * 
      * @param columnMetadata
-     *        List of columns and their types
+     *        The metadata of the columns in the result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

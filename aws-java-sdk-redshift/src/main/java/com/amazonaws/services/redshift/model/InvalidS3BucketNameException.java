@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The S3 bucket name is invalid. For more information about naming rules, go to <a
- * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a>
- * in the Amazon Simple Storage Service (S3) Developer Guide.
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and
+ * Limitations</a> in the Amazon Simple Storage Service (S3) Developer Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

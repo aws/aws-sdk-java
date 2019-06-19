@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
- * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your
- * data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+ * Determine whether your data volume persists on the host container instance and where it is stored. If this parameter
+ * is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist
+ * after the containers associated with it stop running.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Host" target="_top">AWS API Documentation</a>
@@ -32,11 +32,10 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The path on the host container instance that is presented to the container. If this parameter is empty, then the
-     * Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
-     * <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
-     * container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist, the contents of the source path
-     * folder are exported.
+     * Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume
+     * persists at the specified location on the host container instance until you delete it manually. If the source
+     * path location does not exist on the host container instance, the Docker daemon creates it. If the location does
+     * exist, the contents of the source path folder are exported.
      * </p>
      */
     private String sourcePath;
@@ -44,20 +43,18 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The path on the host container instance that is presented to the container. If this parameter is empty, then the
-     * Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
-     * <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
-     * container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist, the contents of the source path
-     * folder are exported.
+     * Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume
+     * persists at the specified location on the host container instance until you delete it manually. If the source
+     * path location does not exist on the host container instance, the Docker daemon creates it. If the location does
+     * exist, the contents of the source path folder are exported.
      * </p>
      * 
      * @param sourcePath
      *        The path on the host container instance that is presented to the container. If this parameter is empty,
-     *        then the Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
-     *        <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
-     *        container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on
-     *        the host container instance, the Docker daemon creates it. If the location does exist, the contents of the
-     *        source path folder are exported.
+     *        then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then
+     *        the data volume persists at the specified location on the host container instance until you delete it
+     *        manually. If the source path location does not exist on the host container instance, the Docker daemon
+     *        creates it. If the location does exist, the contents of the source path folder are exported.
      */
 
     public void setSourcePath(String sourcePath) {
@@ -67,19 +64,17 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The path on the host container instance that is presented to the container. If this parameter is empty, then the
-     * Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
-     * <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
-     * container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist, the contents of the source path
-     * folder are exported.
+     * Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume
+     * persists at the specified location on the host container instance until you delete it manually. If the source
+     * path location does not exist on the host container instance, the Docker daemon creates it. If the location does
+     * exist, the contents of the source path folder are exported.
      * </p>
      * 
      * @return The path on the host container instance that is presented to the container. If this parameter is empty,
-     *         then the Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
-     *         <code>sourcePath</code> file location, then the data volume persists at the specified location on the
-     *         host container instance until you delete it manually. If the <code>sourcePath</code> value does not exist
-     *         on the host container instance, the Docker daemon creates it. If the location does exist, the contents of
-     *         the source path folder are exported.
+     *         then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then
+     *         the data volume persists at the specified location on the host container instance until you delete it
+     *         manually. If the source path location does not exist on the host container instance, the Docker daemon
+     *         creates it. If the location does exist, the contents of the source path folder are exported.
      */
 
     public String getSourcePath() {
@@ -89,20 +84,18 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The path on the host container instance that is presented to the container. If this parameter is empty, then the
-     * Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
-     * <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
-     * container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist, the contents of the source path
-     * folder are exported.
+     * Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume
+     * persists at the specified location on the host container instance until you delete it manually. If the source
+     * path location does not exist on the host container instance, the Docker daemon creates it. If the location does
+     * exist, the contents of the source path folder are exported.
      * </p>
      * 
      * @param sourcePath
      *        The path on the host container instance that is presented to the container. If this parameter is empty,
-     *        then the Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
-     *        <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
-     *        container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on
-     *        the host container instance, the Docker daemon creates it. If the location does exist, the contents of the
-     *        source path folder are exported.
+     *        then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then
+     *        the data volume persists at the specified location on the host container instance until you delete it
+     *        manually. If the source path location does not exist on the host container instance, the Docker daemon
+     *        creates it. If the location does exist, the contents of the source path folder are exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

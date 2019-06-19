@@ -42,6 +42,8 @@ public class CreateCustomActionTypeRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputArtifactDetails").build();
     private static final MarshallingInfo<StructuredPojo> OUTPUTARTIFACTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputArtifactDetails").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateCustomActionTypeRequestMarshaller instance = new CreateCustomActionTypeRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateCustomActionTypeRequestMarshaller {
             protocolMarshaller.marshall(createCustomActionTypeRequest.getConfigurationProperties(), CONFIGURATIONPROPERTIES_BINDING);
             protocolMarshaller.marshall(createCustomActionTypeRequest.getInputArtifactDetails(), INPUTARTIFACTDETAILS_BINDING);
             protocolMarshaller.marshall(createCustomActionTypeRequest.getOutputArtifactDetails(), OUTPUTARTIFACTDETAILS_BINDING);
+            protocolMarshaller.marshall(createCustomActionTypeRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -72,7 +72,7 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
     private TrafficRoutingConfig trafficRoutingConfig;
     /**
      * <p>
-     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      */
     private String computePlatform;
@@ -343,11 +343,12 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      * 
      * @param computePlatform
-     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     *        The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or
+     *        <code>ECS</code>).
      * @see ComputePlatform
      */
 
@@ -357,10 +358,11 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      * 
-     * @return The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * @return The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or
+     *         <code>ECS</code>).
      * @see ComputePlatform
      */
 
@@ -370,11 +372,12 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      * 
      * @param computePlatform
-     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     *        The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or
+     *        <code>ECS</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComputePlatform
      */
@@ -386,11 +389,12 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      * 
      * @param computePlatform
-     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     *        The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or
+     *        <code>ECS</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComputePlatform
      */

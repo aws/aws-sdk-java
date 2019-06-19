@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for SmoothGroupAudioOnlyTimecodeControl
+ * Smooth Group Audio Only Timecode Control
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SmoothGroupAudioOnlyTimecodeControl {

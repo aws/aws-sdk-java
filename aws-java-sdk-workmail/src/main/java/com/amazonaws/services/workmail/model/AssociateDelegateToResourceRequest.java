@@ -33,7 +33,7 @@ public class AssociateDelegateToResourceRequest extends com.amazonaws.AmazonWebS
     private String organizationId;
     /**
      * <p>
-     * The resource for which members are associated.
+     * The resource for which members (users or groups) are associated.
      * </p>
      */
     private String resourceId;
@@ -86,11 +86,11 @@ public class AssociateDelegateToResourceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The resource for which members are associated.
+     * The resource for which members (users or groups) are associated.
      * </p>
      * 
      * @param resourceId
-     *        The resource for which members are associated.
+     *        The resource for which members (users or groups) are associated.
      */
 
     public void setResourceId(String resourceId) {
@@ -99,10 +99,10 @@ public class AssociateDelegateToResourceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The resource for which members are associated.
+     * The resource for which members (users or groups) are associated.
      * </p>
      * 
-     * @return The resource for which members are associated.
+     * @return The resource for which members (users or groups) are associated.
      */
 
     public String getResourceId() {
@@ -111,11 +111,11 @@ public class AssociateDelegateToResourceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The resource for which members are associated.
+     * The resource for which members (users or groups) are associated.
      * </p>
      * 
      * @param resourceId
-     *        The resource for which members are associated.
+     *        The resource for which members (users or groups) are associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

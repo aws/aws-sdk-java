@@ -35,7 +35,7 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     /**
      * <p>
      * Returns the health status of the specified instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      */
@@ -44,7 +44,7 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
      * <p>
      * Represents the color indicator that gives you information about the health of the EC2 instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      */
@@ -135,14 +135,14 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     /**
      * <p>
      * Returns the health status of the specified instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the specified instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      */
 
     public void setHealthStatus(String healthStatus) {
@@ -152,12 +152,12 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     /**
      * <p>
      * Returns the health status of the specified instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @return Returns the health status of the specified instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
      *         and Statuses</a>.
      */
 
@@ -168,14 +168,14 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     /**
      * <p>
      * Returns the health status of the specified instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the specified instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,15 +188,15 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
      * <p>
      * Represents the color indicator that gives you information about the health of the EC2 instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param color
      *        Represents the color indicator that gives you information about the health of the EC2 instance. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      */
 
     public void setColor(String color) {
@@ -207,13 +207,13 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
      * <p>
      * Represents the color indicator that gives you information about the health of the EC2 instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @return Represents the color indicator that gives you information about the health of the EC2 instance. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
      *         and Statuses</a>.
      */
 
@@ -225,15 +225,15 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
      * <p>
      * Represents the color indicator that gives you information about the health of the EC2 instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param color
      *        Represents the color indicator that gives you information about the health of the EC2 instance. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

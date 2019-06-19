@@ -159,6 +159,61 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * </ul>
  * <p>
+ * Merges, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>BatchDescribeMergeConflicts</a>, which returns information about conflicts in a merge between commits in a
+ * repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateUnreferencedMergeCommit</a>, which creates an unreferenced commit between two branches or commits for the
+ * purpose of comparing them and identifying any potential conflicts.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMergeConflicts</a>, which returns information about merge conflicts between the base, source, and
+ * destination versions of a file in a potential merge.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeCommit</a>, which returns information about the merge between a source and destination commit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeConflicts</a>, which returns information about merge conflicts between the source and destination branch
+ * in a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeOptions</a>, which returns information about the available merge options between two branches or commit
+ * specifiers.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesByFastForward</a>, which merges two branches using the fast-forward merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesBySquash</a>, which merges two branches using the squash merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesByThreeWay</a>, which merges two branches using the three-way merge option.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * Pull requests, by calling the following:
  * </p>
  * <ul>
@@ -179,12 +234,6 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
- * <a>GetMergeConflicts</a>, which returns information about merge conflicts between the source and destination branch
- * in a pull request.
- * </p>
- * </li>
- * <li>
- * <p>
  * <a>GetPullRequest</a>, which returns information about a specified pull request.
  * </p>
  * </li>
@@ -197,6 +246,18 @@ import com.amazonaws.services.codecommit.model.*;
  * <p>
  * <a>MergePullRequestByFastForward</a>, which merges the source destination branch of a pull request into the specified
  * destination branch for that pull request using the fast-forward merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergePullRequestBySquash</a>, which merges the source destination branch of a pull request into the specified
+ * destination branch for that pull request using the squash merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergePullRequestByThreeWay</a>. which merges the source destination branch of a pull request into the specified
+ * destination branch for that pull request using the three-way merge option.
  * </p>
  * </li>
  * <li>
@@ -258,6 +319,27 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * </ul>
  * <p>
+ * Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+ * CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * Triggers, by calling the following:
  * </p>
  * <ul>
@@ -281,7 +363,7 @@ import com.amazonaws.services.codecommit.model.*;
  * </ul>
  * <p>
  * For information about how to use AWS CodeCommit, see the <a
- * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -346,6 +428,67 @@ public interface AWSCodeCommit {
      */
     @Deprecated
     void setRegion(Region region);
+
+    /**
+     * <p>
+     * Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the
+     * squash or three-way merge strategy.
+     * </p>
+     * 
+     * @param batchDescribeMergeConflictsRequest
+     * @return Result of the BatchDescribeMergeConflicts operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws MergeOptionRequiredException
+     *         A merge option or stategy is required, and none was provided.
+     * @throws InvalidMergeOptionException
+     *         The specified merge option is not valid for this operation. Not all merge strategies are supported for
+     *         all operations.
+     * @throws InvalidContinuationTokenException
+     *         The specified continuation token is not valid.
+     * @throws CommitRequiredException
+     *         A commit was not specified.
+     * @throws CommitDoesNotExistException
+     *         The specified commit does not exist or no commit was specified, and the specified repository has no
+     *         default branch.
+     * @throws InvalidCommitException
+     *         The specified commit is not valid.
+     * @throws TipsDivergenceExceededException
+     *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
+     *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
+     * @throws InvalidMaxConflictFilesException
+     *         The specified value for the number of conflict files to return is not valid.
+     * @throws InvalidMaxMergeHunksException
+     *         The specified value for the number of merge hunks to return is not valid.
+     * @throws InvalidConflictDetailLevelException
+     *         The specified conflict detail level is not valid.
+     * @throws InvalidConflictResolutionStrategyException
+     *         The specified conflict resolution strategy is not valid.
+     * @throws MaximumFileContentToLoadExceededException
+     *         The number of files to load exceeds the allowed limit.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.BatchDescribeMergeConflicts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflicts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchDescribeMergeConflictsResult batchDescribeMergeConflicts(BatchDescribeMergeConflictsRequest batchDescribeMergeConflictsRequest);
 
     /**
      * <p>
@@ -506,13 +649,12 @@ public interface AWSCodeCommit {
      *         The specified file does not exist. Verify that you have provided the correct name of the file, including
      *         its full path and extension.
      * @throws FileContentSizeLimitExceededException
-     *         The file cannot be added because it is too large. The maximum file size that can be added using PutFile
-     *         is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git
-     *         client.
+     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
+     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
      * @throws FolderContentSizeLimitExceededException
-     *         The commit cannot be created because at least one of the overall changes in the commit result in a folder
-     *         contents exceeding the limit of 6 MB. Either reduce the number and size of your changes, or split the
-     *         changes across multiple folders.
+     *         The commit cannot be created because at least one of the overall changes in the commit results in a
+     *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
+     *         split the changes across multiple folders.
      * @throws InvalidDeletionParameterException
      *         The specified deletion parameter is not valid.
      * @throws RestrictedSourceFileException
@@ -675,11 +817,124 @@ public interface AWSCodeCommit {
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @throws InvalidTagsMapException
+     *         The map of tags is not valid.
+     * @throws TooManyTagsException
+     *         The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+     * @throws InvalidSystemTagUsageException
+     *         The specified tag is not valid. Key names cannot be prefixed with aws:.
+     * @throws TagPolicyException
+     *         The tag policy is not valid.
      * @sample AWSCodeCommit.CreateRepository
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository" target="_top">AWS
      *      API Documentation</a>
      */
     CreateRepositoryResult createRepository(CreateRepositoryRequest createRepositoryRequest);
+
+    /**
+     * <p>
+     * Creates an unerferenced commit that represents the result of merging two branches using a specified merge
+     * strategy. This can help you determine the outcome of a potential merge.
+     * </p>
+     * <note>
+     * <p>
+     * This unreferenced merge commit can only be accessed using the GetCommit API or through git commands such as git
+     * fetch. To retrieve this commit, you must specify its commit ID or otherwise reference it.
+     * </p>
+     * </note>
+     * 
+     * @param createUnreferencedMergeCommitRequest
+     * @return Result of the CreateUnreferencedMergeCommit operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws TipsDivergenceExceededException
+     *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
+     *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
+     * @throws CommitRequiredException
+     *         A commit was not specified.
+     * @throws InvalidCommitException
+     *         The specified commit is not valid.
+     * @throws CommitDoesNotExistException
+     *         The specified commit does not exist or no commit was specified, and the specified repository has no
+     *         default branch.
+     * @throws MergeOptionRequiredException
+     *         A merge option or stategy is required, and none was provided.
+     * @throws InvalidMergeOptionException
+     *         The specified merge option is not valid for this operation. Not all merge strategies are supported for
+     *         all operations.
+     * @throws InvalidConflictDetailLevelException
+     *         The specified conflict detail level is not valid.
+     * @throws InvalidConflictResolutionStrategyException
+     *         The specified conflict resolution strategy is not valid.
+     * @throws InvalidConflictResolutionException
+     *         The specified conflict resolution list is not valid.
+     * @throws ManualMergeRequiredException
+     *         The pull request cannot be merged automatically into the destination branch. You must manually merge the
+     *         branches and resolve any conflicts.
+     * @throws MaximumConflictResolutionEntriesExceededException
+     *         The number of allowed conflict resolution entries was exceeded.
+     * @throws MultipleConflictResolutionEntriesException
+     *         More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict
+     *         resolution entry.
+     * @throws ReplacementTypeRequiredException
+     *         A replacement type is required.
+     * @throws InvalidReplacementTypeException
+     *         Automerge was specified for resolving the conflict, but the specified replacement type is not valid.
+     * @throws ReplacementContentRequiredException
+     *         USE_NEW_CONTENT was specified but no replacement content has been provided.
+     * @throws InvalidReplacementContentException
+     *         Automerge was specified for resolving the conflict, but the replacement type is not valid or content is
+     *         missing.
+     * @throws PathRequiredException
+     *         The folderPath for a location cannot be null.
+     * @throws InvalidPathException
+     *         The specified path is not valid.
+     * @throws FileContentSizeLimitExceededException
+     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
+     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
+     * @throws FolderContentSizeLimitExceededException
+     *         The commit cannot be created because at least one of the overall changes in the commit results in a
+     *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
+     *         split the changes across multiple folders.
+     * @throws MaximumFileContentToLoadExceededException
+     *         The number of files to load exceeds the allowed limit.
+     * @throws FileModeRequiredException
+     *         The commit cannot be created because a file mode is required to update mode permissions for an existing
+     *         file, but no file mode has been specified.
+     * @throws InvalidFileModeException
+     *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
+     *         <a>PutFile</a>.
+     * @throws NameLengthExceededException
+     *         The user name is not valid because it has exceeded the character limit for file names. File names,
+     *         including the path to the file, cannot exceed the character limit.
+     * @throws InvalidEmailException
+     *         The specified email address either contains one or more characters that are not allowed, or it exceeds
+     *         the maximum number of characters allowed for an email address.
+     * @throws CommitMessageLengthExceededException
+     *         The commit message is too long. Provide a shorter string.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.CreateUnreferencedMergeCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateUnreferencedMergeCommitResult createUnreferencedMergeCommit(CreateUnreferencedMergeCommitRequest createUnreferencedMergeCommitRequest);
 
     /**
      * <p>
@@ -853,6 +1108,73 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the
+     * squash or three-way merge strategy. If the merge option for the attempted merge is specified as
+     * FAST_FORWARD_MERGE, an exception will be thrown.
+     * </p>
+     * 
+     * @param describeMergeConflictsRequest
+     * @return Result of the DescribeMergeConflicts operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws MergeOptionRequiredException
+     *         A merge option or stategy is required, and none was provided.
+     * @throws InvalidMergeOptionException
+     *         The specified merge option is not valid for this operation. Not all merge strategies are supported for
+     *         all operations.
+     * @throws InvalidContinuationTokenException
+     *         The specified continuation token is not valid.
+     * @throws CommitRequiredException
+     *         A commit was not specified.
+     * @throws CommitDoesNotExistException
+     *         The specified commit does not exist or no commit was specified, and the specified repository has no
+     *         default branch.
+     * @throws InvalidCommitException
+     *         The specified commit is not valid.
+     * @throws TipsDivergenceExceededException
+     *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
+     *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
+     * @throws PathRequiredException
+     *         The folderPath for a location cannot be null.
+     * @throws InvalidPathException
+     *         The specified path is not valid.
+     * @throws FileDoesNotExistException
+     *         The specified file does not exist. Verify that you have provided the correct name of the file, including
+     *         its full path and extension.
+     * @throws InvalidMaxMergeHunksException
+     *         The specified value for the number of merge hunks to return is not valid.
+     * @throws InvalidConflictDetailLevelException
+     *         The specified conflict detail level is not valid.
+     * @throws InvalidConflictResolutionStrategyException
+     *         The specified conflict resolution strategy is not valid.
+     * @throws MaximumFileContentToLoadExceededException
+     *         The number of files to load exceeds the allowed limit.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.DescribeMergeConflicts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribeMergeConflicts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMergeConflictsResult describeMergeConflicts(DescribeMergeConflictsRequest describeMergeConflictsRequest);
+
+    /**
+     * <p>
      * Returns information about one or more pull request events.
      * </p>
      * 
@@ -929,7 +1251,7 @@ public interface AWSCodeCommit {
      *         The encryption key is not available.
      * @throws FileTooLargeException
      *         The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in
-     *         AWS CodeCommit, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+     *         AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
      *         CodeCommit User Guide</a>.
      * @sample AWSCodeCommit.GetBlob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob" target="_top">AWS API
@@ -1229,7 +1551,7 @@ public interface AWSCodeCommit {
      *         The encryption key is not available.
      * @throws FileTooLargeException
      *         The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in
-     *         AWS CodeCommit, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+     *         AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
      *         CodeCommit User Guide</a>.
      * @sample AWSCodeCommit.GetFile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile" target="_top">AWS API
@@ -1284,6 +1606,50 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Returns information about a specified merge commit.
+     * </p>
+     * 
+     * @param getMergeCommitRequest
+     * @return Result of the GetMergeCommit operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws CommitRequiredException
+     *         A commit was not specified.
+     * @throws InvalidCommitException
+     *         The specified commit is not valid.
+     * @throws CommitDoesNotExistException
+     *         The specified commit does not exist or no commit was specified, and the specified repository has no
+     *         default branch.
+     * @throws InvalidConflictDetailLevelException
+     *         The specified conflict detail level is not valid.
+     * @throws InvalidConflictResolutionStrategyException
+     *         The specified conflict resolution strategy is not valid.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.GetMergeCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeCommit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetMergeCommitResult getMergeCommit(GetMergeCommitRequest getMergeCommitRequest);
+
+    /**
+     * <p>
      * Returns information about merge conflicts between the before and after commit IDs for a pull request in a
      * repository.
      * </p>
@@ -1303,12 +1669,10 @@ public interface AWSCodeCommit {
      * @throws MergeOptionRequiredException
      *         A merge option or stategy is required, and none was provided.
      * @throws InvalidMergeOptionException
-     *         The specified merge option is not valid. The only valid value is FAST_FORWARD_MERGE.
-     * @throws InvalidDestinationCommitSpecifierException
-     *         The destination commit specifier is not valid. You must provide a valid branch name, tag, or full commit
-     *         ID.
-     * @throws InvalidSourceCommitSpecifierException
-     *         The source commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID.
+     *         The specified merge option is not valid for this operation. Not all merge strategies are supported for
+     *         all operations.
+     * @throws InvalidContinuationTokenException
+     *         The specified continuation token is not valid.
      * @throws CommitRequiredException
      *         A commit was not specified.
      * @throws CommitDoesNotExistException
@@ -1319,6 +1683,19 @@ public interface AWSCodeCommit {
      * @throws TipsDivergenceExceededException
      *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
      *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
+     * @throws InvalidMaxConflictFilesException
+     *         The specified value for the number of conflict files to return is not valid.
+     * @throws InvalidConflictDetailLevelException
+     *         The specified conflict detail level is not valid.
+     * @throws InvalidDestinationCommitSpecifierException
+     *         The destination commit specifier is not valid. You must provide a valid branch name, tag, or full commit
+     *         ID.
+     * @throws InvalidSourceCommitSpecifierException
+     *         The source commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID.
+     * @throws InvalidConflictResolutionStrategyException
+     *         The specified conflict resolution strategy is not valid.
+     * @throws MaximumFileContentToLoadExceededException
+     *         The number of files to load exceeds the allowed limit.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -1334,6 +1711,56 @@ public interface AWSCodeCommit {
      *      API Documentation</a>
      */
     GetMergeConflictsResult getMergeConflicts(GetMergeConflictsRequest getMergeConflictsRequest);
+
+    /**
+     * <p>
+     * Returns information about the merge options available for merging two specified branches. For details about why a
+     * particular merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.
+     * </p>
+     * 
+     * @param getMergeOptionsRequest
+     * @return Result of the GetMergeOptions operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws CommitRequiredException
+     *         A commit was not specified.
+     * @throws CommitDoesNotExistException
+     *         The specified commit does not exist or no commit was specified, and the specified repository has no
+     *         default branch.
+     * @throws InvalidCommitException
+     *         The specified commit is not valid.
+     * @throws TipsDivergenceExceededException
+     *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
+     *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
+     * @throws InvalidConflictDetailLevelException
+     *         The specified conflict detail level is not valid.
+     * @throws InvalidConflictResolutionStrategyException
+     *         The specified conflict resolution strategy is not valid.
+     * @throws MaximumFileContentToLoadExceededException
+     *         The number of files to load exceeds the allowed limit.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.GetMergeOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeOptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetMergeOptionsResult getMergeOptions(GetMergeOptionsRequest getMergeOptionsRequest);
 
     /**
      * <p>
@@ -1546,8 +1973,307 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
+     * resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws ResourceArnRequiredException
+     *         A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid
+     *         resources in AWS CodeCommit, see <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws InvalidResourceArnException
+     *         The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @sample AWSCodeCommit.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Merges two branches using the fast-forward merge strategy.
+     * </p>
+     * 
+     * @param mergeBranchesByFastForwardRequest
+     * @return Result of the MergeBranchesByFastForward operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws TipsDivergenceExceededException
+     *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
+     *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
+     * @throws CommitRequiredException
+     *         A commit was not specified.
+     * @throws InvalidCommitException
+     *         The specified commit is not valid.
+     * @throws CommitDoesNotExistException
+     *         The specified commit does not exist or no commit was specified, and the specified repository has no
+     *         default branch.
+     * @throws InvalidTargetBranchException
+     *         The specified target branch is not valid.
+     * @throws InvalidBranchNameException
+     *         The specified reference name is not valid.
+     * @throws BranchNameRequiredException
+     *         A branch name is required but was not specified.
+     * @throws BranchNameIsTagNameException
+     *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
+     *         repository. For a list of valid branch names, use <a>ListBranches</a>.
+     * @throws BranchDoesNotExistException
+     *         The specified branch does not exist.
+     * @throws ManualMergeRequiredException
+     *         The pull request cannot be merged automatically into the destination branch. You must manually merge the
+     *         branches and resolve any conflicts.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.MergeBranchesByFastForward
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByFastForward"
+     *      target="_top">AWS API Documentation</a>
+     */
+    MergeBranchesByFastForwardResult mergeBranchesByFastForward(MergeBranchesByFastForwardRequest mergeBranchesByFastForwardRequest);
+
+    /**
+     * <p>
+     * Merges two branches using the squash merge strategy.
+     * </p>
+     * 
+     * @param mergeBranchesBySquashRequest
+     * @return Result of the MergeBranchesBySquash operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws TipsDivergenceExceededException
+     *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
+     *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
+     * @throws CommitRequiredException
+     *         A commit was not specified.
+     * @throws InvalidCommitException
+     *         The specified commit is not valid.
+     * @throws CommitDoesNotExistException
+     *         The specified commit does not exist or no commit was specified, and the specified repository has no
+     *         default branch.
+     * @throws InvalidTargetBranchException
+     *         The specified target branch is not valid.
+     * @throws InvalidBranchNameException
+     *         The specified reference name is not valid.
+     * @throws BranchNameRequiredException
+     *         A branch name is required but was not specified.
+     * @throws BranchNameIsTagNameException
+     *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
+     *         repository. For a list of valid branch names, use <a>ListBranches</a>.
+     * @throws BranchDoesNotExistException
+     *         The specified branch does not exist.
+     * @throws ManualMergeRequiredException
+     *         The pull request cannot be merged automatically into the destination branch. You must manually merge the
+     *         branches and resolve any conflicts.
+     * @throws InvalidConflictDetailLevelException
+     *         The specified conflict detail level is not valid.
+     * @throws InvalidConflictResolutionStrategyException
+     *         The specified conflict resolution strategy is not valid.
+     * @throws InvalidConflictResolutionException
+     *         The specified conflict resolution list is not valid.
+     * @throws MaximumConflictResolutionEntriesExceededException
+     *         The number of allowed conflict resolution entries was exceeded.
+     * @throws MultipleConflictResolutionEntriesException
+     *         More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict
+     *         resolution entry.
+     * @throws ReplacementTypeRequiredException
+     *         A replacement type is required.
+     * @throws InvalidReplacementTypeException
+     *         Automerge was specified for resolving the conflict, but the specified replacement type is not valid.
+     * @throws ReplacementContentRequiredException
+     *         USE_NEW_CONTENT was specified but no replacement content has been provided.
+     * @throws InvalidReplacementContentException
+     *         Automerge was specified for resolving the conflict, but the replacement type is not valid or content is
+     *         missing.
+     * @throws PathRequiredException
+     *         The folderPath for a location cannot be null.
+     * @throws InvalidPathException
+     *         The specified path is not valid.
+     * @throws FileContentSizeLimitExceededException
+     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
+     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
+     * @throws FolderContentSizeLimitExceededException
+     *         The commit cannot be created because at least one of the overall changes in the commit results in a
+     *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
+     *         split the changes across multiple folders.
+     * @throws MaximumFileContentToLoadExceededException
+     *         The number of files to load exceeds the allowed limit.
+     * @throws FileModeRequiredException
+     *         The commit cannot be created because a file mode is required to update mode permissions for an existing
+     *         file, but no file mode has been specified.
+     * @throws InvalidFileModeException
+     *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
+     *         <a>PutFile</a>.
+     * @throws NameLengthExceededException
+     *         The user name is not valid because it has exceeded the character limit for file names. File names,
+     *         including the path to the file, cannot exceed the character limit.
+     * @throws InvalidEmailException
+     *         The specified email address either contains one or more characters that are not allowed, or it exceeds
+     *         the maximum number of characters allowed for an email address.
+     * @throws CommitMessageLengthExceededException
+     *         The commit message is too long. Provide a shorter string.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.MergeBranchesBySquash
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesBySquash"
+     *      target="_top">AWS API Documentation</a>
+     */
+    MergeBranchesBySquashResult mergeBranchesBySquash(MergeBranchesBySquashRequest mergeBranchesBySquashRequest);
+
+    /**
+     * <p>
+     * Merges two specified branches using the three-way merge strategy.
+     * </p>
+     * 
+     * @param mergeBranchesByThreeWayRequest
+     * @return Result of the MergeBranchesByThreeWay operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws TipsDivergenceExceededException
+     *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
+     *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
+     * @throws CommitRequiredException
+     *         A commit was not specified.
+     * @throws InvalidCommitException
+     *         The specified commit is not valid.
+     * @throws CommitDoesNotExistException
+     *         The specified commit does not exist or no commit was specified, and the specified repository has no
+     *         default branch.
+     * @throws InvalidTargetBranchException
+     *         The specified target branch is not valid.
+     * @throws InvalidBranchNameException
+     *         The specified reference name is not valid.
+     * @throws BranchNameRequiredException
+     *         A branch name is required but was not specified.
+     * @throws BranchNameIsTagNameException
+     *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
+     *         repository. For a list of valid branch names, use <a>ListBranches</a>.
+     * @throws BranchDoesNotExistException
+     *         The specified branch does not exist.
+     * @throws ManualMergeRequiredException
+     *         The pull request cannot be merged automatically into the destination branch. You must manually merge the
+     *         branches and resolve any conflicts.
+     * @throws InvalidConflictDetailLevelException
+     *         The specified conflict detail level is not valid.
+     * @throws InvalidConflictResolutionStrategyException
+     *         The specified conflict resolution strategy is not valid.
+     * @throws InvalidConflictResolutionException
+     *         The specified conflict resolution list is not valid.
+     * @throws MaximumConflictResolutionEntriesExceededException
+     *         The number of allowed conflict resolution entries was exceeded.
+     * @throws MultipleConflictResolutionEntriesException
+     *         More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict
+     *         resolution entry.
+     * @throws ReplacementTypeRequiredException
+     *         A replacement type is required.
+     * @throws InvalidReplacementTypeException
+     *         Automerge was specified for resolving the conflict, but the specified replacement type is not valid.
+     * @throws ReplacementContentRequiredException
+     *         USE_NEW_CONTENT was specified but no replacement content has been provided.
+     * @throws InvalidReplacementContentException
+     *         Automerge was specified for resolving the conflict, but the replacement type is not valid or content is
+     *         missing.
+     * @throws PathRequiredException
+     *         The folderPath for a location cannot be null.
+     * @throws InvalidPathException
+     *         The specified path is not valid.
+     * @throws FileContentSizeLimitExceededException
+     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
+     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
+     * @throws FolderContentSizeLimitExceededException
+     *         The commit cannot be created because at least one of the overall changes in the commit results in a
+     *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
+     *         split the changes across multiple folders.
+     * @throws MaximumFileContentToLoadExceededException
+     *         The number of files to load exceeds the allowed limit.
+     * @throws FileModeRequiredException
+     *         The commit cannot be created because a file mode is required to update mode permissions for an existing
+     *         file, but no file mode has been specified.
+     * @throws InvalidFileModeException
+     *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
+     *         <a>PutFile</a>.
+     * @throws NameLengthExceededException
+     *         The user name is not valid because it has exceeded the character limit for file names. File names,
+     *         including the path to the file, cannot exceed the character limit.
+     * @throws InvalidEmailException
+     *         The specified email address either contains one or more characters that are not allowed, or it exceeds
+     *         the maximum number of characters allowed for an email address.
+     * @throws CommitMessageLengthExceededException
+     *         The commit message is too long. Provide a shorter string.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.MergeBranchesByThreeWay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByThreeWay"
+     *      target="_top">AWS API Documentation</a>
+     */
+    MergeBranchesByThreeWayResult mergeBranchesByThreeWay(MergeBranchesByThreeWayRequest mergeBranchesByThreeWayRequest);
+
+    /**
+     * <p>
      * Closes a pull request and attempts to merge the source commit of a pull request into the specified destination
-     * branch for that pull request at the specified commit using the fast-forward merge option.
+     * branch for that pull request at the specified commit using the fast-forward merge strategy.
      * </p>
      * 
      * @param mergePullRequestByFastForwardRequest
@@ -1573,6 +2299,9 @@ public interface AWSCodeCommit {
      *         The specified reference does not exist. You must provide a full commit ID.
      * @throws InvalidCommitIdException
      *         The specified commit ID is not valid.
+     * @throws RepositoryNotAssociatedWithPullRequestException
+     *         The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify
+     *         the correct repository name for the pull request ID.
      * @throws RepositoryNameRequiredException
      *         A repository name is required but was not specified.
      * @throws InvalidRepositoryNameException
@@ -1598,6 +2327,212 @@ public interface AWSCodeCommit {
      *      target="_top">AWS API Documentation</a>
      */
     MergePullRequestByFastForwardResult mergePullRequestByFastForward(MergePullRequestByFastForwardRequest mergePullRequestByFastForwardRequest);
+
+    /**
+     * <p>
+     * Closes a pull request and attempts to merge the source commit of a pull request into the specified destination
+     * branch for that pull request at the specified commit using the squash merge strategy.
+     * </p>
+     * 
+     * @param mergePullRequestBySquashRequest
+     * @return Result of the MergePullRequestBySquash operation returned by the service.
+     * @throws PullRequestAlreadyClosedException
+     *         The pull request status cannot be updated because it is already closed.
+     * @throws PullRequestDoesNotExistException
+     *         The pull request ID could not be found. Make sure that you have specified the correct repository name and
+     *         pull request ID, and then try again.
+     * @throws PullRequestIdRequiredException
+     *         A pull request ID is required, but none was provided.
+     * @throws InvalidPullRequestIdException
+     *         The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request
+     *         is in the specified repository, and then try again.
+     * @throws InvalidCommitIdException
+     *         The specified commit ID is not valid.
+     * @throws ManualMergeRequiredException
+     *         The pull request cannot be merged automatically into the destination branch. You must manually merge the
+     *         branches and resolve any conflicts.
+     * @throws TipOfSourceReferenceIsDifferentException
+     *         The tip of the source branch in the destination repository does not match the tip of the source branch
+     *         specified in your request. The pull request might have been updated. Make sure that you have the latest
+     *         changes.
+     * @throws TipsDivergenceExceededException
+     *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
+     *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
+     * @throws NameLengthExceededException
+     *         The user name is not valid because it has exceeded the character limit for file names. File names,
+     *         including the path to the file, cannot exceed the character limit.
+     * @throws InvalidEmailException
+     *         The specified email address either contains one or more characters that are not allowed, or it exceeds
+     *         the maximum number of characters allowed for an email address.
+     * @throws CommitMessageLengthExceededException
+     *         The commit message is too long. Provide a shorter string.
+     * @throws InvalidConflictDetailLevelException
+     *         The specified conflict detail level is not valid.
+     * @throws InvalidConflictResolutionStrategyException
+     *         The specified conflict resolution strategy is not valid.
+     * @throws InvalidConflictResolutionException
+     *         The specified conflict resolution list is not valid.
+     * @throws ReplacementTypeRequiredException
+     *         A replacement type is required.
+     * @throws InvalidReplacementTypeException
+     *         Automerge was specified for resolving the conflict, but the specified replacement type is not valid.
+     * @throws MultipleConflictResolutionEntriesException
+     *         More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict
+     *         resolution entry.
+     * @throws ReplacementContentRequiredException
+     *         USE_NEW_CONTENT was specified but no replacement content has been provided.
+     * @throws MaximumConflictResolutionEntriesExceededException
+     *         The number of allowed conflict resolution entries was exceeded.
+     * @throws PathRequiredException
+     *         The folderPath for a location cannot be null.
+     * @throws InvalidPathException
+     *         The specified path is not valid.
+     * @throws InvalidFileModeException
+     *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
+     *         <a>PutFile</a>.
+     * @throws InvalidReplacementContentException
+     *         Automerge was specified for resolving the conflict, but the replacement type is not valid or content is
+     *         missing.
+     * @throws FileContentSizeLimitExceededException
+     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
+     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
+     * @throws FolderContentSizeLimitExceededException
+     *         The commit cannot be created because at least one of the overall changes in the commit results in a
+     *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
+     *         split the changes across multiple folders.
+     * @throws MaximumFileContentToLoadExceededException
+     *         The number of files to load exceeds the allowed limit.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws RepositoryNotAssociatedWithPullRequestException
+     *         The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify
+     *         the correct repository name for the pull request ID.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.MergePullRequestBySquash
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash"
+     *      target="_top">AWS API Documentation</a>
+     */
+    MergePullRequestBySquashResult mergePullRequestBySquash(MergePullRequestBySquashRequest mergePullRequestBySquashRequest);
+
+    /**
+     * <p>
+     * Closes a pull request and attempts to merge the source commit of a pull request into the specified destination
+     * branch for that pull request at the specified commit using the three-way merge strategy.
+     * </p>
+     * 
+     * @param mergePullRequestByThreeWayRequest
+     * @return Result of the MergePullRequestByThreeWay operation returned by the service.
+     * @throws PullRequestAlreadyClosedException
+     *         The pull request status cannot be updated because it is already closed.
+     * @throws PullRequestDoesNotExistException
+     *         The pull request ID could not be found. Make sure that you have specified the correct repository name and
+     *         pull request ID, and then try again.
+     * @throws PullRequestIdRequiredException
+     *         A pull request ID is required, but none was provided.
+     * @throws InvalidPullRequestIdException
+     *         The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request
+     *         is in the specified repository, and then try again.
+     * @throws InvalidCommitIdException
+     *         The specified commit ID is not valid.
+     * @throws ManualMergeRequiredException
+     *         The pull request cannot be merged automatically into the destination branch. You must manually merge the
+     *         branches and resolve any conflicts.
+     * @throws TipOfSourceReferenceIsDifferentException
+     *         The tip of the source branch in the destination repository does not match the tip of the source branch
+     *         specified in your request. The pull request might have been updated. Make sure that you have the latest
+     *         changes.
+     * @throws TipsDivergenceExceededException
+     *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
+     *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
+     * @throws NameLengthExceededException
+     *         The user name is not valid because it has exceeded the character limit for file names. File names,
+     *         including the path to the file, cannot exceed the character limit.
+     * @throws InvalidEmailException
+     *         The specified email address either contains one or more characters that are not allowed, or it exceeds
+     *         the maximum number of characters allowed for an email address.
+     * @throws CommitMessageLengthExceededException
+     *         The commit message is too long. Provide a shorter string.
+     * @throws InvalidConflictDetailLevelException
+     *         The specified conflict detail level is not valid.
+     * @throws InvalidConflictResolutionStrategyException
+     *         The specified conflict resolution strategy is not valid.
+     * @throws InvalidConflictResolutionException
+     *         The specified conflict resolution list is not valid.
+     * @throws ReplacementTypeRequiredException
+     *         A replacement type is required.
+     * @throws InvalidReplacementTypeException
+     *         Automerge was specified for resolving the conflict, but the specified replacement type is not valid.
+     * @throws MultipleConflictResolutionEntriesException
+     *         More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict
+     *         resolution entry.
+     * @throws ReplacementContentRequiredException
+     *         USE_NEW_CONTENT was specified but no replacement content has been provided.
+     * @throws MaximumConflictResolutionEntriesExceededException
+     *         The number of allowed conflict resolution entries was exceeded.
+     * @throws PathRequiredException
+     *         The folderPath for a location cannot be null.
+     * @throws InvalidPathException
+     *         The specified path is not valid.
+     * @throws InvalidFileModeException
+     *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
+     *         <a>PutFile</a>.
+     * @throws InvalidReplacementContentException
+     *         Automerge was specified for resolving the conflict, but the replacement type is not valid or content is
+     *         missing.
+     * @throws FileContentSizeLimitExceededException
+     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
+     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
+     * @throws FolderContentSizeLimitExceededException
+     *         The commit cannot be created because at least one of the overall changes in the commit results in a
+     *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
+     *         split the changes across multiple folders.
+     * @throws MaximumFileContentToLoadExceededException
+     *         The number of files to load exceeds the allowed limit.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws RepositoryNotAssociatedWithPullRequestException
+     *         The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify
+     *         the correct repository name for the pull request ID.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.MergePullRequestByThreeWay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay"
+     *      target="_top">AWS API Documentation</a>
+     */
+    MergePullRequestByThreeWayResult mergePullRequestByThreeWay(MergePullRequestByThreeWayRequest mergePullRequestByThreeWayRequest);
 
     /**
      * <p>
@@ -1823,13 +2758,12 @@ public interface AWSCodeCommit {
      *         The file cannot be added because it is empty. Empty files cannot be added to the repository with this
      *         API.
      * @throws FileContentSizeLimitExceededException
-     *         The file cannot be added because it is too large. The maximum file size that can be added using PutFile
-     *         is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git
-     *         client.
+     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
+     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
      * @throws FolderContentSizeLimitExceededException
-     *         The commit cannot be created because at least one of the overall changes in the commit result in a folder
-     *         contents exceeding the limit of 6 MB. Either reduce the number and size of your changes, or split the
-     *         changes across multiple folders.
+     *         The commit cannot be created because at least one of the overall changes in the commit results in a
+     *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
+     *         split the changes across multiple folders.
      * @throws PathRequiredException
      *         The folderPath for a location cannot be null.
      * @throws InvalidPathException
@@ -1951,6 +2885,50 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
+     * href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws ResourceArnRequiredException
+     *         A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid
+     *         resources in AWS CodeCommit, see <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws InvalidResourceArnException
+     *         The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws TagsMapRequiredException
+     *         A map of tags is required.
+     * @throws InvalidTagsMapException
+     *         The map of tags is not valid.
+     * @throws TooManyTagsException
+     *         The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+     * @throws InvalidSystemTagUsageException
+     *         The specified tag is not valid. Key names cannot be prefixed with aws:.
+     * @throws TagPolicyException
+     *         The tag policy is not valid.
+     * @sample AWSCodeCommit.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
      * Tests the functionality of repository triggers by sending information to the trigger target. If real data is
      * available in the repository, the test will send data from the last commit. If no data is available, sample data
      * will be generated.
@@ -2013,6 +2991,49 @@ public interface AWSCodeCommit {
      *      target="_top">AWS API Documentation</a>
      */
     TestRepositoryTriggersResult testRepositoryTriggers(TestRepositoryTriggersRequest testRepositoryTriggersRequest);
+
+    /**
+     * <p>
+     * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws ResourceArnRequiredException
+     *         A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid
+     *         resources in AWS CodeCommit, see <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws InvalidResourceArnException
+     *         The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws TagKeysListRequiredException
+     *         A list of tag keys is required. The list cannot be empty or null.
+     * @throws InvalidTagKeysListException
+     *         The list of tags is not valid.
+     * @throws TooManyTagsException
+     *         The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+     * @throws InvalidSystemTagUsageException
+     *         The specified tag is not valid. Key names cannot be prefixed with aws:.
+     * @throws TagPolicyException
+     *         The tag policy is not valid.
+     * @sample AWSCodeCommit.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>
@@ -2227,7 +3248,7 @@ public interface AWSCodeCommit {
      * Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters.
      * The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
      * Guide.
      * </p>
      * 

@@ -100,6 +100,25 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
+     * Accepts a proposal request to attach a virtual private gateway or transit gateway to a Direct Connect gateway.
+     * </p>
+     * 
+     * @param acceptDirectConnectGatewayAssociationProposalRequest
+     * @return Result of the AcceptDirectConnectGatewayAssociationProposal operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.AcceptDirectConnectGatewayAssociationProposal
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AcceptDirectConnectGatewayAssociationProposal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AcceptDirectConnectGatewayAssociationProposalResult acceptDirectConnectGatewayAssociationProposal(
+            AcceptDirectConnectGatewayAssociationProposalRequest acceptDirectConnectGatewayAssociationProposalRequest);
+
+    /**
+     * <p>
      * Deprecated. Use <a>AllocateHostedConnection</a> instead.
      * </p>
      * <p>
@@ -111,7 +130,7 @@ public interface AmazonDirectConnect {
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -130,15 +149,16 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a hosted connection on the specified interconnect or a link aggregation group (LAG).
+     * Creates a hosted connection on the specified interconnect or a link aggregation group (LAG) of interconnects.
      * </p>
      * <p>
-     * Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the specified
-     * interconnect or LAG.
+     * Allocates a VLAN number and a specified amount of capacity (bandwidth) for use by a hosted connection on the
+     * specified interconnect or LAG of interconnects. AWS polices the hosted connection for the specified capacity and
+     * the AWS Direct Connect Partner must also police the hosted connection for the specified capacity.
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -208,6 +228,32 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
+     * Provisions a transit virtual interface to be owned by the specified AWS account. Use this type of interface to
+     * connect a transit gateway to your Direct Connect gateway.
+     * </p>
+     * <p>
+     * The owner of a connection provisions a transit virtual interface to be owned by the specified AWS account.
+     * </p>
+     * <p>
+     * After you create a transit virtual interface, it must be confirmed by the owner using
+     * <a>ConfirmTransitVirtualInterface</a>. Until this step has been completed, the transit virtual interface is in
+     * the <code>requested</code> state and is not available to handle traffic.
+     * </p>
+     * 
+     * @param allocateTransitVirtualInterfaceRequest
+     * @return Result of the AllocateTransitVirtualInterface operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.AllocateTransitVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AllocateTransitVirtualInterfaceResult allocateTransitVirtualInterface(AllocateTransitVirtualInterfaceRequest allocateTransitVirtualInterfaceRequest);
+
+    /**
+     * <p>
      * Associates an existing connection with a link aggregation group (LAG). The connection is interrupted and
      * re-established as a member of the LAG (connectivity to AWS is interrupted). The connection must be hosted on the
      * same AWS Direct Connect endpoint as the LAG, and its bandwidth must match the bandwidth for the LAG. You can
@@ -246,7 +292,7 @@ public interface AmazonDirectConnect {
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -355,6 +401,27 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
+     * Accepts ownership of a transit virtual interface created by another AWS account.
+     * </p>
+     * <p>
+     * After the owner of the transit virtual interface makes this call, the specified transit virtual interface is
+     * created and made available to handle traffic.
+     * </p>
+     * 
+     * @param confirmTransitVirtualInterfaceRequest
+     * @return Result of the ConfirmTransitVirtualInterface operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.ConfirmTransitVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ConfirmTransitVirtualInterfaceResult confirmTransitVirtualInterface(ConfirmTransitVirtualInterfaceRequest confirmTransitVirtualInterfaceRequest);
+
+    /**
+     * <p>
      * Creates a BGP peer on the specified virtual interface.
      * </p>
      * <p>
@@ -458,13 +525,38 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates an interconnect between an AWS Direct Connect partner's network and a specific AWS Direct Connect
+     * Creates a proposal to associate the specified virtual private gateway or transit gateway with the specified
+     * Direct Connect gateway.
+     * </p>
+     * <p>
+     * You can only associate a Direct Connect gateway and virtual private gateway or transit gateway when the account
+     * that owns the Direct Connect gateway and the account that owns the virtual private gateway or transit gateway
+     * have the same AWS Payer ID.
+     * </p>
+     * 
+     * @param createDirectConnectGatewayAssociationProposalRequest
+     * @return Result of the CreateDirectConnectGatewayAssociationProposal operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.CreateDirectConnectGatewayAssociationProposal
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateDirectConnectGatewayAssociationProposalResult createDirectConnectGatewayAssociationProposal(
+            CreateDirectConnectGatewayAssociationProposalRequest createDirectConnectGatewayAssociationProposalRequest);
+
+    /**
+     * <p>
+     * Creates an interconnect between an AWS Direct Connect Partner's network and a specific AWS Direct Connect
      * location.
      * </p>
      * <p>
-     * An interconnect is a connection which is capable of hosting other connections. The partner can use an
-     * interconnect to provide sub-1Gbps AWS Direct Connect service to tier 2 customers who do not have their own
-     * connections. Like a standard connection, an interconnect links the partner's network to an AWS Direct Connect
+     * An interconnect is a connection that is capable of hosting other connections. The AWS Direct Connect partner can
+     * use an interconnect to provide AWS Direct Connect hosted connections to customers through their own network
+     * services. Like a standard connection, an interconnect links the partner's network to an AWS Direct Connect
      * location over a standard Ethernet fiber-optic cable. One end is connected to the partner's router, the other to
      * an AWS Direct Connect router.
      * </p>
@@ -475,13 +567,13 @@ public interface AmazonDirectConnect {
      * created.
      * </p>
      * <p>
-     * For each end customer, the AWS Direct Connect partner provisions a connection on their interconnect by calling
-     * <a>AllocateConnectionOnInterconnect</a>. The end customer can then connect to AWS resources by creating a virtual
-     * interface on their connection, using the VLAN assigned to them by the partner.
+     * For each end customer, the AWS Direct Connect Partner provisions a connection on their interconnect by calling
+     * <a>AllocateHostedConnection</a>. The end customer can then connect to AWS resources by creating a virtual
+     * interface on their connection, using the VLAN assigned to them by the AWS Direct Connect Partner.
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -519,7 +611,7 @@ public interface AmazonDirectConnect {
      * disassociated and re-associated with the LAG. The connection ID does not change.
      * </p>
      * <p>
-     * If the AWS account used to create a LAG is a registered AWS Direct Connect partner, the LAG is automatically
+     * If the AWS account used to create a LAG is a registered AWS Direct Connect Partner, the LAG is automatically
      * enabled to host sub-connections. For a LAG owned by a partner, any associated virtual interfaces cannot be
      * directly configured.
      * </p>
@@ -579,6 +671,25 @@ public interface AmazonDirectConnect {
      *      target="_top">AWS API Documentation</a>
      */
     CreatePublicVirtualInterfaceResult createPublicVirtualInterface(CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest);
+
+    /**
+     * <p>
+     * Creates a transit virtual interface. A transit virtual interface is a VLAN that transports traffic from a Direct
+     * Connect gateway to one or more transit gateways. A transit virtual interface enables the connection of multiple
+     * VPCs attached to a transit gateway to a Direct Connect gateway.
+     * </p>
+     * 
+     * @param createTransitVirtualInterfaceRequest
+     * @return Result of the CreateTransitVirtualInterface operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.CreateTransitVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTransitVirtualInterfaceResult createTransitVirtualInterface(CreateTransitVirtualInterfaceRequest createTransitVirtualInterfaceRequest);
 
     /**
      * <p>
@@ -662,11 +773,31 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
+     * Deletes the association proposal request between the specified Direct Connect gateway and virtual private gateway
+     * or transit gateway.
+     * </p>
+     * 
+     * @param deleteDirectConnectGatewayAssociationProposalRequest
+     * @return Result of the DeleteDirectConnectGatewayAssociationProposal operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.DeleteDirectConnectGatewayAssociationProposal
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociationProposal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteDirectConnectGatewayAssociationProposalResult deleteDirectConnectGatewayAssociationProposal(
+            DeleteDirectConnectGatewayAssociationProposalRequest deleteDirectConnectGatewayAssociationProposalRequest);
+
+    /**
+     * <p>
      * Deletes the specified interconnect.
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -777,7 +908,7 @@ public interface AmazonDirectConnect {
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -793,6 +924,26 @@ public interface AmazonDirectConnect {
      */
     @Deprecated
     DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest describeConnectionsOnInterconnectRequest);
+
+    /**
+     * <p>
+     * Describes one or more association proposals for connection between a virtual private gateway or transit gateway
+     * and a Direct Connect gateway.
+     * </p>
+     * 
+     * @param describeDirectConnectGatewayAssociationProposalsRequest
+     * @return Result of the DescribeDirectConnectGatewayAssociationProposals operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.DescribeDirectConnectGatewayAssociationProposals
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociationProposals"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDirectConnectGatewayAssociationProposalsResult describeDirectConnectGatewayAssociationProposals(
+            DescribeDirectConnectGatewayAssociationProposalsRequest describeDirectConnectGatewayAssociationProposalsRequest);
 
     /**
      * <p>
@@ -866,7 +1017,7 @@ public interface AmazonDirectConnect {
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -1078,7 +1229,7 @@ public interface AmazonDirectConnect {
      * Disassociates a connection from a link aggregation group (LAG). The connection is interrupted and re-established
      * as a standalone connection (the connection is not deleted; to delete the connection, use the
      * <a>DeleteConnection</a> request). If the LAG has associated virtual interfaces or hosted connections, they remain
-     * associated with the LAG. A disassociated connection owned by an AWS Direct Connect partner is automatically
+     * associated with the LAG. A disassociated connection owned by an AWS Direct Connect Partner is automatically
      * converted to an interconnect.
      * </p>
      * <p>
@@ -1141,6 +1292,28 @@ public interface AmazonDirectConnect {
      *      API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates the specified attributes of the Direct Connect gateway association.
+     * </p>
+     * <p>
+     * Add or remove prefixes from the association.
+     * </p>
+     * 
+     * @param updateDirectConnectGatewayAssociationRequest
+     * @return Result of the UpdateDirectConnectGatewayAssociation operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.UpdateDirectConnectGatewayAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGatewayAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateDirectConnectGatewayAssociationResult updateDirectConnectGatewayAssociation(
+            UpdateDirectConnectGatewayAssociationRequest updateDirectConnectGatewayAssociationRequest);
 
     /**
      * <p>

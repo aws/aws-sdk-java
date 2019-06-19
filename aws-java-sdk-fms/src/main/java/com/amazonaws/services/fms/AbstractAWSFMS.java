@@ -68,6 +68,11 @@ public class AbstractAWSFMS implements AWSFMS {
     }
 
     @Override
+    public GetProtectionStatusResult getProtectionStatus(GetProtectionStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListComplianceStatusResult listComplianceStatus(ListComplianceStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

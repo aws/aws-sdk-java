@@ -25,17 +25,17 @@ public class DescribeKeyPairsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about one or more key pairs.
+     * Information about the key pairs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<KeyPairInfo> keyPairs;
 
     /**
      * <p>
-     * Information about one or more key pairs.
+     * Information about the key pairs.
      * </p>
      * 
-     * @return Information about one or more key pairs.
+     * @return Information about the key pairs.
      */
 
     public java.util.List<KeyPairInfo> getKeyPairs() {
@@ -47,11 +47,11 @@ public class DescribeKeyPairsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about one or more key pairs.
+     * Information about the key pairs.
      * </p>
      * 
      * @param keyPairs
-     *        Information about one or more key pairs.
+     *        Information about the key pairs.
      */
 
     public void setKeyPairs(java.util.Collection<KeyPairInfo> keyPairs) {
@@ -65,7 +65,7 @@ public class DescribeKeyPairsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about one or more key pairs.
+     * Information about the key pairs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class DescribeKeyPairsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param keyPairs
-     *        Information about one or more key pairs.
+     *        Information about the key pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DescribeKeyPairsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about one or more key pairs.
+     * Information about the key pairs.
      * </p>
      * 
      * @param keyPairs
-     *        Information about one or more key pairs.
+     *        Information about the key pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
+ * 
+ <p>
  * BrokerNodeInfo
  * </p>
  * 
@@ -58,6 +59,12 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private BrokerSoftwareInfo currentBrokerSoftwareInfo;
+    /**
+     * <p>
+     * Endpoints for accessing the broker.
+     * </p>
+     */
+    private java.util.List<String> endpoints;
 
     /**
      * <p>
@@ -65,7 +72,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param attachedENIId
+     *        <p>
      *        The attached elastic network interface of the broker.
+     *        </p>
      */
 
     public void setAttachedENIId(String attachedENIId) {
@@ -77,7 +86,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * The attached elastic network interface of the broker.
      * </p>
      * 
-     * @return The attached elastic network interface of the broker.
+     * @return <p>
+     *         The attached elastic network interface of the broker.
+     *         </p>
      */
 
     public String getAttachedENIId() {
@@ -90,7 +101,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param attachedENIId
+     *        <p>
      *        The attached elastic network interface of the broker.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +118,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param brokerId
+     *        <p>
      *        The ID of the broker.
+     *        </p>
      */
 
     public void setBrokerId(Double brokerId) {
@@ -117,7 +132,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * The ID of the broker.
      * </p>
      * 
-     * @return The ID of the broker.
+     * @return <p>
+     *         The ID of the broker.
+     *         </p>
      */
 
     public Double getBrokerId() {
@@ -130,7 +147,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param brokerId
+     *        <p>
      *        The ID of the broker.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,7 +164,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param clientSubnet
+     *        <p>
      *        The client subnet to which this broker node belongs.
+     *        </p>
      */
 
     public void setClientSubnet(String clientSubnet) {
@@ -157,7 +178,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * The client subnet to which this broker node belongs.
      * </p>
      * 
-     * @return The client subnet to which this broker node belongs.
+     * @return <p>
+     *         The client subnet to which this broker node belongs.
+     *         </p>
      */
 
     public String getClientSubnet() {
@@ -170,7 +193,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param clientSubnet
+     *        <p>
      *        The client subnet to which this broker node belongs.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,7 +210,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param clientVpcIpAddress
+     *        <p>
      *        The virtual private cloud (VPC) of the client.
+     *        </p>
      */
 
     public void setClientVpcIpAddress(String clientVpcIpAddress) {
@@ -197,7 +224,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * The virtual private cloud (VPC) of the client.
      * </p>
      * 
-     * @return The virtual private cloud (VPC) of the client.
+     * @return <p>
+     *         The virtual private cloud (VPC) of the client.
+     *         </p>
      */
 
     public String getClientVpcIpAddress() {
@@ -210,7 +239,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param clientVpcIpAddress
+     *        <p>
      *        The virtual private cloud (VPC) of the client.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,7 +256,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param currentBrokerSoftwareInfo
+     *        <p>
      *        Information about the version of software currently deployed on the Kafka brokers in the cluster.
+     *        </p>
      */
 
     public void setCurrentBrokerSoftwareInfo(BrokerSoftwareInfo currentBrokerSoftwareInfo) {
@@ -237,7 +270,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * Information about the version of software currently deployed on the Kafka brokers in the cluster.
      * </p>
      * 
-     * @return Information about the version of software currently deployed on the Kafka brokers in the cluster.
+     * @return <p>
+     *         Information about the version of software currently deployed on the Kafka brokers in the cluster.
+     *         </p>
      */
 
     public BrokerSoftwareInfo getCurrentBrokerSoftwareInfo() {
@@ -250,12 +285,93 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param currentBrokerSoftwareInfo
+     *        <p>
      *        Information about the version of software currently deployed on the Kafka brokers in the cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BrokerNodeInfo withCurrentBrokerSoftwareInfo(BrokerSoftwareInfo currentBrokerSoftwareInfo) {
         setCurrentBrokerSoftwareInfo(currentBrokerSoftwareInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Endpoints for accessing the broker.
+     * </p>
+     * 
+     * @return <p>
+     *         Endpoints for accessing the broker.
+     *         </p>
+     */
+
+    public java.util.List<String> getEndpoints() {
+        return endpoints;
+    }
+
+    /**
+     * <p>
+     * Endpoints for accessing the broker.
+     * </p>
+     * 
+     * @param endpoints
+     *        <p>
+     *        Endpoints for accessing the broker.
+     *        </p>
+     */
+
+    public void setEndpoints(java.util.Collection<String> endpoints) {
+        if (endpoints == null) {
+            this.endpoints = null;
+            return;
+        }
+
+        this.endpoints = new java.util.ArrayList<String>(endpoints);
+    }
+
+    /**
+     * <p>
+     * Endpoints for accessing the broker.
+     * </p>
+     * 
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEndpoints(java.util.Collection)} or {@link #withEndpoints(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param endpoints
+     *        <p>
+     *        Endpoints for accessing the broker.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BrokerNodeInfo withEndpoints(String... endpoints) {
+        if (this.endpoints == null) {
+            setEndpoints(new java.util.ArrayList<String>(endpoints.length));
+        }
+        for (String ele : endpoints) {
+            this.endpoints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Endpoints for accessing the broker.
+     * </p>
+     * 
+     * @param endpoints
+     *        <p>
+     *        Endpoints for accessing the broker.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BrokerNodeInfo withEndpoints(java.util.Collection<String> endpoints) {
+        setEndpoints(endpoints);
         return this;
     }
 
@@ -280,7 +396,9 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
         if (getClientVpcIpAddress() != null)
             sb.append("ClientVpcIpAddress: ").append(getClientVpcIpAddress()).append(",");
         if (getCurrentBrokerSoftwareInfo() != null)
-            sb.append("CurrentBrokerSoftwareInfo: ").append(getCurrentBrokerSoftwareInfo());
+            sb.append("CurrentBrokerSoftwareInfo: ").append(getCurrentBrokerSoftwareInfo()).append(",");
+        if (getEndpoints() != null)
+            sb.append("Endpoints: ").append(getEndpoints());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +433,10 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCurrentBrokerSoftwareInfo() != null && other.getCurrentBrokerSoftwareInfo().equals(this.getCurrentBrokerSoftwareInfo()) == false)
             return false;
+        if (other.getEndpoints() == null ^ this.getEndpoints() == null)
+            return false;
+        if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +450,7 @@ public class BrokerNodeInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getClientSubnet() == null) ? 0 : getClientSubnet().hashCode());
         hashCode = prime * hashCode + ((getClientVpcIpAddress() == null) ? 0 : getClientVpcIpAddress().hashCode());
         hashCode = prime * hashCode + ((getCurrentBrokerSoftwareInfo() == null) ? 0 : getCurrentBrokerSoftwareInfo().hashCode());
+        hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
         return hashCode;
     }
 

@@ -47,10 +47,38 @@ public class GetMergeConflictsRequest extends com.amazonaws.AmazonWebServiceRequ
     private String sourceCommitSpecifier;
     /**
      * <p>
-     * The merge option or strategy you want to use to merge the code. The only valid value is FAST_FORWARD_MERGE.
+     * The merge option or strategy you want to use to merge the code.
      * </p>
      */
     private String mergeOption;
+    /**
+     * <p>
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
+     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
+     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * </p>
+     */
+    private String conflictDetailLevel;
+    /**
+     * <p>
+     * The maximum number of files to include in the output.
+     * </p>
+     */
+    private Integer maxConflictFiles;
+    /**
+     * <p>
+     * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
+     * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
+     * will be successful.
+     * </p>
+     */
+    private String conflictResolutionStrategy;
+    /**
+     * <p>
+     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -186,12 +214,11 @@ public class GetMergeConflictsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The merge option or strategy you want to use to merge the code. The only valid value is FAST_FORWARD_MERGE.
+     * The merge option or strategy you want to use to merge the code.
      * </p>
      * 
      * @param mergeOption
-     *        The merge option or strategy you want to use to merge the code. The only valid value is
-     *        FAST_FORWARD_MERGE.
+     *        The merge option or strategy you want to use to merge the code.
      * @see MergeOptionTypeEnum
      */
 
@@ -201,11 +228,10 @@ public class GetMergeConflictsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The merge option or strategy you want to use to merge the code. The only valid value is FAST_FORWARD_MERGE.
+     * The merge option or strategy you want to use to merge the code.
      * </p>
      * 
-     * @return The merge option or strategy you want to use to merge the code. The only valid value is
-     *         FAST_FORWARD_MERGE.
+     * @return The merge option or strategy you want to use to merge the code.
      * @see MergeOptionTypeEnum
      */
 
@@ -215,12 +241,11 @@ public class GetMergeConflictsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The merge option or strategy you want to use to merge the code. The only valid value is FAST_FORWARD_MERGE.
+     * The merge option or strategy you want to use to merge the code.
      * </p>
      * 
      * @param mergeOption
-     *        The merge option or strategy you want to use to merge the code. The only valid value is
-     *        FAST_FORWARD_MERGE.
+     *        The merge option or strategy you want to use to merge the code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MergeOptionTypeEnum
      */
@@ -232,18 +257,251 @@ public class GetMergeConflictsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The merge option or strategy you want to use to merge the code. The only valid value is FAST_FORWARD_MERGE.
+     * The merge option or strategy you want to use to merge the code.
      * </p>
      * 
      * @param mergeOption
-     *        The merge option or strategy you want to use to merge the code. The only valid value is
-     *        FAST_FORWARD_MERGE.
+     *        The merge option or strategy you want to use to merge the code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MergeOptionTypeEnum
      */
 
     public GetMergeConflictsRequest withMergeOption(MergeOptionTypeEnum mergeOption) {
         this.mergeOption = mergeOption.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
+     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
+     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * </p>
+     * 
+     * @param conflictDetailLevel
+     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a
+     *        not mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
+     *        conflict will be considered not mergeable if the same file in both branches has differences on the same
+     *        line.
+     * @see ConflictDetailLevelTypeEnum
+     */
+
+    public void setConflictDetailLevel(String conflictDetailLevel) {
+        this.conflictDetailLevel = conflictDetailLevel;
+    }
+
+    /**
+     * <p>
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
+     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
+     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * </p>
+     * 
+     * @return The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a
+     *         not mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
+     *         conflict will be considered not mergeable if the same file in both branches has differences on the same
+     *         line.
+     * @see ConflictDetailLevelTypeEnum
+     */
+
+    public String getConflictDetailLevel() {
+        return this.conflictDetailLevel;
+    }
+
+    /**
+     * <p>
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
+     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
+     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * </p>
+     * 
+     * @param conflictDetailLevel
+     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a
+     *        not mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
+     *        conflict will be considered not mergeable if the same file in both branches has differences on the same
+     *        line.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConflictDetailLevelTypeEnum
+     */
+
+    public GetMergeConflictsRequest withConflictDetailLevel(String conflictDetailLevel) {
+        setConflictDetailLevel(conflictDetailLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
+     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
+     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * </p>
+     * 
+     * @param conflictDetailLevel
+     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a
+     *        not mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
+     *        conflict will be considered not mergeable if the same file in both branches has differences on the same
+     *        line.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConflictDetailLevelTypeEnum
+     */
+
+    public GetMergeConflictsRequest withConflictDetailLevel(ConflictDetailLevelTypeEnum conflictDetailLevel) {
+        this.conflictDetailLevel = conflictDetailLevel.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of files to include in the output.
+     * </p>
+     * 
+     * @param maxConflictFiles
+     *        The maximum number of files to include in the output.
+     */
+
+    public void setMaxConflictFiles(Integer maxConflictFiles) {
+        this.maxConflictFiles = maxConflictFiles;
+    }
+
+    /**
+     * <p>
+     * The maximum number of files to include in the output.
+     * </p>
+     * 
+     * @return The maximum number of files to include in the output.
+     */
+
+    public Integer getMaxConflictFiles() {
+        return this.maxConflictFiles;
+    }
+
+    /**
+     * <p>
+     * The maximum number of files to include in the output.
+     * </p>
+     * 
+     * @param maxConflictFiles
+     *        The maximum number of files to include in the output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMergeConflictsRequest withMaxConflictFiles(Integer maxConflictFiles) {
+        setMaxConflictFiles(maxConflictFiles);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
+     * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
+     * will be successful.
+     * </p>
+     * 
+     * @param conflictResolutionStrategy
+     *        Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two
+     *        versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the
+     *        merge operation will be successful.
+     * @see ConflictResolutionStrategyTypeEnum
+     */
+
+    public void setConflictResolutionStrategy(String conflictResolutionStrategy) {
+        this.conflictResolutionStrategy = conflictResolutionStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
+     * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
+     * will be successful.
+     * </p>
+     * 
+     * @return Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two
+     *         versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the
+     *         merge operation will be successful.
+     * @see ConflictResolutionStrategyTypeEnum
+     */
+
+    public String getConflictResolutionStrategy() {
+        return this.conflictResolutionStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
+     * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
+     * will be successful.
+     * </p>
+     * 
+     * @param conflictResolutionStrategy
+     *        Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two
+     *        versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the
+     *        merge operation will be successful.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConflictResolutionStrategyTypeEnum
+     */
+
+    public GetMergeConflictsRequest withConflictResolutionStrategy(String conflictResolutionStrategy) {
+        setConflictResolutionStrategy(conflictResolutionStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
+     * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
+     * will be successful.
+     * </p>
+     * 
+     * @param conflictResolutionStrategy
+     *        Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two
+     *        versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the
+     *        merge operation will be successful.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConflictResolutionStrategyTypeEnum
+     */
+
+    public GetMergeConflictsRequest withConflictResolutionStrategy(ConflictResolutionStrategyTypeEnum conflictResolutionStrategy) {
+        this.conflictResolutionStrategy = conflictResolutionStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * </p>
+     * 
+     * @param nextToken
+     *        An enumeration token that when provided in a request, returns the next batch of the results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * </p>
+     * 
+     * @return An enumeration token that when provided in a request, returns the next batch of the results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * </p>
+     * 
+     * @param nextToken
+     *        An enumeration token that when provided in a request, returns the next batch of the results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMergeConflictsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
         return this;
     }
 
@@ -266,7 +524,15 @@ public class GetMergeConflictsRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getSourceCommitSpecifier() != null)
             sb.append("SourceCommitSpecifier: ").append(getSourceCommitSpecifier()).append(",");
         if (getMergeOption() != null)
-            sb.append("MergeOption: ").append(getMergeOption());
+            sb.append("MergeOption: ").append(getMergeOption()).append(",");
+        if (getConflictDetailLevel() != null)
+            sb.append("ConflictDetailLevel: ").append(getConflictDetailLevel()).append(",");
+        if (getMaxConflictFiles() != null)
+            sb.append("MaxConflictFiles: ").append(getMaxConflictFiles()).append(",");
+        if (getConflictResolutionStrategy() != null)
+            sb.append("ConflictResolutionStrategy: ").append(getConflictResolutionStrategy()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -297,6 +563,22 @@ public class GetMergeConflictsRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getMergeOption() != null && other.getMergeOption().equals(this.getMergeOption()) == false)
             return false;
+        if (other.getConflictDetailLevel() == null ^ this.getConflictDetailLevel() == null)
+            return false;
+        if (other.getConflictDetailLevel() != null && other.getConflictDetailLevel().equals(this.getConflictDetailLevel()) == false)
+            return false;
+        if (other.getMaxConflictFiles() == null ^ this.getMaxConflictFiles() == null)
+            return false;
+        if (other.getMaxConflictFiles() != null && other.getMaxConflictFiles().equals(this.getMaxConflictFiles()) == false)
+            return false;
+        if (other.getConflictResolutionStrategy() == null ^ this.getConflictResolutionStrategy() == null)
+            return false;
+        if (other.getConflictResolutionStrategy() != null && other.getConflictResolutionStrategy().equals(this.getConflictResolutionStrategy()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -309,6 +591,10 @@ public class GetMergeConflictsRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDestinationCommitSpecifier() == null) ? 0 : getDestinationCommitSpecifier().hashCode());
         hashCode = prime * hashCode + ((getSourceCommitSpecifier() == null) ? 0 : getSourceCommitSpecifier().hashCode());
         hashCode = prime * hashCode + ((getMergeOption() == null) ? 0 : getMergeOption().hashCode());
+        hashCode = prime * hashCode + ((getConflictDetailLevel() == null) ? 0 : getConflictDetailLevel().hashCode());
+        hashCode = prime * hashCode + ((getMaxConflictFiles() == null) ? 0 : getMaxConflictFiles().hashCode());
+        hashCode = prime * hashCode + ((getConflictResolutionStrategy() == null) ? 0 : getConflictResolutionStrategy().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

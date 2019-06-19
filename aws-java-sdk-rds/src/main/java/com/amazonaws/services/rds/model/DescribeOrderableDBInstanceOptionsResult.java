@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the <a>DescribeOrderableDBInstanceOptions</a> action.
+ * Contains the result of a successful invocation of the <code>DescribeOrderableDBInstanceOptions</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions"
@@ -29,7 +29,8 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.
+     * An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB
+     * instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OrderableDBInstanceOption> orderableDBInstanceOptions;
@@ -44,11 +45,12 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.
+     * An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB
+     * instance.
      * </p>
      * 
-     * @return An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB
-     *         instance.
+     * @return An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for
+     *         the DB instance.
      */
 
     public java.util.List<OrderableDBInstanceOption> getOrderableDBInstanceOptions() {
@@ -60,12 +62,13 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.
+     * An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB
+     * instance.
      * </p>
      * 
      * @param orderableDBInstanceOptions
-     *        An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB
-     *        instance.
+     *        An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the
+     *        DB instance.
      */
 
     public void setOrderableDBInstanceOptions(java.util.Collection<OrderableDBInstanceOption> orderableDBInstanceOptions) {
@@ -79,7 +82,8 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.
+     * An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB
+     * instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,8 +92,8 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @param orderableDBInstanceOptions
-     *        An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB
-     *        instance.
+     *        An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the
+     *        DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,12 +109,13 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.
+     * An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB
+     * instance.
      * </p>
      * 
      * @param orderableDBInstanceOptions
-     *        An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB
-     *        instance.
+     *        An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the
+     *        DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,6 +35,8 @@ public class RobotApplicationSummaryMarshaller {
             .marshallLocationName("version").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> ROBOTSOFTWARESUITE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("robotSoftwareSuite").build();
 
     private static final RobotApplicationSummaryMarshaller instance = new RobotApplicationSummaryMarshaller();
 
@@ -56,6 +58,7 @@ public class RobotApplicationSummaryMarshaller {
             protocolMarshaller.marshall(robotApplicationSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(robotApplicationSummary.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(robotApplicationSummary.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
+            protocolMarshaller.marshall(robotApplicationSummary.getRobotSoftwareSuite(), ROBOTSOFTWARESUITE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

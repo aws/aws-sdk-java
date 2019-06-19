@@ -30,15 +30,14 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ML compute instance type for the transform job. For using built-in algorithms to transform moderately sized
-     * datasets, ml.m4.xlarge or <code>ml.m5.large</code> should suffice. There is no default value for
-     * <code>InstanceType</code>.
+     * The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately
+     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * The number of ML compute instances to use in the transform job. For distributed transform, provide a value
+     * The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a value
      * greater than 1. The default value is <code>1</code>.
      * </p>
      */
@@ -72,15 +71,13 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ML compute instance type for the transform job. For using built-in algorithms to transform moderately sized
-     * datasets, ml.m4.xlarge or <code>ml.m5.large</code> should suffice. There is no default value for
-     * <code>InstanceType</code>.
+     * The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately
+     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
      * </p>
      * 
      * @param instanceType
-     *        The ML compute instance type for the transform job. For using built-in algorithms to transform moderately
-     *        sized datasets, ml.m4.xlarge or <code>ml.m5.large</code> should suffice. There is no default value for
-     *        <code>InstanceType</code>.
+     *        The ML compute instance type for the transform job. If you are using built-in algorithms to transform
+     *        moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
      * @see TransformInstanceType
      */
 
@@ -90,14 +87,12 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ML compute instance type for the transform job. For using built-in algorithms to transform moderately sized
-     * datasets, ml.m4.xlarge or <code>ml.m5.large</code> should suffice. There is no default value for
-     * <code>InstanceType</code>.
+     * The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately
+     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
      * </p>
      * 
-     * @return The ML compute instance type for the transform job. For using built-in algorithms to transform moderately
-     *         sized datasets, ml.m4.xlarge or <code>ml.m5.large</code> should suffice. There is no default value for
-     *         <code>InstanceType</code>.
+     * @return The ML compute instance type for the transform job. If you are using built-in algorithms to transform
+     *         moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
      * @see TransformInstanceType
      */
 
@@ -107,15 +102,13 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ML compute instance type for the transform job. For using built-in algorithms to transform moderately sized
-     * datasets, ml.m4.xlarge or <code>ml.m5.large</code> should suffice. There is no default value for
-     * <code>InstanceType</code>.
+     * The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately
+     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
      * </p>
      * 
      * @param instanceType
-     *        The ML compute instance type for the transform job. For using built-in algorithms to transform moderately
-     *        sized datasets, ml.m4.xlarge or <code>ml.m5.large</code> should suffice. There is no default value for
-     *        <code>InstanceType</code>.
+     *        The ML compute instance type for the transform job. If you are using built-in algorithms to transform
+     *        moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransformInstanceType
      */
@@ -127,15 +120,13 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ML compute instance type for the transform job. For using built-in algorithms to transform moderately sized
-     * datasets, ml.m4.xlarge or <code>ml.m5.large</code> should suffice. There is no default value for
-     * <code>InstanceType</code>.
+     * The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately
+     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
      * </p>
      * 
      * @param instanceType
-     *        The ML compute instance type for the transform job. For using built-in algorithms to transform moderately
-     *        sized datasets, ml.m4.xlarge or <code>ml.m5.large</code> should suffice. There is no default value for
-     *        <code>InstanceType</code>.
+     *        The ML compute instance type for the transform job. If you are using built-in algorithms to transform
+     *        moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransformInstanceType
      */
@@ -147,13 +138,13 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of ML compute instances to use in the transform job. For distributed transform, provide a value
+     * The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a value
      * greater than 1. The default value is <code>1</code>.
      * </p>
      * 
      * @param instanceCount
-     *        The number of ML compute instances to use in the transform job. For distributed transform, provide a value
-     *        greater than 1. The default value is <code>1</code>.
+     *        The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a
+     *        value greater than 1. The default value is <code>1</code>.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -162,11 +153,11 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of ML compute instances to use in the transform job. For distributed transform, provide a value
+     * The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a value
      * greater than 1. The default value is <code>1</code>.
      * </p>
      * 
-     * @return The number of ML compute instances to use in the transform job. For distributed transform, provide a
+     * @return The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a
      *         value greater than 1. The default value is <code>1</code>.
      */
 
@@ -176,13 +167,13 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of ML compute instances to use in the transform job. For distributed transform, provide a value
+     * The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a value
      * greater than 1. The default value is <code>1</code>.
      * </p>
      * 
      * @param instanceCount
-     *        The number of ML compute instances to use in the transform job. For distributed transform, provide a value
-     *        greater than 1. The default value is <code>1</code>.
+     *        The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a
+     *        value greater than 1. The default value is <code>1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

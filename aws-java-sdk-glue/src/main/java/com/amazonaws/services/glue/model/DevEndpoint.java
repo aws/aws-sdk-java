@@ -174,6 +174,15 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String securityConfiguration;
+    /**
+     * <p>
+     * A map of arguments used to configure the DevEndpoint.
+     * </p>
+     * <p>
+     * Note that currently, we only support "--enable-glue-datacatalog": "" as a valid argument.
+     * </p>
+     */
+    private java.util.Map<String, String> arguments;
 
     /**
      * <p>
@@ -1209,6 +1218,82 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A map of arguments used to configure the DevEndpoint.
+     * </p>
+     * <p>
+     * Note that currently, we only support "--enable-glue-datacatalog": "" as a valid argument.
+     * </p>
+     * 
+     * @return A map of arguments used to configure the DevEndpoint.</p>
+     *         <p>
+     *         Note that currently, we only support "--enable-glue-datacatalog": "" as a valid argument.
+     */
+
+    public java.util.Map<String, String> getArguments() {
+        return arguments;
+    }
+
+    /**
+     * <p>
+     * A map of arguments used to configure the DevEndpoint.
+     * </p>
+     * <p>
+     * Note that currently, we only support "--enable-glue-datacatalog": "" as a valid argument.
+     * </p>
+     * 
+     * @param arguments
+     *        A map of arguments used to configure the DevEndpoint.</p>
+     *        <p>
+     *        Note that currently, we only support "--enable-glue-datacatalog": "" as a valid argument.
+     */
+
+    public void setArguments(java.util.Map<String, String> arguments) {
+        this.arguments = arguments;
+    }
+
+    /**
+     * <p>
+     * A map of arguments used to configure the DevEndpoint.
+     * </p>
+     * <p>
+     * Note that currently, we only support "--enable-glue-datacatalog": "" as a valid argument.
+     * </p>
+     * 
+     * @param arguments
+     *        A map of arguments used to configure the DevEndpoint.</p>
+     *        <p>
+     *        Note that currently, we only support "--enable-glue-datacatalog": "" as a valid argument.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DevEndpoint withArguments(java.util.Map<String, String> arguments) {
+        setArguments(arguments);
+        return this;
+    }
+
+    public DevEndpoint addArgumentsEntry(String key, String value) {
+        if (null == this.arguments) {
+            this.arguments = new java.util.HashMap<String, String>();
+        }
+        if (this.arguments.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.arguments.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Arguments.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DevEndpoint clearArgumentsEntries() {
+        this.arguments = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1261,7 +1346,9 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
         if (getPublicKeys() != null)
             sb.append("PublicKeys: ").append(getPublicKeys()).append(",");
         if (getSecurityConfiguration() != null)
-            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration());
+            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration()).append(",");
+        if (getArguments() != null)
+            sb.append("Arguments: ").append(getArguments());
         sb.append("}");
         return sb.toString();
     }
@@ -1361,6 +1448,10 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
             return false;
+        if (other.getArguments() == null ^ this.getArguments() == null)
+            return false;
+        if (other.getArguments() != null && other.getArguments().equals(this.getArguments()) == false)
+            return false;
         return true;
     }
 
@@ -1390,6 +1481,7 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPublicKey() == null) ? 0 : getPublicKey().hashCode());
         hashCode = prime * hashCode + ((getPublicKeys() == null) ? 0 : getPublicKeys().hashCode());
         hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getArguments() == null) ? 0 : getArguments().hashCode());
         return hashCode;
     }
 

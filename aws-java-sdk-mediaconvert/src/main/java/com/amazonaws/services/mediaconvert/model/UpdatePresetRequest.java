@@ -31,7 +31,7 @@ public class UpdatePresetRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String description;
     /** The name of the preset you are modifying. */
     private String name;
-
+    /** Settings for preset */
     private PresetSettings settings;
 
     /**
@@ -137,7 +137,10 @@ public class UpdatePresetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * Settings for preset
+     * 
      * @param settings
+     *        Settings for preset
      */
 
     public void setSettings(PresetSettings settings) {
@@ -145,7 +148,9 @@ public class UpdatePresetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * Settings for preset
+     * 
+     * @return Settings for preset
      */
 
     public PresetSettings getSettings() {
@@ -153,7 +158,10 @@ public class UpdatePresetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * Settings for preset
+     * 
      * @param settings
+     *        Settings for preset
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

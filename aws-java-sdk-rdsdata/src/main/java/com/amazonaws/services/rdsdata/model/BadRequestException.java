@@ -15,7 +15,9 @@ package com.amazonaws.services.rdsdata.model;
 import javax.annotation.Generated;
 
 /**
- * Invalid Request exception
+ * <p>
+ * There is an error in the call or in a SQL statement.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BadRequestException extends com.amazonaws.services.rdsdata.model.AWSRDSDataException {

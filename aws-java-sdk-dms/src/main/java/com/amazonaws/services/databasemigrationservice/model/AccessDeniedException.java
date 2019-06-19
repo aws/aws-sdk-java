@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS DMS was denied access to the endpoint.
+ * AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

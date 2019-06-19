@@ -30,6 +30,10 @@ public class Placement implements Serializable, Cloneable {
      * <p>
      * The Availability Zone of the instance.
      * </p>
+     * <p>
+     * If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria
+     * for the Region.
+     * </p>
      */
     private String availabilityZone;
     /**
@@ -86,7 +90,10 @@ public class Placement implements Serializable, Cloneable {
      * any additional object members.
      * 
      * @param availabilityZone
-     *        The Availability Zone of the instance.
+     *        The Availability Zone of the instance.</p>
+     *        <p>
+     *        If not specified, an Availability Zone will be automatically chosen for you based on the load balancing
+     *        criteria for the Region.
      */
     public Placement(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -96,9 +103,16 @@ public class Placement implements Serializable, Cloneable {
      * <p>
      * The Availability Zone of the instance.
      * </p>
+     * <p>
+     * If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria
+     * for the Region.
+     * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone of the instance.
+     *        The Availability Zone of the instance.</p>
+     *        <p>
+     *        If not specified, an Availability Zone will be automatically chosen for you based on the load balancing
+     *        criteria for the Region.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -109,8 +123,15 @@ public class Placement implements Serializable, Cloneable {
      * <p>
      * The Availability Zone of the instance.
      * </p>
+     * <p>
+     * If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria
+     * for the Region.
+     * </p>
      * 
-     * @return The Availability Zone of the instance.
+     * @return The Availability Zone of the instance.</p>
+     *         <p>
+     *         If not specified, an Availability Zone will be automatically chosen for you based on the load balancing
+     *         criteria for the Region.
      */
 
     public String getAvailabilityZone() {
@@ -121,9 +142,16 @@ public class Placement implements Serializable, Cloneable {
      * <p>
      * The Availability Zone of the instance.
      * </p>
+     * <p>
+     * If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria
+     * for the Region.
+     * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone of the instance.
+     *        The Availability Zone of the instance.</p>
+     *        <p>
+     *        If not specified, an Availability Zone will be automatically chosen for you based on the load balancing
+     *        criteria for the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

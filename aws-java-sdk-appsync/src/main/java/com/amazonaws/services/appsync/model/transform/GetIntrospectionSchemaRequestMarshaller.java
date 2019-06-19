@@ -31,6 +31,8 @@ public class GetIntrospectionSchemaRequestMarshaller {
             .marshallLocationName("apiId").build();
     private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("format").build();
+    private static final MarshallingInfo<Boolean> INCLUDEDIRECTIVES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("includeDirectives").build();
 
     private static final GetIntrospectionSchemaRequestMarshaller instance = new GetIntrospectionSchemaRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class GetIntrospectionSchemaRequestMarshaller {
         try {
             protocolMarshaller.marshall(getIntrospectionSchemaRequest.getApiId(), APIID_BINDING);
             protocolMarshaller.marshall(getIntrospectionSchemaRequest.getFormat(), FORMAT_BINDING);
+            protocolMarshaller.marshall(getIntrospectionSchemaRequest.getIncludeDirectives(), INCLUDEDIRECTIVES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

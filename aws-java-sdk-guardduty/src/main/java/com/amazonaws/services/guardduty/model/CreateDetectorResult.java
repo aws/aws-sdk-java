@@ -23,11 +23,17 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The unique ID of the created detector. */
+    /**
+     * <p>
+     * The unique ID of the created detector.
+     * </p>
+     */
     private String detectorId;
 
     /**
+     * <p>
      * The unique ID of the created detector.
+     * </p>
      * 
      * @param detectorId
      *        The unique ID of the created detector.
@@ -38,7 +44,9 @@ public class CreateDetectorResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * The unique ID of the created detector.
+     * </p>
      * 
      * @return The unique ID of the created detector.
      */
@@ -48,7 +56,9 @@ public class CreateDetectorResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * The unique ID of the created detector.
+     * </p>
      * 
      * @param detectorId
      *        The unique ID of the created detector.

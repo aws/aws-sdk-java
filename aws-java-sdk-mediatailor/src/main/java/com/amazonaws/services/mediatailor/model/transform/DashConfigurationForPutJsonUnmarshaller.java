@@ -52,6 +52,10 @@ public class DashConfigurationForPutJsonUnmarshaller implements Unmarshaller<Das
                     context.nextToken();
                     dashConfigurationForPut.setMpdLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OriginManifestType", targetDepth)) {
+                    context.nextToken();
+                    dashConfigurationForPut.setOriginManifestType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

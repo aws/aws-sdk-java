@@ -25,18 +25,18 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The information regarding the newly created user.
+     * The identifier for the new user.
      * </p>
      */
     private String userId;
 
     /**
      * <p>
-     * The information regarding the newly created user.
+     * The identifier for the new user.
      * </p>
      * 
      * @param userId
-     *        The information regarding the newly created user.
+     *        The identifier for the new user.
      */
 
     public void setUserId(String userId) {
@@ -45,10 +45,10 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The information regarding the newly created user.
+     * The identifier for the new user.
      * </p>
      * 
-     * @return The information regarding the newly created user.
+     * @return The identifier for the new user.
      */
 
     public String getUserId() {
@@ -57,11 +57,11 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The information regarding the newly created user.
+     * The identifier for the new user.
      * </p>
      * 
      * @param userId
-     *        The information regarding the newly created user.
+     *        The identifier for the new user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

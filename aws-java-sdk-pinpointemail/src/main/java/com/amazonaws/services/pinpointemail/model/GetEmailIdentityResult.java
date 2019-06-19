@@ -53,7 +53,7 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified
      * email addresses or domains. For more information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
      * User Guide</a>.
      * </p>
      */
@@ -71,6 +71,12 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private MailFromAttributes mailFromAttributes;
+    /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that are associated with the email identity.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -275,14 +281,14 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified
      * email addresses or domains. For more information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
      * User Guide</a>.
      * </p>
      * 
      * @param verifiedForSendingStatus
      *        Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from
      *        verified email addresses or domains. For more information about verifying identities, see the <a
-     *        href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
      *        Pinpoint User Guide</a>.
      */
 
@@ -294,13 +300,13 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified
      * email addresses or domains. For more information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
      * User Guide</a>.
      * </p>
      * 
      * @return Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from
      *         verified email addresses or domains. For more information about verifying identities, see the <a
-     *         href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
+     *         href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
      *         Pinpoint User Guide</a>.
      */
 
@@ -312,14 +318,14 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified
      * email addresses or domains. For more information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
      * User Guide</a>.
      * </p>
      * 
      * @param verifiedForSendingStatus
      *        Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from
      *        verified email addresses or domains. For more information about verifying identities, see the <a
-     *        href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
      *        Pinpoint User Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -333,13 +339,13 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified
      * email addresses or domains. For more information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint
      * User Guide</a>.
      * </p>
      * 
      * @return Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from
      *         verified email addresses or domains. For more information about verifying identities, see the <a
-     *         href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
+     *         href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
      *         Pinpoint User Guide</a>.
      */
 
@@ -437,6 +443,76 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that are associated with the email identity.
+     * </p>
+     * 
+     * @return An array of objects that define the tags (keys and values) that are associated with the email identity.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that are associated with the email identity.
+     * </p>
+     * 
+     * @param tags
+     *        An array of objects that define the tags (keys and values) that are associated with the email identity.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that are associated with the email identity.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        An array of objects that define the tags (keys and values) that are associated with the email identity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEmailIdentityResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that are associated with the email identity.
+     * </p>
+     * 
+     * @param tags
+     *        An array of objects that define the tags (keys and values) that are associated with the email identity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEmailIdentityResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -457,7 +533,9 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
         if (getDkimAttributes() != null)
             sb.append("DkimAttributes: ").append(getDkimAttributes()).append(",");
         if (getMailFromAttributes() != null)
-            sb.append("MailFromAttributes: ").append(getMailFromAttributes());
+            sb.append("MailFromAttributes: ").append(getMailFromAttributes()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -492,6 +570,10 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getMailFromAttributes() != null && other.getMailFromAttributes().equals(this.getMailFromAttributes()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -505,6 +587,7 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getVerifiedForSendingStatus() == null) ? 0 : getVerifiedForSendingStatus().hashCode());
         hashCode = prime * hashCode + ((getDkimAttributes() == null) ? 0 : getDkimAttributes().hashCode());
         hashCode = prime * hashCode + ((getMailFromAttributes() == null) ? 0 : getMailFromAttributes().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

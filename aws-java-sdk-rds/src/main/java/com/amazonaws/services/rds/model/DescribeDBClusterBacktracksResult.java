@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the <a>DescribeDBClusterBacktracks</a> action.
+ * Contains the result of a successful invocation of the <code>DescribeDBClusterBacktracks</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterBacktracks" target="_top">AWS
@@ -28,7 +28,7 @@ public class DescribeDBClusterBacktracksResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent <a>DescribeDBClusterBacktracks</a> request.
+     * A pagination token that can be used in a subsequent <code>DescribeDBClusterBacktracks</code> request.
      * </p>
      */
     private String marker;
@@ -41,11 +41,11 @@ public class DescribeDBClusterBacktracksResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent <a>DescribeDBClusterBacktracks</a> request.
+     * A pagination token that can be used in a subsequent <code>DescribeDBClusterBacktracks</code> request.
      * </p>
      * 
      * @param marker
-     *        A pagination token that can be used in a subsequent <a>DescribeDBClusterBacktracks</a> request.
+     *        A pagination token that can be used in a subsequent <code>DescribeDBClusterBacktracks</code> request.
      */
 
     public void setMarker(String marker) {
@@ -54,10 +54,10 @@ public class DescribeDBClusterBacktracksResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent <a>DescribeDBClusterBacktracks</a> request.
+     * A pagination token that can be used in a subsequent <code>DescribeDBClusterBacktracks</code> request.
      * </p>
      * 
-     * @return A pagination token that can be used in a subsequent <a>DescribeDBClusterBacktracks</a> request.
+     * @return A pagination token that can be used in a subsequent <code>DescribeDBClusterBacktracks</code> request.
      */
 
     public String getMarker() {
@@ -66,11 +66,11 @@ public class DescribeDBClusterBacktracksResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A pagination token that can be used in a subsequent <a>DescribeDBClusterBacktracks</a> request.
+     * A pagination token that can be used in a subsequent <code>DescribeDBClusterBacktracks</code> request.
      * </p>
      * 
      * @param marker
-     *        A pagination token that can be used in a subsequent <a>DescribeDBClusterBacktracks</a> request.
+     *        A pagination token that can be used in a subsequent <code>DescribeDBClusterBacktracks</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

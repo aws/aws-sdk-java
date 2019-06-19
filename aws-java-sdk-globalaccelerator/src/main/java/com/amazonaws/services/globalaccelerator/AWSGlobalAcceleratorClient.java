@@ -285,6 +285,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccelerator");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -350,6 +351,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEndpointGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -414,6 +416,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateListener");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -478,6 +481,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccelerator");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -534,6 +538,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEndpointGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -593,6 +598,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteListener");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -651,6 +657,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccelerator");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -710,6 +717,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAcceleratorAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -767,6 +775,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEndpointGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -826,6 +835,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeListener");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -882,6 +892,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccelerators");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -942,6 +953,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEndpointGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1000,6 +1012,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListListeners");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1058,6 +1071,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccelerator");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1118,6 +1132,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAcceleratorAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1179,6 +1194,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEndpointGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1241,6 +1257,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateListener");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

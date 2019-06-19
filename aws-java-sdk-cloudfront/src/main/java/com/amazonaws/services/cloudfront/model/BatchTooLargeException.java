@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * Invalidation batch specified is too large.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BatchTooLargeException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {

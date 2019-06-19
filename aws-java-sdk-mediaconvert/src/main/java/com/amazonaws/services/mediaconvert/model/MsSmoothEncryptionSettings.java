@@ -26,10 +26,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MsSmoothEncryptionSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Settings for use with a SPEKE key provider */
     private SpekeKeyProvider spekeKeyProvider;
 
     /**
+     * Settings for use with a SPEKE key provider
+     * 
      * @param spekeKeyProvider
+     *        Settings for use with a SPEKE key provider
      */
 
     public void setSpekeKeyProvider(SpekeKeyProvider spekeKeyProvider) {
@@ -37,7 +41,9 @@ public class MsSmoothEncryptionSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * Settings for use with a SPEKE key provider
+     * 
+     * @return Settings for use with a SPEKE key provider
      */
 
     public SpekeKeyProvider getSpekeKeyProvider() {
@@ -45,7 +51,10 @@ public class MsSmoothEncryptionSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Settings for use with a SPEKE key provider
+     * 
      * @param spekeKeyProvider
+     *        Settings for use with a SPEKE key provider
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

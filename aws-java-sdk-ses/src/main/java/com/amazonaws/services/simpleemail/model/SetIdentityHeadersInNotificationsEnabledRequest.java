@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to set whether Amazon SES includes the original email headers in the Amazon SNS notifications of
  * a specified type. For information about notifications, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 

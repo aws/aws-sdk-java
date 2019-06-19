@@ -30,6 +30,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AacSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo
+     * pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains
+     * "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does
+     * not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in
+     * AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio
+     * description (AD). In this case, the encoder will use any values you provide for AudioType and
+     * FollowInputAudioType.
+     */
     private String audioDescriptionBroadcasterMix;
     /**
      * Average bitrate in bits/second. The set of valid values for this setting is: 6000, 8000, 10000, 12000, 14000,
@@ -39,23 +48,46 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
      * Sample rate (sampleRate). Default values depend on Bitrate control mode and Profile.
      */
     private Integer bitrate;
-
+    /** AAC Profile. */
     private String codecProfile;
-
+    /**
+     * Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and
+     * profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control track and
+     * emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101
+     * 154 Annex E.
+     */
     private String codingMode;
-
+    /** Rate Control Mode. */
     private String rateControlMode;
-
+    /**
+     * Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for
+     * the output container.
+     */
     private String rawFormat;
     /** Sample rate in Hz. Valid values depend on rate control mode and profile. */
     private Integer sampleRate;
-
+    /** Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers. */
     private String specification;
-
+    /** VBR Quality Level - Only used if rate_control_mode is VBR. */
     private String vbrQuality;
 
     /**
+     * Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo
+     * pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains
+     * "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does
+     * not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in
+     * AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio
+     * description (AD). In this case, the encoder will use any values you provide for AudioType and
+     * FollowInputAudioType.
+     * 
      * @param audioDescriptionBroadcasterMix
+     *        Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a
+     *        stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this
+     *        stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed
+     *        audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores
+     *        any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not
+     *        contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you
+     *        provide for AudioType and FollowInputAudioType.
      * @see AacAudioDescriptionBroadcasterMix
      */
 
@@ -64,7 +96,21 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo
+     * pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains
+     * "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does
+     * not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in
+     * AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio
+     * description (AD). In this case, the encoder will use any values you provide for AudioType and
+     * FollowInputAudioType.
+     * 
+     * @return Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a
+     *         stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this
+     *         stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain
+     *         pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the
+     *         encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the
+     *         input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any
+     *         values you provide for AudioType and FollowInputAudioType.
      * @see AacAudioDescriptionBroadcasterMix
      */
 
@@ -73,7 +119,22 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo
+     * pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains
+     * "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does
+     * not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in
+     * AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio
+     * description (AD). In this case, the encoder will use any values you provide for AudioType and
+     * FollowInputAudioType.
+     * 
      * @param audioDescriptionBroadcasterMix
+     *        Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a
+     *        stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this
+     *        stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed
+     *        audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores
+     *        any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not
+     *        contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you
+     *        provide for AudioType and FollowInputAudioType.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacAudioDescriptionBroadcasterMix
      */
@@ -84,7 +145,22 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo
+     * pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains
+     * "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does
+     * not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in
+     * AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio
+     * description (AD). In this case, the encoder will use any values you provide for AudioType and
+     * FollowInputAudioType.
+     * 
      * @param audioDescriptionBroadcasterMix
+     *        Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a
+     *        stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this
+     *        stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed
+     *        audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores
+     *        any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not
+     *        contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you
+     *        provide for AudioType and FollowInputAudioType.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacAudioDescriptionBroadcasterMix
      */
@@ -156,7 +232,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * AAC Profile.
+     * 
      * @param codecProfile
+     *        AAC Profile.
      * @see AacCodecProfile
      */
 
@@ -165,7 +244,9 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * AAC Profile.
+     * 
+     * @return AAC Profile.
      * @see AacCodecProfile
      */
 
@@ -174,7 +255,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * AAC Profile.
+     * 
      * @param codecProfile
+     *        AAC Profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacCodecProfile
      */
@@ -185,7 +269,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * AAC Profile.
+     * 
      * @param codecProfile
+     *        AAC Profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacCodecProfile
      */
@@ -196,7 +283,16 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and
+     * profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control track and
+     * emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101
+     * 154 Annex E.
+     * 
      * @param codingMode
+     *        Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode
+     *        and profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control
+     *        track and emits a mono AAC encode of the description track, with control data emitted in the PES header as
+     *        per ETSI TS 101 154 Annex E.
      * @see AacCodingMode
      */
 
@@ -205,7 +301,15 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and
+     * profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control track and
+     * emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101
+     * 154 Annex E.
+     * 
+     * @return Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode
+     *         and profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control
+     *         track and emits a mono AAC encode of the description track, with control data emitted in the PES header
+     *         as per ETSI TS 101 154 Annex E.
      * @see AacCodingMode
      */
 
@@ -214,7 +318,16 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and
+     * profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control track and
+     * emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101
+     * 154 Annex E.
+     * 
      * @param codingMode
+     *        Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode
+     *        and profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control
+     *        track and emits a mono AAC encode of the description track, with control data emitted in the PES header as
+     *        per ETSI TS 101 154 Annex E.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacCodingMode
      */
@@ -225,7 +338,16 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and
+     * profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control track and
+     * emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101
+     * 154 Annex E.
+     * 
      * @param codingMode
+     *        Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode
+     *        and profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control
+     *        track and emits a mono AAC encode of the description track, with control data emitted in the PES header as
+     *        per ETSI TS 101 154 Annex E.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacCodingMode
      */
@@ -236,7 +358,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Rate Control Mode.
+     * 
      * @param rateControlMode
+     *        Rate Control Mode.
      * @see AacRateControlMode
      */
 
@@ -245,7 +370,9 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Rate Control Mode.
+     * 
+     * @return Rate Control Mode.
      * @see AacRateControlMode
      */
 
@@ -254,7 +381,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Rate Control Mode.
+     * 
      * @param rateControlMode
+     *        Rate Control Mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacRateControlMode
      */
@@ -265,7 +395,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Rate Control Mode.
+     * 
      * @param rateControlMode
+     *        Rate Control Mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacRateControlMode
      */
@@ -276,7 +409,12 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for
+     * the output container.
+     * 
      * @param rawFormat
+     *        Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose
+     *        "No container" for the output container.
      * @see AacRawFormat
      */
 
@@ -285,7 +423,11 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for
+     * the output container.
+     * 
+     * @return Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose
+     *         "No container" for the output container.
      * @see AacRawFormat
      */
 
@@ -294,7 +436,12 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for
+     * the output container.
+     * 
      * @param rawFormat
+     *        Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose
+     *        "No container" for the output container.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacRawFormat
      */
@@ -305,7 +452,12 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for
+     * the output container.
+     * 
      * @param rawFormat
+     *        Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose
+     *        "No container" for the output container.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacRawFormat
      */
@@ -350,7 +502,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
+     * 
      * @param specification
+     *        Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
      * @see AacSpecification
      */
 
@@ -359,7 +514,9 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
+     * 
+     * @return Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
      * @see AacSpecification
      */
 
@@ -368,7 +525,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
+     * 
      * @param specification
+     *        Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacSpecification
      */
@@ -379,7 +539,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
+     * 
      * @param specification
+     *        Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacSpecification
      */
@@ -390,7 +553,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * VBR Quality Level - Only used if rate_control_mode is VBR.
+     * 
      * @param vbrQuality
+     *        VBR Quality Level - Only used if rate_control_mode is VBR.
      * @see AacVbrQuality
      */
 
@@ -399,7 +565,9 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * VBR Quality Level - Only used if rate_control_mode is VBR.
+     * 
+     * @return VBR Quality Level - Only used if rate_control_mode is VBR.
      * @see AacVbrQuality
      */
 
@@ -408,7 +576,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * VBR Quality Level - Only used if rate_control_mode is VBR.
+     * 
      * @param vbrQuality
+     *        VBR Quality Level - Only used if rate_control_mode is VBR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacVbrQuality
      */
@@ -419,7 +590,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * VBR Quality Level - Only used if rate_control_mode is VBR.
+     * 
      * @param vbrQuality
+     *        VBR Quality Level - Only used if rate_control_mode is VBR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AacVbrQuality
      */

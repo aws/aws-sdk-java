@@ -77,7 +77,7 @@ import com.amazonaws.services.cloudwatchevents.model.transform.*;
  * </ul>
  * <p>
  * For more information about the features of Amazon CloudWatch Events, see the <a
- * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon CloudWatch Events User Guide</a>.
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon CloudWatch Events User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -352,7 +352,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
      *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
      *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
-     *         <code>PutTargets</code>, or <code>PutRule</code>.
+     *         <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DeleteRule
@@ -384,6 +384,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -442,6 +443,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventBus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -502,6 +504,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -539,7 +542,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
      *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
      *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
-     *         <code>PutTargets</code>, or <code>PutRule</code>.
+     *         <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DisableRule
@@ -571,6 +574,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -607,7 +611,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
      *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
      *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
-     *         <code>PutTargets</code>, or <code>PutRule</code>.
+     *         <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.EnableRule
@@ -639,6 +643,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -694,6 +699,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuleNamesByTarget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -754,12 +760,70 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRules");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ListRulesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Displays the tags associated with a CloudWatch Events resource. In CloudWatch Events, rules can be tagged.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -810,6 +874,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTargetsByRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -864,6 +929,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -900,7 +966,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * If you grant permissions using an organization, then accounts in that organization must specify a
      * <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code> to add your account's event bus
      * as a target. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html"
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html"
      * >Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * <p>
@@ -946,6 +1012,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -983,6 +1050,16 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * on a schedule.
      * </p>
      * <p>
+     * When you initially create a rule, you can optionally assign one or more tags to the rule. Tags can help you
+     * organize and categorize your resources. You can also use them to scope user permissions, by granting a user
+     * permission to access or change only rules with certain tag values. To use the <code>PutRule</code> operation and
+     * assign tags, you must have both the <code>events:PutRule</code> and <code>events:TagResource</code> permissions.
+     * </p>
+     * <p>
+     * If you are updating an existing rule, any tags you specify in the <code>PutRule</code> operation are ignored. To
+     * update the tags of an existing rule, use <a>TagResource</a> and <a>UntagResource</a>.
+     * </p>
+     * <p>
      * Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch
      * Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating
      * event patterns so that they match the ARN syntax in the event you want to match.
@@ -1000,7 +1077,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * <p>
      * An infinite loop can quickly cause higher than expected charges. We recommend that you use budgeting, which
      * alerts you when charges exceed your specified limit. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing Your
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing Your
      * Costs with Budgets</a>.
      * </p>
      * 
@@ -1017,7 +1094,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
      *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
      *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
-     *         <code>PutTargets</code>, or <code>PutRule</code>.
+     *         <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.PutRule
@@ -1049,6 +1126,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1169,7 +1247,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
      * EC2 instances, Kinesis data streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles
      * that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
      * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * <p>
@@ -1185,7 +1263,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * If you are setting the event bus of another account as the target, and that account granted permission to your
      * account through an organization instead of directly by the account ID, then you must specify a
      * <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">
      * Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * <p>
@@ -1249,7 +1328,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
      *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
      *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
-     *         <code>PutTargets</code>, or <code>PutRule</code>.
+     *         <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.PutTargets
@@ -1281,6 +1360,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutTargets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1342,6 +1422,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1384,7 +1465,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
      *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
      *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
-     *         <code>PutTargets</code>, or <code>PutRule</code>.
+     *         <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.RemoveTargets
@@ -1416,12 +1497,91 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTargets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<RemoveTargetsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemoveTargetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified CloudWatch Events resource. Tags can help you
+     * organize and categorize your resources. You can also use them to scope user permissions by granting a user
+     * permission to access or change only resources with certain tag values. In CloudWatch Events, rules can be tagged.
+     * </p>
+     * <p>
+     * Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.
+     * </p>
+     * <p>
+     * You can use the <code>TagResource</code> action with a rule that already has tags. If you specify a new tag key
+     * for the rule, this tag is appended to the list of tags associated with the rule. If you specify a tag key that is
+     * already associated with the rule, the new tag value that you specify replaces the previous value for that tag.
+     * </p>
+     * <p>
+     * You can associate as many as 50 tags with a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule or target.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws ManagedRuleException
+     *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
+     *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
+     *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
+     *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
+     *         <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+     * @sample AmazonCloudWatchEvents.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1477,12 +1637,79 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestEventPattern");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<TestEventPatternResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TestEventPatternResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified CloudWatch Events resource. In CloudWatch Events, rules can be
+     * tagged.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule or target.
+     * @throws ManagedRuleException
+     *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
+     *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
+     *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
+     *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
+     *         <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+     * @sample AmazonCloudWatchEvents.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

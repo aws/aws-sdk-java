@@ -30,7 +30,8 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
+     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     * alias ARN.
      * </p>
      * <p>
      * For example:
@@ -73,7 +74,8 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * Name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the
      * same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> encryptionContext;
@@ -83,7 +85,7 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
@@ -95,7 +97,8 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
+     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     * alias ARN.
      * </p>
      * <p>
      * For example:
@@ -131,8 +134,8 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        A unique identifier for the customer master key (CMK).</p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN
-     *        or alias ARN.
+     *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
+     *        use the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        For example:
@@ -174,7 +177,8 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
+     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     * alias ARN.
      * </p>
      * <p>
      * For example:
@@ -209,8 +213,8 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @return A unique identifier for the customer master key (CMK).</p>
      *         <p>
      *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *         alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key
-     *         ARN or alias ARN.
+     *         alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
+     *         use the key ARN or alias ARN.
      *         </p>
      *         <p>
      *         For example:
@@ -252,7 +256,8 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
+     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     * alias ARN.
      * </p>
      * <p>
      * For example:
@@ -288,8 +293,8 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        A unique identifier for the customer master key (CMK).</p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN
-     *        or alias ARN.
+     *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
+     *        use the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        For example:
@@ -398,13 +403,14 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * Name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the
      * same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a>.
      * </p>
      * 
      * @return Name-value pair that specifies the encryption context to be used for authenticated encryption. If used
      *         here, the same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      *         Context</a>.
      */
 
@@ -419,14 +425,15 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * Name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the
      * same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a>.
      * </p>
      * 
      * @param encryptionContext
      *        Name-value pair that specifies the encryption context to be used for authenticated encryption. If used
      *        here, the same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      *        Context</a>.
      */
 
@@ -438,14 +445,15 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * Name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the
      * same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a>.
      * </p>
      * 
      * @param encryptionContext
      *        Name-value pair that specifies the encryption context to be used for authenticated encryption. If used
      *        here, the same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      *        Context</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -482,15 +490,15 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return A list of grant tokens.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
-     *         the <i>AWS Key Management Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>
+     *         in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public java.util.List<String> getGrantTokens() {
@@ -506,7 +514,7 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -514,7 +522,7 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        A list of grant tokens.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
      *        the <i>AWS Key Management Service Developer Guide</i>.
      */
 
@@ -533,7 +541,7 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
@@ -546,7 +554,7 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        A list of grant tokens.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
      *        the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -567,7 +575,7 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -575,7 +583,7 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        A list of grant tokens.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
      *        the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

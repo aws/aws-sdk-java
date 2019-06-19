@@ -30,9 +30,8 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The friendly name of the policy.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      */
     private String policyName;
@@ -42,7 +41,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -59,6 +58,11 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The JSON policy document that you want to use as the content for the new policy.
+     * </p>
+     * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -102,17 +106,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The friendly name of the policy.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param policyName
      *        The friendly name of the policy.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public void setPolicyName(String policyName) {
@@ -124,16 +126,14 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The friendly name of the policy.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @return The friendly name of the policy.</p>
      *         <p>
-     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *         include any of the following characters: _+=,.@-
+     *         IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *         case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public String getPolicyName() {
@@ -145,17 +145,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The friendly name of the policy.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param policyName
      *        The friendly name of the policy.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,7 +168,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -187,7 +185,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        The path for the policy.</p>
      *        <p>
      *        For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.
      *        </p>
      *        <p>
@@ -210,7 +208,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -226,7 +224,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @return The path for the policy.</p>
      *         <p>
      *         For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>IAM User Guide</i>.
      *         </p>
      *         <p>
@@ -249,7 +247,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -266,7 +264,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        The path for the policy.</p>
      *        <p>
      *        For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.
      *        </p>
      *        <p>
@@ -288,6 +286,11 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The JSON policy document that you want to use as the content for the new policy.
+     * </p>
+     * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -313,6 +316,11 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param policyDocument
      *        The JSON policy document that you want to use as the content for the new policy.</p>
+     *        <p>
+     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *        to JSON format before submitting it to IAM.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:
@@ -345,6 +353,11 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The JSON policy document that you want to use as the content for the new policy.
      * </p>
      * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -367,6 +380,11 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @return The JSON policy document that you want to use as the content for the new policy.</p>
+     *         <p>
+     *         You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *         YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *         to JSON format before submitting it to IAM.
+     *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *         string of characters consisting of the following:
@@ -399,6 +417,11 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The JSON policy document that you want to use as the content for the new policy.
      * </p>
      * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -422,6 +445,11 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param policyDocument
      *        The JSON policy document that you want to use as the content for the new policy.</p>
+     *        <p>
+     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *        to JSON format before submitting it to IAM.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:

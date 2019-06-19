@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The specified CloudFront distribution is not disabled. You must disable the distribution before you can delete it.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StreamingDistributionNotDisabledException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {

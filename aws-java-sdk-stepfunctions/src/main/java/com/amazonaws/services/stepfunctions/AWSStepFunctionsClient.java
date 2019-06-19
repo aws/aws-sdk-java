@@ -410,6 +410,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateActivity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -488,6 +489,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStateMachine");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -542,6 +544,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteActivity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -603,6 +606,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStateMachine");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -665,6 +669,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeActivity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -727,6 +732,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -789,6 +795,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStateMachine");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -853,6 +860,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStateMachineForExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -927,6 +935,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetActivityTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -993,6 +1002,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetExecutionHistory");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1059,6 +1069,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListActivities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1130,6 +1141,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExecutions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1196,6 +1208,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStateMachines");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1252,6 +1265,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1308,6 +1322,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendTaskFailure");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1378,6 +1393,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendTaskHeartbeat");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1436,6 +1452,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendTaskSuccess");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1515,6 +1532,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1571,6 +1589,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1631,6 +1650,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1687,6 +1707,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1760,6 +1781,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStateMachine");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

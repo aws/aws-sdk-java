@@ -60,6 +60,10 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
                     context.nextToken();
                     user.setPrimaryEmail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PrimaryProvisionedNumber", targetDepth)) {
+                    context.nextToken();
+                    user.setPrimaryProvisionedNumber(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DisplayName", targetDepth)) {
                     context.nextToken();
                     user.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));

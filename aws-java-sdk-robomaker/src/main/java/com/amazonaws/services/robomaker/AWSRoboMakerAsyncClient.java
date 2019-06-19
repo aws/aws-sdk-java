@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * an asynchronous operation completes.
  * <p>
  * <p>
- * his section provides documentation for the AWS RoboMaker API operations.
+ * This section provides documentation for the AWS RoboMaker API operations.
  * </p>
  */
 @ThreadSafe
@@ -79,6 +79,39 @@ public class AWSRoboMakerAsyncClient extends AWSRoboMakerClient implements AWSRo
 
                 try {
                     result = executeBatchDescribeSimulationJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDeploymentJobResult> cancelDeploymentJobAsync(CancelDeploymentJobRequest request) {
+
+        return cancelDeploymentJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDeploymentJobResult> cancelDeploymentJobAsync(final CancelDeploymentJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelDeploymentJobRequest, CancelDeploymentJobResult> asyncHandler) {
+        final CancelDeploymentJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelDeploymentJobResult>() {
+            @Override
+            public CancelDeploymentJobResult call() throws Exception {
+                CancelDeploymentJobResult result = null;
+
+                try {
+                    result = executeCancelDeploymentJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

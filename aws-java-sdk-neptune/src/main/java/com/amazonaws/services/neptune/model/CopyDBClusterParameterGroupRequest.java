@@ -29,7 +29,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
      * creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -96,14 +96,18 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String targetDBClusterParameterGroupDescription;
-
+    /**
+     * <p>
+     * The tags to be assigned to the copied DB cluster parameter group.
+     * </p>
+     */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
      * creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -132,8 +136,8 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * @param sourceDBClusterParameterGroupIdentifier
      *        The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information
      *        about creating an ARN, see <a
-     *        href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     *        Constructing an Amazon Resource Name (ARN)</a>. </p>
+     *        href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     *        Constructing an Amazon Resource Name (ARN)</a>.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -166,7 +170,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
      * creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -194,8 +198,8 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * 
      * @return The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information
      *         about creating an ARN, see <a
-     *         href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     *         Constructing an Amazon Resource Name (ARN)</a>. </p>
+     *         href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     *         Constructing an Amazon Resource Name (ARN)</a>.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -228,7 +232,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
      * creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -257,8 +261,8 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * @param sourceDBClusterParameterGroupIdentifier
      *        The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information
      *        about creating an ARN, see <a
-     *        href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     *        Constructing an Amazon Resource Name (ARN)</a>. </p>
+     *        href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     *        Constructing an Amazon Resource Name (ARN)</a>.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -535,7 +539,11 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * The tags to be assigned to the copied DB cluster parameter group.
+     * </p>
+     * 
+     * @return The tags to be assigned to the copied DB cluster parameter group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -543,7 +551,12 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The tags to be assigned to the copied DB cluster parameter group.
+     * </p>
+     * 
      * @param tags
+     *        The tags to be assigned to the copied DB cluster parameter group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -557,12 +570,16 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
+     * The tags to be assigned to the copied DB cluster parameter group.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        The tags to be assigned to the copied DB cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,7 +594,12 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The tags to be assigned to the copied DB cluster parameter group.
+     * </p>
+     * 
      * @param tags
+     *        The tags to be assigned to the copied DB cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

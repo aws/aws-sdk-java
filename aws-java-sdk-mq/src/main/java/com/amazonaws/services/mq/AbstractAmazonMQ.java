@@ -68,6 +68,16 @@ public class AbstractAmazonMQ implements AmazonMQ {
     }
 
     @Override
+    public DescribeBrokerEngineTypesResult describeBrokerEngineTypes(DescribeBrokerEngineTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeBrokerInstanceOptionsResult describeBrokerInstanceOptions(DescribeBrokerInstanceOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeConfigurationResult describeConfiguration(DescribeConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

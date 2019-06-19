@@ -33,7 +33,7 @@ public class DeregisterFromWorkMailRequest extends com.amazonaws.AmazonWebServic
     private String organizationId;
     /**
      * <p>
-     * The identifier for the entity to be updated.
+     * The identifier for the member (user or group) to be updated.
      * </p>
      */
     private String entityId;
@@ -80,11 +80,11 @@ public class DeregisterFromWorkMailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the entity to be updated.
+     * The identifier for the member (user or group) to be updated.
      * </p>
      * 
      * @param entityId
-     *        The identifier for the entity to be updated.
+     *        The identifier for the member (user or group) to be updated.
      */
 
     public void setEntityId(String entityId) {
@@ -93,10 +93,10 @@ public class DeregisterFromWorkMailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the entity to be updated.
+     * The identifier for the member (user or group) to be updated.
      * </p>
      * 
-     * @return The identifier for the entity to be updated.
+     * @return The identifier for the member (user or group) to be updated.
      */
 
     public String getEntityId() {
@@ -105,11 +105,11 @@ public class DeregisterFromWorkMailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the entity to be updated.
+     * The identifier for the member (user or group) to be updated.
      * </p>
      * 
      * @param entityId
-     *        The identifier for the entity to be updated.
+     *        The identifier for the member (user or group) to be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

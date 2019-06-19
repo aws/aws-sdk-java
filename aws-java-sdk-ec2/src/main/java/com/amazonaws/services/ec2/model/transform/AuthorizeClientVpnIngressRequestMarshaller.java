@@ -21,6 +21,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * AuthorizeClientVpnIngressRequest Marshaller
@@ -59,6 +60,8 @@ public class AuthorizeClientVpnIngressRequestMarshaller implements Marshaller<Re
         if (authorizeClientVpnIngressRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(authorizeClientVpnIngressRequest.getDescription()));
         }
+
+        request.addParameter("ClientToken", IdempotentUtils.resolveString(authorizeClientVpnIngressRequest.getClientToken()));
 
         return request;
     }

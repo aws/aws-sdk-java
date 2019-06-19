@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action.
+ * Contains the results of a successful invocation of the <code>DescribeEventCategories</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EventCategoriesMap" target="_top">AWS API

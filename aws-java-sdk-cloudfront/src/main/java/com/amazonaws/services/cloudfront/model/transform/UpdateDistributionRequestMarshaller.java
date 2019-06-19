@@ -51,14 +51,14 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
             request.addHeader("If-Match", StringUtils.fromString(updateDistributionRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2018-11-05/distribution/{Id}/config";
+        String uriResourcePath = "/2019-03-26/distribution/{Id}/config";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updateDistributionRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2018-11-05/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2019-03-26/");
 
             DistributionConfig distributionConfig = updateDistributionRequest.getDistributionConfig();
             if (distributionConfig != null) {

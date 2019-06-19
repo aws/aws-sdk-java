@@ -209,6 +209,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ElasticsearchSettings elasticsearchSettings;
+    /**
+     * <p>
+     * Settings for the Amazon Redshift endpoint
+     * </p>
+     */
+    private RedshiftSettings redshiftSettings;
 
     /**
      * <p>
@@ -1495,6 +1501,46 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Settings for the Amazon Redshift endpoint
+     * </p>
+     * 
+     * @param redshiftSettings
+     *        Settings for the Amazon Redshift endpoint
+     */
+
+    public void setRedshiftSettings(RedshiftSettings redshiftSettings) {
+        this.redshiftSettings = redshiftSettings;
+    }
+
+    /**
+     * <p>
+     * Settings for the Amazon Redshift endpoint
+     * </p>
+     * 
+     * @return Settings for the Amazon Redshift endpoint
+     */
+
+    public RedshiftSettings getRedshiftSettings() {
+        return this.redshiftSettings;
+    }
+
+    /**
+     * <p>
+     * Settings for the Amazon Redshift endpoint
+     * </p>
+     * 
+     * @param redshiftSettings
+     *        Settings for the Amazon Redshift endpoint
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withRedshiftSettings(RedshiftSettings redshiftSettings) {
+        setRedshiftSettings(redshiftSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1551,7 +1597,9 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         if (getKinesisSettings() != null)
             sb.append("KinesisSettings: ").append(getKinesisSettings()).append(",");
         if (getElasticsearchSettings() != null)
-            sb.append("ElasticsearchSettings: ").append(getElasticsearchSettings());
+            sb.append("ElasticsearchSettings: ").append(getElasticsearchSettings()).append(",");
+        if (getRedshiftSettings() != null)
+            sb.append("RedshiftSettings: ").append(getRedshiftSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -1658,6 +1706,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getElasticsearchSettings() != null && other.getElasticsearchSettings().equals(this.getElasticsearchSettings()) == false)
             return false;
+        if (other.getRedshiftSettings() == null ^ this.getRedshiftSettings() == null)
+            return false;
+        if (other.getRedshiftSettings() != null && other.getRedshiftSettings().equals(this.getRedshiftSettings()) == false)
+            return false;
         return true;
     }
 
@@ -1689,6 +1741,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMongoDbSettings() == null) ? 0 : getMongoDbSettings().hashCode());
         hashCode = prime * hashCode + ((getKinesisSettings() == null) ? 0 : getKinesisSettings().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchSettings() == null) ? 0 : getElasticsearchSettings().hashCode());
+        hashCode = prime * hashCode + ((getRedshiftSettings() == null) ? 0 : getRedshiftSettings().hashCode());
         return hashCode;
     }
 

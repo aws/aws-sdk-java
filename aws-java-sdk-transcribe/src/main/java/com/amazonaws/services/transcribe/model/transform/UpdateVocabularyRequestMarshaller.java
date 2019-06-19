@@ -34,6 +34,8 @@ public class UpdateVocabularyRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageCode").build();
     private static final MarshallingInfo<List> PHRASES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Phrases").build();
+    private static final MarshallingInfo<String> VOCABULARYFILEURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VocabularyFileUri").build();
 
     private static final UpdateVocabularyRequestMarshaller instance = new UpdateVocabularyRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class UpdateVocabularyRequestMarshaller {
             protocolMarshaller.marshall(updateVocabularyRequest.getVocabularyName(), VOCABULARYNAME_BINDING);
             protocolMarshaller.marshall(updateVocabularyRequest.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(updateVocabularyRequest.getPhrases(), PHRASES_BINDING);
+            protocolMarshaller.marshall(updateVocabularyRequest.getVocabularyFileUri(), VOCABULARYFILEURI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

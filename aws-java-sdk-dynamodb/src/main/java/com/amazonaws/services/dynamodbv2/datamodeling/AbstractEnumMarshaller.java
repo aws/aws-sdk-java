@@ -20,7 +20,7 @@ import static com.amazonaws.util.Throwables.failure;
  * Generic marshaller for enumerations.
  *
  * Please note, there are some risks in distributed systems when using
- * enumerations as attributes intead of simply using a String.
+ * enumerations as attributes instead of simply using a String.
  * When adding new values to the enumeration, the enum only changes must
  * be deployed before the enumeration value can be persisted. This will
  * ensure that all systems have the correct code to map it from the item

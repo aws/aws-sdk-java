@@ -25,18 +25,18 @@ public class CreateResourceResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The identifier of the created resource.
+     * The identifier of the new resource.
      * </p>
      */
     private String resourceId;
 
     /**
      * <p>
-     * The identifier of the created resource.
+     * The identifier of the new resource.
      * </p>
      * 
      * @param resourceId
-     *        The identifier of the created resource.
+     *        The identifier of the new resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -45,10 +45,10 @@ public class CreateResourceResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The identifier of the created resource.
+     * The identifier of the new resource.
      * </p>
      * 
-     * @return The identifier of the created resource.
+     * @return The identifier of the new resource.
      */
 
     public String getResourceId() {
@@ -57,11 +57,11 @@ public class CreateResourceResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The identifier of the created resource.
+     * The identifier of the new resource.
      * </p>
      * 
      * @param resourceId
-     *        The identifier of the created resource.
+     *        The identifier of the new resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

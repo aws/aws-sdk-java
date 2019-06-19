@@ -25,7 +25,7 @@ public class DescribeMaintenanceWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the Maintenance Windows.
+     * Information about the maintenance windows.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MaintenanceWindowIdentity> windowIdentities;
@@ -39,10 +39,10 @@ public class DescribeMaintenanceWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the Maintenance Windows.
+     * Information about the maintenance windows.
      * </p>
      * 
-     * @return Information about the Maintenance Windows.
+     * @return Information about the maintenance windows.
      */
 
     public java.util.List<MaintenanceWindowIdentity> getWindowIdentities() {
@@ -54,11 +54,11 @@ public class DescribeMaintenanceWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the Maintenance Windows.
+     * Information about the maintenance windows.
      * </p>
      * 
      * @param windowIdentities
-     *        Information about the Maintenance Windows.
+     *        Information about the maintenance windows.
      */
 
     public void setWindowIdentities(java.util.Collection<MaintenanceWindowIdentity> windowIdentities) {
@@ -72,7 +72,7 @@ public class DescribeMaintenanceWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the Maintenance Windows.
+     * Information about the maintenance windows.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeMaintenanceWindowsResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param windowIdentities
-     *        Information about the Maintenance Windows.
+     *        Information about the maintenance windows.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeMaintenanceWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the Maintenance Windows.
+     * Information about the maintenance windows.
      * </p>
      * 
      * @param windowIdentities
-     *        Information about the Maintenance Windows.
+     *        Information about the maintenance windows.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

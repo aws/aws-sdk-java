@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The commit cannot be created because at least one of the overall changes in the commit result in a folder contents
- * exceeding the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple
- * folders.
+ * The commit cannot be created because at least one of the overall changes in the commit results in a folder whose
+ * contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across
+ * multiple folders.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

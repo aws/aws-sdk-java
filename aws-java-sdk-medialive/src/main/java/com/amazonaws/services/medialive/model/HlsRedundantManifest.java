@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * HLS Redundant Manifest
+ * Hls Redundant Manifest
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HlsRedundantManifest {

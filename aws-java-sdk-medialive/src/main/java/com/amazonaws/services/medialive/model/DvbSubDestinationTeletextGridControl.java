@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for DvbSubDestinationTeletextGridControl
+ * Dvb Sub Destination Teletext Grid Control
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DvbSubDestinationTeletextGridControl {

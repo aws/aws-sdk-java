@@ -25,7 +25,7 @@ public class ListPoliciesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of policies that match the filter criteria in the request. The output list does not include the policy
+     * A list of policies that match the filter criteria in the request. The output list doesn't include the policy
      * contents. To see the content for a policy, see <a>DescribePolicy</a>.
      * </p>
      */
@@ -42,11 +42,11 @@ public class ListPoliciesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of policies that match the filter criteria in the request. The output list does not include the policy
+     * A list of policies that match the filter criteria in the request. The output list doesn't include the policy
      * contents. To see the content for a policy, see <a>DescribePolicy</a>.
      * </p>
      * 
-     * @return A list of policies that match the filter criteria in the request. The output list does not include the
+     * @return A list of policies that match the filter criteria in the request. The output list doesn't include the
      *         policy contents. To see the content for a policy, see <a>DescribePolicy</a>.
      */
 
@@ -56,12 +56,12 @@ public class ListPoliciesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of policies that match the filter criteria in the request. The output list does not include the policy
+     * A list of policies that match the filter criteria in the request. The output list doesn't include the policy
      * contents. To see the content for a policy, see <a>DescribePolicy</a>.
      * </p>
      * 
      * @param policies
-     *        A list of policies that match the filter criteria in the request. The output list does not include the
+     *        A list of policies that match the filter criteria in the request. The output list doesn't include the
      *        policy contents. To see the content for a policy, see <a>DescribePolicy</a>.
      */
 
@@ -76,7 +76,7 @@ public class ListPoliciesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of policies that match the filter criteria in the request. The output list does not include the policy
+     * A list of policies that match the filter criteria in the request. The output list doesn't include the policy
      * contents. To see the content for a policy, see <a>DescribePolicy</a>.
      * </p>
      * <p>
@@ -86,7 +86,7 @@ public class ListPoliciesResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param policies
-     *        A list of policies that match the filter criteria in the request. The output list does not include the
+     *        A list of policies that match the filter criteria in the request. The output list doesn't include the
      *        policy contents. To see the content for a policy, see <a>DescribePolicy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -103,12 +103,12 @@ public class ListPoliciesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of policies that match the filter criteria in the request. The output list does not include the policy
+     * A list of policies that match the filter criteria in the request. The output list doesn't include the policy
      * contents. To see the content for a policy, see <a>DescribePolicy</a>.
      * </p>
      * 
      * @param policies
-     *        A list of policies that match the filter criteria in the request. The output list does not include the
+     *        A list of policies that match the filter criteria in the request. The output list doesn't include the
      *        policy contents. To see the content for a policy, see <a>DescribePolicy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

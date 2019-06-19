@@ -15,7 +15,7 @@ package com.amazonaws.services.guardduty.model;
 import javax.annotation.Generated;
 
 /**
- * A enum value that specifies how frequently customer got Finding updates published.
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FindingPublishingFrequency {

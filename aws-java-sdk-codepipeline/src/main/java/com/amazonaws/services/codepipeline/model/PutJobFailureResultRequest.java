@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a PutJobFailureResult action.
+ * Represents the input of a <code>PutJobFailureResult</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult" target="_top">AWS
@@ -30,7 +30,8 @@ public class PutJobFailureResultRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
+     * The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>
+     * .
      * </p>
      */
     private String jobId;
@@ -43,11 +44,13 @@ public class PutJobFailureResultRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
+     * The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>
+     * .
      * </p>
      * 
      * @param jobId
-     *        The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
+     *        The unique system-generated ID of the job that failed. This is the same ID returned from
+     *        <code>PollForJobs</code>.
      */
 
     public void setJobId(String jobId) {
@@ -56,10 +59,12 @@ public class PutJobFailureResultRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
+     * The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>
+     * .
      * </p>
      * 
-     * @return The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
+     * @return The unique system-generated ID of the job that failed. This is the same ID returned from
+     *         <code>PollForJobs</code>.
      */
 
     public String getJobId() {
@@ -68,11 +73,13 @@ public class PutJobFailureResultRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
+     * The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>
+     * .
      * </p>
      * 
      * @param jobId
-     *        The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.
+     *        The unique system-generated ID of the job that failed. This is the same ID returned from
+     *        <code>PollForJobs</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

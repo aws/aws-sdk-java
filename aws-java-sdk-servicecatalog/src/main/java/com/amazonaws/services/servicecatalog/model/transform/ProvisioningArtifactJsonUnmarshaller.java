@@ -64,6 +64,10 @@ public class ProvisioningArtifactJsonUnmarshaller implements Unmarshaller<Provis
                     context.nextToken();
                     provisioningArtifact.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("Guidance", targetDepth)) {
+                    context.nextToken();
+                    provisioningArtifact.setGuidance(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

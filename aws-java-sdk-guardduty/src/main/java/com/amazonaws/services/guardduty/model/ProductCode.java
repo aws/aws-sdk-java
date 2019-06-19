@@ -18,7 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * The product code of the EC2 instance.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ProductCode" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +25,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ProductCode implements Serializable, Cloneable, StructuredPojo {
 
-    /** Product code information. */
+    /**
+     * <p>
+     * Product code information.
+     * </p>
+     */
     private String code;
-    /** Product code type. */
+    /**
+     * <p>
+     * Product code type.
+     * </p>
+     */
     private String productType;
 
     /**
+     * <p>
      * Product code information.
+     * </p>
      * 
      * @param code
      *        Product code information.
@@ -43,7 +52,9 @@ public class ProductCode implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Product code information.
+     * </p>
      * 
      * @return Product code information.
      */
@@ -53,7 +64,9 @@ public class ProductCode implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Product code information.
+     * </p>
      * 
      * @param code
      *        Product code information.
@@ -66,7 +79,9 @@ public class ProductCode implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Product code type.
+     * </p>
      * 
      * @param productType
      *        Product code type.
@@ -77,7 +92,9 @@ public class ProductCode implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Product code type.
+     * </p>
      * 
      * @return Product code type.
      */
@@ -87,7 +104,9 @@ public class ProductCode implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Product code type.
+     * </p>
      * 
      * @param productType
      *        Product code type.

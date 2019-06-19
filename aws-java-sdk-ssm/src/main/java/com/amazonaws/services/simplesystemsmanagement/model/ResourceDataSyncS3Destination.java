@@ -54,7 +54,7 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
     private String region;
     /**
      * <p>
-     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same region as the destination
+     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination
      * Amazon S3 bucket.
      * </p>
      */
@@ -255,12 +255,12 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same region as the destination
+     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination
      * Amazon S3 bucket.
      * </p>
      * 
      * @param aWSKMSKeyARN
-     *        The ARN of an encryption key for a destination in Amazon S3. Must belong to the same region as the
+     *        The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the
      *        destination Amazon S3 bucket.
      */
 
@@ -270,11 +270,11 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same region as the destination
+     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination
      * Amazon S3 bucket.
      * </p>
      * 
-     * @return The ARN of an encryption key for a destination in Amazon S3. Must belong to the same region as the
+     * @return The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the
      *         destination Amazon S3 bucket.
      */
 
@@ -284,12 +284,12 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same region as the destination
+     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination
      * Amazon S3 bucket.
      * </p>
      * 
      * @param aWSKMSKeyARN
-     *        The ARN of an encryption key for a destination in Amazon S3. Must belong to the same region as the
+     *        The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the
      *        destination Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

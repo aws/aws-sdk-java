@@ -78,6 +78,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public CreateOpsItemResult createOpsItem(CreateOpsItemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePatchBaselineResult createPatchBaseline(CreatePatchBaselineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -279,6 +284,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DescribeOpsItemsResult describeOpsItems(DescribeOpsItemsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeParametersResult describeParameters(DescribeParametersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -295,6 +305,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public DescribePatchGroupsResult describePatchGroups(DescribePatchGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribePatchPropertiesResult describePatchProperties(DescribePatchPropertiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -366,6 +381,16 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public GetMaintenanceWindowTaskResult getMaintenanceWindowTask(GetMaintenanceWindowTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetOpsItemResult getOpsItem(GetOpsItemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetOpsSummaryResult getOpsSummary(GetOpsSummaryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -601,6 +626,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public UpdateManagedInstanceRoleResult updateManagedInstanceRole(UpdateManagedInstanceRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateOpsItemResult updateOpsItem(UpdateOpsItemRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

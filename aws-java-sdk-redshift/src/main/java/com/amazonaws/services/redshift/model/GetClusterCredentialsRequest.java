@@ -38,7 +38,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * attempt will fail because the user doesn't exist in the database.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
      * USER</a> in the Amazon Redshift Database Developer Guide.
      * </p>
      * <p>
@@ -190,7 +190,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * attempt will fail because the user doesn't exist in the database.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
      * USER</a> in the Amazon Redshift Database Developer Guide.
      * </p>
      * <p>
@@ -235,7 +235,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon
+     *        href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon
      *        Redshift Database Developer Guide.
      *        </p>
      *        <p>
@@ -286,7 +286,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * attempt will fail because the user doesn't exist in the database.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
      * USER</a> in the Amazon Redshift Database Developer Guide.
      * </p>
      * <p>
@@ -330,7 +330,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *         succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon
+     *         href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon
      *         Redshift Database Developer Guide.
      *         </p>
      *         <p>
@@ -381,7 +381,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * attempt will fail because the user doesn't exist in the database.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
      * USER</a> in the Amazon Redshift Database Developer Guide.
      * </p>
      * <p>
@@ -426,7 +426,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon
+     *        href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon
      *        Redshift Database Developer Guide.
      *        </p>
      *        <p>

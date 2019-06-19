@@ -18,6 +18,13 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <note>
+ * <p>
+ * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications.
+ * Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a
+ * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+ * </p>
+ * </note>
  * <p>
  * Provides a description of the application, including the application Amazon Resource Name (ARN), status, latest
  * version, and input and output configuration.
@@ -68,7 +75,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      */
@@ -76,7 +83,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      */
@@ -84,7 +91,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes reference data sources configured for the application. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      */
@@ -93,8 +100,8 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Describes the CloudWatch log streams that are configured to receive application messages. For more information
      * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
-     * Logs</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     * CloudWatch Logs</a>.
      * </p>
      */
     private java.util.List<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions;
@@ -388,12 +395,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * 
      * @return Describes the application input configuration. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *         Application Input</a>.
      */
 
@@ -404,13 +411,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * 
      * @param inputDescriptions
      *        Describes the application input configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      */
 
@@ -426,7 +433,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * <p>
@@ -437,7 +444,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * 
      * @param inputDescriptions
      *        Describes the application input configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -455,13 +462,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * 
      * @param inputDescriptions
      *        Describes the application input configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -474,12 +481,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @return Describes the application output configuration. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *         Application Output</a>.
      */
 
@@ -490,13 +497,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @param outputDescriptions
      *        Describes the application output configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      */
 
@@ -512,7 +519,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * <p>
@@ -523,7 +530,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * 
      * @param outputDescriptions
      *        Describes the application output configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -541,13 +548,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @param outputDescriptions
      *        Describes the application output configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -560,12 +567,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes reference data sources configured for the application. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * 
      * @return Describes reference data sources configured for the application. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *         Application Input</a>.
      */
 
@@ -576,13 +583,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes reference data sources configured for the application. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * 
      * @param referenceDataSourceDescriptions
      *        Describes reference data sources configured for the application. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      */
 
@@ -598,7 +605,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes reference data sources configured for the application. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * <p>
@@ -609,7 +616,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * 
      * @param referenceDataSourceDescriptions
      *        Describes reference data sources configured for the application. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -627,13 +634,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Describes reference data sources configured for the application. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * 
      * @param referenceDataSourceDescriptions
      *        Describes reference data sources configured for the application. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -647,13 +654,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Describes the CloudWatch log streams that are configured to receive application messages. For more information
      * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
-     * Logs</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     * CloudWatch Logs</a>.
      * </p>
      * 
      * @return Describes the CloudWatch log streams that are configured to receive application messages. For more
      *         information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
      *         CloudWatch Logs</a>.
      */
 
@@ -665,14 +672,14 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Describes the CloudWatch log streams that are configured to receive application messages. For more information
      * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
-     * Logs</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     * CloudWatch Logs</a>.
      * </p>
      * 
      * @param cloudWatchLoggingOptionDescriptions
      *        Describes the CloudWatch log streams that are configured to receive application messages. For more
      *        information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
      *        CloudWatch Logs</a>.
      */
 
@@ -689,8 +696,8 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Describes the CloudWatch log streams that are configured to receive application messages. For more information
      * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
-     * Logs</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     * CloudWatch Logs</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -702,7 +709,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * @param cloudWatchLoggingOptionDescriptions
      *        Describes the CloudWatch log streams that are configured to receive application messages. For more
      *        information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
      *        CloudWatch Logs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -721,14 +728,14 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Describes the CloudWatch log streams that are configured to receive application messages. For more information
      * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
-     * Logs</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     * CloudWatch Logs</a>.
      * </p>
      * 
      * @param cloudWatchLoggingOptionDescriptions
      *        Describes the CloudWatch log streams that are configured to receive application messages. For more
      *        information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
      *        CloudWatch Logs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

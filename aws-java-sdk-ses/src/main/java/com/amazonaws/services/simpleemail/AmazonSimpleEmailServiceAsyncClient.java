@@ -34,13 +34,13 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * This document contains reference information for the <a href="https://aws.amazon.com/ses/">Amazon Simple Email
  * Service</a> (Amazon SES) API, version 2010-12-01. This document is best used in conjunction with the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
  * </p>
  * <note>
  * <p>
  * For a list of Amazon SES endpoints to use in service requests, see <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and Amazon SES</a> in the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and Amazon SES</a> in the <a
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
  * </p>
  * </note>
  */
@@ -1752,6 +1752,41 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
             com.amazonaws.handlers.AsyncHandler<ListVerifiedEmailAddressesRequest, ListVerifiedEmailAddressesResult> asyncHandler) {
 
         return listVerifiedEmailAddressesAsync(new ListVerifiedEmailAddressesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationSetDeliveryOptionsResult> putConfigurationSetDeliveryOptionsAsync(
+            PutConfigurationSetDeliveryOptionsRequest request) {
+
+        return putConfigurationSetDeliveryOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationSetDeliveryOptionsResult> putConfigurationSetDeliveryOptionsAsync(
+            final PutConfigurationSetDeliveryOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutConfigurationSetDeliveryOptionsRequest, PutConfigurationSetDeliveryOptionsResult> asyncHandler) {
+        final PutConfigurationSetDeliveryOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutConfigurationSetDeliveryOptionsResult>() {
+            @Override
+            public PutConfigurationSetDeliveryOptionsResult call() throws Exception {
+                PutConfigurationSetDeliveryOptionsResult result = null;
+
+                try {
+                    result = executePutConfigurationSetDeliveryOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

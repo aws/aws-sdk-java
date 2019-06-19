@@ -35,8 +35,9 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RateBasedRule</code>.
+     * alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name
+     * of the metric after you create the <code>RateBasedRule</code>.
      * </p>
      */
     private String metricName;
@@ -115,14 +116,16 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RateBasedRule</code>.
+     * alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name
+     * of the metric after you create the <code>RateBasedRule</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain
-     *        only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name
-     *        of the metric after you create the <code>RateBasedRule</code>.
+     *        only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't
+     *        contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't
+     *        change the name of the metric after you create the <code>RateBasedRule</code>.
      */
 
     public void setMetricName(String metricName) {
@@ -132,13 +135,15 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RateBasedRule</code>.
+     * alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name
+     * of the metric after you create the <code>RateBasedRule</code>.
      * </p>
      * 
      * @return A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain
-     *         only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the
-     *         name of the metric after you create the <code>RateBasedRule</code>.
+     *         only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't
+     *         contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't
+     *         change the name of the metric after you create the <code>RateBasedRule</code>.
      */
 
     public String getMetricName() {
@@ -148,14 +153,16 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RateBasedRule</code>.
+     * alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name
+     * of the metric after you create the <code>RateBasedRule</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain
-     *        only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name
-     *        of the metric after you create the <code>RateBasedRule</code>.
+     *        only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't
+     *        contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't
+     *        change the name of the metric after you create the <code>RateBasedRule</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

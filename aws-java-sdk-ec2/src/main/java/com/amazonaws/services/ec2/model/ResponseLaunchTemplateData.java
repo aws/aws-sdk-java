@@ -170,18 +170,18 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     private LaunchTemplateCapacityReservationSpecificationResponse capacityReservationSpecification;
     /**
      * <p>
+     * The license configurations.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LaunchTemplateLicenseConfiguration> licenseSpecifications;
+    /**
+     * <p>
      * Indicates whether an instance is configured for hibernation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private LaunchTemplateHibernationOptions hibernationOptions;
-    /**
-     * <p>
-     * The license configurations.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<LaunchTemplateLicenseConfiguration> licenseSpecifications;
 
     /**
      * <p>
@@ -1430,58 +1430,6 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether an instance is configured for hibernation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * 
-     * @param hibernationOptions
-     *        Indicates whether an instance is configured for hibernation. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     */
-
-    public void setHibernationOptions(LaunchTemplateHibernationOptions hibernationOptions) {
-        this.hibernationOptions = hibernationOptions;
-    }
-
-    /**
-     * <p>
-     * Indicates whether an instance is configured for hibernation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * 
-     * @return Indicates whether an instance is configured for hibernation. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     */
-
-    public LaunchTemplateHibernationOptions getHibernationOptions() {
-        return this.hibernationOptions;
-    }
-
-    /**
-     * <p>
-     * Indicates whether an instance is configured for hibernation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * 
-     * @param hibernationOptions
-     *        Indicates whether an instance is configured for hibernation. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ResponseLaunchTemplateData withHibernationOptions(LaunchTemplateHibernationOptions hibernationOptions) {
-        setHibernationOptions(hibernationOptions);
-        return this;
-    }
-
-    /**
-     * <p>
      * The license configurations.
      * </p>
      * 
@@ -1554,6 +1502,58 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether an instance is configured for hibernation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hibernationOptions
+     *        Indicates whether an instance is configured for hibernation. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setHibernationOptions(LaunchTemplateHibernationOptions hibernationOptions) {
+        this.hibernationOptions = hibernationOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an instance is configured for hibernation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether an instance is configured for hibernation. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public LaunchTemplateHibernationOptions getHibernationOptions() {
+        return this.hibernationOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an instance is configured for hibernation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hibernationOptions
+     *        Indicates whether an instance is configured for hibernation. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseLaunchTemplateData withHibernationOptions(LaunchTemplateHibernationOptions hibernationOptions) {
+        setHibernationOptions(hibernationOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1611,10 +1611,10 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
             sb.append("CpuOptions: ").append(getCpuOptions()).append(",");
         if (getCapacityReservationSpecification() != null)
             sb.append("CapacityReservationSpecification: ").append(getCapacityReservationSpecification()).append(",");
-        if (getHibernationOptions() != null)
-            sb.append("HibernationOptions: ").append(getHibernationOptions()).append(",");
         if (getLicenseSpecifications() != null)
-            sb.append("LicenseSpecifications: ").append(getLicenseSpecifications());
+            sb.append("LicenseSpecifications: ").append(getLicenseSpecifications()).append(",");
+        if (getHibernationOptions() != null)
+            sb.append("HibernationOptions: ").append(getHibernationOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1723,13 +1723,13 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         if (other.getCapacityReservationSpecification() != null
                 && other.getCapacityReservationSpecification().equals(this.getCapacityReservationSpecification()) == false)
             return false;
-        if (other.getHibernationOptions() == null ^ this.getHibernationOptions() == null)
-            return false;
-        if (other.getHibernationOptions() != null && other.getHibernationOptions().equals(this.getHibernationOptions()) == false)
-            return false;
         if (other.getLicenseSpecifications() == null ^ this.getLicenseSpecifications() == null)
             return false;
         if (other.getLicenseSpecifications() != null && other.getLicenseSpecifications().equals(this.getLicenseSpecifications()) == false)
+            return false;
+        if (other.getHibernationOptions() == null ^ this.getHibernationOptions() == null)
+            return false;
+        if (other.getHibernationOptions() != null && other.getHibernationOptions().equals(this.getHibernationOptions()) == false)
             return false;
         return true;
     }
@@ -1762,8 +1762,8 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreditSpecification() == null) ? 0 : getCreditSpecification().hashCode());
         hashCode = prime * hashCode + ((getCpuOptions() == null) ? 0 : getCpuOptions().hashCode());
         hashCode = prime * hashCode + ((getCapacityReservationSpecification() == null) ? 0 : getCapacityReservationSpecification().hashCode());
-        hashCode = prime * hashCode + ((getHibernationOptions() == null) ? 0 : getHibernationOptions().hashCode());
         hashCode = prime * hashCode + ((getLicenseSpecifications() == null) ? 0 : getLicenseSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getHibernationOptions() == null) ? 0 : getHibernationOptions().hashCode());
         return hashCode;
     }
 

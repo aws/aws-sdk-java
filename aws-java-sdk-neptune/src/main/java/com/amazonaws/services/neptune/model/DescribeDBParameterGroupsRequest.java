@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBParameterGroups" target="_top">AWS
  *      API Documentation</a>
@@ -254,7 +253,7 @@ public class DescribeDBParameterGroupsRequest extends com.amazonaws.AmazonWebSer
      * @param maxRecords
      *        The maximum number of records to include in the response. If more records exist than the specified
      *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
-     *        remaining results can be retrieved. </p>
+     *        remaining results can be retrieved.</p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -281,7 +280,7 @@ public class DescribeDBParameterGroupsRequest extends com.amazonaws.AmazonWebSer
      * 
      * @return The maximum number of records to include in the response. If more records exist than the specified
      *         <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
-     *         remaining results can be retrieved. </p>
+     *         remaining results can be retrieved.</p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -309,7 +308,7 @@ public class DescribeDBParameterGroupsRequest extends com.amazonaws.AmazonWebSer
      * @param maxRecords
      *        The maximum number of records to include in the response. If more records exist than the specified
      *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the
-     *        remaining results can be retrieved. </p>
+     *        remaining results can be retrieved.</p>
      *        <p>
      *        Default: 100
      *        </p>

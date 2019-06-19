@@ -75,6 +75,155 @@ public class CreateRuleRequestMarshaller implements Marshaller<Request<CreateRul
                             }
                         }
                     }
+
+                    {
+                        HostHeaderConditionConfig hostHeaderConfig = conditionsListValue.getHostHeaderConfig();
+                        if (hostHeaderConfig != null) {
+
+                            if (hostHeaderConfig.getValues() != null) {
+                                java.util.List<String> valuesList = hostHeaderConfig.getValues();
+                                if (valuesList.isEmpty()) {
+                                    request.addParameter("Conditions.member." + conditionsListIndex + ".HostHeaderConfig.Values", "");
+                                } else {
+                                    int valuesListIndex = 1;
+
+                                    for (String valuesListValue : valuesList) {
+                                        if (valuesListValue != null) {
+                                            request.addParameter("Conditions.member." + conditionsListIndex + ".HostHeaderConfig.Values.member."
+                                                    + valuesListIndex, StringUtils.fromString(valuesListValue));
+                                        }
+                                        valuesListIndex++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    {
+                        PathPatternConditionConfig pathPatternConfig = conditionsListValue.getPathPatternConfig();
+                        if (pathPatternConfig != null) {
+
+                            if (pathPatternConfig.getValues() != null) {
+                                java.util.List<String> valuesList = pathPatternConfig.getValues();
+                                if (valuesList.isEmpty()) {
+                                    request.addParameter("Conditions.member." + conditionsListIndex + ".PathPatternConfig.Values", "");
+                                } else {
+                                    int valuesListIndex = 1;
+
+                                    for (String valuesListValue : valuesList) {
+                                        if (valuesListValue != null) {
+                                            request.addParameter("Conditions.member." + conditionsListIndex + ".PathPatternConfig.Values.member."
+                                                    + valuesListIndex, StringUtils.fromString(valuesListValue));
+                                        }
+                                        valuesListIndex++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    {
+                        HttpHeaderConditionConfig httpHeaderConfig = conditionsListValue.getHttpHeaderConfig();
+                        if (httpHeaderConfig != null) {
+
+                            if (httpHeaderConfig.getHttpHeaderName() != null) {
+                                request.addParameter("Conditions.member." + conditionsListIndex + ".HttpHeaderConfig.HttpHeaderName",
+                                        StringUtils.fromString(httpHeaderConfig.getHttpHeaderName()));
+                            }
+
+                            if (httpHeaderConfig.getValues() != null) {
+                                java.util.List<String> valuesList = httpHeaderConfig.getValues();
+                                if (valuesList.isEmpty()) {
+                                    request.addParameter("Conditions.member." + conditionsListIndex + ".HttpHeaderConfig.Values", "");
+                                } else {
+                                    int valuesListIndex = 1;
+
+                                    for (String valuesListValue : valuesList) {
+                                        if (valuesListValue != null) {
+                                            request.addParameter("Conditions.member." + conditionsListIndex + ".HttpHeaderConfig.Values.member."
+                                                    + valuesListIndex, StringUtils.fromString(valuesListValue));
+                                        }
+                                        valuesListIndex++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    {
+                        QueryStringConditionConfig queryStringConfig = conditionsListValue.getQueryStringConfig();
+                        if (queryStringConfig != null) {
+
+                            if (queryStringConfig.getValues() != null) {
+                                java.util.List<QueryStringKeyValuePair> valuesList = queryStringConfig.getValues();
+                                if (valuesList.isEmpty()) {
+                                    request.addParameter("Conditions.member." + conditionsListIndex + ".QueryStringConfig.Values", "");
+                                } else {
+                                    int valuesListIndex = 1;
+
+                                    for (QueryStringKeyValuePair valuesListValue : valuesList) {
+
+                                        if (valuesListValue.getKey() != null) {
+                                            request.addParameter("Conditions.member." + conditionsListIndex + ".QueryStringConfig.Values.member."
+                                                    + valuesListIndex + ".Key", StringUtils.fromString(valuesListValue.getKey()));
+                                        }
+
+                                        if (valuesListValue.getValue() != null) {
+                                            request.addParameter("Conditions.member." + conditionsListIndex + ".QueryStringConfig.Values.member."
+                                                    + valuesListIndex + ".Value", StringUtils.fromString(valuesListValue.getValue()));
+                                        }
+                                        valuesListIndex++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    {
+                        HttpRequestMethodConditionConfig httpRequestMethodConfig = conditionsListValue.getHttpRequestMethodConfig();
+                        if (httpRequestMethodConfig != null) {
+
+                            if (httpRequestMethodConfig.getValues() != null) {
+                                java.util.List<String> valuesList = httpRequestMethodConfig.getValues();
+                                if (valuesList.isEmpty()) {
+                                    request.addParameter("Conditions.member." + conditionsListIndex + ".HttpRequestMethodConfig.Values", "");
+                                } else {
+                                    int valuesListIndex = 1;
+
+                                    for (String valuesListValue : valuesList) {
+                                        if (valuesListValue != null) {
+                                            request.addParameter("Conditions.member." + conditionsListIndex + ".HttpRequestMethodConfig.Values.member."
+                                                    + valuesListIndex, StringUtils.fromString(valuesListValue));
+                                        }
+                                        valuesListIndex++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    {
+                        SourceIpConditionConfig sourceIpConfig = conditionsListValue.getSourceIpConfig();
+                        if (sourceIpConfig != null) {
+
+                            if (sourceIpConfig.getValues() != null) {
+                                java.util.List<String> valuesList = sourceIpConfig.getValues();
+                                if (valuesList.isEmpty()) {
+                                    request.addParameter("Conditions.member." + conditionsListIndex + ".SourceIpConfig.Values", "");
+                                } else {
+                                    int valuesListIndex = 1;
+
+                                    for (String valuesListValue : valuesList) {
+                                        if (valuesListValue != null) {
+                                            request.addParameter("Conditions.member." + conditionsListIndex + ".SourceIpConfig.Values.member."
+                                                    + valuesListIndex, StringUtils.fromString(valuesListValue));
+                                        }
+                                        valuesListIndex++;
+                                    }
+                                }
+                            }
+                        }
+                    }
                     conditionsListIndex++;
                 }
             }

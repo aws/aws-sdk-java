@@ -62,6 +62,18 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private Boolean updateEtlLibraries;
+    /**
+     * <p>
+     * The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * </p>
+     */
+    private java.util.List<String> deleteArguments;
+    /**
+     * <p>
+     * The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     * </p>
+     */
+    private java.util.Map<String, String> addArguments;
 
     /**
      * <p>
@@ -384,6 +396,137 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * </p>
+     * 
+     * @return The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     */
+
+    public java.util.List<String> getDeleteArguments() {
+        return deleteArguments;
+    }
+
+    /**
+     * <p>
+     * The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * </p>
+     * 
+     * @param deleteArguments
+     *        The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     */
+
+    public void setDeleteArguments(java.util.Collection<String> deleteArguments) {
+        if (deleteArguments == null) {
+            this.deleteArguments = null;
+            return;
+        }
+
+        this.deleteArguments = new java.util.ArrayList<String>(deleteArguments);
+    }
+
+    /**
+     * <p>
+     * The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeleteArguments(java.util.Collection)} or {@link #withDeleteArguments(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param deleteArguments
+     *        The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDevEndpointRequest withDeleteArguments(String... deleteArguments) {
+        if (this.deleteArguments == null) {
+            setDeleteArguments(new java.util.ArrayList<String>(deleteArguments.length));
+        }
+        for (String ele : deleteArguments) {
+            this.deleteArguments.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * </p>
+     * 
+     * @param deleteArguments
+     *        The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDevEndpointRequest withDeleteArguments(java.util.Collection<String> deleteArguments) {
+        setDeleteArguments(deleteArguments);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     * </p>
+     * 
+     * @return The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     */
+
+    public java.util.Map<String, String> getAddArguments() {
+        return addArguments;
+    }
+
+    /**
+     * <p>
+     * The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     * </p>
+     * 
+     * @param addArguments
+     *        The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     */
+
+    public void setAddArguments(java.util.Map<String, String> addArguments) {
+        this.addArguments = addArguments;
+    }
+
+    /**
+     * <p>
+     * The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     * </p>
+     * 
+     * @param addArguments
+     *        The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDevEndpointRequest withAddArguments(java.util.Map<String, String> addArguments) {
+        setAddArguments(addArguments);
+        return this;
+    }
+
+    public UpdateDevEndpointRequest addAddArgumentsEntry(String key, String value) {
+        if (null == this.addArguments) {
+            this.addArguments = new java.util.HashMap<String, String>();
+        }
+        if (this.addArguments.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.addArguments.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AddArguments.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDevEndpointRequest clearAddArgumentsEntries() {
+        this.addArguments = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -406,7 +549,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getCustomLibraries() != null)
             sb.append("CustomLibraries: ").append(getCustomLibraries()).append(",");
         if (getUpdateEtlLibraries() != null)
-            sb.append("UpdateEtlLibraries: ").append(getUpdateEtlLibraries());
+            sb.append("UpdateEtlLibraries: ").append(getUpdateEtlLibraries()).append(",");
+        if (getDeleteArguments() != null)
+            sb.append("DeleteArguments: ").append(getDeleteArguments()).append(",");
+        if (getAddArguments() != null)
+            sb.append("AddArguments: ").append(getAddArguments());
         sb.append("}");
         return sb.toString();
     }
@@ -445,6 +592,14 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getUpdateEtlLibraries() != null && other.getUpdateEtlLibraries().equals(this.getUpdateEtlLibraries()) == false)
             return false;
+        if (other.getDeleteArguments() == null ^ this.getDeleteArguments() == null)
+            return false;
+        if (other.getDeleteArguments() != null && other.getDeleteArguments().equals(this.getDeleteArguments()) == false)
+            return false;
+        if (other.getAddArguments() == null ^ this.getAddArguments() == null)
+            return false;
+        if (other.getAddArguments() != null && other.getAddArguments().equals(this.getAddArguments()) == false)
+            return false;
         return true;
     }
 
@@ -459,6 +614,8 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDeletePublicKeys() == null) ? 0 : getDeletePublicKeys().hashCode());
         hashCode = prime * hashCode + ((getCustomLibraries() == null) ? 0 : getCustomLibraries().hashCode());
         hashCode = prime * hashCode + ((getUpdateEtlLibraries() == null) ? 0 : getUpdateEtlLibraries().hashCode());
+        hashCode = prime * hashCode + ((getDeleteArguments() == null) ? 0 : getDeleteArguments().hashCode());
+        hashCode = prime * hashCode + ((getAddArguments() == null) ? 0 : getAddArguments().hashCode());
         return hashCode;
     }
 

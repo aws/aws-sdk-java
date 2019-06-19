@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides additional details about the resource.
+ * Additional details about the resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ResourceDetails" target="_top">AWS API
@@ -30,19 +30,19 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The details of an AWS EC2 instance.
+     * The details of an Amazon EC2 instance.
      * </p>
      */
     private AwsEc2InstanceDetails awsEc2Instance;
     /**
      * <p>
-     * The details of an AWS S3 Bucket.
+     * The details of an Amazon S3 Bucket.
      * </p>
      */
     private AwsS3BucketDetails awsS3Bucket;
     /**
      * <p>
-     * AWS IAM access key details related to a finding.
+     * IAM access key details related to a finding.
      * </p>
      */
     private AwsIamAccessKeyDetails awsIamAccessKey;
@@ -54,18 +54,18 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private ContainerDetails container;
     /**
      * <p>
-     * The details of a resource that does not have a specific sub-field for the resource type defined.
+     * The details of a resource that doesn't have a specific subfield for the resource type defined.
      * </p>
      */
     private java.util.Map<String, String> other;
 
     /**
      * <p>
-     * The details of an AWS EC2 instance.
+     * The details of an Amazon EC2 instance.
      * </p>
      * 
      * @param awsEc2Instance
-     *        The details of an AWS EC2 instance.
+     *        The details of an Amazon EC2 instance.
      */
 
     public void setAwsEc2Instance(AwsEc2InstanceDetails awsEc2Instance) {
@@ -74,10 +74,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The details of an AWS EC2 instance.
+     * The details of an Amazon EC2 instance.
      * </p>
      * 
-     * @return The details of an AWS EC2 instance.
+     * @return The details of an Amazon EC2 instance.
      */
 
     public AwsEc2InstanceDetails getAwsEc2Instance() {
@@ -86,11 +86,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The details of an AWS EC2 instance.
+     * The details of an Amazon EC2 instance.
      * </p>
      * 
      * @param awsEc2Instance
-     *        The details of an AWS EC2 instance.
+     *        The details of an Amazon EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The details of an AWS S3 Bucket.
+     * The details of an Amazon S3 Bucket.
      * </p>
      * 
      * @param awsS3Bucket
-     *        The details of an AWS S3 Bucket.
+     *        The details of an Amazon S3 Bucket.
      */
 
     public void setAwsS3Bucket(AwsS3BucketDetails awsS3Bucket) {
@@ -114,10 +114,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The details of an AWS S3 Bucket.
+     * The details of an Amazon S3 Bucket.
      * </p>
      * 
-     * @return The details of an AWS S3 Bucket.
+     * @return The details of an Amazon S3 Bucket.
      */
 
     public AwsS3BucketDetails getAwsS3Bucket() {
@@ -126,11 +126,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The details of an AWS S3 Bucket.
+     * The details of an Amazon S3 Bucket.
      * </p>
      * 
      * @param awsS3Bucket
-     *        The details of an AWS S3 Bucket.
+     *        The details of an Amazon S3 Bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * AWS IAM access key details related to a finding.
+     * IAM access key details related to a finding.
      * </p>
      * 
      * @param awsIamAccessKey
-     *        AWS IAM access key details related to a finding.
+     *        IAM access key details related to a finding.
      */
 
     public void setAwsIamAccessKey(AwsIamAccessKeyDetails awsIamAccessKey) {
@@ -154,10 +154,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * AWS IAM access key details related to a finding.
+     * IAM access key details related to a finding.
      * </p>
      * 
-     * @return AWS IAM access key details related to a finding.
+     * @return IAM access key details related to a finding.
      */
 
     public AwsIamAccessKeyDetails getAwsIamAccessKey() {
@@ -166,11 +166,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * AWS IAM access key details related to a finding.
+     * IAM access key details related to a finding.
      * </p>
      * 
      * @param awsIamAccessKey
-     *        AWS IAM access key details related to a finding.
+     *        IAM access key details related to a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,10 +221,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The details of a resource that does not have a specific sub-field for the resource type defined.
+     * The details of a resource that doesn't have a specific subfield for the resource type defined.
      * </p>
      * 
-     * @return The details of a resource that does not have a specific sub-field for the resource type defined.
+     * @return The details of a resource that doesn't have a specific subfield for the resource type defined.
      */
 
     public java.util.Map<String, String> getOther() {
@@ -233,11 +233,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The details of a resource that does not have a specific sub-field for the resource type defined.
+     * The details of a resource that doesn't have a specific subfield for the resource type defined.
      * </p>
      * 
      * @param other
-     *        The details of a resource that does not have a specific sub-field for the resource type defined.
+     *        The details of a resource that doesn't have a specific subfield for the resource type defined.
      */
 
     public void setOther(java.util.Map<String, String> other) {
@@ -246,11 +246,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The details of a resource that does not have a specific sub-field for the resource type defined.
+     * The details of a resource that doesn't have a specific subfield for the resource type defined.
      * </p>
      * 
      * @param other
-     *        The details of a resource that does not have a specific sub-field for the resource type defined.
+     *        The details of a resource that doesn't have a specific subfield for the resource type defined.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

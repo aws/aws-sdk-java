@@ -28,7 +28,7 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
     /**
      * <p>
      * The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24. The
-     * address range cannot overlap with another address range that you've brought to this or another region.
+     * address range cannot overlap with another address range that you've brought to this or another Region.
      * </p>
      */
     private String cidr;
@@ -49,12 +49,12 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
     /**
      * <p>
      * The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24. The
-     * address range cannot overlap with another address range that you've brought to this or another region.
+     * address range cannot overlap with another address range that you've brought to this or another Region.
      * </p>
      * 
      * @param cidr
      *        The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24. The
-     *        address range cannot overlap with another address range that you've brought to this or another region.
+     *        address range cannot overlap with another address range that you've brought to this or another Region.
      */
 
     public void setCidr(String cidr) {
@@ -64,12 +64,12 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
     /**
      * <p>
      * The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24. The
-     * address range cannot overlap with another address range that you've brought to this or another region.
+     * address range cannot overlap with another address range that you've brought to this or another Region.
      * </p>
      * 
      * @return The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24.
      *         The address range cannot overlap with another address range that you've brought to this or another
-     *         region.
+     *         Region.
      */
 
     public String getCidr() {
@@ -79,12 +79,12 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
     /**
      * <p>
      * The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24. The
-     * address range cannot overlap with another address range that you've brought to this or another region.
+     * address range cannot overlap with another address range that you've brought to this or another Region.
      * </p>
      * 
      * @param cidr
      *        The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24. The
-     *        address range cannot overlap with another address range that you've brought to this or another region.
+     *        address range cannot overlap with another address range that you've brought to this or another Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

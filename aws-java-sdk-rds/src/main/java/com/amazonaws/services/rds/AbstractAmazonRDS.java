@@ -664,12 +664,22 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public StartActivityStreamResult startActivityStream(StartActivityStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBCluster startDBCluster(StartDBClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DBInstance startDBInstance(StartDBInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopActivityStreamResult stopActivityStream(StopActivityStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

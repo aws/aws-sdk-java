@@ -32,7 +32,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings;
@@ -85,7 +85,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
     private ScheduledInstancesMonitoring monitoring;
     /**
      * <p>
-     * One or more network interfaces.
+     * The network interfaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface> networkInterfaces;
@@ -103,7 +103,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
     private String ramdiskId;
     /**
      * <p>
-     * The IDs of one or more security groups.
+     * The IDs of the security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
@@ -122,10 +122,10 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
-     * @return One or more block device mapping entries.
+     * @return The block device mapping entries.
      */
 
     public java.util.List<ScheduledInstancesBlockDeviceMapping> getBlockDeviceMappings() {
@@ -137,11 +137,11 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings) {
@@ -155,7 +155,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,7 +164,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +180,11 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -527,10 +527,10 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One or more network interfaces.
+     * The network interfaces.
      * </p>
      * 
-     * @return One or more network interfaces.
+     * @return The network interfaces.
      */
 
     public java.util.List<ScheduledInstancesNetworkInterface> getNetworkInterfaces() {
@@ -542,11 +542,11 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One or more network interfaces.
+     * The network interfaces.
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces.
+     *        The network interfaces.
      */
 
     public void setNetworkInterfaces(java.util.Collection<ScheduledInstancesNetworkInterface> networkInterfaces) {
@@ -560,7 +560,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One or more network interfaces.
+     * The network interfaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -569,7 +569,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces.
+     *        The network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -585,11 +585,11 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One or more network interfaces.
+     * The network interfaces.
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces.
+     *        The network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -680,10 +680,10 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The IDs of one or more security groups.
+     * The IDs of the security groups.
      * </p>
      * 
-     * @return The IDs of one or more security groups.
+     * @return The IDs of the security groups.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -695,11 +695,11 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The IDs of one or more security groups.
+     * The IDs of the security groups.
      * </p>
      * 
      * @param securityGroupIds
-     *        The IDs of one or more security groups.
+     *        The IDs of the security groups.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -713,7 +713,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The IDs of one or more security groups.
+     * The IDs of the security groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -722,7 +722,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
      * </p>
      * 
      * @param securityGroupIds
-     *        The IDs of one or more security groups.
+     *        The IDs of the security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -738,11 +738,11 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The IDs of one or more security groups.
+     * The IDs of the security groups.
      * </p>
      * 
      * @param securityGroupIds
-     *        The IDs of one or more security groups.
+     *        The IDs of the security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

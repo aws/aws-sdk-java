@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains the details of an Amazon RDS DB snapshot.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.
+ * This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSnapshot" target="_top">AWS API

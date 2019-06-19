@@ -30,30 +30,30 @@ public class NumberFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the "greater than equal" condition to be applied to a single field when querying for findings.
+     * The greater-than-equal condition to be applied to a single field when querying for findings.
      * </p>
      */
     private Double gte;
     /**
      * <p>
-     * Represents the "less than equal" condition to be applied to a single field when querying for findings.
+     * The less-than-equal condition to be applied to a single field when querying for findings.
      * </p>
      */
     private Double lte;
     /**
      * <p>
-     * Represents the "equal to" condition to be applied to a single field when querying for findings.
+     * The equal-to condition to be applied to a single field when querying for findings.
      * </p>
      */
     private Double eq;
 
     /**
      * <p>
-     * Represents the "greater than equal" condition to be applied to a single field when querying for findings.
+     * The greater-than-equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param gte
-     *        Represents the "greater than equal" condition to be applied to a single field when querying for findings.
+     *        The greater-than-equal condition to be applied to a single field when querying for findings.
      */
 
     public void setGte(Double gte) {
@@ -62,10 +62,10 @@ public class NumberFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the "greater than equal" condition to be applied to a single field when querying for findings.
+     * The greater-than-equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents the "greater than equal" condition to be applied to a single field when querying for findings.
+     * @return The greater-than-equal condition to be applied to a single field when querying for findings.
      */
 
     public Double getGte() {
@@ -74,11 +74,11 @@ public class NumberFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the "greater than equal" condition to be applied to a single field when querying for findings.
+     * The greater-than-equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param gte
-     *        Represents the "greater than equal" condition to be applied to a single field when querying for findings.
+     *        The greater-than-equal condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class NumberFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the "less than equal" condition to be applied to a single field when querying for findings.
+     * The less-than-equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lte
-     *        Represents the "less than equal" condition to be applied to a single field when querying for findings.
+     *        The less-than-equal condition to be applied to a single field when querying for findings.
      */
 
     public void setLte(Double lte) {
@@ -102,10 +102,10 @@ public class NumberFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the "less than equal" condition to be applied to a single field when querying for findings.
+     * The less-than-equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents the "less than equal" condition to be applied to a single field when querying for findings.
+     * @return The less-than-equal condition to be applied to a single field when querying for findings.
      */
 
     public Double getLte() {
@@ -114,11 +114,11 @@ public class NumberFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the "less than equal" condition to be applied to a single field when querying for findings.
+     * The less-than-equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lte
-     *        Represents the "less than equal" condition to be applied to a single field when querying for findings.
+     *        The less-than-equal condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class NumberFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the "equal to" condition to be applied to a single field when querying for findings.
+     * The equal-to condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param eq
-     *        Represents the "equal to" condition to be applied to a single field when querying for findings.
+     *        The equal-to condition to be applied to a single field when querying for findings.
      */
 
     public void setEq(Double eq) {
@@ -142,10 +142,10 @@ public class NumberFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the "equal to" condition to be applied to a single field when querying for findings.
+     * The equal-to condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents the "equal to" condition to be applied to a single field when querying for findings.
+     * @return The equal-to condition to be applied to a single field when querying for findings.
      */
 
     public Double getEq() {
@@ -154,11 +154,11 @@ public class NumberFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the "equal to" condition to be applied to a single field when querying for findings.
+     * The equal-to condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param eq
-     *        Represents the "equal to" condition to be applied to a single field when querying for findings.
+     *        The equal-to condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

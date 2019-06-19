@@ -32,11 +32,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <fullname>Amazon AppStream 2.0</fullname>
  * <p>
- * This is the <i>Amazon AppStream 2.0 API Reference</i>. This reference provides descriptions and syntax for each of
- * the actions and data types in AppStream 2.0. AppStream 2.0 is a fully managed application streaming service. You
- * centrally manage your desktop applications on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0
- * manages the AWS resources required to host and run your applications, scales automatically, and provides access to
- * your users on demand.
+ * This is the <i>Amazon AppStream 2.0 API Reference</i>. It provides descriptions and syntax for each of the actions
+ * and data types in AppStream 2.0. AppStream 2.0 is a fully managed application streaming service. You centrally manage
+ * your desktop applications on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0 manages the AWS
+ * resources required to host and run your applications, scales automatically, and provides access to your users on
+ * demand.
  * </p>
  * <p>
  * To learn more about AppStream 2.0, see the following resources:
@@ -596,6 +596,40 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUsageReportSubscriptionResult> createUsageReportSubscriptionAsync(CreateUsageReportSubscriptionRequest request) {
+
+        return createUsageReportSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUsageReportSubscriptionResult> createUsageReportSubscriptionAsync(
+            final CreateUsageReportSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUsageReportSubscriptionRequest, CreateUsageReportSubscriptionResult> asyncHandler) {
+        final CreateUsageReportSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateUsageReportSubscriptionResult>() {
+            @Override
+            public CreateUsageReportSubscriptionResult call() throws Exception {
+                CreateUsageReportSubscriptionResult result = null;
+
+                try {
+                    result = executeCreateUsageReportSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request) {
 
         return createUserAsync(request, null);
@@ -811,6 +845,40 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
 
                 try {
                     result = executeDeleteStack(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsageReportSubscriptionResult> deleteUsageReportSubscriptionAsync(DeleteUsageReportSubscriptionRequest request) {
+
+        return deleteUsageReportSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsageReportSubscriptionResult> deleteUsageReportSubscriptionAsync(
+            final DeleteUsageReportSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteUsageReportSubscriptionRequest, DeleteUsageReportSubscriptionResult> asyncHandler) {
+        final DeleteUsageReportSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteUsageReportSubscriptionResult>() {
+            @Override
+            public DeleteUsageReportSubscriptionResult call() throws Exception {
+                DeleteUsageReportSubscriptionResult result = null;
+
+                try {
+                    result = executeDeleteUsageReportSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1075,6 +1143,41 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
 
                 try {
                     result = executeDescribeStacks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUsageReportSubscriptionsResult> describeUsageReportSubscriptionsAsync(
+            DescribeUsageReportSubscriptionsRequest request) {
+
+        return describeUsageReportSubscriptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUsageReportSubscriptionsResult> describeUsageReportSubscriptionsAsync(
+            final DescribeUsageReportSubscriptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeUsageReportSubscriptionsRequest, DescribeUsageReportSubscriptionsResult> asyncHandler) {
+        final DescribeUsageReportSubscriptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeUsageReportSubscriptionsResult>() {
+            @Override
+            public DescribeUsageReportSubscriptionsResult call() throws Exception {
+                DescribeUsageReportSubscriptionsResult result = null;
+
+                try {
+                    result = executeDescribeUsageReportSubscriptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

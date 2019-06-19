@@ -70,7 +70,11 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
      * </p>
      */
     private String status;
-
+    /**
+     * <p>
+     * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+     * </p>
+     */
     private CustomDomainConfigType customDomainConfig;
 
     /**
@@ -387,7 +391,12 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+     * </p>
+     * 
      * @param customDomainConfig
+     *        The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
      */
 
     public void setCustomDomainConfig(CustomDomainConfigType customDomainConfig) {
@@ -395,7 +404,11 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+     * </p>
+     * 
+     * @return The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
      */
 
     public CustomDomainConfigType getCustomDomainConfig() {
@@ -403,7 +416,12 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+     * </p>
+     * 
      * @param customDomainConfig
+     *        The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

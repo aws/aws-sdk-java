@@ -172,6 +172,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePlaybackConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -226,6 +227,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPlaybackConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -283,6 +285,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPlaybackConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -338,6 +341,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -391,6 +395,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPlaybackConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -446,6 +451,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -500,6 +506,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

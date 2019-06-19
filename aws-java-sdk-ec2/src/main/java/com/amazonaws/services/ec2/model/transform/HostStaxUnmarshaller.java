@@ -115,6 +115,10 @@ public class HostStaxUnmarshaller implements Unmarshaller<Host, StaxUnmarshaller
                     continue;
                 }
 
+                if (context.testExpression("hostRecovery", targetDepth)) {
+                    host.setHostRecovery(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return host;

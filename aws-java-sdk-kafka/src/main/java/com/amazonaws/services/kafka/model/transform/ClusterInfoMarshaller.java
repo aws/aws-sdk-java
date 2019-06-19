@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.kafka.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,8 +29,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ClusterInfoMarshaller {
 
+    private static final MarshallingInfo<String> ACTIVEOPERATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activeOperationArn").build();
     private static final MarshallingInfo<StructuredPojo> BROKERNODEGROUPINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("brokerNodeGroupInfo").build();
+    private static final MarshallingInfo<StructuredPojo> CLIENTAUTHENTICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientAuthentication").build();
     private static final MarshallingInfo<String> CLUSTERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clusterArn").build();
     private static final MarshallingInfo<String> CLUSTERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -47,6 +53,8 @@ public class ClusterInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfBrokerNodes").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> ZOOKEEPERCONNECTSTRING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("zookeeperConnectString").build();
 
@@ -66,7 +74,9 @@ public class ClusterInfoMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(clusterInfo.getActiveOperationArn(), ACTIVEOPERATIONARN_BINDING);
             protocolMarshaller.marshall(clusterInfo.getBrokerNodeGroupInfo(), BROKERNODEGROUPINFO_BINDING);
+            protocolMarshaller.marshall(clusterInfo.getClientAuthentication(), CLIENTAUTHENTICATION_BINDING);
             protocolMarshaller.marshall(clusterInfo.getClusterArn(), CLUSTERARN_BINDING);
             protocolMarshaller.marshall(clusterInfo.getClusterName(), CLUSTERNAME_BINDING);
             protocolMarshaller.marshall(clusterInfo.getCreationTime(), CREATIONTIME_BINDING);
@@ -76,6 +86,7 @@ public class ClusterInfoMarshaller {
             protocolMarshaller.marshall(clusterInfo.getEnhancedMonitoring(), ENHANCEDMONITORING_BINDING);
             protocolMarshaller.marshall(clusterInfo.getNumberOfBrokerNodes(), NUMBEROFBROKERNODES_BINDING);
             protocolMarshaller.marshall(clusterInfo.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(clusterInfo.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(clusterInfo.getZookeeperConnectString(), ZOOKEEPERCONNECTSTRING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

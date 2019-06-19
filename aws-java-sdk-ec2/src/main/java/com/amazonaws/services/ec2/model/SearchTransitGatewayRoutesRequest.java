@@ -76,14 +76,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     * <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
      * </p>
      * </li>
      * </ul>
@@ -180,14 +178,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     * <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
      * </p>
      * </li>
      * </ul>
@@ -235,14 +231,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *         <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *         <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *         <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     *         <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
      *         </p>
      *         </li>
      */
@@ -298,14 +292,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     * <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
      * </p>
      * </li>
      * </ul>
@@ -353,14 +345,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     *        <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
      *        </p>
      *        </li>
      */
@@ -418,14 +408,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     * <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
      * </p>
      * </li>
      * </ul>
@@ -478,14 +466,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     *        <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -545,14 +531,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     * <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
      * </p>
      * </li>
      * </ul>
@@ -600,14 +584,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
+     *        <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

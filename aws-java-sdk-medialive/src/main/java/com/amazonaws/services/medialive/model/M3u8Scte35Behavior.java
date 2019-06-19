@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for M3u8Scte35Behavior
+ * M3u8 Scte35 Behavior
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M3u8Scte35Behavior {

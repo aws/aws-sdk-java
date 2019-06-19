@@ -84,6 +84,11 @@ public class InstanceAccessDetailsJsonUnmarshaller implements Unmarshaller<Insta
                     context.nextToken();
                     instanceAccessDetails.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("hostKeys", targetDepth)) {
+                    context.nextToken();
+                    instanceAccessDetails.setHostKeys(new ListUnmarshaller<HostKeyAttributes>(HostKeyAttributesJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

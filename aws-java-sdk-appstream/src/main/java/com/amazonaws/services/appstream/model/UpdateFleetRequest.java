@@ -165,16 +165,23 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000. By
-     * default, the value is 900 seconds (15 minutes).
+     * The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected
+     * to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents
+     * before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
+     * </p>
+     * <p>
+     * Specify a value between 600 and 360000.
      * </p>
      */
     private Integer maxUserDurationInSeconds;
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
-     * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
-     * value between 60 and 360000. By default, the value is 900 seconds (15 minutes).
+     * The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to
+     * the streaming session after a disconnection or network interruption within this time interval, they are connected
+     * to their previous session. Otherwise, they are connected to a new session with a new streaming instance.
+     * </p>
+     * <p>
+     * Specify a value between 60 and 360000.
      * </p>
      */
     private Integer disconnectTimeoutInSeconds;
@@ -210,6 +217,31 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private DomainJoinInfo domainJoinInfo;
+    /**
+     * <p>
+     * The amount of time that users can be idle (inactive) before they are disconnected from their streaming session
+     * and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are
+     * disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval
+     * specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users
+     * are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads
+     * and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be
+     * idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.
+     * </p>
+     * <p>
+     * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
+     * between 60 and 3600. The default value is 900.
+     * </p>
+     * <note>
+     * <p>
+     * If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of
+     * minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For
+     * example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a
+     * value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify
+     * a value of 90, users are disconnected after 2 minutes of inactivity.
+     * </p>
+     * </note>
+     */
+    private Integer idleDisconnectTimeoutInSeconds;
     /**
      * <p>
      * The fleet attributes to delete.
@@ -1068,13 +1100,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000. By
-     * default, the value is 900 seconds (15 minutes).
+     * The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected
+     * to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents
+     * before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
+     * </p>
+     * <p>
+     * Specify a value between 600 and 360000.
      * </p>
      * 
      * @param maxUserDurationInSeconds
-     *        The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000. By
-     *        default, the value is 900 seconds (15 minutes).
+     *        The maximum amount of time that a streaming session can remain active, in seconds. If users are still
+     *        connected to a streaming instance five minutes before this limit is reached, they are prompted to save any
+     *        open documents before being disconnected. After this time elapses, the instance is terminated and replaced
+     *        by a new instance.</p>
+     *        <p>
+     *        Specify a value between 600 and 360000.
      */
 
     public void setMaxUserDurationInSeconds(Integer maxUserDurationInSeconds) {
@@ -1083,12 +1123,20 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000. By
-     * default, the value is 900 seconds (15 minutes).
+     * The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected
+     * to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents
+     * before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
+     * </p>
+     * <p>
+     * Specify a value between 600 and 360000.
      * </p>
      * 
-     * @return The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000. By
-     *         default, the value is 900 seconds (15 minutes).
+     * @return The maximum amount of time that a streaming session can remain active, in seconds. If users are still
+     *         connected to a streaming instance five minutes before this limit is reached, they are prompted to save
+     *         any open documents before being disconnected. After this time elapses, the instance is terminated and
+     *         replaced by a new instance.</p>
+     *         <p>
+     *         Specify a value between 600 and 360000.
      */
 
     public Integer getMaxUserDurationInSeconds() {
@@ -1097,13 +1145,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000. By
-     * default, the value is 900 seconds (15 minutes).
+     * The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected
+     * to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents
+     * before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
+     * </p>
+     * <p>
+     * Specify a value between 600 and 360000.
      * </p>
      * 
      * @param maxUserDurationInSeconds
-     *        The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000. By
-     *        default, the value is 900 seconds (15 minutes).
+     *        The maximum amount of time that a streaming session can remain active, in seconds. If users are still
+     *        connected to a streaming instance five minutes before this limit is reached, they are prompted to save any
+     *        open documents before being disconnected. After this time elapses, the instance is terminated and replaced
+     *        by a new instance.</p>
+     *        <p>
+     *        Specify a value between 600 and 360000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1114,15 +1170,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
-     * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
-     * value between 60 and 360000. By default, the value is 900 seconds (15 minutes).
+     * The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to
+     * the streaming session after a disconnection or network interruption within this time interval, they are connected
+     * to their previous session. Otherwise, they are connected to a new session with a new streaming instance.
+     * </p>
+     * <p>
+     * Specify a value between 60 and 360000.
      * </p>
      * 
      * @param disconnectTimeoutInSeconds
-     *        The time after disconnection when a session is considered to have ended, in seconds. If a user who was
-     *        disconnected reconnects within this time interval, the user is connected to their previous session.
-     *        Specify a value between 60 and 360000. By default, the value is 900 seconds (15 minutes).
+     *        The amount of time that a streaming session remains active after users disconnect. If users try to
+     *        reconnect to the streaming session after a disconnection or network interruption within this time
+     *        interval, they are connected to their previous session. Otherwise, they are connected to a new session
+     *        with a new streaming instance. </p>
+     *        <p>
+     *        Specify a value between 60 and 360000.
      */
 
     public void setDisconnectTimeoutInSeconds(Integer disconnectTimeoutInSeconds) {
@@ -1131,14 +1193,20 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
-     * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
-     * value between 60 and 360000. By default, the value is 900 seconds (15 minutes).
+     * The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to
+     * the streaming session after a disconnection or network interruption within this time interval, they are connected
+     * to their previous session. Otherwise, they are connected to a new session with a new streaming instance.
+     * </p>
+     * <p>
+     * Specify a value between 60 and 360000.
      * </p>
      * 
-     * @return The time after disconnection when a session is considered to have ended, in seconds. If a user who was
-     *         disconnected reconnects within this time interval, the user is connected to their previous session.
-     *         Specify a value between 60 and 360000. By default, the value is 900 seconds (15 minutes).
+     * @return The amount of time that a streaming session remains active after users disconnect. If users try to
+     *         reconnect to the streaming session after a disconnection or network interruption within this time
+     *         interval, they are connected to their previous session. Otherwise, they are connected to a new session
+     *         with a new streaming instance. </p>
+     *         <p>
+     *         Specify a value between 60 and 360000.
      */
 
     public Integer getDisconnectTimeoutInSeconds() {
@@ -1147,15 +1215,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
-     * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
-     * value between 60 and 360000. By default, the value is 900 seconds (15 minutes).
+     * The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to
+     * the streaming session after a disconnection or network interruption within this time interval, they are connected
+     * to their previous session. Otherwise, they are connected to a new session with a new streaming instance.
+     * </p>
+     * <p>
+     * Specify a value between 60 and 360000.
      * </p>
      * 
      * @param disconnectTimeoutInSeconds
-     *        The time after disconnection when a session is considered to have ended, in seconds. If a user who was
-     *        disconnected reconnects within this time interval, the user is connected to their previous session.
-     *        Specify a value between 60 and 360000. By default, the value is 900 seconds (15 minutes).
+     *        The amount of time that a streaming session remains active after users disconnect. If users try to
+     *        reconnect to the streaming session after a disconnection or network interruption within this time
+     *        interval, they are connected to their previous session. Otherwise, they are connected to a new session
+     *        with a new streaming instance. </p>
+     *        <p>
+     *        Specify a value between 60 and 360000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1396,6 +1470,163 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * The amount of time that users can be idle (inactive) before they are disconnected from their streaming session
+     * and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are
+     * disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval
+     * specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users
+     * are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads
+     * and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be
+     * idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.
+     * </p>
+     * <p>
+     * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
+     * between 60 and 3600. The default value is 900.
+     * </p>
+     * <note>
+     * <p>
+     * If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of
+     * minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For
+     * example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a
+     * value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify
+     * a value of 90, users are disconnected after 2 minutes of inactivity.
+     * </p>
+     * </note>
+     * 
+     * @param idleDisconnectTimeoutInSeconds
+     *        The amount of time that users can be idle (inactive) before they are disconnected from their streaming
+     *        session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before
+     *        they are disconnected due to inactivity. If users try to reconnect to the streaming session before the
+     *        time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+     *        previous session. Users are considered idle when they stop providing keyboard or mouse input during their
+     *        streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as
+     *        user activity. If users continue to be idle after the time interval in
+     *        <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+     *        <p>
+     *        To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a
+     *        value between 60 and 3600. The default value is 900.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole
+     *        number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the
+     *        nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of
+     *        inactivity. If you specify a value that is at the midpoint between two different minutes, the value is
+     *        rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of
+     *        inactivity.
+     *        </p>
+     */
+
+    public void setIdleDisconnectTimeoutInSeconds(Integer idleDisconnectTimeoutInSeconds) {
+        this.idleDisconnectTimeoutInSeconds = idleDisconnectTimeoutInSeconds;
+    }
+
+    /**
+     * <p>
+     * The amount of time that users can be idle (inactive) before they are disconnected from their streaming session
+     * and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are
+     * disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval
+     * specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users
+     * are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads
+     * and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be
+     * idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.
+     * </p>
+     * <p>
+     * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
+     * between 60 and 3600. The default value is 900.
+     * </p>
+     * <note>
+     * <p>
+     * If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of
+     * minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For
+     * example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a
+     * value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify
+     * a value of 90, users are disconnected after 2 minutes of inactivity.
+     * </p>
+     * </note>
+     * 
+     * @return The amount of time that users can be idle (inactive) before they are disconnected from their streaming
+     *         session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before
+     *         they are disconnected due to inactivity. If users try to reconnect to the streaming session before the
+     *         time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+     *         previous session. Users are considered idle when they stop providing keyboard or mouse input during their
+     *         streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as
+     *         user activity. If users continue to be idle after the time interval in
+     *         <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+     *         <p>
+     *         To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a
+     *         value between 60 and 3600. The default value is 900.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole
+     *         number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the
+     *         nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of
+     *         inactivity. If you specify a value that is at the midpoint between two different minutes, the value is
+     *         rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of
+     *         inactivity.
+     *         </p>
+     */
+
+    public Integer getIdleDisconnectTimeoutInSeconds() {
+        return this.idleDisconnectTimeoutInSeconds;
+    }
+
+    /**
+     * <p>
+     * The amount of time that users can be idle (inactive) before they are disconnected from their streaming session
+     * and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are
+     * disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval
+     * specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users
+     * are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads
+     * and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be
+     * idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.
+     * </p>
+     * <p>
+     * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
+     * between 60 and 3600. The default value is 900.
+     * </p>
+     * <note>
+     * <p>
+     * If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of
+     * minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For
+     * example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a
+     * value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify
+     * a value of 90, users are disconnected after 2 minutes of inactivity.
+     * </p>
+     * </note>
+     * 
+     * @param idleDisconnectTimeoutInSeconds
+     *        The amount of time that users can be idle (inactive) before they are disconnected from their streaming
+     *        session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before
+     *        they are disconnected due to inactivity. If users try to reconnect to the streaming session before the
+     *        time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+     *        previous session. Users are considered idle when they stop providing keyboard or mouse input during their
+     *        streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as
+     *        user activity. If users continue to be idle after the time interval in
+     *        <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+     *        <p>
+     *        To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a
+     *        value between 60 and 3600. The default value is 900.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole
+     *        number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the
+     *        nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of
+     *        inactivity. If you specify a value that is at the midpoint between two different minutes, the value is
+     *        rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of
+     *        inactivity.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetRequest withIdleDisconnectTimeoutInSeconds(Integer idleDisconnectTimeoutInSeconds) {
+        setIdleDisconnectTimeoutInSeconds(idleDisconnectTimeoutInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
      * The fleet attributes to delete.
      * </p>
      * 
@@ -1530,6 +1761,8 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess()).append(",");
         if (getDomainJoinInfo() != null)
             sb.append("DomainJoinInfo: ").append(getDomainJoinInfo()).append(",");
+        if (getIdleDisconnectTimeoutInSeconds() != null)
+            sb.append("IdleDisconnectTimeoutInSeconds: ").append(getIdleDisconnectTimeoutInSeconds()).append(",");
         if (getAttributesToDelete() != null)
             sb.append("AttributesToDelete: ").append(getAttributesToDelete());
         sb.append("}");
@@ -1598,6 +1831,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDomainJoinInfo() != null && other.getDomainJoinInfo().equals(this.getDomainJoinInfo()) == false)
             return false;
+        if (other.getIdleDisconnectTimeoutInSeconds() == null ^ this.getIdleDisconnectTimeoutInSeconds() == null)
+            return false;
+        if (other.getIdleDisconnectTimeoutInSeconds() != null
+                && other.getIdleDisconnectTimeoutInSeconds().equals(this.getIdleDisconnectTimeoutInSeconds()) == false)
+            return false;
         if (other.getAttributesToDelete() == null ^ this.getAttributesToDelete() == null)
             return false;
         if (other.getAttributesToDelete() != null && other.getAttributesToDelete().equals(this.getAttributesToDelete()) == false)
@@ -1623,6 +1861,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
         hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
+        hashCode = prime * hashCode + ((getIdleDisconnectTimeoutInSeconds() == null) ? 0 : getIdleDisconnectTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getAttributesToDelete() == null) ? 0 : getAttributesToDelete().hashCode());
         return hashCode;
     }

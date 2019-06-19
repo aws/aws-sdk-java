@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * DisassociateMembers request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +25,64 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** A list of account IDs of the GuardDuty member accounts that you want to disassociate from master. */
-    private java.util.List<String> accountIds;
-    /** The unique ID of the detector of the GuardDuty account whose members you want to disassociate from master. */
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from master.
+     * </p>
+     */
     private String detectorId;
+    /**
+     * <p>
+     * A list of account IDs of the GuardDuty member accounts that you want to disassociate from master.
+     * </p>
+     */
+    private java.util.List<String> accountIds;
 
     /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from master.
+     * </p>
+     * 
+     * @param detectorId
+     *        The unique ID of the detector of the GuardDuty account whose members you want to disassociate from master.
+     */
+
+    public void setDetectorId(String detectorId) {
+        this.detectorId = detectorId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from master.
+     * </p>
+     * 
+     * @return The unique ID of the detector of the GuardDuty account whose members you want to disassociate from
+     *         master.
+     */
+
+    public String getDetectorId() {
+        return this.detectorId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from master.
+     * </p>
+     * 
+     * @param detectorId
+     *        The unique ID of the detector of the GuardDuty account whose members you want to disassociate from master.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DisassociateMembersRequest withDetectorId(String detectorId) {
+        setDetectorId(detectorId);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts that you want to disassociate from master.
+     * </p>
      * 
      * @return A list of account IDs of the GuardDuty member accounts that you want to disassociate from master.
      */
@@ -42,7 +92,9 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts that you want to disassociate from master.
+     * </p>
      * 
      * @param accountIds
      *        A list of account IDs of the GuardDuty member accounts that you want to disassociate from master.
@@ -58,7 +110,9 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts that you want to disassociate from master.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to
@@ -81,7 +135,9 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts that you want to disassociate from master.
+     * </p>
      * 
      * @param accountIds
      *        A list of account IDs of the GuardDuty member accounts that you want to disassociate from master.
@@ -90,41 +146,6 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
 
     public DisassociateMembersRequest withAccountIds(java.util.Collection<String> accountIds) {
         setAccountIds(accountIds);
-        return this;
-    }
-
-    /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from master.
-     * 
-     * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account whose members you want to disassociate from master.
-     */
-
-    public void setDetectorId(String detectorId) {
-        this.detectorId = detectorId;
-    }
-
-    /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from master.
-     * 
-     * @return The unique ID of the detector of the GuardDuty account whose members you want to disassociate from
-     *         master.
-     */
-
-    public String getDetectorId() {
-        return this.detectorId;
-    }
-
-    /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from master.
-     * 
-     * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account whose members you want to disassociate from master.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DisassociateMembersRequest withDetectorId(String detectorId) {
-        setDetectorId(detectorId);
         return this;
     }
 
@@ -140,10 +161,10 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAccountIds() != null)
-            sb.append("AccountIds: ").append(getAccountIds()).append(",");
         if (getDetectorId() != null)
-            sb.append("DetectorId: ").append(getDetectorId());
+            sb.append("DetectorId: ").append(getDetectorId()).append(",");
+        if (getAccountIds() != null)
+            sb.append("AccountIds: ").append(getAccountIds());
         sb.append("}");
         return sb.toString();
     }
@@ -158,13 +179,13 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof DisassociateMembersRequest == false)
             return false;
         DisassociateMembersRequest other = (DisassociateMembersRequest) obj;
-        if (other.getAccountIds() == null ^ this.getAccountIds() == null)
-            return false;
-        if (other.getAccountIds() != null && other.getAccountIds().equals(this.getAccountIds()) == false)
-            return false;
         if (other.getDetectorId() == null ^ this.getDetectorId() == null)
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
+            return false;
+        if (other.getAccountIds() == null ^ this.getAccountIds() == null)
+            return false;
+        if (other.getAccountIds() != null && other.getAccountIds().equals(this.getAccountIds()) == false)
             return false;
         return true;
     }
@@ -174,8 +195,8 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
+        hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         return hashCode;
     }
 

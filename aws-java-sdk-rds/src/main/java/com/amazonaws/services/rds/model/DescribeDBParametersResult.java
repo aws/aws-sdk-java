@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the <a>DescribeDBParameters</a> action.
+ * Contains the result of a successful invocation of the <code>DescribeDBParameters</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters" target="_top">AWS API
@@ -28,7 +28,7 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <a>Parameter</a> values.
+     * A list of <code>Parameter</code> values.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
@@ -42,10 +42,10 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <a>Parameter</a> values.
+     * A list of <code>Parameter</code> values.
      * </p>
      * 
-     * @return A list of <a>Parameter</a> values.
+     * @return A list of <code>Parameter</code> values.
      */
 
     public java.util.List<Parameter> getParameters() {
@@ -57,11 +57,11 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <a>Parameter</a> values.
+     * A list of <code>Parameter</code> values.
      * </p>
      * 
      * @param parameters
-     *        A list of <a>Parameter</a> values.
+     *        A list of <code>Parameter</code> values.
      */
 
     public void setParameters(java.util.Collection<Parameter> parameters) {
@@ -75,7 +75,7 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <a>Parameter</a> values.
+     * A list of <code>Parameter</code> values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param parameters
-     *        A list of <a>Parameter</a> values.
+     *        A list of <code>Parameter</code> values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <a>Parameter</a> values.
+     * A list of <code>Parameter</code> values.
      * </p>
      * 
      * @param parameters
-     *        A list of <a>Parameter</a> values.
+     *        A list of <code>Parameter</code> values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

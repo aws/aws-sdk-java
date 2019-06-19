@@ -56,6 +56,10 @@ public class VirtualNodeSpecJsonUnmarshaller implements Unmarshaller<VirtualNode
                     context.nextToken();
                     virtualNodeSpec.setListeners(new ListUnmarshaller<Listener>(ListenerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("logging", targetDepth)) {
+                    context.nextToken();
+                    virtualNodeSpec.setLogging(LoggingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("serviceDiscovery", targetDepth)) {
                     context.nextToken();
                     virtualNodeSpec.setServiceDiscovery(ServiceDiscoveryJsonUnmarshaller.getInstance().unmarshall(context));

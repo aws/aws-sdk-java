@@ -257,7 +257,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * The condition under which to stop the training job.
+     * Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon SageMaker
+     * ends the training job. Use this API to cap model training costs.
+     * </p>
+     * <p>
+     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
+     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
+     * training are not lost.
      * </p>
      */
     private StoppingCondition stoppingCondition;
@@ -322,8 +328,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
      * Encryption provides greater security for distributed training, but training might take longer. How long it takes
-     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
-     * in distributed training.
+     * depends on the amount of communication between compute instances, especially if you use a deep learning
+     * algorithms in distributed training.
      * </p>
      */
     private Boolean enableInterContainerTrafficEncryption;
@@ -2145,11 +2151,22 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The condition under which to stop the training job.
+     * Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon SageMaker
+     * ends the training job. Use this API to cap model training costs.
+     * </p>
+     * <p>
+     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
+     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
+     * training are not lost.
      * </p>
      * 
      * @param stoppingCondition
-     *        The condition under which to stop the training job.
+     *        Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon
+     *        SageMaker ends the training job. Use this API to cap model training costs.</p>
+     *        <p>
+     *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
+     *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
+     *        results of training are not lost.
      */
 
     public void setStoppingCondition(StoppingCondition stoppingCondition) {
@@ -2158,10 +2175,21 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The condition under which to stop the training job.
+     * Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon SageMaker
+     * ends the training job. Use this API to cap model training costs.
+     * </p>
+     * <p>
+     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
+     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
+     * training are not lost.
      * </p>
      * 
-     * @return The condition under which to stop the training job.
+     * @return Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon
+     *         SageMaker ends the training job. Use this API to cap model training costs.</p>
+     *         <p>
+     *         To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
+     *         termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so
+     *         the results of training are not lost.
      */
 
     public StoppingCondition getStoppingCondition() {
@@ -2170,11 +2198,22 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The condition under which to stop the training job.
+     * Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon SageMaker
+     * ends the training job. Use this API to cap model training costs.
+     * </p>
+     * <p>
+     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
+     * for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of
+     * training are not lost.
      * </p>
      * 
      * @param stoppingCondition
-     *        The condition under which to stop the training job.
+     *        Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon
+     *        SageMaker ends the training job. Use this API to cap model training costs.</p>
+     *        <p>
+     *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
+     *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
+     *        results of training are not lost.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2639,15 +2678,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
      * Encryption provides greater security for distributed training, but training might take longer. How long it takes
-     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
-     * in distributed training.
+     * depends on the amount of communication between compute instances, especially if you use a deep learning
+     * algorithms in distributed training.
      * </p>
      * 
      * @param enableInterContainerTrafficEncryption
      *        To encrypt all communications between ML compute instances in distributed training, choose
      *        <code>True</code>. Encryption provides greater security for distributed training, but training might take
      *        longer. How long it takes depends on the amount of communication between compute instances, especially if
-     *        you use a deep learning algorithm in distributed training.
+     *        you use a deep learning algorithms in distributed training.
      */
 
     public void setEnableInterContainerTrafficEncryption(Boolean enableInterContainerTrafficEncryption) {
@@ -2658,14 +2697,14 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
      * Encryption provides greater security for distributed training, but training might take longer. How long it takes
-     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
-     * in distributed training.
+     * depends on the amount of communication between compute instances, especially if you use a deep learning
+     * algorithms in distributed training.
      * </p>
      * 
      * @return To encrypt all communications between ML compute instances in distributed training, choose
      *         <code>True</code>. Encryption provides greater security for distributed training, but training might take
      *         longer. How long it takes depends on the amount of communication between compute instances, especially if
-     *         you use a deep learning algorithm in distributed training.
+     *         you use a deep learning algorithms in distributed training.
      */
 
     public Boolean getEnableInterContainerTrafficEncryption() {
@@ -2676,15 +2715,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
      * Encryption provides greater security for distributed training, but training might take longer. How long it takes
-     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
-     * in distributed training.
+     * depends on the amount of communication between compute instances, especially if you use a deep learning
+     * algorithms in distributed training.
      * </p>
      * 
      * @param enableInterContainerTrafficEncryption
      *        To encrypt all communications between ML compute instances in distributed training, choose
      *        <code>True</code>. Encryption provides greater security for distributed training, but training might take
      *        longer. How long it takes depends on the amount of communication between compute instances, especially if
-     *        you use a deep learning algorithm in distributed training.
+     *        you use a deep learning algorithms in distributed training.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2697,14 +2736,14 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>.
      * Encryption provides greater security for distributed training, but training might take longer. How long it takes
-     * depends on the amount of communication between compute instances, especially if you use a deep learning algorithm
-     * in distributed training.
+     * depends on the amount of communication between compute instances, especially if you use a deep learning
+     * algorithms in distributed training.
      * </p>
      * 
      * @return To encrypt all communications between ML compute instances in distributed training, choose
      *         <code>True</code>. Encryption provides greater security for distributed training, but training might take
      *         longer. How long it takes depends on the amount of communication between compute instances, especially if
-     *         you use a deep learning algorithm in distributed training.
+     *         you use a deep learning algorithms in distributed training.
      */
 
     public Boolean isEnableInterContainerTrafficEncryption() {

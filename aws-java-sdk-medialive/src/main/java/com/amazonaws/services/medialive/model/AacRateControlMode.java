@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Placeholder documentation for AacRateControlMode
+ * Aac Rate Control Mode
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AacRateControlMode {

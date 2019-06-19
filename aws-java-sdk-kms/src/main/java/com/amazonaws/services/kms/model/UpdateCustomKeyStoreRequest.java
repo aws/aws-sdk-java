@@ -56,13 +56,12 @@ public class UpdateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * Enter the cluster ID of the cluster that you used to create the custom key store or a cluster that shares a
-     * backup history with the original cluster. You cannot use this parameter to associate a custom key store with a
-     * different cluster.
-     * </p>
-     * <p>
-     * Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of a
-     * cluster, use the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+     * backup history and has the same cluster certificate as the original cluster. You cannot use this parameter to
+     * associate a custom key store with an unrelated cluster. In addition, the replacement cluster must <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">fulfill the
+     * requirements</a> for a cluster associated with a custom key store. To view the cluster certificate of a cluster,
+     * use the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.
      * </p>
      */
@@ -233,13 +232,12 @@ public class UpdateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * Enter the cluster ID of the cluster that you used to create the custom key store or a cluster that shares a
-     * backup history with the original cluster. You cannot use this parameter to associate a custom key store with a
-     * different cluster.
-     * </p>
-     * <p>
-     * Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of a
-     * cluster, use the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+     * backup history and has the same cluster certificate as the original cluster. You cannot use this parameter to
+     * associate a custom key store with an unrelated cluster. In addition, the replacement cluster must <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">fulfill the
+     * requirements</a> for a cluster associated with a custom key store. To view the cluster certificate of a cluster,
+     * use the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.
      * </p>
      * 
@@ -247,13 +245,12 @@ public class UpdateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      *        Associates the custom key store with a related AWS CloudHSM cluster. </p>
      *        <p>
      *        Enter the cluster ID of the cluster that you used to create the custom key store or a cluster that shares
-     *        a backup history with the original cluster. You cannot use this parameter to associate a custom key store
-     *        with a different cluster.
-     *        </p>
-     *        <p>
-     *        Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of
-     *        a cluster, use the <a
-     *        href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html"
+     *        a backup history and has the same cluster certificate as the original cluster. You cannot use this
+     *        parameter to associate a custom key store with an unrelated cluster. In addition, the replacement cluster
+     *        must <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">
+     *        fulfill the requirements</a> for a cluster associated with a custom key store. To view the cluster
+     *        certificate of a cluster, use the <a
+     *        href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html"
      *        >DescribeClusters</a> operation.
      */
 
@@ -267,26 +264,25 @@ public class UpdateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * Enter the cluster ID of the cluster that you used to create the custom key store or a cluster that shares a
-     * backup history with the original cluster. You cannot use this parameter to associate a custom key store with a
-     * different cluster.
-     * </p>
-     * <p>
-     * Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of a
-     * cluster, use the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+     * backup history and has the same cluster certificate as the original cluster. You cannot use this parameter to
+     * associate a custom key store with an unrelated cluster. In addition, the replacement cluster must <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">fulfill the
+     * requirements</a> for a cluster associated with a custom key store. To view the cluster certificate of a cluster,
+     * use the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.
      * </p>
      * 
      * @return Associates the custom key store with a related AWS CloudHSM cluster. </p>
      *         <p>
      *         Enter the cluster ID of the cluster that you used to create the custom key store or a cluster that shares
-     *         a backup history with the original cluster. You cannot use this parameter to associate a custom key store
-     *         with a different cluster.
-     *         </p>
-     *         <p>
-     *         Clusters that share a backup history have the same cluster certificate. To view the cluster certificate
-     *         of a cluster, use the <a
-     *         href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html"
+     *         a backup history and has the same cluster certificate as the original cluster. You cannot use this
+     *         parameter to associate a custom key store with an unrelated cluster. In addition, the replacement cluster
+     *         must <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">fulfill
+     *         the requirements</a> for a cluster associated with a custom key store. To view the cluster certificate of
+     *         a cluster, use the <a
+     *         href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html"
      *         >DescribeClusters</a> operation.
      */
 
@@ -300,13 +296,12 @@ public class UpdateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * Enter the cluster ID of the cluster that you used to create the custom key store or a cluster that shares a
-     * backup history with the original cluster. You cannot use this parameter to associate a custom key store with a
-     * different cluster.
-     * </p>
-     * <p>
-     * Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of a
-     * cluster, use the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+     * backup history and has the same cluster certificate as the original cluster. You cannot use this parameter to
+     * associate a custom key store with an unrelated cluster. In addition, the replacement cluster must <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">fulfill the
+     * requirements</a> for a cluster associated with a custom key store. To view the cluster certificate of a cluster,
+     * use the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.
      * </p>
      * 
@@ -314,13 +309,12 @@ public class UpdateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      *        Associates the custom key store with a related AWS CloudHSM cluster. </p>
      *        <p>
      *        Enter the cluster ID of the cluster that you used to create the custom key store or a cluster that shares
-     *        a backup history with the original cluster. You cannot use this parameter to associate a custom key store
-     *        with a different cluster.
-     *        </p>
-     *        <p>
-     *        Clusters that share a backup history have the same cluster certificate. To view the cluster certificate of
-     *        a cluster, use the <a
-     *        href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html"
+     *        a backup history and has the same cluster certificate as the original cluster. You cannot use this
+     *        parameter to associate a custom key store with an unrelated cluster. In addition, the replacement cluster
+     *        must <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">
+     *        fulfill the requirements</a> for a cluster associated with a custom key store. To view the cluster
+     *        certificate of a cluster, use the <a
+     *        href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html"
      *        >DescribeClusters</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

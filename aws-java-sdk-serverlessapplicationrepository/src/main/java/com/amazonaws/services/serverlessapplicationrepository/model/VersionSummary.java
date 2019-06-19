@@ -51,7 +51,8 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     private String semanticVersion;
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      */
     private String sourceCodeUrl;
@@ -193,11 +194,13 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      * 
      * @param sourceCodeUrl
-     *        A link to a public repository for the source code of your application.
+     *        A link to a public repository for the source code of your application, for example the URL of a specific
+     *        GitHub commit.
      */
 
     public void setSourceCodeUrl(String sourceCodeUrl) {
@@ -206,10 +209,12 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      * 
-     * @return A link to a public repository for the source code of your application.
+     * @return A link to a public repository for the source code of your application, for example the URL of a specific
+     *         GitHub commit.
      */
 
     public String getSourceCodeUrl() {
@@ -218,11 +223,13 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      * 
      * @param sourceCodeUrl
-     *        A link to a public repository for the source code of your application.
+     *        A link to a public repository for the source code of your application, for example the URL of a specific
+     *        GitHub commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

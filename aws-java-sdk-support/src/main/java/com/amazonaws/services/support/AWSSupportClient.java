@@ -432,6 +432,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddAttachmentsToSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -502,6 +503,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddCommunicationToCase");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -634,6 +636,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCase");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -695,6 +698,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAttachment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -774,6 +778,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCases");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -846,6 +851,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCommunications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -910,6 +916,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServices");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -970,6 +977,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSeverityLevels");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1041,6 +1049,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedAdvisorCheckRefreshStatuses");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1140,6 +1149,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedAdvisorCheckResult");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1201,6 +1211,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedAdvisorCheckSummaries");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1259,6 +1270,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedAdvisorChecks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1343,6 +1355,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RefreshTrustedAdvisorCheck");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1401,6 +1414,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResolveCase");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

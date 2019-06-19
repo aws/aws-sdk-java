@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -45,6 +46,8 @@ public class CreateCachediSCSIVolumeRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSEncrypted").build();
     private static final MarshallingInfo<String> KMSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KMSKey").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateCachediSCSIVolumeRequestMarshaller instance = new CreateCachediSCSIVolumeRequestMarshaller();
 
@@ -71,6 +74,7 @@ public class CreateCachediSCSIVolumeRequestMarshaller {
             protocolMarshaller.marshall(createCachediSCSIVolumeRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createCachediSCSIVolumeRequest.getKMSEncrypted(), KMSENCRYPTED_BINDING);
             protocolMarshaller.marshall(createCachediSCSIVolumeRequest.getKMSKey(), KMSKEY_BINDING);
+            protocolMarshaller.marshall(createCachediSCSIVolumeRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

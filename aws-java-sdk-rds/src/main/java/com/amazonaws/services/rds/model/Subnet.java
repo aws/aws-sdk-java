@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
+ * This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Subnet" target="_top">AWS API Documentation</a>

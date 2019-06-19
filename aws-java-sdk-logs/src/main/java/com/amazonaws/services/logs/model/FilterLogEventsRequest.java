@@ -69,7 +69,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
      * Syntax</a>.
      * </p>
      * <p>
@@ -95,6 +95,11 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * log streams within the log group, interleaved in a single response. If the value is false, all the matched log
      * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
      * false.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be
+     * true. The response from this operation will always interleave events from multiple log streams within a log
+     * group.
      * </p>
      */
     private Boolean interleaved;
@@ -403,7 +408,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
      * Syntax</a>.
      * </p>
      * <p>
@@ -412,7 +417,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param filterPattern
      *        The filter pattern to use. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
      *        Pattern Syntax</a>.</p>
      *        <p>
      *        If not provided, all the events are matched.
@@ -425,7 +430,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
      * Syntax</a>.
      * </p>
      * <p>
@@ -433,7 +438,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return The filter pattern to use. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
      *         Pattern Syntax</a>.</p>
      *         <p>
      *         If not provided, all the events are matched.
@@ -446,7 +451,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
      * Syntax</a>.
      * </p>
      * <p>
@@ -455,7 +460,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param filterPattern
      *        The filter pattern to use. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
      *        Pattern Syntax</a>.</p>
      *        <p>
      *        If not provided, all the events are matched.
@@ -554,12 +559,21 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
      * false.
      * </p>
+     * <p>
+     * <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be
+     * true. The response from this operation will always interleave events from multiple log streams within a log
+     * group.
+     * </p>
      * 
      * @param interleaved
      *        If the value is true, the operation makes a best effort to provide responses that contain events from
      *        multiple log streams within the log group, interleaved in a single response. If the value is false, all
      *        the matched log events in the first log stream are searched first, then those in the next log stream, and
-     *        so on. The default is false.
+     *        so on. The default is false.</p>
+     *        <p>
+     *        <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed
+     *        to be true. The response from this operation will always interleave events from multiple log streams
+     *        within a log group.
      */
 
     public void setInterleaved(Boolean interleaved) {
@@ -573,11 +587,20 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
      * false.
      * </p>
+     * <p>
+     * <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be
+     * true. The response from this operation will always interleave events from multiple log streams within a log
+     * group.
+     * </p>
      * 
      * @return If the value is true, the operation makes a best effort to provide responses that contain events from
      *         multiple log streams within the log group, interleaved in a single response. If the value is false, all
      *         the matched log events in the first log stream are searched first, then those in the next log stream, and
-     *         so on. The default is false.
+     *         so on. The default is false.</p>
+     *         <p>
+     *         <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed
+     *         to be true. The response from this operation will always interleave events from multiple log streams
+     *         within a log group.
      */
 
     public Boolean getInterleaved() {
@@ -591,12 +614,21 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
      * false.
      * </p>
+     * <p>
+     * <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be
+     * true. The response from this operation will always interleave events from multiple log streams within a log
+     * group.
+     * </p>
      * 
      * @param interleaved
      *        If the value is true, the operation makes a best effort to provide responses that contain events from
      *        multiple log streams within the log group, interleaved in a single response. If the value is false, all
      *        the matched log events in the first log stream are searched first, then those in the next log stream, and
-     *        so on. The default is false.
+     *        so on. The default is false.</p>
+     *        <p>
+     *        <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed
+     *        to be true. The response from this operation will always interleave events from multiple log streams
+     *        within a log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -612,11 +644,20 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
      * false.
      * </p>
+     * <p>
+     * <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be
+     * true. The response from this operation will always interleave events from multiple log streams within a log
+     * group.
+     * </p>
      * 
      * @return If the value is true, the operation makes a best effort to provide responses that contain events from
      *         multiple log streams within the log group, interleaved in a single response. If the value is false, all
      *         the matched log events in the first log stream are searched first, then those in the next log stream, and
-     *         so on. The default is false.
+     *         so on. The default is false.</p>
+     *         <p>
+     *         <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed
+     *         to be true. The response from this operation will always interleave events from multiple log streams
+     *         within a log group.
      */
 
     public Boolean isInterleaved() {

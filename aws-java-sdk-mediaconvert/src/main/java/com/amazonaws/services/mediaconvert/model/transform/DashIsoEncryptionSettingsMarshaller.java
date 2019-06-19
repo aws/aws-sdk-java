@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DashIsoEncryptionSettingsMarshaller {
 
+    private static final MarshallingInfo<String> PLAYBACKDEVICECOMPATIBILITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("playbackDeviceCompatibility").build();
     private static final MarshallingInfo<StructuredPojo> SPEKEKEYPROVIDER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spekeKeyProvider").build();
 
@@ -46,6 +48,7 @@ public class DashIsoEncryptionSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(dashIsoEncryptionSettings.getPlaybackDeviceCompatibility(), PLAYBACKDEVICECOMPATIBILITY_BINDING);
             protocolMarshaller.marshall(dashIsoEncryptionSettings.getSpekeKeyProvider(), SPEKEKEYPROVIDER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

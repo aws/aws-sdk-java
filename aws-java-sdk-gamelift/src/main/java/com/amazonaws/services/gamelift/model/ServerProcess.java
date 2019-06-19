@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A set of instructions for launching server processes on each instance in a fleet. Each instruction set identifies the
- * location of the server executable, optional launch parameters, and the number of server processes with this
- * configuration to maintain concurrently on the instance. Server process configurations make up a fleet's
+ * A set of instructions for launching server processes on each instance in a fleet. Server processes run either a
+ * custom game build executable or a Realtime Servers script. Each instruction set identifies the location of the custom
+ * game build executable or Realtime launch script, optional launch parameters, and the number of server processes with
+ * this configuration to maintain concurrently on the instance. Server process configurations make up a fleet's
  * <code> <a>RuntimeConfiguration</a> </code>.
  * </p>
  * 
@@ -33,18 +34,27 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Location of the server executable in a game build. All game builds are installed on instances at the root : for
-     * Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows game build
-     * with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch path of "
-     * <code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file located at
-     * <code>MyGame/latest/server.exe</code> must have a launch path of "
-     * <code>/local/game/MyGame/latest/server.exe</code>".
+     * Location of the server executable in a custom game build or the name of the Realtime script file that contains
+     * the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Windows (for custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "
+     * <code>/local/game/MyRealtimeScript.js</code>"
+     * </p>
+     * </li>
+     * </ul>
      */
     private String launchPath;
     /**
      * <p>
-     * Optional list of parameters to pass to the server executable on launch.
+     * Optional list of parameters to pass to the server executable or Realtime script on launch.
      * </p>
      */
     private String parameters;
@@ -57,21 +67,40 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Location of the server executable in a game build. All game builds are installed on instances at the root : for
-     * Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows game build
-     * with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch path of "
-     * <code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file located at
-     * <code>MyGame/latest/server.exe</code> must have a launch path of "
-     * <code>/local/game/MyGame/latest/server.exe</code>".
+     * Location of the server executable in a custom game build or the name of the Realtime script file that contains
+     * the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Windows (for custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "
+     * <code>/local/game/MyRealtimeScript.js</code>"
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param launchPath
-     *        Location of the server executable in a game build. All game builds are installed on instances at the root
-     *        : for Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows
-     *        game build with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch
-     *        path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file
-     *        located at <code>MyGame/latest/server.exe</code> must have a launch path of "
-     *        <code>/local/game/MyGame/latest/server.exe</code>".
+     *        Location of the server executable in a custom game build or the name of the Realtime script file that
+     *        contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at
+     *        the root: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Windows (for custom game builds only): <code>C:\game</code>. Example: "
+     *        <code>C:\game\MyGame\server.exe</code>"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "
+     *        <code>/local/game/MyRealtimeScript.js</code>"
+     *        </p>
+     *        </li>
      */
 
     public void setLaunchPath(String launchPath) {
@@ -80,20 +109,39 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Location of the server executable in a game build. All game builds are installed on instances at the root : for
-     * Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows game build
-     * with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch path of "
-     * <code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file located at
-     * <code>MyGame/latest/server.exe</code> must have a launch path of "
-     * <code>/local/game/MyGame/latest/server.exe</code>".
+     * Location of the server executable in a custom game build or the name of the Realtime script file that contains
+     * the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Windows (for custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "
+     * <code>/local/game/MyRealtimeScript.js</code>"
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Location of the server executable in a game build. All game builds are installed on instances at the root
-     *         : for Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows
-     *         game build with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch
-     *         path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file
-     *         located at <code>MyGame/latest/server.exe</code> must have a launch path of "
-     *         <code>/local/game/MyGame/latest/server.exe</code>".
+     * @return Location of the server executable in a custom game build or the name of the Realtime script file that
+     *         contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at
+     *         the root: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Windows (for custom game builds only): <code>C:\game</code>. Example: "
+     *         <code>C:\game\MyGame\server.exe</code>"
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "
+     *         <code>/local/game/MyRealtimeScript.js</code>"
+     *         </p>
+     *         </li>
      */
 
     public String getLaunchPath() {
@@ -102,21 +150,40 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Location of the server executable in a game build. All game builds are installed on instances at the root : for
-     * Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows game build
-     * with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch path of "
-     * <code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file located at
-     * <code>MyGame/latest/server.exe</code> must have a launch path of "
-     * <code>/local/game/MyGame/latest/server.exe</code>".
+     * Location of the server executable in a custom game build or the name of the Realtime script file that contains
+     * the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Windows (for custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "
+     * <code>/local/game/MyRealtimeScript.js</code>"
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param launchPath
-     *        Location of the server executable in a game build. All game builds are installed on instances at the root
-     *        : for Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows
-     *        game build with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch
-     *        path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file
-     *        located at <code>MyGame/latest/server.exe</code> must have a launch path of "
-     *        <code>/local/game/MyGame/latest/server.exe</code>".
+     *        Location of the server executable in a custom game build or the name of the Realtime script file that
+     *        contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at
+     *        the root: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Windows (for custom game builds only): <code>C:\game</code>. Example: "
+     *        <code>C:\game\MyGame\server.exe</code>"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "
+     *        <code>/local/game/MyRealtimeScript.js</code>"
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +194,11 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Optional list of parameters to pass to the server executable on launch.
+     * Optional list of parameters to pass to the server executable or Realtime script on launch.
      * </p>
      * 
      * @param parameters
-     *        Optional list of parameters to pass to the server executable on launch.
+     *        Optional list of parameters to pass to the server executable or Realtime script on launch.
      */
 
     public void setParameters(String parameters) {
@@ -140,10 +207,10 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Optional list of parameters to pass to the server executable on launch.
+     * Optional list of parameters to pass to the server executable or Realtime script on launch.
      * </p>
      * 
-     * @return Optional list of parameters to pass to the server executable on launch.
+     * @return Optional list of parameters to pass to the server executable or Realtime script on launch.
      */
 
     public String getParameters() {
@@ -152,11 +219,11 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Optional list of parameters to pass to the server executable on launch.
+     * Optional list of parameters to pass to the server executable or Realtime script on launch.
      * </p>
      * 
      * @param parameters
-     *        Optional list of parameters to pass to the server executable on launch.
+     *        Optional list of parameters to pass to the server executable or Realtime script on launch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

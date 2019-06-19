@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An Active Directory Domain membership record associated with the DB instance.
+ * An Active Directory Domain membership record associated with a DB instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DomainMembership" target="_top">AWS API

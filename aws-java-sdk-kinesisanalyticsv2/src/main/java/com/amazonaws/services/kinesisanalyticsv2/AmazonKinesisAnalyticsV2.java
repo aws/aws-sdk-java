@@ -27,7 +27,9 @@ import com.amazonaws.services.kinesisanalyticsv2.model.*;
  * </p>
  * <p>
  * <p>
- * Documentation for Kinesis Data Analytics API v2
+ * Amazon Kinesis Data Analytics is a fully managed service that you can use to process and analyze streaming data using
+ * SQL or Java. The service enables you to quickly author and run SQL or Java code against streaming sources to perform
+ * time series analytics, feed real-time dashboards, and create real-time metrics.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -59,6 +61,8 @@ public interface AmazonKinesisAnalyticsV2 {
      *         of attempting to modify an application without using the current application ID.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.AddApplicationCloudWatchLoggingOption
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationCloudWatchLoggingOption"
@@ -202,15 +206,9 @@ public interface AmazonKinesisAnalyticsV2 {
     /**
      * <p>
      * Creates an Amazon Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics
-     * application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/Java/creating-app.html">Creating an
-     * Application</a>.
+     * application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
+     * an Application</a>.
      * </p>
-     * <note>
-     * <p>
-     * SQL is not enabled for this private beta release. Using SQL parameters (such as
-     * <a>SqlApplicationConfiguration</a>) will result in an error.
-     * </p>
-     * </note>
      * 
      * @param createApplicationRequest
      * @return Result of the CreateApplication operation returned by the service.
@@ -224,6 +222,13 @@ public interface AmazonKinesisAnalyticsV2 {
      *         The specified input parameter value is not valid.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws TooManyTagsException
+     *         Application created with too many tags, or too many tags added to an application. Note that the maximum
+     *         number of application tags includes system tags. The maximum number of user-defined application tags is
+     *         50.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
      * @sample AmazonKinesisAnalyticsV2.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication"
      *      target="_top">AWS API Documentation</a>
@@ -275,6 +280,8 @@ public interface AmazonKinesisAnalyticsV2 {
      *         The specified input parameter value is not valid.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.DeleteApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplication"
      *      target="_top">AWS API Documentation</a>
@@ -299,6 +306,8 @@ public interface AmazonKinesisAnalyticsV2 {
      *         of attempting to modify an application without using the current application ID.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.DeleteApplicationCloudWatchLoggingOption
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationCloudWatchLoggingOption"
@@ -530,15 +539,29 @@ public interface AmazonKinesisAnalyticsV2 {
 
     /**
      * <p>
+     * Retrieves the list of key-value tags assigned to the application.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @sample AmazonKinesisAnalyticsV2.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Starts the specified Amazon Kinesis Data Analytics application. After creating an application, you must
      * exclusively call this operation to start your application.
      * </p>
-     * <note>
-     * <p>
-     * SQL is not enabled for this private beta. Using SQL parameters (such as
-     * <a>RunConfiguration$SqlRunConfigurations</a>) will result in an error.
-     * </p>
-     * </note>
      * 
      * @param startApplicationRequest
      * @return Result of the StartApplication operation returned by the service.
@@ -574,11 +597,66 @@ public interface AmazonKinesisAnalyticsV2 {
      *         The specified input parameter value is not valid.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.StopApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication"
      *      target="_top">AWS API Documentation</a>
      */
     StopApplicationResult stopApplication(StopApplicationRequest stopApplicationRequest);
+
+    /**
+     * <p>
+     * Adds one or more key-value tags to a Kinesis Analytics application. Note that the maximum number of application
+     * tags includes system tags. The maximum number of user-defined application tags is 50.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws TooManyTagsException
+     *         Application created with too many tags, or too many tags added to an application. Note that the maximum
+     *         number of application tags includes system tags. The maximum number of user-defined application tags is
+     *         50.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @sample AmazonKinesisAnalyticsV2.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from a Kinesis Analytics application.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws TooManyTagsException
+     *         Application created with too many tags, or too many tags added to an application. Note that the maximum
+     *         number of application tags includes system tags. The maximum number of user-defined application tags is
+     *         50.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @sample AmazonKinesisAnalyticsV2.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>
@@ -588,12 +666,6 @@ public interface AmazonKinesisAnalyticsV2 {
      * <p>
      * Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update your application.
      * </p>
-     * <note>
-     * <p>
-     * SQL is not enabled for this private beta. Using SQL parameters (such as <a>SqlApplicationConfigurationUpdate</a>)
-     * will result in an error.
-     * </p>
-     * </note>
      * 
      * @param updateApplicationRequest
      * @return Result of the UpdateApplication operation returned by the service.
@@ -610,6 +682,8 @@ public interface AmazonKinesisAnalyticsV2 {
      *         of attempting to modify an application without using the current application ID.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication"
      *      target="_top">AWS API Documentation</a>

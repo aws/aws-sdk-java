@@ -26,43 +26,43 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      */
     private String windowExecutionId;
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * The ID of the specific task execution in the maintenance window task that was retrieved.
      * </p>
      */
     private String taskExecutionId;
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      */
     private String taskArn;
     /**
      * <p>
-     * The role that was assumed when executing the task.
+     * The role that was assumed when running the task.
      * </p>
      */
     private String serviceRole;
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The parameters passed to the task when it was executed.
+     * The parameters passed to the task when it was run.
      * </p>
      * <note>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
@@ -123,11 +123,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that includes the task.
+     *        The ID of the maintenance window execution that includes the task.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -136,10 +136,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution that includes the task.
+     * @return The ID of the maintenance window execution that includes the task.
      */
 
     public String getWindowExecutionId() {
@@ -148,11 +148,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that includes the task.
+     *        The ID of the maintenance window execution that includes the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +163,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * The ID of the specific task execution in the maintenance window task that was retrieved.
      * </p>
      * 
      * @param taskExecutionId
-     *        The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     *        The ID of the specific task execution in the maintenance window task that was retrieved.
      */
 
     public void setTaskExecutionId(String taskExecutionId) {
@@ -176,10 +176,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * The ID of the specific task execution in the maintenance window task that was retrieved.
      * </p>
      * 
-     * @return The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * @return The ID of the specific task execution in the maintenance window task that was retrieved.
      */
 
     public String getTaskExecutionId() {
@@ -188,11 +188,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * The ID of the specific task execution in the maintenance window task that was retrieved.
      * </p>
      * 
      * @param taskExecutionId
-     *        The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     *        The ID of the specific task execution in the maintenance window task that was retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,11 +203,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the executed task.
+     *        The ARN of the task that ran.
      */
 
     public void setTaskArn(String taskArn) {
@@ -216,10 +216,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
-     * @return The ARN of the executed task.
+     * @return The ARN of the task that ran.
      */
 
     public String getTaskArn() {
@@ -228,11 +228,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the executed task.
+     *        The ARN of the task that ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +243,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The role that was assumed when executing the task.
+     * The role that was assumed when running the task.
      * </p>
      * 
      * @param serviceRole
-     *        The role that was assumed when executing the task.
+     *        The role that was assumed when running the task.
      */
 
     public void setServiceRole(String serviceRole) {
@@ -256,10 +256,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The role that was assumed when executing the task.
+     * The role that was assumed when running the task.
      * </p>
      * 
-     * @return The role that was assumed when executing the task.
+     * @return The role that was assumed when running the task.
      */
 
     public String getServiceRole() {
@@ -268,11 +268,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The role that was assumed when executing the task.
+     * The role that was assumed when running the task.
      * </p>
      * 
      * @param serviceRole
-     *        The role that was assumed when executing the task.
+     *        The role that was assumed when running the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,11 +283,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
      * @param type
-     *        The type of task executed.
+     *        The type of task that was run.
      * @see MaintenanceWindowTaskType
      */
 
@@ -297,10 +297,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
-     * @return The type of task executed.
+     * @return The type of task that was run.
      * @see MaintenanceWindowTaskType
      */
 
@@ -310,11 +310,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
      * @param type
-     *        The type of task executed.
+     *        The type of task that was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -326,11 +326,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
      * @param type
-     *        The type of task executed.
+     *        The type of task that was run.
      * @see MaintenanceWindowTaskType
      */
 
@@ -340,11 +340,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
      * @param type
-     *        The type of task executed.
+     *        The type of task that was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -356,13 +356,13 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The parameters passed to the task when it was executed.
+     * The parameters passed to the task when it was run.
      * </p>
      * <note>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
@@ -376,11 +376,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      * 
-     * @return The parameters passed to the task when it was executed.</p> <note>
+     * @return The parameters passed to the task when it was run.</p> <note>
      *         <p>
      *         <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *         instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure.
-     *         For information about how Systems Manager handles these options for the supported Maintenance Window task
+     *         For information about how Systems Manager handles these options for the supported maintenance window task
      *         types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *         </p>
      *         </note>
@@ -403,13 +403,13 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The parameters passed to the task when it was executed.
+     * The parameters passed to the task when it was run.
      * </p>
      * <note>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
@@ -424,11 +424,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param taskParameters
-     *        The parameters passed to the task when it was executed.</p> <note>
+     *        The parameters passed to the task when it was run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
-     *        information about how Systems Manager handles these options for the supported Maintenance Window task
+     *        information about how Systems Manager handles these options for the supported maintenance window task
      *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      *        </note>
@@ -453,13 +453,13 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The parameters passed to the task when it was executed.
+     * The parameters passed to the task when it was run.
      * </p>
      * <note>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
@@ -479,11 +479,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param taskParameters
-     *        The parameters passed to the task when it was executed.</p> <note>
+     *        The parameters passed to the task when it was run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
-     *        information about how Systems Manager handles these options for the supported Maintenance Window task
+     *        information about how Systems Manager handles these options for the supported maintenance window task
      *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      *        </note>
@@ -511,13 +511,13 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The parameters passed to the task when it was executed.
+     * The parameters passed to the task when it was run.
      * </p>
      * <note>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
@@ -532,11 +532,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param taskParameters
-     *        The parameters passed to the task when it was executed.</p> <note>
+     *        The parameters passed to the task when it was run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
-     *        information about how Systems Manager handles these options for the supported Maintenance Window task
+     *        information about how Systems Manager handles these options for the supported maintenance window task
      *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      *        </note>

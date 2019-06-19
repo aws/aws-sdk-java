@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribeVolumeStatus.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -34,7 +32,7 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
     private String nextToken;
     /**
      * <p>
-     * A list of volumes.
+     * Information about the status of the volumes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VolumeStatusItem> volumeStatuses;
@@ -87,10 +85,10 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of volumes.
+     * Information about the status of the volumes.
      * </p>
      * 
-     * @return A list of volumes.
+     * @return Information about the status of the volumes.
      */
 
     public java.util.List<VolumeStatusItem> getVolumeStatuses() {
@@ -102,11 +100,11 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of volumes.
+     * Information about the status of the volumes.
      * </p>
      * 
      * @param volumeStatuses
-     *        A list of volumes.
+     *        Information about the status of the volumes.
      */
 
     public void setVolumeStatuses(java.util.Collection<VolumeStatusItem> volumeStatuses) {
@@ -120,7 +118,7 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of volumes.
+     * Information about the status of the volumes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +127,7 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param volumeStatuses
-     *        A list of volumes.
+     *        Information about the status of the volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +143,11 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of volumes.
+     * Information about the status of the volumes.
      * </p>
      * 
      * @param volumeStatuses
-     *        A list of volumes.
+     *        Information about the status of the volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

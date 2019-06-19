@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterParameterGroup"
  *      target="_top">AWS API Documentation</a>
@@ -61,7 +60,11 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * The tags to be assigned to the new DB cluster parameter group.
+     * </p>
+     */
     private java.util.List<Tag> tags;
 
     /**
@@ -284,7 +287,11 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * The tags to be assigned to the new DB cluster parameter group.
+     * </p>
+     * 
+     * @return The tags to be assigned to the new DB cluster parameter group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -292,7 +299,12 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The tags to be assigned to the new DB cluster parameter group.
+     * </p>
+     * 
      * @param tags
+     *        The tags to be assigned to the new DB cluster parameter group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -306,12 +318,16 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
+     * The tags to be assigned to the new DB cluster parameter group.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        The tags to be assigned to the new DB cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,7 +342,12 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The tags to be assigned to the new DB cluster parameter group.
+     * </p>
+     * 
      * @param tags
+     *        The tags to be assigned to the new DB cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

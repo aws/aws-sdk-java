@@ -25,7 +25,7 @@ public class DescribeFpgaImagesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about one or more FPGA images.
+     * Information about the FPGA images.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FpgaImage> fpgaImages;
@@ -39,10 +39,10 @@ public class DescribeFpgaImagesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about one or more FPGA images.
+     * Information about the FPGA images.
      * </p>
      * 
-     * @return Information about one or more FPGA images.
+     * @return Information about the FPGA images.
      */
 
     public java.util.List<FpgaImage> getFpgaImages() {
@@ -54,11 +54,11 @@ public class DescribeFpgaImagesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about one or more FPGA images.
+     * Information about the FPGA images.
      * </p>
      * 
      * @param fpgaImages
-     *        Information about one or more FPGA images.
+     *        Information about the FPGA images.
      */
 
     public void setFpgaImages(java.util.Collection<FpgaImage> fpgaImages) {
@@ -72,7 +72,7 @@ public class DescribeFpgaImagesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about one or more FPGA images.
+     * Information about the FPGA images.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeFpgaImagesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param fpgaImages
-     *        Information about one or more FPGA images.
+     *        Information about the FPGA images.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeFpgaImagesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about one or more FPGA images.
+     * Information about the FPGA images.
      * </p>
      * 
      * @param fpgaImages
-     *        Information about one or more FPGA images.
+     *        Information about the FPGA images.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

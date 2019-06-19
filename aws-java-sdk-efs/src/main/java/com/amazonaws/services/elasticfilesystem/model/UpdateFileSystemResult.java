@@ -105,15 +105,17 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     * bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or change
-     * between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
-     * change.
+     * <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
+     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
+     * decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as
+     * long as it’s been more than 24 hours since the last decrease or throughput mode change.
      * </p>
      */
     private String throughputMode;
     /**
      * <p>
-     * The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput is 1024
+     * The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
+     * Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is 1024
      * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      * Increase</a> in the <i>Amazon EFS User Guide.</i>
@@ -712,16 +714,18 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     * bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or change
-     * between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
-     * change.
+     * <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
+     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
+     * decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as
+     * long as it’s been more than 24 hours since the last decrease or throughput mode change.
      * </p>
      * 
      * @param throughputMode
      *        The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     *        bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or
-     *        change between the throughput modes as long as it’s been more than 24 hours since the last decrease or
-     *        throughput mode change.
+     *        <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
+     *        <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
+     *        decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
+     *        modes as long as it’s been more than 24 hours since the last decrease or throughput mode change.
      * @see ThroughputMode
      */
 
@@ -732,15 +736,18 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     * bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or change
-     * between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
-     * change.
+     * <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
+     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
+     * decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as
+     * long as it’s been more than 24 hours since the last decrease or throughput mode change.
      * </p>
      * 
      * @return The throughput mode for a file system. There are two throughput modes to choose from for your file
-     *         system: bursting and provisioned. You can decrease your file system's throughput in Provisioned
-     *         Throughput mode or change between the throughput modes as long as it’s been more than 24 hours since the
-     *         last decrease or throughput mode change.
+     *         system: <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
+     *         <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You
+     *         can decrease your file system's throughput in Provisioned Throughput mode or change between the
+     *         throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
+     *         change.
      * @see ThroughputMode
      */
 
@@ -751,16 +758,18 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     * bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or change
-     * between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
-     * change.
+     * <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
+     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
+     * decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as
+     * long as it’s been more than 24 hours since the last decrease or throughput mode change.
      * </p>
      * 
      * @param throughputMode
      *        The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     *        bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or
-     *        change between the throughput modes as long as it’s been more than 24 hours since the last decrease or
-     *        throughput mode change.
+     *        <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
+     *        <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
+     *        decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
+     *        modes as long as it’s been more than 24 hours since the last decrease or throughput mode change.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThroughputMode
      */
@@ -773,16 +782,18 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     * bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or change
-     * between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
-     * change.
+     * <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
+     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
+     * decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as
+     * long as it’s been more than 24 hours since the last decrease or throughput mode change.
      * </p>
      * 
      * @param throughputMode
      *        The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     *        bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or
-     *        change between the throughput modes as long as it’s been more than 24 hours since the last decrease or
-     *        throughput mode change.
+     *        <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
+     *        <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
+     *        decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
+     *        modes as long as it’s been more than 24 hours since the last decrease or throughput mode change.
      * @see ThroughputMode
      */
 
@@ -793,16 +804,18 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     * bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or change
-     * between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
-     * change.
+     * <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
+     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
+     * decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as
+     * long as it’s been more than 24 hours since the last decrease or throughput mode change.
      * </p>
      * 
      * @param throughputMode
      *        The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     *        bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or
-     *        change between the throughput modes as long as it’s been more than 24 hours since the last decrease or
-     *        throughput mode change.
+     *        <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
+     *        <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
+     *        decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
+     *        modes as long as it’s been more than 24 hours since the last decrease or throughput mode change.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThroughputMode
      */
@@ -814,15 +827,17 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput is 1024
+     * The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
+     * Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is 1024
      * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      * Increase</a> in the <i>Amazon EFS User Guide.</i>
      * </p>
      * 
      * @param provisionedThroughputInMibps
-     *        The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput
-     *        is 1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
+     *        The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
+     *        Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is
+     *        1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      *        Increase</a> in the <i>Amazon EFS User Guide.</i>
      */
@@ -833,14 +848,16 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput is 1024
+     * The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
+     * Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is 1024
      * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      * Increase</a> in the <i>Amazon EFS User Guide.</i>
      * </p>
      * 
-     * @return The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput
-     *         is 1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
+     * @return The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
+     *         Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is
+     *         1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
      *         href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      *         Increase</a> in the <i>Amazon EFS User Guide.</i>
      */
@@ -851,15 +868,17 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput is 1024
+     * The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
+     * Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is 1024
      * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      * Increase</a> in the <i>Amazon EFS User Guide.</i>
      * </p>
      * 
      * @param provisionedThroughputInMibps
-     *        The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput
-     *        is 1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
+     *        The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
+     *        Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is
+     *        1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      *        Increase</a> in the <i>Amazon EFS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.

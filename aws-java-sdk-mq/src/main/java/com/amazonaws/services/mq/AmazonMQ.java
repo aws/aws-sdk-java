@@ -148,7 +148,7 @@ public interface AmazonMQ {
     DeleteBrokerResult deleteBroker(DeleteBrokerRequest deleteBrokerRequest);
 
     /**
-     * Remove a tag from a resource.
+     * Removes a tag from a resource.
      * 
      * @param deleteTagsRequest
      * @return Result of the DeleteTags operation returned by the service.
@@ -203,6 +203,40 @@ public interface AmazonMQ {
      *      Documentation</a>
      */
     DescribeBrokerResult describeBroker(DescribeBrokerRequest describeBrokerRequest);
+
+    /**
+     * Describe available engine types and versions.
+     * 
+     * @param describeBrokerEngineTypesRequest
+     * @return Result of the DescribeBrokerEngineTypes operation returned by the service.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @sample AmazonMQ.DescribeBrokerEngineTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeBrokerEngineTypesResult describeBrokerEngineTypes(DescribeBrokerEngineTypesRequest describeBrokerEngineTypesRequest);
+
+    /**
+     * Describe available broker instance options.
+     * 
+     * @param describeBrokerInstanceOptionsRequest
+     * @return Result of the DescribeBrokerInstanceOptions operation returned by the service.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @sample AmazonMQ.DescribeBrokerInstanceOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeBrokerInstanceOptionsResult describeBrokerInstanceOptions(DescribeBrokerInstanceOptionsRequest describeBrokerInstanceOptionsRequest);
 
     /**
      * Returns information about the specified configuration.

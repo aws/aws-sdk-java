@@ -27,13 +27,19 @@ public class ListJobTemplatesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /** Optionally, specify a job template category to limit responses to only job templates from that category. */
     private String category;
-
+    /**
+     * Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+     */
     private String listBy;
     /** Optional. Number of job templates, up to twenty, that will be returned at one time. */
     private Integer maxResults;
     /** Use this string, provided with the response to a previous request, to request the next batch of job templates. */
     private String nextToken;
-
+    /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     */
     private String order;
 
     /**
@@ -71,7 +77,12 @@ public class ListJobTemplatesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+     * 
      * @param listBy
+     *        Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or
+     *        chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
      * @see JobTemplateListBy
      */
 
@@ -80,7 +91,11 @@ public class ListJobTemplatesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+     * 
+     * @return Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or
+     *         chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
      * @see JobTemplateListBy
      */
 
@@ -89,7 +104,12 @@ public class ListJobTemplatesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+     * 
      * @param listBy
+     *        Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or
+     *        chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobTemplateListBy
      */
@@ -100,7 +120,12 @@ public class ListJobTemplatesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+     * 
      * @param listBy
+     *        Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or
+     *        chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobTemplateListBy
      */
@@ -182,7 +207,12 @@ public class ListJobTemplatesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
      * @param order
+     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        DESCENDING order. Default varies by resource.
      * @see Order
      */
 
@@ -191,7 +221,11 @@ public class ListJobTemplatesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
+     * @return When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *         DESCENDING order. Default varies by resource.
      * @see Order
      */
 
@@ -200,7 +234,12 @@ public class ListJobTemplatesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
      * @param order
+     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        DESCENDING order. Default varies by resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
      */
@@ -211,7 +250,12 @@ public class ListJobTemplatesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
      * @param order
+     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        DESCENDING order. Default varies by resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
      */

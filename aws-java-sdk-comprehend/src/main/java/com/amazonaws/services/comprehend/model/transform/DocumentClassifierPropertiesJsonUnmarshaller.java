@@ -84,6 +84,10 @@ public class DocumentClassifierPropertiesJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     documentClassifierProperties.setInputDataConfig(DocumentClassifierInputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("OutputDataConfig", targetDepth)) {
+                    context.nextToken();
+                    documentClassifierProperties.setOutputDataConfig(DocumentClassifierOutputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ClassifierMetadata", targetDepth)) {
                     context.nextToken();
                     documentClassifierProperties.setClassifierMetadata(ClassifierMetadataJsonUnmarshaller.getInstance().unmarshall(context));
@@ -91,6 +95,14 @@ public class DocumentClassifierPropertiesJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("DataAccessRoleArn", targetDepth)) {
                     context.nextToken();
                     documentClassifierProperties.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VolumeKmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    documentClassifierProperties.setVolumeKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VpcConfig", targetDepth)) {
+                    context.nextToken();
+                    documentClassifierProperties.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

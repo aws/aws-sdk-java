@@ -26,18 +26,18 @@ public class RegisterTargetWithMaintenanceWindowResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the target definition in this Maintenance Window.
+     * The ID of the target definition in this maintenance window.
      * </p>
      */
     private String windowTargetId;
 
     /**
      * <p>
-     * The ID of the target definition in this Maintenance Window.
+     * The ID of the target definition in this maintenance window.
      * </p>
      * 
      * @param windowTargetId
-     *        The ID of the target definition in this Maintenance Window.
+     *        The ID of the target definition in this maintenance window.
      */
 
     public void setWindowTargetId(String windowTargetId) {
@@ -46,10 +46,10 @@ public class RegisterTargetWithMaintenanceWindowResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the target definition in this Maintenance Window.
+     * The ID of the target definition in this maintenance window.
      * </p>
      * 
-     * @return The ID of the target definition in this Maintenance Window.
+     * @return The ID of the target definition in this maintenance window.
      */
 
     public String getWindowTargetId() {
@@ -58,11 +58,11 @@ public class RegisterTargetWithMaintenanceWindowResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the target definition in this Maintenance Window.
+     * The ID of the target definition in this maintenance window.
      * </p>
      * 
      * @param windowTargetId
-     *        The ID of the target definition in this Maintenance Window.
+     *        The ID of the target definition in this maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

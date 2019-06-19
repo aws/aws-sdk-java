@@ -59,6 +59,12 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
     private com.amazonaws.internal.SdkInternalList<String> groups;
     /**
      * <p>
+     * The type of network interface.
+     * </p>
+     */
+    private String interfaceType;
+    /**
+     * <p>
      * The number of IPv6 addresses for the network interface.
      * </p>
      */
@@ -354,6 +360,46 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
 
     public LaunchTemplateInstanceNetworkInterfaceSpecification withGroups(java.util.Collection<String> groups) {
         setGroups(groups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of network interface.
+     * </p>
+     * 
+     * @param interfaceType
+     *        The type of network interface.
+     */
+
+    public void setInterfaceType(String interfaceType) {
+        this.interfaceType = interfaceType;
+    }
+
+    /**
+     * <p>
+     * The type of network interface.
+     * </p>
+     * 
+     * @return The type of network interface.
+     */
+
+    public String getInterfaceType() {
+        return this.interfaceType;
+    }
+
+    /**
+     * <p>
+     * The type of network interface.
+     * </p>
+     * 
+     * @param interfaceType
+     *        The type of network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateInstanceNetworkInterfaceSpecification withInterfaceType(String interfaceType) {
+        setInterfaceType(interfaceType);
         return this;
     }
 
@@ -725,6 +771,8 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
             sb.append("DeviceIndex: ").append(getDeviceIndex()).append(",");
         if (getGroups() != null)
             sb.append("Groups: ").append(getGroups()).append(",");
+        if (getInterfaceType() != null)
+            sb.append("InterfaceType: ").append(getInterfaceType()).append(",");
         if (getIpv6AddressCount() != null)
             sb.append("Ipv6AddressCount: ").append(getIpv6AddressCount()).append(",");
         if (getIpv6Addresses() != null)
@@ -773,6 +821,10 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
             return false;
         if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
             return false;
+        if (other.getInterfaceType() == null ^ this.getInterfaceType() == null)
+            return false;
+        if (other.getInterfaceType() != null && other.getInterfaceType().equals(this.getInterfaceType()) == false)
+            return false;
         if (other.getIpv6AddressCount() == null ^ this.getIpv6AddressCount() == null)
             return false;
         if (other.getIpv6AddressCount() != null && other.getIpv6AddressCount().equals(this.getIpv6AddressCount()) == false)
@@ -815,6 +867,7 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDeviceIndex() == null) ? 0 : getDeviceIndex().hashCode());
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
+        hashCode = prime * hashCode + ((getInterfaceType() == null) ? 0 : getInterfaceType().hashCode());
         hashCode = prime * hashCode + ((getIpv6AddressCount() == null) ? 0 : getIpv6AddressCount().hashCode());
         hashCode = prime * hashCode + ((getIpv6Addresses() == null) ? 0 : getIpv6Addresses().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());

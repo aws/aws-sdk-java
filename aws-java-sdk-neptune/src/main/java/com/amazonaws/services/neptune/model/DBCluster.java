@@ -175,7 +175,7 @@ public class DBCluster implements Serializable, Cloneable {
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     * Not supported by Neptune.
      * </p>
      */
     private String replicationSourceIdentifier;
@@ -255,6 +255,12 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date clusterCreateTime;
+    /**
+     * <p>
+     * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * </p>
+     */
+    private java.util.List<String> enabledCloudwatchLogsExports;
 
     /**
      * <p>
@@ -804,8 +810,8 @@ public class DBCluster implements Serializable, Cloneable {
      *        The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections
      *        across the Read Replicas that are available in a DB cluster. As clients request new connections to the
      *        reader endpoint, Neptune distributes the connection requests among the Read Replicas in the DB cluster.
-     *        This functionality can help balance your read workload across multiple Read Replicas in your DB cluster.
-     *        </p>
+     *        This functionality can help balance your read workload across multiple Read Replicas in your DB
+     *        cluster.</p>
      *        <p>
      *        If a failover occurs, and the Read Replica that you are connected to is promoted to be the primary
      *        instance, your connection is dropped. To continue sending your read workload to other Read Replicas in the
@@ -832,8 +838,8 @@ public class DBCluster implements Serializable, Cloneable {
      * @return The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections
      *         across the Read Replicas that are available in a DB cluster. As clients request new connections to the
      *         reader endpoint, Neptune distributes the connection requests among the Read Replicas in the DB cluster.
-     *         This functionality can help balance your read workload across multiple Read Replicas in your DB cluster.
-     *         </p>
+     *         This functionality can help balance your read workload across multiple Read Replicas in your DB
+     *         cluster.</p>
      *         <p>
      *         If a failover occurs, and the Read Replica that you are connected to is promoted to be the primary
      *         instance, your connection is dropped. To continue sending your read workload to other Read Replicas in
@@ -861,8 +867,8 @@ public class DBCluster implements Serializable, Cloneable {
      *        The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections
      *        across the Read Replicas that are available in a DB cluster. As clients request new connections to the
      *        reader endpoint, Neptune distributes the connection requests among the Read Replicas in the DB cluster.
-     *        This functionality can help balance your read workload across multiple Read Replicas in your DB cluster.
-     *        </p>
+     *        This functionality can help balance your read workload across multiple Read Replicas in your DB
+     *        cluster.</p>
      *        <p>
      *        If a failover occurs, and the Read Replica that you are connected to is promoted to be the primary
      *        instance, your connection is dropped. To continue sending your read workload to other Read Replicas in the
@@ -1288,11 +1294,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param replicationSourceIdentifier
-     *        Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     *        Not supported by Neptune.
      */
 
     public void setReplicationSourceIdentifier(String replicationSourceIdentifier) {
@@ -1301,10 +1307,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     * @return Not supported by Neptune.
      */
 
     public String getReplicationSourceIdentifier() {
@@ -1313,11 +1319,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param replicationSourceIdentifier
-     *        Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1981,6 +1987,76 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * </p>
+     * 
+     * @return A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     */
+
+    public java.util.List<String> getEnabledCloudwatchLogsExports() {
+        return enabledCloudwatchLogsExports;
+    }
+
+    /**
+     * <p>
+     * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * </p>
+     * 
+     * @param enabledCloudwatchLogsExports
+     *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     */
+
+    public void setEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
+        if (enabledCloudwatchLogsExports == null) {
+            this.enabledCloudwatchLogsExports = null;
+            return;
+        }
+
+        this.enabledCloudwatchLogsExports = new java.util.ArrayList<String>(enabledCloudwatchLogsExports);
+    }
+
+    /**
+     * <p>
+     * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnabledCloudwatchLogsExports(java.util.Collection)} or
+     * {@link #withEnabledCloudwatchLogsExports(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param enabledCloudwatchLogsExports
+     *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withEnabledCloudwatchLogsExports(String... enabledCloudwatchLogsExports) {
+        if (this.enabledCloudwatchLogsExports == null) {
+            setEnabledCloudwatchLogsExports(new java.util.ArrayList<String>(enabledCloudwatchLogsExports.length));
+        }
+        for (String ele : enabledCloudwatchLogsExports) {
+            this.enabledCloudwatchLogsExports.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * </p>
+     * 
+     * @param enabledCloudwatchLogsExports
+     *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
+        setEnabledCloudwatchLogsExports(enabledCloudwatchLogsExports);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2061,7 +2137,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getCloneGroupId() != null)
             sb.append("CloneGroupId: ").append(getCloneGroupId()).append(",");
         if (getClusterCreateTime() != null)
-            sb.append("ClusterCreateTime: ").append(getClusterCreateTime());
+            sb.append("ClusterCreateTime: ").append(getClusterCreateTime()).append(",");
+        if (getEnabledCloudwatchLogsExports() != null)
+            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports());
         sb.append("}");
         return sb.toString();
     }
@@ -2218,6 +2296,10 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getClusterCreateTime() != null && other.getClusterCreateTime().equals(this.getClusterCreateTime()) == false)
             return false;
+        if (other.getEnabledCloudwatchLogsExports() == null ^ this.getEnabledCloudwatchLogsExports() == null)
+            return false;
+        if (other.getEnabledCloudwatchLogsExports() != null && other.getEnabledCloudwatchLogsExports().equals(this.getEnabledCloudwatchLogsExports()) == false)
+            return false;
         return true;
     }
 
@@ -2261,6 +2343,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         hashCode = prime * hashCode + ((getCloneGroupId() == null) ? 0 : getCloneGroupId().hashCode());
         hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
         return hashCode;
     }
 

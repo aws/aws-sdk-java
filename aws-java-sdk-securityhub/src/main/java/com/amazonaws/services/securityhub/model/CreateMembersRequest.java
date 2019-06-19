@@ -27,20 +27,18 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the accounts that you want to associate with the master Security
-     * Hub account.
+     * A list of account ID and email address pairs of the accounts to associate with the Security Hub master account.
      * </p>
      */
     private java.util.List<AccountDetails> accountDetails;
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the accounts that you want to associate with the master Security
-     * Hub account.
+     * A list of account ID and email address pairs of the accounts to associate with the Security Hub master account.
      * </p>
      * 
-     * @return A list of account ID and email address pairs of the accounts that you want to associate with the master
-     *         Security Hub account.
+     * @return A list of account ID and email address pairs of the accounts to associate with the Security Hub master
+     *         account.
      */
 
     public java.util.List<AccountDetails> getAccountDetails() {
@@ -49,13 +47,12 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the accounts that you want to associate with the master Security
-     * Hub account.
+     * A list of account ID and email address pairs of the accounts to associate with the Security Hub master account.
      * </p>
      * 
      * @param accountDetails
-     *        A list of account ID and email address pairs of the accounts that you want to associate with the master
-     *        Security Hub account.
+     *        A list of account ID and email address pairs of the accounts to associate with the Security Hub master
+     *        account.
      */
 
     public void setAccountDetails(java.util.Collection<AccountDetails> accountDetails) {
@@ -69,8 +66,7 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the accounts that you want to associate with the master Security
-     * Hub account.
+     * A list of account ID and email address pairs of the accounts to associate with the Security Hub master account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,8 +75,8 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param accountDetails
-     *        A list of account ID and email address pairs of the accounts that you want to associate with the master
-     *        Security Hub account.
+     *        A list of account ID and email address pairs of the accounts to associate with the Security Hub master
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,13 +92,12 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the accounts that you want to associate with the master Security
-     * Hub account.
+     * A list of account ID and email address pairs of the accounts to associate with the Security Hub master account.
      * </p>
      * 
      * @param accountDetails
-     *        A list of account ID and email address pairs of the accounts that you want to associate with the master
-     *        Security Hub account.
+     *        A list of account ID and email address pairs of the accounts to associate with the Security Hub master
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

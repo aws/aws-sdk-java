@@ -28,7 +28,7 @@ public class OutputDetail implements Serializable, Cloneable, StructuredPojo {
 
     /** Duration in milliseconds */
     private Integer durationInMs;
-
+    /** Contains details about the output's video stream */
     private VideoDetail videoDetails;
 
     /**
@@ -66,7 +66,10 @@ public class OutputDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Contains details about the output's video stream
+     * 
      * @param videoDetails
+     *        Contains details about the output's video stream
      */
 
     public void setVideoDetails(VideoDetail videoDetails) {
@@ -74,7 +77,9 @@ public class OutputDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Contains details about the output's video stream
+     * 
+     * @return Contains details about the output's video stream
      */
 
     public VideoDetail getVideoDetails() {
@@ -82,7 +87,10 @@ public class OutputDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Contains details about the output's video stream
+     * 
      * @param videoDetails
+     *        Contains details about the output's video stream
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

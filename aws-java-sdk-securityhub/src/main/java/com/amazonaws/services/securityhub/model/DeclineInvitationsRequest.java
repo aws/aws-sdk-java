@@ -27,17 +27,17 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of account IDs specifying accounts whose invitations to Security Hub you want to decline.
+     * A list of account IDs that specify the accounts from which invitations to Security Hub are declined.
      * </p>
      */
     private java.util.List<String> accountIds;
 
     /**
      * <p>
-     * A list of account IDs specifying accounts whose invitations to Security Hub you want to decline.
+     * A list of account IDs that specify the accounts from which invitations to Security Hub are declined.
      * </p>
      * 
-     * @return A list of account IDs specifying accounts whose invitations to Security Hub you want to decline.
+     * @return A list of account IDs that specify the accounts from which invitations to Security Hub are declined.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -46,11 +46,11 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of account IDs specifying accounts whose invitations to Security Hub you want to decline.
+     * A list of account IDs that specify the accounts from which invitations to Security Hub are declined.
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs specifying accounts whose invitations to Security Hub you want to decline.
+     *        A list of account IDs that specify the accounts from which invitations to Security Hub are declined.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -64,7 +64,7 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of account IDs specifying accounts whose invitations to Security Hub you want to decline.
+     * A list of account IDs that specify the accounts from which invitations to Security Hub are declined.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs specifying accounts whose invitations to Security Hub you want to decline.
+     *        A list of account IDs that specify the accounts from which invitations to Security Hub are declined.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of account IDs specifying accounts whose invitations to Security Hub you want to decline.
+     * A list of account IDs that specify the accounts from which invitations to Security Hub are declined.
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs specifying accounts whose invitations to Security Hub you want to decline.
+     *        A list of account IDs that specify the accounts from which invitations to Security Hub are declined.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -66,6 +66,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean active;
+    /**
+     * <p>
+     * The principal ID of the user.
+     * </p>
+     */
+    private String principalId;
 
     /**
      * <p>
@@ -366,6 +372,46 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The principal ID of the user.
+     * </p>
+     * 
+     * @param principalId
+     *        The principal ID of the user.
+     */
+
+    public void setPrincipalId(String principalId) {
+        this.principalId = principalId;
+    }
+
+    /**
+     * <p>
+     * The principal ID of the user.
+     * </p>
+     * 
+     * @return The principal ID of the user.
+     */
+
+    public String getPrincipalId() {
+        return this.principalId;
+    }
+
+    /**
+     * <p>
+     * The principal ID of the user.
+     * </p>
+     * 
+     * @param principalId
+     *        The principal ID of the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public User withPrincipalId(String principalId) {
+        setPrincipalId(principalId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -388,7 +434,9 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         if (getIdentityType() != null)
             sb.append("IdentityType: ").append(getIdentityType()).append(",");
         if (getActive() != null)
-            sb.append("Active: ").append(getActive());
+            sb.append("Active: ").append(getActive()).append(",");
+        if (getPrincipalId() != null)
+            sb.append("PrincipalId: ").append(getPrincipalId());
         sb.append("}");
         return sb.toString();
     }
@@ -427,6 +475,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getActive() != null && other.getActive().equals(this.getActive()) == false)
             return false;
+        if (other.getPrincipalId() == null ^ this.getPrincipalId() == null)
+            return false;
+        if (other.getPrincipalId() != null && other.getPrincipalId().equals(this.getPrincipalId()) == false)
+            return false;
         return true;
     }
 
@@ -441,6 +493,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getIdentityType() == null) ? 0 : getIdentityType().hashCode());
         hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
+        hashCode = prime * hashCode + ((getPrincipalId() == null) ? 0 : getPrincipalId().hashCode());
         return hashCode;
     }
 

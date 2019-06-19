@@ -43,7 +43,7 @@ public class EntityDetails implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      * >reporting period</a>.
      * </p>
      */
@@ -96,7 +96,7 @@ public class EntityDetails implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      * >reporting period</a>.
      * </p>
      * 
@@ -105,7 +105,7 @@ public class EntityDetails implements Serializable, Cloneable {
      *        authenticated entity last attempted to access AWS. AWS does not report unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      *        >reporting period</a>.
      */
 
@@ -120,7 +120,7 @@ public class EntityDetails implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      * >reporting period</a>.
      * </p>
      * 
@@ -128,7 +128,7 @@ public class EntityDetails implements Serializable, Cloneable {
      *         authenticated entity last attempted to access AWS. AWS does not report unauthenticated requests.</p>
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      *         >reporting period</a>.
      */
 
@@ -143,7 +143,7 @@ public class EntityDetails implements Serializable, Cloneable {
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      * >reporting period</a>.
      * </p>
      * 
@@ -152,7 +152,7 @@ public class EntityDetails implements Serializable, Cloneable {
      *        authenticated entity last attempted to access AWS. AWS does not report unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      *        >reporting period</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

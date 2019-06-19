@@ -28,11 +28,11 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * Amazon WorkMail is a secure, managed business email and calendaring service with support for existing desktop and
  * mobile email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or
- * their native iOS and Android email applications. You can integrate Amazon WorkMail with your existing corporate
- * directory and control both the keys that encrypt your data and the location in which your data is stored.
+ * other native iOS and Android email applications. You can integrate WorkMail with your existing corporate directory
+ * and control both the keys that encrypt your data and the location in which your data is stored.
  * </p>
  * <p>
- * The Amazon WorkMail API is designed for the following scenarios:
+ * The WorkMail API is designed for the following scenarios:
  * </p>
  * <ul>
  * <li>
@@ -63,13 +63,13 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * </ul>
  * <p>
- * All Amazon WorkMail API actions are Amazon-authenticated and certificate-signed. They not only require the use of the
- * AWS SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission
- * policies. By creating a role and allowing an IAM user to access the Amazon WorkMail site, the IAM user gains full
- * administrative visibility into the entire Amazon WorkMail organization (or as set in the IAM policy). This includes,
- * but is not limited to, the ability to create, update, and delete users, groups, and resources. This allows developers
- * to perform the scenarios listed above, as well as give users the ability to grant access on a selective basis using
- * the IAM model.
+ * All WorkMail API operations are Amazon-authenticated and certificate-signed. They not only require the use of the AWS
+ * SDK, but also allow for the exclusive use of AWS Identity and Access Management users and roles to help facilitate
+ * access, trust, and permission policies. By creating a role and allowing an IAM user to access the WorkMail site, the
+ * IAM user gains full administrative visibility into the entire WorkMail organization (or as set in the IAM policy).
+ * This includes, but is not limited to, the ability to create, update, and delete users, groups, and resources. This
+ * allows developers to perform the scenarios listed above, as well as give users the ability to grant access on a
+ * selective basis using the IAM model.
  * </p>
  */
 @ThreadSafe
@@ -701,6 +701,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetMailboxDetailsResult> getMailboxDetailsAsync(GetMailboxDetailsRequest request) {
+
+        return getMailboxDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMailboxDetailsResult> getMailboxDetailsAsync(final GetMailboxDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMailboxDetailsRequest, GetMailboxDetailsResult> asyncHandler) {
+        final GetMailboxDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMailboxDetailsResult>() {
+            @Override
+            public GetMailboxDetailsResult call() throws Exception {
+                GetMailboxDetailsResult result = null;
+
+                try {
+                    result = executeGetMailboxDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(ListAliasesRequest request) {
 
         return listAliasesAsync(request, null);
@@ -1048,6 +1081,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeResetPassword(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMailboxQuotaResult> updateMailboxQuotaAsync(UpdateMailboxQuotaRequest request) {
+
+        return updateMailboxQuotaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMailboxQuotaResult> updateMailboxQuotaAsync(final UpdateMailboxQuotaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMailboxQuotaRequest, UpdateMailboxQuotaResult> asyncHandler) {
+        final UpdateMailboxQuotaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMailboxQuotaResult>() {
+            @Override
+            public UpdateMailboxQuotaResult call() throws Exception {
+                UpdateMailboxQuotaResult result = null;
+
+                try {
+                    result = executeUpdateMailboxQuota(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

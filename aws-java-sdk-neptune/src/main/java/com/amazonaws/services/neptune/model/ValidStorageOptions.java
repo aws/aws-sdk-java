@@ -17,8 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call
- * to the <a>DescribeValidDBInstanceModifications</a> action.
+ * Information about valid modifications that you can make to your DB instance.
+ * </p>
+ * <p>
+ * Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ValidStorageOptions" target="_top">AWS API

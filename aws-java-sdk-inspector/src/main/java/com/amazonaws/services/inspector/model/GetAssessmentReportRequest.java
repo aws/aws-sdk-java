@@ -41,7 +41,7 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Specifies the type of the assessment report that you want to generate. There are two types of assessment reports:
      * a finding report and a full report. For more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.
      * </p>
      */
     private String reportType;
@@ -163,13 +163,13 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Specifies the type of the assessment report that you want to generate. There are two types of assessment reports:
      * a finding report and a full report. For more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.
      * </p>
      * 
      * @param reportType
      *        Specifies the type of the assessment report that you want to generate. There are two types of assessment
      *        reports: a finding report and a full report. For more information, see <a
-     *        href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+     *        href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
      *        Reports</a>.
      * @see ReportType
      */
@@ -182,12 +182,12 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Specifies the type of the assessment report that you want to generate. There are two types of assessment reports:
      * a finding report and a full report. For more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.
      * </p>
      * 
      * @return Specifies the type of the assessment report that you want to generate. There are two types of assessment
      *         reports: a finding report and a full report. For more information, see <a
-     *         href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+     *         href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
      *         Reports</a>.
      * @see ReportType
      */
@@ -200,13 +200,13 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Specifies the type of the assessment report that you want to generate. There are two types of assessment reports:
      * a finding report and a full report. For more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.
      * </p>
      * 
      * @param reportType
      *        Specifies the type of the assessment report that you want to generate. There are two types of assessment
      *        reports: a finding report and a full report. For more information, see <a
-     *        href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+     *        href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
      *        Reports</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportType
@@ -221,13 +221,13 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Specifies the type of the assessment report that you want to generate. There are two types of assessment reports:
      * a finding report and a full report. For more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.
      * </p>
      * 
      * @param reportType
      *        Specifies the type of the assessment report that you want to generate. There are two types of assessment
      *        reports: a finding report and a full report. For more information, see <a
-     *        href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+     *        href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
      *        Reports</a>.
      * @see ReportType
      */
@@ -240,13 +240,13 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Specifies the type of the assessment report that you want to generate. There are two types of assessment reports:
      * a finding report and a full report. For more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.
      * </p>
      * 
      * @param reportType
      *        Specifies the type of the assessment report that you want to generate. There are two types of assessment
      *        reports: a finding report and a full report. For more information, see <a
-     *        href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+     *        href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
      *        Reports</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportType

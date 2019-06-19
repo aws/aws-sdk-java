@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
+ * 
+ <p>
  * Zookeeper node information.
  * </p>
  * 
@@ -42,6 +43,12 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
     private String clientVpcIpAddress;
     /**
      * <p>
+     * Endpoints for accessing the ZooKeeper.
+     * </p>
+     */
+    private java.util.List<String> endpoints;
+    /**
+     * <p>
      * The role-specific ID for Zookeeper.
      * </p>
      */
@@ -59,7 +66,9 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param attachedENIId
+     *        <p>
      *        The attached elastic network interface of the broker.
+     *        </p>
      */
 
     public void setAttachedENIId(String attachedENIId) {
@@ -71,7 +80,9 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
      * The attached elastic network interface of the broker.
      * </p>
      * 
-     * @return The attached elastic network interface of the broker.
+     * @return <p>
+     *         The attached elastic network interface of the broker.
+     *         </p>
      */
 
     public String getAttachedENIId() {
@@ -84,7 +95,9 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param attachedENIId
+     *        <p>
      *        The attached elastic network interface of the broker.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,7 +112,9 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param clientVpcIpAddress
+     *        <p>
      *        The virtual private cloud (VPC) IP address of the client.
+     *        </p>
      */
 
     public void setClientVpcIpAddress(String clientVpcIpAddress) {
@@ -111,7 +126,9 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
      * The virtual private cloud (VPC) IP address of the client.
      * </p>
      * 
-     * @return The virtual private cloud (VPC) IP address of the client.
+     * @return <p>
+     *         The virtual private cloud (VPC) IP address of the client.
+     *         </p>
      */
 
     public String getClientVpcIpAddress() {
@@ -124,7 +141,9 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param clientVpcIpAddress
+     *        <p>
      *        The virtual private cloud (VPC) IP address of the client.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +154,92 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * Endpoints for accessing the ZooKeeper.
+     * </p>
+     * 
+     * @return <p>
+     *         Endpoints for accessing the ZooKeeper.
+     *         </p>
+     */
+
+    public java.util.List<String> getEndpoints() {
+        return endpoints;
+    }
+
+    /**
+     * <p>
+     * Endpoints for accessing the ZooKeeper.
+     * </p>
+     * 
+     * @param endpoints
+     *        <p>
+     *        Endpoints for accessing the ZooKeeper.
+     *        </p>
+     */
+
+    public void setEndpoints(java.util.Collection<String> endpoints) {
+        if (endpoints == null) {
+            this.endpoints = null;
+            return;
+        }
+
+        this.endpoints = new java.util.ArrayList<String>(endpoints);
+    }
+
+    /**
+     * <p>
+     * Endpoints for accessing the ZooKeeper.
+     * </p>
+     * 
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEndpoints(java.util.Collection)} or {@link #withEndpoints(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param endpoints
+     *        <p>
+     *        Endpoints for accessing the ZooKeeper.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ZookeeperNodeInfo withEndpoints(String... endpoints) {
+        if (this.endpoints == null) {
+            setEndpoints(new java.util.ArrayList<String>(endpoints.length));
+        }
+        for (String ele : endpoints) {
+            this.endpoints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Endpoints for accessing the ZooKeeper.
+     * </p>
+     * 
+     * @param endpoints
+     *        <p>
+     *        Endpoints for accessing the ZooKeeper.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ZookeeperNodeInfo withEndpoints(java.util.Collection<String> endpoints) {
+        setEndpoints(endpoints);
+        return this;
+    }
+
+    /**
+     * <p>
      * The role-specific ID for Zookeeper.
      * </p>
      * 
      * @param zookeeperId
+     *        <p>
      *        The role-specific ID for Zookeeper.
+     *        </p>
      */
 
     public void setZookeeperId(Double zookeeperId) {
@@ -151,7 +251,9 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
      * The role-specific ID for Zookeeper.
      * </p>
      * 
-     * @return The role-specific ID for Zookeeper.
+     * @return <p>
+     *         The role-specific ID for Zookeeper.
+     *         </p>
      */
 
     public Double getZookeeperId() {
@@ -164,7 +266,9 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param zookeeperId
+     *        <p>
      *        The role-specific ID for Zookeeper.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,7 +283,9 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param zookeeperVersion
+     *        <p>
      *        The version of Zookeeper.
+     *        </p>
      */
 
     public void setZookeeperVersion(String zookeeperVersion) {
@@ -191,7 +297,9 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
      * The version of Zookeeper.
      * </p>
      * 
-     * @return The version of Zookeeper.
+     * @return <p>
+     *         The version of Zookeeper.
+     *         </p>
      */
 
     public String getZookeeperVersion() {
@@ -204,7 +312,9 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param zookeeperVersion
+     *        <p>
      *        The version of Zookeeper.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,6 +339,8 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
             sb.append("AttachedENIId: ").append(getAttachedENIId()).append(",");
         if (getClientVpcIpAddress() != null)
             sb.append("ClientVpcIpAddress: ").append(getClientVpcIpAddress()).append(",");
+        if (getEndpoints() != null)
+            sb.append("Endpoints: ").append(getEndpoints()).append(",");
         if (getZookeeperId() != null)
             sb.append("ZookeeperId: ").append(getZookeeperId()).append(",");
         if (getZookeeperVersion() != null)
@@ -255,6 +367,10 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getClientVpcIpAddress() != null && other.getClientVpcIpAddress().equals(this.getClientVpcIpAddress()) == false)
             return false;
+        if (other.getEndpoints() == null ^ this.getEndpoints() == null)
+            return false;
+        if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
+            return false;
         if (other.getZookeeperId() == null ^ this.getZookeeperId() == null)
             return false;
         if (other.getZookeeperId() != null && other.getZookeeperId().equals(this.getZookeeperId()) == false)
@@ -273,6 +389,7 @@ public class ZookeeperNodeInfo implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getAttachedENIId() == null) ? 0 : getAttachedENIId().hashCode());
         hashCode = prime * hashCode + ((getClientVpcIpAddress() == null) ? 0 : getClientVpcIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
         hashCode = prime * hashCode + ((getZookeeperId() == null) ? 0 : getZookeeperId().hashCode());
         hashCode = prime * hashCode + ((getZookeeperVersion() == null) ? 0 : getZookeeperVersion().hashCode());
         return hashCode;

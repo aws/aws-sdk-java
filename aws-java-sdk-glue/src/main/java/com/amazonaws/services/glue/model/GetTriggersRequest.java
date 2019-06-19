@@ -33,8 +33,8 @@ public class GetTriggersRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String nextToken;
     /**
      * <p>
-     * The name of the job for which to retrieve triggers. The trigger that can start this job will be returned, and if
-     * there is no such trigger, all triggers will be returned.
+     * The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no
+     * such trigger, all triggers are returned.
      * </p>
      */
     private String dependentJobName;
@@ -87,13 +87,13 @@ public class GetTriggersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the job for which to retrieve triggers. The trigger that can start this job will be returned, and if
-     * there is no such trigger, all triggers will be returned.
+     * The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no
+     * such trigger, all triggers are returned.
      * </p>
      * 
      * @param dependentJobName
-     *        The name of the job for which to retrieve triggers. The trigger that can start this job will be returned,
-     *        and if there is no such trigger, all triggers will be returned.
+     *        The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if
+     *        there is no such trigger, all triggers are returned.
      */
 
     public void setDependentJobName(String dependentJobName) {
@@ -102,12 +102,12 @@ public class GetTriggersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the job for which to retrieve triggers. The trigger that can start this job will be returned, and if
-     * there is no such trigger, all triggers will be returned.
+     * The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no
+     * such trigger, all triggers are returned.
      * </p>
      * 
-     * @return The name of the job for which to retrieve triggers. The trigger that can start this job will be returned,
-     *         and if there is no such trigger, all triggers will be returned.
+     * @return The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if
+     *         there is no such trigger, all triggers are returned.
      */
 
     public String getDependentJobName() {
@@ -116,13 +116,13 @@ public class GetTriggersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the job for which to retrieve triggers. The trigger that can start this job will be returned, and if
-     * there is no such trigger, all triggers will be returned.
+     * The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no
+     * such trigger, all triggers are returned.
      * </p>
      * 
      * @param dependentJobName
-     *        The name of the job for which to retrieve triggers. The trigger that can start this job will be returned,
-     *        and if there is no such trigger, all triggers will be returned.
+     *        The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if
+     *        there is no such trigger, all triggers are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

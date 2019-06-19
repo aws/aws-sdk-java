@@ -29,10 +29,10 @@ public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique identifier of the calling entity. The exact value depends on the type of entity making the call. The
-     * values returned are those listed in the <b>aws:userid</b> column in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
-     * table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.
+     * The unique identifier of the calling entity. The exact value depends on the type of entity that is making the
+     * call. The values returned are those listed in the <b>aws:userid</b> column in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable"
+     * >Principal table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.
      * </p>
      */
     private String userId;
@@ -51,16 +51,16 @@ public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique identifier of the calling entity. The exact value depends on the type of entity making the call. The
-     * values returned are those listed in the <b>aws:userid</b> column in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
-     * table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.
+     * The unique identifier of the calling entity. The exact value depends on the type of entity that is making the
+     * call. The values returned are those listed in the <b>aws:userid</b> column in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable"
+     * >Principal table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param userId
-     *        The unique identifier of the calling entity. The exact value depends on the type of entity making the
-     *        call. The values returned are those listed in the <b>aws:userid</b> column in the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable"
+     *        The unique identifier of the calling entity. The exact value depends on the type of entity that is making
+     *        the call. The values returned are those listed in the <b>aws:userid</b> column in the <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable"
      *        >Principal table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.
      */
 
@@ -70,15 +70,15 @@ public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique identifier of the calling entity. The exact value depends on the type of entity making the call. The
-     * values returned are those listed in the <b>aws:userid</b> column in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
-     * table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.
+     * The unique identifier of the calling entity. The exact value depends on the type of entity that is making the
+     * call. The values returned are those listed in the <b>aws:userid</b> column in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable"
+     * >Principal table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.
      * </p>
      * 
-     * @return The unique identifier of the calling entity. The exact value depends on the type of entity making the
-     *         call. The values returned are those listed in the <b>aws:userid</b> column in the <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable"
+     * @return The unique identifier of the calling entity. The exact value depends on the type of entity that is making
+     *         the call. The values returned are those listed in the <b>aws:userid</b> column in the <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable"
      *         >Principal table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.
      */
 
@@ -88,16 +88,16 @@ public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique identifier of the calling entity. The exact value depends on the type of entity making the call. The
-     * values returned are those listed in the <b>aws:userid</b> column in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
-     * table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.
+     * The unique identifier of the calling entity. The exact value depends on the type of entity that is making the
+     * call. The values returned are those listed in the <b>aws:userid</b> column in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable"
+     * >Principal table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param userId
-     *        The unique identifier of the calling entity. The exact value depends on the type of entity making the
-     *        call. The values returned are those listed in the <b>aws:userid</b> column in the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable"
+     *        The unique identifier of the calling entity. The exact value depends on the type of entity that is making
+     *        the call. The values returned are those listed in the <b>aws:userid</b> column in the <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable"
      *        >Principal table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.datasync.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class StartTaskExecutionRequestMarshaller {
             .marshallLocationName("TaskArn").build();
     private static final MarshallingInfo<StructuredPojo> OVERRIDEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverrideOptions").build();
+    private static final MarshallingInfo<List> INCLUDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Includes").build();
 
     private static final StartTaskExecutionRequestMarshaller instance = new StartTaskExecutionRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class StartTaskExecutionRequestMarshaller {
         try {
             protocolMarshaller.marshall(startTaskExecutionRequest.getTaskArn(), TASKARN_BINDING);
             protocolMarshaller.marshall(startTaskExecutionRequest.getOverrideOptions(), OVERRIDEOPTIONS_BINDING);
+            protocolMarshaller.marshall(startTaskExecutionRequest.getIncludes(), INCLUDES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

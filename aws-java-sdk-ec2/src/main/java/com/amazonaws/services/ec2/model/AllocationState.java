@@ -24,7 +24,8 @@ public enum AllocationState {
     UnderAssessment("under-assessment"),
     PermanentFailure("permanent-failure"),
     Released("released"),
-    ReleasedPermanentFailure("released-permanent-failure");
+    ReleasedPermanentFailure("released-permanent-failure"),
+    Pending("pending");
 
     private String value;
 

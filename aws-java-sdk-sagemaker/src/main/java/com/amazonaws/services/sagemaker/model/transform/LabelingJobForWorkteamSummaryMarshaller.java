@@ -37,6 +37,8 @@ public class LabelingJobForWorkteamSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> LABELCOUNTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LabelCounters").build();
+    private static final MarshallingInfo<Integer> NUMBEROFHUMANWORKERSPERDATAOBJECT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfHumanWorkersPerDataObject").build();
 
     private static final LabelingJobForWorkteamSummaryMarshaller instance = new LabelingJobForWorkteamSummaryMarshaller();
 
@@ -59,6 +61,7 @@ public class LabelingJobForWorkteamSummaryMarshaller {
             protocolMarshaller.marshall(labelingJobForWorkteamSummary.getWorkRequesterAccountId(), WORKREQUESTERACCOUNTID_BINDING);
             protocolMarshaller.marshall(labelingJobForWorkteamSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(labelingJobForWorkteamSummary.getLabelCounters(), LABELCOUNTERS_BINDING);
+            protocolMarshaller.marshall(labelingJobForWorkteamSummary.getNumberOfHumanWorkersPerDataObject(), NUMBEROFHUMANWORKERSPERDATAOBJECT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

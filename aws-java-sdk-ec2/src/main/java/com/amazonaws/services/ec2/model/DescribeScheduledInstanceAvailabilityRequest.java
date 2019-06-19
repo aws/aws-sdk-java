@@ -30,7 +30,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -99,7 +99,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -124,7 +124,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -157,7 +157,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -183,7 +183,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -218,7 +218,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -249,7 +249,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -286,7 +286,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -312,7 +312,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>

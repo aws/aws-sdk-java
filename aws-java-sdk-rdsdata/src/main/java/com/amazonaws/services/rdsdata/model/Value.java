@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Column value
+ * <p>
+ * Contains the value of a column.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/Value" target="_top">AWS API
  *      Documentation</a>
@@ -26,31 +28,73 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Value implements Serializable, Cloneable, StructuredPojo {
 
-    /** Arbitrarily nested arrays */
+    /**
+     * <p>
+     * An array of column values.
+     * </p>
+     */
     private java.util.List<Value> arrayValues;
-    /** Long value */
+    /**
+     * <p>
+     * A value for a column of big integer data type.
+     * </p>
+     */
     private Long bigIntValue;
-    /** Bit value */
+    /**
+     * <p>
+     * A value for a column of BIT data type.
+     * </p>
+     */
     private Boolean bitValue;
-    /** Blob value */
+    /**
+     * <p>
+     * A value for a column of BLOB data type.
+     * </p>
+     */
     private java.nio.ByteBuffer blobValue;
-    /** Double value */
+    /**
+     * <p>
+     * A value for a column of double data type.
+     * </p>
+     */
     private Double doubleValue;
-    /** Integer value */
+    /**
+     * <p>
+     * A value for a column of integer data type.
+     * </p>
+     */
     private Integer intValue;
-    /** Is column null */
+    /**
+     * <p>
+     * A NULL value.
+     * </p>
+     */
     private Boolean isNull;
-    /** Float value */
+    /**
+     * <p>
+     * A value for a column of real data type.
+     * </p>
+     */
     private Float realValue;
-    /** String value */
+    /**
+     * <p>
+     * A value for a column of string data type.
+     * </p>
+     */
     private String stringValue;
-    /** Struct or UDT */
+    /**
+     * <p>
+     * A value for a column of STRUCT data type.
+     * </p>
+     */
     private StructValue structValue;
 
     /**
-     * Arbitrarily nested arrays
+     * <p>
+     * An array of column values.
+     * </p>
      * 
-     * @return Arbitrarily nested arrays
+     * @return An array of column values.
      */
 
     public java.util.List<Value> getArrayValues() {
@@ -58,10 +102,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Arbitrarily nested arrays
+     * <p>
+     * An array of column values.
+     * </p>
      * 
      * @param arrayValues
-     *        Arbitrarily nested arrays
+     *        An array of column values.
      */
 
     public void setArrayValues(java.util.Collection<Value> arrayValues) {
@@ -74,7 +120,9 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Arbitrarily nested arrays
+     * <p>
+     * An array of column values.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setArrayValues(java.util.Collection)} or {@link #withArrayValues(java.util.Collection)} if you want to
@@ -82,7 +130,7 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param arrayValues
-     *        Arbitrarily nested arrays
+     *        An array of column values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,10 +145,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Arbitrarily nested arrays
+     * <p>
+     * An array of column values.
+     * </p>
      * 
      * @param arrayValues
-     *        Arbitrarily nested arrays
+     *        An array of column values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,10 +160,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Long value
+     * <p>
+     * A value for a column of big integer data type.
+     * </p>
      * 
      * @param bigIntValue
-     *        Long value
+     *        A value for a column of big integer data type.
      */
 
     public void setBigIntValue(Long bigIntValue) {
@@ -121,9 +173,11 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Long value
+     * <p>
+     * A value for a column of big integer data type.
+     * </p>
      * 
-     * @return Long value
+     * @return A value for a column of big integer data type.
      */
 
     public Long getBigIntValue() {
@@ -131,10 +185,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Long value
+     * <p>
+     * A value for a column of big integer data type.
+     * </p>
      * 
      * @param bigIntValue
-     *        Long value
+     *        A value for a column of big integer data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,10 +200,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Bit value
+     * <p>
+     * A value for a column of BIT data type.
+     * </p>
      * 
      * @param bitValue
-     *        Bit value
+     *        A value for a column of BIT data type.
      */
 
     public void setBitValue(Boolean bitValue) {
@@ -155,9 +213,11 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Bit value
+     * <p>
+     * A value for a column of BIT data type.
+     * </p>
      * 
-     * @return Bit value
+     * @return A value for a column of BIT data type.
      */
 
     public Boolean getBitValue() {
@@ -165,10 +225,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Bit value
+     * <p>
+     * A value for a column of BIT data type.
+     * </p>
      * 
      * @param bitValue
-     *        Bit value
+     *        A value for a column of BIT data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,9 +240,11 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Bit value
+     * <p>
+     * A value for a column of BIT data type.
+     * </p>
      * 
-     * @return Bit value
+     * @return A value for a column of BIT data type.
      */
 
     public Boolean isBitValue() {
@@ -188,7 +252,9 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Blob value
+     * <p>
+     * A value for a column of BLOB data type.
+     * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -201,7 +267,7 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param blobValue
-     *        Blob value
+     *        A value for a column of BLOB data type.
      */
 
     public void setBlobValue(java.nio.ByteBuffer blobValue) {
@@ -209,7 +275,9 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Blob value
+     * <p>
+     * A value for a column of BLOB data type.
+     * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
@@ -218,7 +286,7 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return Blob value
+     * @return A value for a column of BLOB data type.
      */
 
     public java.nio.ByteBuffer getBlobValue() {
@@ -226,7 +294,9 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Blob value
+     * <p>
+     * A value for a column of BLOB data type.
+     * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -239,7 +309,7 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param blobValue
-     *        Blob value
+     *        A value for a column of BLOB data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,10 +319,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Double value
+     * <p>
+     * A value for a column of double data type.
+     * </p>
      * 
      * @param doubleValue
-     *        Double value
+     *        A value for a column of double data type.
      */
 
     public void setDoubleValue(Double doubleValue) {
@@ -260,9 +332,11 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Double value
+     * <p>
+     * A value for a column of double data type.
+     * </p>
      * 
-     * @return Double value
+     * @return A value for a column of double data type.
      */
 
     public Double getDoubleValue() {
@@ -270,10 +344,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Double value
+     * <p>
+     * A value for a column of double data type.
+     * </p>
      * 
      * @param doubleValue
-     *        Double value
+     *        A value for a column of double data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,10 +359,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Integer value
+     * <p>
+     * A value for a column of integer data type.
+     * </p>
      * 
      * @param intValue
-     *        Integer value
+     *        A value for a column of integer data type.
      */
 
     public void setIntValue(Integer intValue) {
@@ -294,9 +372,11 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Integer value
+     * <p>
+     * A value for a column of integer data type.
+     * </p>
      * 
-     * @return Integer value
+     * @return A value for a column of integer data type.
      */
 
     public Integer getIntValue() {
@@ -304,10 +384,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Integer value
+     * <p>
+     * A value for a column of integer data type.
+     * </p>
      * 
      * @param intValue
-     *        Integer value
+     *        A value for a column of integer data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,10 +399,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is column null
+     * <p>
+     * A NULL value.
+     * </p>
      * 
      * @param isNull
-     *        Is column null
+     *        A NULL value.
      */
 
     public void setIsNull(Boolean isNull) {
@@ -328,9 +412,11 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is column null
+     * <p>
+     * A NULL value.
+     * </p>
      * 
-     * @return Is column null
+     * @return A NULL value.
      */
 
     public Boolean getIsNull() {
@@ -338,10 +424,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is column null
+     * <p>
+     * A NULL value.
+     * </p>
      * 
      * @param isNull
-     *        Is column null
+     *        A NULL value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,9 +439,11 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is column null
+     * <p>
+     * A NULL value.
+     * </p>
      * 
-     * @return Is column null
+     * @return A NULL value.
      */
 
     public Boolean isNull() {
@@ -361,10 +451,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Float value
+     * <p>
+     * A value for a column of real data type.
+     * </p>
      * 
      * @param realValue
-     *        Float value
+     *        A value for a column of real data type.
      */
 
     public void setRealValue(Float realValue) {
@@ -372,9 +464,11 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Float value
+     * <p>
+     * A value for a column of real data type.
+     * </p>
      * 
-     * @return Float value
+     * @return A value for a column of real data type.
      */
 
     public Float getRealValue() {
@@ -382,10 +476,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Float value
+     * <p>
+     * A value for a column of real data type.
+     * </p>
      * 
      * @param realValue
-     *        Float value
+     *        A value for a column of real data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,10 +491,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * String value
+     * <p>
+     * A value for a column of string data type.
+     * </p>
      * 
      * @param stringValue
-     *        String value
+     *        A value for a column of string data type.
      */
 
     public void setStringValue(String stringValue) {
@@ -406,9 +504,11 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * String value
+     * <p>
+     * A value for a column of string data type.
+     * </p>
      * 
-     * @return String value
+     * @return A value for a column of string data type.
      */
 
     public String getStringValue() {
@@ -416,10 +516,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * String value
+     * <p>
+     * A value for a column of string data type.
+     * </p>
      * 
      * @param stringValue
-     *        String value
+     *        A value for a column of string data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -429,10 +531,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Struct or UDT
+     * <p>
+     * A value for a column of STRUCT data type.
+     * </p>
      * 
      * @param structValue
-     *        Struct or UDT
+     *        A value for a column of STRUCT data type.
      */
 
     public void setStructValue(StructValue structValue) {
@@ -440,9 +544,11 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Struct or UDT
+     * <p>
+     * A value for a column of STRUCT data type.
+     * </p>
      * 
-     * @return Struct or UDT
+     * @return A value for a column of STRUCT data type.
      */
 
     public StructValue getStructValue() {
@@ -450,10 +556,12 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Struct or UDT
+     * <p>
+     * A value for a column of STRUCT data type.
+     * </p>
      * 
      * @param structValue
-     *        Struct or UDT
+     *        A value for a column of STRUCT data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

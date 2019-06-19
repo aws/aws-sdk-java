@@ -27,21 +27,21 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases
-     * that begin with "alias/aws" are reserved.
+     * The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as
+     * <code>alias/ExampleAlias</code>.
      * </p>
      */
     private String aliasName;
 
     /**
      * <p>
-     * The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases
-     * that begin with "alias/aws" are reserved.
+     * The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as
+     * <code>alias/ExampleAlias</code>.
      * </p>
      * 
      * @param aliasName
-     *        The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/).
-     *        Aliases that begin with "alias/aws" are reserved.
+     *        The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name,
+     *        such as <code>alias/ExampleAlias</code>.
      */
 
     public void setAliasName(String aliasName) {
@@ -50,12 +50,12 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases
-     * that begin with "alias/aws" are reserved.
+     * The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as
+     * <code>alias/ExampleAlias</code>.
      * </p>
      * 
-     * @return The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/).
-     *         Aliases that begin with "alias/aws" are reserved.
+     * @return The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name,
+     *         such as <code>alias/ExampleAlias</code>.
      */
 
     public String getAliasName() {
@@ -64,13 +64,13 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases
-     * that begin with "alias/aws" are reserved.
+     * The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as
+     * <code>alias/ExampleAlias</code>.
      * </p>
      * 
      * @param aliasName
-     *        The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/).
-     *        Aliases that begin with "alias/aws" are reserved.
+     *        The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name,
+     *        such as <code>alias/ExampleAlias</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

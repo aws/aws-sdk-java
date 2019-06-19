@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a response element in the <a>DescribeReservedDBInstances</a> and
- * <a>DescribeReservedDBInstancesOfferings</a> actions.
+ * This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and
+ * <code>DescribeReservedDBInstancesOfferings</code> actions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RecurringCharge" target="_top">AWS API

@@ -37,7 +37,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      */
     private String status;
@@ -109,19 +109,19 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
     private String statusDetails;
     /**
      * <p>
-     * A numeric response code generated after executing the plugin.
+     * A numeric response code generated after running the plugin.
      * </p>
      */
     private Integer responseCode;
     /**
      * <p>
-     * The time the plugin started executing.
+     * The time the plugin started running.
      * </p>
      */
     private java.util.Date responseStartDateTime;
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      */
     private java.util.Date responseFinishDateTime;
@@ -245,11 +245,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with multiple plugins.
+     *        The status of this plugin. You can run a document with multiple plugins.
      * @see CommandPluginStatus
      */
 
@@ -259,10 +259,10 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
-     * @return The status of this plugin. You can execute a document with multiple plugins.
+     * @return The status of this plugin. You can run a document with multiple plugins.
      * @see CommandPluginStatus
      */
 
@@ -272,11 +272,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with multiple plugins.
+     *        The status of this plugin. You can run a document with multiple plugins.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandPluginStatus
      */
@@ -288,11 +288,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with multiple plugins.
+     *        The status of this plugin. You can run a document with multiple plugins.
      * @see CommandPluginStatus
      */
 
@@ -302,11 +302,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with multiple plugins.
+     *        The status of this plugin. You can run a document with multiple plugins.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandPluginStatus
      */
@@ -724,11 +724,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A numeric response code generated after executing the plugin.
+     * A numeric response code generated after running the plugin.
      * </p>
      * 
      * @param responseCode
-     *        A numeric response code generated after executing the plugin.
+     *        A numeric response code generated after running the plugin.
      */
 
     public void setResponseCode(Integer responseCode) {
@@ -737,10 +737,10 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A numeric response code generated after executing the plugin.
+     * A numeric response code generated after running the plugin.
      * </p>
      * 
-     * @return A numeric response code generated after executing the plugin.
+     * @return A numeric response code generated after running the plugin.
      */
 
     public Integer getResponseCode() {
@@ -749,11 +749,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A numeric response code generated after executing the plugin.
+     * A numeric response code generated after running the plugin.
      * </p>
      * 
      * @param responseCode
-     *        A numeric response code generated after executing the plugin.
+     *        A numeric response code generated after running the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -764,11 +764,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the plugin started executing.
+     * The time the plugin started running.
      * </p>
      * 
      * @param responseStartDateTime
-     *        The time the plugin started executing.
+     *        The time the plugin started running.
      */
 
     public void setResponseStartDateTime(java.util.Date responseStartDateTime) {
@@ -777,10 +777,10 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the plugin started executing.
+     * The time the plugin started running.
      * </p>
      * 
-     * @return The time the plugin started executing.
+     * @return The time the plugin started running.
      */
 
     public java.util.Date getResponseStartDateTime() {
@@ -789,11 +789,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the plugin started executing.
+     * The time the plugin started running.
      * </p>
      * 
      * @param responseStartDateTime
-     *        The time the plugin started executing.
+     *        The time the plugin started running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -804,11 +804,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      * 
      * @param responseFinishDateTime
-     *        The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     *        The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      */
 
     public void setResponseFinishDateTime(java.util.Date responseFinishDateTime) {
@@ -817,10 +817,10 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      * 
-     * @return The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * @return The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      */
 
     public java.util.Date getResponseFinishDateTime() {
@@ -829,11 +829,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      * 
      * @param responseFinishDateTime
-     *        The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     *        The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

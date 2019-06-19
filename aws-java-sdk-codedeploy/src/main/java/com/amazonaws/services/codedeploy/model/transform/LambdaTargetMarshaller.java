@@ -40,6 +40,8 @@ public class LambdaTargetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> LIFECYCLEEVENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lifecycleEvents").build();
+    private static final MarshallingInfo<StructuredPojo> LAMBDAFUNCTIONINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionInfo").build();
 
     private static final LambdaTargetMarshaller instance = new LambdaTargetMarshaller();
 
@@ -63,6 +65,7 @@ public class LambdaTargetMarshaller {
             protocolMarshaller.marshall(lambdaTarget.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(lambdaTarget.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(lambdaTarget.getLifecycleEvents(), LIFECYCLEEVENTS_BINDING);
+            protocolMarshaller.marshall(lambdaTarget.getLambdaFunctionInfo(), LAMBDAFUNCTIONINFO_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

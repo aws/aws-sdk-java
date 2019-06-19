@@ -30,7 +30,7 @@ public class GetPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     private String pythonScript;
     /**
      * <p>
-     * Scala code to perform the mapping.
+     * The Scala code to perform the mapping.
      * </p>
      */
     private String scalaCode;
@@ -77,11 +77,11 @@ public class GetPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Scala code to perform the mapping.
+     * The Scala code to perform the mapping.
      * </p>
      * 
      * @param scalaCode
-     *        Scala code to perform the mapping.
+     *        The Scala code to perform the mapping.
      */
 
     public void setScalaCode(String scalaCode) {
@@ -90,10 +90,10 @@ public class GetPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Scala code to perform the mapping.
+     * The Scala code to perform the mapping.
      * </p>
      * 
-     * @return Scala code to perform the mapping.
+     * @return The Scala code to perform the mapping.
      */
 
     public String getScalaCode() {
@@ -102,11 +102,11 @@ public class GetPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Scala code to perform the mapping.
+     * The Scala code to perform the mapping.
      * </p>
      * 
      * @param scalaCode
-     *        Scala code to perform the mapping.
+     *        The Scala code to perform the mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

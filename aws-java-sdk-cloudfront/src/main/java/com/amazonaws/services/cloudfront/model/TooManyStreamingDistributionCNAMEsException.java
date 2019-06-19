@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * Your request contains more CNAMEs than are allowed per distribution.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyStreamingDistributionCNAMEsException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {

@@ -27,18 +27,21 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
+     * images, custom bundles, and IP access control groups.
      * </p>
      */
     private String resourceId;
 
     /**
      * <p>
-     * The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
+     * images, custom bundles, and IP access control groups.
      * </p>
      * 
      * @param resourceId
-     *        The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     *        The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered
+     *        directories, images, custom bundles, and IP access control groups.
      */
 
     public void setResourceId(String resourceId) {
@@ -47,10 +50,12 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
+     * images, custom bundles, and IP access control groups.
      * </p>
      * 
-     * @return The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     * @return The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered
+     *         directories, images, custom bundles, and IP access control groups.
      */
 
     public String getResourceId() {
@@ -59,11 +64,13 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
+     * images, custom bundles, and IP access control groups.
      * </p>
      * 
      * @param resourceId
-     *        The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     *        The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered
+     *        directories, images, custom bundles, and IP access control groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
