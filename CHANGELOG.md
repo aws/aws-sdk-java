@@ -1,3 +1,8 @@
+# __1.11.576__ __2019-06-19__
+## __Amazon Elastic Container Service for Kubernetes__
+  - ### Features
+    - Changing Amazon EKS full service name to Amazon Elastic Kubernetes Service.
+
 # __1.11.575__ __2019-06-18__
 ## __AWS Resource Groups Tagging API__
   - ### Features
@@ -6,6 +11,10 @@
 ## __Amazon Elastic Compute Cloud__
   - ### Features
     - You can now launch new 12xlarge, 24xlarge, and metal instance sizes on the Amazon EC2 compute optimized C5 instance types featuring 2nd Gen Intel Xeon Scalable Processors.
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fix a bug in `TransferManager` that can cause threads in the threadpool to get stuck if an exception occurs in `downloadDirectory` while the downloads are being initiated.
 
 # __1.11.574__ __2019-06-17__
 ## __AWS RoboMaker__
