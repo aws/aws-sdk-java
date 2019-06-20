@@ -1,4 +1,7 @@
 {
+  "Comment": "This is a state machine",
+  "TimeoutSeconds": 180,
+  "Version": "1.0",
   "StartAt":"ParallelState",
   "States":{
     "ParallelState":{

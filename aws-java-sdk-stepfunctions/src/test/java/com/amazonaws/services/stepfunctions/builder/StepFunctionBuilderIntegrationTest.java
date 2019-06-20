@@ -88,7 +88,7 @@ public class StepFunctionBuilderIntegrationTest extends AWSIntegrationTestBase {
     }
 
     @Test
-    public void rountripStateMachine() {
+    public void roundTripStateMachine() {
         StateMachine stateMachine =
             stateMachine().state("ParallelState", testParallelState())
                           .state("WaitForTimestamp", testWaitForTimestamp())
@@ -100,6 +100,9 @@ public class StepFunctionBuilderIntegrationTest extends AWSIntegrationTestBase {
                           .state("PassState", passState().transition(next("EndState")))
                           .state("EndState", succeedState())
                           .startAt("ParallelState")
+                          .comment("This is a state machine")
+                          .timeoutSeconds(180)
+                          .version("1.0")
                           .build();
         CreateStateMachineResult createResult = client.createStateMachine(
             new CreateStateMachineRequest().withName(STATE_MACHINE_NAME)
