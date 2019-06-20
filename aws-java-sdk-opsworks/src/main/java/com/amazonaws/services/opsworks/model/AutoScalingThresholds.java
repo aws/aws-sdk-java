@@ -81,7 +81,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      * To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can
      * either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role
      * manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
      * OpsWorks Stacks to Act on Your Behalf</a>.
      * </p>
      * </note>
@@ -380,7 +380,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      * To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can
      * either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role
      * manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
      * OpsWorks Stacks to Act on Your Behalf</a>.
      * </p>
      * </note>
@@ -391,7 +391,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      *         To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      *         You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you
      *         can edit the role manually. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      *         AWS OpsWorks Stacks to Act on Your Behalf</a>.
      *         </p>
      */
@@ -413,7 +413,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      * To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can
      * either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role
      * manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
      * OpsWorks Stacks to Act on Your Behalf</a>.
      * </p>
      * </note>
@@ -425,7 +425,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      *        To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      *        You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can
      *        edit the role manually. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      *        AWS OpsWorks Stacks to Act on Your Behalf</a>.
      *        </p>
      */
@@ -449,7 +449,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      * To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can
      * either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role
      * manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
      * OpsWorks Stacks to Act on Your Behalf</a>.
      * </p>
      * </note>
@@ -466,7 +466,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      *        To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      *        You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can
      *        edit the role manually. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      *        AWS OpsWorks Stacks to Act on Your Behalf</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -492,7 +492,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      * To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can
      * either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role
      * manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
      * OpsWorks Stacks to Act on Your Behalf</a>.
      * </p>
      * </note>
@@ -504,7 +504,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      *        To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      *        You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can
      *        edit the role manually. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      *        AWS OpsWorks Stacks to Act on Your Behalf</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

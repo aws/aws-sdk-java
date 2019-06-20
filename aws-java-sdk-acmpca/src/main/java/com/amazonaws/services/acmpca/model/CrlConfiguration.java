@@ -24,7 +24,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you
  * specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the
  * <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution
- * Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM PCA.
+ * Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private
+ * CA.
  * </p>
  * <p>
  * Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in
@@ -120,8 +121,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * Certificate revocation lists created by ACM PCA are DER-encoded. You can use the following OpenSSL command to list a
- * CRL.
+ * Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to
+ * list a CRL.
  * </p>
  * <p>
  * <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code>
@@ -136,8 +137,8 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to
-     * enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> operation or for
-     * an existing CA when you call the <a>UpdateCertificateAuthority</a> operation.
+     * enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> action or for an
+     * existing CA when you call the <a>UpdateCertificateAuthority</a> action.
      * </p>
      */
     private Boolean enabled;
@@ -158,8 +159,8 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument,
      * the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate.
-     * You can change the name of your bucket by calling the <a>UpdateCertificateAuthority</a> operation. You must
-     * specify a bucket policy that allows ACM PCA to write the CRL to your bucket.
+     * You can change the name of your bucket by calling the <a>UpdateCertificateAuthority</a> action. You must specify
+     * a bucket policy that allows ACM Private CA to write the CRL to your bucket.
      * </p>
      */
     private String s3BucketName;
@@ -167,14 +168,14 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to
-     * enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> operation or for
-     * an existing CA when you call the <a>UpdateCertificateAuthority</a> operation.
+     * enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> action or for an
+     * existing CA when you call the <a>UpdateCertificateAuthority</a> action.
      * </p>
      * 
      * @param enabled
      *        Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this
      *        value to enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a>
-     *        operation or for an existing CA when you call the <a>UpdateCertificateAuthority</a> operation.
+     *        action or for an existing CA when you call the <a>UpdateCertificateAuthority</a> action.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -184,13 +185,13 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to
-     * enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> operation or for
-     * an existing CA when you call the <a>UpdateCertificateAuthority</a> operation.
+     * enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> action or for an
+     * existing CA when you call the <a>UpdateCertificateAuthority</a> action.
      * </p>
      * 
      * @return Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this
      *         value to enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a>
-     *         operation or for an existing CA when you call the <a>UpdateCertificateAuthority</a> operation.
+     *         action or for an existing CA when you call the <a>UpdateCertificateAuthority</a> action.
      */
 
     public Boolean getEnabled() {
@@ -200,14 +201,14 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to
-     * enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> operation or for
-     * an existing CA when you call the <a>UpdateCertificateAuthority</a> operation.
+     * enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> action or for an
+     * existing CA when you call the <a>UpdateCertificateAuthority</a> action.
      * </p>
      * 
      * @param enabled
      *        Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this
      *        value to enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a>
-     *        operation or for an existing CA when you call the <a>UpdateCertificateAuthority</a> operation.
+     *        action or for an existing CA when you call the <a>UpdateCertificateAuthority</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,13 +220,13 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to
-     * enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> operation or for
-     * an existing CA when you call the <a>UpdateCertificateAuthority</a> operation.
+     * enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> action or for an
+     * existing CA when you call the <a>UpdateCertificateAuthority</a> action.
      * </p>
      * 
      * @return Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this
      *         value to enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a>
-     *         operation or for an existing CA when you call the <a>UpdateCertificateAuthority</a> operation.
+     *         action or for an existing CA when you call the <a>UpdateCertificateAuthority</a> action.
      */
 
     public Boolean isEnabled() {
@@ -325,16 +326,16 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument,
      * the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate.
-     * You can change the name of your bucket by calling the <a>UpdateCertificateAuthority</a> operation. You must
-     * specify a bucket policy that allows ACM PCA to write the CRL to your bucket.
+     * You can change the name of your bucket by calling the <a>UpdateCertificateAuthority</a> action. You must specify
+     * a bucket policy that allows ACM Private CA to write the CRL to your bucket.
      * </p>
      * 
      * @param s3BucketName
      *        Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b>
      *        argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the
      *        issued certificate. You can change the name of your bucket by calling the
-     *        <a>UpdateCertificateAuthority</a> operation. You must specify a bucket policy that allows ACM PCA to write
-     *        the CRL to your bucket.
+     *        <a>UpdateCertificateAuthority</a> action. You must specify a bucket policy that allows ACM Private CA to
+     *        write the CRL to your bucket.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -345,14 +346,14 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument,
      * the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate.
-     * You can change the name of your bucket by calling the <a>UpdateCertificateAuthority</a> operation. You must
-     * specify a bucket policy that allows ACM PCA to write the CRL to your bucket.
+     * You can change the name of your bucket by calling the <a>UpdateCertificateAuthority</a> action. You must specify
+     * a bucket policy that allows ACM Private CA to write the CRL to your bucket.
      * </p>
      * 
      * @return Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b>
      *         argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the
      *         issued certificate. You can change the name of your bucket by calling the
-     *         <a>UpdateCertificateAuthority</a> operation. You must specify a bucket policy that allows ACM PCA to
+     *         <a>UpdateCertificateAuthority</a> action. You must specify a bucket policy that allows ACM Private CA to
      *         write the CRL to your bucket.
      */
 
@@ -364,16 +365,16 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument,
      * the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate.
-     * You can change the name of your bucket by calling the <a>UpdateCertificateAuthority</a> operation. You must
-     * specify a bucket policy that allows ACM PCA to write the CRL to your bucket.
+     * You can change the name of your bucket by calling the <a>UpdateCertificateAuthority</a> action. You must specify
+     * a bucket policy that allows ACM Private CA to write the CRL to your bucket.
      * </p>
      * 
      * @param s3BucketName
      *        Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b>
      *        argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the
      *        issued certificate. You can change the name of your bucket by calling the
-     *        <a>UpdateCertificateAuthority</a> operation. You must specify a bucket policy that allows ACM PCA to write
-     *        the CRL to your bucket.
+     *        <a>UpdateCertificateAuthority</a> action. You must specify a bucket policy that allows ACM Private CA to
+     *        write the CRL to your bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

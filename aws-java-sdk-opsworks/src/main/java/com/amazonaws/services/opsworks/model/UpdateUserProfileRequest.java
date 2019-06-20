@@ -49,7 +49,7 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      * Permissions</a>.
      * </p>
      */
@@ -196,13 +196,13 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      * Permissions</a>.
      * </p>
      * 
      * @param allowSelfManagement
      *        Whether users can specify their own SSH public key through the My Settings page. For more information, see
-     *        <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     *        <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      *        Permissions</a>.
      */
 
@@ -213,12 +213,12 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      * Permissions</a>.
      * </p>
      * 
      * @return Whether users can specify their own SSH public key through the My Settings page. For more information,
-     *         see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     *         see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
      *         User Permissions</a>.
      */
 
@@ -229,13 +229,13 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      * Permissions</a>.
      * </p>
      * 
      * @param allowSelfManagement
      *        Whether users can specify their own SSH public key through the My Settings page. For more information, see
-     *        <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     *        <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      *        Permissions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -248,12 +248,12 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      * Permissions</a>.
      * </p>
      * 
      * @return Whether users can specify their own SSH public key through the My Settings page. For more information,
-     *         see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     *         see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
      *         User Permissions</a>.
      */
 

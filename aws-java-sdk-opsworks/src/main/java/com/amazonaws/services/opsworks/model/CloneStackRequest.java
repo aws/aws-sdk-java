@@ -40,7 +40,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      */
     private String region;
@@ -84,9 +84,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
      * For more information about default VPC and EC2 Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      */
     private String vpcId;
@@ -102,7 +102,8 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role.
      * If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an
      * existing stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more information about IAM
-     * ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * Identifiers</a>.
      * </p>
      * <note>
      * <p>
@@ -116,7 +117,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2
      * instances. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      */
     private String defaultInstanceProfileArn;
@@ -127,9 +128,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
-     * <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
-     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     * <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -160,15 +161,15 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more
      * information about how to use custom AMIs with OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
      * The default option is the parent stack's operating system. For more information about supported operating
-     * systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
-     * Stacks Operating Systems</a>.
+     * systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+     * OpsWorks Stacks Operating Systems</a>.
      * </p>
      * <note>
      * <p>
@@ -207,7 +208,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>Greek_Deities</code>
+     * <code>Greek_Deities_and_Titans</code>
      * </p>
      * </li>
      * <li>
@@ -250,7 +251,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a
      * value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the
      * <code>VpcId</code> parameter description.
      * </p>
@@ -276,8 +277,8 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information about custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
-     * Stack Configuration Attributes</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify
+     * the Stack Configuration Attributes</a>
      * </p>
      */
     private String customJson;
@@ -293,7 +294,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on
      * Chef 11.10 stacks. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      */
     private ChefConfiguration chefConfiguration;
@@ -331,22 +332,28 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      */
     private Boolean useOpsworksSecurityGroups;
-
+    /**
+     * <p>
+     * Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.
+     * </p>
+     */
     private Source customCookbooksSource;
     /**
      * <p>
      * A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks
      * installs the public key on the instance and you can use the private key with an SSH client to log in to the
      * instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate
-     * with an Instance</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
-     * Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when
-     * you <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an
-     * instance</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate
+     * with an Instance</a> and <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>.
+     * You can override this setting by specifying a different key pair, or no key pair, when you <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>.
      * </p>
      */
     private String defaultSshKeyName;
@@ -366,8 +373,8 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The default root device type. This value is used by default for all instances in the cloned stack, but you can
      * override it when you create an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      */
     private String defaultRootDeviceType;
@@ -487,12 +494,12 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param region
      *        The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public void setRegion(String region) {
@@ -502,11 +509,11 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @return The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public String getRegion() {
@@ -516,12 +523,12 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param region
      *        The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -570,9 +577,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
      * For more information about default VPC and EC2 Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * 
      * @param vpcId
@@ -615,9 +622,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
      *        VPC</a>. For more information about default VPC and EC2 Classic, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *        Platforms</a>.
      */
 
@@ -665,9 +672,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
      * For more information about default VPC and EC2 Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * 
      * @return The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All
@@ -709,9 +716,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </ul>
      *         <p>
      *         For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
      *         VPC</a>. For more information about default VPC and EC2 Classic, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *         Platforms</a>.
      */
 
@@ -759,9 +766,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
      * For more information about default VPC and EC2 Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * 
      * @param vpcId
@@ -804,9 +811,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
      *        VPC</a>. For more information about default VPC and EC2 Classic, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *        Platforms</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -886,7 +893,8 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role.
      * If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an
      * existing stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more information about IAM
-     * ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * Identifiers</a>.
      * </p>
      * <note>
      * <p>
@@ -901,7 +909,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You
      *        can obtain an existing stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more
      *        information about IAM ARNs, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
      *        <note>
      *        <p>
      *        You must set this parameter to a valid service role ARN or the action will fail; there is no default
@@ -919,7 +927,8 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role.
      * If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an
      * existing stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more information about IAM
-     * ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * Identifiers</a>.
      * </p>
      * <note>
      * <p>
@@ -933,7 +942,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role
      *         for you. You can obtain an existing stack's IAM ARN programmatically by calling
      *         <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
      *         <note>
      *         <p>
      *         You must set this parameter to a valid service role ARN or the action will fail; there is no default
@@ -951,7 +960,8 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role.
      * If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an
      * existing stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more information about IAM
-     * ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * Identifiers</a>.
      * </p>
      * <note>
      * <p>
@@ -966,7 +976,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You
      *        can obtain an existing stack's IAM ARN programmatically by calling <a>DescribePermissions</a>. For more
      *        information about IAM ARNs, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
      *        <note>
      *        <p>
      *        You must set this parameter to a valid service role ARN or the action will fail; there is no default
@@ -984,13 +994,13 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2
      * instances. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param defaultInstanceProfileArn
      *        The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2
      *        instances. For more information about IAM ARNs, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
     public void setDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
@@ -1001,12 +1011,12 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2
      * instances. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2
      *         instances. For more information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
     public String getDefaultInstanceProfileArn() {
@@ -1017,13 +1027,13 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2
      * instances. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param defaultInstanceProfileArn
      *        The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2
      *        instances. For more information about IAM ARNs, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1039,9 +1049,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
-     * <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
-     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     * <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -1072,15 +1082,15 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more
      * information about how to use custom AMIs with OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
      * The default option is the parent stack's operating system. For more information about supported operating
-     * systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
-     * Stacks Operating Systems</a>.
+     * systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+     * OpsWorks Stacks Operating Systems</a>.
      * </p>
      * <note>
      * <p>
@@ -1094,9 +1104,10 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
-     *        <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
-     *        <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     *        <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     *        <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>
+     *        .
      *        </p>
      *        </li>
      *        <li>
@@ -1127,14 +1138,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.
      *        For more information about how to use custom AMIs with OpsWorks, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        The default option is the parent stack's operating system. For more information about supported operating
-     *        systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+     *        systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      *        OpsWorks Stacks Operating Systems</a>.
      *        </p>
      *        <note>
@@ -1155,9 +1166,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
-     * <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
-     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     * <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -1188,15 +1199,15 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more
      * information about how to use custom AMIs with OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
      * The default option is the parent stack's operating system. For more information about supported operating
-     * systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
-     * Stacks Operating Systems</a>.
+     * systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+     * OpsWorks Stacks Operating Systems</a>.
      * </p>
      * <note>
      * <p>
@@ -1209,9 +1220,10 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <ul>
      *         <li>
      *         <p>
-     *         A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
-     *         <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
-     *         <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     *         A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     *         <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     *         <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     *         <code>Amazon Linux 2015.03</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1242,14 +1254,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.
      *         For more information about how to use custom AMIs with OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
-     *         AMIs</a>.
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     *         Custom AMIs</a>.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         The default option is the parent stack's operating system. For more information about supported operating
-     *         systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+     *         systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      *         OpsWorks Stacks Operating Systems</a>.
      *         </p>
      *         <note>
@@ -1270,9 +1282,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
-     * <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
-     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     * <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -1303,15 +1315,15 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more
      * information about how to use custom AMIs with OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
      * The default option is the parent stack's operating system. For more information about supported operating
-     * systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
-     * Stacks Operating Systems</a>.
+     * systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+     * OpsWorks Stacks Operating Systems</a>.
      * </p>
      * <note>
      * <p>
@@ -1325,9 +1337,10 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
-     *        <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
-     *        <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     *        <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     *        <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>
+     *        .
      *        </p>
      *        </li>
      *        <li>
@@ -1358,14 +1371,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.
      *        For more information about how to use custom AMIs with OpsWorks, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        The default option is the parent stack's operating system. For more information about supported operating
-     *        systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+     *        systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      *        OpsWorks Stacks Operating Systems</a>.
      *        </p>
      *        <note>
@@ -1410,7 +1423,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>Greek_Deities</code>
+     * <code>Greek_Deities_and_Titans</code>
      * </p>
      * </li>
      * <li>
@@ -1477,7 +1490,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Greek_Deities</code>
+     *        <code>Greek_Deities_and_Titans</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1549,7 +1562,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>Greek_Deities</code>
+     * <code>Greek_Deities_and_Titans</code>
      * </p>
      * </li>
      * <li>
@@ -1615,7 +1628,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Greek_Deities</code>
+     *         <code>Greek_Deities_and_Titans</code>
      *         </p>
      *         </li>
      *         <li>
@@ -1687,7 +1700,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>Greek_Deities</code>
+     * <code>Greek_Deities_and_Titans</code>
      * </p>
      * </li>
      * <li>
@@ -1754,7 +1767,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Greek_Deities</code>
+     *        <code>Greek_Deities_and_Titans</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1802,14 +1815,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a
      * value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the
      * <code>VpcId</code> parameter description.
      * </p>
      * 
      * @param defaultAvailabilityZone
      *        The cloned stack's default Availability Zone, which must be in the specified region. For more information,
-     *        see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you
+     *        see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you
      *        also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more
      *        information, see the <code>VpcId</code> parameter description.
      */
@@ -1821,13 +1834,13 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a
      * value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the
      * <code>VpcId</code> parameter description.
      * </p>
      * 
      * @return The cloned stack's default Availability Zone, which must be in the specified region. For more
-     *         information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     *         information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      *         Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the
      *         same zone. For more information, see the <code>VpcId</code> parameter description.
      */
@@ -1839,14 +1852,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a
      * value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the
      * <code>VpcId</code> parameter description.
      * </p>
      * 
      * @param defaultAvailabilityZone
      *        The cloned stack's default Availability Zone, which must be in the specified region. For more information,
-     *        see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you
+     *        see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you
      *        also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more
      *        information, see the <code>VpcId</code> parameter description.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1931,8 +1944,8 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information about custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
-     * Stack Configuration Attributes</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify
+     * the Stack Configuration Attributes</a>
      * </p>
      * 
      * @param customJson
@@ -1943,7 +1956,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        For more information about custom JSON, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *        Modify the Stack Configuration Attributes</a>
      */
 
@@ -1961,8 +1974,8 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information about custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
-     * Stack Configuration Attributes</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify
+     * the Stack Configuration Attributes</a>
      * </p>
      * 
      * @return A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
@@ -1972,7 +1985,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         <p>
      *         For more information about custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *         Modify the Stack Configuration Attributes</a>
      */
 
@@ -1990,8 +2003,8 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information about custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
-     * Stack Configuration Attributes</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify
+     * the Stack Configuration Attributes</a>
      * </p>
      * 
      * @param customJson
@@ -2002,7 +2015,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        For more information about custom JSON, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *        Modify the Stack Configuration Attributes</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2068,13 +2081,13 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on
      * Chef 11.10 stacks. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      * 
      * @param chefConfiguration
      *        A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf
      *        version on Chef 11.10 stacks. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
      *        Stack</a>.
      */
 
@@ -2086,12 +2099,12 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on
      * Chef 11.10 stacks. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      * 
      * @return A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf
      *         version on Chef 11.10 stacks. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
      *         Stack</a>.
      */
 
@@ -2103,13 +2116,13 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on
      * Chef 11.10 stacks. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      * 
      * @param chefConfiguration
      *        A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf
      *        version on Chef 11.10 stacks. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
      *        Stack</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2199,7 +2212,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      * 
      * @param useOpsworksSecurityGroups
@@ -2228,7 +2241,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
      *        Stack</a>.
      */
 
@@ -2264,7 +2277,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      * 
      * @return Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
@@ -2292,7 +2305,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </ul>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
      *         Stack</a>.
      */
 
@@ -2328,7 +2341,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      * 
      * @param useOpsworksSecurityGroups
@@ -2357,7 +2370,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
      *        Stack</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2395,7 +2408,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      * 
      * @return Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
@@ -2423,7 +2436,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </ul>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
      *         Stack</a>.
      */
 
@@ -2432,7 +2445,17 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.
+     * </p>
+     * 
      * @param customCookbooksSource
+     *        Contains the information required to retrieve an app or cookbook from a repository. For more information,
+     *        see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding
+     *        Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks
+     *        and Recipes</a>.
      */
 
     public void setCustomCookbooksSource(Source customCookbooksSource) {
@@ -2440,7 +2463,17 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * @return
+     * <p>
+     * Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.
+     * </p>
+     * 
+     * @return Contains the information required to retrieve an app or cookbook from a repository. For more information,
+     *         see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding
+     *         Apps</a> or <a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and
+     *         Recipes</a>.
      */
 
     public Source getCustomCookbooksSource() {
@@ -2448,7 +2481,17 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.
+     * </p>
+     * 
      * @param customCookbooksSource
+     *        Contains the information required to retrieve an app or cookbook from a repository. For more information,
+     *        see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding
+     *        Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks
+     *        and Recipes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2462,22 +2505,22 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks
      * installs the public key on the instance and you can use the private key with an SSH client to log in to the
      * instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate
-     * with an Instance</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
-     * Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when
-     * you <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an
-     * instance</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate
+     * with an Instance</a> and <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>.
+     * You can override this setting by specifying a different key pair, or no key pair, when you <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>.
      * </p>
      * 
      * @param defaultSshKeyName
      *        A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
      *        OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log
      *        in to the instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
      *        Communicate with an Instance</a> and <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
      *        Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an
      *        instance</a>.
      */
 
@@ -2490,21 +2533,21 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks
      * installs the public key on the instance and you can use the private key with an SSH client to log in to the
      * instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate
-     * with an Instance</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
-     * Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when
-     * you <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an
-     * instance</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate
+     * with an Instance</a> and <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>.
+     * You can override this setting by specifying a different key pair, or no key pair, when you <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>.
      * </p>
      * 
      * @return A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
      *         OpsWorks installs the public key on the instance and you can use the private key with an SSH client to
      *         log in to the instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
      *         Communicate with an Instance</a> and <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
      *         Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an
      *         instance</a>.
      */
 
@@ -2517,22 +2560,22 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks
      * installs the public key on the instance and you can use the private key with an SSH client to log in to the
      * instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate
-     * with an Instance</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
-     * Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when
-     * you <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an
-     * instance</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate
+     * with an Instance</a> and <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>.
+     * You can override this setting by specifying a different key pair, or no key pair, when you <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>.
      * </p>
      * 
      * @param defaultSshKeyName
      *        A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
      *        OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log
      *        in to the instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
      *        Communicate with an Instance</a> and <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
      *        Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an
      *        instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2671,14 +2714,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The default root device type. This value is used by default for all instances in the cloned stack, but you can
      * override it when you create an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param defaultRootDeviceType
      *        The default root device type. This value is used by default for all instances in the cloned stack, but you
      *        can override it when you create an instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
@@ -2691,13 +2734,13 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The default root device type. This value is used by default for all instances in the cloned stack, but you can
      * override it when you create an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @return The default root device type. This value is used by default for all instances in the cloned stack, but
      *         you can override it when you create an instance. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *         >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
@@ -2710,14 +2753,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The default root device type. This value is used by default for all instances in the cloned stack, but you can
      * override it when you create an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param defaultRootDeviceType
      *        The default root device type. This value is used by default for all instances in the cloned stack, but you
      *        can override it when you create an instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
@@ -2732,14 +2775,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The default root device type. This value is used by default for all instances in the cloned stack, but you can
      * override it when you create an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param defaultRootDeviceType
      *        The default root device type. This value is used by default for all instances in the cloned stack, but you
      *        can override it when you create an instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
@@ -2752,14 +2795,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The default root device type. This value is used by default for all instances in the cloned stack, but you can
      * override it when you create an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param defaultRootDeviceType
      *        The default root device type. This value is used by default for all instances in the cloned stack, but you
      *        can override it when you create an instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType

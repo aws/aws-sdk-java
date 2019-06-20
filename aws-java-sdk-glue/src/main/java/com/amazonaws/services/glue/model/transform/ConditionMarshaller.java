@@ -33,6 +33,10 @@ public class ConditionMarshaller {
             .marshallLocationName("JobName").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("State").build();
+    private static final MarshallingInfo<String> CRAWLERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CrawlerName").build();
+    private static final MarshallingInfo<String> CRAWLSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CrawlState").build();
 
     private static final ConditionMarshaller instance = new ConditionMarshaller();
 
@@ -53,6 +57,8 @@ public class ConditionMarshaller {
             protocolMarshaller.marshall(condition.getLogicalOperator(), LOGICALOPERATOR_BINDING);
             protocolMarshaller.marshall(condition.getJobName(), JOBNAME_BINDING);
             protocolMarshaller.marshall(condition.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(condition.getCrawlerName(), CRAWLERNAME_BINDING);
+            protocolMarshaller.marshall(condition.getCrawlState(), CRAWLSTATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -37,7 +37,7 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job (required).
+     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
      * </p>
      */
     private String scriptLocation;
@@ -96,11 +96,11 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job (required).
+     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
      * </p>
      * 
      * @param scriptLocation
-     *        Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job (required).
+     *        Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
      */
 
     public void setScriptLocation(String scriptLocation) {
@@ -109,10 +109,10 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job (required).
+     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
      * </p>
      * 
-     * @return Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job (required).
+     * @return Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
      */
 
     public String getScriptLocation() {
@@ -121,11 +121,11 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job (required).
+     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
      * </p>
      * 
      * @param scriptLocation
-     *        Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job (required).
+     *        Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

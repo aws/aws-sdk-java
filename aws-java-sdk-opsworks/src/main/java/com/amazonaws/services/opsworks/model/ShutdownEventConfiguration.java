@@ -38,7 +38,7 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * Whether to enable Elastic Load Balancing connection draining. For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
+     * "https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
      * >Connection Draining</a>
      * </p>
      */
@@ -93,13 +93,13 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * Whether to enable Elastic Load Balancing connection draining. For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
+     * "https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
      * >Connection Draining</a>
      * </p>
      * 
      * @param delayUntilElbConnectionsDrained
      *        Whether to enable Elastic Load Balancing connection draining. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
+     *        "https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
      *        >Connection Draining</a>
      */
 
@@ -110,12 +110,12 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * Whether to enable Elastic Load Balancing connection draining. For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
+     * "https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
      * >Connection Draining</a>
      * </p>
      * 
      * @return Whether to enable Elastic Load Balancing connection draining. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
+     *         "https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
      *         >Connection Draining</a>
      */
 
@@ -126,13 +126,13 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * Whether to enable Elastic Load Balancing connection draining. For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
+     * "https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
      * >Connection Draining</a>
      * </p>
      * 
      * @param delayUntilElbConnectionsDrained
      *        Whether to enable Elastic Load Balancing connection draining. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
+     *        "https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
      *        >Connection Draining</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -145,12 +145,12 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * Whether to enable Elastic Load Balancing connection draining. For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
+     * "https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
      * >Connection Draining</a>
      * </p>
      * 
      * @return Whether to enable Elastic Load Balancing connection draining. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
+     *         "https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
      *         >Connection Draining</a>
      */
 

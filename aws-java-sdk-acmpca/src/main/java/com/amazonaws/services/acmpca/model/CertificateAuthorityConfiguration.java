@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Contains configuration information for your private certificate authority (CA). This includes information about the
  * class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also
  * includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must
- * specify this information when you call the <a>CreateCertificateAuthority</a> operation.
+ * specify this information when you call the <a>CreateCertificateAuthority</a> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthorityConfiguration"
@@ -33,8 +33,8 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it issues a
-     * certificate.
+     * Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a
+     * certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.
      * </p>
      */
     private String keyAlgorithm;
@@ -53,13 +53,13 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it issues a
-     * certificate.
+     * Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a
+     * certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.
      * </p>
      * 
      * @param keyAlgorithm
-     *        Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it
-     *        issues a certificate.
+     *        Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a
+     *        certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.
      * @see KeyAlgorithm
      */
 
@@ -69,12 +69,12 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it issues a
-     * certificate.
+     * Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a
+     * certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.
      * </p>
      * 
-     * @return Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it
-     *         issues a certificate.
+     * @return Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a
+     *         certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.
      * @see KeyAlgorithm
      */
 
@@ -84,13 +84,13 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it issues a
-     * certificate.
+     * Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a
+     * certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.
      * </p>
      * 
      * @param keyAlgorithm
-     *        Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it
-     *        issues a certificate.
+     *        Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a
+     *        certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyAlgorithm
      */
@@ -102,13 +102,13 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it issues a
-     * certificate.
+     * Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a
+     * certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.
      * </p>
      * 
      * @param keyAlgorithm
-     *        Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it
-     *        issues a certificate.
+     *        Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a
+     *        certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyAlgorithm
      */

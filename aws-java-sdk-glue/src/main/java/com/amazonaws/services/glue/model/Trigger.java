@@ -35,6 +35,12 @@ public class Trigger implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
+     * The name of the workflow associated with the trigger.
+     * </p>
+     */
+    private String workflowName;
+    /**
+     * <p>
      * Reserved for future use.
      * </p>
      */
@@ -116,6 +122,46 @@ public class Trigger implements Serializable, Cloneable, StructuredPojo {
 
     public Trigger withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the workflow associated with the trigger.
+     * </p>
+     * 
+     * @param workflowName
+     *        The name of the workflow associated with the trigger.
+     */
+
+    public void setWorkflowName(String workflowName) {
+        this.workflowName = workflowName;
+    }
+
+    /**
+     * <p>
+     * The name of the workflow associated with the trigger.
+     * </p>
+     * 
+     * @return The name of the workflow associated with the trigger.
+     */
+
+    public String getWorkflowName() {
+        return this.workflowName;
+    }
+
+    /**
+     * <p>
+     * The name of the workflow associated with the trigger.
+     * </p>
+     * 
+     * @param workflowName
+     *        The name of the workflow associated with the trigger.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Trigger withWorkflowName(String workflowName) {
+        setWorkflowName(workflowName);
         return this;
     }
 
@@ -499,6 +545,8 @@ public class Trigger implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getWorkflowName() != null)
+            sb.append("WorkflowName: ").append(getWorkflowName()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getType() != null)
@@ -530,6 +578,10 @@ public class Trigger implements Serializable, Cloneable, StructuredPojo {
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getWorkflowName() == null ^ this.getWorkflowName() == null)
+            return false;
+        if (other.getWorkflowName() != null && other.getWorkflowName().equals(this.getWorkflowName()) == false)
             return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
@@ -568,6 +620,7 @@ public class Trigger implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowName() == null) ? 0 : getWorkflowName().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());

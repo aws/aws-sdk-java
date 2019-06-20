@@ -78,6 +78,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public BatchGetWorkflowsResult batchGetWorkflows(BatchGetWorkflowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchStopJobRunResult batchStopJobRun(BatchStopJobRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -143,6 +148,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public CreateWorkflowResult createWorkflow(CreateWorkflowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteClassifierResult deleteClassifier(DeleteClassifierRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -204,6 +214,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public DeleteUserDefinedFunctionResult deleteUserDefinedFunction(DeleteUserDefinedFunctionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWorkflowResult deleteWorkflow(DeleteWorkflowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -378,6 +393,26 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public GetWorkflowResult getWorkflow(GetWorkflowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetWorkflowRunResult getWorkflowRun(GetWorkflowRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetWorkflowRunPropertiesResult getWorkflowRunProperties(GetWorkflowRunPropertiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetWorkflowRunsResult getWorkflowRuns(GetWorkflowRunsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportCatalogToGlueResult importCatalogToGlue(ImportCatalogToGlueRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -403,12 +438,22 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public ListWorkflowsResult listWorkflows(ListWorkflowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutDataCatalogEncryptionSettingsResult putDataCatalogEncryptionSettings(PutDataCatalogEncryptionSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutWorkflowRunPropertiesResult putWorkflowRunProperties(PutWorkflowRunPropertiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -434,6 +479,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public StartTriggerResult startTrigger(StartTriggerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartWorkflowRunResult startWorkflowRun(StartWorkflowRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -514,6 +564,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public UpdateUserDefinedFunctionResult updateUserDefinedFunction(UpdateUserDefinedFunctionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateWorkflowResult updateWorkflow(UpdateWorkflowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

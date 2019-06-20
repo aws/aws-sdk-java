@@ -393,6 +393,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetWorkflowsResult> batchGetWorkflowsAsync(BatchGetWorkflowsRequest request) {
+
+        return batchGetWorkflowsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetWorkflowsResult> batchGetWorkflowsAsync(final BatchGetWorkflowsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetWorkflowsRequest, BatchGetWorkflowsResult> asyncHandler) {
+        final BatchGetWorkflowsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetWorkflowsResult>() {
+            @Override
+            public BatchGetWorkflowsResult call() throws Exception {
+                BatchGetWorkflowsResult result = null;
+
+                try {
+                    result = executeBatchGetWorkflows(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchStopJobRunResult> batchStopJobRunAsync(BatchStopJobRunRequest request) {
 
         return batchStopJobRunAsync(request, null);
@@ -822,6 +855,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorkflowResult> createWorkflowAsync(CreateWorkflowRequest request) {
+
+        return createWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkflowResult> createWorkflowAsync(final CreateWorkflowRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateWorkflowRequest, CreateWorkflowResult> asyncHandler) {
+        final CreateWorkflowRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateWorkflowResult>() {
+            @Override
+            public CreateWorkflowResult call() throws Exception {
+                CreateWorkflowResult result = null;
+
+                try {
+                    result = executeCreateWorkflow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteClassifierResult> deleteClassifierAsync(DeleteClassifierRequest request) {
 
         return deleteClassifierAsync(request, null);
@@ -1235,6 +1301,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeDeleteUserDefinedFunction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkflowResult> deleteWorkflowAsync(DeleteWorkflowRequest request) {
+
+        return deleteWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkflowResult> deleteWorkflowAsync(final DeleteWorkflowRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteWorkflowRequest, DeleteWorkflowResult> asyncHandler) {
+        final DeleteWorkflowRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteWorkflowResult>() {
+            @Override
+            public DeleteWorkflowResult call() throws Exception {
+                DeleteWorkflowResult result = null;
+
+                try {
+                    result = executeDeleteWorkflow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2375,6 +2474,138 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest request) {
+
+        return getWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(final GetWorkflowRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetWorkflowRequest, GetWorkflowResult> asyncHandler) {
+        final GetWorkflowRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetWorkflowResult>() {
+            @Override
+            public GetWorkflowResult call() throws Exception {
+                GetWorkflowResult result = null;
+
+                try {
+                    result = executeGetWorkflow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowRunResult> getWorkflowRunAsync(GetWorkflowRunRequest request) {
+
+        return getWorkflowRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowRunResult> getWorkflowRunAsync(final GetWorkflowRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetWorkflowRunRequest, GetWorkflowRunResult> asyncHandler) {
+        final GetWorkflowRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetWorkflowRunResult>() {
+            @Override
+            public GetWorkflowRunResult call() throws Exception {
+                GetWorkflowRunResult result = null;
+
+                try {
+                    result = executeGetWorkflowRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowRunPropertiesResult> getWorkflowRunPropertiesAsync(GetWorkflowRunPropertiesRequest request) {
+
+        return getWorkflowRunPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowRunPropertiesResult> getWorkflowRunPropertiesAsync(final GetWorkflowRunPropertiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetWorkflowRunPropertiesRequest, GetWorkflowRunPropertiesResult> asyncHandler) {
+        final GetWorkflowRunPropertiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetWorkflowRunPropertiesResult>() {
+            @Override
+            public GetWorkflowRunPropertiesResult call() throws Exception {
+                GetWorkflowRunPropertiesResult result = null;
+
+                try {
+                    result = executeGetWorkflowRunProperties(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowRunsResult> getWorkflowRunsAsync(GetWorkflowRunsRequest request) {
+
+        return getWorkflowRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowRunsResult> getWorkflowRunsAsync(final GetWorkflowRunsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetWorkflowRunsRequest, GetWorkflowRunsResult> asyncHandler) {
+        final GetWorkflowRunsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetWorkflowRunsResult>() {
+            @Override
+            public GetWorkflowRunsResult call() throws Exception {
+                GetWorkflowRunsResult result = null;
+
+                try {
+                    result = executeGetWorkflowRuns(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportCatalogToGlueResult> importCatalogToGlueAsync(ImportCatalogToGlueRequest request) {
 
         return importCatalogToGlueAsync(request, null);
@@ -2540,6 +2771,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListWorkflowsResult> listWorkflowsAsync(ListWorkflowsRequest request) {
+
+        return listWorkflowsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowsResult> listWorkflowsAsync(final ListWorkflowsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListWorkflowsRequest, ListWorkflowsResult> asyncHandler) {
+        final ListWorkflowsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListWorkflowsResult>() {
+            @Override
+            public ListWorkflowsResult call() throws Exception {
+                ListWorkflowsResult result = null;
+
+                try {
+                    result = executeListWorkflows(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutDataCatalogEncryptionSettingsResult> putDataCatalogEncryptionSettingsAsync(
             PutDataCatalogEncryptionSettingsRequest request) {
 
@@ -2592,6 +2856,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executePutResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutWorkflowRunPropertiesResult> putWorkflowRunPropertiesAsync(PutWorkflowRunPropertiesRequest request) {
+
+        return putWorkflowRunPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutWorkflowRunPropertiesResult> putWorkflowRunPropertiesAsync(final PutWorkflowRunPropertiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutWorkflowRunPropertiesRequest, PutWorkflowRunPropertiesResult> asyncHandler) {
+        final PutWorkflowRunPropertiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutWorkflowRunPropertiesResult>() {
+            @Override
+            public PutWorkflowRunPropertiesResult call() throws Exception {
+                PutWorkflowRunPropertiesResult result = null;
+
+                try {
+                    result = executePutWorkflowRunProperties(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2757,6 +3054,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeStartTrigger(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartWorkflowRunResult> startWorkflowRunAsync(StartWorkflowRunRequest request) {
+
+        return startWorkflowRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartWorkflowRunResult> startWorkflowRunAsync(final StartWorkflowRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartWorkflowRunRequest, StartWorkflowRunResult> asyncHandler) {
+        final StartWorkflowRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartWorkflowRunResult>() {
+            @Override
+            public StartWorkflowRunResult call() throws Exception {
+                StartWorkflowRunResult result = null;
+
+                try {
+                    result = executeStartWorkflowRun(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3285,6 +3615,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeUpdateUserDefinedFunction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkflowResult> updateWorkflowAsync(UpdateWorkflowRequest request) {
+
+        return updateWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkflowResult> updateWorkflowAsync(final UpdateWorkflowRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateWorkflowRequest, UpdateWorkflowResult> asyncHandler) {
+        final UpdateWorkflowRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateWorkflowResult>() {
+            @Override
+            public UpdateWorkflowResult call() throws Exception {
+                UpdateWorkflowResult result = null;
+
+                try {
+                    result = executeUpdateWorkflow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

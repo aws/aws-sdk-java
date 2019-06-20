@@ -61,13 +61,17 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
                     context.nextToken();
                     action.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("SecurityConfiguration", targetDepth)) {
+                    context.nextToken();
+                    action.setSecurityConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("NotificationProperty", targetDepth)) {
                     context.nextToken();
                     action.setNotificationProperty(NotificationPropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("SecurityConfiguration", targetDepth)) {
+                if (context.testExpression("CrawlerName", targetDepth)) {
                     context.nextToken();
-                    action.setSecurityConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
+                    action.setCrawlerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

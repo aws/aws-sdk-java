@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the error which occured when attempting to update a detector.
+ * Information about the error that occured when attempting to update a detector.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchUpdateDetectorErrorEntry"
@@ -30,8 +30,8 @@ public class BatchUpdateDetectorErrorEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The "messageId" of the update request that caused the error. (The value of the <code>messageId</code> in the
-     * update request <code>Detector</code> object.)
+     * The <code>"messageId"</code> of the update request that caused the error. (The value of the
+     * <code>"messageId"</code> in the update request <code>"Detector"</code> object.)
      * </p>
      */
     private String messageId;
@@ -50,13 +50,13 @@ public class BatchUpdateDetectorErrorEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The "messageId" of the update request that caused the error. (The value of the <code>messageId</code> in the
-     * update request <code>Detector</code> object.)
+     * The <code>"messageId"</code> of the update request that caused the error. (The value of the
+     * <code>"messageId"</code> in the update request <code>"Detector"</code> object.)
      * </p>
      * 
      * @param messageId
-     *        The "messageId" of the update request that caused the error. (The value of the <code>messageId</code> in
-     *        the update request <code>Detector</code> object.)
+     *        The <code>"messageId"</code> of the update request that caused the error. (The value of the
+     *        <code>"messageId"</code> in the update request <code>"Detector"</code> object.)
      */
 
     public void setMessageId(String messageId) {
@@ -65,12 +65,12 @@ public class BatchUpdateDetectorErrorEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The "messageId" of the update request that caused the error. (The value of the <code>messageId</code> in the
-     * update request <code>Detector</code> object.)
+     * The <code>"messageId"</code> of the update request that caused the error. (The value of the
+     * <code>"messageId"</code> in the update request <code>"Detector"</code> object.)
      * </p>
      * 
-     * @return The "messageId" of the update request that caused the error. (The value of the <code>messageId</code> in
-     *         the update request <code>Detector</code> object.)
+     * @return The <code>"messageId"</code> of the update request that caused the error. (The value of the
+     *         <code>"messageId"</code> in the update request <code>"Detector"</code> object.)
      */
 
     public String getMessageId() {
@@ -79,13 +79,13 @@ public class BatchUpdateDetectorErrorEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The "messageId" of the update request that caused the error. (The value of the <code>messageId</code> in the
-     * update request <code>Detector</code> object.)
+     * The <code>"messageId"</code> of the update request that caused the error. (The value of the
+     * <code>"messageId"</code> in the update request <code>"Detector"</code> object.)
      * </p>
      * 
      * @param messageId
-     *        The "messageId" of the update request that caused the error. (The value of the <code>messageId</code> in
-     *        the update request <code>Detector</code> object.)
+     *        The <code>"messageId"</code> of the update request that caused the error. (The value of the
+     *        <code>"messageId"</code> in the update request <code>"Detector"</code> object.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

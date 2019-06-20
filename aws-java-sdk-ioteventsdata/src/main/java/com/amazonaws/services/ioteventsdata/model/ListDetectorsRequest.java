@@ -27,7 +27,7 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the detector model whose instances you want to list.
+     * The name of the detector model whose detectors (instances) are listed.
      * </p>
      */
     private String detectorModelName;
@@ -52,11 +52,11 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the detector model whose instances you want to list.
+     * The name of the detector model whose detectors (instances) are listed.
      * </p>
      * 
      * @param detectorModelName
-     *        The name of the detector model whose instances you want to list.
+     *        The name of the detector model whose detectors (instances) are listed.
      */
 
     public void setDetectorModelName(String detectorModelName) {
@@ -65,10 +65,10 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the detector model whose instances you want to list.
+     * The name of the detector model whose detectors (instances) are listed.
      * </p>
      * 
-     * @return The name of the detector model whose instances you want to list.
+     * @return The name of the detector model whose detectors (instances) are listed.
      */
 
     public String getDetectorModelName() {
@@ -77,11 +77,11 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the detector model whose instances you want to list.
+     * The name of the detector model whose detectors (instances) are listed.
      * </p>
      * 
      * @param detectorModelName
-     *        The name of the detector model whose instances you want to list.
+     *        The name of the detector model whose detectors (instances) are listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

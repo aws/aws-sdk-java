@@ -1,3 +1,28 @@
+# __1.11.577__ __2019-06-20__
+## __AWS Certificate Manager Private Certificate Authority__
+  - ### Features
+    - ACM Private CA is launching Root CAs and hierarchy management, a new feature that expands the scope of ACM Private CA from supporting only subordinate issuing CAs, to now include a full CA hierarchy that includes root CAs - the cryptographic root of trust for an organization.
+
+## __AWS Glue__
+  - ### Features
+    - Starting today, you can now use workflows in AWS Glue to author directed acyclic graphs (DAGs) of Glue triggers, crawlers and jobs. Workflows enable orchestration of your ETL workloads by building dependencies between Glue entities (triggers, crawlers and jobs).  You can visually track status of the different nodes in the workflows on the console making it easier to monitor progress and troubleshoot issues. Also, you can share parameters across entities in the workflow.
+
+## __AWS Health APIs and Notifications__
+  - ### Features
+    - API improvements for the AWS Health service.
+
+## __AWS IoT Events Data__
+  - ### Features
+    - "The colon character ':' is now permitted in Detector Model 'key' parameter values.
+
+## __AWS OpsWorks__
+  - ### Features
+    - Documentation updates for OpsWorks Stacks.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds support for RDS storage autoscaling
+
 # __1.11.576__ __2019-06-19__
 ## __Amazon Elastic Container Service for Kubernetes__
   - ### Features

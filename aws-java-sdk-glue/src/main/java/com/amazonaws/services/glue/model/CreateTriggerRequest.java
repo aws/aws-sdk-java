@@ -33,6 +33,12 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String name;
     /**
      * <p>
+     * The name of the workflow associated with the trigger.
+     * </p>
+     */
+    private String workflowName;
+    /**
+     * <p>
      * The type of the new trigger.
      * </p>
      */
@@ -123,6 +129,46 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateTriggerRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the workflow associated with the trigger.
+     * </p>
+     * 
+     * @param workflowName
+     *        The name of the workflow associated with the trigger.
+     */
+
+    public void setWorkflowName(String workflowName) {
+        this.workflowName = workflowName;
+    }
+
+    /**
+     * <p>
+     * The name of the workflow associated with the trigger.
+     * </p>
+     * 
+     * @return The name of the workflow associated with the trigger.
+     */
+
+    public String getWorkflowName() {
+        return this.workflowName;
+    }
+
+    /**
+     * <p>
+     * The name of the workflow associated with the trigger.
+     * </p>
+     * 
+     * @param workflowName
+     *        The name of the workflow associated with the trigger.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTriggerRequest withWorkflowName(String workflowName) {
+        setWorkflowName(workflowName);
         return this;
     }
 
@@ -570,6 +616,8 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getWorkflowName() != null)
+            sb.append("WorkflowName: ").append(getWorkflowName()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getSchedule() != null)
@@ -601,6 +649,10 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getWorkflowName() == null ^ this.getWorkflowName() == null)
+            return false;
+        if (other.getWorkflowName() != null && other.getWorkflowName().equals(this.getWorkflowName()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
@@ -639,6 +691,7 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowName() == null) ? 0 : getWorkflowName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getPredicate() == null) ? 0 : getPredicate().hashCode());

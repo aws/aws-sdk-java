@@ -80,6 +80,10 @@ public class ValidStorageOptionsStaxUnmarshaller implements Unmarshaller<ValidSt
                     continue;
                 }
 
+                if (context.testExpression("SupportsStorageAutoscaling", targetDepth)) {
+                    validStorageOptions.setSupportsStorageAutoscaling(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return validStorageOptions;

@@ -270,6 +270,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(modifyDBInstanceRequest.getDeletionProtection()));
         }
 
+        if (modifyDBInstanceRequest.getMaxAllocatedStorage() != null) {
+            request.addParameter("MaxAllocatedStorage", StringUtils.fromInteger(modifyDBInstanceRequest.getMaxAllocatedStorage()));
+        }
+
         return request;
     }
 

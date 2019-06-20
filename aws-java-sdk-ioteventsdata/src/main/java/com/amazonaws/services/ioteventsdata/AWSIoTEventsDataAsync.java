@@ -27,7 +27,8 @@ import com.amazonaws.services.ioteventsdata.model.*;
  * <p>
  * <p>
  * AWS IoT Events monitors your equipment or device fleets for failures or changes in operation, and triggers actions
- * when such events occur.
+ * when such events occur. AWS IoT Events Data API commands enable you to send inputs to detectors, list detectors, and
+ * view or update a detector's status.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -35,10 +36,10 @@ public interface AWSIoTEventsDataAsync extends AWSIoTEventsData {
 
     /**
      * <p>
-     * Sends a set of messages to the AWS IoT Events system. Each message payload will be transformed into the input you
-     * specify (<code>inputName</code>) and ingested into any detectors that monitor that input. If multiple messages
-     * are sent, the order in which the messages are processed is not guaranteed--you must send messages one at a time
-     * and wait for a successful response to guarantee ordering.
+     * Sends a set of messages to the AWS IoT Events system. Each message payload is transformed into the input you
+     * specify (<code>"inputName"</code>) and ingested into any detectors that monitor that input. If multiple messages
+     * are sent, the order in which the messages are processed isn't guaranteed. To guarantee ordering, you must send
+     * messages one at a time and wait for a successful response.
      * </p>
      * 
      * @param batchPutMessageRequest
@@ -51,10 +52,10 @@ public interface AWSIoTEventsDataAsync extends AWSIoTEventsData {
 
     /**
      * <p>
-     * Sends a set of messages to the AWS IoT Events system. Each message payload will be transformed into the input you
-     * specify (<code>inputName</code>) and ingested into any detectors that monitor that input. If multiple messages
-     * are sent, the order in which the messages are processed is not guaranteed--you must send messages one at a time
-     * and wait for a successful response to guarantee ordering.
+     * Sends a set of messages to the AWS IoT Events system. Each message payload is transformed into the input you
+     * specify (<code>"inputName"</code>) and ingested into any detectors that monitor that input. If multiple messages
+     * are sent, the order in which the messages are processed isn't guaranteed. To guarantee ordering, you must send
+     * messages one at a time and wait for a successful response.
      * </p>
      * 
      * @param batchPutMessageRequest

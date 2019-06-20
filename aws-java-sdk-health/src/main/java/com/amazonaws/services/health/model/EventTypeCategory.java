@@ -22,7 +22,8 @@ public enum EventTypeCategory {
 
     Issue("issue"),
     AccountNotification("accountNotification"),
-    ScheduledChange("scheduledChange");
+    ScheduledChange("scheduledChange"),
+    Investigation("investigation");
 
     private String value;
 

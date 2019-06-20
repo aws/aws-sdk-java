@@ -19,11 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Permissions designate which private CA operations can be performed by an AWS service or entity. In order for ACM to
+ * Permissions designate which private CA actions can be performed by an AWS service or entity. In order for ACM to
  * automatically renew private certificates, you must give the ACM service principal all available permissions (
  * <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be
- * assigned with the <a>CreatePermission</a> operation, removed with the <a>DeletePermission</a> operation, and listed
- * with the <a>ListPermissions</a> operation.
+ * assigned with the <a>CreatePermission</a> action, removed with the <a>DeletePermission</a> action, and listed with
+ * the <a>ListPermissions</a> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/Permission" target="_top">AWS API
@@ -59,7 +59,7 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
     private String sourceAccount;
     /**
      * <p>
-     * The private CA operations that can be performed by the designated AWS service.
+     * The private CA actions that can be performed by the designated AWS service.
      * </p>
      */
     private java.util.List<String> actions;
@@ -238,10 +238,10 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The private CA operations that can be performed by the designated AWS service.
+     * The private CA actions that can be performed by the designated AWS service.
      * </p>
      * 
-     * @return The private CA operations that can be performed by the designated AWS service.
+     * @return The private CA actions that can be performed by the designated AWS service.
      * @see ActionType
      */
 
@@ -251,11 +251,11 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The private CA operations that can be performed by the designated AWS service.
+     * The private CA actions that can be performed by the designated AWS service.
      * </p>
      * 
      * @param actions
-     *        The private CA operations that can be performed by the designated AWS service.
+     *        The private CA actions that can be performed by the designated AWS service.
      * @see ActionType
      */
 
@@ -270,7 +270,7 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The private CA operations that can be performed by the designated AWS service.
+     * The private CA actions that can be performed by the designated AWS service.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -279,7 +279,7 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param actions
-     *        The private CA operations that can be performed by the designated AWS service.
+     *        The private CA actions that can be performed by the designated AWS service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionType
      */
@@ -296,11 +296,11 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The private CA operations that can be performed by the designated AWS service.
+     * The private CA actions that can be performed by the designated AWS service.
      * </p>
      * 
      * @param actions
-     *        The private CA operations that can be performed by the designated AWS service.
+     *        The private CA actions that can be performed by the designated AWS service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionType
      */
@@ -312,11 +312,11 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The private CA operations that can be performed by the designated AWS service.
+     * The private CA actions that can be performed by the designated AWS service.
      * </p>
      * 
      * @param actions
-     *        The private CA operations that can be performed by the designated AWS service.
+     *        The private CA actions that can be performed by the designated AWS service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionType
      */

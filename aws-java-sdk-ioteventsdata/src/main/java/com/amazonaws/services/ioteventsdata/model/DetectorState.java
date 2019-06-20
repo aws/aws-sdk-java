@@ -36,7 +36,7 @@ public class DetectorState implements Serializable, Cloneable, StructuredPojo {
     private String stateName;
     /**
      * <p>
-     * The current state of the detector's variables.
+     * The current values of the detector's variables.
      * </p>
      */
     private java.util.List<Variable> variables;
@@ -89,10 +89,10 @@ public class DetectorState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of the detector's variables.
+     * The current values of the detector's variables.
      * </p>
      * 
-     * @return The current state of the detector's variables.
+     * @return The current values of the detector's variables.
      */
 
     public java.util.List<Variable> getVariables() {
@@ -101,11 +101,11 @@ public class DetectorState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of the detector's variables.
+     * The current values of the detector's variables.
      * </p>
      * 
      * @param variables
-     *        The current state of the detector's variables.
+     *        The current values of the detector's variables.
      */
 
     public void setVariables(java.util.Collection<Variable> variables) {
@@ -119,7 +119,7 @@ public class DetectorState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of the detector's variables.
+     * The current values of the detector's variables.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -128,7 +128,7 @@ public class DetectorState implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param variables
-     *        The current state of the detector's variables.
+     *        The current values of the detector's variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class DetectorState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of the detector's variables.
+     * The current values of the detector's variables.
      * </p>
      * 
      * @param variables
-     *        The current state of the detector's variables.
+     *        The current values of the detector's variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

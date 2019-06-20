@@ -37,7 +37,7 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about
-     * IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * </p>
      */
@@ -87,7 +87,7 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For more information on the permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>
      * </p>
      */
@@ -136,14 +136,14 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about
-     * IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * </p>
      * 
      * @param iamUserArn
      *        The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information
-     *        about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *        Identifiers</a>.
+     *        about IAM ARNs, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
     public void setIamUserArn(String iamUserArn) {
@@ -153,13 +153,13 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about
-     * IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information
      *         about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
     public String getIamUserArn() {
@@ -169,14 +169,14 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about
-     * IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * </p>
      * 
      * @param iamUserArn
      *        The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information
-     *        about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *        Identifiers</a>.
+     *        about IAM ARNs, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,7 +322,7 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For more information on the permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>
      * </p>
      * 
@@ -357,7 +357,7 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        For more information on the permissions associated with these levels, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      *        Permissions</a>
      */
 
@@ -398,7 +398,7 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For more information on the permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>
      * </p>
      * 
@@ -432,7 +432,7 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
      *         </ul>
      *         <p>
      *         For more information on the permissions associated with these levels, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      *         Permissions</a>
      */
 
@@ -473,7 +473,7 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For more information on the permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>
      * </p>
      * 
@@ -508,7 +508,7 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        For more information on the permissions associated with these levels, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      *        Permissions</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -64,16 +64,22 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private Integer timeout;
     /**
      * <p>
+     * The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     * </p>
+     */
+    private String securityConfiguration;
+    /**
+     * <p>
      * Specifies configuration properties of a job run notification.
      * </p>
      */
     private NotificationProperty notificationProperty;
     /**
      * <p>
-     * The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     * The name of the crawler to be used with this action.
      * </p>
      */
-    private String securityConfiguration;
+    private String crawlerName;
 
     /**
      * <p>
@@ -317,6 +323,46 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     */
+
+    public void setSecurityConfiguration(String securityConfiguration) {
+        this.securityConfiguration = securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     * </p>
+     * 
+     * @return The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     */
+
+    public String getSecurityConfiguration() {
+        return this.securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withSecurityConfiguration(String securityConfiguration) {
+        setSecurityConfiguration(securityConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies configuration properties of a job run notification.
      * </p>
      * 
@@ -357,41 +403,41 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     * The name of the crawler to be used with this action.
      * </p>
      * 
-     * @param securityConfiguration
-     *        The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     * @param crawlerName
+     *        The name of the crawler to be used with this action.
      */
 
-    public void setSecurityConfiguration(String securityConfiguration) {
-        this.securityConfiguration = securityConfiguration;
+    public void setCrawlerName(String crawlerName) {
+        this.crawlerName = crawlerName;
     }
 
     /**
      * <p>
-     * The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     * The name of the crawler to be used with this action.
      * </p>
      * 
-     * @return The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     * @return The name of the crawler to be used with this action.
      */
 
-    public String getSecurityConfiguration() {
-        return this.securityConfiguration;
+    public String getCrawlerName() {
+        return this.crawlerName;
     }
 
     /**
      * <p>
-     * The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     * The name of the crawler to be used with this action.
      * </p>
      * 
-     * @param securityConfiguration
-     *        The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+     * @param crawlerName
+     *        The name of the crawler to be used with this action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Action withSecurityConfiguration(String securityConfiguration) {
-        setSecurityConfiguration(securityConfiguration);
+    public Action withCrawlerName(String crawlerName) {
+        setCrawlerName(crawlerName);
         return this;
     }
 
@@ -413,10 +459,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             sb.append("Arguments: ").append(getArguments()).append(",");
         if (getTimeout() != null)
             sb.append("Timeout: ").append(getTimeout()).append(",");
+        if (getSecurityConfiguration() != null)
+            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration()).append(",");
         if (getNotificationProperty() != null)
             sb.append("NotificationProperty: ").append(getNotificationProperty()).append(",");
-        if (getSecurityConfiguration() != null)
-            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration());
+        if (getCrawlerName() != null)
+            sb.append("CrawlerName: ").append(getCrawlerName());
         sb.append("}");
         return sb.toString();
     }
@@ -443,13 +491,17 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
             return false;
+        if (other.getSecurityConfiguration() == null ^ this.getSecurityConfiguration() == null)
+            return false;
+        if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
+            return false;
         if (other.getNotificationProperty() == null ^ this.getNotificationProperty() == null)
             return false;
         if (other.getNotificationProperty() != null && other.getNotificationProperty().equals(this.getNotificationProperty()) == false)
             return false;
-        if (other.getSecurityConfiguration() == null ^ this.getSecurityConfiguration() == null)
+        if (other.getCrawlerName() == null ^ this.getCrawlerName() == null)
             return false;
-        if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
+        if (other.getCrawlerName() != null && other.getCrawlerName().equals(this.getCrawlerName()) == false)
             return false;
         return true;
     }
@@ -462,8 +514,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getArguments() == null) ? 0 : getArguments().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
-        hashCode = prime * hashCode + ((getNotificationProperty() == null) ? 0 : getNotificationProperty().hashCode());
         hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getNotificationProperty() == null) ? 0 : getNotificationProperty().hashCode());
+        hashCode = prime * hashCode + ((getCrawlerName() == null) ? 0 : getCrawlerName().hashCode());
         return hashCode;
     }
 

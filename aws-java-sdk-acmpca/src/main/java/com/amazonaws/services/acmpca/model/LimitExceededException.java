@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An ACM PCA limit has been exceeded. See the exception message returned to determine the limit that was exceeded.
+ * An ACM Private CA limit has been exceeded. See the exception message returned to determine the limit that was
+ * exceeded.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

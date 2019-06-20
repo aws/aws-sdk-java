@@ -55,7 +55,7 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
      * <li>
@@ -100,7 +100,7 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      * </p>
      */
     private Boolean encrypted;
@@ -268,7 +268,7 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
      * <li>
@@ -305,7 +305,7 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
      * 
      * @param volumeType
      *        The volume type. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
      *        Types</a>.</p>
      *        <ul>
      *        <li>
@@ -347,7 +347,7 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
      * <li>
@@ -383,7 +383,7 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @return The volume type. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
      *         Types</a>.</p>
      *         <ul>
      *         <li>
@@ -425,7 +425,7 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
      * <li>
@@ -462,7 +462,7 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
      * 
      * @param volumeType
      *        The volume type. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
      *        Types</a>.</p>
      *        <ul>
      *        <li>
@@ -546,12 +546,12 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      * </p>
      * 
      * @param encrypted
      *        Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -561,11 +561,11 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      * </p>
      * 
      * @return Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      */
 
     public Boolean getEncrypted() {
@@ -575,12 +575,12 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      * </p>
      * 
      * @param encrypted
      *        Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -592,11 +592,11 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      * </p>
      * 
      * @return Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      */
 
     public Boolean isEncrypted() {

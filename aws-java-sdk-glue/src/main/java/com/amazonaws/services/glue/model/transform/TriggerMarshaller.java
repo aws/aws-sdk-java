@@ -30,6 +30,8 @@ public class TriggerMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> WORKFLOWNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkflowName").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -62,6 +64,7 @@ public class TriggerMarshaller {
 
         try {
             protocolMarshaller.marshall(trigger.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(trigger.getWorkflowName(), WORKFLOWNAME_BINDING);
             protocolMarshaller.marshall(trigger.getId(), ID_BINDING);
             protocolMarshaller.marshall(trigger.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(trigger.getState(), STATE_BINDING);

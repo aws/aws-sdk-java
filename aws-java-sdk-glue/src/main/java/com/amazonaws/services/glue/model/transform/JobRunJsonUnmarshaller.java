@@ -113,10 +113,6 @@ public class JobRunJsonUnmarshaller implements Unmarshaller<JobRun, JsonUnmarsha
                     context.nextToken();
                     jobRun.setMaxCapacity(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
-                if (context.testExpression("NotificationProperty", targetDepth)) {
-                    context.nextToken();
-                    jobRun.setNotificationProperty(NotificationPropertyJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("WorkerType", targetDepth)) {
                     context.nextToken();
                     jobRun.setWorkerType(context.getUnmarshaller(String.class).unmarshall(context));
@@ -132,6 +128,10 @@ public class JobRunJsonUnmarshaller implements Unmarshaller<JobRun, JsonUnmarsha
                 if (context.testExpression("LogGroupName", targetDepth)) {
                     context.nextToken();
                     jobRun.setLogGroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NotificationProperty", targetDepth)) {
+                    context.nextToken();
+                    jobRun.setNotificationProperty(NotificationPropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

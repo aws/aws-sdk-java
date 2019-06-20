@@ -33,6 +33,8 @@ public class IssueCertificateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Csr").build();
     private static final MarshallingInfo<String> SIGNINGALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningAlgorithm").build();
+    private static final MarshallingInfo<String> TEMPLATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateArn").build();
     private static final MarshallingInfo<StructuredPojo> VALIDITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Validity").build();
     private static final MarshallingInfo<String> IDEMPOTENCYTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -57,6 +59,7 @@ public class IssueCertificateRequestMarshaller {
             protocolMarshaller.marshall(issueCertificateRequest.getCertificateAuthorityArn(), CERTIFICATEAUTHORITYARN_BINDING);
             protocolMarshaller.marshall(issueCertificateRequest.getCsr(), CSR_BINDING);
             protocolMarshaller.marshall(issueCertificateRequest.getSigningAlgorithm(), SIGNINGALGORITHM_BINDING);
+            protocolMarshaller.marshall(issueCertificateRequest.getTemplateArn(), TEMPLATEARN_BINDING);
             protocolMarshaller.marshall(issueCertificateRequest.getValidity(), VALIDITY_BINDING);
             protocolMarshaller.marshall(issueCertificateRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
         } catch (Exception e) {

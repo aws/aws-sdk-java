@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a> data type.
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a> data type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/EbsBlockDevice" target="_top">AWS API
@@ -38,14 +38,14 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      */
     private Integer iops;
     /**
      * <p>
      * The volume size, in GiB. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      */
     private Integer volumeSize;
@@ -112,12 +112,12 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @param iops
      *        The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      */
 
     public void setIops(Integer iops) {
@@ -127,11 +127,11 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @return The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      */
 
     public Integer getIops() {
@@ -141,12 +141,12 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @param iops
      *        The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,12 +158,12 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The volume size, in GiB. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @param volumeSize
      *        The volume size, in GiB. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      */
 
     public void setVolumeSize(Integer volumeSize) {
@@ -173,11 +173,11 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The volume size, in GiB. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @return The volume size, in GiB. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      */
 
     public Integer getVolumeSize() {
@@ -187,12 +187,12 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The volume size, in GiB. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @param volumeSize
      *        The volume size, in GiB. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

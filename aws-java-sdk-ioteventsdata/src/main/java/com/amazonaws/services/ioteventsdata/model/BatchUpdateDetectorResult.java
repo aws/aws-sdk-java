@@ -25,20 +25,20 @@ public class BatchUpdateDetectorResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of those detector updates which resulted in errors. (The specific update did not occur if an error is
-     * listed here.)
+     * A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did
+     * not occur.)
      * </p>
      */
     private java.util.List<BatchUpdateDetectorErrorEntry> batchUpdateDetectorErrorEntries;
 
     /**
      * <p>
-     * A list of those detector updates which resulted in errors. (The specific update did not occur if an error is
-     * listed here.)
+     * A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did
+     * not occur.)
      * </p>
      * 
-     * @return A list of those detector updates which resulted in errors. (The specific update did not occur if an error
-     *         is listed here.)
+     * @return A list of those detector updates that resulted in errors. (If an error is listed here, the specific
+     *         update did not occur.)
      */
 
     public java.util.List<BatchUpdateDetectorErrorEntry> getBatchUpdateDetectorErrorEntries() {
@@ -47,13 +47,13 @@ public class BatchUpdateDetectorResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of those detector updates which resulted in errors. (The specific update did not occur if an error is
-     * listed here.)
+     * A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did
+     * not occur.)
      * </p>
      * 
      * @param batchUpdateDetectorErrorEntries
-     *        A list of those detector updates which resulted in errors. (The specific update did not occur if an error
-     *        is listed here.)
+     *        A list of those detector updates that resulted in errors. (If an error is listed here, the specific update
+     *        did not occur.)
      */
 
     public void setBatchUpdateDetectorErrorEntries(java.util.Collection<BatchUpdateDetectorErrorEntry> batchUpdateDetectorErrorEntries) {
@@ -67,8 +67,8 @@ public class BatchUpdateDetectorResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of those detector updates which resulted in errors. (The specific update did not occur if an error is
-     * listed here.)
+     * A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did
+     * not occur.)
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,8 +77,8 @@ public class BatchUpdateDetectorResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param batchUpdateDetectorErrorEntries
-     *        A list of those detector updates which resulted in errors. (The specific update did not occur if an error
-     *        is listed here.)
+     *        A list of those detector updates that resulted in errors. (If an error is listed here, the specific update
+     *        did not occur.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,13 +94,13 @@ public class BatchUpdateDetectorResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of those detector updates which resulted in errors. (The specific update did not occur if an error is
-     * listed here.)
+     * A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did
+     * not occur.)
      * </p>
      * 
      * @param batchUpdateDetectorErrorEntries
-     *        A list of those detector updates which resulted in errors. (The specific update did not occur if an error
-     *        is listed here.)
+     *        A list of those detector updates that resulted in errors. (If an error is listed here, the specific update
+     *        did not occur.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

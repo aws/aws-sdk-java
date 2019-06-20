@@ -37,7 +37,7 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
     private String certificateAuthorityArn;
     /**
      * <p>
-     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
+     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> action.
      * </p>
      */
     private String auditReportId;
@@ -102,11 +102,11 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
 
     /**
      * <p>
-     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
+     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> action.
      * </p>
      * 
      * @param auditReportId
-     *        The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
+     *        The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> action.
      */
 
     public void setAuditReportId(String auditReportId) {
@@ -115,10 +115,10 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
 
     /**
      * <p>
-     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
+     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> action.
      * </p>
      * 
-     * @return The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
+     * @return The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> action.
      */
 
     public String getAuditReportId() {
@@ -127,11 +127,11 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
 
     /**
      * <p>
-     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
+     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> action.
      * </p>
      * 
      * @param auditReportId
-     *        The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
+     *        The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

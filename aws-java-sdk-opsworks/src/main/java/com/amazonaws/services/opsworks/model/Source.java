@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
- * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a
- * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.
+ * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a
+ * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Source" target="_top">AWS API
@@ -79,8 +79,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For more information on how to safely handle IAM credentials, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
+     * >https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
      * </p>
      * <p>
      * In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.
@@ -354,8 +354,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For more information on how to safely handle IAM credentials, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
+     * >https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
      * </p>
      * <p>
      * In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.
@@ -377,8 +377,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        For more information on how to safely handle IAM credentials, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     *        >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
+     *        >https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
      *        </p>
      *        <p>
      *        In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.
@@ -406,8 +406,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For more information on how to safely handle IAM credentials, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
+     * >https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
      * </p>
      * <p>
      * In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.
@@ -428,8 +428,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      *         </ul>
      *         <p>
      *         For more information on how to safely handle IAM credentials, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     *         >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
+     *         >https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
      *         </p>
      *         <p>
      *         In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.
@@ -457,8 +457,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For more information on how to safely handle IAM credentials, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
+     * >https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
      * </p>
      * <p>
      * In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.
@@ -480,8 +480,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        For more information on how to safely handle IAM credentials, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     *        >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
+     *        >https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
      *        </p>
      *        <p>
      *        In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The new state, variable values and timer settings of the detector (instance).
+ * The new state, variable values, and timer settings of the detector (instance).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DetectorStateDefinition"
@@ -36,14 +36,14 @@ public class DetectorStateDefinition implements Serializable, Cloneable, Structu
     private String stateName;
     /**
      * <p>
-     * The new values of the detector's variables. Any variable whose value is not specified will be cleared.
+     * The new values of the detector's variables. Any variable whose value isn't specified is cleared.
      * </p>
      */
     private java.util.List<VariableDefinition> variables;
     /**
      * <p>
-     * The new values of the detector's timers. Any timer whose value is not specified will be cleared and its timeout
-     * event will not occur.
+     * The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event
+     * won't occur.
      * </p>
      */
     private java.util.List<TimerDefinition> timers;
@@ -90,10 +90,10 @@ public class DetectorStateDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The new values of the detector's variables. Any variable whose value is not specified will be cleared.
+     * The new values of the detector's variables. Any variable whose value isn't specified is cleared.
      * </p>
      * 
-     * @return The new values of the detector's variables. Any variable whose value is not specified will be cleared.
+     * @return The new values of the detector's variables. Any variable whose value isn't specified is cleared.
      */
 
     public java.util.List<VariableDefinition> getVariables() {
@@ -102,11 +102,11 @@ public class DetectorStateDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The new values of the detector's variables. Any variable whose value is not specified will be cleared.
+     * The new values of the detector's variables. Any variable whose value isn't specified is cleared.
      * </p>
      * 
      * @param variables
-     *        The new values of the detector's variables. Any variable whose value is not specified will be cleared.
+     *        The new values of the detector's variables. Any variable whose value isn't specified is cleared.
      */
 
     public void setVariables(java.util.Collection<VariableDefinition> variables) {
@@ -120,7 +120,7 @@ public class DetectorStateDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The new values of the detector's variables. Any variable whose value is not specified will be cleared.
+     * The new values of the detector's variables. Any variable whose value isn't specified is cleared.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +129,7 @@ public class DetectorStateDefinition implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param variables
-     *        The new values of the detector's variables. Any variable whose value is not specified will be cleared.
+     *        The new values of the detector's variables. Any variable whose value isn't specified is cleared.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +145,11 @@ public class DetectorStateDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The new values of the detector's variables. Any variable whose value is not specified will be cleared.
+     * The new values of the detector's variables. Any variable whose value isn't specified is cleared.
      * </p>
      * 
      * @param variables
-     *        The new values of the detector's variables. Any variable whose value is not specified will be cleared.
+     *        The new values of the detector's variables. Any variable whose value isn't specified is cleared.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,12 +160,12 @@ public class DetectorStateDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The new values of the detector's timers. Any timer whose value is not specified will be cleared and its timeout
-     * event will not occur.
+     * The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event
+     * won't occur.
      * </p>
      * 
-     * @return The new values of the detector's timers. Any timer whose value is not specified will be cleared and its
-     *         timeout event will not occur.
+     * @return The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its
+     *         timeout event won't occur.
      */
 
     public java.util.List<TimerDefinition> getTimers() {
@@ -174,13 +174,13 @@ public class DetectorStateDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The new values of the detector's timers. Any timer whose value is not specified will be cleared and its timeout
-     * event will not occur.
+     * The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event
+     * won't occur.
      * </p>
      * 
      * @param timers
-     *        The new values of the detector's timers. Any timer whose value is not specified will be cleared and its
-     *        timeout event will not occur.
+     *        The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout
+     *        event won't occur.
      */
 
     public void setTimers(java.util.Collection<TimerDefinition> timers) {
@@ -194,8 +194,8 @@ public class DetectorStateDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The new values of the detector's timers. Any timer whose value is not specified will be cleared and its timeout
-     * event will not occur.
+     * The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event
+     * won't occur.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -204,8 +204,8 @@ public class DetectorStateDefinition implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param timers
-     *        The new values of the detector's timers. Any timer whose value is not specified will be cleared and its
-     *        timeout event will not occur.
+     *        The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout
+     *        event won't occur.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,13 +221,13 @@ public class DetectorStateDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The new values of the detector's timers. Any timer whose value is not specified will be cleared and its timeout
-     * event will not occur.
+     * The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event
+     * won't occur.
      * </p>
      * 
      * @param timers
-     *        The new values of the detector's timers. Any timer whose value is not specified will be cleared and its
-     *        timeout event will not occur.
+     *        The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout
+     *        event won't occur.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

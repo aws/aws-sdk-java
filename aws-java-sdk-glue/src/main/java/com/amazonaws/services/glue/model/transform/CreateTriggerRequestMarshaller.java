@@ -31,6 +31,8 @@ public class CreateTriggerRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> WORKFLOWNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkflowName").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> SCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,6 +65,7 @@ public class CreateTriggerRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createTriggerRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createTriggerRequest.getWorkflowName(), WORKFLOWNAME_BINDING);
             protocolMarshaller.marshall(createTriggerRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(createTriggerRequest.getSchedule(), SCHEDULE_BINDING);
             protocolMarshaller.marshall(createTriggerRequest.getPredicate(), PREDICATE_BINDING);

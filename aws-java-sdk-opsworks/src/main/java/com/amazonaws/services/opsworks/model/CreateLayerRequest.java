@@ -53,7 +53,7 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * </p>
      */
     private String shortname;
@@ -76,7 +76,7 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      */
     private String customInstanceProfileArn;
@@ -84,7 +84,7 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the
      * layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
      * JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      * </p>
      */
@@ -116,9 +116,9 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
-     * the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>
+     * to the layer's instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      */
@@ -127,7 +127,7 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      * instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      */
@@ -339,7 +339,7 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * </p>
      * 
      * @param shortname
@@ -349,7 +349,7 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        alphanumeric characters, '-', '_', and '.'.</p>
      *        <p>
      *        The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      */
 
     public void setShortname(String shortname) {
@@ -365,7 +365,7 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * </p>
      * 
      * @return For custom layers only, use this parameter to specify the layer's short name, which is used internally by
@@ -374,7 +374,7 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         alphanumeric characters, '-', '_', and '.'.</p>
      *         <p>
      *         The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      */
 
     public String getShortname() {
@@ -390,7 +390,7 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * </p>
      * 
      * @param shortname
@@ -400,7 +400,7 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        alphanumeric characters, '-', '_', and '.'.</p>
      *        <p>
      *        The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -537,12 +537,12 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param customInstanceProfileArn
      *        The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *        Identifiers</a>.
      */
 
@@ -553,11 +553,11 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @return The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs,
-     *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
 
@@ -568,12 +568,12 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param customInstanceProfileArn
      *        The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *        Identifiers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -587,14 +587,14 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the
      * layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
      * JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      * </p>
      * 
      * @param customJson
      *        A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on
      *        the layer's instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using
      *        Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      */
 
@@ -606,13 +606,13 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the
      * layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
      * JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      * </p>
      * 
      * @return A JSON-formatted string containing custom stack configuration and deployment attributes to be installed
      *         on the layer's instances. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using
      *         Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      */
 
@@ -624,14 +624,14 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the
      * layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
      * JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      * </p>
      * 
      * @param customJson
      *        A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on
      *        the layer's instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using
      *        Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -915,17 +915,17 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
-     * the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>
+     * to the layer's instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @param autoAssignElasticIps
      *        Whether to automatically assign an <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
      *        address</a> to the layer's instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *        Layer</a>.
      */
 
@@ -936,16 +936,16 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
-     * the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>
+     * to the layer's instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @return Whether to automatically assign an <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
      *         address</a> to the layer's instances. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *         Layer</a>.
      */
 
@@ -956,17 +956,17 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
-     * the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>
+     * to the layer's instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @param autoAssignElasticIps
      *        Whether to automatically assign an <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
      *        address</a> to the layer's instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *        Layer</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -979,16 +979,16 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
-     * the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>
+     * to the layer's instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @return Whether to automatically assign an <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
      *         address</a> to the layer's instances. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *         Layer</a>.
      */
 
@@ -1000,14 +1000,14 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      * instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @param autoAssignPublicIps
      *        For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      *        instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *        Layer</a>.
      */
 
@@ -1019,13 +1019,13 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      * instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @return For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      *         instances. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *         Layer</a>.
      */
 
@@ -1037,14 +1037,14 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      * instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @param autoAssignPublicIps
      *        For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      *        instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *        Layer</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1058,13 +1058,13 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      * instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @return For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      *         instances. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *         Layer</a>.
      */
 

@@ -30,13 +30,13 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the operating system, such as <code>Amazon Linux 2017.09</code>.
+     * The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The ID of a supported operating system, such as <code>Amazon Linux 2017.09</code>.
+     * The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
      * </p>
      */
     private String id;
@@ -73,11 +73,11 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the operating system, such as <code>Amazon Linux 2017.09</code>.
+     * The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
      * </p>
      * 
      * @param name
-     *        The name of the operating system, such as <code>Amazon Linux 2017.09</code>.
+     *        The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
      */
 
     public void setName(String name) {
@@ -86,10 +86,10 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the operating system, such as <code>Amazon Linux 2017.09</code>.
+     * The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
      * </p>
      * 
-     * @return The name of the operating system, such as <code>Amazon Linux 2017.09</code>.
+     * @return The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
      */
 
     public String getName() {
@@ -98,11 +98,11 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the operating system, such as <code>Amazon Linux 2017.09</code>.
+     * The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
      * </p>
      * 
      * @param name
-     *        The name of the operating system, such as <code>Amazon Linux 2017.09</code>.
+     *        The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of a supported operating system, such as <code>Amazon Linux 2017.09</code>.
+     * The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
      * </p>
      * 
      * @param id
-     *        The ID of a supported operating system, such as <code>Amazon Linux 2017.09</code>.
+     *        The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
      */
 
     public void setId(String id) {
@@ -126,10 +126,10 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of a supported operating system, such as <code>Amazon Linux 2017.09</code>.
+     * The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
      * </p>
      * 
-     * @return The ID of a supported operating system, such as <code>Amazon Linux 2017.09</code>.
+     * @return The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
      */
 
     public String getId() {
@@ -138,11 +138,11 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of a supported operating system, such as <code>Amazon Linux 2017.09</code>.
+     * The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
      * </p>
      * 
      * @param id
-     *        The ID of a supported operating system, such as <code>Amazon Linux 2017.09</code>.
+     *        The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

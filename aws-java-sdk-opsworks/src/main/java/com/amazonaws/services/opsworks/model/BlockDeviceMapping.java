@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes a block device mapping. This data type maps directly to the Amazon EC2 <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a> data
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a> data
  * type.
  * </p>
  * 
@@ -47,7 +47,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The virtual device name. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.
      * </p>
      */
     private String virtualName;
@@ -153,12 +153,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The virtual device name. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.
      * </p>
      * 
      * @param virtualName
      *        The virtual device name. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html"
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html"
      *        >BlockDeviceMapping</a>.
      */
 
@@ -169,11 +169,11 @@ public class BlockDeviceMapping implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The virtual device name. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.
      * </p>
      * 
      * @return The virtual device name. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html"
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html"
      *         >BlockDeviceMapping</a>.
      */
 
@@ -184,12 +184,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The virtual device name. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.
      * </p>
      * 
      * @param virtualName
      *        The virtual device name. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html"
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html"
      *        >BlockDeviceMapping</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

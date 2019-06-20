@@ -27,17 +27,17 @@ public class BatchUpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of detectors (instances) to be updated, along with the values to be updated.
+     * The list of detectors (instances) to update, along with the values to update.
      * </p>
      */
     private java.util.List<UpdateDetectorRequest> detectors;
 
     /**
      * <p>
-     * The list of detectors (instances) to be updated, along with the values to be updated.
+     * The list of detectors (instances) to update, along with the values to update.
      * </p>
      * 
-     * @return The list of detectors (instances) to be updated, along with the values to be updated.
+     * @return The list of detectors (instances) to update, along with the values to update.
      */
 
     public java.util.List<UpdateDetectorRequest> getDetectors() {
@@ -46,11 +46,11 @@ public class BatchUpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of detectors (instances) to be updated, along with the values to be updated.
+     * The list of detectors (instances) to update, along with the values to update.
      * </p>
      * 
      * @param detectors
-     *        The list of detectors (instances) to be updated, along with the values to be updated.
+     *        The list of detectors (instances) to update, along with the values to update.
      */
 
     public void setDetectors(java.util.Collection<UpdateDetectorRequest> detectors) {
@@ -64,7 +64,7 @@ public class BatchUpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of detectors (instances) to be updated, along with the values to be updated.
+     * The list of detectors (instances) to update, along with the values to update.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class BatchUpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param detectors
-     *        The list of detectors (instances) to be updated, along with the values to be updated.
+     *        The list of detectors (instances) to update, along with the values to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BatchUpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of detectors (instances) to be updated, along with the values to be updated.
+     * The list of detectors (instances) to update, along with the values to update.
      * </p>
      * 
      * @param detectors
-     *        The list of detectors (instances) to be updated, along with the values to be updated.
+     *        The list of detectors (instances) to update, along with the values to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

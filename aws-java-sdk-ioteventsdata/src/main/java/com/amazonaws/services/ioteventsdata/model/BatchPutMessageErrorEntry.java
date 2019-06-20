@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains informations about the errors encountered.
+ * Contains information about the errors encountered.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchPutMessageErrorEntry"
@@ -30,8 +30,8 @@ public class BatchPutMessageErrorEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the message that caused the error. (See the value corresponding to the <code>messageId</code> key in
-     * the <code>message</code> object.)
+     * The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in
+     * the <code>"message"</code> object.)
      * </p>
      */
     private String messageId;
@@ -50,13 +50,13 @@ public class BatchPutMessageErrorEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the message that caused the error. (See the value corresponding to the <code>messageId</code> key in
-     * the <code>message</code> object.)
+     * The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in
+     * the <code>"message"</code> object.)
      * </p>
      * 
      * @param messageId
-     *        The ID of the message that caused the error. (See the value corresponding to the <code>messageId</code>
-     *        key in the <code>message</code> object.)
+     *        The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code>
+     *        key in the <code>"message"</code> object.)
      */
 
     public void setMessageId(String messageId) {
@@ -65,12 +65,12 @@ public class BatchPutMessageErrorEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the message that caused the error. (See the value corresponding to the <code>messageId</code> key in
-     * the <code>message</code> object.)
+     * The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in
+     * the <code>"message"</code> object.)
      * </p>
      * 
-     * @return The ID of the message that caused the error. (See the value corresponding to the <code>messageId</code>
-     *         key in the <code>message</code> object.)
+     * @return The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code>
+     *         key in the <code>"message"</code> object.)
      */
 
     public String getMessageId() {
@@ -79,13 +79,13 @@ public class BatchPutMessageErrorEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the message that caused the error. (See the value corresponding to the <code>messageId</code> key in
-     * the <code>message</code> object.)
+     * The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in
+     * the <code>"message"</code> object.)
      * </p>
      * 
      * @param messageId
-     *        The ID of the message that caused the error. (See the value corresponding to the <code>messageId</code>
-     *        key in the <code>message</code> object.)
+     *        The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code>
+     *        key in the <code>"message"</code> object.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

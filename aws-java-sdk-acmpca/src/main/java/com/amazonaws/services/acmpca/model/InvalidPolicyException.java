@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The S3 bucket policy is not valid. The policy must give ACM PCA rights to read from and write to the bucket and find
- * the bucket location.
+ * The S3 bucket policy is not valid. The policy must give ACM Private CA rights to read from and write to the bucket
+ * and find the bucket location.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

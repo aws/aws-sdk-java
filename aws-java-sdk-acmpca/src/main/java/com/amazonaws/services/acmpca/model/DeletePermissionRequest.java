@@ -28,7 +28,7 @@ public class DeletePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by
-     * calling the <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * calling the <a>ListCertificateAuthorities</a> action. This must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
@@ -45,7 +45,7 @@ public class DeletePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     private String principal;
     /**
      * <p>
-     * The AWS account that calls this operation.
+     * The AWS account that calls this action.
      * </p>
      */
     private String sourceAccount;
@@ -53,7 +53,7 @@ public class DeletePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by
-     * calling the <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * calling the <a>ListCertificateAuthorities</a> action. This must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
@@ -62,7 +62,7 @@ public class DeletePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param certificateAuthorityArn
      *        The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN
-     *        by calling the <a>ListCertificateAuthorities</a> operation. This must have the following form: </p>
+     *        by calling the <a>ListCertificateAuthorities</a> action. This must have the following form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
      */
@@ -74,7 +74,7 @@ public class DeletePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by
-     * calling the <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * calling the <a>ListCertificateAuthorities</a> action. This must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
@@ -82,7 +82,7 @@ public class DeletePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN
-     *         by calling the <a>ListCertificateAuthorities</a> operation. This must have the following form: </p>
+     *         by calling the <a>ListCertificateAuthorities</a> action. This must have the following form: </p>
      *         <p>
      *         <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
      */
@@ -94,7 +94,7 @@ public class DeletePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by
-     * calling the <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * calling the <a>ListCertificateAuthorities</a> action. This must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
@@ -103,7 +103,7 @@ public class DeletePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param certificateAuthorityArn
      *        The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN
-     *        by calling the <a>ListCertificateAuthorities</a> operation. This must have the following form: </p>
+     *        by calling the <a>ListCertificateAuthorities</a> action. This must have the following form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -162,11 +162,11 @@ public class DeletePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account that calls this operation.
+     * The AWS account that calls this action.
      * </p>
      * 
      * @param sourceAccount
-     *        The AWS account that calls this operation.
+     *        The AWS account that calls this action.
      */
 
     public void setSourceAccount(String sourceAccount) {
@@ -175,10 +175,10 @@ public class DeletePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account that calls this operation.
+     * The AWS account that calls this action.
      * </p>
      * 
-     * @return The AWS account that calls this operation.
+     * @return The AWS account that calls this action.
      */
 
     public String getSourceAccount() {
@@ -187,11 +187,11 @@ public class DeletePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account that calls this operation.
+     * The AWS account that calls this action.
      * </p>
      * 
      * @param sourceAccount
-     *        The AWS account that calls this operation.
+     *        The AWS account that calls this action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

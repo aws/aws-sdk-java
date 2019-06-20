@@ -283,6 +283,10 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(createDBInstanceRequest.getDeletionProtection()));
         }
 
+        if (createDBInstanceRequest.getMaxAllocatedStorage() != null) {
+            request.addParameter("MaxAllocatedStorage", StringUtils.fromInteger(createDBInstanceRequest.getMaxAllocatedStorage()));
+        }
+
         return request;
     }
 

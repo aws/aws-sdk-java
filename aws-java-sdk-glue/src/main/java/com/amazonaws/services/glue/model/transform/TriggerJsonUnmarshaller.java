@@ -52,6 +52,10 @@ public class TriggerJsonUnmarshaller implements Unmarshaller<Trigger, JsonUnmars
                     context.nextToken();
                     trigger.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("WorkflowName", targetDepth)) {
+                    context.nextToken();
+                    trigger.setWorkflowName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     trigger.setId(context.getUnmarshaller(String.class).unmarshall(context));

@@ -37,15 +37,19 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
     private String certificateAuthorityArn;
     /**
      * <p>
-     * The PEM-encoded certificate for your private CA. This must be signed by using your on-premises CA.
+     * The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or
+     * it may be signed by another CA that you control.
      * </p>
      */
     private java.nio.ByteBuffer certificate;
     /**
      * <p>
      * A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining
-     * up to your root CA. Your on-premises root certificate is the last in the chain, and each certificate in the chain
-     * signs the one preceding.
+     * up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding.
+     * </p>
+     * <p>
+     * This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.
      * </p>
      */
     private java.nio.ByteBuffer certificateChain;
@@ -113,7 +117,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The PEM-encoded certificate for your private CA. This must be signed by using your on-premises CA.
+     * The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or
+     * it may be signed by another CA that you control.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -127,7 +132,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
      * </p>
      * 
      * @param certificate
-     *        The PEM-encoded certificate for your private CA. This must be signed by using your on-premises CA.
+     *        The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root
+     *        CA, or it may be signed by another CA that you control.
      */
 
     public void setCertificate(java.nio.ByteBuffer certificate) {
@@ -136,7 +142,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The PEM-encoded certificate for your private CA. This must be signed by using your on-premises CA.
+     * The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or
+     * it may be signed by another CA that you control.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -146,7 +153,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
      * {@code position}.
      * </p>
      * 
-     * @return The PEM-encoded certificate for your private CA. This must be signed by using your on-premises CA.
+     * @return The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root
+     *         CA, or it may be signed by another CA that you control.
      */
 
     public java.nio.ByteBuffer getCertificate() {
@@ -155,7 +163,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The PEM-encoded certificate for your private CA. This must be signed by using your on-premises CA.
+     * The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or
+     * it may be signed by another CA that you control.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -169,7 +178,8 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
      * </p>
      * 
      * @param certificate
-     *        The PEM-encoded certificate for your private CA. This must be signed by using your on-premises CA.
+     *        The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root
+     *        CA, or it may be signed by another CA that you control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,8 +191,11 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
     /**
      * <p>
      * A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining
-     * up to your root CA. Your on-premises root certificate is the last in the chain, and each certificate in the chain
-     * signs the one preceding.
+     * up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding.
+     * </p>
+     * <p>
+     * This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -197,8 +210,11 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
      * 
      * @param certificateChain
      *        A PEM-encoded file that contains all of your certificates, other than the certificate you're importing,
-     *        chaining up to your root CA. Your on-premises root certificate is the last in the chain, and each
-     *        certificate in the chain signs the one preceding.
+     *        chaining up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the
+     *        chain, and each certificate in the chain signs the one preceding. </p>
+     *        <p>
+     *        This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no
+     *        chain.
      */
 
     public void setCertificateChain(java.nio.ByteBuffer certificateChain) {
@@ -208,8 +224,11 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
     /**
      * <p>
      * A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining
-     * up to your root CA. Your on-premises root certificate is the last in the chain, and each certificate in the chain
-     * signs the one preceding.
+     * up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding.
+     * </p>
+     * <p>
+     * This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -220,8 +239,11 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
      * </p>
      * 
      * @return A PEM-encoded file that contains all of your certificates, other than the certificate you're importing,
-     *         chaining up to your root CA. Your on-premises root certificate is the last in the chain, and each
-     *         certificate in the chain signs the one preceding.
+     *         chaining up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in
+     *         the chain, and each certificate in the chain signs the one preceding. </p>
+     *         <p>
+     *         This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no
+     *         chain.
      */
 
     public java.nio.ByteBuffer getCertificateChain() {
@@ -231,8 +253,11 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
     /**
      * <p>
      * A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining
-     * up to your root CA. Your on-premises root certificate is the last in the chain, and each certificate in the chain
-     * signs the one preceding.
+     * up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding.
+     * </p>
+     * <p>
+     * This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -247,8 +272,11 @@ public class ImportCertificateAuthorityCertificateRequest extends com.amazonaws.
      * 
      * @param certificateChain
      *        A PEM-encoded file that contains all of your certificates, other than the certificate you're importing,
-     *        chaining up to your root CA. Your on-premises root certificate is the last in the chain, and each
-     *        certificate in the chain signs the one preceding.
+     *        chaining up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the
+     *        chain, and each certificate in the chain signs the one preceding. </p>
+     *        <p>
+     *        This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no
+     *        chain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

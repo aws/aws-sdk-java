@@ -27,20 +27,20 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The list of messages to send. Each message has format:
-     * <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>.
+     * The list of messages to send. Each message has the following format:
+     * <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>
      * </p>
      */
     private java.util.List<Message> messages;
 
     /**
      * <p>
-     * The list of messages to send. Each message has format:
-     * <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>.
+     * The list of messages to send. Each message has the following format:
+     * <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>
      * </p>
      * 
-     * @return The list of messages to send. Each message has format:
-     *         <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>.
+     * @return The list of messages to send. Each message has the following format:
+     *         <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>
      */
 
     public java.util.List<Message> getMessages() {
@@ -49,13 +49,13 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The list of messages to send. Each message has format:
-     * <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>.
+     * The list of messages to send. Each message has the following format:
+     * <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>
      * </p>
      * 
      * @param messages
-     *        The list of messages to send. Each message has format:
-     *        <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>.
+     *        The list of messages to send. Each message has the following format:
+     *        <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>
      */
 
     public void setMessages(java.util.Collection<Message> messages) {
@@ -69,8 +69,8 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The list of messages to send. Each message has format:
-     * <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>.
+     * The list of messages to send. Each message has the following format:
+     * <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,8 +79,8 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param messages
-     *        The list of messages to send. Each message has format:
-     *        <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>.
+     *        The list of messages to send. Each message has the following format:
+     *        <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,13 +96,13 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The list of messages to send. Each message has format:
-     * <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>.
+     * The list of messages to send. Each message has the following format:
+     * <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>
      * </p>
      * 
      * @param messages
-     *        The list of messages to send. Each message has format:
-     *        <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>.
+     *        The list of messages to send. Each message has the following format:
+     *        <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

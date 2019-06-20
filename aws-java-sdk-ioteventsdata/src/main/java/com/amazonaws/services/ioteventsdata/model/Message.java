@@ -30,13 +30,13 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
+     * The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.
      * </p>
      */
     private String messageId;
     /**
      * <p>
-     * The name of the input into which the message payload will be transformed.
+     * The name of the input into which the message payload is transformed.
      * </p>
      */
     private String inputName;
@@ -50,11 +50,11 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
+     * The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.
      * </p>
      * 
      * @param messageId
-     *        The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
+     *        The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.
      */
 
     public void setMessageId(String messageId) {
@@ -63,10 +63,10 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
+     * The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.
      * </p>
      * 
-     * @return The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
+     * @return The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.
      */
 
     public String getMessageId() {
@@ -75,11 +75,11 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
+     * The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.
      * </p>
      * 
      * @param messageId
-     *        The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
+     *        The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the input into which the message payload will be transformed.
+     * The name of the input into which the message payload is transformed.
      * </p>
      * 
      * @param inputName
-     *        The name of the input into which the message payload will be transformed.
+     *        The name of the input into which the message payload is transformed.
      */
 
     public void setInputName(String inputName) {
@@ -103,10 +103,10 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the input into which the message payload will be transformed.
+     * The name of the input into which the message payload is transformed.
      * </p>
      * 
-     * @return The name of the input into which the message payload will be transformed.
+     * @return The name of the input into which the message payload is transformed.
      */
 
     public String getInputName() {
@@ -115,11 +115,11 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the input into which the message payload will be transformed.
+     * The name of the input into which the message payload is transformed.
      * </p>
      * 
      * @param inputName
-     *        The name of the input into which the message payload will be transformed.
+     *        The name of the input into which the message payload is transformed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

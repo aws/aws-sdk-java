@@ -60,6 +60,14 @@ public class ConditionJsonUnmarshaller implements Unmarshaller<Condition, JsonUn
                     context.nextToken();
                     condition.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CrawlerName", targetDepth)) {
+                    context.nextToken();
+                    condition.setCrawlerName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CrawlState", targetDepth)) {
+                    context.nextToken();
+                    condition.setCrawlState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

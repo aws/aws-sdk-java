@@ -13,40 +13,20 @@
 
 /**
  * <p>
- * You can use the ACM PCA API to create a private certificate authority (CA). You must first call the
- * <a>CreateCertificateAuthority</a> operation. If successful, the operation returns an Amazon Resource Name (ARN) for
- * your private CA. Use this ARN as input to the <a>GetCertificateAuthorityCsr</a> operation to retrieve the certificate
- * signing request (CSR) for your private CA certificate. Sign the CSR using the root or an intermediate CA in your
- * on-premises PKI hierarchy, and call the <a>ImportCertificateAuthorityCertificate</a> to import your signed private CA
- * certificate into ACM PCA.
+ * This is the <i>ACM Private CA API Reference</i>. It provides descriptions, syntax, and usage examples for each of the
+ * actions and data types involved in creating and managing private certificate authorities (CA) for your organization.
  * </p>
  * <p>
- * Use your private CA to issue and revoke certificates. These are private certificates that identify and secure client
- * computers, servers, applications, services, devices, and users over SSLS/TLS connections within your organization.
- * Call the <a>IssueCertificate</a> operation to issue a certificate. Call the <a>RevokeCertificate</a> operation to
- * revoke a certificate.
+ * The documentation for each action shows the Query API request parameters and the XML response. Alternatively, you can
+ * use one of the AWS SDKs to access an API that's tailored to the programming language or platform that you're using.
+ * For more information, see <a href="https://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
  * </p>
  * <note>
  * <p>
- * Certificates issued by your private CA can be trusted only within your organization, not publicly.
- * </p>
- * </note>
- * <p>
- * Your private CA can optionally create a certificate revocation list (CRL) to track the certificates you revoke. To
- * create a CRL, you must specify a <a>RevocationConfiguration</a> object when you call the
- * <a>CreateCertificateAuthority</a> operation. ACM PCA writes the CRL to an S3 bucket that you specify. You must
- * specify a bucket policy that grants ACM PCA write permission.
- * </p>
- * <p>
- * You can also call the <a>CreateCertificateAuthorityAuditReport</a> to create an optional audit report, which
- * enumerates all of the issued, valid, expired, and revoked certificates from the CA.
- * </p>
- * <note>
- * <p>
- * Each ACM PCA API operation has a throttling limit which determines the number of times the operation can be called
+ * Each ACM Private CA API action has a throttling limit which determines the number of times the action can be called
  * per second. For more information, see <a
  * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Limits in ACM
- * PCA</a> in the ACM PCA user guide.
+ * Private CA</a> in the ACM Private CA user guide.
  * </p>
  * </note>
  */

@@ -22,10 +22,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509
  * digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns
  * or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the
- * <a>CreateCertificateAuthority</a> operation to create your private CA. You must then call the
- * <a>GetCertificateAuthorityCertificate</a> operation to retrieve a private CA certificate signing request (CSR). Take
- * the CSR to your on-premises CA and sign it with the root CA certificate or a subordinate certificate. Call the
- * <a>ImportCertificateAuthorityCertificate</a> operation to import the signed certificate into AWS Certificate Manager
+ * <a>CreateCertificateAuthority</a> action to create your private CA. You must then call the
+ * <a>GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the
+ * CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the
+ * <a>ImportCertificateAuthorityCertificate</a> action to import the signed certificate into AWS Certificate Manager
  * (ACM).
  * </p>
  * 
@@ -105,7 +105,7 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The period during which a deleted CA can be restored. For more information, see the
-     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> operation.
+     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> action.
      * </p>
      */
     private java.util.Date restorableUntil;
@@ -616,13 +616,12 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The period during which a deleted CA can be restored. For more information, see the
-     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> operation.
+     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> action.
      * </p>
      * 
      * @param restorableUntil
      *        The period during which a deleted CA can be restored. For more information, see the
-     *        <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a>
-     *        operation.
+     *        <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> action.
      */
 
     public void setRestorableUntil(java.util.Date restorableUntil) {
@@ -632,12 +631,12 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The period during which a deleted CA can be restored. For more information, see the
-     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> operation.
+     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> action.
      * </p>
      * 
      * @return The period during which a deleted CA can be restored. For more information, see the
      *         <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a>
-     *         operation.
+     *         action.
      */
 
     public java.util.Date getRestorableUntil() {
@@ -647,13 +646,12 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The period during which a deleted CA can be restored. For more information, see the
-     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> operation.
+     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> action.
      * </p>
      * 
      * @param restorableUntil
      *        The period during which a deleted CA can be restored. For more information, see the
-     *        <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a>
-     *        operation.
+     *        <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -270,6 +270,27 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Returns a list of resource metadata for a given list of workflow names. After calling the
+     * <code>ListWorkflows</code> operation, you can call this operation to access the data to which you have been
+     * granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
+     * </p>
+     * 
+     * @param batchGetWorkflowsRequest
+     * @return Result of the BatchGetWorkflows operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @sample AWSGlue.BatchGetWorkflows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetWorkflows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchGetWorkflowsResult batchGetWorkflows(BatchGetWorkflowsRequest batchGetWorkflowsRequest);
+
+    /**
+     * <p>
      * Stops one or more job runs for a specified job definition.
      * </p>
      * 
@@ -540,6 +561,8 @@ public interface AWSGlue {
      * @return Result of the CreateTrigger operation returned by the service.
      * @throws AlreadyExistsException
      *         A resource to be created or added already exists.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws IdempotentParameterMismatchException
@@ -584,6 +607,31 @@ public interface AWSGlue {
      *      API Documentation</a>
      */
     CreateUserDefinedFunctionResult createUserDefinedFunction(CreateUserDefinedFunctionRequest createUserDefinedFunctionRequest);
+
+    /**
+     * <p>
+     * Creates a new workflow.
+     * </p>
+     * 
+     * @param createWorkflowRequest
+     * @return Result of the CreateWorkflow operation returned by the service.
+     * @throws AlreadyExistsException
+     *         A resource to be created or added already exists.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSGlue.CreateWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateWorkflowResult createWorkflow(CreateWorkflowRequest createWorkflowRequest);
 
     /**
      * <p>
@@ -874,6 +922,27 @@ public interface AWSGlue {
      *      API Documentation</a>
      */
     DeleteUserDefinedFunctionResult deleteUserDefinedFunction(DeleteUserDefinedFunctionRequest deleteUserDefinedFunctionRequest);
+
+    /**
+     * <p>
+     * Deletes a workflow.
+     * </p>
+     * 
+     * @param deleteWorkflowRequest
+     * @return Result of the DeleteWorkflow operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSGlue.DeleteWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteWorkflowResult deleteWorkflow(DeleteWorkflowRequest deleteWorkflowRequest);
 
     /**
      * <p>
@@ -1587,6 +1656,90 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Retrieves resource metadata for a workflow.
+     * </p>
+     * 
+     * @param getWorkflowRequest
+     * @return Result of the GetWorkflow operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.GetWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetWorkflowResult getWorkflow(GetWorkflowRequest getWorkflowRequest);
+
+    /**
+     * <p>
+     * Retrieves the metadata for a given workflow run.
+     * </p>
+     * 
+     * @param getWorkflowRunRequest
+     * @return Result of the GetWorkflowRun operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.GetWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetWorkflowRunResult getWorkflowRun(GetWorkflowRunRequest getWorkflowRunRequest);
+
+    /**
+     * <p>
+     * Retrieves the workflow run properties which were set during the run.
+     * </p>
+     * 
+     * @param getWorkflowRunPropertiesRequest
+     * @return Result of the GetWorkflowRunProperties operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.GetWorkflowRunProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRunProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetWorkflowRunPropertiesResult getWorkflowRunProperties(GetWorkflowRunPropertiesRequest getWorkflowRunPropertiesRequest);
+
+    /**
+     * <p>
+     * Retrieves metadata for all runs of a given workflow.
+     * </p>
+     * 
+     * @param getWorkflowRunsRequest
+     * @return Result of the GetWorkflowRuns operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.GetWorkflowRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRuns" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetWorkflowRunsResult getWorkflowRuns(GetWorkflowRunsRequest getWorkflowRunsRequest);
+
+    /**
+     * <p>
      * Imports an existing Athena Data Catalog to AWS Glue
      * </p>
      * 
@@ -1706,6 +1859,25 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Lists names of workflows created in the account.
+     * </p>
+     * 
+     * @param listWorkflowsRequest
+     * @return Result of the ListWorkflows operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.ListWorkflows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListWorkflows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListWorkflowsResult listWorkflows(ListWorkflowsRequest listWorkflowsRequest);
+
+    /**
+     * <p>
      * Sets the security configuration for a specified catalog. After the configuration has been set, the specified
      * encryption is applied to every catalog write thereafter.
      * </p>
@@ -1746,6 +1918,34 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Puts the specified workflow run properties for the given workflow run. If a property already exists for the
+     * specified run, then it overrides the value otherwise adds the property to existing properties.
+     * </p>
+     * 
+     * @param putWorkflowRunPropertiesRequest
+     * @return Result of the PutWorkflowRunProperties operation returned by the service.
+     * @throws AlreadyExistsException
+     *         A resource to be created or added already exists.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSGlue.PutWorkflowRunProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutWorkflowRunProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutWorkflowRunPropertiesResult putWorkflowRunProperties(PutWorkflowRunPropertiesRequest putWorkflowRunPropertiesRequest);
 
     /**
      * <p>
@@ -1864,6 +2064,31 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     StartTriggerResult startTrigger(StartTriggerRequest startTriggerRequest);
+
+    /**
+     * <p>
+     * Starts a new run of the specified workflow.
+     * </p>
+     * 
+     * @param startWorkflowRunRequest
+     * @return Result of the StartWorkflowRun operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @throws ConcurrentRunsExceededException
+     *         Too many jobs are being run concurrently.
+     * @sample AWSGlue.StartWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartWorkflowRunResult startWorkflowRun(StartWorkflowRunRequest startWorkflowRunRequest);
 
     /**
      * <p>
@@ -2230,6 +2455,29 @@ public interface AWSGlue {
      *      API Documentation</a>
      */
     UpdateUserDefinedFunctionResult updateUserDefinedFunction(UpdateUserDefinedFunctionRequest updateUserDefinedFunctionRequest);
+
+    /**
+     * <p>
+     * Updates an existing workflow.
+     * </p>
+     * 
+     * @param updateWorkflowRequest
+     * @return Result of the UpdateWorkflow operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSGlue.UpdateWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateWorkflowResult updateWorkflow(UpdateWorkflowRequest updateWorkflowRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

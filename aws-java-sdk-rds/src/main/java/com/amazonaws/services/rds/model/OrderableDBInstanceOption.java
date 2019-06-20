@@ -161,6 +161,12 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
+    /**
+     * <p>
+     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance class.
+     * </p>
+     */
+    private Boolean supportsStorageAutoscaling;
 
     /**
      * <p>
@@ -1238,6 +1244,62 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance class.
+     * </p>
+     * 
+     * @param supportsStorageAutoscaling
+     *        Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance
+     *        class.
+     */
+
+    public void setSupportsStorageAutoscaling(Boolean supportsStorageAutoscaling) {
+        this.supportsStorageAutoscaling = supportsStorageAutoscaling;
+    }
+
+    /**
+     * <p>
+     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance class.
+     * </p>
+     * 
+     * @return Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified
+     *         instance class.
+     */
+
+    public Boolean getSupportsStorageAutoscaling() {
+        return this.supportsStorageAutoscaling;
+    }
+
+    /**
+     * <p>
+     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance class.
+     * </p>
+     * 
+     * @param supportsStorageAutoscaling
+     *        Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance
+     *        class.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withSupportsStorageAutoscaling(Boolean supportsStorageAutoscaling) {
+        setSupportsStorageAutoscaling(supportsStorageAutoscaling);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance class.
+     * </p>
+     * 
+     * @return Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified
+     *         instance class.
+     */
+
+    public Boolean isSupportsStorageAutoscaling() {
+        return this.supportsStorageAutoscaling;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1292,7 +1354,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (getAvailableProcessorFeatures() != null)
             sb.append("AvailableProcessorFeatures: ").append(getAvailableProcessorFeatures()).append(",");
         if (getSupportedEngineModes() != null)
-            sb.append("SupportedEngineModes: ").append(getSupportedEngineModes());
+            sb.append("SupportedEngineModes: ").append(getSupportedEngineModes()).append(",");
+        if (getSupportsStorageAutoscaling() != null)
+            sb.append("SupportsStorageAutoscaling: ").append(getSupportsStorageAutoscaling());
         sb.append("}");
         return sb.toString();
     }
@@ -1396,6 +1460,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
             return false;
         if (other.getSupportedEngineModes() != null && other.getSupportedEngineModes().equals(this.getSupportedEngineModes()) == false)
             return false;
+        if (other.getSupportsStorageAutoscaling() == null ^ this.getSupportsStorageAutoscaling() == null)
+            return false;
+        if (other.getSupportsStorageAutoscaling() != null && other.getSupportsStorageAutoscaling().equals(this.getSupportsStorageAutoscaling()) == false)
+            return false;
         return true;
     }
 
@@ -1426,6 +1494,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaxIopsPerGib() == null) ? 0 : getMaxIopsPerGib().hashCode());
         hashCode = prime * hashCode + ((getAvailableProcessorFeatures() == null) ? 0 : getAvailableProcessorFeatures().hashCode());
         hashCode = prime * hashCode + ((getSupportedEngineModes() == null) ? 0 : getSupportedEngineModes().hashCode());
+        hashCode = prime * hashCode + ((getSupportsStorageAutoscaling() == null) ? 0 : getSupportsStorageAutoscaling().hashCode());
         return hashCode;
     }
 

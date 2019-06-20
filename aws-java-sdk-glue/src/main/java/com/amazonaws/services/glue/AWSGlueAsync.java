@@ -385,6 +385,41 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Returns a list of resource metadata for a given list of workflow names. After calling the
+     * <code>ListWorkflows</code> operation, you can call this operation to access the data to which you have been
+     * granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
+     * </p>
+     * 
+     * @param batchGetWorkflowsRequest
+     * @return A Java Future containing the result of the BatchGetWorkflows operation returned by the service.
+     * @sample AWSGlueAsync.BatchGetWorkflows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetWorkflows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetWorkflowsResult> batchGetWorkflowsAsync(BatchGetWorkflowsRequest batchGetWorkflowsRequest);
+
+    /**
+     * <p>
+     * Returns a list of resource metadata for a given list of workflow names. After calling the
+     * <code>ListWorkflows</code> operation, you can call this operation to access the data to which you have been
+     * granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
+     * </p>
+     * 
+     * @param batchGetWorkflowsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetWorkflows operation returned by the service.
+     * @sample AWSGlueAsyncHandler.BatchGetWorkflows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetWorkflows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetWorkflowsResult> batchGetWorkflowsAsync(BatchGetWorkflowsRequest batchGetWorkflowsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetWorkflowsRequest, BatchGetWorkflowsResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops one or more job runs for a specified job definition.
      * </p>
      * 
@@ -797,6 +832,37 @@ public interface AWSGlueAsync extends AWSGlue {
     java.util.concurrent.Future<CreateUserDefinedFunctionResult> createUserDefinedFunctionAsync(
             CreateUserDefinedFunctionRequest createUserDefinedFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateUserDefinedFunctionRequest, CreateUserDefinedFunctionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new workflow.
+     * </p>
+     * 
+     * @param createWorkflowRequest
+     * @return A Java Future containing the result of the CreateWorkflow operation returned by the service.
+     * @sample AWSGlueAsync.CreateWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkflowResult> createWorkflowAsync(CreateWorkflowRequest createWorkflowRequest);
+
+    /**
+     * <p>
+     * Creates a new workflow.
+     * </p>
+     * 
+     * @param createWorkflowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateWorkflow operation returned by the service.
+     * @sample AWSGlueAsyncHandler.CreateWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkflowResult> createWorkflowAsync(CreateWorkflowRequest createWorkflowRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkflowRequest, CreateWorkflowResult> asyncHandler);
 
     /**
      * <p>
@@ -1254,6 +1320,37 @@ public interface AWSGlueAsync extends AWSGlue {
     java.util.concurrent.Future<DeleteUserDefinedFunctionResult> deleteUserDefinedFunctionAsync(
             DeleteUserDefinedFunctionRequest deleteUserDefinedFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserDefinedFunctionRequest, DeleteUserDefinedFunctionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a workflow.
+     * </p>
+     * 
+     * @param deleteWorkflowRequest
+     * @return A Java Future containing the result of the DeleteWorkflow operation returned by the service.
+     * @sample AWSGlueAsync.DeleteWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkflowResult> deleteWorkflowAsync(DeleteWorkflowRequest deleteWorkflowRequest);
+
+    /**
+     * <p>
+     * Deletes a workflow.
+     * </p>
+     * 
+     * @param deleteWorkflowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWorkflow operation returned by the service.
+     * @sample AWSGlueAsyncHandler.DeleteWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkflowResult> deleteWorkflowAsync(DeleteWorkflowRequest deleteWorkflowRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkflowRequest, DeleteWorkflowResult> asyncHandler);
 
     /**
      * <p>
@@ -2345,6 +2442,130 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Retrieves resource metadata for a workflow.
+     * </p>
+     * 
+     * @param getWorkflowRequest
+     * @return A Java Future containing the result of the GetWorkflow operation returned by the service.
+     * @sample AWSGlueAsync.GetWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest getWorkflowRequest);
+
+    /**
+     * <p>
+     * Retrieves resource metadata for a workflow.
+     * </p>
+     * 
+     * @param getWorkflowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetWorkflow operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest getWorkflowRequest,
+            com.amazonaws.handlers.AsyncHandler<GetWorkflowRequest, GetWorkflowResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the metadata for a given workflow run.
+     * </p>
+     * 
+     * @param getWorkflowRunRequest
+     * @return A Java Future containing the result of the GetWorkflowRun operation returned by the service.
+     * @sample AWSGlueAsync.GetWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowRunResult> getWorkflowRunAsync(GetWorkflowRunRequest getWorkflowRunRequest);
+
+    /**
+     * <p>
+     * Retrieves the metadata for a given workflow run.
+     * </p>
+     * 
+     * @param getWorkflowRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetWorkflowRun operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowRunResult> getWorkflowRunAsync(GetWorkflowRunRequest getWorkflowRunRequest,
+            com.amazonaws.handlers.AsyncHandler<GetWorkflowRunRequest, GetWorkflowRunResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the workflow run properties which were set during the run.
+     * </p>
+     * 
+     * @param getWorkflowRunPropertiesRequest
+     * @return A Java Future containing the result of the GetWorkflowRunProperties operation returned by the service.
+     * @sample AWSGlueAsync.GetWorkflowRunProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRunProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowRunPropertiesResult> getWorkflowRunPropertiesAsync(GetWorkflowRunPropertiesRequest getWorkflowRunPropertiesRequest);
+
+    /**
+     * <p>
+     * Retrieves the workflow run properties which were set during the run.
+     * </p>
+     * 
+     * @param getWorkflowRunPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetWorkflowRunProperties operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetWorkflowRunProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRunProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowRunPropertiesResult> getWorkflowRunPropertiesAsync(GetWorkflowRunPropertiesRequest getWorkflowRunPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetWorkflowRunPropertiesRequest, GetWorkflowRunPropertiesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves metadata for all runs of a given workflow.
+     * </p>
+     * 
+     * @param getWorkflowRunsRequest
+     * @return A Java Future containing the result of the GetWorkflowRuns operation returned by the service.
+     * @sample AWSGlueAsync.GetWorkflowRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRuns" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowRunsResult> getWorkflowRunsAsync(GetWorkflowRunsRequest getWorkflowRunsRequest);
+
+    /**
+     * <p>
+     * Retrieves metadata for all runs of a given workflow.
+     * </p>
+     * 
+     * @param getWorkflowRunsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetWorkflowRuns operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetWorkflowRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRuns" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowRunsResult> getWorkflowRunsAsync(GetWorkflowRunsRequest getWorkflowRunsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetWorkflowRunsRequest, GetWorkflowRunsResult> asyncHandler);
+
+    /**
+     * <p>
      * Imports an existing Athena Data Catalog to AWS Glue
      * </p>
      * 
@@ -2548,6 +2769,37 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Lists names of workflows created in the account.
+     * </p>
+     * 
+     * @param listWorkflowsRequest
+     * @return A Java Future containing the result of the ListWorkflows operation returned by the service.
+     * @sample AWSGlueAsync.ListWorkflows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListWorkflows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkflowsResult> listWorkflowsAsync(ListWorkflowsRequest listWorkflowsRequest);
+
+    /**
+     * <p>
+     * Lists names of workflows created in the account.
+     * </p>
+     * 
+     * @param listWorkflowsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWorkflows operation returned by the service.
+     * @sample AWSGlueAsyncHandler.ListWorkflows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListWorkflows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkflowsResult> listWorkflowsAsync(ListWorkflowsRequest listWorkflowsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWorkflowsRequest, ListWorkflowsResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets the security configuration for a specified catalog. After the configuration has been set, the specified
      * encryption is applied to every catalog write thereafter.
      * </p>
@@ -2613,6 +2865,39 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Puts the specified workflow run properties for the given workflow run. If a property already exists for the
+     * specified run, then it overrides the value otherwise adds the property to existing properties.
+     * </p>
+     * 
+     * @param putWorkflowRunPropertiesRequest
+     * @return A Java Future containing the result of the PutWorkflowRunProperties operation returned by the service.
+     * @sample AWSGlueAsync.PutWorkflowRunProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutWorkflowRunProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutWorkflowRunPropertiesResult> putWorkflowRunPropertiesAsync(PutWorkflowRunPropertiesRequest putWorkflowRunPropertiesRequest);
+
+    /**
+     * <p>
+     * Puts the specified workflow run properties for the given workflow run. If a property already exists for the
+     * specified run, then it overrides the value otherwise adds the property to existing properties.
+     * </p>
+     * 
+     * @param putWorkflowRunPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutWorkflowRunProperties operation returned by the service.
+     * @sample AWSGlueAsyncHandler.PutWorkflowRunProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutWorkflowRunProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutWorkflowRunPropertiesResult> putWorkflowRunPropertiesAsync(PutWorkflowRunPropertiesRequest putWorkflowRunPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<PutWorkflowRunPropertiesRequest, PutWorkflowRunPropertiesResult> asyncHandler);
 
     /**
      * <p>
@@ -2778,6 +3063,37 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<StartTriggerResult> startTriggerAsync(StartTriggerRequest startTriggerRequest,
             com.amazonaws.handlers.AsyncHandler<StartTriggerRequest, StartTriggerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a new run of the specified workflow.
+     * </p>
+     * 
+     * @param startWorkflowRunRequest
+     * @return A Java Future containing the result of the StartWorkflowRun operation returned by the service.
+     * @sample AWSGlueAsync.StartWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartWorkflowRunResult> startWorkflowRunAsync(StartWorkflowRunRequest startWorkflowRunRequest);
+
+    /**
+     * <p>
+     * Starts a new run of the specified workflow.
+     * </p>
+     * 
+     * @param startWorkflowRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartWorkflowRun operation returned by the service.
+     * @sample AWSGlueAsyncHandler.StartWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartWorkflowRunResult> startWorkflowRunAsync(StartWorkflowRunRequest startWorkflowRunRequest,
+            com.amazonaws.handlers.AsyncHandler<StartWorkflowRunRequest, StartWorkflowRunResult> asyncHandler);
 
     /**
      * <p>
@@ -3284,5 +3600,36 @@ public interface AWSGlueAsync extends AWSGlue {
     java.util.concurrent.Future<UpdateUserDefinedFunctionResult> updateUserDefinedFunctionAsync(
             UpdateUserDefinedFunctionRequest updateUserDefinedFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateUserDefinedFunctionRequest, UpdateUserDefinedFunctionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing workflow.
+     * </p>
+     * 
+     * @param updateWorkflowRequest
+     * @return A Java Future containing the result of the UpdateWorkflow operation returned by the service.
+     * @sample AWSGlueAsync.UpdateWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWorkflowResult> updateWorkflowAsync(UpdateWorkflowRequest updateWorkflowRequest);
+
+    /**
+     * <p>
+     * Updates an existing workflow.
+     * </p>
+     * 
+     * @param updateWorkflowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateWorkflow operation returned by the service.
+     * @sample AWSGlueAsyncHandler.UpdateWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWorkflowResult> updateWorkflowAsync(UpdateWorkflowRequest updateWorkflowRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateWorkflowRequest, UpdateWorkflowResult> asyncHandler);
 
 }

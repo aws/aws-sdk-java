@@ -61,7 +61,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The value returned by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
      * >DescribeVolumes</a>.
      * </p>
      */
@@ -87,21 +87,21 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The AWS region. For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      */
     private String region;
     /**
      * <p>
      * The volume Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      */
     private String availabilityZone;
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
      * <li>
@@ -146,7 +146,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      * </p>
      */
     private Boolean encrypted;
@@ -354,13 +354,13 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The value returned by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
      * >DescribeVolumes</a>.
      * </p>
      * 
      * @param status
      *        The value returned by <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
      *        >DescribeVolumes</a>.
      */
 
@@ -371,12 +371,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The value returned by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
      * >DescribeVolumes</a>.
      * </p>
      * 
      * @return The value returned by <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
      *         >DescribeVolumes</a>.
      */
 
@@ -387,13 +387,13 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The value returned by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
      * >DescribeVolumes</a>.
      * </p>
      * 
      * @param status
      *        The value returned by <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
      *        >DescribeVolumes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -526,12 +526,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The AWS region. For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param region
      *        The AWS region. For more information about AWS regions, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public void setRegion(String region) {
@@ -541,11 +541,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The AWS region. For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @return The AWS region. For more information about AWS regions, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public String getRegion() {
@@ -555,12 +555,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The AWS region. For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param region
      *        The AWS region. For more information about AWS regions, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -572,12 +572,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The volume Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param availabilityZone
      *        The volume Availability Zone. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -587,11 +587,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The volume Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @return The volume Availability Zone. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public String getAvailabilityZone() {
@@ -601,12 +601,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The volume Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param availabilityZone
      *        The volume Availability Zone. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -618,7 +618,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
      * <li>
@@ -655,7 +655,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param volumeType
      *        The volume type. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
      *        Types</a>.</p>
      *        <ul>
      *        <li>
@@ -697,7 +697,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
      * <li>
@@ -733,7 +733,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @return The volume type. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
      *         Types</a>.</p>
      *         <ul>
      *         <li>
@@ -775,7 +775,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
      * <li>
@@ -812,7 +812,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param volumeType
      *        The volume type. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
      *        Types</a>.</p>
      *        <ul>
      *        <li>
@@ -896,12 +896,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      * </p>
      * 
      * @param encrypted
      *        Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -911,11 +911,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      * </p>
      * 
      * @return Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      */
 
     public Boolean getEncrypted() {
@@ -925,12 +925,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      * </p>
      * 
      * @param encrypted
      *        Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -942,11 +942,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      * </p>
      * 
      * @return Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
      */
 
     public Boolean isEncrypted() {

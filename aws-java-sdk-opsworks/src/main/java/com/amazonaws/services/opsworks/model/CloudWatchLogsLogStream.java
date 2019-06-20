@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes the Amazon CloudWatch logs configuration for a layer. For detailed information about members of this data
- * type, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs
+ * type, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs
  * Agent Reference</a>.
  * </p>
  * 
@@ -41,7 +41,7 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Specifies how the time stamp is extracted from logs. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
      * Reference</a>.
      * </p>
      */
@@ -174,13 +174,13 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Specifies how the time stamp is extracted from logs. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
      * Reference</a>.
      * </p>
      * 
      * @param datetimeFormat
      *        Specifies how the time stamp is extracted from logs. For more information, see the <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
      *        Reference</a>.
      */
 
@@ -191,12 +191,12 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Specifies how the time stamp is extracted from logs. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
      * Reference</a>.
      * </p>
      * 
      * @return Specifies how the time stamp is extracted from logs. For more information, see the <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
      *         Reference</a>.
      */
 
@@ -207,13 +207,13 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Specifies how the time stamp is extracted from logs. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
      * Reference</a>.
      * </p>
      * 
      * @param datetimeFormat
      *        Specifies how the time stamp is extracted from logs. For more information, see the <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent
      *        Reference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
