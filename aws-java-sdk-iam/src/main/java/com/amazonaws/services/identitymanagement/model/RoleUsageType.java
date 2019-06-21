@@ -32,7 +32,7 @@ public class RoleUsageType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region where the service-linked role is being used.
+     * The name of the Region where the service-linked role is being used.
      * </p>
      */
     private String region;
@@ -45,11 +45,11 @@ public class RoleUsageType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region where the service-linked role is being used.
+     * The name of the Region where the service-linked role is being used.
      * </p>
      * 
      * @param region
-     *        The name of the region where the service-linked role is being used.
+     *        The name of the Region where the service-linked role is being used.
      */
 
     public void setRegion(String region) {
@@ -58,10 +58,10 @@ public class RoleUsageType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region where the service-linked role is being used.
+     * The name of the Region where the service-linked role is being used.
      * </p>
      * 
-     * @return The name of the region where the service-linked role is being used.
+     * @return The name of the Region where the service-linked role is being used.
      */
 
     public String getRegion() {
@@ -70,11 +70,11 @@ public class RoleUsageType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region where the service-linked role is being used.
+     * The name of the Region where the service-linked role is being used.
      * </p>
      * 
      * @param region
-     *        The name of the region where the service-linked role is being used.
+     *        The name of the Region where the service-linked role is being used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

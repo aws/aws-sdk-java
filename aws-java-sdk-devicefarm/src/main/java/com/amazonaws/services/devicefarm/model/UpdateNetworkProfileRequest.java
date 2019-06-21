@@ -39,7 +39,7 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
     private String name;
     /**
      * <p>
-     * The descriptoin of the network profile about which you are returning information.
+     * The description of the network profile about which you are returning information.
      * </p>
      */
     private String description;
@@ -180,11 +180,11 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The descriptoin of the network profile about which you are returning information.
+     * The description of the network profile about which you are returning information.
      * </p>
      * 
      * @param description
-     *        The descriptoin of the network profile about which you are returning information.
+     *        The description of the network profile about which you are returning information.
      */
 
     public void setDescription(String description) {
@@ -193,10 +193,10 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The descriptoin of the network profile about which you are returning information.
+     * The description of the network profile about which you are returning information.
      * </p>
      * 
-     * @return The descriptoin of the network profile about which you are returning information.
+     * @return The description of the network profile about which you are returning information.
      */
 
     public String getDescription() {
@@ -205,11 +205,11 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The descriptoin of the network profile about which you are returning information.
+     * The description of the network profile about which you are returning information.
      * </p>
      * 
      * @param description
-     *        The descriptoin of the network profile about which you are returning information.
+     *        The description of the network profile about which you are returning information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

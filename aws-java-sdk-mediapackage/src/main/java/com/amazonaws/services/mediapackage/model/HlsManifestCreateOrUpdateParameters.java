@@ -33,6 +33,10 @@ public class HlsManifestCreateOrUpdateParameters implements Serializable, Clonea
      * blackout tags based on SCTE-35 messages in the input source.
      */
     private String adMarkers;
+
+    private java.util.List<String> adTriggers;
+
+    private String adsOnDeliveryRestrictions;
     /**
      * The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is
      * created.
@@ -133,6 +137,121 @@ public class HlsManifestCreateOrUpdateParameters implements Serializable, Clonea
 
     public HlsManifestCreateOrUpdateParameters withAdMarkers(AdMarkers adMarkers) {
         this.adMarkers = adMarkers.toString();
+        return this;
+    }
+
+    /**
+     * @return
+     * @see AdTriggersElement
+     */
+
+    public java.util.List<String> getAdTriggers() {
+        return adTriggers;
+    }
+
+    /**
+     * @param adTriggers
+     * @see AdTriggersElement
+     */
+
+    public void setAdTriggers(java.util.Collection<String> adTriggers) {
+        if (adTriggers == null) {
+            this.adTriggers = null;
+            return;
+        }
+
+        this.adTriggers = new java.util.ArrayList<String>(adTriggers);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdTriggers(java.util.Collection)} or {@link #withAdTriggers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param adTriggers
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AdTriggersElement
+     */
+
+    public HlsManifestCreateOrUpdateParameters withAdTriggers(String... adTriggers) {
+        if (this.adTriggers == null) {
+            setAdTriggers(new java.util.ArrayList<String>(adTriggers.length));
+        }
+        for (String ele : adTriggers) {
+            this.adTriggers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param adTriggers
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AdTriggersElement
+     */
+
+    public HlsManifestCreateOrUpdateParameters withAdTriggers(java.util.Collection<String> adTriggers) {
+        setAdTriggers(adTriggers);
+        return this;
+    }
+
+    /**
+     * @param adTriggers
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AdTriggersElement
+     */
+
+    public HlsManifestCreateOrUpdateParameters withAdTriggers(AdTriggersElement... adTriggers) {
+        java.util.ArrayList<String> adTriggersCopy = new java.util.ArrayList<String>(adTriggers.length);
+        for (AdTriggersElement value : adTriggers) {
+            adTriggersCopy.add(value.toString());
+        }
+        if (getAdTriggers() == null) {
+            setAdTriggers(adTriggersCopy);
+        } else {
+            getAdTriggers().addAll(adTriggersCopy);
+        }
+        return this;
+    }
+
+    /**
+     * @param adsOnDeliveryRestrictions
+     * @see AdsOnDeliveryRestrictions
+     */
+
+    public void setAdsOnDeliveryRestrictions(String adsOnDeliveryRestrictions) {
+        this.adsOnDeliveryRestrictions = adsOnDeliveryRestrictions;
+    }
+
+    /**
+     * @return
+     * @see AdsOnDeliveryRestrictions
+     */
+
+    public String getAdsOnDeliveryRestrictions() {
+        return this.adsOnDeliveryRestrictions;
+    }
+
+    /**
+     * @param adsOnDeliveryRestrictions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AdsOnDeliveryRestrictions
+     */
+
+    public HlsManifestCreateOrUpdateParameters withAdsOnDeliveryRestrictions(String adsOnDeliveryRestrictions) {
+        setAdsOnDeliveryRestrictions(adsOnDeliveryRestrictions);
+        return this;
+    }
+
+    /**
+     * @param adsOnDeliveryRestrictions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AdsOnDeliveryRestrictions
+     */
+
+    public HlsManifestCreateOrUpdateParameters withAdsOnDeliveryRestrictions(AdsOnDeliveryRestrictions adsOnDeliveryRestrictions) {
+        this.adsOnDeliveryRestrictions = adsOnDeliveryRestrictions.toString();
         return this;
     }
 
@@ -428,6 +547,10 @@ public class HlsManifestCreateOrUpdateParameters implements Serializable, Clonea
         sb.append("{");
         if (getAdMarkers() != null)
             sb.append("AdMarkers: ").append(getAdMarkers()).append(",");
+        if (getAdTriggers() != null)
+            sb.append("AdTriggers: ").append(getAdTriggers()).append(",");
+        if (getAdsOnDeliveryRestrictions() != null)
+            sb.append("AdsOnDeliveryRestrictions: ").append(getAdsOnDeliveryRestrictions()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getIncludeIframeOnlyStream() != null)
@@ -457,6 +580,14 @@ public class HlsManifestCreateOrUpdateParameters implements Serializable, Clonea
         if (other.getAdMarkers() == null ^ this.getAdMarkers() == null)
             return false;
         if (other.getAdMarkers() != null && other.getAdMarkers().equals(this.getAdMarkers()) == false)
+            return false;
+        if (other.getAdTriggers() == null ^ this.getAdTriggers() == null)
+            return false;
+        if (other.getAdTriggers() != null && other.getAdTriggers().equals(this.getAdTriggers()) == false)
+            return false;
+        if (other.getAdsOnDeliveryRestrictions() == null ^ this.getAdsOnDeliveryRestrictions() == null)
+            return false;
+        if (other.getAdsOnDeliveryRestrictions() != null && other.getAdsOnDeliveryRestrictions().equals(this.getAdsOnDeliveryRestrictions()) == false)
             return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
@@ -492,6 +623,8 @@ public class HlsManifestCreateOrUpdateParameters implements Serializable, Clonea
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAdMarkers() == null) ? 0 : getAdMarkers().hashCode());
+        hashCode = prime * hashCode + ((getAdTriggers() == null) ? 0 : getAdTriggers().hashCode());
+        hashCode = prime * hashCode + ((getAdsOnDeliveryRestrictions() == null) ? 0 : getAdsOnDeliveryRestrictions().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getIncludeIframeOnlyStream() == null) ? 0 : getIncludeIframeOnlyStream().hashCode());
         hashCode = prime * hashCode + ((getManifestName() == null) ? 0 : getManifestName().hashCode());

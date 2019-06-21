@@ -30,7 +30,7 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to update.
+     * The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
      * </p>
      */
     private String arn;
@@ -84,11 +84,11 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to update.
+     * The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to update.
+     *        The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
      */
 
     public void setArn(String arn) {
@@ -97,10 +97,10 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to update.
+     * The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
      * </p>
      * 
-     * @return The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to update.
+     * @return The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
      */
 
     public String getArn() {
@@ -109,11 +109,11 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to update.
+     * The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to update.
+     *        The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -143,12 +143,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      * </p>
      * </li>
      * <li>
@@ -208,7 +208,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -423,12 +423,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      * </p>
      * </li>
      * <li>
@@ -488,7 +488,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -595,12 +595,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -660,7 +660,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *        </p>
      *        </li>
      *        </ul>
@@ -774,12 +774,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      * </p>
      * </li>
      * <li>
@@ -839,7 +839,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -945,12 +945,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *         XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *         XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      *         </p>
      *         </li>
      *         <li>
@@ -1010,7 +1010,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *         XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *         </p>
      *         </li>
      *         </ul>
@@ -1124,12 +1124,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      * </p>
      * </li>
      * <li>
@@ -1189,7 +1189,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -1296,12 +1296,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -1361,7 +1361,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *        </p>
      *        </li>
      *        </ul>
@@ -1477,12 +1477,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      * </p>
      * </li>
      * <li>
@@ -1542,7 +1542,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -1649,12 +1649,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -1714,7 +1714,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *        </p>
      *        </li>
      *        </ul>
@@ -1828,12 +1828,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      * </p>
      * </li>
      * <li>
@@ -1893,7 +1893,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -2000,12 +2000,12 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -2065,7 +2065,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *        </p>
      *        </li>
      *        </ul>

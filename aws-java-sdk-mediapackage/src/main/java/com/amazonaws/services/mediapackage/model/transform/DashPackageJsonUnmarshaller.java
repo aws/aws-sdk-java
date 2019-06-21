@@ -48,6 +48,14 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("adTriggers", targetDepth)) {
+                    context.nextToken();
+                    dashPackage.setAdTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("adsOnDeliveryRestrictions", targetDepth)) {
+                    context.nextToken();
+                    dashPackage.setAdsOnDeliveryRestrictions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("encryption", targetDepth)) {
                     context.nextToken();
                     dashPackage.setEncryption(DashEncryptionJsonUnmarshaller.getInstance().unmarshall(context));

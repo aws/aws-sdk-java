@@ -66,7 +66,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -146,12 +146,12 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      * </p>
      * </li>
      * <li>
@@ -211,7 +211,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -432,7 +432,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -512,12 +512,12 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      * </p>
      * </li>
      * <li>
@@ -577,7 +577,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -600,7 +600,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web appliction upload.
+     *        WEB_APP: A web application upload.
      *        </p>
      *        </li>
      *        <li>
@@ -680,12 +680,12 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -745,7 +745,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *        </p>
      *        </li>
      * @see UploadType
@@ -775,7 +775,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -855,12 +855,12 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      * </p>
      * </li>
      * <li>
@@ -920,7 +920,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -942,7 +942,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         WEB_APP: A web appliction upload.
+     *         WEB_APP: A web application upload.
      *         </p>
      *         </li>
      *         <li>
@@ -1022,12 +1022,12 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *         XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *         XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      *         </p>
      *         </li>
      *         <li>
@@ -1087,7 +1087,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *         XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *         </p>
      *         </li>
      * @see UploadType
@@ -1117,7 +1117,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -1197,12 +1197,12 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      * </p>
      * </li>
      * <li>
@@ -1262,7 +1262,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -1285,7 +1285,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web appliction upload.
+     *        WEB_APP: A web application upload.
      *        </p>
      *        </li>
      *        <li>
@@ -1365,12 +1365,12 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -1430,7 +1430,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1462,7 +1462,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -1542,12 +1542,12 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      * </p>
      * </li>
      * <li>
@@ -1607,7 +1607,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -1630,7 +1630,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web appliction upload.
+     *        WEB_APP: A web application upload.
      *        </p>
      *        </li>
      *        <li>
@@ -1710,12 +1710,12 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -1775,7 +1775,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *        </p>
      *        </li>
      * @see UploadType
@@ -1805,7 +1805,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -1885,12 +1885,12 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      * </p>
      * </li>
      * <li>
@@ -1950,7 +1950,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -1973,7 +1973,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web appliction upload.
+     *        WEB_APP: A web application upload.
      *        </p>
      *        </li>
      *        <li>
@@ -2053,12 +2053,12 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -2118,7 +2118,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

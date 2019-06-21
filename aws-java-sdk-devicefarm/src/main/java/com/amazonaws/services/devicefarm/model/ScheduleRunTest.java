@@ -120,12 +120,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -427,12 +427,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -526,12 +526,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The XCode test type.
+     *        XCTEST: The Xcode test type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The XCode UI test type.
+     *        XCTEST_UI: The Xcode UI test type.
      *        </p>
      *        </li>
      * @see TestType
@@ -632,12 +632,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -730,12 +730,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST: The XCode test type.
+     *         XCTEST: The Xcode test type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_UI: The XCode UI test type.
+     *         XCTEST_UI: The Xcode UI test type.
      *         </p>
      *         </li>
      * @see TestType
@@ -836,12 +836,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -935,12 +935,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The XCode test type.
+     *        XCTEST: The Xcode test type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The XCode UI test type.
+     *        XCTEST_UI: The Xcode UI test type.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1043,12 +1043,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -1142,12 +1142,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The XCode test type.
+     *        XCTEST: The Xcode test type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The XCode UI test type.
+     *        XCTEST_UI: The Xcode UI test type.
      *        </p>
      *        </li>
      * @see TestType
@@ -1248,12 +1248,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -1347,12 +1347,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The XCode test type.
+     *        XCTEST: The Xcode test type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The XCode UI test type.
+     *        XCTEST_UI: The Xcode UI test type.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

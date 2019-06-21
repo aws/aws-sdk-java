@@ -30,18 +30,18 @@ public class DeleteRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     * The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     * The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     *        The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      */
 
     public void setArn(String arn) {
@@ -50,10 +50,10 @@ public class DeleteRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     * The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     * @return The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      */
 
     public String getArn() {
@@ -62,11 +62,11 @@ public class DeleteRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     * The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     *        The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

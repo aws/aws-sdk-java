@@ -105,7 +105,7 @@ public class User implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
+     * A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
      * password, but had one in the past, then this field contains the date and time the most recent password was used.
      * </p>
      * <p>
@@ -439,7 +439,7 @@ public class User implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
+     * A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
      * password, but had one in the past, then this field contains the date and time the most recent password was used.
      * </p>
      * <p>
@@ -467,7 +467,7 @@ public class User implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently
+     *        A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently
      *        have a password, but had one in the past, then this field contains the date and time the most recent
      *        password was used.
      *        </p>
@@ -502,7 +502,7 @@ public class User implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
+     * A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
      * password, but had one in the past, then this field contains the date and time the most recent password was used.
      * </p>
      * <p>
@@ -529,9 +529,9 @@ public class User implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently
-     *         have a password, but had one in the past, then this field contains the date and time the most recent
-     *         password was used.
+     *         A null value does not mean that the user <i>never</i> had a password. Also, if the user does not
+     *         currently have a password, but had one in the past, then this field contains the date and time the most
+     *         recent password was used.
      *         </p>
      *         <p>
      *         This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
@@ -564,7 +564,7 @@ public class User implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
+     * A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
      * password, but had one in the past, then this field contains the date and time the most recent password was used.
      * </p>
      * <p>
@@ -592,7 +592,7 @@ public class User implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently
+     *        A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently
      *        have a password, but had one in the past, then this field contains the date and time the most recent
      *        password was used.
      *        </p>

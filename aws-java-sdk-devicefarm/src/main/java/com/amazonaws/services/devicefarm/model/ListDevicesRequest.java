@@ -48,7 +48,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Attribute: The aspect of a device such as platform or model used as the selction criteria in a device filter.
+     * Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.
      * </p>
      * <p>
      * Allowed values include:
@@ -267,7 +267,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Attribute: The aspect of a device such as platform or model used as the selction criteria in a device filter.
+     * Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.
      * </p>
      * <p>
      * Allowed values include:
@@ -396,7 +396,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         Attribute: The aspect of a device such as platform or model used as the selction criteria in a device
+     *         Attribute: The aspect of a device such as platform or model used as the selection criteria in a device
      *         filter.
      *         </p>
      *         <p>
@@ -534,7 +534,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Attribute: The aspect of a device such as platform or model used as the selction criteria in a device filter.
+     * Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.
      * </p>
      * <p>
      * Allowed values include:
@@ -664,7 +664,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        Attribute: The aspect of a device such as platform or model used as the selction criteria in a device
+     *        Attribute: The aspect of a device such as platform or model used as the selection criteria in a device
      *        filter.
      *        </p>
      *        <p>
@@ -807,7 +807,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Attribute: The aspect of a device such as platform or model used as the selction criteria in a device filter.
+     * Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.
      * </p>
      * <p>
      * Allowed values include:
@@ -942,7 +942,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        Attribute: The aspect of a device such as platform or model used as the selction criteria in a device
+     *        Attribute: The aspect of a device such as platform or model used as the selection criteria in a device
      *        filter.
      *        </p>
      *        <p>
@@ -1087,7 +1087,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Attribute: The aspect of a device such as platform or model used as the selction criteria in a device filter.
+     * Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.
      * </p>
      * <p>
      * Allowed values include:
@@ -1217,7 +1217,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        Attribute: The aspect of a device such as platform or model used as the selction criteria in a device
+     *        Attribute: The aspect of a device such as platform or model used as the selection criteria in a device
      *        filter.
      *        </p>
      *        <p>

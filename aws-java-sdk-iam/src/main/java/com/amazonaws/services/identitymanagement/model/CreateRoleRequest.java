@@ -57,7 +57,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
+     * In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
      * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
      * converts a YAML policy to JSON format before submitting it to IAM.
      * </p>
@@ -302,7 +302,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
+     * In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
      * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
      * converts a YAML policy to JSON format before submitting it to IAM.
      * </p>
@@ -334,7 +334,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
      *        <p>
-     *        in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
+     *        In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
      *        CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
      *        CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.
      *        </p>
@@ -373,7 +373,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
+     * In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
      * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
      * converts a YAML policy to JSON format before submitting it to IAM.
      * </p>
@@ -404,7 +404,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @return The trust relationship policy document that grants an entity permission to assume the role.</p>
      *         <p>
-     *         in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
+     *         In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
      *         CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
      *         CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.
      *         </p>
@@ -443,7 +443,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
+     * In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
      * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
      * converts a YAML policy to JSON format before submitting it to IAM.
      * </p>
@@ -475,7 +475,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
      *        <p>
-     *        in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
+     *        In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
      *        CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
      *        CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.
      *        </p>

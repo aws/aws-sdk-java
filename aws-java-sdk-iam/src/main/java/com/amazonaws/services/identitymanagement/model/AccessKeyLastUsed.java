@@ -48,7 +48,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * There is no sign-in data associated with the user
+     * There is no sign-in data associated with the user.
      * </p>
      * </li>
      * </ul>
@@ -72,7 +72,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * There is no sign-in data associated with the user
+     * There is no sign-in data associated with the user.
      * </p>
      * </li>
      * </ul>
@@ -80,7 +80,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     private String serviceName;
     /**
      * <p>
-     * The AWS region where this access key was most recently used. The value for this field is "N/A" in the following
+     * The AWS Region where this access key was most recently used. The value for this field is "N/A" in the following
      * situations:
      * </p>
      * <ul>
@@ -96,12 +96,12 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * There is no sign-in data associated with the user
+     * There is no sign-in data associated with the user.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information about AWS regions, see <a
+     * For more information about AWS Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
      * Services General Reference.
      * </p>
@@ -126,7 +126,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * There is no sign-in data associated with the user
+     * There is no sign-in data associated with the user.
      * </p>
      * </li>
      * </ul>
@@ -147,7 +147,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        There is no sign-in data associated with the user
+     *        There is no sign-in data associated with the user.
      *        </p>
      *        </li>
      */
@@ -174,7 +174,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * There is no sign-in data associated with the user
+     * There is no sign-in data associated with the user.
      * </p>
      * </li>
      * </ul>
@@ -194,7 +194,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         There is no sign-in data associated with the user
+     *         There is no sign-in data associated with the user.
      *         </p>
      *         </li>
      */
@@ -221,7 +221,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * There is no sign-in data associated with the user
+     * There is no sign-in data associated with the user.
      * </p>
      * </li>
      * </ul>
@@ -242,7 +242,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        There is no sign-in data associated with the user
+     *        There is no sign-in data associated with the user.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -271,7 +271,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * There is no sign-in data associated with the user
+     * There is no sign-in data associated with the user.
      * </p>
      * </li>
      * </ul>
@@ -292,7 +292,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        There is no sign-in data associated with the user
+     *        There is no sign-in data associated with the user.
      *        </p>
      *        </li>
      */
@@ -319,7 +319,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * There is no sign-in data associated with the user
+     * There is no sign-in data associated with the user.
      * </p>
      * </li>
      * </ul>
@@ -339,7 +339,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         There is no sign-in data associated with the user
+     *         There is no sign-in data associated with the user.
      *         </p>
      *         </li>
      */
@@ -366,7 +366,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * There is no sign-in data associated with the user
+     * There is no sign-in data associated with the user.
      * </p>
      * </li>
      * </ul>
@@ -387,7 +387,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        There is no sign-in data associated with the user
+     *        There is no sign-in data associated with the user.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -400,7 +400,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS region where this access key was most recently used. The value for this field is "N/A" in the following
+     * The AWS Region where this access key was most recently used. The value for this field is "N/A" in the following
      * situations:
      * </p>
      * <ul>
@@ -416,18 +416,18 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * There is no sign-in data associated with the user
+     * There is no sign-in data associated with the user.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information about AWS regions, see <a
+     * For more information about AWS Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
      * Services General Reference.
      * </p>
      * 
      * @param region
-     *        The AWS region where this access key was most recently used. The value for this field is "N/A" in the
+     *        The AWS Region where this access key was most recently used. The value for this field is "N/A" in the
      *        following situations:</p>
      *        <ul>
      *        <li>
@@ -442,12 +442,12 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        There is no sign-in data associated with the user
+     *        There is no sign-in data associated with the user.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about AWS regions, see <a
+     *        For more information about AWS Regions, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon
      *        Web Services General Reference.
      */
@@ -458,7 +458,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS region where this access key was most recently used. The value for this field is "N/A" in the following
+     * The AWS Region where this access key was most recently used. The value for this field is "N/A" in the following
      * situations:
      * </p>
      * <ul>
@@ -474,17 +474,17 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * There is no sign-in data associated with the user
+     * There is no sign-in data associated with the user.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information about AWS regions, see <a
+     * For more information about AWS Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
      * Services General Reference.
      * </p>
      * 
-     * @return The AWS region where this access key was most recently used. The value for this field is "N/A" in the
+     * @return The AWS Region where this access key was most recently used. The value for this field is "N/A" in the
      *         following situations:</p>
      *         <ul>
      *         <li>
@@ -499,12 +499,12 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         There is no sign-in data associated with the user
+     *         There is no sign-in data associated with the user.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information about AWS regions, see <a
+     *         For more information about AWS Regions, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon
      *         Web Services General Reference.
      */
@@ -515,7 +515,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS region where this access key was most recently used. The value for this field is "N/A" in the following
+     * The AWS Region where this access key was most recently used. The value for this field is "N/A" in the following
      * situations:
      * </p>
      * <ul>
@@ -531,18 +531,18 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * There is no sign-in data associated with the user
+     * There is no sign-in data associated with the user.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information about AWS regions, see <a
+     * For more information about AWS Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon Web
      * Services General Reference.
      * </p>
      * 
      * @param region
-     *        The AWS region where this access key was most recently used. The value for this field is "N/A" in the
+     *        The AWS Region where this access key was most recently used. The value for this field is "N/A" in the
      *        following situations:</p>
      *        <ul>
      *        <li>
@@ -557,12 +557,12 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        There is no sign-in data associated with the user
+     *        There is no sign-in data associated with the user.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about AWS regions, see <a
+     *        For more information about AWS Regions, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> in the Amazon
      *        Web Services General Reference.
      * @return Returns a reference to this object so that method calls can be chained together.

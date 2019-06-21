@@ -165,7 +165,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_LOG: The XCode test output type.
+     * XCTEST_LOG: The Xcode test output type.
      * </p>
      * </li>
      * <li>
@@ -409,7 +409,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_LOG: The XCode test output type.
+     * XCTEST_LOG: The Xcode test output type.
      * </p>
      * </li>
      * <li>
@@ -557,7 +557,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_LOG: The XCode test output type.
+     *        XCTEST_LOG: The Xcode test output type.
      *        </p>
      *        </li>
      *        <li>
@@ -712,7 +712,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_LOG: The XCode test output type.
+     * XCTEST_LOG: The Xcode test output type.
      * </p>
      * </li>
      * <li>
@@ -859,7 +859,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_LOG: The XCode test output type.
+     *         XCTEST_LOG: The Xcode test output type.
      *         </p>
      *         </li>
      *         <li>
@@ -1014,7 +1014,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_LOG: The XCode test output type.
+     * XCTEST_LOG: The Xcode test output type.
      * </p>
      * </li>
      * <li>
@@ -1162,7 +1162,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_LOG: The XCode test output type.
+     *        XCTEST_LOG: The Xcode test output type.
      *        </p>
      *        </li>
      *        <li>
@@ -1319,7 +1319,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_LOG: The XCode test output type.
+     * XCTEST_LOG: The Xcode test output type.
      * </p>
      * </li>
      * <li>
@@ -1467,7 +1467,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_LOG: The XCode test output type.
+     *        XCTEST_LOG: The Xcode test output type.
      *        </p>
      *        </li>
      *        <li>
@@ -1622,7 +1622,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * XCTEST_LOG: The XCode test output type.
+     * XCTEST_LOG: The Xcode test output type.
      * </p>
      * </li>
      * <li>
@@ -1770,7 +1770,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_LOG: The XCode test output type.
+     *        XCTEST_LOG: The Xcode test output type.
      *        </p>
      *        </li>
      *        <li>

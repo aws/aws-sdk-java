@@ -161,7 +161,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ContextEntry> contextEntries;
@@ -1249,11 +1249,11 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      * 
      * @return A list of context keys and corresponding values for the simulation to use. Whenever a context key is
-     *         evaluated in one of the simulated IAM permission policies, the corresponding value is supplied.
+     *         evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.
      */
 
     public java.util.List<ContextEntry> getContextEntries() {
@@ -1266,12 +1266,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      * 
      * @param contextEntries
      *        A list of context keys and corresponding values for the simulation to use. Whenever a context key is
-     *        evaluated in one of the simulated IAM permission policies, the corresponding value is supplied.
+     *        evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.
      */
 
     public void setContextEntries(java.util.Collection<ContextEntry> contextEntries) {
@@ -1286,7 +1286,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1296,7 +1296,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param contextEntries
      *        A list of context keys and corresponding values for the simulation to use. Whenever a context key is
-     *        evaluated in one of the simulated IAM permission policies, the corresponding value is supplied.
+     *        evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1313,12 +1313,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      * 
      * @param contextEntries
      *        A list of context keys and corresponding values for the simulation to use. Whenever a context key is
-     *        evaluated in one of the simulated IAM permission policies, the corresponding value is supplied.
+     *        evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

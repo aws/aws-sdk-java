@@ -76,10 +76,11 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
     private String lastAuthenticatedEntity;
     /**
      * <p>
-     * The total number of authenticated entities that have attempted to access the service.
+     * The total number of authenticated principals (root user, IAM users, or IAM roles) that have attempted to access
+     * the service.
      * </p>
      * <p>
-     * This field is null if no IAM entities attempted to access the service within the <a href=
+     * This field is null if no principals attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      * >reporting period</a>.
      * </p>
@@ -369,18 +370,20 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of authenticated entities that have attempted to access the service.
+     * The total number of authenticated principals (root user, IAM users, or IAM roles) that have attempted to access
+     * the service.
      * </p>
      * <p>
-     * This field is null if no IAM entities attempted to access the service within the <a href=
+     * This field is null if no principals attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      * >reporting period</a>.
      * </p>
      * 
      * @param totalAuthenticatedEntities
-     *        The total number of authenticated entities that have attempted to access the service.</p>
+     *        The total number of authenticated principals (root user, IAM users, or IAM roles) that have attempted to
+     *        access the service.</p>
      *        <p>
-     *        This field is null if no IAM entities attempted to access the service within the <a href=
+     *        This field is null if no principals attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      *        >reporting period</a>.
      */
@@ -391,17 +394,19 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of authenticated entities that have attempted to access the service.
+     * The total number of authenticated principals (root user, IAM users, or IAM roles) that have attempted to access
+     * the service.
      * </p>
      * <p>
-     * This field is null if no IAM entities attempted to access the service within the <a href=
+     * This field is null if no principals attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      * >reporting period</a>.
      * </p>
      * 
-     * @return The total number of authenticated entities that have attempted to access the service.</p>
+     * @return The total number of authenticated principals (root user, IAM users, or IAM roles) that have attempted to
+     *         access the service.</p>
      *         <p>
-     *         This field is null if no IAM entities attempted to access the service within the <a href=
+     *         This field is null if no principals attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      *         >reporting period</a>.
      */
@@ -412,18 +417,20 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of authenticated entities that have attempted to access the service.
+     * The total number of authenticated principals (root user, IAM users, or IAM roles) that have attempted to access
+     * the service.
      * </p>
      * <p>
-     * This field is null if no IAM entities attempted to access the service within the <a href=
+     * This field is null if no principals attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      * >reporting period</a>.
      * </p>
      * 
      * @param totalAuthenticatedEntities
-     *        The total number of authenticated entities that have attempted to access the service.</p>
+     *        The total number of authenticated principals (root user, IAM users, or IAM roles) that have attempted to
+     *        access the service.</p>
      *        <p>
-     *        This field is null if no IAM entities attempted to access the service within the <a href=
+     *        This field is null if no principals attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      *        >reporting period</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

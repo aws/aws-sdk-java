@@ -50,7 +50,7 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
      * report job was completed or failed.
      * </p>
      * <p>
-     * This field is null if the job is still in progress, as indicated by a <code>JobStatus</code> value of
+     * This field is null if the job is still in progress, as indicated by a job status value of
      * <code>IN_PROGRESS</code>.
      * </p>
      */
@@ -272,7 +272,7 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
      * report job was completed or failed.
      * </p>
      * <p>
-     * This field is null if the job is still in progress, as indicated by a <code>JobStatus</code> value of
+     * This field is null if the job is still in progress, as indicated by a job status value of
      * <code>IN_PROGRESS</code>.
      * </p>
      * 
@@ -280,7 +280,7 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
      *        generated report job was completed or failed.</p>
      *        <p>
-     *        This field is null if the job is still in progress, as indicated by a <code>JobStatus</code> value of
+     *        This field is null if the job is still in progress, as indicated by a job status value of
      *        <code>IN_PROGRESS</code>.
      */
 
@@ -294,14 +294,14 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
      * report job was completed or failed.
      * </p>
      * <p>
-     * This field is null if the job is still in progress, as indicated by a <code>JobStatus</code> value of
+     * This field is null if the job is still in progress, as indicated by a job status value of
      * <code>IN_PROGRESS</code>.
      * </p>
      * 
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
      *         generated report job was completed or failed.</p>
      *         <p>
-     *         This field is null if the job is still in progress, as indicated by a <code>JobStatus</code> value of
+     *         This field is null if the job is still in progress, as indicated by a job status value of
      *         <code>IN_PROGRESS</code>.
      */
 
@@ -315,7 +315,7 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
      * report job was completed or failed.
      * </p>
      * <p>
-     * This field is null if the job is still in progress, as indicated by a <code>JobStatus</code> value of
+     * This field is null if the job is still in progress, as indicated by a job status value of
      * <code>IN_PROGRESS</code>.
      * </p>
      * 
@@ -323,7 +323,7 @@ public class GetServiceLastAccessedDetailsResult extends com.amazonaws.AmazonWeb
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
      *        generated report job was completed or failed.</p>
      *        <p>
-     *        This field is null if the job is still in progress, as indicated by a <code>JobStatus</code> value of
+     *        This field is null if the job is still in progress, as indicated by a job status value of
      *        <code>IN_PROGRESS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediapackage.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,10 @@ public class HlsManifestCreateOrUpdateParametersMarshaller {
 
     private static final MarshallingInfo<String> ADMARKERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("adMarkers").build();
+    private static final MarshallingInfo<List> ADTRIGGERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("adTriggers").build();
+    private static final MarshallingInfo<String> ADSONDELIVERYRESTRICTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adsOnDeliveryRestrictions").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
     private static final MarshallingInfo<Boolean> INCLUDEIFRAMEONLYSTREAM_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -59,6 +64,8 @@ public class HlsManifestCreateOrUpdateParametersMarshaller {
 
         try {
             protocolMarshaller.marshall(hlsManifestCreateOrUpdateParameters.getAdMarkers(), ADMARKERS_BINDING);
+            protocolMarshaller.marshall(hlsManifestCreateOrUpdateParameters.getAdTriggers(), ADTRIGGERS_BINDING);
+            protocolMarshaller.marshall(hlsManifestCreateOrUpdateParameters.getAdsOnDeliveryRestrictions(), ADSONDELIVERYRESTRICTIONS_BINDING);
             protocolMarshaller.marshall(hlsManifestCreateOrUpdateParameters.getId(), ID_BINDING);
             protocolMarshaller.marshall(hlsManifestCreateOrUpdateParameters.getIncludeIframeOnlyStream(), INCLUDEIFRAMEONLYSTREAM_BINDING);
             protocolMarshaller.marshall(hlsManifestCreateOrUpdateParameters.getManifestName(), MANIFESTNAME_BINDING);

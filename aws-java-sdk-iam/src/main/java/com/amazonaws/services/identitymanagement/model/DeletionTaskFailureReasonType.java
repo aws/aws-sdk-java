@@ -40,7 +40,7 @@ public class DeletionTaskFailureReasonType implements Serializable, Cloneable {
      * A list of objects that contains details about the service-linked role deletion failure, if that information is
      * returned by the service. If the service-linked role has active sessions or if any resources that were used by the
      * role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of
-     * the resources that are associated with the role and the region in which the resources are being used.
+     * the resources that are associated with the role and the Region in which the resources are being used.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RoleUsageType> roleUsageList;
@@ -90,13 +90,13 @@ public class DeletionTaskFailureReasonType implements Serializable, Cloneable {
      * A list of objects that contains details about the service-linked role deletion failure, if that information is
      * returned by the service. If the service-linked role has active sessions or if any resources that were used by the
      * role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of
-     * the resources that are associated with the role and the region in which the resources are being used.
+     * the resources that are associated with the role and the Region in which the resources are being used.
      * </p>
      * 
      * @return A list of objects that contains details about the service-linked role deletion failure, if that
      *         information is returned by the service. If the service-linked role has active sessions or if any
      *         resources that were used by the role have not been deleted from the linked service, the role can't be
-     *         deleted. This parameter includes a list of the resources that are associated with the role and the region
+     *         deleted. This parameter includes a list of the resources that are associated with the role and the Region
      *         in which the resources are being used.
      */
 
@@ -112,14 +112,14 @@ public class DeletionTaskFailureReasonType implements Serializable, Cloneable {
      * A list of objects that contains details about the service-linked role deletion failure, if that information is
      * returned by the service. If the service-linked role has active sessions or if any resources that were used by the
      * role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of
-     * the resources that are associated with the role and the region in which the resources are being used.
+     * the resources that are associated with the role and the Region in which the resources are being used.
      * </p>
      * 
      * @param roleUsageList
      *        A list of objects that contains details about the service-linked role deletion failure, if that
      *        information is returned by the service. If the service-linked role has active sessions or if any resources
      *        that were used by the role have not been deleted from the linked service, the role can't be deleted. This
-     *        parameter includes a list of the resources that are associated with the role and the region in which the
+     *        parameter includes a list of the resources that are associated with the role and the Region in which the
      *        resources are being used.
      */
 
@@ -137,7 +137,7 @@ public class DeletionTaskFailureReasonType implements Serializable, Cloneable {
      * A list of objects that contains details about the service-linked role deletion failure, if that information is
      * returned by the service. If the service-linked role has active sessions or if any resources that were used by the
      * role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of
-     * the resources that are associated with the role and the region in which the resources are being used.
+     * the resources that are associated with the role and the Region in which the resources are being used.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -149,7 +149,7 @@ public class DeletionTaskFailureReasonType implements Serializable, Cloneable {
      *        A list of objects that contains details about the service-linked role deletion failure, if that
      *        information is returned by the service. If the service-linked role has active sessions or if any resources
      *        that were used by the role have not been deleted from the linked service, the role can't be deleted. This
-     *        parameter includes a list of the resources that are associated with the role and the region in which the
+     *        parameter includes a list of the resources that are associated with the role and the Region in which the
      *        resources are being used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -169,14 +169,14 @@ public class DeletionTaskFailureReasonType implements Serializable, Cloneable {
      * A list of objects that contains details about the service-linked role deletion failure, if that information is
      * returned by the service. If the service-linked role has active sessions or if any resources that were used by the
      * role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of
-     * the resources that are associated with the role and the region in which the resources are being used.
+     * the resources that are associated with the role and the Region in which the resources are being used.
      * </p>
      * 
      * @param roleUsageList
      *        A list of objects that contains details about the service-linked role deletion failure, if that
      *        information is returned by the service. If the service-linked role has active sessions or if any resources
      *        that were used by the role have not been deleted from the linked service, the role can't be deleted. This
-     *        parameter includes a list of the resources that are associated with the role and the region in which the
+     *        parameter includes a list of the resources that are associated with the role and the Region in which the
      *        resources are being used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

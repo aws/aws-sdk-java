@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -55,11 +56,11 @@ public final class StateMachine {
     private final String version;
 
     private StateMachine(Builder builder) {
-        comment = builder.comment;
-        startAt = builder.startAt;
-        timeoutSeconds = builder.timeoutSeconds;
-        states = Buildable.Utils.build(builder.states);
-        version = builder.version;
+        this.comment = builder.comment;
+        this.startAt = builder.startAt;
+        this.timeoutSeconds = builder.timeoutSeconds;
+        this.states = Buildable.Utils.build(builder.states);
+        this.version = builder.version;
     }
 
     /**

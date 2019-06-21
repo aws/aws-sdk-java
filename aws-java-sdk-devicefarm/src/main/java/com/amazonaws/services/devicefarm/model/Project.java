@@ -42,8 +42,8 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The default number of minutes (at the project level) a test run will execute before it times out. Default value
-     * is 60 minutes.
+     * The default number of minutes (at the project level) a test run will execute before it times out. The default
+     * value is 150 minutes.
      * </p>
      */
     private Integer defaultJobTimeoutMinutes;
@@ -136,13 +136,13 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default number of minutes (at the project level) a test run will execute before it times out. Default value
-     * is 60 minutes.
+     * The default number of minutes (at the project level) a test run will execute before it times out. The default
+     * value is 150 minutes.
      * </p>
      * 
      * @param defaultJobTimeoutMinutes
-     *        The default number of minutes (at the project level) a test run will execute before it times out. Default
-     *        value is 60 minutes.
+     *        The default number of minutes (at the project level) a test run will execute before it times out. The
+     *        default value is 150 minutes.
      */
 
     public void setDefaultJobTimeoutMinutes(Integer defaultJobTimeoutMinutes) {
@@ -151,12 +151,12 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default number of minutes (at the project level) a test run will execute before it times out. Default value
-     * is 60 minutes.
+     * The default number of minutes (at the project level) a test run will execute before it times out. The default
+     * value is 150 minutes.
      * </p>
      * 
-     * @return The default number of minutes (at the project level) a test run will execute before it times out. Default
-     *         value is 60 minutes.
+     * @return The default number of minutes (at the project level) a test run will execute before it times out. The
+     *         default value is 150 minutes.
      */
 
     public Integer getDefaultJobTimeoutMinutes() {
@@ -165,13 +165,13 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default number of minutes (at the project level) a test run will execute before it times out. Default value
-     * is 60 minutes.
+     * The default number of minutes (at the project level) a test run will execute before it times out. The default
+     * value is 150 minutes.
      * </p>
      * 
      * @param defaultJobTimeoutMinutes
-     *        The default number of minutes (at the project level) a test run will execute before it times out. Default
-     *        value is 60 minutes.
+     *        The default number of minutes (at the project level) a test run will execute before it times out. The
+     *        default value is 150 minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

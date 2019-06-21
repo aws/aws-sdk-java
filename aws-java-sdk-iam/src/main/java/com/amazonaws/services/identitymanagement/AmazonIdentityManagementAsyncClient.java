@@ -2035,6 +2035,41 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateOrganizationsAccessReportResult> generateOrganizationsAccessReportAsync(
+            GenerateOrganizationsAccessReportRequest request) {
+
+        return generateOrganizationsAccessReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateOrganizationsAccessReportResult> generateOrganizationsAccessReportAsync(
+            final GenerateOrganizationsAccessReportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GenerateOrganizationsAccessReportRequest, GenerateOrganizationsAccessReportResult> asyncHandler) {
+        final GenerateOrganizationsAccessReportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GenerateOrganizationsAccessReportResult>() {
+            @Override
+            public GenerateOrganizationsAccessReportResult call() throws Exception {
+                GenerateOrganizationsAccessReportResult result = null;
+
+                try {
+                    result = executeGenerateOrganizationsAccessReport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GenerateServiceLastAccessedDetailsResult> generateServiceLastAccessedDetailsAsync(
             GenerateServiceLastAccessedDetailsRequest request) {
 
@@ -2547,6 +2582,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeGetOpenIDConnectProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOrganizationsAccessReportResult> getOrganizationsAccessReportAsync(GetOrganizationsAccessReportRequest request) {
+
+        return getOrganizationsAccessReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOrganizationsAccessReportResult> getOrganizationsAccessReportAsync(final GetOrganizationsAccessReportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetOrganizationsAccessReportRequest, GetOrganizationsAccessReportResult> asyncHandler) {
+        final GetOrganizationsAccessReportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetOrganizationsAccessReportResult>() {
+            @Override
+            public GetOrganizationsAccessReportResult call() throws Exception {
+                GetOrganizationsAccessReportResult result = null;
+
+                try {
+                    result = executeGetOrganizationsAccessReport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

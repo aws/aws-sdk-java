@@ -52,6 +52,14 @@ public class HlsManifestCreateOrUpdateParametersJsonUnmarshaller implements Unma
                     context.nextToken();
                     hlsManifestCreateOrUpdateParameters.setAdMarkers(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("adTriggers", targetDepth)) {
+                    context.nextToken();
+                    hlsManifestCreateOrUpdateParameters.setAdTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("adsOnDeliveryRestrictions", targetDepth)) {
+                    context.nextToken();
+                    hlsManifestCreateOrUpdateParameters.setAdsOnDeliveryRestrictions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     hlsManifestCreateOrUpdateParameters.setId(context.getUnmarshaller(String.class).unmarshall(context));

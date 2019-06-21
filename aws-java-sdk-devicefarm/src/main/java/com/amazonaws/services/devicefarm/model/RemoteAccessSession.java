@@ -215,7 +215,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
     private String billingMethod;
     /**
      * <p>
-     * The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
+     * The number of minutes a device is used in a remote access session (including setup and teardown minutes).
      * </p>
      */
     private DeviceMinutes deviceMinutes;
@@ -1907,11 +1907,11 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
+     * The number of minutes a device is used in a remote access session (including setup and teardown minutes).
      * </p>
      * 
      * @param deviceMinutes
-     *        The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
+     *        The number of minutes a device is used in a remote access session (including setup and teardown minutes).
      */
 
     public void setDeviceMinutes(DeviceMinutes deviceMinutes) {
@@ -1920,11 +1920,10 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
+     * The number of minutes a device is used in a remote access session (including setup and teardown minutes).
      * </p>
      * 
-     * @return The number of minutes a device is used in a remote access sesssion (including setup and teardown
-     *         minutes).
+     * @return The number of minutes a device is used in a remote access session (including setup and teardown minutes).
      */
 
     public DeviceMinutes getDeviceMinutes() {
@@ -1933,11 +1932,11 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
+     * The number of minutes a device is used in a remote access session (including setup and teardown minutes).
      * </p>
      * 
      * @param deviceMinutes
-     *        The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
+     *        The number of minutes a device is used in a remote access session (including setup and teardown minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

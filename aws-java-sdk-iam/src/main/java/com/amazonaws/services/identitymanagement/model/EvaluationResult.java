@@ -52,7 +52,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
      * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
-     * explicit deny overrides any allow. Inaddition, the deny statement is the only entry included in the result.
+     * explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Statement> matchedStatements;
@@ -68,8 +68,8 @@ public class EvaluationResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> missingContextValues;
     /**
      * <p>
-     * A structure that details how AWS Organizations and its service control policies affect the results of the
-     * simulation. Only applies if the simulated user's account is part of an organization.
+     * A structure that details how Organizations and its service control policies affect the results of the simulation.
+     * Only applies if the simulated user's account is part of an organization.
      * </p>
      */
     private OrganizationsDecisionDetail organizationsDecisionDetail;
@@ -248,12 +248,12 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
      * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
-     * explicit deny overrides any allow. Inaddition, the deny statement is the only entry included in the result.
+     * explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.
      * </p>
      * 
      * @return A list of the statements in the input policies that determine the result for this scenario. Remember that
      *         even if multiple statements allow the operation on the resource, if only one statement denies that
-     *         operation, then the explicit deny overrides any allow. Inaddition, the deny statement is the only entry
+     *         operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
      *         included in the result.
      */
 
@@ -268,13 +268,13 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
      * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
-     * explicit deny overrides any allow. Inaddition, the deny statement is the only entry included in the result.
+     * explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.
      * </p>
      * 
      * @param matchedStatements
      *        A list of the statements in the input policies that determine the result for this scenario. Remember that
      *        even if multiple statements allow the operation on the resource, if only one statement denies that
-     *        operation, then the explicit deny overrides any allow. Inaddition, the deny statement is the only entry
+     *        operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
      *        included in the result.
      */
 
@@ -291,7 +291,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
      * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
-     * explicit deny overrides any allow. Inaddition, the deny statement is the only entry included in the result.
+     * explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -302,7 +302,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @param matchedStatements
      *        A list of the statements in the input policies that determine the result for this scenario. Remember that
      *        even if multiple statements allow the operation on the resource, if only one statement denies that
-     *        operation, then the explicit deny overrides any allow. Inaddition, the deny statement is the only entry
+     *        operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
      *        included in the result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -321,13 +321,13 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
      * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
-     * explicit deny overrides any allow. Inaddition, the deny statement is the only entry included in the result.
+     * explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.
      * </p>
      * 
      * @param matchedStatements
      *        A list of the statements in the input policies that determine the result for this scenario. Remember that
      *        even if multiple statements allow the operation on the resource, if only one statement denies that
-     *        operation, then the explicit deny overrides any allow. Inaddition, the deny statement is the only entry
+     *        operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
      *        included in the result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -448,12 +448,12 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A structure that details how AWS Organizations and its service control policies affect the results of the
-     * simulation. Only applies if the simulated user's account is part of an organization.
+     * A structure that details how Organizations and its service control policies affect the results of the simulation.
+     * Only applies if the simulated user's account is part of an organization.
      * </p>
      * 
      * @param organizationsDecisionDetail
-     *        A structure that details how AWS Organizations and its service control policies affect the results of the
+     *        A structure that details how Organizations and its service control policies affect the results of the
      *        simulation. Only applies if the simulated user's account is part of an organization.
      */
 
@@ -463,11 +463,11 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A structure that details how AWS Organizations and its service control policies affect the results of the
-     * simulation. Only applies if the simulated user's account is part of an organization.
+     * A structure that details how Organizations and its service control policies affect the results of the simulation.
+     * Only applies if the simulated user's account is part of an organization.
      * </p>
      * 
-     * @return A structure that details how AWS Organizations and its service control policies affect the results of the
+     * @return A structure that details how Organizations and its service control policies affect the results of the
      *         simulation. Only applies if the simulated user's account is part of an organization.
      */
 
@@ -477,12 +477,12 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A structure that details how AWS Organizations and its service control policies affect the results of the
-     * simulation. Only applies if the simulated user's account is part of an organization.
+     * A structure that details how Organizations and its service control policies affect the results of the simulation.
+     * Only applies if the simulated user's account is part of an organization.
      * </p>
      * 
      * @param organizationsDecisionDetail
-     *        A structure that details how AWS Organizations and its service control policies affect the results of the
+     *        A structure that details how Organizations and its service control policies affect the results of the
      *        simulation. Only applies if the simulated user's account is part of an organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

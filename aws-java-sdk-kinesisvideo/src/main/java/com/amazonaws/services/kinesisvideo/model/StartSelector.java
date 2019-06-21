@@ -67,8 +67,8 @@ public class StartSelector implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FRAGMENT_NUMBER - Start with the chunk containing the specific fragment. You must also specify the
-     * <code>StartFragmentNumber</code>.
+     * FRAGMENT_NUMBER - Start with the chunk after a specific fragment. You must also specify the
+     * <code>AfterFragmentNumber</code> parameter.
      * </p>
      * </li>
      * <li>
@@ -130,8 +130,8 @@ public class StartSelector implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FRAGMENT_NUMBER - Start with the chunk containing the specific fragment. You must also specify the
-     * <code>StartFragmentNumber</code>.
+     * FRAGMENT_NUMBER - Start with the chunk after a specific fragment. You must also specify the
+     * <code>AfterFragmentNumber</code> parameter.
      * </p>
      * </li>
      * <li>
@@ -168,8 +168,8 @@ public class StartSelector implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        FRAGMENT_NUMBER - Start with the chunk containing the specific fragment. You must also specify the
-     *        <code>StartFragmentNumber</code>.
+     *        FRAGMENT_NUMBER - Start with the chunk after a specific fragment. You must also specify the
+     *        <code>AfterFragmentNumber</code> parameter.
      *        </p>
      *        </li>
      *        <li>
@@ -213,8 +213,8 @@ public class StartSelector implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FRAGMENT_NUMBER - Start with the chunk containing the specific fragment. You must also specify the
-     * <code>StartFragmentNumber</code>.
+     * FRAGMENT_NUMBER - Start with the chunk after a specific fragment. You must also specify the
+     * <code>AfterFragmentNumber</code> parameter.
      * </p>
      * </li>
      * <li>
@@ -250,8 +250,8 @@ public class StartSelector implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         FRAGMENT_NUMBER - Start with the chunk containing the specific fragment. You must also specify the
-     *         <code>StartFragmentNumber</code>.
+     *         FRAGMENT_NUMBER - Start with the chunk after a specific fragment. You must also specify the
+     *         <code>AfterFragmentNumber</code> parameter.
      *         </p>
      *         </li>
      *         <li>
@@ -295,8 +295,8 @@ public class StartSelector implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FRAGMENT_NUMBER - Start with the chunk containing the specific fragment. You must also specify the
-     * <code>StartFragmentNumber</code>.
+     * FRAGMENT_NUMBER - Start with the chunk after a specific fragment. You must also specify the
+     * <code>AfterFragmentNumber</code> parameter.
      * </p>
      * </li>
      * <li>
@@ -333,8 +333,8 @@ public class StartSelector implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        FRAGMENT_NUMBER - Start with the chunk containing the specific fragment. You must also specify the
-     *        <code>StartFragmentNumber</code>.
+     *        FRAGMENT_NUMBER - Start with the chunk after a specific fragment. You must also specify the
+     *        <code>AfterFragmentNumber</code> parameter.
      *        </p>
      *        </li>
      *        <li>
@@ -380,8 +380,8 @@ public class StartSelector implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FRAGMENT_NUMBER - Start with the chunk containing the specific fragment. You must also specify the
-     * <code>StartFragmentNumber</code>.
+     * FRAGMENT_NUMBER - Start with the chunk after a specific fragment. You must also specify the
+     * <code>AfterFragmentNumber</code> parameter.
      * </p>
      * </li>
      * <li>
@@ -418,8 +418,8 @@ public class StartSelector implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        FRAGMENT_NUMBER - Start with the chunk containing the specific fragment. You must also specify the
-     *        <code>StartFragmentNumber</code>.
+     *        FRAGMENT_NUMBER - Start with the chunk after a specific fragment. You must also specify the
+     *        <code>AfterFragmentNumber</code> parameter.
      *        </p>
      *        </li>
      *        <li>

@@ -28,6 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DashPackageMarshaller {
 
+    private static final MarshallingInfo<List> ADTRIGGERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("adTriggers").build();
+    private static final MarshallingInfo<String> ADSONDELIVERYRESTRICTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adsOnDeliveryRestrictions").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<String> MANIFESTLAYOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -67,6 +71,8 @@ public class DashPackageMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(dashPackage.getAdTriggers(), ADTRIGGERS_BINDING);
+            protocolMarshaller.marshall(dashPackage.getAdsOnDeliveryRestrictions(), ADSONDELIVERYRESTRICTIONS_BINDING);
             protocolMarshaller.marshall(dashPackage.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(dashPackage.getManifestLayout(), MANIFESTLAYOUT_BINDING);
             protocolMarshaller.marshall(dashPackage.getManifestWindowSeconds(), MANIFESTWINDOWSECONDS_BINDING);

@@ -1,3 +1,16 @@
+# __1.11.578__ __2019-06-21__
+## __AWS Device Farm__
+  - ### Features
+    - This release includes updated documentation about the default timeout value for test runs and remote access sessions. This release also includes miscellaneous bug fixes for the documentation.
+
+## __AWS Elemental MediaPackage__
+  - ### Features
+    - Added two new origin endpoint fields for configuring which SCTE-35 messages are treated as advertisements.
+
+## __AWS Identity and Access Management__
+  - ### Features
+    - We are making it easier for you to manage your permission guardrails i.e. service control policies by enabling you to retrieve the last timestamp when an AWS service was accessed within an account or AWS Organizations entity.
+
 # __1.11.577__ __2019-06-20__
 ## __AWS Certificate Manager Private Certificate Authority__
   - ### Features
