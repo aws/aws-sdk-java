@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The remediation options for a finding.
+ * Details about the remediation steps for a finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Remediation" target="_top">AWS API
@@ -30,18 +30,18 @@ public class Remediation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A recommendation on how to remediate the issue identified within a finding.
+     * A recommendation on the steps to take to remediate the issue identified by a finding.
      * </p>
      */
     private Recommendation recommendation;
 
     /**
      * <p>
-     * A recommendation on how to remediate the issue identified within a finding.
+     * A recommendation on the steps to take to remediate the issue identified by a finding.
      * </p>
      * 
      * @param recommendation
-     *        A recommendation on how to remediate the issue identified within a finding.
+     *        A recommendation on the steps to take to remediate the issue identified by a finding.
      */
 
     public void setRecommendation(Recommendation recommendation) {
@@ -50,10 +50,10 @@ public class Remediation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A recommendation on how to remediate the issue identified within a finding.
+     * A recommendation on the steps to take to remediate the issue identified by a finding.
      * </p>
      * 
-     * @return A recommendation on how to remediate the issue identified within a finding.
+     * @return A recommendation on the steps to take to remediate the issue identified by a finding.
      */
 
     public Recommendation getRecommendation() {
@@ -62,11 +62,11 @@ public class Remediation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A recommendation on how to remediate the issue identified within a finding.
+     * A recommendation on the steps to take to remediate the issue identified by a finding.
      * </p>
      * 
      * @param recommendation
-     *        A recommendation on how to remediate the issue identified within a finding.
+     *        A recommendation on the steps to take to remediate the issue identified by a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

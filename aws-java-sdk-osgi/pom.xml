@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.579-SNAPSHOT</version>
+    <version>1.11.579</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,18 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-applicationinsights</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-servicequotas</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-personalizeevents</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1214,6 +1226,14 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>Amazon CloudWatch Application Insights</title>
+                                  <packages>com.amazonaws.services.applicationinsights*</packages>
+                              </group>
+                              <group>
+                                  <title>Service Quotas</title>
+                                  <packages>com.amazonaws.services.servicequotas*</packages>
+                              </group>
                               <group>
                                   <title>Amazon Personalize Events</title>
                                   <packages>com.amazonaws.services.personalizeevents*</packages>

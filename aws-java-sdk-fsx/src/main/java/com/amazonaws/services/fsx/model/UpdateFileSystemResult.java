@@ -28,18 +28,18 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A description of the file system.
+     * A description of the file system that was updated.
      * </p>
      */
     private FileSystem fileSystem;
 
     /**
      * <p>
-     * A description of the file system.
+     * A description of the file system that was updated.
      * </p>
      * 
      * @param fileSystem
-     *        A description of the file system.
+     *        A description of the file system that was updated.
      */
 
     public void setFileSystem(FileSystem fileSystem) {
@@ -48,10 +48,10 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A description of the file system.
+     * A description of the file system that was updated.
      * </p>
      * 
-     * @return A description of the file system.
+     * @return A description of the file system that was updated.
      */
 
     public FileSystem getFileSystem() {
@@ -60,11 +60,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A description of the file system.
+     * A description of the file system that was updated.
      * </p>
      * 
      * @param fileSystem
-     *        A description of the file system.
+     *        A description of the file system that was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

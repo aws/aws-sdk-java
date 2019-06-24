@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.securityhub.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -26,6 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
 public class EnableSecurityHubRequestMarshaller {
+
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final EnableSecurityHubRequestMarshaller instance = new EnableSecurityHubRequestMarshaller();
 
@@ -43,6 +48,7 @@ public class EnableSecurityHubRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(enableSecurityHubRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

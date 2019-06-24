@@ -33,67 +33,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String listenerArn;
     /**
      * <p>
-     * The conditions. Each condition specifies a field name and a single value.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
-     * <p>
-     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
-     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * - .
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
-     * include up to three wildcard characters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * _ - . $ / ~ " ' @ : +
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * &amp; (using &amp;amp;)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
      */
     private java.util.List<RuleCondition> conditions;
     /**
@@ -109,8 +52,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
-     * Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
      * </p>
      * <p>
      * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -173,127 +116,15 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions. Each condition specifies a field name and a single value.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
-     * <p>
-     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
-     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * - .
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
-     * include up to three wildcard characters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * _ - . $ / ~ " ' @ : +
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * &amp; (using &amp;amp;)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The conditions. Each condition specifies a field name and a single value.</p>
-     *         <p>
-     *         If the field name is <code>host-header</code>, you can specify a single host name (for example,
-     *         my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *         any of the following characters. You can include up to three wildcard characters.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A-Z, a-z, 0-9
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         - .
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         (matches 0 or more characters)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         ? (matches exactly 1 character)
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     *         case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
-     *         You can include up to three wildcard characters.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A-Z, a-z, 0-9
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         _ - . $ / ~ " ' @ : +
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         &amp; (using &amp;amp;)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         (matches 0 or more characters)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         ? (matches exactly 1 character)
-     *         </p>
-     *         </li>
+     * @return The conditions. Each rule can include zero or one of the following conditions:
+     *         <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+     *         <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
+     *         <code>query-string</code>.
      */
 
     public java.util.List<RuleCondition> getConditions() {
@@ -302,128 +133,16 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions. Each condition specifies a field name and a single value.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
-     * <p>
-     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
-     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * - .
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
-     * include up to three wildcard characters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * _ - . $ / ~ " ' @ : +
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * &amp; (using &amp;amp;)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param conditions
-     *        The conditions. Each condition specifies a field name and a single value.</p>
-     *        <p>
-     *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
-     *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. You can include up to three wildcard characters.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        A-Z, a-z, 0-9
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        - .
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        (matches 0 or more characters)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ? (matches exactly 1 character)
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     *        case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
-     *        You can include up to three wildcard characters.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        A-Z, a-z, 0-9
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        _ - . $ / ~ " ' @ : +
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        &amp; (using &amp;amp;)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        (matches 0 or more characters)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ? (matches exactly 1 character)
-     *        </p>
-     *        </li>
+     *        The conditions. Each rule can include zero or one of the following conditions:
+     *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
+     *        <code>query-string</code>.
      */
 
     public void setConditions(java.util.Collection<RuleCondition> conditions) {
@@ -437,67 +156,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions. Each condition specifies a field name and a single value.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
-     * <p>
-     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
-     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * - .
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
-     * include up to three wildcard characters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * _ - . $ / ~ " ' @ : +
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * &amp; (using &amp;amp;)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setConditions(java.util.Collection)} or {@link #withConditions(java.util.Collection)} if you want to
@@ -505,65 +167,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param conditions
-     *        The conditions. Each condition specifies a field name and a single value.</p>
-     *        <p>
-     *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
-     *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. You can include up to three wildcard characters.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        A-Z, a-z, 0-9
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        - .
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        (matches 0 or more characters)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ? (matches exactly 1 character)
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     *        case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
-     *        You can include up to three wildcard characters.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        A-Z, a-z, 0-9
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        _ - . $ / ~ " ' @ : +
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        &amp; (using &amp;amp;)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        (matches 0 or more characters)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ? (matches exactly 1 character)
-     *        </p>
-     *        </li>
+     *        The conditions. Each rule can include zero or one of the following conditions:
+     *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
+     *        <code>query-string</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -579,128 +186,16 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions. Each condition specifies a field name and a single value.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
-     * <p>
-     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
-     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * - .
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
-     * include up to three wildcard characters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * _ - . $ / ~ " ' @ : +
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * &amp; (using &amp;amp;)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param conditions
-     *        The conditions. Each condition specifies a field name and a single value.</p>
-     *        <p>
-     *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
-     *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. You can include up to three wildcard characters.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        A-Z, a-z, 0-9
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        - .
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        (matches 0 or more characters)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ? (matches exactly 1 character)
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     *        case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
-     *        You can include up to three wildcard characters.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        A-Z, a-z, 0-9
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        _ - . $ / ~ " ' @ : +
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        &amp; (using &amp;amp;)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        (matches 0 or more characters)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ? (matches exactly 1 character)
-     *        </p>
-     *        </li>
+     *        The conditions. Each rule can include zero or one of the following conditions:
+     *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
+     *        <code>query-string</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -756,8 +251,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
-     * Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
      * </p>
      * <p>
      * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -780,8 +275,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <code>fixed-response</code>, or <code>redirect</code>.</p>
      *         <p>
      *         If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
-     *         must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or
-     *         TLS for a Network Load Balancer.
+     *         must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP,
+     *         TLS, UDP, or TCP_UDP for a Network Load Balancer.
      *         </p>
      *         <p>
      *         [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -811,8 +306,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
-     * Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
      * </p>
      * <p>
      * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -836,8 +331,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>fixed-response</code>, or <code>redirect</code>.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
-     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or
-     *        TLS for a Network Load Balancer.
+     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
+     *        UDP, or TCP_UDP for a Network Load Balancer.
      *        </p>
      *        <p>
      *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -872,8 +367,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
-     * Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
      * </p>
      * <p>
      * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -902,8 +397,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>fixed-response</code>, or <code>redirect</code>.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
-     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or
-     *        TLS for a Network Load Balancer.
+     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
+     *        UDP, or TCP_UDP for a Network Load Balancer.
      *        </p>
      *        <p>
      *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -940,8 +435,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
-     * Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
      * </p>
      * <p>
      * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -965,8 +460,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>fixed-response</code>, or <code>redirect</code>.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
-     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or
-     *        TLS for a Network Load Balancer.
+     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
+     *        UDP, or TCP_UDP for a Network Load Balancer.
      *        </p>
      *        <p>
      *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an

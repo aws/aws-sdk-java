@@ -16,6 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Information about a host header condition.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/HostHeaderConditionConfig"
  *      target="_top">AWS API Documentation</a>
@@ -23,10 +26,33 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HostHeaderConditionConfig implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
+     * character).
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
+     * </p>
+     */
     private java.util.List<String> values;
 
     /**
-     * @return
+     * <p>
+     * One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
+     * character).
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
+     * </p>
+     * 
+     * @return One or more host names. The maximum size of each name is 128 characters. The comparison is case
+     *         insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ?
+     *         (matches exactly 1 character).</p>
+     *         <p>
+     *         If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
      */
 
     public java.util.List<String> getValues() {
@@ -34,7 +60,21 @@ public class HostHeaderConditionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
+     * character).
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
+     * </p>
+     * 
      * @param values
+     *        One or more host names. The maximum size of each name is 128 characters. The comparison is case
+     *        insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ?
+     *        (matches exactly 1 character).</p>
+     *        <p>
+     *        If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -48,12 +88,25 @@ public class HostHeaderConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
+     * One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
+     * character).
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param values
+     *        One or more host names. The maximum size of each name is 128 characters. The comparison is case
+     *        insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ?
+     *        (matches exactly 1 character).</p>
+     *        <p>
+     *        If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +121,21 @@ public class HostHeaderConditionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
+     * character).
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
+     * </p>
+     * 
      * @param values
+     *        One or more host names. The maximum size of each name is 128 characters. The comparison is case
+     *        insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ?
+     *        (matches exactly 1 character).</p>
+     *        <p>
+     *        If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -56,10 +56,6 @@ public class ResourceTagMappingJsonUnmarshaller implements Unmarshaller<Resource
                     context.nextToken();
                     resourceTagMapping.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("ComplianceDetails", targetDepth)) {
-                    context.nextToken();
-                    resourceTagMapping.setComplianceDetails(ComplianceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
-                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

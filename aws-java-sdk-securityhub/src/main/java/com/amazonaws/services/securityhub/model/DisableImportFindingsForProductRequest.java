@@ -27,18 +27,18 @@ public class DisableImportFindingsForProductRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of a resource that represents your subscription to a supported product.
+     * The ARN of the integrated product to disable the integration for.
      * </p>
      */
     private String productSubscriptionArn;
 
     /**
      * <p>
-     * The ARN of a resource that represents your subscription to a supported product.
+     * The ARN of the integrated product to disable the integration for.
      * </p>
      * 
      * @param productSubscriptionArn
-     *        The ARN of a resource that represents your subscription to a supported product.
+     *        The ARN of the integrated product to disable the integration for.
      */
 
     public void setProductSubscriptionArn(String productSubscriptionArn) {
@@ -47,10 +47,10 @@ public class DisableImportFindingsForProductRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of a resource that represents your subscription to a supported product.
+     * The ARN of the integrated product to disable the integration for.
      * </p>
      * 
-     * @return The ARN of a resource that represents your subscription to a supported product.
+     * @return The ARN of the integrated product to disable the integration for.
      */
 
     public String getProductSubscriptionArn() {
@@ -59,11 +59,11 @@ public class DisableImportFindingsForProductRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of a resource that represents your subscription to a supported product.
+     * The ARN of the integrated product to disable the integration for.
      * </p>
      * 
      * @param productSubscriptionArn
-     *        The ARN of a resource that represents your subscription to a supported product.
+     *        The ARN of the integrated product to disable the integration for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

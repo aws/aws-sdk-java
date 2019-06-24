@@ -47,8 +47,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * endpoint type is <code>EDGE</code>.
      * </p>
      * <p>
-     * To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
-     * <code>basePath=prepend</code> or <code>basePath=split</code>.
+     * To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.
      * </p>
      * <p>
      * For example, the AWS CLI command to exclude documentation from the imported API is:
@@ -149,8 +149,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * endpoint type is <code>EDGE</code>.
      * </p>
      * <p>
-     * To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
-     * <code>basePath=prepend</code> or <code>basePath=split</code>.
+     * To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.
      * </p>
      * <p>
      * For example, the AWS CLI command to exclude documentation from the imported API is:
@@ -179,8 +179,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.
      *         </p>
      *         <p>
-     *         To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
-     *         <code>basePath=prepend</code> or <code>basePath=split</code>.
+     *         To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
+     *         <code>basepath=prepend</code> or <code>basepath=split</code>.
      *         </p>
      *         <p>
      *         For example, the AWS CLI command to exclude documentation from the imported API is:
@@ -215,8 +215,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * endpoint type is <code>EDGE</code>.
      * </p>
      * <p>
-     * To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
-     * <code>basePath=prepend</code> or <code>basePath=split</code>.
+     * To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.
      * </p>
      * <p>
      * For example, the AWS CLI command to exclude documentation from the imported API is:
@@ -246,8 +246,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.
      *        </p>
      *        <p>
-     *        To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
-     *        <code>basePath=prepend</code> or <code>basePath=split</code>.
+     *        To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
+     *        <code>basepath=prepend</code> or <code>basepath=split</code>.
      *        </p>
      *        <p>
      *        For example, the AWS CLI command to exclude documentation from the imported API is:
@@ -282,8 +282,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * endpoint type is <code>EDGE</code>.
      * </p>
      * <p>
-     * To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
-     * <code>basePath=prepend</code> or <code>basePath=split</code>.
+     * To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
+     * <code>basepath=prepend</code> or <code>basepath=split</code>.
      * </p>
      * <p>
      * For example, the AWS CLI command to exclude documentation from the imported API is:
@@ -313,8 +313,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.
      *        </p>
      *        <p>
-     *        To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
-     *        <code>basePath=prepend</code> or <code>basePath=split</code>.
+     *        To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
+     *        <code>basepath=prepend</code> or <code>basepath=split</code>.
      *        </p>
      *        <p>
      *        For example, the AWS CLI command to exclude documentation from the imported API is:

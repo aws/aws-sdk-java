@@ -16,6 +16,14 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Information about an HTTP method condition.
+ * </p>
+ * <p>
+ * HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the <a
+ * href="https://www.iana.org/assignments/http-methods/http-methods.xhtml">HTTP Method Registry</a>. You can also define
+ * custom HTTP methods.
+ * </p>
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/HttpRequestMethodConditionConfig"
@@ -24,10 +32,39 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HttpRequestMethodConditionConfig implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-),
+     * and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name
+     * must be an exact match.
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request
+     * method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request
+     * may be cached.
+     * </p>
+     */
     private java.util.List<String> values;
 
     /**
-     * @return
+     * <p>
+     * The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-),
+     * and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name
+     * must be an exact match.
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request
+     * method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request
+     * may be cached.
+     * </p>
+     * 
+     * @return The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen
+     *         (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the
+     *         method name must be an exact match.</p>
+     *         <p>
+     *         If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP
+     *         request method. We recommend that you route GET and HEAD requests in the same way, because the response
+     *         to a HEAD request may be cached.
      */
 
     public java.util.List<String> getValues() {
@@ -35,7 +72,25 @@ public class HttpRequestMethodConditionConfig implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-),
+     * and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name
+     * must be an exact match.
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request
+     * method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request
+     * may be cached.
+     * </p>
+     * 
      * @param values
+     *        The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen
+     *        (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the
+     *        method name must be an exact match.</p>
+     *        <p>
+     *        If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request
+     *        method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD
+     *        request may be cached.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -49,12 +104,29 @@ public class HttpRequestMethodConditionConfig implements Serializable, Cloneable
 
     /**
      * <p>
+     * The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-),
+     * and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name
+     * must be an exact match.
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request
+     * method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request
+     * may be cached.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param values
+     *        The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen
+     *        (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the
+     *        method name must be an exact match.</p>
+     *        <p>
+     *        If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request
+     *        method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD
+     *        request may be cached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,7 +141,25 @@ public class HttpRequestMethodConditionConfig implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-),
+     * and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name
+     * must be an exact match.
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request
+     * method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request
+     * may be cached.
+     * </p>
+     * 
      * @param values
+     *        The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen
+     *        (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the
+     *        method name must be an exact match.</p>
+     *        <p>
+     *        If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request
+     *        method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD
+     *        request may be cached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

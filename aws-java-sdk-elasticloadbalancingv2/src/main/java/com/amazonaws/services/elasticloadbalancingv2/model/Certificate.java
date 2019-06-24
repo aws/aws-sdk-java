@@ -34,8 +34,9 @@ public class Certificate implements Serializable, Cloneable {
     private String certificateArn;
     /**
      * <p>
-     * Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when specifying a
-     * certificate as an input parameter.
+     * Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate
+     * as an input. This value is not included in the output when describing a listener, but is included when describing
+     * listener certificates.
      * </p>
      */
     private Boolean isDefault;
@@ -82,13 +83,15 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when specifying a
-     * certificate as an input parameter.
+     * Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate
+     * as an input. This value is not included in the output when describing a listener, but is included when describing
+     * listener certificates.
      * </p>
      * 
      * @param isDefault
-     *        Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when
-     *        specifying a certificate as an input parameter.
+     *        Indicates whether the certificate is the default certificate. Do not set this value when specifying a
+     *        certificate as an input. This value is not included in the output when describing a listener, but is
+     *        included when describing listener certificates.
      */
 
     public void setIsDefault(Boolean isDefault) {
@@ -97,12 +100,14 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when specifying a
-     * certificate as an input parameter.
+     * Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate
+     * as an input. This value is not included in the output when describing a listener, but is included when describing
+     * listener certificates.
      * </p>
      * 
-     * @return Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when
-     *         specifying a certificate as an input parameter.
+     * @return Indicates whether the certificate is the default certificate. Do not set this value when specifying a
+     *         certificate as an input. This value is not included in the output when describing a listener, but is
+     *         included when describing listener certificates.
      */
 
     public Boolean getIsDefault() {
@@ -111,13 +116,15 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when specifying a
-     * certificate as an input parameter.
+     * Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate
+     * as an input. This value is not included in the output when describing a listener, but is included when describing
+     * listener certificates.
      * </p>
      * 
      * @param isDefault
-     *        Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when
-     *        specifying a certificate as an input parameter.
+     *        Indicates whether the certificate is the default certificate. Do not set this value when specifying a
+     *        certificate as an input. This value is not included in the output when describing a listener, but is
+     *        included when describing listener certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,12 +135,14 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when specifying a
-     * certificate as an input parameter.
+     * Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate
+     * as an input. This value is not included in the output when describing a listener, but is included when describing
+     * listener certificates.
      * </p>
      * 
-     * @return Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when
-     *         specifying a certificate as an input parameter.
+     * @return Indicates whether the certificate is the default certificate. Do not set this value when specifying a
+     *         certificate as an input. This value is not included in the output when describing a listener, but is
+     *         included when describing listener certificates.
      */
 
     public Boolean isDefault() {

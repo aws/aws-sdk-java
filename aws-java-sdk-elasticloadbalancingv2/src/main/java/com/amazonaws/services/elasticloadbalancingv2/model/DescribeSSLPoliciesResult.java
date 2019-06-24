@@ -31,8 +31,7 @@ public class DescribeSSLPoliciesResult extends com.amazonaws.AmazonWebServiceRes
     private java.util.List<SslPolicy> sslPolicies;
     /**
      * <p>
-     * The marker to use when requesting the next set of results. If there are no additional results, the string is
-     * empty.
+     * If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
      * </p>
      */
     private String nextMarker;
@@ -109,13 +108,11 @@ public class DescribeSSLPoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The marker to use when requesting the next set of results. If there are no additional results, the string is
-     * empty.
+     * If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
      * </p>
      * 
      * @param nextMarker
-     *        The marker to use when requesting the next set of results. If there are no additional results, the string
-     *        is empty.
+     *        If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -124,12 +121,10 @@ public class DescribeSSLPoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The marker to use when requesting the next set of results. If there are no additional results, the string is
-     * empty.
+     * If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
      * </p>
      * 
-     * @return The marker to use when requesting the next set of results. If there are no additional results, the string
-     *         is empty.
+     * @return If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
      */
 
     public String getNextMarker() {
@@ -138,13 +133,11 @@ public class DescribeSSLPoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The marker to use when requesting the next set of results. If there are no additional results, the string is
-     * empty.
+     * If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
      * </p>
      * 
      * @param nextMarker
-     *        The marker to use when requesting the next set of results. If there are no additional results, the string
-     *        is empty.
+     *        If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

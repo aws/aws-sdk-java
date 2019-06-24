@@ -40,13 +40,16 @@ public class Rule implements Serializable, Cloneable {
     private String priority;
     /**
      * <p>
-     * The conditions.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
      */
     private java.util.List<RuleCondition> conditions;
     /**
      * <p>
-     * The actions.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.
      * </p>
      */
     private java.util.List<Action> actions;
@@ -139,10 +142,15 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The conditions.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
      * 
-     * @return The conditions.
+     * @return The conditions. Each rule can include zero or one of the following conditions:
+     *         <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+     *         <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
+     *         <code>query-string</code>.
      */
 
     public java.util.List<RuleCondition> getConditions() {
@@ -151,11 +159,16 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The conditions.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
      * 
      * @param conditions
-     *        The conditions.
+     *        The conditions. Each rule can include zero or one of the following conditions:
+     *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
+     *        <code>query-string</code>.
      */
 
     public void setConditions(java.util.Collection<RuleCondition> conditions) {
@@ -169,7 +182,9 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The conditions.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -178,7 +193,10 @@ public class Rule implements Serializable, Cloneable {
      * </p>
      * 
      * @param conditions
-     *        The conditions.
+     *        The conditions. Each rule can include zero or one of the following conditions:
+     *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
+     *        <code>query-string</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +212,16 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The conditions.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
      * 
      * @param conditions
-     *        The conditions.
+     *        The conditions. Each rule can include zero or one of the following conditions:
+     *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
+     *        <code>query-string</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,10 +232,12 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The actions.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.
      * </p>
      * 
-     * @return The actions.
+     * @return The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     *         <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.
      */
 
     public java.util.List<Action> getActions() {
@@ -221,11 +246,13 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The actions.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.
      * </p>
      * 
      * @param actions
-     *        The actions.
+     *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     *        <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.
      */
 
     public void setActions(java.util.Collection<Action> actions) {
@@ -239,7 +266,8 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The actions.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -248,7 +276,8 @@ public class Rule implements Serializable, Cloneable {
      * </p>
      * 
      * @param actions
-     *        The actions.
+     *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     *        <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,11 +293,13 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The actions.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.
      * </p>
      * 
      * @param actions
-     *        The actions.
+     *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     *        <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

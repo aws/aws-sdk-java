@@ -88,6 +88,10 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
                     context.nextToken();
                     backup.setFileSystem(FileSystemJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DirectoryInformation", targetDepth)) {
+                    context.nextToken();
+                    backup.setDirectoryInformation(ActiveDirectoryBackupAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

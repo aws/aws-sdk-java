@@ -16,6 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Information about a key/value pair.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/QueryStringKeyValuePair"
  *      target="_top">AWS API Documentation</a>
@@ -23,12 +26,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class QueryStringKeyValuePair implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The key. You can omit the key.
+     * </p>
+     */
     private String key;
-
+    /**
+     * <p>
+     * The value.
+     * </p>
+     */
     private String value;
 
     /**
+     * <p>
+     * The key. You can omit the key.
+     * </p>
+     * 
      * @param key
+     *        The key. You can omit the key.
      */
 
     public void setKey(String key) {
@@ -36,7 +53,11 @@ public class QueryStringKeyValuePair implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The key. You can omit the key.
+     * </p>
+     * 
+     * @return The key. You can omit the key.
      */
 
     public String getKey() {
@@ -44,7 +65,12 @@ public class QueryStringKeyValuePair implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The key. You can omit the key.
+     * </p>
+     * 
      * @param key
+     *        The key. You can omit the key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +80,12 @@ public class QueryStringKeyValuePair implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The value.
+     * </p>
+     * 
      * @param value
+     *        The value.
      */
 
     public void setValue(String value) {
@@ -62,7 +93,11 @@ public class QueryStringKeyValuePair implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The value.
+     * </p>
+     * 
+     * @return The value.
      */
 
     public String getValue() {
@@ -70,7 +105,12 @@ public class QueryStringKeyValuePair implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The value.
+     * </p>
+     * 
      * @param value
+     *        The value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,7 +25,7 @@ public class DescribeProductsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of products.
+     * A list of products, including details for each product.
      * </p>
      */
     private java.util.List<Product> products;
@@ -38,10 +38,10 @@ public class DescribeProductsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of products.
+     * A list of products, including details for each product.
      * </p>
      * 
-     * @return A list of products.
+     * @return A list of products, including details for each product.
      */
 
     public java.util.List<Product> getProducts() {
@@ -50,11 +50,11 @@ public class DescribeProductsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of products.
+     * A list of products, including details for each product.
      * </p>
      * 
      * @param products
-     *        A list of products.
+     *        A list of products, including details for each product.
      */
 
     public void setProducts(java.util.Collection<Product> products) {
@@ -68,7 +68,7 @@ public class DescribeProductsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of products.
+     * A list of products, including details for each product.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class DescribeProductsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param products
-     *        A list of products.
+     *        A list of products, including details for each product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class DescribeProductsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of products.
+     * A list of products, including details for each product.
      * </p>
      * 
      * @param products
-     *        A list of products.
+     *        A list of products, including details for each product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

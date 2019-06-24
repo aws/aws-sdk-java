@@ -48,6 +48,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public CreateActionTargetResult createActionTarget(CreateActionTargetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateInsightResult createInsight(CreateInsightRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -63,6 +68,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public DeleteActionTargetResult deleteActionTarget(DeleteActionTargetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteInsightResult deleteInsight(DeleteInsightRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,6 +84,16 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
 
     @Override
     public DeleteMembersResult deleteMembers(DeleteMembersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeActionTargetsResult describeActionTargets(DescribeActionTargetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeHubResult describeHub(DescribeHubRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,7 +188,22 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
-    public ListProductSubscribersResult listProductSubscribers(ListProductSubscribersRequest request) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateActionTargetResult updateActionTarget(UpdateActionTargetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -60,7 +60,7 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
     private String launchedAt;
     /**
      * <p>
-     * The date/time that the process was terminated.
+     * The date and time when the process was terminated.
      * </p>
      */
     private String terminatedAt;
@@ -267,11 +267,11 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date/time that the process was terminated.
+     * The date and time when the process was terminated.
      * </p>
      * 
      * @param terminatedAt
-     *        The date/time that the process was terminated.
+     *        The date and time when the process was terminated.
      */
 
     public void setTerminatedAt(String terminatedAt) {
@@ -280,10 +280,10 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date/time that the process was terminated.
+     * The date and time when the process was terminated.
      * </p>
      * 
-     * @return The date/time that the process was terminated.
+     * @return The date and time when the process was terminated.
      */
 
     public String getTerminatedAt() {
@@ -292,11 +292,11 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date/time that the process was terminated.
+     * The date and time when the process was terminated.
      * </p>
      * 
      * @param terminatedAt
-     *        The date/time that the process was terminated.
+     *        The date and time when the process was terminated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

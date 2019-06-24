@@ -85,6 +85,13 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private FileSystem fileSystem;
+    /**
+     * <p>
+     * The configuration of the self-managed Microsoft Active Directory (AD) to which the Windows File Server instance
+     * is joined.
+     * </p>
+     */
+    private ActiveDirectoryBackupAttributes directoryInformation;
 
     /**
      * <p>
@@ -547,6 +554,52 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The configuration of the self-managed Microsoft Active Directory (AD) to which the Windows File Server instance
+     * is joined.
+     * </p>
+     * 
+     * @param directoryInformation
+     *        The configuration of the self-managed Microsoft Active Directory (AD) to which the Windows File Server
+     *        instance is joined.
+     */
+
+    public void setDirectoryInformation(ActiveDirectoryBackupAttributes directoryInformation) {
+        this.directoryInformation = directoryInformation;
+    }
+
+    /**
+     * <p>
+     * The configuration of the self-managed Microsoft Active Directory (AD) to which the Windows File Server instance
+     * is joined.
+     * </p>
+     * 
+     * @return The configuration of the self-managed Microsoft Active Directory (AD) to which the Windows File Server
+     *         instance is joined.
+     */
+
+    public ActiveDirectoryBackupAttributes getDirectoryInformation() {
+        return this.directoryInformation;
+    }
+
+    /**
+     * <p>
+     * The configuration of the self-managed Microsoft Active Directory (AD) to which the Windows File Server instance
+     * is joined.
+     * </p>
+     * 
+     * @param directoryInformation
+     *        The configuration of the self-managed Microsoft Active Directory (AD) to which the Windows File Server
+     *        instance is joined.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withDirectoryInformation(ActiveDirectoryBackupAttributes directoryInformation) {
+        setDirectoryInformation(directoryInformation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -577,7 +630,9 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getFileSystem() != null)
-            sb.append("FileSystem: ").append(getFileSystem());
+            sb.append("FileSystem: ").append(getFileSystem()).append(",");
+        if (getDirectoryInformation() != null)
+            sb.append("DirectoryInformation: ").append(getDirectoryInformation());
         sb.append("}");
         return sb.toString();
     }
@@ -632,6 +687,10 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFileSystem() != null && other.getFileSystem().equals(this.getFileSystem()) == false)
             return false;
+        if (other.getDirectoryInformation() == null ^ this.getDirectoryInformation() == null)
+            return false;
+        if (other.getDirectoryInformation() != null && other.getDirectoryInformation().equals(this.getDirectoryInformation()) == false)
+            return false;
         return true;
     }
 
@@ -650,6 +709,7 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getFileSystem() == null) ? 0 : getFileSystem().hashCode());
+        hashCode = prime * hashCode + ((getDirectoryInformation() == null) ? 0 : getDirectoryInformation().hashCode());
         return hashCode;
     }
 

@@ -27,32 +27,31 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The user-defined name that identifies the insight to create.
+     * The name of the custom insight to create.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and that
-     * result in a subset of findings that are included in this insight.
+     * One or more attributes used to filter the findings included in the insight. Only findings that match the criteria
+     * defined in the filters are included in the insight.
      * </p>
      */
     private AwsSecurityFindingFilters filters;
     /**
      * <p>
-     * The attribute by which the insight's findings are grouped. This attribute is used as a findings aggregator for
-     * the purposes of viewing and managing multiple related findings under a single operand.
+     * The attribute used as the aggregator to group related findings for the insight.
      * </p>
      */
     private String groupByAttribute;
 
     /**
      * <p>
-     * The user-defined name that identifies the insight to create.
+     * The name of the custom insight to create.
      * </p>
      * 
      * @param name
-     *        The user-defined name that identifies the insight to create.
+     *        The name of the custom insight to create.
      */
 
     public void setName(String name) {
@@ -61,10 +60,10 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The user-defined name that identifies the insight to create.
+     * The name of the custom insight to create.
      * </p>
      * 
-     * @return The user-defined name that identifies the insight to create.
+     * @return The name of the custom insight to create.
      */
 
     public String getName() {
@@ -73,11 +72,11 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The user-defined name that identifies the insight to create.
+     * The name of the custom insight to create.
      * </p>
      * 
      * @param name
-     *        The user-defined name that identifies the insight to create.
+     *        The name of the custom insight to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +87,13 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and that
-     * result in a subset of findings that are included in this insight.
+     * One or more attributes used to filter the findings included in the insight. Only findings that match the criteria
+     * defined in the filters are included in the insight.
      * </p>
      * 
      * @param filters
-     *        A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and
-     *        that result in a subset of findings that are included in this insight.
+     *        One or more attributes used to filter the findings included in the insight. Only findings that match the
+     *        criteria defined in the filters are included in the insight.
      */
 
     public void setFilters(AwsSecurityFindingFilters filters) {
@@ -103,12 +102,12 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and that
-     * result in a subset of findings that are included in this insight.
+     * One or more attributes used to filter the findings included in the insight. Only findings that match the criteria
+     * defined in the filters are included in the insight.
      * </p>
      * 
-     * @return A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and
-     *         that result in a subset of findings that are included in this insight.
+     * @return One or more attributes used to filter the findings included in the insight. Only findings that match the
+     *         criteria defined in the filters are included in the insight.
      */
 
     public AwsSecurityFindingFilters getFilters() {
@@ -117,13 +116,13 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and that
-     * result in a subset of findings that are included in this insight.
+     * One or more attributes used to filter the findings included in the insight. Only findings that match the criteria
+     * defined in the filters are included in the insight.
      * </p>
      * 
      * @param filters
-     *        A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and
-     *        that result in a subset of findings that are included in this insight.
+     *        One or more attributes used to filter the findings included in the insight. Only findings that match the
+     *        criteria defined in the filters are included in the insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,13 +133,11 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The attribute by which the insight's findings are grouped. This attribute is used as a findings aggregator for
-     * the purposes of viewing and managing multiple related findings under a single operand.
+     * The attribute used as the aggregator to group related findings for the insight.
      * </p>
      * 
      * @param groupByAttribute
-     *        The attribute by which the insight's findings are grouped. This attribute is used as a findings aggregator
-     *        for the purposes of viewing and managing multiple related findings under a single operand.
+     *        The attribute used as the aggregator to group related findings for the insight.
      */
 
     public void setGroupByAttribute(String groupByAttribute) {
@@ -149,12 +146,10 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The attribute by which the insight's findings are grouped. This attribute is used as a findings aggregator for
-     * the purposes of viewing and managing multiple related findings under a single operand.
+     * The attribute used as the aggregator to group related findings for the insight.
      * </p>
      * 
-     * @return The attribute by which the insight's findings are grouped. This attribute is used as a findings
-     *         aggregator for the purposes of viewing and managing multiple related findings under a single operand.
+     * @return The attribute used as the aggregator to group related findings for the insight.
      */
 
     public String getGroupByAttribute() {
@@ -163,13 +158,11 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The attribute by which the insight's findings are grouped. This attribute is used as a findings aggregator for
-     * the purposes of viewing and managing multiple related findings under a single operand.
+     * The attribute used as the aggregator to group related findings for the insight.
      * </p>
      * 
      * @param groupByAttribute
-     *        The attribute by which the insight's findings are grouped. This attribute is used as a findings aggregator
-     *        for the purposes of viewing and managing multiple related findings under a single operand.
+     *        The attribute used as the aggregator to group related findings for the insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

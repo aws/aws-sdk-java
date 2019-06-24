@@ -33,6 +33,8 @@ public class UpdateFileSystemWindowsConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DailyAutomaticBackupStartTime").build();
     private static final MarshallingInfo<Integer> AUTOMATICBACKUPRETENTIONDAYS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomaticBackupRetentionDays").build();
+    private static final MarshallingInfo<StructuredPojo> SELFMANAGEDACTIVEDIRECTORYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedActiveDirectoryConfiguration").build();
 
     private static final UpdateFileSystemWindowsConfigurationMarshaller instance = new UpdateFileSystemWindowsConfigurationMarshaller();
 
@@ -53,6 +55,8 @@ public class UpdateFileSystemWindowsConfigurationMarshaller {
             protocolMarshaller.marshall(updateFileSystemWindowsConfiguration.getWeeklyMaintenanceStartTime(), WEEKLYMAINTENANCESTARTTIME_BINDING);
             protocolMarshaller.marshall(updateFileSystemWindowsConfiguration.getDailyAutomaticBackupStartTime(), DAILYAUTOMATICBACKUPSTARTTIME_BINDING);
             protocolMarshaller.marshall(updateFileSystemWindowsConfiguration.getAutomaticBackupRetentionDays(), AUTOMATICBACKUPRETENTIONDAYS_BINDING);
+            protocolMarshaller.marshall(updateFileSystemWindowsConfiguration.getSelfManagedActiveDirectoryConfiguration(),
+                    SELFMANAGEDACTIVEDIRECTORYCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

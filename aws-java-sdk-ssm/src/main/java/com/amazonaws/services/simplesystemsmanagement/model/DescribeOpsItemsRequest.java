@@ -88,7 +88,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Key: OperationalData
+     * Key: OperationalData*
      * </p>
      * <p>
      * Operations: Equals
@@ -135,6 +135,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * *If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     * following JSON format: {"key":"key_name","value":"a_value"}
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OpsItemFilter> opsItemFilters;
     /**
@@ -214,7 +218,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Key: OperationalData
+     * Key: OperationalData*
      * </p>
      * <p>
      * Operations: Equals
@@ -261,6 +265,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * *If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     * following JSON format: {"key":"key_name","value":"a_value"}
+     * </p>
      * 
      * @return One or more filters to limit the reponse.</p>
      *         <ul>
@@ -322,7 +330,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Key: OperationalData
+     *         Key: OperationalData*
      *         </p>
      *         <p>
      *         Operations: Equals
@@ -368,6 +376,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *         Operations: Equals
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     *         following JSON format: {"key":"key_name","value":"a_value"}
      */
 
     public java.util.List<OpsItemFilter> getOpsItemFilters() {
@@ -440,7 +452,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Key: OperationalData
+     * Key: OperationalData*
      * </p>
      * <p>
      * Operations: Equals
@@ -487,6 +499,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * *If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     * following JSON format: {"key":"key_name","value":"a_value"}
+     * </p>
      * 
      * @param opsItemFilters
      *        One or more filters to limit the reponse.</p>
@@ -549,7 +565,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Key: OperationalData
+     *        Key: OperationalData*
      *        </p>
      *        <p>
      *        Operations: Equals
@@ -595,6 +611,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        Operations: Equals
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     *        following JSON format: {"key":"key_name","value":"a_value"}
      */
 
     public void setOpsItemFilters(java.util.Collection<OpsItemFilter> opsItemFilters) {
@@ -669,7 +689,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Key: OperationalData
+     * Key: OperationalData*
      * </p>
      * <p>
      * Operations: Equals
@@ -716,6 +736,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * *If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     * following JSON format: {"key":"key_name","value":"a_value"}
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOpsItemFilters(java.util.Collection)} or {@link #withOpsItemFilters(java.util.Collection)} if you want
@@ -783,7 +807,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Key: OperationalData
+     *        Key: OperationalData*
      *        </p>
      *        <p>
      *        Operations: Equals
@@ -829,6 +853,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        Operations: Equals
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     *        following JSON format: {"key":"key_name","value":"a_value"}
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -905,7 +933,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Key: OperationalData
+     * Key: OperationalData*
      * </p>
      * <p>
      * Operations: Equals
@@ -952,6 +980,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * *If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     * following JSON format: {"key":"key_name","value":"a_value"}
+     * </p>
      * 
      * @param opsItemFilters
      *        One or more filters to limit the reponse.</p>
@@ -1014,7 +1046,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Key: OperationalData
+     *        Key: OperationalData*
      *        </p>
      *        <p>
      *        Operations: Equals
@@ -1060,6 +1092,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        Operations: Equals
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     *        following JSON format: {"key":"key_name","value":"a_value"}
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,12 +30,12 @@ import java.util.concurrent.ExecutorService;
  * This guide describes the API operations for the resource groups tagging.
  * </p>
  * <p>
- * A tag is a key-value pair that you can add to an AWS resource. A tag consists of a key and a value, both of which you
- * define. For example, if you have two Amazon EC2 instances, you might assign both a tag key of "Stack." But the value
- * of "Stack" might be "Testing" for one and "Production" for the other.
+ * A tag is a label that you assign to an AWS resource. A tag consists of a key and a value, both of which you define.
+ * For example, if you have two Amazon EC2 instances, you might assign both a tag key of "Stack." But the value of
+ * "Stack" might be "Testing" for one and "Production" for the other.
  * </p>
  * <p>
- * Tagging can help you organize your resources and enables you to simplify resource management, access management, and
+ * Tagging can help you organize your resources and enables you to simplify resource management, access management and
  * cost allocation.
  * </p>
  * <p>
@@ -44,29 +44,22 @@ import java.util.concurrent.ExecutorService;
  * <ul>
  * <li>
  * <p>
- * Tag and untag supported resources located in the specified Region for the AWS account.
+ * Tag and untag supported resources located in the specified region for the AWS account
  * </p>
  * </li>
  * <li>
  * <p>
- * Use tag-based filters to search for resources located in the specified Region for the AWS account.
+ * Use tag-based filters to search for resources located in the specified region for the AWS account
  * </p>
  * </li>
  * <li>
  * <p>
- * List all existing tag keys in the specified Region for the AWS account.
+ * List all existing tag keys in the specified region for the AWS account
  * </p>
  * </li>
  * <li>
  * <p>
- * List all existing values for the specified key in the specified Region for the AWS account.
- * </p>
- * </li>
- * <li>
- * <p>
- * Configure <i>tag policies</i> to help maintain standardized tags across your organization's resources. For more
- * information on tag policies, see <a href="http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies.html">Tag
- * Policies</a>in the <i>AWS Resource Groups User Guide.</i>
+ * List all existing values for the specified key in the specified region for the AWS account
  * </p>
  * </li>
  * </ul>
@@ -74,8 +67,8 @@ import java.util.concurrent.ExecutorService;
  * To make full use of the resource groups tagging API operations, you might need additional IAM permissions, including
  * permission to access the resources of individual services as well as permission to view and apply tags to those
  * resources. For more information, see <a
- * href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
- * Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
+ * href="http://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/obtaining-permissions-for-resource-groups.html"
+ * >Obtaining Permissions for Resource Groups and Tag Editor</a>.
  * </p>
  * <p>
  * You can use the Resource Groups Tagging API to tag resources for the following AWS services.
@@ -94,6 +87,11 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * AWS AppStream
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * AWS AppSync
  * </p>
  * </li>
  * <li>
@@ -323,12 +321,22 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
+ * AWS IoT Greengrass
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * AWS Key Management Service
  * </p>
  * </li>
  * <li>
  * <p>
  * Amazon Kinesis
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon Kinesis Data Analytics
  * </p>
  * </li>
  * <li>
@@ -428,6 +436,11 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
+ * Amazon Simple Notification Service (SNS)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * Amazon Simple Queue Service (SQS)
  * </p>
  * </li>
@@ -497,204 +510,6 @@ public class AWSResourceGroupsTaggingAPIAsyncClient extends AWSResourceGroupsTag
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteTagPolicyResult> deleteTagPolicyAsync(DeleteTagPolicyRequest request) {
-
-        return deleteTagPolicyAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteTagPolicyResult> deleteTagPolicyAsync(final DeleteTagPolicyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteTagPolicyRequest, DeleteTagPolicyResult> asyncHandler) {
-        final DeleteTagPolicyRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<DeleteTagPolicyResult>() {
-            @Override
-            public DeleteTagPolicyResult call() throws Exception {
-                DeleteTagPolicyResult result = null;
-
-                try {
-                    result = executeDeleteTagPolicy(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<DescribeReportCreationResult> describeReportCreationAsync(DescribeReportCreationRequest request) {
-
-        return describeReportCreationAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DescribeReportCreationResult> describeReportCreationAsync(final DescribeReportCreationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DescribeReportCreationRequest, DescribeReportCreationResult> asyncHandler) {
-        final DescribeReportCreationRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<DescribeReportCreationResult>() {
-            @Override
-            public DescribeReportCreationResult call() throws Exception {
-                DescribeReportCreationResult result = null;
-
-                try {
-                    result = executeDescribeReportCreation(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<DisableTagPoliciesResult> disableTagPoliciesAsync(DisableTagPoliciesRequest request) {
-
-        return disableTagPoliciesAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DisableTagPoliciesResult> disableTagPoliciesAsync(final DisableTagPoliciesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DisableTagPoliciesRequest, DisableTagPoliciesResult> asyncHandler) {
-        final DisableTagPoliciesRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<DisableTagPoliciesResult>() {
-            @Override
-            public DisableTagPoliciesResult call() throws Exception {
-                DisableTagPoliciesResult result = null;
-
-                try {
-                    result = executeDisableTagPolicies(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<EnableTagPoliciesResult> enableTagPoliciesAsync(EnableTagPoliciesRequest request) {
-
-        return enableTagPoliciesAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<EnableTagPoliciesResult> enableTagPoliciesAsync(final EnableTagPoliciesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<EnableTagPoliciesRequest, EnableTagPoliciesResult> asyncHandler) {
-        final EnableTagPoliciesRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<EnableTagPoliciesResult>() {
-            @Override
-            public EnableTagPoliciesResult call() throws Exception {
-                EnableTagPoliciesResult result = null;
-
-                try {
-                    result = executeEnableTagPolicies(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetComplianceSummaryResult> getComplianceSummaryAsync(GetComplianceSummaryRequest request) {
-
-        return getComplianceSummaryAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetComplianceSummaryResult> getComplianceSummaryAsync(final GetComplianceSummaryRequest request,
-            final com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryRequest, GetComplianceSummaryResult> asyncHandler) {
-        final GetComplianceSummaryRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<GetComplianceSummaryResult>() {
-            @Override
-            public GetComplianceSummaryResult call() throws Exception {
-                GetComplianceSummaryResult result = null;
-
-                try {
-                    result = executeGetComplianceSummary(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetEffectiveTagPolicyResult> getEffectiveTagPolicyAsync(GetEffectiveTagPolicyRequest request) {
-
-        return getEffectiveTagPolicyAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetEffectiveTagPolicyResult> getEffectiveTagPolicyAsync(final GetEffectiveTagPolicyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<GetEffectiveTagPolicyRequest, GetEffectiveTagPolicyResult> asyncHandler) {
-        final GetEffectiveTagPolicyRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<GetEffectiveTagPolicyResult>() {
-            @Override
-            public GetEffectiveTagPolicyResult call() throws Exception {
-                GetEffectiveTagPolicyResult result = null;
-
-                try {
-                    result = executeGetEffectiveTagPolicy(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
     public java.util.concurrent.Future<GetResourcesResult> getResourcesAsync(GetResourcesRequest request) {
 
         return getResourcesAsync(request, null);
@@ -761,39 +576,6 @@ public class AWSResourceGroupsTaggingAPIAsyncClient extends AWSResourceGroupsTag
     }
 
     @Override
-    public java.util.concurrent.Future<GetTagPolicyResult> getTagPolicyAsync(GetTagPolicyRequest request) {
-
-        return getTagPolicyAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetTagPolicyResult> getTagPolicyAsync(final GetTagPolicyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<GetTagPolicyRequest, GetTagPolicyResult> asyncHandler) {
-        final GetTagPolicyRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<GetTagPolicyResult>() {
-            @Override
-            public GetTagPolicyResult call() throws Exception {
-                GetTagPolicyResult result = null;
-
-                try {
-                    result = executeGetTagPolicy(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
     public java.util.concurrent.Future<GetTagValuesResult> getTagValuesAsync(GetTagValuesRequest request) {
 
         return getTagValuesAsync(request, null);
@@ -811,72 +593,6 @@ public class AWSResourceGroupsTaggingAPIAsyncClient extends AWSResourceGroupsTag
 
                 try {
                     result = executeGetTagValues(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<PutTagPolicyResult> putTagPolicyAsync(PutTagPolicyRequest request) {
-
-        return putTagPolicyAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PutTagPolicyResult> putTagPolicyAsync(final PutTagPolicyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutTagPolicyRequest, PutTagPolicyResult> asyncHandler) {
-        final PutTagPolicyRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<PutTagPolicyResult>() {
-            @Override
-            public PutTagPolicyResult call() throws Exception {
-                PutTagPolicyResult result = null;
-
-                try {
-                    result = executePutTagPolicy(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<StartReportCreationResult> startReportCreationAsync(StartReportCreationRequest request) {
-
-        return startReportCreationAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<StartReportCreationResult> startReportCreationAsync(final StartReportCreationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<StartReportCreationRequest, StartReportCreationResult> asyncHandler) {
-        final StartReportCreationRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<StartReportCreationResult>() {
-            @Override
-            public StartReportCreationResult call() throws Exception {
-                StartReportCreationResult result = null;
-
-                try {
-                    result = executeStartReportCreation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

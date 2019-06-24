@@ -31,6 +31,20 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * (Optional) The version of the document that you want to delete. If not provided, all versions of the document are
+     * deleted.
+     * </p>
+     */
+    private String documentVersion;
+    /**
+     * <p>
+     * (Optional) The version name of the document that you want to delete. If not provided, all versions of the
+     * document are deleted.
+     * </p>
+     */
+    private String versionName;
 
     /**
      * <p>
@@ -73,6 +87,98 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * (Optional) The version of the document that you want to delete. If not provided, all versions of the document are
+     * deleted.
+     * </p>
+     * 
+     * @param documentVersion
+     *        (Optional) The version of the document that you want to delete. If not provided, all versions of the
+     *        document are deleted.
+     */
+
+    public void setDocumentVersion(String documentVersion) {
+        this.documentVersion = documentVersion;
+    }
+
+    /**
+     * <p>
+     * (Optional) The version of the document that you want to delete. If not provided, all versions of the document are
+     * deleted.
+     * </p>
+     * 
+     * @return (Optional) The version of the document that you want to delete. If not provided, all versions of the
+     *         document are deleted.
+     */
+
+    public String getDocumentVersion() {
+        return this.documentVersion;
+    }
+
+    /**
+     * <p>
+     * (Optional) The version of the document that you want to delete. If not provided, all versions of the document are
+     * deleted.
+     * </p>
+     * 
+     * @param documentVersion
+     *        (Optional) The version of the document that you want to delete. If not provided, all versions of the
+     *        document are deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteDocumentRequest withDocumentVersion(String documentVersion) {
+        setDocumentVersion(documentVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) The version name of the document that you want to delete. If not provided, all versions of the
+     * document are deleted.
+     * </p>
+     * 
+     * @param versionName
+     *        (Optional) The version name of the document that you want to delete. If not provided, all versions of the
+     *        document are deleted.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * (Optional) The version name of the document that you want to delete. If not provided, all versions of the
+     * document are deleted.
+     * </p>
+     * 
+     * @return (Optional) The version name of the document that you want to delete. If not provided, all versions of the
+     *         document are deleted.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * (Optional) The version name of the document that you want to delete. If not provided, all versions of the
+     * document are deleted.
+     * </p>
+     * 
+     * @param versionName
+     *        (Optional) The version name of the document that you want to delete. If not provided, all versions of the
+     *        document are deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteDocumentRequest withVersionName(String versionName) {
+        setVersionName(versionName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +191,11 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDocumentVersion() != null)
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +214,14 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
+            return false;
+        if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
+            return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +231,8 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         return hashCode;
     }
 

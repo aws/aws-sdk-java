@@ -42,7 +42,7 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
     private String value;
     /**
      * <p>
-     * The condition to be applied to a key value when querying for findings with a map filter.
+     * The condition to apply to a key value when querying for findings with a map filter.
      * </p>
      */
     private String comparison;
@@ -129,11 +129,11 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition to be applied to a key value when querying for findings with a map filter.
+     * The condition to apply to a key value when querying for findings with a map filter.
      * </p>
      * 
      * @param comparison
-     *        The condition to be applied to a key value when querying for findings with a map filter.
+     *        The condition to apply to a key value when querying for findings with a map filter.
      * @see MapFilterComparison
      */
 
@@ -143,10 +143,10 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition to be applied to a key value when querying for findings with a map filter.
+     * The condition to apply to a key value when querying for findings with a map filter.
      * </p>
      * 
-     * @return The condition to be applied to a key value when querying for findings with a map filter.
+     * @return The condition to apply to a key value when querying for findings with a map filter.
      * @see MapFilterComparison
      */
 
@@ -156,11 +156,11 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition to be applied to a key value when querying for findings with a map filter.
+     * The condition to apply to a key value when querying for findings with a map filter.
      * </p>
      * 
      * @param comparison
-     *        The condition to be applied to a key value when querying for findings with a map filter.
+     *        The condition to apply to a key value when querying for findings with a map filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MapFilterComparison
      */
@@ -172,11 +172,11 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition to be applied to a key value when querying for findings with a map filter.
+     * The condition to apply to a key value when querying for findings with a map filter.
      * </p>
      * 
      * @param comparison
-     *        The condition to be applied to a key value when querying for findings with a map filter.
+     *        The condition to apply to a key value when querying for findings with a map filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MapFilterComparison
      */

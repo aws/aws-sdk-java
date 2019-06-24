@@ -34,7 +34,7 @@ public class GetBasePathMappingRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * [Required] The base path name that callers of the API must provide as part of the URL after the domain name. This
-     * value must be unique for all of the mappings across a single API. Leave this blank if you do not want callers to
+     * value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to
      * specify any base path name after the domain name.
      * </p>
      */
@@ -83,13 +83,13 @@ public class GetBasePathMappingRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * [Required] The base path name that callers of the API must provide as part of the URL after the domain name. This
-     * value must be unique for all of the mappings across a single API. Leave this blank if you do not want callers to
+     * value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to
      * specify any base path name after the domain name.
      * </p>
      * 
      * @param basePath
      *        [Required] The base path name that callers of the API must provide as part of the URL after the domain
-     *        name. This value must be unique for all of the mappings across a single API. Leave this blank if you do
+     *        name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do
      *        not want callers to specify any base path name after the domain name.
      */
 
@@ -100,12 +100,12 @@ public class GetBasePathMappingRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * [Required] The base path name that callers of the API must provide as part of the URL after the domain name. This
-     * value must be unique for all of the mappings across a single API. Leave this blank if you do not want callers to
+     * value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to
      * specify any base path name after the domain name.
      * </p>
      * 
      * @return [Required] The base path name that callers of the API must provide as part of the URL after the domain
-     *         name. This value must be unique for all of the mappings across a single API. Leave this blank if you do
+     *         name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do
      *         not want callers to specify any base path name after the domain name.
      */
 
@@ -116,13 +116,13 @@ public class GetBasePathMappingRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * [Required] The base path name that callers of the API must provide as part of the URL after the domain name. This
-     * value must be unique for all of the mappings across a single API. Leave this blank if you do not want callers to
+     * value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to
      * specify any base path name after the domain name.
      * </p>
      * 
      * @param basePath
      *        [Required] The base path name that callers of the API must provide as part of the URL after the domain
-     *        name. This value must be unique for all of the mappings across a single API. Leave this blank if you do
+     *        name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do
      *        not want callers to specify any base path name after the domain name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

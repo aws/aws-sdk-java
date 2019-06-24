@@ -84,16 +84,7 @@ public class OpsItemSummary implements Serializable, Cloneable, StructuredPojo {
     private String title;
     /**
      * <p>
-     * Operational data is custom data that provides useful reference details about the OpsItem. For example, you can
-     * specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter
-     * operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size
-     * of 20 KB.
-     * </p>
-     * <p>
-     * This custom data is searchable, but with restrictions. For the <code>Searchable operational data</code> feature,
-     * all users with access to the OpsItem Overview page (as provided by the <a>DescribeOpsItems</a> API action) can
-     * view and search on the specified data. For the <code>Private operational data</code> feature, the data is only
-     * viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).
+     * Operational data is custom data that provides useful reference details about the OpsItem.
      * </p>
      */
     private java.util.Map<String, OpsItemDataValue> operationalData;
@@ -479,28 +470,10 @@ public class OpsItemSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Operational data is custom data that provides useful reference details about the OpsItem. For example, you can
-     * specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter
-     * operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size
-     * of 20 KB.
-     * </p>
-     * <p>
-     * This custom data is searchable, but with restrictions. For the <code>Searchable operational data</code> feature,
-     * all users with access to the OpsItem Overview page (as provided by the <a>DescribeOpsItems</a> API action) can
-     * view and search on the specified data. For the <code>Private operational data</code> feature, the data is only
-     * viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).
+     * Operational data is custom data that provides useful reference details about the OpsItem.
      * </p>
      * 
-     * @return Operational data is custom data that provides useful reference details about the OpsItem. For example,
-     *         you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You
-     *         enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has
-     *         a maximum size of 20 KB.</p>
-     *         <p>
-     *         This custom data is searchable, but with restrictions. For the <code>Searchable operational data</code>
-     *         feature, all users with access to the OpsItem Overview page (as provided by the <a>DescribeOpsItems</a>
-     *         API action) can view and search on the specified data. For the <code>Private operational data</code>
-     *         feature, the data is only viewable by users who have access to the OpsItem (as provided by the
-     *         <a>GetOpsItem</a> API action).
+     * @return Operational data is custom data that provides useful reference details about the OpsItem.
      */
 
     public java.util.Map<String, OpsItemDataValue> getOperationalData() {
@@ -509,29 +482,11 @@ public class OpsItemSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Operational data is custom data that provides useful reference details about the OpsItem. For example, you can
-     * specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter
-     * operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size
-     * of 20 KB.
-     * </p>
-     * <p>
-     * This custom data is searchable, but with restrictions. For the <code>Searchable operational data</code> feature,
-     * all users with access to the OpsItem Overview page (as provided by the <a>DescribeOpsItems</a> API action) can
-     * view and search on the specified data. For the <code>Private operational data</code> feature, the data is only
-     * viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).
+     * Operational data is custom data that provides useful reference details about the OpsItem.
      * </p>
      * 
      * @param operationalData
-     *        Operational data is custom data that provides useful reference details about the OpsItem. For example, you
-     *        can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You
-     *        enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a
-     *        maximum size of 20 KB.</p>
-     *        <p>
-     *        This custom data is searchable, but with restrictions. For the <code>Searchable operational data</code>
-     *        feature, all users with access to the OpsItem Overview page (as provided by the <a>DescribeOpsItems</a>
-     *        API action) can view and search on the specified data. For the <code>Private operational data</code>
-     *        feature, the data is only viewable by users who have access to the OpsItem (as provided by the
-     *        <a>GetOpsItem</a> API action).
+     *        Operational data is custom data that provides useful reference details about the OpsItem.
      */
 
     public void setOperationalData(java.util.Map<String, OpsItemDataValue> operationalData) {
@@ -540,29 +495,11 @@ public class OpsItemSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Operational data is custom data that provides useful reference details about the OpsItem. For example, you can
-     * specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter
-     * operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size
-     * of 20 KB.
-     * </p>
-     * <p>
-     * This custom data is searchable, but with restrictions. For the <code>Searchable operational data</code> feature,
-     * all users with access to the OpsItem Overview page (as provided by the <a>DescribeOpsItems</a> API action) can
-     * view and search on the specified data. For the <code>Private operational data</code> feature, the data is only
-     * viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).
+     * Operational data is custom data that provides useful reference details about the OpsItem.
      * </p>
      * 
      * @param operationalData
-     *        Operational data is custom data that provides useful reference details about the OpsItem. For example, you
-     *        can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You
-     *        enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a
-     *        maximum size of 20 KB.</p>
-     *        <p>
-     *        This custom data is searchable, but with restrictions. For the <code>Searchable operational data</code>
-     *        feature, all users with access to the OpsItem Overview page (as provided by the <a>DescribeOpsItems</a>
-     *        API action) can view and search on the specified data. For the <code>Private operational data</code>
-     *        feature, the data is only viewable by users who have access to the OpsItem (as provided by the
-     *        <a>GetOpsItem</a> API action).
+     *        Operational data is custom data that provides useful reference details about the OpsItem.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

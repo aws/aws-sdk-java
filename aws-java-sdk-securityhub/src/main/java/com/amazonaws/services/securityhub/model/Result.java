@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The account details that couldn't be processed.
+ * Details about the account that wasn't processed.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Result" target="_top">AWS API
@@ -30,24 +30,24 @@ public class Result implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An ID of the AWS account that couldn't be processed.
+     * An AWS account ID of the account that wasn't be processed.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The reason for why an account couldn't be processed.
+     * The reason that the account wasn't be processed.
      * </p>
      */
     private String processingResult;
 
     /**
      * <p>
-     * An ID of the AWS account that couldn't be processed.
+     * An AWS account ID of the account that wasn't be processed.
      * </p>
      * 
      * @param accountId
-     *        An ID of the AWS account that couldn't be processed.
+     *        An AWS account ID of the account that wasn't be processed.
      */
 
     public void setAccountId(String accountId) {
@@ -56,10 +56,10 @@ public class Result implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An ID of the AWS account that couldn't be processed.
+     * An AWS account ID of the account that wasn't be processed.
      * </p>
      * 
-     * @return An ID of the AWS account that couldn't be processed.
+     * @return An AWS account ID of the account that wasn't be processed.
      */
 
     public String getAccountId() {
@@ -68,11 +68,11 @@ public class Result implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An ID of the AWS account that couldn't be processed.
+     * An AWS account ID of the account that wasn't be processed.
      * </p>
      * 
      * @param accountId
-     *        An ID of the AWS account that couldn't be processed.
+     *        An AWS account ID of the account that wasn't be processed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class Result implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason for why an account couldn't be processed.
+     * The reason that the account wasn't be processed.
      * </p>
      * 
      * @param processingResult
-     *        The reason for why an account couldn't be processed.
+     *        The reason that the account wasn't be processed.
      */
 
     public void setProcessingResult(String processingResult) {
@@ -96,10 +96,10 @@ public class Result implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason for why an account couldn't be processed.
+     * The reason that the account wasn't be processed.
      * </p>
      * 
-     * @return The reason for why an account couldn't be processed.
+     * @return The reason that the account wasn't be processed.
      */
 
     public String getProcessingResult() {
@@ -108,11 +108,11 @@ public class Result implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason for why an account couldn't be processed.
+     * The reason that the account wasn't be processed.
      * </p>
      * 
      * @param processingResult
-     *        The reason for why an account couldn't be processed.
+     *        The reason that the account wasn't be processed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

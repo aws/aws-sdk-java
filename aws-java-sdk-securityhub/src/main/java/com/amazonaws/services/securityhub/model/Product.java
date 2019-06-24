@@ -72,7 +72,7 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
     private String activationUrl;
     /**
      * <p>
-     * The resource policy asasociated with the product.
+     * The resource policy associated with the product.
      * </p>
      */
     private String productSubscriptionResourcePolicy;
@@ -389,11 +389,11 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource policy asasociated with the product.
+     * The resource policy associated with the product.
      * </p>
      * 
      * @param productSubscriptionResourcePolicy
-     *        The resource policy asasociated with the product.
+     *        The resource policy associated with the product.
      */
 
     public void setProductSubscriptionResourcePolicy(String productSubscriptionResourcePolicy) {
@@ -402,10 +402,10 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource policy asasociated with the product.
+     * The resource policy associated with the product.
      * </p>
      * 
-     * @return The resource policy asasociated with the product.
+     * @return The resource policy associated with the product.
      */
 
     public String getProductSubscriptionResourcePolicy() {
@@ -414,11 +414,11 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource policy asasociated with the product.
+     * The resource policy associated with the product.
      * </p>
      * 
      * @param productSubscriptionResourcePolicy
-     *        The resource policy asasociated with the product.
+     *        The resource policy associated with the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

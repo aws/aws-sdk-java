@@ -38,8 +38,8 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     private String clientRequestToken;
     /**
      * <p>
-     * The configuration for this Microsoft Windows file system. The only supported options are for backup and
-     * maintenance.
+     * The configuration update for this Microsoft Windows file system. The only supported options are for backup and
+     * maintenance and for self-managed Active Directory configuration.
      * </p>
      */
     private UpdateFileSystemWindowsConfiguration windowsConfiguration;
@@ -123,13 +123,13 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration for this Microsoft Windows file system. The only supported options are for backup and
-     * maintenance.
+     * The configuration update for this Microsoft Windows file system. The only supported options are for backup and
+     * maintenance and for self-managed Active Directory configuration.
      * </p>
      * 
      * @param windowsConfiguration
-     *        The configuration for this Microsoft Windows file system. The only supported options are for backup and
-     *        maintenance.
+     *        The configuration update for this Microsoft Windows file system. The only supported options are for backup
+     *        and maintenance and for self-managed Active Directory configuration.
      */
 
     public void setWindowsConfiguration(UpdateFileSystemWindowsConfiguration windowsConfiguration) {
@@ -138,12 +138,12 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration for this Microsoft Windows file system. The only supported options are for backup and
-     * maintenance.
+     * The configuration update for this Microsoft Windows file system. The only supported options are for backup and
+     * maintenance and for self-managed Active Directory configuration.
      * </p>
      * 
-     * @return The configuration for this Microsoft Windows file system. The only supported options are for backup and
-     *         maintenance.
+     * @return The configuration update for this Microsoft Windows file system. The only supported options are for
+     *         backup and maintenance and for self-managed Active Directory configuration.
      */
 
     public UpdateFileSystemWindowsConfiguration getWindowsConfiguration() {
@@ -152,13 +152,13 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration for this Microsoft Windows file system. The only supported options are for backup and
-     * maintenance.
+     * The configuration update for this Microsoft Windows file system. The only supported options are for backup and
+     * maintenance and for self-managed Active Directory configuration.
      * </p>
      * 
      * @param windowsConfiguration
-     *        The configuration for this Microsoft Windows file system. The only supported options are for backup and
-     *        maintenance.
+     *        The configuration update for this Microsoft Windows file system. The only supported options are for backup
+     *        and maintenance and for self-managed Active Directory configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

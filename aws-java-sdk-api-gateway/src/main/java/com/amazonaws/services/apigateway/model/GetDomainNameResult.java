@@ -119,6 +119,27 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
     private EndpointConfiguration endpointConfiguration;
     /**
      * <p>
+     * The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and
+     * <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the
+     * existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
+     * </p>
+     */
+    private String domainNameStatus;
+    /**
+     * <p>
+     * An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     * </p>
+     */
+    private String domainNameStatusMessage;
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     */
+    private String securityPolicy;
+    /**
+     * <p>
      * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      */
@@ -671,6 +692,188 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
+     * The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and
+     * <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the
+     * existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
+     * </p>
+     * 
+     * @param domainNameStatus
+     *        The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and
+     *        <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until
+     *        the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
+     * @see DomainNameStatus
+     */
+
+    public void setDomainNameStatus(String domainNameStatus) {
+        this.domainNameStatus = domainNameStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and
+     * <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the
+     * existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
+     * </p>
+     * 
+     * @return The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and
+     *         <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further
+     *         until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
+     * @see DomainNameStatus
+     */
+
+    public String getDomainNameStatus() {
+        return this.domainNameStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and
+     * <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the
+     * existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
+     * </p>
+     * 
+     * @param domainNameStatus
+     *        The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and
+     *        <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until
+     *        the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DomainNameStatus
+     */
+
+    public GetDomainNameResult withDomainNameStatus(String domainNameStatus) {
+        setDomainNameStatus(domainNameStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and
+     * <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the
+     * existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
+     * </p>
+     * 
+     * @param domainNameStatus
+     *        The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and
+     *        <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until
+     *        the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DomainNameStatus
+     */
+
+    public GetDomainNameResult withDomainNameStatus(DomainNameStatus domainNameStatus) {
+        this.domainNameStatus = domainNameStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     * </p>
+     * 
+     * @param domainNameStatusMessage
+     *        An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     */
+
+    public void setDomainNameStatusMessage(String domainNameStatusMessage) {
+        this.domainNameStatusMessage = domainNameStatusMessage;
+    }
+
+    /**
+     * <p>
+     * An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     * </p>
+     * 
+     * @return An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     */
+
+    public String getDomainNameStatusMessage() {
+        return this.domainNameStatusMessage;
+    }
+
+    /**
+     * <p>
+     * An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     * </p>
+     * 
+     * @param domainNameStatusMessage
+     *        An optional text message containing detailed information about status of the <a>DomainName</a> migration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDomainNameResult withDomainNameStatusMessage(String domainNameStatusMessage) {
+        setDomainNameStatusMessage(domainNameStatusMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     * 
+     * @param securityPolicy
+     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @see SecurityPolicy
+     */
+
+    public void setSecurityPolicy(String securityPolicy) {
+        this.securityPolicy = securityPolicy;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     * 
+     * @return The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values
+     *         are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @see SecurityPolicy
+     */
+
+    public String getSecurityPolicy() {
+        return this.securityPolicy;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     * 
+     * @param securityPolicy
+     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicy
+     */
+
+    public GetDomainNameResult withSecurityPolicy(String securityPolicy) {
+        setSecurityPolicy(securityPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     * 
+     * @param securityPolicy
+     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicy
+     */
+
+    public GetDomainNameResult withSecurityPolicy(SecurityPolicy securityPolicy) {
+        this.securityPolicy = securityPolicy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
@@ -764,6 +967,12 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("DistributionHostedZoneId: ").append(getDistributionHostedZoneId()).append(",");
         if (getEndpointConfiguration() != null)
             sb.append("EndpointConfiguration: ").append(getEndpointConfiguration()).append(",");
+        if (getDomainNameStatus() != null)
+            sb.append("DomainNameStatus: ").append(getDomainNameStatus()).append(",");
+        if (getDomainNameStatusMessage() != null)
+            sb.append("DomainNameStatusMessage: ").append(getDomainNameStatusMessage()).append(",");
+        if (getSecurityPolicy() != null)
+            sb.append("SecurityPolicy: ").append(getSecurityPolicy()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -824,6 +1033,18 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getEndpointConfiguration() != null && other.getEndpointConfiguration().equals(this.getEndpointConfiguration()) == false)
             return false;
+        if (other.getDomainNameStatus() == null ^ this.getDomainNameStatus() == null)
+            return false;
+        if (other.getDomainNameStatus() != null && other.getDomainNameStatus().equals(this.getDomainNameStatus()) == false)
+            return false;
+        if (other.getDomainNameStatusMessage() == null ^ this.getDomainNameStatusMessage() == null)
+            return false;
+        if (other.getDomainNameStatusMessage() != null && other.getDomainNameStatusMessage().equals(this.getDomainNameStatusMessage()) == false)
+            return false;
+        if (other.getSecurityPolicy() == null ^ this.getSecurityPolicy() == null)
+            return false;
+        if (other.getSecurityPolicy() != null && other.getSecurityPolicy().equals(this.getSecurityPolicy()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -847,6 +1068,9 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getDistributionDomainName() == null) ? 0 : getDistributionDomainName().hashCode());
         hashCode = prime * hashCode + ((getDistributionHostedZoneId() == null) ? 0 : getDistributionHostedZoneId().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDomainNameStatus() == null) ? 0 : getDomainNameStatus().hashCode());
+        hashCode = prime * hashCode + ((getDomainNameStatusMessage() == null) ? 0 : getDomainNameStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getSecurityPolicy() == null) ? 0 : getSecurityPolicy().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

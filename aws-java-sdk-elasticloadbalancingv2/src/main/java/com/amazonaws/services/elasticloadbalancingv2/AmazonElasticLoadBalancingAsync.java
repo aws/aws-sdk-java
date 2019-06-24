@@ -104,15 +104,21 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Adds the specified certificate to the specified HTTPS listener.
+     * Adds the specified SSL server certificate to the certificate list for the specified HTTPS listener.
      * </p>
      * <p>
-     * If the certificate was already added, the call is successful but the certificate is not added again.
+     * If the certificate in already in the certificate list, the call is successful but the certificate is not added
+     * again.
      * </p>
      * <p>
-     * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
-     * your listener, use <a>RemoveListenerCertificates</a>. To specify the default SSL server certificate, use
-     * <a>ModifyListener</a>.
+     * To get the certificate list for a listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
+     * the certificate list for a listener, use <a>RemoveListenerCertificates</a>. To replace the default certificate
+     * for a listener, use <a>ModifyListener</a>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates"
+     * >SSL Certificates</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param addListenerCertificatesRequest
@@ -125,15 +131,21 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Adds the specified certificate to the specified HTTPS listener.
+     * Adds the specified SSL server certificate to the certificate list for the specified HTTPS listener.
      * </p>
      * <p>
-     * If the certificate was already added, the call is successful but the certificate is not added again.
+     * If the certificate in already in the certificate list, the call is successful but the certificate is not added
+     * again.
      * </p>
      * <p>
-     * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
-     * your listener, use <a>RemoveListenerCertificates</a>. To specify the default SSL server certificate, use
-     * <a>ModifyListener</a>.
+     * To get the certificate list for a listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
+     * the certificate list for a listener, use <a>RemoveListenerCertificates</a>. To replace the default certificate
+     * for a listener, use <a>ModifyListener</a>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates"
+     * >SSL Certificates</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param addListenerCertificatesRequest
@@ -716,7 +728,16 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Describes the certificates for the specified HTTPS listener.
+     * Describes the default certificate and the certificate list for the specified HTTPS listener.
+     * </p>
+     * <p>
+     * If the default certificate is also in the certificate list, it appears twice in the results (once with
+     * <code>IsDefault</code> set to true and once with <code>IsDefault</code> set to false).
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates"
+     * >SSL Certificates</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeListenerCertificatesRequest
@@ -732,7 +753,16 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Describes the certificates for the specified HTTPS listener.
+     * Describes the default certificate and the certificate list for the specified HTTPS listener.
+     * </p>
+     * <p>
+     * If the default certificate is also in the certificate list, it appears twice in the results (once with
+     * <code>IsDefault</code> set to true and once with <code>IsDefault</code> set to false).
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates"
+     * >SSL Certificates</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeListenerCertificatesRequest
@@ -756,6 +786,10 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Describes the specified listeners or the listeners for the specified Application Load Balancer or Network Load
      * Balancer. You must specify either a load balancer or one or more listeners.
      * </p>
+     * <p>
+     * For an HTTPS or TLS listener, the output includes the default certificate for the listener. To describe the
+     * certificate list for the listener, use <a>DescribeListenerCertificates</a>.
+     * </p>
      * 
      * @param describeListenersRequest
      * @return A Java Future containing the result of the DescribeListeners operation returned by the service.
@@ -769,6 +803,10 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * <p>
      * Describes the specified listeners or the listeners for the specified Application Load Balancer or Network Load
      * Balancer. You must specify either a load balancer or one or more listeners.
+     * </p>
+     * <p>
+     * For an HTTPS or TLS listener, the output includes the default certificate for the listener. To describe the
+     * certificate list for the listener, use <a>DescribeListenerCertificates</a>.
      * </p>
      * 
      * @param describeListenersRequest
@@ -1112,8 +1150,8 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * Any properties that you do not specify retain their current values. However, changing the protocol from HTTPS to
-     * HTTP, or from TLS to TCP, removes the security policy and server certificate properties. If you change the
-     * protocol from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and server certificate
+     * HTTP, or from TLS to TCP, removes the security policy and default certificate properties. If you change the
+     * protocol from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and default certificate
      * properties.
      * </p>
      * 
@@ -1131,8 +1169,8 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * Any properties that you do not specify retain their current values. However, changing the protocol from HTTPS to
-     * HTTP, or from TLS to TCP, removes the security policy and server certificate properties. If you change the
-     * protocol from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and server certificate
+     * HTTP, or from TLS to TCP, removes the security policy and default certificate properties. If you change the
+     * protocol from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and default certificate
      * properties.
      * </p>
      * 
@@ -1374,7 +1412,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Removes the specified certificate from the specified HTTPS listener.
+     * Removes the specified certificate from the certificate list for the specified HTTPS listener.
      * </p>
      * <p>
      * You can't remove the default certificate for a listener. To replace the default certificate, call
@@ -1396,7 +1434,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Removes the specified certificate from the specified HTTPS listener.
+     * Removes the specified certificate from the certificate list for the specified HTTPS listener.
      * </p>
      * <p>
      * You can't remove the default certificate for a listener. To replace the default certificate, call
@@ -1463,9 +1501,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Sets the type of IP addresses used by the subnets of the specified Application Load Balancer or Network Load
      * Balancer.
      * </p>
-     * <p>
-     * Network Load Balancers must use <code>ipv4</code>.
-     * </p>
      * 
      * @param setIpAddressTypeRequest
      * @return A Java Future containing the result of the SetIpAddressType operation returned by the service.
@@ -1479,9 +1514,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * <p>
      * Sets the type of IP addresses used by the subnets of the specified Application Load Balancer or Network Load
      * Balancer.
-     * </p>
-     * <p>
-     * Network Load Balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param setIpAddressTypeRequest

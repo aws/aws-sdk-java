@@ -27,18 +27,18 @@ public class EnableImportFindingsForProductRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ARN of the product that generates findings that you want to import into Security Hub.
+     * The ARN of the product to enable the integration for.
      * </p>
      */
     private String productArn;
 
     /**
      * <p>
-     * The ARN of the product that generates findings that you want to import into Security Hub.
+     * The ARN of the product to enable the integration for.
      * </p>
      * 
      * @param productArn
-     *        The ARN of the product that generates findings that you want to import into Security Hub.
+     *        The ARN of the product to enable the integration for.
      */
 
     public void setProductArn(String productArn) {
@@ -47,10 +47,10 @@ public class EnableImportFindingsForProductRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ARN of the product that generates findings that you want to import into Security Hub.
+     * The ARN of the product to enable the integration for.
      * </p>
      * 
-     * @return The ARN of the product that generates findings that you want to import into Security Hub.
+     * @return The ARN of the product to enable the integration for.
      */
 
     public String getProductArn() {
@@ -59,11 +59,11 @@ public class EnableImportFindingsForProductRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ARN of the product that generates findings that you want to import into Security Hub.
+     * The ARN of the product to enable the integration for.
      * </p>
      * 
      * @param productArn
-     *        The ARN of the product that generates findings that you want to import into Security Hub.
+     *        The ARN of the product to enable the integration for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

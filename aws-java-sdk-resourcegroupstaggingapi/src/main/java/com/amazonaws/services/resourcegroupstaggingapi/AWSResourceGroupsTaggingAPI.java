@@ -31,12 +31,12 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.*;
  * This guide describes the API operations for the resource groups tagging.
  * </p>
  * <p>
- * A tag is a key-value pair that you can add to an AWS resource. A tag consists of a key and a value, both of which you
- * define. For example, if you have two Amazon EC2 instances, you might assign both a tag key of "Stack." But the value
- * of "Stack" might be "Testing" for one and "Production" for the other.
+ * A tag is a label that you assign to an AWS resource. A tag consists of a key and a value, both of which you define.
+ * For example, if you have two Amazon EC2 instances, you might assign both a tag key of "Stack." But the value of
+ * "Stack" might be "Testing" for one and "Production" for the other.
  * </p>
  * <p>
- * Tagging can help you organize your resources and enables you to simplify resource management, access management, and
+ * Tagging can help you organize your resources and enables you to simplify resource management, access management and
  * cost allocation.
  * </p>
  * <p>
@@ -45,29 +45,22 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.*;
  * <ul>
  * <li>
  * <p>
- * Tag and untag supported resources located in the specified Region for the AWS account.
+ * Tag and untag supported resources located in the specified region for the AWS account
  * </p>
  * </li>
  * <li>
  * <p>
- * Use tag-based filters to search for resources located in the specified Region for the AWS account.
+ * Use tag-based filters to search for resources located in the specified region for the AWS account
  * </p>
  * </li>
  * <li>
  * <p>
- * List all existing tag keys in the specified Region for the AWS account.
+ * List all existing tag keys in the specified region for the AWS account
  * </p>
  * </li>
  * <li>
  * <p>
- * List all existing values for the specified key in the specified Region for the AWS account.
- * </p>
- * </li>
- * <li>
- * <p>
- * Configure <i>tag policies</i> to help maintain standardized tags across your organization's resources. For more
- * information on tag policies, see <a href="http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies.html">Tag
- * Policies</a>in the <i>AWS Resource Groups User Guide.</i>
+ * List all existing values for the specified key in the specified region for the AWS account
  * </p>
  * </li>
  * </ul>
@@ -75,8 +68,8 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.*;
  * To make full use of the resource groups tagging API operations, you might need additional IAM permissions, including
  * permission to access the resources of individual services as well as permission to view and apply tags to those
  * resources. For more information, see <a
- * href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
- * Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
+ * href="http://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/obtaining-permissions-for-resource-groups.html"
+ * >Obtaining Permissions for Resource Groups and Tag Editor</a>.
  * </p>
  * <p>
  * You can use the Resource Groups Tagging API to tag resources for the following AWS services.
@@ -95,6 +88,11 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.*;
  * <li>
  * <p>
  * AWS AppStream
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * AWS AppSync
  * </p>
  * </li>
  * <li>
@@ -324,12 +322,22 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.*;
  * </li>
  * <li>
  * <p>
+ * AWS IoT Greengrass
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * AWS Key Management Service
  * </p>
  * </li>
  * <li>
  * <p>
  * Amazon Kinesis
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon Kinesis Data Analytics
  * </p>
  * </li>
  * <li>
@@ -429,6 +437,11 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.*;
  * </li>
  * <li>
  * <p>
+ * Amazon Simple Notification Service (SNS)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * Amazon Simple Queue Service (SQS)
  * </p>
  * </li>
@@ -477,548 +490,10 @@ public interface AWSResourceGroupsTaggingAPI {
 
     /**
      * <p>
-     * Deletes the policy that is attached to the specified organization root or account.
+     * Returns all the tagged or previously tagged resources that are located in the specified region for the AWS
+     * account. You can optionally specify <i>filters</i> (tags and resource types) in your request, depending on what
+     * information you want returned. The response includes all tags that are associated with the requested resources.
      * </p>
-     * <p>
-     * You can call this operation from the organization's master account only and from the us-east-1 Region only.
-     * </p>
-     * 
-     * @param deleteTagPolicyRequest
-     * @return Result of the DeleteTagPolicy operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         The target of the operation is currently being modified by a different request. Try again later.
-     * @throws ConstraintViolationException
-     *         The request was denied as performing this operation violates a constraint. </p>
-     *         <p>
-     *         Some of the reasons in the following list might not apply to this specific API or operation:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Your account must be part of an organization, and you must enable all features in AWS Organizations. <a
-     *         href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
-     *         Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The previous report expired.
-     *         </p>
-     *         </li>
-     * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     * @throws ThrottledException
-     *         The request was denied to limit the frequency of submitted requests.
-     * @throws InternalServiceException
-     *         The request processing failed because of an unknown error, exception, or failure. You can retry the
-     *         request.
-     * @sample AWSResourceGroupsTaggingAPI.DeleteTagPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/DeleteTagPolicy"
-     *      target="_top">AWS API Documentation</a>
-     */
-    DeleteTagPolicyResult deleteTagPolicy(DeleteTagPolicyRequest deleteTagPolicyRequest);
-
-    /**
-     * <p>
-     * Describes the status of the <code>StartReportCreation</code> operation.
-     * </p>
-     * <p>
-     * You can call this operation from the organization's master account only and from the us-east-1 Region only.
-     * </p>
-     * 
-     * @param describeReportCreationRequest
-     * @return Result of the DescribeReportCreation operation returned by the service.
-     * @throws ConstraintViolationException
-     *         The request was denied as performing this operation violates a constraint. </p>
-     *         <p>
-     *         Some of the reasons in the following list might not apply to this specific API or operation:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Your account must be part of an organization, and you must enable all features in AWS Organizations. <a
-     *         href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
-     *         Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The previous report expired.
-     *         </p>
-     *         </li>
-     * @throws InternalServiceException
-     *         The request processing failed because of an unknown error, exception, or failure. You can retry the
-     *         request.
-     * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     * @throws ThrottledException
-     *         The request was denied to limit the frequency of submitted requests.
-     * @sample AWSResourceGroupsTaggingAPI.DescribeReportCreation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/DescribeReportCreation"
-     *      target="_top">AWS API Documentation</a>
-     */
-    DescribeReportCreationResult describeReportCreation(DescribeReportCreationRequest describeReportCreationRequest);
-
-    /**
-     * <p>
-     * Disables tag policies for your organization and deletes all tag policies.
-     * </p>
-     * <p>
-     * You can call this operation from the organization's master account only and from the us-east-1 Region only.
-     * </p>
-     * <important>
-     * <p>
-     * Use caution when disabling tag policies, as this is a destructive operation that applies to your entire
-     * organization. You cannot undo this operation.
-     * </p>
-     * </important>
-     * 
-     * @param disableTagPoliciesRequest
-     * @return Result of the DisableTagPolicies operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         The target of the operation is currently being modified by a different request. Try again later.
-     * @throws ConstraintViolationException
-     *         The request was denied as performing this operation violates a constraint. </p>
-     *         <p>
-     *         Some of the reasons in the following list might not apply to this specific API or operation:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Your account must be part of an organization, and you must enable all features in AWS Organizations. <a
-     *         href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
-     *         Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The previous report expired.
-     *         </p>
-     *         </li>
-     * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     * @throws ThrottledException
-     *         The request was denied to limit the frequency of submitted requests.
-     * @throws InternalServiceException
-     *         The request processing failed because of an unknown error, exception, or failure. You can retry the
-     *         request.
-     * @sample AWSResourceGroupsTaggingAPI.DisableTagPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/DisableTagPolicies"
-     *      target="_top">AWS API Documentation</a>
-     */
-    DisableTagPoliciesResult disableTagPolicies(DisableTagPoliciesRequest disableTagPoliciesRequest);
-
-    /**
-     * <p>
-     * Enables tag policies for your organization. To use tag policies, you must be using AWS Organizations with all
-     * features enabled.
-     * </p>
-     * <p>
-     * You can call this operation from the organization's master account only and from the us-east-1 Region only.
-     * </p>
-     * <p>
-     * This operation does the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Enables tag policies for the specified organization.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Calls the <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">
-     * EnableAWSServiceAccess</a> API on your behalf to allow service access with the
-     * <code>tagpolicies.tag.amazonaws.com</code> service principal.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Creates a <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked role</a>
-     * named <code>AWSServiceRoleForTagPolicies</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information on tag policies, see <a
-     * href="http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies.html">Tag Policies</a> in the <i>AWS Resource
-     * Groups User Guide.</i>
-     * </p>
-     * 
-     * @param enableTagPoliciesRequest
-     * @return Result of the EnableTagPolicies operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         The target of the operation is currently being modified by a different request. Try again later.
-     * @throws ConstraintViolationException
-     *         The request was denied as performing this operation violates a constraint. </p>
-     *         <p>
-     *         Some of the reasons in the following list might not apply to this specific API or operation:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Your account must be part of an organization, and you must enable all features in AWS Organizations. <a
-     *         href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
-     *         Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The previous report expired.
-     *         </p>
-     *         </li>
-     * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     * @throws ThrottledException
-     *         The request was denied to limit the frequency of submitted requests.
-     * @throws InternalServiceException
-     *         The request processing failed because of an unknown error, exception, or failure. You can retry the
-     *         request.
-     * @sample AWSResourceGroupsTaggingAPI.EnableTagPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/EnableTagPolicies"
-     *      target="_top">AWS API Documentation</a>
-     */
-    EnableTagPoliciesResult enableTagPolicies(EnableTagPoliciesRequest enableTagPoliciesRequest);
-
-    /**
-     * <p>
-     * Returns a table that shows counts of resources that are noncompliant with their tag policies.
-     * </p>
-     * <p>
-     * For more information on tag policies, see <a
-     * href="http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies.html">Tag Policies</a> in the <i>AWS Resource
-     * Groups User Guide.</i>
-     * </p>
-     * <p>
-     * You can call this operation from the organization's master account only and from the us-east-1 Region only.
-     * </p>
-     * 
-     * @param getComplianceSummaryRequest
-     * @return Result of the GetComplianceSummary operation returned by the service.
-     * @throws ConstraintViolationException
-     *         The request was denied as performing this operation violates a constraint. </p>
-     *         <p>
-     *         Some of the reasons in the following list might not apply to this specific API or operation:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Your account must be part of an organization, and you must enable all features in AWS Organizations. <a
-     *         href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
-     *         Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The previous report expired.
-     *         </p>
-     *         </li>
-     * @throws InternalServiceException
-     *         The request processing failed because of an unknown error, exception, or failure. You can retry the
-     *         request.
-     * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     * @throws ThrottledException
-     *         The request was denied to limit the frequency of submitted requests.
-     * @sample AWSResourceGroupsTaggingAPI.GetComplianceSummary
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetComplianceSummary"
-     *      target="_top">AWS API Documentation</a>
-     */
-    GetComplianceSummaryResult getComplianceSummary(GetComplianceSummaryRequest getComplianceSummaryRequest);
-
-    /**
-     * <p>
-     * Returns the contents of the effective tag policy for the AWS account. Depending on how you use tag policies, the
-     * effective tag policy for an account is one of the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The tag policy attached to the organization that the account belongs to.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The tag policy attached to the account.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The combination of both policies if tag policies are attached to the organization root and account.
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param getEffectiveTagPolicyRequest
-     * @return Result of the GetEffectiveTagPolicy operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         The target of the operation is currently being modified by a different request. Try again later.
-     * @throws ConstraintViolationException
-     *         The request was denied as performing this operation violates a constraint. </p>
-     *         <p>
-     *         Some of the reasons in the following list might not apply to this specific API or operation:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Your account must be part of an organization, and you must enable all features in AWS Organizations. <a
-     *         href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
-     *         Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The previous report expired.
-     *         </p>
-     *         </li>
-     * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     * @throws ThrottledException
-     *         The request was denied to limit the frequency of submitted requests.
-     * @throws InternalServiceException
-     *         The request processing failed because of an unknown error, exception, or failure. You can retry the
-     *         request.
-     * @sample AWSResourceGroupsTaggingAPI.GetEffectiveTagPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetEffectiveTagPolicy"
-     *      target="_top">AWS API Documentation</a>
-     */
-    GetEffectiveTagPolicyResult getEffectiveTagPolicy(GetEffectiveTagPolicyRequest getEffectiveTagPolicyRequest);
-
-    /**
-     * <p>
-     * Returns all the tagged or previously tagged resources that are located in the specified Region for the AWS
-     * account.
-     * </p>
-     * <p>
-     * Depending on what information you want returned, you can also specify the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <i>Filters</i> that specify what tags and resource types you want returned. The response includes all tags that
-     * are associated with the requested resources.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Information about compliance with tag policies. If supplied, the compliance check follows the specified tag
-     * policy instead of following the effective tag policy. For more information on tag policies, see <a
-     * href="http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies.html">Tag Policies</a> in the <i>AWS Resource
-     * Groups User Guide.</i>
-     * </p>
-     * </li>
-     * </ul>
      * <note>
      * <p>
      * You can check the <code>PaginationToken</code> response parameter to determine if a query completed. Queries can
@@ -1030,42 +505,8 @@ public interface AWSResourceGroupsTaggingAPI {
      * @param getResourcesRequest
      * @return Result of the GetResources operation returned by the service.
      * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
+     *         A parameter is missing or a malformed string or invalid or out-of-range value was supplied for the
+     *         request parameter.
      * @throws ThrottledException
      *         The request was denied to limit the frequency of submitted requests.
      * @throws InternalServiceException
@@ -1082,55 +523,14 @@ public interface AWSResourceGroupsTaggingAPI {
 
     /**
      * <p>
-     * Returns all tag keys in the specified Region for the AWS account.
+     * Returns all tag keys in the specified region for the AWS account.
      * </p>
-     * <note>
-     * <p>
-     * You can check the <code>PaginationToken</code> response parameter to determine if a query completed. Queries can
-     * occasionally return fewer results on a page than allowed. The <code>PaginationToken</code> response parameter
-     * value is <code>null</code> <i>only</i> when there are no more results to display.
-     * </p>
-     * </note>
      * 
      * @param getTagKeysRequest
      * @return Result of the GetTagKeys operation returned by the service.
      * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
+     *         A parameter is missing or a malformed string or invalid or out-of-range value was supplied for the
+     *         request parameter.
      * @throws ThrottledException
      *         The request was denied to limit the frequency of submitted requests.
      * @throws InternalServiceException
@@ -1147,131 +547,14 @@ public interface AWSResourceGroupsTaggingAPI {
 
     /**
      * <p>
-     * Returns the policy that is attached to the specified target.
+     * Returns all tag values for the specified key in the specified region for the AWS account.
      * </p>
-     * <p>
-     * You can call this operation from the organization's master account only and from the us-east-1 Region only.
-     * </p>
-     * 
-     * @param getTagPolicyRequest
-     * @return Result of the GetTagPolicy operation returned by the service.
-     * @throws ConstraintViolationException
-     *         The request was denied as performing this operation violates a constraint. </p>
-     *         <p>
-     *         Some of the reasons in the following list might not apply to this specific API or operation:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Your account must be part of an organization, and you must enable all features in AWS Organizations. <a
-     *         href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
-     *         Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The previous report expired.
-     *         </p>
-     *         </li>
-     * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     * @throws ThrottledException
-     *         The request was denied to limit the frequency of submitted requests.
-     * @throws InternalServiceException
-     *         The request processing failed because of an unknown error, exception, or failure. You can retry the
-     *         request.
-     * @sample AWSResourceGroupsTaggingAPI.GetTagPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagPolicy"
-     *      target="_top">AWS API Documentation</a>
-     */
-    GetTagPolicyResult getTagPolicy(GetTagPolicyRequest getTagPolicyRequest);
-
-    /**
-     * <p>
-     * Returns all tag values for the specified key in the specified Region for the AWS account.
-     * </p>
-     * <note>
-     * <p>
-     * You can check the <code>PaginationToken</code> response parameter to determine if a query completed. Queries can
-     * occasionally return fewer results on a page than allowed. The <code>PaginationToken</code> response parameter
-     * value is <code>null</code> <i>only</i> when there are no more results to display.
-     * </p>
-     * </note>
      * 
      * @param getTagValuesRequest
      * @return Result of the GetTagValues operation returned by the service.
      * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
+     *         A parameter is missing or a malformed string or invalid or out-of-range value was supplied for the
+     *         request parameter.
      * @throws ThrottledException
      *         The request was denied to limit the frequency of submitted requests.
      * @throws InternalServiceException
@@ -1288,201 +571,34 @@ public interface AWSResourceGroupsTaggingAPI {
 
     /**
      * <p>
-     * Validates the tag policy and then attaches it to the account or organization root. This policy determines whether
-     * a resource is compliant.
-     * </p>
-     * <p>
-     * Validating the tag policy includes checking that the tag policy document includes the required components, uses
-     * JSON syntax, and has fewer than 5,000 characters (including spaces). For more information, see <a
-     * href="http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-structure.html">Tag Policy Structure</a> in
-     * the <i>AWS Resource Groups User Guide.</i>
-     * </p>
-     * <note>
-     * <p>
-     * If you later call this operation to attach a tag policy to the same organization root or account, it overwrites
-     * the original call without prompting you to confirm.
-     * </p>
-     * </note>
-     * <p>
-     * You can call this operation from the organization's master account only, and from the us-east-1 Region only.
-     * </p>
-     * 
-     * @param putTagPolicyRequest
-     * @return Result of the PutTagPolicy operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         The target of the operation is currently being modified by a different request. Try again later.
-     * @throws ConstraintViolationException
-     *         The request was denied as performing this operation violates a constraint. </p>
-     *         <p>
-     *         Some of the reasons in the following list might not apply to this specific API or operation:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Your account must be part of an organization, and you must enable all features in AWS Organizations. <a
-     *         href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
-     *         Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The previous report expired.
-     *         </p>
-     *         </li>
-     * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     * @throws ThrottledException
-     *         The request was denied to limit the frequency of submitted requests.
-     * @throws InternalServiceException
-     *         The request processing failed because of an unknown error, exception, or failure. You can retry the
-     *         request.
-     * @sample AWSResourceGroupsTaggingAPI.PutTagPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/PutTagPolicy"
-     *      target="_top">AWS API Documentation</a>
-     */
-    PutTagPolicyResult putTagPolicy(PutTagPolicyRequest putTagPolicyRequest);
-
-    /**
-     * <p>
-     * Generates a report that lists all tagged resources in accounts across your organization, and whether each
-     * resource is compliant with the effective tag policy.
-     * </p>
-     * <p>
-     * You can call this operation from the organization's master account only and from the us-east-1 Region only.
-     * </p>
-     * 
-     * @param startReportCreationRequest
-     * @return Result of the StartReportCreation operation returned by the service.
-     * @throws ConcurrentModificationException
-     *         The target of the operation is currently being modified by a different request. Try again later.
-     * @throws ConstraintViolationException
-     *         The request was denied as performing this operation violates a constraint. </p>
-     *         <p>
-     *         Some of the reasons in the following list might not apply to this specific API or operation:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Your account must be part of an organization, and you must enable all features in AWS Organizations. <a
-     *         href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
-     *         Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The previous report expired.
-     *         </p>
-     *         </li>
-     * @throws InternalServiceException
-     *         The request processing failed because of an unknown error, exception, or failure. You can retry the
-     *         request.
-     * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
-     * @throws ThrottledException
-     *         The request was denied to limit the frequency of submitted requests.
-     * @sample AWSResourceGroupsTaggingAPI.StartReportCreation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/StartReportCreation"
-     *      target="_top">AWS API Documentation</a>
-     */
-    StartReportCreationResult startReportCreation(StartReportCreationRequest startReportCreationRequest);
-
-    /**
-     * <p>
      * Applies one or more tags to the specified resources. Note the following:
      * </p>
      * <ul>
      * <li>
      * <p>
      * Not all resources can have tags. For a list of resources that support tagging, see <a
-     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this list</a>.
+     * href="http://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Supported Resources</a> in the
+     * <i>AWS Resource Groups User Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Each resource can have up to 50 tags.
+     * Each resource can have up to 50 tags. For other limits, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-restrictions">Tag Restrictions</a>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You can only tag resources that are located in the specified Region for the AWS account.
+     * You can only tag resources that are located in the specified region for the AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
      * To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as
      * well as permissions for adding tags. For more information, see <a
-     * href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
-     * Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
+     * href="http://docs.aws.amazon.com/ARG/latest/userguide/obtaining-permissions-for-tagging.html">Obtaining
+     * Permissions for Tagging</a> in the <i>AWS Resource Groups User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1490,42 +606,8 @@ public interface AWSResourceGroupsTaggingAPI {
      * @param tagResourcesRequest
      * @return Result of the TagResources operation returned by the service.
      * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
+     *         A parameter is missing or a malformed string or invalid or out-of-range value was supplied for the
+     *         request parameter.
      * @throws ThrottledException
      *         The request was denied to limit the frequency of submitted requests.
      * @throws InternalServiceException
@@ -1548,13 +630,13 @@ public interface AWSResourceGroupsTaggingAPI {
      * <p>
      * To remove tags from a resource, you need the necessary permissions for the service that the resource belongs to
      * as well as permissions for removing tags. For more information, see <a
-     * href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
-     * Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
+     * href="http://docs.aws.amazon.com/ARG/latest/userguide/obtaining-permissions-for-tagging.html">Obtaining
+     * Permissions for Tagging</a> in the <i>AWS Resource Groups User Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You can only tag resources that are located in the specified Region for the AWS account.
+     * You can only tag resources that are located in the specified region for the AWS account.
      * </p>
      * </li>
      * </ul>
@@ -1562,42 +644,8 @@ public interface AWSResourceGroupsTaggingAPI {
      * @param untagResourcesRequest
      * @return Result of the UntagResources operation returned by the service.
      * @throws InvalidParameterException
-     *         This error indicates one of the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A parameter is missing.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A malformed string was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An out-of-range value was supplied for the request parameter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The target ID is invalid, unsupported, or doesn't exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         There is an issue with the tag policy: It exceeds the maximum size limit, is invalid, or doesn't use JSON
-     *         syntax.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can't access the Amazon S3 bucket for report storage. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies-prereqs.html#bucket-policy-org-report"
-     *         >Additional Requirements for Running Organization-Wide Tag Compliance Report</a> in the <i>AWS Resource
-     *         Groups User Guide.</i>
-     *         </p>
-     *         </li>
+     *         A parameter is missing or a malformed string or invalid or out-of-range value was supplied for the
+     *         request parameter.
      * @throws ThrottledException
      *         The request was denied to limit the frequency of submitted requests.
      * @throws InternalServiceException

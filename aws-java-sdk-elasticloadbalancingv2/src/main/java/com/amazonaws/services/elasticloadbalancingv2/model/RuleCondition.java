@@ -28,18 +28,52 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
+     * The field in the HTTP request. The following are the possible values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>http-header</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>http-request-method</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>host-header</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>path-pattern</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>query-string</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>source-ip</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String field;
     /**
      * <p>
-     * The condition value.
+     * The condition value. You can use <code>Values</code> if the rule contains only <code>host-header</code> and
+     * <code>path-pattern</code> conditions. Otherwise, you can use <code>HostHeaderConfig</code> for
+     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for <code>path-pattern</code> conditions.
      * </p>
      * <p>
-     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
-     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
+     * If <code>Field</code> is <code>host-header</code>, you can specify a single host name (for example,
+     * my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters.
      * </p>
      * <ul>
      * <li>
@@ -64,9 +98,9 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
-     * path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
+     * If <code>Field</code> is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*).
+     * A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters.
      * </p>
      * <ul>
      * <li>
@@ -97,26 +131,114 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      */
     private java.util.List<String> values;
-
+    /**
+     * <p>
+     * Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.
+     * </p>
+     */
     private HostHeaderConditionConfig hostHeaderConfig;
-
+    /**
+     * <p>
+     * Information for a path pattern condition. Specify only when <code>Field</code> is <code>path-pattern</code>.
+     * </p>
+     */
     private PathPatternConditionConfig pathPatternConfig;
-
+    /**
+     * <p>
+     * Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>.
+     * </p>
+     */
     private HttpHeaderConditionConfig httpHeaderConfig;
-
+    /**
+     * <p>
+     * Information for a query string condition. Specify only when <code>Field</code> is <code>query-string</code>.
+     * </p>
+     */
     private QueryStringConditionConfig queryStringConfig;
-
+    /**
+     * <p>
+     * Information for an HTTP method condition. Specify only when <code>Field</code> is
+     * <code>http-request-method</code>.
+     * </p>
+     */
     private HttpRequestMethodConditionConfig httpRequestMethodConfig;
-
+    /**
+     * <p>
+     * Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.
+     * </p>
+     */
     private SourceIpConditionConfig sourceIpConfig;
 
     /**
      * <p>
-     * The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
+     * The field in the HTTP request. The following are the possible values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>http-header</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>http-request-method</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>host-header</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>path-pattern</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>query-string</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>source-ip</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param field
-     *        The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
+     *        The field in the HTTP request. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>http-header</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>http-request-method</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>host-header</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>path-pattern</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>query-string</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>source-ip</code>
+     *        </p>
+     *        </li>
      */
 
     public void setField(String field) {
@@ -125,10 +247,73 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
+     * The field in the HTTP request. The following are the possible values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>http-header</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>http-request-method</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>host-header</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>path-pattern</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>query-string</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>source-ip</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
+     * @return The field in the HTTP request. The following are the possible values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>http-header</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>http-request-method</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>host-header</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>path-pattern</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>query-string</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>source-ip</code>
+     *         </p>
+     *         </li>
      */
 
     public String getField() {
@@ -137,11 +322,74 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
+     * The field in the HTTP request. The following are the possible values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>http-header</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>http-request-method</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>host-header</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>path-pattern</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>query-string</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>source-ip</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param field
-     *        The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
+     *        The field in the HTTP request. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>http-header</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>http-request-method</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>host-header</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>path-pattern</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>query-string</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>source-ip</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,12 +400,14 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The condition value.
+     * The condition value. You can use <code>Values</code> if the rule contains only <code>host-header</code> and
+     * <code>path-pattern</code> conditions. Otherwise, you can use <code>HostHeaderConfig</code> for
+     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for <code>path-pattern</code> conditions.
      * </p>
      * <p>
-     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
-     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
+     * If <code>Field</code> is <code>host-header</code>, you can specify a single host name (for example,
+     * my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters.
      * </p>
      * <ul>
      * <li>
@@ -182,9 +432,9 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
-     * path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
+     * If <code>Field</code> is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*).
+     * A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters.
      * </p>
      * <ul>
      * <li>
@@ -214,11 +464,14 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The condition value.</p>
+     * @return The condition value. You can use <code>Values</code> if the rule contains only <code>host-header</code>
+     *         and <code>path-pattern</code> conditions. Otherwise, you can use <code>HostHeaderConfig</code> for
+     *         <code>host-header</code> conditions and <code>PathPatternConfig</code> for <code>path-pattern</code>
+     *         conditions.</p>
      *         <p>
-     *         If the field name is <code>host-header</code>, you can specify a single host name (for example,
+     *         If <code>Field</code> is <code>host-header</code>, you can specify a single host name (for example,
      *         my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *         any of the following characters. You can include up to three wildcard characters.
+     *         any of the following characters.
      *         </p>
      *         <ul>
      *         <li>
@@ -243,9 +496,9 @@ public class RuleCondition implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example,
+     *         If <code>Field</code> is <code>path-pattern</code>, you can specify a single path pattern (for example,
      *         /img/*). A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of
-     *         the following characters. You can include up to three wildcard characters.
+     *         the following characters.
      *         </p>
      *         <ul>
      *         <li>
@@ -281,12 +534,14 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The condition value.
+     * The condition value. You can use <code>Values</code> if the rule contains only <code>host-header</code> and
+     * <code>path-pattern</code> conditions. Otherwise, you can use <code>HostHeaderConfig</code> for
+     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for <code>path-pattern</code> conditions.
      * </p>
      * <p>
-     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
-     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
+     * If <code>Field</code> is <code>host-header</code>, you can specify a single host name (for example,
+     * my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters.
      * </p>
      * <ul>
      * <li>
@@ -311,9 +566,9 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
-     * path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
+     * If <code>Field</code> is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*).
+     * A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters.
      * </p>
      * <ul>
      * <li>
@@ -344,11 +599,14 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      * 
      * @param values
-     *        The condition value.</p>
+     *        The condition value. You can use <code>Values</code> if the rule contains only <code>host-header</code>
+     *        and <code>path-pattern</code> conditions. Otherwise, you can use <code>HostHeaderConfig</code> for
+     *        <code>host-header</code> conditions and <code>PathPatternConfig</code> for <code>path-pattern</code>
+     *        conditions.</p>
      *        <p>
-     *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
+     *        If <code>Field</code> is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. You can include up to three wildcard characters.
+     *        any of the following characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -373,9 +631,9 @@ public class RuleCondition implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example,
+     *        If <code>Field</code> is <code>path-pattern</code>, you can specify a single path pattern (for example,
      *        /img/*). A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of
-     *        the following characters. You can include up to three wildcard characters.
+     *        the following characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -416,12 +674,14 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The condition value.
+     * The condition value. You can use <code>Values</code> if the rule contains only <code>host-header</code> and
+     * <code>path-pattern</code> conditions. Otherwise, you can use <code>HostHeaderConfig</code> for
+     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for <code>path-pattern</code> conditions.
      * </p>
      * <p>
-     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
-     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
+     * If <code>Field</code> is <code>host-header</code>, you can specify a single host name (for example,
+     * my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters.
      * </p>
      * <ul>
      * <li>
@@ -446,9 +706,9 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
-     * path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
+     * If <code>Field</code> is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*).
+     * A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters.
      * </p>
      * <ul>
      * <li>
@@ -484,11 +744,14 @@ public class RuleCondition implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        The condition value.</p>
+     *        The condition value. You can use <code>Values</code> if the rule contains only <code>host-header</code>
+     *        and <code>path-pattern</code> conditions. Otherwise, you can use <code>HostHeaderConfig</code> for
+     *        <code>host-header</code> conditions and <code>PathPatternConfig</code> for <code>path-pattern</code>
+     *        conditions.</p>
      *        <p>
-     *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
+     *        If <code>Field</code> is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. You can include up to three wildcard characters.
+     *        any of the following characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -513,9 +776,9 @@ public class RuleCondition implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example,
+     *        If <code>Field</code> is <code>path-pattern</code>, you can specify a single path pattern (for example,
      *        /img/*). A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of
-     *        the following characters. You can include up to three wildcard characters.
+     *        the following characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -558,12 +821,14 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The condition value.
+     * The condition value. You can use <code>Values</code> if the rule contains only <code>host-header</code> and
+     * <code>path-pattern</code> conditions. Otherwise, you can use <code>HostHeaderConfig</code> for
+     * <code>host-header</code> conditions and <code>PathPatternConfig</code> for <code>path-pattern</code> conditions.
      * </p>
      * <p>
-     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
-     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
+     * If <code>Field</code> is <code>host-header</code>, you can specify a single host name (for example,
+     * my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters.
      * </p>
      * <ul>
      * <li>
@@ -588,9 +853,9 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
-     * path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. You can include up to three wildcard characters.
+     * If <code>Field</code> is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*).
+     * A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters.
      * </p>
      * <ul>
      * <li>
@@ -621,11 +886,14 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      * 
      * @param values
-     *        The condition value.</p>
+     *        The condition value. You can use <code>Values</code> if the rule contains only <code>host-header</code>
+     *        and <code>path-pattern</code> conditions. Otherwise, you can use <code>HostHeaderConfig</code> for
+     *        <code>host-header</code> conditions and <code>PathPatternConfig</code> for <code>path-pattern</code>
+     *        conditions.</p>
      *        <p>
-     *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
+     *        If <code>Field</code> is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. You can include up to three wildcard characters.
+     *        any of the following characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -650,9 +918,9 @@ public class RuleCondition implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example,
+     *        If <code>Field</code> is <code>path-pattern</code>, you can specify a single path pattern (for example,
      *        /img/*). A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of
-     *        the following characters. You can include up to three wildcard characters.
+     *        the following characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -689,7 +957,12 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.
+     * </p>
+     * 
      * @param hostHeaderConfig
+     *        Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.
      */
 
     public void setHostHeaderConfig(HostHeaderConditionConfig hostHeaderConfig) {
@@ -697,7 +970,12 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.
+     * </p>
+     * 
+     * @return Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>
+     *         .
      */
 
     public HostHeaderConditionConfig getHostHeaderConfig() {
@@ -705,7 +983,12 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.
+     * </p>
+     * 
      * @param hostHeaderConfig
+     *        Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -715,7 +998,13 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information for a path pattern condition. Specify only when <code>Field</code> is <code>path-pattern</code>.
+     * </p>
+     * 
      * @param pathPatternConfig
+     *        Information for a path pattern condition. Specify only when <code>Field</code> is
+     *        <code>path-pattern</code>.
      */
 
     public void setPathPatternConfig(PathPatternConditionConfig pathPatternConfig) {
@@ -723,7 +1012,12 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information for a path pattern condition. Specify only when <code>Field</code> is <code>path-pattern</code>.
+     * </p>
+     * 
+     * @return Information for a path pattern condition. Specify only when <code>Field</code> is
+     *         <code>path-pattern</code>.
      */
 
     public PathPatternConditionConfig getPathPatternConfig() {
@@ -731,7 +1025,13 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information for a path pattern condition. Specify only when <code>Field</code> is <code>path-pattern</code>.
+     * </p>
+     * 
      * @param pathPatternConfig
+     *        Information for a path pattern condition. Specify only when <code>Field</code> is
+     *        <code>path-pattern</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -741,7 +1041,13 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>.
+     * </p>
+     * 
      * @param httpHeaderConfig
+     *        Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>
+     *        .
      */
 
     public void setHttpHeaderConfig(HttpHeaderConditionConfig httpHeaderConfig) {
@@ -749,7 +1055,12 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>.
+     * </p>
+     * 
+     * @return Information for an HTTP header condition. Specify only when <code>Field</code> is
+     *         <code>http-header</code>.
      */
 
     public HttpHeaderConditionConfig getHttpHeaderConfig() {
@@ -757,7 +1068,13 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>.
+     * </p>
+     * 
      * @param httpHeaderConfig
+     *        Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -767,7 +1084,13 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information for a query string condition. Specify only when <code>Field</code> is <code>query-string</code>.
+     * </p>
+     * 
      * @param queryStringConfig
+     *        Information for a query string condition. Specify only when <code>Field</code> is
+     *        <code>query-string</code>.
      */
 
     public void setQueryStringConfig(QueryStringConditionConfig queryStringConfig) {
@@ -775,7 +1098,12 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information for a query string condition. Specify only when <code>Field</code> is <code>query-string</code>.
+     * </p>
+     * 
+     * @return Information for a query string condition. Specify only when <code>Field</code> is
+     *         <code>query-string</code>.
      */
 
     public QueryStringConditionConfig getQueryStringConfig() {
@@ -783,7 +1111,13 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information for a query string condition. Specify only when <code>Field</code> is <code>query-string</code>.
+     * </p>
+     * 
      * @param queryStringConfig
+     *        Information for a query string condition. Specify only when <code>Field</code> is
+     *        <code>query-string</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -793,7 +1127,14 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information for an HTTP method condition. Specify only when <code>Field</code> is
+     * <code>http-request-method</code>.
+     * </p>
+     * 
      * @param httpRequestMethodConfig
+     *        Information for an HTTP method condition. Specify only when <code>Field</code> is
+     *        <code>http-request-method</code>.
      */
 
     public void setHttpRequestMethodConfig(HttpRequestMethodConditionConfig httpRequestMethodConfig) {
@@ -801,7 +1142,13 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information for an HTTP method condition. Specify only when <code>Field</code> is
+     * <code>http-request-method</code>.
+     * </p>
+     * 
+     * @return Information for an HTTP method condition. Specify only when <code>Field</code> is
+     *         <code>http-request-method</code>.
      */
 
     public HttpRequestMethodConditionConfig getHttpRequestMethodConfig() {
@@ -809,7 +1156,14 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information for an HTTP method condition. Specify only when <code>Field</code> is
+     * <code>http-request-method</code>.
+     * </p>
+     * 
      * @param httpRequestMethodConfig
+     *        Information for an HTTP method condition. Specify only when <code>Field</code> is
+     *        <code>http-request-method</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -819,7 +1173,12 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.
+     * </p>
+     * 
      * @param sourceIpConfig
+     *        Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.
      */
 
     public void setSourceIpConfig(SourceIpConditionConfig sourceIpConfig) {
@@ -827,7 +1186,11 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.
+     * </p>
+     * 
+     * @return Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.
      */
 
     public SourceIpConditionConfig getSourceIpConfig() {
@@ -835,7 +1198,12 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.
+     * </p>
+     * 
      * @param sourceIpConfig
+     *        Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

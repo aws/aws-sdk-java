@@ -16,6 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Information about a path pattern condition.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/PathPatternConditionConfig"
  *      target="_top">AWS API Documentation</a>
@@ -23,10 +26,39 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PathPatternConditionConfig implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters.
+     * The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path
+     * pattern is compared only to the path of the URL, not to its query string. To compare against the query string,
+     * use <a>QueryStringConditionConfig</a>.
+     * </p>
+     */
     private java.util.List<String> values;
 
     /**
-     * @return
+     * <p>
+     * One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters.
+     * The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path
+     * pattern is compared only to the path of the URL, not to its query string. To compare against the query string,
+     * use <a>QueryStringConditionConfig</a>.
+     * </p>
+     * 
+     * @return One or more path patterns to compare against the request URL. The maximum size of each string is 128
+     *         characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches
+     *         0 or more characters) and ? (matches exactly 1 character).</p>
+     *         <p>
+     *         If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The
+     *         path pattern is compared only to the path of the URL, not to its query string. To compare against the
+     *         query string, use <a>QueryStringConditionConfig</a>.
      */
 
     public java.util.List<String> getValues() {
@@ -34,7 +66,25 @@ public class PathPatternConditionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters.
+     * The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path
+     * pattern is compared only to the path of the URL, not to its query string. To compare against the query string,
+     * use <a>QueryStringConditionConfig</a>.
+     * </p>
+     * 
      * @param values
+     *        One or more path patterns to compare against the request URL. The maximum size of each string is 128
+     *        characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches
+     *        0 or more characters) and ? (matches exactly 1 character).</p>
+     *        <p>
+     *        If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The
+     *        path pattern is compared only to the path of the URL, not to its query string. To compare against the
+     *        query string, use <a>QueryStringConditionConfig</a>.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -48,12 +98,29 @@ public class PathPatternConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
+     * One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters.
+     * The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path
+     * pattern is compared only to the path of the URL, not to its query string. To compare against the query string,
+     * use <a>QueryStringConditionConfig</a>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param values
+     *        One or more path patterns to compare against the request URL. The maximum size of each string is 128
+     *        characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches
+     *        0 or more characters) and ? (matches exactly 1 character).</p>
+     *        <p>
+     *        If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The
+     *        path pattern is compared only to the path of the URL, not to its query string. To compare against the
+     *        query string, use <a>QueryStringConditionConfig</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +135,25 @@ public class PathPatternConditionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters.
+     * The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path
+     * pattern is compared only to the path of the URL, not to its query string. To compare against the query string,
+     * use <a>QueryStringConditionConfig</a>.
+     * </p>
+     * 
      * @param values
+     *        One or more path patterns to compare against the request URL. The maximum size of each string is 128
+     *        characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches
+     *        0 or more characters) and ? (matches exactly 1 character).</p>
+     *        <p>
+     *        If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The
+     *        path pattern is compared only to the path of the URL, not to its query string. To compare against the
+     *        query string, use <a>QueryStringConditionConfig</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

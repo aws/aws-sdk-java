@@ -16,6 +16,13 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Information about a source IP condition.
+ * </p>
+ * <p>
+ * You can use this condition to route based on the IP address of the source that connects to the load balancer. If a
+ * client is behind a proxy, this is the IP address of the proxy not the IP address of the client.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SourceIpConditionConfig"
  *      target="_top">AWS API Documentation</a>
@@ -23,10 +30,36 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SourceIpConditionConfig implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not
+     * supported.
+     * </p>
+     * <p>
+     * If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one
+     * of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for
+     * addresses in the X-Forwarded-For header, use <a>HttpHeaderConditionConfig</a>.
+     * </p>
+     */
     private java.util.List<String> values;
 
     /**
-     * @return
+     * <p>
+     * One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not
+     * supported.
+     * </p>
+     * <p>
+     * If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one
+     * of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for
+     * addresses in the X-Forwarded-For header, use <a>HttpHeaderConditionConfig</a>.
+     * </p>
+     * 
+     * @return One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are
+     *         not supported.</p>
+     *         <p>
+     *         If you specify multiple addresses, the condition is satisfied if the source IP address of the request
+     *         matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For
+     *         header. To search for addresses in the X-Forwarded-For header, use <a>HttpHeaderConditionConfig</a>.
      */
 
     public java.util.List<String> getValues() {
@@ -34,7 +67,23 @@ public class SourceIpConditionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not
+     * supported.
+     * </p>
+     * <p>
+     * If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one
+     * of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for
+     * addresses in the X-Forwarded-For header, use <a>HttpHeaderConditionConfig</a>.
+     * </p>
+     * 
      * @param values
+     *        One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are
+     *        not supported.</p>
+     *        <p>
+     *        If you specify multiple addresses, the condition is satisfied if the source IP address of the request
+     *        matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For
+     *        header. To search for addresses in the X-Forwarded-For header, use <a>HttpHeaderConditionConfig</a>.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -48,12 +97,27 @@ public class SourceIpConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
+     * One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not
+     * supported.
+     * </p>
+     * <p>
+     * If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one
+     * of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for
+     * addresses in the X-Forwarded-For header, use <a>HttpHeaderConditionConfig</a>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param values
+     *        One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are
+     *        not supported.</p>
+     *        <p>
+     *        If you specify multiple addresses, the condition is satisfied if the source IP address of the request
+     *        matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For
+     *        header. To search for addresses in the X-Forwarded-For header, use <a>HttpHeaderConditionConfig</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +132,23 @@ public class SourceIpConditionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not
+     * supported.
+     * </p>
+     * <p>
+     * If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one
+     * of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for
+     * addresses in the X-Forwarded-For header, use <a>HttpHeaderConditionConfig</a>.
+     * </p>
+     * 
      * @param values
+     *        One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are
+     *        not supported.</p>
+     *        <p>
+     *        If you specify multiple addresses, the condition is satisfied if the source IP address of the request
+     *        matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For
+     *        header. To search for addresses in the X-Forwarded-For header, use <a>HttpHeaderConditionConfig</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

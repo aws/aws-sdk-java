@@ -30,6 +30,8 @@ public class WindowsFileSystemConfigurationMarshaller {
 
     private static final MarshallingInfo<String> ACTIVEDIRECTORYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveDirectoryId").build();
+    private static final MarshallingInfo<StructuredPojo> SELFMANAGEDACTIVEDIRECTORYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedActiveDirectoryConfiguration").build();
     private static final MarshallingInfo<Integer> THROUGHPUTCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThroughputCapacity").build();
     private static final MarshallingInfo<List> MAINTENANCEOPERATIONSINPROGRESS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -60,6 +62,8 @@ public class WindowsFileSystemConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(windowsFileSystemConfiguration.getActiveDirectoryId(), ACTIVEDIRECTORYID_BINDING);
+            protocolMarshaller.marshall(windowsFileSystemConfiguration.getSelfManagedActiveDirectoryConfiguration(),
+                    SELFMANAGEDACTIVEDIRECTORYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(windowsFileSystemConfiguration.getThroughputCapacity(), THROUGHPUTCAPACITY_BINDING);
             protocolMarshaller.marshall(windowsFileSystemConfiguration.getMaintenanceOperationsInProgress(), MAINTENANCEOPERATIONSINPROGRESS_BINDING);
             protocolMarshaller.marshall(windowsFileSystemConfiguration.getWeeklyMaintenanceStartTime(), WEEKLYMAINTENANCESTARTTIME_BINDING);

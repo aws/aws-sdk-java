@@ -48,7 +48,7 @@ public class ContainerDetails implements Serializable, Cloneable, StructuredPojo
     private String imageName;
     /**
      * <p>
-     * The date/time that the container was started.
+     * The date and time when the container started.
      * </p>
      */
     private String launchedAt;
@@ -175,11 +175,11 @@ public class ContainerDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date/time that the container was started.
+     * The date and time when the container started.
      * </p>
      * 
      * @param launchedAt
-     *        The date/time that the container was started.
+     *        The date and time when the container started.
      */
 
     public void setLaunchedAt(String launchedAt) {
@@ -188,10 +188,10 @@ public class ContainerDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date/time that the container was started.
+     * The date and time when the container started.
      * </p>
      * 
-     * @return The date/time that the container was started.
+     * @return The date and time when the container started.
      */
 
     public String getLaunchedAt() {
@@ -200,11 +200,11 @@ public class ContainerDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date/time that the container was started.
+     * The date and time when the container started.
      * </p>
      * 
      * @param launchedAt
-     *        The date/time that the container was started.
+     *        The date and time when the container started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

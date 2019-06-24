@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A collection of attributes used for sorting findings.
+ * A collection of finding attributes used to sort findings.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/SortCriterion" target="_top">AWS API
@@ -30,24 +30,24 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The finding attribute used for sorting findings.
+     * The finding attribute used to sort findings.
      * </p>
      */
     private String field;
     /**
      * <p>
-     * The order used for sorting findings.
+     * The order used to sort findings.
      * </p>
      */
     private String sortOrder;
 
     /**
      * <p>
-     * The finding attribute used for sorting findings.
+     * The finding attribute used to sort findings.
      * </p>
      * 
      * @param field
-     *        The finding attribute used for sorting findings.
+     *        The finding attribute used to sort findings.
      */
 
     public void setField(String field) {
@@ -56,10 +56,10 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The finding attribute used for sorting findings.
+     * The finding attribute used to sort findings.
      * </p>
      * 
-     * @return The finding attribute used for sorting findings.
+     * @return The finding attribute used to sort findings.
      */
 
     public String getField() {
@@ -68,11 +68,11 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The finding attribute used for sorting findings.
+     * The finding attribute used to sort findings.
      * </p>
      * 
      * @param field
-     *        The finding attribute used for sorting findings.
+     *        The finding attribute used to sort findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The order used for sorting findings.
+     * The order used to sort findings.
      * </p>
      * 
      * @param sortOrder
-     *        The order used for sorting findings.
+     *        The order used to sort findings.
      * @see SortOrder
      */
 
@@ -97,10 +97,10 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The order used for sorting findings.
+     * The order used to sort findings.
      * </p>
      * 
-     * @return The order used for sorting findings.
+     * @return The order used to sort findings.
      * @see SortOrder
      */
 
@@ -110,11 +110,11 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The order used for sorting findings.
+     * The order used to sort findings.
      * </p>
      * 
      * @param sortOrder
-     *        The order used for sorting findings.
+     *        The order used to sort findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -126,11 +126,11 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The order used for sorting findings.
+     * The order used to sort findings.
      * </p>
      * 
      * @param sortOrder
-     *        The order used for sorting findings.
+     *        The order used to sort findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */

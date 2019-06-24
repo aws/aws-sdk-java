@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides consistent format for the contents of the Security Hub-aggregated findings. AwsSecurityFinding format
- * enables you to share findings between AWS security services and third-party solutions, and compliance checks.
+ * Provides consistent format for the contents of the Security Hub-aggregated findings. <code>AwsSecurityFinding</code>
+ * format enables you to share findings between AWS security services and third-party solutions, and compliance checks.
  * </p>
  * <note>
  * <p>
@@ -122,8 +122,8 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     private Integer confidence;
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means the underlying
-     * resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      * </p>
      */
     private Integer criticality;
@@ -151,7 +151,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     private String description;
     /**
      * <p>
-     * An data type that describes the remediation options for a finding.
+     * A data type that describes the remediation options for a finding.
      * </p>
      */
     private Remediation remediation;
@@ -164,7 +164,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A data type where security-findings providers can include additional solution-specific details that aren't part
-     * of the defined AwsSecurityFinding format.
+     * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      */
     private java.util.Map<String, String> productFields;
@@ -844,12 +844,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means the underlying
-     * resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      * </p>
      * 
      * @param criticality
-     *        The level of importance assigned to the resources associated with the finding. A score of 0 means the
+     *        The level of importance assigned to the resources associated with the finding. A score of 0 means that the
      *        underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      */
 
@@ -859,12 +859,13 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means the underlying
-     * resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      * </p>
      * 
-     * @return The level of importance assigned to the resources associated with the finding. A score of 0 means the
-     *         underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * @return The level of importance assigned to the resources associated with the finding. A score of 0 means that
+     *         the underlying resources have no criticality, and a score of 100 is reserved for the most critical
+     *         resources.
      */
 
     public Integer getCriticality() {
@@ -873,12 +874,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means the underlying
-     * resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      * </p>
      * 
      * @param criticality
-     *        The level of importance assigned to the resources associated with the finding. A score of 0 means the
+     *        The level of importance assigned to the resources associated with the finding. A score of 0 means that the
      *        underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1018,11 +1019,11 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An data type that describes the remediation options for a finding.
+     * A data type that describes the remediation options for a finding.
      * </p>
      * 
      * @param remediation
-     *        An data type that describes the remediation options for a finding.
+     *        A data type that describes the remediation options for a finding.
      */
 
     public void setRemediation(Remediation remediation) {
@@ -1031,10 +1032,10 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An data type that describes the remediation options for a finding.
+     * A data type that describes the remediation options for a finding.
      * </p>
      * 
-     * @return An data type that describes the remediation options for a finding.
+     * @return A data type that describes the remediation options for a finding.
      */
 
     public Remediation getRemediation() {
@@ -1043,11 +1044,11 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An data type that describes the remediation options for a finding.
+     * A data type that describes the remediation options for a finding.
      * </p>
      * 
      * @param remediation
-     *        An data type that describes the remediation options for a finding.
+     *        A data type that describes the remediation options for a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1099,11 +1100,11 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A data type where security-findings providers can include additional solution-specific details that aren't part
-     * of the defined AwsSecurityFinding format.
+     * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * 
      * @return A data type where security-findings providers can include additional solution-specific details that
-     *         aren't part of the defined AwsSecurityFinding format.
+     *         aren't part of the defined <code>AwsSecurityFinding</code> format.
      */
 
     public java.util.Map<String, String> getProductFields() {
@@ -1113,12 +1114,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A data type where security-findings providers can include additional solution-specific details that aren't part
-     * of the defined AwsSecurityFinding format.
+     * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * 
      * @param productFields
      *        A data type where security-findings providers can include additional solution-specific details that aren't
-     *        part of the defined AwsSecurityFinding format.
+     *        part of the defined <code>AwsSecurityFinding</code> format.
      */
 
     public void setProductFields(java.util.Map<String, String> productFields) {
@@ -1128,12 +1129,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A data type where security-findings providers can include additional solution-specific details that aren't part
-     * of the defined AwsSecurityFinding format.
+     * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * 
      * @param productFields
      *        A data type where security-findings providers can include additional solution-specific details that aren't
-     *        part of the defined AwsSecurityFinding format.
+     *        part of the defined <code>AwsSecurityFinding</code> format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

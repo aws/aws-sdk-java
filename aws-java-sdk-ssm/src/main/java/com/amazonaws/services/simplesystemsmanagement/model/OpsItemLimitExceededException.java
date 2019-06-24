@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The request caused OpsItems to exceed one or more limits. For information about OpsItem limits, see <a href=
- * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-learn-more.html#OpsItems-learn-more-limits"
- * >What are the resource limits for OpsItems?</a>.
+ * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
+ * >What are the resource limits for OpsCenter?</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

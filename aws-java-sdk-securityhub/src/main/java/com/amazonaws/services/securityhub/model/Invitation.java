@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of an invitation that the Security Hub master account sent to an AWS account.
+ * Details about an invitation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Invitation" target="_top">AWS API
@@ -30,13 +30,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID of the Security Hub master account that sent the invitation.
+     * The account ID of the Security Hub master account that the invitation was sent from.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The ID of the invitation that the Security Hub master account sent.
+     * The ID of the invitation sent to the member account.
      * </p>
      */
     private String invitationId;
@@ -48,18 +48,18 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date invitedAt;
     /**
      * <p>
-     * The current relationship status between the inviter and invitee accounts.
+     * The current status of the association between member and master accounts.
      * </p>
      */
     private String memberStatus;
 
     /**
      * <p>
-     * The account ID of the Security Hub master account that sent the invitation.
+     * The account ID of the Security Hub master account that the invitation was sent from.
      * </p>
      * 
      * @param accountId
-     *        The account ID of the Security Hub master account that sent the invitation.
+     *        The account ID of the Security Hub master account that the invitation was sent from.
      */
 
     public void setAccountId(String accountId) {
@@ -68,10 +68,10 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID of the Security Hub master account that sent the invitation.
+     * The account ID of the Security Hub master account that the invitation was sent from.
      * </p>
      * 
-     * @return The account ID of the Security Hub master account that sent the invitation.
+     * @return The account ID of the Security Hub master account that the invitation was sent from.
      */
 
     public String getAccountId() {
@@ -80,11 +80,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID of the Security Hub master account that sent the invitation.
+     * The account ID of the Security Hub master account that the invitation was sent from.
      * </p>
      * 
      * @param accountId
-     *        The account ID of the Security Hub master account that sent the invitation.
+     *        The account ID of the Security Hub master account that the invitation was sent from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the invitation that the Security Hub master account sent.
+     * The ID of the invitation sent to the member account.
      * </p>
      * 
      * @param invitationId
-     *        The ID of the invitation that the Security Hub master account sent.
+     *        The ID of the invitation sent to the member account.
      */
 
     public void setInvitationId(String invitationId) {
@@ -108,10 +108,10 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the invitation that the Security Hub master account sent.
+     * The ID of the invitation sent to the member account.
      * </p>
      * 
-     * @return The ID of the invitation that the Security Hub master account sent.
+     * @return The ID of the invitation sent to the member account.
      */
 
     public String getInvitationId() {
@@ -120,11 +120,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the invitation that the Security Hub master account sent.
+     * The ID of the invitation sent to the member account.
      * </p>
      * 
      * @param invitationId
-     *        The ID of the invitation that the Security Hub master account sent.
+     *        The ID of the invitation sent to the member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current relationship status between the inviter and invitee accounts.
+     * The current status of the association between member and master accounts.
      * </p>
      * 
      * @param memberStatus
-     *        The current relationship status between the inviter and invitee accounts.
+     *        The current status of the association between member and master accounts.
      */
 
     public void setMemberStatus(String memberStatus) {
@@ -188,10 +188,10 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current relationship status between the inviter and invitee accounts.
+     * The current status of the association between member and master accounts.
      * </p>
      * 
-     * @return The current relationship status between the inviter and invitee accounts.
+     * @return The current status of the association between member and master accounts.
      */
 
     public String getMemberStatus() {
@@ -200,11 +200,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current relationship status between the inviter and invitee accounts.
+     * The current status of the association between member and master accounts.
      * </p>
      * 
      * @param memberStatus
-     *        The current relationship status between the inviter and invitee accounts.
+     *        The current status of the association between member and master accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

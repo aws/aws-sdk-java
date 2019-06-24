@@ -60,6 +60,12 @@ public class UpdateFileSystemWindowsConfigurationJsonUnmarshaller implements Unm
                     context.nextToken();
                     updateFileSystemWindowsConfiguration.setAutomaticBackupRetentionDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("SelfManagedActiveDirectoryConfiguration", targetDepth)) {
+                    context.nextToken();
+                    updateFileSystemWindowsConfiguration
+                            .setSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationUpdatesJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -25,17 +25,17 @@ public class DeleteMembersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     * A list of account ID and email address pairs of the AWS accounts that weren't deleted.
      * </p>
      */
     private java.util.List<Result> unprocessedAccounts;
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     * A list of account ID and email address pairs of the AWS accounts that weren't deleted.
      * </p>
      * 
-     * @return A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     * @return A list of account ID and email address pairs of the AWS accounts that weren't deleted.
      */
 
     public java.util.List<Result> getUnprocessedAccounts() {
@@ -44,11 +44,11 @@ public class DeleteMembersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     * A list of account ID and email address pairs of the AWS accounts that weren't deleted.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     *        A list of account ID and email address pairs of the AWS accounts that weren't deleted.
      */
 
     public void setUnprocessedAccounts(java.util.Collection<Result> unprocessedAccounts) {
@@ -62,7 +62,7 @@ public class DeleteMembersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     * A list of account ID and email address pairs of the AWS accounts that weren't deleted.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class DeleteMembersResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     *        A list of account ID and email address pairs of the AWS accounts that weren't deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class DeleteMembersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     * A list of account ID and email address pairs of the AWS accounts that weren't deleted.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     *        A list of account ID and email address pairs of the AWS accounts that weren't deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

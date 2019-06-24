@@ -30,8 +30,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account that created the file system. If the file system was created by an IAM user, the AWS account to
-     * which the IAM user belongs is the owner.
+     * The AWS account that created the file system. If the file system was created by an AWS Identity and Access
+     * Management (IAM) user, the AWS account to which the IAM user belongs is the owner.
      * </p>
      */
     private String ownerId;
@@ -43,27 +43,59 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date creationTime;
     /**
      * <p>
-     * The eight-digit ID of the file system that was automatically assigned by Amazon FSx.
+     * The system-generated, unique 17-digit ID of the file system.
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
-     * Type of file system. Currently the only supported type is WINDOWS.
+     * The type of Amazon FSx file system, either <code>LUSTRE</code> or <code>WINDOWS</code>.
      * </p>
      */
     private String fileSystemType;
     /**
      * <p>
-     * The lifecycle status of the file system.
+     * The lifecycle status of the file system:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURED</code> indicates that the file system is in a failed but recoverable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> indicates that the file system is undergoing a customer initiated update.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String lifecycle;
 
     private FileSystemFailureDetails failureDetails;
     /**
      * <p>
-     * The storage capacity of the file system in gigabytes.
+     * The storage capacity of the file system in gigabytes (GB).
      * </p>
      */
     private Integer storageCapacity;
@@ -75,8 +107,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     private String vpcId;
     /**
      * <p>
-     * The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The file
-     * system is launched in the Availability Zone associated with this subnet.
+     * The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file system
+     * is launched in the Availability Zone associated with this subnet.
      * </p>
      */
     private java.util.List<String> subnetIds;
@@ -88,7 +120,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
      * </p>
      * <p>
-     * For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an Amazon FSx
+     * For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx
      * for Lustre file system, you can have more than one.
      * </p>
      */
@@ -108,7 +140,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     private String kmsKeyId;
     /**
      * <p>
-     * The resource ARN of the file system.
+     * The Amazon Resource Name (ARN) for the file system resource.
      * </p>
      */
     private String resourceARN;
@@ -131,13 +163,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account that created the file system. If the file system was created by an IAM user, the AWS account to
-     * which the IAM user belongs is the owner.
+     * The AWS account that created the file system. If the file system was created by an AWS Identity and Access
+     * Management (IAM) user, the AWS account to which the IAM user belongs is the owner.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account that created the file system. If the file system was created by an IAM user, the AWS
-     *        account to which the IAM user belongs is the owner.
+     *        The AWS account that created the file system. If the file system was created by an AWS Identity and Access
+     *        Management (IAM) user, the AWS account to which the IAM user belongs is the owner.
      */
 
     public void setOwnerId(String ownerId) {
@@ -146,12 +178,12 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account that created the file system. If the file system was created by an IAM user, the AWS account to
-     * which the IAM user belongs is the owner.
+     * The AWS account that created the file system. If the file system was created by an AWS Identity and Access
+     * Management (IAM) user, the AWS account to which the IAM user belongs is the owner.
      * </p>
      * 
-     * @return The AWS account that created the file system. If the file system was created by an IAM user, the AWS
-     *         account to which the IAM user belongs is the owner.
+     * @return The AWS account that created the file system. If the file system was created by an AWS Identity and
+     *         Access Management (IAM) user, the AWS account to which the IAM user belongs is the owner.
      */
 
     public String getOwnerId() {
@@ -160,13 +192,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account that created the file system. If the file system was created by an IAM user, the AWS account to
-     * which the IAM user belongs is the owner.
+     * The AWS account that created the file system. If the file system was created by an AWS Identity and Access
+     * Management (IAM) user, the AWS account to which the IAM user belongs is the owner.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account that created the file system. If the file system was created by an IAM user, the AWS
-     *        account to which the IAM user belongs is the owner.
+     *        The AWS account that created the file system. If the file system was created by an AWS Identity and Access
+     *        Management (IAM) user, the AWS account to which the IAM user belongs is the owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +252,11 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The eight-digit ID of the file system that was automatically assigned by Amazon FSx.
+     * The system-generated, unique 17-digit ID of the file system.
      * </p>
      * 
      * @param fileSystemId
-     *        The eight-digit ID of the file system that was automatically assigned by Amazon FSx.
+     *        The system-generated, unique 17-digit ID of the file system.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -233,10 +265,10 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The eight-digit ID of the file system that was automatically assigned by Amazon FSx.
+     * The system-generated, unique 17-digit ID of the file system.
      * </p>
      * 
-     * @return The eight-digit ID of the file system that was automatically assigned by Amazon FSx.
+     * @return The system-generated, unique 17-digit ID of the file system.
      */
 
     public String getFileSystemId() {
@@ -245,11 +277,11 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The eight-digit ID of the file system that was automatically assigned by Amazon FSx.
+     * The system-generated, unique 17-digit ID of the file system.
      * </p>
      * 
      * @param fileSystemId
-     *        The eight-digit ID of the file system that was automatically assigned by Amazon FSx.
+     *        The system-generated, unique 17-digit ID of the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,11 +292,11 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of file system. Currently the only supported type is WINDOWS.
+     * The type of Amazon FSx file system, either <code>LUSTRE</code> or <code>WINDOWS</code>.
      * </p>
      * 
      * @param fileSystemType
-     *        Type of file system. Currently the only supported type is WINDOWS.
+     *        The type of Amazon FSx file system, either <code>LUSTRE</code> or <code>WINDOWS</code>.
      * @see FileSystemType
      */
 
@@ -274,10 +306,10 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of file system. Currently the only supported type is WINDOWS.
+     * The type of Amazon FSx file system, either <code>LUSTRE</code> or <code>WINDOWS</code>.
      * </p>
      * 
-     * @return Type of file system. Currently the only supported type is WINDOWS.
+     * @return The type of Amazon FSx file system, either <code>LUSTRE</code> or <code>WINDOWS</code>.
      * @see FileSystemType
      */
 
@@ -287,11 +319,11 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of file system. Currently the only supported type is WINDOWS.
+     * The type of Amazon FSx file system, either <code>LUSTRE</code> or <code>WINDOWS</code>.
      * </p>
      * 
      * @param fileSystemType
-     *        Type of file system. Currently the only supported type is WINDOWS.
+     *        The type of Amazon FSx file system, either <code>LUSTRE</code> or <code>WINDOWS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileSystemType
      */
@@ -303,11 +335,11 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of file system. Currently the only supported type is WINDOWS.
+     * The type of Amazon FSx file system, either <code>LUSTRE</code> or <code>WINDOWS</code>.
      * </p>
      * 
      * @param fileSystemType
-     *        Type of file system. Currently the only supported type is WINDOWS.
+     *        The type of Amazon FSx file system, either <code>LUSTRE</code> or <code>WINDOWS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileSystemType
      */
@@ -319,11 +351,74 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The lifecycle status of the file system.
+     * The lifecycle status of the file system:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURED</code> indicates that the file system is in a failed but recoverable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> indicates that the file system is undergoing a customer initiated update.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lifecycle
-     *        The lifecycle status of the file system.
+     *        The lifecycle status of the file system:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MISCONFIGURED</code> indicates that the file system is in a failed but recoverable state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> indicates that the file system is undergoing a customer initiated update.
+     *        </p>
+     *        </li>
      * @see FileSystemLifecycle
      */
 
@@ -333,10 +428,73 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The lifecycle status of the file system.
+     * The lifecycle status of the file system:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURED</code> indicates that the file system is in a failed but recoverable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> indicates that the file system is undergoing a customer initiated update.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The lifecycle status of the file system.
+     * @return The lifecycle status of the file system:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MISCONFIGURED</code> indicates that the file system is in a failed but recoverable state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATING</code> indicates that the file system is undergoing a customer initiated update.
+     *         </p>
+     *         </li>
      * @see FileSystemLifecycle
      */
 
@@ -346,11 +504,74 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The lifecycle status of the file system.
+     * The lifecycle status of the file system:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURED</code> indicates that the file system is in a failed but recoverable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> indicates that the file system is undergoing a customer initiated update.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lifecycle
-     *        The lifecycle status of the file system.
+     *        The lifecycle status of the file system:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MISCONFIGURED</code> indicates that the file system is in a failed but recoverable state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> indicates that the file system is undergoing a customer initiated update.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileSystemLifecycle
      */
@@ -362,11 +583,74 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The lifecycle status of the file system.
+     * The lifecycle status of the file system:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURED</code> indicates that the file system is in a failed but recoverable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> indicates that the file system is undergoing a customer initiated update.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lifecycle
-     *        The lifecycle status of the file system.
+     *        The lifecycle status of the file system:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MISCONFIGURED</code> indicates that the file system is in a failed but recoverable state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> indicates that the file system is undergoing a customer initiated update.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileSystemLifecycle
      */
@@ -404,11 +688,11 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage capacity of the file system in gigabytes.
+     * The storage capacity of the file system in gigabytes (GB).
      * </p>
      * 
      * @param storageCapacity
-     *        The storage capacity of the file system in gigabytes.
+     *        The storage capacity of the file system in gigabytes (GB).
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -417,10 +701,10 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage capacity of the file system in gigabytes.
+     * The storage capacity of the file system in gigabytes (GB).
      * </p>
      * 
-     * @return The storage capacity of the file system in gigabytes.
+     * @return The storage capacity of the file system in gigabytes (GB).
      */
 
     public Integer getStorageCapacity() {
@@ -429,11 +713,11 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage capacity of the file system in gigabytes.
+     * The storage capacity of the file system in gigabytes (GB).
      * </p>
      * 
      * @param storageCapacity
-     *        The storage capacity of the file system in gigabytes.
+     *        The storage capacity of the file system in gigabytes (GB).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,12 +768,12 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The file
-     * system is launched in the Availability Zone associated with this subnet.
+     * The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file system
+     * is launched in the Availability Zone associated with this subnet.
      * </p>
      * 
-     * @return The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The
-     *         file system is launched in the Availability Zone associated with this subnet.
+     * @return The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file
+     *         system is launched in the Availability Zone associated with this subnet.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -498,13 +782,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The file
-     * system is launched in the Availability Zone associated with this subnet.
+     * The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file system
+     * is launched in the Availability Zone associated with this subnet.
      * </p>
      * 
      * @param subnetIds
-     *        The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The
-     *        file system is launched in the Availability Zone associated with this subnet.
+     *        The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file
+     *        system is launched in the Availability Zone associated with this subnet.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -518,8 +802,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The file
-     * system is launched in the Availability Zone associated with this subnet.
+     * The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file system
+     * is launched in the Availability Zone associated with this subnet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -528,8 +812,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param subnetIds
-     *        The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The
-     *        file system is launched in the Availability Zone associated with this subnet.
+     *        The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file
+     *        system is launched in the Availability Zone associated with this subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -545,13 +829,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The file
-     * system is launched in the Availability Zone associated with this subnet.
+     * The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file system
+     * is launched in the Availability Zone associated with this subnet.
      * </p>
      * 
      * @param subnetIds
-     *        The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The
-     *        file system is launched in the Availability Zone associated with this subnet.
+     *        The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file
+     *        system is launched in the Availability Zone associated with this subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -568,7 +852,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
      * </p>
      * <p>
-     * For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an Amazon FSx
+     * For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx
      * for Lustre file system, you can have more than one.
      * </p>
      * 
@@ -578,7 +862,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a>
      *         in the <i>Amazon EC2 User Guide.</i> </p>
      *         <p>
-     *         For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an
+     *         For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an
      *         Amazon FSx for Lustre file system, you can have more than one.
      */
 
@@ -594,7 +878,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
      * </p>
      * <p>
-     * For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an Amazon FSx
+     * For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx
      * for Lustre file system, you can have more than one.
      * </p>
      * 
@@ -605,7 +889,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a>
      *        in the <i>Amazon EC2 User Guide.</i> </p>
      *        <p>
-     *        For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an
+     *        For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an
      *        Amazon FSx for Lustre file system, you can have more than one.
      */
 
@@ -626,7 +910,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
      * </p>
      * <p>
-     * For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an Amazon FSx
+     * For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx
      * for Lustre file system, you can have more than one.
      * </p>
      * <p>
@@ -642,7 +926,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a>
      *        in the <i>Amazon EC2 User Guide.</i> </p>
      *        <p>
-     *        For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an
+     *        For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an
      *        Amazon FSx for Lustre file system, you can have more than one.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -665,7 +949,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
      * </p>
      * <p>
-     * For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an Amazon FSx
+     * For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx
      * for Lustre file system, you can have more than one.
      * </p>
      * 
@@ -676,7 +960,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a>
      *        in the <i>Amazon EC2 User Guide.</i> </p>
      *        <p>
-     *        For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an
+     *        For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an
      *        Amazon FSx for Lustre file system, you can have more than one.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -774,11 +1058,11 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource ARN of the file system.
+     * The Amazon Resource Name (ARN) for the file system resource.
      * </p>
      * 
      * @param resourceARN
-     *        The resource ARN of the file system.
+     *        The Amazon Resource Name (ARN) for the file system resource.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -787,10 +1071,10 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource ARN of the file system.
+     * The Amazon Resource Name (ARN) for the file system resource.
      * </p>
      * 
-     * @return The resource ARN of the file system.
+     * @return The Amazon Resource Name (ARN) for the file system resource.
      */
 
     public String getResourceARN() {
@@ -799,11 +1083,11 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource ARN of the file system.
+     * The Amazon Resource Name (ARN) for the file system resource.
      * </p>
      * 
      * @param resourceARN
-     *        The resource ARN of the file system.
+     *        The Amazon Resource Name (ARN) for the file system resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

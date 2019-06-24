@@ -92,6 +92,18 @@ public class GetDomainNameResultJsonUnmarshaller implements Unmarshaller<GetDoma
                     context.nextToken();
                     getDomainNameResult.setEndpointConfiguration(EndpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("domainNameStatus", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setDomainNameStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("domainNameStatusMessage", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setDomainNameStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("securityPolicy", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setSecurityPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     getDomainNameResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

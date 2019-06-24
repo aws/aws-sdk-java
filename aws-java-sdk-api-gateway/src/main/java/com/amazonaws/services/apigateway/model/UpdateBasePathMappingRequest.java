@@ -35,6 +35,9 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
      * <p>
      * [Required] The base path of the <a>BasePathMapping</a> resource to change.
      * </p>
+     * <p>
+     * To specify an empty base path, set this parameter to <code>'(none)'</code>.
+     * </p>
      */
     private String basePath;
     /**
@@ -88,9 +91,14 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
      * <p>
      * [Required] The base path of the <a>BasePathMapping</a> resource to change.
      * </p>
+     * <p>
+     * To specify an empty base path, set this parameter to <code>'(none)'</code>.
+     * </p>
      * 
      * @param basePath
-     *        [Required] The base path of the <a>BasePathMapping</a> resource to change.
+     *        [Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
+     *        <p>
+     *        To specify an empty base path, set this parameter to <code>'(none)'</code>.
      */
 
     public void setBasePath(String basePath) {
@@ -101,8 +109,13 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
      * <p>
      * [Required] The base path of the <a>BasePathMapping</a> resource to change.
      * </p>
+     * <p>
+     * To specify an empty base path, set this parameter to <code>'(none)'</code>.
+     * </p>
      * 
-     * @return [Required] The base path of the <a>BasePathMapping</a> resource to change.
+     * @return [Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
+     *         <p>
+     *         To specify an empty base path, set this parameter to <code>'(none)'</code>.
      */
 
     public String getBasePath() {
@@ -113,9 +126,14 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
      * <p>
      * [Required] The base path of the <a>BasePathMapping</a> resource to change.
      * </p>
+     * <p>
+     * To specify an empty base path, set this parameter to <code>'(none)'</code>.
+     * </p>
      * 
      * @param basePath
-     *        [Required] The base path of the <a>BasePathMapping</a> resource to change.
+     *        [Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
+     *        <p>
+     *        To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

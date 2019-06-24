@@ -40,7 +40,7 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and
-     * HTTPS protocols. Network Load Balancers support the TCP and TLS protocols.
+     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols.
      * </p>
      */
     private String protocol;
@@ -55,7 +55,7 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     private String sslPolicy;
     /**
      * <p>
-     * [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     * [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set
      * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      * </p>
      * <p>
@@ -69,8 +69,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
-     * Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
      * </p>
      * <p>
      * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -174,12 +174,12 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and
-     * HTTPS protocols. Network Load Balancers support the TCP and TLS protocols.
+     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols.
      * </p>
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer. Application Load Balancers support the
-     *        HTTP and HTTPS protocols. Network Load Balancers support the TCP and TLS protocols.
+     *        HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols.
      * @see ProtocolEnum
      */
 
@@ -190,11 +190,11 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and
-     * HTTPS protocols. Network Load Balancers support the TCP and TLS protocols.
+     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols.
      * </p>
      * 
      * @return The protocol for connections from clients to the load balancer. Application Load Balancers support the
-     *         HTTP and HTTPS protocols. Network Load Balancers support the TCP and TLS protocols.
+     *         HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols.
      * @see ProtocolEnum
      */
 
@@ -205,12 +205,12 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and
-     * HTTPS protocols. Network Load Balancers support the TCP and TLS protocols.
+     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols.
      * </p>
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer. Application Load Balancers support the
-     *        HTTP and HTTPS protocols. Network Load Balancers support the TCP and TLS protocols.
+     *        HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -223,12 +223,12 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and
-     * HTTPS protocols. Network Load Balancers support the TCP and TLS protocols.
+     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols.
      * </p>
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer. Application Load Balancers support the
-     *        HTTP and HTTPS protocols. Network Load Balancers support the TCP and TLS protocols.
+     *        HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols.
      * @see ProtocolEnum
      */
 
@@ -239,12 +239,12 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and
-     * HTTPS protocols. Network Load Balancers support the TCP and TLS protocols.
+     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols.
      * </p>
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer. Application Load Balancers support the
-     *        HTTP and HTTPS protocols. Network Load Balancers support the TCP and TLS protocols.
+     *        HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -314,15 +314,16 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     * [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set
      * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      * </p>
      * <p>
      * To create a certificate list, use <a>AddListenerCertificates</a>.
      * </p>
      * 
-     * @return [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly one certificate.
-     *         Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+     * @return [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one
+     *         certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>
+     *         .</p>
      *         <p>
      *         To create a certificate list, use <a>AddListenerCertificates</a>.
      */
@@ -333,7 +334,7 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     * [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set
      * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      * </p>
      * <p>
@@ -341,8 +342,9 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param certificates
-     *        [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly one certificate.
-     *        Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+     *        [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one
+     *        certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>
+     *        .</p>
      *        <p>
      *        To create a certificate list, use <a>AddListenerCertificates</a>.
      */
@@ -358,7 +360,7 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     * [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set
      * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      * </p>
      * <p>
@@ -371,8 +373,9 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param certificates
-     *        [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly one certificate.
-     *        Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+     *        [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one
+     *        certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>
+     *        .</p>
      *        <p>
      *        To create a certificate list, use <a>AddListenerCertificates</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -390,7 +393,7 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     * [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set
      * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      * </p>
      * <p>
@@ -398,8 +401,9 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param certificates
-     *        [HTTPS and TLS listeners] The default SSL server certificate. You must provide exactly one certificate.
-     *        Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+     *        [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one
+     *        certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>
+     *        .</p>
      *        <p>
      *        To create a certificate list, use <a>AddListenerCertificates</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -416,8 +420,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
-     * Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
      * </p>
      * <p>
      * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -440,8 +444,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      *         actions.</p>
      *         <p>
      *         If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
-     *         must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or
-     *         TLS for a Network Load Balancer.
+     *         must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP,
+     *         TLS, UDP, or TCP_UDP for a Network Load Balancer.
      *         </p>
      *         <p>
      *         [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -470,8 +474,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
-     * Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
      * </p>
      * <p>
      * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -495,8 +499,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      *        actions.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
-     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or
-     *        TLS for a Network Load Balancer.
+     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
+     *        UDP, or TCP_UDP for a Network Load Balancer.
      *        </p>
      *        <p>
      *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -530,8 +534,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
-     * Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
      * </p>
      * <p>
      * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -560,8 +564,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      *        actions.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
-     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or
-     *        TLS for a Network Load Balancer.
+     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
+     *        UDP, or TCP_UDP for a Network Load Balancer.
      *        </p>
      *        <p>
      *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -597,8 +601,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
-     * Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
      * </p>
      * <p>
      * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
@@ -622,8 +626,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      *        actions.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
-     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or
-     *        TLS for a Network Load Balancer.
+     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
+     *        UDP, or TCP_UDP for a Network Load Balancer.
      *        </p>
      *        <p>
      *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an

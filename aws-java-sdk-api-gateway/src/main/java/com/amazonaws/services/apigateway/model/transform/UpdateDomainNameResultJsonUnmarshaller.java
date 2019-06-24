@@ -92,6 +92,18 @@ public class UpdateDomainNameResultJsonUnmarshaller implements Unmarshaller<Upda
                     context.nextToken();
                     updateDomainNameResult.setEndpointConfiguration(EndpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("domainNameStatus", targetDepth)) {
+                    context.nextToken();
+                    updateDomainNameResult.setDomainNameStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("domainNameStatusMessage", targetDepth)) {
+                    context.nextToken();
+                    updateDomainNameResult.setDomainNameStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("securityPolicy", targetDepth)) {
+                    context.nextToken();
+                    updateDomainNameResult.setSecurityPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     updateDomainNameResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

@@ -25,7 +25,9 @@ public enum FileSystemLifecycle {
     AVAILABLE("AVAILABLE"),
     CREATING("CREATING"),
     FAILED("FAILED"),
-    DELETING("DELETING");
+    DELETING("DELETING"),
+    MISCONFIGURED("MISCONFIGURED"),
+    UPDATING("UPDATING");
 
     private String value;
 

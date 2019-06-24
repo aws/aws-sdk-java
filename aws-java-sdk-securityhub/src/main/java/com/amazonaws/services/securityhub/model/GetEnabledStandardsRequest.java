@@ -27,7 +27,7 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of standards subscription ARNS that you want to list and describe.
+     * A list of the standards subscription ARNs for the standards to retrieve.
      * </p>
      */
     private java.util.List<String> standardsSubscriptionArns;
@@ -41,17 +41,17 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of results to return in the response.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * The list of standards subscription ARNS that you want to list and describe.
+     * A list of the standards subscription ARNs for the standards to retrieve.
      * </p>
      * 
-     * @return The list of standards subscription ARNS that you want to list and describe.
+     * @return A list of the standards subscription ARNs for the standards to retrieve.
      */
 
     public java.util.List<String> getStandardsSubscriptionArns() {
@@ -60,11 +60,11 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of standards subscription ARNS that you want to list and describe.
+     * A list of the standards subscription ARNs for the standards to retrieve.
      * </p>
      * 
      * @param standardsSubscriptionArns
-     *        The list of standards subscription ARNS that you want to list and describe.
+     *        A list of the standards subscription ARNs for the standards to retrieve.
      */
 
     public void setStandardsSubscriptionArns(java.util.Collection<String> standardsSubscriptionArns) {
@@ -78,7 +78,7 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of standards subscription ARNS that you want to list and describe.
+     * A list of the standards subscription ARNs for the standards to retrieve.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -87,7 +87,7 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param standardsSubscriptionArns
-     *        The list of standards subscription ARNS that you want to list and describe.
+     *        A list of the standards subscription ARNs for the standards to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,11 +103,11 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of standards subscription ARNS that you want to list and describe.
+     * A list of the standards subscription ARNs for the standards to retrieve.
      * </p>
      * 
      * @param standardsSubscriptionArns
-     *        The list of standards subscription ARNS that you want to list and describe.
+     *        A list of the standards subscription ARNs for the standards to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,11 +171,11 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of results to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items that you want in the response.
+     *        The maximum number of results to return in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -184,10 +184,10 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of results to return in the response.
      * </p>
      * 
-     * @return The maximum number of items that you want in the response.
+     * @return The maximum number of results to return in the response.
      */
 
     public Integer getMaxResults() {
@@ -196,11 +196,11 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of results to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items that you want in the response.
+     *        The maximum number of results to return in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

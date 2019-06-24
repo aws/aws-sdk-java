@@ -80,6 +80,19 @@ public class AbstractAWSSecurityHubAsync extends AbstractAWSSecurityHub implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateActionTargetResult> createActionTargetAsync(CreateActionTargetRequest request) {
+
+        return createActionTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateActionTargetResult> createActionTargetAsync(CreateActionTargetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateActionTargetRequest, CreateActionTargetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInsightResult> createInsightAsync(CreateInsightRequest request) {
 
         return createInsightAsync(request, null);
@@ -119,6 +132,19 @@ public class AbstractAWSSecurityHubAsync extends AbstractAWSSecurityHub implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteActionTargetResult> deleteActionTargetAsync(DeleteActionTargetRequest request) {
+
+        return deleteActionTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteActionTargetResult> deleteActionTargetAsync(DeleteActionTargetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteActionTargetRequest, DeleteActionTargetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteInsightResult> deleteInsightAsync(DeleteInsightRequest request) {
 
         return deleteInsightAsync(request, null);
@@ -153,6 +179,32 @@ public class AbstractAWSSecurityHubAsync extends AbstractAWSSecurityHub implemen
     @Override
     public java.util.concurrent.Future<DeleteMembersResult> deleteMembersAsync(DeleteMembersRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteMembersRequest, DeleteMembersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeActionTargetsResult> describeActionTargetsAsync(DescribeActionTargetsRequest request) {
+
+        return describeActionTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeActionTargetsResult> describeActionTargetsAsync(DescribeActionTargetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeActionTargetsRequest, DescribeActionTargetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHubResult> describeHubAsync(DescribeHubRequest request) {
+
+        return describeHubAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHubResult> describeHubAsync(DescribeHubRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeHubRequest, DescribeHubResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -394,14 +446,53 @@ public class AbstractAWSSecurityHubAsync extends AbstractAWSSecurityHub implemen
     }
 
     @Override
-    public java.util.concurrent.Future<ListProductSubscribersResult> listProductSubscribersAsync(ListProductSubscribersRequest request) {
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
-        return listProductSubscribersAsync(request, null);
+        return listTagsForResourceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<ListProductSubscribersResult> listProductSubscribersAsync(ListProductSubscribersRequest request,
-            com.amazonaws.handlers.AsyncHandler<ListProductSubscribersRequest, ListProductSubscribersResult> asyncHandler) {
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActionTargetResult> updateActionTargetAsync(UpdateActionTargetRequest request) {
+
+        return updateActionTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActionTargetResult> updateActionTargetAsync(UpdateActionTargetRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateActionTargetRequest, UpdateActionTargetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

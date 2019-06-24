@@ -34,6 +34,8 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * </p>
      */
     private String activeDirectoryId;
+
+    private SelfManagedActiveDirectoryAttributes selfManagedActiveDirectoryConfiguration;
     /**
      * <p>
      * The throughput of an Amazon FSx file system, measured in megabytes per second.
@@ -115,6 +117,33 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     public WindowsFileSystemConfiguration withActiveDirectoryId(String activeDirectoryId) {
         setActiveDirectoryId(activeDirectoryId);
+        return this;
+    }
+
+    /**
+     * @param selfManagedActiveDirectoryConfiguration
+     */
+
+    public void setSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryAttributes selfManagedActiveDirectoryConfiguration) {
+        this.selfManagedActiveDirectoryConfiguration = selfManagedActiveDirectoryConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public SelfManagedActiveDirectoryAttributes getSelfManagedActiveDirectoryConfiguration() {
+        return this.selfManagedActiveDirectoryConfiguration;
+    }
+
+    /**
+     * @param selfManagedActiveDirectoryConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WindowsFileSystemConfiguration withSelfManagedActiveDirectoryConfiguration(
+            SelfManagedActiveDirectoryAttributes selfManagedActiveDirectoryConfiguration) {
+        setSelfManagedActiveDirectoryConfiguration(selfManagedActiveDirectoryConfiguration);
         return this;
     }
 
@@ -472,6 +501,8 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
         sb.append("{");
         if (getActiveDirectoryId() != null)
             sb.append("ActiveDirectoryId: ").append(getActiveDirectoryId()).append(",");
+        if (getSelfManagedActiveDirectoryConfiguration() != null)
+            sb.append("SelfManagedActiveDirectoryConfiguration: ").append(getSelfManagedActiveDirectoryConfiguration()).append(",");
         if (getThroughputCapacity() != null)
             sb.append("ThroughputCapacity: ").append(getThroughputCapacity()).append(",");
         if (getMaintenanceOperationsInProgress() != null)
@@ -501,6 +532,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
         if (other.getActiveDirectoryId() == null ^ this.getActiveDirectoryId() == null)
             return false;
         if (other.getActiveDirectoryId() != null && other.getActiveDirectoryId().equals(this.getActiveDirectoryId()) == false)
+            return false;
+        if (other.getSelfManagedActiveDirectoryConfiguration() == null ^ this.getSelfManagedActiveDirectoryConfiguration() == null)
+            return false;
+        if (other.getSelfManagedActiveDirectoryConfiguration() != null
+                && other.getSelfManagedActiveDirectoryConfiguration().equals(this.getSelfManagedActiveDirectoryConfiguration()) == false)
             return false;
         if (other.getThroughputCapacity() == null ^ this.getThroughputCapacity() == null)
             return false;
@@ -537,6 +573,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getActiveDirectoryId() == null) ? 0 : getActiveDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getSelfManagedActiveDirectoryConfiguration() == null) ? 0 : getSelfManagedActiveDirectoryConfiguration().hashCode());
         hashCode = prime * hashCode + ((getThroughputCapacity() == null) ? 0 : getThroughputCapacity().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceOperationsInProgress() == null) ? 0 : getMaintenanceOperationsInProgress().hashCode());
         hashCode = prime * hashCode + ((getWeeklyMaintenanceStartTime() == null) ? 0 : getWeeklyMaintenanceStartTime().hashCode());

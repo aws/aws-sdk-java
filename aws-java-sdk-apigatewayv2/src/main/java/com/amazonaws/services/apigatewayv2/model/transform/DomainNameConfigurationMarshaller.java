@@ -39,6 +39,12 @@ public class DomainNameConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointType").build();
     private static final MarshallingInfo<String> HOSTEDZONEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hostedZoneId").build();
+    private static final MarshallingInfo<String> SECURITYPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("securityPolicy").build();
+    private static final MarshallingInfo<String> DOMAINNAMESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainNameStatus").build();
+    private static final MarshallingInfo<String> DOMAINNAMESTATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainNameStatusMessage").build();
 
     private static final DomainNameConfigurationMarshaller instance = new DomainNameConfigurationMarshaller();
 
@@ -62,6 +68,9 @@ public class DomainNameConfigurationMarshaller {
             protocolMarshaller.marshall(domainNameConfiguration.getCertificateUploadDate(), CERTIFICATEUPLOADDATE_BINDING);
             protocolMarshaller.marshall(domainNameConfiguration.getEndpointType(), ENDPOINTTYPE_BINDING);
             protocolMarshaller.marshall(domainNameConfiguration.getHostedZoneId(), HOSTEDZONEID_BINDING);
+            protocolMarshaller.marshall(domainNameConfiguration.getSecurityPolicy(), SECURITYPOLICY_BINDING);
+            protocolMarshaller.marshall(domainNameConfiguration.getDomainNameStatus(), DOMAINNAMESTATUS_BINDING);
+            protocolMarshaller.marshall(domainNameConfiguration.getDomainNameStatusMessage(), DOMAINNAMESTATUSMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

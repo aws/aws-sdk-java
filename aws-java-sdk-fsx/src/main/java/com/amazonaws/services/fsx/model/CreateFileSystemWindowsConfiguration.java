@@ -31,25 +31,29 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+     * The ID for an existing AWS Managed Microsoft Active Directory (AD) instance that the file system should join when
+     * it's created.
      * </p>
      */
     private String activeDirectoryId;
+
+    private SelfManagedActiveDirectoryConfiguration selfManagedActiveDirectoryConfiguration;
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to the <i>n</i>th increments,
+     * between 2^3 (8) and 2^11 (2048).
      * </p>
      */
     private Integer throughputCapacity;
     /**
      * <p>
-     * The preferred start time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
      * </p>
      */
     private String weeklyMaintenanceStartTime;
     /**
      * <p>
-     * The preferred time to take daily automatic backups, in the UTC time zone.
+     * The preferred time to take daily automatic backups, formatted HH:MM in the UTC time zone.
      * </p>
      */
     private String dailyAutomaticBackupStartTime;
@@ -62,22 +66,23 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     private Integer automaticBackupRetentionDays;
     /**
      * <p>
-     * A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to
-     * false. If it's set to true, all tags on the file system are copied to all automatic backups and any
-     * user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or
-     * more tags, only the specified tags are copied to backups.
+     * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
+     * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
+     * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
+     * tags are copied to backups.
      * </p>
      */
     private Boolean copyTagsToBackups;
 
     /**
      * <p>
-     * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+     * The ID for an existing AWS Managed Microsoft Active Directory (AD) instance that the file system should join when
+     * it's created.
      * </p>
      * 
      * @param activeDirectoryId
-     *        The ID for an existing Microsoft Active Directory instance that the file system should join when it's
-     *        created.
+     *        The ID for an existing AWS Managed Microsoft Active Directory (AD) instance that the file system should
+     *        join when it's created.
      */
 
     public void setActiveDirectoryId(String activeDirectoryId) {
@@ -86,11 +91,12 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+     * The ID for an existing AWS Managed Microsoft Active Directory (AD) instance that the file system should join when
+     * it's created.
      * </p>
      * 
-     * @return The ID for an existing Microsoft Active Directory instance that the file system should join when it's
-     *         created.
+     * @return The ID for an existing AWS Managed Microsoft Active Directory (AD) instance that the file system should
+     *         join when it's created.
      */
 
     public String getActiveDirectoryId() {
@@ -99,12 +105,13 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+     * The ID for an existing AWS Managed Microsoft Active Directory (AD) instance that the file system should join when
+     * it's created.
      * </p>
      * 
      * @param activeDirectoryId
-     *        The ID for an existing Microsoft Active Directory instance that the file system should join when it's
-     *        created.
+     *        The ID for an existing AWS Managed Microsoft Active Directory (AD) instance that the file system should
+     *        join when it's created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,12 +121,41 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     }
 
     /**
+     * @param selfManagedActiveDirectoryConfiguration
+     */
+
+    public void setSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfiguration selfManagedActiveDirectoryConfiguration) {
+        this.selfManagedActiveDirectoryConfiguration = selfManagedActiveDirectoryConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public SelfManagedActiveDirectoryConfiguration getSelfManagedActiveDirectoryConfiguration() {
+        return this.selfManagedActiveDirectoryConfiguration;
+    }
+
+    /**
+     * @param selfManagedActiveDirectoryConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemWindowsConfiguration withSelfManagedActiveDirectoryConfiguration(
+            SelfManagedActiveDirectoryConfiguration selfManagedActiveDirectoryConfiguration) {
+        setSelfManagedActiveDirectoryConfiguration(selfManagedActiveDirectoryConfiguration);
+        return this;
+    }
+
+    /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to the <i>n</i>th increments,
+     * between 2^3 (8) and 2^11 (2048).
      * </p>
      * 
      * @param throughputCapacity
-     *        The throughput of an Amazon FSx file system, measured in megabytes per second.
+     *        The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to the <i>n</i>th
+     *        increments, between 2^3 (8) and 2^11 (2048).
      */
 
     public void setThroughputCapacity(Integer throughputCapacity) {
@@ -128,10 +164,12 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to the <i>n</i>th increments,
+     * between 2^3 (8) and 2^11 (2048).
      * </p>
      * 
-     * @return The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * @return The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to the <i>n</i>th
+     *         increments, between 2^3 (8) and 2^11 (2048).
      */
 
     public Integer getThroughputCapacity() {
@@ -140,11 +178,13 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to the <i>n</i>th increments,
+     * between 2^3 (8) and 2^11 (2048).
      * </p>
      * 
      * @param throughputCapacity
-     *        The throughput of an Amazon FSx file system, measured in megabytes per second.
+     *        The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to the <i>n</i>th
+     *        increments, between 2^3 (8) and 2^11 (2048).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,11 +195,11 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred start time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The preferred start time to perform weekly maintenance, in the UTC time zone.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
      */
 
     public void setWeeklyMaintenanceStartTime(String weeklyMaintenanceStartTime) {
@@ -168,10 +208,10 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred start time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
      * </p>
      * 
-     * @return The preferred start time to perform weekly maintenance, in the UTC time zone.
+     * @return The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
      */
 
     public String getWeeklyMaintenanceStartTime() {
@@ -180,11 +220,11 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred start time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The preferred start time to perform weekly maintenance, in the UTC time zone.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,11 +235,11 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred time to take daily automatic backups, in the UTC time zone.
+     * The preferred time to take daily automatic backups, formatted HH:MM in the UTC time zone.
      * </p>
      * 
      * @param dailyAutomaticBackupStartTime
-     *        The preferred time to take daily automatic backups, in the UTC time zone.
+     *        The preferred time to take daily automatic backups, formatted HH:MM in the UTC time zone.
      */
 
     public void setDailyAutomaticBackupStartTime(String dailyAutomaticBackupStartTime) {
@@ -208,10 +248,10 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred time to take daily automatic backups, in the UTC time zone.
+     * The preferred time to take daily automatic backups, formatted HH:MM in the UTC time zone.
      * </p>
      * 
-     * @return The preferred time to take daily automatic backups, in the UTC time zone.
+     * @return The preferred time to take daily automatic backups, formatted HH:MM in the UTC time zone.
      */
 
     public String getDailyAutomaticBackupStartTime() {
@@ -220,11 +260,11 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred time to take daily automatic backups, in the UTC time zone.
+     * The preferred time to take daily automatic backups, formatted HH:MM in the UTC time zone.
      * </p>
      * 
      * @param dailyAutomaticBackupStartTime
-     *        The preferred time to take daily automatic backups, in the UTC time zone.
+     *        The preferred time to take daily automatic backups, formatted HH:MM in the UTC time zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,17 +324,17 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to
-     * false. If it's set to true, all tags on the file system are copied to all automatic backups and any
-     * user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or
-     * more tags, only the specified tags are copied to backups.
+     * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
+     * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
+     * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
+     * tags are copied to backups.
      * </p>
      * 
      * @param copyTagsToBackups
-     *        A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults
-     *        to false. If it's set to true, all tags on the file system are copied to all automatic backups and any
-     *        user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one
-     *        or more tags, only the specified tags are copied to backups.
+     *        A boolean flag indicating whether tags for the file system should be copied to backups. This value
+     *        defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
+     *        user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
+     *        more tags, only the specified tags are copied to backups.
      */
 
     public void setCopyTagsToBackups(Boolean copyTagsToBackups) {
@@ -303,16 +343,16 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to
-     * false. If it's set to true, all tags on the file system are copied to all automatic backups and any
-     * user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or
-     * more tags, only the specified tags are copied to backups.
+     * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
+     * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
+     * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
+     * tags are copied to backups.
      * </p>
      * 
-     * @return A boolean flag indicating whether tags on the file system should be copied to backups. This value
-     *         defaults to false. If it's set to true, all tags on the file system are copied to all automatic backups
-     *         and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you
-     *         specify one or more tags, only the specified tags are copied to backups.
+     * @return A boolean flag indicating whether tags for the file system should be copied to backups. This value
+     *         defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
+     *         user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
+     *         more tags, only the specified tags are copied to backups.
      */
 
     public Boolean getCopyTagsToBackups() {
@@ -321,17 +361,17 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to
-     * false. If it's set to true, all tags on the file system are copied to all automatic backups and any
-     * user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or
-     * more tags, only the specified tags are copied to backups.
+     * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
+     * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
+     * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
+     * tags are copied to backups.
      * </p>
      * 
      * @param copyTagsToBackups
-     *        A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults
-     *        to false. If it's set to true, all tags on the file system are copied to all automatic backups and any
-     *        user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one
-     *        or more tags, only the specified tags are copied to backups.
+     *        A boolean flag indicating whether tags for the file system should be copied to backups. This value
+     *        defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
+     *        user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
+     *        more tags, only the specified tags are copied to backups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,16 +382,16 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to
-     * false. If it's set to true, all tags on the file system are copied to all automatic backups and any
-     * user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or
-     * more tags, only the specified tags are copied to backups.
+     * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
+     * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
+     * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
+     * tags are copied to backups.
      * </p>
      * 
-     * @return A boolean flag indicating whether tags on the file system should be copied to backups. This value
-     *         defaults to false. If it's set to true, all tags on the file system are copied to all automatic backups
-     *         and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you
-     *         specify one or more tags, only the specified tags are copied to backups.
+     * @return A boolean flag indicating whether tags for the file system should be copied to backups. This value
+     *         defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
+     *         user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
+     *         more tags, only the specified tags are copied to backups.
      */
 
     public Boolean isCopyTagsToBackups() {
@@ -372,6 +412,8 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
         sb.append("{");
         if (getActiveDirectoryId() != null)
             sb.append("ActiveDirectoryId: ").append(getActiveDirectoryId()).append(",");
+        if (getSelfManagedActiveDirectoryConfiguration() != null)
+            sb.append("SelfManagedActiveDirectoryConfiguration: ").append(getSelfManagedActiveDirectoryConfiguration()).append(",");
         if (getThroughputCapacity() != null)
             sb.append("ThroughputCapacity: ").append(getThroughputCapacity()).append(",");
         if (getWeeklyMaintenanceStartTime() != null)
@@ -399,6 +441,11 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
         if (other.getActiveDirectoryId() == null ^ this.getActiveDirectoryId() == null)
             return false;
         if (other.getActiveDirectoryId() != null && other.getActiveDirectoryId().equals(this.getActiveDirectoryId()) == false)
+            return false;
+        if (other.getSelfManagedActiveDirectoryConfiguration() == null ^ this.getSelfManagedActiveDirectoryConfiguration() == null)
+            return false;
+        if (other.getSelfManagedActiveDirectoryConfiguration() != null
+                && other.getSelfManagedActiveDirectoryConfiguration().equals(this.getSelfManagedActiveDirectoryConfiguration()) == false)
             return false;
         if (other.getThroughputCapacity() == null ^ this.getThroughputCapacity() == null)
             return false;
@@ -430,6 +477,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getActiveDirectoryId() == null) ? 0 : getActiveDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getSelfManagedActiveDirectoryConfiguration() == null) ? 0 : getSelfManagedActiveDirectoryConfiguration().hashCode());
         hashCode = prime * hashCode + ((getThroughputCapacity() == null) ? 0 : getThroughputCapacity().hashCode());
         hashCode = prime * hashCode + ((getWeeklyMaintenanceStartTime() == null) ? 0 : getWeeklyMaintenanceStartTime().hashCode());
         hashCode = prime * hashCode + ((getDailyAutomaticBackupStartTime() == null) ? 0 : getDailyAutomaticBackupStartTime().hashCode());

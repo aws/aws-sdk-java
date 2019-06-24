@@ -25,7 +25,7 @@ public class GetEnabledStandardsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The standards subscription details returned by the operation.
+     * A list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.
      * </p>
      */
     private java.util.List<StandardsSubscription> standardsSubscriptions;
@@ -38,10 +38,11 @@ public class GetEnabledStandardsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The standards subscription details returned by the operation.
+     * A list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.
      * </p>
      * 
-     * @return The standards subscription details returned by the operation.
+     * @return A list of <code>StandardsSubscriptions</code> objects that include information about the enabled
+     *         standards.
      */
 
     public java.util.List<StandardsSubscription> getStandardsSubscriptions() {
@@ -50,11 +51,12 @@ public class GetEnabledStandardsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The standards subscription details returned by the operation.
+     * A list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.
      * </p>
      * 
      * @param standardsSubscriptions
-     *        The standards subscription details returned by the operation.
+     *        A list of <code>StandardsSubscriptions</code> objects that include information about the enabled
+     *        standards.
      */
 
     public void setStandardsSubscriptions(java.util.Collection<StandardsSubscription> standardsSubscriptions) {
@@ -68,7 +70,7 @@ public class GetEnabledStandardsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The standards subscription details returned by the operation.
+     * A list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +79,8 @@ public class GetEnabledStandardsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param standardsSubscriptions
-     *        The standards subscription details returned by the operation.
+     *        A list of <code>StandardsSubscriptions</code> objects that include information about the enabled
+     *        standards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +96,12 @@ public class GetEnabledStandardsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The standards subscription details returned by the operation.
+     * A list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.
      * </p>
      * 
      * @param standardsSubscriptions
-     *        The standards subscription details returned by the operation.
+     *        A list of <code>StandardsSubscriptions</code> objects that include information about the enabled
+     *        standards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

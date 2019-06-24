@@ -16,6 +16,14 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Information about a query string condition.
+ * </p>
+ * <p>
+ * The query string component of a URI starts after the first '?' character and is terminated by either a '#' character
+ * or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed
+ * characters are specified by RFC 3986. Any character can be percentage encoded.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/QueryStringConditionConfig"
  *      target="_top">AWS API Documentation</a>
@@ -23,10 +31,40 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class QueryStringConditionConfig implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * One or more key/value pairs or values to find in the query string. The maximum size of each string is 128
+     * characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or
+     * more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query
+     * string, you must escape these characters in <code>Values</code> using a '\' character.
+     * </p>
+     * <p>
+     * If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the
+     * query string.
+     * </p>
+     */
     private java.util.List<QueryStringKeyValuePair> values;
 
     /**
-     * @return
+     * <p>
+     * One or more key/value pairs or values to find in the query string. The maximum size of each string is 128
+     * characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or
+     * more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query
+     * string, you must escape these characters in <code>Values</code> using a '\' character.
+     * </p>
+     * <p>
+     * If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the
+     * query string.
+     * </p>
+     * 
+     * @return One or more key/value pairs or values to find in the query string. The maximum size of each string is 128
+     *         characters. The comparison is case insensitive. The following wildcard characters are supported: *
+     *         (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?'
+     *         character in a query string, you must escape these characters in <code>Values</code> using a '\'
+     *         character.</p>
+     *         <p>
+     *         If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in
+     *         the query string.
      */
 
     public java.util.List<QueryStringKeyValuePair> getValues() {
@@ -34,7 +72,26 @@ public class QueryStringConditionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more key/value pairs or values to find in the query string. The maximum size of each string is 128
+     * characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or
+     * more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query
+     * string, you must escape these characters in <code>Values</code> using a '\' character.
+     * </p>
+     * <p>
+     * If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the
+     * query string.
+     * </p>
+     * 
      * @param values
+     *        One or more key/value pairs or values to find in the query string. The maximum size of each string is 128
+     *        characters. The comparison is case insensitive. The following wildcard characters are supported: *
+     *        (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?'
+     *        character in a query string, you must escape these characters in <code>Values</code> using a '\'
+     *        character.</p>
+     *        <p>
+     *        If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in
+     *        the query string.
      */
 
     public void setValues(java.util.Collection<QueryStringKeyValuePair> values) {
@@ -48,12 +105,30 @@ public class QueryStringConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
+     * One or more key/value pairs or values to find in the query string. The maximum size of each string is 128
+     * characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or
+     * more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query
+     * string, you must escape these characters in <code>Values</code> using a '\' character.
+     * </p>
+     * <p>
+     * If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the
+     * query string.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param values
+     *        One or more key/value pairs or values to find in the query string. The maximum size of each string is 128
+     *        characters. The comparison is case insensitive. The following wildcard characters are supported: *
+     *        (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?'
+     *        character in a query string, you must escape these characters in <code>Values</code> using a '\'
+     *        character.</p>
+     *        <p>
+     *        If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in
+     *        the query string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +143,26 @@ public class QueryStringConditionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more key/value pairs or values to find in the query string. The maximum size of each string is 128
+     * characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or
+     * more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query
+     * string, you must escape these characters in <code>Values</code> using a '\' character.
+     * </p>
+     * <p>
+     * If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the
+     * query string.
+     * </p>
+     * 
      * @param values
+     *        One or more key/value pairs or values to find in the query string. The maximum size of each string is 128
+     *        characters. The comparison is case insensitive. The following wildcard characters are supported: *
+     *        (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?'
+     *        character in a query string, you must escape these characters in <code>Values</code> using a '\'
+     *        character.</p>
+     *        <p>
+     *        If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in
+     *        the query string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

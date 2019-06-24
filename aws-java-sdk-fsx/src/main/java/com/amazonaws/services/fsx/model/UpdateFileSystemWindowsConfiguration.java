@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration object for the Microsoft Windows file system used in the <code>UpdateFileSystem</code> operation.
+ * Updates the Microsoft Windows configuration for an existing Amazon FSx for Windows File Server file system. Amazon
+ * FSx overwrites existing properties with non-null values provided in the request. If you don't specify a non-null
+ * value for a property, that property is not updated.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystemWindowsConfiguration"
@@ -47,6 +49,13 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
      * </p>
      */
     private Integer automaticBackupRetentionDays;
+    /**
+     * <p>
+     * The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD
+     * directory.
+     * </p>
+     */
+    private SelfManagedActiveDirectoryConfigurationUpdates selfManagedActiveDirectoryConfiguration;
 
     /**
      * <p>
@@ -175,6 +184,53 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD
+     * directory.
+     * </p>
+     * 
+     * @param selfManagedActiveDirectoryConfiguration
+     *        The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft
+     *        AD directory.
+     */
+
+    public void setSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationUpdates selfManagedActiveDirectoryConfiguration) {
+        this.selfManagedActiveDirectoryConfiguration = selfManagedActiveDirectoryConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD
+     * directory.
+     * </p>
+     * 
+     * @return The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft
+     *         AD directory.
+     */
+
+    public SelfManagedActiveDirectoryConfigurationUpdates getSelfManagedActiveDirectoryConfiguration() {
+        return this.selfManagedActiveDirectoryConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD
+     * directory.
+     * </p>
+     * 
+     * @param selfManagedActiveDirectoryConfiguration
+     *        The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft
+     *        AD directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemWindowsConfiguration withSelfManagedActiveDirectoryConfiguration(
+            SelfManagedActiveDirectoryConfigurationUpdates selfManagedActiveDirectoryConfiguration) {
+        setSelfManagedActiveDirectoryConfiguration(selfManagedActiveDirectoryConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +247,9 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
         if (getDailyAutomaticBackupStartTime() != null)
             sb.append("DailyAutomaticBackupStartTime: ").append(getDailyAutomaticBackupStartTime()).append(",");
         if (getAutomaticBackupRetentionDays() != null)
-            sb.append("AutomaticBackupRetentionDays: ").append(getAutomaticBackupRetentionDays());
+            sb.append("AutomaticBackupRetentionDays: ").append(getAutomaticBackupRetentionDays()).append(",");
+        if (getSelfManagedActiveDirectoryConfiguration() != null)
+            sb.append("SelfManagedActiveDirectoryConfiguration: ").append(getSelfManagedActiveDirectoryConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -219,6 +277,11 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
             return false;
         if (other.getAutomaticBackupRetentionDays() != null && other.getAutomaticBackupRetentionDays().equals(this.getAutomaticBackupRetentionDays()) == false)
             return false;
+        if (other.getSelfManagedActiveDirectoryConfiguration() == null ^ this.getSelfManagedActiveDirectoryConfiguration() == null)
+            return false;
+        if (other.getSelfManagedActiveDirectoryConfiguration() != null
+                && other.getSelfManagedActiveDirectoryConfiguration().equals(this.getSelfManagedActiveDirectoryConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -230,6 +293,7 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
         hashCode = prime * hashCode + ((getWeeklyMaintenanceStartTime() == null) ? 0 : getWeeklyMaintenanceStartTime().hashCode());
         hashCode = prime * hashCode + ((getDailyAutomaticBackupStartTime() == null) ? 0 : getDailyAutomaticBackupStartTime().hashCode());
         hashCode = prime * hashCode + ((getAutomaticBackupRetentionDays() == null) ? 0 : getAutomaticBackupRetentionDays().hashCode());
+        hashCode = prime * hashCode + ((getSelfManagedActiveDirectoryConfiguration() == null) ? 0 : getSelfManagedActiveDirectoryConfiguration().hashCode());
         return hashCode;
     }
 

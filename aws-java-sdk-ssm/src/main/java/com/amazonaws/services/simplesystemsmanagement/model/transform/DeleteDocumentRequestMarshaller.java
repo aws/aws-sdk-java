@@ -29,6 +29,10 @@ public class DeleteDocumentRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionName").build();
 
     private static final DeleteDocumentRequestMarshaller instance = new DeleteDocumentRequestMarshaller();
 
@@ -47,6 +51,8 @@ public class DeleteDocumentRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteDocumentRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(deleteDocumentRequest.getDocumentVersion(), DOCUMENTVERSION_BINDING);
+            protocolMarshaller.marshall(deleteDocumentRequest.getVersionName(), VERSIONNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

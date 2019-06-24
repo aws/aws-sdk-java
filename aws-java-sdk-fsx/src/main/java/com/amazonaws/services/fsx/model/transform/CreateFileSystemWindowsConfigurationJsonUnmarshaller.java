@@ -52,6 +52,11 @@ public class CreateFileSystemWindowsConfigurationJsonUnmarshaller implements Unm
                     context.nextToken();
                     createFileSystemWindowsConfiguration.setActiveDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SelfManagedActiveDirectoryConfiguration", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemWindowsConfiguration.setSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ThroughputCapacity", targetDepth)) {
                     context.nextToken();
                     createFileSystemWindowsConfiguration.setThroughputCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));

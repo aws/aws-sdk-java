@@ -25,7 +25,7 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Findings details returned by the operation.
+     * The findings that matched the filters specified in the request.
      * </p>
      */
     private java.util.List<AwsSecurityFinding> findings;
@@ -38,10 +38,10 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Findings details returned by the operation.
+     * The findings that matched the filters specified in the request.
      * </p>
      * 
-     * @return Findings details returned by the operation.
+     * @return The findings that matched the filters specified in the request.
      */
 
     public java.util.List<AwsSecurityFinding> getFindings() {
@@ -50,11 +50,11 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Findings details returned by the operation.
+     * The findings that matched the filters specified in the request.
      * </p>
      * 
      * @param findings
-     *        Findings details returned by the operation.
+     *        The findings that matched the filters specified in the request.
      */
 
     public void setFindings(java.util.Collection<AwsSecurityFinding> findings) {
@@ -68,7 +68,7 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Findings details returned by the operation.
+     * The findings that matched the filters specified in the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param findings
-     *        Findings details returned by the operation.
+     *        The findings that matched the filters specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Findings details returned by the operation.
+     * The findings that matched the filters specified in the request.
      * </p>
      * 
      * @param findings
-     *        Findings details returned by the operation.
+     *        The findings that matched the filters specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

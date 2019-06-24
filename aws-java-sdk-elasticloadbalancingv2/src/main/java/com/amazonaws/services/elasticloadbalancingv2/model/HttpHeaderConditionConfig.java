@@ -16,6 +16,12 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Information about an HTTP header condition.
+ * </p>
+ * <p>
+ * There is a set of standard HTTP header fields. You can also define custom HTTP header fields.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/HttpHeaderConditionConfig"
  *      target="_top">AWS API Documentation</a>
@@ -23,12 +29,49 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HttpHeaderConditionConfig implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The
+     * allowed characters are specified by RFC 7230. Wildcards are not supported.
+     * </p>
+     * <p>
+     * You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a> to
+     * specify a host header condition.
+     * </p>
+     */
     private String httpHeaderName;
-
+    /**
+     * <p>
+     * One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128
+     * characters. The comparison strings are case insensitive. The following wildcard characters are supported: *
+     * (matches 0 or more characters) and ? (matches exactly 1 character).
+     * </p>
+     * <p>
+     * If the same header appears multiple times in the request, we search them in order until a match is found.
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP
+     * header. To require that all of the strings are a match, create one condition per string.
+     * </p>
+     */
     private java.util.List<String> values;
 
     /**
+     * <p>
+     * The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The
+     * allowed characters are specified by RFC 7230. Wildcards are not supported.
+     * </p>
+     * <p>
+     * You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a> to
+     * specify a host header condition.
+     * </p>
+     * 
      * @param httpHeaderName
+     *        The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive.
+     *        The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
+     *        <p>
+     *        You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a> to
+     *        specify a host header condition.
      */
 
     public void setHttpHeaderName(String httpHeaderName) {
@@ -36,7 +79,20 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The
+     * allowed characters are specified by RFC 7230. Wildcards are not supported.
+     * </p>
+     * <p>
+     * You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a> to
+     * specify a host header condition.
+     * </p>
+     * 
+     * @return The name of the HTTP header field. The maximum size is 40 characters. The header name is case
+     *         insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
+     *         <p>
+     *         You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a>
+     *         to specify a host header condition.
      */
 
     public String getHttpHeaderName() {
@@ -44,7 +100,21 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The
+     * allowed characters are specified by RFC 7230. Wildcards are not supported.
+     * </p>
+     * <p>
+     * You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a> to
+     * specify a host header condition.
+     * </p>
+     * 
      * @param httpHeaderName
+     *        The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive.
+     *        The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
+     *        <p>
+     *        You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a> to
+     *        specify a host header condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +124,28 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128
+     * characters. The comparison strings are case insensitive. The following wildcard characters are supported: *
+     * (matches 0 or more characters) and ? (matches exactly 1 character).
+     * </p>
+     * <p>
+     * If the same header appears multiple times in the request, we search them in order until a match is found.
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP
+     * header. To require that all of the strings are a match, create one condition per string.
+     * </p>
+     * 
+     * @return One or more strings to compare against the value of the HTTP header. The maximum size of each string is
+     *         128 characters. The comparison strings are case insensitive. The following wildcard characters are
+     *         supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+     *         <p>
+     *         If the same header appears multiple times in the request, we search them in order until a match is found.
+     *         </p>
+     *         <p>
+     *         If you specify multiple strings, the condition is satisfied if one of the strings matches the value of
+     *         the HTTP header. To require that all of the strings are a match, create one condition per string.
      */
 
     public java.util.List<String> getValues() {
@@ -62,7 +153,29 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128
+     * characters. The comparison strings are case insensitive. The following wildcard characters are supported: *
+     * (matches 0 or more characters) and ? (matches exactly 1 character).
+     * </p>
+     * <p>
+     * If the same header appears multiple times in the request, we search them in order until a match is found.
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP
+     * header. To require that all of the strings are a match, create one condition per string.
+     * </p>
+     * 
      * @param values
+     *        One or more strings to compare against the value of the HTTP header. The maximum size of each string is
+     *        128 characters. The comparison strings are case insensitive. The following wildcard characters are
+     *        supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+     *        <p>
+     *        If the same header appears multiple times in the request, we search them in order until a match is found.
+     *        </p>
+     *        <p>
+     *        If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the
+     *        HTTP header. To require that all of the strings are a match, create one condition per string.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -76,12 +189,33 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
+     * One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128
+     * characters. The comparison strings are case insensitive. The following wildcard characters are supported: *
+     * (matches 0 or more characters) and ? (matches exactly 1 character).
+     * </p>
+     * <p>
+     * If the same header appears multiple times in the request, we search them in order until a match is found.
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP
+     * header. To require that all of the strings are a match, create one condition per string.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param values
+     *        One or more strings to compare against the value of the HTTP header. The maximum size of each string is
+     *        128 characters. The comparison strings are case insensitive. The following wildcard characters are
+     *        supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+     *        <p>
+     *        If the same header appears multiple times in the request, we search them in order until a match is found.
+     *        </p>
+     *        <p>
+     *        If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the
+     *        HTTP header. To require that all of the strings are a match, create one condition per string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,7 +230,29 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128
+     * characters. The comparison strings are case insensitive. The following wildcard characters are supported: *
+     * (matches 0 or more characters) and ? (matches exactly 1 character).
+     * </p>
+     * <p>
+     * If the same header appears multiple times in the request, we search them in order until a match is found.
+     * </p>
+     * <p>
+     * If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP
+     * header. To require that all of the strings are a match, create one condition per string.
+     * </p>
+     * 
      * @param values
+     *        One or more strings to compare against the value of the HTTP header. The maximum size of each string is
+     *        128 characters. The comparison strings are case insensitive. The following wildcard characters are
+     *        supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+     *        <p>
+     *        If the same header appears multiple times in the request, we search them in order until a match is found.
+     *        </p>
+     *        <p>
+     *        If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the
+     *        HTTP header. To require that all of the strings are a match, create one condition per string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

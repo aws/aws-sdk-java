@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details for a Security Hub member account.
+ * The details about a member account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Member" target="_top">AWS API
@@ -30,19 +30,19 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID of a Security Hub member account.
+     * The AWS account ID of the member account.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The email of a Security Hub member account.
+     * The email address of the member account.
      * </p>
      */
     private String email;
     /**
      * <p>
-     * The AWS account ID of the Security Hub master account to this member account.
+     * The AWS account ID of the Security Hub master account associated with this member account.
      * </p>
      */
     private String masterId;
@@ -54,24 +54,24 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     private String memberStatus;
     /**
      * <p>
-     * The timestamp of when the member account was invited to Security Hub.
+     * A timestamp for the date and time when the invitation was sent to the member account.
      * </p>
      */
     private java.util.Date invitedAt;
     /**
      * <p>
-     * The timestamp of when this member account was updated.
+     * The timestamp for the date and time when the member account was updated.
      * </p>
      */
     private java.util.Date updatedAt;
 
     /**
      * <p>
-     * The AWS account ID of a Security Hub member account.
+     * The AWS account ID of the member account.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID of a Security Hub member account.
+     *        The AWS account ID of the member account.
      */
 
     public void setAccountId(String accountId) {
@@ -80,10 +80,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID of a Security Hub member account.
+     * The AWS account ID of the member account.
      * </p>
      * 
-     * @return The AWS account ID of a Security Hub member account.
+     * @return The AWS account ID of the member account.
      */
 
     public String getAccountId() {
@@ -92,11 +92,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID of a Security Hub member account.
+     * The AWS account ID of the member account.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID of a Security Hub member account.
+     *        The AWS account ID of the member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email of a Security Hub member account.
+     * The email address of the member account.
      * </p>
      * 
      * @param email
-     *        The email of a Security Hub member account.
+     *        The email address of the member account.
      */
 
     public void setEmail(String email) {
@@ -120,10 +120,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email of a Security Hub member account.
+     * The email address of the member account.
      * </p>
      * 
-     * @return The email of a Security Hub member account.
+     * @return The email address of the member account.
      */
 
     public String getEmail() {
@@ -132,11 +132,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email of a Security Hub member account.
+     * The email address of the member account.
      * </p>
      * 
      * @param email
-     *        The email of a Security Hub member account.
+     *        The email address of the member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID of the Security Hub master account to this member account.
+     * The AWS account ID of the Security Hub master account associated with this member account.
      * </p>
      * 
      * @param masterId
-     *        The AWS account ID of the Security Hub master account to this member account.
+     *        The AWS account ID of the Security Hub master account associated with this member account.
      */
 
     public void setMasterId(String masterId) {
@@ -160,10 +160,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID of the Security Hub master account to this member account.
+     * The AWS account ID of the Security Hub master account associated with this member account.
      * </p>
      * 
-     * @return The AWS account ID of the Security Hub master account to this member account.
+     * @return The AWS account ID of the Security Hub master account associated with this member account.
      */
 
     public String getMasterId() {
@@ -172,11 +172,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID of the Security Hub master account to this member account.
+     * The AWS account ID of the Security Hub master account associated with this member account.
      * </p>
      * 
      * @param masterId
-     *        The AWS account ID of the Security Hub master account to this member account.
+     *        The AWS account ID of the Security Hub master account associated with this member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when the member account was invited to Security Hub.
+     * A timestamp for the date and time when the invitation was sent to the member account.
      * </p>
      * 
      * @param invitedAt
-     *        The timestamp of when the member account was invited to Security Hub.
+     *        A timestamp for the date and time when the invitation was sent to the member account.
      */
 
     public void setInvitedAt(java.util.Date invitedAt) {
@@ -240,10 +240,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when the member account was invited to Security Hub.
+     * A timestamp for the date and time when the invitation was sent to the member account.
      * </p>
      * 
-     * @return The timestamp of when the member account was invited to Security Hub.
+     * @return A timestamp for the date and time when the invitation was sent to the member account.
      */
 
     public java.util.Date getInvitedAt() {
@@ -252,11 +252,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when the member account was invited to Security Hub.
+     * A timestamp for the date and time when the invitation was sent to the member account.
      * </p>
      * 
      * @param invitedAt
-     *        The timestamp of when the member account was invited to Security Hub.
+     *        A timestamp for the date and time when the invitation was sent to the member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,11 +267,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when this member account was updated.
+     * The timestamp for the date and time when the member account was updated.
      * </p>
      * 
      * @param updatedAt
-     *        The timestamp of when this member account was updated.
+     *        The timestamp for the date and time when the member account was updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -280,10 +280,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when this member account was updated.
+     * The timestamp for the date and time when the member account was updated.
      * </p>
      * 
-     * @return The timestamp of when this member account was updated.
+     * @return The timestamp for the date and time when the member account was updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -292,11 +292,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when this member account was updated.
+     * The timestamp for the date and time when the member account was updated.
      * </p>
      * 
      * @param updatedAt
-     *        The timestamp of when this member account was updated.
+     *        The timestamp for the date and time when the member account was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

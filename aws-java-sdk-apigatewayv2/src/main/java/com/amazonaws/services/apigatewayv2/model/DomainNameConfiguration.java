@@ -62,6 +62,27 @@ public class DomainNameConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private String hostedZoneId;
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are
+     * TLS_1_0 and TLS_1_2.
+     * </p>
+     */
+    private String securityPolicy;
+    /**
+     * <p>
+     * The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING,
+     * the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain
+     * can be updated.
+     * </p>
+     */
+    private String domainNameStatus;
+    /**
+     * <p>
+     * An optional text message containing detailed information about status of the domain name migration.
+     * </p>
+     */
+    private String domainNameStatusMessage;
 
     /**
      * <p>
@@ -335,6 +356,188 @@ public class DomainNameConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are
+     * TLS_1_0 and TLS_1_2.
+     * </p>
+     * 
+     * @param securityPolicy
+     *        The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values
+     *        are TLS_1_0 and TLS_1_2.
+     * @see SecurityPolicy
+     */
+
+    public void setSecurityPolicy(String securityPolicy) {
+        this.securityPolicy = securityPolicy;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are
+     * TLS_1_0 and TLS_1_2.
+     * </p>
+     * 
+     * @return The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values
+     *         are TLS_1_0 and TLS_1_2.
+     * @see SecurityPolicy
+     */
+
+    public String getSecurityPolicy() {
+        return this.securityPolicy;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are
+     * TLS_1_0 and TLS_1_2.
+     * </p>
+     * 
+     * @param securityPolicy
+     *        The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values
+     *        are TLS_1_0 and TLS_1_2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicy
+     */
+
+    public DomainNameConfiguration withSecurityPolicy(String securityPolicy) {
+        setSecurityPolicy(securityPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are
+     * TLS_1_0 and TLS_1_2.
+     * </p>
+     * 
+     * @param securityPolicy
+     *        The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values
+     *        are TLS_1_0 and TLS_1_2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicy
+     */
+
+    public DomainNameConfiguration withSecurityPolicy(SecurityPolicy securityPolicy) {
+        this.securityPolicy = securityPolicy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING,
+     * the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain
+     * can be updated.
+     * </p>
+     * 
+     * @param domainNameStatus
+     *        The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is
+     *        UPDATING, the domain cannot be modified further until the existing operation is complete. If it is
+     *        AVAILABLE, the domain can be updated.
+     * @see DomainNameStatus
+     */
+
+    public void setDomainNameStatus(String domainNameStatus) {
+        this.domainNameStatus = domainNameStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING,
+     * the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain
+     * can be updated.
+     * </p>
+     * 
+     * @return The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is
+     *         UPDATING, the domain cannot be modified further until the existing operation is complete. If it is
+     *         AVAILABLE, the domain can be updated.
+     * @see DomainNameStatus
+     */
+
+    public String getDomainNameStatus() {
+        return this.domainNameStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING,
+     * the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain
+     * can be updated.
+     * </p>
+     * 
+     * @param domainNameStatus
+     *        The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is
+     *        UPDATING, the domain cannot be modified further until the existing operation is complete. If it is
+     *        AVAILABLE, the domain can be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DomainNameStatus
+     */
+
+    public DomainNameConfiguration withDomainNameStatus(String domainNameStatus) {
+        setDomainNameStatus(domainNameStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING,
+     * the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain
+     * can be updated.
+     * </p>
+     * 
+     * @param domainNameStatus
+     *        The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is
+     *        UPDATING, the domain cannot be modified further until the existing operation is complete. If it is
+     *        AVAILABLE, the domain can be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DomainNameStatus
+     */
+
+    public DomainNameConfiguration withDomainNameStatus(DomainNameStatus domainNameStatus) {
+        this.domainNameStatus = domainNameStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional text message containing detailed information about status of the domain name migration.
+     * </p>
+     * 
+     * @param domainNameStatusMessage
+     *        An optional text message containing detailed information about status of the domain name migration.
+     */
+
+    public void setDomainNameStatusMessage(String domainNameStatusMessage) {
+        this.domainNameStatusMessage = domainNameStatusMessage;
+    }
+
+    /**
+     * <p>
+     * An optional text message containing detailed information about status of the domain name migration.
+     * </p>
+     * 
+     * @return An optional text message containing detailed information about status of the domain name migration.
+     */
+
+    public String getDomainNameStatusMessage() {
+        return this.domainNameStatusMessage;
+    }
+
+    /**
+     * <p>
+     * An optional text message containing detailed information about status of the domain name migration.
+     * </p>
+     * 
+     * @param domainNameStatusMessage
+     *        An optional text message containing detailed information about status of the domain name migration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainNameConfiguration withDomainNameStatusMessage(String domainNameStatusMessage) {
+        setDomainNameStatusMessage(domainNameStatusMessage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -357,7 +560,13 @@ public class DomainNameConfiguration implements Serializable, Cloneable, Structu
         if (getEndpointType() != null)
             sb.append("EndpointType: ").append(getEndpointType()).append(",");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: ").append(getHostedZoneId());
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
+        if (getSecurityPolicy() != null)
+            sb.append("SecurityPolicy: ").append(getSecurityPolicy()).append(",");
+        if (getDomainNameStatus() != null)
+            sb.append("DomainNameStatus: ").append(getDomainNameStatus()).append(",");
+        if (getDomainNameStatusMessage() != null)
+            sb.append("DomainNameStatusMessage: ").append(getDomainNameStatusMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -396,6 +605,18 @@ public class DomainNameConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false)
             return false;
+        if (other.getSecurityPolicy() == null ^ this.getSecurityPolicy() == null)
+            return false;
+        if (other.getSecurityPolicy() != null && other.getSecurityPolicy().equals(this.getSecurityPolicy()) == false)
+            return false;
+        if (other.getDomainNameStatus() == null ^ this.getDomainNameStatus() == null)
+            return false;
+        if (other.getDomainNameStatus() != null && other.getDomainNameStatus().equals(this.getDomainNameStatus()) == false)
+            return false;
+        if (other.getDomainNameStatusMessage() == null ^ this.getDomainNameStatusMessage() == null)
+            return false;
+        if (other.getDomainNameStatusMessage() != null && other.getDomainNameStatusMessage().equals(this.getDomainNameStatusMessage()) == false)
+            return false;
         return true;
     }
 
@@ -410,6 +631,9 @@ public class DomainNameConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getCertificateUploadDate() == null) ? 0 : getCertificateUploadDate().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode());
+        hashCode = prime * hashCode + ((getSecurityPolicy() == null) ? 0 : getSecurityPolicy().hashCode());
+        hashCode = prime * hashCode + ((getDomainNameStatus() == null) ? 0 : getDomainNameStatus().hashCode());
+        hashCode = prime * hashCode + ((getDomainNameStatusMessage() == null) ? 0 : getDomainNameStatusMessage().hashCode());
         return hashCode;
     }
 

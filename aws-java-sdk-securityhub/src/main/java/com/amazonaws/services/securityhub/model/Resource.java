@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A resource data type that describes a resource that the finding refers to.
+ * A resource related to a finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Resource" target="_top">AWS API
@@ -60,7 +60,7 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * Additional details about the resource.
+     * Additional details about the resource related to a finding.
      * </p>
      */
     private ResourceDetails details;
@@ -307,11 +307,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional details about the resource.
+     * Additional details about the resource related to a finding.
      * </p>
      * 
      * @param details
-     *        Additional details about the resource.
+     *        Additional details about the resource related to a finding.
      */
 
     public void setDetails(ResourceDetails details) {
@@ -320,10 +320,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional details about the resource.
+     * Additional details about the resource related to a finding.
      * </p>
      * 
-     * @return Additional details about the resource.
+     * @return Additional details about the resource related to a finding.
      */
 
     public ResourceDetails getDetails() {
@@ -332,11 +332,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional details about the resource.
+     * Additional details about the resource related to a finding.
      * </p>
      * 
      * @param details
-     *        Additional details about the resource.
+     *        Additional details about the resource related to a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,3 +1,40 @@
+# __1.11.579__ __2019-06-24__
+## __AWS Resource Groups Tagging API__
+  - ### Features
+    - Updated service APIs and documentation.
+
+## __AWS SecurityHub__
+  - ### Features
+    - This release includes a new Tags parameter for the EnableSecurityHub operation, and the following new operations: DescribeHub, CreateActionTarget, DeleteActionTarget, DescribeActionTargets, UpdateActionTarget, TagResource, UntagResource, and ListTagsforResource. It removes the operation ListProductSubscribers, and makes Title and Description required attributes of AwsSecurityFinding.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Customers can pick different security policies (TLS version + cipher suite) for custom domains in API Gateway
+
+## __Amazon CloudWatch Application Insights__
+  - ### Features
+    - CloudWatch Application Insights detects errors and exceptions from logs, including .NET custom application logs, SQL Server logs, IIS logs, and more, and uses a combination of built-in rules and machine learning, such as dynamic baselining, to identify common problems. You can then easily drill into specific issues with CloudWatch Automatic Dashboards that are dynamically generated. These dashboards contain the most recent alarms, a summary of relevant metrics, and log snippets to help you identify root cause.
+
+## __Amazon FSx__
+  - ### Features
+    - Starting today, you can join your Amazon FSx for Windows File Server file systems to your organization's self-managed Microsoft Active Directory while creating the file system. You can also perform in-place updates of file systems to keep your Active Directory configuration up to date.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - AWS Systems Manager now supports deleting a specific version of a SSM Document.
+
+## __AmazonApiGatewayV2__
+  - ### Features
+    - Customers can get information about security policies set on custom domain resources in API Gateway
+
+## __Elastic Load Balancing__
+  - ### Features
+    - This release adds support for UDP on Network Load Balancers
+
+## __Service Quotas__
+  - ### Features
+    - Service Quotas enables you to view and manage your quotas for AWS services from a central location.
+
 # __1.11.578__ __2019-06-21__
 ## __AWS Device Farm__
   - ### Features

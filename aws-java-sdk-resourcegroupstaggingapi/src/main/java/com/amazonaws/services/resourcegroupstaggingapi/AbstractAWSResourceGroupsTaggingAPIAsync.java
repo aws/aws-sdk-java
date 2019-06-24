@@ -28,84 +28,6 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteTagPolicyResult> deleteTagPolicyAsync(DeleteTagPolicyRequest request) {
-
-        return deleteTagPolicyAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteTagPolicyResult> deleteTagPolicyAsync(DeleteTagPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteTagPolicyRequest, DeleteTagPolicyResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<DescribeReportCreationResult> describeReportCreationAsync(DescribeReportCreationRequest request) {
-
-        return describeReportCreationAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DescribeReportCreationResult> describeReportCreationAsync(DescribeReportCreationRequest request,
-            com.amazonaws.handlers.AsyncHandler<DescribeReportCreationRequest, DescribeReportCreationResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<DisableTagPoliciesResult> disableTagPoliciesAsync(DisableTagPoliciesRequest request) {
-
-        return disableTagPoliciesAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DisableTagPoliciesResult> disableTagPoliciesAsync(DisableTagPoliciesRequest request,
-            com.amazonaws.handlers.AsyncHandler<DisableTagPoliciesRequest, DisableTagPoliciesResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<EnableTagPoliciesResult> enableTagPoliciesAsync(EnableTagPoliciesRequest request) {
-
-        return enableTagPoliciesAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<EnableTagPoliciesResult> enableTagPoliciesAsync(EnableTagPoliciesRequest request,
-            com.amazonaws.handlers.AsyncHandler<EnableTagPoliciesRequest, EnableTagPoliciesResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetComplianceSummaryResult> getComplianceSummaryAsync(GetComplianceSummaryRequest request) {
-
-        return getComplianceSummaryAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetComplianceSummaryResult> getComplianceSummaryAsync(GetComplianceSummaryRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryRequest, GetComplianceSummaryResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetEffectiveTagPolicyResult> getEffectiveTagPolicyAsync(GetEffectiveTagPolicyRequest request) {
-
-        return getEffectiveTagPolicyAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetEffectiveTagPolicyResult> getEffectiveTagPolicyAsync(GetEffectiveTagPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetEffectiveTagPolicyRequest, GetEffectiveTagPolicyResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<GetResourcesResult> getResourcesAsync(GetResourcesRequest request) {
 
         return getResourcesAsync(request, null);
@@ -132,19 +54,6 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     }
 
     @Override
-    public java.util.concurrent.Future<GetTagPolicyResult> getTagPolicyAsync(GetTagPolicyRequest request) {
-
-        return getTagPolicyAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetTagPolicyResult> getTagPolicyAsync(GetTagPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetTagPolicyRequest, GetTagPolicyResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<GetTagValuesResult> getTagValuesAsync(GetTagValuesRequest request) {
 
         return getTagValuesAsync(request, null);
@@ -153,32 +62,6 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     @Override
     public java.util.concurrent.Future<GetTagValuesResult> getTagValuesAsync(GetTagValuesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTagValuesRequest, GetTagValuesResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<PutTagPolicyResult> putTagPolicyAsync(PutTagPolicyRequest request) {
-
-        return putTagPolicyAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PutTagPolicyResult> putTagPolicyAsync(PutTagPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutTagPolicyRequest, PutTagPolicyResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<StartReportCreationResult> startReportCreationAsync(StartReportCreationRequest request) {
-
-        return startReportCreationAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<StartReportCreationResult> startReportCreationAsync(StartReportCreationRequest request,
-            com.amazonaws.handlers.AsyncHandler<StartReportCreationRequest, StartReportCreationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

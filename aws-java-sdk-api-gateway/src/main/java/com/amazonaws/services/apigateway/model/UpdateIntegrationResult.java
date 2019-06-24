@@ -179,7 +179,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * <p>
      * If this property is not defined, the request payload will be passed through from the method request to
-     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * integration request without modification, provided that the <code>passthroughBehavior</code> is configured to
      * support payload pass-through.
      * </p>
      */
@@ -192,13 +192,16 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     private Integer timeoutInMillis;
     /**
      * <p>
-     * Specifies the integration's cache namespace.
+     * An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
+     * these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
      * </p>
      */
     private String cacheNamespace;
     /**
      * <p>
-     * Specifies the integration's cache key parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      */
     private java.util.List<String> cacheKeyParameters;
@@ -1295,7 +1298,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * <p>
      * If this property is not defined, the request payload will be passed through from the method request to
-     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * integration request without modification, provided that the <code>passthroughBehavior</code> is configured to
      * support payload pass-through.
      * </p>
      * 
@@ -1317,8 +1320,8 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        </ul>
      *        <p>
      *        If this property is not defined, the request payload will be passed through from the method request to
-     *        integration request without modification, provided that the <code>passthroughBehaviors</code> is
-     *        configured to support payload pass-through.
+     *        integration request without modification, provided that the <code>passthroughBehavior</code> is configured
+     *        to support payload pass-through.
      * @see ContentHandlingStrategy
      */
 
@@ -1346,7 +1349,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * <p>
      * If this property is not defined, the request payload will be passed through from the method request to
-     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * integration request without modification, provided that the <code>passthroughBehavior</code> is configured to
      * support payload pass-through.
      * </p>
      * 
@@ -1367,7 +1370,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *         </ul>
      *         <p>
      *         If this property is not defined, the request payload will be passed through from the method request to
-     *         integration request without modification, provided that the <code>passthroughBehaviors</code> is
+     *         integration request without modification, provided that the <code>passthroughBehavior</code> is
      *         configured to support payload pass-through.
      * @see ContentHandlingStrategy
      */
@@ -1396,7 +1399,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * <p>
      * If this property is not defined, the request payload will be passed through from the method request to
-     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * integration request without modification, provided that the <code>passthroughBehavior</code> is configured to
      * support payload pass-through.
      * </p>
      * 
@@ -1418,8 +1421,8 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        </ul>
      *        <p>
      *        If this property is not defined, the request payload will be passed through from the method request to
-     *        integration request without modification, provided that the <code>passthroughBehaviors</code> is
-     *        configured to support payload pass-through.
+     *        integration request without modification, provided that the <code>passthroughBehavior</code> is configured
+     *        to support payload pass-through.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentHandlingStrategy
      */
@@ -1449,7 +1452,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * <p>
      * If this property is not defined, the request payload will be passed through from the method request to
-     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * integration request without modification, provided that the <code>passthroughBehavior</code> is configured to
      * support payload pass-through.
      * </p>
      * 
@@ -1471,8 +1474,8 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        </ul>
      *        <p>
      *        If this property is not defined, the request payload will be passed through from the method request to
-     *        integration request without modification, provided that the <code>passthroughBehaviors</code> is
-     *        configured to support payload pass-through.
+     *        integration request without modification, provided that the <code>passthroughBehavior</code> is configured
+     *        to support payload pass-through.
      * @see ContentHandlingStrategy
      */
 
@@ -1500,7 +1503,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * <p>
      * If this property is not defined, the request payload will be passed through from the method request to
-     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * integration request without modification, provided that the <code>passthroughBehavior</code> is configured to
      * support payload pass-through.
      * </p>
      * 
@@ -1522,8 +1525,8 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        </ul>
      *        <p>
      *        If this property is not defined, the request payload will be passed through from the method request to
-     *        integration request without modification, provided that the <code>passthroughBehaviors</code> is
-     *        configured to support payload pass-through.
+     *        integration request without modification, provided that the <code>passthroughBehavior</code> is configured
+     *        to support payload pass-through.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentHandlingStrategy
      */
@@ -1576,11 +1579,14 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Specifies the integration's cache namespace.
+     * An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
+     * these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
      * </p>
      * 
      * @param cacheNamespace
-     *        Specifies the integration's cache namespace.
+     *        An API-specific tag group of related cached parameters. To be valid values for
+     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *        <code>requestParameters</code>.
      */
 
     public void setCacheNamespace(String cacheNamespace) {
@@ -1589,10 +1595,13 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Specifies the integration's cache namespace.
+     * An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
+     * these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
      * </p>
      * 
-     * @return Specifies the integration's cache namespace.
+     * @return An API-specific tag group of related cached parameters. To be valid values for
+     *         <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *         <code>requestParameters</code>.
      */
 
     public String getCacheNamespace() {
@@ -1601,11 +1610,14 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Specifies the integration's cache namespace.
+     * An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
+     * these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
      * </p>
      * 
      * @param cacheNamespace
-     *        Specifies the integration's cache namespace.
+     *        An API-specific tag group of related cached parameters. To be valid values for
+     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *        <code>requestParameters</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1616,10 +1628,14 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Specifies the integration's cache key parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      * 
-     * @return Specifies the integration's cache key parameters.
+     * @return A list of request parameters whose values API Gateway caches. To be valid values for
+     *         <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *         <code>requestParameters</code>.
      */
 
     public java.util.List<String> getCacheKeyParameters() {
@@ -1628,11 +1644,15 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Specifies the integration's cache key parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      * 
      * @param cacheKeyParameters
-     *        Specifies the integration's cache key parameters.
+     *        A list of request parameters whose values API Gateway caches. To be valid values for
+     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *        <code>requestParameters</code>.
      */
 
     public void setCacheKeyParameters(java.util.Collection<String> cacheKeyParameters) {
@@ -1646,7 +1666,9 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Specifies the integration's cache key parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1655,7 +1677,9 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param cacheKeyParameters
-     *        Specifies the integration's cache key parameters.
+     *        A list of request parameters whose values API Gateway caches. To be valid values for
+     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *        <code>requestParameters</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1671,11 +1695,15 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Specifies the integration's cache key parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      * 
      * @param cacheKeyParameters
-     *        Specifies the integration's cache key parameters.
+     *        A list of request parameters whose values API Gateway caches. To be valid values for
+     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *        <code>requestParameters</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

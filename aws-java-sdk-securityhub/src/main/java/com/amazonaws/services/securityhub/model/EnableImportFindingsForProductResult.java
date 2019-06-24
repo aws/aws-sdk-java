@@ -26,21 +26,18 @@ public class EnableImportFindingsForProductResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ARN of a resource that represents your subscription to the product that generates the findings that you want
-     * to import into Security Hub.
+     * The ARN of your subscription to the product to enable integrations for.
      * </p>
      */
     private String productSubscriptionArn;
 
     /**
      * <p>
-     * The ARN of a resource that represents your subscription to the product that generates the findings that you want
-     * to import into Security Hub.
+     * The ARN of your subscription to the product to enable integrations for.
      * </p>
      * 
      * @param productSubscriptionArn
-     *        The ARN of a resource that represents your subscription to the product that generates the findings that
-     *        you want to import into Security Hub.
+     *        The ARN of your subscription to the product to enable integrations for.
      */
 
     public void setProductSubscriptionArn(String productSubscriptionArn) {
@@ -49,12 +46,10 @@ public class EnableImportFindingsForProductResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ARN of a resource that represents your subscription to the product that generates the findings that you want
-     * to import into Security Hub.
+     * The ARN of your subscription to the product to enable integrations for.
      * </p>
      * 
-     * @return The ARN of a resource that represents your subscription to the product that generates the findings that
-     *         you want to import into Security Hub.
+     * @return The ARN of your subscription to the product to enable integrations for.
      */
 
     public String getProductSubscriptionArn() {
@@ -63,13 +58,11 @@ public class EnableImportFindingsForProductResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ARN of a resource that represents your subscription to the product that generates the findings that you want
-     * to import into Security Hub.
+     * The ARN of your subscription to the product to enable integrations for.
      * </p>
      * 
      * @param productSubscriptionArn
-     *        The ARN of a resource that represents your subscription to the product that generates the findings that
-     *        you want to import into Security Hub.
+     *        The ARN of your subscription to the product to enable integrations for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,17 +27,17 @@ public class BatchDisableStandardsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARNs of the standards subscriptions that you want to disable.
+     * The ARNs of the standards subscriptions to disable.
      * </p>
      */
     private java.util.List<String> standardsSubscriptionArns;
 
     /**
      * <p>
-     * The ARNs of the standards subscriptions that you want to disable.
+     * The ARNs of the standards subscriptions to disable.
      * </p>
      * 
-     * @return The ARNs of the standards subscriptions that you want to disable.
+     * @return The ARNs of the standards subscriptions to disable.
      */
 
     public java.util.List<String> getStandardsSubscriptionArns() {
@@ -46,11 +46,11 @@ public class BatchDisableStandardsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARNs of the standards subscriptions that you want to disable.
+     * The ARNs of the standards subscriptions to disable.
      * </p>
      * 
      * @param standardsSubscriptionArns
-     *        The ARNs of the standards subscriptions that you want to disable.
+     *        The ARNs of the standards subscriptions to disable.
      */
 
     public void setStandardsSubscriptionArns(java.util.Collection<String> standardsSubscriptionArns) {
@@ -64,7 +64,7 @@ public class BatchDisableStandardsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARNs of the standards subscriptions that you want to disable.
+     * The ARNs of the standards subscriptions to disable.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class BatchDisableStandardsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param standardsSubscriptionArns
-     *        The ARNs of the standards subscriptions that you want to disable.
+     *        The ARNs of the standards subscriptions to disable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BatchDisableStandardsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARNs of the standards subscriptions that you want to disable.
+     * The ARNs of the standards subscriptions to disable.
      * </p>
      * 
      * @param standardsSubscriptionArns
-     *        The ARNs of the standards subscriptions that you want to disable.
+     *        The ARNs of the standards subscriptions to disable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

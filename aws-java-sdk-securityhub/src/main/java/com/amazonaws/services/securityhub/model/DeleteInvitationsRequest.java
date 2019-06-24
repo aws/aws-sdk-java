@@ -27,17 +27,17 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of account IDs that specify accounts whose invitations to Security Hub you want to delete.
+     * A list of the account IDs that sent the invitations to delete.
      * </p>
      */
     private java.util.List<String> accountIds;
 
     /**
      * <p>
-     * A list of account IDs that specify accounts whose invitations to Security Hub you want to delete.
+     * A list of the account IDs that sent the invitations to delete.
      * </p>
      * 
-     * @return A list of account IDs that specify accounts whose invitations to Security Hub you want to delete.
+     * @return A list of the account IDs that sent the invitations to delete.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -46,11 +46,11 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of account IDs that specify accounts whose invitations to Security Hub you want to delete.
+     * A list of the account IDs that sent the invitations to delete.
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs that specify accounts whose invitations to Security Hub you want to delete.
+     *        A list of the account IDs that sent the invitations to delete.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -64,7 +64,7 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of account IDs that specify accounts whose invitations to Security Hub you want to delete.
+     * A list of the account IDs that sent the invitations to delete.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs that specify accounts whose invitations to Security Hub you want to delete.
+     *        A list of the account IDs that sent the invitations to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of account IDs that specify accounts whose invitations to Security Hub you want to delete.
+     * A list of the account IDs that sent the invitations to delete.
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs that specify accounts whose invitations to Security Hub you want to delete.
+     *        A list of the account IDs that sent the invitations to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

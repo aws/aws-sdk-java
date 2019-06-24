@@ -31,7 +31,7 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
     private Integer failedCount;
     /**
      * <p>
-     * The number of findings that were successfully imported
+     * The number of findings that were successfully imported.
      * </p>
      */
     private Integer successCount;
@@ -84,11 +84,11 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The number of findings that were successfully imported
+     * The number of findings that were successfully imported.
      * </p>
      * 
      * @param successCount
-     *        The number of findings that were successfully imported
+     *        The number of findings that were successfully imported.
      */
 
     public void setSuccessCount(Integer successCount) {
@@ -97,10 +97,10 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The number of findings that were successfully imported
+     * The number of findings that were successfully imported.
      * </p>
      * 
-     * @return The number of findings that were successfully imported
+     * @return The number of findings that were successfully imported.
      */
 
     public Integer getSuccessCount() {
@@ -109,11 +109,11 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The number of findings that were successfully imported
+     * The number of findings that were successfully imported.
      * </p>
      * 
      * @param successCount
-     *        The number of findings that were successfully imported
+     *        The number of findings that were successfully imported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

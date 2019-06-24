@@ -28,9 +28,9 @@ public class TagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and
-     * a maximum of 20 ARNs (resources) to tag. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information,
+     * see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private java.util.List<String> resourceARNList;
@@ -44,13 +44,14 @@ public class TagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and
-     * a maximum of 20 ARNs (resources) to tag. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information,
+     * see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum
-     *         of 1 and a maximum of 20 ARNs (resources) to tag. For more information, see <a
+     *         of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For
+     *         more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
@@ -62,14 +63,15 @@ public class TagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and
-     * a maximum of 20 ARNs (resources) to tag. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information,
+     * see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param resourceARNList
      *        A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of
-     *        1 and a maximum of 20 ARNs (resources) to tag. For more information, see <a
+     *        1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more
+     *        information, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
@@ -86,9 +88,9 @@ public class TagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and
-     * a maximum of 20 ARNs (resources) to tag. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information,
+     * see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -98,7 +100,8 @@ public class TagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param resourceARNList
      *        A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of
-     *        1 and a maximum of 20 ARNs (resources) to tag. For more information, see <a
+     *        1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more
+     *        information, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -117,14 +120,15 @@ public class TagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and
-     * a maximum of 20 ARNs (resources) to tag. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information,
+     * see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param resourceARNList
      *        A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of
-     *        1 and a maximum of 20 ARNs (resources) to tag. For more information, see <a
+     *        1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more
+     *        information, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

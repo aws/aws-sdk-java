@@ -25,17 +25,17 @@ public class AddListenerCertificatesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the certificates.
+     * Information about the certificates in the certificate list.
      * </p>
      */
     private java.util.List<Certificate> certificates;
 
     /**
      * <p>
-     * Information about the certificates.
+     * Information about the certificates in the certificate list.
      * </p>
      * 
-     * @return Information about the certificates.
+     * @return Information about the certificates in the certificate list.
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -44,11 +44,11 @@ public class AddListenerCertificatesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the certificates.
+     * Information about the certificates in the certificate list.
      * </p>
      * 
      * @param certificates
-     *        Information about the certificates.
+     *        Information about the certificates in the certificate list.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -62,7 +62,7 @@ public class AddListenerCertificatesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the certificates.
+     * Information about the certificates in the certificate list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class AddListenerCertificatesResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param certificates
-     *        Information about the certificates.
+     *        Information about the certificates in the certificate list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class AddListenerCertificatesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the certificates.
+     * Information about the certificates in the certificate list.
      * </p>
      * 
      * @param certificates
-     *        Information about the certificates.
+     *        Information about the certificates in the certificate list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

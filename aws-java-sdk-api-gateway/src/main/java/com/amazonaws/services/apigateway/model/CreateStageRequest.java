@@ -33,7 +33,8 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String restApiId;
     /**
      * <p>
-     * [Required] The name for the <a>Stage</a> resource.
+     * [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens,
+     * and underscores. Maximum length is 128 characters.
      * </p>
      */
     private String stageName;
@@ -136,11 +137,13 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name for the <a>Stage</a> resource.
+     * [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens,
+     * and underscores. Maximum length is 128 characters.
      * </p>
      * 
      * @param stageName
-     *        [Required] The name for the <a>Stage</a> resource.
+     *        [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters,
+     *        hyphens, and underscores. Maximum length is 128 characters.
      */
 
     public void setStageName(String stageName) {
@@ -149,10 +152,12 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name for the <a>Stage</a> resource.
+     * [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens,
+     * and underscores. Maximum length is 128 characters.
      * </p>
      * 
-     * @return [Required] The name for the <a>Stage</a> resource.
+     * @return [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters,
+     *         hyphens, and underscores. Maximum length is 128 characters.
      */
 
     public String getStageName() {
@@ -161,11 +166,13 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The name for the <a>Stage</a> resource.
+     * [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens,
+     * and underscores. Maximum length is 128 characters.
      * </p>
      * 
      * @param stageName
-     *        [Required] The name for the <a>Stage</a> resource.
+     *        [Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters,
+     *        hyphens, and underscores. Maximum length is 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

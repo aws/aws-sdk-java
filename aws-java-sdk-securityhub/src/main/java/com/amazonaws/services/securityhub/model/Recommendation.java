@@ -30,24 +30,24 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The recommendation of what to do about the issue described in a finding.
+     * Describes the recommended steps to take to remediate an issue identified in a finding.
      * </p>
      */
     private String text;
     /**
      * <p>
-     * A URL to link to general remediation information for the finding type of a finding.
+     * A URL to a page or site that contains information about how to remediate a finding.
      * </p>
      */
     private String url;
 
     /**
      * <p>
-     * The recommendation of what to do about the issue described in a finding.
+     * Describes the recommended steps to take to remediate an issue identified in a finding.
      * </p>
      * 
      * @param text
-     *        The recommendation of what to do about the issue described in a finding.
+     *        Describes the recommended steps to take to remediate an issue identified in a finding.
      */
 
     public void setText(String text) {
@@ -56,10 +56,10 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The recommendation of what to do about the issue described in a finding.
+     * Describes the recommended steps to take to remediate an issue identified in a finding.
      * </p>
      * 
-     * @return The recommendation of what to do about the issue described in a finding.
+     * @return Describes the recommended steps to take to remediate an issue identified in a finding.
      */
 
     public String getText() {
@@ -68,11 +68,11 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The recommendation of what to do about the issue described in a finding.
+     * Describes the recommended steps to take to remediate an issue identified in a finding.
      * </p>
      * 
      * @param text
-     *        The recommendation of what to do about the issue described in a finding.
+     *        Describes the recommended steps to take to remediate an issue identified in a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A URL to link to general remediation information for the finding type of a finding.
+     * A URL to a page or site that contains information about how to remediate a finding.
      * </p>
      * 
      * @param url
-     *        A URL to link to general remediation information for the finding type of a finding.
+     *        A URL to a page or site that contains information about how to remediate a finding.
      */
 
     public void setUrl(String url) {
@@ -96,10 +96,10 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A URL to link to general remediation information for the finding type of a finding.
+     * A URL to a page or site that contains information about how to remediate a finding.
      * </p>
      * 
-     * @return A URL to link to general remediation information for the finding type of a finding.
+     * @return A URL to a page or site that contains information about how to remediate a finding.
      */
 
     public String getUrl() {
@@ -108,11 +108,11 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A URL to link to general remediation information for the finding type of a finding.
+     * A URL to a page or site that contains information about how to remediate a finding.
      * </p>
      * 
      * @param url
-     *        A URL to link to general remediation information for the finding type of a finding.
+     *        A URL to a page or site that contains information about how to remediate a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

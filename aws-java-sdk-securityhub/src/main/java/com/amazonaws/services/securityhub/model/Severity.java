@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A finding's severity.
+ * The severity of the finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Severity" target="_top">AWS API
@@ -30,7 +30,7 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the AWS service or integrated partner product that generated the finding.
      * </p>
      */
     private Double product;
@@ -43,11 +43,12 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the AWS service or integrated partner product that generated the finding.
      * </p>
      * 
      * @param product
-     *        The native severity as defined by the security-findings provider's solution that generated the finding.
+     *        The native severity as defined by the AWS service or integrated partner product that generated the
+     *        finding.
      */
 
     public void setProduct(Double product) {
@@ -56,10 +57,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the AWS service or integrated partner product that generated the finding.
      * </p>
      * 
-     * @return The native severity as defined by the security-findings provider's solution that generated the finding.
+     * @return The native severity as defined by the AWS service or integrated partner product that generated the
+     *         finding.
      */
 
     public Double getProduct() {
@@ -68,11 +70,12 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the AWS service or integrated partner product that generated the finding.
      * </p>
      * 
      * @param product
-     *        The native severity as defined by the security-findings provider's solution that generated the finding.
+     *        The native severity as defined by the AWS service or integrated partner product that generated the
+     *        finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

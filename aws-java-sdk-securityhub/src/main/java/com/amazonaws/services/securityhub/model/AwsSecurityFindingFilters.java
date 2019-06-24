@@ -118,8 +118,8 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<NumberFilter> confidence;
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means the underlying
-     * resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      * </p>
      */
     private java.util.List<NumberFilter> criticality;
@@ -150,7 +150,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A data type where security-findings providers can include additional solution-specific details that aren't part
-     * of the defined AwsSecurityFinding format.
+     * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      */
     private java.util.List<MapFilter> productFields;
@@ -1529,12 +1529,13 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means the underlying
-     * resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      * </p>
      * 
-     * @return The level of importance assigned to the resources associated with the finding. A score of 0 means the
-     *         underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * @return The level of importance assigned to the resources associated with the finding. A score of 0 means that
+     *         the underlying resources have no criticality, and a score of 100 is reserved for the most critical
+     *         resources.
      */
 
     public java.util.List<NumberFilter> getCriticality() {
@@ -1543,12 +1544,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means the underlying
-     * resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      * </p>
      * 
      * @param criticality
-     *        The level of importance assigned to the resources associated with the finding. A score of 0 means the
+     *        The level of importance assigned to the resources associated with the finding. A score of 0 means that the
      *        underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      */
 
@@ -1563,8 +1564,8 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means the underlying
-     * resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1573,7 +1574,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param criticality
-     *        The level of importance assigned to the resources associated with the finding. A score of 0 means the
+     *        The level of importance assigned to the resources associated with the finding. A score of 0 means that the
      *        underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1590,12 +1591,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means the underlying
-     * resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      * </p>
      * 
      * @param criticality
-     *        The level of importance assigned to the resources associated with the finding. A score of 0 means the
+     *        The level of importance assigned to the resources associated with the finding. A score of 0 means that the
      *        underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1888,11 +1889,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A data type where security-findings providers can include additional solution-specific details that aren't part
-     * of the defined AwsSecurityFinding format.
+     * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * 
      * @return A data type where security-findings providers can include additional solution-specific details that
-     *         aren't part of the defined AwsSecurityFinding format.
+     *         aren't part of the defined <code>AwsSecurityFinding</code> format.
      */
 
     public java.util.List<MapFilter> getProductFields() {
@@ -1902,12 +1903,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A data type where security-findings providers can include additional solution-specific details that aren't part
-     * of the defined AwsSecurityFinding format.
+     * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * 
      * @param productFields
      *        A data type where security-findings providers can include additional solution-specific details that aren't
-     *        part of the defined AwsSecurityFinding format.
+     *        part of the defined <code>AwsSecurityFinding</code> format.
      */
 
     public void setProductFields(java.util.Collection<MapFilter> productFields) {
@@ -1922,7 +1923,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A data type where security-findings providers can include additional solution-specific details that aren't part
-     * of the defined AwsSecurityFinding format.
+     * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1932,7 +1933,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * 
      * @param productFields
      *        A data type where security-findings providers can include additional solution-specific details that aren't
-     *        part of the defined AwsSecurityFinding format.
+     *        part of the defined <code>AwsSecurityFinding</code> format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1949,12 +1950,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A data type where security-findings providers can include additional solution-specific details that aren't part
-     * of the defined AwsSecurityFinding format.
+     * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * 
      * @param productFields
      *        A data type where security-findings providers can include additional solution-specific details that aren't
-     *        part of the defined AwsSecurityFinding format.
+     *        part of the defined <code>AwsSecurityFinding</code> format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

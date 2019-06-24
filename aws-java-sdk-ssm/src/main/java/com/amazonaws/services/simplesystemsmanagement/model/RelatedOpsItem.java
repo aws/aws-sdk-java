@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An OpsItems that shares something in common with the current OpsItems. For example, related OpsItems can include
+ * An OpsItems that shares something in common with the current OpsItem. For example, related OpsItems can include
  * OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.
  * </p>
  * 

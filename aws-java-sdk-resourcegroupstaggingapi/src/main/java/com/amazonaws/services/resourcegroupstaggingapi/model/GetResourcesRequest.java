@@ -73,30 +73,30 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * irrespective of the value.
      * </p>
      * <p>
-     * For example, for filters:
-     * <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     * For example, for filters: filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
+     * {key3}:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     * GetResources( {filter1} ) returns resources tagged with key1=value1
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or key2=value4
+     * GetResources( {filter2} ) returns resources tagged with key2=value2 or key2=value3 or key2=value4
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag key,
-     * irrespective of its value
+     * GetResources( {filter3} ) returns resources tagged with any tag containing key3 as its tag key, irrespective of
+     * its value
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
-     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     * GetResources( {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and ( key2=value2 or
+     * key2=value3 or key2=value4) and (key3, irrespective of the value)
      * </p>
      * </li>
      * </ul>
@@ -169,36 +169,6 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.List<String> resourceTypeFilters;
-    /**
-     * <p>
-     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
-     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
-     * </p>
-     */
-    private Boolean includeComplianceDetails;
-    /**
-     * <p>
-     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
-     * you are interested in retrieving information on noncompliant resources only.
-     * </p>
-     * <p>
-     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.
-     * </p>
-     */
-    private Boolean excludeCompliantResources;
-    /**
-     * <p>
-     * The tag policy to check resources against for compliance. If supplied, the compliance check follows the specified
-     * tag policy instead of following the effective tag policy. Using this parameter to specify a tag policy is useful
-     * for testing new tag policies before attaching them to a target.
-     * </p>
-     * <p>
-     * You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.
-     * </p>
-     */
-    private String policy;
 
     /**
      * <p>
@@ -292,30 +262,30 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * irrespective of the value.
      * </p>
      * <p>
-     * For example, for filters:
-     * <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     * For example, for filters: filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
+     * {key3}:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     * GetResources( {filter1} ) returns resources tagged with key1=value1
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or key2=value4
+     * GetResources( {filter2} ) returns resources tagged with key2=value2 or key2=value3 or key2=value4
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag key,
-     * irrespective of its value
+     * GetResources( {filter3} ) returns resources tagged with any tag containing key3 as its tag key, irrespective of
+     * its value
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
-     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     * GetResources( {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and ( key2=value2 or
+     * key2=value3 or key2=value4) and (key3, irrespective of the value)
      * </p>
      * </li>
      * </ul>
@@ -359,31 +329,30 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         irrespective of the value.
      *         </p>
      *         <p>
-     *         For example, for filters:
-     *         <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     *         For example, for filters: filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3
+     *         = {key3}:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     *         GetResources( {filter1} ) returns resources tagged with key1=value1
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
-     *         key2=value4
+     *         GetResources( {filter2} ) returns resources tagged with key2=value2 or key2=value3 or key2=value4
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag
-     *         key, irrespective of its value
+     *         GetResources( {filter3} ) returns resources tagged with any tag containing key3 as its tag key,
+     *         irrespective of its value
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
-     *         key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     *         GetResources( {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and ( key2=value2
+     *         or key2=value3 or key2=value4) and (key3, irrespective of the value)
      *         </p>
      *         </li>
      *         </ul>
@@ -434,30 +403,30 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * irrespective of the value.
      * </p>
      * <p>
-     * For example, for filters:
-     * <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     * For example, for filters: filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
+     * {key3}:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     * GetResources( {filter1} ) returns resources tagged with key1=value1
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or key2=value4
+     * GetResources( {filter2} ) returns resources tagged with key2=value2 or key2=value3 or key2=value4
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag key,
-     * irrespective of its value
+     * GetResources( {filter3} ) returns resources tagged with any tag containing key3 as its tag key, irrespective of
+     * its value
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
-     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     * GetResources( {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and ( key2=value2 or
+     * key2=value3 or key2=value4) and (key3, irrespective of the value)
      * </p>
      * </li>
      * </ul>
@@ -502,31 +471,30 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        irrespective of the value.
      *        </p>
      *        <p>
-     *        For example, for filters:
-     *        <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     *        For example, for filters: filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
+     *        {key3}:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     *        GetResources( {filter1} ) returns resources tagged with key1=value1
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
-     *        key2=value4
+     *        GetResources( {filter2} ) returns resources tagged with key2=value2 or key2=value3 or key2=value4
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag
-     *        key, irrespective of its value
+     *        GetResources( {filter3} ) returns resources tagged with any tag containing key3 as its tag key,
+     *        irrespective of its value
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
-     *        key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     *        GetResources( {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and ( key2=value2
+     *        or key2=value3 or key2=value4) and (key3, irrespective of the value)
      *        </p>
      *        </li>
      *        </ul>
@@ -582,30 +550,30 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * irrespective of the value.
      * </p>
      * <p>
-     * For example, for filters:
-     * <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     * For example, for filters: filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
+     * {key3}:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     * GetResources( {filter1} ) returns resources tagged with key1=value1
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or key2=value4
+     * GetResources( {filter2} ) returns resources tagged with key2=value2 or key2=value3 or key2=value4
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag key,
-     * irrespective of its value
+     * GetResources( {filter3} ) returns resources tagged with any tag containing key3 as its tag key, irrespective of
+     * its value
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
-     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     * GetResources( {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and ( key2=value2 or
+     * key2=value3 or key2=value4) and (key3, irrespective of the value)
      * </p>
      * </li>
      * </ul>
@@ -655,31 +623,30 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        irrespective of the value.
      *        </p>
      *        <p>
-     *        For example, for filters:
-     *        <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     *        For example, for filters: filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
+     *        {key3}:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     *        GetResources( {filter1} ) returns resources tagged with key1=value1
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
-     *        key2=value4
+     *        GetResources( {filter2} ) returns resources tagged with key2=value2 or key2=value3 or key2=value4
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag
-     *        key, irrespective of its value
+     *        GetResources( {filter3} ) returns resources tagged with any tag containing key3 as its tag key,
+     *        irrespective of its value
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
-     *        key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     *        GetResources( {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and ( key2=value2
+     *        or key2=value3 or key2=value4) and (key3, irrespective of the value)
      *        </p>
      *        </li>
      *        </ul>
@@ -737,30 +704,30 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * irrespective of the value.
      * </p>
      * <p>
-     * For example, for filters:
-     * <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     * For example, for filters: filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
+     * {key3}:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     * GetResources( {filter1} ) returns resources tagged with key1=value1
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or key2=value4
+     * GetResources( {filter2} ) returns resources tagged with key2=value2 or key2=value3 or key2=value4
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag key,
-     * irrespective of its value
+     * GetResources( {filter3} ) returns resources tagged with any tag containing key3 as its tag key, irrespective of
+     * its value
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
-     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     * GetResources( {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and ( key2=value2 or
+     * key2=value3 or key2=value4) and (key3, irrespective of the value)
      * </p>
      * </li>
      * </ul>
@@ -805,31 +772,30 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        irrespective of the value.
      *        </p>
      *        <p>
-     *        For example, for filters:
-     *        <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     *        For example, for filters: filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
+     *        {key3}:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     *        GetResources( {filter1} ) returns resources tagged with key1=value1
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
-     *        key2=value4
+     *        GetResources( {filter2} ) returns resources tagged with key2=value2 or key2=value3 or key2=value4
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag
-     *        key, irrespective of its value
+     *        GetResources( {filter3} ) returns resources tagged with any tag containing key3 as its tag key,
+     *        irrespective of its value
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
-     *        key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     *        GetResources( {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and ( key2=value2
+     *        or key2=value3 or key2=value4) and (key3, irrespective of the value)
      *        </p>
      *        </li>
      *        </ul>
@@ -1341,227 +1307,6 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * <p>
-     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
-     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
-     * </p>
-     * 
-     * @param includeComplianceDetails
-     *        Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
-     *        <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
-     */
-
-    public void setIncludeComplianceDetails(Boolean includeComplianceDetails) {
-        this.includeComplianceDetails = includeComplianceDetails;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
-     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
-     * </p>
-     * 
-     * @return Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
-     *         <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
-     */
-
-    public Boolean getIncludeComplianceDetails() {
-        return this.includeComplianceDetails;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
-     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
-     * </p>
-     * 
-     * @param includeComplianceDetails
-     *        Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
-     *        <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetResourcesRequest withIncludeComplianceDetails(Boolean includeComplianceDetails) {
-        setIncludeComplianceDetails(includeComplianceDetails);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
-     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
-     * </p>
-     * 
-     * @return Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
-     *         <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
-     */
-
-    public Boolean isIncludeComplianceDetails() {
-        return this.includeComplianceDetails;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
-     * you are interested in retrieving information on noncompliant resources only.
-     * </p>
-     * <p>
-     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.
-     * </p>
-     * 
-     * @param excludeCompliantResources
-     *        Specifies whether to exclude resources that are compliant with the tag policy. Set this to
-     *        <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
-     *        <p>
-     *        You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     *        <code>true</code>.
-     */
-
-    public void setExcludeCompliantResources(Boolean excludeCompliantResources) {
-        this.excludeCompliantResources = excludeCompliantResources;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
-     * you are interested in retrieving information on noncompliant resources only.
-     * </p>
-     * <p>
-     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.
-     * </p>
-     * 
-     * @return Specifies whether to exclude resources that are compliant with the tag policy. Set this to
-     *         <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
-     *         <p>
-     *         You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     *         <code>true</code>.
-     */
-
-    public Boolean getExcludeCompliantResources() {
-        return this.excludeCompliantResources;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
-     * you are interested in retrieving information on noncompliant resources only.
-     * </p>
-     * <p>
-     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.
-     * </p>
-     * 
-     * @param excludeCompliantResources
-     *        Specifies whether to exclude resources that are compliant with the tag policy. Set this to
-     *        <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
-     *        <p>
-     *        You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     *        <code>true</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetResourcesRequest withExcludeCompliantResources(Boolean excludeCompliantResources) {
-        setExcludeCompliantResources(excludeCompliantResources);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
-     * you are interested in retrieving information on noncompliant resources only.
-     * </p>
-     * <p>
-     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.
-     * </p>
-     * 
-     * @return Specifies whether to exclude resources that are compliant with the tag policy. Set this to
-     *         <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
-     *         <p>
-     *         You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     *         <code>true</code>.
-     */
-
-    public Boolean isExcludeCompliantResources() {
-        return this.excludeCompliantResources;
-    }
-
-    /**
-     * <p>
-     * The tag policy to check resources against for compliance. If supplied, the compliance check follows the specified
-     * tag policy instead of following the effective tag policy. Using this parameter to specify a tag policy is useful
-     * for testing new tag policies before attaching them to a target.
-     * </p>
-     * <p>
-     * You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.
-     * </p>
-     * 
-     * @param policy
-     *        The tag policy to check resources against for compliance. If supplied, the compliance check follows the
-     *        specified tag policy instead of following the effective tag policy. Using this parameter to specify a tag
-     *        policy is useful for testing new tag policies before attaching them to a target.</p>
-     *        <p>
-     *        You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
-     *        <code>true</code>.
-     */
-
-    public void setPolicy(String policy) {
-        this.policy = policy;
-    }
-
-    /**
-     * <p>
-     * The tag policy to check resources against for compliance. If supplied, the compliance check follows the specified
-     * tag policy instead of following the effective tag policy. Using this parameter to specify a tag policy is useful
-     * for testing new tag policies before attaching them to a target.
-     * </p>
-     * <p>
-     * You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.
-     * </p>
-     * 
-     * @return The tag policy to check resources against for compliance. If supplied, the compliance check follows the
-     *         specified tag policy instead of following the effective tag policy. Using this parameter to specify a tag
-     *         policy is useful for testing new tag policies before attaching them to a target.</p>
-     *         <p>
-     *         You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
-     *         <code>true</code>.
-     */
-
-    public String getPolicy() {
-        return this.policy;
-    }
-
-    /**
-     * <p>
-     * The tag policy to check resources against for compliance. If supplied, the compliance check follows the specified
-     * tag policy instead of following the effective tag policy. Using this parameter to specify a tag policy is useful
-     * for testing new tag policies before attaching them to a target.
-     * </p>
-     * <p>
-     * You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.
-     * </p>
-     * 
-     * @param policy
-     *        The tag policy to check resources against for compliance. If supplied, the compliance check follows the
-     *        specified tag policy instead of following the effective tag policy. Using this parameter to specify a tag
-     *        policy is useful for testing new tag policies before attaching them to a target.</p>
-     *        <p>
-     *        You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
-     *        <code>true</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetResourcesRequest withPolicy(String policy) {
-        setPolicy(policy);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1582,13 +1327,7 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getTagsPerPage() != null)
             sb.append("TagsPerPage: ").append(getTagsPerPage()).append(",");
         if (getResourceTypeFilters() != null)
-            sb.append("ResourceTypeFilters: ").append(getResourceTypeFilters()).append(",");
-        if (getIncludeComplianceDetails() != null)
-            sb.append("IncludeComplianceDetails: ").append(getIncludeComplianceDetails()).append(",");
-        if (getExcludeCompliantResources() != null)
-            sb.append("ExcludeCompliantResources: ").append(getExcludeCompliantResources()).append(",");
-        if (getPolicy() != null)
-            sb.append("Policy: ").append(getPolicy());
+            sb.append("ResourceTypeFilters: ").append(getResourceTypeFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -1623,18 +1362,6 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getResourceTypeFilters() != null && other.getResourceTypeFilters().equals(this.getResourceTypeFilters()) == false)
             return false;
-        if (other.getIncludeComplianceDetails() == null ^ this.getIncludeComplianceDetails() == null)
-            return false;
-        if (other.getIncludeComplianceDetails() != null && other.getIncludeComplianceDetails().equals(this.getIncludeComplianceDetails()) == false)
-            return false;
-        if (other.getExcludeCompliantResources() == null ^ this.getExcludeCompliantResources() == null)
-            return false;
-        if (other.getExcludeCompliantResources() != null && other.getExcludeCompliantResources().equals(this.getExcludeCompliantResources()) == false)
-            return false;
-        if (other.getPolicy() == null ^ this.getPolicy() == null)
-            return false;
-        if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
-            return false;
         return true;
     }
 
@@ -1648,9 +1375,6 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getResourcesPerPage() == null) ? 0 : getResourcesPerPage().hashCode());
         hashCode = prime * hashCode + ((getTagsPerPage() == null) ? 0 : getTagsPerPage().hashCode());
         hashCode = prime * hashCode + ((getResourceTypeFilters() == null) ? 0 : getResourceTypeFilters().hashCode());
-        hashCode = prime * hashCode + ((getIncludeComplianceDetails() == null) ? 0 : getIncludeComplianceDetails().hashCode());
-        hashCode = prime * hashCode + ((getExcludeCompliantResources() == null) ? 0 : getExcludeCompliantResources().hashCode());
-        hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
         return hashCode;
     }
 

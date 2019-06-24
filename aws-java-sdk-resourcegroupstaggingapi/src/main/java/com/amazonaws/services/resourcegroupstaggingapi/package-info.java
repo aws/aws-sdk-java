@@ -17,12 +17,12 @@
  * This guide describes the API operations for the resource groups tagging.
  * </p>
  * <p>
- * A tag is a key-value pair that you can add to an AWS resource. A tag consists of a key and a value, both of which you
- * define. For example, if you have two Amazon EC2 instances, you might assign both a tag key of "Stack." But the value
- * of "Stack" might be "Testing" for one and "Production" for the other.
+ * A tag is a label that you assign to an AWS resource. A tag consists of a key and a value, both of which you define.
+ * For example, if you have two Amazon EC2 instances, you might assign both a tag key of "Stack." But the value of
+ * "Stack" might be "Testing" for one and "Production" for the other.
  * </p>
  * <p>
- * Tagging can help you organize your resources and enables you to simplify resource management, access management, and
+ * Tagging can help you organize your resources and enables you to simplify resource management, access management and
  * cost allocation.
  * </p>
  * <p>
@@ -31,29 +31,22 @@
  * <ul>
  * <li>
  * <p>
- * Tag and untag supported resources located in the specified Region for the AWS account.
+ * Tag and untag supported resources located in the specified region for the AWS account
  * </p>
  * </li>
  * <li>
  * <p>
- * Use tag-based filters to search for resources located in the specified Region for the AWS account.
+ * Use tag-based filters to search for resources located in the specified region for the AWS account
  * </p>
  * </li>
  * <li>
  * <p>
- * List all existing tag keys in the specified Region for the AWS account.
+ * List all existing tag keys in the specified region for the AWS account
  * </p>
  * </li>
  * <li>
  * <p>
- * List all existing values for the specified key in the specified Region for the AWS account.
- * </p>
- * </li>
- * <li>
- * <p>
- * Configure <i>tag policies</i> to help maintain standardized tags across your organization's resources. For more
- * information on tag policies, see <a href="http://docs.aws.amazon.com/ARG/latest/userguide/tag-policies.html">Tag
- * Policies</a>in the <i>AWS Resource Groups User Guide.</i>
+ * List all existing values for the specified key in the specified region for the AWS account
  * </p>
  * </li>
  * </ul>
@@ -61,8 +54,8 @@
  * To make full use of the resource groups tagging API operations, you might need additional IAM permissions, including
  * permission to access the resources of individual services as well as permission to view and apply tags to those
  * resources. For more information, see <a
- * href="http://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions">Set Up
- * Permissions</a> in the <i>AWS Resource Groups User Guide.</i>
+ * href="http://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/obtaining-permissions-for-resource-groups.html"
+ * >Obtaining Permissions for Resource Groups and Tag Editor</a>.
  * </p>
  * <p>
  * You can use the Resource Groups Tagging API to tag resources for the following AWS services.
@@ -81,6 +74,11 @@
  * <li>
  * <p>
  * AWS AppStream
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * AWS AppSync
  * </p>
  * </li>
  * <li>
@@ -310,12 +308,22 @@
  * </li>
  * <li>
  * <p>
+ * AWS IoT Greengrass
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * AWS Key Management Service
  * </p>
  * </li>
  * <li>
  * <p>
  * Amazon Kinesis
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon Kinesis Data Analytics
  * </p>
  * </li>
  * <li>
@@ -411,6 +419,11 @@
  * <li>
  * <p>
  * AWS Service Catalog
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon Simple Notification Service (SNS)
  * </p>
  * </li>
  * <li>

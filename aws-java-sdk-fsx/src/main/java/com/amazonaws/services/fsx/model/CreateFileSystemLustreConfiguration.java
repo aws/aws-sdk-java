@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration object for Lustre file systems used in the <code>CreateFileSystem</code> operation.
+ * The Lustre configuration for the file system being created. This value is required if <code>FileSystemType</code> is
+ * set to <code>LUSTRE</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemLustreConfiguration"

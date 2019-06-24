@@ -176,7 +176,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </note>
      * 
      * @param createFileSystemRequest
-     *        The request object for the <code>CreateFileSystem</code> operation.
+     *        The request object used to create a new Amazon FSx file system.
      * @return A Java Future containing the result of the CreateFileSystem operation returned by the service.
      * @sample AmazonFSxAsync.CreateFileSystem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem" target="_top">AWS API
@@ -226,7 +226,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </note>
      * 
      * @param createFileSystemRequest
-     *        The request object for the <code>CreateFileSystem</code> operation.
+     *        The request object used to create a new Amazon FSx file system.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -244,8 +244,8 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * Creates a new Amazon FSx file system from an existing Amazon FSx for Windows File Server backup.
      * </p>
      * <p>
-     * If a file system with the specified client request token exists and the parameters match, this call returns the
-     * description of the existing file system. If a client request token specified by the file system exists and the
+     * If a file system with the specified client request token exists and the parameters match, this operation returns
+     * the description of the file system. If a client request token specified by the file system exists and the
      * parameters don't match, this call returns <code>IncompatibleParameterError</code>. If a file system with the
      * specified client request token doesn't exist, this operation does the following:
      * </p>
@@ -296,8 +296,8 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * Creates a new Amazon FSx file system from an existing Amazon FSx for Windows File Server backup.
      * </p>
      * <p>
-     * If a file system with the specified client request token exists and the parameters match, this call returns the
-     * description of the existing file system. If a client request token specified by the file system exists and the
+     * If a file system with the specified client request token exists and the parameters match, this operation returns
+     * the description of the file system. If a client request token specified by the file system exists and the
      * parameters don't match, this call returns <code>IncompatibleParameterError</code>. If a file system with the
      * specified client request token doesn't exist, this operation does the following:
      * </p>

@@ -27,17 +27,23 @@ public class BatchImportFindingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of findings to import. You must submit them in the AwsSecurityFinding format.
+     * A list of findings to import. To successfully import a finding, it must follow the <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS Security
+     * Finding Format</a>.
      * </p>
      */
     private java.util.List<AwsSecurityFinding> findings;
 
     /**
      * <p>
-     * A list of findings to import. You must submit them in the AwsSecurityFinding format.
+     * A list of findings to import. To successfully import a finding, it must follow the <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS Security
+     * Finding Format</a>.
      * </p>
      * 
-     * @return A list of findings to import. You must submit them in the AwsSecurityFinding format.
+     * @return A list of findings to import. To successfully import a finding, it must follow the <a
+     *         href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
+     *         Security Finding Format</a>.
      */
 
     public java.util.List<AwsSecurityFinding> getFindings() {
@@ -46,11 +52,15 @@ public class BatchImportFindingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of findings to import. You must submit them in the AwsSecurityFinding format.
+     * A list of findings to import. To successfully import a finding, it must follow the <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS Security
+     * Finding Format</a>.
      * </p>
      * 
      * @param findings
-     *        A list of findings to import. You must submit them in the AwsSecurityFinding format.
+     *        A list of findings to import. To successfully import a finding, it must follow the <a
+     *        href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
+     *        Security Finding Format</a>.
      */
 
     public void setFindings(java.util.Collection<AwsSecurityFinding> findings) {
@@ -64,7 +74,9 @@ public class BatchImportFindingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of findings to import. You must submit them in the AwsSecurityFinding format.
+     * A list of findings to import. To successfully import a finding, it must follow the <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS Security
+     * Finding Format</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +85,9 @@ public class BatchImportFindingsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param findings
-     *        A list of findings to import. You must submit them in the AwsSecurityFinding format.
+     *        A list of findings to import. To successfully import a finding, it must follow the <a
+     *        href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
+     *        Security Finding Format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +103,15 @@ public class BatchImportFindingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of findings to import. You must submit them in the AwsSecurityFinding format.
+     * A list of findings to import. To successfully import a finding, it must follow the <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS Security
+     * Finding Format</a>.
      * </p>
      * 
      * @param findings
-     *        A list of findings to import. You must submit them in the AwsSecurityFinding format.
+     *        A list of findings to import. To successfully import a finding, it must follow the <a
+     *        href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
+     *        Security Finding Format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

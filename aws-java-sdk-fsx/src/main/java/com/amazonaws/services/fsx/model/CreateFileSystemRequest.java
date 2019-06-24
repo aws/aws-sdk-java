@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The request object for the <code>CreateFileSystem</code> operation.
+ * The request object used to create a new Amazon FSx file system.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem" target="_top">AWS API
@@ -37,13 +37,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     private String clientRequestToken;
     /**
      * <p>
-     * The type of file system.
+     * The type of Amazon FSx file system to create.
      * </p>
      */
     private String fileSystemType;
     /**
      * <p>
-     * The storage capacity of the file system.
+     * The storage capacity of the file system being created.
      * </p>
      * <p>
      * For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
@@ -56,23 +56,22 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer storageCapacity;
     /**
      * <p>
-     * A list of IDs for the subnets that the file system will be accessible from. File systems support only one subnet.
-     * The file server is also launched in that subnet's Availability Zone.
+     * The IDs of the subnets that the file system will be accessible from. File systems support only one subnet. The
+     * file server is also launched in that subnet's Availability Zone.
      * </p>
      */
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * A list of IDs for the security groups that apply to the specified network interfaces created for file system
-     * access. These security groups will apply to all network interfaces. This list isn't returned in later describe
-     * requests.
+     * A list of IDs specifying the security groups to apply to all network interfaces created for file system access.
+     * This list isn't returned in later requests to describe the file system.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
-     * The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag
-     * appears in the console as the file system name.
+     * The tags to apply to the file system being created. The key value of the <code>Name</code> tag appears in the
+     * console as the file system name.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -80,7 +79,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     private String kmsKeyId;
     /**
      * <p>
-     * The configuration for this Microsoft Windows file system.
+     * The Microsoft Windows configuration for the file system being created. This value is required if
+     * <code>FileSystemType</code> is set to <code>WINDOWS</code>.
      * </p>
      */
     private CreateFileSystemWindowsConfiguration windowsConfiguration;
@@ -138,11 +138,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of file system.
+     * The type of Amazon FSx file system to create.
      * </p>
      * 
      * @param fileSystemType
-     *        The type of file system.
+     *        The type of Amazon FSx file system to create.
      * @see FileSystemType
      */
 
@@ -152,10 +152,10 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of file system.
+     * The type of Amazon FSx file system to create.
      * </p>
      * 
-     * @return The type of file system.
+     * @return The type of Amazon FSx file system to create.
      * @see FileSystemType
      */
 
@@ -165,11 +165,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of file system.
+     * The type of Amazon FSx file system to create.
      * </p>
      * 
      * @param fileSystemType
-     *        The type of file system.
+     *        The type of Amazon FSx file system to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileSystemType
      */
@@ -181,11 +181,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of file system.
+     * The type of Amazon FSx file system to create.
      * </p>
      * 
      * @param fileSystemType
-     *        The type of file system.
+     *        The type of Amazon FSx file system to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileSystemType
      */
@@ -197,7 +197,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The storage capacity of the file system.
+     * The storage capacity of the file system being created.
      * </p>
      * <p>
      * For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
@@ -208,7 +208,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param storageCapacity
-     *        The storage capacity of the file system.</p>
+     *        The storage capacity of the file system being created.</p>
      *        <p>
      *        For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
      *        </p>
@@ -223,7 +223,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The storage capacity of the file system.
+     * The storage capacity of the file system being created.
      * </p>
      * <p>
      * For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
@@ -233,7 +233,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * increments of 3,600 GiB.
      * </p>
      * 
-     * @return The storage capacity of the file system.</p>
+     * @return The storage capacity of the file system being created.</p>
      *         <p>
      *         For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
      *         </p>
@@ -248,7 +248,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The storage capacity of the file system.
+     * The storage capacity of the file system being created.
      * </p>
      * <p>
      * For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
@@ -259,7 +259,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param storageCapacity
-     *        The storage capacity of the file system.</p>
+     *        The storage capacity of the file system being created.</p>
      *        <p>
      *        For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
      *        </p>
@@ -276,11 +276,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of IDs for the subnets that the file system will be accessible from. File systems support only one subnet.
-     * The file server is also launched in that subnet's Availability Zone.
+     * The IDs of the subnets that the file system will be accessible from. File systems support only one subnet. The
+     * file server is also launched in that subnet's Availability Zone.
      * </p>
      * 
-     * @return A list of IDs for the subnets that the file system will be accessible from. File systems support only one
+     * @return The IDs of the subnets that the file system will be accessible from. File systems support only one
      *         subnet. The file server is also launched in that subnet's Availability Zone.
      */
 
@@ -290,13 +290,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of IDs for the subnets that the file system will be accessible from. File systems support only one subnet.
-     * The file server is also launched in that subnet's Availability Zone.
+     * The IDs of the subnets that the file system will be accessible from. File systems support only one subnet. The
+     * file server is also launched in that subnet's Availability Zone.
      * </p>
      * 
      * @param subnetIds
-     *        A list of IDs for the subnets that the file system will be accessible from. File systems support only one
-     *        subnet. The file server is also launched in that subnet's Availability Zone.
+     *        The IDs of the subnets that the file system will be accessible from. File systems support only one subnet.
+     *        The file server is also launched in that subnet's Availability Zone.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -310,8 +310,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of IDs for the subnets that the file system will be accessible from. File systems support only one subnet.
-     * The file server is also launched in that subnet's Availability Zone.
+     * The IDs of the subnets that the file system will be accessible from. File systems support only one subnet. The
+     * file server is also launched in that subnet's Availability Zone.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -320,8 +320,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param subnetIds
-     *        A list of IDs for the subnets that the file system will be accessible from. File systems support only one
-     *        subnet. The file server is also launched in that subnet's Availability Zone.
+     *        The IDs of the subnets that the file system will be accessible from. File systems support only one subnet.
+     *        The file server is also launched in that subnet's Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,13 +337,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of IDs for the subnets that the file system will be accessible from. File systems support only one subnet.
-     * The file server is also launched in that subnet's Availability Zone.
+     * The IDs of the subnets that the file system will be accessible from. File systems support only one subnet. The
+     * file server is also launched in that subnet's Availability Zone.
      * </p>
      * 
      * @param subnetIds
-     *        A list of IDs for the subnets that the file system will be accessible from. File systems support only one
-     *        subnet. The file server is also launched in that subnet's Availability Zone.
+     *        The IDs of the subnets that the file system will be accessible from. File systems support only one subnet.
+     *        The file server is also launched in that subnet's Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,14 +354,12 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of IDs for the security groups that apply to the specified network interfaces created for file system
-     * access. These security groups will apply to all network interfaces. This list isn't returned in later describe
-     * requests.
+     * A list of IDs specifying the security groups to apply to all network interfaces created for file system access.
+     * This list isn't returned in later requests to describe the file system.
      * </p>
      * 
-     * @return A list of IDs for the security groups that apply to the specified network interfaces created for file
-     *         system access. These security groups will apply to all network interfaces. This list isn't returned in
-     *         later describe requests.
+     * @return A list of IDs specifying the security groups to apply to all network interfaces created for file system
+     *         access. This list isn't returned in later requests to describe the file system.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -370,15 +368,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of IDs for the security groups that apply to the specified network interfaces created for file system
-     * access. These security groups will apply to all network interfaces. This list isn't returned in later describe
-     * requests.
+     * A list of IDs specifying the security groups to apply to all network interfaces created for file system access.
+     * This list isn't returned in later requests to describe the file system.
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of IDs for the security groups that apply to the specified network interfaces created for file
-     *        system access. These security groups will apply to all network interfaces. This list isn't returned in
-     *        later describe requests.
+     *        A list of IDs specifying the security groups to apply to all network interfaces created for file system
+     *        access. This list isn't returned in later requests to describe the file system.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -392,9 +388,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of IDs for the security groups that apply to the specified network interfaces created for file system
-     * access. These security groups will apply to all network interfaces. This list isn't returned in later describe
-     * requests.
+     * A list of IDs specifying the security groups to apply to all network interfaces created for file system access.
+     * This list isn't returned in later requests to describe the file system.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -403,9 +398,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of IDs for the security groups that apply to the specified network interfaces created for file
-     *        system access. These security groups will apply to all network interfaces. This list isn't returned in
-     *        later describe requests.
+     *        A list of IDs specifying the security groups to apply to all network interfaces created for file system
+     *        access. This list isn't returned in later requests to describe the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,15 +415,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of IDs for the security groups that apply to the specified network interfaces created for file system
-     * access. These security groups will apply to all network interfaces. This list isn't returned in later describe
-     * requests.
+     * A list of IDs specifying the security groups to apply to all network interfaces created for file system access.
+     * This list isn't returned in later requests to describe the file system.
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of IDs for the security groups that apply to the specified network interfaces created for file
-     *        system access. These security groups will apply to all network interfaces. This list isn't returned in
-     *        later describe requests.
+     *        A list of IDs specifying the security groups to apply to all network interfaces created for file system
+     *        access. This list isn't returned in later requests to describe the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,12 +432,12 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag
-     * appears in the console as the file system name.
+     * The tags to apply to the file system being created. The key value of the <code>Name</code> tag appears in the
+     * console as the file system name.
      * </p>
      * 
-     * @return The tags to be applied to the file system at file system creation. The key value of the <code>Name</code>
-     *         tag appears in the console as the file system name.
+     * @return The tags to apply to the file system being created. The key value of the <code>Name</code> tag appears in
+     *         the console as the file system name.
      */
 
     public java.util.List<Tag> getTags() {
@@ -454,13 +446,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag
-     * appears in the console as the file system name.
+     * The tags to apply to the file system being created. The key value of the <code>Name</code> tag appears in the
+     * console as the file system name.
      * </p>
      * 
      * @param tags
-     *        The tags to be applied to the file system at file system creation. The key value of the <code>Name</code>
-     *        tag appears in the console as the file system name.
+     *        The tags to apply to the file system being created. The key value of the <code>Name</code> tag appears in
+     *        the console as the file system name.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -474,8 +466,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag
-     * appears in the console as the file system name.
+     * The tags to apply to the file system being created. The key value of the <code>Name</code> tag appears in the
+     * console as the file system name.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -484,8 +476,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param tags
-     *        The tags to be applied to the file system at file system creation. The key value of the <code>Name</code>
-     *        tag appears in the console as the file system name.
+     *        The tags to apply to the file system being created. The key value of the <code>Name</code> tag appears in
+     *        the console as the file system name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -501,13 +493,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag
-     * appears in the console as the file system name.
+     * The tags to apply to the file system being created. The key value of the <code>Name</code> tag appears in the
+     * console as the file system name.
      * </p>
      * 
      * @param tags
-     *        The tags to be applied to the file system at file system creation. The key value of the <code>Name</code>
-     *        tag appears in the console as the file system name.
+     *        The tags to apply to the file system being created. The key value of the <code>Name</code> tag appears in
+     *        the console as the file system name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -544,11 +536,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration for this Microsoft Windows file system.
+     * The Microsoft Windows configuration for the file system being created. This value is required if
+     * <code>FileSystemType</code> is set to <code>WINDOWS</code>.
      * </p>
      * 
      * @param windowsConfiguration
-     *        The configuration for this Microsoft Windows file system.
+     *        The Microsoft Windows configuration for the file system being created. This value is required if
+     *        <code>FileSystemType</code> is set to <code>WINDOWS</code>.
      */
 
     public void setWindowsConfiguration(CreateFileSystemWindowsConfiguration windowsConfiguration) {
@@ -557,10 +551,12 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration for this Microsoft Windows file system.
+     * The Microsoft Windows configuration for the file system being created. This value is required if
+     * <code>FileSystemType</code> is set to <code>WINDOWS</code>.
      * </p>
      * 
-     * @return The configuration for this Microsoft Windows file system.
+     * @return The Microsoft Windows configuration for the file system being created. This value is required if
+     *         <code>FileSystemType</code> is set to <code>WINDOWS</code>.
      */
 
     public CreateFileSystemWindowsConfiguration getWindowsConfiguration() {
@@ -569,11 +565,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration for this Microsoft Windows file system.
+     * The Microsoft Windows configuration for the file system being created. This value is required if
+     * <code>FileSystemType</code> is set to <code>WINDOWS</code>.
      * </p>
      * 
      * @param windowsConfiguration
-     *        The configuration for this Microsoft Windows file system.
+     *        The Microsoft Windows configuration for the file system being created. This value is required if
+     *        <code>FileSystemType</code> is set to <code>WINDOWS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

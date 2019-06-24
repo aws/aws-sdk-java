@@ -93,6 +93,13 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     */
+    private String securityPolicy;
 
     /**
      * <p>
@@ -567,6 +574,73 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     * 
+     * @param securityPolicy
+     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @see SecurityPolicy
+     */
+
+    public void setSecurityPolicy(String securityPolicy) {
+        this.securityPolicy = securityPolicy;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     * 
+     * @return The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values
+     *         are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @see SecurityPolicy
+     */
+
+    public String getSecurityPolicy() {
+        return this.securityPolicy;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     * 
+     * @param securityPolicy
+     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicy
+     */
+
+    public CreateDomainNameRequest withSecurityPolicy(String securityPolicy) {
+        setSecurityPolicy(securityPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     * 
+     * @param securityPolicy
+     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicy
+     */
+
+    public CreateDomainNameRequest withSecurityPolicy(SecurityPolicy securityPolicy) {
+        this.securityPolicy = securityPolicy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -597,7 +671,9 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
         if (getEndpointConfiguration() != null)
             sb.append("EndpointConfiguration: ").append(getEndpointConfiguration()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSecurityPolicy() != null)
+            sb.append("SecurityPolicy: ").append(getSecurityPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -652,6 +728,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSecurityPolicy() == null ^ this.getSecurityPolicy() == null)
+            return false;
+        if (other.getSecurityPolicy() != null && other.getSecurityPolicy().equals(this.getSecurityPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -670,6 +750,7 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getRegionalCertificateArn() == null) ? 0 : getRegionalCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSecurityPolicy() == null) ? 0 : getSecurityPolicy().hashCode());
         return hashCode;
     }
 

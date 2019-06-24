@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The response object for the <code>CreateFileSystem</code> operation.
+ * The response object returned after the file system is created.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem" target="_top">AWS API
@@ -28,18 +28,18 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A description of the file system.
+     * The configuration of the file system that was created.
      * </p>
      */
     private FileSystem fileSystem;
 
     /**
      * <p>
-     * A description of the file system.
+     * The configuration of the file system that was created.
      * </p>
      * 
      * @param fileSystem
-     *        A description of the file system.
+     *        The configuration of the file system that was created.
      */
 
     public void setFileSystem(FileSystem fileSystem) {
@@ -48,10 +48,10 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A description of the file system.
+     * The configuration of the file system that was created.
      * </p>
      * 
-     * @return A description of the file system.
+     * @return The configuration of the file system that was created.
      */
 
     public FileSystem getFileSystem() {
@@ -60,11 +60,11 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A description of the file system.
+     * The configuration of the file system that was created.
      * </p>
      * 
      * @param fileSystem
-     *        A description of the file system.
+     *        The configuration of the file system that was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A related finding's details.
+ * Details about a related finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RelatedFinding" target="_top">AWS API
@@ -30,24 +30,24 @@ public class RelatedFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the solution that generated a related finding.
+     * The ARN of the product that generated a related finding.
      * </p>
      */
     private String productArn;
     /**
      * <p>
-     * The solution-generated identifier for a related finding.
+     * The product-generated identifier for a related finding.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The ARN of the solution that generated a related finding.
+     * The ARN of the product that generated a related finding.
      * </p>
      * 
      * @param productArn
-     *        The ARN of the solution that generated a related finding.
+     *        The ARN of the product that generated a related finding.
      */
 
     public void setProductArn(String productArn) {
@@ -56,10 +56,10 @@ public class RelatedFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the solution that generated a related finding.
+     * The ARN of the product that generated a related finding.
      * </p>
      * 
-     * @return The ARN of the solution that generated a related finding.
+     * @return The ARN of the product that generated a related finding.
      */
 
     public String getProductArn() {
@@ -68,11 +68,11 @@ public class RelatedFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the solution that generated a related finding.
+     * The ARN of the product that generated a related finding.
      * </p>
      * 
      * @param productArn
-     *        The ARN of the solution that generated a related finding.
+     *        The ARN of the product that generated a related finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class RelatedFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The solution-generated identifier for a related finding.
+     * The product-generated identifier for a related finding.
      * </p>
      * 
      * @param id
-     *        The solution-generated identifier for a related finding.
+     *        The product-generated identifier for a related finding.
      */
 
     public void setId(String id) {
@@ -96,10 +96,10 @@ public class RelatedFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The solution-generated identifier for a related finding.
+     * The product-generated identifier for a related finding.
      * </p>
      * 
-     * @return The solution-generated identifier for a related finding.
+     * @return The product-generated identifier for a related finding.
      */
 
     public String getId() {
@@ -108,11 +108,11 @@ public class RelatedFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The solution-generated identifier for a related finding.
+     * The product-generated identifier for a related finding.
      * </p>
      * 
      * @param id
-     *        The solution-generated identifier for a related finding.
+     *        The product-generated identifier for a related finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

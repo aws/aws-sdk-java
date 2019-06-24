@@ -26,18 +26,23 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * AWS Security Hub provides you with a comprehensive view of your security state in AWS and your compliance with the
- * security industry standards and best practices. Security Hub collects security data from across AWS accounts,
- * services, and supported third-party partners and helps you analyze your security trends and identify the highest
- * priority security issues. For more information, see <a
+ * Security Hub provides you with a comprehensive view of the security state of your AWS environment and resources. It
+ * also provides you with the compliance status of your environment based on CIS AWS Foundations compliance checks.
+ * Security Hub collects security data from AWS accounts, services, and integrated third-party products and helps you
+ * analyze security trends in your environment to identify the highest priority security issues. For more information
+ * about Security Hub, see the <i> <a
  * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS Security Hub User
- * Guide</a>.
+ * Guide</a> </i>.
  * </p>
- * <important>
  * <p>
- * Important: AWS Security Hub is currently in Preview release.
+ * When you use operations in the Security Hub API, the requests are executed only in the AWS Region that is currently
+ * active or in the specific AWS Region that you specify in your request. Any configuration or settings change that
+ * results from the operation is applied only to that Region. To make the same change in other Regions, execute the same
+ * command for each Region to apply the change to. For example, if your Region is set to <code>us-west-2</code>, when
+ * you use <code>CreateMembers</code> to add a member account to Security Hub, the association of the member account
+ * with the master account is created only in the us-west-2 Region. Security Hub must be enabled for the member account
+ * in the same Region that the invite was sent from.
  * </p>
- * </important>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -204,6 +209,39 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateActionTargetResult> createActionTargetAsync(CreateActionTargetRequest request) {
+
+        return createActionTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateActionTargetResult> createActionTargetAsync(final CreateActionTargetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateActionTargetRequest, CreateActionTargetResult> asyncHandler) {
+        final CreateActionTargetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateActionTargetResult>() {
+            @Override
+            public CreateActionTargetResult call() throws Exception {
+                CreateActionTargetResult result = null;
+
+                try {
+                    result = executeCreateActionTarget(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInsightResult> createInsightAsync(CreateInsightRequest request) {
 
         return createInsightAsync(request, null);
@@ -303,6 +341,39 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteActionTargetResult> deleteActionTargetAsync(DeleteActionTargetRequest request) {
+
+        return deleteActionTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteActionTargetResult> deleteActionTargetAsync(final DeleteActionTargetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteActionTargetRequest, DeleteActionTargetResult> asyncHandler) {
+        final DeleteActionTargetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteActionTargetResult>() {
+            @Override
+            public DeleteActionTargetResult call() throws Exception {
+                DeleteActionTargetResult result = null;
+
+                try {
+                    result = executeDeleteActionTarget(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteInsightResult> deleteInsightAsync(DeleteInsightRequest request) {
 
         return deleteInsightAsync(request, null);
@@ -386,6 +457,72 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
 
                 try {
                     result = executeDeleteMembers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeActionTargetsResult> describeActionTargetsAsync(DescribeActionTargetsRequest request) {
+
+        return describeActionTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeActionTargetsResult> describeActionTargetsAsync(final DescribeActionTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeActionTargetsRequest, DescribeActionTargetsResult> asyncHandler) {
+        final DescribeActionTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeActionTargetsResult>() {
+            @Override
+            public DescribeActionTargetsResult call() throws Exception {
+                DescribeActionTargetsResult result = null;
+
+                try {
+                    result = executeDescribeActionTargets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHubResult> describeHubAsync(DescribeHubRequest request) {
+
+        return describeHubAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHubResult> describeHubAsync(final DescribeHubRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeHubRequest, DescribeHubResult> asyncHandler) {
+        final DescribeHubRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeHubResult>() {
+            @Override
+            public DescribeHubResult call() throws Exception {
+                DescribeHubResult result = null;
+
+                try {
+                    result = executeDescribeHub(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1000,23 +1137,122 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
     }
 
     @Override
-    public java.util.concurrent.Future<ListProductSubscribersResult> listProductSubscribersAsync(ListProductSubscribersRequest request) {
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
-        return listProductSubscribersAsync(request, null);
+        return listTagsForResourceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<ListProductSubscribersResult> listProductSubscribersAsync(final ListProductSubscribersRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ListProductSubscribersRequest, ListProductSubscribersResult> asyncHandler) {
-        final ListProductSubscribersRequest finalRequest = beforeClientExecution(request);
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<ListProductSubscribersResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
             @Override
-            public ListProductSubscribersResult call() throws Exception {
-                ListProductSubscribersResult result = null;
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
 
                 try {
-                    result = executeListProductSubscribers(finalRequest);
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActionTargetResult> updateActionTargetAsync(UpdateActionTargetRequest request) {
+
+        return updateActionTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActionTargetResult> updateActionTargetAsync(final UpdateActionTargetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateActionTargetRequest, UpdateActionTargetResult> asyncHandler) {
+        final UpdateActionTargetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateActionTargetResult>() {
+            @Override
+            public UpdateActionTargetResult call() throws Exception {
+                UpdateActionTargetResult result = null;
+
+                try {
+                    result = executeUpdateActionTarget(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

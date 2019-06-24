@@ -161,13 +161,13 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     private String passthroughBehavior;
     /**
      * <p>
-     * Specifies a put integration input's cache namespace.
+     * A list of request parameters whose values are to be cached.
      * </p>
      */
     private String cacheNamespace;
     /**
      * <p>
-     * Specifies a put integration input's cache key parameters.
+     * An API-specific tag group of related cached parameters.
      * </p>
      */
     private java.util.List<String> cacheKeyParameters;
@@ -191,7 +191,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * If this property is not defined, the request payload will be passed through from the method request to
-     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * integration request without modification, provided that the <code>passthroughBehavior</code> is configured to
      * support payload pass-through.
      * </p>
      */
@@ -1178,11 +1178,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's cache namespace.
+     * A list of request parameters whose values are to be cached.
      * </p>
      * 
      * @param cacheNamespace
-     *        Specifies a put integration input's cache namespace.
+     *        A list of request parameters whose values are to be cached.
      */
 
     public void setCacheNamespace(String cacheNamespace) {
@@ -1191,10 +1191,10 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's cache namespace.
+     * A list of request parameters whose values are to be cached.
      * </p>
      * 
-     * @return Specifies a put integration input's cache namespace.
+     * @return A list of request parameters whose values are to be cached.
      */
 
     public String getCacheNamespace() {
@@ -1203,11 +1203,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's cache namespace.
+     * A list of request parameters whose values are to be cached.
      * </p>
      * 
      * @param cacheNamespace
-     *        Specifies a put integration input's cache namespace.
+     *        A list of request parameters whose values are to be cached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1218,10 +1218,10 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's cache key parameters.
+     * An API-specific tag group of related cached parameters.
      * </p>
      * 
-     * @return Specifies a put integration input's cache key parameters.
+     * @return An API-specific tag group of related cached parameters.
      */
 
     public java.util.List<String> getCacheKeyParameters() {
@@ -1230,11 +1230,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's cache key parameters.
+     * An API-specific tag group of related cached parameters.
      * </p>
      * 
      * @param cacheKeyParameters
-     *        Specifies a put integration input's cache key parameters.
+     *        An API-specific tag group of related cached parameters.
      */
 
     public void setCacheKeyParameters(java.util.Collection<String> cacheKeyParameters) {
@@ -1248,7 +1248,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's cache key parameters.
+     * An API-specific tag group of related cached parameters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1257,7 +1257,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param cacheKeyParameters
-     *        Specifies a put integration input's cache key parameters.
+     *        An API-specific tag group of related cached parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1273,11 +1273,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's cache key parameters.
+     * An API-specific tag group of related cached parameters.
      * </p>
      * 
      * @param cacheKeyParameters
-     *        Specifies a put integration input's cache key parameters.
+     *        An API-specific tag group of related cached parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1306,7 +1306,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * If this property is not defined, the request payload will be passed through from the method request to
-     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * integration request without modification, provided that the <code>passthroughBehavior</code> is configured to
      * support payload pass-through.
      * </p>
      * 
@@ -1328,8 +1328,8 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        If this property is not defined, the request payload will be passed through from the method request to
-     *        integration request without modification, provided that the <code>passthroughBehaviors</code> is
-     *        configured to support payload pass-through.
+     *        integration request without modification, provided that the <code>passthroughBehavior</code> is configured
+     *        to support payload pass-through.
      * @see ContentHandlingStrategy
      */
 
@@ -1357,7 +1357,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * If this property is not defined, the request payload will be passed through from the method request to
-     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * integration request without modification, provided that the <code>passthroughBehavior</code> is configured to
      * support payload pass-through.
      * </p>
      * 
@@ -1378,7 +1378,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </ul>
      *         <p>
      *         If this property is not defined, the request payload will be passed through from the method request to
-     *         integration request without modification, provided that the <code>passthroughBehaviors</code> is
+     *         integration request without modification, provided that the <code>passthroughBehavior</code> is
      *         configured to support payload pass-through.
      * @see ContentHandlingStrategy
      */
@@ -1407,7 +1407,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * If this property is not defined, the request payload will be passed through from the method request to
-     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * integration request without modification, provided that the <code>passthroughBehavior</code> is configured to
      * support payload pass-through.
      * </p>
      * 
@@ -1429,8 +1429,8 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        If this property is not defined, the request payload will be passed through from the method request to
-     *        integration request without modification, provided that the <code>passthroughBehaviors</code> is
-     *        configured to support payload pass-through.
+     *        integration request without modification, provided that the <code>passthroughBehavior</code> is configured
+     *        to support payload pass-through.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentHandlingStrategy
      */
@@ -1460,7 +1460,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * If this property is not defined, the request payload will be passed through from the method request to
-     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * integration request without modification, provided that the <code>passthroughBehavior</code> is configured to
      * support payload pass-through.
      * </p>
      * 
@@ -1482,8 +1482,8 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        If this property is not defined, the request payload will be passed through from the method request to
-     *        integration request without modification, provided that the <code>passthroughBehaviors</code> is
-     *        configured to support payload pass-through.
+     *        integration request without modification, provided that the <code>passthroughBehavior</code> is configured
+     *        to support payload pass-through.
      * @see ContentHandlingStrategy
      */
 
@@ -1511,7 +1511,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * If this property is not defined, the request payload will be passed through from the method request to
-     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * integration request without modification, provided that the <code>passthroughBehavior</code> is configured to
      * support payload pass-through.
      * </p>
      * 
@@ -1533,8 +1533,8 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        If this property is not defined, the request payload will be passed through from the method request to
-     *        integration request without modification, provided that the <code>passthroughBehaviors</code> is
-     *        configured to support payload pass-through.
+     *        integration request without modification, provided that the <code>passthroughBehavior</code> is configured
+     *        to support payload pass-through.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentHandlingStrategy
      */
