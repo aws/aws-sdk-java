@@ -88,12 +88,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
-     * The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through the console, API,
-     * or CLI depends on the volume's origin (new or from a snapshot), starting encryption state, ownership, and whether
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
-     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
-     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
-     * complete list of possible encryption cases, see <a
+     * The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a
+     * snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -110,7 +107,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     private Boolean encrypted;
     /**
      * <p>
-     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume is
      * encrypted.
      * </p>
      * <p>
@@ -550,12 +547,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
-     * The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through the console, API,
-     * or CLI depends on the volume's origin (new or from a snapshot), starting encryption state, ownership, and whether
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
-     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
-     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
-     * complete list of possible encryption cases, see <a
+     * The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a
+     * snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -571,13 +565,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * 
      * @param encrypted
      *        Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
-     *        snapshot. The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through
-     *        the console, API, or CLI depends on the volume's origin (new or from a snapshot), starting encryption
-     *        state, ownership, and whether <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
-     *        encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK)
-     *        with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to
-     *        <code>true</code>. For a complete list of possible encryption cases, see <a
+     *        snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin
+     *        (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is
+     *        enabled. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
      *        EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
@@ -597,12 +587,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
-     * The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through the console, API,
-     * or CLI depends on the volume's origin (new or from a snapshot), starting encryption state, ownership, and whether
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
-     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
-     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
-     * complete list of possible encryption cases, see <a
+     * The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a
+     * snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -617,13 +604,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      * 
      * @return Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
-     *         snapshot. The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through
-     *         the console, API, or CLI depends on the volume's origin (new or from a snapshot), starting encryption
-     *         state, ownership, and whether <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
-     *         encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK)
-     *         with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to
-     *         <code>true</code>. For a complete list of possible encryption cases, see <a
+     *         snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin
+     *         (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is
+     *         enabled. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters"
      *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
@@ -643,12 +626,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
-     * The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through the console, API,
-     * or CLI depends on the volume's origin (new or from a snapshot), starting encryption state, ownership, and whether
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
-     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
-     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
-     * complete list of possible encryption cases, see <a
+     * The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a
+     * snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -664,13 +644,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * 
      * @param encrypted
      *        Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
-     *        snapshot. The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through
-     *        the console, API, or CLI depends on the volume's origin (new or from a snapshot), starting encryption
-     *        state, ownership, and whether <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
-     *        encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK)
-     *        with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to
-     *        <code>true</code>. For a complete list of possible encryption cases, see <a
+     *        snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin
+     *        (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is
+     *        enabled. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
      *        EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
@@ -692,12 +668,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
-     * The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through the console, API,
-     * or CLI depends on the volume's origin (new or from a snapshot), starting encryption state, ownership, and whether
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
-     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
-     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
-     * complete list of possible encryption cases, see <a
+     * The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a
+     * snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -712,13 +685,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      * 
      * @return Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
-     *         snapshot. The default effect of setting the <code>Encrypted</code> parameter to <code>true</code> through
-     *         the console, API, or CLI depends on the volume's origin (new or from a snapshot), starting encryption
-     *         state, ownership, and whether <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
-     *         encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK)
-     *         with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to
-     *         <code>true</code>. For a complete list of possible encryption cases, see <a
+     *         snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin
+     *         (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is
+     *         enabled. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters"
      *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
@@ -737,7 +706,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume is
      * encrypted.
      * </p>
      * <p>
@@ -749,8 +718,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      * 
      * @param kmsKeyId
-     *        Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
-     *        encrypted.</p>
+     *        Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume
+     *        is encrypted.</p>
      *        <p>
      *        This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
@@ -766,7 +735,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume is
      * encrypted.
      * </p>
      * <p>
@@ -777,8 +746,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * RequestSpotInstances</a>.
      * </p>
      * 
-     * @return Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
-     *         encrypted.</p>
+     * @return Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS
+     *         volume is encrypted.</p>
      *         <p>
      *         This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
@@ -794,7 +763,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume is
      * encrypted.
      * </p>
      * <p>
@@ -806,8 +775,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      * 
      * @param kmsKeyId
-     *        Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
-     *        encrypted.</p>
+     *        Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume
+     *        is encrypted.</p>
      *        <p>
      *        This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a

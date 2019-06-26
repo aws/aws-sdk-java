@@ -181,7 +181,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * [EC2-VPC] The ID of the subnet to launch the instance into.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any subnets as part of the network interface.
      * </p>
      */
     private String subnetId;
@@ -258,7 +258,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
-     * security groups as part of the network interface.
+     * security groups and subnets as part of the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
@@ -1567,13 +1567,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * [EC2-VPC] The ID of the subnet to launch the instance into.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any subnets as part of the network interface.
      * </p>
      * 
      * @param subnetId
      *        [EC2-VPC] The ID of the subnet to launch the instance into.</p>
      *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
+     *        If you specify a network interface, you must specify any subnets as part of the network interface.
      */
 
     public void setSubnetId(String subnetId) {
@@ -1585,12 +1585,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * [EC2-VPC] The ID of the subnet to launch the instance into.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any subnets as part of the network interface.
      * </p>
      * 
      * @return [EC2-VPC] The ID of the subnet to launch the instance into.</p>
      *         <p>
-     *         You cannot specify this option and the network interfaces option in the same request.
+     *         If you specify a network interface, you must specify any subnets as part of the network interface.
      */
 
     public String getSubnetId() {
@@ -1602,13 +1602,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * [EC2-VPC] The ID of the subnet to launch the instance into.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any subnets as part of the network interface.
      * </p>
      * 
      * @param subnetId
      *        [EC2-VPC] The ID of the subnet to launch the instance into.</p>
      *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
+     *        If you specify a network interface, you must specify any subnets as part of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2158,11 +2158,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
-     * security groups as part of the network interface.
+     * security groups and subnets as part of the network interface.
      * </p>
      * 
      * @return The network interfaces to associate with the instance. If you specify a network interface, you must
-     *         specify any security groups as part of the network interface.
+     *         specify any security groups and subnets as part of the network interface.
      */
 
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
@@ -2175,12 +2175,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
-     * security groups as part of the network interface.
+     * security groups and subnets as part of the network interface.
      * </p>
      * 
      * @param networkInterfaces
      *        The network interfaces to associate with the instance. If you specify a network interface, you must
-     *        specify any security groups as part of the network interface.
+     *        specify any security groups and subnets as part of the network interface.
      */
 
     public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
@@ -2195,7 +2195,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
-     * security groups as part of the network interface.
+     * security groups and subnets as part of the network interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2205,7 +2205,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param networkInterfaces
      *        The network interfaces to associate with the instance. If you specify a network interface, you must
-     *        specify any security groups as part of the network interface.
+     *        specify any security groups and subnets as part of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2222,12 +2222,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
-     * security groups as part of the network interface.
+     * security groups and subnets as part of the network interface.
      * </p>
      * 
      * @param networkInterfaces
      *        The network interfaces to associate with the instance. If you specify a network interface, you must
-     *        specify any security groups as part of the network interface.
+     *        specify any security groups and subnets as part of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

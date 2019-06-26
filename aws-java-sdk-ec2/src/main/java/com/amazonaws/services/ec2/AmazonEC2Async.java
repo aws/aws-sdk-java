@@ -31,32 +31,31 @@ import com.amazonaws.services.ec2.model.*;
  * Amazon EC2 eliminates the need to invest in hardware up front, so you can develop and deploy applications faster.
  * </p>
  * <p>
- * To learn more about Amazon EC2, Amazon EBS, and Amazon VPC, see the following resources:
+ * To learn more, see the following resources:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>
+ * Amazon EC2: <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>, <a
+ * href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a>
+ * Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon EBS documentation</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>
+ * Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a
+ * href="http://aws.amazon.com/documentation/vpc">Amazon VPC documentation</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://aws.amazon.com/documentation/vpc">Amazon VPC documentation</a>
+ * AWS VPN: <a href="http://aws.amazon.com/vpn">AWS VPN product page</a>, <a
+ * href="http://aws.amazon.com/documentation/vpn">AWS VPN documentation</a>
  * </p>
  * </li>
  * </ul>
@@ -716,9 +715,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * renew the lease using the operating system on the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+     * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param associateDhcpOptionsRequest
@@ -741,9 +739,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * renew the lease using the operating system on the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+     * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param associateDhcpOptionsRequest
@@ -802,9 +799,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * table can be associated with multiple subnets.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param associateRouteTableRequest
@@ -823,9 +819,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * table can be associated with multiple subnets.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param associateRouteTableRequest
@@ -918,8 +913,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about associating CIDR blocks with your VPC and applicable restrictions, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC and Subnet
-     * Sizing</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC and Subnet Sizing</a> in
+     * the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param associateVpcCidrBlockRequest
@@ -937,8 +932,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about associating CIDR blocks with your VPC and applicable restrictions, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC and Subnet
-     * Sizing</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC and Subnet Sizing</a> in
+     * the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param associateVpcCidrBlockRequest
@@ -1009,7 +1004,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Attaches an internet gateway to a VPC, enabling connectivity between the internet and the VPC. For more
      * information about your VPC and internet gateway, see the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual Private Cloud User Guide</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.
      * </p>
      * 
      * @param attachInternetGatewayRequest
@@ -1024,7 +1019,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Attaches an internet gateway to a VPC, enabling connectivity between the internet and the VPC. For more
      * information about your VPC and internet gateway, see the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual Private Cloud User Guide</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.
      * </p>
      * 
      * @param attachInternetGatewayRequest
@@ -1548,7 +1543,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelConversionTaskRequest
-     *        Contains the parameters for CancelConversionTask.
      * @return A Java Future containing the result of the CancelConversionTask operation returned by the service.
      * @sample AmazonEC2Async.CancelConversionTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask" target="_top">AWS API
@@ -1569,7 +1563,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelConversionTaskRequest
-     *        Contains the parameters for CancelConversionTask.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1590,7 +1583,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelExportTaskRequest
-     *        Contains the parameters for CancelExportTask.
      * @return A Java Future containing the result of the CancelExportTask operation returned by the service.
      * @sample AmazonEC2Async.CancelExportTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTask" target="_top">AWS API
@@ -1606,7 +1598,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelExportTaskRequest
-     *        Contains the parameters for CancelExportTask.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1625,7 +1616,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelImportTaskRequest
-     *        Contains the parameters for CancelImportTask.
      * @return A Java Future containing the result of the CancelImportTask operation returned by the service.
      * @sample AmazonEC2Async.CancelImportTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask" target="_top">AWS API
@@ -1639,7 +1629,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelImportTaskRequest
-     *        Contains the parameters for CancelImportTask.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2234,8 +2223,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified Availability Zone in your
      * default VPC. You can have only one default subnet per Availability Zone. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#create-default-subnet">Creating a
-     * Default Subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating a Default
+     * Subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createDefaultSubnetRequest
@@ -2250,8 +2239,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified Availability Zone in your
      * default VPC. You can have only one default subnet per Availability Zone. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#create-default-subnet">Creating a
-     * Default Subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating a Default
+     * Subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createDefaultSubnetRequest
@@ -2271,9 +2260,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet in each Availability
      * Zone. For more information about the components of a default VPC, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default VPC and Default
-     * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot specify the components of the
-     * default VPC yourself.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default VPC and Default Subnets</a> in
+     * the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot specify the components of the default VPC
+     * yourself.
      * </p>
      * <p>
      * If you deleted your previous default VPC, you can create a default VPC. You cannot have more than one default VPC
@@ -2298,9 +2287,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet in each Availability
      * Zone. For more information about the components of a default VPC, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default VPC and Default
-     * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot specify the components of the
-     * default VPC yourself.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default VPC and Default Subnets</a> in
+     * the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot specify the components of the default VPC
+     * yourself.
      * </p>
      * <p>
      * If you deleted your previous default VPC, you can create a default VPC. You cannot have more than one default VPC
@@ -2377,7 +2366,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * (AmazonProvidedDNS). If you create a set of options, and if your VPC has an internet gateway, make sure to set
      * the <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code> or to a domain name server
      * of your choice. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -2440,7 +2429,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * (AmazonProvidedDNS). If you create a set of options, and if your VPC has an internet gateway, make sure to set
      * the <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code> or to a domain name server
      * of your choice. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -2551,8 +2540,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Flow log data for a monitored network interface is recorded as flow log records, which are log events consisting
      * of fields that describe the traffic flow. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records">Flow Log
-     * Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log Records</a> in
+     * the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
      * When publishing to CloudWatch Logs, flow log records are published to a log group, and each network interface has
@@ -2560,8 +2549,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * network interfaces are published to a single log file object that is stored in the specified bucket.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
-     * Flow Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html">VPC Flow
+     * Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createFlowLogsRequest
@@ -2580,8 +2569,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Flow log data for a monitored network interface is recorded as flow log records, which are log events consisting
      * of fields that describe the traffic flow. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records">Flow Log
-     * Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log Records</a> in
+     * the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
      * When publishing to CloudWatch Logs, flow log records are published to a log group, and each network interface has
@@ -2589,8 +2578,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * network interfaces are published to a single log file object that is stored in the specified bucket.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
-     * Flow Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html">VPC Flow
+     * Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createFlowLogsRequest
@@ -2716,7 +2705,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createInstanceExportTaskRequest
-     *        Contains the parameters for CreateInstanceExportTask.
      * @return A Java Future containing the result of the CreateInstanceExportTask operation returned by the service.
      * @sample AmazonEC2Async.CreateInstanceExportTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask" target="_top">AWS
@@ -2736,7 +2724,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createInstanceExportTaskRequest
-     *        Contains the parameters for CreateInstanceExportTask.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2756,7 +2743,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about your VPC and internet gateway, see the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual Private Cloud User Guide</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.
      * </p>
      * 
      * @param createInternetGatewayRequest
@@ -2774,7 +2761,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about your VPC and internet gateway, see the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual Private Cloud User Guide</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.
      * </p>
      * 
      * @param createInternetGatewayRequest
@@ -2946,8 +2933,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * subnet with a private IP address from the IP address range of the subnet. Internet-bound traffic from a private
      * subnet can be routed to the NAT gateway, therefore enabling instances in the private subnet to connect to the
      * internet. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT Gateways</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT Gateways</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createNatGatewayRequest
@@ -2964,8 +2951,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * subnet with a private IP address from the IP address range of the subnet. Internet-bound traffic from a private
      * subnet can be routed to the NAT gateway, therefore enabling instances in the private subnet to connect to the
      * internet. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT Gateways</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT Gateways</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createNatGatewayRequest
@@ -2987,7 +2974,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * groups) for the instances in your VPC.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
      * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -3005,7 +2992,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * groups) for the instances in your VPC.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
      * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -3040,8 +3027,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about network ACLs, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
+     * Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createNetworkAclEntryRequest
@@ -3070,8 +3057,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about network ACLs, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
+     * Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createNetworkAclEntryRequest
@@ -3348,8 +3335,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about route tables, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createRouteRequest
@@ -3391,8 +3378,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about route tables, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createRouteRequest
@@ -3414,9 +3401,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * table with a subnet.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createRouteTableRequest
@@ -3433,9 +3419,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * table with a subnet.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createRouteTableRequest
@@ -3745,7 +3730,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about subnets, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your VPC and Subnets</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and Subnets</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -3789,7 +3774,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about subnets, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your VPC and Subnets</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and Subnets</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -3854,6 +3839,216 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest createTagsRequest,
             com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a Traffic Mirror filter.
+     * </p>
+     * <p>
+     * A Traffic Mirror filter is a set of rules that defines the traffic to mirror.
+     * </p>
+     * <p>
+     * By default, no traffic is mirrored. To mirror traffic, use <a>CreateTrafficMirrorFilterRule</a> to add Traffic
+     * Mirror rules to the filter. The rules you add define what traffic gets mirrored. You can also use
+     * <a>ModifyTrafficMirrorFilterNetworkServices</a> to mirror supported network services.
+     * </p>
+     * 
+     * @param createTrafficMirrorFilterRequest
+     * @return A Java Future containing the result of the CreateTrafficMirrorFilter operation returned by the service.
+     * @sample AmazonEC2Async.CreateTrafficMirrorFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilter" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrafficMirrorFilterResult> createTrafficMirrorFilterAsync(
+            CreateTrafficMirrorFilterRequest createTrafficMirrorFilterRequest);
+
+    /**
+     * <p>
+     * Creates a Traffic Mirror filter.
+     * </p>
+     * <p>
+     * A Traffic Mirror filter is a set of rules that defines the traffic to mirror.
+     * </p>
+     * <p>
+     * By default, no traffic is mirrored. To mirror traffic, use <a>CreateTrafficMirrorFilterRule</a> to add Traffic
+     * Mirror rules to the filter. The rules you add define what traffic gets mirrored. You can also use
+     * <a>ModifyTrafficMirrorFilterNetworkServices</a> to mirror supported network services.
+     * </p>
+     * 
+     * @param createTrafficMirrorFilterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTrafficMirrorFilter operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateTrafficMirrorFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilter" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrafficMirrorFilterResult> createTrafficMirrorFilterAsync(
+            CreateTrafficMirrorFilterRequest createTrafficMirrorFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a Traffic Mirror rule.
+     * </p>
+     * <p>
+     * A Traffic Mirror rule defines the Traffic Mirror source traffic to mirror.
+     * </p>
+     * <p>
+     * You need the Traffic Mirror filter ID when you create the rule.
+     * </p>
+     * 
+     * @param createTrafficMirrorFilterRuleRequest
+     * @return A Java Future containing the result of the CreateTrafficMirrorFilterRule operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateTrafficMirrorFilterRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilterRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrafficMirrorFilterRuleResult> createTrafficMirrorFilterRuleAsync(
+            CreateTrafficMirrorFilterRuleRequest createTrafficMirrorFilterRuleRequest);
+
+    /**
+     * <p>
+     * Creates a Traffic Mirror rule.
+     * </p>
+     * <p>
+     * A Traffic Mirror rule defines the Traffic Mirror source traffic to mirror.
+     * </p>
+     * <p>
+     * You need the Traffic Mirror filter ID when you create the rule.
+     * </p>
+     * 
+     * @param createTrafficMirrorFilterRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTrafficMirrorFilterRule operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateTrafficMirrorFilterRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilterRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrafficMirrorFilterRuleResult> createTrafficMirrorFilterRuleAsync(
+            CreateTrafficMirrorFilterRuleRequest createTrafficMirrorFilterRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a Traffic Mirror session.
+     * </p>
+     * <p>
+     * A Traffic Mirror session actively copies packets from a Traffic Mirror source to a Traffic Mirror target. Create
+     * a filter, and then assign it to the session to define a subset of the traffic to mirror, for example all TCP
+     * traffic.
+     * </p>
+     * <p>
+     * The Traffic Mirror source and the Traffic Mirror target (monitoring appliances) can be in the same VPC, or in a
+     * different VPC connected via VPC peering or a transit gateway.
+     * </p>
+     * <p>
+     * By default, no traffic is mirrored. Use <a>CreateTrafficMirrorFilter</a> to create filter rules that specify the
+     * traffic to mirror.
+     * </p>
+     * 
+     * @param createTrafficMirrorSessionRequest
+     * @return A Java Future containing the result of the CreateTrafficMirrorSession operation returned by the service.
+     * @sample AmazonEC2Async.CreateTrafficMirrorSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrafficMirrorSessionResult> createTrafficMirrorSessionAsync(
+            CreateTrafficMirrorSessionRequest createTrafficMirrorSessionRequest);
+
+    /**
+     * <p>
+     * Creates a Traffic Mirror session.
+     * </p>
+     * <p>
+     * A Traffic Mirror session actively copies packets from a Traffic Mirror source to a Traffic Mirror target. Create
+     * a filter, and then assign it to the session to define a subset of the traffic to mirror, for example all TCP
+     * traffic.
+     * </p>
+     * <p>
+     * The Traffic Mirror source and the Traffic Mirror target (monitoring appliances) can be in the same VPC, or in a
+     * different VPC connected via VPC peering or a transit gateway.
+     * </p>
+     * <p>
+     * By default, no traffic is mirrored. Use <a>CreateTrafficMirrorFilter</a> to create filter rules that specify the
+     * traffic to mirror.
+     * </p>
+     * 
+     * @param createTrafficMirrorSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTrafficMirrorSession operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateTrafficMirrorSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrafficMirrorSessionResult> createTrafficMirrorSessionAsync(
+            CreateTrafficMirrorSessionRequest createTrafficMirrorSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a target for your Traffic Mirror session.
+     * </p>
+     * <p>
+     * A Traffic Mirror target is the destination for mirrored traffic. The Traffic Mirror source and the Traffic Mirror
+     * target (monitoring appliances) can be in the same VPC, or in different VPCs connected via VPC peering or a
+     * transit gateway.
+     * </p>
+     * <p>
+     * A Traffic Mirror target can be a network interface, or a Network Load Balancer.
+     * </p>
+     * <p>
+     * To use the target in a Traffic Mirror session, use <a>CreateTrafficMirrorSession</a>.
+     * </p>
+     * 
+     * @param createTrafficMirrorTargetRequest
+     * @return A Java Future containing the result of the CreateTrafficMirrorTarget operation returned by the service.
+     * @sample AmazonEC2Async.CreateTrafficMirrorTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorTarget" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrafficMirrorTargetResult> createTrafficMirrorTargetAsync(
+            CreateTrafficMirrorTargetRequest createTrafficMirrorTargetRequest);
+
+    /**
+     * <p>
+     * Creates a target for your Traffic Mirror session.
+     * </p>
+     * <p>
+     * A Traffic Mirror target is the destination for mirrored traffic. The Traffic Mirror source and the Traffic Mirror
+     * target (monitoring appliances) can be in the same VPC, or in different VPCs connected via VPC peering or a
+     * transit gateway.
+     * </p>
+     * <p>
+     * A Traffic Mirror target can be a network interface, or a Network Load Balancer.
+     * </p>
+     * <p>
+     * To use the target in a Traffic Mirror session, use <a>CreateTrafficMirrorSession</a>.
+     * </p>
+     * 
+     * @param createTrafficMirrorTargetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTrafficMirrorTarget operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateTrafficMirrorTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorTarget" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrafficMirrorTargetResult> createTrafficMirrorTargetAsync(
+            CreateTrafficMirrorTargetRequest createTrafficMirrorTargetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTrafficMirrorTargetRequest, CreateTrafficMirrorTargetResult> asyncHandler);
 
     /**
      * <p>
@@ -4126,7 +4321,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4
      * addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses). For more information about how large to
-     * make your VPC, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your VPC and
+     * make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and
      * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -4136,7 +4331,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP options, which include only a default DNS
      * server that we provide (AmazonProvidedDNS). For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -4158,7 +4353,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4
      * addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses). For more information about how large to
-     * make your VPC, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your VPC and
+     * make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and
      * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -4168,7 +4363,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP options, which include only a default DNS
      * server that we provide (AmazonProvidedDNS). For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -4195,7 +4390,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a VPC endpoint for a specified service. An endpoint enables you to create a private connection between
      * your VPC and the service. The service may be provided by AWS, an AWS Marketplace partner, or another AWS account.
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
      * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -4225,7 +4420,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a VPC endpoint for a specified service. An endpoint enables you to create a private connection between
      * your VPC and the service. The service may be provided by AWS, an AWS Marketplace partner, or another AWS account.
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
      * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -4310,7 +4505,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * To create an endpoint service configuration, you must first create a Network Load Balancer for your service. For
-     * more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+     * more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
      * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -4331,7 +4526,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * To create an endpoint service configuration, you must first create a Network Load Balancer for your service. For
-     * more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+     * more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
      * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -4358,8 +4553,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <note>
      * <p>
-     * Limitations and rules apply to a VPC peering connection. For more information, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations"
+     * Limitations and rules apply to a VPC peering connection. For more information, see the <a
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations"
      * >limitations</a> section in the <i>VPC Peering Guide</i>.
      * </p>
      * </note>
@@ -4389,8 +4584,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <note>
      * <p>
-     * Limitations and rules apply to a VPC peering connection. For more information, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations"
+     * Limitations and rules apply to a VPC peering connection. For more information, see the <a
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations"
      * >limitations</a> section in the <i>VPC Peering Guide</i>.
      * </p>
      * </note>
@@ -4435,7 +4630,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The supported
-     * connection types are <code>ipsec.1</code> and <code>ipsec.2</code>.
+     * connection types is <code>ipsec.1</code>.
      * </p>
      * <p>
      * The response includes information that you need to give to your network administrator to configure your customer
@@ -4471,7 +4666,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The supported
-     * connection types are <code>ipsec.1</code> and <code>ipsec.2</code>.
+     * connection types is <code>ipsec.1</code>.
      * </p>
      * <p>
      * The response includes information that you need to give to your network administrator to configure your customer
@@ -5515,6 +5710,152 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified Traffic Mirror filter.
+     * </p>
+     * <p>
+     * You cannot delete a Traffic Mirror filter that is in use by a Traffic Mirror session.
+     * </p>
+     * 
+     * @param deleteTrafficMirrorFilterRequest
+     * @return A Java Future containing the result of the DeleteTrafficMirrorFilter operation returned by the service.
+     * @sample AmazonEC2Async.DeleteTrafficMirrorFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilter" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrafficMirrorFilterResult> deleteTrafficMirrorFilterAsync(
+            DeleteTrafficMirrorFilterRequest deleteTrafficMirrorFilterRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Traffic Mirror filter.
+     * </p>
+     * <p>
+     * You cannot delete a Traffic Mirror filter that is in use by a Traffic Mirror session.
+     * </p>
+     * 
+     * @param deleteTrafficMirrorFilterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTrafficMirrorFilter operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeleteTrafficMirrorFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilter" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrafficMirrorFilterResult> deleteTrafficMirrorFilterAsync(
+            DeleteTrafficMirrorFilterRequest deleteTrafficMirrorFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified Traffic Mirror rule.
+     * </p>
+     * 
+     * @param deleteTrafficMirrorFilterRuleRequest
+     * @return A Java Future containing the result of the DeleteTrafficMirrorFilterRule operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteTrafficMirrorFilterRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilterRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrafficMirrorFilterRuleResult> deleteTrafficMirrorFilterRuleAsync(
+            DeleteTrafficMirrorFilterRuleRequest deleteTrafficMirrorFilterRuleRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Traffic Mirror rule.
+     * </p>
+     * 
+     * @param deleteTrafficMirrorFilterRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTrafficMirrorFilterRule operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteTrafficMirrorFilterRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilterRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrafficMirrorFilterRuleResult> deleteTrafficMirrorFilterRuleAsync(
+            DeleteTrafficMirrorFilterRuleRequest deleteTrafficMirrorFilterRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified Traffic Mirror session.
+     * </p>
+     * 
+     * @param deleteTrafficMirrorSessionRequest
+     * @return A Java Future containing the result of the DeleteTrafficMirrorSession operation returned by the service.
+     * @sample AmazonEC2Async.DeleteTrafficMirrorSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrafficMirrorSessionResult> deleteTrafficMirrorSessionAsync(
+            DeleteTrafficMirrorSessionRequest deleteTrafficMirrorSessionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Traffic Mirror session.
+     * </p>
+     * 
+     * @param deleteTrafficMirrorSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTrafficMirrorSession operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeleteTrafficMirrorSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrafficMirrorSessionResult> deleteTrafficMirrorSessionAsync(
+            DeleteTrafficMirrorSessionRequest deleteTrafficMirrorSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified Traffic Mirror target.
+     * </p>
+     * <p>
+     * You cannot delete a Traffic Mirror target that is in use by a Traffic Mirror session.
+     * </p>
+     * 
+     * @param deleteTrafficMirrorTargetRequest
+     * @return A Java Future containing the result of the DeleteTrafficMirrorTarget operation returned by the service.
+     * @sample AmazonEC2Async.DeleteTrafficMirrorTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorTarget" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrafficMirrorTargetResult> deleteTrafficMirrorTargetAsync(
+            DeleteTrafficMirrorTargetRequest deleteTrafficMirrorTargetRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Traffic Mirror target.
+     * </p>
+     * <p>
+     * You cannot delete a Traffic Mirror target that is in use by a Traffic Mirror session.
+     * </p>
+     * 
+     * @param deleteTrafficMirrorTargetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTrafficMirrorTarget operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeleteTrafficMirrorTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorTarget" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrafficMirrorTargetResult> deleteTrafficMirrorTargetAsync(
+            DeleteTrafficMirrorTargetRequest deleteTrafficMirrorTargetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrafficMirrorTargetRequest, DeleteTrafficMirrorTargetResult> asyncHandler);
 
     /**
      * <p>
@@ -6778,7 +7119,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeConversionTasksRequest
-     *        Contains the parameters for DescribeConversionTasks.
      * @return A Java Future containing the result of the DescribeConversionTasks operation returned by the service.
      * @sample AmazonEC2Async.DescribeConversionTasks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks" target="_top">AWS
@@ -6797,7 +7137,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeConversionTasksRequest
-     *        Contains the parameters for DescribeConversionTasks.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -6886,9 +7225,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your DHCP options sets.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+     * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param describeDhcpOptionsRequest
@@ -6904,9 +7242,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your DHCP options sets.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+     * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param describeDhcpOptionsRequest
@@ -7013,7 +7350,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeExportTasksRequest
-     *        Contains the parameters for DescribeExportTasks.
      * @return A Java Future containing the result of the DescribeExportTasks operation returned by the service.
      * @sample AmazonEC2Async.DescribeExportTasks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks" target="_top">AWS API
@@ -7027,7 +7363,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeExportTasksRequest
-     *        Contains the parameters for DescribeExportTasks.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -7697,7 +8032,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeImportImageTasksRequest
-     *        Contains the parameters for DescribeImportImageTasks.
      * @return A Java Future containing the result of the DescribeImportImageTasks operation returned by the service.
      * @sample AmazonEC2Async.DescribeImportImageTasks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportImageTasks" target="_top">AWS
@@ -7711,7 +8045,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeImportImageTasksRequest
-     *        Contains the parameters for DescribeImportImageTasks.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -7745,7 +8078,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeImportSnapshotTasksRequest
-     *        Contains the parameters for DescribeImportSnapshotTasks.
      * @return A Java Future containing the result of the DescribeImportSnapshotTasks operation returned by the service.
      * @sample AmazonEC2Async.DescribeImportSnapshotTasks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportSnapshotTasks"
@@ -7760,7 +8092,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeImportSnapshotTasksRequest
-     *        Contains the parameters for DescribeImportSnapshotTasks.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -8357,7 +8688,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your network ACLs.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
      * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -8374,7 +8705,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your network ACLs.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
      * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -9099,9 +9430,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * for implicit associations.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param describeRouteTablesRequest
@@ -9122,9 +9452,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * for implicit associations.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param describeRouteTablesRequest
@@ -9930,8 +10259,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your subnets.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
-     * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC
+     * and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param describeSubnetsRequest
@@ -9947,8 +10276,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your subnets.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
-     * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC
+     * and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param describeSubnetsRequest
@@ -10033,6 +10362,113 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * @see #describeTagsAsync(DescribeTagsRequest, com.amazonaws.handlers.AsyncHandler)
      */
     java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more Traffic Mirror filters.
+     * </p>
+     * 
+     * @param describeTrafficMirrorFiltersRequest
+     * @return A Java Future containing the result of the DescribeTrafficMirrorFilters operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeTrafficMirrorFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrafficMirrorFiltersResult> describeTrafficMirrorFiltersAsync(
+            DescribeTrafficMirrorFiltersRequest describeTrafficMirrorFiltersRequest);
+
+    /**
+     * <p>
+     * Describes one or more Traffic Mirror filters.
+     * </p>
+     * 
+     * @param describeTrafficMirrorFiltersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTrafficMirrorFilters operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeTrafficMirrorFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrafficMirrorFiltersResult> describeTrafficMirrorFiltersAsync(
+            DescribeTrafficMirrorFiltersRequest describeTrafficMirrorFiltersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrafficMirrorFiltersRequest, DescribeTrafficMirrorFiltersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described.
+     * Alternatively, you can filter the results.
+     * </p>
+     * 
+     * @param describeTrafficMirrorSessionsRequest
+     * @return A Java Future containing the result of the DescribeTrafficMirrorSessions operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeTrafficMirrorSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorSessions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrafficMirrorSessionsResult> describeTrafficMirrorSessionsAsync(
+            DescribeTrafficMirrorSessionsRequest describeTrafficMirrorSessionsRequest);
+
+    /**
+     * <p>
+     * Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described.
+     * Alternatively, you can filter the results.
+     * </p>
+     * 
+     * @param describeTrafficMirrorSessionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTrafficMirrorSessions operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeTrafficMirrorSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorSessions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrafficMirrorSessionsResult> describeTrafficMirrorSessionsAsync(
+            DescribeTrafficMirrorSessionsRequest describeTrafficMirrorSessionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrafficMirrorSessionsRequest, DescribeTrafficMirrorSessionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Information about one or more Traffic Mirror targets.
+     * </p>
+     * 
+     * @param describeTrafficMirrorTargetsRequest
+     * @return A Java Future containing the result of the DescribeTrafficMirrorTargets operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeTrafficMirrorTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrafficMirrorTargetsResult> describeTrafficMirrorTargetsAsync(
+            DescribeTrafficMirrorTargetsRequest describeTrafficMirrorTargetsRequest);
+
+    /**
+     * <p>
+     * Information about one or more Traffic Mirror targets.
+     * </p>
+     * 
+     * @param describeTrafficMirrorTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTrafficMirrorTargets operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeTrafficMirrorTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrafficMirrorTargetsResult> describeTrafficMirrorTargetsAsync(
+            DescribeTrafficMirrorTargetsRequest describeTrafficMirrorTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrafficMirrorTargetsRequest, DescribeTrafficMirrorTargetsResult> asyncHandler);
 
     /**
      * <p>
@@ -11626,8 +12062,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * After you perform this action, the subnet no longer uses the routes in the route table. Instead, it uses the
      * routes in the VPC's main route table. For more information about route tables, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param disassociateRouteTableRequest
@@ -11645,8 +12081,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * After you perform this action, the subnet no longer uses the routes in the route table. Instead, it uses the
      * routes in the VPC's main route table. For more information about route tables, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param disassociateRouteTableRequest
@@ -12685,7 +13121,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importImageRequest
-     *        Contains the parameters for ImportImage.
      * @return A Java Future containing the result of the ImportImage operation returned by the service.
      * @sample AmazonEC2Async.ImportImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage" target="_top">AWS API
@@ -12702,7 +13137,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importImageRequest
-     *        Contains the parameters for ImportImage.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -12742,7 +13176,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importInstanceRequest
-     *        Contains the parameters for ImportInstance.
      * @return A Java Future containing the result of the ImportInstance operation returned by the service.
      * @sample AmazonEC2Async.ImportInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance" target="_top">AWS API
@@ -12763,7 +13196,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importInstanceRequest
-     *        Contains the parameters for ImportInstance.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -12829,7 +13261,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importSnapshotRequest
-     *        Contains the parameters for ImportSnapshot.
      * @return A Java Future containing the result of the ImportSnapshot operation returned by the service.
      * @sample AmazonEC2Async.ImportSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot" target="_top">AWS API
@@ -12843,7 +13274,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importSnapshotRequest
-     *        Contains the parameters for ImportSnapshot.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -12883,7 +13313,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importVolumeRequest
-     *        Contains the parameters for ImportVolume.
      * @return A Java Future containing the result of the ImportVolume operation returned by the service.
      * @sample AmazonEC2Async.ImportVolume
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume" target="_top">AWS API
@@ -12903,7 +13332,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importVolumeRequest
-     *        Contains the parameters for ImportVolume.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -13940,6 +14368,137 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Allows or restricts mirroring network services.
+     * </p>
+     * <p>
+     * By default, Amazon DNS network services are not eligible for Traffic Mirror. Use <code>AddNetworkServices</code>
+     * to add network services to a Traffic Mirror filter. When a network service is added to the Traffic Mirror filter,
+     * all traffic related to that network service will be mirrored. When you no longer want to mirror network services,
+     * use <code>RemoveNetworkServices</code> to remove the network services from the Traffic Mirror filter.
+     * </p>
+     * <p>
+     * FFor information about filter rule properties, see <a href=
+     * "https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html#traffic-mirroring-network-services"
+     * >Network Services</a> in the <i>Traffic Mirroring User Guide </i>.
+     * </p>
+     * 
+     * @param modifyTrafficMirrorFilterNetworkServicesRequest
+     * @return A Java Future containing the result of the ModifyTrafficMirrorFilterNetworkServices operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.ModifyTrafficMirrorFilterNetworkServices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterNetworkServices"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyTrafficMirrorFilterNetworkServicesResult> modifyTrafficMirrorFilterNetworkServicesAsync(
+            ModifyTrafficMirrorFilterNetworkServicesRequest modifyTrafficMirrorFilterNetworkServicesRequest);
+
+    /**
+     * <p>
+     * Allows or restricts mirroring network services.
+     * </p>
+     * <p>
+     * By default, Amazon DNS network services are not eligible for Traffic Mirror. Use <code>AddNetworkServices</code>
+     * to add network services to a Traffic Mirror filter. When a network service is added to the Traffic Mirror filter,
+     * all traffic related to that network service will be mirrored. When you no longer want to mirror network services,
+     * use <code>RemoveNetworkServices</code> to remove the network services from the Traffic Mirror filter.
+     * </p>
+     * <p>
+     * FFor information about filter rule properties, see <a href=
+     * "https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html#traffic-mirroring-network-services"
+     * >Network Services</a> in the <i>Traffic Mirroring User Guide </i>.
+     * </p>
+     * 
+     * @param modifyTrafficMirrorFilterNetworkServicesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyTrafficMirrorFilterNetworkServices operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.ModifyTrafficMirrorFilterNetworkServices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterNetworkServices"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyTrafficMirrorFilterNetworkServicesResult> modifyTrafficMirrorFilterNetworkServicesAsync(
+            ModifyTrafficMirrorFilterNetworkServicesRequest modifyTrafficMirrorFilterNetworkServicesRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyTrafficMirrorFilterNetworkServicesRequest, ModifyTrafficMirrorFilterNetworkServicesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the specified Traffic Mirror rule.
+     * </p>
+     * <p>
+     * <code>DestinationCidrBlock</code> and <code>SourceCidrBlock</code> must both be an IPv4 range or an IPv6 range.
+     * </p>
+     * 
+     * @param modifyTrafficMirrorFilterRuleRequest
+     * @return A Java Future containing the result of the ModifyTrafficMirrorFilterRule operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyTrafficMirrorFilterRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyTrafficMirrorFilterRuleResult> modifyTrafficMirrorFilterRuleAsync(
+            ModifyTrafficMirrorFilterRuleRequest modifyTrafficMirrorFilterRuleRequest);
+
+    /**
+     * <p>
+     * Modifies the specified Traffic Mirror rule.
+     * </p>
+     * <p>
+     * <code>DestinationCidrBlock</code> and <code>SourceCidrBlock</code> must both be an IPv4 range or an IPv6 range.
+     * </p>
+     * 
+     * @param modifyTrafficMirrorFilterRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyTrafficMirrorFilterRule operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyTrafficMirrorFilterRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyTrafficMirrorFilterRuleResult> modifyTrafficMirrorFilterRuleAsync(
+            ModifyTrafficMirrorFilterRuleRequest modifyTrafficMirrorFilterRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyTrafficMirrorFilterRuleRequest, ModifyTrafficMirrorFilterRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies a Traffic Mirror session.
+     * </p>
+     * 
+     * @param modifyTrafficMirrorSessionRequest
+     * @return A Java Future containing the result of the ModifyTrafficMirrorSession operation returned by the service.
+     * @sample AmazonEC2Async.ModifyTrafficMirrorSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyTrafficMirrorSessionResult> modifyTrafficMirrorSessionAsync(
+            ModifyTrafficMirrorSessionRequest modifyTrafficMirrorSessionRequest);
+
+    /**
+     * <p>
+     * Modifies a Traffic Mirror session.
+     * </p>
+     * 
+     * @param modifyTrafficMirrorSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyTrafficMirrorSession operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyTrafficMirrorSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyTrafficMirrorSessionResult> modifyTrafficMirrorSessionAsync(
+            ModifyTrafficMirrorSessionRequest modifyTrafficMirrorSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyTrafficMirrorSessionRequest, ModifyTrafficMirrorSessionResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the specified VPC attachment.
      * </p>
      * 
@@ -14160,8 +14719,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Modifies attributes of a specified VPC endpoint. The attributes that you can modify depend on the type of VPC
      * endpoint (interface or gateway). For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC Endpoints</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC Endpoints</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param modifyVpcEndpointRequest
@@ -14177,8 +14736,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Modifies attributes of a specified VPC endpoint. The attributes that you can modify depend on the type of VPC
      * endpoint (interface or gateway). For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC Endpoints</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC Endpoints</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param modifyVpcEndpointRequest
@@ -14274,8 +14833,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Modifies the permissions for your <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC endpoint service</a>. You
-     * can add or remove permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to your
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC endpoint service</a>. You can
+     * add or remove permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to your
      * endpoint service.
      * </p>
      * <p>
@@ -14297,8 +14856,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Modifies the permissions for your <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC endpoint service</a>. You
-     * can add or remove permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to your
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC endpoint service</a>. You can
+     * add or remove permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to your
      * endpoint service.
      * </p>
      * <p>
@@ -15341,8 +15900,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically
      * associated with the default network ACL. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
+     * Private Cloud User Guide</i>.
      * </p>
      * <p>
      * This is an idempotent operation.
@@ -15362,8 +15921,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically
      * associated with the default network ACL. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
+     * Private Cloud User Guide</i>.
      * </p>
      * <p>
      * This is an idempotent operation.
@@ -15387,8 +15946,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Replaces an entry (rule) in a network ACL. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
+     * Private Cloud User Guide</i>.
      * </p>
      * 
      * @param replaceNetworkAclEntryRequest
@@ -15402,8 +15961,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Replaces an entry (rule) in a network ACL. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
+     * Private Cloud User Guide</i>.
      * </p>
      * 
      * @param replaceNetworkAclEntryRequest
@@ -15426,9 +15985,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * egress-only internet gateway.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param replaceRouteRequest
@@ -15446,9 +16004,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * egress-only internet gateway.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param replaceRouteRequest
@@ -15468,8 +16025,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Changes the route table associated with a given subnet in a VPC. After the operation completes, the subnet uses
      * the routes in the new route table it's associated with. For more information about route tables, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
      * You can also use ReplaceRouteTableAssociation to change which table is the main route table in the VPC. You just
@@ -15490,8 +16047,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Changes the route table associated with a given subnet in a VPC. After the operation completes, the subnet uses
      * the routes in the new route table it's associated with. For more information about route tables, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
      * You can also use ReplaceRouteTableAssociation to change which table is the main route table in the VPC. You just

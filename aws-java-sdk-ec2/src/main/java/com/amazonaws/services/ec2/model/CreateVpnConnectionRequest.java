@@ -35,7 +35,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
     private String customerGatewayId;
     /**
      * <p>
-     * The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).
+     * The type of VPN connection (<code>ipsec.1</code>).
      * </p>
      */
     private String type;
@@ -71,7 +71,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
      * methods to initialize any additional object members.
      * 
      * @param type
-     *        The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).
+     *        The type of VPN connection (<code>ipsec.1</code>).
      * @param customerGatewayId
      *        The ID of the customer gateway.
      * @param vpnGatewayId
@@ -126,11 +126,11 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).
+     * The type of VPN connection (<code>ipsec.1</code>).
      * </p>
      * 
      * @param type
-     *        The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).
+     *        The type of VPN connection (<code>ipsec.1</code>).
      */
 
     public void setType(String type) {
@@ -139,10 +139,10 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).
+     * The type of VPN connection (<code>ipsec.1</code>).
      * </p>
      * 
-     * @return The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).
+     * @return The type of VPN connection (<code>ipsec.1</code>).
      */
 
     public String getType() {
@@ -151,11 +151,11 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).
+     * The type of VPN connection (<code>ipsec.1</code>).
      * </p>
      * 
      * @param type
-     *        The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).
+     *        The type of VPN connection (<code>ipsec.1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

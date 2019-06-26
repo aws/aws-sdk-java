@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Reserved. If you need to sustain traffic greater than the <a
- * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact us
+ * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
  * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
  * </p>
  * 
@@ -31,40 +31,40 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      */
     private java.util.Date provisionTime;
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      */
     private String provisioned;
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      */
     private java.util.Date requestTime;
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      */
     private String requested;
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      */
     private String status;
@@ -72,13 +72,13 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @param provisionTime
      *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      */
 
@@ -89,12 +89,12 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @return Reserved. If you need to sustain traffic greater than the <a
-     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *         contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      */
 
@@ -105,13 +105,13 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @param provisionTime
      *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -124,13 +124,13 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @param provisioned
      *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      */
 
@@ -141,12 +141,12 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @return Reserved. If you need to sustain traffic greater than the <a
-     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *         contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      */
 
@@ -157,13 +157,13 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @param provisioned
      *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -176,13 +176,13 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @param requestTime
      *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      */
 
@@ -193,12 +193,12 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @return Reserved. If you need to sustain traffic greater than the <a
-     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *         contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      */
 
@@ -209,13 +209,13 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @param requestTime
      *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -228,13 +228,13 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @param requested
      *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      */
 
@@ -245,12 +245,12 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @return Reserved. If you need to sustain traffic greater than the <a
-     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *         contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      */
 
@@ -261,13 +261,13 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @param requested
      *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -280,13 +280,13 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @param status
      *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      */
 
@@ -297,12 +297,12 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @return Reserved. If you need to sustain traffic greater than the <a
-     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *         contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      */
 
@@ -313,13 +313,13 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us
+     * through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @param status
      *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>,
      *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

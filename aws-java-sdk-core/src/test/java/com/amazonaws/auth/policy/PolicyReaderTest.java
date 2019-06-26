@@ -17,6 +17,7 @@ package com.amazonaws.auth.policy;
 import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -437,5 +438,28 @@ public class PolicyReaderTest {
         List<Statement> statements = new ArrayList<Statement>(policy.getStatements());
 
         assertEquals("test-string", statements.get(0).getPrincipals().get(0).getId());
+    }
+
+    @Test
+    public void testNotResources() {
+        String jsonString =
+                  "{" +
+                    "\"Version\": \"2012-10-17\"," +
+                    "\"Statement\": [" +
+                      "{" +
+                        "\"Effect\": \"Deny\"," +
+                        "\"Principal\": {" +
+                        "\"AWS\": \"test-string\"" +
+                        "}," +
+                        "\"NotResource\": \"resource\"\n" +
+                      "}" +
+                    "]" +
+                 "}" ;
+        Policy policy = Policy.fromJson(jsonString);
+        List<Statement> statements = new ArrayList<Statement>(policy.getStatements());
+
+        Resource resource = statements.get(0).getResources().get(0);
+        assertEquals("resource", resource.getId());
+        assertTrue("resource", resource.isNotType());
     }
 }

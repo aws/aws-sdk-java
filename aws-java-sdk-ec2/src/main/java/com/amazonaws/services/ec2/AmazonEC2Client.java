@@ -57,32 +57,31 @@ import com.amazonaws.services.ec2.model.transform.*;
  * Amazon EC2 eliminates the need to invest in hardware up front, so you can develop and deploy applications faster.
  * </p>
  * <p>
- * To learn more about Amazon EC2, Amazon EBS, and Amazon VPC, see the following resources:
+ * To learn more, see the following resources:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>
+ * Amazon EC2: <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>, <a
+ * href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a>
+ * Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon EBS documentation</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>
+ * Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a
+ * href="http://aws.amazon.com/documentation/vpc">Amazon VPC documentation</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://aws.amazon.com/documentation/vpc">Amazon VPC documentation</a>
+ * AWS VPN: <a href="http://aws.amazon.com/vpn">AWS VPN product page</a>, <a
+ * href="http://aws.amazon.com/documentation/vpn">AWS VPN documentation</a>
  * </p>
  * </li>
  * </ul>
@@ -1083,9 +1082,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * renew the lease using the operating system on the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+     * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param associateDhcpOptionsRequest
@@ -1198,9 +1196,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * table can be associated with multiple subnets.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param associateRouteTableRequest
@@ -1367,8 +1364,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information about associating CIDR blocks with your VPC and applicable restrictions, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC and Subnet
-     * Sizing</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC and Subnet Sizing</a> in
+     * the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param associateVpcCidrBlockRequest
@@ -1486,7 +1483,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Attaches an internet gateway to a VPC, enabling connectivity between the internet and the VPC. For more
      * information about your VPC and internet gateway, see the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual Private Cloud User Guide</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.
      * </p>
      * 
      * @param attachInternetGatewayRequest
@@ -2128,7 +2125,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param cancelConversionTaskRequest
-     *        Contains the parameters for CancelConversionTask.
      * @return Result of the CancelConversionTask operation returned by the service.
      * @sample AmazonEC2.CancelConversionTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask" target="_top">AWS API
@@ -2184,7 +2180,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param cancelExportTaskRequest
-     *        Contains the parameters for CancelExportTask.
      * @return Result of the CancelExportTask operation returned by the service.
      * @sample AmazonEC2.CancelExportTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTask" target="_top">AWS API
@@ -2238,7 +2233,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param cancelImportTaskRequest
-     *        Contains the parameters for CancelImportTask.
      * @return Result of the CancelImportTask operation returned by the service.
      * @sample AmazonEC2.CancelImportTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask" target="_top">AWS API
@@ -2982,8 +2976,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified Availability Zone in your
      * default VPC. You can have only one default subnet per Availability Zone. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#create-default-subnet">Creating a
-     * Default Subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating a Default
+     * Subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createDefaultSubnetRequest
@@ -3038,9 +3032,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet in each Availability
      * Zone. For more information about the components of a default VPC, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default VPC and Default
-     * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot specify the components of the
-     * default VPC yourself.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default VPC and Default Subnets</a> in
+     * the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot specify the components of the default VPC
+     * yourself.
      * </p>
      * <p>
      * If you deleted your previous default VPC, you can create a default VPC. You cannot have more than one default VPC
@@ -3152,7 +3146,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * (AmazonProvidedDNS). If you create a set of options, and if your VPC has an internet gateway, make sure to set
      * the <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code> or to a domain name server
      * of your choice. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -3328,8 +3322,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Flow log data for a monitored network interface is recorded as flow log records, which are log events consisting
      * of fields that describe the traffic flow. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records">Flow Log
-     * Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log Records</a> in
+     * the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
      * When publishing to CloudWatch Logs, flow log records are published to a log group, and each network interface has
@@ -3337,8 +3331,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * network interfaces are published to a single log file object that is stored in the specified bucket.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
-     * Flow Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html">VPC Flow
+     * Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createFlowLogsRequest
@@ -3524,7 +3518,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param createInstanceExportTaskRequest
-     *        Contains the parameters for CreateInstanceExportTask.
      * @return Result of the CreateInstanceExportTask operation returned by the service.
      * @sample AmazonEC2.CreateInstanceExportTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask" target="_top">AWS
@@ -3579,7 +3572,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information about your VPC and internet gateway, see the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual Private Cloud User Guide</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.
      * </p>
      * 
      * @param createInternetGatewayRequest
@@ -3819,8 +3812,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * subnet with a private IP address from the IP address range of the subnet. Internet-bound traffic from a private
      * subnet can be routed to the NAT gateway, therefore enabling instances in the private subnet to connect to the
      * internet. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT Gateways</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT Gateways</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createNatGatewayRequest
@@ -3877,7 +3870,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * groups) for the instances in your VPC.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
      * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -3947,8 +3940,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information about network ACLs, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
+     * Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createNetworkAclEntryRequest
@@ -4292,8 +4285,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information about route tables, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createRouteRequest
@@ -4349,9 +4342,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * table with a subnet.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createRouteTableRequest
@@ -4713,7 +4705,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information about subnets, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your VPC and Subnets</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and Subnets</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -4815,6 +4807,256 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateTagsResult> responseHandler = new StaxResponseHandler<CreateTagsResult>(new CreateTagsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a Traffic Mirror filter.
+     * </p>
+     * <p>
+     * A Traffic Mirror filter is a set of rules that defines the traffic to mirror.
+     * </p>
+     * <p>
+     * By default, no traffic is mirrored. To mirror traffic, use <a>CreateTrafficMirrorFilterRule</a> to add Traffic
+     * Mirror rules to the filter. The rules you add define what traffic gets mirrored. You can also use
+     * <a>ModifyTrafficMirrorFilterNetworkServices</a> to mirror supported network services.
+     * </p>
+     * 
+     * @param createTrafficMirrorFilterRequest
+     * @return Result of the CreateTrafficMirrorFilter operation returned by the service.
+     * @sample AmazonEC2.CreateTrafficMirrorFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilter" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateTrafficMirrorFilterResult createTrafficMirrorFilter(CreateTrafficMirrorFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrafficMirrorFilter(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrafficMirrorFilterResult executeCreateTrafficMirrorFilter(CreateTrafficMirrorFilterRequest createTrafficMirrorFilterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTrafficMirrorFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTrafficMirrorFilterRequest> request = null;
+        Response<CreateTrafficMirrorFilterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTrafficMirrorFilterRequestMarshaller().marshall(super.beforeMarshalling(createTrafficMirrorFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficMirrorFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateTrafficMirrorFilterResult> responseHandler = new StaxResponseHandler<CreateTrafficMirrorFilterResult>(
+                    new CreateTrafficMirrorFilterResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a Traffic Mirror rule.
+     * </p>
+     * <p>
+     * A Traffic Mirror rule defines the Traffic Mirror source traffic to mirror.
+     * </p>
+     * <p>
+     * You need the Traffic Mirror filter ID when you create the rule.
+     * </p>
+     * 
+     * @param createTrafficMirrorFilterRuleRequest
+     * @return Result of the CreateTrafficMirrorFilterRule operation returned by the service.
+     * @sample AmazonEC2.CreateTrafficMirrorFilterRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilterRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTrafficMirrorFilterRuleResult createTrafficMirrorFilterRule(CreateTrafficMirrorFilterRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrafficMirrorFilterRule(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrafficMirrorFilterRuleResult executeCreateTrafficMirrorFilterRule(CreateTrafficMirrorFilterRuleRequest createTrafficMirrorFilterRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTrafficMirrorFilterRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTrafficMirrorFilterRuleRequest> request = null;
+        Response<CreateTrafficMirrorFilterRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTrafficMirrorFilterRuleRequestMarshaller().marshall(super.beforeMarshalling(createTrafficMirrorFilterRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficMirrorFilterRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateTrafficMirrorFilterRuleResult> responseHandler = new StaxResponseHandler<CreateTrafficMirrorFilterRuleResult>(
+                    new CreateTrafficMirrorFilterRuleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a Traffic Mirror session.
+     * </p>
+     * <p>
+     * A Traffic Mirror session actively copies packets from a Traffic Mirror source to a Traffic Mirror target. Create
+     * a filter, and then assign it to the session to define a subset of the traffic to mirror, for example all TCP
+     * traffic.
+     * </p>
+     * <p>
+     * The Traffic Mirror source and the Traffic Mirror target (monitoring appliances) can be in the same VPC, or in a
+     * different VPC connected via VPC peering or a transit gateway.
+     * </p>
+     * <p>
+     * By default, no traffic is mirrored. Use <a>CreateTrafficMirrorFilter</a> to create filter rules that specify the
+     * traffic to mirror.
+     * </p>
+     * 
+     * @param createTrafficMirrorSessionRequest
+     * @return Result of the CreateTrafficMirrorSession operation returned by the service.
+     * @sample AmazonEC2.CreateTrafficMirrorSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateTrafficMirrorSessionResult createTrafficMirrorSession(CreateTrafficMirrorSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrafficMirrorSession(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrafficMirrorSessionResult executeCreateTrafficMirrorSession(CreateTrafficMirrorSessionRequest createTrafficMirrorSessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTrafficMirrorSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTrafficMirrorSessionRequest> request = null;
+        Response<CreateTrafficMirrorSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTrafficMirrorSessionRequestMarshaller().marshall(super.beforeMarshalling(createTrafficMirrorSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficMirrorSession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateTrafficMirrorSessionResult> responseHandler = new StaxResponseHandler<CreateTrafficMirrorSessionResult>(
+                    new CreateTrafficMirrorSessionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a target for your Traffic Mirror session.
+     * </p>
+     * <p>
+     * A Traffic Mirror target is the destination for mirrored traffic. The Traffic Mirror source and the Traffic Mirror
+     * target (monitoring appliances) can be in the same VPC, or in different VPCs connected via VPC peering or a
+     * transit gateway.
+     * </p>
+     * <p>
+     * A Traffic Mirror target can be a network interface, or a Network Load Balancer.
+     * </p>
+     * <p>
+     * To use the target in a Traffic Mirror session, use <a>CreateTrafficMirrorSession</a>.
+     * </p>
+     * 
+     * @param createTrafficMirrorTargetRequest
+     * @return Result of the CreateTrafficMirrorTarget operation returned by the service.
+     * @sample AmazonEC2.CreateTrafficMirrorTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorTarget" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateTrafficMirrorTargetResult createTrafficMirrorTarget(CreateTrafficMirrorTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrafficMirrorTarget(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrafficMirrorTargetResult executeCreateTrafficMirrorTarget(CreateTrafficMirrorTargetRequest createTrafficMirrorTargetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTrafficMirrorTargetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTrafficMirrorTargetRequest> request = null;
+        Response<CreateTrafficMirrorTargetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTrafficMirrorTargetRequestMarshaller().marshall(super.beforeMarshalling(createTrafficMirrorTargetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficMirrorTarget");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateTrafficMirrorTargetResult> responseHandler = new StaxResponseHandler<CreateTrafficMirrorTargetResult>(
+                    new CreateTrafficMirrorTargetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5145,7 +5387,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4
      * addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses). For more information about how large to
-     * make your VPC, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your VPC and
+     * make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and
      * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -5155,7 +5397,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP options, which include only a default DNS
      * server that we provide (AmazonProvidedDNS). For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -5216,7 +5458,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Creates a VPC endpoint for a specified service. An endpoint enables you to create a private connection between
      * your VPC and the service. The service may be provided by AWS, an AWS Marketplace partner, or another AWS account.
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
      * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -5350,7 +5592,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * To create an endpoint service configuration, you must first create a Network Load Balancer for your service. For
-     * more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+     * more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
      * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -5412,8 +5654,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <note>
      * <p>
-     * Limitations and rules apply to a VPC peering connection. For more information, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations"
+     * Limitations and rules apply to a VPC peering connection. For more information, see the <a
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations"
      * >limitations</a> section in the <i>VPC Peering Guide</i>.
      * </p>
      * </note>
@@ -5482,7 +5724,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The supported
-     * connection types are <code>ipsec.1</code> and <code>ipsec.2</code>.
+     * connection types is <code>ipsec.1</code>.
      * </p>
      * <p>
      * The response includes information that you need to give to your network administrator to configure your customer
@@ -7047,6 +7289,224 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteTagsResult> responseHandler = new StaxResponseHandler<DeleteTagsResult>(new DeleteTagsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified Traffic Mirror filter.
+     * </p>
+     * <p>
+     * You cannot delete a Traffic Mirror filter that is in use by a Traffic Mirror session.
+     * </p>
+     * 
+     * @param deleteTrafficMirrorFilterRequest
+     * @return Result of the DeleteTrafficMirrorFilter operation returned by the service.
+     * @sample AmazonEC2.DeleteTrafficMirrorFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilter" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteTrafficMirrorFilterResult deleteTrafficMirrorFilter(DeleteTrafficMirrorFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrafficMirrorFilter(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrafficMirrorFilterResult executeDeleteTrafficMirrorFilter(DeleteTrafficMirrorFilterRequest deleteTrafficMirrorFilterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTrafficMirrorFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTrafficMirrorFilterRequest> request = null;
+        Response<DeleteTrafficMirrorFilterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTrafficMirrorFilterRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficMirrorFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficMirrorFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteTrafficMirrorFilterResult> responseHandler = new StaxResponseHandler<DeleteTrafficMirrorFilterResult>(
+                    new DeleteTrafficMirrorFilterResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified Traffic Mirror rule.
+     * </p>
+     * 
+     * @param deleteTrafficMirrorFilterRuleRequest
+     * @return Result of the DeleteTrafficMirrorFilterRule operation returned by the service.
+     * @sample AmazonEC2.DeleteTrafficMirrorFilterRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilterRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTrafficMirrorFilterRuleResult deleteTrafficMirrorFilterRule(DeleteTrafficMirrorFilterRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrafficMirrorFilterRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrafficMirrorFilterRuleResult executeDeleteTrafficMirrorFilterRule(DeleteTrafficMirrorFilterRuleRequest deleteTrafficMirrorFilterRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTrafficMirrorFilterRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTrafficMirrorFilterRuleRequest> request = null;
+        Response<DeleteTrafficMirrorFilterRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTrafficMirrorFilterRuleRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficMirrorFilterRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficMirrorFilterRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteTrafficMirrorFilterRuleResult> responseHandler = new StaxResponseHandler<DeleteTrafficMirrorFilterRuleResult>(
+                    new DeleteTrafficMirrorFilterRuleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified Traffic Mirror session.
+     * </p>
+     * 
+     * @param deleteTrafficMirrorSessionRequest
+     * @return Result of the DeleteTrafficMirrorSession operation returned by the service.
+     * @sample AmazonEC2.DeleteTrafficMirrorSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteTrafficMirrorSessionResult deleteTrafficMirrorSession(DeleteTrafficMirrorSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrafficMirrorSession(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrafficMirrorSessionResult executeDeleteTrafficMirrorSession(DeleteTrafficMirrorSessionRequest deleteTrafficMirrorSessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTrafficMirrorSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTrafficMirrorSessionRequest> request = null;
+        Response<DeleteTrafficMirrorSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTrafficMirrorSessionRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficMirrorSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficMirrorSession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteTrafficMirrorSessionResult> responseHandler = new StaxResponseHandler<DeleteTrafficMirrorSessionResult>(
+                    new DeleteTrafficMirrorSessionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified Traffic Mirror target.
+     * </p>
+     * <p>
+     * You cannot delete a Traffic Mirror target that is in use by a Traffic Mirror session.
+     * </p>
+     * 
+     * @param deleteTrafficMirrorTargetRequest
+     * @return Result of the DeleteTrafficMirrorTarget operation returned by the service.
+     * @sample AmazonEC2.DeleteTrafficMirrorTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorTarget" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteTrafficMirrorTargetResult deleteTrafficMirrorTarget(DeleteTrafficMirrorTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrafficMirrorTarget(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrafficMirrorTargetResult executeDeleteTrafficMirrorTarget(DeleteTrafficMirrorTargetRequest deleteTrafficMirrorTargetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTrafficMirrorTargetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTrafficMirrorTargetRequest> request = null;
+        Response<DeleteTrafficMirrorTargetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTrafficMirrorTargetRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficMirrorTargetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficMirrorTarget");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteTrafficMirrorTargetResult> responseHandler = new StaxResponseHandler<DeleteTrafficMirrorTargetResult>(
+                    new DeleteTrafficMirrorTargetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8713,7 +9173,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param describeConversionTasksRequest
-     *        Contains the parameters for DescribeConversionTasks.
      * @return Result of the DescribeConversionTasks operation returned by the service.
      * @sample AmazonEC2.DescribeConversionTasks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks" target="_top">AWS
@@ -8834,9 +9293,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Describes one or more of your DHCP options sets.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+     * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param describeDhcpOptionsRequest
@@ -9008,7 +9466,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param describeExportTasksRequest
-     *        Contains the parameters for DescribeExportTasks.
      * @return Result of the DescribeExportTasks operation returned by the service.
      * @sample AmazonEC2.DescribeExportTasks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks" target="_top">AWS API
@@ -9897,7 +10354,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param describeImportImageTasksRequest
-     *        Contains the parameters for DescribeImportImageTasks.
      * @return Result of the DescribeImportImageTasks operation returned by the service.
      * @sample AmazonEC2.DescribeImportImageTasks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportImageTasks" target="_top">AWS
@@ -9956,7 +10412,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param describeImportSnapshotTasksRequest
-     *        Contains the parameters for DescribeImportSnapshotTasks.
      * @return Result of the DescribeImportSnapshotTasks operation returned by the service.
      * @sample AmazonEC2.DescribeImportSnapshotTasks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportSnapshotTasks"
@@ -10655,7 +11110,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Describes one or more of your network ACLs.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
      * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -11487,9 +11942,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * for implicit associations.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param describeRouteTablesRequest
@@ -12397,8 +12851,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Describes one or more of your subnets.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
-     * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC
+     * and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param describeSubnetsRequest
@@ -12514,6 +12968,166 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeTagsResult describeTags() {
         return describeTags(new DescribeTagsRequest());
+    }
+
+    /**
+     * <p>
+     * Describes one or more Traffic Mirror filters.
+     * </p>
+     * 
+     * @param describeTrafficMirrorFiltersRequest
+     * @return Result of the DescribeTrafficMirrorFilters operation returned by the service.
+     * @sample AmazonEC2.DescribeTrafficMirrorFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTrafficMirrorFiltersResult describeTrafficMirrorFilters(DescribeTrafficMirrorFiltersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrafficMirrorFilters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrafficMirrorFiltersResult executeDescribeTrafficMirrorFilters(DescribeTrafficMirrorFiltersRequest describeTrafficMirrorFiltersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTrafficMirrorFiltersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrafficMirrorFiltersRequest> request = null;
+        Response<DescribeTrafficMirrorFiltersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrafficMirrorFiltersRequestMarshaller().marshall(super.beforeMarshalling(describeTrafficMirrorFiltersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrafficMirrorFilters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTrafficMirrorFiltersResult> responseHandler = new StaxResponseHandler<DescribeTrafficMirrorFiltersResult>(
+                    new DescribeTrafficMirrorFiltersResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described.
+     * Alternatively, you can filter the results.
+     * </p>
+     * 
+     * @param describeTrafficMirrorSessionsRequest
+     * @return Result of the DescribeTrafficMirrorSessions operation returned by the service.
+     * @sample AmazonEC2.DescribeTrafficMirrorSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorSessions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTrafficMirrorSessionsResult describeTrafficMirrorSessions(DescribeTrafficMirrorSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrafficMirrorSessions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrafficMirrorSessionsResult executeDescribeTrafficMirrorSessions(DescribeTrafficMirrorSessionsRequest describeTrafficMirrorSessionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTrafficMirrorSessionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrafficMirrorSessionsRequest> request = null;
+        Response<DescribeTrafficMirrorSessionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrafficMirrorSessionsRequestMarshaller().marshall(super.beforeMarshalling(describeTrafficMirrorSessionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrafficMirrorSessions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTrafficMirrorSessionsResult> responseHandler = new StaxResponseHandler<DescribeTrafficMirrorSessionsResult>(
+                    new DescribeTrafficMirrorSessionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Information about one or more Traffic Mirror targets.
+     * </p>
+     * 
+     * @param describeTrafficMirrorTargetsRequest
+     * @return Result of the DescribeTrafficMirrorTargets operation returned by the service.
+     * @sample AmazonEC2.DescribeTrafficMirrorTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTrafficMirrorTargetsResult describeTrafficMirrorTargets(DescribeTrafficMirrorTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrafficMirrorTargets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrafficMirrorTargetsResult executeDescribeTrafficMirrorTargets(DescribeTrafficMirrorTargetsRequest describeTrafficMirrorTargetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTrafficMirrorTargetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrafficMirrorTargetsRequest> request = null;
+        Response<DescribeTrafficMirrorTargetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrafficMirrorTargetsRequestMarshaller().marshall(super.beforeMarshalling(describeTrafficMirrorTargetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrafficMirrorTargets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTrafficMirrorTargetsResult> responseHandler = new StaxResponseHandler<DescribeTrafficMirrorTargetsResult>(
+                    new DescribeTrafficMirrorTargetsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -14550,8 +15164,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * After you perform this action, the subnet no longer uses the routes in the route table. Instead, it uses the
      * routes in the VPC's main route table. For more information about route tables, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param disassociateRouteTableRequest
@@ -16010,7 +16624,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param importImageRequest
-     *        Contains the parameters for ImportImage.
      * @return Result of the ImportImage operation returned by the service.
      * @sample AmazonEC2.ImportImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage" target="_top">AWS API
@@ -16075,7 +16688,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param importInstanceRequest
-     *        Contains the parameters for ImportInstance.
      * @return Result of the ImportInstance operation returned by the service.
      * @sample AmazonEC2.ImportInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance" target="_top">AWS API
@@ -16189,7 +16801,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param importSnapshotRequest
-     *        Contains the parameters for ImportSnapshot.
      * @return Result of the ImportSnapshot operation returned by the service.
      * @sample AmazonEC2.ImportSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot" target="_top">AWS API
@@ -16254,7 +16865,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param importVolumeRequest
-     *        Contains the parameters for ImportVolume.
      * @return Result of the ImportVolume operation returned by the service.
      * @sample AmazonEC2.ImportVolume
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume" target="_top">AWS API
@@ -17558,6 +18168,181 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Allows or restricts mirroring network services.
+     * </p>
+     * <p>
+     * By default, Amazon DNS network services are not eligible for Traffic Mirror. Use <code>AddNetworkServices</code>
+     * to add network services to a Traffic Mirror filter. When a network service is added to the Traffic Mirror filter,
+     * all traffic related to that network service will be mirrored. When you no longer want to mirror network services,
+     * use <code>RemoveNetworkServices</code> to remove the network services from the Traffic Mirror filter.
+     * </p>
+     * <p>
+     * FFor information about filter rule properties, see <a href=
+     * "https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html#traffic-mirroring-network-services"
+     * >Network Services</a> in the <i>Traffic Mirroring User Guide </i>.
+     * </p>
+     * 
+     * @param modifyTrafficMirrorFilterNetworkServicesRequest
+     * @return Result of the ModifyTrafficMirrorFilterNetworkServices operation returned by the service.
+     * @sample AmazonEC2.ModifyTrafficMirrorFilterNetworkServices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterNetworkServices"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyTrafficMirrorFilterNetworkServicesResult modifyTrafficMirrorFilterNetworkServices(ModifyTrafficMirrorFilterNetworkServicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyTrafficMirrorFilterNetworkServices(request);
+    }
+
+    @SdkInternalApi
+    final ModifyTrafficMirrorFilterNetworkServicesResult executeModifyTrafficMirrorFilterNetworkServices(
+            ModifyTrafficMirrorFilterNetworkServicesRequest modifyTrafficMirrorFilterNetworkServicesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyTrafficMirrorFilterNetworkServicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyTrafficMirrorFilterNetworkServicesRequest> request = null;
+        Response<ModifyTrafficMirrorFilterNetworkServicesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyTrafficMirrorFilterNetworkServicesRequestMarshaller().marshall(super
+                        .beforeMarshalling(modifyTrafficMirrorFilterNetworkServicesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTrafficMirrorFilterNetworkServices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyTrafficMirrorFilterNetworkServicesResult> responseHandler = new StaxResponseHandler<ModifyTrafficMirrorFilterNetworkServicesResult>(
+                    new ModifyTrafficMirrorFilterNetworkServicesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the specified Traffic Mirror rule.
+     * </p>
+     * <p>
+     * <code>DestinationCidrBlock</code> and <code>SourceCidrBlock</code> must both be an IPv4 range or an IPv6 range.
+     * </p>
+     * 
+     * @param modifyTrafficMirrorFilterRuleRequest
+     * @return Result of the ModifyTrafficMirrorFilterRule operation returned by the service.
+     * @sample AmazonEC2.ModifyTrafficMirrorFilterRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyTrafficMirrorFilterRuleResult modifyTrafficMirrorFilterRule(ModifyTrafficMirrorFilterRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyTrafficMirrorFilterRule(request);
+    }
+
+    @SdkInternalApi
+    final ModifyTrafficMirrorFilterRuleResult executeModifyTrafficMirrorFilterRule(ModifyTrafficMirrorFilterRuleRequest modifyTrafficMirrorFilterRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyTrafficMirrorFilterRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyTrafficMirrorFilterRuleRequest> request = null;
+        Response<ModifyTrafficMirrorFilterRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyTrafficMirrorFilterRuleRequestMarshaller().marshall(super.beforeMarshalling(modifyTrafficMirrorFilterRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTrafficMirrorFilterRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyTrafficMirrorFilterRuleResult> responseHandler = new StaxResponseHandler<ModifyTrafficMirrorFilterRuleResult>(
+                    new ModifyTrafficMirrorFilterRuleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies a Traffic Mirror session.
+     * </p>
+     * 
+     * @param modifyTrafficMirrorSessionRequest
+     * @return Result of the ModifyTrafficMirrorSession operation returned by the service.
+     * @sample AmazonEC2.ModifyTrafficMirrorSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyTrafficMirrorSessionResult modifyTrafficMirrorSession(ModifyTrafficMirrorSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyTrafficMirrorSession(request);
+    }
+
+    @SdkInternalApi
+    final ModifyTrafficMirrorSessionResult executeModifyTrafficMirrorSession(ModifyTrafficMirrorSessionRequest modifyTrafficMirrorSessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyTrafficMirrorSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyTrafficMirrorSessionRequest> request = null;
+        Response<ModifyTrafficMirrorSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyTrafficMirrorSessionRequestMarshaller().marshall(super.beforeMarshalling(modifyTrafficMirrorSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTrafficMirrorSession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyTrafficMirrorSessionResult> responseHandler = new StaxResponseHandler<ModifyTrafficMirrorSessionResult>(
+                    new ModifyTrafficMirrorSessionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Modifies the specified VPC attachment.
      * </p>
      * 
@@ -17817,8 +18602,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Modifies attributes of a specified VPC endpoint. The attributes that you can modify depend on the type of VPC
      * endpoint (interface or gateway). For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC Endpoints</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC Endpoints</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param modifyVpcEndpointRequest
@@ -17986,8 +18771,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Modifies the permissions for your <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC endpoint service</a>. You
-     * can add or remove permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to your
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC endpoint service</a>. You can
+     * add or remove permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to your
      * endpoint service.
      * </p>
      * <p>
@@ -19186,8 +19971,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically
      * associated with the default network ACL. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
+     * Private Cloud User Guide</i>.
      * </p>
      * <p>
      * This is an idempotent operation.
@@ -19244,8 +20029,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Replaces an entry (rule) in a network ACL. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
+     * Private Cloud User Guide</i>.
      * </p>
      * 
      * @param replaceNetworkAclEntryRequest
@@ -19303,9 +20088,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * egress-only internet gateway.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param replaceRouteRequest
@@ -19359,8 +20143,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Changes the route table associated with a given subnet in a VPC. After the operation completes, the subnet uses
      * the routes in the new route table it's associated with. For more information about route tables, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon
+     * Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
      * You can also use ReplaceRouteTableAssociation to change which table is the main route table in the VPC. You just

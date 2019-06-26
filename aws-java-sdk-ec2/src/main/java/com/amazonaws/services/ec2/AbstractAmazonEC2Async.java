@@ -1056,6 +1056,58 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorFilterResult> createTrafficMirrorFilterAsync(CreateTrafficMirrorFilterRequest request) {
+
+        return createTrafficMirrorFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorFilterResult> createTrafficMirrorFilterAsync(CreateTrafficMirrorFilterRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorFilterRuleResult> createTrafficMirrorFilterRuleAsync(CreateTrafficMirrorFilterRuleRequest request) {
+
+        return createTrafficMirrorFilterRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorFilterRuleResult> createTrafficMirrorFilterRuleAsync(CreateTrafficMirrorFilterRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorSessionResult> createTrafficMirrorSessionAsync(CreateTrafficMirrorSessionRequest request) {
+
+        return createTrafficMirrorSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorSessionResult> createTrafficMirrorSessionAsync(CreateTrafficMirrorSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorTargetResult> createTrafficMirrorTargetAsync(CreateTrafficMirrorTargetRequest request) {
+
+        return createTrafficMirrorTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorTargetResult> createTrafficMirrorTargetAsync(CreateTrafficMirrorTargetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTrafficMirrorTargetRequest, CreateTrafficMirrorTargetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTransitGatewayResult> createTransitGatewayAsync(CreateTransitGatewayRequest request) {
 
         return createTransitGatewayAsync(request, null);
@@ -1602,6 +1654,58 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorFilterResult> deleteTrafficMirrorFilterAsync(DeleteTrafficMirrorFilterRequest request) {
+
+        return deleteTrafficMirrorFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorFilterResult> deleteTrafficMirrorFilterAsync(DeleteTrafficMirrorFilterRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorFilterRuleResult> deleteTrafficMirrorFilterRuleAsync(DeleteTrafficMirrorFilterRuleRequest request) {
+
+        return deleteTrafficMirrorFilterRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorFilterRuleResult> deleteTrafficMirrorFilterRuleAsync(DeleteTrafficMirrorFilterRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorSessionResult> deleteTrafficMirrorSessionAsync(DeleteTrafficMirrorSessionRequest request) {
+
+        return deleteTrafficMirrorSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorSessionResult> deleteTrafficMirrorSessionAsync(DeleteTrafficMirrorSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorTargetResult> deleteTrafficMirrorTargetAsync(DeleteTrafficMirrorTargetRequest request) {
+
+        return deleteTrafficMirrorTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorTargetResult> deleteTrafficMirrorTargetAsync(DeleteTrafficMirrorTargetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrafficMirrorTargetRequest, DeleteTrafficMirrorTargetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3678,6 +3782,45 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTrafficMirrorFiltersResult> describeTrafficMirrorFiltersAsync(DescribeTrafficMirrorFiltersRequest request) {
+
+        return describeTrafficMirrorFiltersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrafficMirrorFiltersResult> describeTrafficMirrorFiltersAsync(DescribeTrafficMirrorFiltersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrafficMirrorFiltersRequest, DescribeTrafficMirrorFiltersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrafficMirrorSessionsResult> describeTrafficMirrorSessionsAsync(DescribeTrafficMirrorSessionsRequest request) {
+
+        return describeTrafficMirrorSessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrafficMirrorSessionsResult> describeTrafficMirrorSessionsAsync(DescribeTrafficMirrorSessionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrafficMirrorSessionsRequest, DescribeTrafficMirrorSessionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrafficMirrorTargetsResult> describeTrafficMirrorTargetsAsync(DescribeTrafficMirrorTargetsRequest request) {
+
+        return describeTrafficMirrorTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrafficMirrorTargetsResult> describeTrafficMirrorTargetsAsync(DescribeTrafficMirrorTargetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrafficMirrorTargetsRequest, DescribeTrafficMirrorTargetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTransitGatewayAttachmentsResult> describeTransitGatewayAttachmentsAsync(
             DescribeTransitGatewayAttachmentsRequest request) {
 
@@ -5065,6 +5208,47 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<ModifySubnetAttributeResult> modifySubnetAttributeAsync(ModifySubnetAttributeRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifySubnetAttributeRequest, ModifySubnetAttributeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrafficMirrorFilterNetworkServicesResult> modifyTrafficMirrorFilterNetworkServicesAsync(
+            ModifyTrafficMirrorFilterNetworkServicesRequest request) {
+
+        return modifyTrafficMirrorFilterNetworkServicesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrafficMirrorFilterNetworkServicesResult> modifyTrafficMirrorFilterNetworkServicesAsync(
+            ModifyTrafficMirrorFilterNetworkServicesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyTrafficMirrorFilterNetworkServicesRequest, ModifyTrafficMirrorFilterNetworkServicesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrafficMirrorFilterRuleResult> modifyTrafficMirrorFilterRuleAsync(ModifyTrafficMirrorFilterRuleRequest request) {
+
+        return modifyTrafficMirrorFilterRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrafficMirrorFilterRuleResult> modifyTrafficMirrorFilterRuleAsync(ModifyTrafficMirrorFilterRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyTrafficMirrorFilterRuleRequest, ModifyTrafficMirrorFilterRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrafficMirrorSessionResult> modifyTrafficMirrorSessionAsync(ModifyTrafficMirrorSessionRequest request) {
+
+        return modifyTrafficMirrorSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrafficMirrorSessionResult> modifyTrafficMirrorSessionAsync(ModifyTrafficMirrorSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyTrafficMirrorSessionRequest, ModifyTrafficMirrorSessionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

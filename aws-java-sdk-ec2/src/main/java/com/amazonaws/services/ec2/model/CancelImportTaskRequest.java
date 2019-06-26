@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CancelImportTaskRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for CancelImportTask.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CancelImportTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CancelImportTaskRequest> {

@@ -146,17 +146,30 @@ public class JsonPolicyReader {
         if (isNotNull(actionNodes))
             statement.setActions(actionsOf(actionNodes));
 
+        List<Resource> resources = new LinkedList<Resource>();
         JsonNode resourceNodes = jStatement.get(JsonDocumentFields.RESOURCE);
-        if (isNotNull(resourceNodes))
-            statement.setResources(resourcesOf(resourceNodes));
+        if (isNotNull(resourceNodes)) {
+            resources.addAll(resourcesOf(resourceNodes, false));
+        }
+
+        JsonNode notResourceNodes = jStatement.get(JsonDocumentFields.NOT_RESOURCE);
+        if (isNotNull(notResourceNodes)) {
+            resources.addAll(resourcesOf(notResourceNodes, true));
+        }
+
+        if (!resources.isEmpty()) {
+            statement.setResources(resources);
+        }
 
         JsonNode conditionNodes = jStatement.get(JsonDocumentFields.CONDITION);
-        if (isNotNull(conditionNodes))
+        if (isNotNull(conditionNodes)) {
             statement.setConditions(conditionsOf(conditionNodes));
+        }
 
         JsonNode principalNodes = jStatement.get(JsonDocumentFields.PRINCIPAL);
-        if (isNotNull(principalNodes))
+        if (isNotNull(principalNodes)) {
             statement.setPrincipals(principalOf(principalNodes));
+        }
 
         return statement;
     }
@@ -182,21 +195,24 @@ public class JsonPolicyReader {
     }
 
     /**
-     * Generates a list of resources from the Resource Json Node.
+     * Generates a list of resources from the Resource Json Node
+     * using the is not type specified.
      *
      * @param resourceNodes
      *            the resource Json node to be parsed.
+     * @param isNotType
+     *            whether the nodes being parsed are isNotType.
      * @return the list of resources.
      */
-    private List<Resource> resourcesOf(JsonNode resourceNodes) {
+    private List<Resource> resourcesOf(JsonNode resourceNodes, boolean isNotType) {
         List<Resource> resources = new LinkedList<Resource>();
 
         if (resourceNodes.isArray()) {
             for (JsonNode resource : resourceNodes) {
-                resources.add(new Resource(resource.asText()));
+                resources.add(new Resource(resource.asText()).withIsNotType(isNotType));
             }
         } else {
-            resources.add(new Resource(resourceNodes.asText()));
+            resources.add(new Resource(resourceNodes.asText()).withIsNotType(isNotType));
         }
 
         return resources;
@@ -339,6 +355,7 @@ public class JsonPolicyReader {
             this.actionName = actionName;
         }
 
+        @Override
         public String getActionName() {
             return actionName;
         }

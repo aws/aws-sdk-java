@@ -15,7 +15,7 @@ package com.amazonaws.services.eks.model;
 import javax.annotation.Generated;
 
 /**
- * Base exception for all service exceptions thrown by Amazon Elastic Container Service for Kubernetes
+ * Base exception for all service exceptions thrown by Amazon Elastic Kubernetes Service
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonEKSException extends com.amazonaws.AmazonServiceException {

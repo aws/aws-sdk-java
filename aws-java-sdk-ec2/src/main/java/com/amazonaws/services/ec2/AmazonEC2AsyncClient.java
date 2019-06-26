@@ -36,32 +36,31 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * Amazon EC2 eliminates the need to invest in hardware up front, so you can develop and deploy applications faster.
  * </p>
  * <p>
- * To learn more about Amazon EC2, Amazon EBS, and Amazon VPC, see the following resources:
+ * To learn more, see the following resources:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>
+ * Amazon EC2: <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>, <a
+ * href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a>
+ * Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon EBS documentation</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>
+ * Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a
+ * href="http://aws.amazon.com/documentation/vpc">Amazon VPC documentation</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://aws.amazon.com/documentation/vpc">Amazon VPC documentation</a>
+ * AWS VPN: <a href="http://aws.amazon.com/vpn">AWS VPN product page</a>, <a
+ * href="http://aws.amazon.com/documentation/vpn">AWS VPN documentation</a>
  * </p>
  * </li>
  * </ul>
@@ -2729,6 +2728,139 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorFilterResult> createTrafficMirrorFilterAsync(CreateTrafficMirrorFilterRequest request) {
+
+        return createTrafficMirrorFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorFilterResult> createTrafficMirrorFilterAsync(final CreateTrafficMirrorFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResult> asyncHandler) {
+        final CreateTrafficMirrorFilterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTrafficMirrorFilterResult>() {
+            @Override
+            public CreateTrafficMirrorFilterResult call() throws Exception {
+                CreateTrafficMirrorFilterResult result = null;
+
+                try {
+                    result = executeCreateTrafficMirrorFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorFilterRuleResult> createTrafficMirrorFilterRuleAsync(CreateTrafficMirrorFilterRuleRequest request) {
+
+        return createTrafficMirrorFilterRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorFilterRuleResult> createTrafficMirrorFilterRuleAsync(
+            final CreateTrafficMirrorFilterRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResult> asyncHandler) {
+        final CreateTrafficMirrorFilterRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTrafficMirrorFilterRuleResult>() {
+            @Override
+            public CreateTrafficMirrorFilterRuleResult call() throws Exception {
+                CreateTrafficMirrorFilterRuleResult result = null;
+
+                try {
+                    result = executeCreateTrafficMirrorFilterRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorSessionResult> createTrafficMirrorSessionAsync(CreateTrafficMirrorSessionRequest request) {
+
+        return createTrafficMirrorSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorSessionResult> createTrafficMirrorSessionAsync(final CreateTrafficMirrorSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResult> asyncHandler) {
+        final CreateTrafficMirrorSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTrafficMirrorSessionResult>() {
+            @Override
+            public CreateTrafficMirrorSessionResult call() throws Exception {
+                CreateTrafficMirrorSessionResult result = null;
+
+                try {
+                    result = executeCreateTrafficMirrorSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorTargetResult> createTrafficMirrorTargetAsync(CreateTrafficMirrorTargetRequest request) {
+
+        return createTrafficMirrorTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrafficMirrorTargetResult> createTrafficMirrorTargetAsync(final CreateTrafficMirrorTargetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTrafficMirrorTargetRequest, CreateTrafficMirrorTargetResult> asyncHandler) {
+        final CreateTrafficMirrorTargetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTrafficMirrorTargetResult>() {
+            @Override
+            public CreateTrafficMirrorTargetResult call() throws Exception {
+                CreateTrafficMirrorTargetResult result = null;
+
+                try {
+                    result = executeCreateTrafficMirrorTarget(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTransitGatewayResult> createTransitGatewayAsync(CreateTransitGatewayRequest request) {
 
         return createTransitGatewayAsync(request, null);
@@ -4026,6 +4158,139 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDeleteTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorFilterResult> deleteTrafficMirrorFilterAsync(DeleteTrafficMirrorFilterRequest request) {
+
+        return deleteTrafficMirrorFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorFilterResult> deleteTrafficMirrorFilterAsync(final DeleteTrafficMirrorFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResult> asyncHandler) {
+        final DeleteTrafficMirrorFilterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTrafficMirrorFilterResult>() {
+            @Override
+            public DeleteTrafficMirrorFilterResult call() throws Exception {
+                DeleteTrafficMirrorFilterResult result = null;
+
+                try {
+                    result = executeDeleteTrafficMirrorFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorFilterRuleResult> deleteTrafficMirrorFilterRuleAsync(DeleteTrafficMirrorFilterRuleRequest request) {
+
+        return deleteTrafficMirrorFilterRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorFilterRuleResult> deleteTrafficMirrorFilterRuleAsync(
+            final DeleteTrafficMirrorFilterRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResult> asyncHandler) {
+        final DeleteTrafficMirrorFilterRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTrafficMirrorFilterRuleResult>() {
+            @Override
+            public DeleteTrafficMirrorFilterRuleResult call() throws Exception {
+                DeleteTrafficMirrorFilterRuleResult result = null;
+
+                try {
+                    result = executeDeleteTrafficMirrorFilterRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorSessionResult> deleteTrafficMirrorSessionAsync(DeleteTrafficMirrorSessionRequest request) {
+
+        return deleteTrafficMirrorSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorSessionResult> deleteTrafficMirrorSessionAsync(final DeleteTrafficMirrorSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResult> asyncHandler) {
+        final DeleteTrafficMirrorSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTrafficMirrorSessionResult>() {
+            @Override
+            public DeleteTrafficMirrorSessionResult call() throws Exception {
+                DeleteTrafficMirrorSessionResult result = null;
+
+                try {
+                    result = executeDeleteTrafficMirrorSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorTargetResult> deleteTrafficMirrorTargetAsync(DeleteTrafficMirrorTargetRequest request) {
+
+        return deleteTrafficMirrorTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrafficMirrorTargetResult> deleteTrafficMirrorTargetAsync(final DeleteTrafficMirrorTargetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTrafficMirrorTargetRequest, DeleteTrafficMirrorTargetResult> asyncHandler) {
+        final DeleteTrafficMirrorTargetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTrafficMirrorTargetResult>() {
+            @Override
+            public DeleteTrafficMirrorTargetResult call() throws Exception {
+                DeleteTrafficMirrorTargetResult result = null;
+
+                try {
+                    result = executeDeleteTrafficMirrorTarget(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -7895,6 +8160,106 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTrafficMirrorFiltersResult> describeTrafficMirrorFiltersAsync(DescribeTrafficMirrorFiltersRequest request) {
+
+        return describeTrafficMirrorFiltersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrafficMirrorFiltersResult> describeTrafficMirrorFiltersAsync(final DescribeTrafficMirrorFiltersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTrafficMirrorFiltersRequest, DescribeTrafficMirrorFiltersResult> asyncHandler) {
+        final DescribeTrafficMirrorFiltersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTrafficMirrorFiltersResult>() {
+            @Override
+            public DescribeTrafficMirrorFiltersResult call() throws Exception {
+                DescribeTrafficMirrorFiltersResult result = null;
+
+                try {
+                    result = executeDescribeTrafficMirrorFilters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrafficMirrorSessionsResult> describeTrafficMirrorSessionsAsync(DescribeTrafficMirrorSessionsRequest request) {
+
+        return describeTrafficMirrorSessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrafficMirrorSessionsResult> describeTrafficMirrorSessionsAsync(
+            final DescribeTrafficMirrorSessionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTrafficMirrorSessionsRequest, DescribeTrafficMirrorSessionsResult> asyncHandler) {
+        final DescribeTrafficMirrorSessionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTrafficMirrorSessionsResult>() {
+            @Override
+            public DescribeTrafficMirrorSessionsResult call() throws Exception {
+                DescribeTrafficMirrorSessionsResult result = null;
+
+                try {
+                    result = executeDescribeTrafficMirrorSessions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrafficMirrorTargetsResult> describeTrafficMirrorTargetsAsync(DescribeTrafficMirrorTargetsRequest request) {
+
+        return describeTrafficMirrorTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrafficMirrorTargetsResult> describeTrafficMirrorTargetsAsync(final DescribeTrafficMirrorTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTrafficMirrorTargetsRequest, DescribeTrafficMirrorTargetsResult> asyncHandler) {
+        final DescribeTrafficMirrorTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTrafficMirrorTargetsResult>() {
+            @Override
+            public DescribeTrafficMirrorTargetsResult call() throws Exception {
+                DescribeTrafficMirrorTargetsResult result = null;
+
+                try {
+                    result = executeDescribeTrafficMirrorTargets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTransitGatewayAttachmentsResult> describeTransitGatewayAttachmentsAsync(
             DescribeTransitGatewayAttachmentsRequest request) {
 
@@ -10956,6 +11321,108 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeModifySubnetAttribute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrafficMirrorFilterNetworkServicesResult> modifyTrafficMirrorFilterNetworkServicesAsync(
+            ModifyTrafficMirrorFilterNetworkServicesRequest request) {
+
+        return modifyTrafficMirrorFilterNetworkServicesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrafficMirrorFilterNetworkServicesResult> modifyTrafficMirrorFilterNetworkServicesAsync(
+            final ModifyTrafficMirrorFilterNetworkServicesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyTrafficMirrorFilterNetworkServicesRequest, ModifyTrafficMirrorFilterNetworkServicesResult> asyncHandler) {
+        final ModifyTrafficMirrorFilterNetworkServicesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyTrafficMirrorFilterNetworkServicesResult>() {
+            @Override
+            public ModifyTrafficMirrorFilterNetworkServicesResult call() throws Exception {
+                ModifyTrafficMirrorFilterNetworkServicesResult result = null;
+
+                try {
+                    result = executeModifyTrafficMirrorFilterNetworkServices(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrafficMirrorFilterRuleResult> modifyTrafficMirrorFilterRuleAsync(ModifyTrafficMirrorFilterRuleRequest request) {
+
+        return modifyTrafficMirrorFilterRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrafficMirrorFilterRuleResult> modifyTrafficMirrorFilterRuleAsync(
+            final ModifyTrafficMirrorFilterRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyTrafficMirrorFilterRuleRequest, ModifyTrafficMirrorFilterRuleResult> asyncHandler) {
+        final ModifyTrafficMirrorFilterRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyTrafficMirrorFilterRuleResult>() {
+            @Override
+            public ModifyTrafficMirrorFilterRuleResult call() throws Exception {
+                ModifyTrafficMirrorFilterRuleResult result = null;
+
+                try {
+                    result = executeModifyTrafficMirrorFilterRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrafficMirrorSessionResult> modifyTrafficMirrorSessionAsync(ModifyTrafficMirrorSessionRequest request) {
+
+        return modifyTrafficMirrorSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrafficMirrorSessionResult> modifyTrafficMirrorSessionAsync(final ModifyTrafficMirrorSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyTrafficMirrorSessionRequest, ModifyTrafficMirrorSessionResult> asyncHandler) {
+        final ModifyTrafficMirrorSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyTrafficMirrorSessionResult>() {
+            @Override
+            public ModifyTrafficMirrorSessionResult call() throws Exception {
+                ModifyTrafficMirrorSessionResult result = null;
+
+                try {
+                    result = executeModifyTrafficMirrorSession(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

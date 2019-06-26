@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CancelConversionTaskRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for CancelConversionTask.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CancelConversionTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

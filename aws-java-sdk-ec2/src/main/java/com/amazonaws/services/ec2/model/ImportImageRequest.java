@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ImportImageRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ImportImage.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImportImageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportImageRequest> {
@@ -130,33 +128,15 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * The license type to be used for the Amazon Machine Image (AMI) after importing.
      * </p>
      * <p>
-     * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
-     * party cloud like AWS. For more information, see <a
+     * By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     * <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     * <code>BYOL</code> to retain the source-system license, if appropriate.
+     * </p>
+     * <p>
+     * To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party
+     * cloud, such as AWS. For more information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      * >Prerequisites</a> in the VM Import/Export User Guide.
-     * </p>
-     * <p>
-     * Valid values include:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BYOL</code> - Retains the source-system license, if appropriate.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Default value: <code>Auto</code>
      * </p>
      */
     private String licenseType;
@@ -848,65 +828,29 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * The license type to be used for the Amazon Machine Image (AMI) after importing.
      * </p>
      * <p>
-     * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
-     * party cloud like AWS. For more information, see <a
+     * By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     * <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     * <code>BYOL</code> to retain the source-system license, if appropriate.
+     * </p>
+     * <p>
+     * To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party
+     * cloud, such as AWS. For more information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      * >Prerequisites</a> in the VM Import/Export User Guide.
-     * </p>
-     * <p>
-     * Valid values include:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BYOL</code> - Retains the source-system license, if appropriate.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Default value: <code>Auto</code>
      * </p>
      * 
      * @param licenseType
      *        The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
      *        <p>
-     *        <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a
-     *        third party cloud like AWS. For more information, see <a href=
+     *        By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     *        <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     *        <code>BYOL</code> to retain the source-system license, if appropriate.
+     *        </p>
+     *        <p>
+     *        To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third
+     *        party cloud, such as AWS. For more information, see <a href=
      *        "https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      *        >Prerequisites</a> in the VM Import/Export User Guide.
-     *        </p>
-     *        <p>
-     *        Valid values include:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BYOL</code> - Retains the source-system license, if appropriate.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Default value: <code>Auto</code>
      */
 
     public void setLicenseType(String licenseType) {
@@ -918,64 +862,28 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * The license type to be used for the Amazon Machine Image (AMI) after importing.
      * </p>
      * <p>
-     * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
-     * party cloud like AWS. For more information, see <a
+     * By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     * <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     * <code>BYOL</code> to retain the source-system license, if appropriate.
+     * </p>
+     * <p>
+     * To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party
+     * cloud, such as AWS. For more information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      * >Prerequisites</a> in the VM Import/Export User Guide.
-     * </p>
-     * <p>
-     * Valid values include:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BYOL</code> - Retains the source-system license, if appropriate.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Default value: <code>Auto</code>
      * </p>
      * 
      * @return The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
      *         <p>
-     *         <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a
-     *         third party cloud like AWS. For more information, see <a href=
+     *         By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     *         <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     *         <code>BYOL</code> to retain the source-system license, if appropriate.
+     *         </p>
+     *         <p>
+     *         To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third
+     *         party cloud, such as AWS. For more information, see <a href=
      *         "https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      *         >Prerequisites</a> in the VM Import/Export User Guide.
-     *         </p>
-     *         <p>
-     *         Valid values include:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>BYOL</code> - Retains the source-system license, if appropriate.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         Default value: <code>Auto</code>
      */
 
     public String getLicenseType() {
@@ -987,65 +895,29 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * The license type to be used for the Amazon Machine Image (AMI) after importing.
      * </p>
      * <p>
-     * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
-     * party cloud like AWS. For more information, see <a
+     * By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     * <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     * <code>BYOL</code> to retain the source-system license, if appropriate.
+     * </p>
+     * <p>
+     * To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party
+     * cloud, such as AWS. For more information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      * >Prerequisites</a> in the VM Import/Export User Guide.
-     * </p>
-     * <p>
-     * Valid values include:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BYOL</code> - Retains the source-system license, if appropriate.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Default value: <code>Auto</code>
      * </p>
      * 
      * @param licenseType
      *        The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
      *        <p>
-     *        <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a
-     *        third party cloud like AWS. For more information, see <a href=
+     *        By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     *        <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     *        <code>BYOL</code> to retain the source-system license, if appropriate.
+     *        </p>
+     *        <p>
+     *        To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third
+     *        party cloud, such as AWS. For more information, see <a href=
      *        "https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      *        >Prerequisites</a> in the VM Import/Export User Guide.
-     *        </p>
-     *        <p>
-     *        Valid values include:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BYOL</code> - Retains the source-system license, if appropriate.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Default value: <code>Auto</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
