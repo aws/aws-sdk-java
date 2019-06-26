@@ -79,7 +79,8 @@ public class ConflictMetadata implements Serializable, Cloneable, StructuredPojo
     private Boolean fileModeConflict;
     /**
      * <p>
-     * A boolean value (true or false) indicating whether there are conflicts in the object type of a file.
+     * A boolean value (true or false) indicating whether there are conflicts between the branches in the object type of
+     * a file, folder, or submodule.
      * </p>
      */
     private Boolean objectTypeConflict;
@@ -442,11 +443,13 @@ public class ConflictMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean value (true or false) indicating whether there are conflicts in the object type of a file.
+     * A boolean value (true or false) indicating whether there are conflicts between the branches in the object type of
+     * a file, folder, or submodule.
      * </p>
      * 
      * @param objectTypeConflict
-     *        A boolean value (true or false) indicating whether there are conflicts in the object type of a file.
+     *        A boolean value (true or false) indicating whether there are conflicts between the branches in the object
+     *        type of a file, folder, or submodule.
      */
 
     public void setObjectTypeConflict(Boolean objectTypeConflict) {
@@ -455,10 +458,12 @@ public class ConflictMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean value (true or false) indicating whether there are conflicts in the object type of a file.
+     * A boolean value (true or false) indicating whether there are conflicts between the branches in the object type of
+     * a file, folder, or submodule.
      * </p>
      * 
-     * @return A boolean value (true or false) indicating whether there are conflicts in the object type of a file.
+     * @return A boolean value (true or false) indicating whether there are conflicts between the branches in the object
+     *         type of a file, folder, or submodule.
      */
 
     public Boolean getObjectTypeConflict() {
@@ -467,11 +472,13 @@ public class ConflictMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean value (true or false) indicating whether there are conflicts in the object type of a file.
+     * A boolean value (true or false) indicating whether there are conflicts between the branches in the object type of
+     * a file, folder, or submodule.
      * </p>
      * 
      * @param objectTypeConflict
-     *        A boolean value (true or false) indicating whether there are conflicts in the object type of a file.
+     *        A boolean value (true or false) indicating whether there are conflicts between the branches in the object
+     *        type of a file, folder, or submodule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,10 +489,12 @@ public class ConflictMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean value (true or false) indicating whether there are conflicts in the object type of a file.
+     * A boolean value (true or false) indicating whether there are conflicts between the branches in the object type of
+     * a file, folder, or submodule.
      * </p>
      * 
-     * @return A boolean value (true or false) indicating whether there are conflicts in the object type of a file.
+     * @return A boolean value (true or false) indicating whether there are conflicts between the branches in the object
+     *         type of a file, folder, or submodule.
      */
 
     public Boolean isObjectTypeConflict() {

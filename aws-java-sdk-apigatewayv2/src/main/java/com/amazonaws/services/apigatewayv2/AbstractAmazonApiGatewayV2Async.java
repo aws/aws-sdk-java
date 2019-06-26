@@ -613,6 +613,45 @@ public class AbstractAmazonApiGatewayV2Async extends AbstractAmazonApiGatewayV2 
     }
 
     @Override
+    public java.util.concurrent.Future<GetTagsResult> getTagsAsync(GetTagsRequest request) {
+
+        return getTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTagsResult> getTagsAsync(GetTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTagsRequest, GetTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateApiResult> updateApiAsync(UpdateApiRequest request) {
 
         return updateApiAsync(request, null);

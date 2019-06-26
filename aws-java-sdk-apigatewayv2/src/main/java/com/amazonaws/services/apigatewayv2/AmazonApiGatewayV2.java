@@ -788,6 +788,63 @@ public interface AmazonApiGatewayV2 {
 
     /**
      * <p>
+     * Gets the Tags for an API.
+     * </p>
+     * 
+     * @param getTagsRequest
+     * @return Result of the GetTags operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws ConflictException
+     *         The resource already exists.
+     * @sample AmazonApiGatewayV2.GetTags
+     */
+    GetTagsResult getTags(GetTagsRequest getTagsRequest);
+
+    /**
+     * <p>
+     * Tag an APIGW resource
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws ConflictException
+     *         The resource already exists.
+     * @sample AmazonApiGatewayV2.TagResource
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Untag an APIGW resource
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws ConflictException
+     *         The resource already exists.
+     * @sample AmazonApiGatewayV2.UntagResource
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
      * Updates an Api resource.
      * </p>
      * 

@@ -30,30 +30,30 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The line number where a merge conflict begins.
+     * The start position of the hunk in the merge result.
      * </p>
      */
     private Integer startLine;
     /**
      * <p>
-     * The line number where a merge conflict ends.
+     * The end position of the hunk in the merge result.
      * </p>
      */
     private Integer endLine;
     /**
      * <p>
-     * The base-64 encoded content of the hunk that contains the conflict.
+     * The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
      * </p>
      */
     private String hunkContent;
 
     /**
      * <p>
-     * The line number where a merge conflict begins.
+     * The start position of the hunk in the merge result.
      * </p>
      * 
      * @param startLine
-     *        The line number where a merge conflict begins.
+     *        The start position of the hunk in the merge result.
      */
 
     public void setStartLine(Integer startLine) {
@@ -62,10 +62,10 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The line number where a merge conflict begins.
+     * The start position of the hunk in the merge result.
      * </p>
      * 
-     * @return The line number where a merge conflict begins.
+     * @return The start position of the hunk in the merge result.
      */
 
     public Integer getStartLine() {
@@ -74,11 +74,11 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The line number where a merge conflict begins.
+     * The start position of the hunk in the merge result.
      * </p>
      * 
      * @param startLine
-     *        The line number where a merge conflict begins.
+     *        The start position of the hunk in the merge result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The line number where a merge conflict ends.
+     * The end position of the hunk in the merge result.
      * </p>
      * 
      * @param endLine
-     *        The line number where a merge conflict ends.
+     *        The end position of the hunk in the merge result.
      */
 
     public void setEndLine(Integer endLine) {
@@ -102,10 +102,10 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The line number where a merge conflict ends.
+     * The end position of the hunk in the merge result.
      * </p>
      * 
-     * @return The line number where a merge conflict ends.
+     * @return The end position of the hunk in the merge result.
      */
 
     public Integer getEndLine() {
@@ -114,11 +114,11 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The line number where a merge conflict ends.
+     * The end position of the hunk in the merge result.
      * </p>
      * 
      * @param endLine
-     *        The line number where a merge conflict ends.
+     *        The end position of the hunk in the merge result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The base-64 encoded content of the hunk that contains the conflict.
+     * The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
      * </p>
      * 
      * @param hunkContent
-     *        The base-64 encoded content of the hunk that contains the conflict.
+     *        The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
      */
 
     public void setHunkContent(String hunkContent) {
@@ -142,10 +142,10 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The base-64 encoded content of the hunk that contains the conflict.
+     * The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
      * </p>
      * 
-     * @return The base-64 encoded content of the hunk that contains the conflict.
+     * @return The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
      */
 
     public String getHunkContent() {
@@ -154,11 +154,11 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The base-64 encoded content of the hunk that contains the conflict.
+     * The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
      * </p>
      * 
      * @param hunkContent
-     *        The base-64 encoded content of the hunk that contains the conflict.
+     *        The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

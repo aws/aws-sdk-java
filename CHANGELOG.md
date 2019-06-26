@@ -1,3 +1,12 @@
+# __1.11.581__ __2019-06-26__
+## __AWS CodeCommit__
+  - ### Features
+    - This release supports better exception handling for merges.
+
+## __AmazonApiGatewayV2__
+  - ### Features
+    - You can now perform tag operations on ApiGatewayV2 Resources (typically associated with WebSocket APIs)
+
 # __1.11.580__ __2019-06-25__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

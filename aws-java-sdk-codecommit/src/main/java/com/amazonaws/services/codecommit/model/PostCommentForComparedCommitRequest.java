@@ -35,6 +35,11 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
      * <p>
      * To establish the directionality of the comparison, the full commit ID of the 'before' commit.
      * </p>
+     * <note>
+     * <p>
+     * This is required for commenting on any commit unless that commit is the initial commit.
+     * </p>
+     * </note>
      */
     private String beforeCommitId;
     /**
@@ -108,9 +113,17 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
      * <p>
      * To establish the directionality of the comparison, the full commit ID of the 'before' commit.
      * </p>
+     * <note>
+     * <p>
+     * This is required for commenting on any commit unless that commit is the initial commit.
+     * </p>
+     * </note>
      * 
      * @param beforeCommitId
-     *        To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     *        To establish the directionality of the comparison, the full commit ID of the 'before' commit.</p> <note>
+     *        <p>
+     *        This is required for commenting on any commit unless that commit is the initial commit.
+     *        </p>
      */
 
     public void setBeforeCommitId(String beforeCommitId) {
@@ -121,8 +134,16 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
      * <p>
      * To establish the directionality of the comparison, the full commit ID of the 'before' commit.
      * </p>
+     * <note>
+     * <p>
+     * This is required for commenting on any commit unless that commit is the initial commit.
+     * </p>
+     * </note>
      * 
-     * @return To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     * @return To establish the directionality of the comparison, the full commit ID of the 'before' commit.</p> <note>
+     *         <p>
+     *         This is required for commenting on any commit unless that commit is the initial commit.
+     *         </p>
      */
 
     public String getBeforeCommitId() {
@@ -133,9 +154,17 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
      * <p>
      * To establish the directionality of the comparison, the full commit ID of the 'before' commit.
      * </p>
+     * <note>
+     * <p>
+     * This is required for commenting on any commit unless that commit is the initial commit.
+     * </p>
+     * </note>
      * 
      * @param beforeCommitId
-     *        To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     *        To establish the directionality of the comparison, the full commit ID of the 'before' commit.</p> <note>
+     *        <p>
+     *        This is required for commenting on any commit unless that commit is the initial commit.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

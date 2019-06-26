@@ -32,7 +32,8 @@ public class MergeHunk implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file
      * or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid
-     * values include true, false, and null.
+     * values include true, false, and null. This will be true when the hunk represents a conflict and one or more files
+     * contains a line conflict. File mode conflicts in a merge will not set this to be true.
      * </p>
      */
     private Boolean isConflict;
@@ -59,13 +60,16 @@ public class MergeHunk implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file
      * or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid
-     * values include true, false, and null.
+     * values include true, false, and null. This will be true when the hunk represents a conflict and one or more files
+     * contains a line conflict. File mode conflicts in a merge will not set this to be true.
      * </p>
      * 
      * @param isConflict
      *        A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the
      *        same file or the same lines in a file were modified in both the source and destination of a merge or pull
-     *        request. Valid values include true, false, and null.
+     *        request. Valid values include true, false, and null. This will be true when the hunk represents a conflict
+     *        and one or more files contains a line conflict. File mode conflicts in a merge will not set this to be
+     *        true.
      */
 
     public void setIsConflict(Boolean isConflict) {
@@ -76,12 +80,15 @@ public class MergeHunk implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file
      * or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid
-     * values include true, false, and null.
+     * values include true, false, and null. This will be true when the hunk represents a conflict and one or more files
+     * contains a line conflict. File mode conflicts in a merge will not set this to be true.
      * </p>
      * 
      * @return A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the
      *         same file or the same lines in a file were modified in both the source and destination of a merge or pull
-     *         request. Valid values include true, false, and null.
+     *         request. Valid values include true, false, and null. This will be true when the hunk represents a
+     *         conflict and one or more files contains a line conflict. File mode conflicts in a merge will not set this
+     *         to be true.
      */
 
     public Boolean getIsConflict() {
@@ -92,13 +99,16 @@ public class MergeHunk implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file
      * or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid
-     * values include true, false, and null.
+     * values include true, false, and null. This will be true when the hunk represents a conflict and one or more files
+     * contains a line conflict. File mode conflicts in a merge will not set this to be true.
      * </p>
      * 
      * @param isConflict
      *        A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the
      *        same file or the same lines in a file were modified in both the source and destination of a merge or pull
-     *        request. Valid values include true, false, and null.
+     *        request. Valid values include true, false, and null. This will be true when the hunk represents a conflict
+     *        and one or more files contains a line conflict. File mode conflicts in a merge will not set this to be
+     *        true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,12 +121,15 @@ public class MergeHunk implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file
      * or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid
-     * values include true, false, and null.
+     * values include true, false, and null. This will be true when the hunk represents a conflict and one or more files
+     * contains a line conflict. File mode conflicts in a merge will not set this to be true.
      * </p>
      * 
      * @return A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the
      *         same file or the same lines in a file were modified in both the source and destination of a merge or pull
-     *         request. Valid values include true, false, and null.
+     *         request. Valid values include true, false, and null. This will be true when the hunk represents a
+     *         conflict and one or more files contains a line conflict. File mode conflicts in a merge will not set this
+     *         to be true.
      */
 
     public Boolean isConflict() {

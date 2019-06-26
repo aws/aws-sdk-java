@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.apigatewayv2.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +43,8 @@ public class CreateApiRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("routeSelectionExpression").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("version").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateApiRequestMarshaller instance = new CreateApiRequestMarshaller();
 
@@ -65,6 +69,7 @@ public class CreateApiRequestMarshaller {
             protocolMarshaller.marshall(createApiRequest.getProtocolType(), PROTOCOLTYPE_BINDING);
             protocolMarshaller.marshall(createApiRequest.getRouteSelectionExpression(), ROUTESELECTIONEXPRESSION_BINDING);
             protocolMarshaller.marshall(createApiRequest.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(createApiRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

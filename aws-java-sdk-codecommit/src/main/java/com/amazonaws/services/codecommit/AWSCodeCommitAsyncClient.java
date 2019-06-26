@@ -121,6 +121,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetFile</a>, which returns the base-64 encoded content of a specified file.
  * </p>
  * </li>
@@ -131,22 +136,17 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
+ * <a>PutFile</a>, which adds or modifies a single file in a specified repository and branch.
  * </p>
  * </li>
  * </ul>
  * <p>
- * Information about committed code in a repository, by calling the following:
+ * Commits, by calling the following:
  * </p>
  * <ul>
  * <li>
  * <p>
  * <a>CreateCommit</a>, which creates a commit for changes to a repository.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository.
  * </p>
  * </li>
  * <li>
@@ -286,7 +286,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * </ul>
  * <p>
- * Information about comments in a repository, by calling the following:
+ * Comments in a repository, by calling the following:
  * </p>
  * <ul>
  * <li>

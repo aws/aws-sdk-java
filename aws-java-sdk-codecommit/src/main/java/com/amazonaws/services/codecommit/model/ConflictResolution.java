@@ -31,7 +31,7 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Information about how a conflict in a merge will be resolved.
+     * Files that will have content replaced as part of the merge conflict resolution.
      * </p>
      */
     private java.util.List<ReplaceContentEntry> replaceContents;
@@ -50,10 +50,10 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Information about how a conflict in a merge will be resolved.
+     * Files that will have content replaced as part of the merge conflict resolution.
      * </p>
      * 
-     * @return Information about how a conflict in a merge will be resolved.
+     * @return Files that will have content replaced as part of the merge conflict resolution.
      */
 
     public java.util.List<ReplaceContentEntry> getReplaceContents() {
@@ -62,11 +62,11 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Information about how a conflict in a merge will be resolved.
+     * Files that will have content replaced as part of the merge conflict resolution.
      * </p>
      * 
      * @param replaceContents
-     *        Information about how a conflict in a merge will be resolved.
+     *        Files that will have content replaced as part of the merge conflict resolution.
      */
 
     public void setReplaceContents(java.util.Collection<ReplaceContentEntry> replaceContents) {
@@ -80,7 +80,7 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Information about how a conflict in a merge will be resolved.
+     * Files that will have content replaced as part of the merge conflict resolution.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +89,7 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param replaceContents
-     *        Information about how a conflict in a merge will be resolved.
+     *        Files that will have content replaced as part of the merge conflict resolution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +105,11 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Information about how a conflict in a merge will be resolved.
+     * Files that will have content replaced as part of the merge conflict resolution.
      * </p>
      * 
      * @param replaceContents
-     *        Information about how a conflict in a merge will be resolved.
+     *        Files that will have content replaced as part of the merge conflict resolution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

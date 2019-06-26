@@ -47,6 +47,8 @@ public class CreateStageRequestMarshaller {
             .marshallLocationName("stageName").build();
     private static final MarshallingInfo<Map> STAGEVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("stageVariables").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateStageRequestMarshaller instance = new CreateStageRequestMarshaller();
 
@@ -73,6 +75,7 @@ public class CreateStageRequestMarshaller {
             protocolMarshaller.marshall(createStageRequest.getRouteSettings(), ROUTESETTINGS_BINDING);
             protocolMarshaller.marshall(createStageRequest.getStageName(), STAGENAME_BINDING);
             protocolMarshaller.marshall(createStageRequest.getStageVariables(), STAGEVARIABLES_BINDING);
+            protocolMarshaller.marshall(createStageRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

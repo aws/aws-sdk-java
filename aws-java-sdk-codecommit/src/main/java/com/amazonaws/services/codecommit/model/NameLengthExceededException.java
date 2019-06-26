@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The user name is not valid because it has exceeded the character limit for file names. File names, including the path
- * to the file, cannot exceed the character limit.
+ * The user name is not valid because it has exceeded the character limit for author names.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

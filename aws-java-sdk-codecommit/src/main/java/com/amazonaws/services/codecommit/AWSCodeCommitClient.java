@@ -141,6 +141,11 @@ import com.amazonaws.services.codecommit.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetFile</a>, which returns the base-64 encoded content of a specified file.
  * </p>
  * </li>
@@ -151,22 +156,17 @@ import com.amazonaws.services.codecommit.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
+ * <a>PutFile</a>, which adds or modifies a single file in a specified repository and branch.
  * </p>
  * </li>
  * </ul>
  * <p>
- * Information about committed code in a repository, by calling the following:
+ * Commits, by calling the following:
  * </p>
  * <ul>
  * <li>
  * <p>
  * <a>CreateCommit</a>, which creates a commit for changes to a repository.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository.
  * </p>
  * </li>
  * <li>
@@ -306,7 +306,7 @@ import com.amazonaws.services.codecommit.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * Information about comments in a repository, by calling the following:
+ * Comments in a repository, by calling the following:
  * </p>
  * <ul>
  * <li>
@@ -430,6 +430,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CommentDeletedException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.CommentDeletedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaximumItemsToCompareExceededException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.MaximumItemsToCompareExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TitleRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.TitleRequiredException.class))
@@ -1096,6 +1099,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified conflict resolution strategy is not valid.
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
+     * @throws MaximumItemsToCompareExceededException
+     *         The maximum number of items to compare between the source or destination branches and the merge base has
+     *         exceeded the maximum allowed.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -1410,8 +1416,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
      *         <a>PutFile</a>.
      * @throws NameLengthExceededException
-     *         The user name is not valid because it has exceeded the character limit for file names. File names,
-     *         including the path to the file, cannot exceed the character limit.
+     *         The user name is not valid because it has exceeded the character limit for author names.
      * @throws InvalidEmailException
      *         The specified email address either contains one or more characters that are not allowed, or it exceeds
      *         the maximum number of characters allowed for an email address.
@@ -1697,8 +1702,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
 
     /**
      * <p>
-     * Creates an unerferenced commit that represents the result of merging two branches using a specified merge
-     * strategy. This can help you determine the outcome of a potential merge.
+     * Creates an unreferenced commit that represents the result of merging two branches using a specified merge
+     * strategy. This can help you determine the outcome of a potential merge. This API cannot be used with the
+     * fast-forward merge strategy, as that strategy does not create a merge commit.
      * </p>
      * <note>
      * <p>
@@ -1770,6 +1776,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         split the changes across multiple folders.
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
+     * @throws MaximumItemsToCompareExceededException
+     *         The maximum number of items to compare between the source or destination branches and the merge base has
+     *         exceeded the maximum allowed.
      * @throws FileModeRequiredException
      *         The commit cannot be created because a file mode is required to update mode permissions for an existing
      *         file, but no file mode has been specified.
@@ -1777,8 +1786,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
      *         <a>PutFile</a>.
      * @throws NameLengthExceededException
-     *         The user name is not valid because it has exceeded the character limit for file names. File names,
-     *         including the path to the file, cannot exceed the character limit.
+     *         The user name is not valid because it has exceeded the character limit for author names.
      * @throws InvalidEmailException
      *         The specified email address either contains one or more characters that are not allowed, or it exceeds
      *         the maximum number of characters allowed for an email address.
@@ -2031,8 +2039,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
      *         repository. For a list of valid branch names, use <a>ListBranches</a>.
      * @throws NameLengthExceededException
-     *         The user name is not valid because it has exceeded the character limit for file names. File names,
-     *         including the path to the file, cannot exceed the character limit.
+     *         The user name is not valid because it has exceeded the character limit for author names.
      * @throws InvalidEmailException
      *         The specified email address either contains one or more characters that are not allowed, or it exceeds
      *         the maximum number of characters allowed for an email address.
@@ -2223,6 +2230,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified conflict resolution strategy is not valid.
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
+     * @throws MaximumItemsToCompareExceededException
+     *         The maximum number of items to compare between the source or destination branches and the merge base has
+     *         exceeded the maximum allowed.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -3249,6 +3259,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified conflict resolution strategy is not valid.
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
+     * @throws MaximumItemsToCompareExceededException
+     *         The maximum number of items to compare between the source or destination branches and the merge base has
+     *         exceeded the maximum allowed.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -3339,6 +3352,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified conflict resolution strategy is not valid.
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
+     * @throws MaximumItemsToCompareExceededException
+     *         The maximum number of items to compare between the source or destination branches and the merge base has
+     *         exceeded the maximum allowed.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -4092,6 +4108,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         split the changes across multiple folders.
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
+     * @throws MaximumItemsToCompareExceededException
+     *         The maximum number of items to compare between the source or destination branches and the merge base has
+     *         exceeded the maximum allowed.
      * @throws FileModeRequiredException
      *         The commit cannot be created because a file mode is required to update mode permissions for an existing
      *         file, but no file mode has been specified.
@@ -4099,8 +4118,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
      *         <a>PutFile</a>.
      * @throws NameLengthExceededException
-     *         The user name is not valid because it has exceeded the character limit for file names. File names,
-     *         including the path to the file, cannot exceed the character limit.
+     *         The user name is not valid because it has exceeded the character limit for author names.
      * @throws InvalidEmailException
      *         The specified email address either contains one or more characters that are not allowed, or it exceeds
      *         the maximum number of characters allowed for an email address.
@@ -4237,6 +4255,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         split the changes across multiple folders.
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
+     * @throws MaximumItemsToCompareExceededException
+     *         The maximum number of items to compare between the source or destination branches and the merge base has
+     *         exceeded the maximum allowed.
      * @throws FileModeRequiredException
      *         The commit cannot be created because a file mode is required to update mode permissions for an existing
      *         file, but no file mode has been specified.
@@ -4244,8 +4265,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
      *         <a>PutFile</a>.
      * @throws NameLengthExceededException
-     *         The user name is not valid because it has exceeded the character limit for file names. File names,
-     *         including the path to the file, cannot exceed the character limit.
+     *         The user name is not valid because it has exceeded the character limit for author names.
      * @throws InvalidEmailException
      *         The specified email address either contains one or more characters that are not allowed, or it exceeds
      *         the maximum number of characters allowed for an email address.
@@ -4311,8 +4331,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
 
     /**
      * <p>
-     * Closes a pull request and attempts to merge the source commit of a pull request into the specified destination
-     * branch for that pull request at the specified commit using the fast-forward merge strategy.
+     * Attempts to merge the source commit of a pull request into the specified destination branch for that pull request
+     * at the specified commit using the fast-forward merge strategy. If the merge is successful, it closes the pull
+     * request.
      * </p>
      * 
      * @param mergePullRequestByFastForwardRequest
@@ -4411,8 +4432,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
 
     /**
      * <p>
-     * Closes a pull request and attempts to merge the source commit of a pull request into the specified destination
-     * branch for that pull request at the specified commit using the squash merge strategy.
+     * Attempts to merge the source commit of a pull request into the specified destination branch for that pull request
+     * at the specified commit using the squash merge strategy. If the merge is successful, it closes the pull request.
      * </p>
      * 
      * @param mergePullRequestBySquashRequest
@@ -4440,8 +4461,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
      *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
      * @throws NameLengthExceededException
-     *         The user name is not valid because it has exceeded the character limit for file names. File names,
-     *         including the path to the file, cannot exceed the character limit.
+     *         The user name is not valid because it has exceeded the character limit for author names.
      * @throws InvalidEmailException
      *         The specified email address either contains one or more characters that are not allowed, or it exceeds
      *         the maximum number of characters allowed for an email address.
@@ -4483,6 +4503,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         split the changes across multiple folders.
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
+     * @throws MaximumItemsToCompareExceededException
+     *         The maximum number of items to compare between the source or destination branches and the merge base has
+     *         exceeded the maximum allowed.
      * @throws RepositoryNameRequiredException
      *         A repository name is required but was not specified.
      * @throws InvalidRepositoryNameException
@@ -4556,8 +4579,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
 
     /**
      * <p>
-     * Closes a pull request and attempts to merge the source commit of a pull request into the specified destination
-     * branch for that pull request at the specified commit using the three-way merge strategy.
+     * Attempts to merge the source commit of a pull request into the specified destination branch for that pull request
+     * at the specified commit using the three-way merge strategy. If the merge is successful, it closes the pull
+     * request.
      * </p>
      * 
      * @param mergePullRequestByThreeWayRequest
@@ -4585,8 +4609,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
      *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
      * @throws NameLengthExceededException
-     *         The user name is not valid because it has exceeded the character limit for file names. File names,
-     *         including the path to the file, cannot exceed the character limit.
+     *         The user name is not valid because it has exceeded the character limit for author names.
      * @throws InvalidEmailException
      *         The specified email address either contains one or more characters that are not allowed, or it exceeds
      *         the maximum number of characters allowed for an email address.
@@ -4628,6 +4651,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         split the changes across multiple folders.
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
+     * @throws MaximumItemsToCompareExceededException
+     *         The maximum number of items to compare between the source or destination branches and the merge base has
+     *         exceeded the maximum allowed.
      * @throws RepositoryNameRequiredException
      *         A repository name is required but was not specified.
      * @throws InvalidRepositoryNameException
@@ -5070,8 +5096,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
      *         <a>PutFile</a>.
      * @throws NameLengthExceededException
-     *         The user name is not valid because it has exceeded the character limit for file names. File names,
-     *         including the path to the file, cannot exceed the character limit.
+     *         The user name is not valid because it has exceeded the character limit for author names.
      * @throws InvalidEmailException
      *         The specified email address either contains one or more characters that are not allowed, or it exceeds
      *         the maximum number of characters allowed for an email address.

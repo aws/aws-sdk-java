@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.apigatewayv2.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -34,6 +35,8 @@ public class DomainNameMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainName").build();
     private static final MarshallingInfo<List> DOMAINNAMECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainNameConfigurations").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final DomainNameMarshaller instance = new DomainNameMarshaller();
 
@@ -54,6 +57,7 @@ public class DomainNameMarshaller {
             protocolMarshaller.marshall(domainName.getApiMappingSelectionExpression(), APIMAPPINGSELECTIONEXPRESSION_BINDING);
             protocolMarshaller.marshall(domainName.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(domainName.getDomainNameConfigurations(), DOMAINNAMECONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(domainName.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

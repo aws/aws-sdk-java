@@ -253,6 +253,21 @@ public class AbstractAmazonApiGatewayV2 implements AmazonApiGatewayV2 {
     }
 
     @Override
+    public GetTagsResult getTags(GetTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateApiResult updateApi(UpdateApiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
