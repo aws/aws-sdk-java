@@ -83,7 +83,7 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
     private String attachmentState;
     /**
      * <p>
-     * The type of attachment.
+     * The interface type.
      * </p>
      */
     private String attachmentType;
@@ -503,11 +503,11 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The type of attachment.
+     * The interface type.
      * </p>
      * 
      * @param attachmentType
-     *        The type of attachment.
+     *        The interface type.
      * @see DirectConnectGatewayAttachmentType
      */
 
@@ -517,10 +517,10 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The type of attachment.
+     * The interface type.
      * </p>
      * 
-     * @return The type of attachment.
+     * @return The interface type.
      * @see DirectConnectGatewayAttachmentType
      */
 
@@ -530,11 +530,11 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The type of attachment.
+     * The interface type.
      * </p>
      * 
      * @param attachmentType
-     *        The type of attachment.
+     *        The interface type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectConnectGatewayAttachmentType
      */
@@ -546,11 +546,11 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The type of attachment.
+     * The interface type.
      * </p>
      * 
      * @param attachmentType
-     *        The type of attachment.
+     *        The interface type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectConnectGatewayAttachmentType
      */

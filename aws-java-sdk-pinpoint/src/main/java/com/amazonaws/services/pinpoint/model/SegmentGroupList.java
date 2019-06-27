@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Segment group definition.
+ * <p>
+ * Specifies the settings that define the relationships between segment groups for a segment.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentGroupList" target="_top">AWS API
  *      Documentation</a>
@@ -26,19 +28,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo {
 
-    /** A set of segment criteria to evaluate. */
+    /**
+     * <p>
+     * An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.
+     * </p>
+     */
     private java.util.List<SegmentGroup> groups;
     /**
-     * Specify how to handle multiple segment groups. For example, if the segment includes three segment groups, should
-     * the resulting segment include endpoints that are matched by all, any, or none of the segment groups you created.
-     * Acceptable values: ALL, ANY, or NONE.
+     * <p>
+     * Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three
+     * segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment
+     * groups.
+     * </p>
      */
     private String include;
 
     /**
-     * A set of segment criteria to evaluate.
+     * <p>
+     * An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.
+     * </p>
      * 
-     * @return A set of segment criteria to evaluate.
+     * @return An array that defines the set of segment criteria to evaluate when handling segment groups for the
+     *         segment.
      */
 
     public java.util.List<SegmentGroup> getGroups() {
@@ -46,10 +57,13 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A set of segment criteria to evaluate.
+     * <p>
+     * An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.
+     * </p>
      * 
      * @param groups
-     *        A set of segment criteria to evaluate.
+     *        An array that defines the set of segment criteria to evaluate when handling segment groups for the
+     *        segment.
      */
 
     public void setGroups(java.util.Collection<SegmentGroup> groups) {
@@ -62,7 +76,9 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A set of segment criteria to evaluate.
+     * <p>
+     * An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
@@ -70,7 +86,8 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param groups
-     *        A set of segment criteria to evaluate.
+     *        An array that defines the set of segment criteria to evaluate when handling segment groups for the
+     *        segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,10 +102,13 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A set of segment criteria to evaluate.
+     * <p>
+     * An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.
+     * </p>
      * 
      * @param groups
-     *        A set of segment criteria to evaluate.
+     *        An array that defines the set of segment criteria to evaluate when handling segment groups for the
+     *        segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,14 +118,16 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify how to handle multiple segment groups. For example, if the segment includes three segment groups, should
-     * the resulting segment include endpoints that are matched by all, any, or none of the segment groups you created.
-     * Acceptable values: ALL, ANY, or NONE.
+     * <p>
+     * Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three
+     * segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment
+     * groups.
+     * </p>
      * 
      * @param include
-     *        Specify how to handle multiple segment groups. For example, if the segment includes three segment groups,
-     *        should the resulting segment include endpoints that are matched by all, any, or none of the segment groups
-     *        you created. Acceptable values: ALL, ANY, or NONE.
+     *        Specifies how to handle multiple segment groups for the segment. For example, if the segment includes
+     *        three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the
+     *        segment groups.
      * @see Include
      */
 
@@ -114,13 +136,15 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify how to handle multiple segment groups. For example, if the segment includes three segment groups, should
-     * the resulting segment include endpoints that are matched by all, any, or none of the segment groups you created.
-     * Acceptable values: ALL, ANY, or NONE.
+     * <p>
+     * Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three
+     * segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment
+     * groups.
+     * </p>
      * 
-     * @return Specify how to handle multiple segment groups. For example, if the segment includes three segment groups,
-     *         should the resulting segment include endpoints that are matched by all, any, or none of the segment
-     *         groups you created. Acceptable values: ALL, ANY, or NONE.
+     * @return Specifies how to handle multiple segment groups for the segment. For example, if the segment includes
+     *         three segment groups, whether the resulting segment includes endpoints that match all, any, or none of
+     *         the segment groups.
      * @see Include
      */
 
@@ -129,14 +153,16 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify how to handle multiple segment groups. For example, if the segment includes three segment groups, should
-     * the resulting segment include endpoints that are matched by all, any, or none of the segment groups you created.
-     * Acceptable values: ALL, ANY, or NONE.
+     * <p>
+     * Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three
+     * segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment
+     * groups.
+     * </p>
      * 
      * @param include
-     *        Specify how to handle multiple segment groups. For example, if the segment includes three segment groups,
-     *        should the resulting segment include endpoints that are matched by all, any, or none of the segment groups
-     *        you created. Acceptable values: ALL, ANY, or NONE.
+     *        Specifies how to handle multiple segment groups for the segment. For example, if the segment includes
+     *        three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the
+     *        segment groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Include
      */
@@ -147,14 +173,16 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify how to handle multiple segment groups. For example, if the segment includes three segment groups, should
-     * the resulting segment include endpoints that are matched by all, any, or none of the segment groups you created.
-     * Acceptable values: ALL, ANY, or NONE.
+     * <p>
+     * Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three
+     * segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment
+     * groups.
+     * </p>
      * 
      * @param include
-     *        Specify how to handle multiple segment groups. For example, if the segment includes three segment groups,
-     *        should the resulting segment include endpoints that are matched by all, any, or none of the segment groups
-     *        you created. Acceptable values: ALL, ANY, or NONE.
+     *        Specifies how to handle multiple segment groups for the segment. For example, if the segment includes
+     *        three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the
+     *        segment groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Include
      */

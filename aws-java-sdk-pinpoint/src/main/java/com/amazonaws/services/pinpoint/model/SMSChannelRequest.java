@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * SMS Channel Request
+ * <p>
+ * Specifies the status and settings of the SMS channel for an application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SMSChannelRequest" target="_top">AWS API
  *      Documentation</a>
@@ -26,18 +28,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SMSChannelRequest implements Serializable, Cloneable, StructuredPojo {
 
-    /** If the channel is enabled for sending messages. */
+    /**
+     * <p>
+     * Specifies whether to enable the SMS channel for the application.
+     * </p>
+     */
     private Boolean enabled;
-    /** Sender identifier of your messages. */
+    /**
+     * <p>
+     * The identity that you want to display on recipients' devices when they receive messages from the SMS channel.
+     * </p>
+     */
     private String senderId;
-    /** ShortCode registered with phone provider. */
+    /**
+     * <p>
+     * The registered short code that you want to use when you send messages through the SMS channel.
+     * </p>
+     */
     private String shortCode;
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the SMS channel for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether to enable the SMS channel for the application.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -45,9 +61,11 @@ public class SMSChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the SMS channel for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether to enable the SMS channel for the application.
      */
 
     public Boolean getEnabled() {
@@ -55,10 +73,12 @@ public class SMSChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the SMS channel for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether to enable the SMS channel for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,9 +88,11 @@ public class SMSChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the SMS channel for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether to enable the SMS channel for the application.
      */
 
     public Boolean isEnabled() {
@@ -78,10 +100,13 @@ public class SMSChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Sender identifier of your messages.
+     * <p>
+     * The identity that you want to display on recipients' devices when they receive messages from the SMS channel.
+     * </p>
      * 
      * @param senderId
-     *        Sender identifier of your messages.
+     *        The identity that you want to display on recipients' devices when they receive messages from the SMS
+     *        channel.
      */
 
     public void setSenderId(String senderId) {
@@ -89,9 +114,12 @@ public class SMSChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Sender identifier of your messages.
+     * <p>
+     * The identity that you want to display on recipients' devices when they receive messages from the SMS channel.
+     * </p>
      * 
-     * @return Sender identifier of your messages.
+     * @return The identity that you want to display on recipients' devices when they receive messages from the SMS
+     *         channel.
      */
 
     public String getSenderId() {
@@ -99,10 +127,13 @@ public class SMSChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Sender identifier of your messages.
+     * <p>
+     * The identity that you want to display on recipients' devices when they receive messages from the SMS channel.
+     * </p>
      * 
      * @param senderId
-     *        Sender identifier of your messages.
+     *        The identity that you want to display on recipients' devices when they receive messages from the SMS
+     *        channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,10 +143,12 @@ public class SMSChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * ShortCode registered with phone provider.
+     * <p>
+     * The registered short code that you want to use when you send messages through the SMS channel.
+     * </p>
      * 
      * @param shortCode
-     *        ShortCode registered with phone provider.
+     *        The registered short code that you want to use when you send messages through the SMS channel.
      */
 
     public void setShortCode(String shortCode) {
@@ -123,9 +156,11 @@ public class SMSChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * ShortCode registered with phone provider.
+     * <p>
+     * The registered short code that you want to use when you send messages through the SMS channel.
+     * </p>
      * 
-     * @return ShortCode registered with phone provider.
+     * @return The registered short code that you want to use when you send messages through the SMS channel.
      */
 
     public String getShortCode() {
@@ -133,10 +168,12 @@ public class SMSChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * ShortCode registered with phone provider.
+     * <p>
+     * The registered short code that you want to use when you send messages through the SMS channel.
+     * </p>
      * 
      * @param shortCode
-     *        ShortCode registered with phone provider.
+     *        The registered short code that you want to use when you send messages through the SMS channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

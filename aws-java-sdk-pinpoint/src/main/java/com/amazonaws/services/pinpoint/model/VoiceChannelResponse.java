@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Voice Channel Response.
+ * <p>
+ * Provides information about the status and settings of the voice channel for an application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VoiceChannelResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,32 +28,74 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VoiceChannelResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** Application id */
+    /**
+     * <p>
+     * The unique identifier for the application that the voice channel applies to.
+     * </p>
+     */
     private String applicationId;
-    /** The date that the settings were last updated in ISO 8601 format. */
+    /**
+     * <p>
+     * The date and time, in ISO 8601 format, when the voice channel was enabled.
+     * </p>
+     */
     private String creationDate;
-    /** If the channel is enabled for sending messages. */
+    /**
+     * <p>
+     * Specifies whether the voice channel is enabled for the application.
+     * </p>
+     */
     private Boolean enabled;
-
+    /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     */
     private Boolean hasCredential;
-    /** Channel ID. Not used, only for backwards compatibility. */
+    /**
+     * <p>
+     * (Deprecated) An identifier for the voice channel. This property is retained only for backward compatibility.
+     * </p>
+     */
     private String id;
-    /** Is this channel archived */
+    /**
+     * <p>
+     * Specifies whether the voice channel is archived.
+     * </p>
+     */
     private Boolean isArchived;
-    /** Who made the last change */
+    /**
+     * <p>
+     * The user who last modified the voice channel.
+     * </p>
+     */
     private String lastModifiedBy;
-    /** Last date this was updated */
+    /**
+     * <p>
+     * The date and time, in ISO 8601 format, when the voice channel was last modified.
+     * </p>
+     */
     private String lastModifiedDate;
-    /** Platform type. Will be "Voice" */
+    /**
+     * <p>
+     * The type of messaging or notification platform for the channel. For the voice channel, this value is VOICE.
+     * </p>
+     */
     private String platform;
-    /** Version of channel */
+    /**
+     * <p>
+     * The current version of the voice channel.
+     * </p>
+     */
     private Integer version;
 
     /**
-     * Application id
+     * <p>
+     * The unique identifier for the application that the voice channel applies to.
+     * </p>
      * 
      * @param applicationId
-     *        Application id
+     *        The unique identifier for the application that the voice channel applies to.
      */
 
     public void setApplicationId(String applicationId) {
@@ -59,9 +103,11 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Application id
+     * <p>
+     * The unique identifier for the application that the voice channel applies to.
+     * </p>
      * 
-     * @return Application id
+     * @return The unique identifier for the application that the voice channel applies to.
      */
 
     public String getApplicationId() {
@@ -69,10 +115,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Application id
+     * <p>
+     * The unique identifier for the application that the voice channel applies to.
+     * </p>
      * 
      * @param applicationId
-     *        Application id
+     *        The unique identifier for the application that the voice channel applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,10 +130,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>
+     * The date and time, in ISO 8601 format, when the voice channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        The date that the settings were last updated in ISO 8601 format.
+     *        The date and time, in ISO 8601 format, when the voice channel was enabled.
      */
 
     public void setCreationDate(String creationDate) {
@@ -93,9 +143,11 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>
+     * The date and time, in ISO 8601 format, when the voice channel was enabled.
+     * </p>
      * 
-     * @return The date that the settings were last updated in ISO 8601 format.
+     * @return The date and time, in ISO 8601 format, when the voice channel was enabled.
      */
 
     public String getCreationDate() {
@@ -103,10 +155,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>
+     * The date and time, in ISO 8601 format, when the voice channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        The date that the settings were last updated in ISO 8601 format.
+     *        The date and time, in ISO 8601 format, when the voice channel was enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,10 +170,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the voice channel is enabled for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether the voice channel is enabled for the application.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -127,9 +183,11 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the voice channel is enabled for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether the voice channel is enabled for the application.
      */
 
     public Boolean getEnabled() {
@@ -137,10 +195,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the voice channel is enabled for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether the voice channel is enabled for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,9 +210,11 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the voice channel is enabled for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether the voice channel is enabled for the application.
      */
 
     public Boolean isEnabled() {
@@ -160,7 +222,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     * 
      * @param hasCredential
+     *        (Not used) This property is retained only for backward compatibility.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -168,7 +235,11 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     * 
+     * @return (Not used) This property is retained only for backward compatibility.
      */
 
     public Boolean getHasCredential() {
@@ -176,7 +247,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     * 
      * @param hasCredential
+     *        (Not used) This property is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,7 +262,11 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     * 
+     * @return (Not used) This property is retained only for backward compatibility.
      */
 
     public Boolean isHasCredential() {
@@ -194,10 +274,13 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the voice channel. This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param id
-     *        Channel ID. Not used, only for backwards compatibility.
+     *        (Deprecated) An identifier for the voice channel. This property is retained only for backward
+     *        compatibility.
      */
 
     public void setId(String id) {
@@ -205,9 +288,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the voice channel. This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Channel ID. Not used, only for backwards compatibility.
+     * @return (Deprecated) An identifier for the voice channel. This property is retained only for backward
+     *         compatibility.
      */
 
     public String getId() {
@@ -215,10 +301,13 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the voice channel. This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param id
-     *        Channel ID. Not used, only for backwards compatibility.
+     *        (Deprecated) An identifier for the voice channel. This property is retained only for backward
+     *        compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,10 +317,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the voice channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Is this channel archived
+     *        Specifies whether the voice channel is archived.
      */
 
     public void setIsArchived(Boolean isArchived) {
@@ -239,9 +330,11 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the voice channel is archived.
+     * </p>
      * 
-     * @return Is this channel archived
+     * @return Specifies whether the voice channel is archived.
      */
 
     public Boolean getIsArchived() {
@@ -249,10 +342,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the voice channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Is this channel archived
+     *        Specifies whether the voice channel is archived.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,9 +357,11 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the voice channel is archived.
+     * </p>
      * 
-     * @return Is this channel archived
+     * @return Specifies whether the voice channel is archived.
      */
 
     public Boolean isArchived() {
@@ -272,10 +369,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Who made the last change
+     * <p>
+     * The user who last modified the voice channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        Who made the last change
+     *        The user who last modified the voice channel.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -283,9 +382,11 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Who made the last change
+     * <p>
+     * The user who last modified the voice channel.
+     * </p>
      * 
-     * @return Who made the last change
+     * @return The user who last modified the voice channel.
      */
 
     public String getLastModifiedBy() {
@@ -293,10 +394,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Who made the last change
+     * <p>
+     * The user who last modified the voice channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        Who made the last change
+     *        The user who last modified the voice channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,10 +409,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time, in ISO 8601 format, when the voice channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        Last date this was updated
+     *        The date and time, in ISO 8601 format, when the voice channel was last modified.
      */
 
     public void setLastModifiedDate(String lastModifiedDate) {
@@ -317,9 +422,11 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time, in ISO 8601 format, when the voice channel was last modified.
+     * </p>
      * 
-     * @return Last date this was updated
+     * @return The date and time, in ISO 8601 format, when the voice channel was last modified.
      */
 
     public String getLastModifiedDate() {
@@ -327,10 +434,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time, in ISO 8601 format, when the voice channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        Last date this was updated
+     *        The date and time, in ISO 8601 format, when the voice channel was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,10 +449,13 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Platform type. Will be "Voice"
+     * <p>
+     * The type of messaging or notification platform for the channel. For the voice channel, this value is VOICE.
+     * </p>
      * 
      * @param platform
-     *        Platform type. Will be "Voice"
+     *        The type of messaging or notification platform for the channel. For the voice channel, this value is
+     *        VOICE.
      */
 
     public void setPlatform(String platform) {
@@ -351,9 +463,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Platform type. Will be "Voice"
+     * <p>
+     * The type of messaging or notification platform for the channel. For the voice channel, this value is VOICE.
+     * </p>
      * 
-     * @return Platform type. Will be "Voice"
+     * @return The type of messaging or notification platform for the channel. For the voice channel, this value is
+     *         VOICE.
      */
 
     public String getPlatform() {
@@ -361,10 +476,13 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Platform type. Will be "Voice"
+     * <p>
+     * The type of messaging or notification platform for the channel. For the voice channel, this value is VOICE.
+     * </p>
      * 
      * @param platform
-     *        Platform type. Will be "Voice"
+     *        The type of messaging or notification platform for the channel. For the voice channel, this value is
+     *        VOICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -374,10 +492,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the voice channel.
+     * </p>
      * 
      * @param version
-     *        Version of channel
+     *        The current version of the voice channel.
      */
 
     public void setVersion(Integer version) {
@@ -385,9 +505,11 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the voice channel.
+     * </p>
      * 
-     * @return Version of channel
+     * @return The current version of the voice channel.
      */
 
     public Integer getVersion() {
@@ -395,10 +517,12 @@ public class VoiceChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the voice channel.
+     * </p>
      * 
      * @param version
-     *        Version of channel
+     *        The current version of the voice channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

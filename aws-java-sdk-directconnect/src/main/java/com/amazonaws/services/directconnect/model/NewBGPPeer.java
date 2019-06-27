@@ -36,7 +36,8 @@ public class NewBGPPeer implements Serializable, Cloneable, StructuredPojo {
     private Integer asn;
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      */
     private String authKey;
@@ -101,11 +102,13 @@ public class NewBGPPeer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
      * @param authKey
-     *        The authentication key for BGP configuration.
+     *        The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *        maximun lenth of 80 characters.
      */
 
     public void setAuthKey(String authKey) {
@@ -114,10 +117,12 @@ public class NewBGPPeer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
-     * @return The authentication key for BGP configuration.
+     * @return The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *         maximun lenth of 80 characters.
      */
 
     public String getAuthKey() {
@@ -126,11 +131,13 @@ public class NewBGPPeer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
      * @param authKey
-     *        The authentication key for BGP configuration.
+     *        The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *        maximun lenth of 80 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

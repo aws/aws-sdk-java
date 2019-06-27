@@ -44,6 +44,8 @@ public class NewPublicVirtualInterfaceAllocationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("addressFamily").build();
     private static final MarshallingInfo<List> ROUTEFILTERPREFIXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("routeFilterPrefixes").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final NewPublicVirtualInterfaceAllocationMarshaller instance = new NewPublicVirtualInterfaceAllocationMarshaller();
 
@@ -69,6 +71,7 @@ public class NewPublicVirtualInterfaceAllocationMarshaller {
             protocolMarshaller.marshall(newPublicVirtualInterfaceAllocation.getCustomerAddress(), CUSTOMERADDRESS_BINDING);
             protocolMarshaller.marshall(newPublicVirtualInterfaceAllocation.getAddressFamily(), ADDRESSFAMILY_BINDING);
             protocolMarshaller.marshall(newPublicVirtualInterfaceAllocation.getRouteFilterPrefixes(), ROUTEFILTERPREFIXES_BINDING);
+            protocolMarshaller.marshall(newPublicVirtualInterfaceAllocation.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

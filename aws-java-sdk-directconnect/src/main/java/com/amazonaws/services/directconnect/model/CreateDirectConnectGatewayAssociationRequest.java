@@ -41,6 +41,11 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * <p>
      * The Amazon VPC prefixes to advertise to the Direct Connect gateway
      * </p>
+     * <p>
+     * For information about how to set the prefixes, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> addAllowedPrefixesToDirectConnectGateway;
     /**
@@ -134,8 +139,17 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * <p>
      * The Amazon VPC prefixes to advertise to the Direct Connect gateway
      * </p>
+     * <p>
+     * For information about how to set the prefixes, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     * </p>
      * 
-     * @return The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     * @return The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     *         <p>
+     *         For information about how to set the prefixes, see <a href=
+     *         "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     *         >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      */
 
     public java.util.List<RouteFilterPrefix> getAddAllowedPrefixesToDirectConnectGateway() {
@@ -149,9 +163,18 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * <p>
      * The Amazon VPC prefixes to advertise to the Direct Connect gateway
      * </p>
+     * <p>
+     * For information about how to set the prefixes, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     * </p>
      * 
      * @param addAllowedPrefixesToDirectConnectGateway
-     *        The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     *        The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     *        <p>
+     *        For information about how to set the prefixes, see <a href=
+     *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     *        >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      */
 
     public void setAddAllowedPrefixesToDirectConnectGateway(java.util.Collection<RouteFilterPrefix> addAllowedPrefixesToDirectConnectGateway) {
@@ -168,6 +191,11 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * The Amazon VPC prefixes to advertise to the Direct Connect gateway
      * </p>
      * <p>
+     * For information about how to set the prefixes, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAddAllowedPrefixesToDirectConnectGateway(java.util.Collection)} or
      * {@link #withAddAllowedPrefixesToDirectConnectGateway(java.util.Collection)} if you want to override the existing
@@ -175,7 +203,11 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * </p>
      * 
      * @param addAllowedPrefixesToDirectConnectGateway
-     *        The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     *        The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     *        <p>
+     *        For information about how to set the prefixes, see <a href=
+     *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     *        >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,9 +227,18 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * <p>
      * The Amazon VPC prefixes to advertise to the Direct Connect gateway
      * </p>
+     * <p>
+     * For information about how to set the prefixes, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     * </p>
      * 
      * @param addAllowedPrefixesToDirectConnectGateway
-     *        The Amazon VPC prefixes to advertise to the Direct Connect gateway
+     *        The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     *        <p>
+     *        For information about how to set the prefixes, see <a href=
+     *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     *        >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

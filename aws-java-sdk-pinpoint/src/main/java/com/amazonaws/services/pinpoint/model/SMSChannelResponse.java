@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * SMS Channel Response.
+ * <p>
+ * Provides information about the status and settings of the SMS channel for an application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SMSChannelResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,40 +28,98 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SMSChannelResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The unique ID of the application to which the SMS channel belongs. */
+    /**
+     * <p>
+     * The unique identifier for the application that the SMS channel applies to.
+     * </p>
+     */
     private String applicationId;
-    /** The date that the settings were last updated in ISO 8601 format. */
+    /**
+     * <p>
+     * The date and time, in ISO 8601 format, when the SMS channel was enabled.
+     * </p>
+     */
     private String creationDate;
-    /** If the channel is enabled for sending messages. */
+    /**
+     * <p>
+     * Specifies whether the SMS channel is enabled for the application.
+     * </p>
+     */
     private Boolean enabled;
-    /** Not used. Retained for backwards compatibility. */
+    /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     */
     private Boolean hasCredential;
-    /** Channel ID. Not used, only for backwards compatibility. */
+    /**
+     * <p>
+     * (Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.
+     * </p>
+     */
     private String id;
-    /** Is this channel archived */
+    /**
+     * <p>
+     * Specifies whether the SMS channel is archived.
+     * </p>
+     */
     private Boolean isArchived;
-    /** Who last updated this entry */
+    /**
+     * <p>
+     * The user who last modified the SMS channel.
+     * </p>
+     */
     private String lastModifiedBy;
-    /** Last date this was updated */
+    /**
+     * <p>
+     * The date and time, in ISO 8601 format, when the SMS channel was last modified.
+     * </p>
+     */
     private String lastModifiedDate;
-    /** Platform type. Will be "SMS" */
+    /**
+     * <p>
+     * The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.
+     * </p>
+     */
     private String platform;
-    /** Promotional messages per second that can be sent */
+    /**
+     * <p>
+     * The maximum number of promotional messages that you can send through the SMS channel each second.
+     * </p>
+     */
     private Integer promotionalMessagesPerSecond;
-    /** Sender identifier of your messages. */
+    /**
+     * <p>
+     * The identity that displays on recipients' devices when they receive messages from the SMS channel.
+     * </p>
+     */
     private String senderId;
-    /** The short code registered with the phone provider. */
+    /**
+     * <p>
+     * The registered short code to use when you send messages through the SMS channel.
+     * </p>
+     */
     private String shortCode;
-    /** Transactional messages per second that can be sent */
+    /**
+     * <p>
+     * The maximum number of transactional messages that you can send through the SMS channel each second.
+     * </p>
+     */
     private Integer transactionalMessagesPerSecond;
-    /** Version of channel */
+    /**
+     * <p>
+     * The current version of the SMS channel.
+     * </p>
+     */
     private Integer version;
 
     /**
-     * The unique ID of the application to which the SMS channel belongs.
+     * <p>
+     * The unique identifier for the application that the SMS channel applies to.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID of the application to which the SMS channel belongs.
+     *        The unique identifier for the application that the SMS channel applies to.
      */
 
     public void setApplicationId(String applicationId) {
@@ -67,9 +127,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The unique ID of the application to which the SMS channel belongs.
+     * <p>
+     * The unique identifier for the application that the SMS channel applies to.
+     * </p>
      * 
-     * @return The unique ID of the application to which the SMS channel belongs.
+     * @return The unique identifier for the application that the SMS channel applies to.
      */
 
     public String getApplicationId() {
@@ -77,10 +139,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The unique ID of the application to which the SMS channel belongs.
+     * <p>
+     * The unique identifier for the application that the SMS channel applies to.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID of the application to which the SMS channel belongs.
+     *        The unique identifier for the application that the SMS channel applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,10 +154,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>
+     * The date and time, in ISO 8601 format, when the SMS channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        The date that the settings were last updated in ISO 8601 format.
+     *        The date and time, in ISO 8601 format, when the SMS channel was enabled.
      */
 
     public void setCreationDate(String creationDate) {
@@ -101,9 +167,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>
+     * The date and time, in ISO 8601 format, when the SMS channel was enabled.
+     * </p>
      * 
-     * @return The date that the settings were last updated in ISO 8601 format.
+     * @return The date and time, in ISO 8601 format, when the SMS channel was enabled.
      */
 
     public String getCreationDate() {
@@ -111,10 +179,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>
+     * The date and time, in ISO 8601 format, when the SMS channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        The date that the settings were last updated in ISO 8601 format.
+     *        The date and time, in ISO 8601 format, when the SMS channel was enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,10 +194,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the SMS channel is enabled for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether the SMS channel is enabled for the application.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -135,9 +207,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the SMS channel is enabled for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether the SMS channel is enabled for the application.
      */
 
     public Boolean getEnabled() {
@@ -145,10 +219,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the SMS channel is enabled for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether the SMS channel is enabled for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,9 +234,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the SMS channel is enabled for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether the SMS channel is enabled for the application.
      */
 
     public Boolean isEnabled() {
@@ -168,10 +246,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param hasCredential
-     *        Not used. Retained for backwards compatibility.
+     *        (Not used) This property is retained only for backward compatibility.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -179,9 +259,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Not used. Retained for backwards compatibility.
+     * @return (Not used) This property is retained only for backward compatibility.
      */
 
     public Boolean getHasCredential() {
@@ -189,10 +271,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param hasCredential
-     *        Not used. Retained for backwards compatibility.
+     *        (Not used) This property is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,9 +286,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Not used. Retained for backwards compatibility.
+     * @return (Not used) This property is retained only for backward compatibility.
      */
 
     public Boolean isHasCredential() {
@@ -212,10 +298,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param id
-     *        Channel ID. Not used, only for backwards compatibility.
+     *        (Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.
      */
 
     public void setId(String id) {
@@ -223,9 +311,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Channel ID. Not used, only for backwards compatibility.
+     * @return (Deprecated) An identifier for the SMS channel. This property is retained only for backward
+     *         compatibility.
      */
 
     public String getId() {
@@ -233,10 +324,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param id
-     *        Channel ID. Not used, only for backwards compatibility.
+     *        (Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,10 +339,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the SMS channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Is this channel archived
+     *        Specifies whether the SMS channel is archived.
      */
 
     public void setIsArchived(Boolean isArchived) {
@@ -257,9 +352,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the SMS channel is archived.
+     * </p>
      * 
-     * @return Is this channel archived
+     * @return Specifies whether the SMS channel is archived.
      */
 
     public Boolean getIsArchived() {
@@ -267,10 +364,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the SMS channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Is this channel archived
+     *        Specifies whether the SMS channel is archived.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,9 +379,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the SMS channel is archived.
+     * </p>
      * 
-     * @return Is this channel archived
+     * @return Specifies whether the SMS channel is archived.
      */
 
     public Boolean isArchived() {
@@ -290,10 +391,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Who last updated this entry
+     * <p>
+     * The user who last modified the SMS channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        Who last updated this entry
+     *        The user who last modified the SMS channel.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -301,9 +404,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Who last updated this entry
+     * <p>
+     * The user who last modified the SMS channel.
+     * </p>
      * 
-     * @return Who last updated this entry
+     * @return The user who last modified the SMS channel.
      */
 
     public String getLastModifiedBy() {
@@ -311,10 +416,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Who last updated this entry
+     * <p>
+     * The user who last modified the SMS channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        Who last updated this entry
+     *        The user who last modified the SMS channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,10 +431,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time, in ISO 8601 format, when the SMS channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        Last date this was updated
+     *        The date and time, in ISO 8601 format, when the SMS channel was last modified.
      */
 
     public void setLastModifiedDate(String lastModifiedDate) {
@@ -335,9 +444,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time, in ISO 8601 format, when the SMS channel was last modified.
+     * </p>
      * 
-     * @return Last date this was updated
+     * @return The date and time, in ISO 8601 format, when the SMS channel was last modified.
      */
 
     public String getLastModifiedDate() {
@@ -345,10 +456,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time, in ISO 8601 format, when the SMS channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        Last date this was updated
+     *        The date and time, in ISO 8601 format, when the SMS channel was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -358,10 +471,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Platform type. Will be "SMS"
+     * <p>
+     * The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.
+     * </p>
      * 
      * @param platform
-     *        Platform type. Will be "SMS"
+     *        The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.
      */
 
     public void setPlatform(String platform) {
@@ -369,9 +484,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Platform type. Will be "SMS"
+     * <p>
+     * The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.
+     * </p>
      * 
-     * @return Platform type. Will be "SMS"
+     * @return The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.
      */
 
     public String getPlatform() {
@@ -379,10 +496,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Platform type. Will be "SMS"
+     * <p>
+     * The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.
+     * </p>
      * 
      * @param platform
-     *        Platform type. Will be "SMS"
+     *        The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,10 +511,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Promotional messages per second that can be sent
+     * <p>
+     * The maximum number of promotional messages that you can send through the SMS channel each second.
+     * </p>
      * 
      * @param promotionalMessagesPerSecond
-     *        Promotional messages per second that can be sent
+     *        The maximum number of promotional messages that you can send through the SMS channel each second.
      */
 
     public void setPromotionalMessagesPerSecond(Integer promotionalMessagesPerSecond) {
@@ -403,9 +524,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Promotional messages per second that can be sent
+     * <p>
+     * The maximum number of promotional messages that you can send through the SMS channel each second.
+     * </p>
      * 
-     * @return Promotional messages per second that can be sent
+     * @return The maximum number of promotional messages that you can send through the SMS channel each second.
      */
 
     public Integer getPromotionalMessagesPerSecond() {
@@ -413,10 +536,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Promotional messages per second that can be sent
+     * <p>
+     * The maximum number of promotional messages that you can send through the SMS channel each second.
+     * </p>
      * 
      * @param promotionalMessagesPerSecond
-     *        Promotional messages per second that can be sent
+     *        The maximum number of promotional messages that you can send through the SMS channel each second.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -426,10 +551,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Sender identifier of your messages.
+     * <p>
+     * The identity that displays on recipients' devices when they receive messages from the SMS channel.
+     * </p>
      * 
      * @param senderId
-     *        Sender identifier of your messages.
+     *        The identity that displays on recipients' devices when they receive messages from the SMS channel.
      */
 
     public void setSenderId(String senderId) {
@@ -437,9 +564,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Sender identifier of your messages.
+     * <p>
+     * The identity that displays on recipients' devices when they receive messages from the SMS channel.
+     * </p>
      * 
-     * @return Sender identifier of your messages.
+     * @return The identity that displays on recipients' devices when they receive messages from the SMS channel.
      */
 
     public String getSenderId() {
@@ -447,10 +576,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Sender identifier of your messages.
+     * <p>
+     * The identity that displays on recipients' devices when they receive messages from the SMS channel.
+     * </p>
      * 
      * @param senderId
-     *        Sender identifier of your messages.
+     *        The identity that displays on recipients' devices when they receive messages from the SMS channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,10 +591,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The short code registered with the phone provider.
+     * <p>
+     * The registered short code to use when you send messages through the SMS channel.
+     * </p>
      * 
      * @param shortCode
-     *        The short code registered with the phone provider.
+     *        The registered short code to use when you send messages through the SMS channel.
      */
 
     public void setShortCode(String shortCode) {
@@ -471,9 +604,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The short code registered with the phone provider.
+     * <p>
+     * The registered short code to use when you send messages through the SMS channel.
+     * </p>
      * 
-     * @return The short code registered with the phone provider.
+     * @return The registered short code to use when you send messages through the SMS channel.
      */
 
     public String getShortCode() {
@@ -481,10 +616,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The short code registered with the phone provider.
+     * <p>
+     * The registered short code to use when you send messages through the SMS channel.
+     * </p>
      * 
      * @param shortCode
-     *        The short code registered with the phone provider.
+     *        The registered short code to use when you send messages through the SMS channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -494,10 +631,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Transactional messages per second that can be sent
+     * <p>
+     * The maximum number of transactional messages that you can send through the SMS channel each second.
+     * </p>
      * 
      * @param transactionalMessagesPerSecond
-     *        Transactional messages per second that can be sent
+     *        The maximum number of transactional messages that you can send through the SMS channel each second.
      */
 
     public void setTransactionalMessagesPerSecond(Integer transactionalMessagesPerSecond) {
@@ -505,9 +644,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Transactional messages per second that can be sent
+     * <p>
+     * The maximum number of transactional messages that you can send through the SMS channel each second.
+     * </p>
      * 
-     * @return Transactional messages per second that can be sent
+     * @return The maximum number of transactional messages that you can send through the SMS channel each second.
      */
 
     public Integer getTransactionalMessagesPerSecond() {
@@ -515,10 +656,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Transactional messages per second that can be sent
+     * <p>
+     * The maximum number of transactional messages that you can send through the SMS channel each second.
+     * </p>
      * 
      * @param transactionalMessagesPerSecond
-     *        Transactional messages per second that can be sent
+     *        The maximum number of transactional messages that you can send through the SMS channel each second.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,10 +671,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the SMS channel.
+     * </p>
      * 
      * @param version
-     *        Version of channel
+     *        The current version of the SMS channel.
      */
 
     public void setVersion(Integer version) {
@@ -539,9 +684,11 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the SMS channel.
+     * </p>
      * 
-     * @return Version of channel
+     * @return The current version of the SMS channel.
      */
 
     public Integer getVersion() {
@@ -549,10 +696,12 @@ public class SMSChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the SMS channel.
+     * </p>
      * 
      * @param version
-     *        Version of channel
+     *        The current version of the SMS channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,10 @@ public class CreateLagRequestMarshaller {
             .marshallLocationName("lagName").build();
     private static final MarshallingInfo<String> CONNECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionId").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
+    private static final MarshallingInfo<List> CHILDCONNECTIONTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("childConnectionTags").build();
 
     private static final CreateLagRequestMarshaller instance = new CreateLagRequestMarshaller();
 
@@ -59,6 +64,8 @@ public class CreateLagRequestMarshaller {
             protocolMarshaller.marshall(createLagRequest.getConnectionsBandwidth(), CONNECTIONSBANDWIDTH_BINDING);
             protocolMarshaller.marshall(createLagRequest.getLagName(), LAGNAME_BINDING);
             protocolMarshaller.marshall(createLagRequest.getConnectionId(), CONNECTIONID_BINDING);
+            protocolMarshaller.marshall(createLagRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createLagRequest.getChildConnectionTags(), CHILDCONNECTIONTAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

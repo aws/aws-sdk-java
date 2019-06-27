@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Campaign definition
+ * <p>
+ * Provides information about the status, configuration, and other settings for a campaign.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,62 +28,151 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CampaignResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** Treatments that are defined in addition to the default treatment. */
+    /**
+     * <p>
+     * An array of responses, one for each treatment that you defined for the campaign, in addition to the default
+     * treatment.
+     * </p>
+     */
     private java.util.List<TreatmentResource> additionalTreatments;
-    /** The ID of the application to which the campaign applies. */
+    /**
+     * <p>
+     * The unique identifier for the application that the campaign applies to.
+     * </p>
+     */
     private String applicationId;
-    /** The arn for the campaign. */
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the campaign.
+     * </p>
+     */
     private String arn;
-    /** The date the campaign was created in ISO 8601 format. */
+    /**
+     * <p>
+     * The date, ISO 8601 format, when the campaign was created.
+     * </p>
+     */
     private String creationDate;
-    /** The status of the campaign's default treatment. Only present for A/B test campaigns. */
+    /**
+     * <p>
+     * The current status of the campaign's default treatment. This value exists only for campaigns that have more than
+     * one treatment, to support A/B testing.
+     * </p>
+     */
     private CampaignState defaultState;
-    /** A description of the campaign. */
+    /**
+     * <p>
+     * The custom description of the campaign.
+     * </p>
+     */
     private String description;
-    /** The allocated percentage of end users who will not receive messages from this campaign. */
+    /**
+     * <p>
+     * The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.
+     * </p>
+     */
     private Integer holdoutPercent;
-    /** Campaign hook information. */
+    /**
+     * <p>
+     * The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * </p>
+     */
     private CampaignHook hook;
-    /** The unique campaign ID. */
+    /**
+     * <p>
+     * The unique identifier for the campaign.
+     * </p>
+     */
     private String id;
     /**
-     * Indicates whether the campaign is paused. A paused campaign does not send messages unless you resume it by
-     * setting IsPaused to false.
+     * <p>
+     * Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing this
+     * value to false.
+     * </p>
      */
     private Boolean isPaused;
-    /** The date the campaign was last updated in ISO 8601 format. */
+    /**
+     * <p>
+     * The date, in ISO 8601 format, when the campaign was last modified.
+     * </p>
+     */
     private String lastModifiedDate;
-    /** The campaign limits settings. */
+    /**
+     * <p>
+     * The messaging limits for the campaign.
+     * </p>
+     */
     private CampaignLimits limits;
-    /** The message configuration settings. */
+    /**
+     * <p>
+     * The message configuration settings for the campaign.
+     * </p>
+     */
     private MessageConfiguration messageConfiguration;
-    /** The custom name of the campaign. */
+    /**
+     * <p>
+     * The name of the campaign.
+     * </p>
+     */
     private String name;
-    /** The campaign schedule. */
+    /**
+     * <p>
+     * The schedule settings for the campaign.
+     * </p>
+     */
     private Schedule schedule;
-    /** The ID of the segment to which the campaign sends messages. */
+    /**
+     * <p>
+     * The unique identifier for the segment that's associated with the campaign.
+     * </p>
+     */
     private String segmentId;
-    /** The version of the segment to which the campaign sends messages. */
+    /**
+     * <p>
+     * The version number of the segment that's associated with the campaign.
+     * </p>
+     */
     private Integer segmentVersion;
     /**
-     * The campaign status.
-     * 
-     * An A/B test campaign will have a status of COMPLETED only when all treatments have a status of COMPLETED.
+     * <p>
+     * The current status of the campaign.
+     * </p>
      */
     private CampaignState state;
-    /** The Tags for the campaign. */
+    /**
+     * <p>
+     * A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each
+     * tag consists of a required tag key and an associated tag value.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
-    /** A custom description for the treatment. */
+    /**
+     * <p>
+     * The custom description of a variation of the campaign that's used for A/B testing.
+     * </p>
+     */
     private String treatmentDescription;
-    /** The custom name of a variation of the campaign used for A/B testing. */
+    /**
+     * <p>
+     * The custom name of a variation of the campaign that's used for A/B testing.
+     * </p>
+     */
     private String treatmentName;
-    /** The campaign version number. */
+    /**
+     * <p>
+     * The version number of the campaign.
+     * </p>
+     */
     private Integer version;
 
     /**
-     * Treatments that are defined in addition to the default treatment.
+     * <p>
+     * An array of responses, one for each treatment that you defined for the campaign, in addition to the default
+     * treatment.
+     * </p>
      * 
-     * @return Treatments that are defined in addition to the default treatment.
+     * @return An array of responses, one for each treatment that you defined for the campaign, in addition to the
+     *         default treatment.
      */
 
     public java.util.List<TreatmentResource> getAdditionalTreatments() {
@@ -89,10 +180,14 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Treatments that are defined in addition to the default treatment.
+     * <p>
+     * An array of responses, one for each treatment that you defined for the campaign, in addition to the default
+     * treatment.
+     * </p>
      * 
      * @param additionalTreatments
-     *        Treatments that are defined in addition to the default treatment.
+     *        An array of responses, one for each treatment that you defined for the campaign, in addition to the
+     *        default treatment.
      */
 
     public void setAdditionalTreatments(java.util.Collection<TreatmentResource> additionalTreatments) {
@@ -105,7 +200,10 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Treatments that are defined in addition to the default treatment.
+     * <p>
+     * An array of responses, one for each treatment that you defined for the campaign, in addition to the default
+     * treatment.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAdditionalTreatments(java.util.Collection)} or {@link #withAdditionalTreatments(java.util.Collection)}
@@ -113,7 +211,8 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param additionalTreatments
-     *        Treatments that are defined in addition to the default treatment.
+     *        An array of responses, one for each treatment that you defined for the campaign, in addition to the
+     *        default treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,10 +227,14 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Treatments that are defined in addition to the default treatment.
+     * <p>
+     * An array of responses, one for each treatment that you defined for the campaign, in addition to the default
+     * treatment.
+     * </p>
      * 
      * @param additionalTreatments
-     *        Treatments that are defined in addition to the default treatment.
+     *        An array of responses, one for each treatment that you defined for the campaign, in addition to the
+     *        default treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,10 +244,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>
+     * The unique identifier for the application that the campaign applies to.
+     * </p>
      * 
      * @param applicationId
-     *        The ID of the application to which the campaign applies.
+     *        The unique identifier for the application that the campaign applies to.
      */
 
     public void setApplicationId(String applicationId) {
@@ -152,9 +257,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>
+     * The unique identifier for the application that the campaign applies to.
+     * </p>
      * 
-     * @return The ID of the application to which the campaign applies.
+     * @return The unique identifier for the application that the campaign applies to.
      */
 
     public String getApplicationId() {
@@ -162,10 +269,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>
+     * The unique identifier for the application that the campaign applies to.
+     * </p>
      * 
      * @param applicationId
-     *        The ID of the application to which the campaign applies.
+     *        The unique identifier for the application that the campaign applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,10 +284,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The arn for the campaign.
+     * <p>
+     * The Amazon Resource Name (ARN) of the campaign.
+     * </p>
      * 
      * @param arn
-     *        The arn for the campaign.
+     *        The Amazon Resource Name (ARN) of the campaign.
      */
 
     public void setArn(String arn) {
@@ -186,9 +297,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The arn for the campaign.
+     * <p>
+     * The Amazon Resource Name (ARN) of the campaign.
+     * </p>
      * 
-     * @return The arn for the campaign.
+     * @return The Amazon Resource Name (ARN) of the campaign.
      */
 
     public String getArn() {
@@ -196,10 +309,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The arn for the campaign.
+     * <p>
+     * The Amazon Resource Name (ARN) of the campaign.
+     * </p>
      * 
      * @param arn
-     *        The arn for the campaign.
+     *        The Amazon Resource Name (ARN) of the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,10 +324,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The date the campaign was created in ISO 8601 format.
+     * <p>
+     * The date, ISO 8601 format, when the campaign was created.
+     * </p>
      * 
      * @param creationDate
-     *        The date the campaign was created in ISO 8601 format.
+     *        The date, ISO 8601 format, when the campaign was created.
      */
 
     public void setCreationDate(String creationDate) {
@@ -220,9 +337,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The date the campaign was created in ISO 8601 format.
+     * <p>
+     * The date, ISO 8601 format, when the campaign was created.
+     * </p>
      * 
-     * @return The date the campaign was created in ISO 8601 format.
+     * @return The date, ISO 8601 format, when the campaign was created.
      */
 
     public String getCreationDate() {
@@ -230,10 +349,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The date the campaign was created in ISO 8601 format.
+     * <p>
+     * The date, ISO 8601 format, when the campaign was created.
+     * </p>
      * 
      * @param creationDate
-     *        The date the campaign was created in ISO 8601 format.
+     *        The date, ISO 8601 format, when the campaign was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,10 +364,14 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The status of the campaign's default treatment. Only present for A/B test campaigns.
+     * <p>
+     * The current status of the campaign's default treatment. This value exists only for campaigns that have more than
+     * one treatment, to support A/B testing.
+     * </p>
      * 
      * @param defaultState
-     *        The status of the campaign's default treatment. Only present for A/B test campaigns.
+     *        The current status of the campaign's default treatment. This value exists only for campaigns that have
+     *        more than one treatment, to support A/B testing.
      */
 
     public void setDefaultState(CampaignState defaultState) {
@@ -254,9 +379,13 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The status of the campaign's default treatment. Only present for A/B test campaigns.
+     * <p>
+     * The current status of the campaign's default treatment. This value exists only for campaigns that have more than
+     * one treatment, to support A/B testing.
+     * </p>
      * 
-     * @return The status of the campaign's default treatment. Only present for A/B test campaigns.
+     * @return The current status of the campaign's default treatment. This value exists only for campaigns that have
+     *         more than one treatment, to support A/B testing.
      */
 
     public CampaignState getDefaultState() {
@@ -264,10 +393,14 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The status of the campaign's default treatment. Only present for A/B test campaigns.
+     * <p>
+     * The current status of the campaign's default treatment. This value exists only for campaigns that have more than
+     * one treatment, to support A/B testing.
+     * </p>
      * 
      * @param defaultState
-     *        The status of the campaign's default treatment. Only present for A/B test campaigns.
+     *        The current status of the campaign's default treatment. This value exists only for campaigns that have
+     *        more than one treatment, to support A/B testing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,10 +410,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A description of the campaign.
+     * <p>
+     * The custom description of the campaign.
+     * </p>
      * 
      * @param description
-     *        A description of the campaign.
+     *        The custom description of the campaign.
      */
 
     public void setDescription(String description) {
@@ -288,9 +423,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A description of the campaign.
+     * <p>
+     * The custom description of the campaign.
+     * </p>
      * 
-     * @return A description of the campaign.
+     * @return The custom description of the campaign.
      */
 
     public String getDescription() {
@@ -298,10 +435,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A description of the campaign.
+     * <p>
+     * The custom description of the campaign.
+     * </p>
      * 
      * @param description
-     *        A description of the campaign.
+     *        The custom description of the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,10 +450,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The allocated percentage of end users who will not receive messages from this campaign.
+     * <p>
+     * The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.
+     * </p>
      * 
      * @param holdoutPercent
-     *        The allocated percentage of end users who will not receive messages from this campaign.
+     *        The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.
      */
 
     public void setHoldoutPercent(Integer holdoutPercent) {
@@ -322,9 +463,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The allocated percentage of end users who will not receive messages from this campaign.
+     * <p>
+     * The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.
+     * </p>
      * 
-     * @return The allocated percentage of end users who will not receive messages from this campaign.
+     * @return The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.
      */
 
     public Integer getHoldoutPercent() {
@@ -332,10 +475,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The allocated percentage of end users who will not receive messages from this campaign.
+     * <p>
+     * The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.
+     * </p>
      * 
      * @param holdoutPercent
-     *        The allocated percentage of end users who will not receive messages from this campaign.
+     *        The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,10 +490,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Campaign hook information.
+     * <p>
+     * The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * </p>
      * 
      * @param hook
-     *        Campaign hook information.
+     *        The settings for the AWS Lambda function to use as a code hook for the campaign.
      */
 
     public void setHook(CampaignHook hook) {
@@ -356,9 +503,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Campaign hook information.
+     * <p>
+     * The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * </p>
      * 
-     * @return Campaign hook information.
+     * @return The settings for the AWS Lambda function to use as a code hook for the campaign.
      */
 
     public CampaignHook getHook() {
@@ -366,10 +515,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Campaign hook information.
+     * <p>
+     * The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * </p>
      * 
      * @param hook
-     *        Campaign hook information.
+     *        The settings for the AWS Lambda function to use as a code hook for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,10 +530,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The unique campaign ID.
+     * <p>
+     * The unique identifier for the campaign.
+     * </p>
      * 
      * @param id
-     *        The unique campaign ID.
+     *        The unique identifier for the campaign.
      */
 
     public void setId(String id) {
@@ -390,9 +543,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The unique campaign ID.
+     * <p>
+     * The unique identifier for the campaign.
+     * </p>
      * 
-     * @return The unique campaign ID.
+     * @return The unique identifier for the campaign.
      */
 
     public String getId() {
@@ -400,10 +555,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The unique campaign ID.
+     * <p>
+     * The unique identifier for the campaign.
+     * </p>
      * 
      * @param id
-     *        The unique campaign ID.
+     *        The unique identifier for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,12 +570,14 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Indicates whether the campaign is paused. A paused campaign does not send messages unless you resume it by
-     * setting IsPaused to false.
+     * <p>
+     * Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing this
+     * value to false.
+     * </p>
      * 
      * @param isPaused
-     *        Indicates whether the campaign is paused. A paused campaign does not send messages unless you resume it by
-     *        setting IsPaused to false.
+     *        Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing
+     *        this value to false.
      */
 
     public void setIsPaused(Boolean isPaused) {
@@ -426,11 +585,13 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Indicates whether the campaign is paused. A paused campaign does not send messages unless you resume it by
-     * setting IsPaused to false.
+     * <p>
+     * Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing this
+     * value to false.
+     * </p>
      * 
-     * @return Indicates whether the campaign is paused. A paused campaign does not send messages unless you resume it
-     *         by setting IsPaused to false.
+     * @return Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing
+     *         this value to false.
      */
 
     public Boolean getIsPaused() {
@@ -438,12 +599,14 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Indicates whether the campaign is paused. A paused campaign does not send messages unless you resume it by
-     * setting IsPaused to false.
+     * <p>
+     * Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing this
+     * value to false.
+     * </p>
      * 
      * @param isPaused
-     *        Indicates whether the campaign is paused. A paused campaign does not send messages unless you resume it by
-     *        setting IsPaused to false.
+     *        Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing
+     *        this value to false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -453,11 +616,13 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Indicates whether the campaign is paused. A paused campaign does not send messages unless you resume it by
-     * setting IsPaused to false.
+     * <p>
+     * Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing this
+     * value to false.
+     * </p>
      * 
-     * @return Indicates whether the campaign is paused. A paused campaign does not send messages unless you resume it
-     *         by setting IsPaused to false.
+     * @return Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing
+     *         this value to false.
      */
 
     public Boolean isPaused() {
@@ -465,10 +630,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The date the campaign was last updated in ISO 8601 format.
+     * <p>
+     * The date, in ISO 8601 format, when the campaign was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        The date the campaign was last updated in ISO 8601 format.
+     *        The date, in ISO 8601 format, when the campaign was last modified.
      */
 
     public void setLastModifiedDate(String lastModifiedDate) {
@@ -476,9 +643,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The date the campaign was last updated in ISO 8601 format.
+     * <p>
+     * The date, in ISO 8601 format, when the campaign was last modified.
+     * </p>
      * 
-     * @return The date the campaign was last updated in ISO 8601 format.
+     * @return The date, in ISO 8601 format, when the campaign was last modified.
      */
 
     public String getLastModifiedDate() {
@@ -486,10 +655,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The date the campaign was last updated in ISO 8601 format.
+     * <p>
+     * The date, in ISO 8601 format, when the campaign was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        The date the campaign was last updated in ISO 8601 format.
+     *        The date, in ISO 8601 format, when the campaign was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -499,10 +670,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The campaign limits settings.
+     * <p>
+     * The messaging limits for the campaign.
+     * </p>
      * 
      * @param limits
-     *        The campaign limits settings.
+     *        The messaging limits for the campaign.
      */
 
     public void setLimits(CampaignLimits limits) {
@@ -510,9 +683,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The campaign limits settings.
+     * <p>
+     * The messaging limits for the campaign.
+     * </p>
      * 
-     * @return The campaign limits settings.
+     * @return The messaging limits for the campaign.
      */
 
     public CampaignLimits getLimits() {
@@ -520,10 +695,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The campaign limits settings.
+     * <p>
+     * The messaging limits for the campaign.
+     * </p>
      * 
      * @param limits
-     *        The campaign limits settings.
+     *        The messaging limits for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -533,10 +710,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The message configuration settings.
+     * <p>
+     * The message configuration settings for the campaign.
+     * </p>
      * 
      * @param messageConfiguration
-     *        The message configuration settings.
+     *        The message configuration settings for the campaign.
      */
 
     public void setMessageConfiguration(MessageConfiguration messageConfiguration) {
@@ -544,9 +723,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The message configuration settings.
+     * <p>
+     * The message configuration settings for the campaign.
+     * </p>
      * 
-     * @return The message configuration settings.
+     * @return The message configuration settings for the campaign.
      */
 
     public MessageConfiguration getMessageConfiguration() {
@@ -554,10 +735,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The message configuration settings.
+     * <p>
+     * The message configuration settings for the campaign.
+     * </p>
      * 
      * @param messageConfiguration
-     *        The message configuration settings.
+     *        The message configuration settings for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -567,10 +750,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The custom name of the campaign.
+     * <p>
+     * The name of the campaign.
+     * </p>
      * 
      * @param name
-     *        The custom name of the campaign.
+     *        The name of the campaign.
      */
 
     public void setName(String name) {
@@ -578,9 +763,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The custom name of the campaign.
+     * <p>
+     * The name of the campaign.
+     * </p>
      * 
-     * @return The custom name of the campaign.
+     * @return The name of the campaign.
      */
 
     public String getName() {
@@ -588,10 +775,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The custom name of the campaign.
+     * <p>
+     * The name of the campaign.
+     * </p>
      * 
      * @param name
-     *        The custom name of the campaign.
+     *        The name of the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -601,10 +790,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The campaign schedule.
+     * <p>
+     * The schedule settings for the campaign.
+     * </p>
      * 
      * @param schedule
-     *        The campaign schedule.
+     *        The schedule settings for the campaign.
      */
 
     public void setSchedule(Schedule schedule) {
@@ -612,9 +803,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The campaign schedule.
+     * <p>
+     * The schedule settings for the campaign.
+     * </p>
      * 
-     * @return The campaign schedule.
+     * @return The schedule settings for the campaign.
      */
 
     public Schedule getSchedule() {
@@ -622,10 +815,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The campaign schedule.
+     * <p>
+     * The schedule settings for the campaign.
+     * </p>
      * 
      * @param schedule
-     *        The campaign schedule.
+     *        The schedule settings for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -635,10 +830,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the segment to which the campaign sends messages.
+     * <p>
+     * The unique identifier for the segment that's associated with the campaign.
+     * </p>
      * 
      * @param segmentId
-     *        The ID of the segment to which the campaign sends messages.
+     *        The unique identifier for the segment that's associated with the campaign.
      */
 
     public void setSegmentId(String segmentId) {
@@ -646,9 +843,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the segment to which the campaign sends messages.
+     * <p>
+     * The unique identifier for the segment that's associated with the campaign.
+     * </p>
      * 
-     * @return The ID of the segment to which the campaign sends messages.
+     * @return The unique identifier for the segment that's associated with the campaign.
      */
 
     public String getSegmentId() {
@@ -656,10 +855,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the segment to which the campaign sends messages.
+     * <p>
+     * The unique identifier for the segment that's associated with the campaign.
+     * </p>
      * 
      * @param segmentId
-     *        The ID of the segment to which the campaign sends messages.
+     *        The unique identifier for the segment that's associated with the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -669,10 +870,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The version of the segment to which the campaign sends messages.
+     * <p>
+     * The version number of the segment that's associated with the campaign.
+     * </p>
      * 
      * @param segmentVersion
-     *        The version of the segment to which the campaign sends messages.
+     *        The version number of the segment that's associated with the campaign.
      */
 
     public void setSegmentVersion(Integer segmentVersion) {
@@ -680,9 +883,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The version of the segment to which the campaign sends messages.
+     * <p>
+     * The version number of the segment that's associated with the campaign.
+     * </p>
      * 
-     * @return The version of the segment to which the campaign sends messages.
+     * @return The version number of the segment that's associated with the campaign.
      */
 
     public Integer getSegmentVersion() {
@@ -690,10 +895,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The version of the segment to which the campaign sends messages.
+     * <p>
+     * The version number of the segment that's associated with the campaign.
+     * </p>
      * 
      * @param segmentVersion
-     *        The version of the segment to which the campaign sends messages.
+     *        The version number of the segment that's associated with the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -703,14 +910,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The campaign status.
-     * 
-     * An A/B test campaign will have a status of COMPLETED only when all treatments have a status of COMPLETED.
+     * <p>
+     * The current status of the campaign.
+     * </p>
      * 
      * @param state
-     *        The campaign status.
-     * 
-     *        An A/B test campaign will have a status of COMPLETED only when all treatments have a status of COMPLETED.
+     *        The current status of the campaign.
      */
 
     public void setState(CampaignState state) {
@@ -718,13 +923,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The campaign status.
+     * <p>
+     * The current status of the campaign.
+     * </p>
      * 
-     * An A/B test campaign will have a status of COMPLETED only when all treatments have a status of COMPLETED.
-     * 
-     * @return The campaign status.
-     * 
-     *         An A/B test campaign will have a status of COMPLETED only when all treatments have a status of COMPLETED.
+     * @return The current status of the campaign.
      */
 
     public CampaignState getState() {
@@ -732,14 +935,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The campaign status.
-     * 
-     * An A/B test campaign will have a status of COMPLETED only when all treatments have a status of COMPLETED.
+     * <p>
+     * The current status of the campaign.
+     * </p>
      * 
      * @param state
-     *        The campaign status.
-     * 
-     *        An A/B test campaign will have a status of COMPLETED only when all treatments have a status of COMPLETED.
+     *        The current status of the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -749,9 +950,13 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The Tags for the campaign.
+     * <p>
+     * A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each
+     * tag consists of a required tag key and an associated tag value.
+     * </p>
      * 
-     * @return The Tags for the campaign.
+     * @return A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign.
+     *         Each tag consists of a required tag key and an associated tag value.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -759,10 +964,14 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The Tags for the campaign.
+     * <p>
+     * A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each
+     * tag consists of a required tag key and an associated tag value.
+     * </p>
      * 
      * @param tags
-     *        The Tags for the campaign.
+     *        A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign.
+     *        Each tag consists of a required tag key and an associated tag value.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -770,10 +979,14 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The Tags for the campaign.
+     * <p>
+     * A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each
+     * tag consists of a required tag key and an associated tag value.
+     * </p>
      * 
      * @param tags
-     *        The Tags for the campaign.
+     *        A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign.
+     *        Each tag consists of a required tag key and an associated tag value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -804,10 +1017,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A custom description for the treatment.
+     * <p>
+     * The custom description of a variation of the campaign that's used for A/B testing.
+     * </p>
      * 
      * @param treatmentDescription
-     *        A custom description for the treatment.
+     *        The custom description of a variation of the campaign that's used for A/B testing.
      */
 
     public void setTreatmentDescription(String treatmentDescription) {
@@ -815,9 +1030,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A custom description for the treatment.
+     * <p>
+     * The custom description of a variation of the campaign that's used for A/B testing.
+     * </p>
      * 
-     * @return A custom description for the treatment.
+     * @return The custom description of a variation of the campaign that's used for A/B testing.
      */
 
     public String getTreatmentDescription() {
@@ -825,10 +1042,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A custom description for the treatment.
+     * <p>
+     * The custom description of a variation of the campaign that's used for A/B testing.
+     * </p>
      * 
      * @param treatmentDescription
-     *        A custom description for the treatment.
+     *        The custom description of a variation of the campaign that's used for A/B testing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -838,10 +1057,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>
+     * The custom name of a variation of the campaign that's used for A/B testing.
+     * </p>
      * 
      * @param treatmentName
-     *        The custom name of a variation of the campaign used for A/B testing.
+     *        The custom name of a variation of the campaign that's used for A/B testing.
      */
 
     public void setTreatmentName(String treatmentName) {
@@ -849,9 +1070,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>
+     * The custom name of a variation of the campaign that's used for A/B testing.
+     * </p>
      * 
-     * @return The custom name of a variation of the campaign used for A/B testing.
+     * @return The custom name of a variation of the campaign that's used for A/B testing.
      */
 
     public String getTreatmentName() {
@@ -859,10 +1082,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>
+     * The custom name of a variation of the campaign that's used for A/B testing.
+     * </p>
      * 
      * @param treatmentName
-     *        The custom name of a variation of the campaign used for A/B testing.
+     *        The custom name of a variation of the campaign that's used for A/B testing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -872,10 +1097,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The campaign version number.
+     * <p>
+     * The version number of the campaign.
+     * </p>
      * 
      * @param version
-     *        The campaign version number.
+     *        The version number of the campaign.
      */
 
     public void setVersion(Integer version) {
@@ -883,9 +1110,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The campaign version number.
+     * <p>
+     * The version number of the campaign.
+     * </p>
      * 
-     * @return The campaign version number.
+     * @return The version number of the campaign.
      */
 
     public Integer getVersion() {
@@ -893,10 +1122,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The campaign version number.
+     * <p>
+     * The version number of the campaign.
+     * </p>
      * 
      * @param version
-     *        The campaign version number.
+     *        The version number of the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

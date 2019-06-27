@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Apple VoIP Push Notification Service channel definition.
+ * <p>
+ * Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an
+ * application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSVoipChannelResponse" target="_top">AWS
  *      API Documentation</a>
@@ -26,36 +29,89 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class APNSVoipChannelResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** Application id */
+    /**
+     * <p>
+     * The unique identifier for the application that the APNs VoIP channel applies to.
+     * </p>
+     */
     private String applicationId;
-    /** When was this segment created */
+    /**
+     * <p>
+     * The date and time when the APNs VoIP channel was enabled.
+     * </p>
+     */
     private String creationDate;
-    /** The default authentication method used for APNs. */
+    /**
+     * <p>
+     * The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or
+     * certificate.
+     * </p>
+     */
     private String defaultAuthenticationMethod;
-    /** If the channel is enabled for sending messages. */
+    /**
+     * <p>
+     * Specifies whether the APNs VoIP channel is enabled for the application.
+     * </p>
+     */
     private Boolean enabled;
-    /** Not used. Retained for backwards compatibility. */
+    /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     */
     private Boolean hasCredential;
-    /** If the channel is registered with a token key for authentication. */
+    /**
+     * <p>
+     * Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To provide
+     * an authentication key for APNs tokens, set the TokenKey property of the channel.
+     * </p>
+     */
     private Boolean hasTokenKey;
-    /** Channel ID. Not used, only for backwards compatibility. */
+    /**
+     * <p>
+     * (Deprecated) An identifier for the APNs VoIP channel. This property is retained only for backward compatibility.
+     * </p>
+     */
     private String id;
-    /** Is this channel archived */
+    /**
+     * <p>
+     * Specifies whether the APNs VoIP channel is archived.
+     * </p>
+     */
     private Boolean isArchived;
-    /** Who made the last change */
+    /**
+     * <p>
+     * The user who last modified the APNs VoIP channel.
+     * </p>
+     */
     private String lastModifiedBy;
-    /** Last date this was updated */
+    /**
+     * <p>
+     * The date and time when the APNs VoIP channel was last modified.
+     * </p>
+     */
     private String lastModifiedDate;
-    /** The platform type. Will be APNS. */
+    /**
+     * <p>
+     * The type of messaging or notification platform for the channel. For the APNs VoIP channel, this value is
+     * APNS_VOIP.
+     * </p>
+     */
     private String platform;
-    /** Version of channel */
+    /**
+     * <p>
+     * The current version of the APNs VoIP channel.
+     * </p>
+     */
     private Integer version;
 
     /**
-     * Application id
+     * <p>
+     * The unique identifier for the application that the APNs VoIP channel applies to.
+     * </p>
      * 
      * @param applicationId
-     *        Application id
+     *        The unique identifier for the application that the APNs VoIP channel applies to.
      */
 
     public void setApplicationId(String applicationId) {
@@ -63,9 +119,11 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Application id
+     * <p>
+     * The unique identifier for the application that the APNs VoIP channel applies to.
+     * </p>
      * 
-     * @return Application id
+     * @return The unique identifier for the application that the APNs VoIP channel applies to.
      */
 
     public String getApplicationId() {
@@ -73,10 +131,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Application id
+     * <p>
+     * The unique identifier for the application that the APNs VoIP channel applies to.
+     * </p>
      * 
      * @param applicationId
-     *        Application id
+     *        The unique identifier for the application that the APNs VoIP channel applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,10 +146,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * When was this segment created
+     * <p>
+     * The date and time when the APNs VoIP channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        When was this segment created
+     *        The date and time when the APNs VoIP channel was enabled.
      */
 
     public void setCreationDate(String creationDate) {
@@ -97,9 +159,11 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * When was this segment created
+     * <p>
+     * The date and time when the APNs VoIP channel was enabled.
+     * </p>
      * 
-     * @return When was this segment created
+     * @return The date and time when the APNs VoIP channel was enabled.
      */
 
     public String getCreationDate() {
@@ -107,10 +171,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * When was this segment created
+     * <p>
+     * The date and time when the APNs VoIP channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        When was this segment created
+     *        The date and time when the APNs VoIP channel was enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +186,14 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The default authentication method used for APNs.
+     * <p>
+     * The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or
+     * certificate.
+     * </p>
      * 
      * @param defaultAuthenticationMethod
-     *        The default authentication method used for APNs.
+     *        The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel,
+     *        key or certificate.
      */
 
     public void setDefaultAuthenticationMethod(String defaultAuthenticationMethod) {
@@ -131,9 +201,13 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The default authentication method used for APNs.
+     * <p>
+     * The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or
+     * certificate.
+     * </p>
      * 
-     * @return The default authentication method used for APNs.
+     * @return The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel,
+     *         key or certificate.
      */
 
     public String getDefaultAuthenticationMethod() {
@@ -141,10 +215,14 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The default authentication method used for APNs.
+     * <p>
+     * The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or
+     * certificate.
+     * </p>
      * 
      * @param defaultAuthenticationMethod
-     *        The default authentication method used for APNs.
+     *        The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel,
+     *        key or certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,10 +232,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the APNs VoIP channel is enabled for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether the APNs VoIP channel is enabled for the application.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -165,9 +245,11 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the APNs VoIP channel is enabled for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether the APNs VoIP channel is enabled for the application.
      */
 
     public Boolean getEnabled() {
@@ -175,10 +257,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the APNs VoIP channel is enabled for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether the APNs VoIP channel is enabled for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,9 +272,11 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the APNs VoIP channel is enabled for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether the APNs VoIP channel is enabled for the application.
      */
 
     public Boolean isEnabled() {
@@ -198,10 +284,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param hasCredential
-     *        Not used. Retained for backwards compatibility.
+     *        (Not used) This property is retained only for backward compatibility.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -209,9 +297,11 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Not used. Retained for backwards compatibility.
+     * @return (Not used) This property is retained only for backward compatibility.
      */
 
     public Boolean getHasCredential() {
@@ -219,10 +309,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param hasCredential
-     *        Not used. Retained for backwards compatibility.
+     *        (Not used) This property is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,9 +324,11 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Not used. Retained for backwards compatibility.
+     * @return (Not used) This property is retained only for backward compatibility.
      */
 
     public Boolean isHasCredential() {
@@ -242,10 +336,14 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * <p>
+     * Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To provide
+     * an authentication key for APNs tokens, set the TokenKey property of the channel.
+     * </p>
      * 
      * @param hasTokenKey
-     *        If the channel is registered with a token key for authentication.
+     *        Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To
+     *        provide an authentication key for APNs tokens, set the TokenKey property of the channel.
      */
 
     public void setHasTokenKey(Boolean hasTokenKey) {
@@ -253,9 +351,13 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * <p>
+     * Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To provide
+     * an authentication key for APNs tokens, set the TokenKey property of the channel.
+     * </p>
      * 
-     * @return If the channel is registered with a token key for authentication.
+     * @return Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To
+     *         provide an authentication key for APNs tokens, set the TokenKey property of the channel.
      */
 
     public Boolean getHasTokenKey() {
@@ -263,10 +365,14 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * <p>
+     * Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To provide
+     * an authentication key for APNs tokens, set the TokenKey property of the channel.
+     * </p>
      * 
      * @param hasTokenKey
-     *        If the channel is registered with a token key for authentication.
+     *        Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To
+     *        provide an authentication key for APNs tokens, set the TokenKey property of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,9 +382,13 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * <p>
+     * Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To provide
+     * an authentication key for APNs tokens, set the TokenKey property of the channel.
+     * </p>
      * 
-     * @return If the channel is registered with a token key for authentication.
+     * @return Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To
+     *         provide an authentication key for APNs tokens, set the TokenKey property of the channel.
      */
 
     public Boolean isHasTokenKey() {
@@ -286,10 +396,13 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the APNs VoIP channel. This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param id
-     *        Channel ID. Not used, only for backwards compatibility.
+     *        (Deprecated) An identifier for the APNs VoIP channel. This property is retained only for backward
+     *        compatibility.
      */
 
     public void setId(String id) {
@@ -297,9 +410,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the APNs VoIP channel. This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Channel ID. Not used, only for backwards compatibility.
+     * @return (Deprecated) An identifier for the APNs VoIP channel. This property is retained only for backward
+     *         compatibility.
      */
 
     public String getId() {
@@ -307,10 +423,13 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the APNs VoIP channel. This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param id
-     *        Channel ID. Not used, only for backwards compatibility.
+     *        (Deprecated) An identifier for the APNs VoIP channel. This property is retained only for backward
+     *        compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,10 +439,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the APNs VoIP channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Is this channel archived
+     *        Specifies whether the APNs VoIP channel is archived.
      */
 
     public void setIsArchived(Boolean isArchived) {
@@ -331,9 +452,11 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the APNs VoIP channel is archived.
+     * </p>
      * 
-     * @return Is this channel archived
+     * @return Specifies whether the APNs VoIP channel is archived.
      */
 
     public Boolean getIsArchived() {
@@ -341,10 +464,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the APNs VoIP channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Is this channel archived
+     *        Specifies whether the APNs VoIP channel is archived.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,9 +479,11 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the APNs VoIP channel is archived.
+     * </p>
      * 
-     * @return Is this channel archived
+     * @return Specifies whether the APNs VoIP channel is archived.
      */
 
     public Boolean isArchived() {
@@ -364,10 +491,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Who made the last change
+     * <p>
+     * The user who last modified the APNs VoIP channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        Who made the last change
+     *        The user who last modified the APNs VoIP channel.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -375,9 +504,11 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Who made the last change
+     * <p>
+     * The user who last modified the APNs VoIP channel.
+     * </p>
      * 
-     * @return Who made the last change
+     * @return The user who last modified the APNs VoIP channel.
      */
 
     public String getLastModifiedBy() {
@@ -385,10 +516,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Who made the last change
+     * <p>
+     * The user who last modified the APNs VoIP channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        Who made the last change
+     *        The user who last modified the APNs VoIP channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,10 +531,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time when the APNs VoIP channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        Last date this was updated
+     *        The date and time when the APNs VoIP channel was last modified.
      */
 
     public void setLastModifiedDate(String lastModifiedDate) {
@@ -409,9 +544,11 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time when the APNs VoIP channel was last modified.
+     * </p>
      * 
-     * @return Last date this was updated
+     * @return The date and time when the APNs VoIP channel was last modified.
      */
 
     public String getLastModifiedDate() {
@@ -419,10 +556,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time when the APNs VoIP channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        Last date this was updated
+     *        The date and time when the APNs VoIP channel was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -432,10 +571,14 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The platform type. Will be APNS.
+     * <p>
+     * The type of messaging or notification platform for the channel. For the APNs VoIP channel, this value is
+     * APNS_VOIP.
+     * </p>
      * 
      * @param platform
-     *        The platform type. Will be APNS.
+     *        The type of messaging or notification platform for the channel. For the APNs VoIP channel, this value is
+     *        APNS_VOIP.
      */
 
     public void setPlatform(String platform) {
@@ -443,9 +586,13 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The platform type. Will be APNS.
+     * <p>
+     * The type of messaging or notification platform for the channel. For the APNs VoIP channel, this value is
+     * APNS_VOIP.
+     * </p>
      * 
-     * @return The platform type. Will be APNS.
+     * @return The type of messaging or notification platform for the channel. For the APNs VoIP channel, this value is
+     *         APNS_VOIP.
      */
 
     public String getPlatform() {
@@ -453,10 +600,14 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The platform type. Will be APNS.
+     * <p>
+     * The type of messaging or notification platform for the channel. For the APNs VoIP channel, this value is
+     * APNS_VOIP.
+     * </p>
      * 
      * @param platform
-     *        The platform type. Will be APNS.
+     *        The type of messaging or notification platform for the channel. For the APNs VoIP channel, this value is
+     *        APNS_VOIP.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -466,10 +617,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the APNs VoIP channel.
+     * </p>
      * 
      * @param version
-     *        Version of channel
+     *        The current version of the APNs VoIP channel.
      */
 
     public void setVersion(Integer version) {
@@ -477,9 +630,11 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the APNs VoIP channel.
+     * </p>
      * 
-     * @return Version of channel
+     * @return The current version of the APNs VoIP channel.
      */
 
     public Integer getVersion() {
@@ -487,10 +642,12 @@ public class APNSVoipChannelResponse implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the APNs VoIP channel.
+     * </p>
      * 
      * @param version
-     *        Version of channel
+     *        The current version of the APNs VoIP channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Export job list.
+ * <p>
+ * Provides information about all the export jobs that are associated with an application or segment. An export job is a
+ * job that exports endpoint definitions to a file.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ExportJobsResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,15 +29,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExportJobsResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** A list of export jobs for the application. */
+    /**
+     * <p>
+     * An array of responses, one for each export job that's associated with the application (Export Jobs resource) or
+     * segment (Segment Export Jobs resource).
+     * </p>
+     */
     private java.util.List<ExportJobResponse> item;
-    /** The string that you use in a subsequent request to get the next page of results in a paginated response. */
+    /**
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * A list of export jobs for the application.
+     * <p>
+     * An array of responses, one for each export job that's associated with the application (Export Jobs resource) or
+     * segment (Segment Export Jobs resource).
+     * </p>
      * 
-     * @return A list of export jobs for the application.
+     * @return An array of responses, one for each export job that's associated with the application (Export Jobs
+     *         resource) or segment (Segment Export Jobs resource).
      */
 
     public java.util.List<ExportJobResponse> getItem() {
@@ -42,10 +59,14 @@ public class ExportJobsResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * A list of export jobs for the application.
+     * <p>
+     * An array of responses, one for each export job that's associated with the application (Export Jobs resource) or
+     * segment (Segment Export Jobs resource).
+     * </p>
      * 
      * @param item
-     *        A list of export jobs for the application.
+     *        An array of responses, one for each export job that's associated with the application (Export Jobs
+     *        resource) or segment (Segment Export Jobs resource).
      */
 
     public void setItem(java.util.Collection<ExportJobResponse> item) {
@@ -58,7 +79,10 @@ public class ExportJobsResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * A list of export jobs for the application.
+     * <p>
+     * An array of responses, one for each export job that's associated with the application (Export Jobs resource) or
+     * segment (Segment Export Jobs resource).
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItem(java.util.Collection)} or {@link #withItem(java.util.Collection)} if you want to override the
@@ -66,7 +90,8 @@ public class ExportJobsResponse implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param item
-     *        A list of export jobs for the application.
+     *        An array of responses, one for each export job that's associated with the application (Export Jobs
+     *        resource) or segment (Segment Export Jobs resource).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +106,14 @@ public class ExportJobsResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * A list of export jobs for the application.
+     * <p>
+     * An array of responses, one for each export job that's associated with the application (Export Jobs resource) or
+     * segment (Segment Export Jobs resource).
+     * </p>
      * 
      * @param item
-     *        A list of export jobs for the application.
+     *        An array of responses, one for each export job that's associated with the application (Export Jobs
+     *        resource) or segment (Segment Export Jobs resource).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,10 +123,14 @@ public class ExportJobsResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     *        The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *        value is null if there are no additional pages.
      */
 
     public void setNextToken(String nextToken) {
@@ -105,9 +138,13 @@ public class ExportJobsResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
-     * @return The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * @return The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *         value is null if there are no additional pages.
      */
 
     public String getNextToken() {
@@ -115,10 +152,14 @@ public class ExportJobsResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     *        The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *        value is null if there are no additional pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

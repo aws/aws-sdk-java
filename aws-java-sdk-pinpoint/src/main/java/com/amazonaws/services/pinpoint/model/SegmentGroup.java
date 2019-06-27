@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Segment group definition.
+ * <p>
+ * Specifies the base segments and dimensions for a segment, and the relationships between these base segments and
+ * dimensions.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentGroup" target="_top">AWS API
  *      Documentation</a>
@@ -26,33 +29,46 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
 
-    /** List of dimensions to include or exclude. */
+    /**
+     * <p>
+     * An array that defines the dimensions for the segment.
+     * </p>
+     */
     private java.util.List<SegmentDimensions> dimensions;
     /**
-     * The base segment that you build your segment on. The source segment defines the starting "universe" of endpoints.
-     * When you add dimensions to the segment, it filters the source segment based on the dimensions that you specify.
-     * You can specify more than one dimensional segment. You can only specify one imported segment.
-     * 
-     * NOTE: If you specify an imported segment for this attribute, the segment size estimate that appears in the Amazon
-     * Pinpoint console shows the size of the imported segment, without any filters applied to it.
+     * <p>
+     * The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines
+     * the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters
+     * the base segment by using the dimensions that you specify.
+     * </p>
+     * <p>
+     * You can specify more than one dimensional segment or only one imported segment. If you specify an imported
+     * segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported
+     * segment without any filters applied to it.
+     * </p>
      */
     private java.util.List<SegmentReference> sourceSegments;
     /**
-     * Specify how to handle multiple source segments. For example, if you specify three source segments, should the
-     * resulting segment be based on any or all of the segments? Acceptable values: ANY or ALL.
+     * <p>
+     * Specifies how to handle multiple base segments for the segment. For example, if you specify three base segments
+     * for the segment, whether the resulting segment is based on all, any, or none of the base segments.
+     * </p>
      */
     private String sourceType;
     /**
-     * Specify how to handle multiple segment dimensions. For example, if you specify three dimensions, should the
-     * resulting segment include endpoints that are matched by all, any, or none of the dimensions? Acceptable values:
-     * ALL, ANY, or NONE.
+     * <p>
+     * Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions for the
+     * segment, whether the resulting segment includes endpoints that match all, any, or none of the dimensions.
+     * </p>
      */
     private String type;
 
     /**
-     * List of dimensions to include or exclude.
+     * <p>
+     * An array that defines the dimensions for the segment.
+     * </p>
      * 
-     * @return List of dimensions to include or exclude.
+     * @return An array that defines the dimensions for the segment.
      */
 
     public java.util.List<SegmentDimensions> getDimensions() {
@@ -60,10 +76,12 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * List of dimensions to include or exclude.
+     * <p>
+     * An array that defines the dimensions for the segment.
+     * </p>
      * 
      * @param dimensions
-     *        List of dimensions to include or exclude.
+     *        An array that defines the dimensions for the segment.
      */
 
     public void setDimensions(java.util.Collection<SegmentDimensions> dimensions) {
@@ -76,7 +94,9 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * List of dimensions to include or exclude.
+     * <p>
+     * An array that defines the dimensions for the segment.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDimensions(java.util.Collection)} or {@link #withDimensions(java.util.Collection)} if you want to
@@ -84,7 +104,7 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dimensions
-     *        List of dimensions to include or exclude.
+     *        An array that defines the dimensions for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,10 +119,12 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * List of dimensions to include or exclude.
+     * <p>
+     * An array that defines the dimensions for the segment.
+     * </p>
      * 
      * @param dimensions
-     *        List of dimensions to include or exclude.
+     *        An array that defines the dimensions for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,20 +134,24 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The base segment that you build your segment on. The source segment defines the starting "universe" of endpoints.
-     * When you add dimensions to the segment, it filters the source segment based on the dimensions that you specify.
-     * You can specify more than one dimensional segment. You can only specify one imported segment.
+     * <p>
+     * The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines
+     * the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters
+     * the base segment by using the dimensions that you specify.
+     * </p>
+     * <p>
+     * You can specify more than one dimensional segment or only one imported segment. If you specify an imported
+     * segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported
+     * segment without any filters applied to it.
+     * </p>
      * 
-     * NOTE: If you specify an imported segment for this attribute, the segment size estimate that appears in the Amazon
-     * Pinpoint console shows the size of the imported segment, without any filters applied to it.
-     * 
-     * @return The base segment that you build your segment on. The source segment defines the starting "universe" of
-     *         endpoints. When you add dimensions to the segment, it filters the source segment based on the dimensions
-     *         that you specify. You can specify more than one dimensional segment. You can only specify one imported
-     *         segment.
-     * 
-     *         NOTE: If you specify an imported segment for this attribute, the segment size estimate that appears in
-     *         the Amazon Pinpoint console shows the size of the imported segment, without any filters applied to it.
+     * @return The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>,
+     *         defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon
+     *         Pinpoint filters the base segment by using the dimensions that you specify.</p>
+     *         <p>
+     *         You can specify more than one dimensional segment or only one imported segment. If you specify an
+     *         imported segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of
+     *         the imported segment without any filters applied to it.
      */
 
     public java.util.List<SegmentReference> getSourceSegments() {
@@ -133,21 +159,25 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The base segment that you build your segment on. The source segment defines the starting "universe" of endpoints.
-     * When you add dimensions to the segment, it filters the source segment based on the dimensions that you specify.
-     * You can specify more than one dimensional segment. You can only specify one imported segment.
-     * 
-     * NOTE: If you specify an imported segment for this attribute, the segment size estimate that appears in the Amazon
-     * Pinpoint console shows the size of the imported segment, without any filters applied to it.
+     * <p>
+     * The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines
+     * the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters
+     * the base segment by using the dimensions that you specify.
+     * </p>
+     * <p>
+     * You can specify more than one dimensional segment or only one imported segment. If you specify an imported
+     * segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported
+     * segment without any filters applied to it.
+     * </p>
      * 
      * @param sourceSegments
-     *        The base segment that you build your segment on. The source segment defines the starting "universe" of
-     *        endpoints. When you add dimensions to the segment, it filters the source segment based on the dimensions
-     *        that you specify. You can specify more than one dimensional segment. You can only specify one imported
-     *        segment.
-     * 
-     *        NOTE: If you specify an imported segment for this attribute, the segment size estimate that appears in the
-     *        Amazon Pinpoint console shows the size of the imported segment, without any filters applied to it.
+     *        The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>,
+     *        defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon
+     *        Pinpoint filters the base segment by using the dimensions that you specify.</p>
+     *        <p>
+     *        You can specify more than one dimensional segment or only one imported segment. If you specify an imported
+     *        segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the
+     *        imported segment without any filters applied to it.
      */
 
     public void setSourceSegments(java.util.Collection<SegmentReference> sourceSegments) {
@@ -160,12 +190,16 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The base segment that you build your segment on. The source segment defines the starting "universe" of endpoints.
-     * When you add dimensions to the segment, it filters the source segment based on the dimensions that you specify.
-     * You can specify more than one dimensional segment. You can only specify one imported segment.
-     * 
-     * NOTE: If you specify an imported segment for this attribute, the segment size estimate that appears in the Amazon
-     * Pinpoint console shows the size of the imported segment, without any filters applied to it.
+     * <p>
+     * The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines
+     * the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters
+     * the base segment by using the dimensions that you specify.
+     * </p>
+     * <p>
+     * You can specify more than one dimensional segment or only one imported segment. If you specify an imported
+     * segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported
+     * segment without any filters applied to it.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSourceSegments(java.util.Collection)} or {@link #withSourceSegments(java.util.Collection)} if you want
@@ -173,13 +207,13 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param sourceSegments
-     *        The base segment that you build your segment on. The source segment defines the starting "universe" of
-     *        endpoints. When you add dimensions to the segment, it filters the source segment based on the dimensions
-     *        that you specify. You can specify more than one dimensional segment. You can only specify one imported
-     *        segment.
-     * 
-     *        NOTE: If you specify an imported segment for this attribute, the segment size estimate that appears in the
-     *        Amazon Pinpoint console shows the size of the imported segment, without any filters applied to it.
+     *        The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>,
+     *        defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon
+     *        Pinpoint filters the base segment by using the dimensions that you specify.</p>
+     *        <p>
+     *        You can specify more than one dimensional segment or only one imported segment. If you specify an imported
+     *        segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the
+     *        imported segment without any filters applied to it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,21 +228,25 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The base segment that you build your segment on. The source segment defines the starting "universe" of endpoints.
-     * When you add dimensions to the segment, it filters the source segment based on the dimensions that you specify.
-     * You can specify more than one dimensional segment. You can only specify one imported segment.
-     * 
-     * NOTE: If you specify an imported segment for this attribute, the segment size estimate that appears in the Amazon
-     * Pinpoint console shows the size of the imported segment, without any filters applied to it.
+     * <p>
+     * The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines
+     * the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters
+     * the base segment by using the dimensions that you specify.
+     * </p>
+     * <p>
+     * You can specify more than one dimensional segment or only one imported segment. If you specify an imported
+     * segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported
+     * segment without any filters applied to it.
+     * </p>
      * 
      * @param sourceSegments
-     *        The base segment that you build your segment on. The source segment defines the starting "universe" of
-     *        endpoints. When you add dimensions to the segment, it filters the source segment based on the dimensions
-     *        that you specify. You can specify more than one dimensional segment. You can only specify one imported
-     *        segment.
-     * 
-     *        NOTE: If you specify an imported segment for this attribute, the segment size estimate that appears in the
-     *        Amazon Pinpoint console shows the size of the imported segment, without any filters applied to it.
+     *        The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>,
+     *        defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon
+     *        Pinpoint filters the base segment by using the dimensions that you specify.</p>
+     *        <p>
+     *        You can specify more than one dimensional segment or only one imported segment. If you specify an imported
+     *        segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the
+     *        imported segment without any filters applied to it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,12 +256,15 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how to handle multiple source segments. For example, if you specify three source segments, should the
-     * resulting segment be based on any or all of the segments? Acceptable values: ANY or ALL.
+     * <p>
+     * Specifies how to handle multiple base segments for the segment. For example, if you specify three base segments
+     * for the segment, whether the resulting segment is based on all, any, or none of the base segments.
+     * </p>
      * 
      * @param sourceType
-     *        Specify how to handle multiple source segments. For example, if you specify three source segments, should
-     *        the resulting segment be based on any or all of the segments? Acceptable values: ANY or ALL.
+     *        Specifies how to handle multiple base segments for the segment. For example, if you specify three base
+     *        segments for the segment, whether the resulting segment is based on all, any, or none of the base
+     *        segments.
      * @see SourceType
      */
 
@@ -232,11 +273,14 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how to handle multiple source segments. For example, if you specify three source segments, should the
-     * resulting segment be based on any or all of the segments? Acceptable values: ANY or ALL.
+     * <p>
+     * Specifies how to handle multiple base segments for the segment. For example, if you specify three base segments
+     * for the segment, whether the resulting segment is based on all, any, or none of the base segments.
+     * </p>
      * 
-     * @return Specify how to handle multiple source segments. For example, if you specify three source segments, should
-     *         the resulting segment be based on any or all of the segments? Acceptable values: ANY or ALL.
+     * @return Specifies how to handle multiple base segments for the segment. For example, if you specify three base
+     *         segments for the segment, whether the resulting segment is based on all, any, or none of the base
+     *         segments.
      * @see SourceType
      */
 
@@ -245,12 +289,15 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how to handle multiple source segments. For example, if you specify three source segments, should the
-     * resulting segment be based on any or all of the segments? Acceptable values: ANY or ALL.
+     * <p>
+     * Specifies how to handle multiple base segments for the segment. For example, if you specify three base segments
+     * for the segment, whether the resulting segment is based on all, any, or none of the base segments.
+     * </p>
      * 
      * @param sourceType
-     *        Specify how to handle multiple source segments. For example, if you specify three source segments, should
-     *        the resulting segment be based on any or all of the segments? Acceptable values: ANY or ALL.
+     *        Specifies how to handle multiple base segments for the segment. For example, if you specify three base
+     *        segments for the segment, whether the resulting segment is based on all, any, or none of the base
+     *        segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
@@ -261,12 +308,15 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how to handle multiple source segments. For example, if you specify three source segments, should the
-     * resulting segment be based on any or all of the segments? Acceptable values: ANY or ALL.
+     * <p>
+     * Specifies how to handle multiple base segments for the segment. For example, if you specify three base segments
+     * for the segment, whether the resulting segment is based on all, any, or none of the base segments.
+     * </p>
      * 
      * @param sourceType
-     *        Specify how to handle multiple source segments. For example, if you specify three source segments, should
-     *        the resulting segment be based on any or all of the segments? Acceptable values: ANY or ALL.
+     *        Specifies how to handle multiple base segments for the segment. For example, if you specify three base
+     *        segments for the segment, whether the resulting segment is based on all, any, or none of the base
+     *        segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
@@ -277,14 +327,15 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how to handle multiple segment dimensions. For example, if you specify three dimensions, should the
-     * resulting segment include endpoints that are matched by all, any, or none of the dimensions? Acceptable values:
-     * ALL, ANY, or NONE.
+     * <p>
+     * Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions for the
+     * segment, whether the resulting segment includes endpoints that match all, any, or none of the dimensions.
+     * </p>
      * 
      * @param type
-     *        Specify how to handle multiple segment dimensions. For example, if you specify three dimensions, should
-     *        the resulting segment include endpoints that are matched by all, any, or none of the dimensions?
-     *        Acceptable values: ALL, ANY, or NONE.
+     *        Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions
+     *        for the segment, whether the resulting segment includes endpoints that match all, any, or none of the
+     *        dimensions.
      * @see Type
      */
 
@@ -293,13 +344,14 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how to handle multiple segment dimensions. For example, if you specify three dimensions, should the
-     * resulting segment include endpoints that are matched by all, any, or none of the dimensions? Acceptable values:
-     * ALL, ANY, or NONE.
+     * <p>
+     * Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions for the
+     * segment, whether the resulting segment includes endpoints that match all, any, or none of the dimensions.
+     * </p>
      * 
-     * @return Specify how to handle multiple segment dimensions. For example, if you specify three dimensions, should
-     *         the resulting segment include endpoints that are matched by all, any, or none of the dimensions?
-     *         Acceptable values: ALL, ANY, or NONE.
+     * @return Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions
+     *         for the segment, whether the resulting segment includes endpoints that match all, any, or none of the
+     *         dimensions.
      * @see Type
      */
 
@@ -308,14 +360,15 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how to handle multiple segment dimensions. For example, if you specify three dimensions, should the
-     * resulting segment include endpoints that are matched by all, any, or none of the dimensions? Acceptable values:
-     * ALL, ANY, or NONE.
+     * <p>
+     * Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions for the
+     * segment, whether the resulting segment includes endpoints that match all, any, or none of the dimensions.
+     * </p>
      * 
      * @param type
-     *        Specify how to handle multiple segment dimensions. For example, if you specify three dimensions, should
-     *        the resulting segment include endpoints that are matched by all, any, or none of the dimensions?
-     *        Acceptable values: ALL, ANY, or NONE.
+     *        Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions
+     *        for the segment, whether the resulting segment includes endpoints that match all, any, or none of the
+     *        dimensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -326,14 +379,15 @@ public class SegmentGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how to handle multiple segment dimensions. For example, if you specify three dimensions, should the
-     * resulting segment include endpoints that are matched by all, any, or none of the dimensions? Acceptable values:
-     * ALL, ANY, or NONE.
+     * <p>
+     * Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions for the
+     * segment, whether the resulting segment includes endpoints that match all, any, or none of the dimensions.
+     * </p>
      * 
      * @param type
-     *        Specify how to handle multiple segment dimensions. For example, if you specify three dimensions, should
-     *        the resulting segment include endpoints that are matched by all, any, or none of the dimensions?
-     *        Acceptable values: ALL, ANY, or NONE.
+     *        Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions
+     *        for the segment, whether the resulting segment includes endpoints that match all, any, or none of the
+     *        dimensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */

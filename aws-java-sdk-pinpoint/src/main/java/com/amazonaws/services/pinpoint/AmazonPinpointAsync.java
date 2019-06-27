@@ -31,7 +31,9 @@ import com.amazonaws.services.pinpoint.model.*;
 public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
-     * Creates or updates an app.
+     * <p>
+     * Creates an application.
+     * </p>
      * 
      * @param createAppRequest
      * @return A Java Future containing the result of the CreateApp operation returned by the service.
@@ -42,7 +44,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest createAppRequest);
 
     /**
-     * Creates or updates an app.
+     * <p>
+     * Creates an application.
+     * </p>
      * 
      * @param createAppRequest
      * @param asyncHandler
@@ -58,7 +62,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<CreateAppRequest, CreateAppResult> asyncHandler);
 
     /**
-     * Creates or updates a campaign.
+     * <p>
+     * Creates a new campaign for an application or updates the settings of an existing campaign for an application.
+     * </p>
      * 
      * @param createCampaignRequest
      * @return A Java Future containing the result of the CreateCampaign operation returned by the service.
@@ -69,7 +75,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<CreateCampaignResult> createCampaignAsync(CreateCampaignRequest createCampaignRequest);
 
     /**
-     * Creates or updates a campaign.
+     * <p>
+     * Creates a new campaign for an application or updates the settings of an existing campaign for an application.
+     * </p>
      * 
      * @param createCampaignRequest
      * @param asyncHandler
@@ -85,7 +93,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<CreateCampaignRequest, CreateCampaignResult> asyncHandler);
 
     /**
-     * Creates an export job.
+     * <p>
+     * Creates a new export job for an application.
+     * </p>
      * 
      * @param createExportJobRequest
      * @return A Java Future containing the result of the CreateExportJob operation returned by the service.
@@ -96,7 +106,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<CreateExportJobResult> createExportJobAsync(CreateExportJobRequest createExportJobRequest);
 
     /**
-     * Creates an export job.
+     * <p>
+     * Creates a new export job for an application.
+     * </p>
      * 
      * @param createExportJobRequest
      * @param asyncHandler
@@ -112,7 +124,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<CreateExportJobRequest, CreateExportJobResult> asyncHandler);
 
     /**
-     * Creates or updates an import job.
+     * <p>
+     * Creates a new import job for an application.
+     * </p>
      * 
      * @param createImportJobRequest
      * @return A Java Future containing the result of the CreateImportJob operation returned by the service.
@@ -123,7 +137,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<CreateImportJobResult> createImportJobAsync(CreateImportJobRequest createImportJobRequest);
 
     /**
-     * Creates or updates an import job.
+     * <p>
+     * Creates a new import job for an application.
+     * </p>
      * 
      * @param createImportJobRequest
      * @param asyncHandler
@@ -139,7 +155,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<CreateImportJobRequest, CreateImportJobResult> asyncHandler);
 
     /**
-     * Used to create or update a segment.
+     * <p>
+     * Creates a new segment for an application or updates the configuration, dimension, and other settings for an
+     * existing segment that's associated with an application.
+     * </p>
      * 
      * @param createSegmentRequest
      * @return A Java Future containing the result of the CreateSegment operation returned by the service.
@@ -150,7 +169,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<CreateSegmentResult> createSegmentAsync(CreateSegmentRequest createSegmentRequest);
 
     /**
-     * Used to create or update a segment.
+     * <p>
+     * Creates a new segment for an application or updates the configuration, dimension, and other settings for an
+     * existing segment that's associated with an application.
+     * </p>
      * 
      * @param createSegmentRequest
      * @param asyncHandler
@@ -166,7 +188,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<CreateSegmentRequest, CreateSegmentResult> asyncHandler);
 
     /**
-     * Delete an ADM channel.
+     * <p>
+     * Disables the ADM channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteAdmChannelRequest
      * @return A Java Future containing the result of the DeleteAdmChannel operation returned by the service.
@@ -177,7 +201,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteAdmChannelResult> deleteAdmChannelAsync(DeleteAdmChannelRequest deleteAdmChannelRequest);
 
     /**
-     * Delete an ADM channel.
+     * <p>
+     * Disables the ADM channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteAdmChannelRequest
      * @param asyncHandler
@@ -193,7 +219,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteAdmChannelRequest, DeleteAdmChannelResult> asyncHandler);
 
     /**
-     * Deletes the APNs channel for an app.
+     * <p>
+     * Disables the APNs channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteApnsChannelRequest
      * @return A Java Future containing the result of the DeleteApnsChannel operation returned by the service.
@@ -204,7 +232,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteApnsChannelResult> deleteApnsChannelAsync(DeleteApnsChannelRequest deleteApnsChannelRequest);
 
     /**
-     * Deletes the APNs channel for an app.
+     * <p>
+     * Disables the APNs channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteApnsChannelRequest
      * @param asyncHandler
@@ -220,7 +250,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteApnsChannelRequest, DeleteApnsChannelResult> asyncHandler);
 
     /**
-     * Delete an APNS sandbox channel.
+     * <p>
+     * Disables the APNs sandbox channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteApnsSandboxChannelRequest
      * @return A Java Future containing the result of the DeleteApnsSandboxChannel operation returned by the service.
@@ -231,7 +263,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteApnsSandboxChannelResult> deleteApnsSandboxChannelAsync(DeleteApnsSandboxChannelRequest deleteApnsSandboxChannelRequest);
 
     /**
-     * Delete an APNS sandbox channel.
+     * <p>
+     * Disables the APNs sandbox channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteApnsSandboxChannelRequest
      * @param asyncHandler
@@ -247,7 +281,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteApnsSandboxChannelRequest, DeleteApnsSandboxChannelResult> asyncHandler);
 
     /**
-     * Delete an APNS VoIP channel
+     * <p>
+     * Disables the APNs VoIP channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteApnsVoipChannelRequest
      * @return A Java Future containing the result of the DeleteApnsVoipChannel operation returned by the service.
@@ -258,7 +294,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteApnsVoipChannelResult> deleteApnsVoipChannelAsync(DeleteApnsVoipChannelRequest deleteApnsVoipChannelRequest);
 
     /**
-     * Delete an APNS VoIP channel
+     * <p>
+     * Disables the APNs VoIP channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteApnsVoipChannelRequest
      * @param asyncHandler
@@ -274,7 +312,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteApnsVoipChannelRequest, DeleteApnsVoipChannelResult> asyncHandler);
 
     /**
-     * Delete an APNS VoIP sandbox channel
+     * <p>
+     * Disables the APNs VoIP sandbox channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteApnsVoipSandboxChannelRequest
      * @return A Java Future containing the result of the DeleteApnsVoipSandboxChannel operation returned by the
@@ -287,7 +327,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             DeleteApnsVoipSandboxChannelRequest deleteApnsVoipSandboxChannelRequest);
 
     /**
-     * Delete an APNS VoIP sandbox channel
+     * <p>
+     * Disables the APNs VoIP sandbox channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteApnsVoipSandboxChannelRequest
      * @param asyncHandler
@@ -305,7 +347,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteApnsVoipSandboxChannelRequest, DeleteApnsVoipSandboxChannelResult> asyncHandler);
 
     /**
-     * Deletes an app.
+     * <p>
+     * Deletes an application.
+     * </p>
      * 
      * @param deleteAppRequest
      * @return A Java Future containing the result of the DeleteApp operation returned by the service.
@@ -316,7 +360,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest deleteAppRequest);
 
     /**
-     * Deletes an app.
+     * <p>
+     * Deletes an application.
+     * </p>
      * 
      * @param deleteAppRequest
      * @param asyncHandler
@@ -332,7 +378,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, DeleteAppResult> asyncHandler);
 
     /**
-     * Delete a BAIDU GCM channel
+     * <p>
+     * Disables the Baidu channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteBaiduChannelRequest
      * @return A Java Future containing the result of the DeleteBaiduChannel operation returned by the service.
@@ -343,7 +391,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteBaiduChannelResult> deleteBaiduChannelAsync(DeleteBaiduChannelRequest deleteBaiduChannelRequest);
 
     /**
-     * Delete a BAIDU GCM channel
+     * <p>
+     * Disables the Baidu channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteBaiduChannelRequest
      * @param asyncHandler
@@ -359,7 +409,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteBaiduChannelRequest, DeleteBaiduChannelResult> asyncHandler);
 
     /**
-     * Deletes a campaign.
+     * <p>
+     * Deletes a campaign from an application.
+     * </p>
      * 
      * @param deleteCampaignRequest
      * @return A Java Future containing the result of the DeleteCampaign operation returned by the service.
@@ -370,7 +422,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteCampaignResult> deleteCampaignAsync(DeleteCampaignRequest deleteCampaignRequest);
 
     /**
-     * Deletes a campaign.
+     * <p>
+     * Deletes a campaign from an application.
+     * </p>
      * 
      * @param deleteCampaignRequest
      * @param asyncHandler
@@ -386,7 +440,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteCampaignRequest, DeleteCampaignResult> asyncHandler);
 
     /**
-     * Delete an email channel.
+     * <p>
+     * Disables the email channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteEmailChannelRequest
      * @return A Java Future containing the result of the DeleteEmailChannel operation returned by the service.
@@ -397,7 +453,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteEmailChannelResult> deleteEmailChannelAsync(DeleteEmailChannelRequest deleteEmailChannelRequest);
 
     /**
-     * Delete an email channel.
+     * <p>
+     * Disables the email channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteEmailChannelRequest
      * @param asyncHandler
@@ -413,7 +471,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteEmailChannelRequest, DeleteEmailChannelResult> asyncHandler);
 
     /**
-     * Deletes an endpoint.
+     * <p>
+     * Deletes an endpoint from an application.
+     * </p>
      * 
      * @param deleteEndpointRequest
      * @return A Java Future containing the result of the DeleteEndpoint operation returned by the service.
@@ -424,7 +484,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(DeleteEndpointRequest deleteEndpointRequest);
 
     /**
-     * Deletes an endpoint.
+     * <p>
+     * Deletes an endpoint from an application.
+     * </p>
      * 
      * @param deleteEndpointRequest
      * @param asyncHandler
@@ -440,7 +502,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult> asyncHandler);
 
     /**
-     * Deletes the event stream for an app.
+     * <p>
+     * Deletes the event stream for an application.
+     * </p>
      * 
      * @param deleteEventStreamRequest
      * @return A Java Future containing the result of the DeleteEventStream operation returned by the service.
@@ -451,7 +515,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(DeleteEventStreamRequest deleteEventStreamRequest);
 
     /**
-     * Deletes the event stream for an app.
+     * <p>
+     * Deletes the event stream for an application.
+     * </p>
      * 
      * @param deleteEventStreamRequest
      * @param asyncHandler
@@ -467,7 +533,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteEventStreamRequest, DeleteEventStreamResult> asyncHandler);
 
     /**
-     * Deletes the GCM channel for an app.
+     * <p>
+     * Disables the GCM channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteGcmChannelRequest
      * @return A Java Future containing the result of the DeleteGcmChannel operation returned by the service.
@@ -478,7 +546,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteGcmChannelResult> deleteGcmChannelAsync(DeleteGcmChannelRequest deleteGcmChannelRequest);
 
     /**
-     * Deletes the GCM channel for an app.
+     * <p>
+     * Disables the GCM channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteGcmChannelRequest
      * @param asyncHandler
@@ -494,7 +564,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteGcmChannelRequest, DeleteGcmChannelResult> asyncHandler);
 
     /**
-     * Deletes a segment.
+     * <p>
+     * Deletes a segment from an application.
+     * </p>
      * 
      * @param deleteSegmentRequest
      * @return A Java Future containing the result of the DeleteSegment operation returned by the service.
@@ -505,7 +577,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteSegmentResult> deleteSegmentAsync(DeleteSegmentRequest deleteSegmentRequest);
 
     /**
-     * Deletes a segment.
+     * <p>
+     * Deletes a segment from an application.
+     * </p>
      * 
      * @param deleteSegmentRequest
      * @param asyncHandler
@@ -521,7 +595,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteSegmentRequest, DeleteSegmentResult> asyncHandler);
 
     /**
-     * Delete an SMS channel.
+     * <p>
+     * Disables the SMS channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteSmsChannelRequest
      * @return A Java Future containing the result of the DeleteSmsChannel operation returned by the service.
@@ -532,7 +608,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteSmsChannelResult> deleteSmsChannelAsync(DeleteSmsChannelRequest deleteSmsChannelRequest);
 
     /**
-     * Delete an SMS channel.
+     * <p>
+     * Disables the SMS channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteSmsChannelRequest
      * @param asyncHandler
@@ -548,7 +626,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteSmsChannelRequest, DeleteSmsChannelResult> asyncHandler);
 
     /**
-     * Deletes endpoints that are associated with a User ID.
+     * <p>
+     * Deletes all the endpoints that are associated with a specific user ID.
+     * </p>
      * 
      * @param deleteUserEndpointsRequest
      * @return A Java Future containing the result of the DeleteUserEndpoints operation returned by the service.
@@ -559,7 +639,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteUserEndpointsResult> deleteUserEndpointsAsync(DeleteUserEndpointsRequest deleteUserEndpointsRequest);
 
     /**
-     * Deletes endpoints that are associated with a User ID.
+     * <p>
+     * Deletes all the endpoints that are associated with a specific user ID.
+     * </p>
      * 
      * @param deleteUserEndpointsRequest
      * @param asyncHandler
@@ -575,7 +657,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteUserEndpointsRequest, DeleteUserEndpointsResult> asyncHandler);
 
     /**
-     * Delete an Voice channel
+     * <p>
+     * Disables the voice channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteVoiceChannelRequest
      * @return A Java Future containing the result of the DeleteVoiceChannel operation returned by the service.
@@ -586,7 +670,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteVoiceChannelResult> deleteVoiceChannelAsync(DeleteVoiceChannelRequest deleteVoiceChannelRequest);
 
     /**
-     * Delete an Voice channel
+     * <p>
+     * Disables the voice channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteVoiceChannelRequest
      * @param asyncHandler
@@ -602,7 +688,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteVoiceChannelRequest, DeleteVoiceChannelResult> asyncHandler);
 
     /**
-     * Get an ADM channel.
+     * <p>
+     * Retrieves information about the status and settings of the ADM channel for an application.
+     * </p>
      * 
      * @param getAdmChannelRequest
      * @return A Java Future containing the result of the GetAdmChannel operation returned by the service.
@@ -613,7 +701,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetAdmChannelResult> getAdmChannelAsync(GetAdmChannelRequest getAdmChannelRequest);
 
     /**
-     * Get an ADM channel.
+     * <p>
+     * Retrieves information about the status and settings of the ADM channel for an application.
+     * </p>
      * 
      * @param getAdmChannelRequest
      * @param asyncHandler
@@ -629,7 +719,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetAdmChannelRequest, GetAdmChannelResult> asyncHandler);
 
     /**
-     * Returns information about the APNs channel for an app.
+     * <p>
+     * Retrieves information about the status and settings of the APNs channel for an application.
+     * </p>
      * 
      * @param getApnsChannelRequest
      * @return A Java Future containing the result of the GetApnsChannel operation returned by the service.
@@ -640,7 +732,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetApnsChannelResult> getApnsChannelAsync(GetApnsChannelRequest getApnsChannelRequest);
 
     /**
-     * Returns information about the APNs channel for an app.
+     * <p>
+     * Retrieves information about the status and settings of the APNs channel for an application.
+     * </p>
      * 
      * @param getApnsChannelRequest
      * @param asyncHandler
@@ -656,7 +750,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetApnsChannelRequest, GetApnsChannelResult> asyncHandler);
 
     /**
-     * Get an APNS sandbox channel.
+     * <p>
+     * Retrieves information about the status and settings of the APNs sandbox channel for an application.
+     * </p>
      * 
      * @param getApnsSandboxChannelRequest
      * @return A Java Future containing the result of the GetApnsSandboxChannel operation returned by the service.
@@ -667,7 +763,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetApnsSandboxChannelResult> getApnsSandboxChannelAsync(GetApnsSandboxChannelRequest getApnsSandboxChannelRequest);
 
     /**
-     * Get an APNS sandbox channel.
+     * <p>
+     * Retrieves information about the status and settings of the APNs sandbox channel for an application.
+     * </p>
      * 
      * @param getApnsSandboxChannelRequest
      * @param asyncHandler
@@ -683,7 +781,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetApnsSandboxChannelRequest, GetApnsSandboxChannelResult> asyncHandler);
 
     /**
-     * Get an APNS VoIP channel
+     * <p>
+     * Retrieves information about the status and settings of the APNs VoIP channel for an application.
+     * </p>
      * 
      * @param getApnsVoipChannelRequest
      * @return A Java Future containing the result of the GetApnsVoipChannel operation returned by the service.
@@ -694,7 +794,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetApnsVoipChannelResult> getApnsVoipChannelAsync(GetApnsVoipChannelRequest getApnsVoipChannelRequest);
 
     /**
-     * Get an APNS VoIP channel
+     * <p>
+     * Retrieves information about the status and settings of the APNs VoIP channel for an application.
+     * </p>
      * 
      * @param getApnsVoipChannelRequest
      * @param asyncHandler
@@ -710,7 +812,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetApnsVoipChannelRequest, GetApnsVoipChannelResult> asyncHandler);
 
     /**
-     * Get an APNS VoIPSandbox channel
+     * <p>
+     * Retrieves information about the status and settings of the APNs VoIP sandbox channel for an application.
+     * </p>
      * 
      * @param getApnsVoipSandboxChannelRequest
      * @return A Java Future containing the result of the GetApnsVoipSandboxChannel operation returned by the service.
@@ -722,7 +826,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             GetApnsVoipSandboxChannelRequest getApnsVoipSandboxChannelRequest);
 
     /**
-     * Get an APNS VoIPSandbox channel
+     * <p>
+     * Retrieves information about the status and settings of the APNs VoIP sandbox channel for an application.
+     * </p>
      * 
      * @param getApnsVoipSandboxChannelRequest
      * @param asyncHandler
@@ -739,7 +845,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetApnsVoipSandboxChannelRequest, GetApnsVoipSandboxChannelResult> asyncHandler);
 
     /**
-     * Returns information about an app.
+     * <p>
+     * Retrieves information about an application.
+     * </p>
      * 
      * @param getAppRequest
      * @return A Java Future containing the result of the GetApp operation returned by the service.
@@ -750,7 +858,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetAppResult> getAppAsync(GetAppRequest getAppRequest);
 
     /**
-     * Returns information about an app.
+     * <p>
+     * Retrieves information about an application.
+     * </p>
      * 
      * @param getAppRequest
      * @param asyncHandler
@@ -766,7 +876,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetAppRequest, GetAppResult> asyncHandler);
 
     /**
-     * Used to request the settings for an app.
+     * <p>
+     * Retrieves information about the settings for an application.
+     * </p>
      * 
      * @param getApplicationSettingsRequest
      * @return A Java Future containing the result of the GetApplicationSettings operation returned by the service.
@@ -777,7 +889,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetApplicationSettingsResult> getApplicationSettingsAsync(GetApplicationSettingsRequest getApplicationSettingsRequest);
 
     /**
-     * Used to request the settings for an app.
+     * <p>
+     * Retrieves information about the settings for an application.
+     * </p>
      * 
      * @param getApplicationSettingsRequest
      * @param asyncHandler
@@ -793,7 +907,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetApplicationSettingsRequest, GetApplicationSettingsResult> asyncHandler);
 
     /**
-     * Returns information about your apps.
+     * <p>
+     * Retrieves information about all of your applications.
+     * </p>
      * 
      * @param getAppsRequest
      * @return A Java Future containing the result of the GetApps operation returned by the service.
@@ -804,7 +920,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetAppsResult> getAppsAsync(GetAppsRequest getAppsRequest);
 
     /**
-     * Returns information about your apps.
+     * <p>
+     * Retrieves information about all of your applications.
+     * </p>
      * 
      * @param getAppsRequest
      * @param asyncHandler
@@ -820,7 +938,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetAppsRequest, GetAppsResult> asyncHandler);
 
     /**
-     * Get a BAIDU GCM channel
+     * <p>
+     * Retrieves information about the status and settings of the Baidu Cloud Push channel for an application.
+     * </p>
      * 
      * @param getBaiduChannelRequest
      * @return A Java Future containing the result of the GetBaiduChannel operation returned by the service.
@@ -831,7 +951,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetBaiduChannelResult> getBaiduChannelAsync(GetBaiduChannelRequest getBaiduChannelRequest);
 
     /**
-     * Get a BAIDU GCM channel
+     * <p>
+     * Retrieves information about the status and settings of the Baidu Cloud Push channel for an application.
+     * </p>
      * 
      * @param getBaiduChannelRequest
      * @param asyncHandler
@@ -847,7 +969,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetBaiduChannelRequest, GetBaiduChannelResult> asyncHandler);
 
     /**
-     * Returns information about a campaign.
+     * <p>
+     * Retrieves information about the status, configuration, and other settings for a campaign.
+     * </p>
      * 
      * @param getCampaignRequest
      * @return A Java Future containing the result of the GetCampaign operation returned by the service.
@@ -858,7 +982,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetCampaignResult> getCampaignAsync(GetCampaignRequest getCampaignRequest);
 
     /**
-     * Returns information about a campaign.
+     * <p>
+     * Retrieves information about the status, configuration, and other settings for a campaign.
+     * </p>
      * 
      * @param getCampaignRequest
      * @param asyncHandler
@@ -874,7 +1000,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetCampaignRequest, GetCampaignResult> asyncHandler);
 
     /**
-     * Returns information about the activity performed by a campaign.
+     * <p>
+     * Retrieves information about the activity performed by a campaign.
+     * </p>
      * 
      * @param getCampaignActivitiesRequest
      * @return A Java Future containing the result of the GetCampaignActivities operation returned by the service.
@@ -885,7 +1013,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetCampaignActivitiesResult> getCampaignActivitiesAsync(GetCampaignActivitiesRequest getCampaignActivitiesRequest);
 
     /**
-     * Returns information about the activity performed by a campaign.
+     * <p>
+     * Retrieves information about the activity performed by a campaign.
+     * </p>
      * 
      * @param getCampaignActivitiesRequest
      * @param asyncHandler
@@ -901,7 +1031,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetCampaignActivitiesRequest, GetCampaignActivitiesResult> asyncHandler);
 
     /**
-     * Returns information about a specific version of a campaign.
+     * <p>
+     * Retrieves information about the status, configuration, and other settings for a specific version of a campaign.
+     * </p>
      * 
      * @param getCampaignVersionRequest
      * @return A Java Future containing the result of the GetCampaignVersion operation returned by the service.
@@ -912,7 +1044,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetCampaignVersionResult> getCampaignVersionAsync(GetCampaignVersionRequest getCampaignVersionRequest);
 
     /**
-     * Returns information about a specific version of a campaign.
+     * <p>
+     * Retrieves information about the status, configuration, and other settings for a specific version of a campaign.
+     * </p>
      * 
      * @param getCampaignVersionRequest
      * @param asyncHandler
@@ -928,7 +1062,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetCampaignVersionRequest, GetCampaignVersionResult> asyncHandler);
 
     /**
-     * Returns information about your campaign versions.
+     * <p>
+     * Retrieves information about the status, configuration, and other settings for all versions of a specific
+     * campaign.
+     * </p>
      * 
      * @param getCampaignVersionsRequest
      * @return A Java Future containing the result of the GetCampaignVersions operation returned by the service.
@@ -939,7 +1076,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetCampaignVersionsResult> getCampaignVersionsAsync(GetCampaignVersionsRequest getCampaignVersionsRequest);
 
     /**
-     * Returns information about your campaign versions.
+     * <p>
+     * Retrieves information about the status, configuration, and other settings for all versions of a specific
+     * campaign.
+     * </p>
      * 
      * @param getCampaignVersionsRequest
      * @param asyncHandler
@@ -955,7 +1095,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetCampaignVersionsRequest, GetCampaignVersionsResult> asyncHandler);
 
     /**
-     * Returns information about your campaigns.
+     * <p>
+     * Retrieves information about the status, configuration, and other settings for all the campaigns that are
+     * associated with an application.
+     * </p>
      * 
      * @param getCampaignsRequest
      * @return A Java Future containing the result of the GetCampaigns operation returned by the service.
@@ -966,7 +1109,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetCampaignsResult> getCampaignsAsync(GetCampaignsRequest getCampaignsRequest);
 
     /**
-     * Returns information about your campaigns.
+     * <p>
+     * Retrieves information about the status, configuration, and other settings for all the campaigns that are
+     * associated with an application.
+     * </p>
      * 
      * @param getCampaignsRequest
      * @param asyncHandler
@@ -982,7 +1128,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetCampaignsRequest, GetCampaignsResult> asyncHandler);
 
     /**
-     * Get all channels.
+     * <p>
+     * Retrieves information about the history and status of each channel for an application.
+     * </p>
      * 
      * @param getChannelsRequest
      * @return A Java Future containing the result of the GetChannels operation returned by the service.
@@ -993,7 +1141,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetChannelsResult> getChannelsAsync(GetChannelsRequest getChannelsRequest);
 
     /**
-     * Get all channels.
+     * <p>
+     * Retrieves information about the history and status of each channel for an application.
+     * </p>
      * 
      * @param getChannelsRequest
      * @param asyncHandler
@@ -1009,7 +1159,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetChannelsRequest, GetChannelsResult> asyncHandler);
 
     /**
-     * Get an email channel.
+     * <p>
+     * Retrieves information about the status and settings of the email channel for an application.
+     * </p>
      * 
      * @param getEmailChannelRequest
      * @return A Java Future containing the result of the GetEmailChannel operation returned by the service.
@@ -1020,7 +1172,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetEmailChannelResult> getEmailChannelAsync(GetEmailChannelRequest getEmailChannelRequest);
 
     /**
-     * Get an email channel.
+     * <p>
+     * Retrieves information about the status and settings of the email channel for an application.
+     * </p>
      * 
      * @param getEmailChannelRequest
      * @param asyncHandler
@@ -1036,7 +1190,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetEmailChannelRequest, GetEmailChannelResult> asyncHandler);
 
     /**
-     * Returns information about an endpoint.
+     * <p>
+     * Retrieves information about the settings and attributes of a specific endpoint for an application.
+     * </p>
      * 
      * @param getEndpointRequest
      * @return A Java Future containing the result of the GetEndpoint operation returned by the service.
@@ -1047,7 +1203,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetEndpointResult> getEndpointAsync(GetEndpointRequest getEndpointRequest);
 
     /**
-     * Returns information about an endpoint.
+     * <p>
+     * Retrieves information about the settings and attributes of a specific endpoint for an application.
+     * </p>
      * 
      * @param getEndpointRequest
      * @param asyncHandler
@@ -1063,7 +1221,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetEndpointRequest, GetEndpointResult> asyncHandler);
 
     /**
-     * Returns the event stream for an app.
+     * <p>
+     * Retrieves information about the event stream settings for an application.
+     * </p>
      * 
      * @param getEventStreamRequest
      * @return A Java Future containing the result of the GetEventStream operation returned by the service.
@@ -1074,7 +1234,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(GetEventStreamRequest getEventStreamRequest);
 
     /**
-     * Returns the event stream for an app.
+     * <p>
+     * Retrieves information about the event stream settings for an application.
+     * </p>
      * 
      * @param getEventStreamRequest
      * @param asyncHandler
@@ -1090,7 +1252,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetEventStreamRequest, GetEventStreamResult> asyncHandler);
 
     /**
-     * Returns information about an export job.
+     * <p>
+     * Retrieves information about the status and settings of a specific export job for an application.
+     * </p>
      * 
      * @param getExportJobRequest
      * @return A Java Future containing the result of the GetExportJob operation returned by the service.
@@ -1101,7 +1265,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetExportJobResult> getExportJobAsync(GetExportJobRequest getExportJobRequest);
 
     /**
-     * Returns information about an export job.
+     * <p>
+     * Retrieves information about the status and settings of a specific export job for an application.
+     * </p>
      * 
      * @param getExportJobRequest
      * @param asyncHandler
@@ -1117,7 +1283,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetExportJobRequest, GetExportJobResult> asyncHandler);
 
     /**
-     * Returns information about your export jobs.
+     * <p>
+     * Retrieves information about the status and settings of all the export jobs for an application.
+     * </p>
      * 
      * @param getExportJobsRequest
      * @return A Java Future containing the result of the GetExportJobs operation returned by the service.
@@ -1128,7 +1296,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetExportJobsResult> getExportJobsAsync(GetExportJobsRequest getExportJobsRequest);
 
     /**
-     * Returns information about your export jobs.
+     * <p>
+     * Retrieves information about the status and settings of all the export jobs for an application.
+     * </p>
      * 
      * @param getExportJobsRequest
      * @param asyncHandler
@@ -1144,7 +1314,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetExportJobsRequest, GetExportJobsResult> asyncHandler);
 
     /**
-     * Returns information about the GCM channel for an app.
+     * <p>
+     * Retrieves information about the status and settings of the GCM channel for an application.
+     * </p>
      * 
      * @param getGcmChannelRequest
      * @return A Java Future containing the result of the GetGcmChannel operation returned by the service.
@@ -1155,7 +1327,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetGcmChannelResult> getGcmChannelAsync(GetGcmChannelRequest getGcmChannelRequest);
 
     /**
-     * Returns information about the GCM channel for an app.
+     * <p>
+     * Retrieves information about the status and settings of the GCM channel for an application.
+     * </p>
      * 
      * @param getGcmChannelRequest
      * @param asyncHandler
@@ -1171,7 +1345,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetGcmChannelRequest, GetGcmChannelResult> asyncHandler);
 
     /**
-     * Returns information about an import job.
+     * <p>
+     * Retrieves information about the status and settings of a specific import job for an application.
+     * </p>
      * 
      * @param getImportJobRequest
      * @return A Java Future containing the result of the GetImportJob operation returned by the service.
@@ -1182,7 +1358,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest getImportJobRequest);
 
     /**
-     * Returns information about an import job.
+     * <p>
+     * Retrieves information about the status and settings of a specific import job for an application.
+     * </p>
      * 
      * @param getImportJobRequest
      * @param asyncHandler
@@ -1198,7 +1376,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetImportJobRequest, GetImportJobResult> asyncHandler);
 
     /**
-     * Returns information about your import jobs.
+     * <p>
+     * Retrieves information about the status and settings of all the import jobs for an application.
+     * </p>
      * 
      * @param getImportJobsRequest
      * @return A Java Future containing the result of the GetImportJobs operation returned by the service.
@@ -1209,7 +1389,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetImportJobsResult> getImportJobsAsync(GetImportJobsRequest getImportJobsRequest);
 
     /**
-     * Returns information about your import jobs.
+     * <p>
+     * Retrieves information about the status and settings of all the import jobs for an application.
+     * </p>
      * 
      * @param getImportJobsRequest
      * @param asyncHandler
@@ -1225,7 +1407,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetImportJobsRequest, GetImportJobsResult> asyncHandler);
 
     /**
-     * Returns information about a segment.
+     * <p>
+     * Retrieves information about the configuration, dimension, and other settings for a specific segment that's
+     * associated with an application.
+     * </p>
      * 
      * @param getSegmentRequest
      * @return A Java Future containing the result of the GetSegment operation returned by the service.
@@ -1236,7 +1421,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetSegmentResult> getSegmentAsync(GetSegmentRequest getSegmentRequest);
 
     /**
-     * Returns information about a segment.
+     * <p>
+     * Retrieves information about the configuration, dimension, and other settings for a specific segment that's
+     * associated with an application.
+     * </p>
      * 
      * @param getSegmentRequest
      * @param asyncHandler
@@ -1252,7 +1440,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetSegmentRequest, GetSegmentResult> asyncHandler);
 
     /**
-     * Returns a list of export jobs for a specific segment.
+     * <p>
+     * Retrieves information about the status and settings of the export jobs for a segment.
+     * </p>
      * 
      * @param getSegmentExportJobsRequest
      * @return A Java Future containing the result of the GetSegmentExportJobs operation returned by the service.
@@ -1263,7 +1453,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetSegmentExportJobsResult> getSegmentExportJobsAsync(GetSegmentExportJobsRequest getSegmentExportJobsRequest);
 
     /**
-     * Returns a list of export jobs for a specific segment.
+     * <p>
+     * Retrieves information about the status and settings of the export jobs for a segment.
+     * </p>
      * 
      * @param getSegmentExportJobsRequest
      * @param asyncHandler
@@ -1279,7 +1471,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetSegmentExportJobsRequest, GetSegmentExportJobsResult> asyncHandler);
 
     /**
-     * Returns a list of import jobs for a specific segment.
+     * <p>
+     * Retrieves information about the status and settings of the import jobs for a segment.
+     * </p>
      * 
      * @param getSegmentImportJobsRequest
      * @return A Java Future containing the result of the GetSegmentImportJobs operation returned by the service.
@@ -1290,7 +1484,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetSegmentImportJobsResult> getSegmentImportJobsAsync(GetSegmentImportJobsRequest getSegmentImportJobsRequest);
 
     /**
-     * Returns a list of import jobs for a specific segment.
+     * <p>
+     * Retrieves information about the status and settings of the import jobs for a segment.
+     * </p>
      * 
      * @param getSegmentImportJobsRequest
      * @param asyncHandler
@@ -1306,7 +1502,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetSegmentImportJobsRequest, GetSegmentImportJobsResult> asyncHandler);
 
     /**
-     * Returns information about a segment version.
+     * <p>
+     * Retrieves information about the configuration, dimension, and other settings for a specific version of a segment
+     * that's associated with an application.
+     * </p>
      * 
      * @param getSegmentVersionRequest
      * @return A Java Future containing the result of the GetSegmentVersion operation returned by the service.
@@ -1317,7 +1516,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetSegmentVersionResult> getSegmentVersionAsync(GetSegmentVersionRequest getSegmentVersionRequest);
 
     /**
-     * Returns information about a segment version.
+     * <p>
+     * Retrieves information about the configuration, dimension, and other settings for a specific version of a segment
+     * that's associated with an application.
+     * </p>
      * 
      * @param getSegmentVersionRequest
      * @param asyncHandler
@@ -1333,7 +1535,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetSegmentVersionRequest, GetSegmentVersionResult> asyncHandler);
 
     /**
-     * Returns information about your segment versions.
+     * <p>
+     * Retrieves information about the configuration, dimension, and other settings for all versions of a specific
+     * segment that's associated with an application.
+     * </p>
      * 
      * @param getSegmentVersionsRequest
      * @return A Java Future containing the result of the GetSegmentVersions operation returned by the service.
@@ -1344,7 +1549,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetSegmentVersionsResult> getSegmentVersionsAsync(GetSegmentVersionsRequest getSegmentVersionsRequest);
 
     /**
-     * Returns information about your segment versions.
+     * <p>
+     * Retrieves information about the configuration, dimension, and other settings for all versions of a specific
+     * segment that's associated with an application.
+     * </p>
      * 
      * @param getSegmentVersionsRequest
      * @param asyncHandler
@@ -1360,7 +1568,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetSegmentVersionsRequest, GetSegmentVersionsResult> asyncHandler);
 
     /**
-     * Used to get information about your segments.
+     * <p>
+     * Retrieves information about the configuration, dimension, and other settings for all the segments that are
+     * associated with an application.
+     * </p>
      * 
      * @param getSegmentsRequest
      * @return A Java Future containing the result of the GetSegments operation returned by the service.
@@ -1371,7 +1582,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetSegmentsResult> getSegmentsAsync(GetSegmentsRequest getSegmentsRequest);
 
     /**
-     * Used to get information about your segments.
+     * <p>
+     * Retrieves information about the configuration, dimension, and other settings for all the segments that are
+     * associated with an application.
+     * </p>
      * 
      * @param getSegmentsRequest
      * @param asyncHandler
@@ -1387,7 +1601,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetSegmentsRequest, GetSegmentsResult> asyncHandler);
 
     /**
-     * Get an SMS channel.
+     * <p>
+     * Retrieves information about the status and settings of the SMS channel for an application.
+     * </p>
      * 
      * @param getSmsChannelRequest
      * @return A Java Future containing the result of the GetSmsChannel operation returned by the service.
@@ -1398,7 +1614,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetSmsChannelResult> getSmsChannelAsync(GetSmsChannelRequest getSmsChannelRequest);
 
     /**
-     * Get an SMS channel.
+     * <p>
+     * Retrieves information about the status and settings of the SMS channel for an application.
+     * </p>
      * 
      * @param getSmsChannelRequest
      * @param asyncHandler
@@ -1414,7 +1632,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetSmsChannelRequest, GetSmsChannelResult> asyncHandler);
 
     /**
-     * Returns information about the endpoints that are associated with a User ID.
+     * <p>
+     * Retrieves information about all the endpoints that are associated with a specific user ID.
+     * </p>
      * 
      * @param getUserEndpointsRequest
      * @return A Java Future containing the result of the GetUserEndpoints operation returned by the service.
@@ -1425,7 +1645,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetUserEndpointsResult> getUserEndpointsAsync(GetUserEndpointsRequest getUserEndpointsRequest);
 
     /**
-     * Returns information about the endpoints that are associated with a User ID.
+     * <p>
+     * Retrieves information about all the endpoints that are associated with a specific user ID.
+     * </p>
      * 
      * @param getUserEndpointsRequest
      * @param asyncHandler
@@ -1441,7 +1663,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetUserEndpointsRequest, GetUserEndpointsResult> asyncHandler);
 
     /**
-     * Get a Voice Channel
+     * <p>
+     * Retrieves information about the status and settings of the voice channel for an application.
+     * </p>
      * 
      * @param getVoiceChannelRequest
      * @return A Java Future containing the result of the GetVoiceChannel operation returned by the service.
@@ -1452,7 +1676,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetVoiceChannelResult> getVoiceChannelAsync(GetVoiceChannelRequest getVoiceChannelRequest);
 
     /**
-     * Get a Voice Channel
+     * <p>
+     * Retrieves information about the status and settings of the voice channel for an application.
+     * </p>
      * 
      * @param getVoiceChannelRequest
      * @param asyncHandler
@@ -1468,6 +1694,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetVoiceChannelRequest, GetVoiceChannelResult> asyncHandler);
 
     /**
+     * <p>
+     * Retrieves all the tags (keys and values) that are associated with an application, campaign, or segment.
+     * </p>
+     * 
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonPinpointAsync.ListTagsForResource
@@ -1477,6 +1707,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
+     * <p>
+     * Retrieves all the tags (keys and values) that are associated with an application, campaign, or segment.
+     * </p>
+     * 
      * @param listTagsForResourceRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -1491,7 +1725,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
-     * Returns information about the specified phone number.
+     * <p>
+     * Retrieves information about a phone number.
+     * </p>
      * 
      * @param phoneNumberValidateRequest
      * @return A Java Future containing the result of the PhoneNumberValidate operation returned by the service.
@@ -1502,7 +1738,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<PhoneNumberValidateResult> phoneNumberValidateAsync(PhoneNumberValidateRequest phoneNumberValidateRequest);
 
     /**
-     * Returns information about the specified phone number.
+     * <p>
+     * Retrieves information about a phone number.
+     * </p>
      * 
      * @param phoneNumberValidateRequest
      * @param asyncHandler
@@ -1518,7 +1756,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<PhoneNumberValidateRequest, PhoneNumberValidateResult> asyncHandler);
 
     /**
-     * Use to create or update the event stream for an app.
+     * <p>
+     * Creates a new event stream for an application or updates the settings of an existing event stream for an
+     * application.
+     * </p>
      * 
      * @param putEventStreamRequest
      * @return A Java Future containing the result of the PutEventStream operation returned by the service.
@@ -1529,7 +1770,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<PutEventStreamResult> putEventStreamAsync(PutEventStreamRequest putEventStreamRequest);
 
     /**
-     * Use to create or update the event stream for an app.
+     * <p>
+     * Creates a new event stream for an application or updates the settings of an existing event stream for an
+     * application.
+     * </p>
      * 
      * @param putEventStreamRequest
      * @param asyncHandler
@@ -1545,8 +1789,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<PutEventStreamRequest, PutEventStreamResult> asyncHandler);
 
     /**
-     * Use to record events for endpoints. This method creates events and creates or updates the endpoints that those
-     * events are associated with.
+     * <p>
+     * Creates a new event to record for endpoints, or creates or updates endpoint data that existing events are
+     * associated with.
+     * </p>
      * 
      * @param putEventsRequest
      * @return A Java Future containing the result of the PutEvents operation returned by the service.
@@ -1557,8 +1803,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<PutEventsResult> putEventsAsync(PutEventsRequest putEventsRequest);
 
     /**
-     * Use to record events for endpoints. This method creates events and creates or updates the endpoints that those
-     * events are associated with.
+     * <p>
+     * Creates a new event to record for endpoints, or creates or updates endpoint data that existing events are
+     * associated with.
+     * </p>
      * 
      * @param putEventsRequest
      * @param asyncHandler
@@ -1574,7 +1822,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<PutEventsRequest, PutEventsResult> asyncHandler);
 
     /**
-     * Used to remove the attributes for an app
+     * <p>
+     * Removes one or more attributes, of the same attribute type, from all the endpoints that are associated with an
+     * application.
+     * </p>
      * 
      * @param removeAttributesRequest
      * @return A Java Future containing the result of the RemoveAttributes operation returned by the service.
@@ -1585,7 +1836,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<RemoveAttributesResult> removeAttributesAsync(RemoveAttributesRequest removeAttributesRequest);
 
     /**
-     * Used to remove the attributes for an app
+     * <p>
+     * Removes one or more attributes, of the same attribute type, from all the endpoints that are associated with an
+     * application.
+     * </p>
      * 
      * @param removeAttributesRequest
      * @param asyncHandler
@@ -1601,7 +1855,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<RemoveAttributesRequest, RemoveAttributesResult> asyncHandler);
 
     /**
-     * Used to send a direct message.
+     * <p>
+     * Creates and sends a direct message.
+     * </p>
      * 
      * @param sendMessagesRequest
      * @return A Java Future containing the result of the SendMessages operation returned by the service.
@@ -1612,7 +1868,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<SendMessagesResult> sendMessagesAsync(SendMessagesRequest sendMessagesRequest);
 
     /**
-     * Used to send a direct message.
+     * <p>
+     * Creates and sends a direct message.
+     * </p>
      * 
      * @param sendMessagesRequest
      * @param asyncHandler
@@ -1628,7 +1886,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<SendMessagesRequest, SendMessagesResult> asyncHandler);
 
     /**
-     * Used to send a message to a list of users.
+     * <p>
+     * Creates and sends a message to a list of users.
+     * </p>
      * 
      * @param sendUsersMessagesRequest
      * @return A Java Future containing the result of the SendUsersMessages operation returned by the service.
@@ -1639,7 +1899,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<SendUsersMessagesResult> sendUsersMessagesAsync(SendUsersMessagesRequest sendUsersMessagesRequest);
 
     /**
-     * Used to send a message to a list of users.
+     * <p>
+     * Creates and sends a message to a list of users.
+     * </p>
      * 
      * @param sendUsersMessagesRequest
      * @param asyncHandler
@@ -1655,6 +1917,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<SendUsersMessagesRequest, SendUsersMessagesResult> asyncHandler);
 
     /**
+     * <p>
+     * Adds one or more tags (keys and values) to an application, campaign, or segment.
+     * </p>
+     * 
      * @param tagResourceRequest
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonPinpointAsync.TagResource
@@ -1664,6 +1930,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
     /**
+     * <p>
+     * Adds one or more tags (keys and values) to an application, campaign, or segment.
+     * </p>
+     * 
      * @param tagResourceRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -1678,6 +1948,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
+     * <p>
+     * Removes one or more tags (keys and values) from an application, campaign, or segment.
+     * </p>
+     * 
      * @param untagResourceRequest
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AmazonPinpointAsync.UntagResource
@@ -1687,6 +1961,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
     /**
+     * <p>
+     * Removes one or more tags (keys and values) from an application, campaign, or segment.
+     * </p>
+     * 
      * @param untagResourceRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -1701,7 +1979,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
-     * Update an ADM channel.
+     * <p>
+     * Updates the ADM channel settings for an application.
+     * </p>
      * 
      * @param updateAdmChannelRequest
      * @return A Java Future containing the result of the UpdateAdmChannel operation returned by the service.
@@ -1712,7 +1992,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateAdmChannelResult> updateAdmChannelAsync(UpdateAdmChannelRequest updateAdmChannelRequest);
 
     /**
-     * Update an ADM channel.
+     * <p>
+     * Updates the ADM channel settings for an application.
+     * </p>
      * 
      * @param updateAdmChannelRequest
      * @param asyncHandler
@@ -1728,7 +2010,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateAdmChannelRequest, UpdateAdmChannelResult> asyncHandler);
 
     /**
-     * Use to update the APNs channel for an app.
+     * <p>
+     * Updates the APNs channel settings for an application.
+     * </p>
      * 
      * @param updateApnsChannelRequest
      * @return A Java Future containing the result of the UpdateApnsChannel operation returned by the service.
@@ -1739,7 +2023,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateApnsChannelResult> updateApnsChannelAsync(UpdateApnsChannelRequest updateApnsChannelRequest);
 
     /**
-     * Use to update the APNs channel for an app.
+     * <p>
+     * Updates the APNs channel settings for an application.
+     * </p>
      * 
      * @param updateApnsChannelRequest
      * @param asyncHandler
@@ -1755,7 +2041,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateApnsChannelRequest, UpdateApnsChannelResult> asyncHandler);
 
     /**
-     * Update an APNS sandbox channel.
+     * <p>
+     * Updates the APNs sandbox channel settings for an application.
+     * </p>
      * 
      * @param updateApnsSandboxChannelRequest
      * @return A Java Future containing the result of the UpdateApnsSandboxChannel operation returned by the service.
@@ -1766,7 +2054,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateApnsSandboxChannelResult> updateApnsSandboxChannelAsync(UpdateApnsSandboxChannelRequest updateApnsSandboxChannelRequest);
 
     /**
-     * Update an APNS sandbox channel.
+     * <p>
+     * Updates the APNs sandbox channel settings for an application.
+     * </p>
      * 
      * @param updateApnsSandboxChannelRequest
      * @param asyncHandler
@@ -1782,7 +2072,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateApnsSandboxChannelRequest, UpdateApnsSandboxChannelResult> asyncHandler);
 
     /**
-     * Update an APNS VoIP channel
+     * <p>
+     * Updates the APNs VoIP channel settings for an application.
+     * </p>
      * 
      * @param updateApnsVoipChannelRequest
      * @return A Java Future containing the result of the UpdateApnsVoipChannel operation returned by the service.
@@ -1793,7 +2085,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateApnsVoipChannelResult> updateApnsVoipChannelAsync(UpdateApnsVoipChannelRequest updateApnsVoipChannelRequest);
 
     /**
-     * Update an APNS VoIP channel
+     * <p>
+     * Updates the APNs VoIP channel settings for an application.
+     * </p>
      * 
      * @param updateApnsVoipChannelRequest
      * @param asyncHandler
@@ -1809,7 +2103,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateApnsVoipChannelRequest, UpdateApnsVoipChannelResult> asyncHandler);
 
     /**
-     * Update an APNS VoIP sandbox channel
+     * <p>
+     * Updates the settings for the APNs VoIP sandbox channel for an application.
+     * </p>
      * 
      * @param updateApnsVoipSandboxChannelRequest
      * @return A Java Future containing the result of the UpdateApnsVoipSandboxChannel operation returned by the
@@ -1822,7 +2118,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             UpdateApnsVoipSandboxChannelRequest updateApnsVoipSandboxChannelRequest);
 
     /**
-     * Update an APNS VoIP sandbox channel
+     * <p>
+     * Updates the settings for the APNs VoIP sandbox channel for an application.
+     * </p>
      * 
      * @param updateApnsVoipSandboxChannelRequest
      * @param asyncHandler
@@ -1840,7 +2138,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateApnsVoipSandboxChannelRequest, UpdateApnsVoipSandboxChannelResult> asyncHandler);
 
     /**
-     * Used to update the settings for an app.
+     * <p>
+     * Updates the settings for an application.
+     * </p>
      * 
      * @param updateApplicationSettingsRequest
      * @return A Java Future containing the result of the UpdateApplicationSettings operation returned by the service.
@@ -1852,7 +2152,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             UpdateApplicationSettingsRequest updateApplicationSettingsRequest);
 
     /**
-     * Used to update the settings for an app.
+     * <p>
+     * Updates the settings for an application.
+     * </p>
      * 
      * @param updateApplicationSettingsRequest
      * @param asyncHandler
@@ -1869,7 +2171,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationSettingsRequest, UpdateApplicationSettingsResult> asyncHandler);
 
     /**
-     * Update a BAIDU GCM channel
+     * <p>
+     * Updates the settings of the Baidu channel for an application.
+     * </p>
      * 
      * @param updateBaiduChannelRequest
      * @return A Java Future containing the result of the UpdateBaiduChannel operation returned by the service.
@@ -1880,7 +2184,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateBaiduChannelResult> updateBaiduChannelAsync(UpdateBaiduChannelRequest updateBaiduChannelRequest);
 
     /**
-     * Update a BAIDU GCM channel
+     * <p>
+     * Updates the settings of the Baidu channel for an application.
+     * </p>
      * 
      * @param updateBaiduChannelRequest
      * @param asyncHandler
@@ -1896,7 +2202,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateBaiduChannelRequest, UpdateBaiduChannelResult> asyncHandler);
 
     /**
-     * Use to update a campaign.
+     * <p>
+     * Updates the settings for a campaign.
+     * </p>
      * 
      * @param updateCampaignRequest
      * @return A Java Future containing the result of the UpdateCampaign operation returned by the service.
@@ -1907,7 +2215,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateCampaignResult> updateCampaignAsync(UpdateCampaignRequest updateCampaignRequest);
 
     /**
-     * Use to update a campaign.
+     * <p>
+     * Updates the settings for a campaign.
+     * </p>
      * 
      * @param updateCampaignRequest
      * @param asyncHandler
@@ -1923,7 +2233,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateCampaignRequest, UpdateCampaignResult> asyncHandler);
 
     /**
-     * Update an email channel.
+     * <p>
+     * Updates the status and settings of the email channel for an application.
+     * </p>
      * 
      * @param updateEmailChannelRequest
      * @return A Java Future containing the result of the UpdateEmailChannel operation returned by the service.
@@ -1934,7 +2246,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateEmailChannelResult> updateEmailChannelAsync(UpdateEmailChannelRequest updateEmailChannelRequest);
 
     /**
-     * Update an email channel.
+     * <p>
+     * Updates the status and settings of the email channel for an application.
+     * </p>
      * 
      * @param updateEmailChannelRequest
      * @param asyncHandler
@@ -1950,7 +2264,11 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateEmailChannelRequest, UpdateEmailChannelResult> asyncHandler);
 
     /**
-     * Creates or updates an endpoint.
+     * <p>
+     * Creates a new endpoint for an application or updates the settings and attributes of an existing endpoint for an
+     * application. You can also use this operation to define custom attributes (Attributes, Metrics, and UserAttributes
+     * properties) for an endpoint.
+     * </p>
      * 
      * @param updateEndpointRequest
      * @return A Java Future containing the result of the UpdateEndpoint operation returned by the service.
@@ -1961,7 +2279,11 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateEndpointResult> updateEndpointAsync(UpdateEndpointRequest updateEndpointRequest);
 
     /**
-     * Creates or updates an endpoint.
+     * <p>
+     * Creates a new endpoint for an application or updates the settings and attributes of an existing endpoint for an
+     * application. You can also use this operation to define custom attributes (Attributes, Metrics, and UserAttributes
+     * properties) for an endpoint.
+     * </p>
      * 
      * @param updateEndpointRequest
      * @param asyncHandler
@@ -1977,7 +2299,11 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateEndpointRequest, UpdateEndpointResult> asyncHandler);
 
     /**
-     * Use to update a batch of endpoints.
+     * <p>
+     * Creates a new batch of endpoints for an application or updates the settings and attributes of a batch of existing
+     * endpoints for an application. You can also use this operation to define custom attributes (Attributes, Metrics,
+     * and UserAttributes properties) for a batch of endpoints.
+     * </p>
      * 
      * @param updateEndpointsBatchRequest
      * @return A Java Future containing the result of the UpdateEndpointsBatch operation returned by the service.
@@ -1988,7 +2314,11 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateEndpointsBatchResult> updateEndpointsBatchAsync(UpdateEndpointsBatchRequest updateEndpointsBatchRequest);
 
     /**
-     * Use to update a batch of endpoints.
+     * <p>
+     * Creates a new batch of endpoints for an application or updates the settings and attributes of a batch of existing
+     * endpoints for an application. You can also use this operation to define custom attributes (Attributes, Metrics,
+     * and UserAttributes properties) for a batch of endpoints.
+     * </p>
      * 
      * @param updateEndpointsBatchRequest
      * @param asyncHandler
@@ -2004,7 +2334,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateEndpointsBatchRequest, UpdateEndpointsBatchResult> asyncHandler);
 
     /**
-     * Use to update the GCM channel for an app.
+     * <p>
+     * Updates the status and settings of the GCM channel for an application.
+     * </p>
      * 
      * @param updateGcmChannelRequest
      * @return A Java Future containing the result of the UpdateGcmChannel operation returned by the service.
@@ -2015,7 +2347,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateGcmChannelResult> updateGcmChannelAsync(UpdateGcmChannelRequest updateGcmChannelRequest);
 
     /**
-     * Use to update the GCM channel for an app.
+     * <p>
+     * Updates the status and settings of the GCM channel for an application.
+     * </p>
      * 
      * @param updateGcmChannelRequest
      * @param asyncHandler
@@ -2031,7 +2365,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateGcmChannelRequest, UpdateGcmChannelResult> asyncHandler);
 
     /**
-     * Used to update a segment.
+     * <p>
+     * Creates a new segment for an application or updates the configuration, dimension, and other settings for an
+     * existing segment that's associated with an application.
+     * </p>
      * 
      * @param updateSegmentRequest
      * @return A Java Future containing the result of the UpdateSegment operation returned by the service.
@@ -2042,7 +2379,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateSegmentResult> updateSegmentAsync(UpdateSegmentRequest updateSegmentRequest);
 
     /**
-     * Used to update a segment.
+     * <p>
+     * Creates a new segment for an application or updates the configuration, dimension, and other settings for an
+     * existing segment that's associated with an application.
+     * </p>
      * 
      * @param updateSegmentRequest
      * @param asyncHandler
@@ -2058,7 +2398,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateSegmentRequest, UpdateSegmentResult> asyncHandler);
 
     /**
-     * Update an SMS channel.
+     * <p>
+     * Updates the status and settings of the SMS channel for an application.
+     * </p>
      * 
      * @param updateSmsChannelRequest
      * @return A Java Future containing the result of the UpdateSmsChannel operation returned by the service.
@@ -2069,7 +2411,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateSmsChannelResult> updateSmsChannelAsync(UpdateSmsChannelRequest updateSmsChannelRequest);
 
     /**
-     * Update an SMS channel.
+     * <p>
+     * Updates the status and settings of the SMS channel for an application.
+     * </p>
      * 
      * @param updateSmsChannelRequest
      * @param asyncHandler
@@ -2085,7 +2429,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateSmsChannelRequest, UpdateSmsChannelResult> asyncHandler);
 
     /**
-     * Update an Voice channel
+     * <p>
+     * Updates the status and settings of the voice channel for an application.
+     * </p>
      * 
      * @param updateVoiceChannelRequest
      * @return A Java Future containing the result of the UpdateVoiceChannel operation returned by the service.
@@ -2096,7 +2442,9 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateVoiceChannelResult> updateVoiceChannelAsync(UpdateVoiceChannelRequest updateVoiceChannelRequest);
 
     /**
-     * Update an Voice channel
+     * <p>
+     * Updates the status and settings of the voice channel for an application.
+     * </p>
      * 
      * @param updateVoiceChannelRequest
      * @param asyncHandler

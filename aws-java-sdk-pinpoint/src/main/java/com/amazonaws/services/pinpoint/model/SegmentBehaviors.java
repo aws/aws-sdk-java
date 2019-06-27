@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Segment behavior dimensions
+ * <p>
+ * Specifies dimension settings for including or excluding endpoints from a segment based on how recently an endpoint
+ * was active.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentBehaviors" target="_top">AWS API
  *      Documentation</a>
@@ -26,14 +29,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentBehaviors implements Serializable, Cloneable, StructuredPojo {
 
-    /** The recency of use. */
+    /**
+     * <p>
+     * The dimension settings that are based on how recently an endpoint was active.
+     * </p>
+     */
     private RecencyDimension recency;
 
     /**
-     * The recency of use.
+     * <p>
+     * The dimension settings that are based on how recently an endpoint was active.
+     * </p>
      * 
      * @param recency
-     *        The recency of use.
+     *        The dimension settings that are based on how recently an endpoint was active.
      */
 
     public void setRecency(RecencyDimension recency) {
@@ -41,9 +50,11 @@ public class SegmentBehaviors implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The recency of use.
+     * <p>
+     * The dimension settings that are based on how recently an endpoint was active.
+     * </p>
      * 
-     * @return The recency of use.
+     * @return The dimension settings that are based on how recently an endpoint was active.
      */
 
     public RecencyDimension getRecency() {
@@ -51,10 +62,12 @@ public class SegmentBehaviors implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The recency of use.
+     * <p>
+     * The dimension settings that are based on how recently an endpoint was active.
+     * </p>
      * 
      * @param recency
-     *        The recency of use.
+     *        The dimension settings that are based on how recently an endpoint was active.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Segment location dimensions
+ * <p>
+ * Specifies geographical dimension settings for a segment.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentLocation" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentLocation implements Serializable, Cloneable, StructuredPojo {
 
-    /** The country or region, in ISO 3166-1 alpha-2 format. */
+    /**
+     * <p>
+     * The country or region code, in ISO 3166-1 alpha-2 format, for the segment.
+     * </p>
+     */
     private SetDimension country;
-    /** The GPS Point dimension. */
+    /**
+     * <p>
+     * The GPS location and range for the segment.
+     * </p>
+     */
     private GPSPointDimension gPSPoint;
 
     /**
-     * The country or region, in ISO 3166-1 alpha-2 format.
+     * <p>
+     * The country or region code, in ISO 3166-1 alpha-2 format, for the segment.
+     * </p>
      * 
      * @param country
-     *        The country or region, in ISO 3166-1 alpha-2 format.
+     *        The country or region code, in ISO 3166-1 alpha-2 format, for the segment.
      */
 
     public void setCountry(SetDimension country) {
@@ -43,9 +55,11 @@ public class SegmentLocation implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The country or region, in ISO 3166-1 alpha-2 format.
+     * <p>
+     * The country or region code, in ISO 3166-1 alpha-2 format, for the segment.
+     * </p>
      * 
-     * @return The country or region, in ISO 3166-1 alpha-2 format.
+     * @return The country or region code, in ISO 3166-1 alpha-2 format, for the segment.
      */
 
     public SetDimension getCountry() {
@@ -53,10 +67,12 @@ public class SegmentLocation implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The country or region, in ISO 3166-1 alpha-2 format.
+     * <p>
+     * The country or region code, in ISO 3166-1 alpha-2 format, for the segment.
+     * </p>
      * 
      * @param country
-     *        The country or region, in ISO 3166-1 alpha-2 format.
+     *        The country or region code, in ISO 3166-1 alpha-2 format, for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +82,12 @@ public class SegmentLocation implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The GPS Point dimension.
+     * <p>
+     * The GPS location and range for the segment.
+     * </p>
      * 
      * @param gPSPoint
-     *        The GPS Point dimension.
+     *        The GPS location and range for the segment.
      */
 
     public void setGPSPoint(GPSPointDimension gPSPoint) {
@@ -77,9 +95,11 @@ public class SegmentLocation implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The GPS Point dimension.
+     * <p>
+     * The GPS location and range for the segment.
+     * </p>
      * 
-     * @return The GPS Point dimension.
+     * @return The GPS location and range for the segment.
      */
 
     public GPSPointDimension getGPSPoint() {
@@ -87,10 +107,12 @@ public class SegmentLocation implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The GPS Point dimension.
+     * <p>
+     * The GPS location and range for the segment.
+     * </p>
      * 
      * @param gPSPoint
-     *        The GPS Point dimension.
+     *        The GPS location and range for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

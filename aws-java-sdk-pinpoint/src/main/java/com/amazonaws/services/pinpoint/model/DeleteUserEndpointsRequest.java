@@ -25,16 +25,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteUserEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID of your Amazon Pinpoint application. */
+    /**
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
+     */
     private String applicationId;
-    /** The unique ID of the user. */
+    /**
+     * <p>
+     * The unique identifier for the user.
+     * </p>
+     */
     private String userId;
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID of your Amazon Pinpoint application.
+     *        The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *        Amazon Pinpoint console.
      */
 
     public void setApplicationId(String applicationId) {
@@ -42,9 +55,13 @@ public class DeleteUserEndpointsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
      * 
-     * @return The unique ID of your Amazon Pinpoint application.
+     * @return The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *         Amazon Pinpoint console.
      */
 
     public String getApplicationId() {
@@ -52,10 +69,14 @@ public class DeleteUserEndpointsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID of your Amazon Pinpoint application.
+     *        The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *        Amazon Pinpoint console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +86,12 @@ public class DeleteUserEndpointsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * The unique ID of the user.
+     * <p>
+     * The unique identifier for the user.
+     * </p>
      * 
      * @param userId
-     *        The unique ID of the user.
+     *        The unique identifier for the user.
      */
 
     public void setUserId(String userId) {
@@ -76,9 +99,11 @@ public class DeleteUserEndpointsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * The unique ID of the user.
+     * <p>
+     * The unique identifier for the user.
+     * </p>
      * 
-     * @return The unique ID of the user.
+     * @return The unique identifier for the user.
      */
 
     public String getUserId() {
@@ -86,10 +111,12 @@ public class DeleteUserEndpointsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * The unique ID of the user.
+     * <p>
+     * The unique identifier for the user.
+     * </p>
      * 
      * @param userId
-     *        The unique ID of the user.
+     *        The unique identifier for the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

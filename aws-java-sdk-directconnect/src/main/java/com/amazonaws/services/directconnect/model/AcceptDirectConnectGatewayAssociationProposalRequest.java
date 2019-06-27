@@ -46,7 +46,12 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
     private String associatedGatewayOwnerAccount;
     /**
      * <p>
-     * Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * </p>
+     * <p>
+     * For information about how to set the prefixes, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> overrideAllowedPrefixesToDirectConnectGateway;
@@ -173,10 +178,19 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * </p>
+     * <p>
+     * For information about how to set the prefixes, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
-     * @return Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * @return Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
+     *         <p>
+     *         For information about how to set the prefixes, see <a href=
+     *         "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     *         >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      */
 
     public java.util.List<RouteFilterPrefix> getOverrideAllowedPrefixesToDirectConnectGateway() {
@@ -188,11 +202,20 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * </p>
+     * <p>
+     * For information about how to set the prefixes, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
      * @param overrideAllowedPrefixesToDirectConnectGateway
-     *        Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
+     *        Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
+     *        <p>
+     *        For information about how to set the prefixes, see <a href=
+     *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     *        >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      */
 
     public void setOverrideAllowedPrefixesToDirectConnectGateway(java.util.Collection<RouteFilterPrefix> overrideAllowedPrefixesToDirectConnectGateway) {
@@ -207,7 +230,12 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * </p>
+     * <p>
+     * For information about how to set the prefixes, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -217,7 +245,11 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
      * </p>
      * 
      * @param overrideAllowedPrefixesToDirectConnectGateway
-     *        Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
+     *        Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
+     *        <p>
+     *        For information about how to set the prefixes, see <a href=
+     *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     *        >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +267,20 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * </p>
+     * <p>
+     * For information about how to set the prefixes, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
      * @param overrideAllowedPrefixesToDirectConnectGateway
-     *        Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
+     *        Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
+     *        <p>
+     *        For information about how to set the prefixes, see <a href=
+     *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
+     *        >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

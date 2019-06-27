@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Creating application setting request
+ * <p>
+ * Specifies the default settings for an application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteApplicationSettingsRequest"
  *      target="_top">AWS API Documentation</a>
@@ -26,39 +28,78 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WriteApplicationSettingsRequest implements Serializable, Cloneable, StructuredPojo {
 
-    /** Default campaign hook information. */
+    /**
+     * <p>
+     * The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application. To
+     * override these settings for a specific campaign, use the <link
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda function
+     * settings for the campaign.
+     * </p>
+     */
     private CampaignHook campaignHook;
-    /** The CloudWatchMetrics settings for the app. */
+    /**
+     * <p>
+     * Specifies whether to enable application-related alarms in Amazon CloudWatch.
+     * </p>
+     */
     private Boolean cloudWatchMetricsEnabled;
     /**
-     * The limits that apply to each campaign in the project by default. Campaigns can also have their own limits, which
-     * override the settings at the project level.
+     * <p>
+     * The default sending limits for campaigns in the application. To override these limits for a specific campaign,
+     * use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom
+     * limits for the campaign.
+     * </p>
      */
     private CampaignLimits limits;
     /**
-     * The default quiet time for the app. Campaigns in the app don't send messages to endpoints during the quiet time.
-     * 
-     * Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a quiet
-     * time for your app. If your endpoints don't include this attribute, they'll receive the messages that you send
-     * them, even if quiet time is enabled.
-     * 
-     * When you set up an app to use quiet time, campaigns in that app don't send messages during the time range you
-     * specified, as long as all of the following are true: - The endpoint includes a valid Demographic.Timezone
-     * attribute. - The current time in the endpoint's time zone is later than or equal to the time specified in the
-     * QuietTime.Start attribute for the app (or campaign, if applicable). - The current time in the endpoint's time
-     * zone is earlier than or equal to the time specified in the QuietTime.End attribute for the app (or campaign, if
-     * applicable).
-     * 
-     * Individual campaigns within the app can have their own quiet time settings, which override the quiet time
-     * settings at the app level.
+     * <p>
+     * The default quiet time for campaigns in the application. Quiet time is a specific time range when campaigns don't
+     * send messages to endpoints, if all the following conditions are met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The EndpointDemographic.Timezone property of the endpoint is set to a valid value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start
+     * property for the application (or a campaign that has custom quiet time settings).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End
+     * property for the application (or a campaign that has custom quiet time settings).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign, even if quiet
+     * time is enabled.
+     * </p>
+     * <p>
+     * To override the default quiet time settings for a specific campaign, use the <link
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define a custom quiet time for
+     * the campaign.
+     * </p>
      */
     private QuietTime quietTime;
 
     /**
-     * Default campaign hook information.
+     * <p>
+     * The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application. To
+     * override these settings for a specific campaign, use the <link
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda function
+     * settings for the campaign.
+     * </p>
      * 
      * @param campaignHook
-     *        Default campaign hook information.
+     *        The settings for the AWS Lambda function to use by default as a code hook for campaigns in the
+     *        application. To override these settings for a specific campaign, use the <link
+     *        linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda
+     *        function settings for the campaign.
      */
 
     public void setCampaignHook(CampaignHook campaignHook) {
@@ -66,9 +107,17 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * Default campaign hook information.
+     * <p>
+     * The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application. To
+     * override these settings for a specific campaign, use the <link
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda function
+     * settings for the campaign.
+     * </p>
      * 
-     * @return Default campaign hook information.
+     * @return The settings for the AWS Lambda function to use by default as a code hook for campaigns in the
+     *         application. To override these settings for a specific campaign, use the <link
+     *         linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda
+     *         function settings for the campaign.
      */
 
     public CampaignHook getCampaignHook() {
@@ -76,10 +125,18 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * Default campaign hook information.
+     * <p>
+     * The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application. To
+     * override these settings for a specific campaign, use the <link
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda function
+     * settings for the campaign.
+     * </p>
      * 
      * @param campaignHook
-     *        Default campaign hook information.
+     *        The settings for the AWS Lambda function to use by default as a code hook for campaigns in the
+     *        application. To override these settings for a specific campaign, use the <link
+     *        linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda
+     *        function settings for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,10 +146,12 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The CloudWatchMetrics settings for the app.
+     * <p>
+     * Specifies whether to enable application-related alarms in Amazon CloudWatch.
+     * </p>
      * 
      * @param cloudWatchMetricsEnabled
-     *        The CloudWatchMetrics settings for the app.
+     *        Specifies whether to enable application-related alarms in Amazon CloudWatch.
      */
 
     public void setCloudWatchMetricsEnabled(Boolean cloudWatchMetricsEnabled) {
@@ -100,9 +159,11 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The CloudWatchMetrics settings for the app.
+     * <p>
+     * Specifies whether to enable application-related alarms in Amazon CloudWatch.
+     * </p>
      * 
-     * @return The CloudWatchMetrics settings for the app.
+     * @return Specifies whether to enable application-related alarms in Amazon CloudWatch.
      */
 
     public Boolean getCloudWatchMetricsEnabled() {
@@ -110,10 +171,12 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The CloudWatchMetrics settings for the app.
+     * <p>
+     * Specifies whether to enable application-related alarms in Amazon CloudWatch.
+     * </p>
      * 
      * @param cloudWatchMetricsEnabled
-     *        The CloudWatchMetrics settings for the app.
+     *        Specifies whether to enable application-related alarms in Amazon CloudWatch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,9 +186,11 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The CloudWatchMetrics settings for the app.
+     * <p>
+     * Specifies whether to enable application-related alarms in Amazon CloudWatch.
+     * </p>
      * 
-     * @return The CloudWatchMetrics settings for the app.
+     * @return Specifies whether to enable application-related alarms in Amazon CloudWatch.
      */
 
     public Boolean isCloudWatchMetricsEnabled() {
@@ -133,12 +198,16 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The limits that apply to each campaign in the project by default. Campaigns can also have their own limits, which
-     * override the settings at the project level.
+     * <p>
+     * The default sending limits for campaigns in the application. To override these limits for a specific campaign,
+     * use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom
+     * limits for the campaign.
+     * </p>
      * 
      * @param limits
-     *        The limits that apply to each campaign in the project by default. Campaigns can also have their own
-     *        limits, which override the settings at the project level.
+     *        The default sending limits for campaigns in the application. To override these limits for a specific
+     *        campaign, use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
+     *        define custom limits for the campaign.
      */
 
     public void setLimits(CampaignLimits limits) {
@@ -146,11 +215,15 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The limits that apply to each campaign in the project by default. Campaigns can also have their own limits, which
-     * override the settings at the project level.
+     * <p>
+     * The default sending limits for campaigns in the application. To override these limits for a specific campaign,
+     * use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom
+     * limits for the campaign.
+     * </p>
      * 
-     * @return The limits that apply to each campaign in the project by default. Campaigns can also have their own
-     *         limits, which override the settings at the project level.
+     * @return The default sending limits for campaigns in the application. To override these limits for a specific
+     *         campaign, use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
+     *         define custom limits for the campaign.
      */
 
     public CampaignLimits getLimits() {
@@ -158,12 +231,16 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The limits that apply to each campaign in the project by default. Campaigns can also have their own limits, which
-     * override the settings at the project level.
+     * <p>
+     * The default sending limits for campaigns in the application. To override these limits for a specific campaign,
+     * use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom
+     * limits for the campaign.
+     * </p>
      * 
      * @param limits
-     *        The limits that apply to each campaign in the project by default. Campaigns can also have their own
-     *        limits, which override the settings at the project level.
+     *        The default sending limits for campaigns in the application. To override these limits for a specific
+     *        campaign, use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
+     *        define custom limits for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,39 +250,69 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The default quiet time for the app. Campaigns in the app don't send messages to endpoints during the quiet time.
-     * 
-     * Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a quiet
-     * time for your app. If your endpoints don't include this attribute, they'll receive the messages that you send
-     * them, even if quiet time is enabled.
-     * 
-     * When you set up an app to use quiet time, campaigns in that app don't send messages during the time range you
-     * specified, as long as all of the following are true: - The endpoint includes a valid Demographic.Timezone
-     * attribute. - The current time in the endpoint's time zone is later than or equal to the time specified in the
-     * QuietTime.Start attribute for the app (or campaign, if applicable). - The current time in the endpoint's time
-     * zone is earlier than or equal to the time specified in the QuietTime.End attribute for the app (or campaign, if
-     * applicable).
-     * 
-     * Individual campaigns within the app can have their own quiet time settings, which override the quiet time
-     * settings at the app level.
+     * <p>
+     * The default quiet time for campaigns in the application. Quiet time is a specific time range when campaigns don't
+     * send messages to endpoints, if all the following conditions are met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The EndpointDemographic.Timezone property of the endpoint is set to a valid value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start
+     * property for the application (or a campaign that has custom quiet time settings).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End
+     * property for the application (or a campaign that has custom quiet time settings).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign, even if quiet
+     * time is enabled.
+     * </p>
+     * <p>
+     * To override the default quiet time settings for a specific campaign, use the <link
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define a custom quiet time for
+     * the campaign.
+     * </p>
      * 
      * @param quietTime
-     *        The default quiet time for the app. Campaigns in the app don't send messages to endpoints during the quiet
-     *        time.
-     * 
-     *        Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a
-     *        quiet time for your app. If your endpoints don't include this attribute, they'll receive the messages that
-     *        you send them, even if quiet time is enabled.
-     * 
-     *        When you set up an app to use quiet time, campaigns in that app don't send messages during the time range
-     *        you specified, as long as all of the following are true: - The endpoint includes a valid
-     *        Demographic.Timezone attribute. - The current time in the endpoint's time zone is later than or equal to
-     *        the time specified in the QuietTime.Start attribute for the app (or campaign, if applicable). - The
-     *        current time in the endpoint's time zone is earlier than or equal to the time specified in the
-     *        QuietTime.End attribute for the app (or campaign, if applicable).
-     * 
-     *        Individual campaigns within the app can have their own quiet time settings, which override the quiet time
-     *        settings at the app level.
+     *        The default quiet time for campaigns in the application. Quiet time is a specific time range when
+     *        campaigns don't send messages to endpoints, if all the following conditions are met:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The EndpointDemographic.Timezone property of the endpoint is set to a valid value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The current time in the endpoint's time zone is later than or equal to the time specified by the
+     *        QuietTime.Start property for the application (or a campaign that has custom quiet time settings).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The current time in the endpoint's time zone is earlier than or equal to the time specified by the
+     *        QuietTime.End property for the application (or a campaign that has custom quiet time settings).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign, even if
+     *        quiet time is enabled.
+     *        </p>
+     *        <p>
+     *        To override the default quiet time settings for a specific campaign, use the <link
+     *        linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define a custom quiet time
+     *        for the campaign.
      */
 
     public void setQuietTime(QuietTime quietTime) {
@@ -213,38 +320,68 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The default quiet time for the app. Campaigns in the app don't send messages to endpoints during the quiet time.
+     * <p>
+     * The default quiet time for campaigns in the application. Quiet time is a specific time range when campaigns don't
+     * send messages to endpoints, if all the following conditions are met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The EndpointDemographic.Timezone property of the endpoint is set to a valid value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start
+     * property for the application (or a campaign that has custom quiet time settings).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End
+     * property for the application (or a campaign that has custom quiet time settings).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign, even if quiet
+     * time is enabled.
+     * </p>
+     * <p>
+     * To override the default quiet time settings for a specific campaign, use the <link
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define a custom quiet time for
+     * the campaign.
+     * </p>
      * 
-     * Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a quiet
-     * time for your app. If your endpoints don't include this attribute, they'll receive the messages that you send
-     * them, even if quiet time is enabled.
-     * 
-     * When you set up an app to use quiet time, campaigns in that app don't send messages during the time range you
-     * specified, as long as all of the following are true: - The endpoint includes a valid Demographic.Timezone
-     * attribute. - The current time in the endpoint's time zone is later than or equal to the time specified in the
-     * QuietTime.Start attribute for the app (or campaign, if applicable). - The current time in the endpoint's time
-     * zone is earlier than or equal to the time specified in the QuietTime.End attribute for the app (or campaign, if
-     * applicable).
-     * 
-     * Individual campaigns within the app can have their own quiet time settings, which override the quiet time
-     * settings at the app level.
-     * 
-     * @return The default quiet time for the app. Campaigns in the app don't send messages to endpoints during the
-     *         quiet time.
-     * 
-     *         Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a
-     *         quiet time for your app. If your endpoints don't include this attribute, they'll receive the messages
-     *         that you send them, even if quiet time is enabled.
-     * 
-     *         When you set up an app to use quiet time, campaigns in that app don't send messages during the time range
-     *         you specified, as long as all of the following are true: - The endpoint includes a valid
-     *         Demographic.Timezone attribute. - The current time in the endpoint's time zone is later than or equal to
-     *         the time specified in the QuietTime.Start attribute for the app (or campaign, if applicable). - The
-     *         current time in the endpoint's time zone is earlier than or equal to the time specified in the
-     *         QuietTime.End attribute for the app (or campaign, if applicable).
-     * 
-     *         Individual campaigns within the app can have their own quiet time settings, which override the quiet time
-     *         settings at the app level.
+     * @return The default quiet time for campaigns in the application. Quiet time is a specific time range when
+     *         campaigns don't send messages to endpoints, if all the following conditions are met:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The EndpointDemographic.Timezone property of the endpoint is set to a valid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The current time in the endpoint's time zone is later than or equal to the time specified by the
+     *         QuietTime.Start property for the application (or a campaign that has custom quiet time settings).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The current time in the endpoint's time zone is earlier than or equal to the time specified by the
+     *         QuietTime.End property for the application (or a campaign that has custom quiet time settings).
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign, even if
+     *         quiet time is enabled.
+     *         </p>
+     *         <p>
+     *         To override the default quiet time settings for a specific campaign, use the <link
+     *         linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define a custom quiet
+     *         time for the campaign.
      */
 
     public QuietTime getQuietTime() {
@@ -252,39 +389,69 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The default quiet time for the app. Campaigns in the app don't send messages to endpoints during the quiet time.
-     * 
-     * Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a quiet
-     * time for your app. If your endpoints don't include this attribute, they'll receive the messages that you send
-     * them, even if quiet time is enabled.
-     * 
-     * When you set up an app to use quiet time, campaigns in that app don't send messages during the time range you
-     * specified, as long as all of the following are true: - The endpoint includes a valid Demographic.Timezone
-     * attribute. - The current time in the endpoint's time zone is later than or equal to the time specified in the
-     * QuietTime.Start attribute for the app (or campaign, if applicable). - The current time in the endpoint's time
-     * zone is earlier than or equal to the time specified in the QuietTime.End attribute for the app (or campaign, if
-     * applicable).
-     * 
-     * Individual campaigns within the app can have their own quiet time settings, which override the quiet time
-     * settings at the app level.
+     * <p>
+     * The default quiet time for campaigns in the application. Quiet time is a specific time range when campaigns don't
+     * send messages to endpoints, if all the following conditions are met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The EndpointDemographic.Timezone property of the endpoint is set to a valid value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start
+     * property for the application (or a campaign that has custom quiet time settings).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End
+     * property for the application (or a campaign that has custom quiet time settings).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign, even if quiet
+     * time is enabled.
+     * </p>
+     * <p>
+     * To override the default quiet time settings for a specific campaign, use the <link
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define a custom quiet time for
+     * the campaign.
+     * </p>
      * 
      * @param quietTime
-     *        The default quiet time for the app. Campaigns in the app don't send messages to endpoints during the quiet
-     *        time.
-     * 
-     *        Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a
-     *        quiet time for your app. If your endpoints don't include this attribute, they'll receive the messages that
-     *        you send them, even if quiet time is enabled.
-     * 
-     *        When you set up an app to use quiet time, campaigns in that app don't send messages during the time range
-     *        you specified, as long as all of the following are true: - The endpoint includes a valid
-     *        Demographic.Timezone attribute. - The current time in the endpoint's time zone is later than or equal to
-     *        the time specified in the QuietTime.Start attribute for the app (or campaign, if applicable). - The
-     *        current time in the endpoint's time zone is earlier than or equal to the time specified in the
-     *        QuietTime.End attribute for the app (or campaign, if applicable).
-     * 
-     *        Individual campaigns within the app can have their own quiet time settings, which override the quiet time
-     *        settings at the app level.
+     *        The default quiet time for campaigns in the application. Quiet time is a specific time range when
+     *        campaigns don't send messages to endpoints, if all the following conditions are met:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The EndpointDemographic.Timezone property of the endpoint is set to a valid value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The current time in the endpoint's time zone is later than or equal to the time specified by the
+     *        QuietTime.Start property for the application (or a campaign that has custom quiet time settings).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The current time in the endpoint's time zone is earlier than or equal to the time specified by the
+     *        QuietTime.End property for the application (or a campaign that has custom quiet time settings).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign, even if
+     *        quiet time is enabled.
+     *        </p>
+     *        <p>
+     *        To override the default quiet time settings for a specific campaign, use the <link
+     *        linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define a custom quiet time
+     *        for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -167,6 +167,12 @@ public class AllocateConnectionOnInterconnectResult extends com.amazonaws.Amazon
      * </p>
      */
     private String hasLogicalRedundancy;
+    /**
+     * <p>
+     * Any tags assigned to the connection.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -1347,6 +1353,79 @@ public class AllocateConnectionOnInterconnectResult extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * Any tags assigned to the connection.
+     * </p>
+     * 
+     * @return Any tags assigned to the connection.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the connection.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the connection.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the connection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateConnectionOnInterconnectResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the connection.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateConnectionOnInterconnectResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1387,7 +1466,9 @@ public class AllocateConnectionOnInterconnectResult extends com.amazonaws.Amazon
         if (getAwsDeviceV2() != null)
             sb.append("AwsDeviceV2: ").append(getAwsDeviceV2()).append(",");
         if (getHasLogicalRedundancy() != null)
-            sb.append("HasLogicalRedundancy: ").append(getHasLogicalRedundancy());
+            sb.append("HasLogicalRedundancy: ").append(getHasLogicalRedundancy()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1462,6 +1543,10 @@ public class AllocateConnectionOnInterconnectResult extends com.amazonaws.Amazon
             return false;
         if (other.getHasLogicalRedundancy() != null && other.getHasLogicalRedundancy().equals(this.getHasLogicalRedundancy()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1485,6 +1570,7 @@ public class AllocateConnectionOnInterconnectResult extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getJumboFrameCapable() == null) ? 0 : getJumboFrameCapable().hashCode());
         hashCode = prime * hashCode + ((getAwsDeviceV2() == null) ? 0 : getAwsDeviceV2().hashCode());
         hashCode = prime * hashCode + ((getHasLogicalRedundancy() == null) ? 0 : getHasLogicalRedundancy().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

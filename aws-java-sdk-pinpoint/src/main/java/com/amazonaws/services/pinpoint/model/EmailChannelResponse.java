@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Email Channel Response.
+ * <p>
+ * Provides information about the status and settings of the email channel for an application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EmailChannelResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,42 +28,107 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EmailChannelResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The unique ID of the application to which the email channel belongs. */
+    /**
+     * <p>
+     * The unique identifier for the application that the email channel applies to.
+     * </p>
+     */
     private String applicationId;
-    /** The configuration set that you want to use when you send email using the Pinpoint Email API. */
+    /**
+     * <p>
+     * The configuration set that's applied to email that's sent through the channel by using the <a
+     * href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * </p>
+     */
     private String configurationSet;
-    /** The date that the settings were last updated in ISO 8601 format. */
+    /**
+     * <p>
+     * The date and time, in ISO 8601 format, when the email channel was enabled.
+     * </p>
+     */
     private String creationDate;
-    /** If the channel is enabled for sending messages. */
+    /**
+     * <p>
+     * Specifies whether the email channel is enabled for the application.
+     * </p>
+     */
     private Boolean enabled;
-    /** The email address used to send emails from. */
+    /**
+     * <p>
+     * The verified email address that you send email from when you send email through the channel.
+     * </p>
+     */
     private String fromAddress;
-    /** Not used. Retained for backwards compatibility. */
+    /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     */
     private Boolean hasCredential;
-    /** Channel ID. Not used, only for backwards compatibility. */
+    /**
+     * <p>
+     * (Deprecated) An identifier for the email channel. This property is retained only for backward compatibility.
+     * </p>
+     */
     private String id;
-    /** The ARN of an identity verified with SES. */
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you
+     * use when you send email through the channel.
+     * </p>
+     */
     private String identity;
-    /** Is this channel archived */
+    /**
+     * <p>
+     * Specifies whether the email channel is archived.
+     * </p>
+     */
     private Boolean isArchived;
-    /** Who last updated this entry */
+    /**
+     * <p>
+     * The user who last modified the email channel.
+     * </p>
+     */
     private String lastModifiedBy;
-    /** Last date this was updated */
+    /**
+     * <p>
+     * The date and time, in ISO 8601 format, when the email channel was last modified.
+     * </p>
+     */
     private String lastModifiedDate;
-    /** Messages per second that can be sent */
+    /**
+     * <p>
+     * The maximum number of emails that you can send through the channel each second.
+     * </p>
+     */
     private Integer messagesPerSecond;
-    /** Platform type. Will be "EMAIL" */
+    /**
+     * <p>
+     * The type of messaging or notification platform for the channel. For the email channel, this value is EMAIL.
+     * </p>
+     */
     private String platform;
-    /** The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service */
+    /**
+     * <p>
+     * The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit email-related
+     * event data for the channel.
+     * </p>
+     */
     private String roleArn;
-    /** Version of channel */
+    /**
+     * <p>
+     * The current version of the email channel.
+     * </p>
+     */
     private Integer version;
 
     /**
-     * The unique ID of the application to which the email channel belongs.
+     * <p>
+     * The unique identifier for the application that the email channel applies to.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID of the application to which the email channel belongs.
+     *        The unique identifier for the application that the email channel applies to.
      */
 
     public void setApplicationId(String applicationId) {
@@ -69,9 +136,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The unique ID of the application to which the email channel belongs.
+     * <p>
+     * The unique identifier for the application that the email channel applies to.
+     * </p>
      * 
-     * @return The unique ID of the application to which the email channel belongs.
+     * @return The unique identifier for the application that the email channel applies to.
      */
 
     public String getApplicationId() {
@@ -79,10 +148,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The unique ID of the application to which the email channel belongs.
+     * <p>
+     * The unique identifier for the application that the email channel applies to.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID of the application to which the email channel belongs.
+     *        The unique identifier for the application that the email channel applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,10 +163,14 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The configuration set that you want to use when you send email using the Pinpoint Email API.
+     * <p>
+     * The configuration set that's applied to email that's sent through the channel by using the <a
+     * href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * </p>
      * 
      * @param configurationSet
-     *        The configuration set that you want to use when you send email using the Pinpoint Email API.
+     *        The configuration set that's applied to email that's sent through the channel by using the <a
+     *        href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
      */
 
     public void setConfigurationSet(String configurationSet) {
@@ -103,9 +178,13 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The configuration set that you want to use when you send email using the Pinpoint Email API.
+     * <p>
+     * The configuration set that's applied to email that's sent through the channel by using the <a
+     * href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * </p>
      * 
-     * @return The configuration set that you want to use when you send email using the Pinpoint Email API.
+     * @return The configuration set that's applied to email that's sent through the channel by using the <a
+     *         href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
      */
 
     public String getConfigurationSet() {
@@ -113,10 +192,14 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The configuration set that you want to use when you send email using the Pinpoint Email API.
+     * <p>
+     * The configuration set that's applied to email that's sent through the channel by using the <a
+     * href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * </p>
      * 
      * @param configurationSet
-     *        The configuration set that you want to use when you send email using the Pinpoint Email API.
+     *        The configuration set that's applied to email that's sent through the channel by using the <a
+     *        href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,10 +209,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>
+     * The date and time, in ISO 8601 format, when the email channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        The date that the settings were last updated in ISO 8601 format.
+     *        The date and time, in ISO 8601 format, when the email channel was enabled.
      */
 
     public void setCreationDate(String creationDate) {
@@ -137,9 +222,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>
+     * The date and time, in ISO 8601 format, when the email channel was enabled.
+     * </p>
      * 
-     * @return The date that the settings were last updated in ISO 8601 format.
+     * @return The date and time, in ISO 8601 format, when the email channel was enabled.
      */
 
     public String getCreationDate() {
@@ -147,10 +234,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>
+     * The date and time, in ISO 8601 format, when the email channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        The date that the settings were last updated in ISO 8601 format.
+     *        The date and time, in ISO 8601 format, when the email channel was enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,10 +249,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the email channel is enabled for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether the email channel is enabled for the application.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -171,9 +262,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the email channel is enabled for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether the email channel is enabled for the application.
      */
 
     public Boolean getEnabled() {
@@ -181,10 +274,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the email channel is enabled for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether the email channel is enabled for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,9 +289,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the email channel is enabled for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether the email channel is enabled for the application.
      */
 
     public Boolean isEnabled() {
@@ -204,10 +301,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email address used to send emails from.
+     * <p>
+     * The verified email address that you send email from when you send email through the channel.
+     * </p>
      * 
      * @param fromAddress
-     *        The email address used to send emails from.
+     *        The verified email address that you send email from when you send email through the channel.
      */
 
     public void setFromAddress(String fromAddress) {
@@ -215,9 +314,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email address used to send emails from.
+     * <p>
+     * The verified email address that you send email from when you send email through the channel.
+     * </p>
      * 
-     * @return The email address used to send emails from.
+     * @return The verified email address that you send email from when you send email through the channel.
      */
 
     public String getFromAddress() {
@@ -225,10 +326,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email address used to send emails from.
+     * <p>
+     * The verified email address that you send email from when you send email through the channel.
+     * </p>
      * 
      * @param fromAddress
-     *        The email address used to send emails from.
+     *        The verified email address that you send email from when you send email through the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,10 +341,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param hasCredential
-     *        Not used. Retained for backwards compatibility.
+     *        (Not used) This property is retained only for backward compatibility.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -249,9 +354,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Not used. Retained for backwards compatibility.
+     * @return (Not used) This property is retained only for backward compatibility.
      */
 
     public Boolean getHasCredential() {
@@ -259,10 +366,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param hasCredential
-     *        Not used. Retained for backwards compatibility.
+     *        (Not used) This property is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,9 +381,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Not used. Retained for backwards compatibility.
+     * @return (Not used) This property is retained only for backward compatibility.
      */
 
     public Boolean isHasCredential() {
@@ -282,10 +393,13 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the email channel. This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param id
-     *        Channel ID. Not used, only for backwards compatibility.
+     *        (Deprecated) An identifier for the email channel. This property is retained only for backward
+     *        compatibility.
      */
 
     public void setId(String id) {
@@ -293,9 +407,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the email channel. This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Channel ID. Not used, only for backwards compatibility.
+     * @return (Deprecated) An identifier for the email channel. This property is retained only for backward
+     *         compatibility.
      */
 
     public String getId() {
@@ -303,10 +420,13 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the email channel. This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param id
-     *        Channel ID. Not used, only for backwards compatibility.
+     *        (Deprecated) An identifier for the email channel. This property is retained only for backward
+     *        compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,10 +436,16 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The ARN of an identity verified with SES.
+     * <p>
+     * The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you
+     * use when you send email through the channel.
+     * </p>
      * 
      * @param identity
-     *        The ARN of an identity verified with SES.
+     *        <p>
+     *        The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES),
+     *        that you use when you send email through the channel.
+     *        </p>
      */
 
     public void setIdentity(String identity) {
@@ -327,9 +453,15 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The ARN of an identity verified with SES.
+     * <p>
+     * The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you
+     * use when you send email through the channel.
+     * </p>
      * 
-     * @return The ARN of an identity verified with SES.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES),
+     *         that you use when you send email through the channel.
+     *         </p>
      */
 
     public String getIdentity() {
@@ -337,10 +469,16 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The ARN of an identity verified with SES.
+     * <p>
+     * The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you
+     * use when you send email through the channel.
+     * </p>
      * 
      * @param identity
-     *        The ARN of an identity verified with SES.
+     *        <p>
+     *        The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES),
+     *        that you use when you send email through the channel.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,10 +488,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the email channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Is this channel archived
+     *        Specifies whether the email channel is archived.
      */
 
     public void setIsArchived(Boolean isArchived) {
@@ -361,9 +501,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the email channel is archived.
+     * </p>
      * 
-     * @return Is this channel archived
+     * @return Specifies whether the email channel is archived.
      */
 
     public Boolean getIsArchived() {
@@ -371,10 +513,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the email channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Is this channel archived
+     *        Specifies whether the email channel is archived.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,9 +528,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the email channel is archived.
+     * </p>
      * 
-     * @return Is this channel archived
+     * @return Specifies whether the email channel is archived.
      */
 
     public Boolean isArchived() {
@@ -394,10 +540,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Who last updated this entry
+     * <p>
+     * The user who last modified the email channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        Who last updated this entry
+     *        The user who last modified the email channel.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -405,9 +553,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Who last updated this entry
+     * <p>
+     * The user who last modified the email channel.
+     * </p>
      * 
-     * @return Who last updated this entry
+     * @return The user who last modified the email channel.
      */
 
     public String getLastModifiedBy() {
@@ -415,10 +565,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Who last updated this entry
+     * <p>
+     * The user who last modified the email channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        Who last updated this entry
+     *        The user who last modified the email channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,10 +580,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time, in ISO 8601 format, when the email channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        Last date this was updated
+     *        The date and time, in ISO 8601 format, when the email channel was last modified.
      */
 
     public void setLastModifiedDate(String lastModifiedDate) {
@@ -439,9 +593,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time, in ISO 8601 format, when the email channel was last modified.
+     * </p>
      * 
-     * @return Last date this was updated
+     * @return The date and time, in ISO 8601 format, when the email channel was last modified.
      */
 
     public String getLastModifiedDate() {
@@ -449,10 +605,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time, in ISO 8601 format, when the email channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        Last date this was updated
+     *        The date and time, in ISO 8601 format, when the email channel was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -462,10 +620,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Messages per second that can be sent
+     * <p>
+     * The maximum number of emails that you can send through the channel each second.
+     * </p>
      * 
      * @param messagesPerSecond
-     *        Messages per second that can be sent
+     *        The maximum number of emails that you can send through the channel each second.
      */
 
     public void setMessagesPerSecond(Integer messagesPerSecond) {
@@ -473,9 +633,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Messages per second that can be sent
+     * <p>
+     * The maximum number of emails that you can send through the channel each second.
+     * </p>
      * 
-     * @return Messages per second that can be sent
+     * @return The maximum number of emails that you can send through the channel each second.
      */
 
     public Integer getMessagesPerSecond() {
@@ -483,10 +645,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Messages per second that can be sent
+     * <p>
+     * The maximum number of emails that you can send through the channel each second.
+     * </p>
      * 
      * @param messagesPerSecond
-     *        Messages per second that can be sent
+     *        The maximum number of emails that you can send through the channel each second.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -496,10 +660,13 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Platform type. Will be "EMAIL"
+     * <p>
+     * The type of messaging or notification platform for the channel. For the email channel, this value is EMAIL.
+     * </p>
      * 
      * @param platform
-     *        Platform type. Will be "EMAIL"
+     *        The type of messaging or notification platform for the channel. For the email channel, this value is
+     *        EMAIL.
      */
 
     public void setPlatform(String platform) {
@@ -507,9 +674,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Platform type. Will be "EMAIL"
+     * <p>
+     * The type of messaging or notification platform for the channel. For the email channel, this value is EMAIL.
+     * </p>
      * 
-     * @return Platform type. Will be "EMAIL"
+     * @return The type of messaging or notification platform for the channel. For the email channel, this value is
+     *         EMAIL.
      */
 
     public String getPlatform() {
@@ -517,10 +687,13 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Platform type. Will be "EMAIL"
+     * <p>
+     * The type of messaging or notification platform for the channel. For the email channel, this value is EMAIL.
+     * </p>
      * 
      * @param platform
-     *        Platform type. Will be "EMAIL"
+     *        The type of messaging or notification platform for the channel. For the email channel, this value is
+     *        EMAIL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -530,10 +703,16 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service
+     * <p>
+     * The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit email-related
+     * event data for the channel.
+     * </p>
      * 
      * @param roleArn
-     *        The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service
+     *        <p>
+     *        The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit
+     *        email-related event data for the channel.
+     *        </p>
      */
 
     public void setRoleArn(String roleArn) {
@@ -541,9 +720,15 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service
+     * <p>
+     * The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit email-related
+     * event data for the channel.
+     * </p>
      * 
-     * @return The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service
+     * @return <p>
+     *         The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit
+     *         email-related event data for the channel.
+     *         </p>
      */
 
     public String getRoleArn() {
@@ -551,10 +736,16 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service
+     * <p>
+     * The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit email-related
+     * event data for the channel.
+     * </p>
      * 
      * @param roleArn
-     *        The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service
+     *        <p>
+     *        The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit
+     *        email-related event data for the channel.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -564,10 +755,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the email channel.
+     * </p>
      * 
      * @param version
-     *        Version of channel
+     *        The current version of the email channel.
      */
 
     public void setVersion(Integer version) {
@@ -575,9 +768,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the email channel.
+     * </p>
      * 
-     * @return Version of channel
+     * @return The current version of the email channel.
      */
 
     public Integer getVersion() {
@@ -585,10 +780,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the email channel.
+     * </p>
      * 
      * @param version
-     *        Version of channel
+     *        The current version of the email channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

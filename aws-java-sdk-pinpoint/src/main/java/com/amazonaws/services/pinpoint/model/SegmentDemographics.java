@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Segment demographic dimensions
+ * <p>
+ * Specifies demographic-based dimension settings for including or excluding endpoints from a segment. These settings
+ * derive from characteristics of endpoint devices, such as platform, make, and model.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentDemographics" target="_top">AWS API
  *      Documentation</a>
@@ -26,21 +29,47 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentDemographics implements Serializable, Cloneable, StructuredPojo {
 
-    /** The app version criteria for the segment. */
+    /**
+     * <p>
+     * The app version criteria for the segment.
+     * </p>
+     */
     private SetDimension appVersion;
-    /** The channel criteria for the segment. */
+    /**
+     * <p>
+     * The channel criteria for the segment.
+     * </p>
+     */
     private SetDimension channel;
-    /** The device type criteria for the segment. */
+    /**
+     * <p>
+     * The device type criteria for the segment.
+     * </p>
+     */
     private SetDimension deviceType;
-    /** The device make criteria for the segment. */
+    /**
+     * <p>
+     * The device make criteria for the segment.
+     * </p>
+     */
     private SetDimension make;
-    /** The device model criteria for the segment. */
+    /**
+     * <p>
+     * The device model criteria for the segment.
+     * </p>
+     */
     private SetDimension model;
-    /** The device platform criteria for the segment. */
+    /**
+     * <p>
+     * The device platform criteria for the segment.
+     * </p>
+     */
     private SetDimension platform;
 
     /**
+     * <p>
      * The app version criteria for the segment.
+     * </p>
      * 
      * @param appVersion
      *        The app version criteria for the segment.
@@ -51,7 +80,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The app version criteria for the segment.
+     * </p>
      * 
      * @return The app version criteria for the segment.
      */
@@ -61,7 +92,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The app version criteria for the segment.
+     * </p>
      * 
      * @param appVersion
      *        The app version criteria for the segment.
@@ -74,7 +107,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The channel criteria for the segment.
+     * </p>
      * 
      * @param channel
      *        The channel criteria for the segment.
@@ -85,7 +120,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The channel criteria for the segment.
+     * </p>
      * 
      * @return The channel criteria for the segment.
      */
@@ -95,7 +132,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The channel criteria for the segment.
+     * </p>
      * 
      * @param channel
      *        The channel criteria for the segment.
@@ -108,7 +147,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The device type criteria for the segment.
+     * </p>
      * 
      * @param deviceType
      *        The device type criteria for the segment.
@@ -119,7 +160,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The device type criteria for the segment.
+     * </p>
      * 
      * @return The device type criteria for the segment.
      */
@@ -129,7 +172,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The device type criteria for the segment.
+     * </p>
      * 
      * @param deviceType
      *        The device type criteria for the segment.
@@ -142,7 +187,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The device make criteria for the segment.
+     * </p>
      * 
      * @param make
      *        The device make criteria for the segment.
@@ -153,7 +200,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The device make criteria for the segment.
+     * </p>
      * 
      * @return The device make criteria for the segment.
      */
@@ -163,7 +212,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The device make criteria for the segment.
+     * </p>
      * 
      * @param make
      *        The device make criteria for the segment.
@@ -176,7 +227,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The device model criteria for the segment.
+     * </p>
      * 
      * @param model
      *        The device model criteria for the segment.
@@ -187,7 +240,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The device model criteria for the segment.
+     * </p>
      * 
      * @return The device model criteria for the segment.
      */
@@ -197,7 +252,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The device model criteria for the segment.
+     * </p>
      * 
      * @param model
      *        The device model criteria for the segment.
@@ -210,7 +267,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The device platform criteria for the segment.
+     * </p>
      * 
      * @param platform
      *        The device platform criteria for the segment.
@@ -221,7 +280,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The device platform criteria for the segment.
+     * </p>
      * 
      * @return The device platform criteria for the segment.
      */
@@ -231,7 +292,9 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The device platform criteria for the segment.
+     * </p>
      * 
      * @param platform
      *        The device platform criteria for the segment.

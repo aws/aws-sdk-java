@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information about a session.
+ * <p>
+ * Provides information about a session.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/Session" target="_top">AWS API
  *      Documentation</a>
@@ -26,17 +28,35 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Session implements Serializable, Cloneable, StructuredPojo {
 
-    /** The duration of the session, in milliseconds. */
+    /**
+     * <p>
+     * The duration of the session, in milliseconds.
+     * </p>
+     */
     private Integer duration;
-    /** A unique identifier for the session. */
+    /**
+     * <p>
+     * The unique identifier for the session.
+     * </p>
+     */
     private String id;
-    /** The date and time when the session began. */
+    /**
+     * <p>
+     * The date and time when the session began.
+     * </p>
+     */
     private String startTimestamp;
-    /** The date and time when the session ended. */
+    /**
+     * <p>
+     * The date and time when the session ended.
+     * </p>
+     */
     private String stopTimestamp;
 
     /**
+     * <p>
      * The duration of the session, in milliseconds.
+     * </p>
      * 
      * @param duration
      *        The duration of the session, in milliseconds.
@@ -47,7 +67,9 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The duration of the session, in milliseconds.
+     * </p>
      * 
      * @return The duration of the session, in milliseconds.
      */
@@ -57,7 +79,9 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The duration of the session, in milliseconds.
+     * </p>
      * 
      * @param duration
      *        The duration of the session, in milliseconds.
@@ -70,10 +94,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A unique identifier for the session.
+     * <p>
+     * The unique identifier for the session.
+     * </p>
      * 
      * @param id
-     *        A unique identifier for the session.
+     *        The unique identifier for the session.
      */
 
     public void setId(String id) {
@@ -81,9 +107,11 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A unique identifier for the session.
+     * <p>
+     * The unique identifier for the session.
+     * </p>
      * 
-     * @return A unique identifier for the session.
+     * @return The unique identifier for the session.
      */
 
     public String getId() {
@@ -91,10 +119,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A unique identifier for the session.
+     * <p>
+     * The unique identifier for the session.
+     * </p>
      * 
      * @param id
-     *        A unique identifier for the session.
+     *        The unique identifier for the session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,7 +134,9 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The date and time when the session began.
+     * </p>
      * 
      * @param startTimestamp
      *        The date and time when the session began.
@@ -115,7 +147,9 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The date and time when the session began.
+     * </p>
      * 
      * @return The date and time when the session began.
      */
@@ -125,7 +159,9 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The date and time when the session began.
+     * </p>
      * 
      * @param startTimestamp
      *        The date and time when the session began.
@@ -138,7 +174,9 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The date and time when the session ended.
+     * </p>
      * 
      * @param stopTimestamp
      *        The date and time when the session ended.
@@ -149,7 +187,9 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The date and time when the session ended.
+     * </p>
      * 
      * @return The date and time when the session ended.
      */
@@ -159,7 +199,9 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The date and time when the session ended.
+     * </p>
      * 
      * @param stopTimestamp
      *        The date and time when the session ended.

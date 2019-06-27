@@ -54,7 +54,8 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
     private Integer mtu;
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      */
     private String authKey;
@@ -76,6 +77,12 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
      * </p>
      */
     private String customerAddress;
+    /**
+     * <p>
+     * Any tags assigned to the private virtual interface to be provisioned on a connection.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -242,11 +249,13 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
      * @param authKey
-     *        The authentication key for BGP configuration.
+     *        The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *        maximun lenth of 80 characters.
      */
 
     public void setAuthKey(String authKey) {
@@ -255,10 +264,12 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
-     * @return The authentication key for BGP configuration.
+     * @return The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *         maximun lenth of 80 characters.
      */
 
     public String getAuthKey() {
@@ -267,11 +278,13 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
      * @param authKey
-     *        The authentication key for BGP configuration.
+     *        The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *        maximun lenth of 80 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -434,6 +447,79 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * Any tags assigned to the private virtual interface to be provisioned on a connection.
+     * </p>
+     * 
+     * @return Any tags assigned to the private virtual interface to be provisioned on a connection.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the private virtual interface to be provisioned on a connection.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the private virtual interface to be provisioned on a connection.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the private virtual interface to be provisioned on a connection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the private virtual interface to be provisioned on a connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NewPrivateVirtualInterfaceAllocation withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the private virtual interface to be provisioned on a connection.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the private virtual interface to be provisioned on a connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NewPrivateVirtualInterfaceAllocation withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -460,7 +546,9 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
         if (getAddressFamily() != null)
             sb.append("AddressFamily: ").append(getAddressFamily()).append(",");
         if (getCustomerAddress() != null)
-            sb.append("CustomerAddress: ").append(getCustomerAddress());
+            sb.append("CustomerAddress: ").append(getCustomerAddress()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -507,6 +595,10 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
             return false;
         if (other.getCustomerAddress() != null && other.getCustomerAddress().equals(this.getCustomerAddress()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -523,6 +615,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
         hashCode = prime * hashCode + ((getAmazonAddress() == null) ? 0 : getAmazonAddress().hashCode());
         hashCode = prime * hashCode + ((getAddressFamily() == null) ? 0 : getAddressFamily().hashCode());
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Activities for campaign.
+ * <p>
+ * Provides information about the activities that were performed by a campaign.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ActivitiesResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,15 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ActivitiesResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** List of campaign activities */
+    /**
+     * <p>
+     * An array of responses, one for each activity that was performed by the campaign.
+     * </p>
+     */
     private java.util.List<ActivityResponse> item;
-    /** The string that you use in a subsequent request to get the next page of results in a paginated response. */
+    /**
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * List of campaign activities
+     * <p>
+     * An array of responses, one for each activity that was performed by the campaign.
+     * </p>
      * 
-     * @return List of campaign activities
+     * @return An array of responses, one for each activity that was performed by the campaign.
      */
 
     public java.util.List<ActivityResponse> getItem() {
@@ -42,10 +55,12 @@ public class ActivitiesResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * List of campaign activities
+     * <p>
+     * An array of responses, one for each activity that was performed by the campaign.
+     * </p>
      * 
      * @param item
-     *        List of campaign activities
+     *        An array of responses, one for each activity that was performed by the campaign.
      */
 
     public void setItem(java.util.Collection<ActivityResponse> item) {
@@ -58,7 +73,9 @@ public class ActivitiesResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * List of campaign activities
+     * <p>
+     * An array of responses, one for each activity that was performed by the campaign.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItem(java.util.Collection)} or {@link #withItem(java.util.Collection)} if you want to override the
@@ -66,7 +83,7 @@ public class ActivitiesResponse implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param item
-     *        List of campaign activities
+     *        An array of responses, one for each activity that was performed by the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +98,12 @@ public class ActivitiesResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * List of campaign activities
+     * <p>
+     * An array of responses, one for each activity that was performed by the campaign.
+     * </p>
      * 
      * @param item
-     *        List of campaign activities
+     *        An array of responses, one for each activity that was performed by the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,10 +113,14 @@ public class ActivitiesResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     *        The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *        value is null if there are no additional pages.
      */
 
     public void setNextToken(String nextToken) {
@@ -105,9 +128,13 @@ public class ActivitiesResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
-     * @return The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * @return The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *         value is null if there are no additional pages.
      */
 
     public String getNextToken() {
@@ -115,10 +142,14 @@ public class ActivitiesResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     *        The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *        value is null if there are no additional pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

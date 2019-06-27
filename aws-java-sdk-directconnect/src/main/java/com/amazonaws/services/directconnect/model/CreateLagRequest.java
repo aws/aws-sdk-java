@@ -56,6 +56,20 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String connectionId;
+    /**
+     * <p>
+     * The tags to assign to the link aggregation group (LAG).
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The tags to assign to the child connections of the LAG. Only newly created child connections as the result of
+     * creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing connection
+     * that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> childConnectionTags;
 
     /**
      * <p>
@@ -264,6 +278,168 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The tags to assign to the link aggregation group (LAG).
+     * </p>
+     * 
+     * @return The tags to assign to the link aggregation group (LAG).
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the link aggregation group (LAG).
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the link aggregation group (LAG).
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the link aggregation group (LAG).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the link aggregation group (LAG).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLagRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the link aggregation group (LAG).
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the link aggregation group (LAG).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLagRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the child connections of the LAG. Only newly created child connections as the result of
+     * creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing connection
+     * that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * </p>
+     * 
+     * @return The tags to assign to the child connections of the LAG. Only newly created child connections as the
+     *         result of creating a LAG connection are assigned the provided tags. The tags are not assigned to an
+     *         existing connection that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     */
+
+    public java.util.List<Tag> getChildConnectionTags() {
+        if (childConnectionTags == null) {
+            childConnectionTags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return childConnectionTags;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the child connections of the LAG. Only newly created child connections as the result of
+     * creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing connection
+     * that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * </p>
+     * 
+     * @param childConnectionTags
+     *        The tags to assign to the child connections of the LAG. Only newly created child connections as the result
+     *        of creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing
+     *        connection that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     */
+
+    public void setChildConnectionTags(java.util.Collection<Tag> childConnectionTags) {
+        if (childConnectionTags == null) {
+            this.childConnectionTags = null;
+            return;
+        }
+
+        this.childConnectionTags = new com.amazonaws.internal.SdkInternalList<Tag>(childConnectionTags);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the child connections of the LAG. Only newly created child connections as the result of
+     * creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing connection
+     * that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setChildConnectionTags(java.util.Collection)} or {@link #withChildConnectionTags(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param childConnectionTags
+     *        The tags to assign to the child connections of the LAG. Only newly created child connections as the result
+     *        of creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing
+     *        connection that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLagRequest withChildConnectionTags(Tag... childConnectionTags) {
+        if (this.childConnectionTags == null) {
+            setChildConnectionTags(new com.amazonaws.internal.SdkInternalList<Tag>(childConnectionTags.length));
+        }
+        for (Tag ele : childConnectionTags) {
+            this.childConnectionTags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the child connections of the LAG. Only newly created child connections as the result of
+     * creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing connection
+     * that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * </p>
+     * 
+     * @param childConnectionTags
+     *        The tags to assign to the child connections of the LAG. Only newly created child connections as the result
+     *        of creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing
+     *        connection that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLagRequest withChildConnectionTags(java.util.Collection<Tag> childConnectionTags) {
+        setChildConnectionTags(childConnectionTags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -284,7 +460,11 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getLagName() != null)
             sb.append("LagName: ").append(getLagName()).append(",");
         if (getConnectionId() != null)
-            sb.append("ConnectionId: ").append(getConnectionId());
+            sb.append("ConnectionId: ").append(getConnectionId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getChildConnectionTags() != null)
+            sb.append("ChildConnectionTags: ").append(getChildConnectionTags());
         sb.append("}");
         return sb.toString();
     }
@@ -319,6 +499,14 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getConnectionId() != null && other.getConnectionId().equals(this.getConnectionId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getChildConnectionTags() == null ^ this.getChildConnectionTags() == null)
+            return false;
+        if (other.getChildConnectionTags() != null && other.getChildConnectionTags().equals(this.getChildConnectionTags()) == false)
+            return false;
         return true;
     }
 
@@ -332,6 +520,8 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getConnectionsBandwidth() == null) ? 0 : getConnectionsBandwidth().hashCode());
         hashCode = prime * hashCode + ((getLagName() == null) ? 0 : getLagName().hashCode());
         hashCode = prime * hashCode + ((getConnectionId() == null) ? 0 : getConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getChildConnectionTags() == null) ? 0 : getChildConnectionTags().hashCode());
         return hashCode;
     }
 

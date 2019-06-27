@@ -164,6 +164,10 @@ public interface AmazonDirectConnect {
      * 
      * @param allocateHostedConnectionRequest
      * @return Result of the AllocateHostedConnection operation returned by the service.
+     * @throws DuplicateTagKeysException
+     *         A tag key was specified more than once.
+     * @throws TooManyTagsException
+     *         You have reached the limit on the number of tags that can be assigned.
      * @throws DirectConnectServerException
      *         A server-side error occurred.
      * @throws DirectConnectClientException
@@ -186,6 +190,10 @@ public interface AmazonDirectConnect {
      * 
      * @param allocatePrivateVirtualInterfaceRequest
      * @return Result of the AllocatePrivateVirtualInterface operation returned by the service.
+     * @throws DuplicateTagKeysException
+     *         A tag key was specified more than once.
+     * @throws TooManyTagsException
+     *         You have reached the limit on the number of tags that can be assigned.
      * @throws DirectConnectServerException
      *         A server-side error occurred.
      * @throws DirectConnectClientException
@@ -216,6 +224,10 @@ public interface AmazonDirectConnect {
      * 
      * @param allocatePublicVirtualInterfaceRequest
      * @return Result of the AllocatePublicVirtualInterface operation returned by the service.
+     * @throws DuplicateTagKeysException
+     *         A tag key was specified more than once.
+     * @throws TooManyTagsException
+     *         You have reached the limit on the number of tags that can be assigned.
      * @throws DirectConnectServerException
      *         A server-side error occurred.
      * @throws DirectConnectClientException
@@ -242,6 +254,10 @@ public interface AmazonDirectConnect {
      * 
      * @param allocateTransitVirtualInterfaceRequest
      * @return Result of the AllocateTransitVirtualInterface operation returned by the service.
+     * @throws DuplicateTagKeysException
+     *         A tag key was specified more than once.
+     * @throws TooManyTagsException
+     *         You have reached the limit on the number of tags that can be assigned.
      * @throws DirectConnectServerException
      *         A server-side error occurred.
      * @throws DirectConnectClientException
@@ -472,6 +488,10 @@ public interface AmazonDirectConnect {
      * 
      * @param createConnectionRequest
      * @return Result of the CreateConnection operation returned by the service.
+     * @throws DuplicateTagKeysException
+     *         A tag key was specified more than once.
+     * @throws TooManyTagsException
+     *         You have reached the limit on the number of tags that can be assigned.
      * @throws DirectConnectServerException
      *         A server-side error occurred.
      * @throws DirectConnectClientException
@@ -579,6 +599,10 @@ public interface AmazonDirectConnect {
      * 
      * @param createInterconnectRequest
      * @return Result of the CreateInterconnect operation returned by the service.
+     * @throws DuplicateTagKeysException
+     *         A tag key was specified more than once.
+     * @throws TooManyTagsException
+     *         You have reached the limit on the number of tags that can be assigned.
      * @throws DirectConnectServerException
      *         A server-side error occurred.
      * @throws DirectConnectClientException
@@ -618,6 +642,10 @@ public interface AmazonDirectConnect {
      * 
      * @param createLagRequest
      * @return Result of the CreateLag operation returned by the service.
+     * @throws DuplicateTagKeysException
+     *         A tag key was specified more than once.
+     * @throws TooManyTagsException
+     *         You have reached the limit on the number of tags that can be assigned.
      * @throws DirectConnectServerException
      *         A server-side error occurred.
      * @throws DirectConnectClientException
@@ -639,6 +667,10 @@ public interface AmazonDirectConnect {
      * 
      * @param createPrivateVirtualInterfaceRequest
      * @return Result of the CreatePrivateVirtualInterface operation returned by the service.
+     * @throws DuplicateTagKeysException
+     *         A tag key was specified more than once.
+     * @throws TooManyTagsException
+     *         You have reached the limit on the number of tags that can be assigned.
      * @throws DirectConnectServerException
      *         A server-side error occurred.
      * @throws DirectConnectClientException
@@ -662,6 +694,10 @@ public interface AmazonDirectConnect {
      * 
      * @param createPublicVirtualInterfaceRequest
      * @return Result of the CreatePublicVirtualInterface operation returned by the service.
+     * @throws DuplicateTagKeysException
+     *         A tag key was specified more than once.
+     * @throws TooManyTagsException
+     *         You have reached the limit on the number of tags that can be assigned.
      * @throws DirectConnectServerException
      *         A server-side error occurred.
      * @throws DirectConnectClientException
@@ -674,13 +710,24 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a transit virtual interface. A transit virtual interface is a VLAN that transports traffic from a Direct
-     * Connect gateway to one or more transit gateways. A transit virtual interface enables the connection of multiple
+     * Creates a transit virtual interface. A transit virtual interface should be used to access one or more transit
+     * gateways associated with Direct Connect gateways. A transit virtual interface enables the connection of multiple
      * VPCs attached to a transit gateway to a Direct Connect gateway.
      * </p>
+     * <important>
+     * <p>
+     * If you associate your transit gateway with one or more Direct Connect gateways, the Autonomous System Number
+     * (ASN) used by the transit gateway and the Direct Connect gateway must be different. For example, if you use the
+     * default ASN 64512 for both your the transit gateway and Direct Connect gateway, the association request fails.
+     * </p>
+     * </important>
      * 
      * @param createTransitVirtualInterfaceRequest
      * @return Result of the CreateTransitVirtualInterface operation returned by the service.
+     * @throws DuplicateTagKeysException
+     *         A tag key was specified more than once.
+     * @throws TooManyTagsException
+     *         You have reached the limit on the number of tags that can be assigned.
      * @throws DirectConnectServerException
      *         A server-side error occurred.
      * @throws DirectConnectClientException

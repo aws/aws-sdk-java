@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Textual email data, plus an optional character set specification.
+ * <p>
+ * Specifies the subject or body of an email message, represented as textual email data and the applicable character
+ * set.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SimpleEmailPart" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +29,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SimpleEmailPart implements Serializable, Cloneable, StructuredPojo {
 
-    /** The character set of the content. */
+    /**
+     * <p>
+     * The applicable character set for the message content.
+     * </p>
+     */
     private String charset;
-    /** The textual data of the content. */
+    /**
+     * <p>
+     * The textual data of the message content.
+     * </p>
+     */
     private String data;
 
     /**
-     * The character set of the content.
+     * <p>
+     * The applicable character set for the message content.
+     * </p>
      * 
      * @param charset
-     *        The character set of the content.
+     *        The applicable character set for the message content.
      */
 
     public void setCharset(String charset) {
@@ -43,9 +56,11 @@ public class SimpleEmailPart implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The character set of the content.
+     * <p>
+     * The applicable character set for the message content.
+     * </p>
      * 
-     * @return The character set of the content.
+     * @return The applicable character set for the message content.
      */
 
     public String getCharset() {
@@ -53,10 +68,12 @@ public class SimpleEmailPart implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The character set of the content.
+     * <p>
+     * The applicable character set for the message content.
+     * </p>
      * 
      * @param charset
-     *        The character set of the content.
+     *        The applicable character set for the message content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +83,12 @@ public class SimpleEmailPart implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The textual data of the content.
+     * <p>
+     * The textual data of the message content.
+     * </p>
      * 
      * @param data
-     *        The textual data of the content.
+     *        The textual data of the message content.
      */
 
     public void setData(String data) {
@@ -77,9 +96,11 @@ public class SimpleEmailPart implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The textual data of the content.
+     * <p>
+     * The textual data of the message content.
+     * </p>
      * 
-     * @return The textual data of the content.
+     * @return The textual data of the message content.
      */
 
     public String getData() {
@@ -87,10 +108,12 @@ public class SimpleEmailPart implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The textual data of the content.
+     * <p>
+     * The textual data of the message content.
+     * </p>
      * 
      * @param data
-     *        The textual data of the content.
+     *        The textual data of the message content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

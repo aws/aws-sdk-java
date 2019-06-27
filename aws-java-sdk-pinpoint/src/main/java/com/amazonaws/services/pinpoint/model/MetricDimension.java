@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Custom metric dimension
+ * <p>
+ * Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive from
+ * custom metrics that you define for endpoints.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MetricDimension" target="_top">AWS API
  *      Documentation</a>
@@ -27,20 +30,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class MetricDimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
-     * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
+     * <p>
+     * The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN,
+     * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.
+     * </p>
      */
     private String comparisonOperator;
-    /** The value to be compared. */
+    /**
+     * <p>
+     * The value to compare.
+     * </p>
+     */
     private Double value;
 
     /**
-     * The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
-     * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
+     * <p>
+     * The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN,
+     * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.
+     * </p>
      * 
      * @param comparisonOperator
-     *        The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
-     *        GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
+     *        The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN,
+     *        GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.
      */
 
     public void setComparisonOperator(String comparisonOperator) {
@@ -48,11 +59,13 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
-     * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
+     * <p>
+     * The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN,
+     * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.
+     * </p>
      * 
-     * @return The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
-     *         GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
+     * @return The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN,
+     *         GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.
      */
 
     public String getComparisonOperator() {
@@ -60,12 +73,14 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
-     * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
+     * <p>
+     * The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN,
+     * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.
+     * </p>
      * 
      * @param comparisonOperator
-     *        The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
-     *        GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
+     *        The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN,
+     *        GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,10 +90,12 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The value to be compared.
+     * <p>
+     * The value to compare.
+     * </p>
      * 
      * @param value
-     *        The value to be compared.
+     *        The value to compare.
      */
 
     public void setValue(Double value) {
@@ -86,9 +103,11 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The value to be compared.
+     * <p>
+     * The value to compare.
+     * </p>
      * 
-     * @return The value to be compared.
+     * @return The value to compare.
      */
 
     public Double getValue() {
@@ -96,10 +115,12 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The value to be compared.
+     * <p>
+     * The value to compare.
+     * </p>
      * 
      * @param value
-     *        The value to be compared.
+     *        The value to compare.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

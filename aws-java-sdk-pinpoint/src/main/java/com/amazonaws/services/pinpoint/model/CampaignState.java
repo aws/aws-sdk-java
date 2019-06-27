@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * State of the Campaign
+ * <p>
+ * Provides information about the status of a campaign.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignState" target="_top">AWS API
  *      Documentation</a>
@@ -27,21 +29,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class CampaignState implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     * Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     * <p>
+     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
+     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * </p>
      */
     private String campaignStatus;
 
     /**
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     * Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     * <p>
+     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
+     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * </p>
      * 
      * @param campaignStatus
-     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     *        Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
+     *        campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a
+     *        status of COMPLETED.
      * @see CampaignStatus
      */
 
@@ -50,13 +54,14 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
+     * <p>
+     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
+     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * </p>
      * 
-     * Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
-     * 
-     * @return The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     *         Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     * @return The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
+     *         campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have
+     *         a status of COMPLETED.
      * @see CampaignStatus
      */
 
@@ -65,14 +70,15 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     * Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     * <p>
+     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
+     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * </p>
      * 
      * @param campaignStatus
-     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     *        Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
+     *        campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a
+     *        status of COMPLETED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CampaignStatus
      */
@@ -83,14 +89,15 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     * Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     * <p>
+     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
+     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * </p>
      * 
      * @param campaignStatus
-     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     *        Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
+     *        campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a
+     *        status of COMPLETED.
      * @see CampaignStatus
      */
 
@@ -99,14 +106,15 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     * Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     * <p>
+     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
+     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * </p>
      * 
      * @param campaignStatus
-     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     *        Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
+     *        campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a
+     *        status of COMPLETED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CampaignStatus
      */

@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Base definition for channel response.
+ * <p>
+ * Provides information about the general settings and status of a channel for an application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ChannelResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,30 +28,68 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ChannelResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** Application id */
+    /**
+     * <p>
+     * The unique identifier for the application.
+     * </p>
+     */
     private String applicationId;
-    /** When was this segment created */
+    /**
+     * <p>
+     * The date and time, in ISO 8601 format, when the channel was enabled.
+     * </p>
+     */
     private String creationDate;
-    /** If the channel is enabled for sending messages. */
+    /**
+     * <p>
+     * Specifies whether the channel is enabled for the application.
+     * </p>
+     */
     private Boolean enabled;
-    /** Not used. Retained for backwards compatibility. */
+    /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     */
     private Boolean hasCredential;
-    /** Channel ID. Not used, only for backwards compatibility. */
+    /**
+     * <p>
+     * (Deprecated) An identifier for the channel. This property is retained only for backward compatibility.
+     * </p>
+     */
     private String id;
-    /** Is this channel archived */
+    /**
+     * <p>
+     * Specifies whether the channel is archived.
+     * </p>
+     */
     private Boolean isArchived;
-    /** Who made the last change */
+    /**
+     * <p>
+     * The user who last modified the channel.
+     * </p>
+     */
     private String lastModifiedBy;
-    /** Last date this was updated */
+    /**
+     * <p>
+     * The date and time, in ISO 8601 format, when the channel was last modified.
+     * </p>
+     */
     private String lastModifiedDate;
-    /** Version of channel */
+    /**
+     * <p>
+     * The current version of the channel.
+     * </p>
+     */
     private Integer version;
 
     /**
-     * Application id
+     * <p>
+     * The unique identifier for the application.
+     * </p>
      * 
      * @param applicationId
-     *        Application id
+     *        The unique identifier for the application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -57,9 +97,11 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Application id
+     * <p>
+     * The unique identifier for the application.
+     * </p>
      * 
-     * @return Application id
+     * @return The unique identifier for the application.
      */
 
     public String getApplicationId() {
@@ -67,10 +109,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Application id
+     * <p>
+     * The unique identifier for the application.
+     * </p>
      * 
      * @param applicationId
-     *        Application id
+     *        The unique identifier for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +124,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * When was this segment created
+     * <p>
+     * The date and time, in ISO 8601 format, when the channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        When was this segment created
+     *        The date and time, in ISO 8601 format, when the channel was enabled.
      */
 
     public void setCreationDate(String creationDate) {
@@ -91,9 +137,11 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * When was this segment created
+     * <p>
+     * The date and time, in ISO 8601 format, when the channel was enabled.
+     * </p>
      * 
-     * @return When was this segment created
+     * @return The date and time, in ISO 8601 format, when the channel was enabled.
      */
 
     public String getCreationDate() {
@@ -101,10 +149,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * When was this segment created
+     * <p>
+     * The date and time, in ISO 8601 format, when the channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        When was this segment created
+     *        The date and time, in ISO 8601 format, when the channel was enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,10 +164,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the channel is enabled for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether the channel is enabled for the application.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -125,9 +177,11 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the channel is enabled for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether the channel is enabled for the application.
      */
 
     public Boolean getEnabled() {
@@ -135,10 +189,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the channel is enabled for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether the channel is enabled for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,9 +204,11 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the channel is enabled for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether the channel is enabled for the application.
      */
 
     public Boolean isEnabled() {
@@ -158,10 +216,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param hasCredential
-     *        Not used. Retained for backwards compatibility.
+     *        (Not used) This property is retained only for backward compatibility.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -169,9 +229,11 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Not used. Retained for backwards compatibility.
+     * @return (Not used) This property is retained only for backward compatibility.
      */
 
     public Boolean getHasCredential() {
@@ -179,10 +241,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param hasCredential
-     *        Not used. Retained for backwards compatibility.
+     *        (Not used) This property is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,9 +256,11 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Not used. Retained for backwards compatibility.
+     * @return (Not used) This property is retained only for backward compatibility.
      */
 
     public Boolean isHasCredential() {
@@ -202,10 +268,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the channel. This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param id
-     *        Channel ID. Not used, only for backwards compatibility.
+     *        (Deprecated) An identifier for the channel. This property is retained only for backward compatibility.
      */
 
     public void setId(String id) {
@@ -213,9 +281,11 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the channel. This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Channel ID. Not used, only for backwards compatibility.
+     * @return (Deprecated) An identifier for the channel. This property is retained only for backward compatibility.
      */
 
     public String getId() {
@@ -223,10 +293,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the channel. This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param id
-     *        Channel ID. Not used, only for backwards compatibility.
+     *        (Deprecated) An identifier for the channel. This property is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,10 +308,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Is this channel archived
+     *        Specifies whether the channel is archived.
      */
 
     public void setIsArchived(Boolean isArchived) {
@@ -247,9 +321,11 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the channel is archived.
+     * </p>
      * 
-     * @return Is this channel archived
+     * @return Specifies whether the channel is archived.
      */
 
     public Boolean getIsArchived() {
@@ -257,10 +333,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Is this channel archived
+     *        Specifies whether the channel is archived.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,9 +348,11 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the channel is archived.
+     * </p>
      * 
-     * @return Is this channel archived
+     * @return Specifies whether the channel is archived.
      */
 
     public Boolean isArchived() {
@@ -280,10 +360,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Who made the last change
+     * <p>
+     * The user who last modified the channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        Who made the last change
+     *        The user who last modified the channel.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -291,9 +373,11 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Who made the last change
+     * <p>
+     * The user who last modified the channel.
+     * </p>
      * 
-     * @return Who made the last change
+     * @return The user who last modified the channel.
      */
 
     public String getLastModifiedBy() {
@@ -301,10 +385,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Who made the last change
+     * <p>
+     * The user who last modified the channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        Who made the last change
+     *        The user who last modified the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,10 +400,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time, in ISO 8601 format, when the channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        Last date this was updated
+     *        The date and time, in ISO 8601 format, when the channel was last modified.
      */
 
     public void setLastModifiedDate(String lastModifiedDate) {
@@ -325,9 +413,11 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time, in ISO 8601 format, when the channel was last modified.
+     * </p>
      * 
-     * @return Last date this was updated
+     * @return The date and time, in ISO 8601 format, when the channel was last modified.
      */
 
     public String getLastModifiedDate() {
@@ -335,10 +425,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time, in ISO 8601 format, when the channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        Last date this was updated
+     *        The date and time, in ISO 8601 format, when the channel was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,10 +440,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the channel.
+     * </p>
      * 
      * @param version
-     *        Version of channel
+     *        The current version of the channel.
      */
 
     public void setVersion(Integer version) {
@@ -359,9 +453,11 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the channel.
+     * </p>
      * 
-     * @return Version of channel
+     * @return The current version of the channel.
      */
 
     public Integer getVersion() {
@@ -369,10 +465,12 @@ public class ChannelResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the channel.
+     * </p>
      * 
      * @param version
-     *        Version of channel
+     *        The current version of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

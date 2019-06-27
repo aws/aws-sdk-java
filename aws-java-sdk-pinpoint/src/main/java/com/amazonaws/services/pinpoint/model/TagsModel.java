@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Specifies the tags (keys and values) for an application, campaign, or segment.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TagsModel" target="_top">AWS API
  *      Documentation</a>
@@ -25,10 +28,33 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TagsModel implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A string-to-string map of key-value pairs that defines the tags for an application, campaign, or segment. A
+     * project, campaign, or segment can have a maximum of 50 tags.
+     * </p>
+     * <p>
+     * Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is 128
+     * characters. The maximum length of a tag value is 256 characters.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
 
     /**
-     * @return
+     * <p>
+     * A string-to-string map of key-value pairs that defines the tags for an application, campaign, or segment. A
+     * project, campaign, or segment can have a maximum of 50 tags.
+     * </p>
+     * <p>
+     * Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is 128
+     * characters. The maximum length of a tag value is 256 characters.
+     * </p>
+     * 
+     * @return A string-to-string map of key-value pairs that defines the tags for an application, campaign, or segment.
+     *         A project, campaign, or segment can have a maximum of 50 tags.</p>
+     *         <p>
+     *         Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is
+     *         128 characters. The maximum length of a tag value is 256 characters.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -36,7 +62,21 @@ public class TagsModel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A string-to-string map of key-value pairs that defines the tags for an application, campaign, or segment. A
+     * project, campaign, or segment can have a maximum of 50 tags.
+     * </p>
+     * <p>
+     * Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is 128
+     * characters. The maximum length of a tag value is 256 characters.
+     * </p>
+     * 
      * @param tags
+     *        A string-to-string map of key-value pairs that defines the tags for an application, campaign, or segment.
+     *        A project, campaign, or segment can have a maximum of 50 tags.</p>
+     *        <p>
+     *        Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is
+     *        128 characters. The maximum length of a tag value is 256 characters.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -44,7 +84,21 @@ public class TagsModel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A string-to-string map of key-value pairs that defines the tags for an application, campaign, or segment. A
+     * project, campaign, or segment can have a maximum of 50 tags.
+     * </p>
+     * <p>
+     * Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is 128
+     * characters. The maximum length of a tag value is 256 characters.
+     * </p>
+     * 
      * @param tags
+     *        A string-to-string map of key-value pairs that defines the tags for an application, campaign, or segment.
+     *        A project, campaign, or segment can have a maximum of 50 tags.</p>
+     *        <p>
+     *        Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is
+     *        128 characters. The maximum length of a tag value is 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

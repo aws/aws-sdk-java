@@ -92,22 +92,27 @@ public interface AmazonPinpoint {
     void setRegion(Region region);
 
     /**
-     * Creates or updates an app.
+     * <p>
+     * Creates an application.
+     * </p>
      * 
      * @param createAppRequest
      * @return Result of the CreateApp operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.CreateApp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateApp" target="_top">AWS API
      *      Documentation</a>
@@ -115,22 +120,27 @@ public interface AmazonPinpoint {
     CreateAppResult createApp(CreateAppRequest createAppRequest);
 
     /**
-     * Creates or updates a campaign.
+     * <p>
+     * Creates a new campaign for an application or updates the settings of an existing campaign for an application.
+     * </p>
      * 
      * @param createCampaignRequest
      * @return Result of the CreateCampaign operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.CreateCampaign
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateCampaign" target="_top">AWS API
      *      Documentation</a>
@@ -138,22 +148,27 @@ public interface AmazonPinpoint {
     CreateCampaignResult createCampaign(CreateCampaignRequest createCampaignRequest);
 
     /**
-     * Creates an export job.
+     * <p>
+     * Creates a new export job for an application.
+     * </p>
      * 
      * @param createExportJobRequest
      * @return Result of the CreateExportJob operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.CreateExportJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateExportJob" target="_top">AWS API
      *      Documentation</a>
@@ -161,22 +176,27 @@ public interface AmazonPinpoint {
     CreateExportJobResult createExportJob(CreateExportJobRequest createExportJobRequest);
 
     /**
-     * Creates or updates an import job.
+     * <p>
+     * Creates a new import job for an application.
+     * </p>
      * 
      * @param createImportJobRequest
      * @return Result of the CreateImportJob operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.CreateImportJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateImportJob" target="_top">AWS API
      *      Documentation</a>
@@ -184,22 +204,28 @@ public interface AmazonPinpoint {
     CreateImportJobResult createImportJob(CreateImportJobRequest createImportJobRequest);
 
     /**
-     * Used to create or update a segment.
+     * <p>
+     * Creates a new segment for an application or updates the configuration, dimension, and other settings for an
+     * existing segment that's associated with an application.
+     * </p>
      * 
      * @param createSegmentRequest
      * @return Result of the CreateSegment operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.CreateSegment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSegment" target="_top">AWS API
      *      Documentation</a>
@@ -207,22 +233,27 @@ public interface AmazonPinpoint {
     CreateSegmentResult createSegment(CreateSegmentRequest createSegmentRequest);
 
     /**
-     * Delete an ADM channel.
+     * <p>
+     * Disables the ADM channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteAdmChannelRequest
      * @return Result of the DeleteAdmChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteAdmChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel" target="_top">AWS API
      *      Documentation</a>
@@ -230,22 +261,27 @@ public interface AmazonPinpoint {
     DeleteAdmChannelResult deleteAdmChannel(DeleteAdmChannelRequest deleteAdmChannelRequest);
 
     /**
-     * Deletes the APNs channel for an app.
+     * <p>
+     * Disables the APNs channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteApnsChannelRequest
      * @return Result of the DeleteApnsChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteApnsChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsChannel" target="_top">AWS API
      *      Documentation</a>
@@ -253,22 +289,27 @@ public interface AmazonPinpoint {
     DeleteApnsChannelResult deleteApnsChannel(DeleteApnsChannelRequest deleteApnsChannelRequest);
 
     /**
-     * Delete an APNS sandbox channel.
+     * <p>
+     * Disables the APNs sandbox channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteApnsSandboxChannelRequest
      * @return Result of the DeleteApnsSandboxChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteApnsSandboxChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel"
      *      target="_top">AWS API Documentation</a>
@@ -276,22 +317,27 @@ public interface AmazonPinpoint {
     DeleteApnsSandboxChannelResult deleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest deleteApnsSandboxChannelRequest);
 
     /**
-     * Delete an APNS VoIP channel
+     * <p>
+     * Disables the APNs VoIP channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteApnsVoipChannelRequest
      * @return Result of the DeleteApnsVoipChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteApnsVoipChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipChannel" target="_top">AWS
      *      API Documentation</a>
@@ -299,22 +345,27 @@ public interface AmazonPinpoint {
     DeleteApnsVoipChannelResult deleteApnsVoipChannel(DeleteApnsVoipChannelRequest deleteApnsVoipChannelRequest);
 
     /**
-     * Delete an APNS VoIP sandbox channel
+     * <p>
+     * Disables the APNs VoIP sandbox channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteApnsVoipSandboxChannelRequest
      * @return Result of the DeleteApnsVoipSandboxChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteApnsVoipSandboxChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipSandboxChannel"
      *      target="_top">AWS API Documentation</a>
@@ -322,22 +373,27 @@ public interface AmazonPinpoint {
     DeleteApnsVoipSandboxChannelResult deleteApnsVoipSandboxChannel(DeleteApnsVoipSandboxChannelRequest deleteApnsVoipSandboxChannelRequest);
 
     /**
-     * Deletes an app.
+     * <p>
+     * Deletes an application.
+     * </p>
      * 
      * @param deleteAppRequest
      * @return Result of the DeleteApp operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteApp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApp" target="_top">AWS API
      *      Documentation</a>
@@ -345,22 +401,27 @@ public interface AmazonPinpoint {
     DeleteAppResult deleteApp(DeleteAppRequest deleteAppRequest);
 
     /**
-     * Delete a BAIDU GCM channel
+     * <p>
+     * Disables the Baidu channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteBaiduChannelRequest
      * @return Result of the DeleteBaiduChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteBaiduChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteBaiduChannel" target="_top">AWS
      *      API Documentation</a>
@@ -368,22 +429,27 @@ public interface AmazonPinpoint {
     DeleteBaiduChannelResult deleteBaiduChannel(DeleteBaiduChannelRequest deleteBaiduChannelRequest);
 
     /**
-     * Deletes a campaign.
+     * <p>
+     * Deletes a campaign from an application.
+     * </p>
      * 
      * @param deleteCampaignRequest
      * @return Result of the DeleteCampaign operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteCampaign
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteCampaign" target="_top">AWS API
      *      Documentation</a>
@@ -391,22 +457,27 @@ public interface AmazonPinpoint {
     DeleteCampaignResult deleteCampaign(DeleteCampaignRequest deleteCampaignRequest);
 
     /**
-     * Delete an email channel.
+     * <p>
+     * Disables the email channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteEmailChannelRequest
      * @return Result of the DeleteEmailChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteEmailChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel" target="_top">AWS
      *      API Documentation</a>
@@ -414,22 +485,27 @@ public interface AmazonPinpoint {
     DeleteEmailChannelResult deleteEmailChannel(DeleteEmailChannelRequest deleteEmailChannelRequest);
 
     /**
-     * Deletes an endpoint.
+     * <p>
+     * Deletes an endpoint from an application.
+     * </p>
      * 
      * @param deleteEndpointRequest
      * @return Result of the DeleteEndpoint operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEndpoint" target="_top">AWS API
      *      Documentation</a>
@@ -437,22 +513,27 @@ public interface AmazonPinpoint {
     DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest deleteEndpointRequest);
 
     /**
-     * Deletes the event stream for an app.
+     * <p>
+     * Deletes the event stream for an application.
+     * </p>
      * 
      * @param deleteEventStreamRequest
      * @return Result of the DeleteEventStream operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteEventStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEventStream" target="_top">AWS API
      *      Documentation</a>
@@ -460,22 +541,27 @@ public interface AmazonPinpoint {
     DeleteEventStreamResult deleteEventStream(DeleteEventStreamRequest deleteEventStreamRequest);
 
     /**
-     * Deletes the GCM channel for an app.
+     * <p>
+     * Disables the GCM channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteGcmChannelRequest
      * @return Result of the DeleteGcmChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteGcmChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteGcmChannel" target="_top">AWS API
      *      Documentation</a>
@@ -483,22 +569,27 @@ public interface AmazonPinpoint {
     DeleteGcmChannelResult deleteGcmChannel(DeleteGcmChannelRequest deleteGcmChannelRequest);
 
     /**
-     * Deletes a segment.
+     * <p>
+     * Deletes a segment from an application.
+     * </p>
      * 
      * @param deleteSegmentRequest
      * @return Result of the DeleteSegment operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteSegment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSegment" target="_top">AWS API
      *      Documentation</a>
@@ -506,22 +597,27 @@ public interface AmazonPinpoint {
     DeleteSegmentResult deleteSegment(DeleteSegmentRequest deleteSegmentRequest);
 
     /**
-     * Delete an SMS channel.
+     * <p>
+     * Disables the SMS channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteSmsChannelRequest
      * @return Result of the DeleteSmsChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteSmsChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel" target="_top">AWS API
      *      Documentation</a>
@@ -529,22 +625,27 @@ public interface AmazonPinpoint {
     DeleteSmsChannelResult deleteSmsChannel(DeleteSmsChannelRequest deleteSmsChannelRequest);
 
     /**
-     * Deletes endpoints that are associated with a User ID.
+     * <p>
+     * Deletes all the endpoints that are associated with a specific user ID.
+     * </p>
      * 
      * @param deleteUserEndpointsRequest
      * @return Result of the DeleteUserEndpoints operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteUserEndpoints
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints" target="_top">AWS
      *      API Documentation</a>
@@ -552,22 +653,27 @@ public interface AmazonPinpoint {
     DeleteUserEndpointsResult deleteUserEndpoints(DeleteUserEndpointsRequest deleteUserEndpointsRequest);
 
     /**
-     * Delete an Voice channel
+     * <p>
+     * Disables the voice channel for an application and deletes any existing settings for the channel.
+     * </p>
      * 
      * @param deleteVoiceChannelRequest
      * @return Result of the DeleteVoiceChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.DeleteVoiceChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceChannel" target="_top">AWS
      *      API Documentation</a>
@@ -575,22 +681,27 @@ public interface AmazonPinpoint {
     DeleteVoiceChannelResult deleteVoiceChannel(DeleteVoiceChannelRequest deleteVoiceChannelRequest);
 
     /**
-     * Get an ADM channel.
+     * <p>
+     * Retrieves information about the status and settings of the ADM channel for an application.
+     * </p>
      * 
      * @param getAdmChannelRequest
      * @return Result of the GetAdmChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetAdmChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel" target="_top">AWS API
      *      Documentation</a>
@@ -598,22 +709,27 @@ public interface AmazonPinpoint {
     GetAdmChannelResult getAdmChannel(GetAdmChannelRequest getAdmChannelRequest);
 
     /**
-     * Returns information about the APNs channel for an app.
+     * <p>
+     * Retrieves information about the status and settings of the APNs channel for an application.
+     * </p>
      * 
      * @param getApnsChannelRequest
      * @return Result of the GetApnsChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetApnsChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsChannel" target="_top">AWS API
      *      Documentation</a>
@@ -621,22 +737,27 @@ public interface AmazonPinpoint {
     GetApnsChannelResult getApnsChannel(GetApnsChannelRequest getApnsChannelRequest);
 
     /**
-     * Get an APNS sandbox channel.
+     * <p>
+     * Retrieves information about the status and settings of the APNs sandbox channel for an application.
+     * </p>
      * 
      * @param getApnsSandboxChannelRequest
      * @return Result of the GetApnsSandboxChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetApnsSandboxChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel" target="_top">AWS
      *      API Documentation</a>
@@ -644,22 +765,27 @@ public interface AmazonPinpoint {
     GetApnsSandboxChannelResult getApnsSandboxChannel(GetApnsSandboxChannelRequest getApnsSandboxChannelRequest);
 
     /**
-     * Get an APNS VoIP channel
+     * <p>
+     * Retrieves information about the status and settings of the APNs VoIP channel for an application.
+     * </p>
      * 
      * @param getApnsVoipChannelRequest
      * @return Result of the GetApnsVoipChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetApnsVoipChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipChannel" target="_top">AWS
      *      API Documentation</a>
@@ -667,22 +793,27 @@ public interface AmazonPinpoint {
     GetApnsVoipChannelResult getApnsVoipChannel(GetApnsVoipChannelRequest getApnsVoipChannelRequest);
 
     /**
-     * Get an APNS VoIPSandbox channel
+     * <p>
+     * Retrieves information about the status and settings of the APNs VoIP sandbox channel for an application.
+     * </p>
      * 
      * @param getApnsVoipSandboxChannelRequest
      * @return Result of the GetApnsVoipSandboxChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetApnsVoipSandboxChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipSandboxChannel"
      *      target="_top">AWS API Documentation</a>
@@ -690,22 +821,27 @@ public interface AmazonPinpoint {
     GetApnsVoipSandboxChannelResult getApnsVoipSandboxChannel(GetApnsVoipSandboxChannelRequest getApnsVoipSandboxChannelRequest);
 
     /**
-     * Returns information about an app.
+     * <p>
+     * Retrieves information about an application.
+     * </p>
      * 
      * @param getAppRequest
      * @return Result of the GetApp operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetApp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApp" target="_top">AWS API
      *      Documentation</a>
@@ -713,22 +849,27 @@ public interface AmazonPinpoint {
     GetAppResult getApp(GetAppRequest getAppRequest);
 
     /**
-     * Used to request the settings for an app.
+     * <p>
+     * Retrieves information about the settings for an application.
+     * </p>
      * 
      * @param getApplicationSettingsRequest
      * @return Result of the GetApplicationSettings operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetApplicationSettings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationSettings"
      *      target="_top">AWS API Documentation</a>
@@ -736,22 +877,27 @@ public interface AmazonPinpoint {
     GetApplicationSettingsResult getApplicationSettings(GetApplicationSettingsRequest getApplicationSettingsRequest);
 
     /**
-     * Returns information about your apps.
+     * <p>
+     * Retrieves information about all of your applications.
+     * </p>
      * 
      * @param getAppsRequest
      * @return Result of the GetApps operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetApps
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps" target="_top">AWS API
      *      Documentation</a>
@@ -759,22 +905,27 @@ public interface AmazonPinpoint {
     GetAppsResult getApps(GetAppsRequest getAppsRequest);
 
     /**
-     * Get a BAIDU GCM channel
+     * <p>
+     * Retrieves information about the status and settings of the Baidu Cloud Push channel for an application.
+     * </p>
      * 
      * @param getBaiduChannelRequest
      * @return Result of the GetBaiduChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetBaiduChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetBaiduChannel" target="_top">AWS API
      *      Documentation</a>
@@ -782,22 +933,27 @@ public interface AmazonPinpoint {
     GetBaiduChannelResult getBaiduChannel(GetBaiduChannelRequest getBaiduChannelRequest);
 
     /**
-     * Returns information about a campaign.
+     * <p>
+     * Retrieves information about the status, configuration, and other settings for a campaign.
+     * </p>
      * 
      * @param getCampaignRequest
      * @return Result of the GetCampaign operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetCampaign
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaign" target="_top">AWS API
      *      Documentation</a>
@@ -805,22 +961,27 @@ public interface AmazonPinpoint {
     GetCampaignResult getCampaign(GetCampaignRequest getCampaignRequest);
 
     /**
-     * Returns information about the activity performed by a campaign.
+     * <p>
+     * Retrieves information about the activity performed by a campaign.
+     * </p>
      * 
      * @param getCampaignActivitiesRequest
      * @return Result of the GetCampaignActivities operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetCampaignActivities
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignActivities" target="_top">AWS
      *      API Documentation</a>
@@ -828,22 +989,27 @@ public interface AmazonPinpoint {
     GetCampaignActivitiesResult getCampaignActivities(GetCampaignActivitiesRequest getCampaignActivitiesRequest);
 
     /**
-     * Returns information about a specific version of a campaign.
+     * <p>
+     * Retrieves information about the status, configuration, and other settings for a specific version of a campaign.
+     * </p>
      * 
      * @param getCampaignVersionRequest
      * @return Result of the GetCampaignVersion operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetCampaignVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersion" target="_top">AWS
      *      API Documentation</a>
@@ -851,22 +1017,28 @@ public interface AmazonPinpoint {
     GetCampaignVersionResult getCampaignVersion(GetCampaignVersionRequest getCampaignVersionRequest);
 
     /**
-     * Returns information about your campaign versions.
+     * <p>
+     * Retrieves information about the status, configuration, and other settings for all versions of a specific
+     * campaign.
+     * </p>
      * 
      * @param getCampaignVersionsRequest
      * @return Result of the GetCampaignVersions operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetCampaignVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersions" target="_top">AWS
      *      API Documentation</a>
@@ -874,22 +1046,28 @@ public interface AmazonPinpoint {
     GetCampaignVersionsResult getCampaignVersions(GetCampaignVersionsRequest getCampaignVersionsRequest);
 
     /**
-     * Returns information about your campaigns.
+     * <p>
+     * Retrieves information about the status, configuration, and other settings for all the campaigns that are
+     * associated with an application.
+     * </p>
      * 
      * @param getCampaignsRequest
      * @return Result of the GetCampaigns operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetCampaigns
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaigns" target="_top">AWS API
      *      Documentation</a>
@@ -897,22 +1075,27 @@ public interface AmazonPinpoint {
     GetCampaignsResult getCampaigns(GetCampaignsRequest getCampaignsRequest);
 
     /**
-     * Get all channels.
+     * <p>
+     * Retrieves information about the history and status of each channel for an application.
+     * </p>
      * 
      * @param getChannelsRequest
      * @return Result of the GetChannels operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetChannels
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetChannels" target="_top">AWS API
      *      Documentation</a>
@@ -920,22 +1103,27 @@ public interface AmazonPinpoint {
     GetChannelsResult getChannels(GetChannelsRequest getChannelsRequest);
 
     /**
-     * Get an email channel.
+     * <p>
+     * Retrieves information about the status and settings of the email channel for an application.
+     * </p>
      * 
      * @param getEmailChannelRequest
      * @return Result of the GetEmailChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetEmailChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel" target="_top">AWS API
      *      Documentation</a>
@@ -943,22 +1131,27 @@ public interface AmazonPinpoint {
     GetEmailChannelResult getEmailChannel(GetEmailChannelRequest getEmailChannelRequest);
 
     /**
-     * Returns information about an endpoint.
+     * <p>
+     * Retrieves information about the settings and attributes of a specific endpoint for an application.
+     * </p>
      * 
      * @param getEndpointRequest
      * @return Result of the GetEndpoint operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEndpoint" target="_top">AWS API
      *      Documentation</a>
@@ -966,22 +1159,27 @@ public interface AmazonPinpoint {
     GetEndpointResult getEndpoint(GetEndpointRequest getEndpointRequest);
 
     /**
-     * Returns the event stream for an app.
+     * <p>
+     * Retrieves information about the event stream settings for an application.
+     * </p>
      * 
      * @param getEventStreamRequest
      * @return Result of the GetEventStream operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetEventStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStream" target="_top">AWS API
      *      Documentation</a>
@@ -989,22 +1187,27 @@ public interface AmazonPinpoint {
     GetEventStreamResult getEventStream(GetEventStreamRequest getEventStreamRequest);
 
     /**
-     * Returns information about an export job.
+     * <p>
+     * Retrieves information about the status and settings of a specific export job for an application.
+     * </p>
      * 
      * @param getExportJobRequest
      * @return Result of the GetExportJob operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetExportJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJob" target="_top">AWS API
      *      Documentation</a>
@@ -1012,22 +1215,27 @@ public interface AmazonPinpoint {
     GetExportJobResult getExportJob(GetExportJobRequest getExportJobRequest);
 
     /**
-     * Returns information about your export jobs.
+     * <p>
+     * Retrieves information about the status and settings of all the export jobs for an application.
+     * </p>
      * 
      * @param getExportJobsRequest
      * @return Result of the GetExportJobs operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetExportJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJobs" target="_top">AWS API
      *      Documentation</a>
@@ -1035,22 +1243,27 @@ public interface AmazonPinpoint {
     GetExportJobsResult getExportJobs(GetExportJobsRequest getExportJobsRequest);
 
     /**
-     * Returns information about the GCM channel for an app.
+     * <p>
+     * Retrieves information about the status and settings of the GCM channel for an application.
+     * </p>
      * 
      * @param getGcmChannelRequest
      * @return Result of the GetGcmChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetGcmChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetGcmChannel" target="_top">AWS API
      *      Documentation</a>
@@ -1058,22 +1271,27 @@ public interface AmazonPinpoint {
     GetGcmChannelResult getGcmChannel(GetGcmChannelRequest getGcmChannelRequest);
 
     /**
-     * Returns information about an import job.
+     * <p>
+     * Retrieves information about the status and settings of a specific import job for an application.
+     * </p>
      * 
      * @param getImportJobRequest
      * @return Result of the GetImportJob operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetImportJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJob" target="_top">AWS API
      *      Documentation</a>
@@ -1081,22 +1299,27 @@ public interface AmazonPinpoint {
     GetImportJobResult getImportJob(GetImportJobRequest getImportJobRequest);
 
     /**
-     * Returns information about your import jobs.
+     * <p>
+     * Retrieves information about the status and settings of all the import jobs for an application.
+     * </p>
      * 
      * @param getImportJobsRequest
      * @return Result of the GetImportJobs operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetImportJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJobs" target="_top">AWS API
      *      Documentation</a>
@@ -1104,22 +1327,28 @@ public interface AmazonPinpoint {
     GetImportJobsResult getImportJobs(GetImportJobsRequest getImportJobsRequest);
 
     /**
-     * Returns information about a segment.
+     * <p>
+     * Retrieves information about the configuration, dimension, and other settings for a specific segment that's
+     * associated with an application.
+     * </p>
      * 
      * @param getSegmentRequest
      * @return Result of the GetSegment operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetSegment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegment" target="_top">AWS API
      *      Documentation</a>
@@ -1127,22 +1356,27 @@ public interface AmazonPinpoint {
     GetSegmentResult getSegment(GetSegmentRequest getSegmentRequest);
 
     /**
-     * Returns a list of export jobs for a specific segment.
+     * <p>
+     * Retrieves information about the status and settings of the export jobs for a segment.
+     * </p>
      * 
      * @param getSegmentExportJobsRequest
      * @return Result of the GetSegmentExportJobs operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetSegmentExportJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentExportJobs" target="_top">AWS
      *      API Documentation</a>
@@ -1150,22 +1384,27 @@ public interface AmazonPinpoint {
     GetSegmentExportJobsResult getSegmentExportJobs(GetSegmentExportJobsRequest getSegmentExportJobsRequest);
 
     /**
-     * Returns a list of import jobs for a specific segment.
+     * <p>
+     * Retrieves information about the status and settings of the import jobs for a segment.
+     * </p>
      * 
      * @param getSegmentImportJobsRequest
      * @return Result of the GetSegmentImportJobs operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetSegmentImportJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentImportJobs" target="_top">AWS
      *      API Documentation</a>
@@ -1173,22 +1412,28 @@ public interface AmazonPinpoint {
     GetSegmentImportJobsResult getSegmentImportJobs(GetSegmentImportJobsRequest getSegmentImportJobsRequest);
 
     /**
-     * Returns information about a segment version.
+     * <p>
+     * Retrieves information about the configuration, dimension, and other settings for a specific version of a segment
+     * that's associated with an application.
+     * </p>
      * 
      * @param getSegmentVersionRequest
      * @return Result of the GetSegmentVersion operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetSegmentVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersion" target="_top">AWS API
      *      Documentation</a>
@@ -1196,22 +1441,28 @@ public interface AmazonPinpoint {
     GetSegmentVersionResult getSegmentVersion(GetSegmentVersionRequest getSegmentVersionRequest);
 
     /**
-     * Returns information about your segment versions.
+     * <p>
+     * Retrieves information about the configuration, dimension, and other settings for all versions of a specific
+     * segment that's associated with an application.
+     * </p>
      * 
      * @param getSegmentVersionsRequest
      * @return Result of the GetSegmentVersions operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetSegmentVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions" target="_top">AWS
      *      API Documentation</a>
@@ -1219,22 +1470,28 @@ public interface AmazonPinpoint {
     GetSegmentVersionsResult getSegmentVersions(GetSegmentVersionsRequest getSegmentVersionsRequest);
 
     /**
-     * Used to get information about your segments.
+     * <p>
+     * Retrieves information about the configuration, dimension, and other settings for all the segments that are
+     * associated with an application.
+     * </p>
      * 
      * @param getSegmentsRequest
      * @return Result of the GetSegments operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetSegments
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegments" target="_top">AWS API
      *      Documentation</a>
@@ -1242,22 +1499,27 @@ public interface AmazonPinpoint {
     GetSegmentsResult getSegments(GetSegmentsRequest getSegmentsRequest);
 
     /**
-     * Get an SMS channel.
+     * <p>
+     * Retrieves information about the status and settings of the SMS channel for an application.
+     * </p>
      * 
      * @param getSmsChannelRequest
      * @return Result of the GetSmsChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetSmsChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel" target="_top">AWS API
      *      Documentation</a>
@@ -1265,22 +1527,27 @@ public interface AmazonPinpoint {
     GetSmsChannelResult getSmsChannel(GetSmsChannelRequest getSmsChannelRequest);
 
     /**
-     * Returns information about the endpoints that are associated with a User ID.
+     * <p>
+     * Retrieves information about all the endpoints that are associated with a specific user ID.
+     * </p>
      * 
      * @param getUserEndpointsRequest
      * @return Result of the GetUserEndpoints operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetUserEndpoints
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints" target="_top">AWS API
      *      Documentation</a>
@@ -1288,22 +1555,27 @@ public interface AmazonPinpoint {
     GetUserEndpointsResult getUserEndpoints(GetUserEndpointsRequest getUserEndpointsRequest);
 
     /**
-     * Get a Voice Channel
+     * <p>
+     * Retrieves information about the status and settings of the voice channel for an application.
+     * </p>
      * 
      * @param getVoiceChannelRequest
      * @return Result of the GetVoiceChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.GetVoiceChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceChannel" target="_top">AWS API
      *      Documentation</a>
@@ -1311,6 +1583,10 @@ public interface AmazonPinpoint {
     GetVoiceChannelResult getVoiceChannel(GetVoiceChannelRequest getVoiceChannelRequest);
 
     /**
+     * <p>
+     * Retrieves all the tags (keys and values) that are associated with an application, campaign, or segment.
+     * </p>
+     * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @sample AmazonPinpoint.ListTagsForResource
@@ -1320,22 +1596,27 @@ public interface AmazonPinpoint {
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
-     * Returns information about the specified phone number.
+     * <p>
+     * Retrieves information about a phone number.
+     * </p>
      * 
      * @param phoneNumberValidateRequest
      * @return Result of the PhoneNumberValidate operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.PhoneNumberValidate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PhoneNumberValidate" target="_top">AWS
      *      API Documentation</a>
@@ -1343,22 +1624,28 @@ public interface AmazonPinpoint {
     PhoneNumberValidateResult phoneNumberValidate(PhoneNumberValidateRequest phoneNumberValidateRequest);
 
     /**
-     * Use to create or update the event stream for an app.
+     * <p>
+     * Creates a new event stream for an application or updates the settings of an existing event stream for an
+     * application.
+     * </p>
      * 
      * @param putEventStreamRequest
      * @return Result of the PutEventStream operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.PutEventStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEventStream" target="_top">AWS API
      *      Documentation</a>
@@ -1366,23 +1653,28 @@ public interface AmazonPinpoint {
     PutEventStreamResult putEventStream(PutEventStreamRequest putEventStreamRequest);
 
     /**
-     * Use to record events for endpoints. This method creates events and creates or updates the endpoints that those
-     * events are associated with.
+     * <p>
+     * Creates a new event to record for endpoints, or creates or updates endpoint data that existing events are
+     * associated with.
+     * </p>
      * 
      * @param putEventsRequest
      * @return Result of the PutEvents operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.PutEvents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents" target="_top">AWS API
      *      Documentation</a>
@@ -1390,22 +1682,28 @@ public interface AmazonPinpoint {
     PutEventsResult putEvents(PutEventsRequest putEventsRequest);
 
     /**
-     * Used to remove the attributes for an app
+     * <p>
+     * Removes one or more attributes, of the same attribute type, from all the endpoints that are associated with an
+     * application.
+     * </p>
      * 
      * @param removeAttributesRequest
      * @return Result of the RemoveAttributes operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.RemoveAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RemoveAttributes" target="_top">AWS API
      *      Documentation</a>
@@ -1413,22 +1711,27 @@ public interface AmazonPinpoint {
     RemoveAttributesResult removeAttributes(RemoveAttributesRequest removeAttributesRequest);
 
     /**
-     * Used to send a direct message.
+     * <p>
+     * Creates and sends a direct message.
+     * </p>
      * 
      * @param sendMessagesRequest
      * @return Result of the SendMessages operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.SendMessages
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages" target="_top">AWS API
      *      Documentation</a>
@@ -1436,22 +1739,27 @@ public interface AmazonPinpoint {
     SendMessagesResult sendMessages(SendMessagesRequest sendMessagesRequest);
 
     /**
-     * Used to send a message to a list of users.
+     * <p>
+     * Creates and sends a message to a list of users.
+     * </p>
      * 
      * @param sendUsersMessagesRequest
      * @return Result of the SendUsersMessages operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.SendUsersMessages
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages" target="_top">AWS API
      *      Documentation</a>
@@ -1459,6 +1767,10 @@ public interface AmazonPinpoint {
     SendUsersMessagesResult sendUsersMessages(SendUsersMessagesRequest sendUsersMessagesRequest);
 
     /**
+     * <p>
+     * Adds one or more tags (keys and values) to an application, campaign, or segment.
+     * </p>
+     * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @sample AmazonPinpoint.TagResource
@@ -1468,6 +1780,10 @@ public interface AmazonPinpoint {
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
 
     /**
+     * <p>
+     * Removes one or more tags (keys and values) from an application, campaign, or segment.
+     * </p>
+     * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @sample AmazonPinpoint.UntagResource
@@ -1477,22 +1793,27 @@ public interface AmazonPinpoint {
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
-     * Update an ADM channel.
+     * <p>
+     * Updates the ADM channel settings for an application.
+     * </p>
      * 
      * @param updateAdmChannelRequest
      * @return Result of the UpdateAdmChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateAdmChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel" target="_top">AWS API
      *      Documentation</a>
@@ -1500,22 +1821,27 @@ public interface AmazonPinpoint {
     UpdateAdmChannelResult updateAdmChannel(UpdateAdmChannelRequest updateAdmChannelRequest);
 
     /**
-     * Use to update the APNs channel for an app.
+     * <p>
+     * Updates the APNs channel settings for an application.
+     * </p>
      * 
      * @param updateApnsChannelRequest
      * @return Result of the UpdateApnsChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateApnsChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsChannel" target="_top">AWS API
      *      Documentation</a>
@@ -1523,22 +1849,27 @@ public interface AmazonPinpoint {
     UpdateApnsChannelResult updateApnsChannel(UpdateApnsChannelRequest updateApnsChannelRequest);
 
     /**
-     * Update an APNS sandbox channel.
+     * <p>
+     * Updates the APNs sandbox channel settings for an application.
+     * </p>
      * 
      * @param updateApnsSandboxChannelRequest
      * @return Result of the UpdateApnsSandboxChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateApnsSandboxChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel"
      *      target="_top">AWS API Documentation</a>
@@ -1546,22 +1877,27 @@ public interface AmazonPinpoint {
     UpdateApnsSandboxChannelResult updateApnsSandboxChannel(UpdateApnsSandboxChannelRequest updateApnsSandboxChannelRequest);
 
     /**
-     * Update an APNS VoIP channel
+     * <p>
+     * Updates the APNs VoIP channel settings for an application.
+     * </p>
      * 
      * @param updateApnsVoipChannelRequest
      * @return Result of the UpdateApnsVoipChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateApnsVoipChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipChannel" target="_top">AWS
      *      API Documentation</a>
@@ -1569,22 +1905,27 @@ public interface AmazonPinpoint {
     UpdateApnsVoipChannelResult updateApnsVoipChannel(UpdateApnsVoipChannelRequest updateApnsVoipChannelRequest);
 
     /**
-     * Update an APNS VoIP sandbox channel
+     * <p>
+     * Updates the settings for the APNs VoIP sandbox channel for an application.
+     * </p>
      * 
      * @param updateApnsVoipSandboxChannelRequest
      * @return Result of the UpdateApnsVoipSandboxChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateApnsVoipSandboxChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipSandboxChannel"
      *      target="_top">AWS API Documentation</a>
@@ -1592,22 +1933,27 @@ public interface AmazonPinpoint {
     UpdateApnsVoipSandboxChannelResult updateApnsVoipSandboxChannel(UpdateApnsVoipSandboxChannelRequest updateApnsVoipSandboxChannelRequest);
 
     /**
-     * Used to update the settings for an app.
+     * <p>
+     * Updates the settings for an application.
+     * </p>
      * 
      * @param updateApplicationSettingsRequest
      * @return Result of the UpdateApplicationSettings operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateApplicationSettings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApplicationSettings"
      *      target="_top">AWS API Documentation</a>
@@ -1615,22 +1961,27 @@ public interface AmazonPinpoint {
     UpdateApplicationSettingsResult updateApplicationSettings(UpdateApplicationSettingsRequest updateApplicationSettingsRequest);
 
     /**
-     * Update a BAIDU GCM channel
+     * <p>
+     * Updates the settings of the Baidu channel for an application.
+     * </p>
      * 
      * @param updateBaiduChannelRequest
      * @return Result of the UpdateBaiduChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateBaiduChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateBaiduChannel" target="_top">AWS
      *      API Documentation</a>
@@ -1638,22 +1989,27 @@ public interface AmazonPinpoint {
     UpdateBaiduChannelResult updateBaiduChannel(UpdateBaiduChannelRequest updateBaiduChannelRequest);
 
     /**
-     * Use to update a campaign.
+     * <p>
+     * Updates the settings for a campaign.
+     * </p>
      * 
      * @param updateCampaignRequest
      * @return Result of the UpdateCampaign operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateCampaign
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateCampaign" target="_top">AWS API
      *      Documentation</a>
@@ -1661,22 +2017,27 @@ public interface AmazonPinpoint {
     UpdateCampaignResult updateCampaign(UpdateCampaignRequest updateCampaignRequest);
 
     /**
-     * Update an email channel.
+     * <p>
+     * Updates the status and settings of the email channel for an application.
+     * </p>
      * 
      * @param updateEmailChannelRequest
      * @return Result of the UpdateEmailChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateEmailChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel" target="_top">AWS
      *      API Documentation</a>
@@ -1684,22 +2045,29 @@ public interface AmazonPinpoint {
     UpdateEmailChannelResult updateEmailChannel(UpdateEmailChannelRequest updateEmailChannelRequest);
 
     /**
-     * Creates or updates an endpoint.
+     * <p>
+     * Creates a new endpoint for an application or updates the settings and attributes of an existing endpoint for an
+     * application. You can also use this operation to define custom attributes (Attributes, Metrics, and UserAttributes
+     * properties) for an endpoint.
+     * </p>
      * 
      * @param updateEndpointRequest
      * @return Result of the UpdateEndpoint operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint" target="_top">AWS API
      *      Documentation</a>
@@ -1707,22 +2075,29 @@ public interface AmazonPinpoint {
     UpdateEndpointResult updateEndpoint(UpdateEndpointRequest updateEndpointRequest);
 
     /**
-     * Use to update a batch of endpoints.
+     * <p>
+     * Creates a new batch of endpoints for an application or updates the settings and attributes of a batch of existing
+     * endpoints for an application. You can also use this operation to define custom attributes (Attributes, Metrics,
+     * and UserAttributes properties) for a batch of endpoints.
+     * </p>
      * 
      * @param updateEndpointsBatchRequest
      * @return Result of the UpdateEndpointsBatch operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateEndpointsBatch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch" target="_top">AWS
      *      API Documentation</a>
@@ -1730,22 +2105,27 @@ public interface AmazonPinpoint {
     UpdateEndpointsBatchResult updateEndpointsBatch(UpdateEndpointsBatchRequest updateEndpointsBatchRequest);
 
     /**
-     * Use to update the GCM channel for an app.
+     * <p>
+     * Updates the status and settings of the GCM channel for an application.
+     * </p>
      * 
      * @param updateGcmChannelRequest
      * @return Result of the UpdateGcmChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateGcmChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateGcmChannel" target="_top">AWS API
      *      Documentation</a>
@@ -1753,22 +2133,28 @@ public interface AmazonPinpoint {
     UpdateGcmChannelResult updateGcmChannel(UpdateGcmChannelRequest updateGcmChannelRequest);
 
     /**
-     * Used to update a segment.
+     * <p>
+     * Creates a new segment for an application or updates the configuration, dimension, and other settings for an
+     * existing segment that's associated with an application.
+     * </p>
      * 
      * @param updateSegmentRequest
      * @return Result of the UpdateSegment operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateSegment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment" target="_top">AWS API
      *      Documentation</a>
@@ -1776,22 +2162,27 @@ public interface AmazonPinpoint {
     UpdateSegmentResult updateSegment(UpdateSegmentRequest updateSegmentRequest);
 
     /**
-     * Update an SMS channel.
+     * <p>
+     * Updates the status and settings of the SMS channel for an application.
+     * </p>
      * 
      * @param updateSmsChannelRequest
      * @return Result of the UpdateSmsChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateSmsChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel" target="_top">AWS API
      *      Documentation</a>
@@ -1799,22 +2190,27 @@ public interface AmazonPinpoint {
     UpdateSmsChannelResult updateSmsChannel(UpdateSmsChannelRequest updateSmsChannelRequest);
 
     /**
-     * Update an Voice channel
+     * <p>
+     * Updates the status and settings of the voice channel for an application.
+     * </p>
      * 
      * @param updateVoiceChannelRequest
      * @return Result of the UpdateVoiceChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         The request contains a syntax error (BadRequestException).
      * @throws InternalServerErrorException
-     *         500 response
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
      * @throws ForbiddenException
-     *         403 response
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
-     *         404 response
+     *         The request failed because the specified resource was not found (NotFoundException).
      * @throws MethodNotAllowedException
-     *         405 response
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
      * @throws TooManyRequestsException
-     *         429 response
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
      * @sample AmazonPinpoint.UpdateVoiceChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceChannel" target="_top">AWS
      *      API Documentation</a>

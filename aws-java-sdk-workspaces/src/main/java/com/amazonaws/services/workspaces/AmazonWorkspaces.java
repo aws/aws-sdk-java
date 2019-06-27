@@ -149,6 +149,33 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
+     * Copies the specified image from the specified Region to the current Region.
+     * </p>
+     * 
+     * @param copyWorkspaceImageRequest
+     * @return Result of the CopyWorkspaceImage operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @sample AmazonWorkspaces.CopyWorkspaceImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CopyWorkspaceImageResult copyWorkspaceImage(CopyWorkspaceImageRequest copyWorkspaceImageRequest);
+
+    /**
+     * <p>
      * Creates an IP access control group.
      * </p>
      * <p>
@@ -265,7 +292,7 @@ public interface AmazonWorkspaces {
     /**
      * <p>
      * Deletes the specified image from your account. To delete an image, you must first delete any bundles that are
-     * associated with the image.
+     * associated with the image and un-share the image if it is shared with other accounts.
      * </p>
      * 
      * @param deleteWorkspaceImageRequest
@@ -426,6 +453,25 @@ public interface AmazonWorkspaces {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeWorkspaceImagesResult describeWorkspaceImages(DescribeWorkspaceImagesRequest describeWorkspaceImagesRequest);
+
+    /**
+     * <p>
+     * Describes the snapshots for the specified WorkSpace.
+     * </p>
+     * 
+     * @param describeWorkspaceSnapshotsRequest
+     * @return Result of the DescribeWorkspaceSnapshots operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.DescribeWorkspaceSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeWorkspaceSnapshotsResult describeWorkspaceSnapshots(DescribeWorkspaceSnapshotsRequest describeWorkspaceSnapshotsRequest);
 
     /**
      * <p>
@@ -618,8 +664,9 @@ public interface AmazonWorkspaces {
      * </p>
      * <p>
      * To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
-     * WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild. An AutoStop WorkSpace in
-     * this state is not stopped. Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.
+     * WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild, or restore. An AutoStop
+     * WorkSpace in this state is not stopped. Users cannot log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code>
+     * state.
      * </p>
      * 
      * @param modifyWorkspaceStateRequest
@@ -679,6 +726,37 @@ public interface AmazonWorkspaces {
      *      API Documentation</a>
      */
     RebuildWorkspacesResult rebuildWorkspaces(RebuildWorkspacesRequest rebuildWorkspacesRequest);
+
+    /**
+     * <p>
+     * Restores the specified WorkSpace to its last known healthy state.
+     * </p>
+     * <p>
+     * You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>, or
+     * <code>UNHEALTHY</code>.
+     * </p>
+     * <p>
+     * Restoring a WorkSpace is a potentially destructive action that can result in the loss of data. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore a WorkSpace</a>.
+     * </p>
+     * <p>
+     * This operation is asynchronous and returns before the WorkSpace is completely restored.
+     * </p>
+     * 
+     * @param restoreWorkspaceRequest
+     * @return Result of the RestoreWorkspace operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.RestoreWorkspace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RestoreWorkspace" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RestoreWorkspaceResult restoreWorkspace(RestoreWorkspaceRequest restoreWorkspaceRequest);
 
     /**
      * <p>

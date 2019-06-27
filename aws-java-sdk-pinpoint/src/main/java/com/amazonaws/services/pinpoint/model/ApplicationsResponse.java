@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Get Applications Result.
+ * <p>
+ * Provides information about all of your applications.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ApplicationsResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,15 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ApplicationsResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** List of applications returned in this page. */
+    /**
+     * <p>
+     * An array of responses, one for each application that was returned.
+     * </p>
+     */
     private java.util.List<ApplicationResponse> item;
-    /** The string that you use in a subsequent request to get the next page of results in a paginated response. */
+    /**
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * List of applications returned in this page.
+     * <p>
+     * An array of responses, one for each application that was returned.
+     * </p>
      * 
-     * @return List of applications returned in this page.
+     * @return An array of responses, one for each application that was returned.
      */
 
     public java.util.List<ApplicationResponse> getItem() {
@@ -42,10 +55,12 @@ public class ApplicationsResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * List of applications returned in this page.
+     * <p>
+     * An array of responses, one for each application that was returned.
+     * </p>
      * 
      * @param item
-     *        List of applications returned in this page.
+     *        An array of responses, one for each application that was returned.
      */
 
     public void setItem(java.util.Collection<ApplicationResponse> item) {
@@ -58,7 +73,9 @@ public class ApplicationsResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * List of applications returned in this page.
+     * <p>
+     * An array of responses, one for each application that was returned.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItem(java.util.Collection)} or {@link #withItem(java.util.Collection)} if you want to override the
@@ -66,7 +83,7 @@ public class ApplicationsResponse implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param item
-     *        List of applications returned in this page.
+     *        An array of responses, one for each application that was returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +98,12 @@ public class ApplicationsResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * List of applications returned in this page.
+     * <p>
+     * An array of responses, one for each application that was returned.
+     * </p>
      * 
      * @param item
-     *        List of applications returned in this page.
+     *        An array of responses, one for each application that was returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,10 +113,14 @@ public class ApplicationsResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     *        The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *        value is null if there are no additional pages.
      */
 
     public void setNextToken(String nextToken) {
@@ -105,9 +128,13 @@ public class ApplicationsResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
-     * @return The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * @return The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *         value is null if there are no additional pages.
      */
 
     public String getNextToken() {
@@ -115,10 +142,14 @@ public class ApplicationsResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     *        The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *        value is null if there are no additional pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

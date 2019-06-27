@@ -82,7 +82,8 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
     private Long amazonSideAsn;
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      */
     private String authKey;
@@ -219,6 +220,12 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String awsDeviceV2;
+    /**
+     * <p>
+     * Any tags assigned to the virtual interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -582,11 +589,13 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
      * @param authKey
-     *        The authentication key for BGP configuration.
+     *        The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *        maximun lenth of 80 characters.
      */
 
     public void setAuthKey(String authKey) {
@@ -595,10 +604,12 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
-     * @return The authentication key for BGP configuration.
+     * @return The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *         maximun lenth of 80 characters.
      */
 
     public String getAuthKey() {
@@ -607,11 +618,13 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
      * @param authKey
-     *        The authentication key for BGP configuration.
+     *        The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *        maximun lenth of 80 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1833,6 +1846,79 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Any tags assigned to the virtual interface.
+     * </p>
+     * 
+     * @return Any tags assigned to the virtual interface.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the virtual interface.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the virtual interface.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the virtual interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePublicVirtualInterfaceResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the virtual interface.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePublicVirtualInterfaceResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1889,7 +1975,9 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
         if (getRegion() != null)
             sb.append("Region: ").append(getRegion()).append(",");
         if (getAwsDeviceV2() != null)
-            sb.append("AwsDeviceV2: ").append(getAwsDeviceV2());
+            sb.append("AwsDeviceV2: ").append(getAwsDeviceV2()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1996,6 +2084,10 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getAwsDeviceV2() != null && other.getAwsDeviceV2().equals(this.getAwsDeviceV2()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -2027,6 +2119,7 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getBgpPeers() == null) ? 0 : getBgpPeers().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getAwsDeviceV2() == null) ? 0 : getAwsDeviceV2().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

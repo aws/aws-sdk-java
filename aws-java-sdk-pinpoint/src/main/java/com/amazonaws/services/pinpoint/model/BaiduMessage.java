@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Baidu Message.
+ * <p>
+ * Specifies the settings for a one-time message that's sent directly to an endpoint through the Baidu (Baidu Cloud
+ * Push) channel.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/BaiduMessage" target="_top">AWS API
  *      Documentation</a>
@@ -27,68 +30,165 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface
-     * within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you
-     * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * <p>
+     * The action to occur if the recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking
+     * features of the Android platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String action;
-    /** The message body of the notification. */
+    /**
+     * <p>
+     * The body of the notification message.
+     * </p>
+     */
     private String body;
     /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
+     * <p>
+     * The JSON data payload to use for the push notification, if the notification is a silent push notification. This
+     * payload is added to the data.pinpoint.jsonBody object of the notification.
+     * </p>
      */
     private java.util.Map<String, String> data;
-    /** The icon image name of the asset saved in your application. */
+    /**
+     * <p>
+     * The icon image name of the asset saved in your app.
+     * </p>
+     */
     private String iconReference;
-    /** The URL that points to an image used as the large icon to the notification content view. */
+    /**
+     * <p>
+     * The URL of the large icon image to display in the content view of the push notification.
+     * </p>
+     */
     private String imageIconUrl;
-    /** The URL that points to an image used in the push notification. */
+    /**
+     * <p>
+     * The URL of an image to display in the push notification.
+     * </p>
+     */
     private String imageUrl;
-    /** The Raw JSON formatted string to be used as the payload. This value overrides the message. */
+    /**
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
+     * message.
+     * </p>
+     */
     private String rawContent;
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration or supporting phone home functionality.
+     * </p>
      */
     private Boolean silentPush;
     /**
-     * The URL that points to an image used as the small icon for the notification which will be used to represent the
-     * notification in the status bar and content view
+     * <p>
+     * The URL of the small icon image to display in the status bar and the content view of the push notification.
+     * </p>
      */
     private String smallImageIconUrl;
     /**
-     * Indicates a sound to play when the device receives the notification. Supports default, or the filename of a sound
-     * resource bundled in the app. Android sound files must reside in /res/raw/
+     * <p>
+     * The sound to play when the recipient receives the push notification. You can use the default stream or specify
+     * the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside
+     * in /res/raw/.
+     * </p>
      */
     private String sound;
-    /** Default message substitutions. Can be overridden by individual address substitutions. */
+    /**
+     * <p>
+     * The default message variables to use in the notification message. You can override the default variables with
+     * individual address variables.
+     * </p>
+     */
     private java.util.Map<String, java.util.List<String>> substitutions;
     /**
-     * This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device is
-     * offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     * <p>
+     * The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the recipient's
+     * device is offline. The default value and maximum supported time is 604,800 seconds (7 days).
+     * </p>
      */
     private Integer timeToLive;
-    /** The message title that displays above the message on the user's device. */
+    /**
+     * <p>
+     * The title to display above the notification message on the recipient's device.
+     * </p>
+     */
     private String title;
-    /** The URL to open in the user's mobile browser. Used if the value for Action is URL. */
+    /**
+     * <p>
+     * The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the
+     * value of the Action property is URL.
+     * </p>
+     */
     private String url;
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface
-     * within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you
-     * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * <p>
+     * The action to occur if the recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking
+     * features of the Android platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *        action. DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a
-     *        designated user interface within the app. URL - The default mobile browser on the user's device launches
-     *        and opens a web page at the URL you specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     *        The action to occur if the recipient taps the push notification. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *        default action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the
+     *        deep-linking features of the Android platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     *        specify.
+     *        </p>
+     *        </li>
      * @see Action
      */
 
@@ -97,17 +197,50 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface
-     * within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you
-     * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * <p>
+     * The action to occur if the recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking
+     * features of the Android platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your
-     *         app launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *         action. DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a
-     *         designated user interface within the app. URL - The default mobile browser on the user's device launches
-     *         and opens a web page at the URL you specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * @return The action to occur if the recipient taps the push notification. Valid values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *         default action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the
+     *         deep-linking features of the Android platform.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     *         specify.
+     *         </p>
+     *         </li>
      * @see Action
      */
 
@@ -116,18 +249,51 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface
-     * within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you
-     * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * <p>
+     * The action to occur if the recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking
+     * features of the Android platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *        action. DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a
-     *        designated user interface within the app. URL - The default mobile browser on the user's device launches
-     *        and opens a web page at the URL you specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     *        The action to occur if the recipient taps the push notification. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *        default action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the
+     *        deep-linking features of the Android platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     *        specify.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Action
      */
@@ -138,18 +304,51 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface
-     * within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you
-     * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * <p>
+     * The action to occur if the recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking
+     * features of the Android platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *        action. DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a
-     *        designated user interface within the app. URL - The default mobile browser on the user's device launches
-     *        and opens a web page at the URL you specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     *        The action to occur if the recipient taps the push notification. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *        default action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the
+     *        deep-linking features of the Android platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     *        specify.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Action
      */
@@ -160,10 +359,12 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification.
+     * <p>
+     * The body of the notification message.
+     * </p>
      * 
      * @param body
-     *        The message body of the notification.
+     *        The body of the notification message.
      */
 
     public void setBody(String body) {
@@ -171,9 +372,11 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification.
+     * <p>
+     * The body of the notification message.
+     * </p>
      * 
-     * @return The message body of the notification.
+     * @return The body of the notification message.
      */
 
     public String getBody() {
@@ -181,10 +384,12 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification.
+     * <p>
+     * The body of the notification message.
+     * </p>
      * 
      * @param body
-     *        The message body of the notification.
+     *        The body of the notification message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +399,13 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
+     * <p>
+     * The JSON data payload to use for the push notification, if the notification is a silent push notification. This
+     * payload is added to the data.pinpoint.jsonBody object of the notification.
+     * </p>
      * 
-     * @return The data payload used for a silent push. This payload is added to the notifications'
-     *         data.pinpoint.jsonBody' object
+     * @return The JSON data payload to use for the push notification, if the notification is a silent push
+     *         notification. This payload is added to the data.pinpoint.jsonBody object of the notification.
      */
 
     public java.util.Map<String, String> getData() {
@@ -206,12 +413,14 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
+     * <p>
+     * The JSON data payload to use for the push notification, if the notification is a silent push notification. This
+     * payload is added to the data.pinpoint.jsonBody object of the notification.
+     * </p>
      * 
      * @param data
-     *        The data payload used for a silent push. This payload is added to the notifications'
-     *        data.pinpoint.jsonBody' object
+     *        The JSON data payload to use for the push notification, if the notification is a silent push notification.
+     *        This payload is added to the data.pinpoint.jsonBody object of the notification.
      */
 
     public void setData(java.util.Map<String, String> data) {
@@ -219,12 +428,14 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
+     * <p>
+     * The JSON data payload to use for the push notification, if the notification is a silent push notification. This
+     * payload is added to the data.pinpoint.jsonBody object of the notification.
+     * </p>
      * 
      * @param data
-     *        The data payload used for a silent push. This payload is added to the notifications'
-     *        data.pinpoint.jsonBody' object
+     *        The JSON data payload to use for the push notification, if the notification is a silent push notification.
+     *        This payload is added to the data.pinpoint.jsonBody object of the notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,10 +466,12 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The icon image name of the asset saved in your application.
+     * <p>
+     * The icon image name of the asset saved in your app.
+     * </p>
      * 
      * @param iconReference
-     *        The icon image name of the asset saved in your application.
+     *        The icon image name of the asset saved in your app.
      */
 
     public void setIconReference(String iconReference) {
@@ -266,9 +479,11 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The icon image name of the asset saved in your application.
+     * <p>
+     * The icon image name of the asset saved in your app.
+     * </p>
      * 
-     * @return The icon image name of the asset saved in your application.
+     * @return The icon image name of the asset saved in your app.
      */
 
     public String getIconReference() {
@@ -276,10 +491,12 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The icon image name of the asset saved in your application.
+     * <p>
+     * The icon image name of the asset saved in your app.
+     * </p>
      * 
      * @param iconReference
-     *        The icon image name of the asset saved in your application.
+     *        The icon image name of the asset saved in your app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,10 +506,12 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to an image used as the large icon to the notification content view.
+     * <p>
+     * The URL of the large icon image to display in the content view of the push notification.
+     * </p>
      * 
      * @param imageIconUrl
-     *        The URL that points to an image used as the large icon to the notification content view.
+     *        The URL of the large icon image to display in the content view of the push notification.
      */
 
     public void setImageIconUrl(String imageIconUrl) {
@@ -300,9 +519,11 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to an image used as the large icon to the notification content view.
+     * <p>
+     * The URL of the large icon image to display in the content view of the push notification.
+     * </p>
      * 
-     * @return The URL that points to an image used as the large icon to the notification content view.
+     * @return The URL of the large icon image to display in the content view of the push notification.
      */
 
     public String getImageIconUrl() {
@@ -310,10 +531,12 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to an image used as the large icon to the notification content view.
+     * <p>
+     * The URL of the large icon image to display in the content view of the push notification.
+     * </p>
      * 
      * @param imageIconUrl
-     *        The URL that points to an image used as the large icon to the notification content view.
+     *        The URL of the large icon image to display in the content view of the push notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,10 +546,12 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>
+     * The URL of an image to display in the push notification.
+     * </p>
      * 
      * @param imageUrl
-     *        The URL that points to an image used in the push notification.
+     *        The URL of an image to display in the push notification.
      */
 
     public void setImageUrl(String imageUrl) {
@@ -334,9 +559,11 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>
+     * The URL of an image to display in the push notification.
+     * </p>
      * 
-     * @return The URL that points to an image used in the push notification.
+     * @return The URL of an image to display in the push notification.
      */
 
     public String getImageUrl() {
@@ -344,10 +571,12 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>
+     * The URL of an image to display in the push notification.
+     * </p>
      * 
      * @param imageUrl
-     *        The URL that points to an image used in the push notification.
+     *        The URL of an image to display in the push notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,10 +586,14 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
+     * message.
+     * </p>
      * 
      * @param rawContent
-     *        The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
+     *        the message.
      */
 
     public void setRawContent(String rawContent) {
@@ -368,9 +601,13 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
+     * message.
+     * </p>
      * 
-     * @return The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     * @return The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
+     *         the message.
      */
 
     public String getRawContent() {
@@ -378,10 +615,14 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
+     * message.
+     * </p>
      * 
      * @param rawContent
-     *        The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
+     *        the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,12 +632,16 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration or supporting phone home functionality.
+     * </p>
      * 
      * @param silentPush
-     *        Indicates if the message should display on the users device. Silent pushes can be used for Remote
-     *        Configuration and Phone Home use cases.
+     *        Specifies whether the notification is a silent push notification, which is a push notification that
+     *        doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating
+     *        an app's configuration or supporting phone home functionality.
      */
 
     public void setSilentPush(Boolean silentPush) {
@@ -404,11 +649,15 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration or supporting phone home functionality.
+     * </p>
      * 
-     * @return Indicates if the message should display on the users device. Silent pushes can be used for Remote
-     *         Configuration and Phone Home use cases.
+     * @return Specifies whether the notification is a silent push notification, which is a push notification that
+     *         doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating
+     *         an app's configuration or supporting phone home functionality.
      */
 
     public Boolean getSilentPush() {
@@ -416,12 +665,16 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration or supporting phone home functionality.
+     * </p>
      * 
      * @param silentPush
-     *        Indicates if the message should display on the users device. Silent pushes can be used for Remote
-     *        Configuration and Phone Home use cases.
+     *        Specifies whether the notification is a silent push notification, which is a push notification that
+     *        doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating
+     *        an app's configuration or supporting phone home functionality.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -431,11 +684,15 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration or supporting phone home functionality.
+     * </p>
      * 
-     * @return Indicates if the message should display on the users device. Silent pushes can be used for Remote
-     *         Configuration and Phone Home use cases.
+     * @return Specifies whether the notification is a silent push notification, which is a push notification that
+     *         doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating
+     *         an app's configuration or supporting phone home functionality.
      */
 
     public Boolean isSilentPush() {
@@ -443,12 +700,13 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to an image used as the small icon for the notification which will be used to represent the
-     * notification in the status bar and content view
+     * <p>
+     * The URL of the small icon image to display in the status bar and the content view of the push notification.
+     * </p>
      * 
      * @param smallImageIconUrl
-     *        The URL that points to an image used as the small icon for the notification which will be used to
-     *        represent the notification in the status bar and content view
+     *        The URL of the small icon image to display in the status bar and the content view of the push
+     *        notification.
      */
 
     public void setSmallImageIconUrl(String smallImageIconUrl) {
@@ -456,11 +714,12 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to an image used as the small icon for the notification which will be used to represent the
-     * notification in the status bar and content view
+     * <p>
+     * The URL of the small icon image to display in the status bar and the content view of the push notification.
+     * </p>
      * 
-     * @return The URL that points to an image used as the small icon for the notification which will be used to
-     *         represent the notification in the status bar and content view
+     * @return The URL of the small icon image to display in the status bar and the content view of the push
+     *         notification.
      */
 
     public String getSmallImageIconUrl() {
@@ -468,12 +727,13 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to an image used as the small icon for the notification which will be used to represent the
-     * notification in the status bar and content view
+     * <p>
+     * The URL of the small icon image to display in the status bar and the content view of the push notification.
+     * </p>
      * 
      * @param smallImageIconUrl
-     *        The URL that points to an image used as the small icon for the notification which will be used to
-     *        represent the notification in the status bar and content view
+     *        The URL of the small icon image to display in the status bar and the content view of the push
+     *        notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -483,12 +743,16 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates a sound to play when the device receives the notification. Supports default, or the filename of a sound
-     * resource bundled in the app. Android sound files must reside in /res/raw/
+     * <p>
+     * The sound to play when the recipient receives the push notification. You can use the default stream or specify
+     * the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside
+     * in /res/raw/.
+     * </p>
      * 
      * @param sound
-     *        Indicates a sound to play when the device receives the notification. Supports default, or the filename of
-     *        a sound resource bundled in the app. Android sound files must reside in /res/raw/
+     *        The sound to play when the recipient receives the push notification. You can use the default stream or
+     *        specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound
+     *        file must reside in /res/raw/.
      */
 
     public void setSound(String sound) {
@@ -496,11 +760,15 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates a sound to play when the device receives the notification. Supports default, or the filename of a sound
-     * resource bundled in the app. Android sound files must reside in /res/raw/
+     * <p>
+     * The sound to play when the recipient receives the push notification. You can use the default stream or specify
+     * the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside
+     * in /res/raw/.
+     * </p>
      * 
-     * @return Indicates a sound to play when the device receives the notification. Supports default, or the filename of
-     *         a sound resource bundled in the app. Android sound files must reside in /res/raw/
+     * @return The sound to play when the recipient receives the push notification. You can use the default stream or
+     *         specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound
+     *         file must reside in /res/raw/.
      */
 
     public String getSound() {
@@ -508,12 +776,16 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates a sound to play when the device receives the notification. Supports default, or the filename of a sound
-     * resource bundled in the app. Android sound files must reside in /res/raw/
+     * <p>
+     * The sound to play when the recipient receives the push notification. You can use the default stream or specify
+     * the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside
+     * in /res/raw/.
+     * </p>
      * 
      * @param sound
-     *        Indicates a sound to play when the device receives the notification. Supports default, or the filename of
-     *        a sound resource bundled in the app. Android sound files must reside in /res/raw/
+     *        The sound to play when the recipient receives the push notification. You can use the default stream or
+     *        specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound
+     *        file must reside in /res/raw/.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -523,9 +795,13 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The default message variables to use in the notification message. You can override the default variables with
+     * individual address variables.
+     * </p>
      * 
-     * @return Default message substitutions. Can be overridden by individual address substitutions.
+     * @return The default message variables to use in the notification message. You can override the default variables
+     *         with individual address variables.
      */
 
     public java.util.Map<String, java.util.List<String>> getSubstitutions() {
@@ -533,10 +809,14 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The default message variables to use in the notification message. You can override the default variables with
+     * individual address variables.
+     * </p>
      * 
      * @param substitutions
-     *        Default message substitutions. Can be overridden by individual address substitutions.
+     *        The default message variables to use in the notification message. You can override the default variables
+     *        with individual address variables.
      */
 
     public void setSubstitutions(java.util.Map<String, java.util.List<String>> substitutions) {
@@ -544,10 +824,14 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The default message variables to use in the notification message. You can override the default variables with
+     * individual address variables.
+     * </p>
      * 
      * @param substitutions
-     *        Default message substitutions. Can be overridden by individual address substitutions.
+     *        The default message variables to use in the notification message. You can override the default variables
+     *        with individual address variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -578,12 +862,14 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device is
-     * offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     * <p>
+     * The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the recipient's
+     * device is offline. The default value and maximum supported time is 604,800 seconds (7 days).
+     * </p>
      * 
      * @param timeToLive
-     *        This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device
-     *        is offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     *        The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the
+     *        recipient's device is offline. The default value and maximum supported time is 604,800 seconds (7 days).
      */
 
     public void setTimeToLive(Integer timeToLive) {
@@ -591,11 +877,13 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device is
-     * offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     * <p>
+     * The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the recipient's
+     * device is offline. The default value and maximum supported time is 604,800 seconds (7 days).
+     * </p>
      * 
-     * @return This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device
-     *         is offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     * @return The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the
+     *         recipient's device is offline. The default value and maximum supported time is 604,800 seconds (7 days).
      */
 
     public Integer getTimeToLive() {
@@ -603,12 +891,14 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device is
-     * offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     * <p>
+     * The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the recipient's
+     * device is offline. The default value and maximum supported time is 604,800 seconds (7 days).
+     * </p>
      * 
      * @param timeToLive
-     *        This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device
-     *        is offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     *        The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the
+     *        recipient's device is offline. The default value and maximum supported time is 604,800 seconds (7 days).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -618,10 +908,12 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>
+     * The title to display above the notification message on the recipient's device.
+     * </p>
      * 
      * @param title
-     *        The message title that displays above the message on the user's device.
+     *        The title to display above the notification message on the recipient's device.
      */
 
     public void setTitle(String title) {
@@ -629,9 +921,11 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>
+     * The title to display above the notification message on the recipient's device.
+     * </p>
      * 
-     * @return The message title that displays above the message on the user's device.
+     * @return The title to display above the notification message on the recipient's device.
      */
 
     public String getTitle() {
@@ -639,10 +933,12 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>
+     * The title to display above the notification message on the recipient's device.
+     * </p>
      * 
      * @param title
-     *        The message title that displays above the message on the user's device.
+     *        The title to display above the notification message on the recipient's device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -652,10 +948,14 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     * <p>
+     * The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the
+     * value of the Action property is URL.
+     * </p>
      * 
      * @param url
-     *        The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     *        The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and
+     *        the value of the Action property is URL.
      */
 
     public void setUrl(String url) {
@@ -663,9 +963,13 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     * <p>
+     * The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the
+     * value of the Action property is URL.
+     * </p>
      * 
-     * @return The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     * @return The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and
+     *         the value of the Action property is URL.
      */
 
     public String getUrl() {
@@ -673,10 +977,14 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     * <p>
+     * The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the
+     * value of the Action property is URL.
+     * </p>
      * 
      * @param url
-     *        The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     *        The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and
+     *        the value of the Action property is URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

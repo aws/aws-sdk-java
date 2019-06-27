@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Attributes.
+ * <p>
+ * Provides information about the type and the names of attributes that were removed from all the endpoints that are
+ * associated with an application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/AttributesResource" target="_top">AWS API
  *      Documentation</a>
@@ -26,18 +29,49 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AttributesResource implements Serializable, Cloneable, StructuredPojo {
 
-    /** The unique ID for the application. */
+    /**
+     * <p>
+     * The unique identifier for the application.
+     * </p>
+     */
     private String applicationId;
-    /** The attribute type for the application. */
+    /**
+     * <p>
+     * The type of attribute or attributes that were removed from the endpoints. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * endpoint-custom-attributes - Custom attributes that describe endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * endpoint-user-attributes - Custom attributes that describe users
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String attributeType;
-    /** The attributes for the application. */
+    /**
+     * <p>
+     * An array that specifies the names of the attributes that were removed from the endpoints.
+     * </p>
+     */
     private java.util.List<String> attributes;
 
     /**
-     * The unique ID for the application.
+     * <p>
+     * The unique identifier for the application.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID for the application.
+     *        The unique identifier for the application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -45,9 +79,11 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The unique ID for the application.
+     * <p>
+     * The unique identifier for the application.
+     * </p>
      * 
-     * @return The unique ID for the application.
+     * @return The unique identifier for the application.
      */
 
     public String getApplicationId() {
@@ -55,10 +91,12 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The unique ID for the application.
+     * <p>
+     * The unique identifier for the application.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID for the application.
+     *        The unique identifier for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,10 +106,45 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The attribute type for the application.
+     * <p>
+     * The type of attribute or attributes that were removed from the endpoints. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * endpoint-custom-attributes - Custom attributes that describe endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * endpoint-user-attributes - Custom attributes that describe users
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributeType
-     *        The attribute type for the application.
+     *        The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        endpoint-custom-attributes - Custom attributes that describe endpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        endpoint-user-attributes - Custom attributes that describe users
+     *        </p>
+     *        </li>
      */
 
     public void setAttributeType(String attributeType) {
@@ -79,9 +152,44 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The attribute type for the application.
+     * <p>
+     * The type of attribute or attributes that were removed from the endpoints. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * endpoint-custom-attributes - Custom attributes that describe endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * endpoint-user-attributes - Custom attributes that describe users
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The attribute type for the application.
+     * @return The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         endpoint-custom-attributes - Custom attributes that describe endpoints
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         endpoint-user-attributes - Custom attributes that describe users
+     *         </p>
+     *         </li>
      */
 
     public String getAttributeType() {
@@ -89,10 +197,45 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The attribute type for the application.
+     * <p>
+     * The type of attribute or attributes that were removed from the endpoints. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * endpoint-custom-attributes - Custom attributes that describe endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * endpoint-user-attributes - Custom attributes that describe users
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributeType
-     *        The attribute type for the application.
+     *        The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        endpoint-custom-attributes - Custom attributes that describe endpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        endpoint-user-attributes - Custom attributes that describe users
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,9 +245,11 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The attributes for the application.
+     * <p>
+     * An array that specifies the names of the attributes that were removed from the endpoints.
+     * </p>
      * 
-     * @return The attributes for the application.
+     * @return An array that specifies the names of the attributes that were removed from the endpoints.
      */
 
     public java.util.List<String> getAttributes() {
@@ -112,10 +257,12 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The attributes for the application.
+     * <p>
+     * An array that specifies the names of the attributes that were removed from the endpoints.
+     * </p>
      * 
      * @param attributes
-     *        The attributes for the application.
+     *        An array that specifies the names of the attributes that were removed from the endpoints.
      */
 
     public void setAttributes(java.util.Collection<String> attributes) {
@@ -128,7 +275,9 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The attributes for the application.
+     * <p>
+     * An array that specifies the names of the attributes that were removed from the endpoints.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to
@@ -136,7 +285,7 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param attributes
-     *        The attributes for the application.
+     *        An array that specifies the names of the attributes that were removed from the endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,10 +300,12 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The attributes for the application.
+     * <p>
+     * An array that specifies the names of the attributes that were removed from the endpoints.
+     * </p>
      * 
      * @param attributes
-     *        The attributes for the application.
+     *        An array that specifies the names of the attributes that were removed from the endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

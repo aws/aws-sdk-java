@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Model for creating or updating events.
+ * <p>
+ * Specifies information about an event that reports data to Amazon Pinpoint.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/Event" target="_top">AWS API
  *      Documentation</a>
@@ -26,32 +28,74 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Event implements Serializable, Cloneable, StructuredPojo {
 
-    /** The package name associated with the app that's recording the event. */
+    /**
+     * <p>
+     * The package name of the app that's recording the event.
+     * </p>
+     */
     private String appPackageName;
-    /** The title of the app that's recording the event. */
+    /**
+     * <p>
+     * The title of the app that's recording the event.
+     * </p>
+     */
     private String appTitle;
-    /** The version number of the app that's recording the event. */
+    /**
+     * <p>
+     * The version number of the app that's recording the event.
+     * </p>
+     */
     private String appVersionCode;
-    /** Custom attributes that are associated with the event you're adding or updating. */
+    /**
+     * <p>
+     * One or more custom attributes that are associated with the event.
+     * </p>
+     */
     private java.util.Map<String, String> attributes;
-    /** The version of the SDK that's running on the client device. */
+    /**
+     * <p>
+     * The version of the SDK that's running on the client device.
+     * </p>
+     */
     private String clientSdkVersion;
-    /** The name of the custom event that you're recording. */
+    /**
+     * <p>
+     * The name of the event.
+     * </p>
+     */
     private String eventType;
-    /** Custom metrics related to the event. */
+    /**
+     * <p>
+     * One or more custom metrics that are associated with the event.
+     * </p>
+     */
     private java.util.Map<String, Double> metrics;
-    /** The name of the SDK that's being used to record the event. */
+    /**
+     * <p>
+     * The name of the SDK that's being used to record the event.
+     * </p>
+     */
     private String sdkName;
-    /** Information about the session in which the event occurred. */
+    /**
+     * <p>
+     * Information about the session in which the event occurred.
+     * </p>
+     */
     private Session session;
-    /** The date and time when the event occurred, in ISO 8601 format. */
+    /**
+     * <p>
+     * The date and time, in ISO 8601 format, when the event occurred.
+     * </p>
+     */
     private String timestamp;
 
     /**
-     * The package name associated with the app that's recording the event.
+     * <p>
+     * The package name of the app that's recording the event.
+     * </p>
      * 
      * @param appPackageName
-     *        The package name associated with the app that's recording the event.
+     *        The package name of the app that's recording the event.
      */
 
     public void setAppPackageName(String appPackageName) {
@@ -59,9 +103,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The package name associated with the app that's recording the event.
+     * <p>
+     * The package name of the app that's recording the event.
+     * </p>
      * 
-     * @return The package name associated with the app that's recording the event.
+     * @return The package name of the app that's recording the event.
      */
 
     public String getAppPackageName() {
@@ -69,10 +115,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The package name associated with the app that's recording the event.
+     * <p>
+     * The package name of the app that's recording the event.
+     * </p>
      * 
      * @param appPackageName
-     *        The package name associated with the app that's recording the event.
+     *        The package name of the app that's recording the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +130,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The title of the app that's recording the event.
+     * </p>
      * 
      * @param appTitle
      *        The title of the app that's recording the event.
@@ -93,7 +143,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The title of the app that's recording the event.
+     * </p>
      * 
      * @return The title of the app that's recording the event.
      */
@@ -103,7 +155,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The title of the app that's recording the event.
+     * </p>
      * 
      * @param appTitle
      *        The title of the app that's recording the event.
@@ -116,7 +170,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The version number of the app that's recording the event.
+     * </p>
      * 
      * @param appVersionCode
      *        The version number of the app that's recording the event.
@@ -127,7 +183,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The version number of the app that's recording the event.
+     * </p>
      * 
      * @return The version number of the app that's recording the event.
      */
@@ -137,7 +195,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The version number of the app that's recording the event.
+     * </p>
      * 
      * @param appVersionCode
      *        The version number of the app that's recording the event.
@@ -150,9 +210,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Custom attributes that are associated with the event you're adding or updating.
+     * <p>
+     * One or more custom attributes that are associated with the event.
+     * </p>
      * 
-     * @return Custom attributes that are associated with the event you're adding or updating.
+     * @return One or more custom attributes that are associated with the event.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -160,10 +222,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Custom attributes that are associated with the event you're adding or updating.
+     * <p>
+     * One or more custom attributes that are associated with the event.
+     * </p>
      * 
      * @param attributes
-     *        Custom attributes that are associated with the event you're adding or updating.
+     *        One or more custom attributes that are associated with the event.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -171,10 +235,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Custom attributes that are associated with the event you're adding or updating.
+     * <p>
+     * One or more custom attributes that are associated with the event.
+     * </p>
      * 
      * @param attributes
-     *        Custom attributes that are associated with the event you're adding or updating.
+     *        One or more custom attributes that are associated with the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,7 +271,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The version of the SDK that's running on the client device.
+     * </p>
      * 
      * @param clientSdkVersion
      *        The version of the SDK that's running on the client device.
@@ -216,7 +284,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The version of the SDK that's running on the client device.
+     * </p>
      * 
      * @return The version of the SDK that's running on the client device.
      */
@@ -226,7 +296,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The version of the SDK that's running on the client device.
+     * </p>
      * 
      * @param clientSdkVersion
      *        The version of the SDK that's running on the client device.
@@ -239,10 +311,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The name of the custom event that you're recording.
+     * <p>
+     * The name of the event.
+     * </p>
      * 
      * @param eventType
-     *        The name of the custom event that you're recording.
+     *        The name of the event.
      */
 
     public void setEventType(String eventType) {
@@ -250,9 +324,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The name of the custom event that you're recording.
+     * <p>
+     * The name of the event.
+     * </p>
      * 
-     * @return The name of the custom event that you're recording.
+     * @return The name of the event.
      */
 
     public String getEventType() {
@@ -260,10 +336,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The name of the custom event that you're recording.
+     * <p>
+     * The name of the event.
+     * </p>
      * 
      * @param eventType
-     *        The name of the custom event that you're recording.
+     *        The name of the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,9 +351,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Custom metrics related to the event.
+     * <p>
+     * One or more custom metrics that are associated with the event.
+     * </p>
      * 
-     * @return Custom metrics related to the event.
+     * @return One or more custom metrics that are associated with the event.
      */
 
     public java.util.Map<String, Double> getMetrics() {
@@ -283,10 +363,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Custom metrics related to the event.
+     * <p>
+     * One or more custom metrics that are associated with the event.
+     * </p>
      * 
      * @param metrics
-     *        Custom metrics related to the event.
+     *        One or more custom metrics that are associated with the event.
      */
 
     public void setMetrics(java.util.Map<String, Double> metrics) {
@@ -294,10 +376,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Custom metrics related to the event.
+     * <p>
+     * One or more custom metrics that are associated with the event.
+     * </p>
      * 
      * @param metrics
-     *        Custom metrics related to the event.
+     *        One or more custom metrics that are associated with the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,7 +412,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The name of the SDK that's being used to record the event.
+     * </p>
      * 
      * @param sdkName
      *        The name of the SDK that's being used to record the event.
@@ -339,7 +425,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The name of the SDK that's being used to record the event.
+     * </p>
      * 
      * @return The name of the SDK that's being used to record the event.
      */
@@ -349,7 +437,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The name of the SDK that's being used to record the event.
+     * </p>
      * 
      * @param sdkName
      *        The name of the SDK that's being used to record the event.
@@ -362,7 +452,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the session in which the event occurred.
+     * </p>
      * 
      * @param session
      *        Information about the session in which the event occurred.
@@ -373,7 +465,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the session in which the event occurred.
+     * </p>
      * 
      * @return Information about the session in which the event occurred.
      */
@@ -383,7 +477,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Information about the session in which the event occurred.
+     * </p>
      * 
      * @param session
      *        Information about the session in which the event occurred.
@@ -396,10 +492,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The date and time when the event occurred, in ISO 8601 format.
+     * <p>
+     * The date and time, in ISO 8601 format, when the event occurred.
+     * </p>
      * 
      * @param timestamp
-     *        The date and time when the event occurred, in ISO 8601 format.
+     *        The date and time, in ISO 8601 format, when the event occurred.
      */
 
     public void setTimestamp(String timestamp) {
@@ -407,9 +505,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The date and time when the event occurred, in ISO 8601 format.
+     * <p>
+     * The date and time, in ISO 8601 format, when the event occurred.
+     * </p>
      * 
-     * @return The date and time when the event occurred, in ISO 8601 format.
+     * @return The date and time, in ISO 8601 format, when the event occurred.
      */
 
     public String getTimestamp() {
@@ -417,10 +517,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The date and time when the event occurred, in ISO 8601 format.
+     * <p>
+     * The date and time, in ISO 8601 format, when the event occurred.
+     * </p>
      * 
      * @param timestamp
-     *        The date and time when the event occurred, in ISO 8601 format.
+     *        The date and time, in ISO 8601 format, when the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

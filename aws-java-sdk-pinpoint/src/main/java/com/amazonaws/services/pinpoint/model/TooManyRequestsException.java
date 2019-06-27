@@ -15,13 +15,19 @@ package com.amazonaws.services.pinpoint.model;
 import javax.annotation.Generated;
 
 /**
- * Simple message object.
+ * <p>
+ * Provides information about an API request or response.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyRequestsException extends com.amazonaws.services.pinpoint.model.AmazonPinpointException {
     private static final long serialVersionUID = 1L;
 
-    /** The unique message body ID. */
+    /**
+     * <p>
+     * The unique identifier for the request or response.
+     * </p>
+     */
     private String requestID;
 
     /**
@@ -35,10 +41,12 @@ public class TooManyRequestsException extends com.amazonaws.services.pinpoint.mo
     }
 
     /**
-     * The unique message body ID.
+     * <p>
+     * The unique identifier for the request or response.
+     * </p>
      * 
      * @param requestID
-     *        The unique message body ID.
+     *        The unique identifier for the request or response.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RequestID")
@@ -47,9 +55,11 @@ public class TooManyRequestsException extends com.amazonaws.services.pinpoint.mo
     }
 
     /**
-     * The unique message body ID.
+     * <p>
+     * The unique identifier for the request or response.
+     * </p>
      * 
-     * @return The unique message body ID.
+     * @return The unique identifier for the request or response.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RequestID")
@@ -58,10 +68,12 @@ public class TooManyRequestsException extends com.amazonaws.services.pinpoint.mo
     }
 
     /**
-     * The unique message body ID.
+     * <p>
+     * The unique identifier for the request or response.
+     * </p>
      * 
      * @param requestID
-     *        The unique message body ID.
+     *        The unique identifier for the request or response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

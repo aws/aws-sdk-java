@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Segment definition.
+ * <p>
+ * Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a
+ * Dimensions object or a SegmentGroups object, but not both.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteSegmentRequest" target="_top">AWS API
  *      Documentation</a>
@@ -26,24 +29,40 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WriteSegmentRequest implements Serializable, Cloneable, StructuredPojo {
 
-    /** The segment dimensions attributes. */
+    /**
+     * <p>
+     * The criteria that define the dimensions for the segment.
+     * </p>
+     */
     private SegmentDimensions dimensions;
-    /** The name of segment */
+    /**
+     * <p>
+     * The name of the segment.
+     * </p>
+     */
     private String name;
     /**
-     * A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source
-     * segments. Your request can only include one segment group. Your request can include either a SegmentGroups object
-     * or a Dimensions object, but not both.
+     * <p>
+     * The segment group to use and the dimensions to apply to the group's base segments in order to build the segment.
+     * A segment group can consist of zero or more base segments. Your request can include only one segment group.
+     * </p>
      */
     private SegmentGroupList segmentGroups;
-    /** The Tags for the segments. */
+    /**
+     * <p>
+     * A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag consists
+     * of a required tag key and an associated tag value.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
 
     /**
-     * The segment dimensions attributes.
+     * <p>
+     * The criteria that define the dimensions for the segment.
+     * </p>
      * 
      * @param dimensions
-     *        The segment dimensions attributes.
+     *        The criteria that define the dimensions for the segment.
      */
 
     public void setDimensions(SegmentDimensions dimensions) {
@@ -51,9 +70,11 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The segment dimensions attributes.
+     * <p>
+     * The criteria that define the dimensions for the segment.
+     * </p>
      * 
-     * @return The segment dimensions attributes.
+     * @return The criteria that define the dimensions for the segment.
      */
 
     public SegmentDimensions getDimensions() {
@@ -61,10 +82,12 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The segment dimensions attributes.
+     * <p>
+     * The criteria that define the dimensions for the segment.
+     * </p>
      * 
      * @param dimensions
-     *        The segment dimensions attributes.
+     *        The criteria that define the dimensions for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,10 +97,12 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The name of segment
+     * <p>
+     * The name of the segment.
+     * </p>
      * 
      * @param name
-     *        The name of segment
+     *        The name of the segment.
      */
 
     public void setName(String name) {
@@ -85,9 +110,11 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The name of segment
+     * <p>
+     * The name of the segment.
+     * </p>
      * 
-     * @return The name of segment
+     * @return The name of the segment.
      */
 
     public String getName() {
@@ -95,10 +122,12 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The name of segment
+     * <p>
+     * The name of the segment.
+     * </p>
      * 
      * @param name
-     *        The name of segment
+     *        The name of the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,14 +137,15 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source
-     * segments. Your request can only include one segment group. Your request can include either a SegmentGroups object
-     * or a Dimensions object, but not both.
+     * <p>
+     * The segment group to use and the dimensions to apply to the group's base segments in order to build the segment.
+     * A segment group can consist of zero or more base segments. Your request can include only one segment group.
+     * </p>
      * 
      * @param segmentGroups
-     *        A segment group, which consists of zero or more source segments, plus dimensions that are applied to those
-     *        source segments. Your request can only include one segment group. Your request can include either a
-     *        SegmentGroups object or a Dimensions object, but not both.
+     *        The segment group to use and the dimensions to apply to the group's base segments in order to build the
+     *        segment. A segment group can consist of zero or more base segments. Your request can include only one
+     *        segment group.
      */
 
     public void setSegmentGroups(SegmentGroupList segmentGroups) {
@@ -123,13 +153,14 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source
-     * segments. Your request can only include one segment group. Your request can include either a SegmentGroups object
-     * or a Dimensions object, but not both.
+     * <p>
+     * The segment group to use and the dimensions to apply to the group's base segments in order to build the segment.
+     * A segment group can consist of zero or more base segments. Your request can include only one segment group.
+     * </p>
      * 
-     * @return A segment group, which consists of zero or more source segments, plus dimensions that are applied to
-     *         those source segments. Your request can only include one segment group. Your request can include either a
-     *         SegmentGroups object or a Dimensions object, but not both.
+     * @return The segment group to use and the dimensions to apply to the group's base segments in order to build the
+     *         segment. A segment group can consist of zero or more base segments. Your request can include only one
+     *         segment group.
      */
 
     public SegmentGroupList getSegmentGroups() {
@@ -137,14 +168,15 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source
-     * segments. Your request can only include one segment group. Your request can include either a SegmentGroups object
-     * or a Dimensions object, but not both.
+     * <p>
+     * The segment group to use and the dimensions to apply to the group's base segments in order to build the segment.
+     * A segment group can consist of zero or more base segments. Your request can include only one segment group.
+     * </p>
      * 
      * @param segmentGroups
-     *        A segment group, which consists of zero or more source segments, plus dimensions that are applied to those
-     *        source segments. Your request can only include one segment group. Your request can include either a
-     *        SegmentGroups object or a Dimensions object, but not both.
+     *        The segment group to use and the dimensions to apply to the group's base segments in order to build the
+     *        segment. A segment group can consist of zero or more base segments. Your request can include only one
+     *        segment group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,9 +186,13 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The Tags for the segments.
+     * <p>
+     * A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag consists
+     * of a required tag key and an associated tag value.
+     * </p>
      * 
-     * @return The Tags for the segments.
+     * @return A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag
+     *         consists of a required tag key and an associated tag value.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -164,10 +200,14 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The Tags for the segments.
+     * <p>
+     * A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag consists
+     * of a required tag key and an associated tag value.
+     * </p>
      * 
      * @param tags
-     *        The Tags for the segments.
+     *        A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag
+     *        consists of a required tag key and an associated tag value.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -175,10 +215,14 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The Tags for the segments.
+     * <p>
+     * A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag consists
+     * of a required tag key and an associated tag value.
+     * </p>
      * 
      * @param tags
-     *        The Tags for the segments.
+     *        A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag
+     *        consists of a required tag key and an associated tag value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

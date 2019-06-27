@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Simple message object.
+ * <p>
+ * Provides information about an API request or response.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MessageBody" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MessageBody implements Serializable, Cloneable, StructuredPojo {
 
-    /** The error message that's returned from the API. */
+    /**
+     * <p>
+     * The message that's returned from the API.
+     * </p>
+     */
     private String message;
-    /** The unique message body ID. */
+    /**
+     * <p>
+     * The unique identifier for the request or response.
+     * </p>
+     */
     private String requestID;
 
     /**
-     * The error message that's returned from the API.
+     * <p>
+     * The message that's returned from the API.
+     * </p>
      * 
      * @param message
-     *        The error message that's returned from the API.
+     *        The message that's returned from the API.
      */
 
     public void setMessage(String message) {
@@ -43,9 +55,11 @@ public class MessageBody implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The error message that's returned from the API.
+     * <p>
+     * The message that's returned from the API.
+     * </p>
      * 
-     * @return The error message that's returned from the API.
+     * @return The message that's returned from the API.
      */
 
     public String getMessage() {
@@ -53,10 +67,12 @@ public class MessageBody implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The error message that's returned from the API.
+     * <p>
+     * The message that's returned from the API.
+     * </p>
      * 
      * @param message
-     *        The error message that's returned from the API.
+     *        The message that's returned from the API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +82,12 @@ public class MessageBody implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The unique message body ID.
+     * <p>
+     * The unique identifier for the request or response.
+     * </p>
      * 
      * @param requestID
-     *        The unique message body ID.
+     *        The unique identifier for the request or response.
      */
 
     public void setRequestID(String requestID) {
@@ -77,9 +95,11 @@ public class MessageBody implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The unique message body ID.
+     * <p>
+     * The unique identifier for the request or response.
+     * </p>
      * 
-     * @return The unique message body ID.
+     * @return The unique identifier for the request or response.
      */
 
     public String getRequestID() {
@@ -87,10 +107,12 @@ public class MessageBody implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The unique message body ID.
+     * <p>
+     * The unique identifier for the request or response.
+     * </p>
      * 
      * @param requestID
-     *        The unique message body ID.
+     *        The unique identifier for the request or response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

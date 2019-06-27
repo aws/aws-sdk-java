@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Dimension specification of a segment.
+ * <p>
+ * Specifies the dimension type and values for a segment dimension.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SetDimension" target="_top">AWS API
  *      Documentation</a>
@@ -27,32 +29,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class SetDimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The type of dimension:
-     * 
-     * INCLUSIVE - Endpoints that match the criteria are included in the segment.
-     * 
-     * EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+     * <p>
+     * The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included
+     * in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.
+     * </p>
      */
     private String dimensionType;
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded
-     * from the segment, depending on the setting for Type.
+     * <p>
+     * The criteria values to use for the segment dimension. Depending on the value of the DimensionType property,
+     * endpoints are included or excluded from the segment if their values match the criteria values.
+     * </p>
      */
     private java.util.List<String> values;
 
     /**
-     * The type of dimension:
-     * 
-     * INCLUSIVE - Endpoints that match the criteria are included in the segment.
-     * 
-     * EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+     * <p>
+     * The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included
+     * in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.
+     * </p>
      * 
      * @param dimensionType
-     *        The type of dimension:
-     * 
-     *        INCLUSIVE - Endpoints that match the criteria are included in the segment.
-     * 
-     *        EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+     *        The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are
+     *        included in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.
      * @see DimensionType
      */
 
@@ -61,17 +60,13 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of dimension:
+     * <p>
+     * The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included
+     * in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.
+     * </p>
      * 
-     * INCLUSIVE - Endpoints that match the criteria are included in the segment.
-     * 
-     * EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
-     * 
-     * @return The type of dimension:
-     * 
-     *         INCLUSIVE - Endpoints that match the criteria are included in the segment.
-     * 
-     *         EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+     * @return The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are
+     *         included in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.
      * @see DimensionType
      */
 
@@ -80,18 +75,14 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of dimension:
-     * 
-     * INCLUSIVE - Endpoints that match the criteria are included in the segment.
-     * 
-     * EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+     * <p>
+     * The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included
+     * in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.
+     * </p>
      * 
      * @param dimensionType
-     *        The type of dimension:
-     * 
-     *        INCLUSIVE - Endpoints that match the criteria are included in the segment.
-     * 
-     *        EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+     *        The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are
+     *        included in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DimensionType
      */
@@ -102,18 +93,14 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of dimension:
-     * 
-     * INCLUSIVE - Endpoints that match the criteria are included in the segment.
-     * 
-     * EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+     * <p>
+     * The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included
+     * in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.
+     * </p>
      * 
      * @param dimensionType
-     *        The type of dimension:
-     * 
-     *        INCLUSIVE - Endpoints that match the criteria are included in the segment.
-     * 
-     *        EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+     *        The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are
+     *        included in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.
      * @see DimensionType
      */
 
@@ -122,18 +109,14 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of dimension:
-     * 
-     * INCLUSIVE - Endpoints that match the criteria are included in the segment.
-     * 
-     * EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+     * <p>
+     * The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included
+     * in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.
+     * </p>
      * 
      * @param dimensionType
-     *        The type of dimension:
-     * 
-     *        INCLUSIVE - Endpoints that match the criteria are included in the segment.
-     * 
-     *        EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+     *        The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are
+     *        included in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DimensionType
      */
@@ -144,11 +127,13 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded
-     * from the segment, depending on the setting for Type.
+     * <p>
+     * The criteria values to use for the segment dimension. Depending on the value of the DimensionType property,
+     * endpoints are included or excluded from the segment if their values match the criteria values.
+     * </p>
      * 
-     * @return The criteria values for the segment dimension. Endpoints with matching attribute values are included or
-     *         excluded from the segment, depending on the setting for Type.
+     * @return The criteria values to use for the segment dimension. Depending on the value of the DimensionType
+     *         property, endpoints are included or excluded from the segment if their values match the criteria values.
      */
 
     public java.util.List<String> getValues() {
@@ -156,12 +141,14 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded
-     * from the segment, depending on the setting for Type.
+     * <p>
+     * The criteria values to use for the segment dimension. Depending on the value of the DimensionType property,
+     * endpoints are included or excluded from the segment if their values match the criteria values.
+     * </p>
      * 
      * @param values
-     *        The criteria values for the segment dimension. Endpoints with matching attribute values are included or
-     *        excluded from the segment, depending on the setting for Type.
+     *        The criteria values to use for the segment dimension. Depending on the value of the DimensionType
+     *        property, endpoints are included or excluded from the segment if their values match the criteria values.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -174,8 +161,10 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded
-     * from the segment, depending on the setting for Type.
+     * <p>
+     * The criteria values to use for the segment dimension. Depending on the value of the DimensionType property,
+     * endpoints are included or excluded from the segment if their values match the criteria values.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
@@ -183,8 +172,8 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        The criteria values for the segment dimension. Endpoints with matching attribute values are included or
-     *        excluded from the segment, depending on the setting for Type.
+     *        The criteria values to use for the segment dimension. Depending on the value of the DimensionType
+     *        property, endpoints are included or excluded from the segment if their values match the criteria values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,12 +188,14 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded
-     * from the segment, depending on the setting for Type.
+     * <p>
+     * The criteria values to use for the segment dimension. Depending on the value of the DimensionType property,
+     * endpoints are included or excluded from the segment if their values match the criteria values.
+     * </p>
      * 
      * @param values
-     *        The criteria values for the segment dimension. Endpoints with matching attribute values are included or
-     *        excluded from the segment, depending on the setting for Type.
+     *        The criteria values to use for the segment dimension. Depending on the value of the DimensionType
+     *        property, endpoints are included or excluded from the segment if their values match the criteria values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

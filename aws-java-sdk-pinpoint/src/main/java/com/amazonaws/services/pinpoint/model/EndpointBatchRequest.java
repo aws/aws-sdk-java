@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Endpoint batch update request.
+ * <p>
+ * Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each
+ * endpoint.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointBatchRequest" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +29,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EndpointBatchRequest implements Serializable, Cloneable, StructuredPojo {
 
-    /** List of items to update. Maximum 100 items */
+    /**
+     * <p>
+     * An array that defines the endpoints to create or update and, for each endpoint, the property values to set or
+     * change. An array can contain a maximum of 100 items.
+     * </p>
+     */
     private java.util.List<EndpointBatchItem> item;
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>
+     * An array that defines the endpoints to create or update and, for each endpoint, the property values to set or
+     * change. An array can contain a maximum of 100 items.
+     * </p>
      * 
-     * @return List of items to update. Maximum 100 items
+     * @return An array that defines the endpoints to create or update and, for each endpoint, the property values to
+     *         set or change. An array can contain a maximum of 100 items.
      */
 
     public java.util.List<EndpointBatchItem> getItem() {
@@ -40,10 +52,14 @@ public class EndpointBatchRequest implements Serializable, Cloneable, Structured
     }
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>
+     * An array that defines the endpoints to create or update and, for each endpoint, the property values to set or
+     * change. An array can contain a maximum of 100 items.
+     * </p>
      * 
      * @param item
-     *        List of items to update. Maximum 100 items
+     *        An array that defines the endpoints to create or update and, for each endpoint, the property values to set
+     *        or change. An array can contain a maximum of 100 items.
      */
 
     public void setItem(java.util.Collection<EndpointBatchItem> item) {
@@ -56,7 +72,10 @@ public class EndpointBatchRequest implements Serializable, Cloneable, Structured
     }
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>
+     * An array that defines the endpoints to create or update and, for each endpoint, the property values to set or
+     * change. An array can contain a maximum of 100 items.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItem(java.util.Collection)} or {@link #withItem(java.util.Collection)} if you want to override the
@@ -64,7 +83,8 @@ public class EndpointBatchRequest implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param item
-     *        List of items to update. Maximum 100 items
+     *        An array that defines the endpoints to create or update and, for each endpoint, the property values to set
+     *        or change. An array can contain a maximum of 100 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +99,14 @@ public class EndpointBatchRequest implements Serializable, Cloneable, Structured
     }
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>
+     * An array that defines the endpoints to create or update and, for each endpoint, the property values to set or
+     * change. An array can contain a maximum of 100 items.
+     * </p>
      * 
      * @param item
-     *        List of items to update. Maximum 100 items
+     *        An array that defines the endpoints to create or update and, for each endpoint, the property values to set
+     *        or change. An array can contain a maximum of 100 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

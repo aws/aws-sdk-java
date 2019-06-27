@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A complex object that holds the status code and message as a result of processing an event.
+ * <p>
+ * Provides the status code and message that result from processing an event.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventItemResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,20 +28,27 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EventItemResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** A custom message that is associated with the processing of an event. */
+    /**
+     * <p>
+     * A custom message that's returned in the response as a result of processing the event.
+     * </p>
+     */
     private String message;
     /**
-     * The status returned in the response as a result of processing the event.
-     * 
-     * Possible values: 400 (for invalid events) and 202 (for events that were accepted).
+     * <p>
+     * The status code that's returned in the response as a result of processing the event. Possible values are: 202,
+     * for events that were accepted; and, 400, for events that weren't valid.
+     * </p>
      */
     private Integer statusCode;
 
     /**
-     * A custom message that is associated with the processing of an event.
+     * <p>
+     * A custom message that's returned in the response as a result of processing the event.
+     * </p>
      * 
      * @param message
-     *        A custom message that is associated with the processing of an event.
+     *        A custom message that's returned in the response as a result of processing the event.
      */
 
     public void setMessage(String message) {
@@ -47,9 +56,11 @@ public class EventItemResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * A custom message that is associated with the processing of an event.
+     * <p>
+     * A custom message that's returned in the response as a result of processing the event.
+     * </p>
      * 
-     * @return A custom message that is associated with the processing of an event.
+     * @return A custom message that's returned in the response as a result of processing the event.
      */
 
     public String getMessage() {
@@ -57,10 +68,12 @@ public class EventItemResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * A custom message that is associated with the processing of an event.
+     * <p>
+     * A custom message that's returned in the response as a result of processing the event.
+     * </p>
      * 
      * @param message
-     *        A custom message that is associated with the processing of an event.
+     *        A custom message that's returned in the response as a result of processing the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,14 +83,14 @@ public class EventItemResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The status returned in the response as a result of processing the event.
-     * 
-     * Possible values: 400 (for invalid events) and 202 (for events that were accepted).
+     * <p>
+     * The status code that's returned in the response as a result of processing the event. Possible values are: 202,
+     * for events that were accepted; and, 400, for events that weren't valid.
+     * </p>
      * 
      * @param statusCode
-     *        The status returned in the response as a result of processing the event.
-     * 
-     *        Possible values: 400 (for invalid events) and 202 (for events that were accepted).
+     *        The status code that's returned in the response as a result of processing the event. Possible values are:
+     *        202, for events that were accepted; and, 400, for events that weren't valid.
      */
 
     public void setStatusCode(Integer statusCode) {
@@ -85,13 +98,13 @@ public class EventItemResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The status returned in the response as a result of processing the event.
+     * <p>
+     * The status code that's returned in the response as a result of processing the event. Possible values are: 202,
+     * for events that were accepted; and, 400, for events that weren't valid.
+     * </p>
      * 
-     * Possible values: 400 (for invalid events) and 202 (for events that were accepted).
-     * 
-     * @return The status returned in the response as a result of processing the event.
-     * 
-     *         Possible values: 400 (for invalid events) and 202 (for events that were accepted).
+     * @return The status code that's returned in the response as a result of processing the event. Possible values are:
+     *         202, for events that were accepted; and, 400, for events that weren't valid.
      */
 
     public Integer getStatusCode() {
@@ -99,14 +112,14 @@ public class EventItemResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The status returned in the response as a result of processing the event.
-     * 
-     * Possible values: 400 (for invalid events) and 202 (for events that were accepted).
+     * <p>
+     * The status code that's returned in the response as a result of processing the event. Possible values are: 202,
+     * for events that were accepted; and, 400, for events that weren't valid.
+     * </p>
      * 
      * @param statusCode
-     *        The status returned in the response as a result of processing the event.
-     * 
-     *        Possible values: 400 (for invalid events) and 202 (for events that were accepted).
+     *        The status code that's returned in the response as a result of processing the event. Possible values are:
+     *        202, for events that were accepted; and, 400, for events that weren't valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

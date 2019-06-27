@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * List of endpoints
+ * <p>
+ * Provides information about all the endpoints that are associated with a user ID.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointsResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +28,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EndpointsResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The list of endpoints. */
+    /**
+     * <p>
+     * An array of responses, one for each endpoint that's associated with the user ID.
+     * </p>
+     */
     private java.util.List<EndpointResponse> item;
 
     /**
-     * The list of endpoints.
+     * <p>
+     * An array of responses, one for each endpoint that's associated with the user ID.
+     * </p>
      * 
-     * @return The list of endpoints.
+     * @return An array of responses, one for each endpoint that's associated with the user ID.
      */
 
     public java.util.List<EndpointResponse> getItem() {
@@ -40,10 +48,12 @@ public class EndpointsResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The list of endpoints.
+     * <p>
+     * An array of responses, one for each endpoint that's associated with the user ID.
+     * </p>
      * 
      * @param item
-     *        The list of endpoints.
+     *        An array of responses, one for each endpoint that's associated with the user ID.
      */
 
     public void setItem(java.util.Collection<EndpointResponse> item) {
@@ -56,7 +66,9 @@ public class EndpointsResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The list of endpoints.
+     * <p>
+     * An array of responses, one for each endpoint that's associated with the user ID.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItem(java.util.Collection)} or {@link #withItem(java.util.Collection)} if you want to override the
@@ -64,7 +76,7 @@ public class EndpointsResponse implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param item
-     *        The list of endpoints.
+     *        An array of responses, one for each endpoint that's associated with the user ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +91,12 @@ public class EndpointsResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The list of endpoints.
+     * <p>
+     * An array of responses, one for each endpoint that's associated with the user ID.
+     * </p>
      * 
      * @param item
-     *        The list of endpoints.
+     *        An array of responses, one for each endpoint that's associated with the user ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

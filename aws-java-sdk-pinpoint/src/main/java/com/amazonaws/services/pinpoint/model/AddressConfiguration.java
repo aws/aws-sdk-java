@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Address configuration.
+ * <p>
+ * Specifies address-based configuration settings for a message that's sent directly to an endpoint.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/AddressConfiguration" target="_top">AWS API
  *      Documentation</a>
@@ -26,34 +28,56 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AddressConfiguration implements Serializable, Cloneable, StructuredPojo {
 
-    /** Body override. If specified will override default body. */
+    /**
+     * <p>
+     * The message body to use instead of the default message body. This value overrides the default message body.
+     * </p>
+     */
     private String bodyOverride;
     /**
-     * The channel type.
-     * 
-     * Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
+     * <p>
+     * The channel to use when sending the message.
+     * </p>
      */
     private String channelType;
     /**
-     * A map of custom attributes to attributes to be attached to the message for this address. This payload is added to
-     * the push notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
+     * <p>
+     * An object that maps custom attributes to attributes for the address and is attached to the message. For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is
+     * added to email/SMS delivery receipt event attributes.
+     * </p>
      */
     private java.util.Map<String, String> context;
-    /** The Raw JSON formatted string to be used as the payload. This value overrides the message. */
+    /**
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
+     * message.
+     * </p>
+     */
     private String rawContent;
     /**
-     * A map of substitution values for the message to be merged with the DefaultMessage's substitutions. Substitutions
-     * on this map take precedence over the all other substitutions.
+     * <p>
+     * An object that maps variable values for the message. Amazon Pinpoint merges these values with the variable values
+     * specified by properties of the DefaultMessage object. The substitutions in this map take precedence over all
+     * other substitutions.
+     * </p>
      */
     private java.util.Map<String, java.util.List<String>> substitutions;
-    /** Title override. If specified will override default title if applicable. */
+    /**
+     * <p>
+     * The message title to use instead of the default message title. This value overrides the default message title.
+     * </p>
+     */
     private String titleOverride;
 
     /**
-     * Body override. If specified will override default body.
+     * <p>
+     * The message body to use instead of the default message body. This value overrides the default message body.
+     * </p>
      * 
      * @param bodyOverride
-     *        Body override. If specified will override default body.
+     *        The message body to use instead of the default message body. This value overrides the default message
+     *        body.
      */
 
     public void setBodyOverride(String bodyOverride) {
@@ -61,9 +85,12 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Body override. If specified will override default body.
+     * <p>
+     * The message body to use instead of the default message body. This value overrides the default message body.
+     * </p>
      * 
-     * @return Body override. If specified will override default body.
+     * @return The message body to use instead of the default message body. This value overrides the default message
+     *         body.
      */
 
     public String getBodyOverride() {
@@ -71,10 +98,13 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Body override. If specified will override default body.
+     * <p>
+     * The message body to use instead of the default message body. This value overrides the default message body.
+     * </p>
      * 
      * @param bodyOverride
-     *        Body override. If specified will override default body.
+     *        The message body to use instead of the default message body. This value overrides the default message
+     *        body.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,14 +114,12 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The channel type.
-     * 
-     * Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
+     * <p>
+     * The channel to use when sending the message.
+     * </p>
      * 
      * @param channelType
-     *        The channel type.
-     * 
-     *        Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
+     *        The channel to use when sending the message.
      * @see ChannelType
      */
 
@@ -100,13 +128,11 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The channel type.
+     * <p>
+     * The channel to use when sending the message.
+     * </p>
      * 
-     * Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
-     * 
-     * @return The channel type.
-     * 
-     *         Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
+     * @return The channel to use when sending the message.
      * @see ChannelType
      */
 
@@ -115,14 +141,12 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The channel type.
-     * 
-     * Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
+     * <p>
+     * The channel to use when sending the message.
+     * </p>
      * 
      * @param channelType
-     *        The channel type.
-     * 
-     *        Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
+     *        The channel to use when sending the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */
@@ -133,14 +157,12 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The channel type.
-     * 
-     * Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
+     * <p>
+     * The channel to use when sending the message.
+     * </p>
      * 
      * @param channelType
-     *        The channel type.
-     * 
-     *        Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
+     *        The channel to use when sending the message.
      * @see ChannelType
      */
 
@@ -149,14 +171,12 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The channel type.
-     * 
-     * Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
+     * <p>
+     * The channel to use when sending the message.
+     * </p>
      * 
      * @param channelType
-     *        The channel type.
-     * 
-     *        Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
+     *        The channel to use when sending the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */
@@ -167,12 +187,15 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * A map of custom attributes to attributes to be attached to the message for this address. This payload is added to
-     * the push notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
+     * <p>
+     * An object that maps custom attributes to attributes for the address and is attached to the message. For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is
+     * added to email/SMS delivery receipt event attributes.
+     * </p>
      * 
-     * @return A map of custom attributes to attributes to be attached to the message for this address. This payload is
-     *         added to the push notification's 'data.pinpoint' object or added to the email/sms delivery receipt event
-     *         attributes.
+     * @return An object that maps custom attributes to attributes for the address and is attached to the message. For a
+     *         push notification, this payload is added to the data.pinpoint object. For an email or text message, this
+     *         payload is added to email/SMS delivery receipt event attributes.
      */
 
     public java.util.Map<String, String> getContext() {
@@ -180,13 +203,16 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * A map of custom attributes to attributes to be attached to the message for this address. This payload is added to
-     * the push notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
+     * <p>
+     * An object that maps custom attributes to attributes for the address and is attached to the message. For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is
+     * added to email/SMS delivery receipt event attributes.
+     * </p>
      * 
      * @param context
-     *        A map of custom attributes to attributes to be attached to the message for this address. This payload is
-     *        added to the push notification's 'data.pinpoint' object or added to the email/sms delivery receipt event
-     *        attributes.
+     *        An object that maps custom attributes to attributes for the address and is attached to the message. For a
+     *        push notification, this payload is added to the data.pinpoint object. For an email or text message, this
+     *        payload is added to email/SMS delivery receipt event attributes.
      */
 
     public void setContext(java.util.Map<String, String> context) {
@@ -194,13 +220,16 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * A map of custom attributes to attributes to be attached to the message for this address. This payload is added to
-     * the push notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
+     * <p>
+     * An object that maps custom attributes to attributes for the address and is attached to the message. For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is
+     * added to email/SMS delivery receipt event attributes.
+     * </p>
      * 
      * @param context
-     *        A map of custom attributes to attributes to be attached to the message for this address. This payload is
-     *        added to the push notification's 'data.pinpoint' object or added to the email/sms delivery receipt event
-     *        attributes.
+     *        An object that maps custom attributes to attributes for the address and is attached to the message. For a
+     *        push notification, this payload is added to the data.pinpoint object. For an email or text message, this
+     *        payload is added to email/SMS delivery receipt event attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,10 +260,14 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
+     * message.
+     * </p>
      * 
      * @param rawContent
-     *        The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
+     *        the message.
      */
 
     public void setRawContent(String rawContent) {
@@ -242,9 +275,13 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
+     * message.
+     * </p>
      * 
-     * @return The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     * @return The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
+     *         the message.
      */
 
     public String getRawContent() {
@@ -252,10 +289,14 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
+     * message.
+     * </p>
      * 
      * @param rawContent
-     *        The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
+     *        the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,11 +306,15 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * A map of substitution values for the message to be merged with the DefaultMessage's substitutions. Substitutions
-     * on this map take precedence over the all other substitutions.
+     * <p>
+     * An object that maps variable values for the message. Amazon Pinpoint merges these values with the variable values
+     * specified by properties of the DefaultMessage object. The substitutions in this map take precedence over all
+     * other substitutions.
+     * </p>
      * 
-     * @return A map of substitution values for the message to be merged with the DefaultMessage's substitutions.
-     *         Substitutions on this map take precedence over the all other substitutions.
+     * @return An object that maps variable values for the message. Amazon Pinpoint merges these values with the
+     *         variable values specified by properties of the DefaultMessage object. The substitutions in this map take
+     *         precedence over all other substitutions.
      */
 
     public java.util.Map<String, java.util.List<String>> getSubstitutions() {
@@ -277,12 +322,16 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * A map of substitution values for the message to be merged with the DefaultMessage's substitutions. Substitutions
-     * on this map take precedence over the all other substitutions.
+     * <p>
+     * An object that maps variable values for the message. Amazon Pinpoint merges these values with the variable values
+     * specified by properties of the DefaultMessage object. The substitutions in this map take precedence over all
+     * other substitutions.
+     * </p>
      * 
      * @param substitutions
-     *        A map of substitution values for the message to be merged with the DefaultMessage's substitutions.
-     *        Substitutions on this map take precedence over the all other substitutions.
+     *        An object that maps variable values for the message. Amazon Pinpoint merges these values with the variable
+     *        values specified by properties of the DefaultMessage object. The substitutions in this map take precedence
+     *        over all other substitutions.
      */
 
     public void setSubstitutions(java.util.Map<String, java.util.List<String>> substitutions) {
@@ -290,12 +339,16 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * A map of substitution values for the message to be merged with the DefaultMessage's substitutions. Substitutions
-     * on this map take precedence over the all other substitutions.
+     * <p>
+     * An object that maps variable values for the message. Amazon Pinpoint merges these values with the variable values
+     * specified by properties of the DefaultMessage object. The substitutions in this map take precedence over all
+     * other substitutions.
+     * </p>
      * 
      * @param substitutions
-     *        A map of substitution values for the message to be merged with the DefaultMessage's substitutions.
-     *        Substitutions on this map take precedence over the all other substitutions.
+     *        An object that maps variable values for the message. Amazon Pinpoint merges these values with the variable
+     *        values specified by properties of the DefaultMessage object. The substitutions in this map take precedence
+     *        over all other substitutions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,10 +379,13 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Title override. If specified will override default title if applicable.
+     * <p>
+     * The message title to use instead of the default message title. This value overrides the default message title.
+     * </p>
      * 
      * @param titleOverride
-     *        Title override. If specified will override default title if applicable.
+     *        The message title to use instead of the default message title. This value overrides the default message
+     *        title.
      */
 
     public void setTitleOverride(String titleOverride) {
@@ -337,9 +393,12 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Title override. If specified will override default title if applicable.
+     * <p>
+     * The message title to use instead of the default message title. This value overrides the default message title.
+     * </p>
      * 
-     * @return Title override. If specified will override default title if applicable.
+     * @return The message title to use instead of the default message title. This value overrides the default message
+     *         title.
      */
 
     public String getTitleOverride() {
@@ -347,10 +406,13 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Title override. If specified will override default title if applicable.
+     * <p>
+     * The message title to use instead of the default message title. This value overrides the default message title.
+     * </p>
      * 
      * @param titleOverride
-     *        Title override. If specified will override default title if applicable.
+     *        The message title to use instead of the default message title. This value overrides the default message
+     *        title.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

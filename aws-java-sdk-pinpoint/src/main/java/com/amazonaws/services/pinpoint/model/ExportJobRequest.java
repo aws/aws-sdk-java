@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Export job request.
+ * <p>
+ * Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3)
+ * bucket.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ExportJobRequest" target="_top">AWS API
  *      Documentation</a>
@@ -27,34 +30,43 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the Amazon S3 location that
-     * endpoints will be exported to.
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon
+     * Pinpoint to access the Amazon S3 location where you want to export endpoint definitions to.
+     * </p>
      */
     private String roleArn;
     /**
-     * A URL that points to the location within an Amazon S3 bucket that will receive the export. The location is
-     * typically a folder with multiple files.
-     * 
-     * The URL should follow this format: s3://bucket-name/folder-name/
-     * 
-     * Amazon Pinpoint will export endpoints to this location.
+     * <p>
+     * The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where you want to export endpoint
+     * definitions to. This location is typically a folder that contains multiple files. The URL should be in the
+     * following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.
+     * </p>
      */
     private String s3UrlPrefix;
     /**
-     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the endpoints that
-     * belong to the application.
+     * <p>
+     * The identifier for the segment to export endpoint definitions from. If you don't specify this value, Amazon
+     * Pinpoint exports definitions for all the endpoints that are associated with the application.
+     * </p>
      */
     private String segmentId;
-    /** The version of the segment to export if specified. */
+    /**
+     * <p>
+     * The version of the segment to export endpoint definitions from, if specified.
+     * </p>
+     */
     private Integer segmentVersion;
 
     /**
-     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the Amazon S3 location that
-     * endpoints will be exported to.
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon
+     * Pinpoint to access the Amazon S3 location where you want to export endpoint definitions to.
+     * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the Amazon S3 location
-     *        that endpoints will be exported to.
+     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon
+     *        Pinpoint to access the Amazon S3 location where you want to export endpoint definitions to.
      */
 
     public void setRoleArn(String roleArn) {
@@ -62,11 +74,13 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the Amazon S3 location that
-     * endpoints will be exported to.
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon
+     * Pinpoint to access the Amazon S3 location where you want to export endpoint definitions to.
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the Amazon S3
-     *         location that endpoints will be exported to.
+     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes
+     *         Amazon Pinpoint to access the Amazon S3 location where you want to export endpoint definitions to.
      */
 
     public String getRoleArn() {
@@ -74,12 +88,14 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the Amazon S3 location that
-     * endpoints will be exported to.
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon
+     * Pinpoint to access the Amazon S3 location where you want to export endpoint definitions to.
+     * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the Amazon S3 location
-     *        that endpoints will be exported to.
+     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon
+     *        Pinpoint to access the Amazon S3 location where you want to export endpoint definitions to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,20 +105,17 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that will receive the export. The location is
-     * typically a folder with multiple files.
-     * 
-     * The URL should follow this format: s3://bucket-name/folder-name/
-     * 
-     * Amazon Pinpoint will export endpoints to this location.
+     * <p>
+     * The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where you want to export endpoint
+     * definitions to. This location is typically a folder that contains multiple files. The URL should be in the
+     * following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.
+     * </p>
      * 
      * @param s3UrlPrefix
-     *        A URL that points to the location within an Amazon S3 bucket that will receive the export. The location is
-     *        typically a folder with multiple files.
-     * 
-     *        The URL should follow this format: s3://bucket-name/folder-name/
-     * 
-     *        Amazon Pinpoint will export endpoints to this location.
+     *        The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where you want to export
+     *        endpoint definitions to. This location is typically a folder that contains multiple files. The URL should
+     *        be in the following format:
+     *        s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.
      */
 
     public void setS3UrlPrefix(String s3UrlPrefix) {
@@ -110,19 +123,16 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that will receive the export. The location is
-     * typically a folder with multiple files.
+     * <p>
+     * The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where you want to export endpoint
+     * definitions to. This location is typically a folder that contains multiple files. The URL should be in the
+     * following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.
+     * </p>
      * 
-     * The URL should follow this format: s3://bucket-name/folder-name/
-     * 
-     * Amazon Pinpoint will export endpoints to this location.
-     * 
-     * @return A URL that points to the location within an Amazon S3 bucket that will receive the export. The location
-     *         is typically a folder with multiple files.
-     * 
-     *         The URL should follow this format: s3://bucket-name/folder-name/
-     * 
-     *         Amazon Pinpoint will export endpoints to this location.
+     * @return The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where you want to export
+     *         endpoint definitions to. This location is typically a folder that contains multiple files. The URL should
+     *         be in the following format:
+     *         s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.
      */
 
     public String getS3UrlPrefix() {
@@ -130,20 +140,17 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that will receive the export. The location is
-     * typically a folder with multiple files.
-     * 
-     * The URL should follow this format: s3://bucket-name/folder-name/
-     * 
-     * Amazon Pinpoint will export endpoints to this location.
+     * <p>
+     * The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where you want to export endpoint
+     * definitions to. This location is typically a folder that contains multiple files. The URL should be in the
+     * following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.
+     * </p>
      * 
      * @param s3UrlPrefix
-     *        A URL that points to the location within an Amazon S3 bucket that will receive the export. The location is
-     *        typically a folder with multiple files.
-     * 
-     *        The URL should follow this format: s3://bucket-name/folder-name/
-     * 
-     *        Amazon Pinpoint will export endpoints to this location.
+     *        The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where you want to export
+     *        endpoint definitions to. This location is typically a folder that contains multiple files. The URL should
+     *        be in the following format:
+     *        s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,12 +160,14 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the endpoints that
-     * belong to the application.
+     * <p>
+     * The identifier for the segment to export endpoint definitions from. If you don't specify this value, Amazon
+     * Pinpoint exports definitions for all the endpoints that are associated with the application.
+     * </p>
      * 
      * @param segmentId
-     *        The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the
-     *        endpoints that belong to the application.
+     *        The identifier for the segment to export endpoint definitions from. If you don't specify this value,
+     *        Amazon Pinpoint exports definitions for all the endpoints that are associated with the application.
      */
 
     public void setSegmentId(String segmentId) {
@@ -166,11 +175,13 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the endpoints that
-     * belong to the application.
+     * <p>
+     * The identifier for the segment to export endpoint definitions from. If you don't specify this value, Amazon
+     * Pinpoint exports definitions for all the endpoints that are associated with the application.
+     * </p>
      * 
-     * @return The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the
-     *         endpoints that belong to the application.
+     * @return The identifier for the segment to export endpoint definitions from. If you don't specify this value,
+     *         Amazon Pinpoint exports definitions for all the endpoints that are associated with the application.
      */
 
     public String getSegmentId() {
@@ -178,12 +189,14 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the endpoints that
-     * belong to the application.
+     * <p>
+     * The identifier for the segment to export endpoint definitions from. If you don't specify this value, Amazon
+     * Pinpoint exports definitions for all the endpoints that are associated with the application.
+     * </p>
      * 
      * @param segmentId
-     *        The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the
-     *        endpoints that belong to the application.
+     *        The identifier for the segment to export endpoint definitions from. If you don't specify this value,
+     *        Amazon Pinpoint exports definitions for all the endpoints that are associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,10 +206,12 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The version of the segment to export if specified.
+     * <p>
+     * The version of the segment to export endpoint definitions from, if specified.
+     * </p>
      * 
      * @param segmentVersion
-     *        The version of the segment to export if specified.
+     *        The version of the segment to export endpoint definitions from, if specified.
      */
 
     public void setSegmentVersion(Integer segmentVersion) {
@@ -204,9 +219,11 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The version of the segment to export if specified.
+     * <p>
+     * The version of the segment to export endpoint definitions from, if specified.
+     * </p>
      * 
-     * @return The version of the segment to export if specified.
+     * @return The version of the segment to export endpoint definitions from, if specified.
      */
 
     public Integer getSegmentVersion() {
@@ -214,10 +231,12 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The version of the segment to export if specified.
+     * <p>
+     * The version of the segment to export endpoint definitions from, if specified.
+     * </p>
      * 
      * @param segmentVersion
-     *        The version of the segment to export if specified.
+     *        The version of the segment to export endpoint definitions from, if specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

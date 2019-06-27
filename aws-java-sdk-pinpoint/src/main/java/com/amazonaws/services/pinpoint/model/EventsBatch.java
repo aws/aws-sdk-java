@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A batch of PublicEndpoints and Events to process.
+ * <p>
+ * Specifies a batch of endpoints and events to process.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventsBatch" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
 
-    /** The PublicEndpoint attached to the EndpointId from the request. */
+    /**
+     * <p>
+     * A set of properties and attributes that are associated with the endpoint.
+     * </p>
+     */
     private PublicEndpoint endpoint;
-    /** An object that contains a set of events associated with the endpoint. */
+    /**
+     * <p>
+     * A set of properties that are associated with the event.
+     * </p>
+     */
     private java.util.Map<String, Event> events;
 
     /**
-     * The PublicEndpoint attached to the EndpointId from the request.
+     * <p>
+     * A set of properties and attributes that are associated with the endpoint.
+     * </p>
      * 
      * @param endpoint
-     *        The PublicEndpoint attached to the EndpointId from the request.
+     *        A set of properties and attributes that are associated with the endpoint.
      */
 
     public void setEndpoint(PublicEndpoint endpoint) {
@@ -43,9 +55,11 @@ public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The PublicEndpoint attached to the EndpointId from the request.
+     * <p>
+     * A set of properties and attributes that are associated with the endpoint.
+     * </p>
      * 
-     * @return The PublicEndpoint attached to the EndpointId from the request.
+     * @return A set of properties and attributes that are associated with the endpoint.
      */
 
     public PublicEndpoint getEndpoint() {
@@ -53,10 +67,12 @@ public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The PublicEndpoint attached to the EndpointId from the request.
+     * <p>
+     * A set of properties and attributes that are associated with the endpoint.
+     * </p>
      * 
      * @param endpoint
-     *        The PublicEndpoint attached to the EndpointId from the request.
+     *        A set of properties and attributes that are associated with the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,9 +82,11 @@ public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>
+     * A set of properties that are associated with the event.
+     * </p>
      * 
-     * @return An object that contains a set of events associated with the endpoint.
+     * @return A set of properties that are associated with the event.
      */
 
     public java.util.Map<String, Event> getEvents() {
@@ -76,10 +94,12 @@ public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>
+     * A set of properties that are associated with the event.
+     * </p>
      * 
      * @param events
-     *        An object that contains a set of events associated with the endpoint.
+     *        A set of properties that are associated with the event.
      */
 
     public void setEvents(java.util.Map<String, Event> events) {
@@ -87,10 +107,12 @@ public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>
+     * A set of properties that are associated with the event.
+     * </p>
      * 
      * @param events
-     *        An object that contains a set of events associated with the endpoint.
+     *        A set of properties that are associated with the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

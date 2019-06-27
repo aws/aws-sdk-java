@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * An email represented as a raw MIME message.
+ * <p>
+ * Specifies the contents of an email message, represented as a raw MIME message.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RawEmail" target="_top">AWS API
  *      Documentation</a>
@@ -26,11 +28,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RawEmail implements Serializable, Cloneable, StructuredPojo {
 
-    /** The raw email message itself. Then entire message must be base64-encoded. */
+    /**
+     * <p>
+     * The email message, represented as a raw MIME message. The entire message must be base64 encoded.
+     * </p>
+     */
     private java.nio.ByteBuffer data;
 
     /**
-     * The raw email message itself. Then entire message must be base64-encoded.
+     * <p>
+     * The email message, represented as a raw MIME message. The entire message must be base64 encoded.
+     * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -43,7 +51,7 @@ public class RawEmail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param data
-     *        The raw email message itself. Then entire message must be base64-encoded.
+     *        The email message, represented as a raw MIME message. The entire message must be base64 encoded.
      */
 
     public void setData(java.nio.ByteBuffer data) {
@@ -51,7 +59,9 @@ public class RawEmail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The raw email message itself. Then entire message must be base64-encoded.
+     * <p>
+     * The email message, represented as a raw MIME message. The entire message must be base64 encoded.
+     * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
@@ -60,7 +70,7 @@ public class RawEmail implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return The raw email message itself. Then entire message must be base64-encoded.
+     * @return The email message, represented as a raw MIME message. The entire message must be base64 encoded.
      */
 
     public java.nio.ByteBuffer getData() {
@@ -68,7 +78,9 @@ public class RawEmail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The raw email message itself. Then entire message must be base64-encoded.
+     * <p>
+     * The email message, represented as a raw MIME message. The entire message must be base64 encoded.
+     * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -81,7 +93,7 @@ public class RawEmail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param data
-     *        The raw email message itself. Then entire message must be base64-encoded.
+     *        The email message, represented as a raw MIME message. The entire message must be base64 encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

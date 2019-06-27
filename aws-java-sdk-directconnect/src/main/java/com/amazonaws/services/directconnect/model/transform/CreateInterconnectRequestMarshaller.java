@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class CreateInterconnectRequestMarshaller {
             .marshallLocationName("location").build();
     private static final MarshallingInfo<String> LAGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("lagId").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateInterconnectRequestMarshaller instance = new CreateInterconnectRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class CreateInterconnectRequestMarshaller {
             protocolMarshaller.marshall(createInterconnectRequest.getBandwidth(), BANDWIDTH_BINDING);
             protocolMarshaller.marshall(createInterconnectRequest.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(createInterconnectRequest.getLagId(), LAGID_BINDING);
+            protocolMarshaller.marshall(createInterconnectRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

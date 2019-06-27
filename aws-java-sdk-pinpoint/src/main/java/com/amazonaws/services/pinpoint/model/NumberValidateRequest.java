@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Phone Number Validate request.
+ * <p>
+ * Specifies a phone number to validate and retrieve information about.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/NumberValidateRequest" target="_top">AWS API
  *      Documentation</a>
@@ -27,22 +29,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class NumberValidateRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * (Optional) The two-character ISO country code for the country or region where the phone number was originally
-     * registered.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was
+     * originally registered.
+     * </p>
      */
     private String isoCountryCode;
     /**
-     * The phone number to get information about. The phone number that you provide should include a country code. If
-     * the number doesn't include a valid country code, the operation might result in an error.
+     * <p>
+     * The phone number to retrieve information about. The phone number that you provide should include a valid numeric
+     * country code. Otherwise, the operation might result in an error.
+     * </p>
      */
     private String phoneNumber;
 
     /**
-     * (Optional) The two-character ISO country code for the country or region where the phone number was originally
-     * registered.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was
+     * originally registered.
+     * </p>
      * 
      * @param isoCountryCode
-     *        (Optional) The two-character ISO country code for the country or region where the phone number was
+     *        The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was
      *        originally registered.
      */
 
@@ -51,11 +59,13 @@ public class NumberValidateRequest implements Serializable, Cloneable, Structure
     }
 
     /**
-     * (Optional) The two-character ISO country code for the country or region where the phone number was originally
-     * registered.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was
+     * originally registered.
+     * </p>
      * 
-     * @return (Optional) The two-character ISO country code for the country or region where the phone number was
-     *         originally registered.
+     * @return The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number
+     *         was originally registered.
      */
 
     public String getIsoCountryCode() {
@@ -63,11 +73,13 @@ public class NumberValidateRequest implements Serializable, Cloneable, Structure
     }
 
     /**
-     * (Optional) The two-character ISO country code for the country or region where the phone number was originally
-     * registered.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was
+     * originally registered.
+     * </p>
      * 
      * @param isoCountryCode
-     *        (Optional) The two-character ISO country code for the country or region where the phone number was
+     *        The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was
      *        originally registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -78,12 +90,14 @@ public class NumberValidateRequest implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The phone number to get information about. The phone number that you provide should include a country code. If
-     * the number doesn't include a valid country code, the operation might result in an error.
+     * <p>
+     * The phone number to retrieve information about. The phone number that you provide should include a valid numeric
+     * country code. Otherwise, the operation might result in an error.
+     * </p>
      * 
      * @param phoneNumber
-     *        The phone number to get information about. The phone number that you provide should include a country
-     *        code. If the number doesn't include a valid country code, the operation might result in an error.
+     *        The phone number to retrieve information about. The phone number that you provide should include a valid
+     *        numeric country code. Otherwise, the operation might result in an error.
      */
 
     public void setPhoneNumber(String phoneNumber) {
@@ -91,11 +105,13 @@ public class NumberValidateRequest implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The phone number to get information about. The phone number that you provide should include a country code. If
-     * the number doesn't include a valid country code, the operation might result in an error.
+     * <p>
+     * The phone number to retrieve information about. The phone number that you provide should include a valid numeric
+     * country code. Otherwise, the operation might result in an error.
+     * </p>
      * 
-     * @return The phone number to get information about. The phone number that you provide should include a country
-     *         code. If the number doesn't include a valid country code, the operation might result in an error.
+     * @return The phone number to retrieve information about. The phone number that you provide should include a valid
+     *         numeric country code. Otherwise, the operation might result in an error.
      */
 
     public String getPhoneNumber() {
@@ -103,12 +119,14 @@ public class NumberValidateRequest implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The phone number to get information about. The phone number that you provide should include a country code. If
-     * the number doesn't include a valid country code, the operation might result in an error.
+     * <p>
+     * The phone number to retrieve information about. The phone number that you provide should include a valid numeric
+     * country code. Otherwise, the operation might result in an error.
+     * </p>
      * 
      * @param phoneNumber
-     *        The phone number to get information about. The phone number that you provide should include a country
-     *        code. If the number doesn't include a valid country code, the operation might result in an error.
+     *        The phone number to retrieve information about. The phone number that you provide should include a valid
+     *        numeric country code. Otherwise, the operation might result in an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

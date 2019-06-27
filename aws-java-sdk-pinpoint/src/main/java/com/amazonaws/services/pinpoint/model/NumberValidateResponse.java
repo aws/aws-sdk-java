@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Phone Number Validate response.
+ * <p>
+ * Provides information about a phone number.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/NumberValidateResponse" target="_top">AWS
  *      API Documentation</a>
@@ -26,43 +28,100 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NumberValidateResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The carrier or servive provider that the phone number is currently registered with. */
+    /**
+     * <p>
+     * The carrier or service provider that the phone number is currently registered with.
+     * </p>
+     */
     private String carrier;
-    /** The city where the phone number was originally registered. */
+    /**
+     * <p>
+     * The name of the city where the phone number was originally registered.
+     * </p>
+     */
     private String city;
-    /** The cleansed phone number, shown in E.164 format. */
+    /**
+     * <p>
+     * The cleansed phone number, in E.164 format, for the location where the phone number was originally registered.
+     * </p>
+     */
     private String cleansedPhoneNumberE164;
-    /** The cleansed phone number, shown in the local phone number format. */
+    /**
+     * <p>
+     * The cleansed phone number, in the format for the location where the phone number was originally registered.
+     * </p>
+     */
     private String cleansedPhoneNumberNational;
-    /** The country or region where the phone number was originally registered. */
+    /**
+     * <p>
+     * The name of the country or region where the phone number was originally registered.
+     * </p>
+     */
     private String country;
-    /** The two-character ISO code for the country or region where the phone number was originally registered. */
+    /**
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was
+     * originally registered.
+     * </p>
+     */
     private String countryCodeIso2;
-    /** The numeric code for the country or region where the phone number was originally registered. */
+    /**
+     * <p>
+     * The numeric code for the country or region where the phone number was originally registered.
+     * </p>
+     */
     private String countryCodeNumeric;
-    /** The county where the phone number was originally registered. */
+    /**
+     * <p>
+     * The name of the county where the phone number was originally registered.
+     * </p>
+     */
     private String county;
-    /** The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body. */
+    /**
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.
+     * </p>
+     */
     private String originalCountryCodeIso2;
-    /** The phone number that you included in the request body. */
+    /**
+     * <p>
+     * The phone number that was sent in the request body.
+     * </p>
+     */
     private String originalPhoneNumber;
-    /** A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER. */
+    /**
+     * <p>
+     * The description of the phone type. Valid values are: MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
+     * </p>
+     */
     private String phoneType;
     /**
-     * The phone type, represented by an integer. Possible values include 0 (MOBILE), 1 (LANDLINE), 2 (VOIP), 3
-     * (INVALID), 4 (OTHER), and 5 (PREPAID).
+     * <p>
+     * The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3 (invalid), 4
+     * (other), and 5 (prepaid).
+     * </p>
      */
     private Integer phoneTypeCode;
-    /** The time zone for the location where the phone number was originally registered. */
+    /**
+     * <p>
+     * The time zone for the location where the phone number was originally registered.
+     * </p>
+     */
     private String timezone;
-    /** The postal code for the location where the phone number was originally registered. */
+    /**
+     * <p>
+     * The postal or ZIP code for the location where the phone number was originally registered.
+     * </p>
+     */
     private String zipCode;
 
     /**
-     * The carrier or servive provider that the phone number is currently registered with.
+     * <p>
+     * The carrier or service provider that the phone number is currently registered with.
+     * </p>
      * 
      * @param carrier
-     *        The carrier or servive provider that the phone number is currently registered with.
+     *        The carrier or service provider that the phone number is currently registered with.
      */
 
     public void setCarrier(String carrier) {
@@ -70,9 +129,11 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The carrier or servive provider that the phone number is currently registered with.
+     * <p>
+     * The carrier or service provider that the phone number is currently registered with.
+     * </p>
      * 
-     * @return The carrier or servive provider that the phone number is currently registered with.
+     * @return The carrier or service provider that the phone number is currently registered with.
      */
 
     public String getCarrier() {
@@ -80,10 +141,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The carrier or servive provider that the phone number is currently registered with.
+     * <p>
+     * The carrier or service provider that the phone number is currently registered with.
+     * </p>
      * 
      * @param carrier
-     *        The carrier or servive provider that the phone number is currently registered with.
+     *        The carrier or service provider that the phone number is currently registered with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,10 +156,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The city where the phone number was originally registered.
+     * <p>
+     * The name of the city where the phone number was originally registered.
+     * </p>
      * 
      * @param city
-     *        The city where the phone number was originally registered.
+     *        The name of the city where the phone number was originally registered.
      */
 
     public void setCity(String city) {
@@ -104,9 +169,11 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The city where the phone number was originally registered.
+     * <p>
+     * The name of the city where the phone number was originally registered.
+     * </p>
      * 
-     * @return The city where the phone number was originally registered.
+     * @return The name of the city where the phone number was originally registered.
      */
 
     public String getCity() {
@@ -114,10 +181,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The city where the phone number was originally registered.
+     * <p>
+     * The name of the city where the phone number was originally registered.
+     * </p>
      * 
      * @param city
-     *        The city where the phone number was originally registered.
+     *        The name of the city where the phone number was originally registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,10 +196,13 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The cleansed phone number, shown in E.164 format.
+     * <p>
+     * The cleansed phone number, in E.164 format, for the location where the phone number was originally registered.
+     * </p>
      * 
      * @param cleansedPhoneNumberE164
-     *        The cleansed phone number, shown in E.164 format.
+     *        The cleansed phone number, in E.164 format, for the location where the phone number was originally
+     *        registered.
      */
 
     public void setCleansedPhoneNumberE164(String cleansedPhoneNumberE164) {
@@ -138,9 +210,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The cleansed phone number, shown in E.164 format.
+     * <p>
+     * The cleansed phone number, in E.164 format, for the location where the phone number was originally registered.
+     * </p>
      * 
-     * @return The cleansed phone number, shown in E.164 format.
+     * @return The cleansed phone number, in E.164 format, for the location where the phone number was originally
+     *         registered.
      */
 
     public String getCleansedPhoneNumberE164() {
@@ -148,10 +223,13 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The cleansed phone number, shown in E.164 format.
+     * <p>
+     * The cleansed phone number, in E.164 format, for the location where the phone number was originally registered.
+     * </p>
      * 
      * @param cleansedPhoneNumberE164
-     *        The cleansed phone number, shown in E.164 format.
+     *        The cleansed phone number, in E.164 format, for the location where the phone number was originally
+     *        registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,10 +239,13 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The cleansed phone number, shown in the local phone number format.
+     * <p>
+     * The cleansed phone number, in the format for the location where the phone number was originally registered.
+     * </p>
      * 
      * @param cleansedPhoneNumberNational
-     *        The cleansed phone number, shown in the local phone number format.
+     *        The cleansed phone number, in the format for the location where the phone number was originally
+     *        registered.
      */
 
     public void setCleansedPhoneNumberNational(String cleansedPhoneNumberNational) {
@@ -172,9 +253,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The cleansed phone number, shown in the local phone number format.
+     * <p>
+     * The cleansed phone number, in the format for the location where the phone number was originally registered.
+     * </p>
      * 
-     * @return The cleansed phone number, shown in the local phone number format.
+     * @return The cleansed phone number, in the format for the location where the phone number was originally
+     *         registered.
      */
 
     public String getCleansedPhoneNumberNational() {
@@ -182,10 +266,13 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The cleansed phone number, shown in the local phone number format.
+     * <p>
+     * The cleansed phone number, in the format for the location where the phone number was originally registered.
+     * </p>
      * 
      * @param cleansedPhoneNumberNational
-     *        The cleansed phone number, shown in the local phone number format.
+     *        The cleansed phone number, in the format for the location where the phone number was originally
+     *        registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,10 +282,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The country or region where the phone number was originally registered.
+     * <p>
+     * The name of the country or region where the phone number was originally registered.
+     * </p>
      * 
      * @param country
-     *        The country or region where the phone number was originally registered.
+     *        The name of the country or region where the phone number was originally registered.
      */
 
     public void setCountry(String country) {
@@ -206,9 +295,11 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The country or region where the phone number was originally registered.
+     * <p>
+     * The name of the country or region where the phone number was originally registered.
+     * </p>
      * 
-     * @return The country or region where the phone number was originally registered.
+     * @return The name of the country or region where the phone number was originally registered.
      */
 
     public String getCountry() {
@@ -216,10 +307,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The country or region where the phone number was originally registered.
+     * <p>
+     * The name of the country or region where the phone number was originally registered.
+     * </p>
      * 
      * @param country
-     *        The country or region where the phone number was originally registered.
+     *        The name of the country or region where the phone number was originally registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,10 +322,14 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The two-character ISO code for the country or region where the phone number was originally registered.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was
+     * originally registered.
+     * </p>
      * 
      * @param countryCodeIso2
-     *        The two-character ISO code for the country or region where the phone number was originally registered.
+     *        The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was
+     *        originally registered.
      */
 
     public void setCountryCodeIso2(String countryCodeIso2) {
@@ -240,9 +337,13 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The two-character ISO code for the country or region where the phone number was originally registered.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was
+     * originally registered.
+     * </p>
      * 
-     * @return The two-character ISO code for the country or region where the phone number was originally registered.
+     * @return The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number
+     *         was originally registered.
      */
 
     public String getCountryCodeIso2() {
@@ -250,10 +351,14 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The two-character ISO code for the country or region where the phone number was originally registered.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was
+     * originally registered.
+     * </p>
      * 
      * @param countryCodeIso2
-     *        The two-character ISO code for the country or region where the phone number was originally registered.
+     *        The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was
+     *        originally registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,7 +368,9 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
      * The numeric code for the country or region where the phone number was originally registered.
+     * </p>
      * 
      * @param countryCodeNumeric
      *        The numeric code for the country or region where the phone number was originally registered.
@@ -274,7 +381,9 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
      * The numeric code for the country or region where the phone number was originally registered.
+     * </p>
      * 
      * @return The numeric code for the country or region where the phone number was originally registered.
      */
@@ -284,7 +393,9 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
      * The numeric code for the country or region where the phone number was originally registered.
+     * </p>
      * 
      * @param countryCodeNumeric
      *        The numeric code for the country or region where the phone number was originally registered.
@@ -297,10 +408,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The county where the phone number was originally registered.
+     * <p>
+     * The name of the county where the phone number was originally registered.
+     * </p>
      * 
      * @param county
-     *        The county where the phone number was originally registered.
+     *        The name of the county where the phone number was originally registered.
      */
 
     public void setCounty(String county) {
@@ -308,9 +421,11 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The county where the phone number was originally registered.
+     * <p>
+     * The name of the county where the phone number was originally registered.
+     * </p>
      * 
-     * @return The county where the phone number was originally registered.
+     * @return The name of the county where the phone number was originally registered.
      */
 
     public String getCounty() {
@@ -318,10 +433,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The county where the phone number was originally registered.
+     * <p>
+     * The name of the county where the phone number was originally registered.
+     * </p>
      * 
      * @param county
-     *        The county where the phone number was originally registered.
+     *        The name of the county where the phone number was originally registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,10 +448,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.
+     * </p>
      * 
      * @param originalCountryCodeIso2
-     *        The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body.
+     *        The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.
      */
 
     public void setOriginalCountryCodeIso2(String originalCountryCodeIso2) {
@@ -342,9 +461,11 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.
+     * </p>
      * 
-     * @return The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body.
+     * @return The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.
      */
 
     public String getOriginalCountryCodeIso2() {
@@ -352,10 +473,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.
+     * </p>
      * 
      * @param originalCountryCodeIso2
-     *        The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body.
+     *        The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -365,10 +488,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The phone number that you included in the request body.
+     * <p>
+     * The phone number that was sent in the request body.
+     * </p>
      * 
      * @param originalPhoneNumber
-     *        The phone number that you included in the request body.
+     *        The phone number that was sent in the request body.
      */
 
     public void setOriginalPhoneNumber(String originalPhoneNumber) {
@@ -376,9 +501,11 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The phone number that you included in the request body.
+     * <p>
+     * The phone number that was sent in the request body.
+     * </p>
      * 
-     * @return The phone number that you included in the request body.
+     * @return The phone number that was sent in the request body.
      */
 
     public String getOriginalPhoneNumber() {
@@ -386,10 +513,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The phone number that you included in the request body.
+     * <p>
+     * The phone number that was sent in the request body.
+     * </p>
      * 
      * @param originalPhoneNumber
-     *        The phone number that you included in the request body.
+     *        The phone number that was sent in the request body.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,10 +528,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
+     * <p>
+     * The description of the phone type. Valid values are: MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
+     * </p>
      * 
      * @param phoneType
-     *        A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
+     *        The description of the phone type. Valid values are: MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
      */
 
     public void setPhoneType(String phoneType) {
@@ -410,9 +541,11 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
+     * <p>
+     * The description of the phone type. Valid values are: MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
+     * </p>
      * 
-     * @return A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
+     * @return The description of the phone type. Valid values are: MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
      */
 
     public String getPhoneType() {
@@ -420,10 +553,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
+     * <p>
+     * The description of the phone type. Valid values are: MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
+     * </p>
      * 
      * @param phoneType
-     *        A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
+     *        The description of the phone type. Valid values are: MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -433,12 +568,14 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The phone type, represented by an integer. Possible values include 0 (MOBILE), 1 (LANDLINE), 2 (VOIP), 3
-     * (INVALID), 4 (OTHER), and 5 (PREPAID).
+     * <p>
+     * The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3 (invalid), 4
+     * (other), and 5 (prepaid).
+     * </p>
      * 
      * @param phoneTypeCode
-     *        The phone type, represented by an integer. Possible values include 0 (MOBILE), 1 (LANDLINE), 2 (VOIP), 3
-     *        (INVALID), 4 (OTHER), and 5 (PREPAID).
+     *        The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3
+     *        (invalid), 4 (other), and 5 (prepaid).
      */
 
     public void setPhoneTypeCode(Integer phoneTypeCode) {
@@ -446,11 +583,13 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The phone type, represented by an integer. Possible values include 0 (MOBILE), 1 (LANDLINE), 2 (VOIP), 3
-     * (INVALID), 4 (OTHER), and 5 (PREPAID).
+     * <p>
+     * The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3 (invalid), 4
+     * (other), and 5 (prepaid).
+     * </p>
      * 
-     * @return The phone type, represented by an integer. Possible values include 0 (MOBILE), 1 (LANDLINE), 2 (VOIP), 3
-     *         (INVALID), 4 (OTHER), and 5 (PREPAID).
+     * @return The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3
+     *         (invalid), 4 (other), and 5 (prepaid).
      */
 
     public Integer getPhoneTypeCode() {
@@ -458,12 +597,14 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The phone type, represented by an integer. Possible values include 0 (MOBILE), 1 (LANDLINE), 2 (VOIP), 3
-     * (INVALID), 4 (OTHER), and 5 (PREPAID).
+     * <p>
+     * The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3 (invalid), 4
+     * (other), and 5 (prepaid).
+     * </p>
      * 
      * @param phoneTypeCode
-     *        The phone type, represented by an integer. Possible values include 0 (MOBILE), 1 (LANDLINE), 2 (VOIP), 3
-     *        (INVALID), 4 (OTHER), and 5 (PREPAID).
+     *        The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3
+     *        (invalid), 4 (other), and 5 (prepaid).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -473,7 +614,9 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
      * The time zone for the location where the phone number was originally registered.
+     * </p>
      * 
      * @param timezone
      *        The time zone for the location where the phone number was originally registered.
@@ -484,7 +627,9 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
      * The time zone for the location where the phone number was originally registered.
+     * </p>
      * 
      * @return The time zone for the location where the phone number was originally registered.
      */
@@ -494,7 +639,9 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
      * The time zone for the location where the phone number was originally registered.
+     * </p>
      * 
      * @param timezone
      *        The time zone for the location where the phone number was originally registered.
@@ -507,10 +654,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The postal code for the location where the phone number was originally registered.
+     * <p>
+     * The postal or ZIP code for the location where the phone number was originally registered.
+     * </p>
      * 
      * @param zipCode
-     *        The postal code for the location where the phone number was originally registered.
+     *        The postal or ZIP code for the location where the phone number was originally registered.
      */
 
     public void setZipCode(String zipCode) {
@@ -518,9 +667,11 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The postal code for the location where the phone number was originally registered.
+     * <p>
+     * The postal or ZIP code for the location where the phone number was originally registered.
+     * </p>
      * 
-     * @return The postal code for the location where the phone number was originally registered.
+     * @return The postal or ZIP code for the location where the phone number was originally registered.
      */
 
     public String getZipCode() {
@@ -528,10 +679,12 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The postal code for the location where the phone number was originally registered.
+     * <p>
+     * The postal or ZIP code for the location where the phone number was originally registered.
+     * </p>
      * 
      * @param zipCode
-     *        The postal code for the location where the phone number was originally registered.
+     *        The postal or ZIP code for the location where the phone number was originally registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

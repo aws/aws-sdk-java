@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A set of events to process.
+ * <p>
+ * Specifies a batch of events to process.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventsRequest" target="_top">AWS API
  *      Documentation</a>
@@ -27,17 +29,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class EventsRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * A batch of events to process. Each BatchItem consists of an endpoint ID as the key, and an EventsBatch object as
-     * the value.
+     * <p>
+     * The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch
+     * object as its value.
+     * </p>
      */
     private java.util.Map<String, EventsBatch> batchItem;
 
     /**
-     * A batch of events to process. Each BatchItem consists of an endpoint ID as the key, and an EventsBatch object as
-     * the value.
+     * <p>
+     * The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch
+     * object as its value.
+     * </p>
      * 
-     * @return A batch of events to process. Each BatchItem consists of an endpoint ID as the key, and an EventsBatch
-     *         object as the value.
+     * @return The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an
+     *         EventsBatch object as its value.
      */
 
     public java.util.Map<String, EventsBatch> getBatchItem() {
@@ -45,12 +51,14 @@ public class EventsRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A batch of events to process. Each BatchItem consists of an endpoint ID as the key, and an EventsBatch object as
-     * the value.
+     * <p>
+     * The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch
+     * object as its value.
+     * </p>
      * 
      * @param batchItem
-     *        A batch of events to process. Each BatchItem consists of an endpoint ID as the key, and an EventsBatch
-     *        object as the value.
+     *        The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an
+     *        EventsBatch object as its value.
      */
 
     public void setBatchItem(java.util.Map<String, EventsBatch> batchItem) {
@@ -58,12 +66,14 @@ public class EventsRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A batch of events to process. Each BatchItem consists of an endpoint ID as the key, and an EventsBatch object as
-     * the value.
+     * <p>
+     * The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch
+     * object as its value.
+     * </p>
      * 
      * @param batchItem
-     *        A batch of events to process. Each BatchItem consists of an endpoint ID as the key, and an EventsBatch
-     *        object as the value.
+     *        The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an
+     *        EventsBatch object as its value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,21 +25,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID of your Amazon Pinpoint application. */
+    /**
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
+     */
     private String applicationId;
-    /** The number of entries you want on each page in the response. */
+    /**
+     * <p>
+     * The maximum number of items to include on each page in a paginated response.
+     * </p>
+     */
     private String pageSize;
     /**
-     * The NextToken string returned on a previous page that you use to get the next page of results in a paginated
-     * response.
+     * <p>
+     * The NextToken string that specifies which page of results to return in a paginated response.
+     * </p>
      */
     private String token;
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID of your Amazon Pinpoint application.
+     *        The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *        Amazon Pinpoint console.
      */
 
     public void setApplicationId(String applicationId) {
@@ -47,9 +61,13 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
      * 
-     * @return The unique ID of your Amazon Pinpoint application.
+     * @return The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *         Amazon Pinpoint console.
      */
 
     public String getApplicationId() {
@@ -57,10 +75,14 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID of your Amazon Pinpoint application.
+     *        The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *        Amazon Pinpoint console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,10 +92,12 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>
+     * The maximum number of items to include on each page in a paginated response.
+     * </p>
      * 
      * @param pageSize
-     *        The number of entries you want on each page in the response.
+     *        The maximum number of items to include on each page in a paginated response.
      */
 
     public void setPageSize(String pageSize) {
@@ -81,9 +105,11 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>
+     * The maximum number of items to include on each page in a paginated response.
+     * </p>
      * 
-     * @return The number of entries you want on each page in the response.
+     * @return The maximum number of items to include on each page in a paginated response.
      */
 
     public String getPageSize() {
@@ -91,10 +117,12 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>
+     * The maximum number of items to include on each page in a paginated response.
+     * </p>
      * 
      * @param pageSize
-     *        The number of entries you want on each page in the response.
+     *        The maximum number of items to include on each page in a paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,12 +132,12 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next page of results in a paginated
-     * response.
+     * <p>
+     * The NextToken string that specifies which page of results to return in a paginated response.
+     * </p>
      * 
      * @param token
-     *        The NextToken string returned on a previous page that you use to get the next page of results in a
-     *        paginated response.
+     *        The NextToken string that specifies which page of results to return in a paginated response.
      */
 
     public void setToken(String token) {
@@ -117,11 +145,11 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next page of results in a paginated
-     * response.
+     * <p>
+     * The NextToken string that specifies which page of results to return in a paginated response.
+     * </p>
      * 
-     * @return The NextToken string returned on a previous page that you use to get the next page of results in a
-     *         paginated response.
+     * @return The NextToken string that specifies which page of results to return in a paginated response.
      */
 
     public String getToken() {
@@ -129,12 +157,12 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next page of results in a paginated
-     * response.
+     * <p>
+     * The NextToken string that specifies which page of results to return in a paginated response.
+     * </p>
      * 
      * @param token
-     *        The NextToken string returned on a previous page that you use to get the next page of results in a
-     *        paginated response.
+     *        The NextToken string that specifies which page of results to return in a paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

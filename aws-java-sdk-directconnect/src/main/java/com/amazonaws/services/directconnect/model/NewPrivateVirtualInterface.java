@@ -54,7 +54,8 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
     private Integer mtu;
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      */
     private String authKey;
@@ -88,6 +89,12 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
      * </p>
      */
     private String directConnectGatewayId;
+    /**
+     * <p>
+     * Any tags assigned to the private virtual interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -254,11 +261,13 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
      * @param authKey
-     *        The authentication key for BGP configuration.
+     *        The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *        maximun lenth of 80 characters.
      */
 
     public void setAuthKey(String authKey) {
@@ -267,10 +276,12 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
-     * @return The authentication key for BGP configuration.
+     * @return The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *         maximun lenth of 80 characters.
      */
 
     public String getAuthKey() {
@@ -279,11 +290,13 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
      * @param authKey
-     *        The authentication key for BGP configuration.
+     *        The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *        maximun lenth of 80 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -526,6 +539,79 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Any tags assigned to the private virtual interface.
+     * </p>
+     * 
+     * @return Any tags assigned to the private virtual interface.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the private virtual interface.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the private virtual interface.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the private virtual interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the private virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NewPrivateVirtualInterface withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the private virtual interface.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the private virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NewPrivateVirtualInterface withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -556,7 +642,9 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
         if (getVirtualGatewayId() != null)
             sb.append("VirtualGatewayId: ").append(getVirtualGatewayId()).append(",");
         if (getDirectConnectGatewayId() != null)
-            sb.append("DirectConnectGatewayId: ").append(getDirectConnectGatewayId());
+            sb.append("DirectConnectGatewayId: ").append(getDirectConnectGatewayId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -611,6 +699,10 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
             return false;
         if (other.getDirectConnectGatewayId() != null && other.getDirectConnectGatewayId().equals(this.getDirectConnectGatewayId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -629,6 +721,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getAddressFamily() == null) ? 0 : getAddressFamily().hashCode());
         hashCode = prime * hashCode + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId().hashCode());
         hashCode = prime * hashCode + ((getDirectConnectGatewayId() == null) ? 0 : getDirectConnectGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

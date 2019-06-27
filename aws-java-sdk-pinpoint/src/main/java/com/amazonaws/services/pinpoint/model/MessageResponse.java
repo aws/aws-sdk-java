@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Send message response.
+ * <p>
+ * Provides information about the results of a request to send a message to an endpoint address.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MessageResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,26 +28,40 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MessageResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** Application id of the message. */
+    /**
+     * <p>
+     * The unique identifier for the application that was used to send the message.
+     * </p>
+     */
     private String applicationId;
     /**
-     * A map containing a multi part response for each address, with the endpointId as the key and the result as the
-     * value.
+     * <p>
+     * A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint
+     * ID is the key and the result is the value.
+     * </p>
      */
     private java.util.Map<String, EndpointMessageResult> endpointResult;
-    /** Original request Id for which this message was delivered. */
+    /**
+     * <p>
+     * The identifier for the original request that the message was delivered for.
+     * </p>
+     */
     private String requestId;
     /**
-     * A map containing a multi part response for each address, with the address as the key(Email address, phone number
-     * or push token) and the result as the value.
+     * <p>
+     * A map that contains a multipart response for each address (email address, phone number, or push notification
+     * token) that the message was sent to. In the map, the address is the key and the result is the value.
+     * </p>
      */
     private java.util.Map<String, MessageResult> result;
 
     /**
-     * Application id of the message.
+     * <p>
+     * The unique identifier for the application that was used to send the message.
+     * </p>
      * 
      * @param applicationId
-     *        Application id of the message.
+     *        The unique identifier for the application that was used to send the message.
      */
 
     public void setApplicationId(String applicationId) {
@@ -53,9 +69,11 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Application id of the message.
+     * <p>
+     * The unique identifier for the application that was used to send the message.
+     * </p>
      * 
-     * @return Application id of the message.
+     * @return The unique identifier for the application that was used to send the message.
      */
 
     public String getApplicationId() {
@@ -63,10 +81,12 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Application id of the message.
+     * <p>
+     * The unique identifier for the application that was used to send the message.
+     * </p>
      * 
      * @param applicationId
-     *        Application id of the message.
+     *        The unique identifier for the application that was used to send the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,11 +96,13 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as the key and the result as the
-     * value.
+     * <p>
+     * A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint
+     * ID is the key and the result is the value.
+     * </p>
      * 
-     * @return A map containing a multi part response for each address, with the endpointId as the key and the result as
-     *         the value.
+     * @return A map that contains a multipart response for each address that the message was sent to. In the map, the
+     *         endpoint ID is the key and the result is the value.
      */
 
     public java.util.Map<String, EndpointMessageResult> getEndpointResult() {
@@ -88,12 +110,14 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as the key and the result as the
-     * value.
+     * <p>
+     * A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint
+     * ID is the key and the result is the value.
+     * </p>
      * 
      * @param endpointResult
-     *        A map containing a multi part response for each address, with the endpointId as the key and the result as
-     *        the value.
+     *        A map that contains a multipart response for each address that the message was sent to. In the map, the
+     *        endpoint ID is the key and the result is the value.
      */
 
     public void setEndpointResult(java.util.Map<String, EndpointMessageResult> endpointResult) {
@@ -101,12 +125,14 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as the key and the result as the
-     * value.
+     * <p>
+     * A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint
+     * ID is the key and the result is the value.
+     * </p>
      * 
      * @param endpointResult
-     *        A map containing a multi part response for each address, with the endpointId as the key and the result as
-     *        the value.
+     *        A map that contains a multipart response for each address that the message was sent to. In the map, the
+     *        endpoint ID is the key and the result is the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,10 +163,12 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Original request Id for which this message was delivered.
+     * <p>
+     * The identifier for the original request that the message was delivered for.
+     * </p>
      * 
      * @param requestId
-     *        Original request Id for which this message was delivered.
+     *        The identifier for the original request that the message was delivered for.
      */
 
     public void setRequestId(String requestId) {
@@ -148,9 +176,11 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Original request Id for which this message was delivered.
+     * <p>
+     * The identifier for the original request that the message was delivered for.
+     * </p>
      * 
-     * @return Original request Id for which this message was delivered.
+     * @return The identifier for the original request that the message was delivered for.
      */
 
     public String getRequestId() {
@@ -158,10 +188,12 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Original request Id for which this message was delivered.
+     * <p>
+     * The identifier for the original request that the message was delivered for.
+     * </p>
      * 
      * @param requestId
-     *        Original request Id for which this message was delivered.
+     *        The identifier for the original request that the message was delivered for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,11 +203,14 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * A map containing a multi part response for each address, with the address as the key(Email address, phone number
-     * or push token) and the result as the value.
+     * <p>
+     * A map that contains a multipart response for each address (email address, phone number, or push notification
+     * token) that the message was sent to. In the map, the address is the key and the result is the value.
+     * </p>
      * 
-     * @return A map containing a multi part response for each address, with the address as the key(Email address, phone
-     *         number or push token) and the result as the value.
+     * @return A map that contains a multipart response for each address (email address, phone number, or push
+     *         notification token) that the message was sent to. In the map, the address is the key and the result is
+     *         the value.
      */
 
     public java.util.Map<String, MessageResult> getResult() {
@@ -183,12 +218,15 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * A map containing a multi part response for each address, with the address as the key(Email address, phone number
-     * or push token) and the result as the value.
+     * <p>
+     * A map that contains a multipart response for each address (email address, phone number, or push notification
+     * token) that the message was sent to. In the map, the address is the key and the result is the value.
+     * </p>
      * 
      * @param result
-     *        A map containing a multi part response for each address, with the address as the key(Email address, phone
-     *        number or push token) and the result as the value.
+     *        A map that contains a multipart response for each address (email address, phone number, or push
+     *        notification token) that the message was sent to. In the map, the address is the key and the result is the
+     *        value.
      */
 
     public void setResult(java.util.Map<String, MessageResult> result) {
@@ -196,12 +234,15 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * A map containing a multi part response for each address, with the address as the key(Email address, phone number
-     * or push token) and the result as the value.
+     * <p>
+     * A map that contains a multipart response for each address (email address, phone number, or push notification
+     * token) that the message was sent to. In the map, the address is the key and the result is the value.
+     * </p>
      * 
      * @param result
-     *        A map containing a multi part response for each address, with the address as the key(Email address, phone
-     *        number or push token) and the result as the value.
+     *        A map that contains a multipart response for each address (email address, phone number, or push
+     *        notification token) that the message was sent to. In the map, the address is the key and the result is the
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

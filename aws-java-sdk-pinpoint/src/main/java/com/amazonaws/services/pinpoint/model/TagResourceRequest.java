@@ -25,12 +25,22 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application, campaign, or segment.
+     * </p>
+     */
     private String resourceArn;
 
     private TagsModel tagsModel;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application, campaign, or segment.
+     * </p>
+     * 
      * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the application, campaign, or segment.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -38,7 +48,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the application, campaign, or segment.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the application, campaign, or segment.
      */
 
     public String getResourceArn() {
@@ -46,7 +60,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application, campaign, or segment.
+     * </p>
+     * 
      * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the application, campaign, or segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

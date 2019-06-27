@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * SMS Message.
+ * <p>
+ * Specifies the default settings for a one-time SMS message that's sent directly to an endpoint.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SMSMessage" target="_top">AWS API
  *      Documentation</a>
@@ -26,28 +28,53 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
-    /** The body of the SMS message. */
+    /**
+     * <p>
+     * The body of the SMS message.
+     * </p>
+     */
     private String body;
-    /** The SMS program name that you provided to AWS Support when you requested your dedicated number. */
+    /**
+     * <p>
+     * The SMS program name that you provided to AWS Support when you requested your dedicated number.
+     * </p>
+     */
     private String keyword;
-    /** Is this a transaction priority message or lower priority. */
+    /**
+     * <p>
+     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
+     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
+     * time-sensitive, such as a marketing message.
+     * </p>
+     */
     private String messageType;
     /**
-     * The phone number that the SMS message originates from. Specify one of the dedicated long codes or short codes
-     * that you requested from AWS Support and that is assigned to your account. If this attribute is not specified,
-     * Amazon Pinpoint randomly assigns a long code.
+     * <p>
+     * The number that the SMS message originates from. This should be one of the dedicated long codes or short codes
+     * that you requested from AWS Support and is assigned to your AWS account. If you don't specify a long or short
+     * code, Amazon Pinpoint assigns a random long code to the SMS message.
+     * </p>
      */
     private String originationNumber;
     /**
-     * The sender ID that is shown as the message sender on the recipient's device. Support for sender IDs varies by
+     * <p>
+     * The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by
      * country or region.
+     * </p>
      */
     private String senderId;
-    /** Default message substitutions. Can be overridden by individual address substitutions. */
+    /**
+     * <p>
+     * The message variables to use in the SMS message. You can override the default variables with individual address
+     * variables.
+     * </p>
+     */
     private java.util.Map<String, java.util.List<String>> substitutions;
 
     /**
+     * <p>
      * The body of the SMS message.
+     * </p>
      * 
      * @param body
      *        The body of the SMS message.
@@ -58,7 +85,9 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The body of the SMS message.
+     * </p>
      * 
      * @return The body of the SMS message.
      */
@@ -68,7 +97,9 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The body of the SMS message.
+     * </p>
      * 
      * @param body
      *        The body of the SMS message.
@@ -81,7 +112,9 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The SMS program name that you provided to AWS Support when you requested your dedicated number.
+     * </p>
      * 
      * @param keyword
      *        The SMS program name that you provided to AWS Support when you requested your dedicated number.
@@ -92,7 +125,9 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The SMS program name that you provided to AWS Support when you requested your dedicated number.
+     * </p>
      * 
      * @return The SMS program name that you provided to AWS Support when you requested your dedicated number.
      */
@@ -102,7 +137,9 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The SMS program name that you provided to AWS Support when you requested your dedicated number.
+     * </p>
      * 
      * @param keyword
      *        The SMS program name that you provided to AWS Support when you requested your dedicated number.
@@ -115,10 +152,16 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * <p>
+     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
+     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
+     * time-sensitive, such as a marketing message.
+     * </p>
      * 
      * @param messageType
-     *        Is this a transaction priority message or lower priority.
+     *        The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
+     *        a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
+     *        time-sensitive, such as a marketing message.
      * @see MessageType
      */
 
@@ -127,9 +170,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * <p>
+     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
+     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
+     * time-sensitive, such as a marketing message.
+     * </p>
      * 
-     * @return Is this a transaction priority message or lower priority.
+     * @return The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
+     *         a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical
+     *         or time-sensitive, such as a marketing message.
      * @see MessageType
      */
 
@@ -138,10 +187,16 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * <p>
+     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
+     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
+     * time-sensitive, such as a marketing message.
+     * </p>
      * 
      * @param messageType
-     *        Is this a transaction priority message or lower priority.
+     *        The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
+     *        a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
+     *        time-sensitive, such as a marketing message.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -152,10 +207,16 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * <p>
+     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
+     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
+     * time-sensitive, such as a marketing message.
+     * </p>
      * 
      * @param messageType
-     *        Is this a transaction priority message or lower priority.
+     *        The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
+     *        a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
+     *        time-sensitive, such as a marketing message.
      * @see MessageType
      */
 
@@ -164,10 +225,16 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * <p>
+     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
+     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
+     * time-sensitive, such as a marketing message.
+     * </p>
      * 
      * @param messageType
-     *        Is this a transaction priority message or lower priority.
+     *        The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
+     *        a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
+     *        time-sensitive, such as a marketing message.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -178,14 +245,16 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The phone number that the SMS message originates from. Specify one of the dedicated long codes or short codes
-     * that you requested from AWS Support and that is assigned to your account. If this attribute is not specified,
-     * Amazon Pinpoint randomly assigns a long code.
+     * <p>
+     * The number that the SMS message originates from. This should be one of the dedicated long codes or short codes
+     * that you requested from AWS Support and is assigned to your AWS account. If you don't specify a long or short
+     * code, Amazon Pinpoint assigns a random long code to the SMS message.
+     * </p>
      * 
      * @param originationNumber
-     *        The phone number that the SMS message originates from. Specify one of the dedicated long codes or short
-     *        codes that you requested from AWS Support and that is assigned to your account. If this attribute is not
-     *        specified, Amazon Pinpoint randomly assigns a long code.
+     *        The number that the SMS message originates from. This should be one of the dedicated long codes or short
+     *        codes that you requested from AWS Support and is assigned to your AWS account. If you don't specify a long
+     *        or short code, Amazon Pinpoint assigns a random long code to the SMS message.
      */
 
     public void setOriginationNumber(String originationNumber) {
@@ -193,13 +262,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The phone number that the SMS message originates from. Specify one of the dedicated long codes or short codes
-     * that you requested from AWS Support and that is assigned to your account. If this attribute is not specified,
-     * Amazon Pinpoint randomly assigns a long code.
+     * <p>
+     * The number that the SMS message originates from. This should be one of the dedicated long codes or short codes
+     * that you requested from AWS Support and is assigned to your AWS account. If you don't specify a long or short
+     * code, Amazon Pinpoint assigns a random long code to the SMS message.
+     * </p>
      * 
-     * @return The phone number that the SMS message originates from. Specify one of the dedicated long codes or short
-     *         codes that you requested from AWS Support and that is assigned to your account. If this attribute is not
-     *         specified, Amazon Pinpoint randomly assigns a long code.
+     * @return The number that the SMS message originates from. This should be one of the dedicated long codes or short
+     *         codes that you requested from AWS Support and is assigned to your AWS account. If you don't specify a
+     *         long or short code, Amazon Pinpoint assigns a random long code to the SMS message.
      */
 
     public String getOriginationNumber() {
@@ -207,14 +278,16 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The phone number that the SMS message originates from. Specify one of the dedicated long codes or short codes
-     * that you requested from AWS Support and that is assigned to your account. If this attribute is not specified,
-     * Amazon Pinpoint randomly assigns a long code.
+     * <p>
+     * The number that the SMS message originates from. This should be one of the dedicated long codes or short codes
+     * that you requested from AWS Support and is assigned to your AWS account. If you don't specify a long or short
+     * code, Amazon Pinpoint assigns a random long code to the SMS message.
+     * </p>
      * 
      * @param originationNumber
-     *        The phone number that the SMS message originates from. Specify one of the dedicated long codes or short
-     *        codes that you requested from AWS Support and that is assigned to your account. If this attribute is not
-     *        specified, Amazon Pinpoint randomly assigns a long code.
+     *        The number that the SMS message originates from. This should be one of the dedicated long codes or short
+     *        codes that you requested from AWS Support and is assigned to your AWS account. If you don't specify a long
+     *        or short code, Amazon Pinpoint assigns a random long code to the SMS message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,12 +297,14 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The sender ID that is shown as the message sender on the recipient's device. Support for sender IDs varies by
+     * <p>
+     * The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by
      * country or region.
+     * </p>
      * 
      * @param senderId
-     *        The sender ID that is shown as the message sender on the recipient's device. Support for sender IDs varies
-     *        by country or region.
+     *        The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs
+     *        varies by country or region.
      */
 
     public void setSenderId(String senderId) {
@@ -237,10 +312,12 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The sender ID that is shown as the message sender on the recipient's device. Support for sender IDs varies by
+     * <p>
+     * The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by
      * country or region.
+     * </p>
      * 
-     * @return The sender ID that is shown as the message sender on the recipient's device. Support for sender IDs
+     * @return The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs
      *         varies by country or region.
      */
 
@@ -249,12 +326,14 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The sender ID that is shown as the message sender on the recipient's device. Support for sender IDs varies by
+     * <p>
+     * The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by
      * country or region.
+     * </p>
      * 
      * @param senderId
-     *        The sender ID that is shown as the message sender on the recipient's device. Support for sender IDs varies
-     *        by country or region.
+     *        The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs
+     *        varies by country or region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,9 +343,13 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The message variables to use in the SMS message. You can override the default variables with individual address
+     * variables.
+     * </p>
      * 
-     * @return Default message substitutions. Can be overridden by individual address substitutions.
+     * @return The message variables to use in the SMS message. You can override the default variables with individual
+     *         address variables.
      */
 
     public java.util.Map<String, java.util.List<String>> getSubstitutions() {
@@ -274,10 +357,14 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The message variables to use in the SMS message. You can override the default variables with individual address
+     * variables.
+     * </p>
      * 
      * @param substitutions
-     *        Default message substitutions. Can be overridden by individual address substitutions.
+     *        The message variables to use in the SMS message. You can override the default variables with individual
+     *        address variables.
      */
 
     public void setSubstitutions(java.util.Map<String, java.util.List<String>> substitutions) {
@@ -285,10 +372,14 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The message variables to use in the SMS message. You can override the default variables with individual address
+     * variables.
+     * </p>
      * 
      * @param substitutions
-     *        Default message substitutions. Can be overridden by individual address substitutions.
+     *        The message variables to use in the SMS message. You can override the default variables with individual
+     *        address variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Google Cloud Messaging credentials
+ * <p>
+ * Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send
+ * push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GCMChannelRequest" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +29,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GCMChannelRequest implements Serializable, Cloneable, StructuredPojo {
 
-    /** Platform credential API key from Google. */
+    /**
+     * <p>
+     * The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with Google
+     * services.
+     * </p>
+     */
     private String apiKey;
-    /** If the channel is enabled for sending messages. */
+    /**
+     * <p>
+     * Specifies whether to enable the GCM channel for the application.
+     * </p>
+     */
     private Boolean enabled;
 
     /**
-     * Platform credential API key from Google.
+     * <p>
+     * The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with Google
+     * services.
+     * </p>
      * 
      * @param apiKey
-     *        Platform credential API key from Google.
+     *        The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with
+     *        Google services.
      */
 
     public void setApiKey(String apiKey) {
@@ -43,9 +59,13 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Platform credential API key from Google.
+     * <p>
+     * The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with Google
+     * services.
+     * </p>
      * 
-     * @return Platform credential API key from Google.
+     * @return The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with
+     *         Google services.
      */
 
     public String getApiKey() {
@@ -53,10 +73,14 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Platform credential API key from Google.
+     * <p>
+     * The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with Google
+     * services.
+     * </p>
      * 
      * @param apiKey
-     *        Platform credential API key from Google.
+     *        The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with
+     *        Google services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +90,12 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the GCM channel for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether to enable the GCM channel for the application.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -77,9 +103,11 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the GCM channel for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether to enable the GCM channel for the application.
      */
 
     public Boolean getEnabled() {
@@ -87,10 +115,12 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the GCM channel for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether to enable the GCM channel for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,9 +130,11 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the GCM channel for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether to enable the GCM channel for the application.
      */
 
     public Boolean isEnabled() {

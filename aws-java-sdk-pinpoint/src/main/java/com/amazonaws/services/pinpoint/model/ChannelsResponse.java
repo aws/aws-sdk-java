@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Get channels definition
+ * <p>
+ * Provides information about the general settings and status of all channels for an application, including channels
+ * that aren't enabled for the application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ChannelsResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +29,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ChannelsResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** A map of channels, with the ChannelType as the key and the Channel as the value. */
+    /**
+     * <p>
+     * A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the
+     * key and the Channel is the value.
+     * </p>
+     */
     private java.util.Map<String, ChannelResponse> channels;
 
     /**
-     * A map of channels, with the ChannelType as the key and the Channel as the value.
+     * <p>
+     * A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the
+     * key and the Channel is the value.
+     * </p>
      * 
-     * @return A map of channels, with the ChannelType as the key and the Channel as the value.
+     * @return A map that contains a multipart response for each channel. For each item in this object, the ChannelType
+     *         is the key and the Channel is the value.
      */
 
     public java.util.Map<String, ChannelResponse> getChannels() {
@@ -40,10 +52,14 @@ public class ChannelsResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A map of channels, with the ChannelType as the key and the Channel as the value.
+     * <p>
+     * A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the
+     * key and the Channel is the value.
+     * </p>
      * 
      * @param channels
-     *        A map of channels, with the ChannelType as the key and the Channel as the value.
+     *        A map that contains a multipart response for each channel. For each item in this object, the ChannelType
+     *        is the key and the Channel is the value.
      */
 
     public void setChannels(java.util.Map<String, ChannelResponse> channels) {
@@ -51,10 +67,14 @@ public class ChannelsResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A map of channels, with the ChannelType as the key and the Channel as the value.
+     * <p>
+     * A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the
+     * key and the Channel is the value.
+     * </p>
      * 
      * @param channels
-     *        A map of channels, with the ChannelType as the key and the Channel as the value.
+     *        A map that contains a multipart response for each channel. For each item in this object, the ChannelType
+     *        is the key and the Channel is the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

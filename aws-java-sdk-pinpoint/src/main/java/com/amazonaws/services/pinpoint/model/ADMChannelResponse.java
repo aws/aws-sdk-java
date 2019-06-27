@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Amazon Device Messaging channel definition.
+ * <p>
+ * Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ADMChannelResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,32 +28,74 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ADMChannelResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The ID of the application to which the channel applies. */
+    /**
+     * <p>
+     * The unique identifier for the application that the ADM channel applies to.
+     * </p>
+     */
     private String applicationId;
-    /** The date and time when this channel was created. */
+    /**
+     * <p>
+     * The date and time when the ADM channel was enabled.
+     * </p>
+     */
     private String creationDate;
-    /** Indicates whether or not the channel is enabled for sending messages. */
+    /**
+     * <p>
+     * Specifies whether the ADM channel is enabled for the application.
+     * </p>
+     */
     private Boolean enabled;
-    /** Not used. Retained for backwards compatibility. */
+    /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     */
     private Boolean hasCredential;
-    /** (Deprecated) An identifier for the channel. Retained for backwards compatibility. */
+    /**
+     * <p>
+     * (Deprecated) An identifier for the ADM channel. This property is retained only for backward compatibility.
+     * </p>
+     */
     private String id;
-    /** Indicates whether or not the channel is archived. */
+    /**
+     * <p>
+     * Specifies whether the ADM channel is archived.
+     * </p>
+     */
     private Boolean isArchived;
-    /** The user who last updated this channel. */
+    /**
+     * <p>
+     * The user who last modified the ADM channel.
+     * </p>
+     */
     private String lastModifiedBy;
-    /** The date and time when this channel was last modified. */
+    /**
+     * <p>
+     * The date and time when the ADM channel was last modified.
+     * </p>
+     */
     private String lastModifiedDate;
-    /** The platform type. For this channel, the value is always "ADM." */
+    /**
+     * <p>
+     * The type of messaging or notification platform for the channel. For the ADM channel, this value is ADM.
+     * </p>
+     */
     private String platform;
-    /** The channel version. */
+    /**
+     * <p>
+     * The current version of the ADM channel.
+     * </p>
+     */
     private Integer version;
 
     /**
-     * The ID of the application to which the channel applies.
+     * <p>
+     * The unique identifier for the application that the ADM channel applies to.
+     * </p>
      * 
      * @param applicationId
-     *        The ID of the application to which the channel applies.
+     *        The unique identifier for the application that the ADM channel applies to.
      */
 
     public void setApplicationId(String applicationId) {
@@ -59,9 +103,11 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The ID of the application to which the channel applies.
+     * <p>
+     * The unique identifier for the application that the ADM channel applies to.
+     * </p>
      * 
-     * @return The ID of the application to which the channel applies.
+     * @return The unique identifier for the application that the ADM channel applies to.
      */
 
     public String getApplicationId() {
@@ -69,10 +115,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The ID of the application to which the channel applies.
+     * <p>
+     * The unique identifier for the application that the ADM channel applies to.
+     * </p>
      * 
      * @param applicationId
-     *        The ID of the application to which the channel applies.
+     *        The unique identifier for the application that the ADM channel applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,10 +130,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The date and time when this channel was created.
+     * <p>
+     * The date and time when the ADM channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        The date and time when this channel was created.
+     *        The date and time when the ADM channel was enabled.
      */
 
     public void setCreationDate(String creationDate) {
@@ -93,9 +143,11 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The date and time when this channel was created.
+     * <p>
+     * The date and time when the ADM channel was enabled.
+     * </p>
      * 
-     * @return The date and time when this channel was created.
+     * @return The date and time when the ADM channel was enabled.
      */
 
     public String getCreationDate() {
@@ -103,10 +155,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The date and time when this channel was created.
+     * <p>
+     * The date and time when the ADM channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        The date and time when this channel was created.
+     *        The date and time when the ADM channel was enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,10 +170,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether or not the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the ADM channel is enabled for the application.
+     * </p>
      * 
      * @param enabled
-     *        Indicates whether or not the channel is enabled for sending messages.
+     *        Specifies whether the ADM channel is enabled for the application.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -127,9 +183,11 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether or not the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the ADM channel is enabled for the application.
+     * </p>
      * 
-     * @return Indicates whether or not the channel is enabled for sending messages.
+     * @return Specifies whether the ADM channel is enabled for the application.
      */
 
     public Boolean getEnabled() {
@@ -137,10 +195,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether or not the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the ADM channel is enabled for the application.
+     * </p>
      * 
      * @param enabled
-     *        Indicates whether or not the channel is enabled for sending messages.
+     *        Specifies whether the ADM channel is enabled for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,9 +210,11 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether or not the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether the ADM channel is enabled for the application.
+     * </p>
      * 
-     * @return Indicates whether or not the channel is enabled for sending messages.
+     * @return Specifies whether the ADM channel is enabled for the application.
      */
 
     public Boolean isEnabled() {
@@ -160,10 +222,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param hasCredential
-     *        Not used. Retained for backwards compatibility.
+     *        (Not used) This property is retained only for backward compatibility.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -171,9 +235,11 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Not used. Retained for backwards compatibility.
+     * @return (Not used) This property is retained only for backward compatibility.
      */
 
     public Boolean getHasCredential() {
@@ -181,10 +247,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param hasCredential
-     *        Not used. Retained for backwards compatibility.
+     *        (Not used) This property is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,9 +262,11 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return Not used. Retained for backwards compatibility.
+     * @return (Not used) This property is retained only for backward compatibility.
      */
 
     public Boolean isHasCredential() {
@@ -204,10 +274,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * (Deprecated) An identifier for the channel. Retained for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the ADM channel. This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param id
-     *        (Deprecated) An identifier for the channel. Retained for backwards compatibility.
+     *        (Deprecated) An identifier for the ADM channel. This property is retained only for backward compatibility.
      */
 
     public void setId(String id) {
@@ -215,9 +287,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * (Deprecated) An identifier for the channel. Retained for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the ADM channel. This property is retained only for backward compatibility.
+     * </p>
      * 
-     * @return (Deprecated) An identifier for the channel. Retained for backwards compatibility.
+     * @return (Deprecated) An identifier for the ADM channel. This property is retained only for backward
+     *         compatibility.
      */
 
     public String getId() {
@@ -225,10 +300,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * (Deprecated) An identifier for the channel. Retained for backwards compatibility.
+     * <p>
+     * (Deprecated) An identifier for the ADM channel. This property is retained only for backward compatibility.
+     * </p>
      * 
      * @param id
-     *        (Deprecated) An identifier for the channel. Retained for backwards compatibility.
+     *        (Deprecated) An identifier for the ADM channel. This property is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,10 +315,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether or not the channel is archived.
+     * <p>
+     * Specifies whether the ADM channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Indicates whether or not the channel is archived.
+     *        Specifies whether the ADM channel is archived.
      */
 
     public void setIsArchived(Boolean isArchived) {
@@ -249,9 +328,11 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether or not the channel is archived.
+     * <p>
+     * Specifies whether the ADM channel is archived.
+     * </p>
      * 
-     * @return Indicates whether or not the channel is archived.
+     * @return Specifies whether the ADM channel is archived.
      */
 
     public Boolean getIsArchived() {
@@ -259,10 +340,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether or not the channel is archived.
+     * <p>
+     * Specifies whether the ADM channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Indicates whether or not the channel is archived.
+     *        Specifies whether the ADM channel is archived.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,9 +355,11 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether or not the channel is archived.
+     * <p>
+     * Specifies whether the ADM channel is archived.
+     * </p>
      * 
-     * @return Indicates whether or not the channel is archived.
+     * @return Specifies whether the ADM channel is archived.
      */
 
     public Boolean isArchived() {
@@ -282,10 +367,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The user who last updated this channel.
+     * <p>
+     * The user who last modified the ADM channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        The user who last updated this channel.
+     *        The user who last modified the ADM channel.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -293,9 +380,11 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The user who last updated this channel.
+     * <p>
+     * The user who last modified the ADM channel.
+     * </p>
      * 
-     * @return The user who last updated this channel.
+     * @return The user who last modified the ADM channel.
      */
 
     public String getLastModifiedBy() {
@@ -303,10 +392,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The user who last updated this channel.
+     * <p>
+     * The user who last modified the ADM channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        The user who last updated this channel.
+     *        The user who last modified the ADM channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,10 +407,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The date and time when this channel was last modified.
+     * <p>
+     * The date and time when the ADM channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        The date and time when this channel was last modified.
+     *        The date and time when the ADM channel was last modified.
      */
 
     public void setLastModifiedDate(String lastModifiedDate) {
@@ -327,9 +420,11 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The date and time when this channel was last modified.
+     * <p>
+     * The date and time when the ADM channel was last modified.
+     * </p>
      * 
-     * @return The date and time when this channel was last modified.
+     * @return The date and time when the ADM channel was last modified.
      */
 
     public String getLastModifiedDate() {
@@ -337,10 +432,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The date and time when this channel was last modified.
+     * <p>
+     * The date and time when the ADM channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        The date and time when this channel was last modified.
+     *        The date and time when the ADM channel was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,10 +447,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The platform type. For this channel, the value is always "ADM."
+     * <p>
+     * The type of messaging or notification platform for the channel. For the ADM channel, this value is ADM.
+     * </p>
      * 
      * @param platform
-     *        The platform type. For this channel, the value is always "ADM."
+     *        The type of messaging or notification platform for the channel. For the ADM channel, this value is ADM.
      */
 
     public void setPlatform(String platform) {
@@ -361,9 +460,11 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The platform type. For this channel, the value is always "ADM."
+     * <p>
+     * The type of messaging or notification platform for the channel. For the ADM channel, this value is ADM.
+     * </p>
      * 
-     * @return The platform type. For this channel, the value is always "ADM."
+     * @return The type of messaging or notification platform for the channel. For the ADM channel, this value is ADM.
      */
 
     public String getPlatform() {
@@ -371,10 +472,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The platform type. For this channel, the value is always "ADM."
+     * <p>
+     * The type of messaging or notification platform for the channel. For the ADM channel, this value is ADM.
+     * </p>
      * 
      * @param platform
-     *        The platform type. For this channel, the value is always "ADM."
+     *        The type of messaging or notification platform for the channel. For the ADM channel, this value is ADM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,10 +487,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The channel version.
+     * <p>
+     * The current version of the ADM channel.
+     * </p>
      * 
      * @param version
-     *        The channel version.
+     *        The current version of the ADM channel.
      */
 
     public void setVersion(Integer version) {
@@ -395,9 +500,11 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The channel version.
+     * <p>
+     * The current version of the ADM channel.
+     * </p>
      * 
-     * @return The channel version.
+     * @return The current version of the ADM channel.
      */
 
     public Integer getVersion() {
@@ -405,10 +512,12 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The channel version.
+     * <p>
+     * The current version of the ADM channel.
+     * </p>
      * 
      * @param version
-     *        The channel version.
+     *        The current version of the ADM channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

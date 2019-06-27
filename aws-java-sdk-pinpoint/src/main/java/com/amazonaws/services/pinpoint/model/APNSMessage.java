@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * APNS Message.
+ * <p>
+ * Specifies the settings for a one-time message that's sent directly to an endpoint through the APNs (Apple Push
+ * Notification service) channel.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSMessage" target="_top">AWS API
  *      Documentation</a>
@@ -27,102 +30,213 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface
-     * within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you
-     * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * <p>
+     * The action to occur if the recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     * deep-linking features of the iOS platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String action;
     /**
-     * Include this key when you want the system to modify the badge of your app icon. If this key is not included in
-     * the dictionary, the badge is not changed. To remove the badge, set the value of this key to 0.
+     * <p>
+     * The key that indicates whether and how to modify the badge of your app's icon when the recipient receives the
+     * push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove the badge,
+     * set this value to 0.
+     * </p>
      */
     private Integer badge;
-    /** The message body of the notification. */
+    /**
+     * <p>
+     * The body of the notification message.
+     * </p>
+     */
     private String body;
     /**
-     * Provide this key with a string value that represents the notification's type. This value corresponds to the value
-     * in the identifier property of one of your app's registered categories.
+     * <p>
+     * The key that indicates the notification type for the push notification. This key is a value that's defined by the
+     * identifier property of one of your app's registered categories.
+     * </p>
      */
     private String category;
     /**
-     * An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
-     * notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon Pinpoint
-     * uses this value to set the apns-collapse-id request header when it sends the message to APNs.
+     * <p>
+     * An arbitrary identifier that, if assigned to multiple messages, APNs uses to coalesce the messages into a single
+     * push notification instead of delivering each message individually. This value can't exceed 64 bytes.
+     * </p>
+     * <p>
+     * Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the notification
+     * message to APNs.
+     * </p>
      */
     private String collapseId;
     /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
+     * <p>
+     * The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody
+     * object of the notification.
+     * </p>
      */
     private java.util.Map<String, String> data;
-    /** A URL that refers to the location of an image or video that you want to display in the push notification. */
+    /**
+     * <p>
+     * The URL of an image or video to display in the push notification.
+     * </p>
+     */
     private String mediaUrl;
-    /** The preferred authentication method, either "CERTIFICATE" or "TOKEN" */
+    /**
+     * <p>
+     * The authentication method that you want Amazon Pinpoint to use when authenticating with Apple Push Notification
+     * service (APNs), CERTIFICATE or TOKEN.
+     * </p>
+     */
     private String preferredAuthenticationMethod;
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it sends the
-     * message to APNs. Accepts the following values:
-     * 
-     * "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
-     * 
-     * "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound, or badge
-     * on the receiving device.
-     * 
-     * The default value is "10".
-     * 
-     * The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these values for
-     * APNs messages and converts them.
-     * 
-     * For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and Remote
-     * Notification Programming Guide.
+     * <p>
+     * para>5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.
+     * </p>
+     * /listitem> <li>
+     * <p>
+     * 10 - High priority, the notification is sent immediately. This is the default value. A high priority notification
+     * should trigger an alert, play a sound, or badge your app's icon on the recipient's device.
+     * </p>
+     * </li>/para>
+     * <p>
+     * Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification message
+     * to APNs.
+     * </p>
+     * <p>
+     * The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are normal, for
+     * 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts and converts the
+     * value to the corresponding APNs value.
+     * </p>
      */
     private String priority;
-    /** The Raw JSON formatted string to be used as the payload. This value overrides the message. */
+    /**
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
+     * message.
+     * </p>
+     */
     private String rawContent;
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration, displaying messages in an in-app message center, or supporting phone home functionality.
+     * </p>
      */
     private Boolean silentPush;
     /**
-     * Include this key when you want the system to play a sound. The value of this key is the name of a sound file in
-     * your app's main bundle or in the Library/Sounds folder of your app's data container. If the sound file cannot be
-     * found, or if you specify defaultfor the value, the system plays the default alert sound.
+     * <p>
+     * The key for the sound to play when the recipient receives the push notification. The value of this key is the
+     * name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the
+     * sound file can't be found or you specify default for the value, the system plays the default alert sound.
+     * </p>
      */
     private String sound;
-    /** Default message substitutions. Can be overridden by individual address substitutions. */
+    /**
+     * <p>
+     * The default message variables to use in the notification message. You can override these default variables with
+     * individual address variables.
+     * </p>
+     */
     private java.util.Map<String, java.util.List<String>> substitutions;
     /**
-     * Provide this key with a string value that represents the app-specific identifier for grouping notifications. If
-     * you provide a Notification Content app extension, you can use this value to group your notifications together.
+     * <p>
+     * The key that represents your app-specific identifier for grouping notifications. If you provide a Notification
+     * Content app extension, you can use this value to group your notifications together.
+     * </p>
      */
     private String threadId;
     /**
-     * The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0, APNs
-     * does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value to set the
-     * apns-expiration request header when it sends the message to APNs.
+     * <p>
+     * The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if the
+     * service is unable to deliver the notification the first time. If this value is 0, APNs treats the notification as
+     * if it expires immediately and the service doesn't store or try to deliver the notification again.
+     * </p>
+     * <p>
+     * Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification message
+     * to APNs.
+     * </p>
      */
     private Integer timeToLive;
-    /** The message title that displays above the message on the user's device. */
+    /**
+     * <p>
+     * The title to display above the notification message on the recipient's device.
+     * </p>
+     */
     private String title;
-    /** The URL to open in the user's mobile browser. Used if the value for Action is URL. */
+    /**
+     * <p>
+     * The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the
+     * value of the Action property is URL.
+     * </p>
+     */
     private String url;
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface
-     * within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you
-     * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * <p>
+     * The action to occur if the recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     * deep-linking features of the iOS platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *        action. DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a
-     *        designated user interface within the app. URL - The default mobile browser on the user's device launches
-     *        and opens a web page at the URL you specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     *        The action to occur if the recipient taps the push notification. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *        default action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     *        deep-linking features of the iOS platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     *        specify.
+     *        </p>
+     *        </li>
      * @see Action
      */
 
@@ -131,17 +245,50 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface
-     * within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you
-     * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * <p>
+     * The action to occur if the recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     * deep-linking features of the iOS platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your
-     *         app launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *         action. DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a
-     *         designated user interface within the app. URL - The default mobile browser on the user's device launches
-     *         and opens a web page at the URL you specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * @return The action to occur if the recipient taps the push notification. Valid values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *         default action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     *         deep-linking features of the iOS platform.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     *         specify.
+     *         </p>
+     *         </li>
      * @see Action
      */
 
@@ -150,18 +297,51 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface
-     * within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you
-     * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * <p>
+     * The action to occur if the recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     * deep-linking features of the iOS platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *        action. DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a
-     *        designated user interface within the app. URL - The default mobile browser on the user's device launches
-     *        and opens a web page at the URL you specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     *        The action to occur if the recipient taps the push notification. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *        default action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     *        deep-linking features of the iOS platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     *        specify.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Action
      */
@@ -172,18 +352,51 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface
-     * within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you
-     * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * <p>
+     * The action to occur if the recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     * deep-linking features of the iOS platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *        action. DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a
-     *        designated user interface within the app. URL - The default mobile browser on the user's device launches
-     *        and opens a web page at the URL you specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     *        The action to occur if the recipient taps the push notification. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *        default action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     *        deep-linking features of the iOS platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     *        specify.
+     *        </p>
+     *        </li>
      * @see Action
      */
 
@@ -192,18 +405,51 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface
-     * within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you
-     * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     * <p>
+     * The action to occur if the recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     * deep-linking features of the iOS platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
-     *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *        action. DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a
-     *        designated user interface within the app. URL - The default mobile browser on the user's device launches
-     *        and opens a web page at the URL you specify. Possible values include: OPEN_APP | DEEP_LINK | URL
+     *        The action to occur if the recipient taps the push notification. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *        default action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     *        deep-linking features of the iOS platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     *        specify.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Action
      */
@@ -214,12 +460,16 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Include this key when you want the system to modify the badge of your app icon. If this key is not included in
-     * the dictionary, the badge is not changed. To remove the badge, set the value of this key to 0.
+     * <p>
+     * The key that indicates whether and how to modify the badge of your app's icon when the recipient receives the
+     * push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove the badge,
+     * set this value to 0.
+     * </p>
      * 
      * @param badge
-     *        Include this key when you want the system to modify the badge of your app icon. If this key is not
-     *        included in the dictionary, the badge is not changed. To remove the badge, set the value of this key to 0.
+     *        The key that indicates whether and how to modify the badge of your app's icon when the recipient receives
+     *        the push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove
+     *        the badge, set this value to 0.
      */
 
     public void setBadge(Integer badge) {
@@ -227,12 +477,15 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Include this key when you want the system to modify the badge of your app icon. If this key is not included in
-     * the dictionary, the badge is not changed. To remove the badge, set the value of this key to 0.
+     * <p>
+     * The key that indicates whether and how to modify the badge of your app's icon when the recipient receives the
+     * push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove the badge,
+     * set this value to 0.
+     * </p>
      * 
-     * @return Include this key when you want the system to modify the badge of your app icon. If this key is not
-     *         included in the dictionary, the badge is not changed. To remove the badge, set the value of this key to
-     *         0.
+     * @return The key that indicates whether and how to modify the badge of your app's icon when the recipient receives
+     *         the push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove
+     *         the badge, set this value to 0.
      */
 
     public Integer getBadge() {
@@ -240,12 +493,16 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Include this key when you want the system to modify the badge of your app icon. If this key is not included in
-     * the dictionary, the badge is not changed. To remove the badge, set the value of this key to 0.
+     * <p>
+     * The key that indicates whether and how to modify the badge of your app's icon when the recipient receives the
+     * push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove the badge,
+     * set this value to 0.
+     * </p>
      * 
      * @param badge
-     *        Include this key when you want the system to modify the badge of your app icon. If this key is not
-     *        included in the dictionary, the badge is not changed. To remove the badge, set the value of this key to 0.
+     *        The key that indicates whether and how to modify the badge of your app's icon when the recipient receives
+     *        the push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove
+     *        the badge, set this value to 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,10 +512,12 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification.
+     * <p>
+     * The body of the notification message.
+     * </p>
      * 
      * @param body
-     *        The message body of the notification.
+     *        The body of the notification message.
      */
 
     public void setBody(String body) {
@@ -266,9 +525,11 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification.
+     * <p>
+     * The body of the notification message.
+     * </p>
      * 
-     * @return The message body of the notification.
+     * @return The body of the notification message.
      */
 
     public String getBody() {
@@ -276,10 +537,12 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification.
+     * <p>
+     * The body of the notification message.
+     * </p>
      * 
      * @param body
-     *        The message body of the notification.
+     *        The body of the notification message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,12 +552,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Provide this key with a string value that represents the notification's type. This value corresponds to the value
-     * in the identifier property of one of your app's registered categories.
+     * <p>
+     * The key that indicates the notification type for the push notification. This key is a value that's defined by the
+     * identifier property of one of your app's registered categories.
+     * </p>
      * 
      * @param category
-     *        Provide this key with a string value that represents the notification's type. This value corresponds to
-     *        the value in the identifier property of one of your app's registered categories.
+     *        The key that indicates the notification type for the push notification. This key is a value that's defined
+     *        by the identifier property of one of your app's registered categories.
      */
 
     public void setCategory(String category) {
@@ -302,11 +567,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Provide this key with a string value that represents the notification's type. This value corresponds to the value
-     * in the identifier property of one of your app's registered categories.
+     * <p>
+     * The key that indicates the notification type for the push notification. This key is a value that's defined by the
+     * identifier property of one of your app's registered categories.
+     * </p>
      * 
-     * @return Provide this key with a string value that represents the notification's type. This value corresponds to
-     *         the value in the identifier property of one of your app's registered categories.
+     * @return The key that indicates the notification type for the push notification. This key is a value that's
+     *         defined by the identifier property of one of your app's registered categories.
      */
 
     public String getCategory() {
@@ -314,12 +581,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Provide this key with a string value that represents the notification's type. This value corresponds to the value
-     * in the identifier property of one of your app's registered categories.
+     * <p>
+     * The key that indicates the notification type for the push notification. This key is a value that's defined by the
+     * identifier property of one of your app's registered categories.
+     * </p>
      * 
      * @param category
-     *        Provide this key with a string value that represents the notification's type. This value corresponds to
-     *        the value in the identifier property of one of your app's registered categories.
+     *        The key that indicates the notification type for the push notification. This key is a value that's defined
+     *        by the identifier property of one of your app's registered categories.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,14 +598,22 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
-     * notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon Pinpoint
-     * uses this value to set the apns-collapse-id request header when it sends the message to APNs.
+     * <p>
+     * An arbitrary identifier that, if assigned to multiple messages, APNs uses to coalesce the messages into a single
+     * push notification instead of delivering each message individually. This value can't exceed 64 bytes.
+     * </p>
+     * <p>
+     * Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the notification
+     * message to APNs.
+     * </p>
      * 
      * @param collapseId
-     *        An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
-     *        notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon
-     *        Pinpoint uses this value to set the apns-collapse-id request header when it sends the message to APNs.
+     *        An arbitrary identifier that, if assigned to multiple messages, APNs uses to coalesce the messages into a
+     *        single push notification instead of delivering each message individually. This value can't exceed 64
+     *        bytes.</p>
+     *        <p>
+     *        Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the notification
+     *        message to APNs.
      */
 
     public void setCollapseId(String collapseId) {
@@ -344,13 +621,21 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
-     * notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon Pinpoint
-     * uses this value to set the apns-collapse-id request header when it sends the message to APNs.
+     * <p>
+     * An arbitrary identifier that, if assigned to multiple messages, APNs uses to coalesce the messages into a single
+     * push notification instead of delivering each message individually. This value can't exceed 64 bytes.
+     * </p>
+     * <p>
+     * Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the notification
+     * message to APNs.
+     * </p>
      * 
-     * @return An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
-     *         notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon
-     *         Pinpoint uses this value to set the apns-collapse-id request header when it sends the message to APNs.
+     * @return An arbitrary identifier that, if assigned to multiple messages, APNs uses to coalesce the messages into a
+     *         single push notification instead of delivering each message individually. This value can't exceed 64
+     *         bytes.</p>
+     *         <p>
+     *         Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the
+     *         notification message to APNs.
      */
 
     public String getCollapseId() {
@@ -358,14 +643,22 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
-     * notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon Pinpoint
-     * uses this value to set the apns-collapse-id request header when it sends the message to APNs.
+     * <p>
+     * An arbitrary identifier that, if assigned to multiple messages, APNs uses to coalesce the messages into a single
+     * push notification instead of delivering each message individually. This value can't exceed 64 bytes.
+     * </p>
+     * <p>
+     * Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the notification
+     * message to APNs.
+     * </p>
      * 
      * @param collapseId
-     *        An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
-     *        notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon
-     *        Pinpoint uses this value to set the apns-collapse-id request header when it sends the message to APNs.
+     *        An arbitrary identifier that, if assigned to multiple messages, APNs uses to coalesce the messages into a
+     *        single push notification instead of delivering each message individually. This value can't exceed 64
+     *        bytes.</p>
+     *        <p>
+     *        Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the notification
+     *        message to APNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,11 +668,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
+     * <p>
+     * The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody
+     * object of the notification.
+     * </p>
      * 
-     * @return The data payload used for a silent push. This payload is added to the notifications'
-     *         data.pinpoint.jsonBody' object
+     * @return The JSON payload to use for a silent push notification. This payload is added to the
+     *         data.pinpoint.jsonBody object of the notification.
      */
 
     public java.util.Map<String, String> getData() {
@@ -387,12 +682,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
+     * <p>
+     * The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody
+     * object of the notification.
+     * </p>
      * 
      * @param data
-     *        The data payload used for a silent push. This payload is added to the notifications'
-     *        data.pinpoint.jsonBody' object
+     *        The JSON payload to use for a silent push notification. This payload is added to the
+     *        data.pinpoint.jsonBody object of the notification.
      */
 
     public void setData(java.util.Map<String, String> data) {
@@ -400,12 +697,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
+     * <p>
+     * The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody
+     * object of the notification.
+     * </p>
      * 
      * @param data
-     *        The data payload used for a silent push. This payload is added to the notifications'
-     *        data.pinpoint.jsonBody' object
+     *        The JSON payload to use for a silent push notification. This payload is added to the
+     *        data.pinpoint.jsonBody object of the notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,10 +735,12 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display in the push notification.
+     * <p>
+     * The URL of an image or video to display in the push notification.
+     * </p>
      * 
      * @param mediaUrl
-     *        A URL that refers to the location of an image or video that you want to display in the push notification.
+     *        The URL of an image or video to display in the push notification.
      */
 
     public void setMediaUrl(String mediaUrl) {
@@ -447,9 +748,11 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display in the push notification.
+     * <p>
+     * The URL of an image or video to display in the push notification.
+     * </p>
      * 
-     * @return A URL that refers to the location of an image or video that you want to display in the push notification.
+     * @return The URL of an image or video to display in the push notification.
      */
 
     public String getMediaUrl() {
@@ -457,10 +760,12 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display in the push notification.
+     * <p>
+     * The URL of an image or video to display in the push notification.
+     * </p>
      * 
      * @param mediaUrl
-     *        A URL that refers to the location of an image or video that you want to display in the push notification.
+     *        The URL of an image or video to display in the push notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,10 +775,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * <p>
+     * The authentication method that you want Amazon Pinpoint to use when authenticating with Apple Push Notification
+     * service (APNs), CERTIFICATE or TOKEN.
+     * </p>
      * 
      * @param preferredAuthenticationMethod
-     *        The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     *        The authentication method that you want Amazon Pinpoint to use when authenticating with Apple Push
+     *        Notification service (APNs), CERTIFICATE or TOKEN.
      */
 
     public void setPreferredAuthenticationMethod(String preferredAuthenticationMethod) {
@@ -481,9 +790,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * <p>
+     * The authentication method that you want Amazon Pinpoint to use when authenticating with Apple Push Notification
+     * service (APNs), CERTIFICATE or TOKEN.
+     * </p>
      * 
-     * @return The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * @return The authentication method that you want Amazon Pinpoint to use when authenticating with Apple Push
+     *         Notification service (APNs), CERTIFICATE or TOKEN.
      */
 
     public String getPreferredAuthenticationMethod() {
@@ -491,10 +804,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * <p>
+     * The authentication method that you want Amazon Pinpoint to use when authenticating with Apple Push Notification
+     * service (APNs), CERTIFICATE or TOKEN.
+     * </p>
      * 
      * @param preferredAuthenticationMethod
-     *        The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     *        The authentication method that you want Amazon Pinpoint to use when authenticating with Apple Push
+     *        Notification service (APNs), CERTIFICATE or TOKEN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,38 +821,41 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it sends the
-     * message to APNs. Accepts the following values:
-     * 
-     * "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
-     * 
-     * "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound, or badge
-     * on the receiving device.
-     * 
-     * The default value is "10".
-     * 
-     * The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these values for
-     * APNs messages and converts them.
-     * 
-     * For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and Remote
-     * Notification Programming Guide.
+     * <p>
+     * para>5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.
+     * </p>
+     * /listitem> <li>
+     * <p>
+     * 10 - High priority, the notification is sent immediately. This is the default value. A high priority notification
+     * should trigger an alert, play a sound, or badge your app's icon on the recipient's device.
+     * </p>
+     * </li>/para>
+     * <p>
+     * Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification message
+     * to APNs.
+     * </p>
+     * <p>
+     * The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are normal, for
+     * 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts and converts the
+     * value to the corresponding APNs value.
+     * </p>
      * 
      * @param priority
-     *        The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it
-     *        sends the message to APNs. Accepts the following values:
-     * 
-     *        "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
-     * 
-     *        "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound, or
-     *        badge on the receiving device.
-     * 
-     *        The default value is "10".
-     * 
-     *        The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these
-     *        values for APNs messages and converts them.
-     * 
-     *        For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and
-     *        Remote Notification Programming Guide.
+     *        para>5 - Low priority, the notification might be delayed, delivered as part of a group, or
+     *        throttled.</p>/listitem> <li>
+     *        <p>
+     *        10 - High priority, the notification is sent immediately. This is the default value. A high priority
+     *        notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.
+     *        </p>
+     *        </li>/para>
+     *        <p>
+     *        Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification
+     *        message to APNs.
+     *        </p>
+     *        <p>
+     *        The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are
+     *        normal, for 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts
+     *        and converts the value to the corresponding APNs value.
      */
 
     public void setPriority(String priority) {
@@ -543,37 +863,40 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it sends the
-     * message to APNs. Accepts the following values:
+     * <p>
+     * para>5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.
+     * </p>
+     * /listitem> <li>
+     * <p>
+     * 10 - High priority, the notification is sent immediately. This is the default value. A high priority notification
+     * should trigger an alert, play a sound, or badge your app's icon on the recipient's device.
+     * </p>
+     * </li>/para>
+     * <p>
+     * Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification message
+     * to APNs.
+     * </p>
+     * <p>
+     * The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are normal, for
+     * 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts and converts the
+     * value to the corresponding APNs value.
+     * </p>
      * 
-     * "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
-     * 
-     * "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound, or badge
-     * on the receiving device.
-     * 
-     * The default value is "10".
-     * 
-     * The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these values for
-     * APNs messages and converts them.
-     * 
-     * For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and Remote
-     * Notification Programming Guide.
-     * 
-     * @return The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it
-     *         sends the message to APNs. Accepts the following values:
-     * 
-     *         "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
-     * 
-     *         "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound,
-     *         or badge on the receiving device.
-     * 
-     *         The default value is "10".
-     * 
-     *         The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these
-     *         values for APNs messages and converts them.
-     * 
-     *         For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and
-     *         Remote Notification Programming Guide.
+     * @return para>5 - Low priority, the notification might be delayed, delivered as part of a group, or
+     *         throttled.</p>/listitem> <li>
+     *         <p>
+     *         10 - High priority, the notification is sent immediately. This is the default value. A high priority
+     *         notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.
+     *         </p>
+     *         </li>/para>
+     *         <p>
+     *         Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification
+     *         message to APNs.
+     *         </p>
+     *         <p>
+     *         The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are
+     *         normal, for 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts
+     *         and converts the value to the corresponding APNs value.
      */
 
     public String getPriority() {
@@ -581,38 +904,41 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it sends the
-     * message to APNs. Accepts the following values:
-     * 
-     * "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
-     * 
-     * "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound, or badge
-     * on the receiving device.
-     * 
-     * The default value is "10".
-     * 
-     * The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these values for
-     * APNs messages and converts them.
-     * 
-     * For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and Remote
-     * Notification Programming Guide.
+     * <p>
+     * para>5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.
+     * </p>
+     * /listitem> <li>
+     * <p>
+     * 10 - High priority, the notification is sent immediately. This is the default value. A high priority notification
+     * should trigger an alert, play a sound, or badge your app's icon on the recipient's device.
+     * </p>
+     * </li>/para>
+     * <p>
+     * Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification message
+     * to APNs.
+     * </p>
+     * <p>
+     * The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are normal, for
+     * 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts and converts the
+     * value to the corresponding APNs value.
+     * </p>
      * 
      * @param priority
-     *        The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it
-     *        sends the message to APNs. Accepts the following values:
-     * 
-     *        "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
-     * 
-     *        "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound, or
-     *        badge on the receiving device.
-     * 
-     *        The default value is "10".
-     * 
-     *        The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these
-     *        values for APNs messages and converts them.
-     * 
-     *        For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and
-     *        Remote Notification Programming Guide.
+     *        para>5 - Low priority, the notification might be delayed, delivered as part of a group, or
+     *        throttled.</p>/listitem> <li>
+     *        <p>
+     *        10 - High priority, the notification is sent immediately. This is the default value. A high priority
+     *        notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.
+     *        </p>
+     *        </li>/para>
+     *        <p>
+     *        Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification
+     *        message to APNs.
+     *        </p>
+     *        <p>
+     *        The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are
+     *        normal, for 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts
+     *        and converts the value to the corresponding APNs value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -622,10 +948,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
+     * message.
+     * </p>
      * 
      * @param rawContent
-     *        The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
+     *        the message.
      */
 
     public void setRawContent(String rawContent) {
@@ -633,9 +963,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
+     * message.
+     * </p>
      * 
-     * @return The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     * @return The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
+     *         the message.
      */
 
     public String getRawContent() {
@@ -643,10 +977,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
+     * message.
+     * </p>
      * 
      * @param rawContent
-     *        The Raw JSON formatted string to be used as the payload. This value overrides the message.
+     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
+     *        the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -656,12 +994,17 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration, displaying messages in an in-app message center, or supporting phone home functionality.
+     * </p>
      * 
      * @param silentPush
-     *        Indicates if the message should display on the users device. Silent pushes can be used for Remote
-     *        Configuration and Phone Home use cases.
+     *        Specifies whether the notification is a silent push notification, which is a push notification that
+     *        doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating
+     *        an app's configuration, displaying messages in an in-app message center, or supporting phone home
+     *        functionality.
      */
 
     public void setSilentPush(Boolean silentPush) {
@@ -669,11 +1012,16 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration, displaying messages in an in-app message center, or supporting phone home functionality.
+     * </p>
      * 
-     * @return Indicates if the message should display on the users device. Silent pushes can be used for Remote
-     *         Configuration and Phone Home use cases.
+     * @return Specifies whether the notification is a silent push notification, which is a push notification that
+     *         doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating
+     *         an app's configuration, displaying messages in an in-app message center, or supporting phone home
+     *         functionality.
      */
 
     public Boolean getSilentPush() {
@@ -681,12 +1029,17 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration, displaying messages in an in-app message center, or supporting phone home functionality.
+     * </p>
      * 
      * @param silentPush
-     *        Indicates if the message should display on the users device. Silent pushes can be used for Remote
-     *        Configuration and Phone Home use cases.
+     *        Specifies whether the notification is a silent push notification, which is a push notification that
+     *        doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating
+     *        an app's configuration, displaying messages in an in-app message center, or supporting phone home
+     *        functionality.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -696,11 +1049,16 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration, displaying messages in an in-app message center, or supporting phone home functionality.
+     * </p>
      * 
-     * @return Indicates if the message should display on the users device. Silent pushes can be used for Remote
-     *         Configuration and Phone Home use cases.
+     * @return Specifies whether the notification is a silent push notification, which is a push notification that
+     *         doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating
+     *         an app's configuration, displaying messages in an in-app message center, or supporting phone home
+     *         functionality.
      */
 
     public Boolean isSilentPush() {
@@ -708,14 +1066,17 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Include this key when you want the system to play a sound. The value of this key is the name of a sound file in
-     * your app's main bundle or in the Library/Sounds folder of your app's data container. If the sound file cannot be
-     * found, or if you specify defaultfor the value, the system plays the default alert sound.
+     * <p>
+     * The key for the sound to play when the recipient receives the push notification. The value of this key is the
+     * name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the
+     * sound file can't be found or you specify default for the value, the system plays the default alert sound.
+     * </p>
      * 
      * @param sound
-     *        Include this key when you want the system to play a sound. The value of this key is the name of a sound
-     *        file in your app's main bundle or in the Library/Sounds folder of your app's data container. If the sound
-     *        file cannot be found, or if you specify defaultfor the value, the system plays the default alert sound.
+     *        The key for the sound to play when the recipient receives the push notification. The value of this key is
+     *        the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data
+     *        container. If the sound file can't be found or you specify default for the value, the system plays the
+     *        default alert sound.
      */
 
     public void setSound(String sound) {
@@ -723,13 +1084,16 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Include this key when you want the system to play a sound. The value of this key is the name of a sound file in
-     * your app's main bundle or in the Library/Sounds folder of your app's data container. If the sound file cannot be
-     * found, or if you specify defaultfor the value, the system plays the default alert sound.
+     * <p>
+     * The key for the sound to play when the recipient receives the push notification. The value of this key is the
+     * name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the
+     * sound file can't be found or you specify default for the value, the system plays the default alert sound.
+     * </p>
      * 
-     * @return Include this key when you want the system to play a sound. The value of this key is the name of a sound
-     *         file in your app's main bundle or in the Library/Sounds folder of your app's data container. If the sound
-     *         file cannot be found, or if you specify defaultfor the value, the system plays the default alert sound.
+     * @return The key for the sound to play when the recipient receives the push notification. The value of this key is
+     *         the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data
+     *         container. If the sound file can't be found or you specify default for the value, the system plays the
+     *         default alert sound.
      */
 
     public String getSound() {
@@ -737,14 +1101,17 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Include this key when you want the system to play a sound. The value of this key is the name of a sound file in
-     * your app's main bundle or in the Library/Sounds folder of your app's data container. If the sound file cannot be
-     * found, or if you specify defaultfor the value, the system plays the default alert sound.
+     * <p>
+     * The key for the sound to play when the recipient receives the push notification. The value of this key is the
+     * name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the
+     * sound file can't be found or you specify default for the value, the system plays the default alert sound.
+     * </p>
      * 
      * @param sound
-     *        Include this key when you want the system to play a sound. The value of this key is the name of a sound
-     *        file in your app's main bundle or in the Library/Sounds folder of your app's data container. If the sound
-     *        file cannot be found, or if you specify defaultfor the value, the system plays the default alert sound.
+     *        The key for the sound to play when the recipient receives the push notification. The value of this key is
+     *        the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data
+     *        container. If the sound file can't be found or you specify default for the value, the system plays the
+     *        default alert sound.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -754,9 +1121,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The default message variables to use in the notification message. You can override these default variables with
+     * individual address variables.
+     * </p>
      * 
-     * @return Default message substitutions. Can be overridden by individual address substitutions.
+     * @return The default message variables to use in the notification message. You can override these default
+     *         variables with individual address variables.
      */
 
     public java.util.Map<String, java.util.List<String>> getSubstitutions() {
@@ -764,10 +1135,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The default message variables to use in the notification message. You can override these default variables with
+     * individual address variables.
+     * </p>
      * 
      * @param substitutions
-     *        Default message substitutions. Can be overridden by individual address substitutions.
+     *        The default message variables to use in the notification message. You can override these default variables
+     *        with individual address variables.
      */
 
     public void setSubstitutions(java.util.Map<String, java.util.List<String>> substitutions) {
@@ -775,10 +1150,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The default message variables to use in the notification message. You can override these default variables with
+     * individual address variables.
+     * </p>
      * 
      * @param substitutions
-     *        Default message substitutions. Can be overridden by individual address substitutions.
+     *        The default message variables to use in the notification message. You can override these default variables
+     *        with individual address variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -809,13 +1188,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Provide this key with a string value that represents the app-specific identifier for grouping notifications. If
-     * you provide a Notification Content app extension, you can use this value to group your notifications together.
+     * <p>
+     * The key that represents your app-specific identifier for grouping notifications. If you provide a Notification
+     * Content app extension, you can use this value to group your notifications together.
+     * </p>
      * 
      * @param threadId
-     *        Provide this key with a string value that represents the app-specific identifier for grouping
-     *        notifications. If you provide a Notification Content app extension, you can use this value to group your
-     *        notifications together.
+     *        The key that represents your app-specific identifier for grouping notifications. If you provide a
+     *        Notification Content app extension, you can use this value to group your notifications together.
      */
 
     public void setThreadId(String threadId) {
@@ -823,12 +1203,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Provide this key with a string value that represents the app-specific identifier for grouping notifications. If
-     * you provide a Notification Content app extension, you can use this value to group your notifications together.
+     * <p>
+     * The key that represents your app-specific identifier for grouping notifications. If you provide a Notification
+     * Content app extension, you can use this value to group your notifications together.
+     * </p>
      * 
-     * @return Provide this key with a string value that represents the app-specific identifier for grouping
-     *         notifications. If you provide a Notification Content app extension, you can use this value to group your
-     *         notifications together.
+     * @return The key that represents your app-specific identifier for grouping notifications. If you provide a
+     *         Notification Content app extension, you can use this value to group your notifications together.
      */
 
     public String getThreadId() {
@@ -836,13 +1217,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Provide this key with a string value that represents the app-specific identifier for grouping notifications. If
-     * you provide a Notification Content app extension, you can use this value to group your notifications together.
+     * <p>
+     * The key that represents your app-specific identifier for grouping notifications. If you provide a Notification
+     * Content app extension, you can use this value to group your notifications together.
+     * </p>
      * 
      * @param threadId
-     *        Provide this key with a string value that represents the app-specific identifier for grouping
-     *        notifications. If you provide a Notification Content app extension, you can use this value to group your
-     *        notifications together.
+     *        The key that represents your app-specific identifier for grouping notifications. If you provide a
+     *        Notification Content app extension, you can use this value to group your notifications together.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -852,14 +1234,24 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0, APNs
-     * does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value to set the
-     * apns-expiration request header when it sends the message to APNs.
+     * <p>
+     * The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if the
+     * service is unable to deliver the notification the first time. If this value is 0, APNs treats the notification as
+     * if it expires immediately and the service doesn't store or try to deliver the notification again.
+     * </p>
+     * <p>
+     * Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification message
+     * to APNs.
+     * </p>
      * 
      * @param timeToLive
-     *        The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0,
-     *        APNs does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value
-     *        to set the apns-expiration request header when it sends the message to APNs.
+     *        The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if
+     *        the service is unable to deliver the notification the first time. If this value is 0, APNs treats the
+     *        notification as if it expires immediately and the service doesn't store or try to deliver the notification
+     *        again.</p>
+     *        <p>
+     *        Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification
+     *        message to APNs.
      */
 
     public void setTimeToLive(Integer timeToLive) {
@@ -867,13 +1259,23 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0, APNs
-     * does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value to set the
-     * apns-expiration request header when it sends the message to APNs.
+     * <p>
+     * The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if the
+     * service is unable to deliver the notification the first time. If this value is 0, APNs treats the notification as
+     * if it expires immediately and the service doesn't store or try to deliver the notification again.
+     * </p>
+     * <p>
+     * Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification message
+     * to APNs.
+     * </p>
      * 
-     * @return The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0,
-     *         APNs does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value
-     *         to set the apns-expiration request header when it sends the message to APNs.
+     * @return The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if
+     *         the service is unable to deliver the notification the first time. If this value is 0, APNs treats the
+     *         notification as if it expires immediately and the service doesn't store or try to deliver the
+     *         notification again.</p>
+     *         <p>
+     *         Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification
+     *         message to APNs.
      */
 
     public Integer getTimeToLive() {
@@ -881,14 +1283,24 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0, APNs
-     * does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value to set the
-     * apns-expiration request header when it sends the message to APNs.
+     * <p>
+     * The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if the
+     * service is unable to deliver the notification the first time. If this value is 0, APNs treats the notification as
+     * if it expires immediately and the service doesn't store or try to deliver the notification again.
+     * </p>
+     * <p>
+     * Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification message
+     * to APNs.
+     * </p>
      * 
      * @param timeToLive
-     *        The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0,
-     *        APNs does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value
-     *        to set the apns-expiration request header when it sends the message to APNs.
+     *        The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if
+     *        the service is unable to deliver the notification the first time. If this value is 0, APNs treats the
+     *        notification as if it expires immediately and the service doesn't store or try to deliver the notification
+     *        again.</p>
+     *        <p>
+     *        Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification
+     *        message to APNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -898,10 +1310,12 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>
+     * The title to display above the notification message on the recipient's device.
+     * </p>
      * 
      * @param title
-     *        The message title that displays above the message on the user's device.
+     *        The title to display above the notification message on the recipient's device.
      */
 
     public void setTitle(String title) {
@@ -909,9 +1323,11 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>
+     * The title to display above the notification message on the recipient's device.
+     * </p>
      * 
-     * @return The message title that displays above the message on the user's device.
+     * @return The title to display above the notification message on the recipient's device.
      */
 
     public String getTitle() {
@@ -919,10 +1335,12 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>
+     * The title to display above the notification message on the recipient's device.
+     * </p>
      * 
      * @param title
-     *        The message title that displays above the message on the user's device.
+     *        The title to display above the notification message on the recipient's device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -932,10 +1350,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     * <p>
+     * The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the
+     * value of the Action property is URL.
+     * </p>
      * 
      * @param url
-     *        The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     *        The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and
+     *        the value of the Action property is URL.
      */
 
     public void setUrl(String url) {
@@ -943,9 +1365,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     * <p>
+     * The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the
+     * value of the Action property is URL.
+     * </p>
      * 
-     * @return The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     * @return The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and
+     *         the value of the Action property is URL.
      */
 
     public String getUrl() {
@@ -953,10 +1379,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     * <p>
+     * The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the
+     * value of the Action property is URL.
+     * </p>
      * 
      * @param url
-     *        The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     *        The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and
+     *        the value of the Action property is URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

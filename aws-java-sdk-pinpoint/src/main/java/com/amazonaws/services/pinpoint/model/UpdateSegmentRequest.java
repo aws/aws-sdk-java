@@ -25,18 +25,31 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateSegmentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID of your Amazon Pinpoint application. */
+    /**
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
+     */
     private String applicationId;
-    /** The unique ID of the segment. */
+    /**
+     * <p>
+     * The unique identifier for the segment.
+     * </p>
+     */
     private String segmentId;
 
     private WriteSegmentRequest writeSegmentRequest;
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID of your Amazon Pinpoint application.
+     *        The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *        Amazon Pinpoint console.
      */
 
     public void setApplicationId(String applicationId) {
@@ -44,9 +57,13 @@ public class UpdateSegmentRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
      * 
-     * @return The unique ID of your Amazon Pinpoint application.
+     * @return The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *         Amazon Pinpoint console.
      */
 
     public String getApplicationId() {
@@ -54,10 +71,14 @@ public class UpdateSegmentRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID of your Amazon Pinpoint application.
+     *        The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *        Amazon Pinpoint console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,10 +88,12 @@ public class UpdateSegmentRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The unique ID of the segment.
+     * <p>
+     * The unique identifier for the segment.
+     * </p>
      * 
      * @param segmentId
-     *        The unique ID of the segment.
+     *        The unique identifier for the segment.
      */
 
     public void setSegmentId(String segmentId) {
@@ -78,9 +101,11 @@ public class UpdateSegmentRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The unique ID of the segment.
+     * <p>
+     * The unique identifier for the segment.
+     * </p>
      * 
-     * @return The unique ID of the segment.
+     * @return The unique identifier for the segment.
      */
 
     public String getSegmentId() {
@@ -88,10 +113,12 @@ public class UpdateSegmentRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The unique ID of the segment.
+     * <p>
+     * The unique identifier for the segment.
+     * </p>
      * 
      * @param segmentId
-     *        The unique ID of the segment.
+     *        The unique identifier for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

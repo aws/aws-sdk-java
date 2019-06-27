@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * GPS point location dimension
+ * <p>
+ * Specifies GPS-based criteria for including or excluding endpoints from a segment.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GPSPointDimension" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GPSPointDimension implements Serializable, Cloneable, StructuredPojo {
 
-    /** Coordinate to measure distance from. */
+    /**
+     * <p>
+     * The GPS coordinates to measure distance from.
+     * </p>
+     */
     private GPSCoordinates coordinates;
-    /** Range in kilometers from the coordinate. */
+    /**
+     * <p>
+     * The range, in kilometers, from the GPS coordinates.
+     * </p>
+     */
     private Double rangeInKilometers;
 
     /**
-     * Coordinate to measure distance from.
+     * <p>
+     * The GPS coordinates to measure distance from.
+     * </p>
      * 
      * @param coordinates
-     *        Coordinate to measure distance from.
+     *        The GPS coordinates to measure distance from.
      */
 
     public void setCoordinates(GPSCoordinates coordinates) {
@@ -43,9 +55,11 @@ public class GPSPointDimension implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Coordinate to measure distance from.
+     * <p>
+     * The GPS coordinates to measure distance from.
+     * </p>
      * 
-     * @return Coordinate to measure distance from.
+     * @return The GPS coordinates to measure distance from.
      */
 
     public GPSCoordinates getCoordinates() {
@@ -53,10 +67,12 @@ public class GPSPointDimension implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Coordinate to measure distance from.
+     * <p>
+     * The GPS coordinates to measure distance from.
+     * </p>
      * 
      * @param coordinates
-     *        Coordinate to measure distance from.
+     *        The GPS coordinates to measure distance from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +82,12 @@ public class GPSPointDimension implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Range in kilometers from the coordinate.
+     * <p>
+     * The range, in kilometers, from the GPS coordinates.
+     * </p>
      * 
      * @param rangeInKilometers
-     *        Range in kilometers from the coordinate.
+     *        The range, in kilometers, from the GPS coordinates.
      */
 
     public void setRangeInKilometers(Double rangeInKilometers) {
@@ -77,9 +95,11 @@ public class GPSPointDimension implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Range in kilometers from the coordinate.
+     * <p>
+     * The range, in kilometers, from the GPS coordinates.
+     * </p>
      * 
-     * @return Range in kilometers from the coordinate.
+     * @return The range, in kilometers, from the GPS coordinates.
      */
 
     public Double getRangeInKilometers() {
@@ -87,10 +107,12 @@ public class GPSPointDimension implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Range in kilometers from the coordinate.
+     * <p>
+     * The range, in kilometers, from the GPS coordinates.
+     * </p>
      * 
      * @param rangeInKilometers
-     *        Range in kilometers from the coordinate.
+     *        The range, in kilometers, from the GPS coordinates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

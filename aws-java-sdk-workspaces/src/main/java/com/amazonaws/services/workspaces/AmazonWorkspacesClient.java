@@ -450,6 +450,73 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Copies the specified image from the specified Region to the current Region.
+     * </p>
+     * 
+     * @param copyWorkspaceImageRequest
+     * @return Result of the CopyWorkspaceImage operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @sample AmazonWorkspaces.CopyWorkspaceImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CopyWorkspaceImageResult copyWorkspaceImage(CopyWorkspaceImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopyWorkspaceImage(request);
+    }
+
+    @SdkInternalApi
+    final CopyWorkspaceImageResult executeCopyWorkspaceImage(CopyWorkspaceImageRequest copyWorkspaceImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(copyWorkspaceImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CopyWorkspaceImageRequest> request = null;
+        Response<CopyWorkspaceImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CopyWorkspaceImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(copyWorkspaceImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyWorkspaceImage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CopyWorkspaceImageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CopyWorkspaceImageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an IP access control group.
      * </p>
      * <p>
@@ -766,7 +833,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
     /**
      * <p>
      * Deletes the specified image from your account. To delete an image, you must first delete any bundles that are
-     * associated with the image.
+     * associated with the image and un-share the image if it is shared with other accounts.
      * </p>
      * 
      * @param deleteWorkspaceImageRequest
@@ -1296,6 +1363,67 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Describes the snapshots for the specified WorkSpace.
+     * </p>
+     * 
+     * @param describeWorkspaceSnapshotsRequest
+     * @return Result of the DescribeWorkspaceSnapshots operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.DescribeWorkspaceSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeWorkspaceSnapshotsResult describeWorkspaceSnapshots(DescribeWorkspaceSnapshotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkspaceSnapshots(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkspaceSnapshotsResult executeDescribeWorkspaceSnapshots(DescribeWorkspaceSnapshotsRequest describeWorkspaceSnapshotsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeWorkspaceSnapshotsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeWorkspaceSnapshotsRequest> request = null;
+        Response<DescribeWorkspaceSnapshotsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeWorkspaceSnapshotsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeWorkspaceSnapshotsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaceSnapshots");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeWorkspaceSnapshotsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeWorkspaceSnapshotsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified WorkSpaces.
      * </p>
      * <p>
@@ -1811,8 +1939,9 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * </p>
      * <p>
      * To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
-     * WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild. An AutoStop WorkSpace in
-     * this state is not stopped. Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.
+     * WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild, or restore. An AutoStop
+     * WorkSpace in this state is not stopped. Users cannot log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code>
+     * state.
      * </p>
      * 
      * @param modifyWorkspaceStateRequest
@@ -1983,6 +2112,77 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<RebuildWorkspacesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RebuildWorkspacesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Restores the specified WorkSpace to its last known healthy state.
+     * </p>
+     * <p>
+     * You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>, or
+     * <code>UNHEALTHY</code>.
+     * </p>
+     * <p>
+     * Restoring a WorkSpace is a potentially destructive action that can result in the loss of data. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore a WorkSpace</a>.
+     * </p>
+     * <p>
+     * This operation is asynchronous and returns before the WorkSpace is completely restored.
+     * </p>
+     * 
+     * @param restoreWorkspaceRequest
+     * @return Result of the RestoreWorkspace operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.RestoreWorkspace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RestoreWorkspace" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RestoreWorkspaceResult restoreWorkspace(RestoreWorkspaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreWorkspace(request);
+    }
+
+    @SdkInternalApi
+    final RestoreWorkspaceResult executeRestoreWorkspace(RestoreWorkspaceRequest restoreWorkspaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(restoreWorkspaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestoreWorkspaceRequest> request = null;
+        Response<RestoreWorkspaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestoreWorkspaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreWorkspaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreWorkspace");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RestoreWorkspaceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RestoreWorkspaceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

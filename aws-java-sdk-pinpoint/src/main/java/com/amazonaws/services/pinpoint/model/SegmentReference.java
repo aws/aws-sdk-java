@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Segment reference.
+ * <p>
+ * Specifies the segment identifier and version of a segment.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentReference" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentReference implements Serializable, Cloneable, StructuredPojo {
 
-    /** A unique identifier for the segment. */
+    /**
+     * <p>
+     * The unique identifier for the segment.
+     * </p>
+     */
     private String id;
-    /** If specified contains a specific version of the segment included. */
+    /**
+     * <p>
+     * The version number of the segment.
+     * </p>
+     */
     private Integer version;
 
     /**
-     * A unique identifier for the segment.
+     * <p>
+     * The unique identifier for the segment.
+     * </p>
      * 
      * @param id
-     *        A unique identifier for the segment.
+     *        The unique identifier for the segment.
      */
 
     public void setId(String id) {
@@ -43,9 +55,11 @@ public class SegmentReference implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A unique identifier for the segment.
+     * <p>
+     * The unique identifier for the segment.
+     * </p>
      * 
-     * @return A unique identifier for the segment.
+     * @return The unique identifier for the segment.
      */
 
     public String getId() {
@@ -53,10 +67,12 @@ public class SegmentReference implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A unique identifier for the segment.
+     * <p>
+     * The unique identifier for the segment.
+     * </p>
      * 
      * @param id
-     *        A unique identifier for the segment.
+     *        The unique identifier for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +82,12 @@ public class SegmentReference implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * If specified contains a specific version of the segment included.
+     * <p>
+     * The version number of the segment.
+     * </p>
      * 
      * @param version
-     *        If specified contains a specific version of the segment included.
+     *        The version number of the segment.
      */
 
     public void setVersion(Integer version) {
@@ -77,9 +95,11 @@ public class SegmentReference implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * If specified contains a specific version of the segment included.
+     * <p>
+     * The version number of the segment.
+     * </p>
      * 
-     * @return If specified contains a specific version of the segment included.
+     * @return The version number of the segment.
      */
 
     public Integer getVersion() {
@@ -87,10 +107,12 @@ public class SegmentReference implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * If specified contains a specific version of the segment included.
+     * <p>
+     * The version number of the segment.
+     * </p>
      * 
      * @param version
-     *        If specified contains a specific version of the segment included.
+     *        The version number of the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

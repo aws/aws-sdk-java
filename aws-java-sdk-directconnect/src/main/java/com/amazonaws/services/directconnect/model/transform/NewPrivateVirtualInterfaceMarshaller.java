@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -47,6 +48,8 @@ public class NewPrivateVirtualInterfaceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualGatewayId").build();
     private static final MarshallingInfo<String> DIRECTCONNECTGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("directConnectGatewayId").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final NewPrivateVirtualInterfaceMarshaller instance = new NewPrivateVirtualInterfaceMarshaller();
 
@@ -74,6 +77,7 @@ public class NewPrivateVirtualInterfaceMarshaller {
             protocolMarshaller.marshall(newPrivateVirtualInterface.getAddressFamily(), ADDRESSFAMILY_BINDING);
             protocolMarshaller.marshall(newPrivateVirtualInterface.getVirtualGatewayId(), VIRTUALGATEWAYID_BINDING);
             protocolMarshaller.marshall(newPrivateVirtualInterface.getDirectConnectGatewayId(), DIRECTCONNECTGATEWAYID_BINDING);
+            protocolMarshaller.marshall(newPrivateVirtualInterface.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

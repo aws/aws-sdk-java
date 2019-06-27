@@ -49,6 +49,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String lagId;
+    /**
+     * <p>
+     * The tags to assign to the connection.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -211,6 +217,79 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The tags to assign to the connection.
+     * </p>
+     * 
+     * @return The tags to assign to the connection.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the connection.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the connection.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the connection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectionRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the connection.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectionRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -229,7 +308,9 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
         if (getConnectionName() != null)
             sb.append("ConnectionName: ").append(getConnectionName()).append(",");
         if (getLagId() != null)
-            sb.append("LagId: ").append(getLagId());
+            sb.append("LagId: ").append(getLagId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -260,6 +341,10 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getLagId() != null && other.getLagId().equals(this.getLagId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -272,6 +357,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
         hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
         hashCode = prime * hashCode + ((getLagId() == null) ? 0 : getLagId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

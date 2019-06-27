@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * An object that defines the events that cause the campaign to be sent.
+ * <p>
+ * Specifies the settings for events that cause a campaign to be sent.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignEventFilter" target="_top">AWS API
  *      Documentation</a>
@@ -26,22 +28,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CampaignEventFilter implements Serializable, Cloneable, StructuredPojo {
 
-    /** An object that defines the dimensions for the event filter. */
+    /**
+     * <p>
+     * The dimension settings of the event filter for the campaign.
+     * </p>
+     */
     private EventDimensions dimensions;
     /**
-     * The type of event that causes the campaign to be sent. Possible values:
-     * 
-     * SYSTEM - Send the campaign when a system event occurs. See the System resource for more information.
-     * 
-     * ENDPOINT - Send the campaign when an endpoint event occurs. See the Event resource for more information.
+     * <p>
+     * The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system
+     * event occurs; and, ENDPOINT, sends the campaign when an endpoint event (<link
+     * linkend="apps-application-id-events">Events</link> resource) occurs.
+     * </p>
      */
     private String filterType;
 
     /**
-     * An object that defines the dimensions for the event filter.
+     * <p>
+     * The dimension settings of the event filter for the campaign.
+     * </p>
      * 
      * @param dimensions
-     *        An object that defines the dimensions for the event filter.
+     *        The dimension settings of the event filter for the campaign.
      */
 
     public void setDimensions(EventDimensions dimensions) {
@@ -49,9 +57,11 @@ public class CampaignEventFilter implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * An object that defines the dimensions for the event filter.
+     * <p>
+     * The dimension settings of the event filter for the campaign.
+     * </p>
      * 
-     * @return An object that defines the dimensions for the event filter.
+     * @return The dimension settings of the event filter for the campaign.
      */
 
     public EventDimensions getDimensions() {
@@ -59,10 +69,12 @@ public class CampaignEventFilter implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * An object that defines the dimensions for the event filter.
+     * <p>
+     * The dimension settings of the event filter for the campaign.
+     * </p>
      * 
      * @param dimensions
-     *        An object that defines the dimensions for the event filter.
+     *        The dimension settings of the event filter for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,18 +84,16 @@ public class CampaignEventFilter implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The type of event that causes the campaign to be sent. Possible values:
-     * 
-     * SYSTEM - Send the campaign when a system event occurs. See the System resource for more information.
-     * 
-     * ENDPOINT - Send the campaign when an endpoint event occurs. See the Event resource for more information.
+     * <p>
+     * The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system
+     * event occurs; and, ENDPOINT, sends the campaign when an endpoint event (<link
+     * linkend="apps-application-id-events">Events</link> resource) occurs.
+     * </p>
      * 
      * @param filterType
-     *        The type of event that causes the campaign to be sent. Possible values:
-     * 
-     *        SYSTEM - Send the campaign when a system event occurs. See the System resource for more information.
-     * 
-     *        ENDPOINT - Send the campaign when an endpoint event occurs. See the Event resource for more information.
+     *        The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a
+     *        system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (<link
+     *        linkend="apps-application-id-events">Events</link> resource) occurs.
      * @see FilterType
      */
 
@@ -92,17 +102,15 @@ public class CampaignEventFilter implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The type of event that causes the campaign to be sent. Possible values:
+     * <p>
+     * The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system
+     * event occurs; and, ENDPOINT, sends the campaign when an endpoint event (<link
+     * linkend="apps-application-id-events">Events</link> resource) occurs.
+     * </p>
      * 
-     * SYSTEM - Send the campaign when a system event occurs. See the System resource for more information.
-     * 
-     * ENDPOINT - Send the campaign when an endpoint event occurs. See the Event resource for more information.
-     * 
-     * @return The type of event that causes the campaign to be sent. Possible values:
-     * 
-     *         SYSTEM - Send the campaign when a system event occurs. See the System resource for more information.
-     * 
-     *         ENDPOINT - Send the campaign when an endpoint event occurs. See the Event resource for more information.
+     * @return The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when
+     *         a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (<link
+     *         linkend="apps-application-id-events">Events</link> resource) occurs.
      * @see FilterType
      */
 
@@ -111,18 +119,16 @@ public class CampaignEventFilter implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The type of event that causes the campaign to be sent. Possible values:
-     * 
-     * SYSTEM - Send the campaign when a system event occurs. See the System resource for more information.
-     * 
-     * ENDPOINT - Send the campaign when an endpoint event occurs. See the Event resource for more information.
+     * <p>
+     * The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system
+     * event occurs; and, ENDPOINT, sends the campaign when an endpoint event (<link
+     * linkend="apps-application-id-events">Events</link> resource) occurs.
+     * </p>
      * 
      * @param filterType
-     *        The type of event that causes the campaign to be sent. Possible values:
-     * 
-     *        SYSTEM - Send the campaign when a system event occurs. See the System resource for more information.
-     * 
-     *        ENDPOINT - Send the campaign when an endpoint event occurs. See the Event resource for more information.
+     *        The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a
+     *        system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (<link
+     *        linkend="apps-application-id-events">Events</link> resource) occurs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterType
      */
@@ -133,18 +139,16 @@ public class CampaignEventFilter implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The type of event that causes the campaign to be sent. Possible values:
-     * 
-     * SYSTEM - Send the campaign when a system event occurs. See the System resource for more information.
-     * 
-     * ENDPOINT - Send the campaign when an endpoint event occurs. See the Event resource for more information.
+     * <p>
+     * The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system
+     * event occurs; and, ENDPOINT, sends the campaign when an endpoint event (<link
+     * linkend="apps-application-id-events">Events</link> resource) occurs.
+     * </p>
      * 
      * @param filterType
-     *        The type of event that causes the campaign to be sent. Possible values:
-     * 
-     *        SYSTEM - Send the campaign when a system event occurs. See the System resource for more information.
-     * 
-     *        ENDPOINT - Send the campaign when an endpoint event occurs. See the Event resource for more information.
+     *        The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a
+     *        system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (<link
+     *        linkend="apps-application-id-events">Events</link> resource) occurs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterType
      */

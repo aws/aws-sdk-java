@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * The response that's provided after registering the endpoint.
+ * <p>
+ * Provides information about the results of a request to create or update an endpoint that's associated with an event.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ItemResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,19 +28,27 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The response received after the endpoint was accepted. */
+    /**
+     * <p>
+     * The response that was received after the endpoint data was accepted.
+     * </p>
+     */
     private EndpointItemResponse endpointItemResponse;
     /**
-     * A multipart response object that contains a key and value for each event ID in the request. In each object, the
-     * event ID is the key, and an EventItemResponse object is the value.
+     * <p>
+     * A multipart response object that contains a key and a value for each event in the request. In each object, the
+     * event ID is the key and an EventItemResponse object is the value.
+     * </p>
      */
     private java.util.Map<String, EventItemResponse> eventsItemResponse;
 
     /**
-     * The response received after the endpoint was accepted.
+     * <p>
+     * The response that was received after the endpoint data was accepted.
+     * </p>
      * 
      * @param endpointItemResponse
-     *        The response received after the endpoint was accepted.
+     *        The response that was received after the endpoint data was accepted.
      */
 
     public void setEndpointItemResponse(EndpointItemResponse endpointItemResponse) {
@@ -46,9 +56,11 @@ public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The response received after the endpoint was accepted.
+     * <p>
+     * The response that was received after the endpoint data was accepted.
+     * </p>
      * 
-     * @return The response received after the endpoint was accepted.
+     * @return The response that was received after the endpoint data was accepted.
      */
 
     public EndpointItemResponse getEndpointItemResponse() {
@@ -56,10 +68,12 @@ public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The response received after the endpoint was accepted.
+     * <p>
+     * The response that was received after the endpoint data was accepted.
+     * </p>
      * 
      * @param endpointItemResponse
-     *        The response received after the endpoint was accepted.
+     *        The response that was received after the endpoint data was accepted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,11 +83,13 @@ public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A multipart response object that contains a key and value for each event ID in the request. In each object, the
-     * event ID is the key, and an EventItemResponse object is the value.
+     * <p>
+     * A multipart response object that contains a key and a value for each event in the request. In each object, the
+     * event ID is the key and an EventItemResponse object is the value.
+     * </p>
      * 
-     * @return A multipart response object that contains a key and value for each event ID in the request. In each
-     *         object, the event ID is the key, and an EventItemResponse object is the value.
+     * @return A multipart response object that contains a key and a value for each event in the request. In each
+     *         object, the event ID is the key and an EventItemResponse object is the value.
      */
 
     public java.util.Map<String, EventItemResponse> getEventsItemResponse() {
@@ -81,12 +97,14 @@ public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A multipart response object that contains a key and value for each event ID in the request. In each object, the
-     * event ID is the key, and an EventItemResponse object is the value.
+     * <p>
+     * A multipart response object that contains a key and a value for each event in the request. In each object, the
+     * event ID is the key and an EventItemResponse object is the value.
+     * </p>
      * 
      * @param eventsItemResponse
-     *        A multipart response object that contains a key and value for each event ID in the request. In each
-     *        object, the event ID is the key, and an EventItemResponse object is the value.
+     *        A multipart response object that contains a key and a value for each event in the request. In each object,
+     *        the event ID is the key and an EventItemResponse object is the value.
      */
 
     public void setEventsItemResponse(java.util.Map<String, EventItemResponse> eventsItemResponse) {
@@ -94,12 +112,14 @@ public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A multipart response object that contains a key and value for each event ID in the request. In each object, the
-     * event ID is the key, and an EventItemResponse object is the value.
+     * <p>
+     * A multipart response object that contains a key and a value for each event in the request. In each object, the
+     * event ID is the key and an EventItemResponse object is the value.
+     * </p>
      * 
      * @param eventsItemResponse
-     *        A multipart response object that contains a key and value for each event ID in the request. In each
-     *        object, the event ID is the key, and an EventItemResponse object is the value.
+     *        A multipart response object that contains a key and a value for each event in the request. In each object,
+     *        the event ID is the key and an EventItemResponse object is the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

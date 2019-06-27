@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * GPS coordinates
+ * <p>
+ * Specifies the GPS coordinates of a location.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GPSCoordinates" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GPSCoordinates implements Serializable, Cloneable, StructuredPojo {
 
-    /** Latitude */
+    /**
+     * <p>
+     * The latitude coordinate of the location.
+     * </p>
+     */
     private Double latitude;
-    /** Longitude */
+    /**
+     * <p>
+     * The longitude coordinate of the location.
+     * </p>
+     */
     private Double longitude;
 
     /**
-     * Latitude
+     * <p>
+     * The latitude coordinate of the location.
+     * </p>
      * 
      * @param latitude
-     *        Latitude
+     *        The latitude coordinate of the location.
      */
 
     public void setLatitude(Double latitude) {
@@ -43,9 +55,11 @@ public class GPSCoordinates implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Latitude
+     * <p>
+     * The latitude coordinate of the location.
+     * </p>
      * 
-     * @return Latitude
+     * @return The latitude coordinate of the location.
      */
 
     public Double getLatitude() {
@@ -53,10 +67,12 @@ public class GPSCoordinates implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Latitude
+     * <p>
+     * The latitude coordinate of the location.
+     * </p>
      * 
      * @param latitude
-     *        Latitude
+     *        The latitude coordinate of the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +82,12 @@ public class GPSCoordinates implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Longitude
+     * <p>
+     * The longitude coordinate of the location.
+     * </p>
      * 
      * @param longitude
-     *        Longitude
+     *        The longitude coordinate of the location.
      */
 
     public void setLongitude(Double longitude) {
@@ -77,9 +95,11 @@ public class GPSCoordinates implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Longitude
+     * <p>
+     * The longitude coordinate of the location.
+     * </p>
      * 
-     * @return Longitude
+     * @return The longitude coordinate of the location.
      */
 
     public Double getLongitude() {
@@ -87,10 +107,12 @@ public class GPSCoordinates implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Longitude
+     * <p>
+     * The longitude coordinate of the location.
+     * </p>
      * 
      * @param longitude
-     *        Longitude
+     *        The longitude coordinate of the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

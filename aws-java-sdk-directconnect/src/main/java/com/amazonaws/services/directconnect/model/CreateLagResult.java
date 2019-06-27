@@ -155,6 +155,12 @@ public class CreateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private String hasLogicalRedundancy;
+    /**
+     * <p>
+     * Any tags assigned to link aggregation group (LAG).
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -1261,6 +1267,79 @@ public class CreateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
+     * Any tags assigned to link aggregation group (LAG).
+     * </p>
+     * 
+     * @return Any tags assigned to link aggregation group (LAG).
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to link aggregation group (LAG).
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to link aggregation group (LAG).
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to link aggregation group (LAG).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to link aggregation group (LAG).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLagResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to link aggregation group (LAG).
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to link aggregation group (LAG).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLagResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1301,7 +1380,9 @@ public class CreateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (getJumboFrameCapable() != null)
             sb.append("JumboFrameCapable: ").append(getJumboFrameCapable()).append(",");
         if (getHasLogicalRedundancy() != null)
-            sb.append("HasLogicalRedundancy: ").append(getHasLogicalRedundancy());
+            sb.append("HasLogicalRedundancy: ").append(getHasLogicalRedundancy()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1376,6 +1457,10 @@ public class CreateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getHasLogicalRedundancy() != null && other.getHasLogicalRedundancy().equals(this.getHasLogicalRedundancy()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1399,6 +1484,7 @@ public class CreateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getAllowsHostedConnections() == null) ? 0 : getAllowsHostedConnections().hashCode());
         hashCode = prime * hashCode + ((getJumboFrameCapable() == null) ? 0 : getJumboFrameCapable().hashCode());
         hashCode = prime * hashCode + ((getHasLogicalRedundancy() == null) ? 0 : getHasLogicalRedundancy().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

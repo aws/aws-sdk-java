@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a transit virtual interface.
+ * Information about the transit virtual interface.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewTransitVirtualInterface"
@@ -48,7 +48,7 @@ public class NewTransitVirtualInterface implements Serializable, Cloneable, Stru
     private Integer asn;
     /**
      * <p>
-     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.
+     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.
      * </p>
      */
     private Integer mtu;
@@ -82,6 +82,12 @@ public class NewTransitVirtualInterface implements Serializable, Cloneable, Stru
      * </p>
      */
     private String directConnectGatewayId;
+    /**
+     * <p>
+     * Any tags assigned to the transit virtual interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -205,11 +211,11 @@ public class NewTransitVirtualInterface implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.
+     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.
      * </p>
      * 
      * @param mtu
-     *        The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value
+     *        The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value
      *        is 1500.
      */
 
@@ -219,10 +225,10 @@ public class NewTransitVirtualInterface implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.
+     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.
      * </p>
      * 
-     * @return The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value
+     * @return The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value
      *         is 1500.
      */
 
@@ -232,11 +238,11 @@ public class NewTransitVirtualInterface implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.
+     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.
      * </p>
      * 
      * @param mtu
-     *        The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value
+     *        The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value
      *        is 1500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -466,6 +472,79 @@ public class NewTransitVirtualInterface implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Any tags assigned to the transit virtual interface.
+     * </p>
+     * 
+     * @return Any tags assigned to the transit virtual interface.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the transit virtual interface.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the transit virtual interface.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the transit virtual interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the transit virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NewTransitVirtualInterface withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the transit virtual interface.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the transit virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NewTransitVirtualInterface withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -494,7 +573,9 @@ public class NewTransitVirtualInterface implements Serializable, Cloneable, Stru
         if (getAddressFamily() != null)
             sb.append("AddressFamily: ").append(getAddressFamily()).append(",");
         if (getDirectConnectGatewayId() != null)
-            sb.append("DirectConnectGatewayId: ").append(getDirectConnectGatewayId());
+            sb.append("DirectConnectGatewayId: ").append(getDirectConnectGatewayId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -545,6 +626,10 @@ public class NewTransitVirtualInterface implements Serializable, Cloneable, Stru
             return false;
         if (other.getDirectConnectGatewayId() != null && other.getDirectConnectGatewayId().equals(this.getDirectConnectGatewayId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -562,6 +647,7 @@ public class NewTransitVirtualInterface implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
         hashCode = prime * hashCode + ((getAddressFamily() == null) ? 0 : getAddressFamily().hashCode());
         hashCode = prime * hashCode + ((getDirectConnectGatewayId() == null) ? 0 : getDirectConnectGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

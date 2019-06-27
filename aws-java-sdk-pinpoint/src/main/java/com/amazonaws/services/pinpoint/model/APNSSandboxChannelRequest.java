@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Apple Development Push Notification Service channel definition.
+ * <p>
+ * Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSSandboxChannelRequest" target="_top">AWS
  *      API Documentation</a>
@@ -26,28 +28,66 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class APNSSandboxChannelRequest implements Serializable, Cloneable, StructuredPojo {
 
-    /** The bundle id used for APNs Tokens. */
+    /**
+     * <p>
+     * The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.
+     * </p>
+     */
     private String bundleId;
-    /** The distribution certificate from Apple. */
+    /**
+     * <p>
+     * The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the
+     * APNs sandbox environment by using an APNs certificate.
+     * </p>
+     */
     private String certificate;
-    /** The default authentication method used for APNs. */
+    /**
+     * <p>
+     * The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox
+     * environment, key or certificate.
+     * </p>
+     */
     private String defaultAuthenticationMethod;
-    /** If the channel is enabled for sending messages. */
+    /**
+     * <p>
+     * Specifies whether to enable the APNs sandbox channel for the application.
+     * </p>
+     */
     private Boolean enabled;
-    /** The certificate private key. */
+    /**
+     * <p>
+     * The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs
+     * sandbox environment.
+     * </p>
+     */
     private String privateKey;
-    /** The team id used for APNs Tokens. */
+    /**
+     * <p>
+     * The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.
+     * </p>
+     */
     private String teamId;
-    /** The token key used for APNs Tokens. */
+    /**
+     * <p>
+     * The authentication key to use for APNs tokens.
+     * </p>
+     */
     private String tokenKey;
-    /** The token key used for APNs Tokens. */
+    /**
+     * <p>
+     * The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the
+     * APNs sandbox environment by using APNs tokens.
+     * </p>
+     */
     private String tokenKeyId;
 
     /**
-     * The bundle id used for APNs Tokens.
+     * <p>
+     * The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.
+     * </p>
      * 
      * @param bundleId
-     *        The bundle id used for APNs Tokens.
+     *        The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.
      */
 
     public void setBundleId(String bundleId) {
@@ -55,9 +95,11 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The bundle id used for APNs Tokens.
+     * <p>
+     * The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.
+     * </p>
      * 
-     * @return The bundle id used for APNs Tokens.
+     * @return The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.
      */
 
     public String getBundleId() {
@@ -65,10 +107,12 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The bundle id used for APNs Tokens.
+     * <p>
+     * The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.
+     * </p>
      * 
      * @param bundleId
-     *        The bundle id used for APNs Tokens.
+     *        The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +122,14 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The distribution certificate from Apple.
+     * <p>
+     * The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the
+     * APNs sandbox environment by using an APNs certificate.
+     * </p>
      * 
      * @param certificate
-     *        The distribution certificate from Apple.
+     *        The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with
+     *        the APNs sandbox environment by using an APNs certificate.
      */
 
     public void setCertificate(String certificate) {
@@ -89,9 +137,13 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The distribution certificate from Apple.
+     * <p>
+     * The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the
+     * APNs sandbox environment by using an APNs certificate.
+     * </p>
      * 
-     * @return The distribution certificate from Apple.
+     * @return The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with
+     *         the APNs sandbox environment by using an APNs certificate.
      */
 
     public String getCertificate() {
@@ -99,10 +151,14 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The distribution certificate from Apple.
+     * <p>
+     * The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the
+     * APNs sandbox environment by using an APNs certificate.
+     * </p>
      * 
      * @param certificate
-     *        The distribution certificate from Apple.
+     *        The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with
+     *        the APNs sandbox environment by using an APNs certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,10 +168,14 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The default authentication method used for APNs.
+     * <p>
+     * The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox
+     * environment, key or certificate.
+     * </p>
      * 
      * @param defaultAuthenticationMethod
-     *        The default authentication method used for APNs.
+     *        The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs
+     *        sandbox environment, key or certificate.
      */
 
     public void setDefaultAuthenticationMethod(String defaultAuthenticationMethod) {
@@ -123,9 +183,13 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The default authentication method used for APNs.
+     * <p>
+     * The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox
+     * environment, key or certificate.
+     * </p>
      * 
-     * @return The default authentication method used for APNs.
+     * @return The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs
+     *         sandbox environment, key or certificate.
      */
 
     public String getDefaultAuthenticationMethod() {
@@ -133,10 +197,14 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The default authentication method used for APNs.
+     * <p>
+     * The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox
+     * environment, key or certificate.
+     * </p>
      * 
      * @param defaultAuthenticationMethod
-     *        The default authentication method used for APNs.
+     *        The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs
+     *        sandbox environment, key or certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,10 +214,12 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the APNs sandbox channel for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether to enable the APNs sandbox channel for the application.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -157,9 +227,11 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the APNs sandbox channel for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether to enable the APNs sandbox channel for the application.
      */
 
     public Boolean getEnabled() {
@@ -167,10 +239,12 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the APNs sandbox channel for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether to enable the APNs sandbox channel for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,9 +254,11 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the APNs sandbox channel for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether to enable the APNs sandbox channel for the application.
      */
 
     public Boolean isEnabled() {
@@ -190,10 +266,14 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The certificate private key.
+     * <p>
+     * The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs
+     * sandbox environment.
+     * </p>
      * 
      * @param privateKey
-     *        The certificate private key.
+     *        The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with
+     *        the APNs sandbox environment.
      */
 
     public void setPrivateKey(String privateKey) {
@@ -201,9 +281,13 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The certificate private key.
+     * <p>
+     * The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs
+     * sandbox environment.
+     * </p>
      * 
-     * @return The certificate private key.
+     * @return The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with
+     *         the APNs sandbox environment.
      */
 
     public String getPrivateKey() {
@@ -211,10 +295,14 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The certificate private key.
+     * <p>
+     * The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs
+     * sandbox environment.
+     * </p>
      * 
      * @param privateKey
-     *        The certificate private key.
+     *        The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with
+     *        the APNs sandbox environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,10 +312,13 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The team id used for APNs Tokens.
+     * <p>
+     * The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.
+     * </p>
      * 
      * @param teamId
-     *        The team id used for APNs Tokens.
+     *        The identifier that's assigned to your Apple developer account team. This identifier is used for APNs
+     *        tokens.
      */
 
     public void setTeamId(String teamId) {
@@ -235,9 +326,12 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The team id used for APNs Tokens.
+     * <p>
+     * The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.
+     * </p>
      * 
-     * @return The team id used for APNs Tokens.
+     * @return The identifier that's assigned to your Apple developer account team. This identifier is used for APNs
+     *         tokens.
      */
 
     public String getTeamId() {
@@ -245,10 +339,13 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The team id used for APNs Tokens.
+     * <p>
+     * The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.
+     * </p>
      * 
      * @param teamId
-     *        The team id used for APNs Tokens.
+     *        The identifier that's assigned to your Apple developer account team. This identifier is used for APNs
+     *        tokens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,10 +355,12 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The token key used for APNs Tokens.
+     * <p>
+     * The authentication key to use for APNs tokens.
+     * </p>
      * 
      * @param tokenKey
-     *        The token key used for APNs Tokens.
+     *        The authentication key to use for APNs tokens.
      */
 
     public void setTokenKey(String tokenKey) {
@@ -269,9 +368,11 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The token key used for APNs Tokens.
+     * <p>
+     * The authentication key to use for APNs tokens.
+     * </p>
      * 
-     * @return The token key used for APNs Tokens.
+     * @return The authentication key to use for APNs tokens.
      */
 
     public String getTokenKey() {
@@ -279,10 +380,12 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The token key used for APNs Tokens.
+     * <p>
+     * The authentication key to use for APNs tokens.
+     * </p>
      * 
      * @param tokenKey
-     *        The token key used for APNs Tokens.
+     *        The authentication key to use for APNs tokens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,10 +395,14 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The token key used for APNs Tokens.
+     * <p>
+     * The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the
+     * APNs sandbox environment by using APNs tokens.
+     * </p>
      * 
      * @param tokenKeyId
-     *        The token key used for APNs Tokens.
+     *        The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate
+     *        with the APNs sandbox environment by using APNs tokens.
      */
 
     public void setTokenKeyId(String tokenKeyId) {
@@ -303,9 +410,13 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The token key used for APNs Tokens.
+     * <p>
+     * The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the
+     * APNs sandbox environment by using APNs tokens.
+     * </p>
      * 
-     * @return The token key used for APNs Tokens.
+     * @return The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate
+     *         with the APNs sandbox environment by using APNs tokens.
      */
 
     public String getTokenKeyId() {
@@ -313,10 +424,14 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
-     * The token key used for APNs Tokens.
+     * <p>
+     * The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the
+     * APNs sandbox environment by using APNs tokens.
+     * </p>
      * 
      * @param tokenKeyId
-     *        The token key used for APNs Tokens.
+     *        The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate
+     *        with the APNs sandbox environment by using APNs tokens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

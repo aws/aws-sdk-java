@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Voice Message.
+ * <p>
+ * Specifies the settings for a one-time voice message that's sent directly to an endpoint through the voice channel.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VoiceMessage" target="_top">AWS API
  *      Documentation</a>
@@ -26,22 +28,48 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
 
-    /** The message body of the notification, the email body or the text message. */
+    /**
+     * <p>
+     * The text script for the voice message.
+     * </p>
+     */
     private String body;
-    /** Language of sent message */
+    /**
+     * <p>
+     * The language to use when delivering the message. For a list of supported languages, see the <a
+     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * </p>
+     */
     private String languageCode;
-    /** Is the number from the pool or messaging service to send from. */
+    /**
+     * <p>
+     * The phone number from the pool or messaging service to send the message from. Although it isn't required, we
+     * recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
+     * </p>
+     */
     private String originationNumber;
-    /** Default message substitutions. Can be overridden by individual address substitutions. */
+    /**
+     * <p>
+     * The default message variables to use in the voice message. You can override the default variables with individual
+     * address variables.
+     * </p>
+     */
     private java.util.Map<String, java.util.List<String>> substitutions;
-    /** Voice ID of sent message. */
+    /**
+     * <p>
+     * The name of the voice to use when delivering the message. For a list of supported voices, see the <a
+     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * </p>
+     */
     private String voiceId;
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * <p>
+     * The text script for the voice message.
+     * </p>
      * 
      * @param body
-     *        The message body of the notification, the email body or the text message.
+     *        The text script for the voice message.
      */
 
     public void setBody(String body) {
@@ -49,9 +77,11 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * <p>
+     * The text script for the voice message.
+     * </p>
      * 
-     * @return The message body of the notification, the email body or the text message.
+     * @return The text script for the voice message.
      */
 
     public String getBody() {
@@ -59,10 +89,12 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * <p>
+     * The text script for the voice message.
+     * </p>
      * 
      * @param body
-     *        The message body of the notification, the email body or the text message.
+     *        The text script for the voice message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,10 +104,14 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Language of sent message
+     * <p>
+     * The language to use when delivering the message. For a list of supported languages, see the <a
+     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * </p>
      * 
      * @param languageCode
-     *        Language of sent message
+     *        The language to use when delivering the message. For a list of supported languages, see the <a
+     *        href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
      */
 
     public void setLanguageCode(String languageCode) {
@@ -83,9 +119,13 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Language of sent message
+     * <p>
+     * The language to use when delivering the message. For a list of supported languages, see the <a
+     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * </p>
      * 
-     * @return Language of sent message
+     * @return The language to use when delivering the message. For a list of supported languages, see the <a
+     *         href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
      */
 
     public String getLanguageCode() {
@@ -93,10 +133,14 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Language of sent message
+     * <p>
+     * The language to use when delivering the message. For a list of supported languages, see the <a
+     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * </p>
      * 
      * @param languageCode
-     *        Language of sent message
+     *        The language to use when delivering the message. For a list of supported languages, see the <a
+     *        href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,10 +150,14 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is the number from the pool or messaging service to send from.
+     * <p>
+     * The phone number from the pool or messaging service to send the message from. Although it isn't required, we
+     * recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
+     * </p>
      * 
      * @param originationNumber
-     *        Is the number from the pool or messaging service to send from.
+     *        The phone number from the pool or messaging service to send the message from. Although it isn't required,
+     *        we recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
      */
 
     public void setOriginationNumber(String originationNumber) {
@@ -117,9 +165,13 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is the number from the pool or messaging service to send from.
+     * <p>
+     * The phone number from the pool or messaging service to send the message from. Although it isn't required, we
+     * recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
+     * </p>
      * 
-     * @return Is the number from the pool or messaging service to send from.
+     * @return The phone number from the pool or messaging service to send the message from. Although it isn't required,
+     *         we recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
      */
 
     public String getOriginationNumber() {
@@ -127,10 +179,14 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is the number from the pool or messaging service to send from.
+     * <p>
+     * The phone number from the pool or messaging service to send the message from. Although it isn't required, we
+     * recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
+     * </p>
      * 
      * @param originationNumber
-     *        Is the number from the pool or messaging service to send from.
+     *        The phone number from the pool or messaging service to send the message from. Although it isn't required,
+     *        we recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,9 +196,13 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The default message variables to use in the voice message. You can override the default variables with individual
+     * address variables.
+     * </p>
      * 
-     * @return Default message substitutions. Can be overridden by individual address substitutions.
+     * @return The default message variables to use in the voice message. You can override the default variables with
+     *         individual address variables.
      */
 
     public java.util.Map<String, java.util.List<String>> getSubstitutions() {
@@ -150,10 +210,14 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The default message variables to use in the voice message. You can override the default variables with individual
+     * address variables.
+     * </p>
      * 
      * @param substitutions
-     *        Default message substitutions. Can be overridden by individual address substitutions.
+     *        The default message variables to use in the voice message. You can override the default variables with
+     *        individual address variables.
      */
 
     public void setSubstitutions(java.util.Map<String, java.util.List<String>> substitutions) {
@@ -161,10 +225,14 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The default message variables to use in the voice message. You can override the default variables with individual
+     * address variables.
+     * </p>
      * 
      * @param substitutions
-     *        Default message substitutions. Can be overridden by individual address substitutions.
+     *        The default message variables to use in the voice message. You can override the default variables with
+     *        individual address variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,10 +263,14 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Voice ID of sent message.
+     * <p>
+     * The name of the voice to use when delivering the message. For a list of supported voices, see the <a
+     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * </p>
      * 
      * @param voiceId
-     *        Voice ID of sent message.
+     *        The name of the voice to use when delivering the message. For a list of supported voices, see the <a
+     *        href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
      */
 
     public void setVoiceId(String voiceId) {
@@ -206,9 +278,13 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Voice ID of sent message.
+     * <p>
+     * The name of the voice to use when delivering the message. For a list of supported voices, see the <a
+     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * </p>
      * 
-     * @return Voice ID of sent message.
+     * @return The name of the voice to use when delivering the message. For a list of supported voices, see the <a
+     *         href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
      */
 
     public String getVoiceId() {
@@ -216,10 +292,14 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Voice ID of sent message.
+     * <p>
+     * The name of the voice to use when delivering the message. For a list of supported voices, see the <a
+     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * </p>
      * 
      * @param voiceId
-     *        Voice ID of sent message.
+     *        The name of the voice to use when delivering the message. For a list of supported voices, see the <a
+     *        href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

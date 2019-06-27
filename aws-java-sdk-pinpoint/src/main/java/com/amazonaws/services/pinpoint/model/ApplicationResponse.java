@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Application Response.
+ * <p>
+ * Provides information about an application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ApplicationResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,20 +28,41 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ApplicationResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The arn for the application. */
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     */
     private String arn;
-    /** The unique application ID. */
+    /**
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
+     */
     private String id;
-    /** The display name of the application. */
+    /**
+     * <p>
+     * The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint
+     * console.
+     * </p>
+     */
     private String name;
-    /** The Tags for the application. */
+    /**
+     * <p>
+     * A string-to-string map of key-value pairs that identifies the tags that are associated with the application. Each
+     * tag consists of a required tag key and an associated tag value.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
 
     /**
-     * The arn for the application.
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
      * 
      * @param arn
-     *        The arn for the application.
+     *        The Amazon Resource Name (ARN) of the application.
      */
 
     public void setArn(String arn) {
@@ -47,9 +70,11 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The arn for the application.
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
      * 
-     * @return The arn for the application.
+     * @return The Amazon Resource Name (ARN) of the application.
      */
 
     public String getArn() {
@@ -57,10 +82,12 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The arn for the application.
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
      * 
      * @param arn
-     *        The arn for the application.
+     *        The Amazon Resource Name (ARN) of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,10 +97,14 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The unique application ID.
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
      * 
      * @param id
-     *        The unique application ID.
+     *        The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *        Amazon Pinpoint console.
      */
 
     public void setId(String id) {
@@ -81,9 +112,13 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The unique application ID.
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
      * 
-     * @return The unique application ID.
+     * @return The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *         Amazon Pinpoint console.
      */
 
     public String getId() {
@@ -91,10 +126,14 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The unique application ID.
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
      * 
      * @param id
-     *        The unique application ID.
+     *        The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *        Amazon Pinpoint console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,10 +143,14 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The display name of the application.
+     * <p>
+     * The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint
+     * console.
+     * </p>
      * 
      * @param name
-     *        The display name of the application.
+     *        The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon
+     *        Pinpoint console.
      */
 
     public void setName(String name) {
@@ -115,9 +158,13 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The display name of the application.
+     * <p>
+     * The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint
+     * console.
+     * </p>
      * 
-     * @return The display name of the application.
+     * @return The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon
+     *         Pinpoint console.
      */
 
     public String getName() {
@@ -125,10 +172,14 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The display name of the application.
+     * <p>
+     * The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint
+     * console.
+     * </p>
      * 
      * @param name
-     *        The display name of the application.
+     *        The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon
+     *        Pinpoint console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,9 +189,13 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The Tags for the application.
+     * <p>
+     * A string-to-string map of key-value pairs that identifies the tags that are associated with the application. Each
+     * tag consists of a required tag key and an associated tag value.
+     * </p>
      * 
-     * @return The Tags for the application.
+     * @return A string-to-string map of key-value pairs that identifies the tags that are associated with the
+     *         application. Each tag consists of a required tag key and an associated tag value.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -148,10 +203,14 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The Tags for the application.
+     * <p>
+     * A string-to-string map of key-value pairs that identifies the tags that are associated with the application. Each
+     * tag consists of a required tag key and an associated tag value.
+     * </p>
      * 
      * @param tags
-     *        The Tags for the application.
+     *        A string-to-string map of key-value pairs that identifies the tags that are associated with the
+     *        application. Each tag consists of a required tag key and an associated tag value.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -159,10 +218,14 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The Tags for the application.
+     * <p>
+     * A string-to-string map of key-value pairs that identifies the tags that are associated with the application. Each
+     * tag consists of a required tag key and an associated tag value.
+     * </p>
      * 
      * @param tags
-     *        The Tags for the application.
+     *        A string-to-string map of key-value pairs that identifies the tags that are associated with the
+     *        application. Each tag consists of a required tag key and an associated tag value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

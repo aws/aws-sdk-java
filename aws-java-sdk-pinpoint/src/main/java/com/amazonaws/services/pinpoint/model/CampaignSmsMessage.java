@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * SMS message configuration.
+ * <p>
+ * Specifies the content and settings for an SMS message that's sent to recipients of a campaign.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignSmsMessage" target="_top">AWS API
  *      Documentation</a>
@@ -26,18 +28,34 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPojo {
 
-    /** The SMS text body. */
+    /**
+     * <p>
+     * The body of the SMS message.
+     * </p>
+     */
     private String body;
-    /** Is this is a transactional SMS message, otherwise a promotional message. */
+    /**
+     * <p>
+     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
+     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
+     * time-sensitive, such as a marketing message.
+     * </p>
+     */
     private String messageType;
-    /** Sender ID of sent message. */
+    /**
+     * <p>
+     * The sender ID to display on recipients' devices when they receive the SMS message.
+     * </p>
+     */
     private String senderId;
 
     /**
-     * The SMS text body.
+     * <p>
+     * The body of the SMS message.
+     * </p>
      * 
      * @param body
-     *        The SMS text body.
+     *        The body of the SMS message.
      */
 
     public void setBody(String body) {
@@ -45,9 +63,11 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The SMS text body.
+     * <p>
+     * The body of the SMS message.
+     * </p>
      * 
-     * @return The SMS text body.
+     * @return The body of the SMS message.
      */
 
     public String getBody() {
@@ -55,10 +75,12 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The SMS text body.
+     * <p>
+     * The body of the SMS message.
+     * </p>
      * 
      * @param body
-     *        The SMS text body.
+     *        The body of the SMS message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,10 +90,16 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Is this is a transactional SMS message, otherwise a promotional message.
+     * <p>
+     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
+     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
+     * time-sensitive, such as a marketing message.
+     * </p>
      * 
      * @param messageType
-     *        Is this is a transactional SMS message, otherwise a promotional message.
+     *        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
+     *        as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
+     *        or time-sensitive, such as a marketing message.
      * @see MessageType
      */
 
@@ -80,9 +108,15 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Is this is a transactional SMS message, otherwise a promotional message.
+     * <p>
+     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
+     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
+     * time-sensitive, such as a marketing message.
+     * </p>
      * 
-     * @return Is this is a transactional SMS message, otherwise a promotional message.
+     * @return The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
+     *         as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
+     *         or time-sensitive, such as a marketing message.
      * @see MessageType
      */
 
@@ -91,10 +125,16 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Is this is a transactional SMS message, otherwise a promotional message.
+     * <p>
+     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
+     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
+     * time-sensitive, such as a marketing message.
+     * </p>
      * 
      * @param messageType
-     *        Is this is a transactional SMS message, otherwise a promotional message.
+     *        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
+     *        as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
+     *        or time-sensitive, such as a marketing message.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -105,10 +145,16 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Is this is a transactional SMS message, otherwise a promotional message.
+     * <p>
+     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
+     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
+     * time-sensitive, such as a marketing message.
+     * </p>
      * 
      * @param messageType
-     *        Is this is a transactional SMS message, otherwise a promotional message.
+     *        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
+     *        as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
+     *        or time-sensitive, such as a marketing message.
      * @see MessageType
      */
 
@@ -117,10 +163,16 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Is this is a transactional SMS message, otherwise a promotional message.
+     * <p>
+     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
+     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
+     * time-sensitive, such as a marketing message.
+     * </p>
      * 
      * @param messageType
-     *        Is this is a transactional SMS message, otherwise a promotional message.
+     *        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
+     *        as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
+     *        or time-sensitive, such as a marketing message.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -131,10 +183,12 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Sender ID of sent message.
+     * <p>
+     * The sender ID to display on recipients' devices when they receive the SMS message.
+     * </p>
      * 
      * @param senderId
-     *        Sender ID of sent message.
+     *        The sender ID to display on recipients' devices when they receive the SMS message.
      */
 
     public void setSenderId(String senderId) {
@@ -142,9 +196,11 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Sender ID of sent message.
+     * <p>
+     * The sender ID to display on recipients' devices when they receive the SMS message.
+     * </p>
      * 
-     * @return Sender ID of sent message.
+     * @return The sender ID to display on recipients' devices when they receive the SMS message.
      */
 
     public String getSenderId() {
@@ -152,10 +208,12 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Sender ID of sent message.
+     * <p>
+     * The sender ID to display on recipients' devices when they receive the SMS message.
+     * </p>
      * 
      * @param senderId
-     *        Sender ID of sent message.
+     *        The sender ID to display on recipients' devices when they receive the SMS message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

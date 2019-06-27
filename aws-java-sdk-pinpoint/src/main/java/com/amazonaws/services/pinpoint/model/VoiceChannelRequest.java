@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Voice Channel Request
+ * <p>
+ * Specifies the status and settings of the voice channel for an application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VoiceChannelRequest" target="_top">AWS API
  *      Documentation</a>
@@ -26,14 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VoiceChannelRequest implements Serializable, Cloneable, StructuredPojo {
 
-    /** If the channel is enabled for sending messages. */
+    /**
+     * <p>
+     * Specifies whether to enable the voice channel for the application.
+     * </p>
+     */
     private Boolean enabled;
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the voice channel for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether to enable the voice channel for the application.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -41,9 +49,11 @@ public class VoiceChannelRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the voice channel for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether to enable the voice channel for the application.
      */
 
     public Boolean getEnabled() {
@@ -51,10 +61,12 @@ public class VoiceChannelRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the voice channel for the application.
+     * </p>
      * 
      * @param enabled
-     *        If the channel is enabled for sending messages.
+     *        Specifies whether to enable the voice channel for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,9 +76,11 @@ public class VoiceChannelRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>
+     * Specifies whether to enable the voice channel for the application.
+     * </p>
      * 
-     * @return If the channel is enabled for sending messages.
+     * @return Specifies whether to enable the voice channel for the application.
      */
 
     public Boolean isEnabled() {

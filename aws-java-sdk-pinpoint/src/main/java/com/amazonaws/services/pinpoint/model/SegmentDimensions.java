@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Segment dimensions
+ * <p>
+ * Specifies the dimension settings for a segment.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentDimensions" target="_top">AWS API
  *      Documentation</a>
@@ -26,23 +28,49 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentDimensions implements Serializable, Cloneable, StructuredPojo {
 
-    /** Custom segment attributes. */
+    /**
+     * <p>
+     * One or more custom attributes to use as criteria for the segment.
+     * </p>
+     */
     private java.util.Map<String, AttributeDimension> attributes;
-    /** The segment behaviors attributes. */
+    /**
+     * <p>
+     * The behavior-based criteria, such as how recently users have used your app, for the segment.
+     * </p>
+     */
     private SegmentBehaviors behavior;
-    /** The segment demographics attributes. */
+    /**
+     * <p>
+     * The demographic-based criteria, such as device platform, for the segment.
+     * </p>
+     */
     private SegmentDemographics demographic;
-    /** The segment location attributes. */
+    /**
+     * <p>
+     * The location-based criteria, such as region or GPS coordinates, for the segment.
+     * </p>
+     */
     private SegmentLocation location;
-    /** Custom segment metrics. */
+    /**
+     * <p>
+     * One or more custom metrics to use as criteria for the segment.
+     * </p>
+     */
     private java.util.Map<String, MetricDimension> metrics;
-    /** Custom segment user attributes. */
+    /**
+     * <p>
+     * One or more custom user attributes to use as criteria for the segment.
+     * </p>
+     */
     private java.util.Map<String, AttributeDimension> userAttributes;
 
     /**
-     * Custom segment attributes.
+     * <p>
+     * One or more custom attributes to use as criteria for the segment.
+     * </p>
      * 
-     * @return Custom segment attributes.
+     * @return One or more custom attributes to use as criteria for the segment.
      */
 
     public java.util.Map<String, AttributeDimension> getAttributes() {
@@ -50,10 +78,12 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Custom segment attributes.
+     * <p>
+     * One or more custom attributes to use as criteria for the segment.
+     * </p>
      * 
      * @param attributes
-     *        Custom segment attributes.
+     *        One or more custom attributes to use as criteria for the segment.
      */
 
     public void setAttributes(java.util.Map<String, AttributeDimension> attributes) {
@@ -61,10 +91,12 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Custom segment attributes.
+     * <p>
+     * One or more custom attributes to use as criteria for the segment.
+     * </p>
      * 
      * @param attributes
-     *        Custom segment attributes.
+     *        One or more custom attributes to use as criteria for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,10 +127,12 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The segment behaviors attributes.
+     * <p>
+     * The behavior-based criteria, such as how recently users have used your app, for the segment.
+     * </p>
      * 
      * @param behavior
-     *        The segment behaviors attributes.
+     *        The behavior-based criteria, such as how recently users have used your app, for the segment.
      */
 
     public void setBehavior(SegmentBehaviors behavior) {
@@ -106,9 +140,11 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The segment behaviors attributes.
+     * <p>
+     * The behavior-based criteria, such as how recently users have used your app, for the segment.
+     * </p>
      * 
-     * @return The segment behaviors attributes.
+     * @return The behavior-based criteria, such as how recently users have used your app, for the segment.
      */
 
     public SegmentBehaviors getBehavior() {
@@ -116,10 +152,12 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The segment behaviors attributes.
+     * <p>
+     * The behavior-based criteria, such as how recently users have used your app, for the segment.
+     * </p>
      * 
      * @param behavior
-     *        The segment behaviors attributes.
+     *        The behavior-based criteria, such as how recently users have used your app, for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,10 +167,12 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The segment demographics attributes.
+     * <p>
+     * The demographic-based criteria, such as device platform, for the segment.
+     * </p>
      * 
      * @param demographic
-     *        The segment demographics attributes.
+     *        The demographic-based criteria, such as device platform, for the segment.
      */
 
     public void setDemographic(SegmentDemographics demographic) {
@@ -140,9 +180,11 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The segment demographics attributes.
+     * <p>
+     * The demographic-based criteria, such as device platform, for the segment.
+     * </p>
      * 
-     * @return The segment demographics attributes.
+     * @return The demographic-based criteria, such as device platform, for the segment.
      */
 
     public SegmentDemographics getDemographic() {
@@ -150,10 +192,12 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The segment demographics attributes.
+     * <p>
+     * The demographic-based criteria, such as device platform, for the segment.
+     * </p>
      * 
      * @param demographic
-     *        The segment demographics attributes.
+     *        The demographic-based criteria, such as device platform, for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,10 +207,12 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The segment location attributes.
+     * <p>
+     * The location-based criteria, such as region or GPS coordinates, for the segment.
+     * </p>
      * 
      * @param location
-     *        The segment location attributes.
+     *        The location-based criteria, such as region or GPS coordinates, for the segment.
      */
 
     public void setLocation(SegmentLocation location) {
@@ -174,9 +220,11 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The segment location attributes.
+     * <p>
+     * The location-based criteria, such as region or GPS coordinates, for the segment.
+     * </p>
      * 
-     * @return The segment location attributes.
+     * @return The location-based criteria, such as region or GPS coordinates, for the segment.
      */
 
     public SegmentLocation getLocation() {
@@ -184,10 +232,12 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The segment location attributes.
+     * <p>
+     * The location-based criteria, such as region or GPS coordinates, for the segment.
+     * </p>
      * 
      * @param location
-     *        The segment location attributes.
+     *        The location-based criteria, such as region or GPS coordinates, for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,9 +247,11 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Custom segment metrics.
+     * <p>
+     * One or more custom metrics to use as criteria for the segment.
+     * </p>
      * 
-     * @return Custom segment metrics.
+     * @return One or more custom metrics to use as criteria for the segment.
      */
 
     public java.util.Map<String, MetricDimension> getMetrics() {
@@ -207,10 +259,12 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Custom segment metrics.
+     * <p>
+     * One or more custom metrics to use as criteria for the segment.
+     * </p>
      * 
      * @param metrics
-     *        Custom segment metrics.
+     *        One or more custom metrics to use as criteria for the segment.
      */
 
     public void setMetrics(java.util.Map<String, MetricDimension> metrics) {
@@ -218,10 +272,12 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Custom segment metrics.
+     * <p>
+     * One or more custom metrics to use as criteria for the segment.
+     * </p>
      * 
      * @param metrics
-     *        Custom segment metrics.
+     *        One or more custom metrics to use as criteria for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,9 +308,11 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Custom segment user attributes.
+     * <p>
+     * One or more custom user attributes to use as criteria for the segment.
+     * </p>
      * 
-     * @return Custom segment user attributes.
+     * @return One or more custom user attributes to use as criteria for the segment.
      */
 
     public java.util.Map<String, AttributeDimension> getUserAttributes() {
@@ -262,10 +320,12 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Custom segment user attributes.
+     * <p>
+     * One or more custom user attributes to use as criteria for the segment.
+     * </p>
      * 
      * @param userAttributes
-     *        Custom segment user attributes.
+     *        One or more custom user attributes to use as criteria for the segment.
      */
 
     public void setUserAttributes(java.util.Map<String, AttributeDimension> userAttributes) {
@@ -273,10 +333,12 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Custom segment user attributes.
+     * <p>
+     * One or more custom user attributes to use as criteria for the segment.
+     * </p>
      * 
      * @param userAttributes
-     *        Custom segment user attributes.
+     *        One or more custom user attributes to use as criteria for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

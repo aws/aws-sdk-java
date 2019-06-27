@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Define how a segment based on recency of use.
+ * <p>
+ * Specifies criteria for including or excluding endpoints from a segment based on how recently an endpoint was active.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RecencyDimension" target="_top">AWS API
  *      Documentation</a>
@@ -27,29 +29,27 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class RecencyDimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The length of time during which users have been active or inactive with your app.
-     * 
-     * Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     * <p>
+     * The duration to use when determining whether an endpoint is active or inactive.
+     * </p>
      */
     private String duration;
     /**
-     * The recency dimension type:
-     * 
-     * ACTIVE - Users who have used your app within the specified duration are included in the segment.
-     * 
-     * INACTIVE - Users who have not used your app within the specified duration are included in the segment.
+     * <p>
+     * The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within
+     * the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the
+     * specified duration are included in the segment.
+     * </p>
      */
     private String recencyType;
 
     /**
-     * The length of time during which users have been active or inactive with your app.
-     * 
-     * Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     * <p>
+     * The duration to use when determining whether an endpoint is active or inactive.
+     * </p>
      * 
      * @param duration
-     *        The length of time during which users have been active or inactive with your app.
-     * 
-     *        Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     *        The duration to use when determining whether an endpoint is active or inactive.
      * @see Duration
      */
 
@@ -58,13 +58,11 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The length of time during which users have been active or inactive with your app.
+     * <p>
+     * The duration to use when determining whether an endpoint is active or inactive.
+     * </p>
      * 
-     * Valid values: HR_24, DAY_7, DAY_14, DAY_30
-     * 
-     * @return The length of time during which users have been active or inactive with your app.
-     * 
-     *         Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     * @return The duration to use when determining whether an endpoint is active or inactive.
      * @see Duration
      */
 
@@ -73,14 +71,12 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The length of time during which users have been active or inactive with your app.
-     * 
-     * Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     * <p>
+     * The duration to use when determining whether an endpoint is active or inactive.
+     * </p>
      * 
      * @param duration
-     *        The length of time during which users have been active or inactive with your app.
-     * 
-     *        Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     *        The duration to use when determining whether an endpoint is active or inactive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Duration
      */
@@ -91,14 +87,12 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The length of time during which users have been active or inactive with your app.
-     * 
-     * Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     * <p>
+     * The duration to use when determining whether an endpoint is active or inactive.
+     * </p>
      * 
      * @param duration
-     *        The length of time during which users have been active or inactive with your app.
-     * 
-     *        Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     *        The duration to use when determining whether an endpoint is active or inactive.
      * @see Duration
      */
 
@@ -107,14 +101,12 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The length of time during which users have been active or inactive with your app.
-     * 
-     * Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     * <p>
+     * The duration to use when determining whether an endpoint is active or inactive.
+     * </p>
      * 
      * @param duration
-     *        The length of time during which users have been active or inactive with your app.
-     * 
-     *        Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     *        The duration to use when determining whether an endpoint is active or inactive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Duration
      */
@@ -125,18 +117,16 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The recency dimension type:
-     * 
-     * ACTIVE - Users who have used your app within the specified duration are included in the segment.
-     * 
-     * INACTIVE - Users who have not used your app within the specified duration are included in the segment.
+     * <p>
+     * The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within
+     * the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the
+     * specified duration are included in the segment.
+     * </p>
      * 
      * @param recencyType
-     *        The recency dimension type:
-     * 
-     *        ACTIVE - Users who have used your app within the specified duration are included in the segment.
-     * 
-     *        INACTIVE - Users who have not used your app within the specified duration are included in the segment.
+     *        The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active
+     *        within the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active
+     *        within the specified duration are included in the segment.
      * @see RecencyType
      */
 
@@ -145,17 +135,15 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The recency dimension type:
+     * <p>
+     * The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within
+     * the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the
+     * specified duration are included in the segment.
+     * </p>
      * 
-     * ACTIVE - Users who have used your app within the specified duration are included in the segment.
-     * 
-     * INACTIVE - Users who have not used your app within the specified duration are included in the segment.
-     * 
-     * @return The recency dimension type:
-     * 
-     *         ACTIVE - Users who have used your app within the specified duration are included in the segment.
-     * 
-     *         INACTIVE - Users who have not used your app within the specified duration are included in the segment.
+     * @return The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were
+     *         active within the specified duration are included in the segment; and, INACTIVE, endpoints that weren't
+     *         active within the specified duration are included in the segment.
      * @see RecencyType
      */
 
@@ -164,18 +152,16 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The recency dimension type:
-     * 
-     * ACTIVE - Users who have used your app within the specified duration are included in the segment.
-     * 
-     * INACTIVE - Users who have not used your app within the specified duration are included in the segment.
+     * <p>
+     * The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within
+     * the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the
+     * specified duration are included in the segment.
+     * </p>
      * 
      * @param recencyType
-     *        The recency dimension type:
-     * 
-     *        ACTIVE - Users who have used your app within the specified duration are included in the segment.
-     * 
-     *        INACTIVE - Users who have not used your app within the specified duration are included in the segment.
+     *        The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active
+     *        within the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active
+     *        within the specified duration are included in the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecencyType
      */
@@ -186,18 +172,16 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The recency dimension type:
-     * 
-     * ACTIVE - Users who have used your app within the specified duration are included in the segment.
-     * 
-     * INACTIVE - Users who have not used your app within the specified duration are included in the segment.
+     * <p>
+     * The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within
+     * the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the
+     * specified duration are included in the segment.
+     * </p>
      * 
      * @param recencyType
-     *        The recency dimension type:
-     * 
-     *        ACTIVE - Users who have used your app within the specified duration are included in the segment.
-     * 
-     *        INACTIVE - Users who have not used your app within the specified duration are included in the segment.
+     *        The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active
+     *        within the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active
+     *        within the specified duration are included in the segment.
      * @see RecencyType
      */
 
@@ -206,18 +190,16 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The recency dimension type:
-     * 
-     * ACTIVE - Users who have used your app within the specified duration are included in the segment.
-     * 
-     * INACTIVE - Users who have not used your app within the specified duration are included in the segment.
+     * <p>
+     * The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within
+     * the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the
+     * specified duration are included in the segment.
+     * </p>
      * 
      * @param recencyType
-     *        The recency dimension type:
-     * 
-     *        ACTIVE - Users who have used your app within the specified duration are included in the segment.
-     * 
-     *        INACTIVE - Users who have not used your app within the specified duration are included in the segment.
+     *        The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active
+     *        within the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active
+     *        within the specified duration are included in the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecencyType
      */

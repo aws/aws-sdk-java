@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Custom messages associated with events.
+ * <p>
+ * Provides information about endpoints and the events that they're associated with.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventsResponse" target="_top">AWS API
  *      Documentation</a>
@@ -27,26 +29,25 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class EventsResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * A map that contains a multipart response for each endpoint. Each item in this object uses the endpoint ID as the
-     * key, and the item response as the value.
-     * 
-     * If no item response exists, the value can also be one of the following: 202 (if the request was processed
-     * successfully) or 400 (if the payload was invalid, or required fields were missing).
+     * <p>
+     * A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the
+     * key and the item response is the value. If no item response exists, the value can also be one of the following:
+     * 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.
+     * </p>
      */
     private java.util.Map<String, ItemResponse> results;
 
     /**
-     * A map that contains a multipart response for each endpoint. Each item in this object uses the endpoint ID as the
-     * key, and the item response as the value.
+     * <p>
+     * A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the
+     * key and the item response is the value. If no item response exists, the value can also be one of the following:
+     * 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.
+     * </p>
      * 
-     * If no item response exists, the value can also be one of the following: 202 (if the request was processed
-     * successfully) or 400 (if the payload was invalid, or required fields were missing).
-     * 
-     * @return A map that contains a multipart response for each endpoint. Each item in this object uses the endpoint ID
-     *         as the key, and the item response as the value.
-     * 
-     *         If no item response exists, the value can also be one of the following: 202 (if the request was processed
-     *         successfully) or 400 (if the payload was invalid, or required fields were missing).
+     * @return A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID
+     *         is the key and the item response is the value. If no item response exists, the value can also be one of
+     *         the following: 202, the request was processed successfully; or 400, the payload wasn't valid or required
+     *         fields were missing.
      */
 
     public java.util.Map<String, ItemResponse> getResults() {
@@ -54,18 +55,17 @@ public class EventsResponse implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A map that contains a multipart response for each endpoint. Each item in this object uses the endpoint ID as the
-     * key, and the item response as the value.
-     * 
-     * If no item response exists, the value can also be one of the following: 202 (if the request was processed
-     * successfully) or 400 (if the payload was invalid, or required fields were missing).
+     * <p>
+     * A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the
+     * key and the item response is the value. If no item response exists, the value can also be one of the following:
+     * 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.
+     * </p>
      * 
      * @param results
-     *        A map that contains a multipart response for each endpoint. Each item in this object uses the endpoint ID
-     *        as the key, and the item response as the value.
-     * 
-     *        If no item response exists, the value can also be one of the following: 202 (if the request was processed
-     *        successfully) or 400 (if the payload was invalid, or required fields were missing).
+     *        A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID
+     *        is the key and the item response is the value. If no item response exists, the value can also be one of
+     *        the following: 202, the request was processed successfully; or 400, the payload wasn't valid or required
+     *        fields were missing.
      */
 
     public void setResults(java.util.Map<String, ItemResponse> results) {
@@ -73,18 +73,17 @@ public class EventsResponse implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A map that contains a multipart response for each endpoint. Each item in this object uses the endpoint ID as the
-     * key, and the item response as the value.
-     * 
-     * If no item response exists, the value can also be one of the following: 202 (if the request was processed
-     * successfully) or 400 (if the payload was invalid, or required fields were missing).
+     * <p>
+     * A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the
+     * key and the item response is the value. If no item response exists, the value can also be one of the following:
+     * 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.
+     * </p>
      * 
      * @param results
-     *        A map that contains a multipart response for each endpoint. Each item in this object uses the endpoint ID
-     *        as the key, and the item response as the value.
-     * 
-     *        If no item response exists, the value can also be one of the following: 202 (if the request was processed
-     *        successfully) or 400 (if the payload was invalid, or required fields were missing).
+     *        A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID
+     *        is the key and the item response is the value. If no item response exists, the value can also be one of
+     *        the following: 202, the request was processed successfully; or 400, the payload wasn't valid or required
+     *        fields were missing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

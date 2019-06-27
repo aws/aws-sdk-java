@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Demographic information about the endpoint.
+ * <p>
+ * Specifies demographic information about an endpoint, such as the applicable time zone and platform.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointDemographic" target="_top">AWS API
  *      Documentation</a>
@@ -26,31 +28,63 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EndpointDemographic implements Serializable, Cloneable, StructuredPojo {
 
-    /** The version of the application associated with the endpoint. */
+    /**
+     * <p>
+     * The version of the app that's associated with the endpoint.
+     * </p>
+     */
     private String appVersion;
     /**
-     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code, followed by an underscore, followed by
-     * an ISO 3166-1 alpha-2 value.
+     * <p>
+     * The locale of the endpoint, in the following format: the ISO 639-1 alpha-2 code, followed by an underscore (_),
+     * followed by an ISO 3166-1 alpha-2 value.
+     * </p>
      */
     private String locale;
-    /** The manufacturer of the endpoint device, such as Apple or Samsung. */
+    /**
+     * <p>
+     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * </p>
+     */
     private String make;
-    /** The model name or number of the endpoint device, such as iPhone. */
+    /**
+     * <p>
+     * The model name or number of the endpoint device, such as iPhone.
+     * </p>
+     */
     private String model;
-    /** The model version of the endpoint device. */
+    /**
+     * <p>
+     * The model version of the endpoint device.
+     * </p>
+     */
     private String modelVersion;
-    /** The platform of the endpoint device, such as iOS or Android. */
+    /**
+     * <p>
+     * The platform of the endpoint device, such as iOS or Android.
+     * </p>
+     */
     private String platform;
-    /** The platform version of the endpoint device. */
+    /**
+     * <p>
+     * The platform version of the endpoint device.
+     * </p>
+     */
     private String platformVersion;
-    /** The timezone of the endpoint. Specified as a tz database value, such as Americas/Los_Angeles. */
+    /**
+     * <p>
+     * The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.
+     * </p>
+     */
     private String timezone;
 
     /**
-     * The version of the application associated with the endpoint.
+     * <p>
+     * The version of the app that's associated with the endpoint.
+     * </p>
      * 
      * @param appVersion
-     *        The version of the application associated with the endpoint.
+     *        The version of the app that's associated with the endpoint.
      */
 
     public void setAppVersion(String appVersion) {
@@ -58,9 +92,11 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The version of the application associated with the endpoint.
+     * <p>
+     * The version of the app that's associated with the endpoint.
+     * </p>
      * 
-     * @return The version of the application associated with the endpoint.
+     * @return The version of the app that's associated with the endpoint.
      */
 
     public String getAppVersion() {
@@ -68,10 +104,12 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The version of the application associated with the endpoint.
+     * <p>
+     * The version of the app that's associated with the endpoint.
+     * </p>
      * 
      * @param appVersion
-     *        The version of the application associated with the endpoint.
+     *        The version of the app that's associated with the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,12 +119,14 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code, followed by an underscore, followed by
-     * an ISO 3166-1 alpha-2 value.
+     * <p>
+     * The locale of the endpoint, in the following format: the ISO 639-1 alpha-2 code, followed by an underscore (_),
+     * followed by an ISO 3166-1 alpha-2 value.
+     * </p>
      * 
      * @param locale
-     *        The endpoint locale in the following format: The ISO 639-1 alpha-2 code, followed by an underscore,
-     *        followed by an ISO 3166-1 alpha-2 value.
+     *        The locale of the endpoint, in the following format: the ISO 639-1 alpha-2 code, followed by an underscore
+     *        (_), followed by an ISO 3166-1 alpha-2 value.
      */
 
     public void setLocale(String locale) {
@@ -94,11 +134,13 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code, followed by an underscore, followed by
-     * an ISO 3166-1 alpha-2 value.
+     * <p>
+     * The locale of the endpoint, in the following format: the ISO 639-1 alpha-2 code, followed by an underscore (_),
+     * followed by an ISO 3166-1 alpha-2 value.
+     * </p>
      * 
-     * @return The endpoint locale in the following format: The ISO 639-1 alpha-2 code, followed by an underscore,
-     *         followed by an ISO 3166-1 alpha-2 value.
+     * @return The locale of the endpoint, in the following format: the ISO 639-1 alpha-2 code, followed by an
+     *         underscore (_), followed by an ISO 3166-1 alpha-2 value.
      */
 
     public String getLocale() {
@@ -106,12 +148,14 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code, followed by an underscore, followed by
-     * an ISO 3166-1 alpha-2 value.
+     * <p>
+     * The locale of the endpoint, in the following format: the ISO 639-1 alpha-2 code, followed by an underscore (_),
+     * followed by an ISO 3166-1 alpha-2 value.
+     * </p>
      * 
      * @param locale
-     *        The endpoint locale in the following format: The ISO 639-1 alpha-2 code, followed by an underscore,
-     *        followed by an ISO 3166-1 alpha-2 value.
+     *        The locale of the endpoint, in the following format: the ISO 639-1 alpha-2 code, followed by an underscore
+     *        (_), followed by an ISO 3166-1 alpha-2 value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,7 +165,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * </p>
      * 
      * @param make
      *        The manufacturer of the endpoint device, such as Apple or Samsung.
@@ -132,7 +178,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * </p>
      * 
      * @return The manufacturer of the endpoint device, such as Apple or Samsung.
      */
@@ -142,7 +190,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * </p>
      * 
      * @param make
      *        The manufacturer of the endpoint device, such as Apple or Samsung.
@@ -155,7 +205,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The model name or number of the endpoint device, such as iPhone.
+     * </p>
      * 
      * @param model
      *        The model name or number of the endpoint device, such as iPhone.
@@ -166,7 +218,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The model name or number of the endpoint device, such as iPhone.
+     * </p>
      * 
      * @return The model name or number of the endpoint device, such as iPhone.
      */
@@ -176,7 +230,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The model name or number of the endpoint device, such as iPhone.
+     * </p>
      * 
      * @param model
      *        The model name or number of the endpoint device, such as iPhone.
@@ -189,7 +245,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The model version of the endpoint device.
+     * </p>
      * 
      * @param modelVersion
      *        The model version of the endpoint device.
@@ -200,7 +258,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The model version of the endpoint device.
+     * </p>
      * 
      * @return The model version of the endpoint device.
      */
@@ -210,7 +270,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The model version of the endpoint device.
+     * </p>
      * 
      * @param modelVersion
      *        The model version of the endpoint device.
@@ -223,7 +285,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The platform of the endpoint device, such as iOS or Android.
+     * </p>
      * 
      * @param platform
      *        The platform of the endpoint device, such as iOS or Android.
@@ -234,7 +298,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The platform of the endpoint device, such as iOS or Android.
+     * </p>
      * 
      * @return The platform of the endpoint device, such as iOS or Android.
      */
@@ -244,7 +310,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The platform of the endpoint device, such as iOS or Android.
+     * </p>
      * 
      * @param platform
      *        The platform of the endpoint device, such as iOS or Android.
@@ -257,7 +325,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The platform version of the endpoint device.
+     * </p>
      * 
      * @param platformVersion
      *        The platform version of the endpoint device.
@@ -268,7 +338,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The platform version of the endpoint device.
+     * </p>
      * 
      * @return The platform version of the endpoint device.
      */
@@ -278,7 +350,9 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The platform version of the endpoint device.
+     * </p>
      * 
      * @param platformVersion
      *        The platform version of the endpoint device.
@@ -291,10 +365,12 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The timezone of the endpoint. Specified as a tz database value, such as Americas/Los_Angeles.
+     * <p>
+     * The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.
+     * </p>
      * 
      * @param timezone
-     *        The timezone of the endpoint. Specified as a tz database value, such as Americas/Los_Angeles.
+     *        The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.
      */
 
     public void setTimezone(String timezone) {
@@ -302,9 +378,11 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The timezone of the endpoint. Specified as a tz database value, such as Americas/Los_Angeles.
+     * <p>
+     * The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.
+     * </p>
      * 
-     * @return The timezone of the endpoint. Specified as a tz database value, such as Americas/Los_Angeles.
+     * @return The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.
      */
 
     public String getTimezone() {
@@ -312,10 +390,12 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The timezone of the endpoint. Specified as a tz database value, such as Americas/Los_Angeles.
+     * <p>
+     * The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.
+     * </p>
      * 
      * @param timezone
-     *        The timezone of the endpoint. Specified as a tz database value, such as Americas/Los_Angeles.
+     *        The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

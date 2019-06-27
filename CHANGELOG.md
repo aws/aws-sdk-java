@@ -1,4 +1,21 @@
-# __1.11.582__ __2019-06-27__
+# __1.11.583__ __2019-06-27__
+## __AWS Direct Connect__
+  - ### Features
+    - Tags will now be included in the API responses of all supported resources (Virtual interfaces, Connections, Interconnects and LAGs). You can also add tags while creating these resources.
+
+## __AWS EC2 Instance Connect__
+  - ### Features
+    - Amazon EC2 Instance Connect is a simple and secure way to connect to your instances using Secure Shell (SSH). With EC2 Instance Connect, you can control SSH access to your instances using AWS Identity and Access Management (IAM) policies as well as audit connection requests with AWS CloudTrail events. In addition, you can leverage your existing SSH keys or further enhance your security posture by generating one-time use SSH keys each time an authorized user connects.
+
+## __Amazon Pinpoint__
+  - ### Features
+    - This release includes editorial updates for the Amazon Pinpoint API documentation.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Added support for the WorkSpaces restore feature and copying WorkSpaces Images across AWS Regions.
+
+# __1.11.582__ __2019-06-26__
 ## __Amazon DynamoDB__
   - ### Features
     - Documentation updates for dynamodb

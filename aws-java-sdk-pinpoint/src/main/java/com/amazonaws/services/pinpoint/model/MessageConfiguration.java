@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Message configuration for a campaign.
+ * <p>
+ * Specifies the message configuration settings for a campaign.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MessageConfiguration" target="_top">AWS API
  *      Documentation</a>
@@ -26,26 +28,63 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MessageConfiguration implements Serializable, Cloneable, StructuredPojo {
 
-    /** The message that the campaign delivers to ADM channels. Overrides the default message. */
+    /**
+     * <p>
+     * The message that the campaign sends through the ADM (Amazon Device Messaging) channel. This message overrides the
+     * default message.
+     * </p>
+     */
     private Message aDMMessage;
-    /** The message that the campaign delivers to APNS channels. Overrides the default message. */
+    /**
+     * <p>
+     * The message that the campaign sends through the APNs (Apple Push Notification service) channel. This message
+     * overrides the default message.
+     * </p>
+     */
     private Message aPNSMessage;
-    /** The message that the campaign delivers to Baidu channels. Overrides the default message. */
+    /**
+     * <p>
+     * The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. This message overrides the
+     * default message.
+     * </p>
+     */
     private Message baiduMessage;
-    /** The default message for all channels. */
+    /**
+     * <p>
+     * The default message that the campaign sends through all the channels that are configured for the campaign.
+     * </p>
+     */
     private Message defaultMessage;
-    /** The email message configuration. */
+    /**
+     * <p>
+     * The message that the campaign sends through the email channel.
+     * </p>
+     */
     private CampaignEmailMessage emailMessage;
-    /** The message that the campaign delivers to GCM channels. Overrides the default message. */
+    /**
+     * <p>
+     * The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push
+     * notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This
+     * message overrides the default message.
+     * </p>
+     */
     private Message gCMMessage;
-    /** The SMS message configuration. */
+    /**
+     * <p>
+     * The message that the campaign sends through the SMS channel.
+     * </p>
+     */
     private CampaignSmsMessage sMSMessage;
 
     /**
-     * The message that the campaign delivers to ADM channels. Overrides the default message.
+     * <p>
+     * The message that the campaign sends through the ADM (Amazon Device Messaging) channel. This message overrides the
+     * default message.
+     * </p>
      * 
      * @param aDMMessage
-     *        The message that the campaign delivers to ADM channels. Overrides the default message.
+     *        The message that the campaign sends through the ADM (Amazon Device Messaging) channel. This message
+     *        overrides the default message.
      */
 
     public void setADMMessage(Message aDMMessage) {
@@ -53,9 +92,13 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The message that the campaign delivers to ADM channels. Overrides the default message.
+     * <p>
+     * The message that the campaign sends through the ADM (Amazon Device Messaging) channel. This message overrides the
+     * default message.
+     * </p>
      * 
-     * @return The message that the campaign delivers to ADM channels. Overrides the default message.
+     * @return The message that the campaign sends through the ADM (Amazon Device Messaging) channel. This message
+     *         overrides the default message.
      */
 
     public Message getADMMessage() {
@@ -63,10 +106,14 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The message that the campaign delivers to ADM channels. Overrides the default message.
+     * <p>
+     * The message that the campaign sends through the ADM (Amazon Device Messaging) channel. This message overrides the
+     * default message.
+     * </p>
      * 
      * @param aDMMessage
-     *        The message that the campaign delivers to ADM channels. Overrides the default message.
+     *        The message that the campaign sends through the ADM (Amazon Device Messaging) channel. This message
+     *        overrides the default message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,10 +123,14 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The message that the campaign delivers to APNS channels. Overrides the default message.
+     * <p>
+     * The message that the campaign sends through the APNs (Apple Push Notification service) channel. This message
+     * overrides the default message.
+     * </p>
      * 
      * @param aPNSMessage
-     *        The message that the campaign delivers to APNS channels. Overrides the default message.
+     *        The message that the campaign sends through the APNs (Apple Push Notification service) channel. This
+     *        message overrides the default message.
      */
 
     public void setAPNSMessage(Message aPNSMessage) {
@@ -87,9 +138,13 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The message that the campaign delivers to APNS channels. Overrides the default message.
+     * <p>
+     * The message that the campaign sends through the APNs (Apple Push Notification service) channel. This message
+     * overrides the default message.
+     * </p>
      * 
-     * @return The message that the campaign delivers to APNS channels. Overrides the default message.
+     * @return The message that the campaign sends through the APNs (Apple Push Notification service) channel. This
+     *         message overrides the default message.
      */
 
     public Message getAPNSMessage() {
@@ -97,10 +152,14 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The message that the campaign delivers to APNS channels. Overrides the default message.
+     * <p>
+     * The message that the campaign sends through the APNs (Apple Push Notification service) channel. This message
+     * overrides the default message.
+     * </p>
      * 
      * @param aPNSMessage
-     *        The message that the campaign delivers to APNS channels. Overrides the default message.
+     *        The message that the campaign sends through the APNs (Apple Push Notification service) channel. This
+     *        message overrides the default message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,10 +169,14 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The message that the campaign delivers to Baidu channels. Overrides the default message.
+     * <p>
+     * The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. This message overrides the
+     * default message.
+     * </p>
      * 
      * @param baiduMessage
-     *        The message that the campaign delivers to Baidu channels. Overrides the default message.
+     *        The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. This message overrides
+     *        the default message.
      */
 
     public void setBaiduMessage(Message baiduMessage) {
@@ -121,9 +184,13 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The message that the campaign delivers to Baidu channels. Overrides the default message.
+     * <p>
+     * The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. This message overrides the
+     * default message.
+     * </p>
      * 
-     * @return The message that the campaign delivers to Baidu channels. Overrides the default message.
+     * @return The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. This message overrides
+     *         the default message.
      */
 
     public Message getBaiduMessage() {
@@ -131,10 +198,14 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The message that the campaign delivers to Baidu channels. Overrides the default message.
+     * <p>
+     * The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. This message overrides the
+     * default message.
+     * </p>
      * 
      * @param baiduMessage
-     *        The message that the campaign delivers to Baidu channels. Overrides the default message.
+     *        The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. This message overrides
+     *        the default message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,10 +215,12 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The default message for all channels.
+     * <p>
+     * The default message that the campaign sends through all the channels that are configured for the campaign.
+     * </p>
      * 
      * @param defaultMessage
-     *        The default message for all channels.
+     *        The default message that the campaign sends through all the channels that are configured for the campaign.
      */
 
     public void setDefaultMessage(Message defaultMessage) {
@@ -155,9 +228,12 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The default message for all channels.
+     * <p>
+     * The default message that the campaign sends through all the channels that are configured for the campaign.
+     * </p>
      * 
-     * @return The default message for all channels.
+     * @return The default message that the campaign sends through all the channels that are configured for the
+     *         campaign.
      */
 
     public Message getDefaultMessage() {
@@ -165,10 +241,12 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The default message for all channels.
+     * <p>
+     * The default message that the campaign sends through all the channels that are configured for the campaign.
+     * </p>
      * 
      * @param defaultMessage
-     *        The default message for all channels.
+     *        The default message that the campaign sends through all the channels that are configured for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,10 +256,12 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email message configuration.
+     * <p>
+     * The message that the campaign sends through the email channel.
+     * </p>
      * 
      * @param emailMessage
-     *        The email message configuration.
+     *        The message that the campaign sends through the email channel.
      */
 
     public void setEmailMessage(CampaignEmailMessage emailMessage) {
@@ -189,9 +269,11 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email message configuration.
+     * <p>
+     * The message that the campaign sends through the email channel.
+     * </p>
      * 
-     * @return The email message configuration.
+     * @return The message that the campaign sends through the email channel.
      */
 
     public CampaignEmailMessage getEmailMessage() {
@@ -199,10 +281,12 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email message configuration.
+     * <p>
+     * The message that the campaign sends through the email channel.
+     * </p>
      * 
      * @param emailMessage
-     *        The email message configuration.
+     *        The message that the campaign sends through the email channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,10 +296,16 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The message that the campaign delivers to GCM channels. Overrides the default message.
+     * <p>
+     * The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push
+     * notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This
+     * message overrides the default message.
+     * </p>
      * 
      * @param gCMMessage
-     *        The message that the campaign delivers to GCM channels. Overrides the default message.
+     *        The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push
+     *        notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
+     *        This message overrides the default message.
      */
 
     public void setGCMMessage(Message gCMMessage) {
@@ -223,9 +313,15 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The message that the campaign delivers to GCM channels. Overrides the default message.
+     * <p>
+     * The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push
+     * notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This
+     * message overrides the default message.
+     * </p>
      * 
-     * @return The message that the campaign delivers to GCM channels. Overrides the default message.
+     * @return The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push
+     *         notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
+     *         This message overrides the default message.
      */
 
     public Message getGCMMessage() {
@@ -233,10 +329,16 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The message that the campaign delivers to GCM channels. Overrides the default message.
+     * <p>
+     * The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push
+     * notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This
+     * message overrides the default message.
+     * </p>
      * 
      * @param gCMMessage
-     *        The message that the campaign delivers to GCM channels. Overrides the default message.
+     *        The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push
+     *        notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
+     *        This message overrides the default message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,10 +348,12 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The SMS message configuration.
+     * <p>
+     * The message that the campaign sends through the SMS channel.
+     * </p>
      * 
      * @param sMSMessage
-     *        The SMS message configuration.
+     *        The message that the campaign sends through the SMS channel.
      */
 
     public void setSMSMessage(CampaignSmsMessage sMSMessage) {
@@ -257,9 +361,11 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The SMS message configuration.
+     * <p>
+     * The message that the campaign sends through the SMS channel.
+     * </p>
      * 
-     * @return The SMS message configuration.
+     * @return The message that the campaign sends through the SMS channel.
      */
 
     public CampaignSmsMessage getSMSMessage() {
@@ -267,10 +373,12 @@ public class MessageConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The SMS message configuration.
+     * <p>
+     * The message that the campaign sends through the SMS channel.
+     * </p>
      * 
      * @param sMSMessage
-     *        The SMS message configuration.
+     *        The message that the campaign sends through the SMS channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

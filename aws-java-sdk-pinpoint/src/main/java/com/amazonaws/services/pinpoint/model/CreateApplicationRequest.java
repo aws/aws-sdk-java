@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Application Request.
+ * <p>
+ * Specifies the display name of an application and the tags to associate with the application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateApplicationRequest" target="_top">AWS
  *      API Documentation</a>
@@ -26,16 +28,30 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateApplicationRequest implements Serializable, Cloneable, StructuredPojo {
 
-    /** The display name of the application. Used in the Amazon Pinpoint console. */
+    /**
+     * <p>
+     * The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint
+     * console.
+     * </p>
+     */
     private String name;
-    /** The Tags for the app. */
+    /**
+     * <p>
+     * A string-to-string map of key-value pairs that defines the tags to associate with the application. Each tag
+     * consists of a required tag key and an associated tag value.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
 
     /**
-     * The display name of the application. Used in the Amazon Pinpoint console.
+     * <p>
+     * The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint
+     * console.
+     * </p>
      * 
      * @param name
-     *        The display name of the application. Used in the Amazon Pinpoint console.
+     *        The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon
+     *        Pinpoint console.
      */
 
     public void setName(String name) {
@@ -43,9 +59,13 @@ public class CreateApplicationRequest implements Serializable, Cloneable, Struct
     }
 
     /**
-     * The display name of the application. Used in the Amazon Pinpoint console.
+     * <p>
+     * The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint
+     * console.
+     * </p>
      * 
-     * @return The display name of the application. Used in the Amazon Pinpoint console.
+     * @return The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon
+     *         Pinpoint console.
      */
 
     public String getName() {
@@ -53,10 +73,14 @@ public class CreateApplicationRequest implements Serializable, Cloneable, Struct
     }
 
     /**
-     * The display name of the application. Used in the Amazon Pinpoint console.
+     * <p>
+     * The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint
+     * console.
+     * </p>
      * 
      * @param name
-     *        The display name of the application. Used in the Amazon Pinpoint console.
+     *        The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon
+     *        Pinpoint console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,9 +90,13 @@ public class CreateApplicationRequest implements Serializable, Cloneable, Struct
     }
 
     /**
-     * The Tags for the app.
+     * <p>
+     * A string-to-string map of key-value pairs that defines the tags to associate with the application. Each tag
+     * consists of a required tag key and an associated tag value.
+     * </p>
      * 
-     * @return The Tags for the app.
+     * @return A string-to-string map of key-value pairs that defines the tags to associate with the application. Each
+     *         tag consists of a required tag key and an associated tag value.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -76,10 +104,14 @@ public class CreateApplicationRequest implements Serializable, Cloneable, Struct
     }
 
     /**
-     * The Tags for the app.
+     * <p>
+     * A string-to-string map of key-value pairs that defines the tags to associate with the application. Each tag
+     * consists of a required tag key and an associated tag value.
+     * </p>
      * 
      * @param tags
-     *        The Tags for the app.
+     *        A string-to-string map of key-value pairs that defines the tags to associate with the application. Each
+     *        tag consists of a required tag key and an associated tag value.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -87,10 +119,14 @@ public class CreateApplicationRequest implements Serializable, Cloneable, Struct
     }
 
     /**
-     * The Tags for the app.
+     * <p>
+     * A string-to-string map of key-value pairs that defines the tags to associate with the application. Each tag
+     * consists of a required tag key and an associated tag value.
+     * </p>
      * 
      * @param tags
-     *        The Tags for the app.
+     *        A string-to-string map of key-value pairs that defines the tags to associate with the application. Each
+     *        tag consists of a required tag key and an associated tag value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

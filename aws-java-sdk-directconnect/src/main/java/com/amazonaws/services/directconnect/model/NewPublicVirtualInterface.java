@@ -48,7 +48,8 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable, Struc
     private Integer asn;
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      */
     private String authKey;
@@ -76,6 +77,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable, Struc
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixes;
+    /**
+     * <p>
+     * Any tags assigned to the public virtual interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -199,11 +206,13 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
      * @param authKey
-     *        The authentication key for BGP configuration.
+     *        The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *        maximun lenth of 80 characters.
      */
 
     public void setAuthKey(String authKey) {
@@ -212,10 +221,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
-     * @return The authentication key for BGP configuration.
+     * @return The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *         maximun lenth of 80 characters.
      */
 
     public String getAuthKey() {
@@ -224,11 +235,13 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The authentication key for BGP configuration.
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
      * </p>
      * 
      * @param authKey
-     *        The authentication key for BGP configuration.
+     *        The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *        maximun lenth of 80 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -464,6 +477,79 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Any tags assigned to the public virtual interface.
+     * </p>
+     * 
+     * @return Any tags assigned to the public virtual interface.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the public virtual interface.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the public virtual interface.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the public virtual interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the public virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NewPublicVirtualInterface withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the public virtual interface.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the public virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NewPublicVirtualInterface withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -490,7 +576,9 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable, Struc
         if (getAddressFamily() != null)
             sb.append("AddressFamily: ").append(getAddressFamily()).append(",");
         if (getRouteFilterPrefixes() != null)
-            sb.append("RouteFilterPrefixes: ").append(getRouteFilterPrefixes());
+            sb.append("RouteFilterPrefixes: ").append(getRouteFilterPrefixes()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -537,6 +625,10 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable, Struc
             return false;
         if (other.getRouteFilterPrefixes() != null && other.getRouteFilterPrefixes().equals(this.getRouteFilterPrefixes()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -553,6 +645,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
         hashCode = prime * hashCode + ((getAddressFamily() == null) ? 0 : getAddressFamily().hashCode());
         hashCode = prime * hashCode + ((getRouteFilterPrefixes() == null) ? 0 : getRouteFilterPrefixes().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

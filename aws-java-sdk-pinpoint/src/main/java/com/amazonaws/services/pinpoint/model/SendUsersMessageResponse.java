@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * User send message response.
+ * <p>
+ * Provides information about which users and endpoints a message was sent to.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessageResponse" target="_top">AWS
  *      API Documentation</a>
@@ -26,22 +28,34 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SendUsersMessageResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The unique ID of the Amazon Pinpoint project used to send the message. */
+    /**
+     * <p>
+     * The unique identifier for the application that was used to send the message.
+     * </p>
+     */
     private String applicationId;
-    /** The unique ID assigned to the users-messages request. */
+    /**
+     * <p>
+     * The unique identifier that was assigned to the message request.
+     * </p>
+     */
     private String requestId;
     /**
-     * An object that shows the endpoints that were messaged for each user. The object provides a list of user IDs. For
-     * each user ID, it provides the endpoint IDs that were messaged. For each endpoint ID, it provides an
+     * <p>
+     * An object that indicates which endpoints the message was sent to, for each user. The object lists user IDs and,
+     * for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID, it provides an
      * EndpointMessageResult object.
+     * </p>
      */
     private java.util.Map<String, java.util.Map<String, EndpointMessageResult>> result;
 
     /**
-     * The unique ID of the Amazon Pinpoint project used to send the message.
+     * <p>
+     * The unique identifier for the application that was used to send the message.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID of the Amazon Pinpoint project used to send the message.
+     *        The unique identifier for the application that was used to send the message.
      */
 
     public void setApplicationId(String applicationId) {
@@ -49,9 +63,11 @@ public class SendUsersMessageResponse implements Serializable, Cloneable, Struct
     }
 
     /**
-     * The unique ID of the Amazon Pinpoint project used to send the message.
+     * <p>
+     * The unique identifier for the application that was used to send the message.
+     * </p>
      * 
-     * @return The unique ID of the Amazon Pinpoint project used to send the message.
+     * @return The unique identifier for the application that was used to send the message.
      */
 
     public String getApplicationId() {
@@ -59,10 +75,12 @@ public class SendUsersMessageResponse implements Serializable, Cloneable, Struct
     }
 
     /**
-     * The unique ID of the Amazon Pinpoint project used to send the message.
+     * <p>
+     * The unique identifier for the application that was used to send the message.
+     * </p>
      * 
      * @param applicationId
-     *        The unique ID of the Amazon Pinpoint project used to send the message.
+     *        The unique identifier for the application that was used to send the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,10 +90,12 @@ public class SendUsersMessageResponse implements Serializable, Cloneable, Struct
     }
 
     /**
-     * The unique ID assigned to the users-messages request.
+     * <p>
+     * The unique identifier that was assigned to the message request.
+     * </p>
      * 
      * @param requestId
-     *        The unique ID assigned to the users-messages request.
+     *        The unique identifier that was assigned to the message request.
      */
 
     public void setRequestId(String requestId) {
@@ -83,9 +103,11 @@ public class SendUsersMessageResponse implements Serializable, Cloneable, Struct
     }
 
     /**
-     * The unique ID assigned to the users-messages request.
+     * <p>
+     * The unique identifier that was assigned to the message request.
+     * </p>
      * 
-     * @return The unique ID assigned to the users-messages request.
+     * @return The unique identifier that was assigned to the message request.
      */
 
     public String getRequestId() {
@@ -93,10 +115,12 @@ public class SendUsersMessageResponse implements Serializable, Cloneable, Struct
     }
 
     /**
-     * The unique ID assigned to the users-messages request.
+     * <p>
+     * The unique identifier that was assigned to the message request.
+     * </p>
      * 
      * @param requestId
-     *        The unique ID assigned to the users-messages request.
+     *        The unique identifier that was assigned to the message request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,13 +130,15 @@ public class SendUsersMessageResponse implements Serializable, Cloneable, Struct
     }
 
     /**
-     * An object that shows the endpoints that were messaged for each user. The object provides a list of user IDs. For
-     * each user ID, it provides the endpoint IDs that were messaged. For each endpoint ID, it provides an
+     * <p>
+     * An object that indicates which endpoints the message was sent to, for each user. The object lists user IDs and,
+     * for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID, it provides an
      * EndpointMessageResult object.
+     * </p>
      * 
-     * @return An object that shows the endpoints that were messaged for each user. The object provides a list of user
-     *         IDs. For each user ID, it provides the endpoint IDs that were messaged. For each endpoint ID, it provides
-     *         an EndpointMessageResult object.
+     * @return An object that indicates which endpoints the message was sent to, for each user. The object lists user
+     *         IDs and, for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID,
+     *         it provides an EndpointMessageResult object.
      */
 
     public java.util.Map<String, java.util.Map<String, EndpointMessageResult>> getResult() {
@@ -120,14 +146,16 @@ public class SendUsersMessageResponse implements Serializable, Cloneable, Struct
     }
 
     /**
-     * An object that shows the endpoints that were messaged for each user. The object provides a list of user IDs. For
-     * each user ID, it provides the endpoint IDs that were messaged. For each endpoint ID, it provides an
+     * <p>
+     * An object that indicates which endpoints the message was sent to, for each user. The object lists user IDs and,
+     * for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID, it provides an
      * EndpointMessageResult object.
+     * </p>
      * 
      * @param result
-     *        An object that shows the endpoints that were messaged for each user. The object provides a list of user
-     *        IDs. For each user ID, it provides the endpoint IDs that were messaged. For each endpoint ID, it provides
-     *        an EndpointMessageResult object.
+     *        An object that indicates which endpoints the message was sent to, for each user. The object lists user IDs
+     *        and, for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID, it
+     *        provides an EndpointMessageResult object.
      */
 
     public void setResult(java.util.Map<String, java.util.Map<String, EndpointMessageResult>> result) {
@@ -135,14 +163,16 @@ public class SendUsersMessageResponse implements Serializable, Cloneable, Struct
     }
 
     /**
-     * An object that shows the endpoints that were messaged for each user. The object provides a list of user IDs. For
-     * each user ID, it provides the endpoint IDs that were messaged. For each endpoint ID, it provides an
+     * <p>
+     * An object that indicates which endpoints the message was sent to, for each user. The object lists user IDs and,
+     * for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID, it provides an
      * EndpointMessageResult object.
+     * </p>
      * 
      * @param result
-     *        An object that shows the endpoints that were messaged for each user. The object provides a list of user
-     *        IDs. For each user ID, it provides the endpoint IDs that were messaged. For each endpoint ID, it provides
-     *        an EndpointMessageResult object.
+     *        An object that indicates which endpoints the message was sent to, for each user. The object lists user IDs
+     *        and, for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID, it
+     *        provides an EndpointMessageResult object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

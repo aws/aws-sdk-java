@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -51,6 +52,8 @@ public class InterconnectMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsDeviceV2").build();
     private static final MarshallingInfo<String> HASLOGICALREDUNDANCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hasLogicalRedundancy").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final InterconnectMarshaller instance = new InterconnectMarshaller();
 
@@ -80,6 +83,7 @@ public class InterconnectMarshaller {
             protocolMarshaller.marshall(interconnect.getJumboFrameCapable(), JUMBOFRAMECAPABLE_BINDING);
             protocolMarshaller.marshall(interconnect.getAwsDeviceV2(), AWSDEVICEV2_BINDING);
             protocolMarshaller.marshall(interconnect.getHasLogicalRedundancy(), HASLOGICALREDUNDANCY_BINDING);
+            protocolMarshaller.marshall(interconnect.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

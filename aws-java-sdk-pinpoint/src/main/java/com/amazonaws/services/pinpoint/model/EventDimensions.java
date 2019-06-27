@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Event dimensions.
+ * <p>
+ * Specifies the dimensions for an event filter that determines when a campaign is sent.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventDimensions" target="_top">AWS API
  *      Documentation</a>
@@ -27,27 +29,35 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class EventDimensions implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria
-     * when you create an event filter.
+     * <p>
+     * One or more custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection
+     * criteria when you create an event filter.
+     * </p>
      */
     private java.util.Map<String, AttributeDimension> attributes;
     /**
-     * The name of the event that causes the campaign to be sent. This can be a standard event type that Amazon Pinpoint
-     * generates, such as _session.start, or a custom event that's specific to your app.
+     * <p>
+     * The name of the event that causes the campaign to be sent. This can be a standard type of event that Amazon
+     * Pinpoint generates, such as _session.start, or a custom event that's specific to your app.
+     * </p>
      */
     private SetDimension eventType;
     /**
-     * Custom metrics that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria when
-     * you create an event filter.
+     * <p>
+     * One or more custom metrics that your app reports to Amazon Pinpoint. You can use these metrics as selection
+     * criteria when you create an event filter.
+     * </p>
      */
     private java.util.Map<String, MetricDimension> metrics;
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria
-     * when you create an event filter.
+     * <p>
+     * One or more custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection
+     * criteria when you create an event filter.
+     * </p>
      * 
-     * @return Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection
-     *         criteria when you create an event filter.
+     * @return One or more custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as
+     *         selection criteria when you create an event filter.
      */
 
     public java.util.Map<String, AttributeDimension> getAttributes() {
@@ -55,12 +65,14 @@ public class EventDimensions implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria
-     * when you create an event filter.
+     * <p>
+     * One or more custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection
+     * criteria when you create an event filter.
+     * </p>
      * 
      * @param attributes
-     *        Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection
-     *        criteria when you create an event filter.
+     *        One or more custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as
+     *        selection criteria when you create an event filter.
      */
 
     public void setAttributes(java.util.Map<String, AttributeDimension> attributes) {
@@ -68,12 +80,14 @@ public class EventDimensions implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria
-     * when you create an event filter.
+     * <p>
+     * One or more custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection
+     * criteria when you create an event filter.
+     * </p>
      * 
      * @param attributes
-     *        Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection
-     *        criteria when you create an event filter.
+     *        One or more custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as
+     *        selection criteria when you create an event filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,12 +118,14 @@ public class EventDimensions implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The name of the event that causes the campaign to be sent. This can be a standard event type that Amazon Pinpoint
-     * generates, such as _session.start, or a custom event that's specific to your app.
+     * <p>
+     * The name of the event that causes the campaign to be sent. This can be a standard type of event that Amazon
+     * Pinpoint generates, such as _session.start, or a custom event that's specific to your app.
+     * </p>
      * 
      * @param eventType
-     *        The name of the event that causes the campaign to be sent. This can be a standard event type that Amazon
-     *        Pinpoint generates, such as _session.start, or a custom event that's specific to your app.
+     *        The name of the event that causes the campaign to be sent. This can be a standard type of event that
+     *        Amazon Pinpoint generates, such as _session.start, or a custom event that's specific to your app.
      */
 
     public void setEventType(SetDimension eventType) {
@@ -117,11 +133,13 @@ public class EventDimensions implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The name of the event that causes the campaign to be sent. This can be a standard event type that Amazon Pinpoint
-     * generates, such as _session.start, or a custom event that's specific to your app.
+     * <p>
+     * The name of the event that causes the campaign to be sent. This can be a standard type of event that Amazon
+     * Pinpoint generates, such as _session.start, or a custom event that's specific to your app.
+     * </p>
      * 
-     * @return The name of the event that causes the campaign to be sent. This can be a standard event type that Amazon
-     *         Pinpoint generates, such as _session.start, or a custom event that's specific to your app.
+     * @return The name of the event that causes the campaign to be sent. This can be a standard type of event that
+     *         Amazon Pinpoint generates, such as _session.start, or a custom event that's specific to your app.
      */
 
     public SetDimension getEventType() {
@@ -129,12 +147,14 @@ public class EventDimensions implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The name of the event that causes the campaign to be sent. This can be a standard event type that Amazon Pinpoint
-     * generates, such as _session.start, or a custom event that's specific to your app.
+     * <p>
+     * The name of the event that causes the campaign to be sent. This can be a standard type of event that Amazon
+     * Pinpoint generates, such as _session.start, or a custom event that's specific to your app.
+     * </p>
      * 
      * @param eventType
-     *        The name of the event that causes the campaign to be sent. This can be a standard event type that Amazon
-     *        Pinpoint generates, such as _session.start, or a custom event that's specific to your app.
+     *        The name of the event that causes the campaign to be sent. This can be a standard type of event that
+     *        Amazon Pinpoint generates, such as _session.start, or a custom event that's specific to your app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +164,13 @@ public class EventDimensions implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Custom metrics that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria when
-     * you create an event filter.
+     * <p>
+     * One or more custom metrics that your app reports to Amazon Pinpoint. You can use these metrics as selection
+     * criteria when you create an event filter.
+     * </p>
      * 
-     * @return Custom metrics that your app reports to Amazon Pinpoint. You can use these attributes as selection
-     *         criteria when you create an event filter.
+     * @return One or more custom metrics that your app reports to Amazon Pinpoint. You can use these metrics as
+     *         selection criteria when you create an event filter.
      */
 
     public java.util.Map<String, MetricDimension> getMetrics() {
@@ -156,12 +178,14 @@ public class EventDimensions implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Custom metrics that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria when
-     * you create an event filter.
+     * <p>
+     * One or more custom metrics that your app reports to Amazon Pinpoint. You can use these metrics as selection
+     * criteria when you create an event filter.
+     * </p>
      * 
      * @param metrics
-     *        Custom metrics that your app reports to Amazon Pinpoint. You can use these attributes as selection
-     *        criteria when you create an event filter.
+     *        One or more custom metrics that your app reports to Amazon Pinpoint. You can use these metrics as
+     *        selection criteria when you create an event filter.
      */
 
     public void setMetrics(java.util.Map<String, MetricDimension> metrics) {
@@ -169,12 +193,14 @@ public class EventDimensions implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Custom metrics that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria when
-     * you create an event filter.
+     * <p>
+     * One or more custom metrics that your app reports to Amazon Pinpoint. You can use these metrics as selection
+     * criteria when you create an event filter.
+     * </p>
      * 
      * @param metrics
-     *        Custom metrics that your app reports to Amazon Pinpoint. You can use these attributes as selection
-     *        criteria when you create an event filter.
+     *        One or more custom metrics that your app reports to Amazon Pinpoint. You can use these metrics as
+     *        selection criteria when you create an event filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

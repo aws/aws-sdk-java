@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Email Message.
+ * <p>
+ * Specifies the default settings and content for a one-time email message that's sent directly to an endpoint.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EmailMessage" target="_top">AWS API
  *      Documentation</a>
@@ -26,26 +28,56 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
 
-    /** The body of the email message. */
+    /**
+     * <p>
+     * The body of the email message.
+     * </p>
+     */
     private String body;
-    /** The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. */
+    /**
+     * <p>
+     * The email address to forward bounces and complaints to, if feedback forwarding is enabled.
+     * </p>
+     */
     private String feedbackForwardingAddress;
-    /** The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel. */
+    /**
+     * <p>
+     * The verified email address to send the email message from. The default value is the FromAddress specified for the
+     * email channel.
+     * </p>
+     */
     private String fromAddress;
-    /** An email represented as a raw MIME message. */
+    /**
+     * <p>
+     * The email message, represented as a raw MIME message.
+     * </p>
+     */
     private RawEmail rawEmail;
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the email, each reply-to address will
-     * receive the reply.
+     * <p>
+     * The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address
+     * receives the reply.
+     * </p>
      */
     private java.util.List<String> replyToAddresses;
-    /** An email composed of a subject, a text part and a html part. */
+    /**
+     * <p>
+     * The email message, composed of a subject, a text part, and an HTML part.
+     * </p>
+     */
     private SimpleEmail simpleEmail;
-    /** Default message substitutions. Can be overridden by individual address substitutions. */
+    /**
+     * <p>
+     * The default message variables to use in the email message. You can override the default variables with individual
+     * address variables.
+     * </p>
+     */
     private java.util.Map<String, java.util.List<String>> substitutions;
 
     /**
+     * <p>
      * The body of the email message.
+     * </p>
      * 
      * @param body
      *        The body of the email message.
@@ -56,7 +88,9 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The body of the email message.
+     * </p>
      * 
      * @return The body of the email message.
      */
@@ -66,7 +100,9 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The body of the email message.
+     * </p>
      * 
      * @param body
      *        The body of the email message.
@@ -79,10 +115,12 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled.
+     * <p>
+     * The email address to forward bounces and complaints to, if feedback forwarding is enabled.
+     * </p>
      * 
      * @param feedbackForwardingAddress
-     *        The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled.
+     *        The email address to forward bounces and complaints to, if feedback forwarding is enabled.
      */
 
     public void setFeedbackForwardingAddress(String feedbackForwardingAddress) {
@@ -90,9 +128,11 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled.
+     * <p>
+     * The email address to forward bounces and complaints to, if feedback forwarding is enabled.
+     * </p>
      * 
-     * @return The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled.
+     * @return The email address to forward bounces and complaints to, if feedback forwarding is enabled.
      */
 
     public String getFeedbackForwardingAddress() {
@@ -100,10 +140,12 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled.
+     * <p>
+     * The email address to forward bounces and complaints to, if feedback forwarding is enabled.
+     * </p>
      * 
      * @param feedbackForwardingAddress
-     *        The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled.
+     *        The email address to forward bounces and complaints to, if feedback forwarding is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,10 +155,14 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel.
+     * <p>
+     * The verified email address to send the email message from. The default value is the FromAddress specified for the
+     * email channel.
+     * </p>
      * 
      * @param fromAddress
-     *        The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel.
+     *        The verified email address to send the email message from. The default value is the FromAddress specified
+     *        for the email channel.
      */
 
     public void setFromAddress(String fromAddress) {
@@ -124,10 +170,13 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel.
+     * <p>
+     * The verified email address to send the email message from. The default value is the FromAddress specified for the
+     * email channel.
+     * </p>
      * 
-     * @return The email address used to send the email from. Defaults to use FromAddress specified in the Email
-     *         Channel.
+     * @return The verified email address to send the email message from. The default value is the FromAddress specified
+     *         for the email channel.
      */
 
     public String getFromAddress() {
@@ -135,10 +184,14 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel.
+     * <p>
+     * The verified email address to send the email message from. The default value is the FromAddress specified for the
+     * email channel.
+     * </p>
      * 
      * @param fromAddress
-     *        The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel.
+     *        The verified email address to send the email message from. The default value is the FromAddress specified
+     *        for the email channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,10 +201,12 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An email represented as a raw MIME message.
+     * <p>
+     * The email message, represented as a raw MIME message.
+     * </p>
      * 
      * @param rawEmail
-     *        An email represented as a raw MIME message.
+     *        The email message, represented as a raw MIME message.
      */
 
     public void setRawEmail(RawEmail rawEmail) {
@@ -159,9 +214,11 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An email represented as a raw MIME message.
+     * <p>
+     * The email message, represented as a raw MIME message.
+     * </p>
      * 
-     * @return An email represented as a raw MIME message.
+     * @return The email message, represented as a raw MIME message.
      */
 
     public RawEmail getRawEmail() {
@@ -169,10 +226,12 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An email represented as a raw MIME message.
+     * <p>
+     * The email message, represented as a raw MIME message.
+     * </p>
      * 
      * @param rawEmail
-     *        An email represented as a raw MIME message.
+     *        The email message, represented as a raw MIME message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +241,13 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the email, each reply-to address will
-     * receive the reply.
+     * <p>
+     * The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address
+     * receives the reply.
+     * </p>
      * 
-     * @return The reply-to email address(es) for the email. If the recipient replies to the email, each reply-to
-     *         address will receive the reply.
+     * @return The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to
+     *         address receives the reply.
      */
 
     public java.util.List<String> getReplyToAddresses() {
@@ -194,12 +255,14 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the email, each reply-to address will
-     * receive the reply.
+     * <p>
+     * The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address
+     * receives the reply.
+     * </p>
      * 
      * @param replyToAddresses
-     *        The reply-to email address(es) for the email. If the recipient replies to the email, each reply-to address
-     *        will receive the reply.
+     *        The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to
+     *        address receives the reply.
      */
 
     public void setReplyToAddresses(java.util.Collection<String> replyToAddresses) {
@@ -212,8 +275,10 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the email, each reply-to address will
-     * receive the reply.
+     * <p>
+     * The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address
+     * receives the reply.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setReplyToAddresses(java.util.Collection)} or {@link #withReplyToAddresses(java.util.Collection)} if you
@@ -221,8 +286,8 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param replyToAddresses
-     *        The reply-to email address(es) for the email. If the recipient replies to the email, each reply-to address
-     *        will receive the reply.
+     *        The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to
+     *        address receives the reply.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,12 +302,14 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the email, each reply-to address will
-     * receive the reply.
+     * <p>
+     * The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address
+     * receives the reply.
+     * </p>
      * 
      * @param replyToAddresses
-     *        The reply-to email address(es) for the email. If the recipient replies to the email, each reply-to address
-     *        will receive the reply.
+     *        The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to
+     *        address receives the reply.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,10 +319,12 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An email composed of a subject, a text part and a html part.
+     * <p>
+     * The email message, composed of a subject, a text part, and an HTML part.
+     * </p>
      * 
      * @param simpleEmail
-     *        An email composed of a subject, a text part and a html part.
+     *        The email message, composed of a subject, a text part, and an HTML part.
      */
 
     public void setSimpleEmail(SimpleEmail simpleEmail) {
@@ -263,9 +332,11 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An email composed of a subject, a text part and a html part.
+     * <p>
+     * The email message, composed of a subject, a text part, and an HTML part.
+     * </p>
      * 
-     * @return An email composed of a subject, a text part and a html part.
+     * @return The email message, composed of a subject, a text part, and an HTML part.
      */
 
     public SimpleEmail getSimpleEmail() {
@@ -273,10 +344,12 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An email composed of a subject, a text part and a html part.
+     * <p>
+     * The email message, composed of a subject, a text part, and an HTML part.
+     * </p>
      * 
      * @param simpleEmail
-     *        An email composed of a subject, a text part and a html part.
+     *        The email message, composed of a subject, a text part, and an HTML part.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,9 +359,13 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The default message variables to use in the email message. You can override the default variables with individual
+     * address variables.
+     * </p>
      * 
-     * @return Default message substitutions. Can be overridden by individual address substitutions.
+     * @return The default message variables to use in the email message. You can override the default variables with
+     *         individual address variables.
      */
 
     public java.util.Map<String, java.util.List<String>> getSubstitutions() {
@@ -296,10 +373,14 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The default message variables to use in the email message. You can override the default variables with individual
+     * address variables.
+     * </p>
      * 
      * @param substitutions
-     *        Default message substitutions. Can be overridden by individual address substitutions.
+     *        The default message variables to use in the email message. You can override the default variables with
+     *        individual address variables.
      */
 
     public void setSubstitutions(java.util.Map<String, java.util.List<String>> substitutions) {
@@ -307,10 +388,14 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Default message substitutions. Can be overridden by individual address substitutions.
+     * <p>
+     * The default message variables to use in the email message. You can override the default variables with individual
+     * address variables.
+     * </p>
      * 
      * @param substitutions
-     *        Default message substitutions. Can be overridden by individual address substitutions.
+     *        The default message variables to use in the email message. You can override the default variables with
+     *        individual address variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

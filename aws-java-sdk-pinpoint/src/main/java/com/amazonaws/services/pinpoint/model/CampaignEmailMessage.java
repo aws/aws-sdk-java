@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * The email message configuration.
+ * <p>
+ * Specifies the content and "From" address for an email message that's sent to recipients of a campaign.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignEmailMessage" target="_top">AWS API
  *      Documentation</a>
@@ -26,20 +28,39 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CampaignEmailMessage implements Serializable, Cloneable, StructuredPojo {
 
-    /** The email text body. */
+    /**
+     * <p>
+     * The body of the email for recipients whose email clients don't support HTML content.
+     * </p>
+     */
     private String body;
-    /** The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel. */
+    /**
+     * <p>
+     * The verified email address to send the email from. The default address is the FromAddress specified for the email
+     * channel for the application.
+     * </p>
+     */
     private String fromAddress;
-    /** The email html body. */
+    /**
+     * <p>
+     * The body of the email, in HTML format, for recipients whose email clients support HTML content.
+     * </p>
+     */
     private String htmlBody;
-    /** The email title (Or subject). */
+    /**
+     * <p>
+     * The subject line, or title, of the email.
+     * </p>
+     */
     private String title;
 
     /**
-     * The email text body.
+     * <p>
+     * The body of the email for recipients whose email clients don't support HTML content.
+     * </p>
      * 
      * @param body
-     *        The email text body.
+     *        The body of the email for recipients whose email clients don't support HTML content.
      */
 
     public void setBody(String body) {
@@ -47,9 +68,11 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email text body.
+     * <p>
+     * The body of the email for recipients whose email clients don't support HTML content.
+     * </p>
      * 
-     * @return The email text body.
+     * @return The body of the email for recipients whose email clients don't support HTML content.
      */
 
     public String getBody() {
@@ -57,10 +80,12 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email text body.
+     * <p>
+     * The body of the email for recipients whose email clients don't support HTML content.
+     * </p>
      * 
      * @param body
-     *        The email text body.
+     *        The body of the email for recipients whose email clients don't support HTML content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,10 +95,14 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel.
+     * <p>
+     * The verified email address to send the email from. The default address is the FromAddress specified for the email
+     * channel for the application.
+     * </p>
      * 
      * @param fromAddress
-     *        The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel.
+     *        The verified email address to send the email from. The default address is the FromAddress specified for
+     *        the email channel for the application.
      */
 
     public void setFromAddress(String fromAddress) {
@@ -81,10 +110,13 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel.
+     * <p>
+     * The verified email address to send the email from. The default address is the FromAddress specified for the email
+     * channel for the application.
+     * </p>
      * 
-     * @return The email address used to send the email from. Defaults to use FromAddress specified in the Email
-     *         Channel.
+     * @return The verified email address to send the email from. The default address is the FromAddress specified for
+     *         the email channel for the application.
      */
 
     public String getFromAddress() {
@@ -92,10 +124,14 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel.
+     * <p>
+     * The verified email address to send the email from. The default address is the FromAddress specified for the email
+     * channel for the application.
+     * </p>
      * 
      * @param fromAddress
-     *        The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel.
+     *        The verified email address to send the email from. The default address is the FromAddress specified for
+     *        the email channel for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,10 +141,12 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email html body.
+     * <p>
+     * The body of the email, in HTML format, for recipients whose email clients support HTML content.
+     * </p>
      * 
      * @param htmlBody
-     *        The email html body.
+     *        The body of the email, in HTML format, for recipients whose email clients support HTML content.
      */
 
     public void setHtmlBody(String htmlBody) {
@@ -116,9 +154,11 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email html body.
+     * <p>
+     * The body of the email, in HTML format, for recipients whose email clients support HTML content.
+     * </p>
      * 
-     * @return The email html body.
+     * @return The body of the email, in HTML format, for recipients whose email clients support HTML content.
      */
 
     public String getHtmlBody() {
@@ -126,10 +166,12 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email html body.
+     * <p>
+     * The body of the email, in HTML format, for recipients whose email clients support HTML content.
+     * </p>
      * 
      * @param htmlBody
-     *        The email html body.
+     *        The body of the email, in HTML format, for recipients whose email clients support HTML content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,10 +181,12 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email title (Or subject).
+     * <p>
+     * The subject line, or title, of the email.
+     * </p>
      * 
      * @param title
-     *        The email title (Or subject).
+     *        The subject line, or title, of the email.
      */
 
     public void setTitle(String title) {
@@ -150,9 +194,11 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email title (Or subject).
+     * <p>
+     * The subject line, or title, of the email.
+     * </p>
      * 
-     * @return The email title (Or subject).
+     * @return The subject line, or title, of the email.
      */
 
     public String getTitle() {
@@ -160,10 +206,12 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The email title (Or subject).
+     * <p>
+     * The subject line, or title, of the email.
+     * </p>
      * 
      * @param title
-     *        The email title (Or subject).
+     *        The subject line, or title, of the email.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
