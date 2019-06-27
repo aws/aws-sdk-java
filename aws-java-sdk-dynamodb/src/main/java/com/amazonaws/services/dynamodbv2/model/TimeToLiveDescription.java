@@ -30,24 +30,24 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Time to Live status for the table.
+     * The TTL status for the table.
      * </p>
      */
     private String timeToLiveStatus;
     /**
      * <p>
-     * The name of the Time to Live attribute for items in the table.
+     * The name of the TTL attribute for items in the table.
      * </p>
      */
     private String attributeName;
 
     /**
      * <p>
-     * The Time to Live status for the table.
+     * The TTL status for the table.
      * </p>
      * 
      * @param timeToLiveStatus
-     *        The Time to Live status for the table.
+     *        The TTL status for the table.
      * @see TimeToLiveStatus
      */
 
@@ -57,10 +57,10 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Time to Live status for the table.
+     * The TTL status for the table.
      * </p>
      * 
-     * @return The Time to Live status for the table.
+     * @return The TTL status for the table.
      * @see TimeToLiveStatus
      */
 
@@ -70,11 +70,11 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Time to Live status for the table.
+     * The TTL status for the table.
      * </p>
      * 
      * @param timeToLiveStatus
-     *        The Time to Live status for the table.
+     *        The TTL status for the table.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeToLiveStatus
      */
@@ -86,11 +86,11 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Time to Live status for the table.
+     * The TTL status for the table.
      * </p>
      * 
      * @param timeToLiveStatus
-     *        The Time to Live status for the table.
+     *        The TTL status for the table.
      * @see TimeToLiveStatus
      */
 
@@ -100,11 +100,11 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Time to Live status for the table.
+     * The TTL status for the table.
      * </p>
      * 
      * @param timeToLiveStatus
-     *        The Time to Live status for the table.
+     *        The TTL status for the table.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeToLiveStatus
      */
@@ -116,11 +116,11 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the Time to Live attribute for items in the table.
+     * The name of the TTL attribute for items in the table.
      * </p>
      * 
      * @param attributeName
-     *        The name of the Time to Live attribute for items in the table.
+     *        The name of the TTL attribute for items in the table.
      */
 
     public void setAttributeName(String attributeName) {
@@ -129,10 +129,10 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the Time to Live attribute for items in the table.
+     * The name of the TTL attribute for items in the table.
      * </p>
      * 
-     * @return The name of the Time to Live attribute for items in the table.
+     * @return The name of the TTL attribute for items in the table.
      */
 
     public String getAttributeName() {
@@ -141,11 +141,11 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the Time to Live attribute for items in the table.
+     * The name of the TTL attribute for items in the table.
      * </p>
      * 
      * @param attributeName
-     *        The name of the Time to Live attribute for items in the table.
+     *        The name of the TTL attribute for items in the table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

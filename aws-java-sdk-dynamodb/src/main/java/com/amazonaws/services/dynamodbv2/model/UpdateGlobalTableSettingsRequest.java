@@ -46,7 +46,7 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
     private Long globalTableProvisionedWriteCapacityUnits;
     /**
      * <p>
-     * AutoScaling settings for managing provisioned write capacity for the global table.
+     * Auto scaling settings for managing provisioned write capacity for the global table.
      * </p>
      */
     private AutoScalingSettingsUpdate globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate;
@@ -58,7 +58,7 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
     private java.util.List<GlobalTableGlobalSecondaryIndexSettingsUpdate> globalTableGlobalSecondaryIndexSettingsUpdate;
     /**
      * <p>
-     * Represents the settings for a global table in a region that will be modified.
+     * Represents the settings for a global table in a Region that will be modified.
      * </p>
      */
     private java.util.List<ReplicaSettingsUpdate> replicaSettingsUpdate;
@@ -215,11 +215,11 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * AutoScaling settings for managing provisioned write capacity for the global table.
+     * Auto scaling settings for managing provisioned write capacity for the global table.
      * </p>
      * 
      * @param globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate
-     *        AutoScaling settings for managing provisioned write capacity for the global table.
+     *        Auto scaling settings for managing provisioned write capacity for the global table.
      */
 
     public void setGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(
@@ -229,10 +229,10 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * AutoScaling settings for managing provisioned write capacity for the global table.
+     * Auto scaling settings for managing provisioned write capacity for the global table.
      * </p>
      * 
-     * @return AutoScaling settings for managing provisioned write capacity for the global table.
+     * @return Auto scaling settings for managing provisioned write capacity for the global table.
      */
 
     public AutoScalingSettingsUpdate getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate() {
@@ -241,11 +241,11 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * AutoScaling settings for managing provisioned write capacity for the global table.
+     * Auto scaling settings for managing provisioned write capacity for the global table.
      * </p>
      * 
      * @param globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate
-     *        AutoScaling settings for managing provisioned write capacity for the global table.
+     *        Auto scaling settings for managing provisioned write capacity for the global table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,10 +333,10 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Represents the settings for a global table in a region that will be modified.
+     * Represents the settings for a global table in a Region that will be modified.
      * </p>
      * 
-     * @return Represents the settings for a global table in a region that will be modified.
+     * @return Represents the settings for a global table in a Region that will be modified.
      */
 
     public java.util.List<ReplicaSettingsUpdate> getReplicaSettingsUpdate() {
@@ -345,11 +345,11 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Represents the settings for a global table in a region that will be modified.
+     * Represents the settings for a global table in a Region that will be modified.
      * </p>
      * 
      * @param replicaSettingsUpdate
-     *        Represents the settings for a global table in a region that will be modified.
+     *        Represents the settings for a global table in a Region that will be modified.
      */
 
     public void setReplicaSettingsUpdate(java.util.Collection<ReplicaSettingsUpdate> replicaSettingsUpdate) {
@@ -363,7 +363,7 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Represents the settings for a global table in a region that will be modified.
+     * Represents the settings for a global table in a Region that will be modified.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -372,7 +372,7 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param replicaSettingsUpdate
-     *        Represents the settings for a global table in a region that will be modified.
+     *        Represents the settings for a global table in a Region that will be modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,11 +388,11 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Represents the settings for a global table in a region that will be modified.
+     * Represents the settings for a global table in a Region that will be modified.
      * </p>
      * 
      * @param replicaSettingsUpdate
-     *        Represents the settings for a global table in a region that will be modified.
+     *        Represents the settings for a global table in a Region that will be modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

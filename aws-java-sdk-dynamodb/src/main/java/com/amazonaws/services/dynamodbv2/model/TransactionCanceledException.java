@@ -50,6 +50,11 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * The aggregate size of the items in the transaction exceeds 4 MBs.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * There is a user error, such as an invalid data format.
  * </p>
  * </li>
@@ -73,6 +78,11 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * There is insufficient provisioned capacity for the transaction to be completed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The aggregate size of the items in the transaction exceeds 4 MBs.
  * </p>
  * </li>
  * <li>

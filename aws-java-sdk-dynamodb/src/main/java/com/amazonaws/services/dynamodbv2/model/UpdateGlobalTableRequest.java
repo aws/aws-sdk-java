@@ -33,7 +33,7 @@ public class UpdateGlobalTableRequest extends com.amazonaws.AmazonWebServiceRequ
     private String globalTableName;
     /**
      * <p>
-     * A list of regions that should be added or removed from the global table.
+     * A list of Regions that should be added or removed from the global table.
      * </p>
      */
     private java.util.List<ReplicaUpdate> replicaUpdates;
@@ -80,10 +80,10 @@ public class UpdateGlobalTableRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of regions that should be added or removed from the global table.
+     * A list of Regions that should be added or removed from the global table.
      * </p>
      * 
-     * @return A list of regions that should be added or removed from the global table.
+     * @return A list of Regions that should be added or removed from the global table.
      */
 
     public java.util.List<ReplicaUpdate> getReplicaUpdates() {
@@ -92,11 +92,11 @@ public class UpdateGlobalTableRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of regions that should be added or removed from the global table.
+     * A list of Regions that should be added or removed from the global table.
      * </p>
      * 
      * @param replicaUpdates
-     *        A list of regions that should be added or removed from the global table.
+     *        A list of Regions that should be added or removed from the global table.
      */
 
     public void setReplicaUpdates(java.util.Collection<ReplicaUpdate> replicaUpdates) {
@@ -110,7 +110,7 @@ public class UpdateGlobalTableRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of regions that should be added or removed from the global table.
+     * A list of Regions that should be added or removed from the global table.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class UpdateGlobalTableRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param replicaUpdates
-     *        A list of regions that should be added or removed from the global table.
+     *        A list of Regions that should be added or removed from the global table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UpdateGlobalTableRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of regions that should be added or removed from the global table.
+     * A list of Regions that should be added or removed from the global table.
      * </p>
      * 
      * @param replicaUpdates
-     *        A list of regions that should be added or removed from the global table.
+     *        A list of Regions that should be added or removed from the global table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,7 +31,7 @@ public class DescribeGlobalTableSettingsResult extends com.amazonaws.AmazonWebSe
     private String globalTableName;
     /**
      * <p>
-     * The region specific settings for the global table.
+     * The Region-specific settings for the global table.
      * </p>
      */
     private java.util.List<ReplicaSettingsDescription> replicaSettings;
@@ -78,10 +78,10 @@ public class DescribeGlobalTableSettingsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The region specific settings for the global table.
+     * The Region-specific settings for the global table.
      * </p>
      * 
-     * @return The region specific settings for the global table.
+     * @return The Region-specific settings for the global table.
      */
 
     public java.util.List<ReplicaSettingsDescription> getReplicaSettings() {
@@ -90,11 +90,11 @@ public class DescribeGlobalTableSettingsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The region specific settings for the global table.
+     * The Region-specific settings for the global table.
      * </p>
      * 
      * @param replicaSettings
-     *        The region specific settings for the global table.
+     *        The Region-specific settings for the global table.
      */
 
     public void setReplicaSettings(java.util.Collection<ReplicaSettingsDescription> replicaSettings) {
@@ -108,7 +108,7 @@ public class DescribeGlobalTableSettingsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The region specific settings for the global table.
+     * The Region-specific settings for the global table.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +117,7 @@ public class DescribeGlobalTableSettingsResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param replicaSettings
-     *        The region specific settings for the global table.
+     *        The Region-specific settings for the global table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class DescribeGlobalTableSettingsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The region specific settings for the global table.
+     * The Region-specific settings for the global table.
      * </p>
      * 
      * @param replicaSettings
-     *        The region specific settings for the global table.
+     *        The Region-specific settings for the global table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

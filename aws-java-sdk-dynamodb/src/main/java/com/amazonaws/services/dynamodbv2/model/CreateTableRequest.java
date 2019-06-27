@@ -77,7 +77,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -98,7 +98,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.List<KeySchemaElement> keySchema;
@@ -143,7 +143,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -202,7 +202,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -275,7 +275,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     * <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).
      * </p>
      * </li>
      * <li>
@@ -372,8 +372,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -393,7 +393,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public CreateTableRequest(String tableName, java.util.List<KeySchemaElement> keySchema) {
         setTableName(tableName);
@@ -444,8 +444,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -465,7 +465,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param provisionedThroughput
      *        Represents the provisioned throughput settings for a specified table or index. The settings can be
      *        modified using the <code>UpdateTable</code> operation.
@@ -634,7 +634,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -655,7 +655,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return Specifies the attributes that make up the primary key for a table or an index. The attributes in
@@ -693,7 +693,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <note>
      *         <p>
      *         The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute"
-     *         derives from DynamoDB' usage of an internal hash function to evenly distribute data items across
+     *         derives from the DynamoDB usage of an internal hash function to evenly distribute data items across
      *         partitions, based on their partition key values.
      *         </p>
      *         <p>
@@ -714,7 +714,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     *         >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.List<KeySchemaElement> getKeySchema() {
@@ -758,7 +758,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -779,7 +779,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param keySchema
@@ -818,8 +818,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -839,7 +839,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
@@ -888,7 +888,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -909,7 +909,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -953,8 +953,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -974,7 +974,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1025,7 +1025,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -1046,7 +1046,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param keySchema
@@ -1085,8 +1085,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -1106,7 +1106,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1156,7 +1156,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1216,7 +1216,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *         projected attributes are in <code>NonKeyAttributes</code>.
+     *         projected attributes is in <code>NonKeyAttributes</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1283,7 +1283,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1344,7 +1344,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1416,7 +1416,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1482,7 +1482,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1556,7 +1556,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1617,7 +1617,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1681,7 +1681,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1742,7 +1742,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *         projected attributes are in <code>NonKeyAttributes</code>.
+     *         projected attributes is in <code>NonKeyAttributes</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1810,7 +1810,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1872,7 +1872,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1945,7 +1945,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -2012,7 +2012,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -2087,7 +2087,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -2149,7 +2149,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -2462,7 +2462,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     * <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).
      * </p>
      * </li>
      * <li>
@@ -2500,7 +2500,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     *        <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled
+     *        (false).
      *        </p>
      *        </li>
      *        <li>
@@ -2546,7 +2547,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     * <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).
      * </p>
      * </li>
      * <li>
@@ -2583,7 +2584,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     *         <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled
+     *         (false).
      *         </p>
      *         </li>
      *         <li>
@@ -2630,7 +2632,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     * <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).
      * </p>
      * </li>
      * <li>
@@ -2668,7 +2670,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     *        <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled
+     *        (false).
      *        </p>
      *        </li>
      *        <li>

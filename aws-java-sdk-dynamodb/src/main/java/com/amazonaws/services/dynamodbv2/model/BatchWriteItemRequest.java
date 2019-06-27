@@ -60,7 +60,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
      * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
-     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected
      * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
@@ -128,7 +128,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
      *        name and an attribute value. Attribute values must not be null; string and binary type attributes must
      *        have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
-     *        values will be rejected with a <code>ValidationException</code> exception.
+     *        values are rejected with a <code>ValidationException</code> exception.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
@@ -174,7 +174,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
      * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
-     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected
      * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
@@ -218,7 +218,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
      *         name and an attribute value. Attribute values must not be null; string and binary type attributes must
      *         have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
-     *         values will be rejected with a <code>ValidationException</code> exception.
+     *         values are rejected with a <code>ValidationException</code> exception.
      *         </p>
      *         <p>
      *         If you specify any attributes that are part of an index key, then the data types for those attributes
@@ -265,7 +265,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
      * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
-     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected
      * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
@@ -310,7 +310,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
      *        name and an attribute value. Attribute values must not be null; string and binary type attributes must
      *        have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
-     *        values will be rejected with a <code>ValidationException</code> exception.
+     *        values are rejected with a <code>ValidationException</code> exception.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
@@ -357,7 +357,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
      * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
-     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected
      * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
@@ -402,7 +402,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
      *        name and an attribute value. Attribute values must not be null; string and binary type attributes must
      *        have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
-     *        values will be rejected with a <code>ValidationException</code> exception.
+     *        values are rejected with a <code>ValidationException</code> exception.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must

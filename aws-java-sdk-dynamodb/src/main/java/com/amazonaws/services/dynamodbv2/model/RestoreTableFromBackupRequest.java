@@ -33,7 +33,7 @@ public class RestoreTableFromBackupRequest extends com.amazonaws.AmazonWebServic
     private String targetTableName;
     /**
      * <p>
-     * The ARN associated with the backup.
+     * The Amazon Resource Name (ARN) associated with the backup.
      * </p>
      */
     private String backupArn;
@@ -80,11 +80,11 @@ public class RestoreTableFromBackupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN associated with the backup.
+     * The Amazon Resource Name (ARN) associated with the backup.
      * </p>
      * 
      * @param backupArn
-     *        The ARN associated with the backup.
+     *        The Amazon Resource Name (ARN) associated with the backup.
      */
 
     public void setBackupArn(String backupArn) {
@@ -93,10 +93,10 @@ public class RestoreTableFromBackupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN associated with the backup.
+     * The Amazon Resource Name (ARN) associated with the backup.
      * </p>
      * 
-     * @return The ARN associated with the backup.
+     * @return The Amazon Resource Name (ARN) associated with the backup.
      */
 
     public String getBackupArn() {
@@ -105,11 +105,11 @@ public class RestoreTableFromBackupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN associated with the backup.
+     * The Amazon Resource Name (ARN) associated with the backup.
      * </p>
      * 
      * @param backupArn
-     *        The ARN associated with the backup.
+     *        The Amazon Resource Name (ARN) associated with the backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

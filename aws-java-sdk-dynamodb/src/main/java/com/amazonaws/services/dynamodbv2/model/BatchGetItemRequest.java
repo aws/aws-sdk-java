@@ -108,7 +108,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a href=
+     * For more information about expression attribute names, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
@@ -128,8 +128,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * be separated by commas.
      * </p>
      * <p>
-     * If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are
-     * not found, they will not appear in the result.
+     * If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not
+     * found, they do not appear in the result.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -240,7 +240,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on expression attribute names, see <a href=
+     *        For more information about expression attribute names, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
@@ -260,8 +260,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        expression must be separated by commas.
      *        </p>
      *        <p>
-     *        If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *        attributes are not found, they will not appear in the result.
+     *        If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *        are not found, they do not appear in the result.
      *        </p>
      *        <p>
      *        For more information, see <a href=
@@ -364,7 +364,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on expression attribute names, see <a href=
+     *        For more information about expression attribute names, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
@@ -384,8 +384,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        expression must be separated by commas.
      *        </p>
      *        <p>
-     *        If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *        attributes are not found, they will not appear in the result.
+     *        If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *        are not found, they do not appear in the result.
      *        </p>
      *        <p>
      *        For more information, see <a href=
@@ -490,7 +490,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on expression attribute names, see <a href=
+     *        For more information about expression attribute names, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
@@ -510,8 +510,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        expression must be separated by commas.
      *        </p>
      *        <p>
-     *        If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *        attributes are not found, they will not appear in the result.
+     *        If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *        are not found, they do not appear in the result.
      *        </p>
      *        <p>
      *        For more information, see <a href=
@@ -614,7 +614,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a href=
+     * For more information about expression attribute names, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
@@ -634,8 +634,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * be separated by commas.
      * </p>
      * <p>
-     * If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are
-     * not found, they will not appear in the result.
+     * If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not
+     * found, they do not appear in the result.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -730,7 +730,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         </note>
      *         <p>
-     *         For more information on expression attribute names, see <a href=
+     *         For more information about expression attribute names, see <a href=
      *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *         </p>
@@ -750,8 +750,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         expression must be separated by commas.
      *         </p>
      *         <p>
-     *         If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *         attributes are not found, they will not appear in the result.
+     *         If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *         are not found, they do not appear in the result.
      *         </p>
      *         <p>
      *         For more information, see <a href=
@@ -853,7 +853,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a href=
+     * For more information about expression attribute names, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
@@ -873,8 +873,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * be separated by commas.
      * </p>
      * <p>
-     * If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are
-     * not found, they will not appear in the result.
+     * If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not
+     * found, they do not appear in the result.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -970,7 +970,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on expression attribute names, see <a href=
+     *        For more information about expression attribute names, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
@@ -990,8 +990,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        expression must be separated by commas.
      *        </p>
      *        <p>
-     *        If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *        attributes are not found, they will not appear in the result.
+     *        If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *        are not found, they do not appear in the result.
      *        </p>
      *        <p>
      *        For more information, see <a href=
@@ -1093,7 +1093,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a href=
+     * For more information about expression attribute names, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
@@ -1113,8 +1113,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * be separated by commas.
      * </p>
      * <p>
-     * If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are
-     * not found, they will not appear in the result.
+     * If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not
+     * found, they do not appear in the result.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1210,7 +1210,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on expression attribute names, see <a href=
+     *        For more information about expression attribute names, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
@@ -1230,8 +1230,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        expression must be separated by commas.
      *        </p>
      *        <p>
-     *        If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *        attributes are not found, they will not appear in the result.
+     *        If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *        are not found, they do not appear in the result.
      *        </p>
      *        <p>
      *        For more information, see <a href=

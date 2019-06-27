@@ -69,13 +69,13 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * sets, or elements of a JSON document. The attributes in the expression must be separated by commas.
      * </p>
      * <p>
-     * If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are
-     * not found, they will not appear in the result.
+     * If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not
+     * found, they do not appear in the result.
      * </p>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private String projectionExpression;
@@ -145,7 +145,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * For more information on expression attribute names, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> expressionAttributeNames;
@@ -538,13 +538,13 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * sets, or elements of a JSON document. The attributes in the expression must be separated by commas.
      * </p>
      * <p>
-     * If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are
-     * not found, they will not appear in the result.
+     * If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not
+     * found, they do not appear in the result.
      * </p>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param projectionExpression
@@ -552,13 +552,13 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by
      *        commas.</p>
      *        <p>
-     *        If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *        attributes are not found, they will not appear in the result.
+     *        If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *        are not found, they do not appear in the result.
      *        </p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setProjectionExpression(String projectionExpression) {
@@ -571,26 +571,26 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * sets, or elements of a JSON document. The attributes in the expression must be separated by commas.
      * </p>
      * <p>
-     * If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are
-     * not found, they will not appear in the result.
+     * If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not
+     * found, they do not appear in the result.
      * </p>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return A string that identifies one or more attributes to retrieve from the table. These attributes can include
      *         scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by
      *         commas.</p>
      *         <p>
-     *         If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *         attributes are not found, they will not appear in the result.
+     *         If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *         are not found, they do not appear in the result.
      *         </p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public String getProjectionExpression() {
@@ -603,13 +603,13 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * sets, or elements of a JSON document. The attributes in the expression must be separated by commas.
      * </p>
      * <p>
-     * If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are
-     * not found, they will not appear in the result.
+     * If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not
+     * found, they do not appear in the result.
      * </p>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param projectionExpression
@@ -617,13 +617,13 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by
      *        commas.</p>
      *        <p>
-     *        If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *        attributes are not found, they will not appear in the result.
+     *        If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *        are not found, they do not appear in the result.
      *        </p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -698,7 +698,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * For more information on expression attribute names, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return One or more substitution tokens for attribute names in an expression. The following are some use cases
@@ -764,7 +764,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         <p>
      *         For more information on expression attribute names, see <a href=
      *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.Map<String, String> getExpressionAttributeNames() {
@@ -837,7 +837,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * For more information on expression attribute names, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeNames
@@ -904,7 +904,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        For more information on expression attribute names, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setExpressionAttributeNames(java.util.Map<String, String> expressionAttributeNames) {
@@ -977,7 +977,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * For more information on expression attribute names, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeNames
@@ -1044,7 +1044,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        For more information on expression attribute names, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

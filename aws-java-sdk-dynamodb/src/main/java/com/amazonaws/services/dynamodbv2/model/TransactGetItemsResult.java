@@ -34,7 +34,7 @@ public class TransactGetItemsResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.List<ConsumedCapacity> consumedCapacity;
     /**
      * <p>
-     * An ordered array of up to 10 <code>ItemResponse</code> objects, each of which corresponds to the
+     * An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds to the
      * <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each
      * <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the
      * requested item.
@@ -142,7 +142,7 @@ public class TransactGetItemsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An ordered array of up to 10 <code>ItemResponse</code> objects, each of which corresponds to the
+     * An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds to the
      * <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each
      * <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the
      * requested item.
@@ -152,7 +152,7 @@ public class TransactGetItemsResult extends com.amazonaws.AmazonWebServiceResult
      * requested item has no projected attributes, the corresponding <code>ItemResponse</code> object is an empty Map.
      * </p>
      * 
-     * @return An ordered array of up to 10 <code>ItemResponse</code> objects, each of which corresponds to the
+     * @return An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds to the
      *         <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each
      *         <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes
      *         of the requested item.</p>
@@ -168,7 +168,7 @@ public class TransactGetItemsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An ordered array of up to 10 <code>ItemResponse</code> objects, each of which corresponds to the
+     * An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds to the
      * <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each
      * <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the
      * requested item.
@@ -179,7 +179,7 @@ public class TransactGetItemsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param responses
-     *        An ordered array of up to 10 <code>ItemResponse</code> objects, each of which corresponds to the
+     *        An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds to the
      *        <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each
      *        <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes
      *        of the requested item.</p>
@@ -200,7 +200,7 @@ public class TransactGetItemsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An ordered array of up to 10 <code>ItemResponse</code> objects, each of which corresponds to the
+     * An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds to the
      * <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each
      * <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the
      * requested item.
@@ -216,7 +216,7 @@ public class TransactGetItemsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param responses
-     *        An ordered array of up to 10 <code>ItemResponse</code> objects, each of which corresponds to the
+     *        An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds to the
      *        <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each
      *        <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes
      *        of the requested item.</p>
@@ -239,7 +239,7 @@ public class TransactGetItemsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An ordered array of up to 10 <code>ItemResponse</code> objects, each of which corresponds to the
+     * An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds to the
      * <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each
      * <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes of the
      * requested item.
@@ -250,7 +250,7 @@ public class TransactGetItemsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param responses
-     *        An ordered array of up to 10 <code>ItemResponse</code> objects, each of which corresponds to the
+     *        An ordered array of up to 25 <code>ItemResponse</code> objects, each of which corresponds to the
      *        <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i> array. Each
      *        <code>ItemResponse</code> object contains a Map of the name-value pairs that are the projected attributes
      *        of the requested item.</p>

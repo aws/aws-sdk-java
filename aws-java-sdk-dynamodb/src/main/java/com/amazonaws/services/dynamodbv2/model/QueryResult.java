@@ -80,8 +80,8 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * <p>
      * The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned
      * throughput consumed, along with statistics for the table and any indexes involved in the operation.
-     * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified
-     * For more information, see <a
+     * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
+     * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
@@ -458,8 +458,8 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * <p>
      * The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned
      * throughput consumed, along with statistics for the table and any indexes involved in the operation.
-     * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified
-     * For more information, see <a
+     * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
+     * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
@@ -468,7 +468,7 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      *        The capacity units consumed by the <code>Query</code> operation. The data returned includes the total
      *        provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *        operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
-     *        parameter was specified For more information, see <a
+     *        parameter was specified. For more information, see <a
      *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      *        >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -481,8 +481,8 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * <p>
      * The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned
      * throughput consumed, along with statistics for the table and any indexes involved in the operation.
-     * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified
-     * For more information, see <a
+     * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
+     * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
@@ -490,7 +490,7 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * @return The capacity units consumed by the <code>Query</code> operation. The data returned includes the total
      *         provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *         operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
-     *         parameter was specified For more information, see <a
+     *         parameter was specified. For more information, see <a
      *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      *         >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
@@ -503,8 +503,8 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * <p>
      * The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned
      * throughput consumed, along with statistics for the table and any indexes involved in the operation.
-     * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified
-     * For more information, see <a
+     * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
+     * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
@@ -513,7 +513,7 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      *        The capacity units consumed by the <code>Query</code> operation. The data returned includes the total
      *        provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *        operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
-     *        parameter was specified For more information, see <a
+     *        parameter was specified. For more information, see <a
      *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      *        >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

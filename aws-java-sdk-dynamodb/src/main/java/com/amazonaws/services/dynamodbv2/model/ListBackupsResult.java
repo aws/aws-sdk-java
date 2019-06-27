@@ -40,7 +40,7 @@ public class ListBackupsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * no more results to be retrieved.
      * </p>
      * <p>
-     * If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to be
+     * If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data to be
      * returned. All results are guaranteed to have been returned if and only if no value for
      * <code>LastEvaluatedBackupArn</code> is returned.
      * </p>
@@ -128,7 +128,7 @@ public class ListBackupsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * no more results to be retrieved.
      * </p>
      * <p>
-     * If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to be
+     * If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data to be
      * returned. All results are guaranteed to have been returned if and only if no value for
      * <code>LastEvaluatedBackupArn</code> is returned.
      * </p>
@@ -142,8 +142,8 @@ public class ListBackupsResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        there are no more results to be retrieved.
      *        </p>
      *        <p>
-     *        If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to be
-     *        returned. All results are guaranteed to have been returned if and only if no value for
+     *        If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data
+     *        to be returned. All results are guaranteed to have been returned if and only if no value for
      *        <code>LastEvaluatedBackupArn</code> is returned.
      */
 
@@ -162,7 +162,7 @@ public class ListBackupsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * no more results to be retrieved.
      * </p>
      * <p>
-     * If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to be
+     * If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data to be
      * returned. All results are guaranteed to have been returned if and only if no value for
      * <code>LastEvaluatedBackupArn</code> is returned.
      * </p>
@@ -175,8 +175,8 @@ public class ListBackupsResult extends com.amazonaws.AmazonWebServiceResult<com.
      *         there are no more results to be retrieved.
      *         </p>
      *         <p>
-     *         If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to
-     *         be returned. All results are guaranteed to have been returned if and only if no value for
+     *         If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data
+     *         to be returned. All results are guaranteed to have been returned if and only if no value for
      *         <code>LastEvaluatedBackupArn</code> is returned.
      */
 
@@ -195,7 +195,7 @@ public class ListBackupsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * no more results to be retrieved.
      * </p>
      * <p>
-     * If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to be
+     * If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data to be
      * returned. All results are guaranteed to have been returned if and only if no value for
      * <code>LastEvaluatedBackupArn</code> is returned.
      * </p>
@@ -209,8 +209,8 @@ public class ListBackupsResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        there are no more results to be retrieved.
      *        </p>
      *        <p>
-     *        If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to be
-     *        returned. All results are guaranteed to have been returned if and only if no value for
+     *        If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data
+     *        to be returned. All results are guaranteed to have been returned if and only if no value for
      *        <code>LastEvaluatedBackupArn</code> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

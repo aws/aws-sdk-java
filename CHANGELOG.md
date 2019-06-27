@@ -1,3 +1,8 @@
+# __1.11.582__ __2019-06-27__
+## __Amazon DynamoDB__
+  - ### Features
+    - Documentation updates for dynamodb
+
 # __1.11.581__ __2019-06-26__
 ## __AWS CodeCommit__
   - ### Features

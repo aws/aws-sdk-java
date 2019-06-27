@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the settings used to enable or disable Time to Live for the specified table.
+ * Represents the settings used to enable or disable Time to Live (TTL) for the specified table.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TimeToLiveSpecification" target="_top">AWS
@@ -30,24 +30,24 @@ public class TimeToLiveSpecification implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Indicates whether Time To Live is to be enabled (true) or disabled (false) on the table.
+     * Indicates whether TTL is to be enabled (true) or disabled (false) on the table.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * The name of the Time to Live attribute used to store the expiration time for items in the table.
+     * The name of the TTL attribute used to store the expiration time for items in the table.
      * </p>
      */
     private String attributeName;
 
     /**
      * <p>
-     * Indicates whether Time To Live is to be enabled (true) or disabled (false) on the table.
+     * Indicates whether TTL is to be enabled (true) or disabled (false) on the table.
      * </p>
      * 
      * @param enabled
-     *        Indicates whether Time To Live is to be enabled (true) or disabled (false) on the table.
+     *        Indicates whether TTL is to be enabled (true) or disabled (false) on the table.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -56,10 +56,10 @@ public class TimeToLiveSpecification implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Indicates whether Time To Live is to be enabled (true) or disabled (false) on the table.
+     * Indicates whether TTL is to be enabled (true) or disabled (false) on the table.
      * </p>
      * 
-     * @return Indicates whether Time To Live is to be enabled (true) or disabled (false) on the table.
+     * @return Indicates whether TTL is to be enabled (true) or disabled (false) on the table.
      */
 
     public Boolean getEnabled() {
@@ -68,11 +68,11 @@ public class TimeToLiveSpecification implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Indicates whether Time To Live is to be enabled (true) or disabled (false) on the table.
+     * Indicates whether TTL is to be enabled (true) or disabled (false) on the table.
      * </p>
      * 
      * @param enabled
-     *        Indicates whether Time To Live is to be enabled (true) or disabled (false) on the table.
+     *        Indicates whether TTL is to be enabled (true) or disabled (false) on the table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class TimeToLiveSpecification implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Indicates whether Time To Live is to be enabled (true) or disabled (false) on the table.
+     * Indicates whether TTL is to be enabled (true) or disabled (false) on the table.
      * </p>
      * 
-     * @return Indicates whether Time To Live is to be enabled (true) or disabled (false) on the table.
+     * @return Indicates whether TTL is to be enabled (true) or disabled (false) on the table.
      */
 
     public Boolean isEnabled() {
@@ -95,11 +95,11 @@ public class TimeToLiveSpecification implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the Time to Live attribute used to store the expiration time for items in the table.
+     * The name of the TTL attribute used to store the expiration time for items in the table.
      * </p>
      * 
      * @param attributeName
-     *        The name of the Time to Live attribute used to store the expiration time for items in the table.
+     *        The name of the TTL attribute used to store the expiration time for items in the table.
      */
 
     public void setAttributeName(String attributeName) {
@@ -108,10 +108,10 @@ public class TimeToLiveSpecification implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the Time to Live attribute used to store the expiration time for items in the table.
+     * The name of the TTL attribute used to store the expiration time for items in the table.
      * </p>
      * 
-     * @return The name of the Time to Live attribute used to store the expiration time for items in the table.
+     * @return The name of the TTL attribute used to store the expiration time for items in the table.
      */
 
     public String getAttributeName() {
@@ -120,11 +120,11 @@ public class TimeToLiveSpecification implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the Time to Live attribute used to store the expiration time for items in the table.
+     * The name of the TTL attribute used to store the expiration time for items in the table.
      * </p>
      * 
      * @param attributeName
-     *        The name of the Time to Live attribute used to store the expiration time for items in the table.
+     *        The name of the TTL attribute used to store the expiration time for items in the table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

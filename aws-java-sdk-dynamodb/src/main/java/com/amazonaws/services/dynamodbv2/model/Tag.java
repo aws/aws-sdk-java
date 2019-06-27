@@ -22,9 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table.
  * </p>
  * <p>
- * AWS-assigned tag names and values are automatically assigned the aws: prefix, which the user cannot assign.
- * AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix user: in the
- * Cost Allocation Report. You cannot backdate the application of a tag.
+ * AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot
+ * assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix
+ * <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag.
  * </p>
  * <p>
  * For an overview on tagging DynamoDB resources, see <a
@@ -39,7 +39,7 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
+     * The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
      * key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.
      * </p>
      */
@@ -53,12 +53,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
+     * The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
      * key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.
      * </p>
      * 
      * @param key
-     *        The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the
+     *        The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the
      *        same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new
      *        value.
      */
@@ -69,11 +69,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
+     * The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
      * key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.
      * </p>
      * 
-     * @return The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the
+     * @return The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the
      *         same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new
      *         value.
      */
@@ -84,12 +84,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
+     * The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
      * key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.
      * </p>
      * 
      * @param key
-     *        The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the
+     *        The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the
      *        same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new
      *        value.
      * @return Returns a reference to this object so that method calls can be chained together.

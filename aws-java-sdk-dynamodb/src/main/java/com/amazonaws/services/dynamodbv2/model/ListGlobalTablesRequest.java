@@ -39,7 +39,7 @@ public class ListGlobalTablesRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer limit;
     /**
      * <p>
-     * Lists the global tables in a specific region.
+     * Lists the global tables in a specific Region.
      * </p>
      */
     private String regionName;
@@ -126,11 +126,11 @@ public class ListGlobalTablesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Lists the global tables in a specific region.
+     * Lists the global tables in a specific Region.
      * </p>
      * 
      * @param regionName
-     *        Lists the global tables in a specific region.
+     *        Lists the global tables in a specific Region.
      */
 
     public void setRegionName(String regionName) {
@@ -139,10 +139,10 @@ public class ListGlobalTablesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Lists the global tables in a specific region.
+     * Lists the global tables in a specific Region.
      * </p>
      * 
-     * @return Lists the global tables in a specific region.
+     * @return Lists the global tables in a specific Region.
      */
 
     public String getRegionName() {
@@ -151,11 +151,11 @@ public class ListGlobalTablesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Lists the global tables in a specific region.
+     * Lists the global tables in a specific Region.
      * </p>
      * 
      * @param regionName
-     *        Lists the global tables in a specific region.
+     *        Lists the global tables in a specific Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

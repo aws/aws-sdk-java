@@ -51,10 +51,10 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.Date timeRangeUpperBound;
     /**
      * <p>
-     * <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated when the current page of results was
-     * returned, inclusive of the current page of results. This value may be specified as the
-     * <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page
-     * of results.
+     * <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the
+     * current page of results was returned, inclusive of the current page of results. This value may be specified as
+     * the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next
+     * page of results.
      * </p>
      */
     private String exclusiveStartBackupArn;
@@ -247,17 +247,17 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated when the current page of results was
-     * returned, inclusive of the current page of results. This value may be specified as the
-     * <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page
-     * of results.
+     * <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the
+     * current page of results was returned, inclusive of the current page of results. This value may be specified as
+     * the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next
+     * page of results.
      * </p>
      * 
      * @param exclusiveStartBackupArn
-     *        <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated when the current page of
-     *        results was returned, inclusive of the current page of results. This value may be specified as the
-     *        <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the
-     *        next page of results.
+     *        <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when
+     *        the current page of results was returned, inclusive of the current page of results. This value may be
+     *        specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order
+     *        to fetch the next page of results.
      */
 
     public void setExclusiveStartBackupArn(String exclusiveStartBackupArn) {
@@ -266,16 +266,16 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated when the current page of results was
-     * returned, inclusive of the current page of results. This value may be specified as the
-     * <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page
-     * of results.
+     * <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the
+     * current page of results was returned, inclusive of the current page of results. This value may be specified as
+     * the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next
+     * page of results.
      * </p>
      * 
-     * @return <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated when the current page of
-     *         results was returned, inclusive of the current page of results. This value may be specified as the
-     *         <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the
-     *         next page of results.
+     * @return <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when
+     *         the current page of results was returned, inclusive of the current page of results. This value may be
+     *         specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in
+     *         order to fetch the next page of results.
      */
 
     public String getExclusiveStartBackupArn() {
@@ -284,17 +284,17 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated when the current page of results was
-     * returned, inclusive of the current page of results. This value may be specified as the
-     * <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page
-     * of results.
+     * <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the
+     * current page of results was returned, inclusive of the current page of results. This value may be specified as
+     * the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next
+     * page of results.
      * </p>
      * 
      * @param exclusiveStartBackupArn
-     *        <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated when the current page of
-     *        results was returned, inclusive of the current page of results. This value may be specified as the
-     *        <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the
-     *        next page of results.
+     *        <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when
+     *        the current page of results was returned, inclusive of the current page of results. This value may be
+     *        specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order
+     *        to fetch the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

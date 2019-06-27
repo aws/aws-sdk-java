@@ -33,7 +33,7 @@ public class TransactWriteItemsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about
-     * any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations.
      * </p>
      */
@@ -120,13 +120,13 @@ public class TransactWriteItemsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about
-     * any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations.
      * </p>
      * 
      * @return A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information
      *         about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>
-     *         or <code>DeleteItem</code> operations.
+     *         , or <code>DeleteItem</code> operations.
      */
 
     public java.util.Map<String, java.util.List<ItemCollectionMetrics>> getItemCollectionMetrics() {
@@ -136,13 +136,13 @@ public class TransactWriteItemsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about
-     * any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations.
      * </p>
      * 
      * @param itemCollectionMetrics
      *        A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information
-     *        about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>
+     *        about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>,
      *        or <code>DeleteItem</code> operations.
      */
 
@@ -153,13 +153,13 @@ public class TransactWriteItemsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about
-     * any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations.
      * </p>
      * 
      * @param itemCollectionMetrics
      *        A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information
-     *        about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>
+     *        about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>,
      *        or <code>DeleteItem</code> operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
