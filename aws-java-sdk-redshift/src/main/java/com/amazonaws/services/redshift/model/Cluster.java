@@ -143,6 +143,39 @@ public class Cluster implements Serializable, Cloneable {
     private String clusterStatus;
     /**
      * <p>
+     * The availability status of the cluster for queries. Possible values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Available - The cluster is available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable - The cluster is not available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed - The cluster failed and is not available for queries.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String clusterAvailabilityStatus;
+    /**
+     * <p>
      * The status of a modify operation, if any, initiated for the cluster.
      * </p>
      */
@@ -1115,6 +1148,205 @@ public class Cluster implements Serializable, Cloneable {
 
     public Cluster withClusterStatus(String clusterStatus) {
         setClusterStatus(clusterStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The availability status of the cluster for queries. Possible values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Available - The cluster is available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable - The cluster is not available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed - The cluster failed and is not available for queries.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param clusterAvailabilityStatus
+     *        The availability status of the cluster for queries. Possible values are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Available - The cluster is available for queries.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unavailable - The cluster is not available for queries.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed - The cluster failed and is not available for queries.
+     *        </p>
+     *        </li>
+     */
+
+    public void setClusterAvailabilityStatus(String clusterAvailabilityStatus) {
+        this.clusterAvailabilityStatus = clusterAvailabilityStatus;
+    }
+
+    /**
+     * <p>
+     * The availability status of the cluster for queries. Possible values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Available - The cluster is available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable - The cluster is not available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed - The cluster failed and is not available for queries.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The availability status of the cluster for queries. Possible values are the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Available - The cluster is available for queries.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Unavailable - The cluster is not available for queries.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Failed - The cluster failed and is not available for queries.
+     *         </p>
+     *         </li>
+     */
+
+    public String getClusterAvailabilityStatus() {
+        return this.clusterAvailabilityStatus;
+    }
+
+    /**
+     * <p>
+     * The availability status of the cluster for queries. Possible values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Available - The cluster is available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable - The cluster is not available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed - The cluster failed and is not available for queries.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param clusterAvailabilityStatus
+     *        The availability status of the cluster for queries. Possible values are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Available - The cluster is available for queries.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unavailable - The cluster is not available for queries.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed - The cluster failed and is not available for queries.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withClusterAvailabilityStatus(String clusterAvailabilityStatus) {
+        setClusterAvailabilityStatus(clusterAvailabilityStatus);
         return this;
     }
 
@@ -3329,6 +3561,8 @@ public class Cluster implements Serializable, Cloneable {
             sb.append("NodeType: ").append(getNodeType()).append(",");
         if (getClusterStatus() != null)
             sb.append("ClusterStatus: ").append(getClusterStatus()).append(",");
+        if (getClusterAvailabilityStatus() != null)
+            sb.append("ClusterAvailabilityStatus: ").append(getClusterAvailabilityStatus()).append(",");
         if (getModifyStatus() != null)
             sb.append("ModifyStatus: ").append(getModifyStatus()).append(",");
         if (getMasterUsername() != null)
@@ -3432,6 +3666,10 @@ public class Cluster implements Serializable, Cloneable {
         if (other.getClusterStatus() == null ^ this.getClusterStatus() == null)
             return false;
         if (other.getClusterStatus() != null && other.getClusterStatus().equals(this.getClusterStatus()) == false)
+            return false;
+        if (other.getClusterAvailabilityStatus() == null ^ this.getClusterAvailabilityStatus() == null)
+            return false;
+        if (other.getClusterAvailabilityStatus() != null && other.getClusterAvailabilityStatus().equals(this.getClusterAvailabilityStatus()) == false)
             return false;
         if (other.getModifyStatus() == null ^ this.getModifyStatus() == null)
             return false;
@@ -3603,6 +3841,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getNodeType() == null) ? 0 : getNodeType().hashCode());
         hashCode = prime * hashCode + ((getClusterStatus() == null) ? 0 : getClusterStatus().hashCode());
+        hashCode = prime * hashCode + ((getClusterAvailabilityStatus() == null) ? 0 : getClusterAvailabilityStatus().hashCode());
         hashCode = prime * hashCode + ((getModifyStatus() == null) ? 0 : getModifyStatus().hashCode());
         hashCode = prime * hashCode + ((getMasterUsername() == null) ? 0 : getMasterUsername().hashCode());
         hashCode = prime * hashCode + ((getDBName() == null) ? 0 : getDBName().hashCode());

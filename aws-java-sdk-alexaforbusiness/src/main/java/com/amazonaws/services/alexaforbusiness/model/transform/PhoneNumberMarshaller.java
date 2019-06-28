@@ -10,43 +10,46 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.workspaces.model.transform;
+package com.amazonaws.services.alexaforbusiness.model.transform;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.services.workspaces.model.*;
+import com.amazonaws.services.alexaforbusiness.model.*;
 
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SnapshotMarshaller
+ * PhoneNumberMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class SnapshotMarshaller {
+public class PhoneNumberMarshaller {
 
-    private static final MarshallingInfo<java.util.Date> SNAPSHOTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> NUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Number").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
 
-    private static final SnapshotMarshaller instance = new SnapshotMarshaller();
+    private static final PhoneNumberMarshaller instance = new PhoneNumberMarshaller();
 
-    public static SnapshotMarshaller getInstance() {
+    public static PhoneNumberMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(Snapshot snapshot, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(PhoneNumber phoneNumber, ProtocolMarshaller protocolMarshaller) {
 
-        if (snapshot == null) {
+        if (phoneNumber == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(snapshot.getSnapshotTime(), SNAPSHOTTIME_BINDING);
+            protocolMarshaller.marshall(phoneNumber.getNumber(), NUMBER_BINDING);
+            protocolMarshaller.marshall(phoneNumber.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

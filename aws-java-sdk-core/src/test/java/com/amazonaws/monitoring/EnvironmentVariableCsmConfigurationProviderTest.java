@@ -22,7 +22,10 @@ import utils.EnvironmentVariableHelper;
 
 import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_CLIENT_ID_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_ENABLED_ENV_VAR;
+import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_HOST_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_PORT_ENV_VAR;
+import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_CLIENT_ID;
+import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_HOST;
 import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_PORT;
 import static org.junit.Assert.assertEquals;
 
@@ -50,12 +53,13 @@ public class EnvironmentVariableCsmConfigurationProviderTest {
     @Test
     public void testCorrectlyResolvesConfiguration() {
         environmentVariableHelper.set(AWS_CSM_ENABLED_ENV_VAR, "true");
+        environmentVariableHelper.set(AWS_CSM_HOST_ENV_VAR, "bar");
         environmentVariableHelper.set(AWS_CSM_PORT_ENV_VAR, "1234");
         environmentVariableHelper.set(AWS_CSM_CLIENT_ID_ENV_VAR, "foo");
 
         CsmConfiguration cfg = provider.getConfiguration();
 
-        assertEquals(new CsmConfiguration(true, 1234, "foo"), cfg);
+        assertEquals(CsmConfiguration.builder().withEnabled(true).withHost("bar").withPort(1234).withClientId("foo").build(), cfg);
     }
 
     @Test(expected = SdkClientException.class)
@@ -73,11 +77,13 @@ public class EnvironmentVariableCsmConfigurationProviderTest {
     }
 
     @Test
-    public void noPortClientIdSpecified_shouldUseDefaultValues() {
+    public void optionalValuesNotSet_shouldUseDefaultValues() {
         environmentVariableHelper.reset();
         environmentVariableHelper.set(AWS_CSM_ENABLED_ENV_VAR, "true");
 
         CsmConfiguration configuration = provider.getConfiguration();
         assertEquals(DEFAULT_AWS_CSM_PORT, configuration.getPort());
+        assertEquals(DEFAULT_AWS_CSM_HOST, configuration.getHost());
+        assertEquals(DEFAULT_AWS_CSM_CLIENT_ID, configuration.getClientId());
     }
 }

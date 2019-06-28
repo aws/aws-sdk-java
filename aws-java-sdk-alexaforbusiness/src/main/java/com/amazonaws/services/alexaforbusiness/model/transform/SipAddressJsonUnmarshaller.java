@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.workspaces.model.transform;
+package com.amazonaws.services.alexaforbusiness.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.workspaces.model.*;
+import com.amazonaws.services.alexaforbusiness.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Snapshot JSON Unmarshaller
+ * SipAddress JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SnapshotJsonUnmarshaller implements Unmarshaller<Snapshot, JsonUnmarshallerContext> {
+public class SipAddressJsonUnmarshaller implements Unmarshaller<SipAddress, JsonUnmarshallerContext> {
 
-    public Snapshot unmarshall(JsonUnmarshallerContext context) throws Exception {
-        Snapshot snapshot = new Snapshot();
+    public SipAddress unmarshall(JsonUnmarshallerContext context) throws Exception {
+        SipAddress sipAddress = new SipAddress();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -48,9 +48,13 @@ public class SnapshotJsonUnmarshaller implements Unmarshaller<Snapshot, JsonUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("SnapshotTime", targetDepth)) {
+                if (context.testExpression("Uri", targetDepth)) {
                     context.nextToken();
-                    snapshot.setSnapshotTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    sipAddress.setUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Type", targetDepth)) {
+                    context.nextToken();
+                    sipAddress.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -61,14 +65,14 @@ public class SnapshotJsonUnmarshaller implements Unmarshaller<Snapshot, JsonUnma
             token = context.nextToken();
         }
 
-        return snapshot;
+        return sipAddress;
     }
 
-    private static SnapshotJsonUnmarshaller instance;
+    private static SipAddressJsonUnmarshaller instance;
 
-    public static SnapshotJsonUnmarshaller getInstance() {
+    public static SipAddressJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new SnapshotJsonUnmarshaller();
+            instance = new SipAddressJsonUnmarshaller();
         return instance;
     }
 }

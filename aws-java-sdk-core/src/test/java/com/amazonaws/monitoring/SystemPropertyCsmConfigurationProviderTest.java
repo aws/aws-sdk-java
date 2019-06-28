@@ -21,8 +21,10 @@ import org.junit.Test;
 
 import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_CLIENT_ID_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_ENABLED_SYSTEM_PROPERTY;
+import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_HOST_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_PORT_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_CLIENT_ID;
+import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_HOST;
 import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_PORT;
 import static org.junit.Assert.assertEquals;
 
@@ -50,12 +52,19 @@ public class SystemPropertyCsmConfigurationProviderTest {
     @Test
     public void testCorrectlyResolvesConfiguration() {
         System.setProperty(AWS_CSM_ENABLED_SYSTEM_PROPERTY, "true");
+        System.setProperty(AWS_CSM_HOST_SYSTEM_PROPERTY, "bar");
         System.setProperty(AWS_CSM_PORT_SYSTEM_PROPERTY, "1234");
         System.setProperty(AWS_CSM_CLIENT_ID_SYSTEM_PROPERTY, "foo");
 
         CsmConfiguration cfg = provider.getConfiguration();
 
-        assertEquals(new CsmConfiguration(true, 1234, "foo"), cfg);
+        CsmConfiguration expected = CsmConfiguration.builder()
+                .withEnabled(true)
+                .withHost("bar")
+                .withPort(1234)
+                .withClientId("foo")
+                .build();
+        assertEquals(expected, cfg);
     }
 
     @Test(expected = SdkClientException.class)
@@ -73,10 +82,12 @@ public class SystemPropertyCsmConfigurationProviderTest {
     }
 
     @Test
-    public void portClientIdPortNumberNotProvided_shouldUseDefaultValues() {
+    public void optionalValuesNotSet_shouldUseDefaultValues() {
         System.setProperty(AWS_CSM_ENABLED_SYSTEM_PROPERTY, "true");
 
-        assertEquals(DEFAULT_AWS_CSM_PORT, provider.getConfiguration().getPort());
-        assertEquals(DEFAULT_AWS_CSM_CLIENT_ID, provider.getConfiguration().getClientId());
+        CsmConfiguration configuration = provider.getConfiguration();
+        assertEquals(DEFAULT_AWS_CSM_HOST, configuration.getHost());
+        assertEquals(DEFAULT_AWS_CSM_PORT, configuration.getPort());
+        assertEquals(DEFAULT_AWS_CSM_CLIENT_ID, configuration.getClientId());
     }
 }

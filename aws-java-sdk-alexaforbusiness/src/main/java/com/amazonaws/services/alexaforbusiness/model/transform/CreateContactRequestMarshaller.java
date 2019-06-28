@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.alexaforbusiness.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,10 @@ public class CreateContactRequestMarshaller {
             .marshallLocationName("LastName").build();
     private static final MarshallingInfo<String> PHONENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PhoneNumber").build();
+    private static final MarshallingInfo<List> PHONENUMBERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PhoneNumbers").build();
+    private static final MarshallingInfo<List> SIPADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SipAddresses").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -61,6 +66,8 @@ public class CreateContactRequestMarshaller {
             protocolMarshaller.marshall(createContactRequest.getFirstName(), FIRSTNAME_BINDING);
             protocolMarshaller.marshall(createContactRequest.getLastName(), LASTNAME_BINDING);
             protocolMarshaller.marshall(createContactRequest.getPhoneNumber(), PHONENUMBER_BINDING);
+            protocolMarshaller.marshall(createContactRequest.getPhoneNumbers(), PHONENUMBERS_BINDING);
+            protocolMarshaller.marshall(createContactRequest.getSipAddresses(), SIPADDRESSES_BINDING);
             protocolMarshaller.marshall(createContactRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

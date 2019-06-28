@@ -10,43 +10,46 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.workspaces.model.transform;
+package com.amazonaws.services.alexaforbusiness.model.transform;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.services.workspaces.model.*;
+import com.amazonaws.services.alexaforbusiness.model.*;
 
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeWorkspaceSnapshotsRequestMarshaller
+ * SipAddressMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class DescribeWorkspaceSnapshotsRequestMarshaller {
+public class SipAddressMarshaller {
 
-    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkspaceId").build();
+    private static final MarshallingInfo<String> URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Uri").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
 
-    private static final DescribeWorkspaceSnapshotsRequestMarshaller instance = new DescribeWorkspaceSnapshotsRequestMarshaller();
+    private static final SipAddressMarshaller instance = new SipAddressMarshaller();
 
-    public static DescribeWorkspaceSnapshotsRequestMarshaller getInstance() {
+    public static SipAddressMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(DescribeWorkspaceSnapshotsRequest describeWorkspaceSnapshotsRequest, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(SipAddress sipAddress, ProtocolMarshaller protocolMarshaller) {
 
-        if (describeWorkspaceSnapshotsRequest == null) {
+        if (sipAddress == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(describeWorkspaceSnapshotsRequest.getWorkspaceId(), WORKSPACEID_BINDING);
+            protocolMarshaller.marshall(sipAddress.getUri(), URI_BINDING);
+            protocolMarshaller.marshall(sipAddress.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

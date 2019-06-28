@@ -133,11 +133,6 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
-    public DescribeWorkspaceSnapshotsResult describeWorkspaceSnapshots(DescribeWorkspaceSnapshotsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public DescribeWorkspacesResult describeWorkspaces(DescribeWorkspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -194,11 +189,6 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
 
     @Override
     public RebuildWorkspacesResult rebuildWorkspaces(RebuildWorkspacesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public RestoreWorkspaceResult restoreWorkspace(RestoreWorkspaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

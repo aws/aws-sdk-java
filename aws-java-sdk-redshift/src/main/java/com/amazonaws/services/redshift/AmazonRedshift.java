@@ -2399,6 +2399,10 @@ public interface AmazonRedshift {
      *         The provided cluster track name is not valid.
      * @throws SnapshotScheduleNotFoundException
      *         We could not find the specified snapshot schedule.
+     * @throws TagLimitExceededException
+     *         You have exceeded the number of tags allowed.
+     * @throws InvalidTagException
+     *         The tag is invalid.
      * @sample AmazonRedshift.RestoreFromClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot"
      *      target="_top">AWS API Documentation</a>

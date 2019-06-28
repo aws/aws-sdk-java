@@ -16,13 +16,14 @@ package com.amazonaws.monitoring;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.ThreadSafe;
-import com.amazonaws.util.StringUtils;
 
 import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_CLIENT_ID_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_ENABLED_ENV_VAR;
+import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_HOST_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_PORT_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_CLIENT_ID;
 import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_PORT;
+import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_HOST;
 
 /**
  * Configuration provider that sources the client side monitoring
@@ -43,14 +44,20 @@ public final class EnvironmentVariableCsmConfigurationProvider implements CsmCon
                                          + " environment variables!");
         }
 
+        String host = System.getenv(AWS_CSM_HOST_ENV_VAR);
+        host = host == null ? DEFAULT_AWS_CSM_HOST : host;
         String port = System.getenv(AWS_CSM_PORT_ENV_VAR);
         String clientId = System.getenv(AWS_CSM_CLIENT_ID_ENV_VAR);
         clientId = clientId == null ? DEFAULT_AWS_CSM_CLIENT_ID : clientId;
 
         try {
             int portNumber = port == null ? DEFAULT_AWS_CSM_PORT : Integer.parseInt(port);
-            return new CsmConfiguration(Boolean.parseBoolean(enabled), portNumber, clientId);
-
+            return CsmConfiguration.builder()
+                    .withEnabled(Boolean.parseBoolean(enabled))
+                    .withHost(host)
+                    .withPort(portNumber)
+                    .withClientId(clientId)
+                    .build();
         } catch (Exception e) {
             throw new SdkClientException("Unable to load Client Side Monitoring configurations from"
                     + " environment variables!", e);

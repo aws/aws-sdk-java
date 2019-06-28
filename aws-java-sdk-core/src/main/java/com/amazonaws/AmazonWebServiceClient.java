@@ -230,7 +230,7 @@ public abstract class AmazonWebServiceClient {
         this.csmConfiguration = getCsmConfiguration(clientParams.getClientSideMonitoringConfigurationProvider());
 
         if (isCsmEnabled()) {
-            agentMonitoringListener = new AgentMonitoringListener(csmConfiguration.getPort());
+            agentMonitoringListener = new AgentMonitoringListener(csmConfiguration.getHost(), csmConfiguration.getPort());
             monitoringListeners.add(agentMonitoringListener);
         }
 

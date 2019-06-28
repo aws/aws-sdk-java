@@ -19,8 +19,10 @@ import com.amazonaws.annotation.ThreadSafe;
 
 import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_CLIENT_ID_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_ENABLED_SYSTEM_PROPERTY;
+import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_HOST_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.AWS_CSM_PORT_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_PORT;
+import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_HOST;
 
 /**
  * Configuration provider that sources the client side monitoring
@@ -32,7 +34,7 @@ import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_PORT;
  */
 @ThreadSafe
 public final class SystemPropertyCsmConfigurationProvider implements CsmConfigurationProvider {
-   @Override
+    @Override
     public CsmConfiguration getConfiguration() throws SdkClientException {
         String enabled = System.getProperty(AWS_CSM_ENABLED_SYSTEM_PROPERTY);
 
@@ -41,12 +43,18 @@ public final class SystemPropertyCsmConfigurationProvider implements CsmConfigur
                     + " system properties variables!");
         }
 
-       String port = System.getProperty(AWS_CSM_PORT_SYSTEM_PROPERTY);
-       String clientId = System.getProperty(AWS_CSM_CLIENT_ID_SYSTEM_PROPERTY, "");
+        String host = System.getProperty(AWS_CSM_HOST_SYSTEM_PROPERTY, DEFAULT_AWS_CSM_HOST);
+        String port = System.getProperty(AWS_CSM_PORT_SYSTEM_PROPERTY);
+        String clientId = System.getProperty(AWS_CSM_CLIENT_ID_SYSTEM_PROPERTY, "");
 
         try {
             int portNumber = port == null ? DEFAULT_AWS_CSM_PORT : Integer.parseInt(port);
-            return new CsmConfiguration(Boolean.parseBoolean(enabled), portNumber, clientId);
+            return CsmConfiguration.builder()
+                    .withEnabled(Boolean.parseBoolean(enabled))
+                    .withHost(host)
+                    .withPort(portNumber)
+                    .withClientId(clientId)
+                    .build();
         } catch (Exception e) {
             throw new SdkClientException("Unable to load Client Side Monitoring configurations from"
                     + " system properties variables!", e);

@@ -39,7 +39,7 @@ public final class AgentMonitoringListener extends MonitoringListener {
     private static final String SIMPLE_NAME = "AgentMonitoringListener";
     private static final int MAX_BUFFER_SIZE = 8192;
 
-    private final AsynchronousAgentDispatcher dispatcher;
+    private AsynchronousAgentDispatcher dispatcher;
     private final DatagramChannel channel;
     private final int maxSize;
 
@@ -49,7 +49,7 @@ public final class AgentMonitoringListener extends MonitoringListener {
      * @param port the port of the local agent
      * @throws SdkClientException
      */
-    public AgentMonitoringListener(int port) throws SdkClientException {
+    public AgentMonitoringListener(String host, int port) throws SdkClientException {
         try {
             this.dispatcher = AsynchronousAgentDispatcher.getInstance();
             this.dispatcher.init();
@@ -68,8 +68,11 @@ public final class AgentMonitoringListener extends MonitoringListener {
                 LOG.debug(String.format("System socket buffer size %d is less than 8K. Any events larger than the buffer size "
                                         + "will be dropped", maxSize));
             }
-            channel.connect(new InetSocketAddress("localhost", port));
+            channel.connect(new InetSocketAddress(host, port));
         } catch (Exception e) {
+            if (this.dispatcher != null) {
+                this.dispatcher.release();
+            }
             throw new SdkClientException("Failed to initialize AgentMonitoringListener", e);
         }
     }

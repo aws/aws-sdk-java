@@ -16,17 +16,20 @@ package com.amazonaws.monitoring;
 
 import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_CLIENT_ID;
 import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_PORT;
+import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_HOST;
 
 /**
  * Configuration for Client Side Monitoring.
  */
 public final class CsmConfiguration {
     private final boolean enabled;
+    private final String host;
     private final int port;
     private final String clientId;
 
     public CsmConfiguration(boolean enabled, int port, String clientId) {
         this.enabled = enabled;
+        this.host = null;
         this.port = port;
         this.clientId = clientId;
     }
@@ -37,6 +40,7 @@ public final class CsmConfiguration {
 
     private CsmConfiguration(Builder builder) {
         this.enabled = builder.enabled == null ? false : builder.enabled;
+        this.host = builder.host == null ? DEFAULT_AWS_CSM_HOST : builder.host;
         this.port = builder.port == null ? DEFAULT_AWS_CSM_PORT : builder.port;
         this.clientId = builder.clientId == null ? DEFAULT_AWS_CSM_CLIENT_ID : builder.clientId;
     }
@@ -50,7 +54,14 @@ public final class CsmConfiguration {
     }
 
     /**
-     * The port of the out of process client side monitoring agent.
+     * The host to send monitoring events to.
+     */
+    public String getHost() {
+        return host;
+    }
+
+    /**
+     * The port on the specified host to send monitoring events to.
      */
     public int getPort() {
         return port;
@@ -65,27 +76,22 @@ public final class CsmConfiguration {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        CsmConfiguration other = (CsmConfiguration) o;
+        CsmConfiguration that = (CsmConfiguration) o;
 
-        if (enabled != other.enabled) {
-            return false;
-        }
-        if (port != other.port) {
-            return false;
-        }
-        return clientId != null ? clientId.equals(other.clientId) : other.clientId == null;
+        if (enabled != that.enabled) return false;
+        if (port != that.port) return false;
+        if (host != null ? !host.equals(that.host) : that.host != null) return false;
+        return clientId != null ? clientId.equals(that.clientId) : that.clientId == null;
+
     }
 
     @Override
     public int hashCode() {
         int result = (enabled ? 1 : 0);
+        result = 31 * result + (host != null ? host.hashCode() : 0);
         result = 31 * result + port;
         result = 31 * result + (clientId != null ? clientId.hashCode() : 0);
         return result;
@@ -93,6 +99,7 @@ public final class CsmConfiguration {
 
     public static class Builder {
         private Boolean enabled;
+        private String host;
         private Integer port;
         private String clientId;
 
@@ -107,6 +114,11 @@ public final class CsmConfiguration {
 
         public Builder withClientId(String clientId) {
             this.clientId = clientId;
+            return this;
+        }
+
+        public Builder withHost(String host) {
+            this.host = host;
             return this;
         }
 

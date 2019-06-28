@@ -16,6 +16,7 @@ package com.amazonaws.monitoring;
 
 import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_CLIENT_ID;
 import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_PORT;
+import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_HOST;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.ThreadSafe;
@@ -34,6 +35,7 @@ import com.amazonaws.profile.path.AwsProfileFileLocationProvider;
 @ThreadSafe
 public final class ProfileCsmConfigurationProvider implements CsmConfigurationProvider {
     public static final String CSM_ENABLED_PROPERTY = "csm_enabled";
+    public static final String CSM_HOST_PROPERTY = "csm_host";
     public static final String CSM_PORT_PROPERTY = "csm_port";
     public static final String CSM_CLIENT_ID_PROPERTY = "csm_client_id";
 
@@ -98,6 +100,8 @@ public final class ProfileCsmConfigurationProvider implements CsmConfigurationPr
                                                        + " required properties!", profileName));
         }
 
+        String host = profile.getPropertyValue(CSM_HOST_PROPERTY);
+        host = host == null ? DEFAULT_AWS_CSM_HOST : host;
         String port = profile.getPropertyValue(CSM_PORT_PROPERTY);
         String clientId = profile.getPropertyValue(CSM_CLIENT_ID_PROPERTY);
         clientId = clientId == null ? DEFAULT_AWS_CSM_CLIENT_ID : clientId;
@@ -105,8 +109,12 @@ public final class ProfileCsmConfigurationProvider implements CsmConfigurationPr
         try {
             int portNumber = port == null ? DEFAULT_AWS_CSM_PORT : Integer.parseInt(port);
 
-            return new CsmConfiguration(Boolean.parseBoolean(enabled), portNumber,
-                    clientId);
+            return CsmConfiguration.builder()
+                    .withEnabled(Boolean.parseBoolean(enabled))
+                    .withHost(host)
+                    .withPort(portNumber)
+                    .withClientId(clientId)
+                    .build();
         } catch (Exception e) {
             throw new SdkClientException(String.format("Unable to load configuration from the '%s'"
                         + " profile!", profileName), e);

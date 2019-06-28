@@ -456,25 +456,6 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes the snapshots for the specified WorkSpace.
-     * </p>
-     * 
-     * @param describeWorkspaceSnapshotsRequest
-     * @return Result of the DescribeWorkspaceSnapshots operation returned by the service.
-     * @throws InvalidParameterValuesException
-     *         One or more parameter values are not valid.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccessDeniedException
-     *         The user is not authorized to access a resource.
-     * @sample AmazonWorkspaces.DescribeWorkspaceSnapshots
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceSnapshots"
-     *      target="_top">AWS API Documentation</a>
-     */
-    DescribeWorkspaceSnapshotsResult describeWorkspaceSnapshots(DescribeWorkspaceSnapshotsRequest describeWorkspaceSnapshotsRequest);
-
-    /**
-     * <p>
      * Describes the specified WorkSpaces.
      * </p>
      * <p>
@@ -726,37 +707,6 @@ public interface AmazonWorkspaces {
      *      API Documentation</a>
      */
     RebuildWorkspacesResult rebuildWorkspaces(RebuildWorkspacesRequest rebuildWorkspacesRequest);
-
-    /**
-     * <p>
-     * Restores the specified WorkSpace to its last known healthy state.
-     * </p>
-     * <p>
-     * You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>, or
-     * <code>UNHEALTHY</code>.
-     * </p>
-     * <p>
-     * Restoring a WorkSpace is a potentially destructive action that can result in the loss of data. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore a WorkSpace</a>.
-     * </p>
-     * <p>
-     * This operation is asynchronous and returns before the WorkSpace is completely restored.
-     * </p>
-     * 
-     * @param restoreWorkspaceRequest
-     * @return Result of the RestoreWorkspace operation returned by the service.
-     * @throws InvalidParameterValuesException
-     *         One or more parameter values are not valid.
-     * @throws ResourceNotFoundException
-     *         The resource could not be found.
-     * @throws AccessDeniedException
-     *         The user is not authorized to access a resource.
-     * @sample AmazonWorkspaces.RestoreWorkspace
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RestoreWorkspace" target="_top">AWS
-     *      API Documentation</a>
-     */
-    RestoreWorkspaceResult restoreWorkspace(RestoreWorkspaceRequest restoreWorkspaceRequest);
 
     /**
      * <p>

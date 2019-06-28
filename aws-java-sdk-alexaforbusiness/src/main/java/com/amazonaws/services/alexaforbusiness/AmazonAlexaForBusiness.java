@@ -444,6 +444,11 @@ public interface AmazonAlexaForBusiness {
     /**
      * <p>
      * When this action is called for a specified shared device, it allows authorized users to delete the device's
+     * entire previous history of voice input data and associated response data. This action can be called once every 24
+     * hours for a specific shared device.
+     * </p>
+     * <p>
+     * When this action is called for a specified shared device, it allows authorized users to delete the device's
      * entire previous history of voice input data. This action can be called once every 24 hours for a specific shared
      * device.
      * </p>
@@ -1294,7 +1299,7 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Sends an enrollment invitation email with a URL to a user. The URL is valid for 72 hours or until you call this
+     * Sends an enrollment invitation email with a URL to a user. The URL is valid for 30 days or until you call this
      * operation again, whichever comes first.
      * </p>
      * 

@@ -60,6 +60,11 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("ClusterAvailabilityStatus", targetDepth)) {
+                    cluster.setClusterAvailabilityStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ModifyStatus", targetDepth)) {
                     cluster.setModifyStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

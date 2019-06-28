@@ -30,8 +30,6 @@ public class RebuildWorkspacesRequestMarshaller {
 
     private static final MarshallingInfo<List> REBUILDWORKSPACEREQUESTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RebuildWorkspaceRequests").build();
-    private static final MarshallingInfo<String> ADDITIONALINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalInfo").build();
 
     private static final RebuildWorkspacesRequestMarshaller instance = new RebuildWorkspacesRequestMarshaller();
 
@@ -50,7 +48,6 @@ public class RebuildWorkspacesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(rebuildWorkspacesRequest.getRebuildWorkspaceRequests(), REBUILDWORKSPACEREQUESTS_BINDING);
-            protocolMarshaller.marshall(rebuildWorkspacesRequest.getAdditionalInfo(), ADDITIONALINFO_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

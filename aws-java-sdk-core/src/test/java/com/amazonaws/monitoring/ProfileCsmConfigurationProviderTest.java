@@ -43,7 +43,13 @@ public class ProfileCsmConfigurationProviderTest {
             new ProfileCsmConfigurationProvider(TEST_PROFILE_NAME,
                     makeConfigLocationProvider(COMPLETE_CONFIG));
 
-        assertEquals(new CsmConfiguration(true, 1234, "foo"), provider.getConfiguration());
+        CsmConfiguration expected = CsmConfiguration.builder()
+                .withEnabled(true)
+                .withHost("bar")
+                .withPort(1234)
+                .withClientId("foo")
+                .build();
+        assertEquals(expected, provider.getConfiguration());
     }
 
     @Test(expected = SdkClientException.class)
@@ -88,7 +94,14 @@ public class ProfileCsmConfigurationProviderTest {
                 new ProfileCsmConfigurationProvider("aws_csm_2",
                         makeConfigLocationProvider(MULTIPLE_PROFILES_WITH_CSM_PROPERTIES_CONFIG));
 
-        assertEquals(new CsmConfiguration(false, 5678, "bar"), provider.getConfiguration());
+        CsmConfiguration expected = CsmConfiguration.builder()
+                .withEnabled(false)
+                .withHost("bar2")
+                .withPort(5678)
+                .withClientId("bar")
+                .build();
+
+        assertEquals(expected, provider.getConfiguration());
     }
 
     @Test
@@ -99,7 +112,14 @@ public class ProfileCsmConfigurationProviderTest {
                     new ProfileCsmConfigurationProvider(null,
                             makeConfigLocationProvider(COMPLETE_CONFIG));
 
-            assertEquals(new CsmConfiguration(true, 1234, "foo"), provider.getConfiguration());
+            CsmConfiguration expected = CsmConfiguration.builder()
+                    .withEnabled(true)
+                    .withHost("bar")
+                    .withPort(1234)
+                    .withClientId("foo")
+                    .build();
+
+            assertEquals(expected, provider.getConfiguration());
         } finally {
             System.clearProperty(AWS_PROFILE_SYSTEM_PROPERTY);
         }
@@ -119,7 +139,7 @@ public class ProfileCsmConfigurationProviderTest {
     }
 
     @Test
-    public void profileNullPortClientId_shouldUseDefaultValues() {
+    public void optionalValuesNotSet_shouldUseDefaultValues() {
         ProfileCsmConfigurationProvider provider =
             new ProfileCsmConfigurationProvider(TEST_PROFILE_NAME,
                                                 makeConfigLocationProvider(PROFILE_WITH_ONLY_ENABLED_PROPERTY));

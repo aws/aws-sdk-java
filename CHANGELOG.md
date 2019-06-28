@@ -1,3 +1,20 @@
+# __1.11.584__ __2019-06-28__
+## __Alexa For Business__
+  - ### Features
+    - This release allows developers and customers to add SIP addresses and international phone numbers to contacts.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - You can now launch 8xlarge and 16xlarge instance sizes on the general purpose M5 and memory optimized R5 instance types.
+
+## __Amazon Redshift__
+  - ### Features
+    - ClusterAvailabilityStatus: The availability status of the cluster for queries. Possible values are the following: Available, Unavailable, Maintenance, Modifying, Failed.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Minor API fixes for WorkSpaces.
+
 # __1.11.583__ __2019-06-27__
 ## __AWS Direct Connect__
   - ### Features

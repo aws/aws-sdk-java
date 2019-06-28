@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.workspaces.model.transform;
+package com.amazonaws.services.alexaforbusiness.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.workspaces.model.*;
+import com.amazonaws.services.alexaforbusiness.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * DescribeWorkspaceSnapshotsResult JSON Unmarshaller
+ * PhoneNumber JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeWorkspaceSnapshotsResultJsonUnmarshaller implements Unmarshaller<DescribeWorkspaceSnapshotsResult, JsonUnmarshallerContext> {
+public class PhoneNumberJsonUnmarshaller implements Unmarshaller<PhoneNumber, JsonUnmarshallerContext> {
 
-    public DescribeWorkspaceSnapshotsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
-        DescribeWorkspaceSnapshotsResult describeWorkspaceSnapshotsResult = new DescribeWorkspaceSnapshotsResult();
+    public PhoneNumber unmarshall(JsonUnmarshallerContext context) throws Exception {
+        PhoneNumber phoneNumber = new PhoneNumber();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -40,7 +40,7 @@ public class DescribeWorkspaceSnapshotsResultJsonUnmarshaller implements Unmarsh
         if (token == null)
             token = context.nextToken();
         if (token == VALUE_NULL) {
-            return describeWorkspaceSnapshotsResult;
+            return null;
         }
 
         while (true) {
@@ -48,15 +48,13 @@ public class DescribeWorkspaceSnapshotsResultJsonUnmarshaller implements Unmarsh
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("RebuildSnapshots", targetDepth)) {
+                if (context.testExpression("Number", targetDepth)) {
                     context.nextToken();
-                    describeWorkspaceSnapshotsResult.setRebuildSnapshots(new ListUnmarshaller<Snapshot>(SnapshotJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    phoneNumber.setNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("RestoreSnapshots", targetDepth)) {
+                if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    describeWorkspaceSnapshotsResult.setRestoreSnapshots(new ListUnmarshaller<Snapshot>(SnapshotJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    phoneNumber.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -67,14 +65,14 @@ public class DescribeWorkspaceSnapshotsResultJsonUnmarshaller implements Unmarsh
             token = context.nextToken();
         }
 
-        return describeWorkspaceSnapshotsResult;
+        return phoneNumber;
     }
 
-    private static DescribeWorkspaceSnapshotsResultJsonUnmarshaller instance;
+    private static PhoneNumberJsonUnmarshaller instance;
 
-    public static DescribeWorkspaceSnapshotsResultJsonUnmarshaller getInstance() {
+    public static PhoneNumberJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new DescribeWorkspaceSnapshotsResultJsonUnmarshaller();
+            instance = new PhoneNumberJsonUnmarshaller();
         return instance;
     }
 }

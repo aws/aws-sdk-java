@@ -22,7 +22,8 @@ public enum EventType {
 
     InstanceChange("instanceChange"),
     FleetRequestChange("fleetRequestChange"),
-    Error("error");
+    Error("error"),
+    Information("information");
 
     private String value;
 

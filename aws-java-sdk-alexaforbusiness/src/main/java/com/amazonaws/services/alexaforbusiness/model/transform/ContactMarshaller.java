@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.alexaforbusiness.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,10 @@ public class ContactMarshaller {
             .marshallLocationName("LastName").build();
     private static final MarshallingInfo<String> PHONENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PhoneNumber").build();
+    private static final MarshallingInfo<List> PHONENUMBERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PhoneNumbers").build();
+    private static final MarshallingInfo<List> SIPADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SipAddresses").build();
 
     private static final ContactMarshaller instance = new ContactMarshaller();
 
@@ -59,6 +64,8 @@ public class ContactMarshaller {
             protocolMarshaller.marshall(contact.getFirstName(), FIRSTNAME_BINDING);
             protocolMarshaller.marshall(contact.getLastName(), LASTNAME_BINDING);
             protocolMarshaller.marshall(contact.getPhoneNumber(), PHONENUMBER_BINDING);
+            protocolMarshaller.marshall(contact.getPhoneNumbers(), PHONENUMBERS_BINDING);
+            protocolMarshaller.marshall(contact.getSipAddresses(), SIPADDRESSES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

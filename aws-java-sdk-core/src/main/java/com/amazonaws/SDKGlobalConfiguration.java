@@ -206,6 +206,11 @@ public class SDKGlobalConfiguration {
         "com.amazonaws.sdk.enableRuntimeProfiling";
 
     /**
+     * The default host used by client side monitoring.
+     */
+    public static final String DEFAULT_AWS_CSM_HOST = "127.0.0.1";
+
+    /**
      * The default port used by client side monitoring.
      */
     public static final int DEFAULT_AWS_CSM_PORT = 31000;
@@ -219,6 +224,11 @@ public class SDKGlobalConfiguration {
      * System property to enable/disable client side monitoring.
      */
     public static final String AWS_CSM_ENABLED_SYSTEM_PROPERTY = "com.amazonaws.sdk.csm.enabled";
+
+    /**
+     * System property to set the host that will receive the client side monitoring events.
+     */
+    public static final String AWS_CSM_HOST_SYSTEM_PROPERTY = "com.amazonaws.sdk.csm.host";
 
     /**
      * System property to set the port of the out of process client side
@@ -293,10 +303,15 @@ public class SDKGlobalConfiguration {
      */
     public static final String AWS_EC2_METADATA_DISABLED_SYSTEM_PROPERTY = "com.amazonaws.sdk.disableEc2Metadata";
 
-    /*
+    /**
      * Environment variable to enable/disable client side monitoring.
      */
     public static final String AWS_CSM_ENABLED_ENV_VAR = "AWS_CSM_ENABLED";
+
+    /**
+     * Environment variable to set the host to send client side monitor events to.
+     */
+    public static final String AWS_CSM_HOST_ENV_VAR = "AWS_CSM_HOST";
 
     /**
      * Environment varaible to set the port of the out of process client side
