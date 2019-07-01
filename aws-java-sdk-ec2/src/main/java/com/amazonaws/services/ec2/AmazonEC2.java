@@ -3752,7 +3752,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the specified instances or all of your instances.
+     * Describes the specified instances or all of AWS account's instances.
      * </p>
      * <p>
      * If you specify one or more instance IDs, Amazon EC2 returns information for those instances. If you do not

@@ -17,9 +17,18 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The number of units to request. You can choose to set the target capacity in terms of instances or a performance
- * characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is
- * <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
+ * The number of units to request. You can choose to set the target capacity as the number of instances. Or you can set
+ * the target capacity to a performance characteristic that is important to your application workload, such as vCPUs,
+ * memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity
+ * later.
+ * </p>
+ * <p>
+ * You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code>
+ * parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price
+ * per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it
+ * reaches the maximum amount you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet
+ * stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are
+ * located in and .
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetCapacitySpecificationRequest"

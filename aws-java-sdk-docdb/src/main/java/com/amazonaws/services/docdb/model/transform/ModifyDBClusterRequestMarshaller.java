@@ -139,6 +139,10 @@ public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<Modi
             request.addParameter("EngineVersion", StringUtils.fromString(modifyDBClusterRequest.getEngineVersion()));
         }
 
+        if (modifyDBClusterRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(modifyDBClusterRequest.getDeletionProtection()));
+        }
+
         return request;
     }
 

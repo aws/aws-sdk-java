@@ -59,7 +59,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * The compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>.
+     * The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
      * </p>
      */
     private String dBInstanceClass;
@@ -320,11 +320,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>.
+     * The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>.
+     *        The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
      */
 
     public void setDBInstanceClass(String dBInstanceClass) {
@@ -333,10 +333,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>.
+     * The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
      * </p>
      * 
-     * @return The compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>.
+     * @return The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
      */
 
     public String getDBInstanceClass() {
@@ -345,11 +345,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>.
+     * The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>.
+     *        The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

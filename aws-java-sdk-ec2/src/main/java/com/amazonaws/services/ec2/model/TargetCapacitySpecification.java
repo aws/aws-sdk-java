@@ -21,6 +21,13 @@ import javax.annotation.Generated;
  * characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is
  * <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
  * </p>
+ * <p>
+ * You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code>
+ * , or both to ensure your fleet cost does not exceed your budget. If you set a maximum price per hour for the
+ * On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum
+ * amount you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching
+ * instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in and
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetCapacitySpecification" target="_top">AWS
  *      API Documentation</a>
@@ -36,13 +43,15 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
     private Integer totalTargetCapacity;
     /**
      * <p>
-     * The number of On-Demand units to request.
+     * The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot specify a
+     * target capacity for On-Demand units.
      * </p>
      */
     private Integer onDemandTargetCapacity;
     /**
      * <p>
-     * The maximum number of Spot units to launch.
+     * The maximum number of Spot units to launch. If you specify a target capacity for On-Demand units, you cannot
+     * specify a target capacity for Spot units.
      * </p>
      */
     private Integer spotTargetCapacity;
@@ -95,11 +104,13 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of On-Demand units to request.
+     * The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot specify a
+     * target capacity for On-Demand units.
      * </p>
      * 
      * @param onDemandTargetCapacity
-     *        The number of On-Demand units to request.
+     *        The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot
+     *        specify a target capacity for On-Demand units.
      */
 
     public void setOnDemandTargetCapacity(Integer onDemandTargetCapacity) {
@@ -108,10 +119,12 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of On-Demand units to request.
+     * The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot specify a
+     * target capacity for On-Demand units.
      * </p>
      * 
-     * @return The number of On-Demand units to request.
+     * @return The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot
+     *         specify a target capacity for On-Demand units.
      */
 
     public Integer getOnDemandTargetCapacity() {
@@ -120,11 +133,13 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of On-Demand units to request.
+     * The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot specify a
+     * target capacity for On-Demand units.
      * </p>
      * 
      * @param onDemandTargetCapacity
-     *        The number of On-Demand units to request.
+     *        The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot
+     *        specify a target capacity for On-Demand units.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +150,13 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of Spot units to launch.
+     * The maximum number of Spot units to launch. If you specify a target capacity for On-Demand units, you cannot
+     * specify a target capacity for Spot units.
      * </p>
      * 
      * @param spotTargetCapacity
-     *        The maximum number of Spot units to launch.
+     *        The maximum number of Spot units to launch. If you specify a target capacity for On-Demand units, you
+     *        cannot specify a target capacity for Spot units.
      */
 
     public void setSpotTargetCapacity(Integer spotTargetCapacity) {
@@ -148,10 +165,12 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of Spot units to launch.
+     * The maximum number of Spot units to launch. If you specify a target capacity for On-Demand units, you cannot
+     * specify a target capacity for Spot units.
      * </p>
      * 
-     * @return The maximum number of Spot units to launch.
+     * @return The maximum number of Spot units to launch. If you specify a target capacity for On-Demand units, you
+     *         cannot specify a target capacity for Spot units.
      */
 
     public Integer getSpotTargetCapacity() {
@@ -160,11 +179,13 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of Spot units to launch.
+     * The maximum number of Spot units to launch. If you specify a target capacity for On-Demand units, you cannot
+     * specify a target capacity for Spot units.
      * </p>
      * 
      * @param spotTargetCapacity
-     *        The maximum number of Spot units to launch.
+     *        The maximum number of Spot units to launch. If you specify a target capacity for On-Demand units, you
+     *        cannot specify a target capacity for Spot units.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

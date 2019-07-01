@@ -208,6 +208,14 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<String> enabledCloudwatchLogsExports;
+    /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     */
+    private Boolean deletionProtection;
 
     /**
      * <p>
@@ -1598,6 +1606,74 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster
+     *        cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled.
+     *        <code>DeletionProtection</code> protects clusters from being accidentally deleted.
+     */
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     * 
+     * @return Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster
+     *         cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled.
+     *         <code>DeletionProtection</code> protects clusters from being accidentally deleted.
+     */
+
+    public Boolean getDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster
+     *        cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled.
+     *        <code>DeletionProtection</code> protects clusters from being accidentally deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withDeletionProtection(Boolean deletionProtection) {
+        setDeletionProtection(deletionProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     * 
+     * @return Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster
+     *         cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled.
+     *         <code>DeletionProtection</code> protects clusters from being accidentally deleted.
+     */
+
+    public Boolean isDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1664,7 +1740,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getClusterCreateTime() != null)
             sb.append("ClusterCreateTime: ").append(getClusterCreateTime()).append(",");
         if (getEnabledCloudwatchLogsExports() != null)
-            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports());
+            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports()).append(",");
+        if (getDeletionProtection() != null)
+            sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -1791,6 +1869,10 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getEnabledCloudwatchLogsExports() != null && other.getEnabledCloudwatchLogsExports().equals(this.getEnabledCloudwatchLogsExports()) == false)
             return false;
+        if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
+            return false;
+        if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
         return true;
     }
 
@@ -1827,6 +1909,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAssociatedRoles() == null) ? 0 : getAssociatedRoles().hashCode());
         hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }
 

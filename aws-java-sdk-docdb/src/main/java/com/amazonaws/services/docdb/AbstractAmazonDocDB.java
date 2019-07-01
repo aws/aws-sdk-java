@@ -224,6 +224,16 @@ public class AbstractAmazonDocDB implements AmazonDocDB {
     }
 
     @Override
+    public DBCluster startDBCluster(StartDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DBCluster stopDBCluster(StopDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

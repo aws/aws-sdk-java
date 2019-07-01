@@ -137,8 +137,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer port;
     /**
      * <p>
-     * The new password for the master database user. This password can contain any printable ASCII character except "
-     * <code>/</code>", "<code>"</code>", or "<code>@</code>".
+     * The password for the master database user. This password can contain any printable ASCII character except forward
+     * slash (/), double quote ("), or the "at" symbol (@).
      * </p>
      * <p>
      * Constraints: Must contain from 8 to 41 characters.
@@ -215,6 +215,14 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String engineVersion;
+    /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     */
+    private Boolean deletionProtection;
 
     /**
      * <p>
@@ -945,16 +953,16 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new password for the master database user. This password can contain any printable ASCII character except "
-     * <code>/</code>", "<code>"</code>", or "<code>@</code>".
+     * The password for the master database user. This password can contain any printable ASCII character except forward
+     * slash (/), double quote ("), or the "at" symbol (@).
      * </p>
      * <p>
      * Constraints: Must contain from 8 to 41 characters.
      * </p>
      * 
      * @param masterUserPassword
-     *        The new password for the master database user. This password can contain any printable ASCII character
-     *        except "<code>/</code>", "<code>"</code>", or "<code>@</code>".</p>
+     *        The password for the master database user. This password can contain any printable ASCII character except
+     *        forward slash (/), double quote ("), or the "at" symbol (@).</p>
      *        <p>
      *        Constraints: Must contain from 8 to 41 characters.
      */
@@ -965,15 +973,15 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new password for the master database user. This password can contain any printable ASCII character except "
-     * <code>/</code>", "<code>"</code>", or "<code>@</code>".
+     * The password for the master database user. This password can contain any printable ASCII character except forward
+     * slash (/), double quote ("), or the "at" symbol (@).
      * </p>
      * <p>
      * Constraints: Must contain from 8 to 41 characters.
      * </p>
      * 
-     * @return The new password for the master database user. This password can contain any printable ASCII character
-     *         except "<code>/</code>", "<code>"</code>", or "<code>@</code>".</p>
+     * @return The password for the master database user. This password can contain any printable ASCII character except
+     *         forward slash (/), double quote ("), or the "at" symbol (@).</p>
      *         <p>
      *         Constraints: Must contain from 8 to 41 characters.
      */
@@ -984,16 +992,16 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new password for the master database user. This password can contain any printable ASCII character except "
-     * <code>/</code>", "<code>"</code>", or "<code>@</code>".
+     * The password for the master database user. This password can contain any printable ASCII character except forward
+     * slash (/), double quote ("), or the "at" symbol (@).
      * </p>
      * <p>
      * Constraints: Must contain from 8 to 41 characters.
      * </p>
      * 
      * @param masterUserPassword
-     *        The new password for the master database user. This password can contain any printable ASCII character
-     *        except "<code>/</code>", "<code>"</code>", or "<code>@</code>".</p>
+     *        The password for the master database user. This password can contain any printable ASCII character except
+     *        forward slash (/), double quote ("), or the "at" symbol (@).</p>
      *        <p>
      *        Constraints: Must contain from 8 to 41 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1435,6 +1443,74 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster
+     *        cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled.
+     *        <code>DeletionProtection</code> protects clusters from being accidentally deleted.
+     */
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     * 
+     * @return Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster
+     *         cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled.
+     *         <code>DeletionProtection</code> protects clusters from being accidentally deleted.
+     */
+
+    public Boolean getDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster
+     *        cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled.
+     *        <code>DeletionProtection</code> protects clusters from being accidentally deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBClusterRequest withDeletionProtection(Boolean deletionProtection) {
+        setDeletionProtection(deletionProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     * 
+     * @return Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster
+     *         cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled.
+     *         <code>DeletionProtection</code> protects clusters from being accidentally deleted.
+     */
+
+    public Boolean isDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1469,7 +1545,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getCloudwatchLogsExportConfiguration() != null)
             sb.append("CloudwatchLogsExportConfiguration: ").append(getCloudwatchLogsExportConfiguration()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: ").append(getEngineVersion());
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getDeletionProtection() != null)
+            sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -1533,6 +1611,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
+            return false;
+        if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
         return true;
     }
 
@@ -1553,6 +1635,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         hashCode = prime * hashCode + ((getCloudwatchLogsExportConfiguration() == null) ? 0 : getCloudwatchLogsExportConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }
 

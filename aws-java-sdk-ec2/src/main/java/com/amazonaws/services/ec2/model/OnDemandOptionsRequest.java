@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+ * Describes the configuration of On-Demand Instances in an EC2 Fleet.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/OnDemandOptionsRequest" target="_top">AWS API
@@ -55,6 +55,12 @@ public class OnDemandOptionsRequest implements Serializable, Cloneable {
      * </p>
      */
     private Integer minTargetCapacity;
+    /**
+     * <p>
+     * The maximum amount per hour for On-Demand Instances that you're willing to pay.
+     * </p>
+     */
+    private String maxTotalPrice;
 
     /**
      * <p>
@@ -298,6 +304,46 @@ public class OnDemandOptionsRequest implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The maximum amount per hour for On-Demand Instances that you're willing to pay.
+     * </p>
+     * 
+     * @param maxTotalPrice
+     *        The maximum amount per hour for On-Demand Instances that you're willing to pay.
+     */
+
+    public void setMaxTotalPrice(String maxTotalPrice) {
+        this.maxTotalPrice = maxTotalPrice;
+    }
+
+    /**
+     * <p>
+     * The maximum amount per hour for On-Demand Instances that you're willing to pay.
+     * </p>
+     * 
+     * @return The maximum amount per hour for On-Demand Instances that you're willing to pay.
+     */
+
+    public String getMaxTotalPrice() {
+        return this.maxTotalPrice;
+    }
+
+    /**
+     * <p>
+     * The maximum amount per hour for On-Demand Instances that you're willing to pay.
+     * </p>
+     * 
+     * @param maxTotalPrice
+     *        The maximum amount per hour for On-Demand Instances that you're willing to pay.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OnDemandOptionsRequest withMaxTotalPrice(String maxTotalPrice) {
+        setMaxTotalPrice(maxTotalPrice);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -316,7 +362,9 @@ public class OnDemandOptionsRequest implements Serializable, Cloneable {
         if (getSingleAvailabilityZone() != null)
             sb.append("SingleAvailabilityZone: ").append(getSingleAvailabilityZone()).append(",");
         if (getMinTargetCapacity() != null)
-            sb.append("MinTargetCapacity: ").append(getMinTargetCapacity());
+            sb.append("MinTargetCapacity: ").append(getMinTargetCapacity()).append(",");
+        if (getMaxTotalPrice() != null)
+            sb.append("MaxTotalPrice: ").append(getMaxTotalPrice());
         sb.append("}");
         return sb.toString();
     }
@@ -347,6 +395,10 @@ public class OnDemandOptionsRequest implements Serializable, Cloneable {
             return false;
         if (other.getMinTargetCapacity() != null && other.getMinTargetCapacity().equals(this.getMinTargetCapacity()) == false)
             return false;
+        if (other.getMaxTotalPrice() == null ^ this.getMaxTotalPrice() == null)
+            return false;
+        if (other.getMaxTotalPrice() != null && other.getMaxTotalPrice().equals(this.getMaxTotalPrice()) == false)
+            return false;
         return true;
     }
 
@@ -359,6 +411,7 @@ public class OnDemandOptionsRequest implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSingleInstanceType() == null) ? 0 : getSingleInstanceType().hashCode());
         hashCode = prime * hashCode + ((getSingleAvailabilityZone() == null) ? 0 : getSingleAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getMinTargetCapacity() == null) ? 0 : getMinTargetCapacity().hashCode());
+        hashCode = prime * hashCode + ((getMaxTotalPrice() == null) ? 0 : getMaxTotalPrice().hashCode());
         return hashCode;
     }
 

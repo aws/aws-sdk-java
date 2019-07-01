@@ -127,6 +127,10 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
             }
         }
 
+        if (restoreDBClusterToPointInTimeRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getDeletionProtection()));
+        }
+
         return request;
     }
 

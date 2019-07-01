@@ -62,6 +62,11 @@ public class OnDemandOptionsRequestStaxUnmarshaller implements Unmarshaller<OnDe
                     onDemandOptionsRequest.setMinTargetCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("MaxTotalPrice", targetDepth)) {
+                    onDemandOptionsRequest.setMaxTotalPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return onDemandOptionsRequest;

@@ -173,6 +173,14 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private java.util.List<String> enableCloudwatchLogsExports;
+    /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     */
+    private Boolean deletionProtection;
 
     /**
      * <p>
@@ -1198,6 +1206,74 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster
+     *        cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled.
+     *        <code>DeletionProtection</code> protects clusters from being accidentally deleted.
+     */
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     * 
+     * @return Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster
+     *         cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled.
+     *         <code>DeletionProtection</code> protects clusters from being accidentally deleted.
+     */
+
+    public Boolean getDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster
+     *        cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled.
+     *        <code>DeletionProtection</code> protects clusters from being accidentally deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterFromSnapshotRequest withDeletionProtection(Boolean deletionProtection) {
+        setDeletionProtection(deletionProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot
+     * be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
+     * protects clusters from being accidentally deleted.
+     * </p>
+     * 
+     * @return Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster
+     *         cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled.
+     *         <code>DeletionProtection</code> protects clusters from being accidentally deleted.
+     */
+
+    public Boolean isDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1230,7 +1306,9 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getEnableCloudwatchLogsExports() != null)
-            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports());
+            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
+        if (getDeletionProtection() != null)
+            sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -1289,6 +1367,10 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getEnableCloudwatchLogsExports() != null && other.getEnableCloudwatchLogsExports().equals(this.getEnableCloudwatchLogsExports()) == false)
             return false;
+        if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
+            return false;
+        if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
         return true;
     }
 
@@ -1308,6 +1390,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }
 

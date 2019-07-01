@@ -115,6 +115,16 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("onDemandMaxTotalPrice", targetDepth)) {
+                    spotFleetRequestConfigData.setOnDemandMaxTotalPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("spotMaxTotalPrice", targetDepth)) {
+                    spotFleetRequestConfigData.setSpotMaxTotalPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("terminateInstancesWithExpiration", targetDepth)) {
                     spotFleetRequestConfigData.setTerminateInstancesWithExpiration(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

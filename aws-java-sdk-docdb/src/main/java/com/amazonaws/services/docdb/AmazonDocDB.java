@@ -74,6 +74,10 @@ public interface AmazonDocDB {
      * @return Result of the ApplyPendingMaintenanceAction operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource ID was not found.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster isn't in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @sample AmazonDocDB.ApplyPendingMaintenanceAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ApplyPendingMaintenanceAction"
      *      target="_top">AWS API Documentation</a>
@@ -1053,6 +1057,49 @@ public interface AmazonDocDB {
      *      target="_top">AWS API Documentation</a>
      */
     DBCluster restoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest restoreDBClusterToPointInTimeRequest);
+
+    /**
+     * <p>
+     * Restarts the stopped cluster that is specified by <code>DBClusterIdentifier</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping and
+     * Starting an Amazon DocumentDB Cluster</a>.
+     * </p>
+     * 
+     * @param startDBClusterRequest
+     * @return Result of the StartDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster isn't in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance isn't in the <i>available</i> state.
+     * @sample AmazonDocDB.StartDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StartDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DBCluster startDBCluster(StartDBClusterRequest startDBClusterRequest);
+
+    /**
+     * <p>
+     * Stops the running cluster that is specified by <code>DBClusterIdentifier</code>. The cluster must be in the
+     * <i>available</i> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping and
+     * Starting an Amazon DocumentDB Cluster</a>.
+     * </p>
+     * 
+     * @param stopDBClusterRequest
+     * @return Result of the StopDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster isn't in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance isn't in the <i>available</i> state.
+     * @sample AmazonDocDB.StopDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StopDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DBCluster stopDBCluster(StopDBClusterRequest stopDBClusterRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

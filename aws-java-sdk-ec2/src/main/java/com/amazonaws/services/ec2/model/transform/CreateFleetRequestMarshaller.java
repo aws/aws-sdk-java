@@ -70,6 +70,10 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
             if (spotOptions.getMinTargetCapacity() != null) {
                 request.addParameter("SpotOptions.MinTargetCapacity", StringUtils.fromInteger(spotOptions.getMinTargetCapacity()));
             }
+
+            if (spotOptions.getMaxTotalPrice() != null) {
+                request.addParameter("SpotOptions.MaxTotalPrice", StringUtils.fromString(spotOptions.getMaxTotalPrice()));
+            }
         }
 
         OnDemandOptionsRequest onDemandOptions = createFleetRequest.getOnDemandOptions();
@@ -89,6 +93,10 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
 
             if (onDemandOptions.getMinTargetCapacity() != null) {
                 request.addParameter("OnDemandOptions.MinTargetCapacity", StringUtils.fromInteger(onDemandOptions.getMinTargetCapacity()));
+            }
+
+            if (onDemandOptions.getMaxTotalPrice() != null) {
+                request.addParameter("OnDemandOptions.MaxTotalPrice", StringUtils.fromString(onDemandOptions.getMaxTotalPrice()));
             }
         }
 

@@ -543,4 +543,30 @@ public class AbstractAmazonDocDBAsync extends AbstractAmazonDocDB implements Ama
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<DBCluster> startDBClusterAsync(StartDBClusterRequest request) {
+
+        return startDBClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBCluster> startDBClusterAsync(StartDBClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartDBClusterRequest, DBCluster> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBCluster> stopDBClusterAsync(StopDBClusterRequest request) {
+
+        return stopDBClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBCluster> stopDBClusterAsync(StopDBClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopDBClusterRequest, DBCluster> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

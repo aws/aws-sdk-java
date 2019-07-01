@@ -533,6 +533,14 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                         StringUtils.fromInteger(spotFleetRequestConfig.getOnDemandTargetCapacity()));
             }
 
+            if (spotFleetRequestConfig.getOnDemandMaxTotalPrice() != null) {
+                request.addParameter("SpotFleetRequestConfig.OnDemandMaxTotalPrice", StringUtils.fromString(spotFleetRequestConfig.getOnDemandMaxTotalPrice()));
+            }
+
+            if (spotFleetRequestConfig.getSpotMaxTotalPrice() != null) {
+                request.addParameter("SpotFleetRequestConfig.SpotMaxTotalPrice", StringUtils.fromString(spotFleetRequestConfig.getSpotMaxTotalPrice()));
+            }
+
             if (spotFleetRequestConfig.getTerminateInstancesWithExpiration() != null) {
                 request.addParameter("SpotFleetRequestConfig.TerminateInstancesWithExpiration",
                         StringUtils.fromBoolean(spotFleetRequestConfig.getTerminateInstancesWithExpiration()));

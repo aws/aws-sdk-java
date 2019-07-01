@@ -1,3 +1,20 @@
+# __1.11.585__ __2019-07-01__
+## __AWS Organizations__
+  - ### Features
+    - Specifying the tag key and tag value is required for tagging requests.
+
+## __Amazon DocumentDB with MongoDB compatibility__
+  - ### Features
+    - This release provides support for cluster delete protection and the ability to stop and start clusters.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for specifying a maximum hourly price for all On-Demand and Spot instances in both Spot Fleet and EC2 Fleet.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds support for RDS DB Cluster major version upgrade 
+
 # __1.11.584__ __2019-06-28__
 ## __Alexa For Business__
   - ### Features

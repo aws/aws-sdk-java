@@ -33,7 +33,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resourceId;
     /**
      * <p>
-     * The tag to add to the specified resource.
+     * The tag to add to the specified resource. Specifying the tag key is required. You can set the value of a tag to
+     * an empty string, but you can't set the value of a tag to null.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -80,10 +81,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag to add to the specified resource.
+     * The tag to add to the specified resource. Specifying the tag key is required. You can set the value of a tag to
+     * an empty string, but you can't set the value of a tag to null.
      * </p>
      * 
-     * @return The tag to add to the specified resource.
+     * @return The tag to add to the specified resource. Specifying the tag key is required. You can set the value of a
+     *         tag to an empty string, but you can't set the value of a tag to null.
      */
 
     public java.util.List<Tag> getTags() {
@@ -92,11 +95,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag to add to the specified resource.
+     * The tag to add to the specified resource. Specifying the tag key is required. You can set the value of a tag to
+     * an empty string, but you can't set the value of a tag to null.
      * </p>
      * 
      * @param tags
-     *        The tag to add to the specified resource.
+     *        The tag to add to the specified resource. Specifying the tag key is required. You can set the value of a
+     *        tag to an empty string, but you can't set the value of a tag to null.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -110,7 +115,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag to add to the specified resource.
+     * The tag to add to the specified resource. Specifying the tag key is required. You can set the value of a tag to
+     * an empty string, but you can't set the value of a tag to null.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +125,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The tag to add to the specified resource.
+     *        The tag to add to the specified resource. Specifying the tag key is required. You can set the value of a
+     *        tag to an empty string, but you can't set the value of a tag to null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +142,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag to add to the specified resource.
+     * The tag to add to the specified resource. Specifying the tag key is required. You can set the value of a tag to
+     * an empty string, but you can't set the value of a tag to null.
      * </p>
      * 
      * @param tags
-     *        The tag to add to the specified resource.
+     *        The tag to add to the specified resource. Specifying the tag key is required. You can set the value of a
+     *        tag to an empty string, but you can't set the value of a tag to null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

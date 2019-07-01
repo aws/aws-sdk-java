@@ -243,6 +243,10 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      * @return Result of the ApplyPendingMaintenanceAction operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource ID was not found.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster isn't in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @sample AmazonDocDB.ApplyPendingMaintenanceAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ApplyPendingMaintenanceAction"
      *      target="_top">AWS API Documentation</a>
@@ -2718,6 +2722,127 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBClusterToPointInTime");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Restarts the stopped cluster that is specified by <code>DBClusterIdentifier</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping and
+     * Starting an Amazon DocumentDB Cluster</a>.
+     * </p>
+     * 
+     * @param startDBClusterRequest
+     * @return Result of the StartDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster isn't in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance isn't in the <i>available</i> state.
+     * @sample AmazonDocDB.StartDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StartDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DBCluster startDBCluster(StartDBClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDBCluster(request);
+    }
+
+    @SdkInternalApi
+    final DBCluster executeStartDBCluster(StartDBClusterRequest startDBClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDBClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDBClusterRequest> request = null;
+        Response<DBCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDBClusterRequestMarshaller().marshall(super.beforeMarshalling(startDBClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDBCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops the running cluster that is specified by <code>DBClusterIdentifier</code>. The cluster must be in the
+     * <i>available</i> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping and
+     * Starting an Amazon DocumentDB Cluster</a>.
+     * </p>
+     * 
+     * @param stopDBClusterRequest
+     * @return Result of the StopDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster isn't in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance isn't in the <i>available</i> state.
+     * @sample AmazonDocDB.StopDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StopDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DBCluster stopDBCluster(StopDBClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopDBCluster(request);
+    }
+
+    @SdkInternalApi
+    final DBCluster executeStopDBCluster(StopDBClusterRequest stopDBClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopDBClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopDBClusterRequest> request = null;
+        Response<DBCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopDBClusterRequestMarshaller().marshall(super.beforeMarshalling(stopDBClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {

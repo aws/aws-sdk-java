@@ -366,7 +366,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -713,7 +713,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -879,7 +879,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -1254,7 +1254,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -1692,7 +1692,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -2000,7 +2000,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -2305,7 +2305,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -2606,7 +2606,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -2774,7 +2774,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -2917,7 +2917,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -3066,7 +3066,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -3217,7 +3217,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -3368,7 +3368,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -3513,7 +3513,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -3664,7 +3664,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -3848,7 +3848,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -3993,7 +3993,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -4300,7 +4300,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -4623,7 +4623,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -4924,7 +4924,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -5244,7 +5244,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -5480,7 +5480,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -5780,7 +5780,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -6031,7 +6031,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -6365,7 +6365,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -6665,7 +6665,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -6819,7 +6819,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -6973,7 +6973,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -7127,7 +7127,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -7281,7 +7281,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -7437,7 +7437,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -7596,7 +7596,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -7747,7 +7747,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -7910,7 +7910,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -8061,7 +8061,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -8213,7 +8213,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -8374,7 +8374,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -8519,7 +8519,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -8670,7 +8670,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -8813,7 +8813,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -9142,7 +9142,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -9438,7 +9438,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -9731,7 +9731,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -9879,7 +9879,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>
@@ -10175,7 +10175,7 @@ public interface AWSOrganizations {
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENUM: You specified a value that isn't valid for that parameter.
+     *         INVALID_ENUM: You specified an invalid value.
      *         </p>
      *         </li>
      *         <li>

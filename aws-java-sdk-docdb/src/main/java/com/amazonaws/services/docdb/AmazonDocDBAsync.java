@@ -1612,4 +1612,76 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
     java.util.concurrent.Future<DBCluster> restoreDBClusterToPointInTimeAsync(RestoreDBClusterToPointInTimeRequest restoreDBClusterToPointInTimeRequest,
             com.amazonaws.handlers.AsyncHandler<RestoreDBClusterToPointInTimeRequest, DBCluster> asyncHandler);
 
+    /**
+     * <p>
+     * Restarts the stopped cluster that is specified by <code>DBClusterIdentifier</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping and
+     * Starting an Amazon DocumentDB Cluster</a>.
+     * </p>
+     * 
+     * @param startDBClusterRequest
+     * @return A Java Future containing the result of the StartDBCluster operation returned by the service.
+     * @sample AmazonDocDBAsync.StartDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StartDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBCluster> startDBClusterAsync(StartDBClusterRequest startDBClusterRequest);
+
+    /**
+     * <p>
+     * Restarts the stopped cluster that is specified by <code>DBClusterIdentifier</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping and
+     * Starting an Amazon DocumentDB Cluster</a>.
+     * </p>
+     * 
+     * @param startDBClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartDBCluster operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.StartDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StartDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBCluster> startDBClusterAsync(StartDBClusterRequest startDBClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<StartDBClusterRequest, DBCluster> asyncHandler);
+
+    /**
+     * <p>
+     * Stops the running cluster that is specified by <code>DBClusterIdentifier</code>. The cluster must be in the
+     * <i>available</i> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping and
+     * Starting an Amazon DocumentDB Cluster</a>.
+     * </p>
+     * 
+     * @param stopDBClusterRequest
+     * @return A Java Future containing the result of the StopDBCluster operation returned by the service.
+     * @sample AmazonDocDBAsync.StopDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StopDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBCluster> stopDBClusterAsync(StopDBClusterRequest stopDBClusterRequest);
+
+    /**
+     * <p>
+     * Stops the running cluster that is specified by <code>DBClusterIdentifier</code>. The cluster must be in the
+     * <i>available</i> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping and
+     * Starting an Amazon DocumentDB Cluster</a>.
+     * </p>
+     * 
+     * @param stopDBClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopDBCluster operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.StopDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StopDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBCluster> stopDBClusterAsync(StopDBClusterRequest stopDBClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<StopDBClusterRequest, DBCluster> asyncHandler);
+
 }

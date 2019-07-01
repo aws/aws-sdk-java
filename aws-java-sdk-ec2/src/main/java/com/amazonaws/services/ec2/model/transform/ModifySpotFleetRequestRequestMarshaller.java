@@ -52,6 +52,10 @@ public class ModifySpotFleetRequestRequestMarshaller implements Marshaller<Reque
             request.addParameter("TargetCapacity", StringUtils.fromInteger(modifySpotFleetRequestRequest.getTargetCapacity()));
         }
 
+        if (modifySpotFleetRequestRequest.getOnDemandTargetCapacity() != null) {
+            request.addParameter("OnDemandTargetCapacity", StringUtils.fromInteger(modifySpotFleetRequestRequest.getOnDemandTargetCapacity()));
+        }
+
         return request;
     }
 

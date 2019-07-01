@@ -46,7 +46,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * The new compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>. Not all DB
+     * The new compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>. Not all DB
      * instance classes are available in all AWS Regions.
      * </p>
      * <p>
@@ -250,7 +250,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>. Not all DB
+     * The new compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>. Not all DB
      * instance classes are available in all AWS Regions.
      * </p>
      * <p>
@@ -262,7 +262,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param dBInstanceClass
-     *        The new compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>. Not all DB
+     *        The new compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>. Not all DB
      *        instance classes are available in all AWS Regions. </p>
      *        <p>
      *        If you modify the DB instance class, an outage occurs during the change. The change is applied during the
@@ -279,7 +279,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>. Not all DB
+     * The new compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>. Not all DB
      * instance classes are available in all AWS Regions.
      * </p>
      * <p>
@@ -290,7 +290,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: Uses existing setting.
      * </p>
      * 
-     * @return The new compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>. Not all DB
+     * @return The new compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>. Not all DB
      *         instance classes are available in all AWS Regions. </p>
      *         <p>
      *         If you modify the DB instance class, an outage occurs during the change. The change is applied during the
@@ -307,7 +307,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>. Not all DB
+     * The new compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>. Not all DB
      * instance classes are available in all AWS Regions.
      * </p>
      * <p>
@@ -319,7 +319,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param dBInstanceClass
-     *        The new compute and memory capacity of the DB instance; for example, <code>db.m4.large</code>. Not all DB
+     *        The new compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>. Not all DB
      *        instance classes are available in all AWS Regions. </p>
      *        <p>
      *        If you modify the DB instance class, an outage occurs during the change. The change is applied during the

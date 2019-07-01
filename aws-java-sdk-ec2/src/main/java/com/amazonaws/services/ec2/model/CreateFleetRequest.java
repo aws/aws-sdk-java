@@ -41,7 +41,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     private SpotOptionsRequest spotOptions;
     /**
      * <p>
-     * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * Describes the configuration of On-Demand Instances in an EC2 Fleet.
      * </p>
      */
     private OnDemandOptionsRequest onDemandOptions;
@@ -60,8 +60,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     private com.amazonaws.internal.SdkInternalList<FleetLaunchTemplateConfigRequest> launchTemplateConfigs;
     /**
      * <p>
-     * The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>, <code>SpotTargetCapacity</code>, and
-     * <code>DefaultCapacityType</code> structure.
+     * The number of units to request.
      * </p>
      */
     private TargetCapacitySpecificationRequest targetCapacitySpecification;
@@ -215,11 +214,11 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * Describes the configuration of On-Demand Instances in an EC2 Fleet.
      * </p>
      * 
      * @param onDemandOptions
-     *        The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     *        Describes the configuration of On-Demand Instances in an EC2 Fleet.
      */
 
     public void setOnDemandOptions(OnDemandOptionsRequest onDemandOptions) {
@@ -228,10 +227,10 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * Describes the configuration of On-Demand Instances in an EC2 Fleet.
      * </p>
      * 
-     * @return The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * @return Describes the configuration of On-Demand Instances in an EC2 Fleet.
      */
 
     public OnDemandOptionsRequest getOnDemandOptions() {
@@ -240,11 +239,11 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * Describes the configuration of On-Demand Instances in an EC2 Fleet.
      * </p>
      * 
      * @param onDemandOptions
-     *        The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     *        Describes the configuration of On-Demand Instances in an EC2 Fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,13 +394,11 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>, <code>SpotTargetCapacity</code>, and
-     * <code>DefaultCapacityType</code> structure.
+     * The number of units to request.
      * </p>
      * 
      * @param targetCapacitySpecification
-     *        The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>, <code>SpotTargetCapacity</code>
-     *        , and <code>DefaultCapacityType</code> structure.
+     *        The number of units to request.
      */
 
     public void setTargetCapacitySpecification(TargetCapacitySpecificationRequest targetCapacitySpecification) {
@@ -410,12 +407,10 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>, <code>SpotTargetCapacity</code>, and
-     * <code>DefaultCapacityType</code> structure.
+     * The number of units to request.
      * </p>
      * 
-     * @return The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>,
-     *         <code>SpotTargetCapacity</code>, and <code>DefaultCapacityType</code> structure.
+     * @return The number of units to request.
      */
 
     public TargetCapacitySpecificationRequest getTargetCapacitySpecification() {
@@ -424,13 +419,11 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>, <code>SpotTargetCapacity</code>, and
-     * <code>DefaultCapacityType</code> structure.
+     * The number of units to request.
      * </p>
      * 
      * @param targetCapacitySpecification
-     *        The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>, <code>SpotTargetCapacity</code>
-     *        , and <code>DefaultCapacityType</code> structure.
+     *        The number of units to request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

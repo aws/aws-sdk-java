@@ -47,6 +47,12 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
      * </p>
      */
     private Integer targetCapacity;
+    /**
+     * <p>
+     * The number of On-Demand Instances in the fleet.
+     * </p>
+     */
+    private Integer onDemandTargetCapacity;
 
     /**
      * <p>
@@ -212,6 +218,46 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * The number of On-Demand Instances in the fleet.
+     * </p>
+     * 
+     * @param onDemandTargetCapacity
+     *        The number of On-Demand Instances in the fleet.
+     */
+
+    public void setOnDemandTargetCapacity(Integer onDemandTargetCapacity) {
+        this.onDemandTargetCapacity = onDemandTargetCapacity;
+    }
+
+    /**
+     * <p>
+     * The number of On-Demand Instances in the fleet.
+     * </p>
+     * 
+     * @return The number of On-Demand Instances in the fleet.
+     */
+
+    public Integer getOnDemandTargetCapacity() {
+        return this.onDemandTargetCapacity;
+    }
+
+    /**
+     * <p>
+     * The number of On-Demand Instances in the fleet.
+     * </p>
+     * 
+     * @param onDemandTargetCapacity
+     *        The number of On-Demand Instances in the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifySpotFleetRequestRequest withOnDemandTargetCapacity(Integer onDemandTargetCapacity) {
+        setOnDemandTargetCapacity(onDemandTargetCapacity);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -239,7 +285,9 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         if (getSpotFleetRequestId() != null)
             sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
         if (getTargetCapacity() != null)
-            sb.append("TargetCapacity: ").append(getTargetCapacity());
+            sb.append("TargetCapacity: ").append(getTargetCapacity()).append(",");
+        if (getOnDemandTargetCapacity() != null)
+            sb.append("OnDemandTargetCapacity: ").append(getOnDemandTargetCapacity());
         sb.append("}");
         return sb.toString();
     }
@@ -267,6 +315,10 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
             return false;
         if (other.getTargetCapacity() != null && other.getTargetCapacity().equals(this.getTargetCapacity()) == false)
             return false;
+        if (other.getOnDemandTargetCapacity() == null ^ this.getOnDemandTargetCapacity() == null)
+            return false;
+        if (other.getOnDemandTargetCapacity() != null && other.getOnDemandTargetCapacity().equals(this.getOnDemandTargetCapacity()) == false)
+            return false;
         return true;
     }
 
@@ -278,6 +330,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getExcessCapacityTerminationPolicy() == null) ? 0 : getExcessCapacityTerminationPolicy().hashCode());
         hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
         hashCode = prime * hashCode + ((getTargetCapacity() == null) ? 0 : getTargetCapacity().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandTargetCapacity() == null) ? 0 : getOnDemandTargetCapacity().hashCode());
         return hashCode;
     }
 
