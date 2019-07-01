@@ -1580,7 +1580,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         try {
             return IOUtils.toString(object.getObjectContent());
         } catch (IOException e) {
-            throw new SdkClientException("Error streaming content from S3 during download");
+            throw new SdkClientException("Error streaming content from S3 during download", e);
         } finally {
             IOUtils.closeQuietly(object, log);
         }
