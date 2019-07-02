@@ -30,9 +30,14 @@ public class UsageReportSubscription implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon S3 bucket where generated reports are stored. When a usage report subscription is enabled for the
-     * first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and
-     * the Region.
+     * The Amazon S3 bucket where generated reports are stored.
+     * </p>
+     * <p>
+     * If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream
+     * 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you
+     * enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you
+     * haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new
+     * S3 bucket.
      * </p>
      */
     private String s3BucketName;
@@ -50,22 +55,31 @@ public class UsageReportSubscription implements Serializable, Cloneable, Structu
     private java.util.Date lastGeneratedReportDate;
     /**
      * <p>
-     * The errors that are returned when usage reports can't be generated.
+     * The errors that were returned if usage reports couldn't be generated.
      * </p>
      */
     private java.util.List<LastReportGenerationExecutionError> subscriptionErrors;
 
     /**
      * <p>
-     * The Amazon S3 bucket where generated reports are stored. When a usage report subscription is enabled for the
-     * first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and
-     * the Region.
+     * The Amazon S3 bucket where generated reports are stored.
+     * </p>
+     * <p>
+     * If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream
+     * 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you
+     * enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you
+     * haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new
+     * S3 bucket.
      * </p>
      * 
      * @param s3BucketName
-     *        The Amazon S3 bucket where generated reports are stored. When a usage report subscription is enabled for
-     *        the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS
-     *        account and the Region.
+     *        The Amazon S3 bucket where generated reports are stored.</p>
+     *        <p>
+     *        If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration,
+     *        AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and
+     *        Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your
+     *        usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports,
+     *        AppStream 2.0 creates a new S3 bucket.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -74,14 +88,23 @@ public class UsageReportSubscription implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon S3 bucket where generated reports are stored. When a usage report subscription is enabled for the
-     * first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and
-     * the Region.
+     * The Amazon S3 bucket where generated reports are stored.
+     * </p>
+     * <p>
+     * If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream
+     * 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you
+     * enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you
+     * haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new
+     * S3 bucket.
      * </p>
      * 
-     * @return The Amazon S3 bucket where generated reports are stored. When a usage report subscription is enabled for
-     *         the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS
-     *         account and the Region.
+     * @return The Amazon S3 bucket where generated reports are stored.</p>
+     *         <p>
+     *         If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration,
+     *         AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and
+     *         Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your
+     *         usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports,
+     *         AppStream 2.0 creates a new S3 bucket.
      */
 
     public String getS3BucketName() {
@@ -90,15 +113,24 @@ public class UsageReportSubscription implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon S3 bucket where generated reports are stored. When a usage report subscription is enabled for the
-     * first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and
-     * the Region.
+     * The Amazon S3 bucket where generated reports are stored.
+     * </p>
+     * <p>
+     * If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream
+     * 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you
+     * enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you
+     * haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new
+     * S3 bucket.
      * </p>
      * 
      * @param s3BucketName
-     *        The Amazon S3 bucket where generated reports are stored. When a usage report subscription is enabled for
-     *        the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS
-     *        account and the Region.
+     *        The Amazon S3 bucket where generated reports are stored.</p>
+     *        <p>
+     *        If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration,
+     *        AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and
+     *        Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your
+     *        usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports,
+     *        AppStream 2.0 creates a new S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,10 +240,10 @@ public class UsageReportSubscription implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The errors that are returned when usage reports can't be generated.
+     * The errors that were returned if usage reports couldn't be generated.
      * </p>
      * 
-     * @return The errors that are returned when usage reports can't be generated.
+     * @return The errors that were returned if usage reports couldn't be generated.
      */
 
     public java.util.List<LastReportGenerationExecutionError> getSubscriptionErrors() {
@@ -220,11 +252,11 @@ public class UsageReportSubscription implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The errors that are returned when usage reports can't be generated.
+     * The errors that were returned if usage reports couldn't be generated.
      * </p>
      * 
      * @param subscriptionErrors
-     *        The errors that are returned when usage reports can't be generated.
+     *        The errors that were returned if usage reports couldn't be generated.
      */
 
     public void setSubscriptionErrors(java.util.Collection<LastReportGenerationExecutionError> subscriptionErrors) {
@@ -238,7 +270,7 @@ public class UsageReportSubscription implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The errors that are returned when usage reports can't be generated.
+     * The errors that were returned if usage reports couldn't be generated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -247,7 +279,7 @@ public class UsageReportSubscription implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param subscriptionErrors
-     *        The errors that are returned when usage reports can't be generated.
+     *        The errors that were returned if usage reports couldn't be generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,11 +295,11 @@ public class UsageReportSubscription implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The errors that are returned when usage reports can't be generated.
+     * The errors that were returned if usage reports couldn't be generated.
      * </p>
      * 
      * @param subscriptionErrors
-     *        The errors that are returned when usage reports can't be generated.
+     *        The errors that were returned if usage reports couldn't be generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

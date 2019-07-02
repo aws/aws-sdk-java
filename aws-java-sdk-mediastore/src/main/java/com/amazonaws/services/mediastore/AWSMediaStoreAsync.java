@@ -395,6 +395,37 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
 
     /**
      * <p>
+     * Returns a list of the tags assigned to the specified container.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSMediaStoreAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of the tags assigned to the specified container.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSMediaStoreAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an access policy for the specified container to restrict the users and clients that can access it. For
      * information about the data that is included in an access policy, see the <a
      * href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.
@@ -605,5 +636,75 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
      */
     java.util.concurrent.Future<StopAccessLoggingResult> stopAccessLoggingAsync(StopAccessLoggingRequest stopAccessLoggingRequest,
             com.amazonaws.handlers.AsyncHandler<StopAccessLoggingRequest, StopAccessLoggingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds tags to the specified AWS Elemental MediaStore container. Tags are key:value pairs that you can associate
+     * with AWS resources. For example, the tag key might be "customer" and the tag value might be "companyA." You can
+     * specify one or more tags to add to each container. You can add up to 50 tags to each container. For more
+     * information about tagging, including naming and usage conventions, see <a
+     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSMediaStoreAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds tags to the specified AWS Elemental MediaStore container. Tags are key:value pairs that you can associate
+     * with AWS resources. For example, the tag key might be "customer" and the tag value might be "companyA." You can
+     * specify one or more tags to add to each container. You can add up to 50 tags to each container. For more
+     * information about tagging, including naming and usage conventions, see <a
+     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSMediaStoreAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags from the specified container. You can specify one or more tags to remove.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSMediaStoreAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from the specified container. You can specify one or more tags to remove.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSMediaStoreAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

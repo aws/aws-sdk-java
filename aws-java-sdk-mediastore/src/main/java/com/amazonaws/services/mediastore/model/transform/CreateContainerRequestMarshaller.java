@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediastore.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class CreateContainerRequestMarshaller {
 
     private static final MarshallingInfo<String> CONTAINERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContainerName").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateContainerRequestMarshaller instance = new CreateContainerRequestMarshaller();
 
@@ -47,6 +50,7 @@ public class CreateContainerRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createContainerRequest.getContainerName(), CONTAINERNAME_BINDING);
+            protocolMarshaller.marshall(createContainerRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

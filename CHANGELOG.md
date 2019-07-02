@@ -1,3 +1,12 @@
+# __1.11.586__ __2019-07-02__
+## __AWS Elemental MediaStore__
+  - ### Features
+    - This release adds support for tagging, untagging, and listing tags for AWS Elemental MediaStore containers.
+
+## __Amazon AppStream__
+  - ### Features
+    - Adding ImageBuilderName in Fleet API and Documentation updates for AppStream. 
+
 # __1.11.585__ __2019-07-01__
 ## __AWS Organizations__
   - ### Features

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the parameters for a fleet.
+ * Describes a fleet.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Fleet" target="_top">AWS API
@@ -169,7 +169,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
-     * between 60 and 3600. The default value is 900.
+     * between 60 and 3600. The default value is 0.
      * </p>
      * <note>
      * <p>
@@ -1209,7 +1209,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
-     * between 60 and 3600. The default value is 900.
+     * between 60 and 3600. The default value is 0.
      * </p>
      * <note>
      * <p>
@@ -1232,7 +1232,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *        <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
      *        <p>
      *        To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a
-     *        value between 60 and 3600. The default value is 900.
+     *        value between 60 and 3600. The default value is 0.
      *        </p>
      *        <note>
      *        <p>
@@ -1261,7 +1261,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
-     * between 60 and 3600. The default value is 900.
+     * between 60 and 3600. The default value is 0.
      * </p>
      * <note>
      * <p>
@@ -1283,7 +1283,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *         <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
      *         <p>
      *         To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a
-     *         value between 60 and 3600. The default value is 900.
+     *         value between 60 and 3600. The default value is 0.
      *         </p>
      *         <note>
      *         <p>
@@ -1312,7 +1312,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
-     * between 60 and 3600. The default value is 900.
+     * between 60 and 3600. The default value is 0.
      * </p>
      * <note>
      * <p>
@@ -1335,7 +1335,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *        <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
      *        <p>
      *        To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a
-     *        value between 60 and 3600. The default value is 900.
+     *        value between 60 and 3600. The default value is 0.
      *        </p>
      *        <note>
      *        <p>

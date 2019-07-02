@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the network details of the fleet instance for the streaming session.
+ * Describes the network details of the fleet or image builder instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/NetworkAccessConfiguration"

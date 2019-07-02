@@ -107,6 +107,8 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DomainJoinInfo domainJoinInfo;
+
+    private NetworkAccessConfiguration networkAccessConfiguration;
     /**
      * <p>
      * The image builder errors.
@@ -697,6 +699,32 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param networkAccessConfiguration
+     */
+
+    public void setNetworkAccessConfiguration(NetworkAccessConfiguration networkAccessConfiguration) {
+        this.networkAccessConfiguration = networkAccessConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public NetworkAccessConfiguration getNetworkAccessConfiguration() {
+        return this.networkAccessConfiguration;
+    }
+
+    /**
+     * @param networkAccessConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageBuilder withNetworkAccessConfiguration(NetworkAccessConfiguration networkAccessConfiguration) {
+        setNetworkAccessConfiguration(networkAccessConfiguration);
+        return this;
+    }
+
+    /**
      * <p>
      * The image builder errors.
      * </p>
@@ -844,6 +872,8 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
             sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess()).append(",");
         if (getDomainJoinInfo() != null)
             sb.append("DomainJoinInfo: ").append(getDomainJoinInfo()).append(",");
+        if (getNetworkAccessConfiguration() != null)
+            sb.append("NetworkAccessConfiguration: ").append(getNetworkAccessConfiguration()).append(",");
         if (getImageBuilderErrors() != null)
             sb.append("ImageBuilderErrors: ").append(getImageBuilderErrors()).append(",");
         if (getAppstreamAgentVersion() != null)
@@ -914,6 +944,10 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDomainJoinInfo() != null && other.getDomainJoinInfo().equals(this.getDomainJoinInfo()) == false)
             return false;
+        if (other.getNetworkAccessConfiguration() == null ^ this.getNetworkAccessConfiguration() == null)
+            return false;
+        if (other.getNetworkAccessConfiguration() != null && other.getNetworkAccessConfiguration().equals(this.getNetworkAccessConfiguration()) == false)
+            return false;
         if (other.getImageBuilderErrors() == null ^ this.getImageBuilderErrors() == null)
             return false;
         if (other.getImageBuilderErrors() != null && other.getImageBuilderErrors().equals(this.getImageBuilderErrors()) == false)
@@ -943,6 +977,7 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
         hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
+        hashCode = prime * hashCode + ((getNetworkAccessConfiguration() == null) ? 0 : getNetworkAccessConfiguration().hashCode());
         hashCode = prime * hashCode + ((getImageBuilderErrors() == null) ? 0 : getImageBuilderErrors().hashCode());
         hashCode = prime * hashCode + ((getAppstreamAgentVersion() == null) ? 0 : getAppstreamAgentVersion().hashCode());
         return hashCode;

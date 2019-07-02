@@ -54,6 +54,8 @@ public class ImageBuilderMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableDefaultInternetAccess").build();
     private static final MarshallingInfo<StructuredPojo> DOMAINJOININFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainJoinInfo").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKACCESSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkAccessConfiguration").build();
     private static final MarshallingInfo<List> IMAGEBUILDERERRORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageBuilderErrors").build();
     private static final MarshallingInfo<String> APPSTREAMAGENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -88,6 +90,7 @@ public class ImageBuilderMarshaller {
             protocolMarshaller.marshall(imageBuilder.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(imageBuilder.getEnableDefaultInternetAccess(), ENABLEDEFAULTINTERNETACCESS_BINDING);
             protocolMarshaller.marshall(imageBuilder.getDomainJoinInfo(), DOMAINJOININFO_BINDING);
+            protocolMarshaller.marshall(imageBuilder.getNetworkAccessConfiguration(), NETWORKACCESSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(imageBuilder.getImageBuilderErrors(), IMAGEBUILDERERRORS_BINDING);
             protocolMarshaller.marshall(imageBuilder.getAppstreamAgentVersion(), APPSTREAMAGENTVERSION_BINDING);
         } catch (Exception e) {

@@ -78,6 +78,11 @@ public class AbstractAWSMediaStore implements AWSMediaStore {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutContainerPolicyResult putContainerPolicy(PutContainerPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +104,16 @@ public class AbstractAWSMediaStore implements AWSMediaStore {
 
     @Override
     public StopAccessLoggingResult stopAccessLogging(StopAccessLoggingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

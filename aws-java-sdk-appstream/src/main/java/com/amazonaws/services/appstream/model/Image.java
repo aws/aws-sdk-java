@@ -73,6 +73,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private Boolean imageBuilderSupported;
     /**
      * <p>
+     * The name of the image builder that was used to create the private image. If the image is shared, this value is
+     * null.
+     * </p>
+     */
+    private String imageBuilderName;
+    /**
+     * <p>
      * The operating system platform of the image.
      * </p>
      */
@@ -491,6 +498,52 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The name of the image builder that was used to create the private image. If the image is shared, this value is
+     * null.
+     * </p>
+     * 
+     * @param imageBuilderName
+     *        The name of the image builder that was used to create the private image. If the image is shared, this
+     *        value is null.
+     */
+
+    public void setImageBuilderName(String imageBuilderName) {
+        this.imageBuilderName = imageBuilderName;
+    }
+
+    /**
+     * <p>
+     * The name of the image builder that was used to create the private image. If the image is shared, this value is
+     * null.
+     * </p>
+     * 
+     * @return The name of the image builder that was used to create the private image. If the image is shared, this
+     *         value is null.
+     */
+
+    public String getImageBuilderName() {
+        return this.imageBuilderName;
+    }
+
+    /**
+     * <p>
+     * The name of the image builder that was used to create the private image. If the image is shared, this value is
+     * null.
+     * </p>
+     * 
+     * @param imageBuilderName
+     *        The name of the image builder that was used to create the private image. If the image is shared, this
+     *        value is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withImageBuilderName(String imageBuilderName) {
+        setImageBuilderName(imageBuilderName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The operating system platform of the image.
      * </p>
      * 
@@ -904,6 +957,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
             sb.append("Visibility: ").append(getVisibility()).append(",");
         if (getImageBuilderSupported() != null)
             sb.append("ImageBuilderSupported: ").append(getImageBuilderSupported()).append(",");
+        if (getImageBuilderName() != null)
+            sb.append("ImageBuilderName: ").append(getImageBuilderName()).append(",");
         if (getPlatform() != null)
             sb.append("Platform: ").append(getPlatform()).append(",");
         if (getDescription() != null)
@@ -962,6 +1017,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImageBuilderSupported() != null && other.getImageBuilderSupported().equals(this.getImageBuilderSupported()) == false)
             return false;
+        if (other.getImageBuilderName() == null ^ this.getImageBuilderName() == null)
+            return false;
+        if (other.getImageBuilderName() != null && other.getImageBuilderName().equals(this.getImageBuilderName()) == false)
+            return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
         if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
@@ -1009,6 +1068,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getVisibility() == null) ? 0 : getVisibility().hashCode());
         hashCode = prime * hashCode + ((getImageBuilderSupported() == null) ? 0 : getImageBuilderSupported().hashCode());
+        hashCode = prime * hashCode + ((getImageBuilderName() == null) ? 0 : getImageBuilderName().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getStateChangeReason() == null) ? 0 : getStateChangeReason().hashCode());

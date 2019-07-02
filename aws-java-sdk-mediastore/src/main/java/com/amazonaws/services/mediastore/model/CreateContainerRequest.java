@@ -33,6 +33,16 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String containerName;
+    /**
+     * <p>
+     * An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key
+     * represents a category (such as "environment") and the tag value represents a specific value within that category
+     * (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more
+     * information about tagging, including naming and usage conventions, see <a
+     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -87,6 +97,108 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key
+     * represents a category (such as "environment") and the tag value represents a specific value within that category
+     * (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more
+     * information about tagging, including naming and usage conventions, see <a
+     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * </p>
+     * 
+     * @return An array of key:value pairs that you define. These values can be anything that you want. Typically, the
+     *         tag key represents a category (such as "environment") and the tag value represents a specific value
+     *         within that category (such as "test," "development," or "production"). You can add up to 50 tags to each
+     *         container. For more information about tagging, including naming and usage conventions, see <a
+     *         href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key
+     * represents a category (such as "environment") and the tag value represents a specific value within that category
+     * (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more
+     * information about tagging, including naming and usage conventions, see <a
+     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * </p>
+     * 
+     * @param tags
+     *        An array of key:value pairs that you define. These values can be anything that you want. Typically, the
+     *        tag key represents a category (such as "environment") and the tag value represents a specific value within
+     *        that category (such as "test," "development," or "production"). You can add up to 50 tags to each
+     *        container. For more information about tagging, including naming and usage conventions, see <a
+     *        href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key
+     * represents a category (such as "environment") and the tag value represents a specific value within that category
+     * (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more
+     * information about tagging, including naming and usage conventions, see <a
+     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        An array of key:value pairs that you define. These values can be anything that you want. Typically, the
+     *        tag key represents a category (such as "environment") and the tag value represents a specific value within
+     *        that category (such as "test," "development," or "production"). You can add up to 50 tags to each
+     *        container. For more information about tagging, including naming and usage conventions, see <a
+     *        href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateContainerRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key
+     * represents a category (such as "environment") and the tag value represents a specific value within that category
+     * (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more
+     * information about tagging, including naming and usage conventions, see <a
+     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * </p>
+     * 
+     * @param tags
+     *        An array of key:value pairs that you define. These values can be anything that you want. Typically, the
+     *        tag key represents a category (such as "environment") and the tag value represents a specific value within
+     *        that category (such as "test," "development," or "production"). You can add up to 50 tags to each
+     *        container. For more information about tagging, including naming and usage conventions, see <a
+     *        href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateContainerRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -99,7 +211,9 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContainerName() != null)
-            sb.append("ContainerName: ").append(getContainerName());
+            sb.append("ContainerName: ").append(getContainerName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -118,6 +232,10 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getContainerName() != null && other.getContainerName().equals(this.getContainerName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -127,6 +245,7 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getContainerName() == null) ? 0 : getContainerName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

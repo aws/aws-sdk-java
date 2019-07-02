@@ -265,6 +265,25 @@ public interface AWSMediaStore {
 
     /**
      * <p>
+     * Returns a list of the tags assigned to the specified container.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Creates an access policy for the specified container to restrict the users and clients that can access it. For
      * information about the data that is included in an access policy, see the <a
      * href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.
@@ -386,6 +405,48 @@ public interface AWSMediaStore {
      *      API Documentation</a>
      */
     StopAccessLoggingResult stopAccessLogging(StopAccessLoggingRequest stopAccessLoggingRequest);
+
+    /**
+     * <p>
+     * Adds tags to the specified AWS Elemental MediaStore container. Tags are key:value pairs that you can associate
+     * with AWS resources. For example, the tag key might be "customer" and the tag value might be "companyA." You can
+     * specify one or more tags to add to each container. You can add up to 50 tags to each container. For more
+     * information about tagging, including naming and usage conventions, see <a
+     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from the specified container. You can specify one or more tags to remove.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -768,6 +768,65 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
     /**
      * <p>
+     * Returns a list of the tags assigned to the specified container.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an access policy for the specified container to restrict the users and clients that can access it. For
      * information about the data that is included in an access policy, see the <a
      * href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.
@@ -1080,6 +1139,128 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
             HttpResponseHandler<AmazonWebServiceResponse<StopAccessLoggingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopAccessLoggingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds tags to the specified AWS Elemental MediaStore container. Tags are key:value pairs that you can associate
+     * with AWS resources. For example, the tag key might be "customer" and the tag value might be "companyA." You can
+     * specify one or more tags to add to each container. You can add up to 50 tags to each container. For more
+     * information about tagging, including naming and usage conventions, see <a
+     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes tags from the specified container. You can specify one or more tags to remove.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

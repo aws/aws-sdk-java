@@ -31,7 +31,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder
-     * instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
+     * instance. Fleet instances use one or more subnets. Image builder instances use one subnet.
      * </p>
      */
     private java.util.List<String> subnetIds;
@@ -45,11 +45,11 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder
-     * instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
+     * instance. Fleet instances use one or more subnets. Image builder instances use one subnet.
      * </p>
      * 
      * @return The identifiers of the subnets to which a network interface is attached from the fleet instance or image
-     *         builder instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
+     *         builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -59,12 +59,12 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder
-     * instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
+     * instance. Fleet instances use one or more subnets. Image builder instances use one subnet.
      * </p>
      * 
      * @param subnetIds
      *        The identifiers of the subnets to which a network interface is attached from the fleet instance or image
-     *        builder instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
+     *        builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -79,7 +79,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder
-     * instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
+     * instance. Fleet instances use one or more subnets. Image builder instances use one subnet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +89,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param subnetIds
      *        The identifiers of the subnets to which a network interface is attached from the fleet instance or image
-     *        builder instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
+     *        builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,12 +106,12 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder
-     * instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
+     * instance. Fleet instances use one or more subnets. Image builder instances use one subnet.
      * </p>
      * 
      * @param subnetIds
      *        The identifiers of the subnets to which a network interface is attached from the fleet instance or image
-     *        builder instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
+     *        builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

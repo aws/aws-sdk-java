@@ -266,7 +266,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
-     * between 60 and 3600. The default value is 900.
+     * between 60 and 3600. The default value is 0.
      * </p>
      * <note>
      * <p>
@@ -1800,7 +1800,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
-     * between 60 and 3600. The default value is 900.
+     * between 60 and 3600. The default value is 0.
      * </p>
      * <note>
      * <p>
@@ -1823,7 +1823,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
      *        <p>
      *        To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a
-     *        value between 60 and 3600. The default value is 900.
+     *        value between 60 and 3600. The default value is 0.
      *        </p>
      *        <note>
      *        <p>
@@ -1852,7 +1852,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
-     * between 60 and 3600. The default value is 900.
+     * between 60 and 3600. The default value is 0.
      * </p>
      * <note>
      * <p>
@@ -1874,7 +1874,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
      *         <p>
      *         To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a
-     *         value between 60 and 3600. The default value is 900.
+     *         value between 60 and 3600. The default value is 0.
      *         </p>
      *         <note>
      *         <p>
@@ -1903,7 +1903,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
-     * between 60 and 3600. The default value is 900.
+     * between 60 and 3600. The default value is 0.
      * </p>
      * <note>
      * <p>
@@ -1926,7 +1926,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
      *        <p>
      *        To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a
-     *        value between 60 and 3600. The default value is 900.
+     *        value between 60 and 3600. The default value is 0.
      *        </p>
      *        <note>
      *        <p>

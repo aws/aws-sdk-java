@@ -100,6 +100,10 @@ public class ImageBuilderJsonUnmarshaller implements Unmarshaller<ImageBuilder, 
                     context.nextToken();
                     imageBuilder.setDomainJoinInfo(DomainJoinInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("NetworkAccessConfiguration", targetDepth)) {
+                    context.nextToken();
+                    imageBuilder.setNetworkAccessConfiguration(NetworkAccessConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ImageBuilderErrors", targetDepth)) {
                     context.nextToken();
                     imageBuilder.setImageBuilderErrors(new ListUnmarshaller<ResourceError>(ResourceErrorJsonUnmarshaller.getInstance()).unmarshall(context));
