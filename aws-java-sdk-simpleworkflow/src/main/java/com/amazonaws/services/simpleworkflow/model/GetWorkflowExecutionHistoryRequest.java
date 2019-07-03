@@ -39,9 +39,11 @@ public class GetWorkflowExecutionHistoryRequest extends com.amazonaws.AmazonWebS
     private WorkflowExecution execution;
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
@@ -50,13 +52,8 @@ public class GetWorkflowExecutionHistoryRequest extends com.amazonaws.AmazonWebS
     private String nextPageToken;
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
-     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
-     * size <i>smaller</i> than the maximum.
-     * </p>
-     * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
-     * maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      */
     private Integer maximumPageSize;
@@ -150,18 +147,22 @@ public class GetWorkflowExecutionHistoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *        retrieve the next page of results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     *        If <code>NextPageToken</code> is returned there are more results available. The value of
+     *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      */
@@ -172,17 +173,21 @@ public class GetWorkflowExecutionHistoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
-     * @return If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *         retrieve the next page of results, make the call again using the returned token in
-     *         <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     * @return If <code>NextPageToken</code> is returned there are more results available. The value of
+     *         <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *         returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *         expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *         <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *         <p>
      *         The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      */
@@ -193,18 +198,22 @@ public class GetWorkflowExecutionHistoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *        retrieve the next page of results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     *        If <code>NextPageToken</code> is returned there are more results available. The value of
+     *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -217,22 +226,13 @@ public class GetWorkflowExecutionHistoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
-     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
-     * size <i>smaller</i> than the maximum.
-     * </p>
-     * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
-     * maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
-     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
-     *        specify a page size <i>smaller</i> than the maximum.</p>
-     *        <p>
-     *        This is an upper limit only; the actual number of results returned per call may be fewer than the
-     *        specified maximum.
+     *        The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further
+     *        pages of results.
      */
 
     public void setMaximumPageSize(Integer maximumPageSize) {
@@ -241,21 +241,12 @@ public class GetWorkflowExecutionHistoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
-     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
-     * size <i>smaller</i> than the maximum.
-     * </p>
-     * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
-     * maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * 
-     * @return The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to
-     *         obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *         however, specify a page size <i>smaller</i> than the maximum.</p>
-     *         <p>
-     *         This is an upper limit only; the actual number of results returned per call may be fewer than the
-     *         specified maximum.
+     * @return The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain
+     *         further pages of results.
      */
 
     public Integer getMaximumPageSize() {
@@ -264,22 +255,13 @@ public class GetWorkflowExecutionHistoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
-     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
-     * size <i>smaller</i> than the maximum.
-     * </p>
-     * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
-     * maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
-     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
-     *        specify a page size <i>smaller</i> than the maximum.</p>
-     *        <p>
-     *        This is an upper limit only; the actual number of results returned per call may be fewer than the
-     *        specified maximum.
+     *        The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further
+     *        pages of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

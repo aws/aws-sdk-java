@@ -81,6 +81,10 @@ public class DescribeDBClustersRequestMarshaller implements Marshaller<Request<D
             request.addParameter("Marker", StringUtils.fromString(describeDBClustersRequest.getMarker()));
         }
 
+        if (describeDBClustersRequest.getIncludeShared() != null) {
+            request.addParameter("IncludeShared", StringUtils.fromBoolean(describeDBClustersRequest.getIncludeShared()));
+        }
+
         return request;
     }
 

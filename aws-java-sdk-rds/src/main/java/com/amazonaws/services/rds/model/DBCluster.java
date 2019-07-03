@@ -366,6 +366,12 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private Boolean copyTagsToSnapshot;
+    /**
+     * <p>
+     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * </p>
+     */
+    private Boolean crossAccountClone;
 
     /**
      * <p>
@@ -3008,6 +3014,58 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * </p>
+     * 
+     * @param crossAccountClone
+     *        Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     */
+
+    public void setCrossAccountClone(Boolean crossAccountClone) {
+        this.crossAccountClone = crossAccountClone;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * </p>
+     * 
+     * @return Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     */
+
+    public Boolean getCrossAccountClone() {
+        return this.crossAccountClone;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * </p>
+     * 
+     * @param crossAccountClone
+     *        Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withCrossAccountClone(Boolean crossAccountClone) {
+        setCrossAccountClone(crossAccountClone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * </p>
+     * 
+     * @return Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     */
+
+    public Boolean isCrossAccountClone() {
+        return this.crossAccountClone;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3118,7 +3176,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getActivityStreamKinesisStreamName() != null)
             sb.append("ActivityStreamKinesisStreamName: ").append(getActivityStreamKinesisStreamName()).append(",");
         if (getCopyTagsToSnapshot() != null)
-            sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot());
+            sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot()).append(",");
+        if (getCrossAccountClone() != null)
+            sb.append("CrossAccountClone: ").append(getCrossAccountClone());
         sb.append("}");
         return sb.toString();
     }
@@ -3337,6 +3397,10 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
             return false;
+        if (other.getCrossAccountClone() == null ^ this.getCrossAccountClone() == null)
+            return false;
+        if (other.getCrossAccountClone() != null && other.getCrossAccountClone().equals(this.getCrossAccountClone()) == false)
+            return false;
         return true;
     }
 
@@ -3395,6 +3459,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getActivityStreamKmsKeyId() == null) ? 0 : getActivityStreamKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getActivityStreamKinesisStreamName() == null) ? 0 : getActivityStreamKinesisStreamName().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
+        hashCode = prime * hashCode + ((getCrossAccountClone() == null) ? 0 : getCrossAccountClone().hashCode());
         return hashCode;
     }
 

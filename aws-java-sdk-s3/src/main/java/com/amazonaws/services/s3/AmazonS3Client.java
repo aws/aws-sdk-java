@@ -4412,6 +4412,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             addHeaderIfNotNull(request,
                     Headers.SERVER_SIDE_ENCRYPTION_AWS_KMS_KEYID,
                     sseParams.getAwsKmsKeyId());
+            addHeaderIfNotNull(request, Headers.SERVER_SIDE_ENCRYPTION_AWS_KMS_CONTEXT, sseParams.getAwsKmsEncryptionContext());
         }
     }
 

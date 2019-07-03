@@ -32,6 +32,9 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the tag that must be associated with the execution for it to meet the filter criteria.
      * </p>
+     * <p>
+     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
      */
     private String tag;
 
@@ -39,9 +42,14 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the tag that must be associated with the execution for it to meet the filter criteria.
      * </p>
+     * <p>
+     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
      * 
      * @param tag
-     *        Specifies the tag that must be associated with the execution for it to meet the filter criteria.
+     *        Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
+     *        <p>
+     *        Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
      */
 
     public void setTag(String tag) {
@@ -52,8 +60,13 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the tag that must be associated with the execution for it to meet the filter criteria.
      * </p>
+     * <p>
+     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
      * 
-     * @return Specifies the tag that must be associated with the execution for it to meet the filter criteria.
+     * @return Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
+     *         <p>
+     *         Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
      */
 
     public String getTag() {
@@ -64,9 +77,14 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the tag that must be associated with the execution for it to meet the filter criteria.
      * </p>
+     * <p>
+     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
      * 
      * @param tag
-     *        Specifies the tag that must be associated with the execution for it to meet the filter criteria.
+     *        Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
+     *        <p>
+     *        Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,12 +36,12 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * The user defined identifier associated with the workflow execution. You can use this to associate a custom
      * identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically
      * a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same
-     * <code>workflowId</code> at the same time.
+     * <code>workflowId</code> at the same time within the same domain.
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      */
     private String workflowId;
@@ -66,7 +66,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      */
     private TaskList taskList;
@@ -79,7 +79,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      */
@@ -186,8 +186,8 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any
      * attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history
      * event. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
-     * >http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
+     * >https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -239,23 +239,23 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * The user defined identifier associated with the workflow execution. You can use this to associate a custom
      * identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically
      * a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same
-     * <code>workflowId</code> at the same time.
+     * <code>workflowId</code> at the same time within the same domain.
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param workflowId
      *        The user defined identifier associated with the workflow execution. You can use this to associate a custom
      *        identifier with the workflow execution. You may specify the same identifier if a workflow execution is
      *        logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the
-     *        same <code>workflowId</code> at the same time.</p>
+     *        same <code>workflowId</code> at the same time within the same domain.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      */
 
@@ -268,22 +268,22 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * The user defined identifier associated with the workflow execution. You can use this to associate a custom
      * identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically
      * a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same
-     * <code>workflowId</code> at the same time.
+     * <code>workflowId</code> at the same time within the same domain.
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @return The user defined identifier associated with the workflow execution. You can use this to associate a
      *         custom identifier with the workflow execution. You may specify the same identifier if a workflow
      *         execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow
-     *         executions with the same <code>workflowId</code> at the same time.</p>
+     *         executions with the same <code>workflowId</code> at the same time within the same domain.</p>
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *         <code>arn</code>.
      */
 
@@ -296,23 +296,23 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * The user defined identifier associated with the workflow execution. You can use this to associate a custom
      * identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically
      * a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same
-     * <code>workflowId</code> at the same time.
+     * <code>workflowId</code> at the same time within the same domain.
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param workflowId
      *        The user defined identifier associated with the workflow execution. You can use this to associate a custom
      *        identifier with the workflow execution. You may specify the same identifier if a workflow execution is
      *        logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the
-     *        same <code>workflowId</code> at the same time.</p>
+     *        same <code>workflowId</code> at the same time within the same domain.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -377,7 +377,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
@@ -392,7 +392,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      */
 
@@ -415,7 +415,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @return The task list to use for the decision tasks generated for this workflow execution. This overrides the
@@ -429,7 +429,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *         <code>arn</code>.
      */
 
@@ -452,7 +452,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
@@ -467,7 +467,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -486,7 +486,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -497,7 +497,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *        (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
@@ -514,7 +514,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -525,7 +525,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *         priority.</p>
      *         <p>
      *         For more information about setting task priority, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *         Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
@@ -542,7 +542,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -553,7 +553,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *        (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1334,8 +1334,8 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any
      * attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history
      * event. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
-     * >http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
+     * >https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -1346,8 +1346,8 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *        Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM
      *        role, any attempt to schedule a Lambda task fails. This results in a
      *        <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
-     *        >http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
+     *        >https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF
      *        Developer Guide</i>.
      *        </p>
      */
@@ -1365,8 +1365,8 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any
      * attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history
      * event. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
-     * >http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
+     * >https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -1376,8 +1376,8 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *         Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM
      *         role, any attempt to schedule a Lambda task fails. This results in a
      *         <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
-     *         >http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
+     *         >https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF
      *         Developer Guide</i>.
      *         </p>
      */
@@ -1395,8 +1395,8 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any
      * attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history
      * event. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
-     * >http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
+     * >https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -1407,8 +1407,8 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *        Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM
      *        role, any attempt to schedule a Lambda task fails. This results in a
      *        <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
-     *        >http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html"
+     *        >https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF
      *        Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

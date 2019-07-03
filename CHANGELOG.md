@@ -1,3 +1,20 @@
+# __1.11.587__ __2019-07-03__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - AssignPrivateIpAddresses response includes two new fields: AssignedPrivateIpAddresses, NetworkInterfaceId
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release supports Cross-Account Cloning for Amazon Aurora clusters.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Add S3 x-amz-server-side-encryption-context support.
+
+## __Amazon Simple Workflow Service__
+  - ### Features
+    - This release adds APIs that allow adding and removing tags to a SWF domain, and viewing tags for a domain. It also enables adding tags when creating a domain.
+
 # __1.11.586__ __2019-07-02__
 ## __AWS Elemental MediaStore__
   - ### Features

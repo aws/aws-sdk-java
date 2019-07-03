@@ -32,7 +32,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      */
     private String name;
@@ -53,11 +53,20 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits,
-     * see: <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     * see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
      * Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      */
     private String workflowExecutionRetentionPeriodInDays;
+    /**
+     * <p>
+     * Tags to be added when registering a domain.
+     * </p>
+     * <p>
+     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
+     */
+    private java.util.List<ResourceTag> tags;
 
     /**
      * <p>
@@ -66,7 +75,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param name
@@ -75,7 +84,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      */
 
@@ -90,7 +99,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @return Name of the domain to register. The name must be unique in the region that the domain is registered
@@ -98,7 +107,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *         <code>arn</code>.
      */
 
@@ -113,7 +122,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param name
@@ -122,7 +131,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -183,7 +192,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits,
-     * see: <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     * see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
      * Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -199,7 +208,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service
      *        limits, see: <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
      *        Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
@@ -218,7 +227,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits,
-     * see: <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     * see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
      * Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -233,7 +242,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service
      *         limits, see: <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
      *         Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
@@ -252,7 +261,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits,
-     * see: <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     * see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
      * Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -268,13 +277,103 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service
      *        limits, see: <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service
      *        Limits</a> in the <i>Amazon SWF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterDomainRequest withWorkflowExecutionRetentionPeriodInDays(String workflowExecutionRetentionPeriodInDays) {
         setWorkflowExecutionRetentionPeriodInDays(workflowExecutionRetentionPeriodInDays);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags to be added when registering a domain.
+     * </p>
+     * <p>
+     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
+     * 
+     * @return Tags to be added when registering a domain.</p>
+     *         <p>
+     *         Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     */
+
+    public java.util.List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags to be added when registering a domain.
+     * </p>
+     * <p>
+     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to be added when registering a domain.</p>
+     *        <p>
+     *        Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     */
+
+    public void setTags(java.util.Collection<ResourceTag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<ResourceTag>(tags);
+    }
+
+    /**
+     * <p>
+     * Tags to be added when registering a domain.
+     * </p>
+     * <p>
+     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to be added when registering a domain.</p>
+     *        <p>
+     *        Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterDomainRequest withTags(ResourceTag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<ResourceTag>(tags.length));
+        }
+        for (ResourceTag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags to be added when registering a domain.
+     * </p>
+     * <p>
+     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to be added when registering a domain.</p>
+     *        <p>
+     *        Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterDomainRequest withTags(java.util.Collection<ResourceTag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -295,7 +394,9 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getWorkflowExecutionRetentionPeriodInDays() != null)
-            sb.append("WorkflowExecutionRetentionPeriodInDays: ").append(getWorkflowExecutionRetentionPeriodInDays());
+            sb.append("WorkflowExecutionRetentionPeriodInDays: ").append(getWorkflowExecutionRetentionPeriodInDays()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -323,6 +424,10 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
         if (other.getWorkflowExecutionRetentionPeriodInDays() != null
                 && other.getWorkflowExecutionRetentionPeriodInDays().equals(this.getWorkflowExecutionRetentionPeriodInDays()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -334,6 +439,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getWorkflowExecutionRetentionPeriodInDays() == null) ? 0 : getWorkflowExecutionRetentionPeriodInDays().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

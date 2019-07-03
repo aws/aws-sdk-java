@@ -236,6 +236,19 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceOutput> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceOutput> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceOutput> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<WorkflowTypeInfos> listWorkflowTypesAsync(ListWorkflowTypesRequest request) {
 
         return listWorkflowTypesAsync(request, null);
@@ -418,6 +431,19 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     }
 
     @Override
+    public java.util.concurrent.Future<Void> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<Void> terminateWorkflowExecutionAsync(TerminateWorkflowExecutionRequest request) {
 
         return terminateWorkflowExecutionAsync(request, null);
@@ -426,6 +452,58 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     @Override
     public java.util.concurrent.Future<Void> terminateWorkflowExecutionAsync(TerminateWorkflowExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<TerminateWorkflowExecutionRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> undeprecateActivityTypeAsync(UndeprecateActivityTypeRequest request) {
+
+        return undeprecateActivityTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> undeprecateActivityTypeAsync(UndeprecateActivityTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<UndeprecateActivityTypeRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> undeprecateDomainAsync(UndeprecateDomainRequest request) {
+
+        return undeprecateDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> undeprecateDomainAsync(UndeprecateDomainRequest request,
+            com.amazonaws.handlers.AsyncHandler<UndeprecateDomainRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> undeprecateWorkflowTypeAsync(UndeprecateWorkflowTypeRequest request) {
+
+        return undeprecateWorkflowTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> undeprecateWorkflowTypeAsync(UndeprecateWorkflowTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<UndeprecateWorkflowTypeRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, Void> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

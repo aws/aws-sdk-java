@@ -201,6 +201,11 @@ public interface Headers {
      */
     public static final String SERVER_SIDE_ENCRYPTION_AWS_KMS_KEYID = "x-amz-server-side-encryption-aws-kms-key-id";
 
+    /**
+     * AWS KMS Encryption Context to use for object encryption
+     */
+    public static final String SERVER_SIDE_ENCRYPTION_AWS_KMS_CONTEXT= "x-amz-server-side-encryption-context";
+
     /** Header for the replication status of an Amazon S3 Object.*/
     public static final String OBJECT_REPLICATION_STATUS = "x-amz-replication-status";
 

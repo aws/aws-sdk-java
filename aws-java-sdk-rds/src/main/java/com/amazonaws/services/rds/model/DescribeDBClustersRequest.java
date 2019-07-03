@@ -82,6 +82,13 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String marker;
+    /**
+     * <p>
+     * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
+     * other AWS accounts.
+     * </p>
+     */
+    private Boolean includeShared;
 
     /**
      * <p>
@@ -481,6 +488,66 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
+     * other AWS accounts.
+     * </p>
+     * 
+     * @param includeShared
+     *        Optional Boolean parameter that specifies whether the output includes information about clusters shared
+     *        from other AWS accounts.
+     */
+
+    public void setIncludeShared(Boolean includeShared) {
+        this.includeShared = includeShared;
+    }
+
+    /**
+     * <p>
+     * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
+     * other AWS accounts.
+     * </p>
+     * 
+     * @return Optional Boolean parameter that specifies whether the output includes information about clusters shared
+     *         from other AWS accounts.
+     */
+
+    public Boolean getIncludeShared() {
+        return this.includeShared;
+    }
+
+    /**
+     * <p>
+     * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
+     * other AWS accounts.
+     * </p>
+     * 
+     * @param includeShared
+     *        Optional Boolean parameter that specifies whether the output includes information about clusters shared
+     *        from other AWS accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDBClustersRequest withIncludeShared(Boolean includeShared) {
+        setIncludeShared(includeShared);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
+     * other AWS accounts.
+     * </p>
+     * 
+     * @return Optional Boolean parameter that specifies whether the output includes information about clusters shared
+     *         from other AWS accounts.
+     */
+
+    public Boolean isIncludeShared() {
+        return this.includeShared;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -499,7 +566,9 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
         if (getMaxRecords() != null)
             sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: ").append(getMarker());
+            sb.append("Marker: ").append(getMarker()).append(",");
+        if (getIncludeShared() != null)
+            sb.append("IncludeShared: ").append(getIncludeShared());
         sb.append("}");
         return sb.toString();
     }
@@ -530,6 +599,10 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
+        if (other.getIncludeShared() == null ^ this.getIncludeShared() == null)
+            return false;
+        if (other.getIncludeShared() != null && other.getIncludeShared().equals(this.getIncludeShared()) == false)
+            return false;
         return true;
     }
 
@@ -542,6 +615,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getIncludeShared() == null) ? 0 : getIncludeShared().hashCode());
         return hashCode;
     }
 

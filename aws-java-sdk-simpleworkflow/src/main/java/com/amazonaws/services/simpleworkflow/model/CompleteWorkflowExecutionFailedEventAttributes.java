@@ -36,7 +36,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      * <p>
      * If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked
      * sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
      * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -59,7 +59,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      * <p>
      * If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked
      * sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
      * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -70,7 +70,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      *        <p>
      *        If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it
      *        lacked sufficient permissions. For details and example IAM policies, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage
      *        Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      *        </p>
      * @see CompleteWorkflowExecutionFailedCause
@@ -88,7 +88,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      * <p>
      * If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked
      * sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
      * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -98,7 +98,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      *         <p>
      *         If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it
      *         lacked sufficient permissions. For details and example IAM policies, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage
      *         Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      *         </p>
      * @see CompleteWorkflowExecutionFailedCause
@@ -116,7 +116,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      * <p>
      * If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked
      * sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
      * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -127,7 +127,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      *        <p>
      *        If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it
      *        lacked sufficient permissions. For details and example IAM policies, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage
      *        Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -147,7 +147,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      * <p>
      * If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked
      * sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
      * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -158,7 +158,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      *        <p>
      *        If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it
      *        lacked sufficient permissions. For details and example IAM policies, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage
      *        Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      *        </p>
      * @see CompleteWorkflowExecutionFailedCause
@@ -176,7 +176,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      * <p>
      * If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked
      * sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
      * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -187,7 +187,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      *        <p>
      *        If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it
      *        lacked sufficient permissions. For details and example IAM policies, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage
      *        Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

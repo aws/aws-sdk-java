@@ -38,7 +38,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      */
     private TaskList taskList;
@@ -51,9 +51,11 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
     private String identity;
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
@@ -70,9 +72,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
     private String nextPageToken;
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
-     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
-     * size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -135,7 +136,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
@@ -143,7 +144,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      */
 
@@ -158,14 +159,14 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @return Specifies the task list to poll for decision tasks.</p>
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *         <code>arn</code>.
      */
 
@@ -180,7 +181,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
@@ -188,7 +189,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -249,9 +250,11 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
@@ -266,9 +269,11 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </note>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *        retrieve the next page of results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     *        If <code>NextPageToken</code> is returned there are more results available. The value of
+     *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      *        </p>
@@ -287,9 +292,11 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
@@ -303,9 +310,11 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * </note>
      * 
-     * @return If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *         retrieve the next page of results, make the call again using the returned token in
-     *         <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     * @return If <code>NextPageToken</code> is returned there are more results available. The value of
+     *         <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *         returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *         expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *         <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *         <p>
      *         The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      *         </p>
@@ -324,9 +333,11 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
@@ -341,9 +352,11 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </note>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *        retrieve the next page of results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     *        If <code>NextPageToken</code> is returned there are more results available. The value of
+     *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      *        </p>
@@ -364,9 +377,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
-     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
-     * size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -374,9 +386,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
-     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
-     *        specify a page size <i>smaller</i> than the maximum.</p>
+     *        The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further
+     *        pages of results. </p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the
      *        specified maximum.
@@ -388,18 +399,16 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
-     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
-     * size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
      * maximum.
      * </p>
      * 
-     * @return The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to
-     *         obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *         however, specify a page size <i>smaller</i> than the maximum.</p>
+     * @return The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain
+     *         further pages of results. </p>
      *         <p>
      *         This is an upper limit only; the actual number of results returned per call may be fewer than the
      *         specified maximum.
@@ -411,9 +420,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
-     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
-     * size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -421,9 +429,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
-     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
-     *        specify a page size <i>smaller</i> than the maximum.</p>
+     *        The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further
+     *        pages of results. </p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the
      *        specified maximum.

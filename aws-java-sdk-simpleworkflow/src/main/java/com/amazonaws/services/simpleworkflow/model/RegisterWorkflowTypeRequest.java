@@ -38,7 +38,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      */
     private String name;
@@ -55,7 +55,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      */
     private String version;
@@ -107,7 +107,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      */
@@ -151,7 +151,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when
      * you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http://docs.aws.amazon.com/
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/
      * amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -205,7 +205,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param name
@@ -213,7 +213,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      */
 
@@ -228,14 +228,14 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @return The name of the workflow type.</p>
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *         <code>arn</code>.
      */
 
@@ -250,7 +250,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param name
@@ -258,7 +258,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -281,7 +281,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param version
@@ -294,7 +294,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      */
 
@@ -315,7 +315,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @return The version of the workflow type.</p> <note>
@@ -328,7 +328,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *         <code>arn</code>.
      */
 
@@ -349,7 +349,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param version
@@ -362,7 +362,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -631,7 +631,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -641,7 +641,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
@@ -657,7 +657,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -666,7 +666,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *         <p>
      *         For more information about setting task priority, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *         Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
@@ -682,7 +682,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -692,7 +692,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1028,7 +1028,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when
      * you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http://docs.aws.amazon.com/
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/
      * amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -1039,7 +1039,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM
      *        role when you start this workflow type, the default Lambda role is attached to the execution. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https
      *        ://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer
      *        Guide</i>.
      *        </p>
@@ -1057,7 +1057,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when
      * you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http://docs.aws.amazon.com/
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/
      * amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -1067,7 +1067,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      *         Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM
      *         role when you start this workflow type, the default Lambda role is attached to the execution. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https
      *         ://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF
      *         Developer Guide</i>.
      *         </p>
@@ -1085,7 +1085,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when
      * you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http://docs.aws.amazon.com/
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/
      * amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -1096,7 +1096,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM
      *        role when you start this workflow type, the default Lambda role is attached to the execution. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https
      *        ://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer
      *        Guide</i>.
      *        </p>

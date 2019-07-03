@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Returned if the specified domain already exists. You get this fault even if the existing domain is in deprecated
- * status.
+ * Returned if the domain already exists. You may get this fault if you are registering a domain that is either already
+ * registered or deprecated, or if you undeprecate a domain that is currently registered.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

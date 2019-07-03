@@ -60,6 +60,12 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The ARN of the domain.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -350,6 +356,46 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ARN of the domain.
+     * </p>
+     * 
+     * @param arn
+     *        The ARN of the domain.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the domain.
+     * </p>
+     * 
+     * @return The ARN of the domain.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the domain.
+     * </p>
+     * 
+     * @param arn
+     *        The ARN of the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainInfo withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -366,7 +412,9 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -393,6 +441,10 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -404,6 +456,7 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

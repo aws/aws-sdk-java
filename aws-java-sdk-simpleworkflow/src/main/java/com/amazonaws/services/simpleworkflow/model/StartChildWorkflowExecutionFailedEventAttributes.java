@@ -42,8 +42,8 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      * <p>
      * When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it lacks
      * sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to
-     * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access
+     * to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
      */
@@ -131,8 +131,8 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      * <p>
      * When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it lacks
      * sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to
-     * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access
+     * to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -142,7 +142,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      *        <p>
      *        When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it
      *        lacks sufficient permissions. For details and example IAM policies, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage
      *        Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      *        </p>
      * @see StartChildWorkflowExecutionFailedCause
@@ -160,8 +160,8 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      * <p>
      * When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it lacks
      * sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to
-     * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access
+     * to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -170,7 +170,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      *         <p>
      *         When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it
      *         lacks sufficient permissions. For details and example IAM policies, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage
      *         Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      *         </p>
      * @see StartChildWorkflowExecutionFailedCause
@@ -188,8 +188,8 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      * <p>
      * When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it lacks
      * sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to
-     * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access
+     * to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -199,7 +199,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      *        <p>
      *        When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it
      *        lacks sufficient permissions. For details and example IAM policies, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage
      *        Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -219,8 +219,8 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      * <p>
      * When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it lacks
      * sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to
-     * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access
+     * to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -230,7 +230,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      *        <p>
      *        When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it
      *        lacks sufficient permissions. For details and example IAM policies, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage
      *        Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      *        </p>
      * @see StartChildWorkflowExecutionFailedCause
@@ -248,8 +248,8 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      * <p>
      * When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it lacks
      * sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to
-     * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access
+     * to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -259,7 +259,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      *        <p>
      *        When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it
      *        lacks sufficient permissions. For details and example IAM policies, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage
      *        Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

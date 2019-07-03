@@ -33,6 +33,8 @@ public class DomainInfoMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
 
     private static final DomainInfoMarshaller instance = new DomainInfoMarshaller();
 
@@ -53,6 +55,7 @@ public class DomainInfoMarshaller {
             protocolMarshaller.marshall(domainInfo.getName(), NAME_BINDING);
             protocolMarshaller.marshall(domainInfo.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(domainInfo.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(domainInfo.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

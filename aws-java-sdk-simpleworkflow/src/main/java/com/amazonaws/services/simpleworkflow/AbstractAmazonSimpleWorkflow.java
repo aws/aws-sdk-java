@@ -118,6 +118,11 @@ public class AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflow {
     }
 
     @Override
+    public ListTagsForResourceOutput listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public WorkflowTypeInfos listWorkflowTypes(ListWorkflowTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -188,7 +193,32 @@ public class AbstractAmazonSimpleWorkflow implements AmazonSimpleWorkflow {
     }
 
     @Override
+    public void tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void terminateWorkflowExecution(TerminateWorkflowExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public void undeprecateActivityType(UndeprecateActivityTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public void undeprecateDomain(UndeprecateDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public void undeprecateWorkflowType(UndeprecateWorkflowTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public void untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

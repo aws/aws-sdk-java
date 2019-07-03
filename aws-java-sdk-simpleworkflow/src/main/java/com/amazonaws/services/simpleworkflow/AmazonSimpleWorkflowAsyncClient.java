@@ -43,7 +43,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i>
- * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.
+ * <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.
  * </p>
  */
 @ThreadSafe
@@ -785,6 +785,39 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceOutput> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceOutput> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceOutput> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceOutput>() {
+            @Override
+            public ListTagsForResourceOutput call() throws Exception {
+                ListTagsForResourceOutput result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<WorkflowTypeInfos> listWorkflowTypesAsync(ListWorkflowTypesRequest request) {
 
         return listWorkflowTypesAsync(request, null);
@@ -1247,6 +1280,39 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     }
 
     @Override
+    public java.util.concurrent.Future<Void> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, Void> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+                Void result = null;
+
+                try {
+                    executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<Void> terminateWorkflowExecutionAsync(TerminateWorkflowExecutionRequest request) {
 
         return terminateWorkflowExecutionAsync(request, null);
@@ -1264,6 +1330,138 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
 
                 try {
                     executeTerminateWorkflowExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> undeprecateActivityTypeAsync(UndeprecateActivityTypeRequest request) {
+
+        return undeprecateActivityTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> undeprecateActivityTypeAsync(final UndeprecateActivityTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UndeprecateActivityTypeRequest, Void> asyncHandler) {
+        final UndeprecateActivityTypeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+                Void result = null;
+
+                try {
+                    executeUndeprecateActivityType(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> undeprecateDomainAsync(UndeprecateDomainRequest request) {
+
+        return undeprecateDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> undeprecateDomainAsync(final UndeprecateDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UndeprecateDomainRequest, Void> asyncHandler) {
+        final UndeprecateDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+                Void result = null;
+
+                try {
+                    executeUndeprecateDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> undeprecateWorkflowTypeAsync(UndeprecateWorkflowTypeRequest request) {
+
+        return undeprecateWorkflowTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> undeprecateWorkflowTypeAsync(final UndeprecateWorkflowTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UndeprecateWorkflowTypeRequest, Void> asyncHandler) {
+        final UndeprecateWorkflowTypeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+                Void result = null;
+
+                try {
+                    executeUndeprecateWorkflowType(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, Void> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+                Void result = null;
+
+                try {
+                    executeUntagResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

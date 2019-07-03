@@ -21,13 +21,20 @@ public class SSEAwsKeyManagementParams implements Serializable {
      * The AWS Key Management Key id to be used for Server Side Encryption of
      * the Amazon S3 object.
      */
-    private final String awsKmsKeyId;
+    private String awsKmsKeyId;
+
+    /*
+     * Specifies the AWS KMS Encryption Context to use for object encryption.
+     * The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
+     */
+    private String awsKmsEncryptionContext;
 
     /**
      * Constructs a new instance of SSEAwsKeyManagementParams. The default AWS
      * KMS Key id is used for encryption.
      */
     public SSEAwsKeyManagementParams() {
+        this.awsKmsEncryptionContext = null;
         this.awsKmsKeyId = null;
     }
 
@@ -41,6 +48,7 @@ public class SSEAwsKeyManagementParams implements Serializable {
                     "AWS Key Management System Key id cannot be null");
         }
         this.awsKmsKeyId = awsKmsKeyId;
+        this.awsKmsEncryptionContext = null;
     }
 
     /**
@@ -52,10 +60,45 @@ public class SSEAwsKeyManagementParams implements Serializable {
     }
 
     /**
+     * Sets the awsKmsKeyId
+     *
+     * @param awsKmsKeyId The new awsKmsKeyId value.
+     * @return This object for method chaining.
+     */
+    public SSEAwsKeyManagementParams withAwsKmsKeyId(String awsKmsKeyId) {
+        setAwsKmsKeyId(awsKmsKeyId);
+        return this;
+    }
+
+    private void setAwsKmsKeyId(String awsKmsKeyId) {
+        this.awsKmsKeyId = awsKmsKeyId;
+    }
+
+    /**
      * Returns the scheme used for encrypting the Amazon S3 object. Currently
      * the encryption is always "aws:kms".
      */
     public String getEncryption() {
         return SSEAlgorithm.KMS.getAlgorithm();
+    }
+
+
+    public String getAwsKmsEncryptionContext() {
+        return awsKmsEncryptionContext;
+    }
+
+    /**
+     * Sets the awsKmsEncryptionContext
+     *
+     * @param awsKmsEncryptionContext The new awsKmsEncryptionContext value.
+     * @return This object for method chaining.
+     */
+    public SSEAwsKeyManagementParams withAwsKmsEncryptionContext(String awsKmsEncryptionContext) {
+        setAwsKmsEncryptionContext(awsKmsEncryptionContext);
+        return this;
+    }
+
+    private void setAwsKmsEncryptionContext(String awsKmsEncryptionContext) {
+        this.awsKmsEncryptionContext = awsKmsEncryptionContext;
     }
 }

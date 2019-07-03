@@ -891,6 +891,15 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
                 .get(Headers.SERVER_SIDE_ENCRYPTION_AWS_KMS_KEYID);
     }
 
+    /**
+     * Returns the AWS Key Management System encryption context used for Server Side
+     * Encryption of the Amazon S3 object.
+     */
+    public String getSSEAwsKmsEncryptionContext() {
+        return (String) metadata
+            .get(Headers.SERVER_SIDE_ENCRYPTION_AWS_KMS_CONTEXT);
+    }
+
     @Override
     public boolean isRequesterCharged() {
         return metadata.get(Headers.REQUESTER_CHARGED_HEADER) != null;

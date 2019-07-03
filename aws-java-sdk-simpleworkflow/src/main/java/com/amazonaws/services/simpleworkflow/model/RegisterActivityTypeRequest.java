@@ -38,7 +38,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      */
     private String name;
@@ -54,7 +54,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      */
     private String version;
@@ -108,7 +108,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      * </p>
      */
@@ -184,7 +184,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param name
@@ -192,7 +192,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      */
 
@@ -207,14 +207,14 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @return The name of the activity type within the domain.</p>
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *         <code>arn</code>.
      */
 
@@ -229,7 +229,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param name
@@ -237,7 +237,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -259,7 +259,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param version
@@ -272,7 +272,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      */
 
@@ -292,7 +292,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @return The version of the activity type.</p> <note>
@@ -304,7 +304,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *         <code>arn</code>.
      */
 
@@ -324,7 +324,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param version
@@ -337,7 +337,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
      *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -617,7 +617,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      * </p>
      * 
@@ -627,7 +627,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *        Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      */
 
@@ -643,7 +643,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      * </p>
      * 
@@ -652,7 +652,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *         <p>
      *         For more information about setting task priority, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *         Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      */
 
@@ -668,7 +668,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      * </p>
      * 
@@ -678,7 +678,7 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *        Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

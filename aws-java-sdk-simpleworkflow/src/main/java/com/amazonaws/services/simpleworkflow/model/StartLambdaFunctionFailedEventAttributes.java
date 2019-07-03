@@ -44,7 +44,7 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      * <p>
      * If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role
      * attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
      * <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -115,7 +115,7 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      * <p>
      * If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role
      * attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
      * <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -126,8 +126,8 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      *        <p>
      *        If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM
      *        role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
-     *        <i>Amazon SWF Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in
+     *        the <i>Amazon SWF Developer Guide</i>.
      *        </p>
      * @see StartLambdaFunctionFailedCause
      */
@@ -145,7 +145,7 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      * <p>
      * If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role
      * attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
      * <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -155,8 +155,8 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      *         <p>
      *         If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM
      *         role attached to the execution lacked sufficient permissions. For details and example IAM policies, see
-     *         <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in
-     *         the <i>Amazon SWF Developer Guide</i>.
+     *         <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a>
+     *         in the <i>Amazon SWF Developer Guide</i>.
      *         </p>
      * @see StartLambdaFunctionFailedCause
      */
@@ -174,7 +174,7 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      * <p>
      * If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role
      * attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
      * <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -185,8 +185,8 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      *        <p>
      *        If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM
      *        role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
-     *        <i>Amazon SWF Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in
+     *        the <i>Amazon SWF Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StartLambdaFunctionFailedCause
@@ -206,7 +206,7 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      * <p>
      * If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role
      * attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
      * <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -217,8 +217,8 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      *        <p>
      *        If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM
      *        role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
-     *        <i>Amazon SWF Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in
+     *        the <i>Amazon SWF Developer Guide</i>.
      *        </p>
      * @see StartLambdaFunctionFailedCause
      */
@@ -236,7 +236,7 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      * <p>
      * If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role
      * attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
      * <i>Amazon SWF Developer Guide</i>.
      * </p>
      * </note>
@@ -247,8 +247,8 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      *        <p>
      *        If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM
      *        role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
-     *        <i>Amazon SWF Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in
+     *        the <i>Amazon SWF Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StartLambdaFunctionFailedCause

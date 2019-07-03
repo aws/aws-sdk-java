@@ -70,7 +70,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the
  * specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to
  * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a
- * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
+ * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
  * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
  * </p>
  * 
@@ -155,7 +155,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      */
@@ -655,7 +655,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -666,7 +666,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *        (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
@@ -683,7 +683,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -693,7 +693,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *         (2147483647). Higher numbers indicate higher priority.</p>
      *         <p>
      *         For more information about setting task priority, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *         Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
@@ -710,7 +710,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -721,7 +721,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *        (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

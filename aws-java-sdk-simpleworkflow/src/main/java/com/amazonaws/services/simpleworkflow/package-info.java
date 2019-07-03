@@ -25,7 +25,7 @@
  * </p>
  * <p>
  * This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i>
- * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.
+ * <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.
  * </p>
  */
 package com.amazonaws.services.simpleworkflow;

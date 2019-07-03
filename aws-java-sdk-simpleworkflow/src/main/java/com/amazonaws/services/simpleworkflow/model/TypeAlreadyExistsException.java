@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Returned if the type already exists in the specified domain. You get this fault even if the existing type is in
- * deprecated status. You can specify another version if the intent is to create a new distinct version of the type.
+ * Returned if the type already exists in the specified domain. You may get this fault if you are registering a type
+ * that is either already registered or deprecated, or if you undeprecate a type that is currently registered.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

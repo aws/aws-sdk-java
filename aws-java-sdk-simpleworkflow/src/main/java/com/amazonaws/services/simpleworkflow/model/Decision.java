@@ -107,7 +107,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express
  * permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions
  * as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM
- * policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to
+ * policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to
  * Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
  * </p>
  * <p>
@@ -138,8 +138,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * One of the following events might be added to the history to indicate an error. The event attribute's
  * <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to
  * <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and
- * example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
- * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+ * example IAM policies, see <a
+ * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
+ * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
  * </p>
  * <ul>
  * <li>

@@ -88,7 +88,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      */
@@ -447,7 +447,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -460,7 +460,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      *        </p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
@@ -479,7 +479,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -491,7 +491,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      *         </p>
      *         <p>
      *         For more information about setting task priority, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *         Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
@@ -510,7 +510,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
@@ -523,7 +523,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      *        </p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
      *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

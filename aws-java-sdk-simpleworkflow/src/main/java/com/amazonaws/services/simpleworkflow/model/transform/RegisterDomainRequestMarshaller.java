@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class RegisterDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> WORKFLOWEXECUTIONRETENTIONPERIODINDAYS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workflowExecutionRetentionPeriodInDays").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final RegisterDomainRequestMarshaller instance = new RegisterDomainRequestMarshaller();
 
@@ -53,6 +56,7 @@ public class RegisterDomainRequestMarshaller {
             protocolMarshaller.marshall(registerDomainRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(registerDomainRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(registerDomainRequest.getWorkflowExecutionRetentionPeriodInDays(), WORKFLOWEXECUTIONRETENTIONPERIODINDAYS_BINDING);
+            protocolMarshaller.marshall(registerDomainRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
