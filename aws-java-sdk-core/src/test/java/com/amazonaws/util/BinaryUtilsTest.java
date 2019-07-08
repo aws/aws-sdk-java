@@ -22,7 +22,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertArrayEquals;
 
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
@@ -44,6 +46,37 @@ public class BinaryUtilsTest {
             String hex2 = Base16Lower.encodeAsString(new byte[] {-1});
             assertEquals(hex, hex2);
         }
+    }
+
+    @Test
+    public void testFromHex() {
+        assertArrayEquals(new byte[]{0}, BinaryUtils.fromHex("00"));
+        assertArrayEquals(new byte[]{-1}, BinaryUtils.fromHex("ff"));
+    }
+
+    @Test
+    public void testToBase64() {
+        assertEquals("AA==", BinaryUtils.toBase64(new byte[]{0}));
+        assertEquals("/w==", BinaryUtils.toBase64(new byte[]{-1}));
+        assertEquals("AQID", BinaryUtils.toBase64(new byte[]{1, 2, 3}));
+    }
+
+    @Test
+    public void testFromBase64() {
+        assertNull(BinaryUtils.fromBase64(null));
+        assertArrayEquals(new byte[]{0}, BinaryUtils.fromBase64("AA=="));
+        assertArrayEquals(new byte[]{-1}, BinaryUtils.fromBase64("/w=="));
+        assertArrayEquals(new byte[]{1, 2, 3}, BinaryUtils.fromBase64("AQID"));
+    }
+
+    @Test
+    public void testToStream() throws IOException {
+        assertArrayEquals(new byte[0],
+                IOUtils.toByteArray(BinaryUtils.toStream(null)));
+        assertArrayEquals(new byte[0],
+                IOUtils.toByteArray(BinaryUtils.toStream(ByteBuffer.allocate(0))));
+        assertArrayEquals(new byte[]{0, 0, 0},
+                IOUtils.toByteArray(BinaryUtils.toStream(ByteBuffer.allocate(3))));
     }
 
     @Test
