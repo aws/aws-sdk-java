@@ -314,6 +314,39 @@ public class AWSCostExplorerAsyncClient extends AWSCostExplorerClient implements
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<GetUsageForecastResult> getUsageForecastAsync(GetUsageForecastRequest request) {
+
+        return getUsageForecastAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsageForecastResult> getUsageForecastAsync(final GetUsageForecastRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetUsageForecastRequest, GetUsageForecastResult> asyncHandler) {
+        final GetUsageForecastRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetUsageForecastResult>() {
+            @Override
+            public GetUsageForecastResult call() throws Exception {
+                GetUsageForecastResult result = null;
+
+                try {
+                    result = executeGetUsageForecast(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

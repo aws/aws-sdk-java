@@ -96,6 +96,9 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnresolvableUsageUnitException").withModeledClass(
+                                    com.amazonaws.services.costexplorer.model.UnresolvableUsageUnitException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RequestChangedException").withModeledClass(
                                     com.amazonaws.services.costexplorer.model.RequestChangedException.class))
                     .addErrorMetadata(
@@ -676,6 +679,67 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<GetTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast time period
+     * that you select, based on your past usage.
+     * </p>
+     * 
+     * @param getUsageForecastRequest
+     * @return Result of the GetUsageForecast operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @throws UnresolvableUsageUnitException
+     *         Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code> filter
+     *         selections that contain matching units, for example: <code>hours</code>.(
+     * @sample AWSCostExplorer.GetUsageForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetUsageForecastResult getUsageForecast(GetUsageForecastRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetUsageForecast(request);
+    }
+
+    @SdkInternalApi
+    final GetUsageForecastResult executeGetUsageForecast(GetUsageForecastRequest getUsageForecastRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getUsageForecastRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetUsageForecastRequest> request = null;
+        Response<GetUsageForecastResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetUsageForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsageForecastRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUsageForecast");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetUsageForecastResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUsageForecastResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

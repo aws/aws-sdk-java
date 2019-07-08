@@ -43,27 +43,27 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * AmortizedCost
+     * AMORTIZED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * BlendedCost
+     * BLENDED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * NetAmortizedCost
+     * NET_AMORTIZED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * NetUnblendedCost
+     * NET_UNBLENDED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * UnblendedCost
+     * UNBLENDED_COST
      * </p>
      * </li>
      * </ul>
@@ -149,27 +149,27 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * AmortizedCost
+     * AMORTIZED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * BlendedCost
+     * BLENDED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * NetAmortizedCost
+     * NET_AMORTIZED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * NetUnblendedCost
+     * NET_UNBLENDED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * UnblendedCost
+     * UNBLENDED_COST
      * </p>
      * </li>
      * </ul>
@@ -184,27 +184,27 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        AmortizedCost
+     *        AMORTIZED_COST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BlendedCost
+     *        BLENDED_COST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NetAmortizedCost
+     *        NET_AMORTIZED_COST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NetUnblendedCost
+     *        NET_UNBLENDED_COST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UnblendedCost
+     *        UNBLENDED_COST
      *        </p>
      *        </li>
      * @see Metric
@@ -226,27 +226,27 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * AmortizedCost
+     * AMORTIZED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * BlendedCost
+     * BLENDED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * NetAmortizedCost
+     * NET_AMORTIZED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * NetUnblendedCost
+     * NET_UNBLENDED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * UnblendedCost
+     * UNBLENDED_COST
      * </p>
      * </li>
      * </ul>
@@ -260,27 +260,27 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         AmortizedCost
+     *         AMORTIZED_COST
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         BlendedCost
+     *         BLENDED_COST
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         NetAmortizedCost
+     *         NET_AMORTIZED_COST
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         NetUnblendedCost
+     *         NET_UNBLENDED_COST
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         UnblendedCost
+     *         UNBLENDED_COST
      *         </p>
      *         </li>
      * @see Metric
@@ -302,27 +302,27 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * AmortizedCost
+     * AMORTIZED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * BlendedCost
+     * BLENDED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * NetAmortizedCost
+     * NET_AMORTIZED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * NetUnblendedCost
+     * NET_UNBLENDED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * UnblendedCost
+     * UNBLENDED_COST
      * </p>
      * </li>
      * </ul>
@@ -337,27 +337,27 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        AmortizedCost
+     *        AMORTIZED_COST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BlendedCost
+     *        BLENDED_COST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NetAmortizedCost
+     *        NET_AMORTIZED_COST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NetUnblendedCost
+     *        NET_UNBLENDED_COST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UnblendedCost
+     *        UNBLENDED_COST
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -381,27 +381,27 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * AmortizedCost
+     * AMORTIZED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * BlendedCost
+     * BLENDED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * NetAmortizedCost
+     * NET_AMORTIZED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * NetUnblendedCost
+     * NET_UNBLENDED_COST
      * </p>
      * </li>
      * <li>
      * <p>
-     * UnblendedCost
+     * UNBLENDED_COST
      * </p>
      * </li>
      * </ul>
@@ -416,27 +416,27 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        AmortizedCost
+     *        AMORTIZED_COST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BlendedCost
+     *        BLENDED_COST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NetAmortizedCost
+     *        NET_AMORTIZED_COST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NetUnblendedCost
+     *        NET_UNBLENDED_COST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UnblendedCost
+     *        UNBLENDED_COST
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

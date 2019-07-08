@@ -466,4 +466,37 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     java.util.concurrent.Future<GetTagsResult> getTagsAsync(GetTagsRequest getTagsRequest,
             com.amazonaws.handlers.AsyncHandler<GetTagsRequest, GetTagsResult> asyncHandler);
 
+    /**
+     * <p>
+     * Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast time period
+     * that you select, based on your past usage.
+     * </p>
+     * 
+     * @param getUsageForecastRequest
+     * @return A Java Future containing the result of the GetUsageForecast operation returned by the service.
+     * @sample AWSCostExplorerAsync.GetUsageForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetUsageForecastResult> getUsageForecastAsync(GetUsageForecastRequest getUsageForecastRequest);
+
+    /**
+     * <p>
+     * Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast time period
+     * that you select, based on your past usage.
+     * </p>
+     * 
+     * @param getUsageForecastRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUsageForecast operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetUsageForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetUsageForecastResult> getUsageForecastAsync(GetUsageForecastRequest getUsageForecastRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUsageForecastRequest, GetUsageForecastResult> asyncHandler);
+
 }

@@ -304,6 +304,27 @@ public interface AWSCostExplorer {
     GetTagsResult getTags(GetTagsRequest getTagsRequest);
 
     /**
+     * <p>
+     * Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast time period
+     * that you select, based on your past usage.
+     * </p>
+     * 
+     * @param getUsageForecastRequest
+     * @return Result of the GetUsageForecast operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @throws UnresolvableUsageUnitException
+     *         Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code> filter
+     *         selections that contain matching units, for example: <code>hours</code>.(
+     * @sample AWSCostExplorer.GetUsageForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetUsageForecastResult getUsageForecast(GetUsageForecastRequest getUsageForecastRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.
