@@ -20,7 +20,6 @@ import com.amazonaws.services.opsworkscm.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSOpsWorksCMWaiters {
@@ -30,7 +29,7 @@ public class AWSOpsWorksCMWaiters {
      */
     private final AWSOpsWorksCM client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AWSOpsWorksCMWaiters");
 
     /**
      * Constructs a new AWSOpsWorksCMWaiters with the given client

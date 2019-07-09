@@ -78,6 +78,37 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
+     * Deletes the specified anomaly detection model from your account.
+     * </p>
+     * 
+     * @param deleteAnomalyDetectorRequest
+     * @return A Java Future containing the result of the DeleteAnomalyDetector operation returned by the service.
+     * @sample AmazonCloudWatchAsync.DeleteAnomalyDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAnomalyDetector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnomalyDetectorResult> deleteAnomalyDetectorAsync(DeleteAnomalyDetectorRequest deleteAnomalyDetectorRequest);
+
+    /**
+     * <p>
+     * Deletes the specified anomaly detection model from your account.
+     * </p>
+     * 
+     * @param deleteAnomalyDetectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAnomalyDetector operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.DeleteAnomalyDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAnomalyDetector"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnomalyDetectorResult> deleteAnomalyDetectorAsync(DeleteAnomalyDetectorRequest deleteAnomalyDetectorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAnomalyDetectorRequest, DeleteAnomalyDetectorResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes all dashboards that you specify. You may specify up to 100 dashboards to delete. If there is an error
      * during this call, no dashboards are deleted.
      * </p>
@@ -241,6 +272,41 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      */
     java.util.concurrent.Future<DescribeAlarmsForMetricResult> describeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAlarmsForMetricRequest, DescribeAlarmsForMetricResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the anomaly detection models that you have created in your account. You can list all models in your account
+     * or filter the results to only the models that are related to a certain namespace, metric name, or metric
+     * dimension.
+     * </p>
+     * 
+     * @param describeAnomalyDetectorsRequest
+     * @return A Java Future containing the result of the DescribeAnomalyDetectors operation returned by the service.
+     * @sample AmazonCloudWatchAsync.DescribeAnomalyDetectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAnomalyDetectors"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAnomalyDetectorsResult> describeAnomalyDetectorsAsync(DescribeAnomalyDetectorsRequest describeAnomalyDetectorsRequest);
+
+    /**
+     * <p>
+     * Lists the anomaly detection models that you have created in your account. You can list all models in your account
+     * or filter the results to only the models that are related to a certain namespace, metric name, or metric
+     * dimension.
+     * </p>
+     * 
+     * @param describeAnomalyDetectorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAnomalyDetectors operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.DescribeAnomalyDetectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAnomalyDetectors"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAnomalyDetectorsResult> describeAnomalyDetectorsAsync(DescribeAnomalyDetectorsRequest describeAnomalyDetectorsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAnomalyDetectorsRequest, DescribeAnomalyDetectorsResult> asyncHandler);
 
     /**
      * <p>
@@ -857,12 +923,54 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
+     * Creates an anomaly detection model for a CloudWatch metric. You can use the model to display a band of expected
+     * normal values when the metric is graphed.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html"
+     * >CloudWatch Anomaly Detection</a>.
+     * </p>
+     * 
+     * @param putAnomalyDetectorRequest
+     * @return A Java Future containing the result of the PutAnomalyDetector operation returned by the service.
+     * @sample AmazonCloudWatchAsync.PutAnomalyDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAnomalyDetectorResult> putAnomalyDetectorAsync(PutAnomalyDetectorRequest putAnomalyDetectorRequest);
+
+    /**
+     * <p>
+     * Creates an anomaly detection model for a CloudWatch metric. You can use the model to display a band of expected
+     * normal values when the metric is graphed.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html"
+     * >CloudWatch Anomaly Detection</a>.
+     * </p>
+     * 
+     * @param putAnomalyDetectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAnomalyDetector operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.PutAnomalyDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAnomalyDetectorResult> putAnomalyDetectorAsync(PutAnomalyDetectorRequest putAnomalyDetectorRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAnomalyDetectorRequest, PutAnomalyDetectorResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a dashboard if it does not already exist, or updates an existing dashboard. If you update a dashboard,
      * the entire contents are replaced with what you specify here.
      * </p>
      * <p>
-     * There is no limit to the number of dashboards in your account. All dashboards in your account are global, not
-     * region-specific.
+     * All dashboards in your account are global, not region-specific.
      * </p>
      * <p>
      * A simple way to create a dashboard using <code>PutDashboard</code> is to copy an existing dashboard. To copy an
@@ -892,8 +1000,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * the entire contents are replaced with what you specify here.
      * </p>
      * <p>
-     * There is no limit to the number of dashboards in your account. All dashboards in your account are global, not
-     * region-specific.
+     * All dashboards in your account are global, not region-specific.
      * </p>
      * <p>
      * A simple way to create a dashboard using <code>PutDashboard</code> is to copy an existing dashboard. To copy an
@@ -924,7 +1031,11 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
-     * Creates or updates an alarm and associates it with the specified metric or metric math expression.
+     * Creates or updates an alarm and associates it with the specified metric, metric math expression, or anomaly
+     * detection model.
+     * </p>
+     * <p>
+     * Alarms based on anomaly detection models cannot have Auto Scaling actions.
      * </p>
      * <p>
      * When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The
@@ -998,7 +1109,11 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
-     * Creates or updates an alarm and associates it with the specified metric or metric math expression.
+     * Creates or updates an alarm and associates it with the specified metric, metric math expression, or anomaly
+     * detection model.
+     * </p>
+     * <p>
+     * Alarms based on anomaly detection models cannot have Auto Scaling actions.
      * </p>
      * <p>
      * When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The

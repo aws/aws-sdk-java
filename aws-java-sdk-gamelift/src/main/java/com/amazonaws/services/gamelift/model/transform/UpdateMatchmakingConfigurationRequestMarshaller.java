@@ -52,6 +52,8 @@ public class UpdateMatchmakingConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameProperties").build();
     private static final MarshallingInfo<String> GAMESESSIONDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionData").build();
+    private static final MarshallingInfo<String> BACKFILLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackfillMode").build();
 
     private static final UpdateMatchmakingConfigurationRequestMarshaller instance = new UpdateMatchmakingConfigurationRequestMarshaller();
 
@@ -81,6 +83,7 @@ public class UpdateMatchmakingConfigurationRequestMarshaller {
             protocolMarshaller.marshall(updateMatchmakingConfigurationRequest.getCustomEventData(), CUSTOMEVENTDATA_BINDING);
             protocolMarshaller.marshall(updateMatchmakingConfigurationRequest.getGameProperties(), GAMEPROPERTIES_BINDING);
             protocolMarshaller.marshall(updateMatchmakingConfigurationRequest.getGameSessionData(), GAMESESSIONDATA_BINDING);
+            protocolMarshaller.marshall(updateMatchmakingConfigurationRequest.getBackfillMode(), BACKFILLMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -261,6 +261,10 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
             }
         }
 
+        if (putMetricAlarmRequest.getThresholdMetricId() != null) {
+            request.addParameter("ThresholdMetricId", StringUtils.fromString(putMetricAlarmRequest.getThresholdMetricId()));
+        }
+
         return request;
     }
 

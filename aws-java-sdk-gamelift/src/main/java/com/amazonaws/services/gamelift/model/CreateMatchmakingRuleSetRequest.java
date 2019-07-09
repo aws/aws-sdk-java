@@ -37,8 +37,8 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
     private String name;
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON, but most
-     * elements support a description field.
+     * Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements
+     * support a description field.
      * </p>
      */
     private String ruleSetBody;
@@ -94,13 +94,13 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON, but most
-     * elements support a description field.
+     * Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements
+     * support a description field.
      * </p>
      * 
      * @param ruleSetBody
-     *        Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON,
-     *        but most elements support a description field.
+     *        Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     *        elements support a description field.
      */
 
     public void setRuleSetBody(String ruleSetBody) {
@@ -109,12 +109,12 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON, but most
-     * elements support a description field.
+     * Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements
+     * support a description field.
      * </p>
      * 
-     * @return Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON,
-     *         but most elements support a description field.
+     * @return Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     *         elements support a description field.
      */
 
     public String getRuleSetBody() {
@@ -123,13 +123,13 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON, but most
-     * elements support a description field.
+     * Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements
+     * support a description field.
      * </p>
      * 
      * @param ruleSetBody
-     *        Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON,
-     *        but most elements support a description field.
+     *        Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     *        elements support a description field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

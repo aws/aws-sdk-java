@@ -79,13 +79,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status.
+     * <b>FAILED</b> -- The matchmaking request was not completed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
+     * <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
      * </p>
      * </li>
      * <li>
@@ -276,13 +276,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status.
+     * <b>FAILED</b> -- The matchmaking request was not completed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
+     * <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
      * </p>
      * </li>
      * <li>
@@ -333,13 +333,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a
-     *        proposed match are placed in <code>FAILED</code> status.
+     *        <b>FAILED</b> -- The matchmaking request was not completed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     *        <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
+     *        <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
      *        </p>
      *        </li>
      *        <li>
@@ -397,13 +397,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status.
+     * <b>FAILED</b> -- The matchmaking request was not completed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
+     * <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
      * </p>
      * </li>
      * <li>
@@ -453,13 +453,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         <li>
      *         <p>
-     *         <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a
-     *         proposed match are placed in <code>FAILED</code> status.
+     *         <b>FAILED</b> -- The matchmaking request was not completed.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     *         <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
+     *         <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
      *         </p>
      *         </li>
      *         <li>
@@ -517,13 +517,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status.
+     * <b>FAILED</b> -- The matchmaking request was not completed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
+     * <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
      * </p>
      * </li>
      * <li>
@@ -574,13 +574,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a
-     *        proposed match are placed in <code>FAILED</code> status.
+     *        <b>FAILED</b> -- The matchmaking request was not completed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     *        <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
+     *        <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
      *        </p>
      *        </li>
      *        <li>
@@ -640,13 +640,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status.
+     * <b>FAILED</b> -- The matchmaking request was not completed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
+     * <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
      * </p>
      * </li>
      * <li>
@@ -697,13 +697,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a
-     *        proposed match are placed in <code>FAILED</code> status.
+     *        <b>FAILED</b> -- The matchmaking request was not completed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     *        <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
+     *        <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
      *        </p>
      *        </li>
      *        <li>

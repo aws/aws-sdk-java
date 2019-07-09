@@ -55,6 +55,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
     private String changeToken;
 
+    private java.util.List<Tag> tags;
+
     /**
      * <p>
      * A friendly name or description of the <a>WebACL</a>. You can't change <code>Name</code> after you create the
@@ -246,6 +248,58 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * @param tags
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWebACLRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWebACLRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -264,7 +318,9 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getDefaultAction() != null)
             sb.append("DefaultAction: ").append(getDefaultAction()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: ").append(getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -295,6 +351,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getChangeToken() != null && other.getChangeToken().equals(this.getChangeToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -307,6 +367,7 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
         hashCode = prime * hashCode + ((getDefaultAction() == null) ? 0 : getDefaultAction().hashCode());
         hashCode = prime * hashCode + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

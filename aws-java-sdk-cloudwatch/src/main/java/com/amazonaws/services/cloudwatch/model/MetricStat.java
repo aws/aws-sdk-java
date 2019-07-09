@@ -46,7 +46,8 @@ public class MetricStat implements Serializable, Cloneable {
     private String stat;
     /**
      * <p>
-     * The unit to use for the returned data points.
+     * When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.
+     * In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * </p>
      */
     private String unit;
@@ -173,11 +174,13 @@ public class MetricStat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unit to use for the returned data points.
+     * When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.
+     * In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * </p>
      * 
      * @param unit
-     *        The unit to use for the returned data points.
+     *        When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the
+     *        metric. In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * @see StandardUnit
      */
 
@@ -187,10 +190,12 @@ public class MetricStat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unit to use for the returned data points.
+     * When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.
+     * In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * </p>
      * 
-     * @return The unit to use for the returned data points.
+     * @return When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the
+     *         metric. In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * @see StandardUnit
      */
 
@@ -200,11 +205,13 @@ public class MetricStat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unit to use for the returned data points.
+     * When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.
+     * In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * </p>
      * 
      * @param unit
-     *        The unit to use for the returned data points.
+     *        When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the
+     *        metric. In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardUnit
      */
@@ -216,11 +223,13 @@ public class MetricStat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unit to use for the returned data points.
+     * When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.
+     * In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * </p>
      * 
      * @param unit
-     *        The unit to use for the returned data points.
+     *        When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the
+     *        metric. In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardUnit
      */

@@ -42,19 +42,21 @@ public class StartJobRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String branchName;
     /**
      * <p>
-     * Unique Id for the Job.
+     * Unique Id for an existing job. Required for "RETRY" JobType.
      * </p>
      */
     private String jobId;
     /**
      * <p>
-     * Type for the Job.
+     * Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the latest change from the specified
+     * branch. Only available for apps that have connected to a repository. "RETRY": Retry an existing job. JobId is
+     * required for this type of job.
      * </p>
      */
     private String jobType;
     /**
      * <p>
-     * Reason for the Job.
+     * Descriptive reason for starting this job.
      * </p>
      */
     private String jobReason;
@@ -159,11 +161,11 @@ public class StartJobRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Unique Id for the Job.
+     * Unique Id for an existing job. Required for "RETRY" JobType.
      * </p>
      * 
      * @param jobId
-     *        Unique Id for the Job.
+     *        Unique Id for an existing job. Required for "RETRY" JobType.
      */
 
     public void setJobId(String jobId) {
@@ -172,10 +174,10 @@ public class StartJobRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Unique Id for the Job.
+     * Unique Id for an existing job. Required for "RETRY" JobType.
      * </p>
      * 
-     * @return Unique Id for the Job.
+     * @return Unique Id for an existing job. Required for "RETRY" JobType.
      */
 
     public String getJobId() {
@@ -184,11 +186,11 @@ public class StartJobRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Unique Id for the Job.
+     * Unique Id for an existing job. Required for "RETRY" JobType.
      * </p>
      * 
      * @param jobId
-     *        Unique Id for the Job.
+     *        Unique Id for an existing job. Required for "RETRY" JobType.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,11 +201,15 @@ public class StartJobRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Type for the Job.
+     * Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the latest change from the specified
+     * branch. Only available for apps that have connected to a repository. "RETRY": Retry an existing job. JobId is
+     * required for this type of job.
      * </p>
      * 
      * @param jobType
-     *        Type for the Job.
+     *        Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the latest change from the
+     *        specified branch. Only available for apps that have connected to a repository. "RETRY": Retry an existing
+     *        job. JobId is required for this type of job.
      * @see JobType
      */
 
@@ -213,10 +219,14 @@ public class StartJobRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Type for the Job.
+     * Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the latest change from the specified
+     * branch. Only available for apps that have connected to a repository. "RETRY": Retry an existing job. JobId is
+     * required for this type of job.
      * </p>
      * 
-     * @return Type for the Job.
+     * @return Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the latest change from the
+     *         specified branch. Only available for apps that have connected to a repository. "RETRY": Retry an existing
+     *         job. JobId is required for this type of job.
      * @see JobType
      */
 
@@ -226,11 +236,15 @@ public class StartJobRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Type for the Job.
+     * Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the latest change from the specified
+     * branch. Only available for apps that have connected to a repository. "RETRY": Retry an existing job. JobId is
+     * required for this type of job.
      * </p>
      * 
      * @param jobType
-     *        Type for the Job.
+     *        Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the latest change from the
+     *        specified branch. Only available for apps that have connected to a repository. "RETRY": Retry an existing
+     *        job. JobId is required for this type of job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */
@@ -242,11 +256,15 @@ public class StartJobRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Type for the Job.
+     * Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the latest change from the specified
+     * branch. Only available for apps that have connected to a repository. "RETRY": Retry an existing job. JobId is
+     * required for this type of job.
      * </p>
      * 
      * @param jobType
-     *        Type for the Job.
+     *        Type for the Job. Available JobTypes are: \n "RELEASE": Start a new job with the latest change from the
+     *        specified branch. Only available for apps that have connected to a repository. "RETRY": Retry an existing
+     *        job. JobId is required for this type of job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */
@@ -258,11 +276,11 @@ public class StartJobRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Reason for the Job.
+     * Descriptive reason for starting this job.
      * </p>
      * 
      * @param jobReason
-     *        Reason for the Job.
+     *        Descriptive reason for starting this job.
      */
 
     public void setJobReason(String jobReason) {
@@ -271,10 +289,10 @@ public class StartJobRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Reason for the Job.
+     * Descriptive reason for starting this job.
      * </p>
      * 
-     * @return Reason for the Job.
+     * @return Descriptive reason for starting this job.
      */
 
     public String getJobReason() {
@@ -283,11 +301,11 @@ public class StartJobRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Reason for the Job.
+     * Descriptive reason for starting this job.
      * </p>
      * 
      * @param jobReason
-     *        Reason for the Job.
+     *        Descriptive reason for starting this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

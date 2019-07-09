@@ -134,6 +134,19 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteOrganizationConfigRuleResult> deleteOrganizationConfigRuleAsync(DeleteOrganizationConfigRuleRequest request) {
+
+        return deleteOrganizationConfigRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOrganizationConfigRuleResult> deleteOrganizationConfigRuleAsync(DeleteOrganizationConfigRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteOrganizationConfigRuleRequest, DeleteOrganizationConfigRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeletePendingAggregationRequestResult> deletePendingAggregationRequestAsync(
             DeletePendingAggregationRequestRequest request) {
 
@@ -545,6 +558,36 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigRuleStatusesResult> describeOrganizationConfigRuleStatusesAsync(
+            DescribeOrganizationConfigRuleStatusesRequest request) {
+
+        return describeOrganizationConfigRuleStatusesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigRuleStatusesResult> describeOrganizationConfigRuleStatusesAsync(
+            DescribeOrganizationConfigRuleStatusesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigRuleStatusesRequest, DescribeOrganizationConfigRuleStatusesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigRulesResult> describeOrganizationConfigRulesAsync(
+            DescribeOrganizationConfigRulesRequest request) {
+
+        return describeOrganizationConfigRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigRulesResult> describeOrganizationConfigRulesAsync(
+            DescribeOrganizationConfigRulesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigRulesRequest, DescribeOrganizationConfigRulesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribePendingAggregationRequestsResult> describePendingAggregationRequestsAsync(
             DescribePendingAggregationRequestsRequest request) {
 
@@ -782,6 +825,21 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetOrganizationConfigRuleDetailedStatusResult> getOrganizationConfigRuleDetailedStatusAsync(
+            GetOrganizationConfigRuleDetailedStatusRequest request) {
+
+        return getOrganizationConfigRuleDetailedStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOrganizationConfigRuleDetailedStatusResult> getOrganizationConfigRuleDetailedStatusAsync(
+            GetOrganizationConfigRuleDetailedStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetOrganizationConfigRuleDetailedStatusRequest, GetOrganizationConfigRuleDetailedStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(GetResourceConfigHistoryRequest request) {
 
         return getResourceConfigHistoryAsync(request, null);
@@ -909,6 +967,19 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     @Override
     public java.util.concurrent.Future<PutEvaluationsResult> putEvaluationsAsync(PutEvaluationsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutOrganizationConfigRuleResult> putOrganizationConfigRuleAsync(PutOrganizationConfigRuleRequest request) {
+
+        return putOrganizationConfigRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutOrganizationConfigRuleResult> putOrganizationConfigRuleAsync(PutOrganizationConfigRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutOrganizationConfigRuleRequest, PutOrganizationConfigRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

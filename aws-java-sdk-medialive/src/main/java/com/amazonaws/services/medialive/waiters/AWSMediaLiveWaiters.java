@@ -20,7 +20,6 @@ import com.amazonaws.services.medialive.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSMediaLiveWaiters {
@@ -30,7 +29,7 @@ public class AWSMediaLiveWaiters {
      */
     private final AWSMediaLive client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AWSMediaLiveWaiters");
 
     /**
      * Constructs a new AWSMediaLiveWaiters with the given client

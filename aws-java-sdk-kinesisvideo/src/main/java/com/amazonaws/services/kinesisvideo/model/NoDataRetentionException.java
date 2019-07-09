@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A <code>PlaybackMode</code> of <code>ON_DEMAND</code> was requested for a stream that does not retain data (that is,
- * has a <code>DataRetentionInHours</code> of 0).
+ * A streaming session was requested for a stream that does not retain data (that is, has a
+ * <code>DataRetentionInHours</code> of 0).
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

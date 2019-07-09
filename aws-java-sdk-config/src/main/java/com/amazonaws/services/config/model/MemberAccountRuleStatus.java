@@ -10,7 +10,7 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.kinesisvideo.model;
+package com.amazonaws.services.config.model;
 
 import javax.annotation.Generated;
 
@@ -18,14 +18,18 @@ import javax.annotation.Generated;
  * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum DiscontinuityMode {
+public enum MemberAccountRuleStatus {
 
-    ALWAYS("ALWAYS"),
-    NEVER("NEVER");
+    CREATE_SUCCESSFUL("CREATE_SUCCESSFUL"),
+    CREATE_IN_PROGRESS("CREATE_IN_PROGRESS"),
+    CREATE_FAILED("CREATE_FAILED"),
+    DELETE_SUCCESSFUL("DELETE_SUCCESSFUL"),
+    DELETE_FAILED("DELETE_FAILED"),
+    DELETE_IN_PROGRESS("DELETE_IN_PROGRESS");
 
     private String value;
 
-    private DiscontinuityMode(String value) {
+    private MemberAccountRuleStatus(String value) {
         this.value = value;
     }
 
@@ -39,17 +43,17 @@ public enum DiscontinuityMode {
      *
      * @param value
      *        real value
-     * @return DiscontinuityMode corresponding to the value
+     * @return MemberAccountRuleStatus corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static DiscontinuityMode fromValue(String value) {
+    public static MemberAccountRuleStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (DiscontinuityMode enumEntry : DiscontinuityMode.values()) {
+        for (MemberAccountRuleStatus enumEntry : MemberAccountRuleStatus.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

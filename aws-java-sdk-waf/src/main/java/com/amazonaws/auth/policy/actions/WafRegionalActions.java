@@ -147,6 +147,8 @@ public enum WafRegionalActions implements Action {
     ListSqlInjectionMatchSets("waf-regional:ListSqlInjectionMatchSets"),
     /** Action for the ListSubscribedRuleGroups operation. */
     ListSubscribedRuleGroups("waf-regional:ListSubscribedRuleGroups"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("waf-regional:ListTagsForResource"),
     /** Action for the ListWebACLs operation. */
     ListWebACLs("waf-regional:ListWebACLs"),
     /** Action for the ListXssMatchSets operation. */
@@ -155,6 +157,10 @@ public enum WafRegionalActions implements Action {
     PutLoggingConfiguration("waf-regional:PutLoggingConfiguration"),
     /** Action for the PutPermissionPolicy operation. */
     PutPermissionPolicy("waf-regional:PutPermissionPolicy"),
+    /** Action for the TagResource operation. */
+    TagResource("waf-regional:TagResource"),
+    /** Action for the UntagResource operation. */
+    UntagResource("waf-regional:UntagResource"),
     /** Action for the UpdateByteMatchSet operation. */
     UpdateByteMatchSet("waf-regional:UpdateByteMatchSet"),
     /** Action for the UpdateGeoMatchSet operation. */

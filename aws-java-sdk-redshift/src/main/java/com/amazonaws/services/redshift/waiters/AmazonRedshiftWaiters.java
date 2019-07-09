@@ -20,7 +20,6 @@ import com.amazonaws.services.redshift.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonRedshiftWaiters {
@@ -30,7 +29,7 @@ public class AmazonRedshiftWaiters {
      */
     private final AmazonRedshift client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonRedshiftWaiters");
 
     /**
      * Constructs a new AmazonRedshiftWaiters with the given client

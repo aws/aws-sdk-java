@@ -627,6 +627,9 @@ public interface AWSWAF {
      *         that you can create for an AWS account. For more information, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
+     * @throws WAFTagOperationException
+     * @throws WAFTagOperationInternalErrorException
+     * @throws WAFBadRequestException
      * @sample AWSWAF.CreateRateBasedRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule" target="_top">AWS API
      *      Documentation</a>
@@ -891,6 +894,9 @@ public interface AWSWAF {
      *         that you can create for an AWS account. For more information, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
+     * @throws WAFTagOperationException
+     * @throws WAFTagOperationInternalErrorException
+     * @throws WAFBadRequestException
      * @sample AWSWAF.CreateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule" target="_top">AWS API
      *      Documentation</a>
@@ -941,6 +947,9 @@ public interface AWSWAF {
      *         that you can create for an AWS account. For more information, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
+     * @throws WAFTagOperationException
+     * @throws WAFTagOperationInternalErrorException
+     * @throws WAFBadRequestException
      * @sample AWSWAF.CreateRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRuleGroup" target="_top">AWS API
      *      Documentation</a>
@@ -1314,6 +1323,9 @@ public interface AWSWAF {
      *         that you can create for an AWS account. For more information, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
+     * @throws WAFTagOperationException
+     * @throws WAFTagOperationInternalErrorException
+     * @throws WAFBadRequestException
      * @sample AWSWAF.CreateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL" target="_top">AWS API
      *      Documentation</a>
@@ -1821,6 +1833,8 @@ public interface AWSWAF {
      *         You tried to delete an <code>IPSet</code> that references one or more IP addresses.
      *         </p>
      *         </li>
+     * @throws WAFTagOperationException
+     * @throws WAFTagOperationInternalErrorException
      * @sample AWSWAF.DeleteRateBasedRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRateBasedRule" target="_top">AWS API
      *      Documentation</a>
@@ -2056,6 +2070,8 @@ public interface AWSWAF {
      *         You tried to delete an <code>IPSet</code> that references one or more IP addresses.
      *         </p>
      *         </li>
+     * @throws WAFTagOperationException
+     * @throws WAFTagOperationInternalErrorException
      * @sample AWSWAF.DeleteRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule" target="_top">AWS API
      *      Documentation</a>
@@ -2172,6 +2188,8 @@ public interface AWSWAF {
      *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
      *         </li>
+     * @throws WAFTagOperationException
+     * @throws WAFTagOperationInternalErrorException
      * @sample AWSWAF.DeleteRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRuleGroup" target="_top">AWS API
      *      Documentation</a>
@@ -2431,6 +2449,8 @@ public interface AWSWAF {
      *         You tried to delete an <code>IPSet</code> that references one or more IP addresses.
      *         </p>
      *         </li>
+     * @throws WAFTagOperationException
+     * @throws WAFTagOperationInternalErrorException
      * @sample AWSWAF.DeleteWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL" target="_top">AWS API
      *      Documentation</a>
@@ -3310,6 +3330,77 @@ public interface AWSWAF {
     ListSubscribedRuleGroupsResult listSubscribedRuleGroups(ListSubscribedRuleGroupsRequest listSubscribedRuleGroupsRequest);
 
     /**
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFBadRequestException
+     * @throws WAFTagOperationException
+     * @throws WAFTagOperationInternalErrorException
+     * @sample AWSWAF.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
      * <p>
      * Returns an array of <a>WebACLSummary</a> objects in the response.
      * </p>
@@ -3525,6 +3616,153 @@ public interface AWSWAF {
      *      Documentation</a>
      */
     PutPermissionPolicyResult putPermissionPolicy(PutPermissionPolicyRequest putPermissionPolicyRequest);
+
+    /**
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         Developer Guide</i>.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFBadRequestException
+     * @throws WAFTagOperationException
+     * @throws WAFTagOperationInternalErrorException
+     * @sample AWSWAF.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFBadRequestException
+     * @throws WAFTagOperationException
+     * @throws WAFTagOperationInternalErrorException
+     * @sample AWSWAF.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

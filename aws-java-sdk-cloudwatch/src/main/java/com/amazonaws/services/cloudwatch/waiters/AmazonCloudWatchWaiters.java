@@ -20,7 +20,6 @@ import com.amazonaws.services.cloudwatch.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCloudWatchWaiters {
@@ -30,7 +29,7 @@ public class AmazonCloudWatchWaiters {
      */
     private final AmazonCloudWatch client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonCloudWatchWaiters");
 
     /**
      * Constructs a new AmazonCloudWatchWaiters with the given client

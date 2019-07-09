@@ -28,18 +28,18 @@ public class ValidateMatchmakingRuleSetResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Response indicating whether or not the rule set is valid.
+     * Response indicating whether the rule set is valid.
      * </p>
      */
     private Boolean valid;
 
     /**
      * <p>
-     * Response indicating whether or not the rule set is valid.
+     * Response indicating whether the rule set is valid.
      * </p>
      * 
      * @param valid
-     *        Response indicating whether or not the rule set is valid.
+     *        Response indicating whether the rule set is valid.
      */
 
     public void setValid(Boolean valid) {
@@ -48,10 +48,10 @@ public class ValidateMatchmakingRuleSetResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Response indicating whether or not the rule set is valid.
+     * Response indicating whether the rule set is valid.
      * </p>
      * 
-     * @return Response indicating whether or not the rule set is valid.
+     * @return Response indicating whether the rule set is valid.
      */
 
     public Boolean getValid() {
@@ -60,11 +60,11 @@ public class ValidateMatchmakingRuleSetResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Response indicating whether or not the rule set is valid.
+     * Response indicating whether the rule set is valid.
      * </p>
      * 
      * @param valid
-     *        Response indicating whether or not the rule set is valid.
+     *        Response indicating whether the rule set is valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,10 +75,10 @@ public class ValidateMatchmakingRuleSetResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Response indicating whether or not the rule set is valid.
+     * Response indicating whether the rule set is valid.
      * </p>
      * 
-     * @return Response indicating whether or not the rule set is valid.
+     * @return Response indicating whether the rule set is valid.
      */
 
     public Boolean isValid() {

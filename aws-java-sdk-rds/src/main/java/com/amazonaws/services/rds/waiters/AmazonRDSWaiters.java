@@ -20,7 +20,6 @@ import com.amazonaws.services.rds.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonRDSWaiters {
@@ -30,7 +29,7 @@ public class AmazonRDSWaiters {
      */
     private final AmazonRDS client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonRDSWaiters");
 
     /**
      * Constructs a new AmazonRDSWaiters with the given client

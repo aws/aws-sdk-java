@@ -63,7 +63,9 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * past.
      * </p>
      * <p>
-     * If the <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code> value is required.
+     * The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for
+     * <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then
+     * the session will continue to include newly ingested fragments until the session expires.
      * </p>
      * <note>
      * <p>
@@ -184,7 +186,9 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * past.
      * </p>
      * <p>
-     * If the <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code> value is required.
+     * The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for
+     * <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then
+     * the session will continue to include newly ingested fragments until the session expires.
      * </p>
      * <note>
      * <p>
@@ -201,7 +205,9 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      *        in the past.
      *        </p>
      *        <p>
-     *        If the <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code> value is required.
+     *        The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for
+     *        <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code>
+     *        mode then the session will continue to include newly ingested fragments until the session expires.
      *        </p>
      *        <note>
      *        <p>
@@ -225,7 +231,9 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * past.
      * </p>
      * <p>
-     * If the <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code> value is required.
+     * The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for
+     * <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then
+     * the session will continue to include newly ingested fragments until the session expires.
      * </p>
      * <note>
      * <p>
@@ -242,8 +250,9 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      *         in the past.
      *         </p>
      *         <p>
-     *         If the <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code> value is
-     *         required.
+     *         The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for
+     *         <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code>
+     *         mode then the session will continue to include newly ingested fragments until the session expires.
      *         </p>
      *         <note>
      *         <p>
@@ -267,7 +276,9 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * past.
      * </p>
      * <p>
-     * If the <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code> value is required.
+     * The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for
+     * <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code> mode then
+     * the session will continue to include newly ingested fragments until the session expires.
      * </p>
      * <note>
      * <p>
@@ -284,7 +295,9 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      *        in the past.
      *        </p>
      *        <p>
-     *        If the <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code> value is required.
+     *        The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but optional for
+     *        <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not set for <code>LIVE_REPLAY</code>
+     *        mode then the session will continue to include newly ingested fragments until the session expires.
      *        </p>
      *        <note>
      *        <p>

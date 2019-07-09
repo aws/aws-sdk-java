@@ -323,6 +323,11 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListWebACLsResult listWebACLs(ListWebACLsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -339,6 +344,16 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public PutPermissionPolicyResult putPermissionPolicy(PutPermissionPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -30,7 +30,7 @@ public class Fragment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The index value of the fragment.
+     * The unique identifier of the fragment. This value monotonically increases based on the ingestion order.
      * </p>
      */
     private String fragmentNumber;
@@ -61,11 +61,11 @@ public class Fragment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The index value of the fragment.
+     * The unique identifier of the fragment. This value monotonically increases based on the ingestion order.
      * </p>
      * 
      * @param fragmentNumber
-     *        The index value of the fragment.
+     *        The unique identifier of the fragment. This value monotonically increases based on the ingestion order.
      */
 
     public void setFragmentNumber(String fragmentNumber) {
@@ -74,10 +74,10 @@ public class Fragment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The index value of the fragment.
+     * The unique identifier of the fragment. This value monotonically increases based on the ingestion order.
      * </p>
      * 
-     * @return The index value of the fragment.
+     * @return The unique identifier of the fragment. This value monotonically increases based on the ingestion order.
      */
 
     public String getFragmentNumber() {
@@ -86,11 +86,11 @@ public class Fragment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The index value of the fragment.
+     * The unique identifier of the fragment. This value monotonically increases based on the ingestion order.
      * </p>
      * 
      * @param fragmentNumber
-     *        The index value of the fragment.
+     *        The unique identifier of the fragment. This value monotonically increases based on the ingestion order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

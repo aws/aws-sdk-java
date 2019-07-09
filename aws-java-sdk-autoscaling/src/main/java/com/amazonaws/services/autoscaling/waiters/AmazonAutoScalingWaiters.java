@@ -20,7 +20,6 @@ import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonAutoScalingWaiters {
@@ -30,7 +29,7 @@ public class AmazonAutoScalingWaiters {
      */
     private final AmazonAutoScaling client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonAutoScalingWaiters");
 
     /**
      * Constructs a new AmazonAutoScalingWaiters with the given client

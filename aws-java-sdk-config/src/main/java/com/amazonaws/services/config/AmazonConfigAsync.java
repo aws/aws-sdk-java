@@ -433,6 +433,33 @@ public interface AmazonConfigAsync extends AmazonConfig {
             com.amazonaws.handlers.AsyncHandler<DeleteEvaluationResultsRequest, DeleteEvaluationResultsResult> asyncHandler);
 
     /**
+     * @param deleteOrganizationConfigRuleRequest
+     * @return A Java Future containing the result of the DeleteOrganizationConfigRule operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.DeleteOrganizationConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOrganizationConfigRuleResult> deleteOrganizationConfigRuleAsync(
+            DeleteOrganizationConfigRuleRequest deleteOrganizationConfigRuleRequest);
+
+    /**
+     * @param deleteOrganizationConfigRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOrganizationConfigRule operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.DeleteOrganizationConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOrganizationConfigRuleResult> deleteOrganizationConfigRuleAsync(
+            DeleteOrganizationConfigRuleRequest deleteOrganizationConfigRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOrganizationConfigRuleRequest, DeleteOrganizationConfigRuleResult> asyncHandler);
+
+    /**
      * <p>
      * Deletes pending authorization requests for a specified aggregator account in a specified region.
      * </p>
@@ -1356,6 +1383,60 @@ public interface AmazonConfigAsync extends AmazonConfig {
             com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelsRequest, DescribeDeliveryChannelsResult> asyncHandler);
 
     /**
+     * @param describeOrganizationConfigRuleStatusesRequest
+     * @return A Java Future containing the result of the DescribeOrganizationConfigRuleStatuses operation returned by
+     *         the service.
+     * @sample AmazonConfigAsync.DescribeOrganizationConfigRuleStatuses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOrganizationConfigRuleStatusesResult> describeOrganizationConfigRuleStatusesAsync(
+            DescribeOrganizationConfigRuleStatusesRequest describeOrganizationConfigRuleStatusesRequest);
+
+    /**
+     * @param describeOrganizationConfigRuleStatusesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeOrganizationConfigRuleStatuses operation returned by
+     *         the service.
+     * @sample AmazonConfigAsyncHandler.DescribeOrganizationConfigRuleStatuses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOrganizationConfigRuleStatusesResult> describeOrganizationConfigRuleStatusesAsync(
+            DescribeOrganizationConfigRuleStatusesRequest describeOrganizationConfigRuleStatusesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigRuleStatusesRequest, DescribeOrganizationConfigRuleStatusesResult> asyncHandler);
+
+    /**
+     * @param describeOrganizationConfigRulesRequest
+     * @return A Java Future containing the result of the DescribeOrganizationConfigRules operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.DescribeOrganizationConfigRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOrganizationConfigRulesResult> describeOrganizationConfigRulesAsync(
+            DescribeOrganizationConfigRulesRequest describeOrganizationConfigRulesRequest);
+
+    /**
+     * @param describeOrganizationConfigRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeOrganizationConfigRules operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.DescribeOrganizationConfigRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOrganizationConfigRulesResult> describeOrganizationConfigRulesAsync(
+            DescribeOrganizationConfigRulesRequest describeOrganizationConfigRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigRulesRequest, DescribeOrganizationConfigRulesResult> asyncHandler);
+
+    /**
      * <p>
      * Returns a list of all pending aggregation requests.
      * </p>
@@ -2037,6 +2118,33 @@ public interface AmazonConfigAsync extends AmazonConfig {
             com.amazonaws.handlers.AsyncHandler<GetDiscoveredResourceCountsRequest, GetDiscoveredResourceCountsResult> asyncHandler);
 
     /**
+     * @param getOrganizationConfigRuleDetailedStatusRequest
+     * @return A Java Future containing the result of the GetOrganizationConfigRuleDetailedStatus operation returned by
+     *         the service.
+     * @sample AmazonConfigAsync.GetOrganizationConfigRuleDetailedStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOrganizationConfigRuleDetailedStatusResult> getOrganizationConfigRuleDetailedStatusAsync(
+            GetOrganizationConfigRuleDetailedStatusRequest getOrganizationConfigRuleDetailedStatusRequest);
+
+    /**
+     * @param getOrganizationConfigRuleDetailedStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOrganizationConfigRuleDetailedStatus operation returned by
+     *         the service.
+     * @sample AmazonConfigAsyncHandler.GetOrganizationConfigRuleDetailedStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOrganizationConfigRuleDetailedStatusResult> getOrganizationConfigRuleDetailedStatusAsync(
+            GetOrganizationConfigRuleDetailedStatusRequest getOrganizationConfigRuleDetailedStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOrganizationConfigRuleDetailedStatusRequest, GetOrganizationConfigRuleDetailedStatusResult> asyncHandler);
+
+    /**
      * <p>
      * Returns a list of configuration items for the specified resource. The list contains details about each state of
      * the resource during the specified time interval. If you specified a retention period to retain your
@@ -2597,6 +2705,31 @@ public interface AmazonConfigAsync extends AmazonConfig {
      */
     java.util.concurrent.Future<PutEvaluationsResult> putEvaluationsAsync(PutEvaluationsRequest putEvaluationsRequest,
             com.amazonaws.handlers.AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult> asyncHandler);
+
+    /**
+     * @param putOrganizationConfigRuleRequest
+     * @return A Java Future containing the result of the PutOrganizationConfigRule operation returned by the service.
+     * @sample AmazonConfigAsync.PutOrganizationConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutOrganizationConfigRuleResult> putOrganizationConfigRuleAsync(
+            PutOrganizationConfigRuleRequest putOrganizationConfigRuleRequest);
+
+    /**
+     * @param putOrganizationConfigRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutOrganizationConfigRule operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.PutOrganizationConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutOrganizationConfigRuleResult> putOrganizationConfigRuleAsync(
+            PutOrganizationConfigRuleRequest putOrganizationConfigRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<PutOrganizationConfigRuleRequest, PutOrganizationConfigRuleResult> asyncHandler);
 
     /**
      * <p>

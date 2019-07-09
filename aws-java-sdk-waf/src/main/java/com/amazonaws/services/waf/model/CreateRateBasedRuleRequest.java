@@ -67,6 +67,8 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
      */
     private String changeToken;
 
+    private java.util.List<Tag> tags;
+
     /**
      * <p>
      * A friendly name or description of the <a>RateBasedRule</a>. You can't change the name of a
@@ -382,6 +384,58 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * @param tags
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRateBasedRuleRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRateBasedRuleRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -402,7 +456,9 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
         if (getRateLimit() != null)
             sb.append("RateLimit: ").append(getRateLimit()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: ").append(getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -437,6 +493,10 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getChangeToken() != null && other.getChangeToken().equals(this.getChangeToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -450,6 +510,7 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getRateKey() == null) ? 0 : getRateKey().hashCode());
         hashCode = prime * hashCode + ((getRateLimit() == null) ? 0 : getRateLimit().hashCode());
         hashCode = prime * hashCode + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Set of rule statements, used with FlexMatch, that determine how to build a certain kind of player match. Each rule
- * set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are
- * used in <a>MatchmakingConfiguration</a> objects.
+ * Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes
+ * a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in
+ * <a>MatchmakingConfiguration</a> objects.
  * </p>
  * <p>
  * A rule set may define the following elements for a match. For detailed information and examples showing how to
@@ -75,8 +75,8 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
     private String ruleSetName;
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. (Note that comments14 are not allowed in JSON, but
-     * most elements support a description field.)
+     * Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements
+     * support a description field.
      * </p>
      */
     private String ruleSetBody;
@@ -130,13 +130,13 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. (Note that comments14 are not allowed in JSON, but
-     * most elements support a description field.)
+     * Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements
+     * support a description field.
      * </p>
      * 
      * @param ruleSetBody
-     *        Collection of matchmaking rules, formatted as a JSON string. (Note that comments14 are not allowed in
-     *        JSON, but most elements support a description field.)
+     *        Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     *        elements support a description field.
      */
 
     public void setRuleSetBody(String ruleSetBody) {
@@ -145,12 +145,12 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. (Note that comments14 are not allowed in JSON, but
-     * most elements support a description field.)
+     * Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements
+     * support a description field.
      * </p>
      * 
-     * @return Collection of matchmaking rules, formatted as a JSON string. (Note that comments14 are not allowed in
-     *         JSON, but most elements support a description field.)
+     * @return Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     *         elements support a description field.
      */
 
     public String getRuleSetBody() {
@@ -159,13 +159,13 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. (Note that comments14 are not allowed in JSON, but
-     * most elements support a description field.)
+     * Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements
+     * support a description field.
      * </p>
      * 
      * @param ruleSetBody
-     *        Collection of matchmaking rules, formatted as a JSON string. (Note that comments14 are not allowed in
-     *        JSON, but most elements support a description field.)
+     *        Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     *        elements support a description field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

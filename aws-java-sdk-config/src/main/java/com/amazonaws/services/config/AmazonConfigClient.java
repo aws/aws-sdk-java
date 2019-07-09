@@ -122,6 +122,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigurationAggregatorException").withModeledClass(
                                     com.amazonaws.services.config.model.NoSuchConfigurationAggregatorException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RemediationInProgressException").withModeledClass(
+                                    com.amazonaws.services.config.model.RemediationInProgressException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OrganizationAccessDeniedException").withModeledClass(
                                     com.amazonaws.services.config.model.OrganizationAccessDeniedException.class))
                     .addErrorMetadata(
@@ -152,6 +155,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("InvalidLimitException").withModeledClass(
                                     com.amazonaws.services.config.model.InvalidLimitException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchOrganizationConfigRuleException").withModeledClass(
+                                    com.amazonaws.services.config.model.NoSuchOrganizationConfigRuleException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfDeliveryChannelsExceededException").withModeledClass(
                                     com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException.class))
                     .addErrorMetadata(
@@ -169,6 +175,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidExpressionException").withModeledClass(
                                     com.amazonaws.services.config.model.InvalidExpressionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfOrganizationConfigRulesExceededException").withModeledClass(
+                                    com.amazonaws.services.config.model.MaxNumberOfOrganizationConfigRulesExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
                                     com.amazonaws.services.config.model.InvalidParameterValueException.class))
@@ -941,6 +950,61 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     }
 
     /**
+     * @param deleteOrganizationConfigRuleRequest
+     * @return Result of the DeleteOrganizationConfigRule operation returned by the service.
+     * @throws NoSuchOrganizationConfigRuleException
+     * @throws ResourceInUseException
+     *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request
+     *         again later.
+     * @sample AmazonConfig.DeleteOrganizationConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteOrganizationConfigRuleResult deleteOrganizationConfigRule(DeleteOrganizationConfigRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOrganizationConfigRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOrganizationConfigRuleResult executeDeleteOrganizationConfigRule(DeleteOrganizationConfigRuleRequest deleteOrganizationConfigRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteOrganizationConfigRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteOrganizationConfigRuleRequest> request = null;
+        Response<DeleteOrganizationConfigRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOrganizationConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteOrganizationConfigRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganizationConfigRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteOrganizationConfigRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteOrganizationConfigRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Deletes pending authorization requests for a specified aggregator account in a specified region.
      * </p>
@@ -1007,6 +1071,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @return Result of the DeleteRemediationConfiguration operation returned by the service.
      * @throws NoSuchRemediationConfigurationException
      *         You specified an AWS Config rule without a remediation configuration.
+     * @throws RemediationInProgressException
      * @sample AmazonConfig.DeleteRemediationConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -2075,6 +2140,122 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     }
 
     /**
+     * @param describeOrganizationConfigRuleStatusesRequest
+     * @return Result of the DescribeOrganizationConfigRuleStatuses operation returned by the service.
+     * @throws NoSuchOrganizationConfigRuleException
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @sample AmazonConfig.DescribeOrganizationConfigRuleStatuses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeOrganizationConfigRuleStatusesResult describeOrganizationConfigRuleStatuses(DescribeOrganizationConfigRuleStatusesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOrganizationConfigRuleStatuses(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOrganizationConfigRuleStatusesResult executeDescribeOrganizationConfigRuleStatuses(
+            DescribeOrganizationConfigRuleStatusesRequest describeOrganizationConfigRuleStatusesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeOrganizationConfigRuleStatusesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeOrganizationConfigRuleStatusesRequest> request = null;
+        Response<DescribeOrganizationConfigRuleStatusesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeOrganizationConfigRuleStatusesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeOrganizationConfigRuleStatusesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConfigRuleStatuses");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeOrganizationConfigRuleStatusesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeOrganizationConfigRuleStatusesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param describeOrganizationConfigRulesRequest
+     * @return Result of the DescribeOrganizationConfigRules operation returned by the service.
+     * @throws NoSuchOrganizationConfigRuleException
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @sample AmazonConfig.DescribeOrganizationConfigRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeOrganizationConfigRulesResult describeOrganizationConfigRules(DescribeOrganizationConfigRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOrganizationConfigRules(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOrganizationConfigRulesResult executeDescribeOrganizationConfigRules(
+            DescribeOrganizationConfigRulesRequest describeOrganizationConfigRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeOrganizationConfigRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeOrganizationConfigRulesRequest> request = null;
+        Response<DescribeOrganizationConfigRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeOrganizationConfigRulesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeOrganizationConfigRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConfigRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeOrganizationConfigRulesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeOrganizationConfigRulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Returns a list of all pending aggregation requests.
      * </p>
@@ -2979,6 +3160,64 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     }
 
     /**
+     * @param getOrganizationConfigRuleDetailedStatusRequest
+     * @return Result of the GetOrganizationConfigRuleDetailedStatus operation returned by the service.
+     * @throws NoSuchOrganizationConfigRuleException
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @sample AmazonConfig.GetOrganizationConfigRuleDetailedStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetOrganizationConfigRuleDetailedStatusResult getOrganizationConfigRuleDetailedStatus(GetOrganizationConfigRuleDetailedStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOrganizationConfigRuleDetailedStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetOrganizationConfigRuleDetailedStatusResult executeGetOrganizationConfigRuleDetailedStatus(
+            GetOrganizationConfigRuleDetailedStatusRequest getOrganizationConfigRuleDetailedStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getOrganizationConfigRuleDetailedStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOrganizationConfigRuleDetailedStatusRequest> request = null;
+        Response<GetOrganizationConfigRuleDetailedStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOrganizationConfigRuleDetailedStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getOrganizationConfigRuleDetailedStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOrganizationConfigRuleDetailedStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetOrganizationConfigRuleDetailedStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetOrganizationConfigRuleDetailedStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Returns a list of configuration items for the specified resource. The list contains details about each state of
      * the resource during the specified time interval. If you specified a retention period to retain your
@@ -3749,6 +3988,85 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<PutEvaluationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutEvaluationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param putOrganizationConfigRuleRequest
+     * @return Result of the PutOrganizationConfigRule operation returned by the service.
+     * @throws MaxNumberOfOrganizationConfigRulesExceededException
+     * @throws ResourceInUseException
+     *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request
+     *         again later.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws OrganizationAccessDeniedException
+     *         No permission to call the EnableAWSServiceAccess API.
+     * @throws NoAvailableOrganizationException
+     *         Organization does is no longer available.
+     * @throws OrganizationAllFeaturesNotEnabledException
+     *         The configuration aggregator cannot be created because organization does not have all features enabled.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the
+     *         config:Put* action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.
+     *         </p>
+     *         </li>
+     * @sample AmazonConfig.PutOrganizationConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutOrganizationConfigRuleResult putOrganizationConfigRule(PutOrganizationConfigRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executePutOrganizationConfigRule(request);
+    }
+
+    @SdkInternalApi
+    final PutOrganizationConfigRuleResult executePutOrganizationConfigRule(PutOrganizationConfigRuleRequest putOrganizationConfigRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putOrganizationConfigRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutOrganizationConfigRuleRequest> request = null;
+        Response<PutOrganizationConfigRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutOrganizationConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putOrganizationConfigRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutOrganizationConfigRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutOrganizationConfigRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutOrganizationConfigRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

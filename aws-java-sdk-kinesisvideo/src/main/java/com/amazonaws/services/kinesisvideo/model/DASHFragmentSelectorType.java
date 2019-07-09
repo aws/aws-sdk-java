@@ -18,14 +18,14 @@ import javax.annotation.Generated;
  * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum PlaybackMode {
+public enum DASHFragmentSelectorType {
 
-    LIVE("LIVE"),
-    ON_DEMAND("ON_DEMAND");
+    PRODUCER_TIMESTAMP("PRODUCER_TIMESTAMP"),
+    SERVER_TIMESTAMP("SERVER_TIMESTAMP");
 
     private String value;
 
-    private PlaybackMode(String value) {
+    private DASHFragmentSelectorType(String value) {
         this.value = value;
     }
 
@@ -39,17 +39,17 @@ public enum PlaybackMode {
      *
      * @param value
      *        real value
-     * @return PlaybackMode corresponding to the value
+     * @return DASHFragmentSelectorType corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static PlaybackMode fromValue(String value) {
+    public static DASHFragmentSelectorType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (PlaybackMode enumEntry : PlaybackMode.values()) {
+        for (DASHFragmentSelectorType enumEntry : DASHFragmentSelectorType.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

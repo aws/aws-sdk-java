@@ -46,10 +46,10 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
     private String streamARN;
     /**
      * <p>
-     * Whether to retrieve live or archived, on-demand data.
+     * Whether to retrieve live, live replay, or archived, on-demand data.
      * </p>
      * <p>
-     * Features of the two types of session include the following:
+     * Features of the three types of sessions include the following:
      * </p>
      * <ul>
      * <li>
@@ -70,6 +70,18 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </note></li>
      * <li>
      * <p>
+     * <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly to how
+     * it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time.
+     * Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment
+     * elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the
+     * media playlist every two seconds. This mode is useful to be able to start playback from when an event is detected
+     * and continue live streaming media that has not yet been ingested as of the time of the session creation. This
+     * mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the
+     * <code>ON_DEMAND</code> mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the fragments for
      * the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The playlist
      * must be retrieved only once for each session. When this type of session is played in a media player, the user
@@ -78,7 +90,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * </ul>
      * <p>
-     * In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
+     * In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
      * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
      * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
      * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
@@ -94,11 +106,11 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * The time range of the requested fragment, and the source of the timestamps.
      * </p>
      * <p>
-     * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is optional if
-     * <code>PlaybackMode</code> is <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
-     * <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If
-     * <code>PlaybackMode</code> is <code>ON_DEMAND</code>, both <code>FragmentSelectorType</code> and
-     * <code>TimestampRange</code> must be set.
+     * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>.
+     * This parameter is optional if PlaybackMode is<code/> <code>LIVE</code>. If <code>PlaybackMode</code> is
+     * <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should
+     * not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both
+     * <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.
      * </p>
      */
     private HLSFragmentSelector hLSFragmentSelector;
@@ -156,7 +168,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>,
-     * <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.
+     * <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for
+     * that session.
      * </p>
      * <p>
      * The default is 300 (5 minutes).
@@ -179,8 +192,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * minimum of 3 fragments and a maximum of 10 fragments.
      * </p>
      * <p>
-     * The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code>, and 1,000 if
-     * <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
+     * The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and
+     * 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      * </p>
      * <p>
      * The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second
@@ -301,10 +314,10 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Whether to retrieve live or archived, on-demand data.
+     * Whether to retrieve live, live replay, or archived, on-demand data.
      * </p>
      * <p>
-     * Features of the two types of session include the following:
+     * Features of the three types of sessions include the following:
      * </p>
      * <ul>
      * <li>
@@ -325,6 +338,18 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </note></li>
      * <li>
      * <p>
+     * <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly to how
+     * it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time.
+     * Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment
+     * elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the
+     * media playlist every two seconds. This mode is useful to be able to start playback from when an event is detected
+     * and continue live streaming media that has not yet been ingested as of the time of the session creation. This
+     * mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the
+     * <code>ON_DEMAND</code> mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the fragments for
      * the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The playlist
      * must be retrieved only once for each session. When this type of session is played in a media player, the user
@@ -333,7 +358,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * </ul>
      * <p>
-     * In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
+     * In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
      * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
      * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
      * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
@@ -344,9 +369,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param playbackMode
-     *        Whether to retrieve live or archived, on-demand data.</p>
+     *        Whether to retrieve live, live replay, or archived, on-demand data.</p>
      *        <p>
-     *        Features of the two types of session include the following:
+     *        Features of the three types of sessions include the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -369,6 +394,18 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </note></li>
      *        <li>
      *        <p>
+     *        <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly
+     *        to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given
+     *        start time. Instead of fragments being added as they are ingested, fragments are added as the duration of
+     *        the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new
+     *        fragment is added to the media playlist every two seconds. This mode is useful to be able to start
+     *        playback from when an event is detected and continue live streaming media that has not yet been ingested
+     *        as of the time of the session creation. This mode is also useful to stream previously archived media
+     *        without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the
      *        fragments for the session, up to the number that is specified in
      *        <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved only once for each session.
@@ -378,7 +415,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        </ul>
      *        <p>
-     *        In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
+     *        In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
      *        there are multiple fragments with the same start timestamp, the fragment that has the larger fragment
      *        number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not
      *        included. Fragments that have different timestamps but have overlapping durations are still included in
@@ -386,7 +423,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <p>
      *        The default is <code>LIVE</code>.
-     * @see PlaybackMode
+     * @see HLSPlaybackMode
      */
 
     public void setPlaybackMode(String playbackMode) {
@@ -395,10 +432,10 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Whether to retrieve live or archived, on-demand data.
+     * Whether to retrieve live, live replay, or archived, on-demand data.
      * </p>
      * <p>
-     * Features of the two types of session include the following:
+     * Features of the three types of sessions include the following:
      * </p>
      * <ul>
      * <li>
@@ -419,6 +456,18 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </note></li>
      * <li>
      * <p>
+     * <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly to how
+     * it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time.
+     * Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment
+     * elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the
+     * media playlist every two seconds. This mode is useful to be able to start playback from when an event is detected
+     * and continue live streaming media that has not yet been ingested as of the time of the session creation. This
+     * mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the
+     * <code>ON_DEMAND</code> mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the fragments for
      * the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The playlist
      * must be retrieved only once for each session. When this type of session is played in a media player, the user
@@ -427,7 +476,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * </ul>
      * <p>
-     * In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
+     * In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
      * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
      * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
      * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
@@ -437,9 +486,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * The default is <code>LIVE</code>.
      * </p>
      * 
-     * @return Whether to retrieve live or archived, on-demand data.</p>
+     * @return Whether to retrieve live, live replay, or archived, on-demand data.</p>
      *         <p>
-     *         Features of the two types of session include the following:
+     *         Features of the three types of sessions include the following:
      *         </p>
      *         <ul>
      *         <li>
@@ -462,6 +511,18 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *         </note></li>
      *         <li>
      *         <p>
+     *         <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly
+     *         to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given
+     *         start time. Instead of fragments being added as they are ingested, fragments are added as the duration of
+     *         the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new
+     *         fragment is added to the media playlist every two seconds. This mode is useful to be able to start
+     *         playback from when an event is detected and continue live streaming media that has not yet been ingested
+     *         as of the time of the session creation. This mode is also useful to stream previously archived media
+     *         without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the
      *         fragments for the session, up to the number that is specified in
      *         <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved only once for each session.
@@ -471,7 +532,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *         </li>
      *         </ul>
      *         <p>
-     *         In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
+     *         In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
      *         there are multiple fragments with the same start timestamp, the fragment that has the larger fragment
      *         number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not
      *         included. Fragments that have different timestamps but have overlapping durations are still included in
@@ -479,7 +540,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *         </p>
      *         <p>
      *         The default is <code>LIVE</code>.
-     * @see PlaybackMode
+     * @see HLSPlaybackMode
      */
 
     public String getPlaybackMode() {
@@ -488,10 +549,10 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Whether to retrieve live or archived, on-demand data.
+     * Whether to retrieve live, live replay, or archived, on-demand data.
      * </p>
      * <p>
-     * Features of the two types of session include the following:
+     * Features of the three types of sessions include the following:
      * </p>
      * <ul>
      * <li>
@@ -512,6 +573,18 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </note></li>
      * <li>
      * <p>
+     * <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly to how
+     * it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time.
+     * Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment
+     * elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the
+     * media playlist every two seconds. This mode is useful to be able to start playback from when an event is detected
+     * and continue live streaming media that has not yet been ingested as of the time of the session creation. This
+     * mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the
+     * <code>ON_DEMAND</code> mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the fragments for
      * the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The playlist
      * must be retrieved only once for each session. When this type of session is played in a media player, the user
@@ -520,7 +593,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * </ul>
      * <p>
-     * In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
+     * In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
      * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
      * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
      * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
@@ -531,9 +604,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param playbackMode
-     *        Whether to retrieve live or archived, on-demand data.</p>
+     *        Whether to retrieve live, live replay, or archived, on-demand data.</p>
      *        <p>
-     *        Features of the two types of session include the following:
+     *        Features of the three types of sessions include the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -556,6 +629,18 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </note></li>
      *        <li>
      *        <p>
+     *        <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly
+     *        to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given
+     *        start time. Instead of fragments being added as they are ingested, fragments are added as the duration of
+     *        the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new
+     *        fragment is added to the media playlist every two seconds. This mode is useful to be able to start
+     *        playback from when an event is detected and continue live streaming media that has not yet been ingested
+     *        as of the time of the session creation. This mode is also useful to stream previously archived media
+     *        without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the
      *        fragments for the session, up to the number that is specified in
      *        <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved only once for each session.
@@ -565,7 +650,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        </ul>
      *        <p>
-     *        In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
+     *        In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
      *        there are multiple fragments with the same start timestamp, the fragment that has the larger fragment
      *        number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not
      *        included. Fragments that have different timestamps but have overlapping durations are still included in
@@ -574,7 +659,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        The default is <code>LIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PlaybackMode
+     * @see HLSPlaybackMode
      */
 
     public GetHLSStreamingSessionURLRequest withPlaybackMode(String playbackMode) {
@@ -584,10 +669,10 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Whether to retrieve live or archived, on-demand data.
+     * Whether to retrieve live, live replay, or archived, on-demand data.
      * </p>
      * <p>
-     * Features of the two types of session include the following:
+     * Features of the three types of sessions include the following:
      * </p>
      * <ul>
      * <li>
@@ -608,6 +693,18 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </note></li>
      * <li>
      * <p>
+     * <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly to how
+     * it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time.
+     * Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment
+     * elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the
+     * media playlist every two seconds. This mode is useful to be able to start playback from when an event is detected
+     * and continue live streaming media that has not yet been ingested as of the time of the session creation. This
+     * mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the
+     * <code>ON_DEMAND</code> mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the fragments for
      * the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The playlist
      * must be retrieved only once for each session. When this type of session is played in a media player, the user
@@ -616,7 +713,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * </ul>
      * <p>
-     * In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
+     * In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
      * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
      * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
      * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
@@ -627,9 +724,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param playbackMode
-     *        Whether to retrieve live or archived, on-demand data.</p>
+     *        Whether to retrieve live, live replay, or archived, on-demand data.</p>
      *        <p>
-     *        Features of the two types of session include the following:
+     *        Features of the three types of sessions include the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -652,6 +749,18 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </note></li>
      *        <li>
      *        <p>
+     *        <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly
+     *        to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given
+     *        start time. Instead of fragments being added as they are ingested, fragments are added as the duration of
+     *        the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new
+     *        fragment is added to the media playlist every two seconds. This mode is useful to be able to start
+     *        playback from when an event is detected and continue live streaming media that has not yet been ingested
+     *        as of the time of the session creation. This mode is also useful to stream previously archived media
+     *        without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the
      *        fragments for the session, up to the number that is specified in
      *        <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved only once for each session.
@@ -661,7 +770,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        </ul>
      *        <p>
-     *        In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
+     *        In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
      *        there are multiple fragments with the same start timestamp, the fragment that has the larger fragment
      *        number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not
      *        included. Fragments that have different timestamps but have overlapping durations are still included in
@@ -670,10 +779,10 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        The default is <code>LIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PlaybackMode
+     * @see HLSPlaybackMode
      */
 
-    public GetHLSStreamingSessionURLRequest withPlaybackMode(PlaybackMode playbackMode) {
+    public GetHLSStreamingSessionURLRequest withPlaybackMode(HLSPlaybackMode playbackMode) {
         this.playbackMode = playbackMode.toString();
         return this;
     }
@@ -683,21 +792,22 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * The time range of the requested fragment, and the source of the timestamps.
      * </p>
      * <p>
-     * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is optional if
-     * <code>PlaybackMode</code> is <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
-     * <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If
-     * <code>PlaybackMode</code> is <code>ON_DEMAND</code>, both <code>FragmentSelectorType</code> and
-     * <code>TimestampRange</code> must be set.
+     * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>.
+     * This parameter is optional if PlaybackMode is<code/> <code>LIVE</code>. If <code>PlaybackMode</code> is
+     * <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should
+     * not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both
+     * <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.
      * </p>
      * 
      * @param hLSFragmentSelector
      *        The time range of the requested fragment, and the source of the timestamps.</p>
      *        <p>
-     *        This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is
-     *        optional if <code>PlaybackMode</code> is <code>LIVE</code>. If <code>PlaybackMode</code> is
-     *        <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code>
-     *        should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code>, both
-     *        <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.
+     *        This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
+     *        <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code/> <code>LIVE</code>. If
+     *        <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the
+     *        <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
+     *        <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be
+     *        set.
      */
 
     public void setHLSFragmentSelector(HLSFragmentSelector hLSFragmentSelector) {
@@ -709,20 +819,21 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * The time range of the requested fragment, and the source of the timestamps.
      * </p>
      * <p>
-     * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is optional if
-     * <code>PlaybackMode</code> is <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
-     * <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If
-     * <code>PlaybackMode</code> is <code>ON_DEMAND</code>, both <code>FragmentSelectorType</code> and
-     * <code>TimestampRange</code> must be set.
+     * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>.
+     * This parameter is optional if PlaybackMode is<code/> <code>LIVE</code>. If <code>PlaybackMode</code> is
+     * <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should
+     * not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both
+     * <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.
      * </p>
      * 
      * @return The time range of the requested fragment, and the source of the timestamps.</p>
      *         <p>
-     *         This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is
-     *         optional if <code>PlaybackMode</code> is <code>LIVE</code>. If <code>PlaybackMode</code> is
-     *         <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code>
-     *         should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code>, both
-     *         <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.
+     *         This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
+     *         <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code/> <code>LIVE</code>. If
+     *         <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the
+     *         <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
+     *         <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be
+     *         set.
      */
 
     public HLSFragmentSelector getHLSFragmentSelector() {
@@ -734,21 +845,22 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * The time range of the requested fragment, and the source of the timestamps.
      * </p>
      * <p>
-     * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is optional if
-     * <code>PlaybackMode</code> is <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
-     * <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If
-     * <code>PlaybackMode</code> is <code>ON_DEMAND</code>, both <code>FragmentSelectorType</code> and
-     * <code>TimestampRange</code> must be set.
+     * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>.
+     * This parameter is optional if PlaybackMode is<code/> <code>LIVE</code>. If <code>PlaybackMode</code> is
+     * <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should
+     * not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both
+     * <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.
      * </p>
      * 
      * @param hLSFragmentSelector
      *        The time range of the requested fragment, and the source of the timestamps.</p>
      *        <p>
-     *        This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is
-     *        optional if <code>PlaybackMode</code> is <code>LIVE</code>. If <code>PlaybackMode</code> is
-     *        <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code>
-     *        should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code>, both
-     *        <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.
+     *        This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
+     *        <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code/> <code>LIVE</code>. If
+     *        <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the
+     *        <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
+     *        <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be
+     *        set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -907,7 +1019,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        flags between fragments if the fragment timestamps are not accurate or if fragments might be missing. You
      *        should not place discontinuity flags between fragments for the player timeline to accurately map to the
      *        producer timestamps.
-     * @see DiscontinuityMode
+     * @see HLSDiscontinuityMode
      */
 
     public void setDiscontinuityMode(String discontinuityMode) {
@@ -944,7 +1056,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *         flags between fragments if the fragment timestamps are not accurate or if fragments might be missing. You
      *         should not place discontinuity flags between fragments for the player timeline to accurately map to the
      *         producer timestamps.
-     * @see DiscontinuityMode
+     * @see HLSDiscontinuityMode
      */
 
     public String getDiscontinuityMode() {
@@ -983,7 +1095,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        should not place discontinuity flags between fragments for the player timeline to accurately map to the
      *        producer timestamps.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DiscontinuityMode
+     * @see HLSDiscontinuityMode
      */
 
     public GetHLSStreamingSessionURLRequest withDiscontinuityMode(String discontinuityMode) {
@@ -1023,10 +1135,10 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        should not place discontinuity flags between fragments for the player timeline to accurately map to the
      *        producer timestamps.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DiscontinuityMode
+     * @see HLSDiscontinuityMode
      */
 
-    public GetHLSStreamingSessionURLRequest withDiscontinuityMode(DiscontinuityMode discontinuityMode) {
+    public GetHLSStreamingSessionURLRequest withDiscontinuityMode(HLSDiscontinuityMode discontinuityMode) {
         this.discontinuityMode = discontinuityMode.toString();
         return this;
     }
@@ -1055,7 +1167,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the
      *        timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
      *        <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
-     * @see DisplayFragmentTimestamp
+     * @see HLSDisplayFragmentTimestamp
      */
 
     public void setDisplayFragmentTimestamp(String displayFragmentTimestamp) {
@@ -1085,7 +1197,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *         The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the
      *         timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
      *         <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
-     * @see DisplayFragmentTimestamp
+     * @see HLSDisplayFragmentTimestamp
      */
 
     public String getDisplayFragmentTimestamp() {
@@ -1117,7 +1229,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
      *        <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DisplayFragmentTimestamp
+     * @see HLSDisplayFragmentTimestamp
      */
 
     public GetHLSStreamingSessionURLRequest withDisplayFragmentTimestamp(String displayFragmentTimestamp) {
@@ -1150,10 +1262,10 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
      *        <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DisplayFragmentTimestamp
+     * @see HLSDisplayFragmentTimestamp
      */
 
-    public GetHLSStreamingSessionURLRequest withDisplayFragmentTimestamp(DisplayFragmentTimestamp displayFragmentTimestamp) {
+    public GetHLSStreamingSessionURLRequest withDisplayFragmentTimestamp(HLSDisplayFragmentTimestamp displayFragmentTimestamp) {
         this.displayFragmentTimestamp = displayFragmentTimestamp.toString();
         return this;
     }
@@ -1165,7 +1277,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>,
-     * <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.
+     * <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for
+     * that session.
      * </p>
      * <p>
      * The default is 300 (5 minutes).
@@ -1176,8 +1289,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        43200 (12 hours).</p>
      *        <p>
      *        When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>,
-     *        <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can
-     *        be made for that session.
+     *        <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or
+     *        <code>GetTSFragment</code> can be made for that session.
      *        </p>
      *        <p>
      *        The default is 300 (5 minutes).
@@ -1194,7 +1307,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>,
-     * <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.
+     * <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for
+     * that session.
      * </p>
      * <p>
      * The default is 300 (5 minutes).
@@ -1204,8 +1318,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *         43200 (12 hours).</p>
      *         <p>
      *         When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>,
-     *         <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code>
-     *         can be made for that session.
+     *         <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or
+     *         <code>GetTSFragment</code> can be made for that session.
      *         </p>
      *         <p>
      *         The default is 300 (5 minutes).
@@ -1222,7 +1336,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>,
-     * <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.
+     * <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for
+     * that session.
      * </p>
      * <p>
      * The default is 300 (5 minutes).
@@ -1233,8 +1348,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        43200 (12 hours).</p>
      *        <p>
      *        When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>,
-     *        <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can
-     *        be made for that session.
+     *        <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or
+     *        <code>GetTSFragment</code> can be made for that session.
      *        </p>
      *        <p>
      *        The default is 300 (5 minutes).
@@ -1262,8 +1377,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * minimum of 3 fragments and a maximum of 10 fragments.
      * </p>
      * <p>
-     * The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code>, and 1,000 if
-     * <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
+     * The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and
+     * 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      * </p>
      * <p>
      * The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second
@@ -1284,8 +1399,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        playlist have a minimum of 3 fragments and a maximum of 10 fragments.
      *        </p>
      *        <p>
-     *        The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code>, and 1,000 if
-     *        <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
+     *        The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>,
+     *        and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      *        </p>
      *        <p>
      *        The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second
@@ -1312,8 +1427,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * minimum of 3 fragments and a maximum of 10 fragments.
      * </p>
      * <p>
-     * The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code>, and 1,000 if
-     * <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
+     * The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and
+     * 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      * </p>
      * <p>
      * The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second
@@ -1333,8 +1448,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *         media playlist have a minimum of 3 fragments and a maximum of 10 fragments.
      *         </p>
      *         <p>
-     *         The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code>, and 1,000 if
-     *         <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
+     *         The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>,
+     *         and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      *         </p>
      *         <p>
      *         The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with
@@ -1361,8 +1476,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * minimum of 3 fragments and a maximum of 10 fragments.
      * </p>
      * <p>
-     * The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code>, and 1,000 if
-     * <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
+     * The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and
+     * 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      * </p>
      * <p>
      * The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second
@@ -1383,8 +1498,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        playlist have a minimum of 3 fragments and a maximum of 10 fragments.
      *        </p>
      *        <p>
-     *        The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code>, and 1,000 if
-     *        <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
+     *        The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>,
+     *        and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      *        </p>
      *        <p>
      *        The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second

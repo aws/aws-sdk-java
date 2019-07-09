@@ -20,7 +20,6 @@ import com.amazonaws.services.eks.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonEKSWaiters {
@@ -30,7 +29,7 @@ public class AmazonEKSWaiters {
      */
     private final AmazonEKS client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonEKSWaiters");
 
     /**
      * Constructs a new AmazonEKSWaiters with the given client

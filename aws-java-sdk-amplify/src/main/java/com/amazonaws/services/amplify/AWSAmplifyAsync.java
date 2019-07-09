@@ -100,6 +100,39 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
+     * Create a deployment for manual deploy apps. (Apps are not connected to repository)
+     * </p>
+     * 
+     * @param createDeploymentRequest
+     *        Request structure for create a new deployment.
+     * @return A Java Future containing the result of the CreateDeployment operation returned by the service.
+     * @sample AWSAmplifyAsync.CreateDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(CreateDeploymentRequest createDeploymentRequest);
+
+    /**
+     * <p>
+     * Create a deployment for manual deploy apps. (Apps are not connected to repository)
+     * </p>
+     * 
+     * @param createDeploymentRequest
+     *        Request structure for create a new deployment.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDeployment operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.CreateDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(CreateDeploymentRequest createDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDeploymentRequest, CreateDeploymentResult> asyncHandler);
+
+    /**
+     * <p>
      * Create a new DomainAssociation on an App
      * </p>
      * 
@@ -130,6 +163,39 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      */
     java.util.concurrent.Future<CreateDomainAssociationResult> createDomainAssociationAsync(CreateDomainAssociationRequest createDomainAssociationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDomainAssociationRequest, CreateDomainAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a new webhook on an App.
+     * </p>
+     * 
+     * @param createWebhookRequest
+     *        Request structure for create webhook request.
+     * @return A Java Future containing the result of the CreateWebhook operation returned by the service.
+     * @sample AWSAmplifyAsync.CreateWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWebhookResult> createWebhookAsync(CreateWebhookRequest createWebhookRequest);
+
+    /**
+     * <p>
+     * Create a new webhook on an App.
+     * </p>
+     * 
+     * @param createWebhookRequest
+     *        Request structure for create webhook request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateWebhook operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.CreateWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWebhookResult> createWebhookAsync(CreateWebhookRequest createWebhookRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateWebhookRequest, CreateWebhookResult> asyncHandler);
 
     /**
      * <p>
@@ -265,6 +331,39 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
+     * Deletes a webhook.
+     * </p>
+     * 
+     * @param deleteWebhookRequest
+     *        Request structure for the delete webhook request.
+     * @return A Java Future containing the result of the DeleteWebhook operation returned by the service.
+     * @sample AWSAmplifyAsync.DeleteWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWebhookResult> deleteWebhookAsync(DeleteWebhookRequest deleteWebhookRequest);
+
+    /**
+     * <p>
+     * Deletes a webhook.
+     * </p>
+     * 
+     * @param deleteWebhookRequest
+     *        Request structure for the delete webhook request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWebhook operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.DeleteWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWebhookResult> deleteWebhookAsync(DeleteWebhookRequest deleteWebhookRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWebhookRequest, DeleteWebhookResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves an existing Amplify App by appId.
      * </p>
      * 
@@ -394,6 +493,39 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      */
     java.util.concurrent.Future<GetJobResult> getJobAsync(GetJobRequest getJobRequest,
             com.amazonaws.handlers.AsyncHandler<GetJobRequest, GetJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves webhook info that corresponds to a webhookId.
+     * </p>
+     * 
+     * @param getWebhookRequest
+     *        Request structure for the get webhook request.
+     * @return A Java Future containing the result of the GetWebhook operation returned by the service.
+     * @sample AWSAmplifyAsync.GetWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetWebhookResult> getWebhookAsync(GetWebhookRequest getWebhookRequest);
+
+    /**
+     * <p>
+     * Retrieves webhook info that corresponds to a webhookId.
+     * </p>
+     * 
+     * @param getWebhookRequest
+     *        Request structure for the get webhook request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetWebhook operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.GetWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetWebhookResult> getWebhookAsync(GetWebhookRequest getWebhookRequest,
+            com.amazonaws.handlers.AsyncHandler<GetWebhookRequest, GetWebhookResult> asyncHandler);
 
     /**
      * <p>
@@ -529,6 +661,105 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
+     * List tags for resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     *        Request structure used to list tags for resource.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSAmplifyAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * List tags for resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     *        Request structure used to list tags for resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * List webhooks with an app.
+     * </p>
+     * 
+     * @param listWebhooksRequest
+     *        Request structure for the list webhooks request.
+     * @return A Java Future containing the result of the ListWebhooks operation returned by the service.
+     * @sample AWSAmplifyAsync.ListWebhooks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListWebhooks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWebhooksResult> listWebhooksAsync(ListWebhooksRequest listWebhooksRequest);
+
+    /**
+     * <p>
+     * List webhooks with an app.
+     * </p>
+     * 
+     * @param listWebhooksRequest
+     *        Request structure for the list webhooks request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWebhooks operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.ListWebhooks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListWebhooks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWebhooksResult> listWebhooksAsync(ListWebhooksRequest listWebhooksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWebhooksRequest, ListWebhooksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Start a deployment for manual deploy apps. (Apps are not connected to repository)
+     * </p>
+     * 
+     * @param startDeploymentRequest
+     *        Request structure for start a deployment.
+     * @return A Java Future containing the result of the StartDeployment operation returned by the service.
+     * @sample AWSAmplifyAsync.StartDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartDeploymentResult> startDeploymentAsync(StartDeploymentRequest startDeploymentRequest);
+
+    /**
+     * <p>
+     * Start a deployment for manual deploy apps. (Apps are not connected to repository)
+     * </p>
+     * 
+     * @param startDeploymentRequest
+     *        Request structure for start a deployment.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartDeployment operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.StartDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartDeploymentResult> startDeploymentAsync(StartDeploymentRequest startDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<StartDeploymentRequest, StartDeploymentResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts a new job for a branch, part of an Amplify App.
      * </p>
      * 
@@ -592,6 +823,72 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      */
     java.util.concurrent.Future<StopJobResult> stopJobAsync(StopJobRequest stopJobRequest,
             com.amazonaws.handlers.AsyncHandler<StopJobRequest, StopJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Tag resource with tag key and value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Request structure used to tag resource.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSAmplifyAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Tag resource with tag key and value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Request structure used to tag resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Untag resource with resourceArn.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     *        Request structure used to untag resource.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSAmplifyAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Untag resource with resourceArn.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     *        Request structure used to untag resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -691,5 +988,38 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      */
     java.util.concurrent.Future<UpdateDomainAssociationResult> updateDomainAssociationAsync(UpdateDomainAssociationRequest updateDomainAssociationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainAssociationRequest, UpdateDomainAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update a webhook.
+     * </p>
+     * 
+     * @param updateWebhookRequest
+     *        Request structure for update webhook request.
+     * @return A Java Future containing the result of the UpdateWebhook operation returned by the service.
+     * @sample AWSAmplifyAsync.UpdateWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWebhookResult> updateWebhookAsync(UpdateWebhookRequest updateWebhookRequest);
+
+    /**
+     * <p>
+     * Update a webhook.
+     * </p>
+     * 
+     * @param updateWebhookRequest
+     *        Request structure for update webhook request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateWebhook operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.UpdateWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWebhookResult> updateWebhookAsync(UpdateWebhookRequest updateWebhookRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateWebhookRequest, UpdateWebhookResult> asyncHandler);
 
 }

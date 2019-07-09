@@ -20,7 +20,6 @@ import com.amazonaws.services.docdb.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonDocDBWaiters {
@@ -30,7 +29,7 @@ public class AmazonDocDBWaiters {
      */
     private final AmazonDocDB client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonDocDBWaiters");
 
     /**
      * Constructs a new AmazonDocDBWaiters with the given client

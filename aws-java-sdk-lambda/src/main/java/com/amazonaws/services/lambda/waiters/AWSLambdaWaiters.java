@@ -20,7 +20,6 @@ import com.amazonaws.services.lambda.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSLambdaWaiters {
@@ -30,7 +29,7 @@ public class AWSLambdaWaiters {
      */
     private final AWSLambda client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AWSLambdaWaiters");
 
     /**
      * Constructs a new AWSLambdaWaiters with the given client

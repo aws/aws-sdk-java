@@ -20,7 +20,6 @@ import com.amazonaws.services.elasticloadbalancingv2.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonElasticLoadBalancingWaiters {
@@ -30,7 +29,7 @@ public class AmazonElasticLoadBalancingWaiters {
      */
     private final AmazonElasticLoadBalancing client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonElasticLoadBalancingWaiters");
 
     /**
      * Constructs a new AmazonElasticLoadBalancingWaiters with the given client

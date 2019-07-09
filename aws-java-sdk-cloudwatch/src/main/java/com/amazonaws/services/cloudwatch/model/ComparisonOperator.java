@@ -23,7 +23,10 @@ public enum ComparisonOperator {
     GreaterThanOrEqualToThreshold("GreaterThanOrEqualToThreshold"),
     GreaterThanThreshold("GreaterThanThreshold"),
     LessThanThreshold("LessThanThreshold"),
-    LessThanOrEqualToThreshold("LessThanOrEqualToThreshold");
+    LessThanOrEqualToThreshold("LessThanOrEqualToThreshold"),
+    LessThanLowerOrGreaterThanUpperThreshold("LessThanLowerOrGreaterThanUpperThreshold"),
+    LessThanLowerThreshold("LessThanLowerThreshold"),
+    GreaterThanUpperThreshold("GreaterThanUpperThreshold");
 
     private String value;
 

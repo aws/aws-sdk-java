@@ -20,10 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Platform {
 
-    IOS("IOS"),
-    ANDROID("ANDROID"),
-    WEB("WEB"),
-    REACT_NATIVE("REACT_NATIVE");
+    WEB("WEB");
 
     private String value;
 

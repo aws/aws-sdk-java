@@ -530,6 +530,39 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteOrganizationConfigRuleResult> deleteOrganizationConfigRuleAsync(DeleteOrganizationConfigRuleRequest request) {
+
+        return deleteOrganizationConfigRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOrganizationConfigRuleResult> deleteOrganizationConfigRuleAsync(final DeleteOrganizationConfigRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteOrganizationConfigRuleRequest, DeleteOrganizationConfigRuleResult> asyncHandler) {
+        final DeleteOrganizationConfigRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteOrganizationConfigRuleResult>() {
+            @Override
+            public DeleteOrganizationConfigRuleResult call() throws Exception {
+                DeleteOrganizationConfigRuleResult result = null;
+
+                try {
+                    result = executeDeleteOrganizationConfigRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeletePendingAggregationRequestResult> deletePendingAggregationRequestAsync(
             DeletePendingAggregationRequestRequest request) {
 
@@ -1265,6 +1298,76 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigRuleStatusesResult> describeOrganizationConfigRuleStatusesAsync(
+            DescribeOrganizationConfigRuleStatusesRequest request) {
+
+        return describeOrganizationConfigRuleStatusesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigRuleStatusesResult> describeOrganizationConfigRuleStatusesAsync(
+            final DescribeOrganizationConfigRuleStatusesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigRuleStatusesRequest, DescribeOrganizationConfigRuleStatusesResult> asyncHandler) {
+        final DescribeOrganizationConfigRuleStatusesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeOrganizationConfigRuleStatusesResult>() {
+            @Override
+            public DescribeOrganizationConfigRuleStatusesResult call() throws Exception {
+                DescribeOrganizationConfigRuleStatusesResult result = null;
+
+                try {
+                    result = executeDescribeOrganizationConfigRuleStatuses(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigRulesResult> describeOrganizationConfigRulesAsync(
+            DescribeOrganizationConfigRulesRequest request) {
+
+        return describeOrganizationConfigRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigRulesResult> describeOrganizationConfigRulesAsync(
+            final DescribeOrganizationConfigRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigRulesRequest, DescribeOrganizationConfigRulesResult> asyncHandler) {
+        final DescribeOrganizationConfigRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeOrganizationConfigRulesResult>() {
+            @Override
+            public DescribeOrganizationConfigRulesResult call() throws Exception {
+                DescribeOrganizationConfigRulesResult result = null;
+
+                try {
+                    result = executeDescribeOrganizationConfigRules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribePendingAggregationRequestsResult> describePendingAggregationRequestsAsync(
             DescribePendingAggregationRequestsRequest request) {
 
@@ -1763,6 +1866,41 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<GetOrganizationConfigRuleDetailedStatusResult> getOrganizationConfigRuleDetailedStatusAsync(
+            GetOrganizationConfigRuleDetailedStatusRequest request) {
+
+        return getOrganizationConfigRuleDetailedStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOrganizationConfigRuleDetailedStatusResult> getOrganizationConfigRuleDetailedStatusAsync(
+            final GetOrganizationConfigRuleDetailedStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetOrganizationConfigRuleDetailedStatusRequest, GetOrganizationConfigRuleDetailedStatusResult> asyncHandler) {
+        final GetOrganizationConfigRuleDetailedStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetOrganizationConfigRuleDetailedStatusResult>() {
+            @Override
+            public GetOrganizationConfigRuleDetailedStatusResult call() throws Exception {
+                GetOrganizationConfigRuleDetailedStatusResult result = null;
+
+                try {
+                    result = executeGetOrganizationConfigRuleDetailedStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(GetResourceConfigHistoryRequest request) {
 
         return getResourceConfigHistoryAsync(request, null);
@@ -2079,6 +2217,39 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
 
                 try {
                     result = executePutEvaluations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutOrganizationConfigRuleResult> putOrganizationConfigRuleAsync(PutOrganizationConfigRuleRequest request) {
+
+        return putOrganizationConfigRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutOrganizationConfigRuleResult> putOrganizationConfigRuleAsync(final PutOrganizationConfigRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutOrganizationConfigRuleRequest, PutOrganizationConfigRuleResult> asyncHandler) {
+        final PutOrganizationConfigRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutOrganizationConfigRuleResult>() {
+            @Override
+            public PutOrganizationConfigRuleResult call() throws Exception {
+                PutOrganizationConfigRuleResult result = null;
+
+                try {
+                    result = executePutOrganizationConfigRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

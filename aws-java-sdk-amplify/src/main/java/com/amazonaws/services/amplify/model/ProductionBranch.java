@@ -42,7 +42,7 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
     private String status;
     /**
      * <p>
-     * Thumbnail Url for Production Branch.
+     * Thumbnail URL for Production Branch.
      * </p>
      */
     private String thumbnailUrl;
@@ -135,11 +135,11 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Thumbnail Url for Production Branch.
+     * Thumbnail URL for Production Branch.
      * </p>
      * 
      * @param thumbnailUrl
-     *        Thumbnail Url for Production Branch.
+     *        Thumbnail URL for Production Branch.
      */
 
     public void setThumbnailUrl(String thumbnailUrl) {
@@ -148,10 +148,10 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Thumbnail Url for Production Branch.
+     * Thumbnail URL for Production Branch.
      * </p>
      * 
-     * @return Thumbnail Url for Production Branch.
+     * @return Thumbnail URL for Production Branch.
      */
 
     public String getThumbnailUrl() {
@@ -160,11 +160,11 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Thumbnail Url for Production Branch.
+     * Thumbnail URL for Production Branch.
      * </p>
      * 
      * @param thumbnailUrl
-     *        Thumbnail Url for Production Branch.
+     *        Thumbnail URL for Production Branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

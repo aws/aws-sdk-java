@@ -94,6 +94,24 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String buildSpec;
+    /**
+     * <p>
+     * Enables automated branch creation for the Amplify App.
+     * </p>
+     */
+    private Boolean enableAutoBranchCreation;
+    /**
+     * <p>
+     * Automated branch creation glob patterns for the Amplify App.
+     * </p>
+     */
+    private java.util.List<String> autoBranchCreationPatterns;
+    /**
+     * <p>
+     * Automated branch creation config for the Amplify App.
+     * </p>
+     */
+    private AutoBranchCreationConfig autoBranchCreationConfig;
 
     /**
      * <p>
@@ -630,6 +648,168 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Enables automated branch creation for the Amplify App.
+     * </p>
+     * 
+     * @param enableAutoBranchCreation
+     *        Enables automated branch creation for the Amplify App.
+     */
+
+    public void setEnableAutoBranchCreation(Boolean enableAutoBranchCreation) {
+        this.enableAutoBranchCreation = enableAutoBranchCreation;
+    }
+
+    /**
+     * <p>
+     * Enables automated branch creation for the Amplify App.
+     * </p>
+     * 
+     * @return Enables automated branch creation for the Amplify App.
+     */
+
+    public Boolean getEnableAutoBranchCreation() {
+        return this.enableAutoBranchCreation;
+    }
+
+    /**
+     * <p>
+     * Enables automated branch creation for the Amplify App.
+     * </p>
+     * 
+     * @param enableAutoBranchCreation
+     *        Enables automated branch creation for the Amplify App.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAppRequest withEnableAutoBranchCreation(Boolean enableAutoBranchCreation) {
+        setEnableAutoBranchCreation(enableAutoBranchCreation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables automated branch creation for the Amplify App.
+     * </p>
+     * 
+     * @return Enables automated branch creation for the Amplify App.
+     */
+
+    public Boolean isEnableAutoBranchCreation() {
+        return this.enableAutoBranchCreation;
+    }
+
+    /**
+     * <p>
+     * Automated branch creation glob patterns for the Amplify App.
+     * </p>
+     * 
+     * @return Automated branch creation glob patterns for the Amplify App.
+     */
+
+    public java.util.List<String> getAutoBranchCreationPatterns() {
+        return autoBranchCreationPatterns;
+    }
+
+    /**
+     * <p>
+     * Automated branch creation glob patterns for the Amplify App.
+     * </p>
+     * 
+     * @param autoBranchCreationPatterns
+     *        Automated branch creation glob patterns for the Amplify App.
+     */
+
+    public void setAutoBranchCreationPatterns(java.util.Collection<String> autoBranchCreationPatterns) {
+        if (autoBranchCreationPatterns == null) {
+            this.autoBranchCreationPatterns = null;
+            return;
+        }
+
+        this.autoBranchCreationPatterns = new java.util.ArrayList<String>(autoBranchCreationPatterns);
+    }
+
+    /**
+     * <p>
+     * Automated branch creation glob patterns for the Amplify App.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAutoBranchCreationPatterns(java.util.Collection)} or
+     * {@link #withAutoBranchCreationPatterns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param autoBranchCreationPatterns
+     *        Automated branch creation glob patterns for the Amplify App.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAppRequest withAutoBranchCreationPatterns(String... autoBranchCreationPatterns) {
+        if (this.autoBranchCreationPatterns == null) {
+            setAutoBranchCreationPatterns(new java.util.ArrayList<String>(autoBranchCreationPatterns.length));
+        }
+        for (String ele : autoBranchCreationPatterns) {
+            this.autoBranchCreationPatterns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Automated branch creation glob patterns for the Amplify App.
+     * </p>
+     * 
+     * @param autoBranchCreationPatterns
+     *        Automated branch creation glob patterns for the Amplify App.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAppRequest withAutoBranchCreationPatterns(java.util.Collection<String> autoBranchCreationPatterns) {
+        setAutoBranchCreationPatterns(autoBranchCreationPatterns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Automated branch creation config for the Amplify App.
+     * </p>
+     * 
+     * @param autoBranchCreationConfig
+     *        Automated branch creation config for the Amplify App.
+     */
+
+    public void setAutoBranchCreationConfig(AutoBranchCreationConfig autoBranchCreationConfig) {
+        this.autoBranchCreationConfig = autoBranchCreationConfig;
+    }
+
+    /**
+     * <p>
+     * Automated branch creation config for the Amplify App.
+     * </p>
+     * 
+     * @return Automated branch creation config for the Amplify App.
+     */
+
+    public AutoBranchCreationConfig getAutoBranchCreationConfig() {
+        return this.autoBranchCreationConfig;
+    }
+
+    /**
+     * <p>
+     * Automated branch creation config for the Amplify App.
+     * </p>
+     * 
+     * @param autoBranchCreationConfig
+     *        Automated branch creation config for the Amplify App.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAppRequest withAutoBranchCreationConfig(AutoBranchCreationConfig autoBranchCreationConfig) {
+        setAutoBranchCreationConfig(autoBranchCreationConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -662,7 +842,13 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getCustomRules() != null)
             sb.append("CustomRules: ").append(getCustomRules()).append(",");
         if (getBuildSpec() != null)
-            sb.append("BuildSpec: ").append(getBuildSpec());
+            sb.append("BuildSpec: ").append(getBuildSpec()).append(",");
+        if (getEnableAutoBranchCreation() != null)
+            sb.append("EnableAutoBranchCreation: ").append(getEnableAutoBranchCreation()).append(",");
+        if (getAutoBranchCreationPatterns() != null)
+            sb.append("AutoBranchCreationPatterns: ").append(getAutoBranchCreationPatterns()).append(",");
+        if (getAutoBranchCreationConfig() != null)
+            sb.append("AutoBranchCreationConfig: ").append(getAutoBranchCreationConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -721,6 +907,18 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getBuildSpec() != null && other.getBuildSpec().equals(this.getBuildSpec()) == false)
             return false;
+        if (other.getEnableAutoBranchCreation() == null ^ this.getEnableAutoBranchCreation() == null)
+            return false;
+        if (other.getEnableAutoBranchCreation() != null && other.getEnableAutoBranchCreation().equals(this.getEnableAutoBranchCreation()) == false)
+            return false;
+        if (other.getAutoBranchCreationPatterns() == null ^ this.getAutoBranchCreationPatterns() == null)
+            return false;
+        if (other.getAutoBranchCreationPatterns() != null && other.getAutoBranchCreationPatterns().equals(this.getAutoBranchCreationPatterns()) == false)
+            return false;
+        if (other.getAutoBranchCreationConfig() == null ^ this.getAutoBranchCreationConfig() == null)
+            return false;
+        if (other.getAutoBranchCreationConfig() != null && other.getAutoBranchCreationConfig().equals(this.getAutoBranchCreationConfig()) == false)
+            return false;
         return true;
     }
 
@@ -740,6 +938,9 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getBasicAuthCredentials() == null) ? 0 : getBasicAuthCredentials().hashCode());
         hashCode = prime * hashCode + ((getCustomRules() == null) ? 0 : getCustomRules().hashCode());
         hashCode = prime * hashCode + ((getBuildSpec() == null) ? 0 : getBuildSpec().hashCode());
+        hashCode = prime * hashCode + ((getEnableAutoBranchCreation() == null) ? 0 : getEnableAutoBranchCreation().hashCode());
+        hashCode = prime * hashCode + ((getAutoBranchCreationPatterns() == null) ? 0 : getAutoBranchCreationPatterns().hashCode());
+        hashCode = prime * hashCode + ((getAutoBranchCreationConfig() == null) ? 0 : getAutoBranchCreationConfig().hashCode());
         return hashCode;
     }
 

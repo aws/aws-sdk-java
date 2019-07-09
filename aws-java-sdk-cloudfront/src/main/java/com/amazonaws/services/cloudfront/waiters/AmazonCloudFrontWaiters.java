@@ -20,7 +20,6 @@ import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCloudFrontWaiters {
@@ -30,7 +29,7 @@ public class AmazonCloudFrontWaiters {
      */
     private final AmazonCloudFront client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonCloudFrontWaiters");
 
     /**
      * Constructs a new AmazonCloudFrontWaiters with the given client

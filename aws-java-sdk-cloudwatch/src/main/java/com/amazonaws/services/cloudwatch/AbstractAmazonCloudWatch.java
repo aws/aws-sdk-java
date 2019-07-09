@@ -44,6 +44,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public DeleteAnomalyDetectorResult deleteAnomalyDetector(DeleteAnomalyDetectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDashboardsResult deleteDashboards(DeleteDashboardsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -70,6 +75,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
 
     @Override
     public DescribeAlarmsForMetricResult describeAlarmsForMetric(DescribeAlarmsForMetricRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAnomalyDetectorsResult describeAnomalyDetectors(DescribeAnomalyDetectorsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -120,6 +130,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAnomalyDetectorResult putAnomalyDetector(PutAnomalyDetectorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

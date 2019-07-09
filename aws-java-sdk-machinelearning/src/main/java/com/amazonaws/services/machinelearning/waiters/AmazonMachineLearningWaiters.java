@@ -20,7 +20,6 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonMachineLearningWaiters {
@@ -30,7 +29,7 @@ public class AmazonMachineLearningWaiters {
      */
     private final AmazonMachineLearning client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonMachineLearningWaiters");
 
     /**
      * Constructs a new AmazonMachineLearningWaiters with the given client

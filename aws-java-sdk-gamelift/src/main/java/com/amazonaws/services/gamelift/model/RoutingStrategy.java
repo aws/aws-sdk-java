@@ -24,104 +24,33 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ul>
  * <li>
  * <p>
- * <a>CreateFleet</a>
+ * <a>CreateAlias</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListFleets</a>
+ * <a>ListAliases</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteFleet</a>
+ * <a>DescribeAlias</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Describe fleets:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>DescribeFleetAttributes</a>
+ * <a>UpdateAlias</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeFleetCapacity</a>
+ * <a>DeleteAlias</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeFleetPortSettings</a>
+ * <a>ResolveAlias</a>
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetUtilization</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeRuntimeConfiguration</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeEC2InstanceLimits</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetEvents</a>
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * Update fleets:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>UpdateFleetAttributes</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateFleetCapacity</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateFleetPortSettings</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateRuntimeConfiguration</a>
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * Manage fleet actions:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>StartFleetActions</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>StopFleetActions</a>
- * </p>
- * </li>
- * </ul>
  * </li>
  * </ul>
  * 

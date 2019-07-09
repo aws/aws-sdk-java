@@ -22,6 +22,7 @@ public enum JobType {
 
     RELEASE("RELEASE"),
     RETRY("RETRY"),
+    MANUAL("MANUAL"),
     WEB_HOOK("WEB_HOOK");
 
     private String value;

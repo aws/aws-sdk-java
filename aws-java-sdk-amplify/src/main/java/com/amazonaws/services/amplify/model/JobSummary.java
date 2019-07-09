@@ -78,7 +78,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date endTime;
     /**
      * <p>
-     * Type for the Job.
+     * Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually retried by
+     * using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
      * </p>
      */
     private String jobType;
@@ -424,11 +425,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type for the Job.
+     * Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually retried by
+     * using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
      * </p>
      * 
      * @param jobType
-     *        Type for the Job.
+     *        Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually
+     *        retried by using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
      * @see JobType
      */
 
@@ -438,10 +441,12 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type for the Job.
+     * Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually retried by
+     * using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
      * </p>
      * 
-     * @return Type for the Job.
+     * @return Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually
+     *         retried by using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
      * @see JobType
      */
 
@@ -451,11 +456,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type for the Job.
+     * Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually retried by
+     * using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
      * </p>
      * 
      * @param jobType
-     *        Type for the Job.
+     *        Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually
+     *        retried by using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */
@@ -467,11 +474,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type for the Job.
+     * Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually retried by
+     * using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
      * </p>
      * 
      * @param jobType
-     *        Type for the Job.
+     *        Type for the Job. \n "RELEASE": Manually released from source by using StartJob API. "RETRY": Manually
+     *        retried by using StartJob API. "WEB_HOOK": Automatically triggered by WebHooks.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */

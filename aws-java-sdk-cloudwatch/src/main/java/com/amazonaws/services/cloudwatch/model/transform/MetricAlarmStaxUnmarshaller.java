@@ -200,6 +200,10 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
                     continue;
                 }
 
+                if (context.testExpression("ThresholdMetricId", targetDepth)) {
+                    metricAlarm.setThresholdMetricId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return metricAlarm;

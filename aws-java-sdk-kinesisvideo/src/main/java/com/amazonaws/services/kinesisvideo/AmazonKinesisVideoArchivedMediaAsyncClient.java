@@ -61,6 +61,39 @@ public class AmazonKinesisVideoArchivedMediaAsyncClient extends AmazonKinesisVid
     }
 
     @Override
+    public java.util.concurrent.Future<GetDASHStreamingSessionURLResult> getDASHStreamingSessionURLAsync(GetDASHStreamingSessionURLRequest request) {
+
+        return getDASHStreamingSessionURLAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDASHStreamingSessionURLResult> getDASHStreamingSessionURLAsync(final GetDASHStreamingSessionURLRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDASHStreamingSessionURLRequest, GetDASHStreamingSessionURLResult> asyncHandler) {
+        final GetDASHStreamingSessionURLRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDASHStreamingSessionURLResult>() {
+            @Override
+            public GetDASHStreamingSessionURLResult call() throws Exception {
+                GetDASHStreamingSessionURLResult result = null;
+
+                try {
+                    result = executeGetDASHStreamingSessionURL(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetHLSStreamingSessionURLResult> getHLSStreamingSessionURLAsync(GetHLSStreamingSessionURLRequest request) {
 
         return getHLSStreamingSessionURLAsync(request, null);

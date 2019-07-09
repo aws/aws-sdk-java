@@ -35,7 +35,9 @@ public enum ParameterExceptionField {
     RATE_KEY("RATE_KEY"),
     RULE_TYPE("RULE_TYPE"),
     NEXT_MARKER("NEXT_MARKER"),
-    RESOURCE_ARN("RESOURCE_ARN");
+    RESOURCE_ARN("RESOURCE_ARN"),
+    TAGS("TAGS"),
+    TAG_KEYS("TAG_KEYS");
 
     private String value;
 

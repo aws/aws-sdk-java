@@ -20,7 +20,6 @@ import com.amazonaws.services.acmpca.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSACMPCAWaiters {
@@ -30,7 +29,7 @@ public class AWSACMPCAWaiters {
      */
     private final AWSACMPCA client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AWSACMPCAWaiters");
 
     /**
      * Constructs a new AWSACMPCAWaiters with the given client

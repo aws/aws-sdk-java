@@ -20,7 +20,6 @@ import com.amazonaws.services.cloudformation.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCloudFormationWaiters {
@@ -30,7 +29,7 @@ public class AmazonCloudFormationWaiters {
      */
     private final AmazonCloudFormation client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonCloudFormationWaiters");
 
     /**
      * Constructs a new AmazonCloudFormationWaiters with the given client

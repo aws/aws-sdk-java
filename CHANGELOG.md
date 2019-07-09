@@ -1,3 +1,44 @@
+# __1.11.589__ __2019-07-09__
+## __AWS Amplify__
+  - ### Features
+    - This release adds webhook APIs and manual deployment APIs for AWS Amplify Console.
+
+## __AWS Config__
+  - ### Features
+    - AWS Config now supports a new set of APIs to manage AWS Config rules across your organization in AWS Organizations. Using this capability, you can centrally create, update, and delete AWS Config rules across all accounts in your organization. This capability is particularly useful if you have a need to deploy a common set of AWS Config rules across all accounts. You can also specify accounts where AWS Config rules should not be created. In addition, you can use these APIs from the master account in AWS Organizations to enforce governance by ensuring that the underlying AWS Config rules are not modifiable by your organization member accounts.These APIs work for both managed and custom AWS Config rules. For more information, see Enabling AWS Config Rules Across all Accounts in Your Organization in the AWS Config Developer Guide.The new APIs are available in all commercial AWS Regions where AWS Config and AWS Organizations are supported. For the full list of supported Regions, see AWS Regions and Endpoints in the AWS General Reference. To learn more about AWS Config, visit the AWS Config webpage. To learn more about AWS Organizations, visit the AWS Organizations webpage.
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fix for Github issue #2035 - Waiters now use a cached threadpool ExecutorService instead of a fixed threadpool. This will reduce overall resource consumption for typical use-cases, and eliminate inappropriate thread blocking behavior for heavy use.
+
+## __AWS WAF__
+  - ### Features
+    - Updated SDK APIs to add tags to WAF Resources: WebACL, Rule, Rulegroup and RateBasedRule. Tags can also be added during creation of these resources.
+
+## __AWS WAF Regional__
+  - ### Features
+    - Updated SDK APIs to add tags to WAF Resources: WebACL, Rule, Rulegroup and RateBasedRule. Tags can also be added during creation of these resources.
+
+## __Amazon CloudWatch__
+  - ### Features
+    - This release adds three new APIs (PutAnomalyDetector, DeleteAnomalyDetector, and DescribeAnomalyDetectors) to support the new feature, CloudWatch Anomaly Detection. In addition, PutMetricAlarm and DescribeAlarms APIs are updated to support management of Anomaly Detection based alarms.
+
+## __Amazon Elastic File System__
+  - ### Features
+    - EFS customers can now enable Lifecycle Management for all file systems. You can also now select from one of four Lifecycle Management policies (14, 30, 60 and 90 days), to automatically move files that have not been accessed for the period of time defined by the policy, from the EFS Standard storage class to the EFS Infrequent Access (IA) storage class. EFS IA provides price/performance that is cost-optimized for files that are not accessed every day.
+
+## __Amazon GameLift__
+  - ### Features
+    - GameLift FlexMatch now supports matchmaking of up to 200 players per game session, and FlexMatch can now automatically backfill your game sessions whenever there is an open slot.
+
+## __Amazon Kinesis Video Streams__
+  - ### Features
+    - Add "GET_DASH_STREAMING_SESSION_URL" as an API name to the GetDataEndpoint API.
+
+## __Amazon Kinesis Video Streams Archived Media__
+  - ### Features
+    - Adds support for the GetDASHStreamingSessionURL API. Also adds support for the Live Replay playback mode of the GetHLSStreamingSessionURL API.
+
 # __1.11.588__ __2019-07-08__
 ## __AWS Cost Explorer Service__
   - ### Features

@@ -290,6 +290,39 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAnomalyDetectorResult> deleteAnomalyDetectorAsync(DeleteAnomalyDetectorRequest request) {
+
+        return deleteAnomalyDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAnomalyDetectorResult> deleteAnomalyDetectorAsync(final DeleteAnomalyDetectorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAnomalyDetectorRequest, DeleteAnomalyDetectorResult> asyncHandler) {
+        final DeleteAnomalyDetectorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAnomalyDetectorResult>() {
+            @Override
+            public DeleteAnomalyDetectorResult call() throws Exception {
+                DeleteAnomalyDetectorResult result = null;
+
+                try {
+                    result = executeDeleteAnomalyDetector(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDashboardsResult> deleteDashboardsAsync(DeleteDashboardsRequest request) {
 
         return deleteDashboardsAsync(request, null);
@@ -452,6 +485,39 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
 
                 try {
                     result = executeDescribeAlarmsForMetric(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAnomalyDetectorsResult> describeAnomalyDetectorsAsync(DescribeAnomalyDetectorsRequest request) {
+
+        return describeAnomalyDetectorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAnomalyDetectorsResult> describeAnomalyDetectorsAsync(final DescribeAnomalyDetectorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAnomalyDetectorsRequest, DescribeAnomalyDetectorsResult> asyncHandler) {
+        final DescribeAnomalyDetectorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAnomalyDetectorsResult>() {
+            @Override
+            public DescribeAnomalyDetectorsResult call() throws Exception {
+                DescribeAnomalyDetectorsResult result = null;
+
+                try {
+                    result = executeDescribeAnomalyDetectors(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -772,6 +838,39 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAnomalyDetectorResult> putAnomalyDetectorAsync(PutAnomalyDetectorRequest request) {
+
+        return putAnomalyDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAnomalyDetectorResult> putAnomalyDetectorAsync(final PutAnomalyDetectorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAnomalyDetectorRequest, PutAnomalyDetectorResult> asyncHandler) {
+        final PutAnomalyDetectorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAnomalyDetectorResult>() {
+            @Override
+            public PutAnomalyDetectorResult call() throws Exception {
+                PutAnomalyDetectorResult result = null;
+
+                try {
+                    result = executePutAnomalyDetector(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

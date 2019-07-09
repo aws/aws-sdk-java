@@ -30,35 +30,22 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A value that indicates how long it takes to transition files to the IA storage class. Currently, the only valid
-     * value is <code>AFTER_30_DAYS</code>.
-     * </p>
-     * <p>
-     * <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
-     * transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing the
-     * contents of a directory don't count as a file access event.
+     * A value that describes the period of time that a file is not accessed, after which it transitions to the IA
+     * storage class. Metadata operations such as listing the contents of a directory don't count as file access events.
      * </p>
      */
     private String transitionToIA;
 
     /**
      * <p>
-     * A value that indicates how long it takes to transition files to the IA storage class. Currently, the only valid
-     * value is <code>AFTER_30_DAYS</code>.
-     * </p>
-     * <p>
-     * <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
-     * transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing the
-     * contents of a directory don't count as a file access event.
+     * A value that describes the period of time that a file is not accessed, after which it transitions to the IA
+     * storage class. Metadata operations such as listing the contents of a directory don't count as file access events.
      * </p>
      * 
      * @param transitionToIA
-     *        A value that indicates how long it takes to transition files to the IA storage class. Currently, the only
-     *        valid value is <code>AFTER_30_DAYS</code>.</p>
-     *        <p>
-     *        <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
-     *        transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing
-     *        the contents of a directory don't count as a file access event.
+     *        A value that describes the period of time that a file is not accessed, after which it transitions to the
+     *        IA storage class. Metadata operations such as listing the contents of a directory don't count as file
+     *        access events.
      * @see TransitionToIARules
      */
 
@@ -68,21 +55,13 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A value that indicates how long it takes to transition files to the IA storage class. Currently, the only valid
-     * value is <code>AFTER_30_DAYS</code>.
-     * </p>
-     * <p>
-     * <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
-     * transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing the
-     * contents of a directory don't count as a file access event.
+     * A value that describes the period of time that a file is not accessed, after which it transitions to the IA
+     * storage class. Metadata operations such as listing the contents of a directory don't count as file access events.
      * </p>
      * 
-     * @return A value that indicates how long it takes to transition files to the IA storage class. Currently, the only
-     *         valid value is <code>AFTER_30_DAYS</code>.</p>
-     *         <p>
-     *         <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
-     *         transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing
-     *         the contents of a directory don't count as a file access event.
+     * @return A value that describes the period of time that a file is not accessed, after which it transitions to the
+     *         IA storage class. Metadata operations such as listing the contents of a directory don't count as file
+     *         access events.
      * @see TransitionToIARules
      */
 
@@ -92,22 +71,14 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A value that indicates how long it takes to transition files to the IA storage class. Currently, the only valid
-     * value is <code>AFTER_30_DAYS</code>.
-     * </p>
-     * <p>
-     * <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
-     * transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing the
-     * contents of a directory don't count as a file access event.
+     * A value that describes the period of time that a file is not accessed, after which it transitions to the IA
+     * storage class. Metadata operations such as listing the contents of a directory don't count as file access events.
      * </p>
      * 
      * @param transitionToIA
-     *        A value that indicates how long it takes to transition files to the IA storage class. Currently, the only
-     *        valid value is <code>AFTER_30_DAYS</code>.</p>
-     *        <p>
-     *        <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
-     *        transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing
-     *        the contents of a directory don't count as a file access event.
+     *        A value that describes the period of time that a file is not accessed, after which it transitions to the
+     *        IA storage class. Metadata operations such as listing the contents of a directory don't count as file
+     *        access events.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitionToIARules
      */
@@ -119,22 +90,14 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A value that indicates how long it takes to transition files to the IA storage class. Currently, the only valid
-     * value is <code>AFTER_30_DAYS</code>.
-     * </p>
-     * <p>
-     * <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
-     * transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing the
-     * contents of a directory don't count as a file access event.
+     * A value that describes the period of time that a file is not accessed, after which it transitions to the IA
+     * storage class. Metadata operations such as listing the contents of a directory don't count as file access events.
      * </p>
      * 
      * @param transitionToIA
-     *        A value that indicates how long it takes to transition files to the IA storage class. Currently, the only
-     *        valid value is <code>AFTER_30_DAYS</code>.</p>
-     *        <p>
-     *        <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
-     *        transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing
-     *        the contents of a directory don't count as a file access event.
+     *        A value that describes the period of time that a file is not accessed, after which it transitions to the
+     *        IA storage class. Metadata operations such as listing the contents of a directory don't count as file
+     *        access events.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitionToIARules
      */

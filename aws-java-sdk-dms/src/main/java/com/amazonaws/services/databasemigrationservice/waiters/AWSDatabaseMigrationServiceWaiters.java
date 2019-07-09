@@ -20,7 +20,6 @@ import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSDatabaseMigrationServiceWaiters {
@@ -30,7 +29,7 @@ public class AWSDatabaseMigrationServiceWaiters {
      */
     private final AWSDatabaseMigrationService client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AWSDatabaseMigrationServiceWaiters");
 
     /**
      * Constructs a new AWSDatabaseMigrationServiceWaiters with the given client

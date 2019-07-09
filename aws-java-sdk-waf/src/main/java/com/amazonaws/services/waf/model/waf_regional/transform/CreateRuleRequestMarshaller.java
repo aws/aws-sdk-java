@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.waf.model.waf_regional.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class CreateRuleRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricName").build();
     private static final MarshallingInfo<String> CHANGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeToken").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateRuleRequestMarshaller instance = new CreateRuleRequestMarshaller();
 
@@ -53,6 +56,7 @@ public class CreateRuleRequestMarshaller {
             protocolMarshaller.marshall(createRuleRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createRuleRequest.getMetricName(), METRICNAME_BINDING);
             protocolMarshaller.marshall(createRuleRequest.getChangeToken(), CHANGETOKEN_BINDING);
+            protocolMarshaller.marshall(createRuleRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

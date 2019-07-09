@@ -10,7 +10,7 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.kinesisvideo.model;
+package com.amazonaws.services.config.model;
 
 import javax.annotation.Generated;
 
@@ -18,14 +18,15 @@ import javax.annotation.Generated;
  * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum DisplayFragmentTimestamp {
+public enum OrganizationConfigRuleTriggerType {
 
-    ALWAYS("ALWAYS"),
-    NEVER("NEVER");
+    ConfigurationItemChangeNotification("ConfigurationItemChangeNotification"),
+    OversizedConfigurationItemChangeNotification("OversizedConfigurationItemChangeNotification"),
+    ScheduledNotification("ScheduledNotification");
 
     private String value;
 
-    private DisplayFragmentTimestamp(String value) {
+    private OrganizationConfigRuleTriggerType(String value) {
         this.value = value;
     }
 
@@ -39,17 +40,17 @@ public enum DisplayFragmentTimestamp {
      *
      * @param value
      *        real value
-     * @return DisplayFragmentTimestamp corresponding to the value
+     * @return OrganizationConfigRuleTriggerType corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static DisplayFragmentTimestamp fromValue(String value) {
+    public static OrganizationConfigRuleTriggerType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (DisplayFragmentTimestamp enumEntry : DisplayFragmentTimestamp.values()) {
+        for (OrganizationConfigRuleTriggerType enumEntry : OrganizationConfigRuleTriggerType.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

@@ -306,6 +306,19 @@ public interface AmazonConfig {
     DeleteEvaluationResultsResult deleteEvaluationResults(DeleteEvaluationResultsRequest deleteEvaluationResultsRequest);
 
     /**
+     * @param deleteOrganizationConfigRuleRequest
+     * @return Result of the DeleteOrganizationConfigRule operation returned by the service.
+     * @throws NoSuchOrganizationConfigRuleException
+     * @throws ResourceInUseException
+     *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request
+     *         again later.
+     * @sample AmazonConfig.DeleteOrganizationConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteOrganizationConfigRuleResult deleteOrganizationConfigRule(DeleteOrganizationConfigRuleRequest deleteOrganizationConfigRuleRequest);
+
+    /**
      * <p>
      * Deletes pending authorization requests for a specified aggregator account in a specified region.
      * </p>
@@ -329,6 +342,7 @@ public interface AmazonConfig {
      * @return Result of the DeleteRemediationConfiguration operation returned by the service.
      * @throws NoSuchRemediationConfigurationException
      *         You specified an AWS Config rule without a remediation configuration.
+     * @throws RemediationInProgressException
      * @sample AmazonConfig.DeleteRemediationConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -783,6 +797,37 @@ public interface AmazonConfig {
     DescribeDeliveryChannelsResult describeDeliveryChannels();
 
     /**
+     * @param describeOrganizationConfigRuleStatusesRequest
+     * @return Result of the DescribeOrganizationConfigRuleStatuses operation returned by the service.
+     * @throws NoSuchOrganizationConfigRuleException
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @sample AmazonConfig.DescribeOrganizationConfigRuleStatuses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeOrganizationConfigRuleStatusesResult describeOrganizationConfigRuleStatuses(
+            DescribeOrganizationConfigRuleStatusesRequest describeOrganizationConfigRuleStatusesRequest);
+
+    /**
+     * @param describeOrganizationConfigRulesRequest
+     * @return Result of the DescribeOrganizationConfigRules operation returned by the service.
+     * @throws NoSuchOrganizationConfigRuleException
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @sample AmazonConfig.DescribeOrganizationConfigRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeOrganizationConfigRulesResult describeOrganizationConfigRules(DescribeOrganizationConfigRulesRequest describeOrganizationConfigRulesRequest);
+
+    /**
      * <p>
      * Returns a list of all pending aggregation requests.
      * </p>
@@ -1139,6 +1184,22 @@ public interface AmazonConfig {
      *      target="_top">AWS API Documentation</a>
      */
     GetDiscoveredResourceCountsResult getDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest getDiscoveredResourceCountsRequest);
+
+    /**
+     * @param getOrganizationConfigRuleDetailedStatusRequest
+     * @return Result of the GetOrganizationConfigRuleDetailedStatus operation returned by the service.
+     * @throws NoSuchOrganizationConfigRuleException
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @sample AmazonConfig.GetOrganizationConfigRuleDetailedStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetOrganizationConfigRuleDetailedStatusResult getOrganizationConfigRuleDetailedStatus(
+            GetOrganizationConfigRuleDetailedStatusRequest getOrganizationConfigRuleDetailedStatusRequest);
 
     /**
      * <p>
@@ -1507,6 +1568,43 @@ public interface AmazonConfig {
      *      Documentation</a>
      */
     PutEvaluationsResult putEvaluations(PutEvaluationsRequest putEvaluationsRequest);
+
+    /**
+     * @param putOrganizationConfigRuleRequest
+     * @return Result of the PutOrganizationConfigRule operation returned by the service.
+     * @throws MaxNumberOfOrganizationConfigRulesExceededException
+     * @throws ResourceInUseException
+     *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request
+     *         again later.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws OrganizationAccessDeniedException
+     *         No permission to call the EnableAWSServiceAccess API.
+     * @throws NoAvailableOrganizationException
+     *         Organization does is no longer available.
+     * @throws OrganizationAllFeaturesNotEnabledException
+     *         The configuration aggregator cannot be created because organization does not have all features enabled.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the
+     *         config:Put* action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.
+     *         </p>
+     *         </li>
+     * @sample AmazonConfig.PutOrganizationConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutOrganizationConfigRuleResult putOrganizationConfigRule(PutOrganizationConfigRuleRequest putOrganizationConfigRuleRequest);
 
     /**
      * <p>

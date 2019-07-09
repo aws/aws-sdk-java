@@ -20,7 +20,6 @@ import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCertificateManagerWaiters {
@@ -30,7 +29,7 @@ public class AWSCertificateManagerWaiters {
      */
     private final AWSCertificateManager client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AWSCertificateManagerWaiters");
 
     /**
      * Constructs a new AWSCertificateManagerWaiters with the given client

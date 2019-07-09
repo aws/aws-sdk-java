@@ -130,6 +130,10 @@ public class BranchJsonUnmarshaller implements Unmarshaller<Branch, JsonUnmarsha
                     context.nextToken();
                     branch.setTtl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("associatedResources", targetDepth)) {
+                    context.nextToken();
+                    branch.setAssociatedResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

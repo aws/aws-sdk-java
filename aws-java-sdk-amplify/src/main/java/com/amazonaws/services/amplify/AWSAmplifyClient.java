@@ -84,6 +84,9 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                             new JsonErrorShapeMetadata().withErrorCode("DependentServiceFailureException").withModeledClass(
                                     com.amazonaws.services.amplify.model.DependentServiceFailureException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.amplify.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
                                     com.amazonaws.services.amplify.model.NotFoundException.class))
                     .addErrorMetadata(
@@ -275,6 +278,68 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
 
     /**
      * <p>
+     * Create a deployment for manual deploy apps. (Apps are not connected to repository)
+     * </p>
+     * 
+     * @param createDeploymentRequest
+     *        Request structure for create a new deployment.
+     * @return Result of the CreateDeployment operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws LimitExceededException
+     *         Exception thrown when a resource could not be created because of service limits.
+     * @sample AWSAmplify.CreateDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateDeploymentResult createDeployment(CreateDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDeployment(request);
+    }
+
+    @SdkInternalApi
+    final CreateDeploymentResult executeCreateDeployment(CreateDeploymentRequest createDeploymentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDeploymentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDeploymentRequest> request = null;
+        Response<CreateDeploymentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeploymentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeployment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDeploymentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Create a new DomainAssociation on an App
      * </p>
      * 
@@ -331,6 +396,72 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
             HttpResponseHandler<AmazonWebServiceResponse<CreateDomainAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateDomainAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Create a new webhook on an App.
+     * </p>
+     * 
+     * @param createWebhookRequest
+     *        Request structure for create webhook request.
+     * @return Result of the CreateWebhook operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws NotFoundException
+     *         Exception thrown when an entity has not been found during an operation.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws LimitExceededException
+     *         Exception thrown when a resource could not be created because of service limits.
+     * @throws DependentServiceFailureException
+     *         Exception thrown when an operation fails due to a dependent service throwing an exception.
+     * @sample AWSAmplify.CreateWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateWebhookResult createWebhook(CreateWebhookRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWebhook(request);
+    }
+
+    @SdkInternalApi
+    final CreateWebhookResult executeCreateWebhook(CreateWebhookRequest createWebhookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWebhookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWebhookRequest> request = null;
+        Response<CreateWebhookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWebhookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWebhook");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWebhookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWebhookResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -601,6 +732,70 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
 
     /**
      * <p>
+     * Deletes a webhook.
+     * </p>
+     * 
+     * @param deleteWebhookRequest
+     *        Request structure for the delete webhook request.
+     * @return Result of the DeleteWebhook operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws NotFoundException
+     *         Exception thrown when an entity has not been found during an operation.
+     * @throws LimitExceededException
+     *         Exception thrown when a resource could not be created because of service limits.
+     * @sample AWSAmplify.DeleteWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteWebhookResult deleteWebhook(DeleteWebhookRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWebhook(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWebhookResult executeDeleteWebhook(DeleteWebhookRequest deleteWebhookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWebhookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWebhookRequest> request = null;
+        Response<DeleteWebhookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWebhookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWebhook");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWebhookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWebhookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves an existing Amplify App by appId.
      * </p>
      * 
@@ -839,6 +1034,70 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
 
             HttpResponseHandler<AmazonWebServiceResponse<GetJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves webhook info that corresponds to a webhookId.
+     * </p>
+     * 
+     * @param getWebhookRequest
+     *        Request structure for the get webhook request.
+     * @return Result of the GetWebhook operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws NotFoundException
+     *         Exception thrown when an entity has not been found during an operation.
+     * @throws LimitExceededException
+     *         Exception thrown when a resource could not be created because of service limits.
+     * @sample AWSAmplify.GetWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetWebhookResult getWebhook(GetWebhookRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetWebhook(request);
+    }
+
+    @SdkInternalApi
+    final GetWebhookResult executeGetWebhook(GetWebhookRequest getWebhookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getWebhookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetWebhookRequest> request = null;
+        Response<GetWebhookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWebhookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWebhook");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetWebhookResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetWebhookResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1094,6 +1353,192 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
 
     /**
      * <p>
+     * List tags for resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     *        Request structure used to list tags for resource.
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws ResourceNotFoundException
+     *         Exception thrown when an operation fails due to non-existent resource.
+     * @sample AWSAmplify.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List webhooks with an app.
+     * </p>
+     * 
+     * @param listWebhooksRequest
+     *        Request structure for the list webhooks request.
+     * @return Result of the ListWebhooks operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws LimitExceededException
+     *         Exception thrown when a resource could not be created because of service limits.
+     * @sample AWSAmplify.ListWebhooks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListWebhooks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListWebhooksResult listWebhooks(ListWebhooksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWebhooks(request);
+    }
+
+    @SdkInternalApi
+    final ListWebhooksResult executeListWebhooks(ListWebhooksRequest listWebhooksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWebhooksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWebhooksRequest> request = null;
+        Response<ListWebhooksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWebhooksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWebhooksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebhooks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWebhooksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListWebhooksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Start a deployment for manual deploy apps. (Apps are not connected to repository)
+     * </p>
+     * 
+     * @param startDeploymentRequest
+     *        Request structure for start a deployment.
+     * @return Result of the StartDeployment operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws NotFoundException
+     *         Exception thrown when an entity has not been found during an operation.
+     * @throws LimitExceededException
+     *         Exception thrown when a resource could not be created because of service limits.
+     * @sample AWSAmplify.StartDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartDeploymentResult startDeployment(StartDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDeployment(request);
+    }
+
+    @SdkInternalApi
+    final StartDeploymentResult executeStartDeployment(StartDeploymentRequest startDeploymentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDeploymentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDeploymentRequest> request = null;
+        Response<StartDeploymentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startDeploymentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDeployment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartDeploymentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts a new job for a branch, part of an Amplify App.
      * </p>
      * 
@@ -1210,6 +1655,126 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
 
             HttpResponseHandler<AmazonWebServiceResponse<StopJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Tag resource with tag key and value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Request structure used to tag resource.
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws ResourceNotFoundException
+     *         Exception thrown when an operation fails due to non-existent resource.
+     * @sample AWSAmplify.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Untag resource with resourceArn.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     *        Request structure used to untag resource.
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws ResourceNotFoundException
+     *         Exception thrown when an operation fails due to non-existent resource.
+     * @sample AWSAmplify.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1402,6 +1967,70 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDomainAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateDomainAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update a webhook.
+     * </p>
+     * 
+     * @param updateWebhookRequest
+     *        Request structure for update webhook request.
+     * @return Result of the UpdateWebhook operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws NotFoundException
+     *         Exception thrown when an entity has not been found during an operation.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws DependentServiceFailureException
+     *         Exception thrown when an operation fails due to a dependent service throwing an exception.
+     * @sample AWSAmplify.UpdateWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateWebhookResult updateWebhook(UpdateWebhookRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateWebhook(request);
+    }
+
+    @SdkInternalApi
+    final UpdateWebhookResult executeUpdateWebhook(UpdateWebhookRequest updateWebhookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateWebhookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateWebhookRequest> request = null;
+        Response<UpdateWebhookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWebhookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWebhook");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateWebhookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateWebhookResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

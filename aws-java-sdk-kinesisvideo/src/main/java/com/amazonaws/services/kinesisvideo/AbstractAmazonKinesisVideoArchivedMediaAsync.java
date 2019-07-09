@@ -28,6 +28,19 @@ public class AbstractAmazonKinesisVideoArchivedMediaAsync extends AbstractAmazon
     }
 
     @Override
+    public java.util.concurrent.Future<GetDASHStreamingSessionURLResult> getDASHStreamingSessionURLAsync(GetDASHStreamingSessionURLRequest request) {
+
+        return getDASHStreamingSessionURLAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDASHStreamingSessionURLResult> getDASHStreamingSessionURLAsync(GetDASHStreamingSessionURLRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDASHStreamingSessionURLRequest, GetDASHStreamingSessionURLResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetHLSStreamingSessionURLResult> getHLSStreamingSessionURLAsync(GetHLSStreamingSessionURLRequest request) {
 
         return getHLSStreamingSessionURLAsync(request, null);

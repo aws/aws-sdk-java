@@ -209,6 +209,10 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic
      * value is used as the first operand.
      * </p>
+     * <p>
+     * The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and
+     * <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.
+     * </p>
      */
     private String comparisonOperator;
     /**
@@ -266,6 +270,19 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * If this is an alarm based on an anomaly detection model, make this value match the ID of the
+     * <code>ANOMALY_DETECTION_BAND</code> function.
+     * </p>
+     * <p>
+     * For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.
+     * </p>
+     * <p>
+     * If your alarm uses this parameter, it cannot have Auto Scaling actions.
+     * </p>
+     */
+    private String thresholdMetricId;
 
     /**
      * <p>
@@ -1731,10 +1748,17 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic
      * value is used as the first operand.
      * </p>
+     * <p>
+     * The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and
+     * <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.
+     * </p>
      * 
      * @param comparisonOperator
      *        The arithmetic operation to use when comparing the specified statistic and threshold. The specified
-     *        statistic value is used as the first operand.
+     *        statistic value is used as the first operand.</p>
+     *        <p>
+     *        The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and
+     *        <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.
      * @see ComparisonOperator
      */
 
@@ -1747,9 +1771,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic
      * value is used as the first operand.
      * </p>
+     * <p>
+     * The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and
+     * <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.
+     * </p>
      * 
      * @return The arithmetic operation to use when comparing the specified statistic and threshold. The specified
-     *         statistic value is used as the first operand.
+     *         statistic value is used as the first operand.</p>
+     *         <p>
+     *         The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>,
+     *         and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.
      * @see ComparisonOperator
      */
 
@@ -1762,10 +1793,17 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic
      * value is used as the first operand.
      * </p>
+     * <p>
+     * The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and
+     * <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.
+     * </p>
      * 
      * @param comparisonOperator
      *        The arithmetic operation to use when comparing the specified statistic and threshold. The specified
-     *        statistic value is used as the first operand.
+     *        statistic value is used as the first operand.</p>
+     *        <p>
+     *        The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and
+     *        <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
      */
@@ -1780,10 +1818,17 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic
      * value is used as the first operand.
      * </p>
+     * <p>
+     * The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and
+     * <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.
+     * </p>
      * 
      * @param comparisonOperator
      *        The arithmetic operation to use when comparing the specified statistic and threshold. The specified
-     *        statistic value is used as the first operand.
+     *        statistic value is used as the first operand.</p>
+     *        <p>
+     *        The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and
+     *        <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.
      * @see ComparisonOperator
      */
 
@@ -1796,10 +1841,17 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic
      * value is used as the first operand.
      * </p>
+     * <p>
+     * The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and
+     * <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.
+     * </p>
      * 
      * @param comparisonOperator
      *        The arithmetic operation to use when comparing the specified statistic and threshold. The specified
-     *        statistic value is used as the first operand.
+     *        statistic value is used as the first operand.</p>
+     *        <p>
+     *        The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and
+     *        <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
      */
@@ -2246,6 +2298,88 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * If this is an alarm based on an anomaly detection model, make this value match the ID of the
+     * <code>ANOMALY_DETECTION_BAND</code> function.
+     * </p>
+     * <p>
+     * For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.
+     * </p>
+     * <p>
+     * If your alarm uses this parameter, it cannot have Auto Scaling actions.
+     * </p>
+     * 
+     * @param thresholdMetricId
+     *        If this is an alarm based on an anomaly detection model, make this value match the ID of the
+     *        <code>ANOMALY_DETECTION_BAND</code> function.</p>
+     *        <p>
+     *        For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this
+     *        page.
+     *        </p>
+     *        <p>
+     *        If your alarm uses this parameter, it cannot have Auto Scaling actions.
+     */
+
+    public void setThresholdMetricId(String thresholdMetricId) {
+        this.thresholdMetricId = thresholdMetricId;
+    }
+
+    /**
+     * <p>
+     * If this is an alarm based on an anomaly detection model, make this value match the ID of the
+     * <code>ANOMALY_DETECTION_BAND</code> function.
+     * </p>
+     * <p>
+     * For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.
+     * </p>
+     * <p>
+     * If your alarm uses this parameter, it cannot have Auto Scaling actions.
+     * </p>
+     * 
+     * @return If this is an alarm based on an anomaly detection model, make this value match the ID of the
+     *         <code>ANOMALY_DETECTION_BAND</code> function.</p>
+     *         <p>
+     *         For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this
+     *         page.
+     *         </p>
+     *         <p>
+     *         If your alarm uses this parameter, it cannot have Auto Scaling actions.
+     */
+
+    public String getThresholdMetricId() {
+        return this.thresholdMetricId;
+    }
+
+    /**
+     * <p>
+     * If this is an alarm based on an anomaly detection model, make this value match the ID of the
+     * <code>ANOMALY_DETECTION_BAND</code> function.
+     * </p>
+     * <p>
+     * For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.
+     * </p>
+     * <p>
+     * If your alarm uses this parameter, it cannot have Auto Scaling actions.
+     * </p>
+     * 
+     * @param thresholdMetricId
+     *        If this is an alarm based on an anomaly detection model, make this value match the ID of the
+     *        <code>ANOMALY_DETECTION_BAND</code> function.</p>
+     *        <p>
+     *        For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this
+     *        page.
+     *        </p>
+     *        <p>
+     *        If your alarm uses this parameter, it cannot have Auto Scaling actions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutMetricAlarmRequest withThresholdMetricId(String thresholdMetricId) {
+        setThresholdMetricId(thresholdMetricId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2298,7 +2432,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getMetrics() != null)
             sb.append("Metrics: ").append(getMetrics()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getThresholdMetricId() != null)
+            sb.append("ThresholdMetricId: ").append(getThresholdMetricId());
         sb.append("}");
         return sb.toString();
     }
@@ -2398,6 +2534,10 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getThresholdMetricId() == null ^ this.getThresholdMetricId() == null)
+            return false;
+        if (other.getThresholdMetricId() != null && other.getThresholdMetricId().equals(this.getThresholdMetricId()) == false)
+            return false;
         return true;
     }
 
@@ -2427,6 +2567,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getEvaluateLowSampleCountPercentile() == null) ? 0 : getEvaluateLowSampleCountPercentile().hashCode());
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getThresholdMetricId() == null) ? 0 : getThresholdMetricId().hashCode());
         return hashCode;
     }
 

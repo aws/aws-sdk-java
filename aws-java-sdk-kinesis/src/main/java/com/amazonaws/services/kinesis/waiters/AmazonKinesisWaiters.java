@@ -20,7 +20,6 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonKinesisWaiters {
@@ -30,7 +29,7 @@ public class AmazonKinesisWaiters {
      */
     private final AmazonKinesis client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonKinesisWaiters");
 
     /**
      * Constructs a new AmazonKinesisWaiters with the given client

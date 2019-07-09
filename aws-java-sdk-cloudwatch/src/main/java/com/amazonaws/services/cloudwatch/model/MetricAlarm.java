@@ -103,7 +103,7 @@ public class MetricAlarm implements Serializable, Cloneable {
     private java.util.Date stateUpdatedTimestamp;
     /**
      * <p>
-     * The name of the metric associated with the alarm.
+     * The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      * </p>
      */
     private String metricName;
@@ -184,8 +184,21 @@ public class MetricAlarm implements Serializable, Cloneable {
      * </p>
      */
     private String evaluateLowSampleCountPercentile;
-    /** <p/> */
+    /**
+     * <p>
+     * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
+     * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
+     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<MetricDataQuery> metrics;
+    /**
+     * <p>
+     * In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+     * function used as the threshold for the alarm.
+     * </p>
+     */
+    private String thresholdMetricId;
 
     /**
      * <p>
@@ -837,11 +850,11 @@ public class MetricAlarm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the metric associated with the alarm.
+     * The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric associated with the alarm.
+     *        The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      */
 
     public void setMetricName(String metricName) {
@@ -850,10 +863,10 @@ public class MetricAlarm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the metric associated with the alarm.
+     * The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      * </p>
      * 
-     * @return The name of the metric associated with the alarm.
+     * @return The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      */
 
     public String getMetricName() {
@@ -862,11 +875,11 @@ public class MetricAlarm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the metric associated with the alarm.
+     * The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric associated with the alarm.
+     *        The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1529,9 +1542,16 @@ public class MetricAlarm implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
+     * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
+     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * </p>
      * 
-     * @return
+     * @return An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each
+     *         structure either retrieves a metric or performs a math expression. One item in the Metrics array is the
+     *         math expression that the alarm watches. This expression by designated by having <code>ReturnValue</code>
+     *         set to true.
      */
 
     public java.util.List<MetricDataQuery> getMetrics() {
@@ -1542,9 +1562,17 @@ public class MetricAlarm implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
+     * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
+     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * </p>
      * 
      * @param metrics
+     *        An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure
+     *        either retrieves a metric or performs a math expression. One item in the Metrics array is the math
+     *        expression that the alarm watches. This expression by designated by having <code>ReturnValue</code> set to
+     *        true.
      */
 
     public void setMetrics(java.util.Collection<MetricDataQuery> metrics) {
@@ -1557,7 +1585,11 @@ public class MetricAlarm implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
+     * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
+     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMetrics(java.util.Collection)} or {@link #withMetrics(java.util.Collection)} if you want to override
@@ -1565,6 +1597,10 @@ public class MetricAlarm implements Serializable, Cloneable {
      * </p>
      * 
      * @param metrics
+     *        An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure
+     *        either retrieves a metric or performs a math expression. One item in the Metrics array is the math
+     *        expression that the alarm watches. This expression by designated by having <code>ReturnValue</code> set to
+     *        true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1579,14 +1615,68 @@ public class MetricAlarm implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
+     * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
+     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * </p>
      * 
      * @param metrics
+     *        An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure
+     *        either retrieves a metric or performs a math expression. One item in the Metrics array is the math
+     *        expression that the alarm watches. This expression by designated by having <code>ReturnValue</code> set to
+     *        true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public MetricAlarm withMetrics(java.util.Collection<MetricDataQuery> metrics) {
         setMetrics(metrics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+     * function used as the threshold for the alarm.
+     * </p>
+     * 
+     * @param thresholdMetricId
+     *        In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+     *        function used as the threshold for the alarm.
+     */
+
+    public void setThresholdMetricId(String thresholdMetricId) {
+        this.thresholdMetricId = thresholdMetricId;
+    }
+
+    /**
+     * <p>
+     * In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+     * function used as the threshold for the alarm.
+     * </p>
+     * 
+     * @return In an alarm based on an anomaly detection model, this is the ID of the
+     *         <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.
+     */
+
+    public String getThresholdMetricId() {
+        return this.thresholdMetricId;
+    }
+
+    /**
+     * <p>
+     * In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+     * function used as the threshold for the alarm.
+     * </p>
+     * 
+     * @param thresholdMetricId
+     *        In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+     *        function used as the threshold for the alarm.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricAlarm withThresholdMetricId(String thresholdMetricId) {
+        setThresholdMetricId(thresholdMetricId);
         return this;
     }
 
@@ -1653,7 +1743,9 @@ public class MetricAlarm implements Serializable, Cloneable {
         if (getEvaluateLowSampleCountPercentile() != null)
             sb.append("EvaluateLowSampleCountPercentile: ").append(getEvaluateLowSampleCountPercentile()).append(",");
         if (getMetrics() != null)
-            sb.append("Metrics: ").append(getMetrics());
+            sb.append("Metrics: ").append(getMetrics()).append(",");
+        if (getThresholdMetricId() != null)
+            sb.append("ThresholdMetricId: ").append(getThresholdMetricId());
         sb.append("}");
         return sb.toString();
     }
@@ -1774,6 +1866,10 @@ public class MetricAlarm implements Serializable, Cloneable {
             return false;
         if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
             return false;
+        if (other.getThresholdMetricId() == null ^ this.getThresholdMetricId() == null)
+            return false;
+        if (other.getThresholdMetricId() != null && other.getThresholdMetricId().equals(this.getThresholdMetricId()) == false)
+            return false;
         return true;
     }
 
@@ -1808,6 +1904,7 @@ public class MetricAlarm implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTreatMissingData() == null) ? 0 : getTreatMissingData().hashCode());
         hashCode = prime * hashCode + ((getEvaluateLowSampleCountPercentile() == null) ? 0 : getEvaluateLowSampleCountPercentile().hashCode());
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
+        hashCode = prime * hashCode + ((getThresholdMetricId() == null) ? 0 : getThresholdMetricId().hashCode());
         return hashCode;
     }
 

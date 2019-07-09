@@ -43,6 +43,10 @@ public class StepMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifactsUrl").build();
     private static final MarshallingInfo<Map> SCREENSHOTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("screenshots").build();
+    private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusReason").build();
+    private static final MarshallingInfo<String> CONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("context").build();
 
     private static final StepMarshaller instance = new StepMarshaller();
 
@@ -67,6 +71,8 @@ public class StepMarshaller {
             protocolMarshaller.marshall(step.getLogUrl(), LOGURL_BINDING);
             protocolMarshaller.marshall(step.getArtifactsUrl(), ARTIFACTSURL_BINDING);
             protocolMarshaller.marshall(step.getScreenshots(), SCREENSHOTS_BINDING);
+            protocolMarshaller.marshall(step.getStatusReason(), STATUSREASON_BINDING);
+            protocolMarshaller.marshall(step.getContext(), CONTEXT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -20,7 +20,6 @@ import com.amazonaws.services.elasticache.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonElastiCacheWaiters {
@@ -30,7 +29,7 @@ public class AmazonElastiCacheWaiters {
      */
     private final AmazonElastiCache client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonElastiCacheWaiters");
 
     /**
      * Constructs a new AmazonElastiCacheWaiters with the given client
