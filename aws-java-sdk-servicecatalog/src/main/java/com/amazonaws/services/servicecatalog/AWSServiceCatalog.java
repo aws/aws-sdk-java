@@ -878,6 +878,21 @@ public interface AWSServiceCatalog {
     DescribeServiceActionResult describeServiceAction(DescribeServiceActionRequest describeServiceActionRequest);
 
     /**
+     * @param describeServiceActionExecutionParametersRequest
+     * @return Result of the DescribeServiceActionExecutionParameters operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeServiceActionExecutionParameters
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceActionExecutionParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeServiceActionExecutionParametersResult describeServiceActionExecutionParameters(
+            DescribeServiceActionExecutionParametersRequest describeServiceActionExecutionParametersRequest);
+
+    /**
      * <p>
      * Gets information about the specified TagOption.
      * </p>

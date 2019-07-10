@@ -1,3 +1,16 @@
+# __1.11.590__ __2019-07-10__
+## __AWS Service Catalog__
+  - ### Features
+    - This release adds support for Parameters in ExecuteProvisionedProductServiceAction and adds functionality to get the default parameter values for a Self-Service Action execution against a Provisioned Product via DescribeServiceActionExecutionParameters
+
+## __Amazon Glacier__
+  - ### Features
+    - Documentation updates for glacier
+
+## __Amazon QuickSight__
+  - ### Features
+    - Amazon QuickSight now supports embedding dashboards for all non-federated QuickSight users. This includes IAM users, AD users and users from the QuickSight user pool. The get-dashboard-embed-url API accepts QUICKSIGHT as identity type with a user ARN to authenticate the embeddable dashboard viewer as a non-federated user.
+
 # __1.11.589__ __2019-07-09__
 ## __AWS Amplify__
   - ### Features

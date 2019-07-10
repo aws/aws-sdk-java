@@ -58,9 +58,9 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The Amazon SNS topic ARN to which Amazon Glacier sends a notification when the job is completed and the output is
-     * ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic must
-     * exist.
+     * The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the output
+     * is ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic
+     * must exist.
      * </p>
      */
     private String sNSTopic;
@@ -341,13 +341,13 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon SNS topic ARN to which Amazon Glacier sends a notification when the job is completed and the output is
-     * ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic must
-     * exist.
+     * The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the output
+     * is ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic
+     * must exist.
      * </p>
      * 
      * @param sNSTopic
-     *        The Amazon SNS topic ARN to which Amazon Glacier sends a notification when the job is completed and the
+     *        The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the
      *        output is ready for you to download. The specified topic publishes the notification to its subscribers.
      *        The SNS topic must exist.
      */
@@ -358,14 +358,14 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon SNS topic ARN to which Amazon Glacier sends a notification when the job is completed and the output is
-     * ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic must
-     * exist.
+     * The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the output
+     * is ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic
+     * must exist.
      * </p>
      * 
-     * @return The Amazon SNS topic ARN to which Amazon Glacier sends a notification when the job is completed and the
-     *         output is ready for you to download. The specified topic publishes the notification to its subscribers.
-     *         The SNS topic must exist.
+     * @return The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and
+     *         the output is ready for you to download. The specified topic publishes the notification to its
+     *         subscribers. The SNS topic must exist.
      */
 
     public String getSNSTopic() {
@@ -374,13 +374,13 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon SNS topic ARN to which Amazon Glacier sends a notification when the job is completed and the output is
-     * ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic must
-     * exist.
+     * The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the output
+     * is ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic
+     * must exist.
      * </p>
      * 
      * @param sNSTopic
-     *        The Amazon SNS topic ARN to which Amazon Glacier sends a notification when the job is completed and the
+     *        The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the
      *        output is ready for you to download. The specified topic publishes the notification to its subscribers.
      *        The SNS topic must exist.
      * @return Returns a reference to this object so that method calls can be chained together.

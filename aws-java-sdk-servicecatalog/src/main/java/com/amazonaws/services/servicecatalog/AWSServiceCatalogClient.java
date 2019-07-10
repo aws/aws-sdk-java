@@ -2647,6 +2647,63 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * @param describeServiceActionExecutionParametersRequest
+     * @return Result of the DescribeServiceActionExecutionParameters operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeServiceActionExecutionParameters
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceActionExecutionParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeServiceActionExecutionParametersResult describeServiceActionExecutionParameters(DescribeServiceActionExecutionParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeServiceActionExecutionParameters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeServiceActionExecutionParametersResult executeDescribeServiceActionExecutionParameters(
+            DescribeServiceActionExecutionParametersRequest describeServiceActionExecutionParametersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeServiceActionExecutionParametersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeServiceActionExecutionParametersRequest> request = null;
+        Response<DescribeServiceActionExecutionParametersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeServiceActionExecutionParametersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeServiceActionExecutionParametersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServiceActionExecutionParameters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeServiceActionExecutionParametersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeServiceActionExecutionParametersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Gets information about the specified TagOption.
      * </p>

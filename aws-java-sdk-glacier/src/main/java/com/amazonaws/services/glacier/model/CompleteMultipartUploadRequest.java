@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts
- * have been uploaded and Amazon Glacier can now assemble the archive from the uploaded parts. After assembling and
- * saving the archive to the vault, Amazon Glacier returns the URI path of the newly created archive resource.
+ * have been uploaded and Amazon S3 Glacier (Glacier) can now assemble the archive from the uploaded parts. After
+ * assembling and saving the archive to the vault, Glacier returns the URI path of the newly created archive resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -30,7 +30,7 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
@@ -59,7 +59,7 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If
      * the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as
-     * computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.
+     * computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.
      * </p>
      */
     private String checksum;
@@ -85,7 +85,7 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
      * @param checksum
      *        The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual
      *        parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled
-     *        archive as computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.
+     *        archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.
      */
     public CompleteMultipartUploadRequest(String vaultName, String uploadId, String archiveSize, String checksum) {
         setVaultName(vaultName);
@@ -100,9 +100,9 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens ('-') in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens ('-') in the ID.
      * @param vaultName
      *        The name of the vault.
      * @param uploadId
@@ -113,7 +113,7 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
      * @param checksum
      *        The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual
      *        parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled
-     *        archive as computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.
+     *        archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.
      */
     public CompleteMultipartUploadRequest(String accountId, String vaultName, String uploadId, String archiveSize, String checksum) {
         setAccountId(accountId);
@@ -126,16 +126,16 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens ('-') in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens ('-') in the ID.
      */
 
     public void setAccountId(String accountId) {
@@ -145,15 +145,15 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
      * 
      * @return The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *         specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *         uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *         ID, do not include any hyphens ('-') in the ID.
+     *         specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *         Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *         account ID, do not include any hyphens ('-') in the ID.
      */
 
     public String getAccountId() {
@@ -163,16 +163,16 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens ('-') in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens ('-') in the ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,13 +311,13 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If
      * the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as
-     * computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.
+     * computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.
      * </p>
      * 
      * @param checksum
      *        The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual
      *        parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled
-     *        archive as computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.
+     *        archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.
      */
 
     public void setChecksum(String checksum) {
@@ -328,12 +328,12 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If
      * the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as
-     * computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.
+     * computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.
      * </p>
      * 
      * @return The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual
      *         parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled
-     *         archive as computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.
+     *         archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.
      */
 
     public String getChecksum() {
@@ -344,13 +344,13 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If
      * the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as
-     * computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.
+     * computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.
      * </p>
      * 
      * @param checksum
      *        The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual
      *        parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled
-     *        archive as computed by Amazon Glacier, Amazon Glacier returns an error and the request fails.
+     *        archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

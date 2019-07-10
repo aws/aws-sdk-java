@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Provides options for downloading output of an Amazon Glacier job.
+ * Provides options for downloading output of an Amazon S3 Glacier job.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,7 +28,7 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
@@ -82,8 +82,8 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
      * After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree
      * hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API, obtain job
      * information of the job that provided you the output. The response includes the checksum of the entire archive
-     * stored in Amazon Glacier. You compare this value with the checksum you computed to ensure you have downloaded the
-     * entire archive content with no errors.
+     * stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded
+     * the entire archive content with no errors.
      * </p>
      * <p/></li>
      * </ol>
@@ -140,8 +140,8 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        After downloading all the parts of the job output, you have a list of eight checksum values. Compute the
      *        tree hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API,
      *        obtain job information of the job that provided you the output. The response includes the checksum of the
-     *        entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure
-     *        you have downloaded the entire archive content with no errors.
+     *        entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to
+     *        ensure you have downloaded the entire archive content with no errors.
      *        </p>
      *        <p/></li>
      */
@@ -157,9 +157,9 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens ('-') in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens ('-') in the ID.
      * @param vaultName
      *        The name of the vault.
      * @param jobId
@@ -199,8 +199,8 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        After downloading all the parts of the job output, you have a list of eight checksum values. Compute the
      *        tree hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API,
      *        obtain job information of the job that provided you the output. The response includes the checksum of the
-     *        entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure
-     *        you have downloaded the entire archive content with no errors.
+     *        entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to
+     *        ensure you have downloaded the entire archive content with no errors.
      *        </p>
      *        <p/></li>
      */
@@ -214,16 +214,16 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens ('-') in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens ('-') in the ID.
      */
 
     public void setAccountId(String accountId) {
@@ -233,15 +233,15 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
      * 
      * @return The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *         specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *         uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *         ID, do not include any hyphens ('-') in the ID.
+     *         specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *         Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *         account ID, do not include any hyphens ('-') in the ID.
      */
 
     public String getAccountId() {
@@ -251,16 +251,16 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens ('-') in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens ('-') in the ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,8 +385,8 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
      * After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree
      * hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API, obtain job
      * information of the job that provided you the output. The response includes the checksum of the entire archive
-     * stored in Amazon Glacier. You compare this value with the checksum you computed to ensure you have downloaded the
-     * entire archive content with no errors.
+     * stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded
+     * the entire archive content with no errors.
      * </p>
      * <p/></li>
      * </ol>
@@ -426,8 +426,8 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        After downloading all the parts of the job output, you have a list of eight checksum values. Compute the
      *        tree hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API,
      *        obtain job information of the job that provided you the output. The response includes the checksum of the
-     *        entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure
-     *        you have downloaded the entire archive content with no errors.
+     *        entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to
+     *        ensure you have downloaded the entire archive content with no errors.
      *        </p>
      *        <p/></li>
      */
@@ -472,8 +472,8 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
      * After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree
      * hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API, obtain job
      * information of the job that provided you the output. The response includes the checksum of the entire archive
-     * stored in Amazon Glacier. You compare this value with the checksum you computed to ensure you have downloaded the
-     * entire archive content with no errors.
+     * stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded
+     * the entire archive content with no errors.
      * </p>
      * <p/></li>
      * </ol>
@@ -512,8 +512,8 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         After downloading all the parts of the job output, you have a list of eight checksum values. Compute the
      *         tree hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API,
      *         obtain job information of the job that provided you the output. The response includes the checksum of the
-     *         entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure
-     *         you have downloaded the entire archive content with no errors.
+     *         entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to
+     *         ensure you have downloaded the entire archive content with no errors.
      *         </p>
      *         <p/></li>
      */
@@ -558,8 +558,8 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
      * After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree
      * hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API, obtain job
      * information of the job that provided you the output. The response includes the checksum of the entire archive
-     * stored in Amazon Glacier. You compare this value with the checksum you computed to ensure you have downloaded the
-     * entire archive content with no errors.
+     * stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded
+     * the entire archive content with no errors.
      * </p>
      * <p/></li>
      * </ol>
@@ -599,8 +599,8 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        After downloading all the parts of the job output, you have a list of eight checksum values. Compute the
      *        tree hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API,
      *        obtain job information of the job that provided you the output. The response includes the checksum of the
-     *        entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure
-     *        you have downloaded the entire archive content with no errors.
+     *        entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to
+     *        ensure you have downloaded the entire archive content with no errors.
      *        </p>
      *        <p/></li>
      * @return Returns a reference to this object so that method calls can be chained together.

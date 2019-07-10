@@ -1396,6 +1396,35 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
             com.amazonaws.handlers.AsyncHandler<DescribeServiceActionRequest, DescribeServiceActionResult> asyncHandler);
 
     /**
+     * @param describeServiceActionExecutionParametersRequest
+     * @return A Java Future containing the result of the DescribeServiceActionExecutionParameters operation returned by
+     *         the service.
+     * @sample AWSServiceCatalogAsync.DescribeServiceActionExecutionParameters
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceActionExecutionParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeServiceActionExecutionParametersResult> describeServiceActionExecutionParametersAsync(
+            DescribeServiceActionExecutionParametersRequest describeServiceActionExecutionParametersRequest);
+
+    /**
+     * @param describeServiceActionExecutionParametersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeServiceActionExecutionParameters operation returned by
+     *         the service.
+     * @sample AWSServiceCatalogAsyncHandler.DescribeServiceActionExecutionParameters
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceActionExecutionParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeServiceActionExecutionParametersResult> describeServiceActionExecutionParametersAsync(
+            DescribeServiceActionExecutionParametersRequest describeServiceActionExecutionParametersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeServiceActionExecutionParametersRequest, DescribeServiceActionExecutionParametersResult> asyncHandler);
+
+    /**
      * <p>
      * Gets information about the specified TagOption.
      * </p>

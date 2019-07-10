@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Amazon Glacier response to your request.
+ * The Amazon S3 Glacier response to your request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,7 +25,7 @@ public class InitiateMultipartUploadResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The relative URI path of the multipart upload ID Amazon Glacier created.
+     * The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      * </p>
      */
     private String location;
@@ -38,11 +38,11 @@ public class InitiateMultipartUploadResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The relative URI path of the multipart upload ID Amazon Glacier created.
+     * The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      * </p>
      * 
      * @param location
-     *        The relative URI path of the multipart upload ID Amazon Glacier created.
+     *        The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      */
 
     public void setLocation(String location) {
@@ -51,10 +51,10 @@ public class InitiateMultipartUploadResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The relative URI path of the multipart upload ID Amazon Glacier created.
+     * The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      * </p>
      * 
-     * @return The relative URI path of the multipart upload ID Amazon Glacier created.
+     * @return The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      */
 
     public String getLocation() {
@@ -63,11 +63,11 @@ public class InitiateMultipartUploadResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The relative URI path of the multipart upload ID Amazon Glacier created.
+     * The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      * </p>
      * 
      * @param location
-     *        The relative URI path of the multipart upload ID Amazon Glacier created.
+     *        The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

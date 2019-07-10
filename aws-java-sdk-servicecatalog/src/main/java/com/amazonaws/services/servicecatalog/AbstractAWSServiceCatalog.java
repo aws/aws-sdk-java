@@ -231,6 +231,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public DescribeServiceActionExecutionParametersResult describeServiceActionExecutionParameters(DescribeServiceActionExecutionParametersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeTagOptionResult describeTagOption(DescribeTagOptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

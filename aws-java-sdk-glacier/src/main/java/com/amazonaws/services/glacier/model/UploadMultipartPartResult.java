@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the Amazon Glacier response to your request.
+ * Contains the Amazon S3 Glacier response to your request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,18 +25,18 @@ public class UploadMultipartPartResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     * The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      * </p>
      */
     private String checksum;
 
     /**
      * <p>
-     * The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     * The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      * </p>
      * 
      * @param checksum
-     *        The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     *        The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      */
 
     public void setChecksum(String checksum) {
@@ -45,10 +45,10 @@ public class UploadMultipartPartResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     * The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      * </p>
      * 
-     * @return The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     * @return The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      */
 
     public String getChecksum() {
@@ -57,11 +57,11 @@ public class UploadMultipartPartResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     * The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      * </p>
      * 
      * @param checksum
-     *        The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     *        The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

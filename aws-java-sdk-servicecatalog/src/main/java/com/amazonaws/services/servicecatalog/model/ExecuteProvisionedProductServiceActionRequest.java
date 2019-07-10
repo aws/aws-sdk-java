@@ -68,6 +68,8 @@ public class ExecuteProvisionedProductServiceActionRequest extends com.amazonaws
      */
     private String acceptLanguage;
 
+    private java.util.Map<String, java.util.List<String>> parameters;
+
     /**
      * <p>
      * The identifier of the provisioned product.
@@ -328,6 +330,53 @@ public class ExecuteProvisionedProductServiceActionRequest extends com.amazonaws
     }
 
     /**
+     * @return
+     */
+
+    public java.util.Map<String, java.util.List<String>> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * @param parameters
+     */
+
+    public void setParameters(java.util.Map<String, java.util.List<String>> parameters) {
+        this.parameters = parameters;
+    }
+
+    /**
+     * @param parameters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecuteProvisionedProductServiceActionRequest withParameters(java.util.Map<String, java.util.List<String>> parameters) {
+        setParameters(parameters);
+        return this;
+    }
+
+    public ExecuteProvisionedProductServiceActionRequest addParametersEntry(String key, java.util.List<String> value) {
+        if (null == this.parameters) {
+            this.parameters = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.parameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.parameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Parameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecuteProvisionedProductServiceActionRequest clearParametersEntries() {
+        this.parameters = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -346,7 +395,9 @@ public class ExecuteProvisionedProductServiceActionRequest extends com.amazonaws
         if (getExecuteToken() != null)
             sb.append("ExecuteToken: ").append(getExecuteToken()).append(",");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: ").append(getAcceptLanguage());
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
+        if (getParameters() != null)
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -377,6 +428,10 @@ public class ExecuteProvisionedProductServiceActionRequest extends com.amazonaws
             return false;
         if (other.getAcceptLanguage() != null && other.getAcceptLanguage().equals(this.getAcceptLanguage()) == false)
             return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
+            return false;
         return true;
     }
 
@@ -389,6 +444,7 @@ public class ExecuteProvisionedProductServiceActionRequest extends com.amazonaws
         hashCode = prime * hashCode + ((getServiceActionId() == null) ? 0 : getServiceActionId().hashCode());
         hashCode = prime * hashCode + ((getExecuteToken() == null) ? 0 : getExecuteToken().hashCode());
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         return hashCode;
     }
 

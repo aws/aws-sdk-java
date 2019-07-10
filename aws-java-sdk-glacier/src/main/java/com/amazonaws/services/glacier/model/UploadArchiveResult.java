@@ -17,13 +17,13 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the Amazon Glacier response to your request.
+ * Contains the Amazon S3 Glacier response to your request.
  * </p>
  * <p>
  * For information about the underlying REST API, see <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual
- * information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
- * with Archives in Amazon Glacier</a>.
+ * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual
+ * information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+ * with Archives in Amazon S3 Glacier</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -37,7 +37,7 @@ public class UploadArchiveResult extends com.amazonaws.AmazonWebServiceResult<co
     private String location;
     /**
      * <p>
-     * The checksum of the archive computed by Amazon Glacier.
+     * The checksum of the archive computed by Amazon S3 Glacier.
      * </p>
      */
     private String checksum;
@@ -90,11 +90,11 @@ public class UploadArchiveResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The checksum of the archive computed by Amazon Glacier.
+     * The checksum of the archive computed by Amazon S3 Glacier.
      * </p>
      * 
      * @param checksum
-     *        The checksum of the archive computed by Amazon Glacier.
+     *        The checksum of the archive computed by Amazon S3 Glacier.
      */
 
     public void setChecksum(String checksum) {
@@ -103,10 +103,10 @@ public class UploadArchiveResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The checksum of the archive computed by Amazon Glacier.
+     * The checksum of the archive computed by Amazon S3 Glacier.
      * </p>
      * 
-     * @return The checksum of the archive computed by Amazon Glacier.
+     * @return The checksum of the archive computed by Amazon S3 Glacier.
      */
 
     public String getChecksum() {
@@ -115,11 +115,11 @@ public class UploadArchiveResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The checksum of the archive computed by Amazon Glacier.
+     * The checksum of the archive computed by Amazon S3 Glacier.
      * </p>
      * 
      * @param checksum
-     *        The checksum of the archive computed by Amazon Glacier.
+     *        The checksum of the archive computed by Amazon S3 Glacier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

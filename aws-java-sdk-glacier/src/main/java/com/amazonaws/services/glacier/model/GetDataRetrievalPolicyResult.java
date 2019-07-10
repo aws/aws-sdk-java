@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the Amazon Glacier response to the <code>GetDataRetrievalPolicy</code> request.
+ * Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code> request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

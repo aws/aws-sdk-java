@@ -1516,6 +1516,41 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeServiceActionExecutionParametersResult> describeServiceActionExecutionParametersAsync(
+            DescribeServiceActionExecutionParametersRequest request) {
+
+        return describeServiceActionExecutionParametersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeServiceActionExecutionParametersResult> describeServiceActionExecutionParametersAsync(
+            final DescribeServiceActionExecutionParametersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeServiceActionExecutionParametersRequest, DescribeServiceActionExecutionParametersResult> asyncHandler) {
+        final DescribeServiceActionExecutionParametersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeServiceActionExecutionParametersResult>() {
+            @Override
+            public DescribeServiceActionExecutionParametersResult call() throws Exception {
+                DescribeServiceActionExecutionParametersResult result = null;
+
+                try {
+                    result = executeDescribeServiceActionExecutionParameters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTagOptionResult> describeTagOptionAsync(DescribeTagOptionRequest request) {
 
         return describeTagOptionAsync(request, null);

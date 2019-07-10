@@ -61,6 +61,40 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private Boolean resetDisabled;
+    /**
+     * <p>
+     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any of
+     * the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon QuickSight users in your account (readers, authors, or admins)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AD users
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invited non-federated users
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Federated IAM users
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Federated IAM role-based sessions
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String userArn;
 
     /**
      * <p>
@@ -350,6 +384,211 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any of
+     * the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon QuickSight users in your account (readers, authors, or admins)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AD users
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invited non-federated users
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Federated IAM users
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Federated IAM role-based sessions
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param userArn
+     *        The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for
+     *        any of the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Amazon QuickSight users in your account (readers, authors, or admins)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AD users
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invited non-federated users
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Federated IAM users
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Federated IAM role-based sessions
+     *        </p>
+     *        </li>
+     */
+
+    public void setUserArn(String userArn) {
+        this.userArn = userArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any of
+     * the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon QuickSight users in your account (readers, authors, or admins)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AD users
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invited non-federated users
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Federated IAM users
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Federated IAM role-based sessions
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this
+     *         for any of the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Amazon QuickSight users in your account (readers, authors, or admins)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AD users
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invited non-federated users
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Federated IAM users
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Federated IAM role-based sessions
+     *         </p>
+     *         </li>
+     */
+
+    public String getUserArn() {
+        return this.userArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any of
+     * the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon QuickSight users in your account (readers, authors, or admins)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AD users
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invited non-federated users
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Federated IAM users
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Federated IAM role-based sessions
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param userArn
+     *        The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for
+     *        any of the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Amazon QuickSight users in your account (readers, authors, or admins)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AD users
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invited non-federated users
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Federated IAM users
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Federated IAM role-based sessions
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDashboardEmbedUrlRequest withUserArn(String userArn) {
+        setUserArn(userArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -372,7 +611,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
         if (getUndoRedoDisabled() != null)
             sb.append("UndoRedoDisabled: ").append(getUndoRedoDisabled()).append(",");
         if (getResetDisabled() != null)
-            sb.append("ResetDisabled: ").append(getResetDisabled());
+            sb.append("ResetDisabled: ").append(getResetDisabled()).append(",");
+        if (getUserArn() != null)
+            sb.append("UserArn: ").append(getUserArn());
         sb.append("}");
         return sb.toString();
     }
@@ -411,6 +652,10 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getResetDisabled() != null && other.getResetDisabled().equals(this.getResetDisabled()) == false)
             return false;
+        if (other.getUserArn() == null ^ this.getUserArn() == null)
+            return false;
+        if (other.getUserArn() != null && other.getUserArn().equals(this.getUserArn()) == false)
+            return false;
         return true;
     }
 
@@ -425,6 +670,7 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getSessionLifetimeInMinutes() == null) ? 0 : getSessionLifetimeInMinutes().hashCode());
         hashCode = prime * hashCode + ((getUndoRedoDisabled() == null) ? 0 : getUndoRedoDisabled().hashCode());
         hashCode = prime * hashCode + ((getResetDisabled() == null) ? 0 : getResetDisabled().hashCode());
+        hashCode = prime * hashCode + ((getUserArn() == null) ? 0 : getUserArn().hashCode());
         return hashCode;
     }
 

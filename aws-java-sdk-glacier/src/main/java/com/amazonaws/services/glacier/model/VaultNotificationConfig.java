@@ -33,7 +33,8 @@ public class VaultNotificationConfig implements Serializable, Cloneable, Structu
     private String sNSTopic;
     /**
      * <p>
-     * A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.
+     * A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS
+     * topic.
      * </p>
      */
     private java.util.List<String> events;
@@ -52,8 +53,8 @@ public class VaultNotificationConfig implements Serializable, Cloneable, Structu
      * @param sNSTopic
      *        The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).
      * @param events
-     *        A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS
-     *        topic.
+     *        A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon
+     *        SNS topic.
      */
     public VaultNotificationConfig(String sNSTopic, java.util.List<String> events) {
         setSNSTopic(sNSTopic);
@@ -102,10 +103,11 @@ public class VaultNotificationConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.
+     * A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS
+     * topic.
      * </p>
      * 
-     * @return A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon
+     * @return A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon
      *         SNS topic.
      */
 
@@ -115,12 +117,13 @@ public class VaultNotificationConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.
+     * A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS
+     * topic.
      * </p>
      * 
      * @param events
-     *        A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS
-     *        topic.
+     *        A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon
+     *        SNS topic.
      */
 
     public void setEvents(java.util.Collection<String> events) {
@@ -134,7 +137,8 @@ public class VaultNotificationConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.
+     * A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS
+     * topic.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -143,8 +147,8 @@ public class VaultNotificationConfig implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param events
-     *        A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS
-     *        topic.
+     *        A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon
+     *        SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,12 +164,13 @@ public class VaultNotificationConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.
+     * A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS
+     * topic.
      * </p>
      * 
      * @param events
-     *        A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS
-     *        topic.
+     *        A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon
+     *        SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

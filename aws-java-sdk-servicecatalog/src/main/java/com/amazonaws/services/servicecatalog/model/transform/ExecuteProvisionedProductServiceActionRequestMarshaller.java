@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -38,6 +40,8 @@ public class ExecuteProvisionedProductServiceActionRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Parameters").build();
 
     private static final ExecuteProvisionedProductServiceActionRequestMarshaller instance = new ExecuteProvisionedProductServiceActionRequestMarshaller();
 
@@ -59,6 +63,7 @@ public class ExecuteProvisionedProductServiceActionRequestMarshaller {
             protocolMarshaller.marshall(executeProvisionedProductServiceActionRequest.getServiceActionId(), SERVICEACTIONID_BINDING);
             protocolMarshaller.marshall(executeProvisionedProductServiceActionRequest.getExecuteToken(), EXECUTETOKEN_BINDING);
             protocolMarshaller.marshall(executeProvisionedProductServiceActionRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(executeProvisionedProductServiceActionRequest.getParameters(), PARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

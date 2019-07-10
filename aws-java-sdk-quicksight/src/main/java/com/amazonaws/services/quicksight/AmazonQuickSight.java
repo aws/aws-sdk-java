@@ -264,7 +264,17 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes a user after locating the user by its principal ID.
+     * Deletes a user identified by its principal ID.
+     * </p>
+     * <p>
+     * The permission resource is
+     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt; </i> </code>.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight delete-user-by-principal-id --aws-account-id=111122223333 --namespace=default --principal-id=ABCDEFJA26JLI7EUUOEHS </code>
      * </p>
      * 
      * @param deleteUserByPrincipalIdRequest

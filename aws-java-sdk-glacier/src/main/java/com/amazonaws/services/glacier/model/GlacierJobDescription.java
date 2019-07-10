@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the description of an Amazon Glacier job.
+ * Contains the description of an Amazon S3 Glacier job.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An opaque string that identifies an Amazon Glacier job.
+     * An opaque string that identifies an Amazon S3 Glacier job.
      * </p>
      */
     private String jobId;
@@ -201,11 +201,11 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An opaque string that identifies an Amazon Glacier job.
+     * An opaque string that identifies an Amazon S3 Glacier job.
      * </p>
      * 
      * @param jobId
-     *        An opaque string that identifies an Amazon Glacier job.
+     *        An opaque string that identifies an Amazon S3 Glacier job.
      */
 
     public void setJobId(String jobId) {
@@ -214,10 +214,10 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An opaque string that identifies an Amazon Glacier job.
+     * An opaque string that identifies an Amazon S3 Glacier job.
      * </p>
      * 
-     * @return An opaque string that identifies an Amazon Glacier job.
+     * @return An opaque string that identifies an Amazon S3 Glacier job.
      */
 
     public String getJobId() {
@@ -226,11 +226,11 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An opaque string that identifies an Amazon Glacier job.
+     * An opaque string that identifies an Amazon S3 Glacier job.
      * </p>
      * 
      * @param jobId
-     *        An opaque string that identifies an Amazon Glacier job.
+     *        An opaque string that identifies an Amazon S3 Glacier job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

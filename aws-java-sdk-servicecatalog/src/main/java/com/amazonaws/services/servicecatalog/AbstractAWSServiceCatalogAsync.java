@@ -530,6 +530,21 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeServiceActionExecutionParametersResult> describeServiceActionExecutionParametersAsync(
+            DescribeServiceActionExecutionParametersRequest request) {
+
+        return describeServiceActionExecutionParametersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeServiceActionExecutionParametersResult> describeServiceActionExecutionParametersAsync(
+            DescribeServiceActionExecutionParametersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeServiceActionExecutionParametersRequest, DescribeServiceActionExecutionParametersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTagOptionResult> describeTagOptionAsync(DescribeTagOptionRequest request) {
 
         return describeTagOptionAsync(request, null);

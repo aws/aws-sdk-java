@@ -28,7 +28,7 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
@@ -54,7 +54,7 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
     private String checksum;
     /**
      * <p>
-     * Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier uses
+     * Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses
      * this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An
      * example header is Content-Range:bytes 0-4194303/*.
      * </p>
@@ -85,9 +85,9 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
      * @param checksum
      *        The SHA256 tree hash of the data being uploaded.
      * @param range
-     *        Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier
-     *        uses this information to assemble the archive in the proper sequence. The format of this header follows
-     *        RFC 2616. An example header is Content-Range:bytes 0-4194303/*.
+     *        Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3
+     *        Glacier uses this information to assemble the archive in the proper sequence. The format of this header
+     *        follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.
      * @param body
      *        The data to upload.
      */
@@ -105,9 +105,9 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens ('-') in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens ('-') in the ID.
      * @param vaultName
      *        The name of the vault.
      * @param uploadId
@@ -115,9 +115,9 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
      * @param checksum
      *        The SHA256 tree hash of the data being uploaded.
      * @param range
-     *        Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier
-     *        uses this information to assemble the archive in the proper sequence. The format of this header follows
-     *        RFC 2616. An example header is Content-Range:bytes 0-4194303/*.
+     *        Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3
+     *        Glacier uses this information to assemble the archive in the proper sequence. The format of this header
+     *        follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.
      * @param body
      *        The data to upload.
      */
@@ -133,16 +133,16 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens ('-') in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens ('-') in the ID.
      */
 
     public void setAccountId(String accountId) {
@@ -152,15 +152,15 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
      * 
      * @return The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *         specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *         uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *         ID, do not include any hyphens ('-') in the ID.
+     *         specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *         Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *         account ID, do not include any hyphens ('-') in the ID.
      */
 
     public String getAccountId() {
@@ -170,16 +170,16 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens ('-') in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens ('-') in the ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,15 +310,15 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier uses
+     * Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses
      * this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An
      * example header is Content-Range:bytes 0-4194303/*.
      * </p>
      * 
      * @param range
-     *        Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier
-     *        uses this information to assemble the archive in the proper sequence. The format of this header follows
-     *        RFC 2616. An example header is Content-Range:bytes 0-4194303/*.
+     *        Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3
+     *        Glacier uses this information to assemble the archive in the proper sequence. The format of this header
+     *        follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.
      */
 
     public void setRange(String range) {
@@ -327,14 +327,14 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier uses
+     * Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses
      * this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An
      * example header is Content-Range:bytes 0-4194303/*.
      * </p>
      * 
-     * @return Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier
-     *         uses this information to assemble the archive in the proper sequence. The format of this header follows
-     *         RFC 2616. An example header is Content-Range:bytes 0-4194303/*.
+     * @return Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3
+     *         Glacier uses this information to assemble the archive in the proper sequence. The format of this header
+     *         follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.
      */
 
     public String getRange() {
@@ -343,15 +343,15 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier uses
+     * Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses
      * this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An
      * example header is Content-Range:bytes 0-4194303/*.
      * </p>
      * 
      * @param range
-     *        Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier
-     *        uses this information to assemble the archive in the proper sequence. The format of this header follows
-     *        RFC 2616. An example header is Content-Range:bytes 0-4194303/*.
+     *        Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3
+     *        Glacier uses this information to assemble the archive in the proper sequence. The format of this header
+     *        follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

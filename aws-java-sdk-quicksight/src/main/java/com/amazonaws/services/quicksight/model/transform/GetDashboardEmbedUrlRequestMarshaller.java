@@ -39,6 +39,8 @@ public class GetDashboardEmbedUrlRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("undo-redo-disabled").build();
     private static final MarshallingInfo<Boolean> RESETDISABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("reset-disabled").build();
+    private static final MarshallingInfo<String> USERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("user-arn").build();
 
     private static final GetDashboardEmbedUrlRequestMarshaller instance = new GetDashboardEmbedUrlRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class GetDashboardEmbedUrlRequestMarshaller {
             protocolMarshaller.marshall(getDashboardEmbedUrlRequest.getSessionLifetimeInMinutes(), SESSIONLIFETIMEINMINUTES_BINDING);
             protocolMarshaller.marshall(getDashboardEmbedUrlRequest.getUndoRedoDisabled(), UNDOREDODISABLED_BINDING);
             protocolMarshaller.marshall(getDashboardEmbedUrlRequest.getResetDisabled(), RESETDISABLED_BINDING);
+            protocolMarshaller.marshall(getDashboardEmbedUrlRequest.getUserArn(), USERARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

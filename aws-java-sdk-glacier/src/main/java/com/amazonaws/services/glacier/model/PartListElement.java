@@ -33,7 +33,7 @@ public class PartListElement implements Serializable, Cloneable, StructuredPojo 
     private String rangeInBytes;
     /**
      * <p>
-     * The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.
+     * The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.
      * </p>
      */
     private String sHA256TreeHash;
@@ -80,11 +80,11 @@ public class PartListElement implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.
+     * The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.
      * </p>
      * 
      * @param sHA256TreeHash
-     *        The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never
+     *        The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never
      *        <code>null</code>.
      */
 
@@ -94,10 +94,10 @@ public class PartListElement implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.
+     * The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.
      * </p>
      * 
-     * @return The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never
+     * @return The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never
      *         <code>null</code>.
      */
 
@@ -107,11 +107,11 @@ public class PartListElement implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.
+     * The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.
      * </p>
      * 
      * @param sHA256TreeHash
-     *        The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never
+     *        The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never
      *        <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
