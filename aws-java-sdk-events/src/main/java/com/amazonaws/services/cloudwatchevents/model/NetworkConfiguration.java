@@ -30,20 +30,20 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address
-     * is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
+     * Use this structure to specify the VPC subnets and security groups for the task and whether a public IP address is
+     * to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
      * </p>
      */
     private AwsVpcConfiguration awsvpcConfiguration;
 
     /**
      * <p>
-     * Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address
-     * is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
+     * Use this structure to specify the VPC subnets and security groups for the task and whether a public IP address is
+     * to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
      * </p>
      * 
      * @param awsvpcConfiguration
-     *        Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP
+     *        Use this structure to specify the VPC subnets and security groups for the task and whether a public IP
      *        address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code>
      *        network mode.
      */
@@ -54,11 +54,11 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address
-     * is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
+     * Use this structure to specify the VPC subnets and security groups for the task and whether a public IP address is
+     * to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
      * </p>
      * 
-     * @return Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP
+     * @return Use this structure to specify the VPC subnets and security groups for the task and whether a public IP
      *         address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code>
      *         network mode.
      */
@@ -69,12 +69,12 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address
-     * is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
+     * Use this structure to specify the VPC subnets and security groups for the task and whether a public IP address is
+     * to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
      * </p>
      * 
      * @param awsvpcConfiguration
-     *        Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP
+     *        Use this structure to specify the VPC subnets and security groups for the task and whether a public IP
      *        address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code>
      *        network mode.
      * @return Returns a reference to this object so that method calls can be chained together.

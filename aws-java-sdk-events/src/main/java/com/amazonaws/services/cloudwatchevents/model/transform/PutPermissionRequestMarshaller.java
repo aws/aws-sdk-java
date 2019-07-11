@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PutPermissionRequestMarshaller {
 
+    private static final MarshallingInfo<String> EVENTBUSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBusName").build();
     private static final MarshallingInfo<String> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Action").build();
     private static final MarshallingInfo<String> PRINCIPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +54,7 @@ public class PutPermissionRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(putPermissionRequest.getEventBusName(), EVENTBUSNAME_BINDING);
             protocolMarshaller.marshall(putPermissionRequest.getAction(), ACTION_BINDING);
             protocolMarshaller.marshall(putPermissionRequest.getPrincipal(), PRINCIPAL_BINDING);
             protocolMarshaller.marshall(putPermissionRequest.getStatementId(), STATEMENTID_BINDING);

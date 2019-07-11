@@ -80,6 +80,10 @@ public class DescribeRuleResultJsonUnmarshaller implements Unmarshaller<Describe
                     context.nextToken();
                     describeRuleResult.setManagedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EventBusName", targetDepth)) {
+                    context.nextToken();
+                    describeRuleResult.setEventBusName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -27,18 +27,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the CloudWatch Events rule for which you want to view tags.
+     * The ARN of the rule for which you want to view tags.
      * </p>
      */
     private String resourceARN;
 
     /**
      * <p>
-     * The ARN of the CloudWatch Events rule for which you want to view tags.
+     * The ARN of the rule for which you want to view tags.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the CloudWatch Events rule for which you want to view tags.
+     *        The ARN of the rule for which you want to view tags.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -47,10 +47,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the CloudWatch Events rule for which you want to view tags.
+     * The ARN of the rule for which you want to view tags.
      * </p>
      * 
-     * @return The ARN of the CloudWatch Events rule for which you want to view tags.
+     * @return The ARN of the rule for which you want to view tags.
      */
 
     public String getResourceARN() {
@@ -59,11 +59,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the CloudWatch Events rule for which you want to view tags.
+     * The ARN of the rule for which you want to view tags.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the CloudWatch Events rule for which you want to view tags.
+     *        The ARN of the rule for which you want to view tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

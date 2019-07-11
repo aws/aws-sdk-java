@@ -51,7 +51,7 @@ public class BatchParameters implements Serializable, Cloneable, StructuredPojo 
     private BatchArrayProperties arrayProperties;
     /**
      * <p>
-     * The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of
+     * The retry strategy to use for failed jobs if the target is an AWS Batch job. The retry strategy is the number of
      * times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it
      * overrides the retry strategy defined in the job definition.
      * </p>
@@ -198,13 +198,13 @@ public class BatchParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of
+     * The retry strategy to use for failed jobs if the target is an AWS Batch job. The retry strategy is the number of
      * times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it
      * overrides the retry strategy defined in the job definition.
      * </p>
      * 
      * @param retryStrategy
-     *        The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the
+     *        The retry strategy to use for failed jobs if the target is an AWS Batch job. The retry strategy is the
      *        number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry
      *        strategy here, it overrides the retry strategy defined in the job definition.
      */
@@ -215,12 +215,12 @@ public class BatchParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of
+     * The retry strategy to use for failed jobs if the target is an AWS Batch job. The retry strategy is the number of
      * times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it
      * overrides the retry strategy defined in the job definition.
      * </p>
      * 
-     * @return The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the
+     * @return The retry strategy to use for failed jobs if the target is an AWS Batch job. The retry strategy is the
      *         number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry
      *         strategy here, it overrides the retry strategy defined in the job definition.
      */
@@ -231,13 +231,13 @@ public class BatchParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of
+     * The retry strategy to use for failed jobs if the target is an AWS Batch job. The retry strategy is the number of
      * times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it
      * overrides the retry strategy defined in the job definition.
      * </p>
      * 
      * @param retryStrategy
-     *        The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the
+     *        The retry strategy to use for failed jobs if the target is an AWS Batch job. The retry strategy is the
      *        number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry
      *        strategy here, it overrides the retry strategy defined in the job definition.
      * @return Returns a reference to this object so that method calls can be chained together.

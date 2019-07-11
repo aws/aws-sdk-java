@@ -29,6 +29,8 @@ public class DeleteRuleRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> EVENTBUSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBusName").build();
     private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Force").build();
 
@@ -49,6 +51,7 @@ public class DeleteRuleRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteRuleRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(deleteRuleRequest.getEventBusName(), EVENTBUSNAME_BINDING);
             protocolMarshaller.marshall(deleteRuleRequest.getForce(), FORCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

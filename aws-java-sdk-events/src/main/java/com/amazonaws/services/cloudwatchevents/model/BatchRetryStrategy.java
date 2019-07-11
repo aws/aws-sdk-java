@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you specify a retry strategy here,
- * it overrides the retry strategy defined in the job definition.
+ * The retry strategy to use for failed jobs if the target is an AWS Batch job. If you specify a retry strategy here, it
+ * overrides the retry strategy defined in the job definition.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/BatchRetryStrategy" target="_top">AWS API

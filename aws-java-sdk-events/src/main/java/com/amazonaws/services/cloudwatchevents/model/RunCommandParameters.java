@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent
- * the command.
+ * This parameter contains the criteria (either <code>InstanceIds</code> or a tag) used to specify which EC2 instances
+ * are to be sent the command.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RunCommandParameters" target="_top">AWS API
@@ -31,20 +31,20 @@ public class RunCommandParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds
-     * or a tag.
+     * Currently, we support including only one <code>RunCommandTarget</code> block, which specifies either an array of
+     * <code>InstanceIds</code> or a tag.
      * </p>
      */
     private java.util.List<RunCommandTarget> runCommandTargets;
 
     /**
      * <p>
-     * Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds
-     * or a tag.
+     * Currently, we support including only one <code>RunCommandTarget</code> block, which specifies either an array of
+     * <code>InstanceIds</code> or a tag.
      * </p>
      * 
-     * @return Currently, we support including only one RunCommandTarget block, which specifies either an array of
-     *         InstanceIds or a tag.
+     * @return Currently, we support including only one <code>RunCommandTarget</code> block, which specifies either an
+     *         array of <code>InstanceIds</code> or a tag.
      */
 
     public java.util.List<RunCommandTarget> getRunCommandTargets() {
@@ -53,13 +53,13 @@ public class RunCommandParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds
-     * or a tag.
+     * Currently, we support including only one <code>RunCommandTarget</code> block, which specifies either an array of
+     * <code>InstanceIds</code> or a tag.
      * </p>
      * 
      * @param runCommandTargets
-     *        Currently, we support including only one RunCommandTarget block, which specifies either an array of
-     *        InstanceIds or a tag.
+     *        Currently, we support including only one <code>RunCommandTarget</code> block, which specifies either an
+     *        array of <code>InstanceIds</code> or a tag.
      */
 
     public void setRunCommandTargets(java.util.Collection<RunCommandTarget> runCommandTargets) {
@@ -73,8 +73,8 @@ public class RunCommandParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds
-     * or a tag.
+     * Currently, we support including only one <code>RunCommandTarget</code> block, which specifies either an array of
+     * <code>InstanceIds</code> or a tag.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,8 +83,8 @@ public class RunCommandParameters implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param runCommandTargets
-     *        Currently, we support including only one RunCommandTarget block, which specifies either an array of
-     *        InstanceIds or a tag.
+     *        Currently, we support including only one <code>RunCommandTarget</code> block, which specifies either an
+     *        array of <code>InstanceIds</code> or a tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +100,13 @@ public class RunCommandParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds
-     * or a tag.
+     * Currently, we support including only one <code>RunCommandTarget</code> block, which specifies either an array of
+     * <code>InstanceIds</code> or a tag.
      * </p>
      * 
      * @param runCommandTargets
-     *        Currently, we support including only one RunCommandTarget block, which specifies either an array of
-     *        InstanceIds or a tag.
+     *        Currently, we support including only one <code>RunCommandTarget</code> block, which specifies either an
+     *        array of <code>InstanceIds</code> or a tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

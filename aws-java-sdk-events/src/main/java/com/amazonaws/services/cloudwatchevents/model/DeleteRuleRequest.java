@@ -33,6 +33,12 @@ public class DeleteRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String name;
     /**
      * <p>
+     * The event bus associated with the rule. If you omit this, the default event bus is used.
+     * </p>
+     */
+    private String eventBusName;
+    /**
+     * <p>
      * If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as
      * <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can
      * check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking
@@ -78,6 +84,46 @@ public class DeleteRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     public DeleteRuleRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The event bus associated with the rule. If you omit this, the default event bus is used.
+     * </p>
+     * 
+     * @param eventBusName
+     *        The event bus associated with the rule. If you omit this, the default event bus is used.
+     */
+
+    public void setEventBusName(String eventBusName) {
+        this.eventBusName = eventBusName;
+    }
+
+    /**
+     * <p>
+     * The event bus associated with the rule. If you omit this, the default event bus is used.
+     * </p>
+     * 
+     * @return The event bus associated with the rule. If you omit this, the default event bus is used.
+     */
+
+    public String getEventBusName() {
+        return this.eventBusName;
+    }
+
+    /**
+     * <p>
+     * The event bus associated with the rule. If you omit this, the default event bus is used.
+     * </p>
+     * 
+     * @param eventBusName
+     *        The event bus associated with the rule. If you omit this, the default event bus is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteRuleRequest withEventBusName(String eventBusName) {
+        setEventBusName(eventBusName);
         return this;
     }
 
@@ -171,6 +217,8 @@ public class DeleteRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getEventBusName() != null)
+            sb.append("EventBusName: ").append(getEventBusName()).append(",");
         if (getForce() != null)
             sb.append("Force: ").append(getForce());
         sb.append("}");
@@ -191,6 +239,10 @@ public class DeleteRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getEventBusName() == null ^ this.getEventBusName() == null)
+            return false;
+        if (other.getEventBusName() != null && other.getEventBusName().equals(this.getEventBusName()) == false)
+            return false;
         if (other.getForce() == null ^ this.getForce() == null)
             return false;
         if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
@@ -204,6 +256,7 @@ public class DeleteRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getEventBusName() == null) ? 0 : getEventBusName().hashCode());
         hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;
     }

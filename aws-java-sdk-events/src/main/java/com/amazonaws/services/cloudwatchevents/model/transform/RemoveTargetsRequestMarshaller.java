@@ -30,6 +30,8 @@ public class RemoveTargetsRequestMarshaller {
 
     private static final MarshallingInfo<String> RULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Rule").build();
+    private static final MarshallingInfo<String> EVENTBUSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBusName").build();
     private static final MarshallingInfo<List> IDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Ids").build();
     private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +54,7 @@ public class RemoveTargetsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(removeTargetsRequest.getRule(), RULE_BINDING);
+            protocolMarshaller.marshall(removeTargetsRequest.getEventBusName(), EVENTBUSNAME_BINDING);
             protocolMarshaller.marshall(removeTargetsRequest.getIds(), IDS_BINDING);
             protocolMarshaller.marshall(removeTargetsRequest.getForce(), FORCE_BINDING);
         } catch (Exception e) {

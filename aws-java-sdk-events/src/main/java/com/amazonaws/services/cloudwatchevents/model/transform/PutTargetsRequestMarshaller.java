@@ -30,6 +30,8 @@ public class PutTargetsRequestMarshaller {
 
     private static final MarshallingInfo<String> RULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Rule").build();
+    private static final MarshallingInfo<String> EVENTBUSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBusName").build();
     private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Targets").build();
 
@@ -50,6 +52,7 @@ public class PutTargetsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(putTargetsRequest.getRule(), RULE_BINDING);
+            protocolMarshaller.marshall(putTargetsRequest.getEventBusName(), EVENTBUSNAME_BINDING);
             protocolMarshaller.marshall(putTargetsRequest.getTargets(), TARGETS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

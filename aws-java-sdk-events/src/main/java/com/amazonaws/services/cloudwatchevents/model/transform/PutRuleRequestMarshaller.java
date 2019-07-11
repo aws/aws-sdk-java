@@ -42,6 +42,8 @@ public class PutRuleRequestMarshaller {
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> EVENTBUSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBusName").build();
 
     private static final PutRuleRequestMarshaller instance = new PutRuleRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class PutRuleRequestMarshaller {
             protocolMarshaller.marshall(putRuleRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(putRuleRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(putRuleRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(putRuleRequest.getEventBusName(), EVENTBUSNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

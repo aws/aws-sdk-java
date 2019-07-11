@@ -29,6 +29,8 @@ public class ListRulesRequestMarshaller {
 
     private static final MarshallingInfo<String> NAMEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NamePrefix").build();
+    private static final MarshallingInfo<String> EVENTBUSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBusName").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -51,6 +53,7 @@ public class ListRulesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listRulesRequest.getNamePrefix(), NAMEPREFIX_BINDING);
+            protocolMarshaller.marshall(listRulesRequest.getEventBusName(), EVENTBUSNAME_BINDING);
             protocolMarshaller.marshall(listRulesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listRulesRequest.getLimit(), LIMIT_BINDING);
         } catch (Exception e) {

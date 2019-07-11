@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each
- * <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values.
+ * <code>RunCommandTarget</code> block can include only one key, but this key can specify multiple values.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RunCommandTarget" target="_top">AWS API

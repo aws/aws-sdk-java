@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be
+ * This structure specifies the VPC subnets and security groups for the task and whether a public IP address is to be
  * used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
  * </p>
  * 
@@ -39,7 +39,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies the security groups associated with the task. These security groups must all be in the same VPC. You
-     * can specify as many as five security groups. If you do not specify a security group, the default security group
+     * can specify as many as five security groups. If you don't specify a security group, the default security group
      * for the VPC is used.
      * </p>
      */
@@ -134,12 +134,12 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies the security groups associated with the task. These security groups must all be in the same VPC. You
-     * can specify as many as five security groups. If you do not specify a security group, the default security group
+     * can specify as many as five security groups. If you don't specify a security group, the default security group
      * for the VPC is used.
      * </p>
      * 
      * @return Specifies the security groups associated with the task. These security groups must all be in the same
-     *         VPC. You can specify as many as five security groups. If you do not specify a security group, the default
+     *         VPC. You can specify as many as five security groups. If you don't specify a security group, the default
      *         security group for the VPC is used.
      */
 
@@ -150,13 +150,13 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies the security groups associated with the task. These security groups must all be in the same VPC. You
-     * can specify as many as five security groups. If you do not specify a security group, the default security group
+     * can specify as many as five security groups. If you don't specify a security group, the default security group
      * for the VPC is used.
      * </p>
      * 
      * @param securityGroups
      *        Specifies the security groups associated with the task. These security groups must all be in the same VPC.
-     *        You can specify as many as five security groups. If you do not specify a security group, the default
+     *        You can specify as many as five security groups. If you don't specify a security group, the default
      *        security group for the VPC is used.
      */
 
@@ -172,7 +172,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies the security groups associated with the task. These security groups must all be in the same VPC. You
-     * can specify as many as five security groups. If you do not specify a security group, the default security group
+     * can specify as many as five security groups. If you don't specify a security group, the default security group
      * for the VPC is used.
      * </p>
      * <p>
@@ -183,7 +183,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
      * 
      * @param securityGroups
      *        Specifies the security groups associated with the task. These security groups must all be in the same VPC.
-     *        You can specify as many as five security groups. If you do not specify a security group, the default
+     *        You can specify as many as five security groups. If you don't specify a security group, the default
      *        security group for the VPC is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -201,13 +201,13 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies the security groups associated with the task. These security groups must all be in the same VPC. You
-     * can specify as many as five security groups. If you do not specify a security group, the default security group
+     * can specify as many as five security groups. If you don't specify a security group, the default security group
      * for the VPC is used.
      * </p>
      * 
      * @param securityGroups
      *        Specifies the security groups associated with the task. These security groups must all be in the same VPC.
-     *        You can specify as many as five security groups. If you do not specify a security group, the default
+     *        You can specify as many as five security groups. If you don't specify a security group, the default
      *        security group for the VPC is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

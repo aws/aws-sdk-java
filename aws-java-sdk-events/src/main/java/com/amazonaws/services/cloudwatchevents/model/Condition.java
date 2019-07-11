@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the
- * condition. Currently, the only supported condition is membership in a certain AWS organization. The string must
+ * A JSON string that you can use to limit the event bus permissions that you're granting to only accounts that fulfill
+ * the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must
  * contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies
- * the ID of the AWS organization. Following is an example value for <code>Condition</code>:
+ * the ID of the AWS organization. The following is an example value for <code>Condition</code>:
  * </p>
  * <p>
  * <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code>
@@ -36,30 +36,30 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.
+     * The type of condition. Currently, the only supported value is <code>StringEquals</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.
+     * The key for the condition. Currently, the only supported key is <code>aws:PrincipalOrgID</code>.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * Specifies the value for the key. Currently, this must be the ID of the organization.
+     * The value for the key. Currently, this must be the ID of the organization.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.
+     * The type of condition. Currently, the only supported value is <code>StringEquals</code>.
      * </p>
      * 
      * @param type
-     *        Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.
+     *        The type of condition. Currently, the only supported value is <code>StringEquals</code>.
      */
 
     public void setType(String type) {
@@ -68,10 +68,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.
+     * The type of condition. Currently, the only supported value is <code>StringEquals</code>.
      * </p>
      * 
-     * @return Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.
+     * @return The type of condition. Currently, the only supported value is <code>StringEquals</code>.
      */
 
     public String getType() {
@@ -80,11 +80,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.
+     * The type of condition. Currently, the only supported value is <code>StringEquals</code>.
      * </p>
      * 
      * @param type
-     *        Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.
+     *        The type of condition. Currently, the only supported value is <code>StringEquals</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.
+     * The key for the condition. Currently, the only supported key is <code>aws:PrincipalOrgID</code>.
      * </p>
      * 
      * @param key
-     *        Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.
+     *        The key for the condition. Currently, the only supported key is <code>aws:PrincipalOrgID</code>.
      */
 
     public void setKey(String key) {
@@ -108,10 +108,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.
+     * The key for the condition. Currently, the only supported key is <code>aws:PrincipalOrgID</code>.
      * </p>
      * 
-     * @return Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.
+     * @return The key for the condition. Currently, the only supported key is <code>aws:PrincipalOrgID</code>.
      */
 
     public String getKey() {
@@ -120,11 +120,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.
+     * The key for the condition. Currently, the only supported key is <code>aws:PrincipalOrgID</code>.
      * </p>
      * 
      * @param key
-     *        Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.
+     *        The key for the condition. Currently, the only supported key is <code>aws:PrincipalOrgID</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the value for the key. Currently, this must be the ID of the organization.
+     * The value for the key. Currently, this must be the ID of the organization.
      * </p>
      * 
      * @param value
-     *        Specifies the value for the key. Currently, this must be the ID of the organization.
+     *        The value for the key. Currently, this must be the ID of the organization.
      */
 
     public void setValue(String value) {
@@ -148,10 +148,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the value for the key. Currently, this must be the ID of the organization.
+     * The value for the key. Currently, this must be the ID of the organization.
      * </p>
      * 
-     * @return Specifies the value for the key. Currently, this must be the ID of the organization.
+     * @return The value for the key. Currently, this must be the ID of the organization.
      */
 
     public String getValue() {
@@ -160,11 +160,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the value for the key. Currently, this must be the ID of the organization.
+     * The value for the key. Currently, this must be the ID of the organization.
      * </p>
      * 
      * @param value
-     *        Specifies the value for the key. Currently, this must be the ID of the organization.
+     *        The value for the key. Currently, this must be the ID of the organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

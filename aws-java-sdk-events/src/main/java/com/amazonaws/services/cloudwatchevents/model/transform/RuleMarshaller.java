@@ -43,6 +43,8 @@ public class RuleMarshaller {
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<String> MANAGEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ManagedBy").build();
+    private static final MarshallingInfo<String> EVENTBUSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBusName").build();
 
     private static final RuleMarshaller instance = new RuleMarshaller();
 
@@ -68,6 +70,7 @@ public class RuleMarshaller {
             protocolMarshaller.marshall(rule.getScheduleExpression(), SCHEDULEEXPRESSION_BINDING);
             protocolMarshaller.marshall(rule.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(rule.getManagedBy(), MANAGEDBY_BINDING);
+            protocolMarshaller.marshall(rule.getEventBusName(), EVENTBUSNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -27,7 +27,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the CloudWatch Events rule that you're adding tags to.
+     * The ARN of the rule that you're adding tags to.
      * </p>
      */
     private String resourceARN;
@@ -40,11 +40,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the CloudWatch Events rule that you're adding tags to.
+     * The ARN of the rule that you're adding tags to.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the CloudWatch Events rule that you're adding tags to.
+     *        The ARN of the rule that you're adding tags to.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the CloudWatch Events rule that you're adding tags to.
+     * The ARN of the rule that you're adding tags to.
      * </p>
      * 
-     * @return The ARN of the CloudWatch Events rule that you're adding tags to.
+     * @return The ARN of the rule that you're adding tags to.
      */
 
     public String getResourceARN() {
@@ -65,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the CloudWatch Events rule that you're adding tags to.
+     * The ARN of the rule that you're adding tags to.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the CloudWatch Events rule that you're adding tags to.
+     *        The ARN of the rule that you're adding tags to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

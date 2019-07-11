@@ -31,33 +31,33 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change
- * state, they automatically send events into an event stream. You can create rules that match selected events in the
- * stream and route them to targets to take action. You can also use rules to take action on a predetermined schedule.
- * For example, you can configure rules to:
+ * Amazon EventBridge helps you to respond to state changes in your AWS resources. When your resources change state,
+ * they automatically send events into an event stream. You can create rules that match selected events in the stream
+ * and route them to targets to take action. You can also use rules to take action on a predetermined schedule. For
+ * example, you can configure rules to:
  * </p>
  * <ul>
  * <li>
  * <p>
  * Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance
- * enters the running state.
+ * enters the running state
  * </p>
  * </li>
  * <li>
  * <p>
  * Direct specific API records from AWS CloudTrail to an Amazon Kinesis data stream for detailed analysis of potential
- * security or availability risks.
+ * security or availability risks
  * </p>
  * </li>
  * <li>
  * <p>
- * Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.
+ * Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume
  * </p>
  * </li>
  * </ul>
  * <p>
- * For more information about the features of Amazon CloudWatch Events, see the <a
- * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon CloudWatch Events User Guide</a>.
+ * For more information about the features of Amazon EventBridge, see the <a
+ * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/">Amazon EventBridge User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -272,6 +272,204 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     }
 
     @Override
+    public java.util.concurrent.Future<ActivateEventSourceResult> activateEventSourceAsync(ActivateEventSourceRequest request) {
+
+        return activateEventSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ActivateEventSourceResult> activateEventSourceAsync(final ActivateEventSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ActivateEventSourceRequest, ActivateEventSourceResult> asyncHandler) {
+        final ActivateEventSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ActivateEventSourceResult>() {
+            @Override
+            public ActivateEventSourceResult call() throws Exception {
+                ActivateEventSourceResult result = null;
+
+                try {
+                    result = executeActivateEventSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEventBusResult> createEventBusAsync(CreateEventBusRequest request) {
+
+        return createEventBusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEventBusResult> createEventBusAsync(final CreateEventBusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEventBusRequest, CreateEventBusResult> asyncHandler) {
+        final CreateEventBusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEventBusResult>() {
+            @Override
+            public CreateEventBusResult call() throws Exception {
+                CreateEventBusResult result = null;
+
+                try {
+                    result = executeCreateEventBus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePartnerEventSourceResult> createPartnerEventSourceAsync(CreatePartnerEventSourceRequest request) {
+
+        return createPartnerEventSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePartnerEventSourceResult> createPartnerEventSourceAsync(final CreatePartnerEventSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePartnerEventSourceRequest, CreatePartnerEventSourceResult> asyncHandler) {
+        final CreatePartnerEventSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePartnerEventSourceResult>() {
+            @Override
+            public CreatePartnerEventSourceResult call() throws Exception {
+                CreatePartnerEventSourceResult result = null;
+
+                try {
+                    result = executeCreatePartnerEventSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeactivateEventSourceResult> deactivateEventSourceAsync(DeactivateEventSourceRequest request) {
+
+        return deactivateEventSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeactivateEventSourceResult> deactivateEventSourceAsync(final DeactivateEventSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeactivateEventSourceRequest, DeactivateEventSourceResult> asyncHandler) {
+        final DeactivateEventSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeactivateEventSourceResult>() {
+            @Override
+            public DeactivateEventSourceResult call() throws Exception {
+                DeactivateEventSourceResult result = null;
+
+                try {
+                    result = executeDeactivateEventSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventBusResult> deleteEventBusAsync(DeleteEventBusRequest request) {
+
+        return deleteEventBusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventBusResult> deleteEventBusAsync(final DeleteEventBusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEventBusRequest, DeleteEventBusResult> asyncHandler) {
+        final DeleteEventBusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEventBusResult>() {
+            @Override
+            public DeleteEventBusResult call() throws Exception {
+                DeleteEventBusResult result = null;
+
+                try {
+                    result = executeDeleteEventBus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePartnerEventSourceResult> deletePartnerEventSourceAsync(DeletePartnerEventSourceRequest request) {
+
+        return deletePartnerEventSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePartnerEventSourceResult> deletePartnerEventSourceAsync(final DeletePartnerEventSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePartnerEventSourceRequest, DeletePartnerEventSourceResult> asyncHandler) {
+        final DeletePartnerEventSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePartnerEventSourceResult>() {
+            @Override
+            public DeletePartnerEventSourceResult call() throws Exception {
+                DeletePartnerEventSourceResult result = null;
+
+                try {
+                    result = executeDeletePartnerEventSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest request) {
 
         return deleteRuleAsync(request, null);
@@ -322,6 +520,72 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executeDescribeEventBus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventSourceResult> describeEventSourceAsync(DescribeEventSourceRequest request) {
+
+        return describeEventSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventSourceResult> describeEventSourceAsync(final DescribeEventSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEventSourceRequest, DescribeEventSourceResult> asyncHandler) {
+        final DescribeEventSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEventSourceResult>() {
+            @Override
+            public DescribeEventSourceResult call() throws Exception {
+                DescribeEventSourceResult result = null;
+
+                try {
+                    result = executeDescribeEventSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePartnerEventSourceResult> describePartnerEventSourceAsync(DescribePartnerEventSourceRequest request) {
+
+        return describePartnerEventSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePartnerEventSourceResult> describePartnerEventSourceAsync(final DescribePartnerEventSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePartnerEventSourceRequest, DescribePartnerEventSourceResult> asyncHandler) {
+        final DescribePartnerEventSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePartnerEventSourceResult>() {
+            @Override
+            public DescribePartnerEventSourceResult call() throws Exception {
+                DescribePartnerEventSourceResult result = null;
+
+                try {
+                    result = executeDescribePartnerEventSource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -421,6 +685,139 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executeEnableRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventBusesResult> listEventBusesAsync(ListEventBusesRequest request) {
+
+        return listEventBusesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventBusesResult> listEventBusesAsync(final ListEventBusesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEventBusesRequest, ListEventBusesResult> asyncHandler) {
+        final ListEventBusesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEventBusesResult>() {
+            @Override
+            public ListEventBusesResult call() throws Exception {
+                ListEventBusesResult result = null;
+
+                try {
+                    result = executeListEventBuses(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventSourcesResult> listEventSourcesAsync(ListEventSourcesRequest request) {
+
+        return listEventSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventSourcesResult> listEventSourcesAsync(final ListEventSourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEventSourcesRequest, ListEventSourcesResult> asyncHandler) {
+        final ListEventSourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEventSourcesResult>() {
+            @Override
+            public ListEventSourcesResult call() throws Exception {
+                ListEventSourcesResult result = null;
+
+                try {
+                    result = executeListEventSources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPartnerEventSourceAccountsResult> listPartnerEventSourceAccountsAsync(ListPartnerEventSourceAccountsRequest request) {
+
+        return listPartnerEventSourceAccountsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPartnerEventSourceAccountsResult> listPartnerEventSourceAccountsAsync(
+            final ListPartnerEventSourceAccountsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPartnerEventSourceAccountsRequest, ListPartnerEventSourceAccountsResult> asyncHandler) {
+        final ListPartnerEventSourceAccountsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPartnerEventSourceAccountsResult>() {
+            @Override
+            public ListPartnerEventSourceAccountsResult call() throws Exception {
+                ListPartnerEventSourceAccountsResult result = null;
+
+                try {
+                    result = executeListPartnerEventSourceAccounts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPartnerEventSourcesResult> listPartnerEventSourcesAsync(ListPartnerEventSourcesRequest request) {
+
+        return listPartnerEventSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPartnerEventSourcesResult> listPartnerEventSourcesAsync(final ListPartnerEventSourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPartnerEventSourcesRequest, ListPartnerEventSourcesResult> asyncHandler) {
+        final ListPartnerEventSourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPartnerEventSourcesResult>() {
+            @Override
+            public ListPartnerEventSourcesResult call() throws Exception {
+                ListPartnerEventSourcesResult result = null;
+
+                try {
+                    result = executeListPartnerEventSources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -586,6 +983,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executePutEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPartnerEventsResult> putPartnerEventsAsync(PutPartnerEventsRequest request) {
+
+        return putPartnerEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPartnerEventsResult> putPartnerEventsAsync(final PutPartnerEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutPartnerEventsRequest, PutPartnerEventsResult> asyncHandler) {
+        final PutPartnerEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutPartnerEventsResult>() {
+            @Override
+            public PutPartnerEventsResult call() throws Exception {
+                PutPartnerEventsResult result = null;
+
+                try {
+                    result = executePutPartnerEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

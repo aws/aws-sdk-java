@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You tried to create more rules or add more targets to a rule than is allowed.
+ * You tried to create more resources than is allowed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

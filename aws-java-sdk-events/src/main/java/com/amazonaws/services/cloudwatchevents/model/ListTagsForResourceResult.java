@@ -25,17 +25,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of tag keys and values associated with the rule you specified
+     * The list of tag keys and values associated with the rule that you specified.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The list of tag keys and values associated with the rule you specified
+     * The list of tag keys and values associated with the rule that you specified.
      * </p>
      * 
-     * @return The list of tag keys and values associated with the rule you specified
+     * @return The list of tag keys and values associated with the rule that you specified.
      */
 
     public java.util.List<Tag> getTags() {
@@ -44,11 +44,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of tag keys and values associated with the rule you specified
+     * The list of tag keys and values associated with the rule that you specified.
      * </p>
      * 
      * @param tags
-     *        The list of tag keys and values associated with the rule you specified
+     *        The list of tag keys and values associated with the rule that you specified.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -62,7 +62,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of tag keys and values associated with the rule you specified
+     * The list of tag keys and values associated with the rule that you specified.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param tags
-     *        The list of tag keys and values associated with the rule you specified
+     *        The list of tag keys and values associated with the rule that you specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of tag keys and values associated with the rule you specified
+     * The list of tag keys and values associated with the rule that you specified.
      * </p>
      * 
      * @param tags
-     *        The list of tag keys and values associated with the rule you specified
+     *        The list of tag keys and values associated with the rule that you specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

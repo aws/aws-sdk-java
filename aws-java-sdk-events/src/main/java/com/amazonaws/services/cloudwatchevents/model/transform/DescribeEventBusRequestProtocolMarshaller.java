@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DescribeEventBusRequestProtocolMarshaller implements Marshaller<Request<DescribeEventBusRequest>, DescribeEventBusRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.AWS_JSON).requestUri("/")
-            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(false).operationIdentifier("AWSEvents.DescribeEventBus")
+            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).operationIdentifier("AWSEvents.DescribeEventBus")
             .serviceName("AmazonCloudWatchEvents").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

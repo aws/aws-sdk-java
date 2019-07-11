@@ -29,6 +29,8 @@ public class ListRuleNamesByTargetRequestMarshaller {
 
     private static final MarshallingInfo<String> TARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TargetArn").build();
+    private static final MarshallingInfo<String> EVENTBUSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBusName").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -51,6 +53,7 @@ public class ListRuleNamesByTargetRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listRuleNamesByTargetRequest.getTargetArn(), TARGETARN_BINDING);
+            protocolMarshaller.marshall(listRuleNamesByTargetRequest.getEventBusName(), EVENTBUSNAME_BINDING);
             protocolMarshaller.marshall(listRuleNamesByTargetRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listRuleNamesByTargetRequest.getLimit(), LIMIT_BINDING);
         } catch (Exception e) {

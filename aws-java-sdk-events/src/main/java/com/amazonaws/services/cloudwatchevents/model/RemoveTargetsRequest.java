@@ -33,16 +33,22 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String rule;
     /**
      * <p>
+     * The name of the event bus associated with the rule.
+     * </p>
+     */
+    private String eventBusName;
+    /**
+     * <p>
      * The IDs of the targets to remove from the rule.
      * </p>
      */
     private java.util.List<String> ids;
     /**
      * <p>
-     * If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as
-     * <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can
-     * check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking
-     * the <code>ManagedBy</code> field of the response.
+     * If this is a managed rule created by an AWS service on your behalf, you must specify <code>Force</code> as
+     * <code>True</code> to remove targets. This parameter is ignored for rules that aren't managed rules. You can check
+     * whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the
+     * <code>ManagedBy</code> field of the response.
      * </p>
      */
     private Boolean force;
@@ -84,6 +90,46 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public RemoveTargetsRequest withRule(String rule) {
         setRule(rule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the event bus associated with the rule.
+     * </p>
+     * 
+     * @param eventBusName
+     *        The name of the event bus associated with the rule.
+     */
+
+    public void setEventBusName(String eventBusName) {
+        this.eventBusName = eventBusName;
+    }
+
+    /**
+     * <p>
+     * The name of the event bus associated with the rule.
+     * </p>
+     * 
+     * @return The name of the event bus associated with the rule.
+     */
+
+    public String getEventBusName() {
+        return this.eventBusName;
+    }
+
+    /**
+     * <p>
+     * The name of the event bus associated with the rule.
+     * </p>
+     * 
+     * @param eventBusName
+     *        The name of the event bus associated with the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemoveTargetsRequest withEventBusName(String eventBusName) {
+        setEventBusName(eventBusName);
         return this;
     }
 
@@ -159,17 +205,17 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as
-     * <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can
-     * check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking
-     * the <code>ManagedBy</code> field of the response.
+     * If this is a managed rule created by an AWS service on your behalf, you must specify <code>Force</code> as
+     * <code>True</code> to remove targets. This parameter is ignored for rules that aren't managed rules. You can check
+     * whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the
+     * <code>ManagedBy</code> field of the response.
      * </p>
      * 
      * @param force
-     *        If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code>
-     *        as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules.
-     *        You can check whether a rule is a managed rule by using <code>DescribeRule</code> or
-     *        <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.
+     *        If this is a managed rule created by an AWS service on your behalf, you must specify <code>Force</code> as
+     *        <code>True</code> to remove targets. This parameter is ignored for rules that aren't managed rules. You
+     *        can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code>
+     *        and checking the <code>ManagedBy</code> field of the response.
      */
 
     public void setForce(Boolean force) {
@@ -178,14 +224,14 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as
-     * <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can
-     * check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking
-     * the <code>ManagedBy</code> field of the response.
+     * If this is a managed rule created by an AWS service on your behalf, you must specify <code>Force</code> as
+     * <code>True</code> to remove targets. This parameter is ignored for rules that aren't managed rules. You can check
+     * whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the
+     * <code>ManagedBy</code> field of the response.
      * </p>
      * 
-     * @return If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code>
-     *         as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules.
+     * @return If this is a managed rule created by an AWS service on your behalf, you must specify <code>Force</code>
+     *         as <code>True</code> to remove targets. This parameter is ignored for rules that aren't managed rules.
      *         You can check whether a rule is a managed rule by using <code>DescribeRule</code> or
      *         <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.
      */
@@ -196,17 +242,17 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as
-     * <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can
-     * check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking
-     * the <code>ManagedBy</code> field of the response.
+     * If this is a managed rule created by an AWS service on your behalf, you must specify <code>Force</code> as
+     * <code>True</code> to remove targets. This parameter is ignored for rules that aren't managed rules. You can check
+     * whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the
+     * <code>ManagedBy</code> field of the response.
      * </p>
      * 
      * @param force
-     *        If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code>
-     *        as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules.
-     *        You can check whether a rule is a managed rule by using <code>DescribeRule</code> or
-     *        <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.
+     *        If this is a managed rule created by an AWS service on your behalf, you must specify <code>Force</code> as
+     *        <code>True</code> to remove targets. This parameter is ignored for rules that aren't managed rules. You
+     *        can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code>
+     *        and checking the <code>ManagedBy</code> field of the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,14 +263,14 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as
-     * <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can
-     * check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking
-     * the <code>ManagedBy</code> field of the response.
+     * If this is a managed rule created by an AWS service on your behalf, you must specify <code>Force</code> as
+     * <code>True</code> to remove targets. This parameter is ignored for rules that aren't managed rules. You can check
+     * whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the
+     * <code>ManagedBy</code> field of the response.
      * </p>
      * 
-     * @return If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code>
-     *         as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules.
+     * @return If this is a managed rule created by an AWS service on your behalf, you must specify <code>Force</code>
+     *         as <code>True</code> to remove targets. This parameter is ignored for rules that aren't managed rules.
      *         You can check whether a rule is a managed rule by using <code>DescribeRule</code> or
      *         <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.
      */
@@ -247,6 +293,8 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
         sb.append("{");
         if (getRule() != null)
             sb.append("Rule: ").append(getRule()).append(",");
+        if (getEventBusName() != null)
+            sb.append("EventBusName: ").append(getEventBusName()).append(",");
         if (getIds() != null)
             sb.append("Ids: ").append(getIds()).append(",");
         if (getForce() != null)
@@ -269,6 +317,10 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getRule() != null && other.getRule().equals(this.getRule()) == false)
             return false;
+        if (other.getEventBusName() == null ^ this.getEventBusName() == null)
+            return false;
+        if (other.getEventBusName() != null && other.getEventBusName().equals(this.getEventBusName()) == false)
+            return false;
         if (other.getIds() == null ^ this.getIds() == null)
             return false;
         if (other.getIds() != null && other.getIds().equals(this.getIds()) == false)
@@ -286,6 +338,7 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRule() == null) ? 0 : getRule().hashCode());
+        hashCode = prime * hashCode + ((getEventBusName() == null) ? 0 : getEventBusName().hashCode());
         hashCode = prime * hashCode + ((getIds() == null) ? 0 : getIds().hashCode());
         hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;

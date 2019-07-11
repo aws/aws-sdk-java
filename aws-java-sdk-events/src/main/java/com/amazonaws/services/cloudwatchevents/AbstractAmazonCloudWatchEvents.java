@@ -38,12 +38,52 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
     }
 
     @Override
+    public ActivateEventSourceResult activateEventSource(ActivateEventSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateEventBusResult createEventBus(CreateEventBusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreatePartnerEventSourceResult createPartnerEventSource(CreatePartnerEventSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeactivateEventSourceResult deactivateEventSource(DeactivateEventSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteEventBusResult deleteEventBus(DeleteEventBusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePartnerEventSourceResult deletePartnerEventSource(DeletePartnerEventSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRuleResult deleteRule(DeleteRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeEventBusResult describeEventBus(DescribeEventBusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEventSourceResult describeEventSource(DescribeEventSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribePartnerEventSourceResult describePartnerEventSource(DescribePartnerEventSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,6 +99,26 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
 
     @Override
     public EnableRuleResult enableRule(EnableRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListEventBusesResult listEventBuses(ListEventBusesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListEventSourcesResult listEventSources(ListEventSourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPartnerEventSourceAccountsResult listPartnerEventSourceAccounts(ListPartnerEventSourceAccountsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPartnerEventSourcesResult listPartnerEventSources(ListPartnerEventSourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +144,11 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
 
     @Override
     public PutEventsResult putEvents(PutEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutPartnerEventsResult putPartnerEvents(PutPartnerEventsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

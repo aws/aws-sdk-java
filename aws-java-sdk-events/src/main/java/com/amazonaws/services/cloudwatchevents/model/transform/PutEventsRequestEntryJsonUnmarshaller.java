@@ -68,6 +68,10 @@ public class PutEventsRequestEntryJsonUnmarshaller implements Unmarshaller<PutEv
                     context.nextToken();
                     putEventsRequestEntry.setDetail(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EventBusName", targetDepth)) {
+                    context.nextToken();
+                    putEventsRequestEntry.setEventBusName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -53,12 +53,12 @@ public class EcsParameters implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC
-     * subnets and security groups associated with the task, and whether a public IP address is to be used. This
+     * subnets and security groups associated with the task and whether a public IP address is to be used. This
      * structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is
      * required for Fargate tasks.
      * </p>
      * <p>
-     * If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code>
+     * If you specify <code>NetworkConfiguration</code> when the target ECS task doesn't use the <code>awsvpc</code>
      * network mode, the task fails.
      * </p>
      */
@@ -257,22 +257,22 @@ public class EcsParameters implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC
-     * subnets and security groups associated with the task, and whether a public IP address is to be used. This
+     * subnets and security groups associated with the task and whether a public IP address is to be used. This
      * structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is
      * required for Fargate tasks.
      * </p>
      * <p>
-     * If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code>
+     * If you specify <code>NetworkConfiguration</code> when the target ECS task doesn't use the <code>awsvpc</code>
      * network mode, the task fails.
      * </p>
      * 
      * @param networkConfiguration
      *        Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This structure specifies the
-     *        VPC subnets and security groups associated with the task, and whether a public IP address is to be used.
+     *        VPC subnets and security groups associated with the task and whether a public IP address is to be used.
      *        This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the
      *        <code>awsvpc</code> mode is required for Fargate tasks.</p>
      *        <p>
-     *        If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the
+     *        If you specify <code>NetworkConfiguration</code> when the target ECS task doesn't use the
      *        <code>awsvpc</code> network mode, the task fails.
      */
 
@@ -283,21 +283,21 @@ public class EcsParameters implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC
-     * subnets and security groups associated with the task, and whether a public IP address is to be used. This
+     * subnets and security groups associated with the task and whether a public IP address is to be used. This
      * structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is
      * required for Fargate tasks.
      * </p>
      * <p>
-     * If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code>
+     * If you specify <code>NetworkConfiguration</code> when the target ECS task doesn't use the <code>awsvpc</code>
      * network mode, the task fails.
      * </p>
      * 
      * @return Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This structure specifies
-     *         the VPC subnets and security groups associated with the task, and whether a public IP address is to be
+     *         the VPC subnets and security groups associated with the task and whether a public IP address is to be
      *         used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the
      *         <code>awsvpc</code> mode is required for Fargate tasks.</p>
      *         <p>
-     *         If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the
+     *         If you specify <code>NetworkConfiguration</code> when the target ECS task doesn't use the
      *         <code>awsvpc</code> network mode, the task fails.
      */
 
@@ -308,22 +308,22 @@ public class EcsParameters implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC
-     * subnets and security groups associated with the task, and whether a public IP address is to be used. This
+     * subnets and security groups associated with the task and whether a public IP address is to be used. This
      * structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is
      * required for Fargate tasks.
      * </p>
      * <p>
-     * If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code>
+     * If you specify <code>NetworkConfiguration</code> when the target ECS task doesn't use the <code>awsvpc</code>
      * network mode, the task fails.
      * </p>
      * 
      * @param networkConfiguration
      *        Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This structure specifies the
-     *        VPC subnets and security groups associated with the task, and whether a public IP address is to be used.
+     *        VPC subnets and security groups associated with the task and whether a public IP address is to be used.
      *        This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the
      *        <code>awsvpc</code> mode is required for Fargate tasks.</p>
      *        <p>
-     *        If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the
+     *        If you specify <code>NetworkConfiguration</code> when the target ECS task doesn't use the
      *        <code>awsvpc</code> network mode, the task fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

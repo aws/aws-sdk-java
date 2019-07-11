@@ -29,6 +29,8 @@ public class DescribeRuleRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> EVENTBUSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBusName").build();
 
     private static final DescribeRuleRequestMarshaller instance = new DescribeRuleRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DescribeRuleRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeRuleRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(describeRuleRequest.getEventBusName(), EVENTBUSNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
