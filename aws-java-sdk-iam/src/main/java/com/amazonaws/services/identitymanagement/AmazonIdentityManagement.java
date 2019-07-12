@@ -2064,9 +2064,6 @@ public interface AmazonIdentityManagement {
      * 
      * @param getAccessKeyLastUsedRequest
      * @return Result of the GetAccessKeyLastUsed operation returned by the service.
-     * @throws NoSuchEntityException
-     *         The request was rejected because it referenced a resource entity that does not exist. The error message
-     *         describes the resource.
      * @sample AmazonIdentityManagement.GetAccessKeyLastUsed
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed" target="_top">AWS API
      *      Documentation</a>

@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RobotSoftwareSuiteVersionType {
 
-    Kinetic("Kinetic");
+    Kinetic("Kinetic"),
+    Melodic("Melodic");
 
     private String value;
 

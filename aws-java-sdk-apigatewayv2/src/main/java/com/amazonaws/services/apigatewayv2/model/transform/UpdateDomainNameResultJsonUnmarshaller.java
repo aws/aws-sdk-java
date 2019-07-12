@@ -61,6 +61,11 @@ public class UpdateDomainNameResultJsonUnmarshaller implements Unmarshaller<Upda
                     updateDomainNameResult.setDomainNameConfigurations(new ListUnmarshaller<DomainNameConfiguration>(DomainNameConfigurationJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    updateDomainNameResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

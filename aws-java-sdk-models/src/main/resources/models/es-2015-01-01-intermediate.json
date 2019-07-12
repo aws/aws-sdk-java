@@ -12782,6 +12782,54 @@
         "name" : "M410xlargeElasticsearch",
         "value" : "m4.10xlarge.elasticsearch"
       }, {
+        "name" : "M5LargeElasticsearch",
+        "value" : "m5.large.elasticsearch"
+      }, {
+        "name" : "M5XlargeElasticsearch",
+        "value" : "m5.xlarge.elasticsearch"
+      }, {
+        "name" : "M52xlargeElasticsearch",
+        "value" : "m5.2xlarge.elasticsearch"
+      }, {
+        "name" : "M54xlargeElasticsearch",
+        "value" : "m5.4xlarge.elasticsearch"
+      }, {
+        "name" : "M512xlargeElasticsearch",
+        "value" : "m5.12xlarge.elasticsearch"
+      }, {
+        "name" : "R5LargeElasticsearch",
+        "value" : "r5.large.elasticsearch"
+      }, {
+        "name" : "R5XlargeElasticsearch",
+        "value" : "r5.xlarge.elasticsearch"
+      }, {
+        "name" : "R52xlargeElasticsearch",
+        "value" : "r5.2xlarge.elasticsearch"
+      }, {
+        "name" : "R54xlargeElasticsearch",
+        "value" : "r5.4xlarge.elasticsearch"
+      }, {
+        "name" : "R512xlargeElasticsearch",
+        "value" : "r5.12xlarge.elasticsearch"
+      }, {
+        "name" : "C5LargeElasticsearch",
+        "value" : "c5.large.elasticsearch"
+      }, {
+        "name" : "C5XlargeElasticsearch",
+        "value" : "c5.xlarge.elasticsearch"
+      }, {
+        "name" : "C52xlargeElasticsearch",
+        "value" : "c5.2xlarge.elasticsearch"
+      }, {
+        "name" : "C54xlargeElasticsearch",
+        "value" : "c5.4xlarge.elasticsearch"
+      }, {
+        "name" : "C59xlargeElasticsearch",
+        "value" : "c5.9xlarge.elasticsearch"
+      }, {
+        "name" : "C518xlargeElasticsearch",
+        "value" : "c5.18xlarge.elasticsearch"
+      }, {
         "name" : "T2MicroElasticsearch",
         "value" : "t2.micro.elasticsearch"
       }, {

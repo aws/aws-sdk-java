@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -54389,6 +54389,9 @@
       "enums" : [ {
         "name" : "Kinetic",
         "value" : "Kinetic"
+      }, {
+        "name" : "Melodic",
+        "value" : "Melodic"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -68458,7 +68461,7 @@
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
             "c2jName" : "member",
-            "c2jShape" : "GenericString",
+            "c2jShape" : "NonEmptyString",
             "deprecated" : false,
             "documentation" : "",
             "enumType" : null,
@@ -68607,7 +68610,7 @@
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
             "c2jName" : "member",
-            "c2jShape" : "GenericString",
+            "c2jShape" : "NonEmptyString",
             "deprecated" : false,
             "documentation" : "",
             "enumType" : null,
@@ -68893,7 +68896,7 @@
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
               "c2jName" : "member",
-              "c2jShape" : "GenericString",
+              "c2jShape" : "NonEmptyString",
               "deprecated" : false,
               "documentation" : "",
               "enumType" : null,
@@ -69043,7 +69046,7 @@
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
               "c2jName" : "member",
-              "c2jShape" : "GenericString",
+              "c2jShape" : "NonEmptyString",
               "deprecated" : false,
               "documentation" : "",
               "enumType" : null,
@@ -69233,7 +69236,7 @@
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
             "c2jName" : "member",
-            "c2jShape" : "GenericString",
+            "c2jShape" : "NonEmptyString",
             "deprecated" : false,
             "documentation" : "",
             "enumType" : null,
@@ -69382,7 +69385,7 @@
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
             "c2jName" : "member",
-            "c2jShape" : "GenericString",
+            "c2jShape" : "NonEmptyString",
             "deprecated" : false,
             "documentation" : "",
             "enumType" : null,
@@ -69735,7 +69738,7 @@
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
               "c2jName" : "member",
-              "c2jShape" : "GenericString",
+              "c2jShape" : "NonEmptyString",
               "deprecated" : false,
               "documentation" : "",
               "enumType" : null,
@@ -69885,7 +69888,7 @@
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
               "c2jName" : "member",
-              "c2jShape" : "GenericString",
+              "c2jShape" : "NonEmptyString",
               "deprecated" : false,
               "documentation" : "",
               "enumType" : null,

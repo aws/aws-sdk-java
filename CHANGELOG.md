@@ -1,3 +1,20 @@
+# __1.11.592__ __2019-07-12__
+## __AWS Identity and Access Management__
+  - ### Features
+    - Removed exception that was indicated but never thrown for IAM GetAccessKeyLastUsed API
+
+## __AWS RoboMaker__
+  - ### Features
+    - Added Melodic as a supported Robot Software Suite Version
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Amazon Elasticsearch Service now supports M5, C5, and R5 instance types.
+
+## __AmazonApiGatewayV2__
+  - ### Features
+    - Bug fix (Add tags field to Update Stage , Api and DomainName Responses )
+
 # __1.11.591__ __2019-07-11__
 ## __Amazon CloudWatch Events__
   - ### Features
