@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified KMS entity or resource can't be found.
+ * The specified AWS KMS entity or resource can't be found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

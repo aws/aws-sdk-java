@@ -59,8 +59,9 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
     private String marker;
     /**
      * <p>
-     * Set this flag to avoid returning setting information. Use this to reduce overhead when settings are too large.
-     * Choose TRUE to use this flag, otherwise choose FALSE (default).
+     * An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     * information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).
      * </p>
      */
     private Boolean withoutSettings;
@@ -296,13 +297,15 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Set this flag to avoid returning setting information. Use this to reduce overhead when settings are too large.
-     * Choose TRUE to use this flag, otherwise choose FALSE (default).
+     * An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     * information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).
      * </p>
      * 
      * @param withoutSettings
-     *        Set this flag to avoid returning setting information. Use this to reduce overhead when settings are too
-     *        large. Choose TRUE to use this flag, otherwise choose FALSE (default).
+     *        An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     *        information is too large. To use this option, choose <code>true</code>; otherwise, choose
+     *        <code>false</code> (the default).
      */
 
     public void setWithoutSettings(Boolean withoutSettings) {
@@ -311,12 +314,14 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Set this flag to avoid returning setting information. Use this to reduce overhead when settings are too large.
-     * Choose TRUE to use this flag, otherwise choose FALSE (default).
+     * An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     * information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).
      * </p>
      * 
-     * @return Set this flag to avoid returning setting information. Use this to reduce overhead when settings are too
-     *         large. Choose TRUE to use this flag, otherwise choose FALSE (default).
+     * @return An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     *         information is too large. To use this option, choose <code>true</code>; otherwise, choose
+     *         <code>false</code> (the default).
      */
 
     public Boolean getWithoutSettings() {
@@ -325,13 +330,15 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Set this flag to avoid returning setting information. Use this to reduce overhead when settings are too large.
-     * Choose TRUE to use this flag, otherwise choose FALSE (default).
+     * An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     * information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).
      * </p>
      * 
      * @param withoutSettings
-     *        Set this flag to avoid returning setting information. Use this to reduce overhead when settings are too
-     *        large. Choose TRUE to use this flag, otherwise choose FALSE (default).
+     *        An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     *        information is too large. To use this option, choose <code>true</code>; otherwise, choose
+     *        <code>false</code> (the default).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,12 +349,14 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Set this flag to avoid returning setting information. Use this to reduce overhead when settings are too large.
-     * Choose TRUE to use this flag, otherwise choose FALSE (default).
+     * An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     * information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).
      * </p>
      * 
-     * @return Set this flag to avoid returning setting information. Use this to reduce overhead when settings are too
-     *         large. Choose TRUE to use this flag, otherwise choose FALSE (default).
+     * @return An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     *         information is too large. To use this option, choose <code>true</code>; otherwise, choose
+     *         <code>false</code> (the default).
      */
 
     public Boolean isWithoutSettings() {

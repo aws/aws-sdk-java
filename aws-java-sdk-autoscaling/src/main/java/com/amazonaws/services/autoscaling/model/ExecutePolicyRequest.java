@@ -42,7 +42,8 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.
      * </p>
      * <p>
-     * This parameter is not supported if the policy type is <code>StepScaling</code>.
+     * This parameter is not supported if the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
@@ -163,7 +164,8 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.
      * </p>
      * <p>
-     * This parameter is not supported if the policy type is <code>StepScaling</code>.
+     * This parameter is not supported if the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
@@ -174,7 +176,8 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the
      *        policy.</p>
      *        <p>
-     *        This parameter is not supported if the policy type is <code>StepScaling</code>.
+     *        This parameter is not supported if the policy type is <code>StepScaling</code> or
+     *        <code>TargetTrackingScaling</code>.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -191,7 +194,8 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.
      * </p>
      * <p>
-     * This parameter is not supported if the policy type is <code>StepScaling</code>.
+     * This parameter is not supported if the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
@@ -201,7 +205,8 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the
      *         policy.</p>
      *         <p>
-     *         This parameter is not supported if the policy type is <code>StepScaling</code>.
+     *         This parameter is not supported if the policy type is <code>StepScaling</code> or
+     *         <code>TargetTrackingScaling</code>.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -218,7 +223,8 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.
      * </p>
      * <p>
-     * This parameter is not supported if the policy type is <code>StepScaling</code>.
+     * This parameter is not supported if the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
@@ -229,7 +235,8 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the
      *        policy.</p>
      *        <p>
-     *        This parameter is not supported if the policy type is <code>StepScaling</code>.
+     *        This parameter is not supported if the policy type is <code>StepScaling</code> or
+     *        <code>TargetTrackingScaling</code>.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -248,7 +255,8 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.
      * </p>
      * <p>
-     * This parameter is not supported if the policy type is <code>StepScaling</code>.
+     * This parameter is not supported if the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
@@ -258,7 +266,8 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the
      *         policy.</p>
      *         <p>
-     *         This parameter is not supported if the policy type is <code>StepScaling</code>.
+     *         This parameter is not supported if the policy type is <code>StepScaling</code> or
+     *         <code>TargetTrackingScaling</code>.
      *         </p>
      *         <p>
      *         For more information, see <a

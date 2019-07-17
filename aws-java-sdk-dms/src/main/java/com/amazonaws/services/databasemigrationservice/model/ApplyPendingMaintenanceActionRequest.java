@@ -40,8 +40,8 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
     private String applyAction;
     /**
      * <p>
-     * A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type
-     * <code>immediate</code> cannot be undone.
+     * A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request
+     * of type <code>immediate</code>.
      * </p>
      * <p>
      * Valid values:
@@ -148,8 +148,8 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type
-     * <code>immediate</code> cannot be undone.
+     * A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request
+     * of type <code>immediate</code>.
      * </p>
      * <p>
      * Valid values:
@@ -173,8 +173,8 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * </ul>
      * 
      * @param optInType
-     *        A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type
-     *        <code>immediate</code> cannot be undone.</p>
+     *        A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in
+     *        request of type <code>immediate</code>.</p>
      *        <p>
      *        Valid values:
      *        </p>
@@ -203,8 +203,8 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type
-     * <code>immediate</code> cannot be undone.
+     * A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request
+     * of type <code>immediate</code>.
      * </p>
      * <p>
      * Valid values:
@@ -227,8 +227,8 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * 
-     * @return A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type
-     *         <code>immediate</code> cannot be undone.</p>
+     * @return A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in
+     *         request of type <code>immediate</code>.</p>
      *         <p>
      *         Valid values:
      *         </p>
@@ -257,8 +257,8 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type
-     * <code>immediate</code> cannot be undone.
+     * A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request
+     * of type <code>immediate</code>.
      * </p>
      * <p>
      * Valid values:
@@ -282,8 +282,8 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * </ul>
      * 
      * @param optInType
-     *        A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type
-     *        <code>immediate</code> cannot be undone.</p>
+     *        A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in
+     *        request of type <code>immediate</code>.</p>
      *        <p>
      *        Valid values:
      *        </p>

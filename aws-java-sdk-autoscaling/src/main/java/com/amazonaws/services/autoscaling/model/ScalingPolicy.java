@@ -46,7 +46,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     private String policyARN;
     /**
      * <p>
-     * The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     * <code>TargetTrackingScaling</code>.
      * </p>
      */
     private String policyType;
@@ -239,11 +240,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     * <code>TargetTrackingScaling</code>.
      * </p>
      * 
      * @param policyType
-     *        The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     *        The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     *        <code>TargetTrackingScaling</code>.
      */
 
     public void setPolicyType(String policyType) {
@@ -252,10 +255,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     * <code>TargetTrackingScaling</code>.
      * </p>
      * 
-     * @return The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * @return The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     *         <code>TargetTrackingScaling</code>.
      */
 
     public String getPolicyType() {
@@ -264,11 +269,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     * <code>TargetTrackingScaling</code>.
      * </p>
      * 
      * @param policyType
-     *        The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     *        The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
+     *        <code>TargetTrackingScaling</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

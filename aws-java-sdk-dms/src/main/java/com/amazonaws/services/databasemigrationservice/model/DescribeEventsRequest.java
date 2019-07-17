@@ -28,8 +28,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the event source. An identifier must begin with a letter and must contain only ASCII letters,
-     * digits, and hyphens. It cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of an event source.
      * </p>
      */
     private String sourceIdentifier;
@@ -38,7 +37,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: replication-instance | replication-task
      * </p>
      */
     private String sourceType;
@@ -62,7 +61,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer duration;
     /**
      * <p>
-     * A list of event categories for a source type that you want to subscribe to.
+     * A list of event categories for the source type that you've chosen.
      * </p>
      */
     private java.util.List<String> eventCategories;
@@ -96,13 +95,11 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the event source. An identifier must begin with a letter and must contain only ASCII letters,
-     * digits, and hyphens. It cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of an event source.
      * </p>
      * 
      * @param sourceIdentifier
-     *        The identifier of the event source. An identifier must begin with a letter and must contain only ASCII
-     *        letters, digits, and hyphens. It cannot end with a hyphen or contain two consecutive hyphens.
+     *        The identifier of an event source.
      */
 
     public void setSourceIdentifier(String sourceIdentifier) {
@@ -111,12 +108,10 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the event source. An identifier must begin with a letter and must contain only ASCII letters,
-     * digits, and hyphens. It cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of an event source.
      * </p>
      * 
-     * @return The identifier of the event source. An identifier must begin with a letter and must contain only ASCII
-     *         letters, digits, and hyphens. It cannot end with a hyphen or contain two consecutive hyphens.
+     * @return The identifier of an event source.
      */
 
     public String getSourceIdentifier() {
@@ -125,13 +120,11 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the event source. An identifier must begin with a letter and must contain only ASCII letters,
-     * digits, and hyphens. It cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of an event source.
      * </p>
      * 
      * @param sourceIdentifier
-     *        The identifier of the event source. An identifier must begin with a letter and must contain only ASCII
-     *        letters, digits, and hyphens. It cannot end with a hyphen or contain two consecutive hyphens.
+     *        The identifier of an event source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,13 +138,13 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: replication-instance | replication-task
      * </p>
      * 
      * @param sourceType
      *        The type of AWS DMS resource that generates events.</p>
      *        <p>
-     *        Valid values: replication-instance | migration-task
+     *        Valid values: replication-instance | replication-task
      * @see SourceType
      */
 
@@ -164,12 +157,12 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: replication-instance | replication-task
      * </p>
      * 
      * @return The type of AWS DMS resource that generates events.</p>
      *         <p>
-     *         Valid values: replication-instance | migration-task
+     *         Valid values: replication-instance | replication-task
      * @see SourceType
      */
 
@@ -182,13 +175,13 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: replication-instance | replication-task
      * </p>
      * 
      * @param sourceType
      *        The type of AWS DMS resource that generates events.</p>
      *        <p>
-     *        Valid values: replication-instance | migration-task
+     *        Valid values: replication-instance | replication-task
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
@@ -203,13 +196,13 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: replication-instance | replication-task
      * </p>
      * 
      * @param sourceType
      *        The type of AWS DMS resource that generates events.</p>
      *        <p>
-     *        Valid values: replication-instance | migration-task
+     *        Valid values: replication-instance | replication-task
      * @see SourceType
      */
 
@@ -222,13 +215,13 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: replication-instance | replication-task
      * </p>
      * 
      * @param sourceType
      *        The type of AWS DMS resource that generates events.</p>
      *        <p>
-     *        Valid values: replication-instance | migration-task
+     *        Valid values: replication-instance | replication-task
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
@@ -360,10 +353,10 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of event categories for a source type that you want to subscribe to.
+     * A list of event categories for the source type that you've chosen.
      * </p>
      * 
-     * @return A list of event categories for a source type that you want to subscribe to.
+     * @return A list of event categories for the source type that you've chosen.
      */
 
     public java.util.List<String> getEventCategories() {
@@ -372,11 +365,11 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of event categories for a source type that you want to subscribe to.
+     * A list of event categories for the source type that you've chosen.
      * </p>
      * 
      * @param eventCategories
-     *        A list of event categories for a source type that you want to subscribe to.
+     *        A list of event categories for the source type that you've chosen.
      */
 
     public void setEventCategories(java.util.Collection<String> eventCategories) {
@@ -390,7 +383,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of event categories for a source type that you want to subscribe to.
+     * A list of event categories for the source type that you've chosen.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -399,7 +392,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param eventCategories
-     *        A list of event categories for a source type that you want to subscribe to.
+     *        A list of event categories for the source type that you've chosen.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,11 +408,11 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of event categories for a source type that you want to subscribe to.
+     * A list of event categories for the source type that you've chosen.
      * </p>
      * 
      * @param eventCategories
-     *        A list of event categories for a source type that you want to subscribe to.
+     *        A list of event categories for the source type that you've chosen.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

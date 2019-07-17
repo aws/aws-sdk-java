@@ -18,7 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Associates a set of tags with an AWS DMS resource.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource" target="_top">AWS API
  *      Documentation</a>
@@ -28,27 +30,35 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources include a
-     * replication instance, endpoint, and a replication task.
+     * Identifies the AWS DMS resource to which tags should be added. The value for this parameter is an Amazon Resource
+     * Name (ARN).
+     * </p>
+     * <p>
+     * For AWS DMS, you can tag a replication instance, an endpoint, or a replication task.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The tag to be assigned to the DMS resource.
+     * One or more tags to be assigned to the resource.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources include a
-     * replication instance, endpoint, and a replication task.
+     * Identifies the AWS DMS resource to which tags should be added. The value for this parameter is an Amazon Resource
+     * Name (ARN).
+     * </p>
+     * <p>
+     * For AWS DMS, you can tag a replication instance, an endpoint, or a replication task.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources
-     *        include a replication instance, endpoint, and a replication task.
+     *        Identifies the AWS DMS resource to which tags should be added. The value for this parameter is an Amazon
+     *        Resource Name (ARN).</p>
+     *        <p>
+     *        For AWS DMS, you can tag a replication instance, an endpoint, or a replication task.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -57,12 +67,17 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources include a
-     * replication instance, endpoint, and a replication task.
+     * Identifies the AWS DMS resource to which tags should be added. The value for this parameter is an Amazon Resource
+     * Name (ARN).
+     * </p>
+     * <p>
+     * For AWS DMS, you can tag a replication instance, an endpoint, or a replication task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources
-     *         include a replication instance, endpoint, and a replication task.
+     * @return Identifies the AWS DMS resource to which tags should be added. The value for this parameter is an Amazon
+     *         Resource Name (ARN).</p>
+     *         <p>
+     *         For AWS DMS, you can tag a replication instance, an endpoint, or a replication task.
      */
 
     public String getResourceArn() {
@@ -71,13 +86,18 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources include a
-     * replication instance, endpoint, and a replication task.
+     * Identifies the AWS DMS resource to which tags should be added. The value for this parameter is an Amazon Resource
+     * Name (ARN).
+     * </p>
+     * <p>
+     * For AWS DMS, you can tag a replication instance, an endpoint, or a replication task.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be added to. AWS DMS resources
-     *        include a replication instance, endpoint, and a replication task.
+     *        Identifies the AWS DMS resource to which tags should be added. The value for this parameter is an Amazon
+     *        Resource Name (ARN).</p>
+     *        <p>
+     *        For AWS DMS, you can tag a replication instance, an endpoint, or a replication task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,10 +108,10 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tag to be assigned to the DMS resource.
+     * One or more tags to be assigned to the resource.
      * </p>
      * 
-     * @return The tag to be assigned to the DMS resource.
+     * @return One or more tags to be assigned to the resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -100,11 +120,11 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tag to be assigned to the DMS resource.
+     * One or more tags to be assigned to the resource.
      * </p>
      * 
      * @param tags
-     *        The tag to be assigned to the DMS resource.
+     *        One or more tags to be assigned to the resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -118,7 +138,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tag to be assigned to the DMS resource.
+     * One or more tags to be assigned to the resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,7 +147,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param tags
-     *        The tag to be assigned to the DMS resource.
+     *        One or more tags to be assigned to the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +163,11 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tag to be assigned to the DMS resource.
+     * One or more tags to be assigned to the resource.
      * </p>
      * 
      * @param tags
-     *        The tag to be assigned to the DMS resource.
+     *        One or more tags to be assigned to the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

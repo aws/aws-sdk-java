@@ -18,14 +18,15 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can
- * provision a combination of On-Demand Instances and Spot Instances across multiple instance types. Used in combination
- * with <a>CreateAutoScalingGroup</a>. For more information, see <a
- * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups with
- * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+ * provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more
+ * information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+ * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User
+ * Guide</i>.
  * </p>
  * <p>
- * When you create your Auto Scaling group, you can specify a launch configuration or template as a parameter for the
- * top-level object, or you can specify a mixed instances policy, but not both at the same time.
+ * You can create a mixed instances policy for a new Auto Scaling group (<a>CreateAutoScalingGroup</a>), or you can
+ * create it for an existing group by updating the group (<a>UpdateAutoScalingGroup</a>) to specify
+ * <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch configuration or template.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MixedInstancesPolicy" target="_top">AWS
@@ -36,11 +37,10 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template and overrides.
+     * The launch template and instance types (overrides).
      * </p>
      * <p>
-     * This parameter is required when creating an Auto Scaling group with a mixed instances policy, but is not required
-     * when updating the group.
+     * This parameter must be specified when creating a mixed instances policy.
      * </p>
      */
     private LaunchTemplate launchTemplate;
@@ -49,25 +49,23 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
      * The instances distribution to use.
      * </p>
      * <p>
-     * If you leave this parameter unspecified when creating the group, the default values are used.
+     * If you leave this parameter unspecified when creating a mixed instances policy, the default values are used.
      * </p>
      */
     private InstancesDistribution instancesDistribution;
 
     /**
      * <p>
-     * The launch template and overrides.
+     * The launch template and instance types (overrides).
      * </p>
      * <p>
-     * This parameter is required when creating an Auto Scaling group with a mixed instances policy, but is not required
-     * when updating the group.
+     * This parameter must be specified when creating a mixed instances policy.
      * </p>
      * 
      * @param launchTemplate
-     *        The launch template and overrides.</p>
+     *        The launch template and instance types (overrides).</p>
      *        <p>
-     *        This parameter is required when creating an Auto Scaling group with a mixed instances policy, but is not
-     *        required when updating the group.
+     *        This parameter must be specified when creating a mixed instances policy.
      */
 
     public void setLaunchTemplate(LaunchTemplate launchTemplate) {
@@ -76,17 +74,15 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template and overrides.
+     * The launch template and instance types (overrides).
      * </p>
      * <p>
-     * This parameter is required when creating an Auto Scaling group with a mixed instances policy, but is not required
-     * when updating the group.
+     * This parameter must be specified when creating a mixed instances policy.
      * </p>
      * 
-     * @return The launch template and overrides.</p>
+     * @return The launch template and instance types (overrides).</p>
      *         <p>
-     *         This parameter is required when creating an Auto Scaling group with a mixed instances policy, but is not
-     *         required when updating the group.
+     *         This parameter must be specified when creating a mixed instances policy.
      */
 
     public LaunchTemplate getLaunchTemplate() {
@@ -95,18 +91,16 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template and overrides.
+     * The launch template and instance types (overrides).
      * </p>
      * <p>
-     * This parameter is required when creating an Auto Scaling group with a mixed instances policy, but is not required
-     * when updating the group.
+     * This parameter must be specified when creating a mixed instances policy.
      * </p>
      * 
      * @param launchTemplate
-     *        The launch template and overrides.</p>
+     *        The launch template and instance types (overrides).</p>
      *        <p>
-     *        This parameter is required when creating an Auto Scaling group with a mixed instances policy, but is not
-     *        required when updating the group.
+     *        This parameter must be specified when creating a mixed instances policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,13 +114,14 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
      * The instances distribution to use.
      * </p>
      * <p>
-     * If you leave this parameter unspecified when creating the group, the default values are used.
+     * If you leave this parameter unspecified when creating a mixed instances policy, the default values are used.
      * </p>
      * 
      * @param instancesDistribution
-     *        The instances distribution to use. </p>
+     *        The instances distribution to use.</p>
      *        <p>
-     *        If you leave this parameter unspecified when creating the group, the default values are used.
+     *        If you leave this parameter unspecified when creating a mixed instances policy, the default values are
+     *        used.
      */
 
     public void setInstancesDistribution(InstancesDistribution instancesDistribution) {
@@ -138,12 +133,13 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
      * The instances distribution to use.
      * </p>
      * <p>
-     * If you leave this parameter unspecified when creating the group, the default values are used.
+     * If you leave this parameter unspecified when creating a mixed instances policy, the default values are used.
      * </p>
      * 
-     * @return The instances distribution to use. </p>
+     * @return The instances distribution to use.</p>
      *         <p>
-     *         If you leave this parameter unspecified when creating the group, the default values are used.
+     *         If you leave this parameter unspecified when creating a mixed instances policy, the default values are
+     *         used.
      */
 
     public InstancesDistribution getInstancesDistribution() {
@@ -155,13 +151,14 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
      * The instances distribution to use.
      * </p>
      * <p>
-     * If you leave this parameter unspecified when creating the group, the default values are used.
+     * If you leave this parameter unspecified when creating a mixed instances policy, the default values are used.
      * </p>
      * 
      * @param instancesDistribution
-     *        The instances distribution to use. </p>
+     *        The instances distribution to use.</p>
      *        <p>
-     *        If you leave this parameter unspecified when creating the group, the default values are used.
+     *        If you leave this parameter unspecified when creating a mixed instances policy, the default values are
+     *        used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

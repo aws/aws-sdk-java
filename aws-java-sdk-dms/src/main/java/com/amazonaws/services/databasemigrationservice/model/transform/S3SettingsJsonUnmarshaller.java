@@ -112,9 +112,17 @@ public class S3SettingsJsonUnmarshaller implements Unmarshaller<S3Settings, Json
                     context.nextToken();
                     s3Settings.setEnableStatistics(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("IncludeOpForFullLoad", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setIncludeOpForFullLoad(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("CdcInsertsOnly", targetDepth)) {
                     context.nextToken();
                     s3Settings.setCdcInsertsOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("TimestampColumnName", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setTimestampColumnName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

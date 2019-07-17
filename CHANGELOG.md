@@ -1,3 +1,16 @@
+# __1.11.593__ __2019-07-17__
+## __AWS Config__
+  - ### Features
+    - This release adds more granularity to the status of an OrganizationConfigRule by adding a new status. It also adds an exception when organization access is denied.
+
+## __AWS Database Migration Service__
+  - ### Features
+    - S3 endpoint settings update: 1) Option to append operation column to full-load files. 2) Option to add a commit timestamp column to full-load and cdc files. Updated DescribeAccountAttributes to include UniqueAccountIdentifier.
+
+## __Auto Scaling__
+  - ### Features
+    - Documentation updates for autoscaling
+
 # __1.11.592__ __2019-07-12__
 ## __AWS Identity and Access Management__
   - ### Features

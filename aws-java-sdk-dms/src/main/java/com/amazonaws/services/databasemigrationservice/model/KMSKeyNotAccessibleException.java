@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS DMS cannot access the KMS key.
+ * AWS DMS cannot access the AWS KMS key.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

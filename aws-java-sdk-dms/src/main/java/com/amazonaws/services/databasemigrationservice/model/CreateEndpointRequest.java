@@ -35,13 +35,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String endpointIdentifier;
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      */
     private String endpointType;
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value, include
+     * The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include
      * <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>, <code>aurora</code>,
      * <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>, <code>db2</code>, <code>azuredb</code>,
      * <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>, and <code>sqlserver</code>.
@@ -80,21 +80,31 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String databaseName;
     /**
      * <p>
-     * Additional attributes associated with the connection.
+     * Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated
+     * by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For
+     * information on the attributes available for connecting your source or target endpoint, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with AWS DMS Endpoints</a> in
+     * the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private String extraConnectionAttributes;
     /**
      * <p>
-     * The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for the
-     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * Tags to be added to the endpoint.
+     * One or more tags to be assigned to the endpoint.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -106,9 +116,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String certificateArn;
     /**
      * <p>
-     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
-     * <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default value is
-     * <code>none</code>.
+     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
      * </p>
      */
     private String sslMode;
@@ -189,7 +197,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
      * available settings, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      * Guide.</i>
      * </p>
@@ -256,11 +264,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -270,10 +278,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
-     * @return The type of endpoint.
+     * @return The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -283,11 +291,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
@@ -299,11 +307,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -313,11 +321,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
@@ -329,14 +337,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value, include
+     * The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include
      * <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>, <code>aurora</code>,
      * <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>, <code>db2</code>, <code>azuredb</code>,
      * <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>, and <code>sqlserver</code>.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value,
+     *        The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value,
      *        include <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
      *        <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>,
      *        <code>db2</code>, <code>azuredb</code>, <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>,
@@ -349,13 +357,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value, include
+     * The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include
      * <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>, <code>aurora</code>,
      * <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>, <code>db2</code>, <code>azuredb</code>,
      * <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>, and <code>sqlserver</code>.
      * </p>
      * 
-     * @return The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value,
+     * @return The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value,
      *         include <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
      *         <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>,
      *         <code>db2</code>, <code>azuredb</code>, <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>,
@@ -368,14 +376,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value, include
+     * The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include
      * <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>, <code>aurora</code>,
      * <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>, <code>db2</code>, <code>azuredb</code>,
      * <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>, and <code>sqlserver</code>.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value,
+     *        The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value,
      *        include <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
      *        <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>,
      *        <code>db2</code>, <code>azuredb</code>, <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>,
@@ -590,11 +598,19 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Additional attributes associated with the connection.
+     * Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated
+     * by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For
+     * information on the attributes available for connecting your source or target endpoint, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with AWS DMS Endpoints</a> in
+     * the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param extraConnectionAttributes
-     *        Additional attributes associated with the connection.
+     *        Additional attributes associated with the connection. Each attribute is specified as a name-value pair
+     *        associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional
+     *        white space. For information on the attributes available for connecting your source or target endpoint,
+     *        see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with AWS DMS
+     *        Endpoints</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public void setExtraConnectionAttributes(String extraConnectionAttributes) {
@@ -603,10 +619,18 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Additional attributes associated with the connection.
+     * Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated
+     * by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For
+     * information on the attributes available for connecting your source or target endpoint, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with AWS DMS Endpoints</a> in
+     * the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
-     * @return Additional attributes associated with the connection.
+     * @return Additional attributes associated with the connection. Each attribute is specified as a name-value pair
+     *         associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional
+     *         white space. For information on the attributes available for connecting your source or target endpoint,
+     *         see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with AWS DMS
+     *         Endpoints</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public String getExtraConnectionAttributes() {
@@ -615,11 +639,19 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Additional attributes associated with the connection.
+     * Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated
+     * by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For
+     * information on the attributes available for connecting your source or target endpoint, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with AWS DMS Endpoints</a> in
+     * the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param extraConnectionAttributes
-     *        Additional attributes associated with the connection.
+     *        Additional attributes associated with the connection. Each attribute is specified as a name-value pair
+     *        associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional
+     *        white space. For information on the attributes available for connecting your source or target endpoint,
+     *        see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with AWS DMS
+     *        Endpoints</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -630,16 +662,26 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for the
-     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for
-     *        the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *        each AWS Region.
+     *        An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        encryption key.
+     *        </p>
+     *        <p>
+     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     *        encryption key for each AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -648,15 +690,25 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for the
-     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for
-     *         the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     *         default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *         each AWS Region.
+     * @return An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
+     *         <p>
+     *         If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *         encryption key.
+     *         </p>
+     *         <p>
+     *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     *         encryption key for each AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -665,16 +717,26 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for the
-     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for
-     *        the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *        each AWS Region.
+     *        An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        encryption key.
+     *        </p>
+     *        <p>
+     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     *        encryption key for each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -685,10 +747,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tags to be added to the endpoint.
+     * One or more tags to be assigned to the endpoint.
      * </p>
      * 
-     * @return Tags to be added to the endpoint.
+     * @return One or more tags to be assigned to the endpoint.
      */
 
     public java.util.List<Tag> getTags() {
@@ -697,11 +759,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tags to be added to the endpoint.
+     * One or more tags to be assigned to the endpoint.
      * </p>
      * 
      * @param tags
-     *        Tags to be added to the endpoint.
+     *        One or more tags to be assigned to the endpoint.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -715,7 +777,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tags to be added to the endpoint.
+     * One or more tags to be assigned to the endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -724,7 +786,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param tags
-     *        Tags to be added to the endpoint.
+     *        One or more tags to be assigned to the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -740,11 +802,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tags to be added to the endpoint.
+     * One or more tags to be assigned to the endpoint.
      * </p>
      * 
      * @param tags
-     *        Tags to be added to the endpoint.
+     *        One or more tags to be assigned to the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -795,15 +857,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
-     * <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default value is
-     * <code>none</code>.
+     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
      * </p>
      * 
      * @param sslMode
-     *        The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
-     *        <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default
-     *        value is <code>none</code>.
+     *        The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
      * @see DmsSslModeValue
      */
 
@@ -813,14 +871,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
-     * <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default value is
-     * <code>none</code>.
+     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
      * </p>
      * 
-     * @return The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four
-     *         values: <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The
-     *         default value is <code>none</code>.
+     * @return The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
      * @see DmsSslModeValue
      */
 
@@ -830,15 +884,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
-     * <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default value is
-     * <code>none</code>.
+     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
      * </p>
      * 
      * @param sslMode
-     *        The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
-     *        <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default
-     *        value is <code>none</code>.
+     *        The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DmsSslModeValue
      */
@@ -850,15 +900,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
-     * <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default value is
-     * <code>none</code>.
+     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
      * </p>
      * 
      * @param sslMode
-     *        The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
-     *        <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default
-     *        value is <code>none</code>.
+     *        The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
      * @see DmsSslModeValue
      */
 
@@ -868,15 +914,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
-     * <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default value is
-     * <code>none</code>.
+     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
      * </p>
      * 
      * @param sslMode
-     *        The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
-     *        <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default
-     *        value is <code>none</code>.
+     *        The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DmsSslModeValue
      */
@@ -1355,7 +1397,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
      * available settings, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      * Guide.</i>
      * </p>
@@ -1363,7 +1405,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param kinesisSettings
      *        Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about
      *        the available settings, see <a href=
-     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      *        >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      *        Guide.</i>
      */
@@ -1376,14 +1418,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
      * available settings, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      * Guide.</i>
      * </p>
      * 
      * @return Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about
      *         the available settings, see <a href=
-     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      *         >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      *         Guide.</i>
      */
@@ -1396,7 +1438,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
      * available settings, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      * Guide.</i>
      * </p>
@@ -1404,7 +1446,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param kinesisSettings
      *        Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about
      *        the available settings, see <a href=
-     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      *        >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      *        Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -34,7 +34,7 @@ public class ModifyReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
     private String replicationSubnetGroupIdentifier;
     /**
      * <p>
-     * The description of the replication instance subnet group.
+     * A description for the replication instance subnet group.
      * </p>
      */
     private String replicationSubnetGroupDescription;
@@ -87,11 +87,11 @@ public class ModifyReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The description of the replication instance subnet group.
+     * A description for the replication instance subnet group.
      * </p>
      * 
      * @param replicationSubnetGroupDescription
-     *        The description of the replication instance subnet group.
+     *        A description for the replication instance subnet group.
      */
 
     public void setReplicationSubnetGroupDescription(String replicationSubnetGroupDescription) {
@@ -100,10 +100,10 @@ public class ModifyReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The description of the replication instance subnet group.
+     * A description for the replication instance subnet group.
      * </p>
      * 
-     * @return The description of the replication instance subnet group.
+     * @return A description for the replication instance subnet group.
      */
 
     public String getReplicationSubnetGroupDescription() {
@@ -112,11 +112,11 @@ public class ModifyReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The description of the replication instance subnet group.
+     * A description for the replication instance subnet group.
      * </p>
      * 
      * @param replicationSubnetGroupDescription
-     *        The description of the replication instance subnet group.
+     *        A description for the replication instance subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

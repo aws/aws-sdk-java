@@ -44,8 +44,8 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
     private Integer allocatedStorage;
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      */
     private Boolean multiAZ;
@@ -159,12 +159,12 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -174,11 +174,11 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -188,12 +188,12 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -205,11 +205,11 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 

@@ -115,8 +115,8 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     private ReplicationPendingModifiedValues pendingModifiedValues;
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      */
     private Boolean multiAZ;
@@ -134,10 +134,15 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
-     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
-     * AWS Region.
+     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      */
     private String kmsKeyId;
@@ -163,13 +168,13 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     private String replicationInstancePrivateIpAddress;
     /**
      * <p>
-     * The public IP address of the replication instance.
+     * One or more public IP addresses for the replication instance.
      * </p>
      */
     private java.util.List<String> replicationInstancePublicIpAddresses;
     /**
      * <p>
-     * The private IP address of the replication instance.
+     * One or more private IP addresses for the replication instance.
      * </p>
      */
     private java.util.List<String> replicationInstancePrivateIpAddresses;
@@ -788,12 +793,12 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -803,11 +808,11 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -817,12 +822,12 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -834,11 +839,11 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -940,15 +945,24 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
-     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
-     * AWS Region.
+     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't
-     *        specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key.
+     *        An AWS KMS key identifier that is used to encrypt the data on the replication instance.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        encryption key.
+     *        </p>
+     *        <p>
      *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *        encryption key for each AWS Region.
      */
@@ -959,14 +973,23 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
-     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
-     * AWS Region.
+     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't
-     *         specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key.
+     * @return An AWS KMS key identifier that is used to encrypt the data on the replication instance.</p>
+     *         <p>
+     *         If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *         encryption key.
+     *         </p>
+     *         <p>
      *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *         encryption key for each AWS Region.
      */
@@ -977,15 +1000,24 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
-     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
-     * AWS Region.
+     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't
-     *        specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key.
+     *        An AWS KMS key identifier that is used to encrypt the data on the replication instance.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        encryption key.
+     *        </p>
+     *        <p>
      *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *        encryption key for each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1118,10 +1150,10 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The public IP address of the replication instance.
+     * One or more public IP addresses for the replication instance.
      * </p>
      * 
-     * @return The public IP address of the replication instance.
+     * @return One or more public IP addresses for the replication instance.
      */
 
     public java.util.List<String> getReplicationInstancePublicIpAddresses() {
@@ -1130,11 +1162,11 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The public IP address of the replication instance.
+     * One or more public IP addresses for the replication instance.
      * </p>
      * 
      * @param replicationInstancePublicIpAddresses
-     *        The public IP address of the replication instance.
+     *        One or more public IP addresses for the replication instance.
      */
 
     public void setReplicationInstancePublicIpAddresses(java.util.Collection<String> replicationInstancePublicIpAddresses) {
@@ -1148,7 +1180,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The public IP address of the replication instance.
+     * One or more public IP addresses for the replication instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1158,7 +1190,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param replicationInstancePublicIpAddresses
-     *        The public IP address of the replication instance.
+     *        One or more public IP addresses for the replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1174,11 +1206,11 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The public IP address of the replication instance.
+     * One or more public IP addresses for the replication instance.
      * </p>
      * 
      * @param replicationInstancePublicIpAddresses
-     *        The public IP address of the replication instance.
+     *        One or more public IP addresses for the replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1189,10 +1221,10 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The private IP address of the replication instance.
+     * One or more private IP addresses for the replication instance.
      * </p>
      * 
-     * @return The private IP address of the replication instance.
+     * @return One or more private IP addresses for the replication instance.
      */
 
     public java.util.List<String> getReplicationInstancePrivateIpAddresses() {
@@ -1201,11 +1233,11 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The private IP address of the replication instance.
+     * One or more private IP addresses for the replication instance.
      * </p>
      * 
      * @param replicationInstancePrivateIpAddresses
-     *        The private IP address of the replication instance.
+     *        One or more private IP addresses for the replication instance.
      */
 
     public void setReplicationInstancePrivateIpAddresses(java.util.Collection<String> replicationInstancePrivateIpAddresses) {
@@ -1219,7 +1251,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The private IP address of the replication instance.
+     * One or more private IP addresses for the replication instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1229,7 +1261,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param replicationInstancePrivateIpAddresses
-     *        The private IP address of the replication instance.
+     *        One or more private IP addresses for the replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1245,11 +1277,11 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The private IP address of the replication instance.
+     * One or more private IP addresses for the replication instance.
      * </p>
      * 
      * @param replicationInstancePrivateIpAddresses
-     *        The private IP address of the replication instance.
+     *        One or more private IP addresses for the replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

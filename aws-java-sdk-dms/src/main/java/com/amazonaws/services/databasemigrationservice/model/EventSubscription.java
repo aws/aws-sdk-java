@@ -71,7 +71,7 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | replication-server | security-group | migration-task
+     * Valid values: replication-instance | replication-server | security-group | replication-task
      * </p>
      */
     private String sourceType;
@@ -356,13 +356,13 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | replication-server | security-group | migration-task
+     * Valid values: replication-instance | replication-server | security-group | replication-task
      * </p>
      * 
      * @param sourceType
      *        The type of AWS DMS resource that generates events. </p>
      *        <p>
-     *        Valid values: replication-instance | replication-server | security-group | migration-task
+     *        Valid values: replication-instance | replication-server | security-group | replication-task
      */
 
     public void setSourceType(String sourceType) {
@@ -374,12 +374,12 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | replication-server | security-group | migration-task
+     * Valid values: replication-instance | replication-server | security-group | replication-task
      * </p>
      * 
      * @return The type of AWS DMS resource that generates events. </p>
      *         <p>
-     *         Valid values: replication-instance | replication-server | security-group | migration-task
+     *         Valid values: replication-instance | replication-server | security-group | replication-task
      */
 
     public String getSourceType() {
@@ -391,13 +391,13 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | replication-server | security-group | migration-task
+     * Valid values: replication-instance | replication-server | security-group | replication-task
      * </p>
      * 
      * @param sourceType
      *        The type of AWS DMS resource that generates events. </p>
      *        <p>
-     *        Valid values: replication-instance | replication-server | security-group | migration-task
+     *        Valid values: replication-instance | replication-server | security-group | replication-task
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

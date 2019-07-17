@@ -34,7 +34,7 @@ public class ReplicationSubnetGroup implements Serializable, Cloneable, Structur
     private String replicationSubnetGroupIdentifier;
     /**
      * <p>
-     * The description of the replication subnet group.
+     * A description for the replication subnet group.
      * </p>
      */
     private String replicationSubnetGroupDescription;
@@ -99,11 +99,11 @@ public class ReplicationSubnetGroup implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The description of the replication subnet group.
+     * A description for the replication subnet group.
      * </p>
      * 
      * @param replicationSubnetGroupDescription
-     *        The description of the replication subnet group.
+     *        A description for the replication subnet group.
      */
 
     public void setReplicationSubnetGroupDescription(String replicationSubnetGroupDescription) {
@@ -112,10 +112,10 @@ public class ReplicationSubnetGroup implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The description of the replication subnet group.
+     * A description for the replication subnet group.
      * </p>
      * 
-     * @return The description of the replication subnet group.
+     * @return A description for the replication subnet group.
      */
 
     public String getReplicationSubnetGroupDescription() {
@@ -124,11 +124,11 @@ public class ReplicationSubnetGroup implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The description of the replication subnet group.
+     * A description for the replication subnet group.
      * </p>
      * 
      * @param replicationSubnetGroupDescription
-     *        The description of the replication subnet group.
+     *        A description for the replication subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

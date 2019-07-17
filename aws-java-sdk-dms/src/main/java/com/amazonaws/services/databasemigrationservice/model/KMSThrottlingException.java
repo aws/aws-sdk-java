@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This request triggered KMS request throttling.
+ * This request triggered AWS KMS request throttling.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

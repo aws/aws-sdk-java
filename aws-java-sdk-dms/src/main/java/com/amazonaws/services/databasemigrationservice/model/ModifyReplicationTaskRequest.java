@@ -60,20 +60,15 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     private String replicationTaskIdentifier;
     /**
      * <p>
-     * The migration type.
-     * </p>
-     * <p>
-     * Valid values: full-load | cdc | full-load-and-cdc
+     * The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
      * </p>
      */
     private String migrationType;
     /**
      * <p>
      * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
-     * </p>
-     * <p>
-     * For example, --table-mappings file://mappingfile.json
+     * path with <code>file://</code>. When working with the DMS API, provide the JSON as the parameter value, for
+     * example: <code>--table-mappings file://mappingfile.json</code>
      * </p>
      */
     private String tableMappings;
@@ -326,16 +321,12 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The migration type.
-     * </p>
-     * <p>
-     * Valid values: full-load | cdc | full-load-and-cdc
+     * The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
      * </p>
      * 
      * @param migrationType
-     *        The migration type.</p>
-     *        <p>
-     *        Valid values: full-load | cdc | full-load-and-cdc
+     *        The migration type. Valid values: <code>full-load</code> | <code>cdc</code> |
+     *        <code>full-load-and-cdc</code>
      * @see MigrationTypeValue
      */
 
@@ -345,15 +336,11 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The migration type.
-     * </p>
-     * <p>
-     * Valid values: full-load | cdc | full-load-and-cdc
+     * The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
      * </p>
      * 
-     * @return The migration type.</p>
-     *         <p>
-     *         Valid values: full-load | cdc | full-load-and-cdc
+     * @return The migration type. Valid values: <code>full-load</code> | <code>cdc</code> |
+     *         <code>full-load-and-cdc</code>
      * @see MigrationTypeValue
      */
 
@@ -363,16 +350,12 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The migration type.
-     * </p>
-     * <p>
-     * Valid values: full-load | cdc | full-load-and-cdc
+     * The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
      * </p>
      * 
      * @param migrationType
-     *        The migration type.</p>
-     *        <p>
-     *        Valid values: full-load | cdc | full-load-and-cdc
+     *        The migration type. Valid values: <code>full-load</code> | <code>cdc</code> |
+     *        <code>full-load-and-cdc</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MigrationTypeValue
      */
@@ -384,16 +367,12 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The migration type.
-     * </p>
-     * <p>
-     * Valid values: full-load | cdc | full-load-and-cdc
+     * The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
      * </p>
      * 
      * @param migrationType
-     *        The migration type.</p>
-     *        <p>
-     *        Valid values: full-load | cdc | full-load-and-cdc
+     *        The migration type. Valid values: <code>full-load</code> | <code>cdc</code> |
+     *        <code>full-load-and-cdc</code>
      * @see MigrationTypeValue
      */
 
@@ -403,16 +382,12 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The migration type.
-     * </p>
-     * <p>
-     * Valid values: full-load | cdc | full-load-and-cdc
+     * The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
      * </p>
      * 
      * @param migrationType
-     *        The migration type.</p>
-     *        <p>
-     *        Valid values: full-load | cdc | full-load-and-cdc
+     *        The migration type. Valid values: <code>full-load</code> | <code>cdc</code> |
+     *        <code>full-load-and-cdc</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MigrationTypeValue
      */
@@ -425,18 +400,14 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
-     * </p>
-     * <p>
-     * For example, --table-mappings file://mappingfile.json
+     * path with <code>file://</code>. When working with the DMS API, provide the JSON as the parameter value, for
+     * example: <code>--table-mappings file://mappingfile.json</code>
      * </p>
      * 
      * @param tableMappings
      *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *        Precede the path with "file://". When working with the DMS API, provide the JSON as the parameter
-     *        value.</p>
-     *        <p>
-     *        For example, --table-mappings file://mappingfile.json
+     *        Precede the path with <code>file://</code>. When working with the DMS API, provide the JSON as the
+     *        parameter value, for example: <code>--table-mappings file://mappingfile.json</code>
      */
 
     public void setTableMappings(String tableMappings) {
@@ -446,17 +417,13 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
-     * </p>
-     * <p>
-     * For example, --table-mappings file://mappingfile.json
+     * path with <code>file://</code>. When working with the DMS API, provide the JSON as the parameter value, for
+     * example: <code>--table-mappings file://mappingfile.json</code>
      * </p>
      * 
      * @return When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *         Precede the path with "file://". When working with the DMS API, provide the JSON as the parameter
-     *         value.</p>
-     *         <p>
-     *         For example, --table-mappings file://mappingfile.json
+     *         Precede the path with <code>file://</code>. When working with the DMS API, provide the JSON as the
+     *         parameter value, for example: <code>--table-mappings file://mappingfile.json</code>
      */
 
     public String getTableMappings() {
@@ -466,18 +433,14 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
-     * </p>
-     * <p>
-     * For example, --table-mappings file://mappingfile.json
+     * path with <code>file://</code>. When working with the DMS API, provide the JSON as the parameter value, for
+     * example: <code>--table-mappings file://mappingfile.json</code>
      * </p>
      * 
      * @param tableMappings
      *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *        Precede the path with "file://". When working with the DMS API, provide the JSON as the parameter
-     *        value.</p>
-     *        <p>
-     *        For example, --table-mappings file://mappingfile.json
+     *        Precede the path with <code>file://</code>. When working with the DMS API, provide the JSON as the
+     *        parameter value, for example: <code>--table-mappings file://mappingfile.json</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

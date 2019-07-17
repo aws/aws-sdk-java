@@ -28,7 +28,7 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the replication instance.
+     * The Amazon Resource Name (ARN) of the replication instance.
      * </p>
      */
     private String replicationInstanceArn;
@@ -58,11 +58,11 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the replication instance.
+     * The Amazon Resource Name (ARN) of the replication instance.
      * </p>
      * 
      * @param replicationInstanceArn
-     *        The ARN of the replication instance.
+     *        The Amazon Resource Name (ARN) of the replication instance.
      */
 
     public void setReplicationInstanceArn(String replicationInstanceArn) {
@@ -71,10 +71,10 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the replication instance.
+     * The Amazon Resource Name (ARN) of the replication instance.
      * </p>
      * 
-     * @return The ARN of the replication instance.
+     * @return The Amazon Resource Name (ARN) of the replication instance.
      */
 
     public String getReplicationInstanceArn() {
@@ -83,11 +83,11 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the replication instance.
+     * The Amazon Resource Name (ARN) of the replication instance.
      * </p>
      * 
      * @param replicationInstanceArn
-     *        The ARN of the replication instance.
+     *        The Amazon Resource Name (ARN) of the replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Removes one or more tags from an AWS DMS resource.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource" target="_top">AWS API
  *      Documentation</a>
@@ -28,7 +30,8 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be removed from.
+     * An AWS DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name
+     * (ARN).
      * </p>
      */
     private String resourceArn;
@@ -41,11 +44,13 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be removed from.
+     * An AWS DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name
+     * (ARN).
      * </p>
      * 
      * @param resourceArn
-     *        &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be removed from.
+     *        An AWS DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon
+     *        Resource Name (ARN).
      */
 
     public void setResourceArn(String resourceArn) {
@@ -54,10 +59,12 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be removed from.
+     * An AWS DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name
+     * (ARN).
      * </p>
      * 
-     * @return &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be removed from.
+     * @return An AWS DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon
+     *         Resource Name (ARN).
      */
 
     public String getResourceArn() {
@@ -66,11 +73,13 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be removed from.
+     * An AWS DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name
+     * (ARN).
      * </p>
      * 
      * @param resourceArn
-     *        &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be removed from.
+     *        An AWS DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon
+     *        Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

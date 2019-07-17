@@ -34,7 +34,7 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
     private String serviceAccessRoleArn;
     /**
      * <p>
-     * The endpoint for the ElasticSearch cluster.
+     * The endpoint for the Elasticsearch cluster.
      * </p>
      */
     private String endpointUri;
@@ -93,11 +93,11 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The endpoint for the ElasticSearch cluster.
+     * The endpoint for the Elasticsearch cluster.
      * </p>
      * 
      * @param endpointUri
-     *        The endpoint for the ElasticSearch cluster.
+     *        The endpoint for the Elasticsearch cluster.
      */
 
     public void setEndpointUri(String endpointUri) {
@@ -106,10 +106,10 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The endpoint for the ElasticSearch cluster.
+     * The endpoint for the Elasticsearch cluster.
      * </p>
      * 
-     * @return The endpoint for the ElasticSearch cluster.
+     * @return The endpoint for the Elasticsearch cluster.
      */
 
     public String getEndpointUri() {
@@ -118,11 +118,11 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The endpoint for the ElasticSearch cluster.
+     * The endpoint for the Elasticsearch cluster.
      * </p>
      * 
      * @param endpointUri
-     *        The endpoint for the ElasticSearch cluster.
+     *        The endpoint for the Elasticsearch cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

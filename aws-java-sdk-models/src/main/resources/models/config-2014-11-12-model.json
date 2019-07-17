@@ -126,7 +126,8 @@
       "input":{"shape":"DeleteOrganizationConfigRuleRequest"},
       "errors":[
         {"shape":"NoSuchOrganizationConfigRuleException"},
-        {"shape":"ResourceInUseException"}
+        {"shape":"ResourceInUseException"},
+        {"shape":"OrganizationAccessDeniedException"}
       ]
     },
     "DeletePendingAggregationRequest":{
@@ -367,7 +368,8 @@
       "errors":[
         {"shape":"NoSuchOrganizationConfigRuleException"},
         {"shape":"InvalidLimitException"},
-        {"shape":"InvalidNextTokenException"}
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"OrganizationAccessDeniedException"}
       ]
     },
     "DescribeOrganizationConfigRules":{
@@ -381,7 +383,8 @@
       "errors":[
         {"shape":"NoSuchOrganizationConfigRuleException"},
         {"shape":"InvalidNextTokenException"},
-        {"shape":"InvalidLimitException"}
+        {"shape":"InvalidLimitException"},
+        {"shape":"OrganizationAccessDeniedException"}
       ]
     },
     "DescribePendingAggregationRequests":{
@@ -577,7 +580,8 @@
       "errors":[
         {"shape":"NoSuchOrganizationConfigRuleException"},
         {"shape":"InvalidLimitException"},
-        {"shape":"InvalidNextTokenException"}
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"OrganizationAccessDeniedException"}
       ]
     },
     "GetResourceConfigHistory":{
@@ -3404,6 +3408,9 @@
         "CREATE_SUCCESSFUL",
         "CREATE_IN_PROGRESS",
         "CREATE_FAILED",
+        "UPDATE_SUCCESSFUL",
+        "UPDATE_FAILED",
+        "UPDATE_IN_PROGRESS",
         "DELETE_SUCCESSFUL",
         "DELETE_FAILED",
         "DELETE_IN_PROGRESS"
@@ -3650,6 +3657,9 @@
         "CREATE_SUCCESSFUL",
         "CREATE_IN_PROGRESS",
         "CREATE_FAILED",
+        "UPDATE_SUCCESSFUL",
+        "UPDATE_FAILED",
+        "UPDATE_IN_PROGRESS",
         "DELETE_SUCCESSFUL",
         "DELETE_FAILED",
         "DELETE_IN_PROGRESS"

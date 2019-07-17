@@ -28,8 +28,8 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
-     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
+     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      */
     private String engineName;
@@ -41,7 +41,7 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
     private Boolean supportsCDC;
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      */
     private String endpointType;
@@ -55,14 +55,13 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
-     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
+     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres,
-     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
-     *        sqlserver.
+     *        The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
+     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      */
 
     public void setEngineName(String engineName) {
@@ -71,13 +70,12 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
-     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
+     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
-     * @return The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres,
-     *         mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
-     *         sqlserver.
+     * @return The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
+     *         mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      */
 
     public String getEngineName() {
@@ -86,14 +84,13 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
-     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
+     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres,
-     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
-     *        sqlserver.
+     *        The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
+     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +153,11 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -170,10 +167,10 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
-     * @return The type of endpoint.
+     * @return The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -183,11 +180,11 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
@@ -199,11 +196,11 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -213,11 +210,11 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */

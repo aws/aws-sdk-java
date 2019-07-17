@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The state of the specified KMS resource isn't valid for this request.
+ * The state of the specified AWS KMS resource isn't valid for this request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

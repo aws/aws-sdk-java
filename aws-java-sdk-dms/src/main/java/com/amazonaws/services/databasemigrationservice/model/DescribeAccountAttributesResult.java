@@ -30,6 +30,22 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private java.util.List<AccountQuota> accountQuotas;
+    /**
+     * <p>
+     * A unique AWS DMS identifier for an account in a particular AWS Region. The value of this identifier has the
+     * following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses
+     * this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given AWS Region.
+     * The format of this S3 bucket name is the following:
+     * <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3
+     * bucket: <code>dms-111122223333-c44445555666</code>.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports <code>UniqueAccountIdentifier</code> in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     */
+    private String uniqueAccountIdentifier;
 
     /**
      * <p>
@@ -102,6 +118,100 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * A unique AWS DMS identifier for an account in a particular AWS Region. The value of this identifier has the
+     * following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses
+     * this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given AWS Region.
+     * The format of this S3 bucket name is the following:
+     * <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3
+     * bucket: <code>dms-111122223333-c44445555666</code>.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports <code>UniqueAccountIdentifier</code> in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     * 
+     * @param uniqueAccountIdentifier
+     *        A unique AWS DMS identifier for an account in a particular AWS Region. The value of this identifier has
+     *        the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example,
+     *        DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a
+     *        given AWS Region. The format of this S3 bucket name is the following:
+     *        <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this
+     *        default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
+     *        <p>
+     *        AWS DMS supports <code>UniqueAccountIdentifier</code> in versions 3.1.4 and later.
+     *        </p>
+     */
+
+    public void setUniqueAccountIdentifier(String uniqueAccountIdentifier) {
+        this.uniqueAccountIdentifier = uniqueAccountIdentifier;
+    }
+
+    /**
+     * <p>
+     * A unique AWS DMS identifier for an account in a particular AWS Region. The value of this identifier has the
+     * following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses
+     * this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given AWS Region.
+     * The format of this S3 bucket name is the following:
+     * <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3
+     * bucket: <code>dms-111122223333-c44445555666</code>.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports <code>UniqueAccountIdentifier</code> in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     * 
+     * @return A unique AWS DMS identifier for an account in a particular AWS Region. The value of this identifier has
+     *         the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example,
+     *         DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a
+     *         given AWS Region. The format of this S3 bucket name is the following:
+     *         <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this
+     *         default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
+     *         <p>
+     *         AWS DMS supports <code>UniqueAccountIdentifier</code> in versions 3.1.4 and later.
+     *         </p>
+     */
+
+    public String getUniqueAccountIdentifier() {
+        return this.uniqueAccountIdentifier;
+    }
+
+    /**
+     * <p>
+     * A unique AWS DMS identifier for an account in a particular AWS Region. The value of this identifier has the
+     * following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses
+     * this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given AWS Region.
+     * The format of this S3 bucket name is the following:
+     * <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3
+     * bucket: <code>dms-111122223333-c44445555666</code>.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports <code>UniqueAccountIdentifier</code> in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     * 
+     * @param uniqueAccountIdentifier
+     *        A unique AWS DMS identifier for an account in a particular AWS Region. The value of this identifier has
+     *        the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example,
+     *        DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a
+     *        given AWS Region. The format of this S3 bucket name is the following:
+     *        <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this
+     *        default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
+     *        <p>
+     *        AWS DMS supports <code>UniqueAccountIdentifier</code> in versions 3.1.4 and later.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAccountAttributesResult withUniqueAccountIdentifier(String uniqueAccountIdentifier) {
+        setUniqueAccountIdentifier(uniqueAccountIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -114,7 +224,9 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountQuotas() != null)
-            sb.append("AccountQuotas: ").append(getAccountQuotas());
+            sb.append("AccountQuotas: ").append(getAccountQuotas()).append(",");
+        if (getUniqueAccountIdentifier() != null)
+            sb.append("UniqueAccountIdentifier: ").append(getUniqueAccountIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -133,6 +245,10 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getAccountQuotas() != null && other.getAccountQuotas().equals(this.getAccountQuotas()) == false)
             return false;
+        if (other.getUniqueAccountIdentifier() == null ^ this.getUniqueAccountIdentifier() == null)
+            return false;
+        if (other.getUniqueAccountIdentifier() != null && other.getUniqueAccountIdentifier().equals(this.getUniqueAccountIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -142,6 +258,7 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccountQuotas() == null) ? 0 : getAccountQuotas().hashCode());
+        hashCode = prime * hashCode + ((getUniqueAccountIdentifier() == null) ? 0 : getUniqueAccountIdentifier().hashCode());
         return hashCode;
     }
 

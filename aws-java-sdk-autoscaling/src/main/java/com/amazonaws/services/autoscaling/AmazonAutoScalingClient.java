@@ -1204,8 +1204,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * Deletes the specified scaling policy.
      * </p>
      * <p>
-     * Deleting a policy deletes the underlying alarm action, but does not delete the alarm, even if it no longer has an
-     * associated action.
+     * Deleting either a step scaling policy or a simple scaling policy deletes the underlying alarm action, but does
+     * not delete the alarm, even if it no longer has an associated action.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/deleting-scaling-policy.html">Deleting a Scaling
+     * Policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param deletePolicyRequest
@@ -2322,8 +2327,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes the actions scheduled for your Auto Scaling group that haven't run. To describe the actions that have
-     * already run, use <a>DescribeScalingActivities</a>.
+     * Describes the actions scheduled for your Auto Scaling group that haven't run or that have not reached their end
+     * time. To describe the actions that have already run, use <a>DescribeScalingActivities</a>.
      * </p>
      * 
      * @param describeScheduledActionsRequest
@@ -3809,39 +3814,50 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * Updates the configuration for the specified Auto Scaling group.
      * </p>
      * <p>
-     * The new settings take effect on any scaling activities after this call returns. Scaling activities that are
-     * currently in progress aren't affected.
+     * To update an Auto Scaling group, specify the name of the group and the parameter that you want to change. Any
+     * parameters that you don't specify are not changed by this update request. The new settings take effect on any
+     * scaling activities after this call returns. Scaling activities that are currently in progress aren't affected.
      * </p>
      * <p>
-     * To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to
-     * <code>false</code>, you must first disable the collection of group metrics. Otherwise, you get an error. If you
-     * have previously enabled the collection of group metrics, you can disable it using
-     * <a>DisableMetricsCollection</a>.
+     * If you associate a new launch configuration or template with an Auto Scaling group, all new instances will get
+     * the updated configuration, but existing instances continue to run with the configuration that they were
+     * originally launched with. When you update a group to specify a mixed instances policy instead of a launch
+     * configuration or template, existing instances may be replaced to match the new purchasing options that you
+     * specified in the policy. For example, if the group currently has 100% On-Demand capacity and the policy specifies
+     * 50% Spot capacity, this means that half of your instances will be gradually terminated and relaunched as Spot
+     * Instances. When replacing instances, Amazon EC2 Auto Scaling launches new instances before terminating the old
+     * ones, so that updating your group does not compromise the performance or availability of your application.
      * </p>
      * <p>
-     * Note the following:
+     * Note the following about changing <code>DesiredCapacity</code>, <code>MaxSize</code>, or <code>MinSize</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
+     * If a scale-in event occurs as a result of a new <code>DesiredCapacity</code> value that is lower than the current
+     * size of the group, the Auto Scaling group uses its termination policy to determine which instances to terminate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * If you specify a new value for <code>MinSize</code> without specifying a value for <code>DesiredCapacity</code>,
-     * and the new <code>MinSize</code> is larger than the current size of the group, we implicitly call
-     * <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MinSize</code>.
+     * and the new <code>MinSize</code> is larger than the current size of the group, this sets the group's
+     * <code>DesiredCapacity</code> to the new <code>MinSize</code> value.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify a new value for <code>MaxSize</code> without specifying a value for <code>DesiredCapacity</code>,
-     * and the new <code>MaxSize</code> is smaller than the current size of the group, we implicitly call
-     * <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MaxSize</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * All other optional parameters are left unchanged if not specified.
+     * and the new <code>MaxSize</code> is smaller than the current size of the group, this sets the group's
+     * <code>DesiredCapacity</code> to the new <code>MaxSize</code> value.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To see which parameters have been set, use <a>DescribeAutoScalingGroups</a>. You can also view the scaling
+     * policies for an Auto Scaling group using <a>DescribePolicies</a>. If the group has scaling policies, you can
+     * update them using <a>PutScalingPolicy</a>.
+     * </p>
      * 
      * @param updateAutoScalingGroupRequest
      * @return Result of the UpdateAutoScalingGroup operation returned by the service.

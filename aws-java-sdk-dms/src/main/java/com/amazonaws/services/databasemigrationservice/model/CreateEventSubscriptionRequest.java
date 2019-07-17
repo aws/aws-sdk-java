@@ -28,10 +28,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the AWS DMS event notification subscription.
-     * </p>
-     * <p>
-     * Constraints: The name must be less than 255 characters.
+     * The name of the AWS DMS event notification subscription. This name must be less than 255 characters.
      * </p>
      */
     private String subscriptionName;
@@ -49,14 +46,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * is not specified, all events are returned.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: <code>replication-instance</code> | <code>replication-task</code>
      * </p>
      */
     private String sourceType;
     /**
      * <p>
-     * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
-     * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
+     * A list of event categories for a source type that you want to subscribe to. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
@@ -64,9 +60,14 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     private java.util.List<String> eventCategories;
     /**
      * <p>
-     * The list of identifiers of the event sources for which events will be returned. If not specified, then all
-     * sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters,
-     * digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * A list of identifiers for which AWS DMS provides notification events.
+     * </p>
+     * <p>
+     * If you don't specify a value, notifications are provided for all sources.
+     * </p>
+     * <p>
+     * If you specify multiple values, they must be of the same type. For example, if you specify a database instance
+     * ID, then all of the other values must be database instance IDs.
      * </p>
      */
     private java.util.List<String> sourceIds;
@@ -79,23 +80,18 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     private Boolean enabled;
     /**
      * <p>
-     * A tag to be attached to the event subscription.
+     * One or more tags to be assigned to the event subscription.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The name of the AWS DMS event notification subscription.
-     * </p>
-     * <p>
-     * Constraints: The name must be less than 255 characters.
+     * The name of the AWS DMS event notification subscription. This name must be less than 255 characters.
      * </p>
      * 
      * @param subscriptionName
-     *        The name of the AWS DMS event notification subscription. </p>
-     *        <p>
-     *        Constraints: The name must be less than 255 characters.
+     *        The name of the AWS DMS event notification subscription. This name must be less than 255 characters.
      */
 
     public void setSubscriptionName(String subscriptionName) {
@@ -104,15 +100,10 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the AWS DMS event notification subscription.
-     * </p>
-     * <p>
-     * Constraints: The name must be less than 255 characters.
+     * The name of the AWS DMS event notification subscription. This name must be less than 255 characters.
      * </p>
      * 
-     * @return The name of the AWS DMS event notification subscription. </p>
-     *         <p>
-     *         Constraints: The name must be less than 255 characters.
+     * @return The name of the AWS DMS event notification subscription. This name must be less than 255 characters.
      */
 
     public String getSubscriptionName() {
@@ -121,16 +112,11 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the AWS DMS event notification subscription.
-     * </p>
-     * <p>
-     * Constraints: The name must be less than 255 characters.
+     * The name of the AWS DMS event notification subscription. This name must be less than 255 characters.
      * </p>
      * 
      * @param subscriptionName
-     *        The name of the AWS DMS event notification subscription. </p>
-     *        <p>
-     *        Constraints: The name must be less than 255 characters.
+     *        The name of the AWS DMS event notification subscription. This name must be less than 255 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,7 +178,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * is not specified, all events are returned.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: <code>replication-instance</code> | <code>replication-task</code>
      * </p>
      * 
      * @param sourceType
@@ -200,7 +186,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *        generated by a replication instance, you set this parameter to <code>replication-instance</code>. If this
      *        value is not specified, all events are returned. </p>
      *        <p>
-     *        Valid values: replication-instance | migration-task
+     *        Valid values: <code>replication-instance</code> | <code>replication-task</code>
      */
 
     public void setSourceType(String sourceType) {
@@ -214,14 +200,14 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * is not specified, all events are returned.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: <code>replication-instance</code> | <code>replication-task</code>
      * </p>
      * 
      * @return The type of AWS DMS resource that generates the events. For example, if you want to be notified of events
      *         generated by a replication instance, you set this parameter to <code>replication-instance</code>. If this
      *         value is not specified, all events are returned. </p>
      *         <p>
-     *         Valid values: replication-instance | migration-task
+     *         Valid values: <code>replication-instance</code> | <code>replication-task</code>
      */
 
     public String getSourceType() {
@@ -235,7 +221,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * is not specified, all events are returned.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: <code>replication-instance</code> | <code>replication-task</code>
      * </p>
      * 
      * @param sourceType
@@ -243,7 +229,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *        generated by a replication instance, you set this parameter to <code>replication-instance</code>. If this
      *        value is not specified, all events are returned. </p>
      *        <p>
-     *        Valid values: replication-instance | migration-task
+     *        Valid values: <code>replication-instance</code> | <code>replication-task</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,15 +240,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
-     * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
+     * A list of event categories for a source type that you want to subscribe to. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
-     * @return A list of event categories for a source type that you want to subscribe to. You can see a list of the
-     *         categories for a given source type by calling the <code>DescribeEventCategories</code> action or in the
-     *         topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * @return A list of event categories for a source type that you want to subscribe to. For more information, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      *         Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
@@ -272,16 +256,14 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
-     * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
+     * A list of event categories for a source type that you want to subscribe to. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param eventCategories
-     *        A list of event categories for a source type that you want to subscribe to. You can see a list of the
-     *        categories for a given source type by calling the <code>DescribeEventCategories</code> action or in the
-     *        topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     *        A list of event categories for a source type that you want to subscribe to. For more information, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      *        Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
@@ -296,8 +278,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
-     * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
+     * A list of event categories for a source type that you want to subscribe to. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
@@ -308,9 +289,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param eventCategories
-     *        A list of event categories for a source type that you want to subscribe to. You can see a list of the
-     *        categories for a given source type by calling the <code>DescribeEventCategories</code> action or in the
-     *        topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     *        A list of event categories for a source type that you want to subscribe to. For more information, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      *        Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -327,16 +307,14 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
-     * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
+     * A list of event categories for a source type that you want to subscribe to. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param eventCategories
-     *        A list of event categories for a source type that you want to subscribe to. You can see a list of the
-     *        categories for a given source type by calling the <code>DescribeEventCategories</code> action or in the
-     *        topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     *        A list of event categories for a source type that you want to subscribe to. For more information, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
      *        Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -348,14 +326,23 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The list of identifiers of the event sources for which events will be returned. If not specified, then all
-     * sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters,
-     * digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * A list of identifiers for which AWS DMS provides notification events.
+     * </p>
+     * <p>
+     * If you don't specify a value, notifications are provided for all sources.
+     * </p>
+     * <p>
+     * If you specify multiple values, they must be of the same type. For example, if you specify a database instance
+     * ID, then all of the other values must be database instance IDs.
      * </p>
      * 
-     * @return The list of identifiers of the event sources for which events will be returned. If not specified, then
-     *         all sources are included in the response. An identifier must begin with a letter and must contain only
-     *         ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * @return A list of identifiers for which AWS DMS provides notification events.</p>
+     *         <p>
+     *         If you don't specify a value, notifications are provided for all sources.
+     *         </p>
+     *         <p>
+     *         If you specify multiple values, they must be of the same type. For example, if you specify a database
+     *         instance ID, then all of the other values must be database instance IDs.
      */
 
     public java.util.List<String> getSourceIds() {
@@ -364,15 +351,24 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The list of identifiers of the event sources for which events will be returned. If not specified, then all
-     * sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters,
-     * digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * A list of identifiers for which AWS DMS provides notification events.
+     * </p>
+     * <p>
+     * If you don't specify a value, notifications are provided for all sources.
+     * </p>
+     * <p>
+     * If you specify multiple values, they must be of the same type. For example, if you specify a database instance
+     * ID, then all of the other values must be database instance IDs.
      * </p>
      * 
      * @param sourceIds
-     *        The list of identifiers of the event sources for which events will be returned. If not specified, then all
-     *        sources are included in the response. An identifier must begin with a letter and must contain only ASCII
-     *        letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     *        A list of identifiers for which AWS DMS provides notification events.</p>
+     *        <p>
+     *        If you don't specify a value, notifications are provided for all sources.
+     *        </p>
+     *        <p>
+     *        If you specify multiple values, they must be of the same type. For example, if you specify a database
+     *        instance ID, then all of the other values must be database instance IDs.
      */
 
     public void setSourceIds(java.util.Collection<String> sourceIds) {
@@ -386,9 +382,14 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The list of identifiers of the event sources for which events will be returned. If not specified, then all
-     * sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters,
-     * digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * A list of identifiers for which AWS DMS provides notification events.
+     * </p>
+     * <p>
+     * If you don't specify a value, notifications are provided for all sources.
+     * </p>
+     * <p>
+     * If you specify multiple values, they must be of the same type. For example, if you specify a database instance
+     * ID, then all of the other values must be database instance IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -397,9 +398,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param sourceIds
-     *        The list of identifiers of the event sources for which events will be returned. If not specified, then all
-     *        sources are included in the response. An identifier must begin with a letter and must contain only ASCII
-     *        letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     *        A list of identifiers for which AWS DMS provides notification events.</p>
+     *        <p>
+     *        If you don't specify a value, notifications are provided for all sources.
+     *        </p>
+     *        <p>
+     *        If you specify multiple values, they must be of the same type. For example, if you specify a database
+     *        instance ID, then all of the other values must be database instance IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,15 +420,24 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The list of identifiers of the event sources for which events will be returned. If not specified, then all
-     * sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters,
-     * digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * A list of identifiers for which AWS DMS provides notification events.
+     * </p>
+     * <p>
+     * If you don't specify a value, notifications are provided for all sources.
+     * </p>
+     * <p>
+     * If you specify multiple values, they must be of the same type. For example, if you specify a database instance
+     * ID, then all of the other values must be database instance IDs.
      * </p>
      * 
      * @param sourceIds
-     *        The list of identifiers of the event sources for which events will be returned. If not specified, then all
-     *        sources are included in the response. An identifier must begin with a letter and must contain only ASCII
-     *        letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     *        A list of identifiers for which AWS DMS provides notification events.</p>
+     *        <p>
+     *        If you don't specify a value, notifications are provided for all sources.
+     *        </p>
+     *        <p>
+     *        If you specify multiple values, they must be of the same type. For example, if you specify a database
+     *        instance ID, then all of the other values must be database instance IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -494,10 +508,10 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A tag to be attached to the event subscription.
+     * One or more tags to be assigned to the event subscription.
      * </p>
      * 
-     * @return A tag to be attached to the event subscription.
+     * @return One or more tags to be assigned to the event subscription.
      */
 
     public java.util.List<Tag> getTags() {
@@ -506,11 +520,11 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A tag to be attached to the event subscription.
+     * One or more tags to be assigned to the event subscription.
      * </p>
      * 
      * @param tags
-     *        A tag to be attached to the event subscription.
+     *        One or more tags to be assigned to the event subscription.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -524,7 +538,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A tag to be attached to the event subscription.
+     * One or more tags to be assigned to the event subscription.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -533,7 +547,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param tags
-     *        A tag to be attached to the event subscription.
+     *        One or more tags to be assigned to the event subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -549,11 +563,11 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A tag to be attached to the event subscription.
+     * One or more tags to be assigned to the event subscription.
      * </p>
      * 
      * @param tags
-     *        A tag to be attached to the event subscription.
+     *        One or more tags to be assigned to the event subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

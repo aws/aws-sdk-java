@@ -44,6 +44,8 @@ public class OrderableReplicationInstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludedAllocatedStorage").build();
     private static final MarshallingInfo<List> AVAILABILITYZONES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZones").build();
+    private static final MarshallingInfo<String> RELEASESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReleaseStatus").build();
 
     private static final OrderableReplicationInstanceMarshaller instance = new OrderableReplicationInstanceMarshaller();
 
@@ -69,6 +71,7 @@ public class OrderableReplicationInstanceMarshaller {
             protocolMarshaller.marshall(orderableReplicationInstance.getDefaultAllocatedStorage(), DEFAULTALLOCATEDSTORAGE_BINDING);
             protocolMarshaller.marshall(orderableReplicationInstance.getIncludedAllocatedStorage(), INCLUDEDALLOCATEDSTORAGE_BINDING);
             protocolMarshaller.marshall(orderableReplicationInstance.getAvailabilityZones(), AVAILABILITYZONES_BINDING);
+            protocolMarshaller.marshall(orderableReplicationInstance.getReleaseStatus(), RELEASESTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

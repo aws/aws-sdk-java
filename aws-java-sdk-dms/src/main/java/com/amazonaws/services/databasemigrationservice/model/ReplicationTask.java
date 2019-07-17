@@ -120,8 +120,9 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date replicationTaskStartDate;
     /**
      * <p>
-     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
-     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code>
+     * or <code>CdcStartTime</code> to specify when you want the CDC operation to start. Specifying both values results
+     * in an error.
      * </p>
      * <p>
      * The value can be in date, checkpoint, or LSN/SCN format.
@@ -803,8 +804,9 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
-     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code>
+     * or <code>CdcStartTime</code> to specify when you want the CDC operation to start. Specifying both values results
+     * in an error.
      * </p>
      * <p>
      * The value can be in date, checkpoint, or LSN/SCN format.
@@ -821,9 +823,9 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param cdcStartPosition
-     *        Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
-     *        CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
-     *        error.</p>
+     *        Indicates when you want a change data capture (CDC) operation to start. Use either
+     *        <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to
+     *        start. Specifying both values results in an error.</p>
      *        <p>
      *        The value can be in date, checkpoint, or LSN/SCN format.
      *        </p>
@@ -844,8 +846,9 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
-     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code>
+     * or <code>CdcStartTime</code> to specify when you want the CDC operation to start. Specifying both values results
+     * in an error.
      * </p>
      * <p>
      * The value can be in date, checkpoint, or LSN/SCN format.
@@ -861,9 +864,9 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
      * </p>
      * 
-     * @return Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
-     *         CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
-     *         error.</p>
+     * @return Indicates when you want a change data capture (CDC) operation to start. Use either
+     *         <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to
+     *         start. Specifying both values results in an error.</p>
      *         <p>
      *         The value can be in date, checkpoint, or LSN/SCN format.
      *         </p>
@@ -884,8 +887,9 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
-     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code>
+     * or <code>CdcStartTime</code> to specify when you want the CDC operation to start. Specifying both values results
+     * in an error.
      * </p>
      * <p>
      * The value can be in date, checkpoint, or LSN/SCN format.
@@ -902,9 +906,9 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param cdcStartPosition
-     *        Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
-     *        CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
-     *        error.</p>
+     *        Indicates when you want a change data capture (CDC) operation to start. Use either
+     *        <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to
+     *        start. Specifying both values results in an error.</p>
      *        <p>
      *        The value can be in date, checkpoint, or LSN/SCN format.
      *        </p>

@@ -59,8 +59,12 @@ public class S3SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParquetVersion").build();
     private static final MarshallingInfo<Boolean> ENABLESTATISTICS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableStatistics").build();
+    private static final MarshallingInfo<Boolean> INCLUDEOPFORFULLLOAD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeOpForFullLoad").build();
     private static final MarshallingInfo<Boolean> CDCINSERTSONLY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdcInsertsOnly").build();
+    private static final MarshallingInfo<String> TIMESTAMPCOLUMNNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimestampColumnName").build();
 
     private static final S3SettingsMarshaller instance = new S3SettingsMarshaller();
 
@@ -94,7 +98,9 @@ public class S3SettingsMarshaller {
             protocolMarshaller.marshall(s3Settings.getDataPageSize(), DATAPAGESIZE_BINDING);
             protocolMarshaller.marshall(s3Settings.getParquetVersion(), PARQUETVERSION_BINDING);
             protocolMarshaller.marshall(s3Settings.getEnableStatistics(), ENABLESTATISTICS_BINDING);
+            protocolMarshaller.marshall(s3Settings.getIncludeOpForFullLoad(), INCLUDEOPFORFULLLOAD_BINDING);
             protocolMarshaller.marshall(s3Settings.getCdcInsertsOnly(), CDCINSERTSONLY_BINDING);
+            protocolMarshaller.marshall(s3Settings.getTimestampColumnName(), TIMESTAMPCOLUMNNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

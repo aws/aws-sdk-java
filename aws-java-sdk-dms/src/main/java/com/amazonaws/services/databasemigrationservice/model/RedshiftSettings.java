@@ -28,25 +28,26 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an
-     * error. You can choose TRUE or FALSE (default).
+     * A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be
+     * loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).
      * </p>
      * <p>
      * This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT
-     * parameter. If the date format for the data does not match the DATEFORMAT specification, Amazon Redshift inserts a
+     * parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a
      * NULL value into that field.
      * </p>
      */
     private Boolean acceptAnyDate;
     /**
      * <p>
-     * Code to run after connecting. This should be the code, not a filename.
+     * Code to run after connecting. This parameter should contain the code itself, not the name of a file containing
+     * the code.
      * </p>
      */
     private String afterConnectScript;
     /**
      * <p>
-     * The location where the CSV files are stored before being uploaded to the S3 bucket.
+     * The location where the comma-separated value (.csv) files are stored before being uploaded to the S3 bucket.
      * </p>
      */
     private String bucketFolder;
@@ -58,22 +59,23 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     private String bucketName;
     /**
      * <p>
-     * Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you initially establish
-     * a connection.
+     * A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you
+     * initially establish a connection.
      * </p>
      */
     private Integer connectionTimeout;
     /**
      * <p>
-     * The name of the Amazon Redshift data warehouse (service) you are working with.
+     * The name of the Amazon Redshift data warehouse (service) that you are working with.
      * </p>
      */
     private String databaseName;
     /**
      * <p>
-     * The date format you are using. Valid values are <code>auto</code> (case-sensitive), your date format string
-     * enclosed in quotes, or NULL. If this is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using
-     * <code>auto</code> recognizes most strings, even some that are not supported when you use a date format string.
+     * The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string
+     * enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'.
+     * Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format
+     * string.
      * </p>
      * <p>
      * If your date and time values use formats different from each other, set this to <code>auto</code>.
@@ -82,43 +84,44 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     private String dateFormat;
     /**
      * <p>
-     * Specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of TRUE sets empty CHAR
-     * and VARCHAR fields to null. The default is FALSE.
+     * A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of
+     * <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.
      * </p>
      */
     private Boolean emptyAsNull;
     /**
      * <p>
-     * The type of server side encryption you want to use for your data. This is part of the endpoint settings or the
-     * extra connections attributes for Amazon S3. You can choose either SSE_S3 (default) or SSE_KMS. To use SSE_S3,
-     * create an IAM role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
-     * <code>"s3:PutObject", "s3:ListBucket"</code>.
+     * The type of server-side encryption that you want to use for your data. This encryption type is part of the
+     * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
+     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS Identity and Access Management
+     * (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+     * <code>"s3:PutObject", "s3:ListBucket"</code>
      * </p>
      */
     private String encryptionMode;
     /**
      * <p>
-     * Specifies the number of threads used to upload a single file. This accepts a value between 1 and 64. It defaults
+     * The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults
      * to 10.
      * </p>
      */
     private Integer fileTransferUploadStreams;
     /**
      * <p>
-     * Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
+     * The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
      * </p>
      */
     private Integer loadTimeout;
     /**
      * <p>
-     * Specifies the maximum size (in KB) of any CSV file used to transfer data to Amazon Redshift. This accepts a value
-     * between 1 and 1048576. It defaults to 32768 KB (32 MB).
+     * The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value from 1
+     * through 1,048,576. It defaults to 32,768 KB (32 MB).
      * </p>
      */
     private Integer maxFileSize;
     /**
      * <p>
-     * The password for the user named in the username property.
+     * The password for the user named in the <code>username</code> property.
      * </p>
      */
     private String password;
@@ -130,21 +133,22 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     private Integer port;
     /**
      * <p>
-     * Removes surrounding quotation marks from strings in the incoming data. All characters within the quotation marks,
-     * including delimiters, are retained. Choose TRUE to remove quotation marks. The default is FALSE.
+     * A value that specifies to remove surrounding quotation marks from strings in the incoming data. All characters
+     * within the quotation marks, including delimiters, are retained. Choose <code>true</code> to remove quotation
+     * marks. The default is <code>false</code>.
      * </p>
      */
     private Boolean removeQuotes;
     /**
      * <p>
-     * A list of chars you want to replace. Use with <code>ReplaceChars</code>.
+     * A list of characters that you want to replace. Use with <code>ReplaceChars</code>.
      * </p>
      */
     private String replaceInvalidChars;
     /**
      * <p>
-     * Replaces invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified value
-     * instead. The default is "?".
+     * A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>,
+     * substituting the specified characters instead. The default is <code>"?"</code>.
      * </p>
      */
     private String replaceChars;
@@ -156,40 +160,42 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     private String serverName;
     /**
      * <p>
-     * The ARN of the role that has access to the Redshift service.
+     * The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service.
      * </p>
      */
     private String serviceAccessRoleArn;
     /**
      * <p>
-     * If you are using SSE_KMS for the <code>EncryptionMode</code>, provide the KMS Key ID. The key you use needs an
-     * attached policy that enables IAM user permissions and allows use of the key.
+     * The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key
+     * ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.
      * </p>
      */
     private String serverSideEncryptionKmsKeyId;
     /**
      * <p>
-     * The time format you want to use. Valid values are <code>auto</code> (case-sensitive), 'timeformat_string',
-     * 'epochsecs', or 'epochmillisecs'. It defaults to 10. Using <code>auto</code> recognizes most strings, even some
-     * that are not supported when you use a time format string.
+     * The time format that you want to use. Valid values are <code>auto</code> (case-sensitive),
+     * <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10.
+     * Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format
+     * string.
      * </p>
      * <p>
-     * If your date and time values use formats different from each other, set this to <code>auto</code>.
+     * If your date and time values use formats different from each other, set this parameter to <code>auto</code>.
      * </p>
      */
     private String timeFormat;
     /**
      * <p>
-     * Removes the trailing white space characters from a VARCHAR string. This parameter applies only to columns with a
-     * VARCHAR data type. Choose TRUE to remove unneeded white space. The default is FALSE.
+     * A value that specifies to remove the trailing white space characters from a VARCHAR string. This parameter
+     * applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded white space. The
+     * default is <code>false</code>.
      * </p>
      */
     private Boolean trimBlanks;
     /**
      * <p>
-     * Truncates data in columns to the appropriate number of characters, so that it fits in the column. Applies only to
-     * columns with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose TRUE to truncate data. The
-     * default is FALSE.
+     * A value that specifies to truncate data in columns to the appropriate number of characters, so that the data fits
+     * in the column. This parameter applies only to columns with a VARCHAR or CHAR data type, and rows with a size of 4
+     * MB or less. Choose <code>true</code> to truncate data. The default is <code>false</code>.
      * </p>
      */
     private Boolean truncateColumns;
@@ -201,29 +207,30 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     private String username;
     /**
      * <p>
-     * The size of the write buffer to use in rows. Valid values range from 1 to 2048. Defaults to 1024. Use this
-     * setting to tune performance.
+     * The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is 1,024. Use
+     * this setting to tune performance.
      * </p>
      */
     private Integer writeBufferSize;
 
     /**
      * <p>
-     * Allows any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an
-     * error. You can choose TRUE or FALSE (default).
+     * A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be
+     * loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).
      * </p>
      * <p>
      * This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT
-     * parameter. If the date format for the data does not match the DATEFORMAT specification, Amazon Redshift inserts a
+     * parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a
      * NULL value into that field.
      * </p>
      * 
      * @param acceptAnyDate
-     *        Allows any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without
-     *        generating an error. You can choose TRUE or FALSE (default).</p>
+     *        A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to
+     *        be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the
+     *        default).</p>
      *        <p>
      *        This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT
-     *        parameter. If the date format for the data does not match the DATEFORMAT specification, Amazon Redshift
+     *        parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift
      *        inserts a NULL value into that field.
      */
 
@@ -233,20 +240,21 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an
-     * error. You can choose TRUE or FALSE (default).
+     * A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be
+     * loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).
      * </p>
      * <p>
      * This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT
-     * parameter. If the date format for the data does not match the DATEFORMAT specification, Amazon Redshift inserts a
+     * parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a
      * NULL value into that field.
      * </p>
      * 
-     * @return Allows any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without
-     *         generating an error. You can choose TRUE or FALSE (default).</p>
+     * @return A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to
+     *         be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the
+     *         default).</p>
      *         <p>
      *         This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT
-     *         parameter. If the date format for the data does not match the DATEFORMAT specification, Amazon Redshift
+     *         parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift
      *         inserts a NULL value into that field.
      */
 
@@ -256,21 +264,22 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an
-     * error. You can choose TRUE or FALSE (default).
+     * A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be
+     * loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).
      * </p>
      * <p>
      * This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT
-     * parameter. If the date format for the data does not match the DATEFORMAT specification, Amazon Redshift inserts a
+     * parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a
      * NULL value into that field.
      * </p>
      * 
      * @param acceptAnyDate
-     *        Allows any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without
-     *        generating an error. You can choose TRUE or FALSE (default).</p>
+     *        A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to
+     *        be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the
+     *        default).</p>
      *        <p>
      *        This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT
-     *        parameter. If the date format for the data does not match the DATEFORMAT specification, Amazon Redshift
+     *        parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift
      *        inserts a NULL value into that field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -282,20 +291,21 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an
-     * error. You can choose TRUE or FALSE (default).
+     * A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be
+     * loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).
      * </p>
      * <p>
      * This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT
-     * parameter. If the date format for the data does not match the DATEFORMAT specification, Amazon Redshift inserts a
+     * parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a
      * NULL value into that field.
      * </p>
      * 
-     * @return Allows any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without
-     *         generating an error. You can choose TRUE or FALSE (default).</p>
+     * @return A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to
+     *         be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the
+     *         default).</p>
      *         <p>
      *         This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT
-     *         parameter. If the date format for the data does not match the DATEFORMAT specification, Amazon Redshift
+     *         parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift
      *         inserts a NULL value into that field.
      */
 
@@ -305,11 +315,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Code to run after connecting. This should be the code, not a filename.
+     * Code to run after connecting. This parameter should contain the code itself, not the name of a file containing
+     * the code.
      * </p>
      * 
      * @param afterConnectScript
-     *        Code to run after connecting. This should be the code, not a filename.
+     *        Code to run after connecting. This parameter should contain the code itself, not the name of a file
+     *        containing the code.
      */
 
     public void setAfterConnectScript(String afterConnectScript) {
@@ -318,10 +330,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Code to run after connecting. This should be the code, not a filename.
+     * Code to run after connecting. This parameter should contain the code itself, not the name of a file containing
+     * the code.
      * </p>
      * 
-     * @return Code to run after connecting. This should be the code, not a filename.
+     * @return Code to run after connecting. This parameter should contain the code itself, not the name of a file
+     *         containing the code.
      */
 
     public String getAfterConnectScript() {
@@ -330,11 +344,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Code to run after connecting. This should be the code, not a filename.
+     * Code to run after connecting. This parameter should contain the code itself, not the name of a file containing
+     * the code.
      * </p>
      * 
      * @param afterConnectScript
-     *        Code to run after connecting. This should be the code, not a filename.
+     *        Code to run after connecting. This parameter should contain the code itself, not the name of a file
+     *        containing the code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,11 +361,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The location where the CSV files are stored before being uploaded to the S3 bucket.
+     * The location where the comma-separated value (.csv) files are stored before being uploaded to the S3 bucket.
      * </p>
      * 
      * @param bucketFolder
-     *        The location where the CSV files are stored before being uploaded to the S3 bucket.
+     *        The location where the comma-separated value (.csv) files are stored before being uploaded to the S3
+     *        bucket.
      */
 
     public void setBucketFolder(String bucketFolder) {
@@ -358,10 +375,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The location where the CSV files are stored before being uploaded to the S3 bucket.
+     * The location where the comma-separated value (.csv) files are stored before being uploaded to the S3 bucket.
      * </p>
      * 
-     * @return The location where the CSV files are stored before being uploaded to the S3 bucket.
+     * @return The location where the comma-separated value (.csv) files are stored before being uploaded to the S3
+     *         bucket.
      */
 
     public String getBucketFolder() {
@@ -370,11 +388,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The location where the CSV files are stored before being uploaded to the S3 bucket.
+     * The location where the comma-separated value (.csv) files are stored before being uploaded to the S3 bucket.
      * </p>
      * 
      * @param bucketFolder
-     *        The location where the CSV files are stored before being uploaded to the S3 bucket.
+     *        The location where the comma-separated value (.csv) files are stored before being uploaded to the S3
+     *        bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -425,13 +444,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you initially establish
-     * a connection.
+     * A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you
+     * initially establish a connection.
      * </p>
      * 
      * @param connectionTimeout
-     *        Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you initially
-     *        establish a connection.
+     *        A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you
+     *        initially establish a connection.
      */
 
     public void setConnectionTimeout(Integer connectionTimeout) {
@@ -440,12 +459,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you initially establish
-     * a connection.
+     * A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you
+     * initially establish a connection.
      * </p>
      * 
-     * @return Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you initially
-     *         establish a connection.
+     * @return A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you
+     *         initially establish a connection.
      */
 
     public Integer getConnectionTimeout() {
@@ -454,13 +473,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you initially establish
-     * a connection.
+     * A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you
+     * initially establish a connection.
      * </p>
      * 
      * @param connectionTimeout
-     *        Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you initially
-     *        establish a connection.
+     *        A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you
+     *        initially establish a connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,11 +490,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the Amazon Redshift data warehouse (service) you are working with.
+     * The name of the Amazon Redshift data warehouse (service) that you are working with.
      * </p>
      * 
      * @param databaseName
-     *        The name of the Amazon Redshift data warehouse (service) you are working with.
+     *        The name of the Amazon Redshift data warehouse (service) that you are working with.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -484,10 +503,10 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the Amazon Redshift data warehouse (service) you are working with.
+     * The name of the Amazon Redshift data warehouse (service) that you are working with.
      * </p>
      * 
-     * @return The name of the Amazon Redshift data warehouse (service) you are working with.
+     * @return The name of the Amazon Redshift data warehouse (service) that you are working with.
      */
 
     public String getDatabaseName() {
@@ -496,11 +515,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the Amazon Redshift data warehouse (service) you are working with.
+     * The name of the Amazon Redshift data warehouse (service) that you are working with.
      * </p>
      * 
      * @param databaseName
-     *        The name of the Amazon Redshift data warehouse (service) you are working with.
+     *        The name of the Amazon Redshift data warehouse (service) that you are working with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -511,19 +530,20 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date format you are using. Valid values are <code>auto</code> (case-sensitive), your date format string
-     * enclosed in quotes, or NULL. If this is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using
-     * <code>auto</code> recognizes most strings, even some that are not supported when you use a date format string.
+     * The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string
+     * enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'.
+     * Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format
+     * string.
      * </p>
      * <p>
      * If your date and time values use formats different from each other, set this to <code>auto</code>.
      * </p>
      * 
      * @param dateFormat
-     *        The date format you are using. Valid values are <code>auto</code> (case-sensitive), your date format
-     *        string enclosed in quotes, or NULL. If this is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'.
-     *        Using <code>auto</code> recognizes most strings, even some that are not supported when you use a date
-     *        format string. </p>
+     *        The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format
+     *        string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of
+     *        'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you
+     *        use a date format string. </p>
      *        <p>
      *        If your date and time values use formats different from each other, set this to <code>auto</code>.
      */
@@ -534,17 +554,18 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date format you are using. Valid values are <code>auto</code> (case-sensitive), your date format string
-     * enclosed in quotes, or NULL. If this is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using
-     * <code>auto</code> recognizes most strings, even some that are not supported when you use a date format string.
+     * The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string
+     * enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'.
+     * Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format
+     * string.
      * </p>
      * <p>
      * If your date and time values use formats different from each other, set this to <code>auto</code>.
      * </p>
      * 
-     * @return The date format you are using. Valid values are <code>auto</code> (case-sensitive), your date format
-     *         string enclosed in quotes, or NULL. If this is left unset (NULL), it defaults to a format of
-     *         'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that are not supported when you
+     * @return The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format
+     *         string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of
+     *         'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you
      *         use a date format string. </p>
      *         <p>
      *         If your date and time values use formats different from each other, set this to <code>auto</code>.
@@ -556,19 +577,20 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date format you are using. Valid values are <code>auto</code> (case-sensitive), your date format string
-     * enclosed in quotes, or NULL. If this is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using
-     * <code>auto</code> recognizes most strings, even some that are not supported when you use a date format string.
+     * The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string
+     * enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'.
+     * Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format
+     * string.
      * </p>
      * <p>
      * If your date and time values use formats different from each other, set this to <code>auto</code>.
      * </p>
      * 
      * @param dateFormat
-     *        The date format you are using. Valid values are <code>auto</code> (case-sensitive), your date format
-     *        string enclosed in quotes, or NULL. If this is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'.
-     *        Using <code>auto</code> recognizes most strings, even some that are not supported when you use a date
-     *        format string. </p>
+     *        The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format
+     *        string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of
+     *        'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you
+     *        use a date format string. </p>
      *        <p>
      *        If your date and time values use formats different from each other, set this to <code>auto</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -581,13 +603,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of TRUE sets empty CHAR
-     * and VARCHAR fields to null. The default is FALSE.
+     * A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of
+     * <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.
      * </p>
      * 
      * @param emptyAsNull
-     *        Specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of TRUE sets empty
-     *        CHAR and VARCHAR fields to null. The default is FALSE.
+     *        A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of
+     *        <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.
      */
 
     public void setEmptyAsNull(Boolean emptyAsNull) {
@@ -596,12 +618,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of TRUE sets empty CHAR
-     * and VARCHAR fields to null. The default is FALSE.
+     * A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of
+     * <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.
      * </p>
      * 
-     * @return Specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of TRUE sets
-     *         empty CHAR and VARCHAR fields to null. The default is FALSE.
+     * @return A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of
+     *         <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.
      */
 
     public Boolean getEmptyAsNull() {
@@ -610,13 +632,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of TRUE sets empty CHAR
-     * and VARCHAR fields to null. The default is FALSE.
+     * A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of
+     * <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.
      * </p>
      * 
      * @param emptyAsNull
-     *        Specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of TRUE sets empty
-     *        CHAR and VARCHAR fields to null. The default is FALSE.
+     *        A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of
+     *        <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -627,12 +649,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of TRUE sets empty CHAR
-     * and VARCHAR fields to null. The default is FALSE.
+     * A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of
+     * <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.
      * </p>
      * 
-     * @return Specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of TRUE sets
-     *         empty CHAR and VARCHAR fields to null. The default is FALSE.
+     * @return A value that specifies whether AWS DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of
+     *         <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.
      */
 
     public Boolean isEmptyAsNull() {
@@ -641,17 +663,19 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of server side encryption you want to use for your data. This is part of the endpoint settings or the
-     * extra connections attributes for Amazon S3. You can choose either SSE_S3 (default) or SSE_KMS. To use SSE_S3,
-     * create an IAM role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
-     * <code>"s3:PutObject", "s3:ListBucket"</code>.
+     * The type of server-side encryption that you want to use for your data. This encryption type is part of the
+     * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
+     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS Identity and Access Management
+     * (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+     * <code>"s3:PutObject", "s3:ListBucket"</code>
      * </p>
      * 
      * @param encryptionMode
-     *        The type of server side encryption you want to use for your data. This is part of the endpoint settings or
-     *        the extra connections attributes for Amazon S3. You can choose either SSE_S3 (default) or SSE_KMS. To use
-     *        SSE_S3, create an IAM role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
-     *        actions: <code>"s3:PutObject", "s3:ListBucket"</code>.
+     *        The type of server-side encryption that you want to use for your data. This encryption type is part of the
+     *        endpoint settings or the extra connections attributes for Amazon S3. You can choose either
+     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS
+     *        Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use
+     *        the following actions: <code>"s3:PutObject", "s3:ListBucket"</code>
      * @see EncryptionModeValue
      */
 
@@ -661,16 +685,18 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of server side encryption you want to use for your data. This is part of the endpoint settings or the
-     * extra connections attributes for Amazon S3. You can choose either SSE_S3 (default) or SSE_KMS. To use SSE_S3,
-     * create an IAM role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
-     * <code>"s3:PutObject", "s3:ListBucket"</code>.
+     * The type of server-side encryption that you want to use for your data. This encryption type is part of the
+     * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
+     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS Identity and Access Management
+     * (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+     * <code>"s3:PutObject", "s3:ListBucket"</code>
      * </p>
      * 
-     * @return The type of server side encryption you want to use for your data. This is part of the endpoint settings
-     *         or the extra connections attributes for Amazon S3. You can choose either SSE_S3 (default) or SSE_KMS. To
-     *         use SSE_S3, create an IAM role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the
-     *         following actions: <code>"s3:PutObject", "s3:ListBucket"</code>.
+     * @return The type of server-side encryption that you want to use for your data. This encryption type is part of
+     *         the endpoint settings or the extra connections attributes for Amazon S3. You can choose either
+     *         <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS
+     *         Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use
+     *         the following actions: <code>"s3:PutObject", "s3:ListBucket"</code>
      * @see EncryptionModeValue
      */
 
@@ -680,17 +706,19 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of server side encryption you want to use for your data. This is part of the endpoint settings or the
-     * extra connections attributes for Amazon S3. You can choose either SSE_S3 (default) or SSE_KMS. To use SSE_S3,
-     * create an IAM role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
-     * <code>"s3:PutObject", "s3:ListBucket"</code>.
+     * The type of server-side encryption that you want to use for your data. This encryption type is part of the
+     * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
+     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS Identity and Access Management
+     * (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+     * <code>"s3:PutObject", "s3:ListBucket"</code>
      * </p>
      * 
      * @param encryptionMode
-     *        The type of server side encryption you want to use for your data. This is part of the endpoint settings or
-     *        the extra connections attributes for Amazon S3. You can choose either SSE_S3 (default) or SSE_KMS. To use
-     *        SSE_S3, create an IAM role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
-     *        actions: <code>"s3:PutObject", "s3:ListBucket"</code>.
+     *        The type of server-side encryption that you want to use for your data. This encryption type is part of the
+     *        endpoint settings or the extra connections attributes for Amazon S3. You can choose either
+     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS
+     *        Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use
+     *        the following actions: <code>"s3:PutObject", "s3:ListBucket"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionModeValue
      */
@@ -702,17 +730,19 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of server side encryption you want to use for your data. This is part of the endpoint settings or the
-     * extra connections attributes for Amazon S3. You can choose either SSE_S3 (default) or SSE_KMS. To use SSE_S3,
-     * create an IAM role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
-     * <code>"s3:PutObject", "s3:ListBucket"</code>.
+     * The type of server-side encryption that you want to use for your data. This encryption type is part of the
+     * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
+     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS Identity and Access Management
+     * (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+     * <code>"s3:PutObject", "s3:ListBucket"</code>
      * </p>
      * 
      * @param encryptionMode
-     *        The type of server side encryption you want to use for your data. This is part of the endpoint settings or
-     *        the extra connections attributes for Amazon S3. You can choose either SSE_S3 (default) or SSE_KMS. To use
-     *        SSE_S3, create an IAM role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following
-     *        actions: <code>"s3:PutObject", "s3:ListBucket"</code>.
+     *        The type of server-side encryption that you want to use for your data. This encryption type is part of the
+     *        endpoint settings or the extra connections attributes for Amazon S3. You can choose either
+     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, create an AWS
+     *        Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use
+     *        the following actions: <code>"s3:PutObject", "s3:ListBucket"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionModeValue
      */
@@ -724,12 +754,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the number of threads used to upload a single file. This accepts a value between 1 and 64. It defaults
+     * The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults
      * to 10.
      * </p>
      * 
      * @param fileTransferUploadStreams
-     *        Specifies the number of threads used to upload a single file. This accepts a value between 1 and 64. It
+     *        The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It
      *        defaults to 10.
      */
 
@@ -739,11 +769,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the number of threads used to upload a single file. This accepts a value between 1 and 64. It defaults
+     * The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults
      * to 10.
      * </p>
      * 
-     * @return Specifies the number of threads used to upload a single file. This accepts a value between 1 and 64. It
+     * @return The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It
      *         defaults to 10.
      */
 
@@ -753,12 +783,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the number of threads used to upload a single file. This accepts a value between 1 and 64. It defaults
+     * The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults
      * to 10.
      * </p>
      * 
      * @param fileTransferUploadStreams
-     *        Specifies the number of threads used to upload a single file. This accepts a value between 1 and 64. It
+     *        The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It
      *        defaults to 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -770,12 +800,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
+     * The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
      * </p>
      * 
      * @param loadTimeout
-     *        Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you begin
-     *        loading.
+     *        The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
      */
 
     public void setLoadTimeout(Integer loadTimeout) {
@@ -784,11 +813,10 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
+     * The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
      * </p>
      * 
-     * @return Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you begin
-     *         loading.
+     * @return The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
      */
 
     public Integer getLoadTimeout() {
@@ -797,12 +825,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
+     * The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
      * </p>
      * 
      * @param loadTimeout
-     *        Sets the amount of time to wait (in milliseconds) before timing out, beginning from when you begin
-     *        loading.
+     *        The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -813,13 +840,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the maximum size (in KB) of any CSV file used to transfer data to Amazon Redshift. This accepts a value
-     * between 1 and 1048576. It defaults to 32768 KB (32 MB).
+     * The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value from 1
+     * through 1,048,576. It defaults to 32,768 KB (32 MB).
      * </p>
      * 
      * @param maxFileSize
-     *        Specifies the maximum size (in KB) of any CSV file used to transfer data to Amazon Redshift. This accepts
-     *        a value between 1 and 1048576. It defaults to 32768 KB (32 MB).
+     *        The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value
+     *        from 1 through 1,048,576. It defaults to 32,768 KB (32 MB).
      */
 
     public void setMaxFileSize(Integer maxFileSize) {
@@ -828,12 +855,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the maximum size (in KB) of any CSV file used to transfer data to Amazon Redshift. This accepts a value
-     * between 1 and 1048576. It defaults to 32768 KB (32 MB).
+     * The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value from 1
+     * through 1,048,576. It defaults to 32,768 KB (32 MB).
      * </p>
      * 
-     * @return Specifies the maximum size (in KB) of any CSV file used to transfer data to Amazon Redshift. This accepts
-     *         a value between 1 and 1048576. It defaults to 32768 KB (32 MB).
+     * @return The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value
+     *         from 1 through 1,048,576. It defaults to 32,768 KB (32 MB).
      */
 
     public Integer getMaxFileSize() {
@@ -842,13 +869,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the maximum size (in KB) of any CSV file used to transfer data to Amazon Redshift. This accepts a value
-     * between 1 and 1048576. It defaults to 32768 KB (32 MB).
+     * The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value from 1
+     * through 1,048,576. It defaults to 32,768 KB (32 MB).
      * </p>
      * 
      * @param maxFileSize
-     *        Specifies the maximum size (in KB) of any CSV file used to transfer data to Amazon Redshift. This accepts
-     *        a value between 1 and 1048576. It defaults to 32768 KB (32 MB).
+     *        The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value
+     *        from 1 through 1,048,576. It defaults to 32,768 KB (32 MB).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -859,11 +886,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The password for the user named in the username property.
+     * The password for the user named in the <code>username</code> property.
      * </p>
      * 
      * @param password
-     *        The password for the user named in the username property.
+     *        The password for the user named in the <code>username</code> property.
      */
 
     public void setPassword(String password) {
@@ -872,10 +899,10 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The password for the user named in the username property.
+     * The password for the user named in the <code>username</code> property.
      * </p>
      * 
-     * @return The password for the user named in the username property.
+     * @return The password for the user named in the <code>username</code> property.
      */
 
     public String getPassword() {
@@ -884,11 +911,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The password for the user named in the username property.
+     * The password for the user named in the <code>username</code> property.
      * </p>
      * 
      * @param password
-     *        The password for the user named in the username property.
+     *        The password for the user named in the <code>username</code> property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -939,13 +966,15 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Removes surrounding quotation marks from strings in the incoming data. All characters within the quotation marks,
-     * including delimiters, are retained. Choose TRUE to remove quotation marks. The default is FALSE.
+     * A value that specifies to remove surrounding quotation marks from strings in the incoming data. All characters
+     * within the quotation marks, including delimiters, are retained. Choose <code>true</code> to remove quotation
+     * marks. The default is <code>false</code>.
      * </p>
      * 
      * @param removeQuotes
-     *        Removes surrounding quotation marks from strings in the incoming data. All characters within the quotation
-     *        marks, including delimiters, are retained. Choose TRUE to remove quotation marks. The default is FALSE.
+     *        A value that specifies to remove surrounding quotation marks from strings in the incoming data. All
+     *        characters within the quotation marks, including delimiters, are retained. Choose <code>true</code> to
+     *        remove quotation marks. The default is <code>false</code>.
      */
 
     public void setRemoveQuotes(Boolean removeQuotes) {
@@ -954,13 +983,14 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Removes surrounding quotation marks from strings in the incoming data. All characters within the quotation marks,
-     * including delimiters, are retained. Choose TRUE to remove quotation marks. The default is FALSE.
+     * A value that specifies to remove surrounding quotation marks from strings in the incoming data. All characters
+     * within the quotation marks, including delimiters, are retained. Choose <code>true</code> to remove quotation
+     * marks. The default is <code>false</code>.
      * </p>
      * 
-     * @return Removes surrounding quotation marks from strings in the incoming data. All characters within the
-     *         quotation marks, including delimiters, are retained. Choose TRUE to remove quotation marks. The default
-     *         is FALSE.
+     * @return A value that specifies to remove surrounding quotation marks from strings in the incoming data. All
+     *         characters within the quotation marks, including delimiters, are retained. Choose <code>true</code> to
+     *         remove quotation marks. The default is <code>false</code>.
      */
 
     public Boolean getRemoveQuotes() {
@@ -969,13 +999,15 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Removes surrounding quotation marks from strings in the incoming data. All characters within the quotation marks,
-     * including delimiters, are retained. Choose TRUE to remove quotation marks. The default is FALSE.
+     * A value that specifies to remove surrounding quotation marks from strings in the incoming data. All characters
+     * within the quotation marks, including delimiters, are retained. Choose <code>true</code> to remove quotation
+     * marks. The default is <code>false</code>.
      * </p>
      * 
      * @param removeQuotes
-     *        Removes surrounding quotation marks from strings in the incoming data. All characters within the quotation
-     *        marks, including delimiters, are retained. Choose TRUE to remove quotation marks. The default is FALSE.
+     *        A value that specifies to remove surrounding quotation marks from strings in the incoming data. All
+     *        characters within the quotation marks, including delimiters, are retained. Choose <code>true</code> to
+     *        remove quotation marks. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -986,13 +1018,14 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Removes surrounding quotation marks from strings in the incoming data. All characters within the quotation marks,
-     * including delimiters, are retained. Choose TRUE to remove quotation marks. The default is FALSE.
+     * A value that specifies to remove surrounding quotation marks from strings in the incoming data. All characters
+     * within the quotation marks, including delimiters, are retained. Choose <code>true</code> to remove quotation
+     * marks. The default is <code>false</code>.
      * </p>
      * 
-     * @return Removes surrounding quotation marks from strings in the incoming data. All characters within the
-     *         quotation marks, including delimiters, are retained. Choose TRUE to remove quotation marks. The default
-     *         is FALSE.
+     * @return A value that specifies to remove surrounding quotation marks from strings in the incoming data. All
+     *         characters within the quotation marks, including delimiters, are retained. Choose <code>true</code> to
+     *         remove quotation marks. The default is <code>false</code>.
      */
 
     public Boolean isRemoveQuotes() {
@@ -1001,11 +1034,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of chars you want to replace. Use with <code>ReplaceChars</code>.
+     * A list of characters that you want to replace. Use with <code>ReplaceChars</code>.
      * </p>
      * 
      * @param replaceInvalidChars
-     *        A list of chars you want to replace. Use with <code>ReplaceChars</code>.
+     *        A list of characters that you want to replace. Use with <code>ReplaceChars</code>.
      */
 
     public void setReplaceInvalidChars(String replaceInvalidChars) {
@@ -1014,10 +1047,10 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of chars you want to replace. Use with <code>ReplaceChars</code>.
+     * A list of characters that you want to replace. Use with <code>ReplaceChars</code>.
      * </p>
      * 
-     * @return A list of chars you want to replace. Use with <code>ReplaceChars</code>.
+     * @return A list of characters that you want to replace. Use with <code>ReplaceChars</code>.
      */
 
     public String getReplaceInvalidChars() {
@@ -1026,11 +1059,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of chars you want to replace. Use with <code>ReplaceChars</code>.
+     * A list of characters that you want to replace. Use with <code>ReplaceChars</code>.
      * </p>
      * 
      * @param replaceInvalidChars
-     *        A list of chars you want to replace. Use with <code>ReplaceChars</code>.
+     *        A list of characters that you want to replace. Use with <code>ReplaceChars</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1041,13 +1074,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Replaces invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified value
-     * instead. The default is "?".
+     * A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>,
+     * substituting the specified characters instead. The default is <code>"?"</code>.
      * </p>
      * 
      * @param replaceChars
-     *        Replaces invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified
-     *        value instead. The default is "?".
+     *        A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>,
+     *        substituting the specified characters instead. The default is <code>"?"</code>.
      */
 
     public void setReplaceChars(String replaceChars) {
@@ -1056,12 +1089,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Replaces invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified value
-     * instead. The default is "?".
+     * A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>,
+     * substituting the specified characters instead. The default is <code>"?"</code>.
      * </p>
      * 
-     * @return Replaces invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified
-     *         value instead. The default is "?".
+     * @return A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>,
+     *         substituting the specified characters instead. The default is <code>"?"</code>.
      */
 
     public String getReplaceChars() {
@@ -1070,13 +1103,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Replaces invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified value
-     * instead. The default is "?".
+     * A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>,
+     * substituting the specified characters instead. The default is <code>"?"</code>.
      * </p>
      * 
      * @param replaceChars
-     *        Replaces invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified
-     *        value instead. The default is "?".
+     *        A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>,
+     *        substituting the specified characters instead. The default is <code>"?"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1127,11 +1160,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the role that has access to the Redshift service.
+     * The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The ARN of the role that has access to the Redshift service.
+     *        The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service.
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -1140,10 +1173,10 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the role that has access to the Redshift service.
+     * The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service.
      * </p>
      * 
-     * @return The ARN of the role that has access to the Redshift service.
+     * @return The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service.
      */
 
     public String getServiceAccessRoleArn() {
@@ -1152,11 +1185,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the role that has access to the Redshift service.
+     * The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The ARN of the role that has access to the Redshift service.
+     *        The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1167,13 +1200,14 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If you are using SSE_KMS for the <code>EncryptionMode</code>, provide the KMS Key ID. The key you use needs an
-     * attached policy that enables IAM user permissions and allows use of the key.
+     * The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key
+     * ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.
      * </p>
      * 
      * @param serverSideEncryptionKmsKeyId
-     *        If you are using SSE_KMS for the <code>EncryptionMode</code>, provide the KMS Key ID. The key you use
-     *        needs an attached policy that enables IAM user permissions and allows use of the key.
+     *        The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide
+     *        this key ID. The key that you use needs an attached policy that enables IAM user permissions and allows
+     *        use of the key.
      */
 
     public void setServerSideEncryptionKmsKeyId(String serverSideEncryptionKmsKeyId) {
@@ -1182,12 +1216,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If you are using SSE_KMS for the <code>EncryptionMode</code>, provide the KMS Key ID. The key you use needs an
-     * attached policy that enables IAM user permissions and allows use of the key.
+     * The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key
+     * ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.
      * </p>
      * 
-     * @return If you are using SSE_KMS for the <code>EncryptionMode</code>, provide the KMS Key ID. The key you use
-     *         needs an attached policy that enables IAM user permissions and allows use of the key.
+     * @return The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide
+     *         this key ID. The key that you use needs an attached policy that enables IAM user permissions and allows
+     *         use of the key.
      */
 
     public String getServerSideEncryptionKmsKeyId() {
@@ -1196,13 +1231,14 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If you are using SSE_KMS for the <code>EncryptionMode</code>, provide the KMS Key ID. The key you use needs an
-     * attached policy that enables IAM user permissions and allows use of the key.
+     * The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key
+     * ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.
      * </p>
      * 
      * @param serverSideEncryptionKmsKeyId
-     *        If you are using SSE_KMS for the <code>EncryptionMode</code>, provide the KMS Key ID. The key you use
-     *        needs an attached policy that enables IAM user permissions and allows use of the key.
+     *        The AWS KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide
+     *        this key ID. The key that you use needs an attached policy that enables IAM user permissions and allows
+     *        use of the key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1213,20 +1249,23 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time format you want to use. Valid values are <code>auto</code> (case-sensitive), 'timeformat_string',
-     * 'epochsecs', or 'epochmillisecs'. It defaults to 10. Using <code>auto</code> recognizes most strings, even some
-     * that are not supported when you use a time format string.
+     * The time format that you want to use. Valid values are <code>auto</code> (case-sensitive),
+     * <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10.
+     * Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format
+     * string.
      * </p>
      * <p>
-     * If your date and time values use formats different from each other, set this to <code>auto</code>.
+     * If your date and time values use formats different from each other, set this parameter to <code>auto</code>.
      * </p>
      * 
      * @param timeFormat
-     *        The time format you want to use. Valid values are <code>auto</code> (case-sensitive), 'timeformat_string',
-     *        'epochsecs', or 'epochmillisecs'. It defaults to 10. Using <code>auto</code> recognizes most strings, even
-     *        some that are not supported when you use a time format string. </p>
+     *        The time format that you want to use. Valid values are <code>auto</code> (case-sensitive),
+     *        <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults
+     *        to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a
+     *        time format string. </p>
      *        <p>
-     *        If your date and time values use formats different from each other, set this to <code>auto</code>.
+     *        If your date and time values use formats different from each other, set this parameter to
+     *        <code>auto</code>.
      */
 
     public void setTimeFormat(String timeFormat) {
@@ -1235,19 +1274,22 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time format you want to use. Valid values are <code>auto</code> (case-sensitive), 'timeformat_string',
-     * 'epochsecs', or 'epochmillisecs'. It defaults to 10. Using <code>auto</code> recognizes most strings, even some
-     * that are not supported when you use a time format string.
+     * The time format that you want to use. Valid values are <code>auto</code> (case-sensitive),
+     * <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10.
+     * Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format
+     * string.
      * </p>
      * <p>
-     * If your date and time values use formats different from each other, set this to <code>auto</code>.
+     * If your date and time values use formats different from each other, set this parameter to <code>auto</code>.
      * </p>
      * 
-     * @return The time format you want to use. Valid values are <code>auto</code> (case-sensitive),
-     *         'timeformat_string', 'epochsecs', or 'epochmillisecs'. It defaults to 10. Using <code>auto</code>
-     *         recognizes most strings, even some that are not supported when you use a time format string. </p>
+     * @return The time format that you want to use. Valid values are <code>auto</code> (case-sensitive),
+     *         <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults
+     *         to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a
+     *         time format string. </p>
      *         <p>
-     *         If your date and time values use formats different from each other, set this to <code>auto</code>.
+     *         If your date and time values use formats different from each other, set this parameter to
+     *         <code>auto</code>.
      */
 
     public String getTimeFormat() {
@@ -1256,20 +1298,23 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time format you want to use. Valid values are <code>auto</code> (case-sensitive), 'timeformat_string',
-     * 'epochsecs', or 'epochmillisecs'. It defaults to 10. Using <code>auto</code> recognizes most strings, even some
-     * that are not supported when you use a time format string.
+     * The time format that you want to use. Valid values are <code>auto</code> (case-sensitive),
+     * <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10.
+     * Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format
+     * string.
      * </p>
      * <p>
-     * If your date and time values use formats different from each other, set this to <code>auto</code>.
+     * If your date and time values use formats different from each other, set this parameter to <code>auto</code>.
      * </p>
      * 
      * @param timeFormat
-     *        The time format you want to use. Valid values are <code>auto</code> (case-sensitive), 'timeformat_string',
-     *        'epochsecs', or 'epochmillisecs'. It defaults to 10. Using <code>auto</code> recognizes most strings, even
-     *        some that are not supported when you use a time format string. </p>
+     *        The time format that you want to use. Valid values are <code>auto</code> (case-sensitive),
+     *        <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults
+     *        to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a
+     *        time format string. </p>
      *        <p>
-     *        If your date and time values use formats different from each other, set this to <code>auto</code>.
+     *        If your date and time values use formats different from each other, set this parameter to
+     *        <code>auto</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1280,13 +1325,15 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Removes the trailing white space characters from a VARCHAR string. This parameter applies only to columns with a
-     * VARCHAR data type. Choose TRUE to remove unneeded white space. The default is FALSE.
+     * A value that specifies to remove the trailing white space characters from a VARCHAR string. This parameter
+     * applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded white space. The
+     * default is <code>false</code>.
      * </p>
      * 
      * @param trimBlanks
-     *        Removes the trailing white space characters from a VARCHAR string. This parameter applies only to columns
-     *        with a VARCHAR data type. Choose TRUE to remove unneeded white space. The default is FALSE.
+     *        A value that specifies to remove the trailing white space characters from a VARCHAR string. This parameter
+     *        applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded white space.
+     *        The default is <code>false</code>.
      */
 
     public void setTrimBlanks(Boolean trimBlanks) {
@@ -1295,12 +1342,14 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Removes the trailing white space characters from a VARCHAR string. This parameter applies only to columns with a
-     * VARCHAR data type. Choose TRUE to remove unneeded white space. The default is FALSE.
+     * A value that specifies to remove the trailing white space characters from a VARCHAR string. This parameter
+     * applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded white space. The
+     * default is <code>false</code>.
      * </p>
      * 
-     * @return Removes the trailing white space characters from a VARCHAR string. This parameter applies only to columns
-     *         with a VARCHAR data type. Choose TRUE to remove unneeded white space. The default is FALSE.
+     * @return A value that specifies to remove the trailing white space characters from a VARCHAR string. This
+     *         parameter applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded
+     *         white space. The default is <code>false</code>.
      */
 
     public Boolean getTrimBlanks() {
@@ -1309,13 +1358,15 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Removes the trailing white space characters from a VARCHAR string. This parameter applies only to columns with a
-     * VARCHAR data type. Choose TRUE to remove unneeded white space. The default is FALSE.
+     * A value that specifies to remove the trailing white space characters from a VARCHAR string. This parameter
+     * applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded white space. The
+     * default is <code>false</code>.
      * </p>
      * 
      * @param trimBlanks
-     *        Removes the trailing white space characters from a VARCHAR string. This parameter applies only to columns
-     *        with a VARCHAR data type. Choose TRUE to remove unneeded white space. The default is FALSE.
+     *        A value that specifies to remove the trailing white space characters from a VARCHAR string. This parameter
+     *        applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded white space.
+     *        The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1326,12 +1377,14 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Removes the trailing white space characters from a VARCHAR string. This parameter applies only to columns with a
-     * VARCHAR data type. Choose TRUE to remove unneeded white space. The default is FALSE.
+     * A value that specifies to remove the trailing white space characters from a VARCHAR string. This parameter
+     * applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded white space. The
+     * default is <code>false</code>.
      * </p>
      * 
-     * @return Removes the trailing white space characters from a VARCHAR string. This parameter applies only to columns
-     *         with a VARCHAR data type. Choose TRUE to remove unneeded white space. The default is FALSE.
+     * @return A value that specifies to remove the trailing white space characters from a VARCHAR string. This
+     *         parameter applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded
+     *         white space. The default is <code>false</code>.
      */
 
     public Boolean isTrimBlanks() {
@@ -1340,15 +1393,15 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Truncates data in columns to the appropriate number of characters, so that it fits in the column. Applies only to
-     * columns with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose TRUE to truncate data. The
-     * default is FALSE.
+     * A value that specifies to truncate data in columns to the appropriate number of characters, so that the data fits
+     * in the column. This parameter applies only to columns with a VARCHAR or CHAR data type, and rows with a size of 4
+     * MB or less. Choose <code>true</code> to truncate data. The default is <code>false</code>.
      * </p>
      * 
      * @param truncateColumns
-     *        Truncates data in columns to the appropriate number of characters, so that it fits in the column. Applies
-     *        only to columns with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose TRUE to
-     *        truncate data. The default is FALSE.
+     *        A value that specifies to truncate data in columns to the appropriate number of characters, so that the
+     *        data fits in the column. This parameter applies only to columns with a VARCHAR or CHAR data type, and rows
+     *        with a size of 4 MB or less. Choose <code>true</code> to truncate data. The default is <code>false</code>.
      */
 
     public void setTruncateColumns(Boolean truncateColumns) {
@@ -1357,14 +1410,15 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Truncates data in columns to the appropriate number of characters, so that it fits in the column. Applies only to
-     * columns with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose TRUE to truncate data. The
-     * default is FALSE.
+     * A value that specifies to truncate data in columns to the appropriate number of characters, so that the data fits
+     * in the column. This parameter applies only to columns with a VARCHAR or CHAR data type, and rows with a size of 4
+     * MB or less. Choose <code>true</code> to truncate data. The default is <code>false</code>.
      * </p>
      * 
-     * @return Truncates data in columns to the appropriate number of characters, so that it fits in the column. Applies
-     *         only to columns with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose TRUE to
-     *         truncate data. The default is FALSE.
+     * @return A value that specifies to truncate data in columns to the appropriate number of characters, so that the
+     *         data fits in the column. This parameter applies only to columns with a VARCHAR or CHAR data type, and
+     *         rows with a size of 4 MB or less. Choose <code>true</code> to truncate data. The default is
+     *         <code>false</code>.
      */
 
     public Boolean getTruncateColumns() {
@@ -1373,15 +1427,15 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Truncates data in columns to the appropriate number of characters, so that it fits in the column. Applies only to
-     * columns with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose TRUE to truncate data. The
-     * default is FALSE.
+     * A value that specifies to truncate data in columns to the appropriate number of characters, so that the data fits
+     * in the column. This parameter applies only to columns with a VARCHAR or CHAR data type, and rows with a size of 4
+     * MB or less. Choose <code>true</code> to truncate data. The default is <code>false</code>.
      * </p>
      * 
      * @param truncateColumns
-     *        Truncates data in columns to the appropriate number of characters, so that it fits in the column. Applies
-     *        only to columns with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose TRUE to
-     *        truncate data. The default is FALSE.
+     *        A value that specifies to truncate data in columns to the appropriate number of characters, so that the
+     *        data fits in the column. This parameter applies only to columns with a VARCHAR or CHAR data type, and rows
+     *        with a size of 4 MB or less. Choose <code>true</code> to truncate data. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1392,14 +1446,15 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Truncates data in columns to the appropriate number of characters, so that it fits in the column. Applies only to
-     * columns with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose TRUE to truncate data. The
-     * default is FALSE.
+     * A value that specifies to truncate data in columns to the appropriate number of characters, so that the data fits
+     * in the column. This parameter applies only to columns with a VARCHAR or CHAR data type, and rows with a size of 4
+     * MB or less. Choose <code>true</code> to truncate data. The default is <code>false</code>.
      * </p>
      * 
-     * @return Truncates data in columns to the appropriate number of characters, so that it fits in the column. Applies
-     *         only to columns with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose TRUE to
-     *         truncate data. The default is FALSE.
+     * @return A value that specifies to truncate data in columns to the appropriate number of characters, so that the
+     *         data fits in the column. This parameter applies only to columns with a VARCHAR or CHAR data type, and
+     *         rows with a size of 4 MB or less. Choose <code>true</code> to truncate data. The default is
+     *         <code>false</code>.
      */
 
     public Boolean isTruncateColumns() {
@@ -1448,13 +1503,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The size of the write buffer to use in rows. Valid values range from 1 to 2048. Defaults to 1024. Use this
-     * setting to tune performance.
+     * The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is 1,024. Use
+     * this setting to tune performance.
      * </p>
      * 
      * @param writeBufferSize
-     *        The size of the write buffer to use in rows. Valid values range from 1 to 2048. Defaults to 1024. Use this
-     *        setting to tune performance.
+     *        The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is
+     *        1,024. Use this setting to tune performance.
      */
 
     public void setWriteBufferSize(Integer writeBufferSize) {
@@ -1463,12 +1518,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The size of the write buffer to use in rows. Valid values range from 1 to 2048. Defaults to 1024. Use this
-     * setting to tune performance.
+     * The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is 1,024. Use
+     * this setting to tune performance.
      * </p>
      * 
-     * @return The size of the write buffer to use in rows. Valid values range from 1 to 2048. Defaults to 1024. Use
-     *         this setting to tune performance.
+     * @return The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is
+     *         1,024. Use this setting to tune performance.
      */
 
     public Integer getWriteBufferSize() {
@@ -1477,13 +1532,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The size of the write buffer to use in rows. Valid values range from 1 to 2048. Defaults to 1024. Use this
-     * setting to tune performance.
+     * The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is 1,024. Use
+     * this setting to tune performance.
      * </p>
      * 
      * @param writeBufferSize
-     *        The size of the write buffer to use in rows. Valid values range from 1 to 2048. Defaults to 1024. Use this
-     *        setting to tune performance.
+     *        The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is
+     *        1,024. Use this setting to tune performance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

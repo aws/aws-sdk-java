@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The ciphertext references a key that doesn't exist or DMS account doesn't have an access to
+ * The ciphertext references a key that doesn't exist or that the DMS account doesn't have access to.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

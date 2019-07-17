@@ -41,14 +41,14 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String endpointIdentifier;
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      */
     private String endpointType;
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     * The type of engine for the endpoint. Valid values, depending on the EndpointType, include mysql, oracle,
+     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
      * sqlserver.
      * </p>
      */
@@ -98,13 +98,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String certificateArn;
     /**
      * <p>
-     * The SSL mode to be used.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * </p>
      */
     private String sslMode;
@@ -186,7 +180,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
      * available settings, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      * Guide.</i>
      * </p>
@@ -293,11 +287,11 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -307,10 +301,10 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
-     * @return The type of endpoint.
+     * @return The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -320,11 +314,11 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
@@ -336,11 +330,11 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -350,11 +344,11 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
@@ -366,15 +360,15 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     * The type of engine for the endpoint. Valid values, depending on the EndpointType, include mysql, oracle,
+     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
      * sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     *        postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
-     *        mongodb, and sqlserver.
+     *        The type of engine for the endpoint. Valid values, depending on the EndpointType, include mysql, oracle,
+     *        postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     *        sqlserver.
      */
 
     public void setEngineName(String engineName) {
@@ -383,14 +377,14 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     * The type of engine for the endpoint. Valid values, depending on the EndpointType, include mysql, oracle,
+     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
      * sqlserver.
      * </p>
      * 
-     * @return The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     *         postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
-     *         mongodb, and sqlserver.
+     * @return The type of engine for the endpoint. Valid values, depending on the EndpointType, include mysql, oracle,
+     *         postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     *         sqlserver.
      */
 
     public String getEngineName() {
@@ -399,15 +393,15 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     * The type of engine for the endpoint. Valid values, depending on the EndpointType, include mysql, oracle,
+     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
      * sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     *        postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
-     *        mongodb, and sqlserver.
+     *        The type of engine for the endpoint. Valid values, depending on the EndpointType, include mysql, oracle,
+     *        postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     *        sqlserver.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -704,22 +698,11 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL mode to be used.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * </p>
      * 
      * @param sslMode
-     *        The SSL mode to be used.</p>
-     *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *        </p>
-     *        <p>
-     *        The default value is none.
+     *        The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * @see DmsSslModeValue
      */
 
@@ -729,21 +712,10 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL mode to be used.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * </p>
      * 
-     * @return The SSL mode to be used.</p>
-     *         <p>
-     *         SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *         </p>
-     *         <p>
-     *         The default value is none.
+     * @return The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * @see DmsSslModeValue
      */
 
@@ -753,22 +725,11 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL mode to be used.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * </p>
      * 
      * @param sslMode
-     *        The SSL mode to be used.</p>
-     *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *        </p>
-     *        <p>
-     *        The default value is none.
+     *        The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DmsSslModeValue
      */
@@ -780,22 +741,11 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL mode to be used.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * </p>
      * 
      * @param sslMode
-     *        The SSL mode to be used.</p>
-     *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *        </p>
-     *        <p>
-     *        The default value is none.
+     *        The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * @see DmsSslModeValue
      */
 
@@ -805,22 +755,11 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL mode to be used.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * </p>
      * 
      * @param sslMode
-     *        The SSL mode to be used.</p>
-     *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *        </p>
-     *        <p>
-     *        The default value is none.
+     *        The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DmsSslModeValue
      */
@@ -1302,7 +1241,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
      * available settings, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      * Guide.</i>
      * </p>
@@ -1310,7 +1249,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param kinesisSettings
      *        Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about
      *        the available settings, see <a href=
-     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      *        >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      *        Guide.</i>
      */
@@ -1323,14 +1262,14 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
      * available settings, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      * Guide.</i>
      * </p>
      * 
      * @return Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about
      *         the available settings, see <a href=
-     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      *         >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      *         Guide.</i>
      */
@@ -1343,7 +1282,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
      * available settings, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      * Guide.</i>
      * </p>
@@ -1351,7 +1290,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param kinesisSettings
      *        Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about
      *        the available settings, see <a href=
-     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      *        >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      *        Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.

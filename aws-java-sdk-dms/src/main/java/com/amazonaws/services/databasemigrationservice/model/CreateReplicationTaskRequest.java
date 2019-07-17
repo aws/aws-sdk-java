@@ -28,7 +28,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The replication task identifier.
+     * An identifier for the replication task.
      * </p>
      * <p>
      * Constraints:
@@ -54,43 +54,41 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     private String replicationTaskIdentifier;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
      * </p>
      */
     private String sourceEndpointArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.
      * </p>
      */
     private String targetEndpointArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication instance.
+     * The Amazon Resource Name (ARN) of a replication instance.
      * </p>
      */
     private String replicationInstanceArn;
     /**
      * <p>
-     * The migration type.
+     * The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
      * </p>
      */
     private String migrationType;
     /**
      * <p>
-     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
-     * </p>
-     * <p>
-     * For example, --table-mappings file://mappingfile.json
+     * The table mappings for the task, in JSON format. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
+     * Mapping</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      */
     private String tableMappings;
     /**
      * <p>
-     * Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     * Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
+     * Settings</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      */
     private String replicationTaskSettings;
@@ -139,14 +137,14 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     private String cdcStopPosition;
     /**
      * <p>
-     * Tags to be added to the replication instance.
+     * One or more tags to be assigned to the replication task.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The replication task identifier.
+     * An identifier for the replication task.
      * </p>
      * <p>
      * Constraints:
@@ -170,7 +168,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param replicationTaskIdentifier
-     *        The replication task identifier.</p>
+     *        An identifier for the replication task.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -198,7 +196,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The replication task identifier.
+     * An identifier for the replication task.
      * </p>
      * <p>
      * Constraints:
@@ -221,7 +219,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ul>
      * 
-     * @return The replication task identifier.</p>
+     * @return An identifier for the replication task.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -249,7 +247,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The replication task identifier.
+     * An identifier for the replication task.
      * </p>
      * <p>
      * Constraints:
@@ -273,7 +271,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param replicationTaskIdentifier
-     *        The replication task identifier.</p>
+     *        An identifier for the replication task.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -303,11 +301,11 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
      * </p>
      * 
      * @param sourceEndpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     *        An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
      */
 
     public void setSourceEndpointArn(String sourceEndpointArn) {
@@ -316,10 +314,10 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * @return An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
      */
 
     public String getSourceEndpointArn() {
@@ -328,11 +326,11 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
      * </p>
      * 
      * @param sourceEndpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     *        An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,11 +341,11 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.
      * </p>
      * 
      * @param targetEndpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     *        An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.
      */
 
     public void setTargetEndpointArn(String targetEndpointArn) {
@@ -356,10 +354,10 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * @return An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.
      */
 
     public String getTargetEndpointArn() {
@@ -368,11 +366,11 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.
      * </p>
      * 
      * @param targetEndpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     *        An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,11 +381,11 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication instance.
+     * The Amazon Resource Name (ARN) of a replication instance.
      * </p>
      * 
      * @param replicationInstanceArn
-     *        The Amazon Resource Name (ARN) of the replication instance.
+     *        The Amazon Resource Name (ARN) of a replication instance.
      */
 
     public void setReplicationInstanceArn(String replicationInstanceArn) {
@@ -396,10 +394,10 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication instance.
+     * The Amazon Resource Name (ARN) of a replication instance.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the replication instance.
+     * @return The Amazon Resource Name (ARN) of a replication instance.
      */
 
     public String getReplicationInstanceArn() {
@@ -408,11 +406,11 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication instance.
+     * The Amazon Resource Name (ARN) of a replication instance.
      * </p>
      * 
      * @param replicationInstanceArn
-     *        The Amazon Resource Name (ARN) of the replication instance.
+     *        The Amazon Resource Name (ARN) of a replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -423,11 +421,12 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The migration type.
+     * The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
      * </p>
      * 
      * @param migrationType
-     *        The migration type.
+     *        The migration type. Valid values: <code>full-load</code> | <code>cdc</code> |
+     *        <code>full-load-and-cdc</code>
      * @see MigrationTypeValue
      */
 
@@ -437,10 +436,11 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The migration type.
+     * The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
      * </p>
      * 
-     * @return The migration type.
+     * @return The migration type. Valid values: <code>full-load</code> | <code>cdc</code> |
+     *         <code>full-load-and-cdc</code>
      * @see MigrationTypeValue
      */
 
@@ -450,11 +450,12 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The migration type.
+     * The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
      * </p>
      * 
      * @param migrationType
-     *        The migration type.
+     *        The migration type. Valid values: <code>full-load</code> | <code>cdc</code> |
+     *        <code>full-load-and-cdc</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MigrationTypeValue
      */
@@ -466,11 +467,12 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The migration type.
+     * The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
      * </p>
      * 
      * @param migrationType
-     *        The migration type.
+     *        The migration type. Valid values: <code>full-load</code> | <code>cdc</code> |
+     *        <code>full-load-and-cdc</code>
      * @see MigrationTypeValue
      */
 
@@ -480,11 +482,12 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The migration type.
+     * The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
      * </p>
      * 
      * @param migrationType
-     *        The migration type.
+     *        The migration type. Valid values: <code>full-load</code> | <code>cdc</code> |
+     *        <code>full-load-and-cdc</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MigrationTypeValue
      */
@@ -496,19 +499,15 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
-     * </p>
-     * <p>
-     * For example, --table-mappings file://mappingfile.json
+     * The table mappings for the task, in JSON format. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
+     * Mapping</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @param tableMappings
-     *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *        Precede the path with "file://". When working with the DMS API, provide the JSON as the parameter
-     *        value.</p>
-     *        <p>
-     *        For example, --table-mappings file://mappingfile.json
+     *        The table mappings for the task, in JSON format. For more information, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
+     *        >Table Mapping</a> in the <i>AWS Database Migration User Guide.</i>
      */
 
     public void setTableMappings(String tableMappings) {
@@ -517,18 +516,14 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
-     * </p>
-     * <p>
-     * For example, --table-mappings file://mappingfile.json
+     * The table mappings for the task, in JSON format. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
+     * Mapping</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
-     * @return When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *         Precede the path with "file://". When working with the DMS API, provide the JSON as the parameter
-     *         value.</p>
-     *         <p>
-     *         For example, --table-mappings file://mappingfile.json
+     * @return The table mappings for the task, in JSON format. For more information, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
+     *         >Table Mapping</a> in the <i>AWS Database Migration User Guide.</i>
      */
 
     public String getTableMappings() {
@@ -537,19 +532,15 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
-     * </p>
-     * <p>
-     * For example, --table-mappings file://mappingfile.json
+     * The table mappings for the task, in JSON format. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
+     * Mapping</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @param tableMappings
-     *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *        Precede the path with "file://". When working with the DMS API, provide the JSON as the parameter
-     *        value.</p>
-     *        <p>
-     *        For example, --table-mappings file://mappingfile.json
+     *        The table mappings for the task, in JSON format. For more information, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
+     *        >Table Mapping</a> in the <i>AWS Database Migration User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -560,15 +551,15 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     * Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
+     * Settings</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @param replicationTaskSettings
-     *        Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     *        Overall settings for the task, in JSON format. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     *        Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
+     *        Settings</a> in the <i>AWS Database Migration User Guide.</i>
      */
 
     public void setReplicationTaskSettings(String replicationTaskSettings) {
@@ -577,15 +568,14 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     * Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
+     * Settings</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
-     * @return Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
-     *         href
-     *         ="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     *         Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
+     * @return Overall settings for the task, in JSON format. For more information, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html"
+     *         >Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
      */
 
     public String getReplicationTaskSettings() {
@@ -594,15 +584,15 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     * Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
+     * Settings</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @param replicationTaskSettings
-     *        Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     *        Overall settings for the task, in JSON format. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     *        Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
+     *        Settings</a> in the <i>AWS Database Migration User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -880,10 +870,10 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Tags to be added to the replication instance.
+     * One or more tags to be assigned to the replication task.
      * </p>
      * 
-     * @return Tags to be added to the replication instance.
+     * @return One or more tags to be assigned to the replication task.
      */
 
     public java.util.List<Tag> getTags() {
@@ -892,11 +882,11 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Tags to be added to the replication instance.
+     * One or more tags to be assigned to the replication task.
      * </p>
      * 
      * @param tags
-     *        Tags to be added to the replication instance.
+     *        One or more tags to be assigned to the replication task.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -910,7 +900,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Tags to be added to the replication instance.
+     * One or more tags to be assigned to the replication task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -919,7 +909,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param tags
-     *        Tags to be added to the replication instance.
+     *        One or more tags to be assigned to the replication task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -935,11 +925,11 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Tags to be added to the replication instance.
+     * One or more tags to be assigned to the replication task.
      * </p>
      * 
      * @param tags
-     *        Tags to be added to the replication instance.
+     *        One or more tags to be assigned to the replication task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

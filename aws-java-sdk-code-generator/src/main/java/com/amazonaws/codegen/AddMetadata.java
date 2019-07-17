@@ -58,7 +58,6 @@ final class AddMetadata {
         INTERFACE_NAME_TO_SERVICE_ID.put("AmazonElasticFileSystem", "EFS");
         INTERFACE_NAME_TO_SERVICE_ID.put("AmazonElastiCache", "ElastiCache");
         INTERFACE_NAME_TO_SERVICE_ID.put("AmazonElasticTranscoder", "Elastic Transcoder");
-        INTERFACE_NAME_TO_SERVICE_ID.put("AmazonElasticLoadBalancing", "Elastic Load Balancing");
         INTERFACE_NAME_TO_SERVICE_ID.put("AmazonElasticMapReduce", "EMR");
         INTERFACE_NAME_TO_SERVICE_ID.put("AmazonGameLift", "GameLift");
         INTERFACE_NAME_TO_SERVICE_ID.put("AmazonGlacier", "Glacier");

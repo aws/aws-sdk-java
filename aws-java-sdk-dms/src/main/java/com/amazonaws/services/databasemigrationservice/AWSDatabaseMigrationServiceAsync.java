@@ -49,6 +49,7 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * </p>
      * 
      * @param addTagsToResourceRequest
+     *        Associates a set of tags with an AWS DMS resource.
      * @return A Java Future containing the result of the AddTagsToResource operation returned by the service.
      * @sample AWSDatabaseMigrationServiceAsync.AddTagsToResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource" target="_top">AWS API
@@ -64,6 +65,7 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * </p>
      * 
      * @param addTagsToResourceRequest
+     *        Associates a set of tags with an AWS DMS resource.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -522,9 +524,11 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
-     * Lists all of the AWS DMS attributes for a customer account. The attributes include AWS DMS quotas for the
-     * account, such as the number of replication instances allowed. The description for a quota includes the quota
-     * name, current usage toward that quota, and the quota's maximum value.
+     * Lists all of the AWS DMS attributes for a customer account. These attributes include AWS DMS quotas for the
+     * account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas
+     * supported by the account, such as the number of replication instances allowed. The description for each resource
+     * quota, includes the quota name, current usage toward that quota, and the quota's maximum value. DMS uses the
+     * unique account identifier to name each artifact used by DMS in the given region.
      * </p>
      * <p>
      * This command does not take any parameters.
@@ -541,9 +545,11 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
-     * Lists all of the AWS DMS attributes for a customer account. The attributes include AWS DMS quotas for the
-     * account, such as the number of replication instances allowed. The description for a quota includes the quota
-     * name, current usage toward that quota, and the quota's maximum value.
+     * Lists all of the AWS DMS attributes for a customer account. These attributes include AWS DMS quotas for the
+     * account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas
+     * supported by the account, such as the number of replication instances allowed. The description for each resource
+     * quota, includes the quota name, current usage toward that quota, and the quota's maximum value. DMS uses the
+     * unique account identifier to name each artifact used by DMS in the given region.
      * </p>
      * <p>
      * This command does not take any parameters.
@@ -1510,6 +1516,7 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * </p>
      * 
      * @param removeTagsFromResourceRequest
+     *        Removes one or more tags from an AWS DMS resource.
      * @return A Java Future containing the result of the RemoveTagsFromResource operation returned by the service.
      * @sample AWSDatabaseMigrationServiceAsync.RemoveTagsFromResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource" target="_top">AWS API
@@ -1523,6 +1530,7 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * </p>
      * 
      * @param removeTagsFromResourceRequest
+     *        Removes one or more tags from an AWS DMS resource.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

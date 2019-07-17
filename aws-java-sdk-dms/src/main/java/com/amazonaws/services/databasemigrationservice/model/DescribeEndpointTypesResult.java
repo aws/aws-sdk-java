@@ -33,7 +33,7 @@ public class DescribeEndpointTypesResult extends com.amazonaws.AmazonWebServiceR
     private String marker;
     /**
      * <p>
-     * The type of endpoints that are supported.
+     * The types of endpoints that are supported.
      * </p>
      */
     private java.util.List<SupportedEndpointType> supportedEndpointTypes;
@@ -86,10 +86,10 @@ public class DescribeEndpointTypesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of endpoints that are supported.
+     * The types of endpoints that are supported.
      * </p>
      * 
-     * @return The type of endpoints that are supported.
+     * @return The types of endpoints that are supported.
      */
 
     public java.util.List<SupportedEndpointType> getSupportedEndpointTypes() {
@@ -98,11 +98,11 @@ public class DescribeEndpointTypesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of endpoints that are supported.
+     * The types of endpoints that are supported.
      * </p>
      * 
      * @param supportedEndpointTypes
-     *        The type of endpoints that are supported.
+     *        The types of endpoints that are supported.
      */
 
     public void setSupportedEndpointTypes(java.util.Collection<SupportedEndpointType> supportedEndpointTypes) {
@@ -116,7 +116,7 @@ public class DescribeEndpointTypesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of endpoints that are supported.
+     * The types of endpoints that are supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,7 +125,7 @@ public class DescribeEndpointTypesResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param supportedEndpointTypes
-     *        The type of endpoints that are supported.
+     *        The types of endpoints that are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class DescribeEndpointTypesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of endpoints that are supported.
+     * The types of endpoints that are supported.
      * </p>
      * 
      * @param supportedEndpointTypes
-     *        The type of endpoints that are supported.
+     *        The types of endpoints that are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

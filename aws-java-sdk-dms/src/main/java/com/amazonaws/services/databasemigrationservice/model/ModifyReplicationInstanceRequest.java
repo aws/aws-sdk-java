@@ -84,8 +84,8 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      */
     private Boolean multiAZ;
@@ -97,11 +97,11 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private String engineVersion;
     /**
      * <p>
-     * Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage and the
+     * Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the
      * change is asynchronously applied as soon as possible.
      * </p>
      * <p>
-     * Constraints: This parameter must be set to true when specifying a value for the <code>EngineVersion</code>
+     * This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code>
      * parameter that is a different major version than the replication instance's current version.
      * </p>
      */
@@ -524,12 +524,12 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -539,11 +539,11 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -553,12 +553,12 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -570,11 +570,11 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -624,19 +624,19 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage and the
+     * Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the
      * change is asynchronously applied as soon as possible.
      * </p>
      * <p>
-     * Constraints: This parameter must be set to true when specifying a value for the <code>EngineVersion</code>
+     * This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code>
      * parameter that is a different major version than the replication instance's current version.
      * </p>
      * 
      * @param allowMajorVersionUpgrade
-     *        Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage
+     *        Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage,
      *        and the change is asynchronously applied as soon as possible.</p>
      *        <p>
-     *        Constraints: This parameter must be set to true when specifying a value for the <code>EngineVersion</code>
+     *        This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code>
      *        parameter that is a different major version than the replication instance's current version.
      */
 
@@ -646,18 +646,18 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage and the
+     * Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the
      * change is asynchronously applied as soon as possible.
      * </p>
      * <p>
-     * Constraints: This parameter must be set to true when specifying a value for the <code>EngineVersion</code>
+     * This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code>
      * parameter that is a different major version than the replication instance's current version.
      * </p>
      * 
-     * @return Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage
+     * @return Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage,
      *         and the change is asynchronously applied as soon as possible.</p>
      *         <p>
-     *         Constraints: This parameter must be set to true when specifying a value for the
+     *         This parameter must be set to <code>true</code> when specifying a value for the
      *         <code>EngineVersion</code> parameter that is a different major version than the replication instance's
      *         current version.
      */
@@ -668,19 +668,19 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage and the
+     * Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the
      * change is asynchronously applied as soon as possible.
      * </p>
      * <p>
-     * Constraints: This parameter must be set to true when specifying a value for the <code>EngineVersion</code>
+     * This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code>
      * parameter that is a different major version than the replication instance's current version.
      * </p>
      * 
      * @param allowMajorVersionUpgrade
-     *        Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage
+     *        Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage,
      *        and the change is asynchronously applied as soon as possible.</p>
      *        <p>
-     *        Constraints: This parameter must be set to true when specifying a value for the <code>EngineVersion</code>
+     *        This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code>
      *        parameter that is a different major version than the replication instance's current version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -692,18 +692,18 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage and the
+     * Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the
      * change is asynchronously applied as soon as possible.
      * </p>
      * <p>
-     * Constraints: This parameter must be set to true when specifying a value for the <code>EngineVersion</code>
+     * This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code>
      * parameter that is a different major version than the replication instance's current version.
      * </p>
      * 
-     * @return Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage
+     * @return Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage,
      *         and the change is asynchronously applied as soon as possible.</p>
      *         <p>
-     *         Constraints: This parameter must be set to true when specifying a value for the
+     *         This parameter must be set to <code>true</code> when specifying a value for the
      *         <code>EngineVersion</code> parameter that is a different major version than the replication instance's
      *         current version.
      */

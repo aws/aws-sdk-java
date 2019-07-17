@@ -80,13 +80,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private java.util.List<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The EC2 Availability Zone that the replication instance will be created in.
-     * </p>
-     * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's region.
-     * </p>
-     * <p>
-     * Example: <code>us-east-1d</code>
+     * The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     * system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      * </p>
      */
     private String availabilityZone;
@@ -104,8 +99,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week.
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -117,8 +112,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      */
     private Boolean multiAZ;
@@ -130,8 +125,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private String engineVersion;
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the replication instance during the
-     * maintenance window.
+     * Indicates whether minor engine upgrades will be applied automatically to the replication instance during the
+     * maintenance window. This parameter defaults to <code>true</code>.
      * </p>
      * <p>
      * Default: <code>true</code>
@@ -140,16 +135,21 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * Tags to be associated with the replication instance.
+     * One or more tags to be assigned to the replication instance.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
-     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
-     * AWS Region.
+     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      */
     private String kmsKeyId;
@@ -527,22 +527,13 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The EC2 Availability Zone that the replication instance will be created in.
-     * </p>
-     * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's region.
-     * </p>
-     * <p>
-     * Example: <code>us-east-1d</code>
+     * The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     * system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the replication instance will be created in.</p>
-     *        <p>
-     *        Default: A random, system-chosen Availability Zone in the endpoint's region.
-     *        </p>
-     *        <p>
-     *        Example: <code>us-east-1d</code>
+     *        The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     *        system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -551,21 +542,12 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The EC2 Availability Zone that the replication instance will be created in.
-     * </p>
-     * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's region.
-     * </p>
-     * <p>
-     * Example: <code>us-east-1d</code>
+     * The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     * system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      * </p>
      * 
-     * @return The EC2 Availability Zone that the replication instance will be created in.</p>
-     *         <p>
-     *         Default: A random, system-chosen Availability Zone in the endpoint's region.
-     *         </p>
-     *         <p>
-     *         Example: <code>us-east-1d</code>
+     * @return The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     *         system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      */
 
     public String getAvailabilityZone() {
@@ -574,22 +556,13 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The EC2 Availability Zone that the replication instance will be created in.
-     * </p>
-     * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's region.
-     * </p>
-     * <p>
-     * Example: <code>us-east-1d</code>
+     * The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     * system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the replication instance will be created in.</p>
-     *        <p>
-     *        Default: A random, system-chosen Availability Zone in the endpoint's region.
-     *        </p>
-     *        <p>
-     *        Example: <code>us-east-1d</code>
+     *        The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     *        system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -646,8 +619,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week.
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -662,7 +635,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
      *        random day of the week.
      *        </p>
      *        <p>
@@ -684,8 +657,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week.
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -699,8 +672,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
-     *         random day of the week.
+     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on
+     *         a random day of the week.
      *         </p>
      *         <p>
      *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -721,8 +694,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week.
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -737,7 +710,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
      *        random day of the week.
      *        </p>
      *        <p>
@@ -755,12 +728,12 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -770,11 +743,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -784,12 +757,12 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -801,11 +774,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies if the replication instance is a Multi-AZ deployment. You cannot set the <code>AvailabilityZone</code>
-     * parameter if the Multi-AZ parameter is set to <code>true</code>.
+     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -855,16 +828,16 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the replication instance during the
-     * maintenance window.
+     * Indicates whether minor engine upgrades will be applied automatically to the replication instance during the
+     * maintenance window. This parameter defaults to <code>true</code>.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades will be applied automatically to the replication instance during the
-     *        maintenance window.</p>
+     *        Indicates whether minor engine upgrades will be applied automatically to the replication instance during
+     *        the maintenance window. This parameter defaults to <code>true</code>.</p>
      *        <p>
      *        Default: <code>true</code>
      */
@@ -875,15 +848,15 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the replication instance during the
-     * maintenance window.
+     * Indicates whether minor engine upgrades will be applied automatically to the replication instance during the
+     * maintenance window. This parameter defaults to <code>true</code>.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates that minor engine upgrades will be applied automatically to the replication instance during the
-     *         maintenance window.</p>
+     * @return Indicates whether minor engine upgrades will be applied automatically to the replication instance during
+     *         the maintenance window. This parameter defaults to <code>true</code>.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -894,16 +867,16 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the replication instance during the
-     * maintenance window.
+     * Indicates whether minor engine upgrades will be applied automatically to the replication instance during the
+     * maintenance window. This parameter defaults to <code>true</code>.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades will be applied automatically to the replication instance during the
-     *        maintenance window.</p>
+     *        Indicates whether minor engine upgrades will be applied automatically to the replication instance during
+     *        the maintenance window. This parameter defaults to <code>true</code>.</p>
      *        <p>
      *        Default: <code>true</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -916,15 +889,15 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the replication instance during the
-     * maintenance window.
+     * Indicates whether minor engine upgrades will be applied automatically to the replication instance during the
+     * maintenance window. This parameter defaults to <code>true</code>.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates that minor engine upgrades will be applied automatically to the replication instance during the
-     *         maintenance window.</p>
+     * @return Indicates whether minor engine upgrades will be applied automatically to the replication instance during
+     *         the maintenance window. This parameter defaults to <code>true</code>.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -935,10 +908,10 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Tags to be associated with the replication instance.
+     * One or more tags to be assigned to the replication instance.
      * </p>
      * 
-     * @return Tags to be associated with the replication instance.
+     * @return One or more tags to be assigned to the replication instance.
      */
 
     public java.util.List<Tag> getTags() {
@@ -947,11 +920,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Tags to be associated with the replication instance.
+     * One or more tags to be assigned to the replication instance.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the replication instance.
+     *        One or more tags to be assigned to the replication instance.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -965,7 +938,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Tags to be associated with the replication instance.
+     * One or more tags to be assigned to the replication instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -974,7 +947,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the replication instance.
+     *        One or more tags to be assigned to the replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -990,11 +963,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Tags to be associated with the replication instance.
+     * One or more tags to be assigned to the replication instance.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the replication instance.
+     *        One or more tags to be assigned to the replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1005,15 +978,24 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
-     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
-     * AWS Region.
+     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't
-     *        specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key.
+     *        An AWS KMS key identifier that is used to encrypt the data on the replication instance.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        encryption key.
+     *        </p>
+     *        <p>
      *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *        encryption key for each AWS Region.
      */
@@ -1024,14 +1006,23 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
-     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
-     * AWS Region.
+     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't
-     *         specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key.
+     * @return An AWS KMS key identifier that is used to encrypt the data on the replication instance.</p>
+     *         <p>
+     *         If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *         encryption key.
+     *         </p>
+     *         <p>
      *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *         encryption key for each AWS Region.
      */
@@ -1042,15 +1033,24 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
-     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
-     * AWS Region.
+     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't
-     *        specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key.
+     *        An AWS KMS key identifier that is used to encrypt the data on the replication instance.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        encryption key.
+     *        </p>
+     *        <p>
      *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *        encryption key for each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.

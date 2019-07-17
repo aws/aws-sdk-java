@@ -30,8 +30,8 @@ public class ResourcePendingMaintenanceActions implements Serializable, Cloneabl
      * <p>
      * The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to. For
      * information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an
-     * Amazon Resource Name (ARN)</a> in the DMS documentation.
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html"> Constructing an Amazon
+     * Resource Name (ARN) for AWS DMS</a> in the DMS documentation.
      * </p>
      */
     private String resourceIdentifier;
@@ -46,15 +46,15 @@ public class ResourcePendingMaintenanceActions implements Serializable, Cloneabl
      * <p>
      * The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to. For
      * information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an
-     * Amazon Resource Name (ARN)</a> in the DMS documentation.
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html"> Constructing an Amazon
+     * Resource Name (ARN) for AWS DMS</a> in the DMS documentation.
      * </p>
      * 
      * @param resourceIdentifier
      *        The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to. For
      *        information about creating an ARN, see <a
-     *        href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing
-     *        an Amazon Resource Name (ARN)</a> in the DMS documentation.
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html"> Constructing an
+     *        Amazon Resource Name (ARN) for AWS DMS</a> in the DMS documentation.
      */
 
     public void setResourceIdentifier(String resourceIdentifier) {
@@ -65,14 +65,14 @@ public class ResourcePendingMaintenanceActions implements Serializable, Cloneabl
      * <p>
      * The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to. For
      * information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an
-     * Amazon Resource Name (ARN)</a> in the DMS documentation.
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html"> Constructing an Amazon
+     * Resource Name (ARN) for AWS DMS</a> in the DMS documentation.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to. For
      *         information about creating an ARN, see <a
-     *         href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing
-     *         an Amazon Resource Name (ARN)</a> in the DMS documentation.
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html"> Constructing an
+     *         Amazon Resource Name (ARN) for AWS DMS</a> in the DMS documentation.
      */
 
     public String getResourceIdentifier() {
@@ -83,15 +83,15 @@ public class ResourcePendingMaintenanceActions implements Serializable, Cloneabl
      * <p>
      * The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to. For
      * information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an
-     * Amazon Resource Name (ARN)</a> in the DMS documentation.
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html"> Constructing an Amazon
+     * Resource Name (ARN) for AWS DMS</a> in the DMS documentation.
      * </p>
      * 
      * @param resourceIdentifier
      *        The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to. For
      *        information about creating an ARN, see <a
-     *        href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing
-     *        an Amazon Resource Name (ARN)</a> in the DMS documentation.
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html"> Constructing an
+     *        Amazon Resource Name (ARN) for AWS DMS</a> in the DMS documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

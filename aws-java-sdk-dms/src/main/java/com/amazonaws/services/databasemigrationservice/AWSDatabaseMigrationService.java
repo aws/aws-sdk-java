@@ -110,6 +110,7 @@ public interface AWSDatabaseMigrationService {
      * </p>
      * 
      * @param addTagsToResourceRequest
+     *        Associates a set of tags with an AWS DMS resource.
      * @return Result of the AddTagsToResource operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
@@ -142,7 +143,7 @@ public interface AWSDatabaseMigrationService {
      * @param createEndpointRequest
      * @return Result of the CreateEndpoint operation returned by the service.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the KMS key.
+     *         AWS DMS cannot access the AWS KMS key.
      * @throws ResourceAlreadyExistsException
      *         The resource you are attempting to create already exists.
      * @throws ResourceQuotaExceededException
@@ -193,15 +194,15 @@ public interface AWSDatabaseMigrationService {
      * @throws SNSNoAuthorizationException
      *         You are not authorized for the SNS subscription.
      * @throws KMSAccessDeniedException
-     *         The ciphertext references a key that doesn't exist or DMS account doesn't have an access to
+     *         The ciphertext references a key that doesn't exist or that the DMS account doesn't have access to.
      * @throws KMSDisabledException
      *         The specified master key (CMK) isn't enabled.
      * @throws KMSInvalidStateException
-     *         The state of the specified KMS resource isn't valid for this request.
+     *         The state of the specified AWS KMS resource isn't valid for this request.
      * @throws KMSNotFoundException
-     *         The specified KMS entity or resource can't be found.
+     *         The specified AWS KMS entity or resource can't be found.
      * @throws KMSThrottlingException
-     *         This request triggered KMS request throttling.
+     *         This request triggered AWS KMS request throttling.
      * @sample AWSDatabaseMigrationService.CreateEventSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription" target="_top">AWS
      *      API Documentation</a>
@@ -235,7 +236,7 @@ public interface AWSDatabaseMigrationService {
      * @throws InvalidSubnetException
      *         The subnet provided is invalid.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the KMS key.
+     *         AWS DMS cannot access the AWS KMS key.
      * @sample AWSDatabaseMigrationService.CreateReplicationInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance" target="_top">AWS
      *      API Documentation</a>
@@ -284,7 +285,7 @@ public interface AWSDatabaseMigrationService {
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the KMS key.
+     *         AWS DMS cannot access the AWS KMS key.
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.CreateReplicationTask
@@ -409,9 +410,11 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
-     * Lists all of the AWS DMS attributes for a customer account. The attributes include AWS DMS quotas for the
-     * account, such as the number of replication instances allowed. The description for a quota includes the quota
-     * name, current usage toward that quota, and the quota's maximum value.
+     * Lists all of the AWS DMS attributes for a customer account. These attributes include AWS DMS quotas for the
+     * account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas
+     * supported by the account, such as the number of replication instances allowed. The description for each resource
+     * quota, includes the quota name, current usage toward that quota, and the quota's maximum value. DMS uses the
+     * unique account identifier to name each artifact used by DMS in the given region.
      * </p>
      * <p>
      * This command does not take any parameters.
@@ -749,7 +752,7 @@ public interface AWSDatabaseMigrationService {
      * @throws ResourceAlreadyExistsException
      *         The resource you are attempting to create already exists.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the KMS key.
+     *         AWS DMS cannot access the AWS KMS key.
      * @throws AccessDeniedException
      *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @sample AWSDatabaseMigrationService.ModifyEndpoint
@@ -774,15 +777,15 @@ public interface AWSDatabaseMigrationService {
      * @throws SNSNoAuthorizationException
      *         You are not authorized for the SNS subscription.
      * @throws KMSAccessDeniedException
-     *         The ciphertext references a key that doesn't exist or DMS account doesn't have an access to
+     *         The ciphertext references a key that doesn't exist or that the DMS account doesn't have access to.
      * @throws KMSDisabledException
      *         The specified master key (CMK) isn't enabled.
      * @throws KMSInvalidStateException
-     *         The state of the specified KMS resource isn't valid for this request.
+     *         The state of the specified AWS KMS resource isn't valid for this request.
      * @throws KMSNotFoundException
-     *         The specified KMS entity or resource can't be found.
+     *         The specified AWS KMS entity or resource can't be found.
      * @throws KMSThrottlingException
-     *         This request triggered KMS request throttling.
+     *         This request triggered AWS KMS request throttling.
      * @sample AWSDatabaseMigrationService.ModifyEventSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription" target="_top">AWS
      *      API Documentation</a>
@@ -869,7 +872,7 @@ public interface AWSDatabaseMigrationService {
      * @throws ResourceAlreadyExistsException
      *         The resource you are attempting to create already exists.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the KMS key.
+     *         AWS DMS cannot access the AWS KMS key.
      * @sample AWSDatabaseMigrationService.ModifyReplicationTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask" target="_top">AWS API
      *      Documentation</a>
@@ -907,7 +910,7 @@ public interface AWSDatabaseMigrationService {
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the KMS key.
+     *         AWS DMS cannot access the AWS KMS key.
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.RefreshSchemas
@@ -939,6 +942,7 @@ public interface AWSDatabaseMigrationService {
      * </p>
      * 
      * @param removeTagsFromResourceRequest
+     *        Removes one or more tags from an AWS DMS resource.
      * @return Result of the RemoveTagsFromResource operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
@@ -1019,7 +1023,7 @@ public interface AWSDatabaseMigrationService {
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the KMS key.
+     *         AWS DMS cannot access the AWS KMS key.
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.TestConnection

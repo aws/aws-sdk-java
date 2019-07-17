@@ -31,7 +31,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: replication-instance | replication-task
      * </p>
      */
     private String sourceType;
@@ -47,13 +47,13 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: replication-instance | replication-task
      * </p>
      * 
      * @param sourceType
      *        The type of AWS DMS resource that generates events. </p>
      *        <p>
-     *        Valid values: replication-instance | migration-task
+     *        Valid values: replication-instance | replication-task
      */
 
     public void setSourceType(String sourceType) {
@@ -65,12 +65,12 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: replication-instance | replication-task
      * </p>
      * 
      * @return The type of AWS DMS resource that generates events. </p>
      *         <p>
-     *         Valid values: replication-instance | migration-task
+     *         Valid values: replication-instance | replication-task
      */
 
     public String getSourceType() {
@@ -82,13 +82,13 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * The type of AWS DMS resource that generates events.
      * </p>
      * <p>
-     * Valid values: replication-instance | migration-task
+     * Valid values: replication-instance | replication-task
      * </p>
      * 
      * @param sourceType
      *        The type of AWS DMS resource that generates events. </p>
      *        <p>
-     *        Valid values: replication-instance | migration-task
+     *        Valid values: replication-instance | replication-task
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -74,10 +74,22 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
     private Integer includedAllocatedStorage;
     /**
      * <p>
-     * List of availability zones for this replication instance.
+     * List of Availability Zones for this replication instance.
      * </p>
      */
     private java.util.List<String> availabilityZones;
+    /**
+     * <p>
+     * The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test
+     * mode. This indicates some features might not work as expected.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     */
+    private String releaseStatus;
 
     /**
      * <p>
@@ -382,10 +394,10 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of availability zones for this replication instance.
+     * List of Availability Zones for this replication instance.
      * </p>
      * 
-     * @return List of availability zones for this replication instance.
+     * @return List of Availability Zones for this replication instance.
      */
 
     public java.util.List<String> getAvailabilityZones() {
@@ -394,11 +406,11 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of availability zones for this replication instance.
+     * List of Availability Zones for this replication instance.
      * </p>
      * 
      * @param availabilityZones
-     *        List of availability zones for this replication instance.
+     *        List of Availability Zones for this replication instance.
      */
 
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
@@ -412,7 +424,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of availability zones for this replication instance.
+     * List of Availability Zones for this replication instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -421,7 +433,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * </p>
      * 
      * @param availabilityZones
-     *        List of availability zones for this replication instance.
+     *        List of Availability Zones for this replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,16 +449,115 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of availability zones for this replication instance.
+     * List of Availability Zones for this replication instance.
      * </p>
      * 
      * @param availabilityZones
-     *        List of availability zones for this replication instance.
+     *        List of Availability Zones for this replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OrderableReplicationInstance withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         setAvailabilityZones(availabilityZones);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test
+     * mode. This indicates some features might not work as expected.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     * 
+     * @param releaseStatus
+     *        The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or
+     *        test mode. This indicates some features might not work as expected.</p> <note>
+     *        <p>
+     *        AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     *        </p>
+     * @see ReleaseStatusValues
+     */
+
+    public void setReleaseStatus(String releaseStatus) {
+        this.releaseStatus = releaseStatus;
+    }
+
+    /**
+     * <p>
+     * The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test
+     * mode. This indicates some features might not work as expected.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     * 
+     * @return The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta
+     *         or test mode. This indicates some features might not work as expected.</p> <note>
+     *         <p>
+     *         AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     *         </p>
+     * @see ReleaseStatusValues
+     */
+
+    public String getReleaseStatus() {
+        return this.releaseStatus;
+    }
+
+    /**
+     * <p>
+     * The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test
+     * mode. This indicates some features might not work as expected.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     * 
+     * @param releaseStatus
+     *        The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or
+     *        test mode. This indicates some features might not work as expected.</p> <note>
+     *        <p>
+     *        AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReleaseStatusValues
+     */
+
+    public OrderableReplicationInstance withReleaseStatus(String releaseStatus) {
+        setReleaseStatus(releaseStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test
+     * mode. This indicates some features might not work as expected.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     * 
+     * @param releaseStatus
+     *        The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or
+     *        test mode. This indicates some features might not work as expected.</p> <note>
+     *        <p>
+     *        AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReleaseStatusValues
+     */
+
+    public OrderableReplicationInstance withReleaseStatus(ReleaseStatusValues releaseStatus) {
+        this.releaseStatus = releaseStatus.toString();
         return this;
     }
 
@@ -477,7 +588,9 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
         if (getIncludedAllocatedStorage() != null)
             sb.append("IncludedAllocatedStorage: ").append(getIncludedAllocatedStorage()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: ").append(getAvailabilityZones());
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
+        if (getReleaseStatus() != null)
+            sb.append("ReleaseStatus: ").append(getReleaseStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -524,6 +637,10 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
             return false;
         if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false)
             return false;
+        if (other.getReleaseStatus() == null ^ this.getReleaseStatus() == null)
+            return false;
+        if (other.getReleaseStatus() != null && other.getReleaseStatus().equals(this.getReleaseStatus()) == false)
+            return false;
         return true;
     }
 
@@ -540,6 +657,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getDefaultAllocatedStorage() == null) ? 0 : getDefaultAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getIncludedAllocatedStorage() == null) ? 0 : getIncludedAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
+        hashCode = prime * hashCode + ((getReleaseStatus() == null) ? 0 : getReleaseStatus().hashCode());
         return hashCode;
     }
 

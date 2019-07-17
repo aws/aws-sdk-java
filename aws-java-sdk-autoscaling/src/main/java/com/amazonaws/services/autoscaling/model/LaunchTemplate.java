@@ -40,10 +40,7 @@ public class LaunchTemplate implements Serializable, Cloneable {
     /**
      * <p>
      * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type.
-     * </p>
-     * <p>
-     * You must specify between 2 and 20 overrides.
+     * supported override is instance type. You must specify between 2 and 20 overrides.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateOverrides> overrides;
@@ -97,16 +94,11 @@ public class LaunchTemplate implements Serializable, Cloneable {
     /**
      * <p>
      * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type.
-     * </p>
-     * <p>
-     * You must specify between 2 and 20 overrides.
+     * supported override is instance type. You must specify between 2 and 20 overrides.
      * </p>
      * 
      * @return Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     *         supported override is instance type. </p>
-     *         <p>
-     *         You must specify between 2 and 20 overrides.
+     *         supported override is instance type. You must specify between 2 and 20 overrides.
      */
 
     public java.util.List<LaunchTemplateOverrides> getOverrides() {
@@ -119,17 +111,12 @@ public class LaunchTemplate implements Serializable, Cloneable {
     /**
      * <p>
      * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type.
-     * </p>
-     * <p>
-     * You must specify between 2 and 20 overrides.
+     * supported override is instance type. You must specify between 2 and 20 overrides.
      * </p>
      * 
      * @param overrides
      *        Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     *        supported override is instance type. </p>
-     *        <p>
-     *        You must specify between 2 and 20 overrides.
+     *        supported override is instance type. You must specify between 2 and 20 overrides.
      */
 
     public void setOverrides(java.util.Collection<LaunchTemplateOverrides> overrides) {
@@ -144,10 +131,7 @@ public class LaunchTemplate implements Serializable, Cloneable {
     /**
      * <p>
      * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type.
-     * </p>
-     * <p>
-     * You must specify between 2 and 20 overrides.
+     * supported override is instance type. You must specify between 2 and 20 overrides.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -157,9 +141,7 @@ public class LaunchTemplate implements Serializable, Cloneable {
      * 
      * @param overrides
      *        Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     *        supported override is instance type. </p>
-     *        <p>
-     *        You must specify between 2 and 20 overrides.
+     *        supported override is instance type. You must specify between 2 and 20 overrides.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,17 +158,12 @@ public class LaunchTemplate implements Serializable, Cloneable {
     /**
      * <p>
      * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type.
-     * </p>
-     * <p>
-     * You must specify between 2 and 20 overrides.
+     * supported override is instance type. You must specify between 2 and 20 overrides.
      * </p>
      * 
      * @param overrides
      *        Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     *        supported override is instance type. </p>
-     *        <p>
-     *        You must specify between 2 and 20 overrides.
+     *        supported override is instance type. You must specify between 2 and 20 overrides.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
