@@ -103,7 +103,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -153,7 +153,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only
      * newly created nodes can be located in different Availability Zones. For guidance on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * <p>
@@ -856,7 +856,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -880,8 +880,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
-     *        Considerations for Memcached</a>.
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
+     *        Node Considerations for Memcached</a>.
      *        </p>
      * @see AZMode
      */
@@ -910,7 +910,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -933,8 +933,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *         existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *         section of <a
-     *         href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
-     *         Considerations for Memcached</a>.
+     *         href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
+     *         Node Considerations for Memcached</a>.
      *         </p>
      * @see AZMode
      */
@@ -963,7 +963,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -987,8 +987,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
-     *        Considerations for Memcached</a>.
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
+     *        Node Considerations for Memcached</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AZMode
@@ -1019,7 +1019,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -1043,8 +1043,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
-     *        Considerations for Memcached</a>.
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
+     *        Node Considerations for Memcached</a>.
      *        </p>
      * @see AZMode
      */
@@ -1073,7 +1073,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -1097,8 +1097,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
-     *        Considerations for Memcached</a>.
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
+     *        Node Considerations for Memcached</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AZMode
@@ -1153,7 +1153,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only
      * newly created nodes can be located in different Availability Zones. For guidance on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * <p>
@@ -1298,8 +1298,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         Zone. Only newly created nodes can be located in different Availability Zones. For guidance on how to
      *         move existing Memcached nodes to different Availability Zones, see the <b>Availability Zone
      *         Considerations</b> section of <a
-     *         href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
-     *         Considerations for Memcached</a>.
+     *         href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
+     *         Node Considerations for Memcached</a>.
      *         </p>
      *         <p>
      *         <b>Impact of new add/remove requests upon pending requests</b>
@@ -1451,7 +1451,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only
      * newly created nodes can be located in different Availability Zones. For guidance on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * <p>
@@ -1596,8 +1596,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes can be located in different Availability Zones. For guidance on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
-     *        Considerations for Memcached</a>.
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
+     *        Node Considerations for Memcached</a>.
      *        </p>
      *        <p>
      *        <b>Impact of new add/remove requests upon pending requests</b>
@@ -1751,7 +1751,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only
      * newly created nodes can be located in different Availability Zones. For guidance on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * <p>
@@ -1901,8 +1901,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes can be located in different Availability Zones. For guidance on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
-     *        Considerations for Memcached</a>.
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
+     *        Node Considerations for Memcached</a>.
      *        </p>
      *        <p>
      *        <b>Impact of new add/remove requests upon pending requests</b>
@@ -2058,7 +2058,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only
      * newly created nodes can be located in different Availability Zones. For guidance on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * <p>
@@ -2203,8 +2203,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes can be located in different Availability Zones. For guidance on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
-     *        Considerations for Memcached</a>.
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
+     *        Node Considerations for Memcached</a>.
      *        </p>
      *        <p>
      *        <b>Impact of new add/remove requests upon pending requests</b>

@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about whether instances in the original environment are terminated when a blue/green deployment is
- * successful.
+ * successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BlueInstanceTerminationOption"
@@ -50,8 +50,16 @@ public class BlueInstanceTerminationOption implements Serializable, Cloneable, S
     private String action;
     /**
      * <p>
-     * The number of minutes to wait after a successful blue/green deployment before terminating instances from the
-     * original environment. The maximum setting is 2880 minutes (2 days).
+     * For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before
+     * terminating instances from the original environment.
+     * </p>
+     * <p>
+     * For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an
+     * Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task
+     * set.
+     * </p>
+     * <p>
+     * The maximum setting is 2880 minutes (2 days).
      * </p>
      */
     private Integer terminationWaitTimeInMinutes;
@@ -256,13 +264,28 @@ public class BlueInstanceTerminationOption implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The number of minutes to wait after a successful blue/green deployment before terminating instances from the
-     * original environment. The maximum setting is 2880 minutes (2 days).
+     * For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before
+     * terminating instances from the original environment.
+     * </p>
+     * <p>
+     * For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an
+     * Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task
+     * set.
+     * </p>
+     * <p>
+     * The maximum setting is 2880 minutes (2 days).
      * </p>
      * 
      * @param terminationWaitTimeInMinutes
-     *        The number of minutes to wait after a successful blue/green deployment before terminating instances from
-     *        the original environment. The maximum setting is 2880 minutes (2 days).
+     *        For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment
+     *        before terminating instances from the original environment.</p>
+     *        <p>
+     *        For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During
+     *        an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement
+     *        (green) task set.
+     *        </p>
+     *        <p>
+     *        The maximum setting is 2880 minutes (2 days).
      */
 
     public void setTerminationWaitTimeInMinutes(Integer terminationWaitTimeInMinutes) {
@@ -271,12 +294,27 @@ public class BlueInstanceTerminationOption implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The number of minutes to wait after a successful blue/green deployment before terminating instances from the
-     * original environment. The maximum setting is 2880 minutes (2 days).
+     * For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before
+     * terminating instances from the original environment.
+     * </p>
+     * <p>
+     * For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an
+     * Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task
+     * set.
+     * </p>
+     * <p>
+     * The maximum setting is 2880 minutes (2 days).
      * </p>
      * 
-     * @return The number of minutes to wait after a successful blue/green deployment before terminating instances from
-     *         the original environment. The maximum setting is 2880 minutes (2 days).
+     * @return For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment
+     *         before terminating instances from the original environment.</p>
+     *         <p>
+     *         For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During
+     *         an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement
+     *         (green) task set.
+     *         </p>
+     *         <p>
+     *         The maximum setting is 2880 minutes (2 days).
      */
 
     public Integer getTerminationWaitTimeInMinutes() {
@@ -285,13 +323,28 @@ public class BlueInstanceTerminationOption implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The number of minutes to wait after a successful blue/green deployment before terminating instances from the
-     * original environment. The maximum setting is 2880 minutes (2 days).
+     * For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before
+     * terminating instances from the original environment.
+     * </p>
+     * <p>
+     * For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an
+     * Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task
+     * set.
+     * </p>
+     * <p>
+     * The maximum setting is 2880 minutes (2 days).
      * </p>
      * 
      * @param terminationWaitTimeInMinutes
-     *        The number of minutes to wait after a successful blue/green deployment before terminating instances from
-     *        the original environment. The maximum setting is 2880 minutes (2 days).
+     *        For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment
+     *        before terminating instances from the original environment.</p>
+     *        <p>
+     *        For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During
+     *        an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement
+     *        (green) task set.
+     *        </p>
+     *        <p>
+     *        The maximum setting is 2880 minutes (2 days).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

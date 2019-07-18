@@ -23,7 +23,8 @@ public enum SettingName {
     ServiceLongArnFormat("serviceLongArnFormat"),
     TaskLongArnFormat("taskLongArnFormat"),
     ContainerInstanceLongArnFormat("containerInstanceLongArnFormat"),
-    AwsvpcTrunking("awsvpcTrunking");
+    AwsvpcTrunking("awsvpcTrunking"),
+    ContainerInsights("containerInsights");
 
     private String value;
 

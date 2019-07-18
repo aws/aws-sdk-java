@@ -29,6 +29,10 @@ public class EntityRecognizerMetadataEntityTypesListItemMarshaller {
 
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
+    private static final MarshallingInfo<StructuredPojo> EVALUATIONMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationMetrics").build();
+    private static final MarshallingInfo<Integer> NUMBEROFTRAINMENTIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfTrainMentions").build();
 
     private static final EntityRecognizerMetadataEntityTypesListItemMarshaller instance = new EntityRecognizerMetadataEntityTypesListItemMarshaller();
 
@@ -47,6 +51,8 @@ public class EntityRecognizerMetadataEntityTypesListItemMarshaller {
 
         try {
             protocolMarshaller.marshall(entityRecognizerMetadataEntityTypesListItem.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(entityRecognizerMetadataEntityTypesListItem.getEvaluationMetrics(), EVALUATIONMETRICS_BINDING);
+            protocolMarshaller.marshall(entityRecognizerMetadataEntityTypesListItem.getNumberOfTrainMentions(), NUMBEROFTRAINMENTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -53,6 +53,15 @@ public class EntityRecognizerMetadataEntityTypesListItemJsonUnmarshaller impleme
                     context.nextToken();
                     entityRecognizerMetadataEntityTypesListItem.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EvaluationMetrics", targetDepth)) {
+                    context.nextToken();
+                    entityRecognizerMetadataEntityTypesListItem.setEvaluationMetrics(EntityTypesEvaluationMetricsJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
+                if (context.testExpression("NumberOfTrainMentions", targetDepth)) {
+                    context.nextToken();
+                    entityRecognizerMetadataEntityTypesListItem.setNumberOfTrainMentions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

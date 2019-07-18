@@ -33,7 +33,8 @@ public class DetectSyntaxRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String text;
     /**
      * <p>
-     * The language code of the input documents. You can specify English ("en") or Spanish ("es").
+     * The language code of the input documents. You can specify any of the primary languages supported by Amazon
+     * Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").
      * </p>
      */
     private String languageCode;
@@ -80,11 +81,14 @@ public class DetectSyntaxRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The language code of the input documents. You can specify English ("en") or Spanish ("es").
+     * The language code of the input documents. You can specify any of the primary languages supported by Amazon
+     * Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").
      * </p>
      * 
      * @param languageCode
-     *        The language code of the input documents. You can specify English ("en") or Spanish ("es").
+     *        The language code of the input documents. You can specify any of the primary languages supported by Amazon
+     *        Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese
+     *        ("pt").
      * @see SyntaxLanguageCode
      */
 
@@ -94,10 +98,13 @@ public class DetectSyntaxRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The language code of the input documents. You can specify English ("en") or Spanish ("es").
+     * The language code of the input documents. You can specify any of the primary languages supported by Amazon
+     * Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").
      * </p>
      * 
-     * @return The language code of the input documents. You can specify English ("en") or Spanish ("es").
+     * @return The language code of the input documents. You can specify any of the primary languages supported by
+     *         Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or
+     *         Portuguese ("pt").
      * @see SyntaxLanguageCode
      */
 
@@ -107,11 +114,14 @@ public class DetectSyntaxRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The language code of the input documents. You can specify English ("en") or Spanish ("es").
+     * The language code of the input documents. You can specify any of the primary languages supported by Amazon
+     * Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").
      * </p>
      * 
      * @param languageCode
-     *        The language code of the input documents. You can specify English ("en") or Spanish ("es").
+     *        The language code of the input documents. You can specify any of the primary languages supported by Amazon
+     *        Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese
+     *        ("pt").
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SyntaxLanguageCode
      */
@@ -123,11 +133,14 @@ public class DetectSyntaxRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The language code of the input documents. You can specify English ("en") or Spanish ("es").
+     * The language code of the input documents. You can specify any of the primary languages supported by Amazon
+     * Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").
      * </p>
      * 
      * @param languageCode
-     *        The language code of the input documents. You can specify English ("en") or Spanish ("es").
+     *        The language code of the input documents. You can specify any of the primary languages supported by Amazon
+     *        Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese
+     *        ("pt").
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SyntaxLanguageCode
      */

@@ -171,7 +171,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.
+     * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -189,7 +189,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.
+     * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1270,7 +1270,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.
+     * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1285,7 +1285,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     *        <code>3.2.6</code> or <code>4.x</code>.
+     *        <code>3.2.6</code>, <code>4.x</code> or later.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -1306,7 +1306,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.
+     * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1320,7 +1320,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     *         <code>3.2.6</code> or <code>4.x</code>.
+     *         <code>3.2.6</code>, <code>4.x</code> or later.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -1341,7 +1341,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.
+     * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1356,7 +1356,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     *        <code>3.2.6</code> or <code>4.x</code>.
+     *        <code>3.2.6</code>, <code>4.x</code> or later.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -1379,7 +1379,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.
+     * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1393,7 +1393,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     *         <code>3.2.6</code> or <code>4.x</code>.
+     *         <code>3.2.6</code>, <code>4.x</code> or later.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -1414,7 +1414,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.
+     * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1429,7 +1429,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     *        <code>3.2.6</code> or <code>4.x</code>.
+     *        <code>3.2.6</code>, <code>4.x</code> or later.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -1450,7 +1450,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.
+     * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1464,7 +1464,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     *         <code>3.2.6</code> or <code>4.x</code>.
+     *         <code>3.2.6</code>, <code>4.x</code> or later.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -1485,7 +1485,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.
+     * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1500,7 +1500,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     *        <code>3.2.6</code> or <code>4.x</code>.
+     *        <code>3.2.6</code>, <code>4.x</code> or later.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -1523,7 +1523,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.
+     * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1537,7 +1537,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
-     *         <code>3.2.6</code> or <code>4.x</code>.
+     *         <code>3.2.6</code>, <code>4.x</code> or later.
      *         </p>
      *         <p>
      *         Default: <code>false</code>

@@ -40,8 +40,23 @@ public class ListDeploymentTargetsRequest extends com.amazonaws.AmazonWebService
     private String nextToken;
     /**
      * <p>
-     * A key used to filter the returned targets.
+     * A key used to filter the returned targets. The two valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>,
+     * <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>,
+     * or <code>Unknown</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or
+     * <code>Green</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Map<String, java.util.List<String>> targetFilters;
 
@@ -133,10 +148,39 @@ public class ListDeploymentTargetsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A key used to filter the returned targets.
+     * A key used to filter the returned targets. The two valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>,
+     * <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>,
+     * or <code>Unknown</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or
+     * <code>Green</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return A key used to filter the returned targets.
+     * @return A key used to filter the returned targets. The two valid values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>,
+     *         <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     *         <code>Succeeded</code>, or <code>Unknown</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be
+     *         <code>Blue</code> or <code>Green</code>.
+     *         </p>
+     *         </li>
      */
 
     public java.util.Map<String, java.util.List<String>> getTargetFilters() {
@@ -145,11 +189,40 @@ public class ListDeploymentTargetsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A key used to filter the returned targets.
+     * A key used to filter the returned targets. The two valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>,
+     * <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>,
+     * or <code>Unknown</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or
+     * <code>Green</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param targetFilters
-     *        A key used to filter the returned targets.
+     *        A key used to filter the returned targets. The two valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>,
+     *        <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     *        <code>Succeeded</code>, or <code>Unknown</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be
+     *        <code>Blue</code> or <code>Green</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setTargetFilters(java.util.Map<String, java.util.List<String>> targetFilters) {
@@ -158,11 +231,40 @@ public class ListDeploymentTargetsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A key used to filter the returned targets.
+     * A key used to filter the returned targets. The two valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>,
+     * <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>,
+     * or <code>Unknown</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or
+     * <code>Green</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param targetFilters
-     *        A key used to filter the returned targets.
+     *        A key used to filter the returned targets. The two valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>,
+     *        <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     *        <code>Succeeded</code>, or <code>Unknown</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be
+     *        <code>Blue</code> or <code>Green</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -685,7 +685,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * <b>Solution:</b> Add List and Read permissions on the bucket. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html"
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      * >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
      * </p>
      * </li>
@@ -695,7 +695,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * <b>Solution:</b> Add Upload/Delete permissions on the bucket. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html"
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      * >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
      * </p>
      * </li>
@@ -705,7 +705,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * <b>Solution:</b> Add View Permissions on the bucket. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html"
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      * >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
      * </p>
      * </li>
@@ -1088,7 +1088,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * the replicas.
      * </p>
      * <p>
-     * A Redis (cluster mode enabled) replication group is a collection of 1 to 15 node groups (shards). Each node group
+     * A Redis (cluster mode enabled) replication group is a collection of 1 to 90 node groups (shards). Each node group
      * (shard) has one read/write primary node and up to 5 read-only replica nodes. Writes to the primary are
      * asynchronously propagated to the replicas. Redis (cluster mode enabled) replication groups partition the data
      * across node groups (shards).
@@ -1142,7 +1142,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *         of tags. The maximum number of tags permitted on a resource is 50.
      * @throws NodeGroupsPerReplicationGroupQuotaExceededException
      *         The request cannot be processed because it would exceed the maximum allowed number of node groups
-     *         (shards) in a single replication group. The default maximum is 15
+     *         (shards) in a single replication group. The default maximum is 90
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1308,7 +1308,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *         The request cannot be processed because it would exceed the allowed number of clusters per customer.
      * @throws NodeGroupsPerReplicationGroupQuotaExceededException
      *         The request cannot be processed because it would exceed the maximum allowed number of node groups
-     *         (shards) in a single replication group. The default maximum is 15
+     *         (shards) in a single replication group. The default maximum is 90
      * @throws NodeQuotaForCustomerExceededException
      *         The request cannot be processed because it would exceed the allowed number of cache nodes per customer.
      * @throws ServiceLinkedRoleNotFoundException
@@ -2776,7 +2776,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *         The request cannot be processed because it would exceed the allowed number of clusters per customer.
      * @throws NodeGroupsPerReplicationGroupQuotaExceededException
      *         The request cannot be processed because it would exceed the maximum allowed number of node groups
-     *         (shards) in a single replication group. The default maximum is 15
+     *         (shards) in a single replication group. The default maximum is 90
      * @throws NodeQuotaForCustomerExceededException
      *         The request cannot be processed because it would exceed the allowed number of cache nodes per customer.
      * @throws NoOperationException
@@ -3309,7 +3309,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *         >InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.
      * @throws NodeGroupsPerReplicationGroupQuotaExceededException
      *         The request cannot be processed because it would exceed the maximum allowed number of node groups
-     *         (shards) in a single replication group. The default maximum is 15
+     *         (shards) in a single replication group. The default maximum is 90
      * @throws NodeQuotaForCustomerExceededException
      *         The request cannot be processed because it would exceed the allowed number of cache nodes per customer.
      * @throws InvalidParameterValueException

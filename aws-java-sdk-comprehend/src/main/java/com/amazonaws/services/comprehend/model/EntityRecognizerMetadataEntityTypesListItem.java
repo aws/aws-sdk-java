@@ -35,6 +35,18 @@ public class EntityRecognizerMetadataEntityTypesListItem implements Serializable
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity types.
+     * </p>
+     */
+    private EntityTypesEvaluationMetrics evaluationMetrics;
+    /**
+     * <p>
+     * indicates the number of times the given entity name was seen in the training data.
+     * </p>
+     */
+    private Integer numberOfTrainMentions;
 
     /**
      * <p>
@@ -77,6 +89,89 @@ public class EntityRecognizerMetadataEntityTypesListItem implements Serializable
     }
 
     /**
+     * <p>
+     * Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity types.
+     * </p>
+     * 
+     * @param evaluationMetrics
+     *        Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity
+     *        types.
+     */
+
+    public void setEvaluationMetrics(EntityTypesEvaluationMetrics evaluationMetrics) {
+        this.evaluationMetrics = evaluationMetrics;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity types.
+     * </p>
+     * 
+     * @return Detailed information about the accuracy of the entity recognizer for a specific item on the list of
+     *         entity types.
+     */
+
+    public EntityTypesEvaluationMetrics getEvaluationMetrics() {
+        return this.evaluationMetrics;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity types.
+     * </p>
+     * 
+     * @param evaluationMetrics
+     *        Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity
+     *        types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntityRecognizerMetadataEntityTypesListItem withEvaluationMetrics(EntityTypesEvaluationMetrics evaluationMetrics) {
+        setEvaluationMetrics(evaluationMetrics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * indicates the number of times the given entity name was seen in the training data.
+     * </p>
+     * 
+     * @param numberOfTrainMentions
+     *        indicates the number of times the given entity name was seen in the training data.
+     */
+
+    public void setNumberOfTrainMentions(Integer numberOfTrainMentions) {
+        this.numberOfTrainMentions = numberOfTrainMentions;
+    }
+
+    /**
+     * <p>
+     * indicates the number of times the given entity name was seen in the training data.
+     * </p>
+     * 
+     * @return indicates the number of times the given entity name was seen in the training data.
+     */
+
+    public Integer getNumberOfTrainMentions() {
+        return this.numberOfTrainMentions;
+    }
+
+    /**
+     * <p>
+     * indicates the number of times the given entity name was seen in the training data.
+     * </p>
+     * 
+     * @param numberOfTrainMentions
+     *        indicates the number of times the given entity name was seen in the training data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntityRecognizerMetadataEntityTypesListItem withNumberOfTrainMentions(Integer numberOfTrainMentions) {
+        setNumberOfTrainMentions(numberOfTrainMentions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -89,7 +184,11 @@ public class EntityRecognizerMetadataEntityTypesListItem implements Serializable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getEvaluationMetrics() != null)
+            sb.append("EvaluationMetrics: ").append(getEvaluationMetrics()).append(",");
+        if (getNumberOfTrainMentions() != null)
+            sb.append("NumberOfTrainMentions: ").append(getNumberOfTrainMentions());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +207,14 @@ public class EntityRecognizerMetadataEntityTypesListItem implements Serializable
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getEvaluationMetrics() == null ^ this.getEvaluationMetrics() == null)
+            return false;
+        if (other.getEvaluationMetrics() != null && other.getEvaluationMetrics().equals(this.getEvaluationMetrics()) == false)
+            return false;
+        if (other.getNumberOfTrainMentions() == null ^ this.getNumberOfTrainMentions() == null)
+            return false;
+        if (other.getNumberOfTrainMentions() != null && other.getNumberOfTrainMentions().equals(this.getNumberOfTrainMentions()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +224,8 @@ public class EntityRecognizerMetadataEntityTypesListItem implements Serializable
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getEvaluationMetrics() == null) ? 0 : getEvaluationMetrics().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfTrainMentions() == null) ? 0 : getNumberOfTrainMentions().hashCode());
         return hashCode;
     }
 

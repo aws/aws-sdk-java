@@ -40,6 +40,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a
+     * cluster. If this value is specified, it will override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ClusterSetting> settings;
 
     /**
      * <p>
@@ -177,6 +185,95 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a
+     * cluster. If this value is specified, it will override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     * </p>
+     * 
+     * @return The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container
+     *         Insights for a cluster. If this value is specified, it will override the <code>containerInsights</code>
+     *         value set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     */
+
+    public java.util.List<ClusterSetting> getSettings() {
+        if (settings == null) {
+            settings = new com.amazonaws.internal.SdkInternalList<ClusterSetting>();
+        }
+        return settings;
+    }
+
+    /**
+     * <p>
+     * The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a
+     * cluster. If this value is specified, it will override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     * </p>
+     * 
+     * @param settings
+     *        The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights
+     *        for a cluster. If this value is specified, it will override the <code>containerInsights</code> value set
+     *        with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     */
+
+    public void setSettings(java.util.Collection<ClusterSetting> settings) {
+        if (settings == null) {
+            this.settings = null;
+            return;
+        }
+
+        this.settings = new com.amazonaws.internal.SdkInternalList<ClusterSetting>(settings);
+    }
+
+    /**
+     * <p>
+     * The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a
+     * cluster. If this value is specified, it will override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSettings(java.util.Collection)} or {@link #withSettings(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param settings
+     *        The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights
+     *        for a cluster. If this value is specified, it will override the <code>containerInsights</code> value set
+     *        with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withSettings(ClusterSetting... settings) {
+        if (this.settings == null) {
+            setSettings(new com.amazonaws.internal.SdkInternalList<ClusterSetting>(settings.length));
+        }
+        for (ClusterSetting ele : settings) {
+            this.settings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a
+     * cluster. If this value is specified, it will override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     * </p>
+     * 
+     * @param settings
+     *        The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights
+     *        for a cluster. If this value is specified, it will override the <code>containerInsights</code> value set
+     *        with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withSettings(java.util.Collection<ClusterSetting> settings) {
+        setSettings(settings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +288,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getClusterName() != null)
             sb.append("ClusterName: ").append(getClusterName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSettings() != null)
+            sb.append("Settings: ").append(getSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -214,6 +313,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSettings() == null ^ this.getSettings() == null)
+            return false;
+        if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
+            return false;
         return true;
     }
 
@@ -224,6 +327,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getClusterName() == null) ? 0 : getClusterName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         return hashCode;
     }
 
