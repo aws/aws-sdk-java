@@ -72,6 +72,22 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
                     context.nextToken();
                     action.setResetTimer(ResetTimerActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("lambda", targetDepth)) {
+                    context.nextToken();
+                    action.setLambda(LambdaActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("iotEvents", targetDepth)) {
+                    context.nextToken();
+                    action.setIotEvents(IotEventsActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("sqs", targetDepth)) {
+                    context.nextToken();
+                    action.setSqs(SqsActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("firehose", targetDepth)) {
+                    context.nextToken();
+                    action.setFirehose(FirehoseActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

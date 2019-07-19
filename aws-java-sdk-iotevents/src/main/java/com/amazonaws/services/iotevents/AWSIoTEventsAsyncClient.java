@@ -27,7 +27,8 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * AWS IoT Events monitors your equipment or device fleets for failures or changes in operation, and triggers actions
- * when such events occur.
+ * when such events occur. AWS IoT Events API commands enable you to create, read, update and delete inputs and detector
+ * models, and to list their versions.
  * </p>
  */
 @ThreadSafe

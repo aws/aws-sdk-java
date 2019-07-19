@@ -30,18 +30,18 @@ public class SNSTopicPublishAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the Amazon SNS target to which the message is sent.
+     * The ARN of the Amazon SNS target where the message is sent.
      * </p>
      */
     private String targetArn;
 
     /**
      * <p>
-     * The ARN of the Amazon SNS target to which the message is sent.
+     * The ARN of the Amazon SNS target where the message is sent.
      * </p>
      * 
      * @param targetArn
-     *        The ARN of the Amazon SNS target to which the message is sent.
+     *        The ARN of the Amazon SNS target where the message is sent.
      */
 
     public void setTargetArn(String targetArn) {
@@ -50,10 +50,10 @@ public class SNSTopicPublishAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the Amazon SNS target to which the message is sent.
+     * The ARN of the Amazon SNS target where the message is sent.
      * </p>
      * 
-     * @return The ARN of the Amazon SNS target to which the message is sent.
+     * @return The ARN of the Amazon SNS target where the message is sent.
      */
 
     public String getTargetArn() {
@@ -62,11 +62,11 @@ public class SNSTopicPublishAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the Amazon SNS target to which the message is sent.
+     * The ARN of the Amazon SNS target where the message is sent.
      * </p>
      * 
      * @param targetArn
-     *        The ARN of the Amazon SNS target to which the message is sent.
+     *        The ARN of the Amazon SNS target where the message is sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

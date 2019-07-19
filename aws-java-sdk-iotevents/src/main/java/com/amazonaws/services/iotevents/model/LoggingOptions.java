@@ -36,7 +36,7 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
     private String roleArn;
     /**
      * <p>
-     * The logging level. Currently, only "ERROR" is supported.
+     * The logging level.
      * </p>
      */
     private String level;
@@ -96,11 +96,11 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The logging level. Currently, only "ERROR" is supported.
+     * The logging level.
      * </p>
      * 
      * @param level
-     *        The logging level. Currently, only "ERROR" is supported.
+     *        The logging level.
      * @see LoggingLevel
      */
 
@@ -110,10 +110,10 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The logging level. Currently, only "ERROR" is supported.
+     * The logging level.
      * </p>
      * 
-     * @return The logging level. Currently, only "ERROR" is supported.
+     * @return The logging level.
      * @see LoggingLevel
      */
 
@@ -123,11 +123,11 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The logging level. Currently, only "ERROR" is supported.
+     * The logging level.
      * </p>
      * 
      * @param level
-     *        The logging level. Currently, only "ERROR" is supported.
+     *        The logging level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoggingLevel
      */
@@ -139,11 +139,11 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The logging level. Currently, only "ERROR" is supported.
+     * The logging level.
      * </p>
      * 
      * @param level
-     *        The logging level. Currently, only "ERROR" is supported.
+     *        The logging level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoggingLevel
      */

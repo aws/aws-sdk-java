@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * For more information, see <a
- * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html">Interpreting
+ * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html">Interpreting
  * Responses</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
  * </p>
  * 

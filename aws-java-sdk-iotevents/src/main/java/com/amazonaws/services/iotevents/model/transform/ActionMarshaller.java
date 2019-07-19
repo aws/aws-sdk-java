@@ -39,6 +39,14 @@ public class ActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clearTimer").build();
     private static final MarshallingInfo<StructuredPojo> RESETTIMER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resetTimer").build();
+    private static final MarshallingInfo<StructuredPojo> LAMBDA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambda").build();
+    private static final MarshallingInfo<StructuredPojo> IOTEVENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iotEvents").build();
+    private static final MarshallingInfo<StructuredPojo> SQS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sqs").build();
+    private static final MarshallingInfo<StructuredPojo> FIREHOSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firehose").build();
 
     private static final ActionMarshaller instance = new ActionMarshaller();
 
@@ -62,6 +70,10 @@ public class ActionMarshaller {
             protocolMarshaller.marshall(action.getSetTimer(), SETTIMER_BINDING);
             protocolMarshaller.marshall(action.getClearTimer(), CLEARTIMER_BINDING);
             protocolMarshaller.marshall(action.getResetTimer(), RESETTIMER_BINDING);
+            protocolMarshaller.marshall(action.getLambda(), LAMBDA_BINDING);
+            protocolMarshaller.marshall(action.getIotEvents(), IOTEVENTS_BINDING);
+            protocolMarshaller.marshall(action.getSqs(), SQS_BINDING);
+            protocolMarshaller.marshall(action.getFirehose(), FIREHOSE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

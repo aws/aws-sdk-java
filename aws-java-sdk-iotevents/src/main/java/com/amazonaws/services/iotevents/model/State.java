@@ -36,19 +36,19 @@ public class State implements Serializable, Cloneable, StructuredPojo {
     private String stateName;
     /**
      * <p>
-     * When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.
+     * When an input is received and the <code>"condition"</code> is TRUE, perform the specified <code>"actions"</code>.
      * </p>
      */
     private OnInputLifecycle onInput;
     /**
      * <p>
-     * When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.
+     * When entering this state, perform these <code>"actions"</code> if the <code>"condition"</code> is TRUE.
      * </p>
      */
     private OnEnterLifecycle onEnter;
     /**
      * <p>
-     * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is TRUE.
+     * When exiting this state, perform these <code>"actions"</code> if the specified <code>"condition"</code> is TRUE.
      * </p>
      */
     private OnExitLifecycle onExit;
@@ -95,12 +95,12 @@ public class State implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.
+     * When an input is received and the <code>"condition"</code> is TRUE, perform the specified <code>"actions"</code>.
      * </p>
      * 
      * @param onInput
-     *        When an input is received and the <code>condition</code> is TRUE, perform the specified
-     *        <code>actions</code>.
+     *        When an input is received and the <code>"condition"</code> is TRUE, perform the specified
+     *        <code>"actions"</code>.
      */
 
     public void setOnInput(OnInputLifecycle onInput) {
@@ -109,11 +109,11 @@ public class State implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.
+     * When an input is received and the <code>"condition"</code> is TRUE, perform the specified <code>"actions"</code>.
      * </p>
      * 
-     * @return When an input is received and the <code>condition</code> is TRUE, perform the specified
-     *         <code>actions</code>.
+     * @return When an input is received and the <code>"condition"</code> is TRUE, perform the specified
+     *         <code>"actions"</code>.
      */
 
     public OnInputLifecycle getOnInput() {
@@ -122,12 +122,12 @@ public class State implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.
+     * When an input is received and the <code>"condition"</code> is TRUE, perform the specified <code>"actions"</code>.
      * </p>
      * 
      * @param onInput
-     *        When an input is received and the <code>condition</code> is TRUE, perform the specified
-     *        <code>actions</code>.
+     *        When an input is received and the <code>"condition"</code> is TRUE, perform the specified
+     *        <code>"actions"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class State implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.
+     * When entering this state, perform these <code>"actions"</code> if the <code>"condition"</code> is TRUE.
      * </p>
      * 
      * @param onEnter
-     *        When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.
+     *        When entering this state, perform these <code>"actions"</code> if the <code>"condition"</code> is TRUE.
      */
 
     public void setOnEnter(OnEnterLifecycle onEnter) {
@@ -151,10 +151,10 @@ public class State implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.
+     * When entering this state, perform these <code>"actions"</code> if the <code>"condition"</code> is TRUE.
      * </p>
      * 
-     * @return When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.
+     * @return When entering this state, perform these <code>"actions"</code> if the <code>"condition"</code> is TRUE.
      */
 
     public OnEnterLifecycle getOnEnter() {
@@ -163,11 +163,11 @@ public class State implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.
+     * When entering this state, perform these <code>"actions"</code> if the <code>"condition"</code> is TRUE.
      * </p>
      * 
      * @param onEnter
-     *        When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.
+     *        When entering this state, perform these <code>"actions"</code> if the <code>"condition"</code> is TRUE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class State implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is TRUE.
+     * When exiting this state, perform these <code>"actions"</code> if the specified <code>"condition"</code> is TRUE.
      * </p>
      * 
      * @param onExit
-     *        When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is
+     *        When exiting this state, perform these <code>"actions"</code> if the specified <code>"condition"</code> is
      *        TRUE.
      */
 
@@ -192,11 +192,11 @@ public class State implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is TRUE.
+     * When exiting this state, perform these <code>"actions"</code> if the specified <code>"condition"</code> is TRUE.
      * </p>
      * 
-     * @return When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is
-     *         TRUE.
+     * @return When exiting this state, perform these <code>"actions"</code> if the specified <code>"condition"</code>
+     *         is TRUE.
      */
 
     public OnExitLifecycle getOnExit() {
@@ -205,11 +205,11 @@ public class State implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is TRUE.
+     * When exiting this state, perform these <code>"actions"</code> if the specified <code>"condition"</code> is TRUE.
      * </p>
      * 
      * @param onExit
-     *        When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is
+     *        When exiting this state, perform these <code>"actions"</code> if the specified <code>"condition"</code> is
      *        TRUE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

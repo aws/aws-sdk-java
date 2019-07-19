@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information required to publish the MQTT message via the AWS IoT Message Broker.
+ * Information required to publish the MQTT message via the AWS IoT message broker.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/IotTopicPublishAction" target="_top">AWS

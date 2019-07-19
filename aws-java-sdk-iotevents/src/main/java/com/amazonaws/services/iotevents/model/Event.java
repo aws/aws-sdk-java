@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the <code>actions</code> to be performed when the <code>condition</code> evaluates to TRUE.
+ * Specifies the <code>"actions"</code> to be performed when the <code>"condition"</code> evaluates to TRUE.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/Event" target="_top">AWS API
@@ -36,9 +36,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     private String eventName;
     /**
      * <p>
-     * [Optional] The Boolean expression that when TRUE causes the <code>actions</code> to be performed. If not present,
-     * the actions are performed (=TRUE); if the expression result is not a Boolean value the actions are NOT performed
-     * (=FALSE).
+     * [Optional] The Boolean expression that when TRUE causes the <code>"actions"</code> to be performed. If not
+     * present, the actions are performed (=TRUE); if the expression result is not a Boolean value, the actions are NOT
+     * performed (=FALSE).
      * </p>
      */
     private String condition;
@@ -91,14 +91,14 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Optional] The Boolean expression that when TRUE causes the <code>actions</code> to be performed. If not present,
-     * the actions are performed (=TRUE); if the expression result is not a Boolean value the actions are NOT performed
-     * (=FALSE).
+     * [Optional] The Boolean expression that when TRUE causes the <code>"actions"</code> to be performed. If not
+     * present, the actions are performed (=TRUE); if the expression result is not a Boolean value, the actions are NOT
+     * performed (=FALSE).
      * </p>
      * 
      * @param condition
-     *        [Optional] The Boolean expression that when TRUE causes the <code>actions</code> to be performed. If not
-     *        present, the actions are performed (=TRUE); if the expression result is not a Boolean value the actions
+     *        [Optional] The Boolean expression that when TRUE causes the <code>"actions"</code> to be performed. If not
+     *        present, the actions are performed (=TRUE); if the expression result is not a Boolean value, the actions
      *        are NOT performed (=FALSE).
      */
 
@@ -108,14 +108,14 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Optional] The Boolean expression that when TRUE causes the <code>actions</code> to be performed. If not present,
-     * the actions are performed (=TRUE); if the expression result is not a Boolean value the actions are NOT performed
-     * (=FALSE).
+     * [Optional] The Boolean expression that when TRUE causes the <code>"actions"</code> to be performed. If not
+     * present, the actions are performed (=TRUE); if the expression result is not a Boolean value, the actions are NOT
+     * performed (=FALSE).
      * </p>
      * 
-     * @return [Optional] The Boolean expression that when TRUE causes the <code>actions</code> to be performed. If not
-     *         present, the actions are performed (=TRUE); if the expression result is not a Boolean value the actions
-     *         are NOT performed (=FALSE).
+     * @return [Optional] The Boolean expression that when TRUE causes the <code>"actions"</code> to be performed. If
+     *         not present, the actions are performed (=TRUE); if the expression result is not a Boolean value, the
+     *         actions are NOT performed (=FALSE).
      */
 
     public String getCondition() {
@@ -124,14 +124,14 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Optional] The Boolean expression that when TRUE causes the <code>actions</code> to be performed. If not present,
-     * the actions are performed (=TRUE); if the expression result is not a Boolean value the actions are NOT performed
-     * (=FALSE).
+     * [Optional] The Boolean expression that when TRUE causes the <code>"actions"</code> to be performed. If not
+     * present, the actions are performed (=TRUE); if the expression result is not a Boolean value, the actions are NOT
+     * performed (=FALSE).
      * </p>
      * 
      * @param condition
-     *        [Optional] The Boolean expression that when TRUE causes the <code>actions</code> to be performed. If not
-     *        present, the actions are performed (=TRUE); if the expression result is not a Boolean value the actions
+     *        [Optional] The Boolean expression that when TRUE causes the <code>"actions"</code> to be performed. If not
+     *        present, the actions are performed (=TRUE); if the expression result is not a Boolean value, the actions
      *        are NOT performed (=FALSE).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -27,7 +27,7 @@ public class UpdateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the detector model to be updated.
+     * The name of the detector model that is updated.
      * </p>
      */
     private String detectorModelName;
@@ -52,11 +52,11 @@ public class UpdateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the detector model to be updated.
+     * The name of the detector model that is updated.
      * </p>
      * 
      * @param detectorModelName
-     *        The name of the detector model to be updated.
+     *        The name of the detector model that is updated.
      */
 
     public void setDetectorModelName(String detectorModelName) {
@@ -65,10 +65,10 @@ public class UpdateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the detector model to be updated.
+     * The name of the detector model that is updated.
      * </p>
      * 
-     * @return The name of the detector model to be updated.
+     * @return The name of the detector model that is updated.
      */
 
     public String getDetectorModelName() {
@@ -77,11 +77,11 @@ public class UpdateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the detector model to be updated.
+     * The name of the detector model that is updated.
      * </p>
      * 
      * @param detectorModelName
-     *        The name of the detector model to be updated.
+     *        The name of the detector model that is updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

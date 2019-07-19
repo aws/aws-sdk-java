@@ -52,7 +52,8 @@ import com.amazonaws.services.iotevents.model.transform.*;
  * <p>
  * <p>
  * AWS IoT Events monitors your equipment or device fleets for failures or changes in operation, and triggers actions
- * when such events occur.
+ * when such events occur. AWS IoT Events API commands enable you to create, read, update and delete inputs and detector
+ * models, and to list their versions.
  * </p>
  */
 @ThreadSafe
@@ -415,8 +416,8 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
 
     /**
      * <p>
-     * Describes a detector model. If the <code>version</code> parameter is not specified, information about the latest
-     * version is returned.
+     * Describes a detector model. If the <code>"version"</code> parameter is not specified, information about the
+     * latest version is returned.
      * </p>
      * 
      * @param describeDetectorModelRequest
@@ -863,9 +864,9 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
      * Sets or updates the AWS IoT Events logging options.
      * </p>
      * <p>
-     * Note that if you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the
-     * change to take effect. Also, if you change the policy attached to the role you specified in the roleArn field
-     * (for example, to correct an invalid policy) it takes up to five minutes for that change to take effect.
+     * If you update the value of any <code>"loggingOptions"</code> field, it takes up to one minute for the change to
+     * take effect. Also, if you change the policy attached to the role you specified in the <code>"roleArn"</code>
+     * field (for example, to correct an invalid policy) it takes up to five minutes for that change to take effect.
      * </p>
      * 
      * @param putLoggingOptionsRequest
@@ -930,7 +931,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
 
     /**
      * <p>
-     * Add to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.
+     * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1058,8 +1059,8 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
 
     /**
      * <p>
-     * Updates a detector model. Detectors (instances) spawned by the previous version will be deleted and re-created as
-     * new inputs arrive.
+     * Updates a detector model. Detectors (instances) spawned by the previous version are deleted and then re-created
+     * as new inputs arrive.
      * </p>
      * 
      * @param updateDetectorModelRequest

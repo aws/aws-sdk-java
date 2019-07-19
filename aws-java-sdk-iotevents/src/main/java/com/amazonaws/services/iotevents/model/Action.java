@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An action to be performed when the <code>condition</code> is TRUE.
+ * An action to be performed when the <code>"condition"</code> is TRUE.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/Action" target="_top">AWS API
@@ -42,7 +42,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private SNSTopicPublishAction sns;
     /**
      * <p>
-     * Publishes an MQTT message with the given topic to the AWS IoT Message Broker.
+     * Publishes an MQTT message with the given topic to the AWS IoT message broker.
      * </p>
      */
     private IotTopicPublishAction iotTopicPublish;
@@ -64,6 +64,33 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ResetTimerAction resetTimer;
+    /**
+     * <p>
+     * Calls a Lambda function, passing in information about the detector model instance and the event which triggered
+     * the action.
+     * </p>
+     */
+    private LambdaAction lambda;
+    /**
+     * <p>
+     * Sends an IoT Events input, passing in information about the detector model instance and the event which triggered
+     * the action.
+     * </p>
+     */
+    private IotEventsAction iotEvents;
+    /**
+     * <p>
+     * Sends information about the detector model instance and the event which triggered the action to an AWS SQS queue.
+     * </p>
+     */
+    private SqsAction sqs;
+    /**
+     * <p>
+     * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data
+     * Firehose stream.
+     * </p>
+     */
+    private FirehoseAction firehose;
 
     /**
      * <p>
@@ -147,11 +174,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Publishes an MQTT message with the given topic to the AWS IoT Message Broker.
+     * Publishes an MQTT message with the given topic to the AWS IoT message broker.
      * </p>
      * 
      * @param iotTopicPublish
-     *        Publishes an MQTT message with the given topic to the AWS IoT Message Broker.
+     *        Publishes an MQTT message with the given topic to the AWS IoT message broker.
      */
 
     public void setIotTopicPublish(IotTopicPublishAction iotTopicPublish) {
@@ -160,10 +187,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Publishes an MQTT message with the given topic to the AWS IoT Message Broker.
+     * Publishes an MQTT message with the given topic to the AWS IoT message broker.
      * </p>
      * 
-     * @return Publishes an MQTT message with the given topic to the AWS IoT Message Broker.
+     * @return Publishes an MQTT message with the given topic to the AWS IoT message broker.
      */
 
     public IotTopicPublishAction getIotTopicPublish() {
@@ -172,11 +199,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Publishes an MQTT message with the given topic to the AWS IoT Message Broker.
+     * Publishes an MQTT message with the given topic to the AWS IoT message broker.
      * </p>
      * 
      * @param iotTopicPublish
-     *        Publishes an MQTT message with the given topic to the AWS IoT Message Broker.
+     *        Publishes an MQTT message with the given topic to the AWS IoT message broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,6 +333,187 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Calls a Lambda function, passing in information about the detector model instance and the event which triggered
+     * the action.
+     * </p>
+     * 
+     * @param lambda
+     *        Calls a Lambda function, passing in information about the detector model instance and the event which
+     *        triggered the action.
+     */
+
+    public void setLambda(LambdaAction lambda) {
+        this.lambda = lambda;
+    }
+
+    /**
+     * <p>
+     * Calls a Lambda function, passing in information about the detector model instance and the event which triggered
+     * the action.
+     * </p>
+     * 
+     * @return Calls a Lambda function, passing in information about the detector model instance and the event which
+     *         triggered the action.
+     */
+
+    public LambdaAction getLambda() {
+        return this.lambda;
+    }
+
+    /**
+     * <p>
+     * Calls a Lambda function, passing in information about the detector model instance and the event which triggered
+     * the action.
+     * </p>
+     * 
+     * @param lambda
+     *        Calls a Lambda function, passing in information about the detector model instance and the event which
+     *        triggered the action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withLambda(LambdaAction lambda) {
+        setLambda(lambda);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sends an IoT Events input, passing in information about the detector model instance and the event which triggered
+     * the action.
+     * </p>
+     * 
+     * @param iotEvents
+     *        Sends an IoT Events input, passing in information about the detector model instance and the event which
+     *        triggered the action.
+     */
+
+    public void setIotEvents(IotEventsAction iotEvents) {
+        this.iotEvents = iotEvents;
+    }
+
+    /**
+     * <p>
+     * Sends an IoT Events input, passing in information about the detector model instance and the event which triggered
+     * the action.
+     * </p>
+     * 
+     * @return Sends an IoT Events input, passing in information about the detector model instance and the event which
+     *         triggered the action.
+     */
+
+    public IotEventsAction getIotEvents() {
+        return this.iotEvents;
+    }
+
+    /**
+     * <p>
+     * Sends an IoT Events input, passing in information about the detector model instance and the event which triggered
+     * the action.
+     * </p>
+     * 
+     * @param iotEvents
+     *        Sends an IoT Events input, passing in information about the detector model instance and the event which
+     *        triggered the action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withIotEvents(IotEventsAction iotEvents) {
+        setIotEvents(iotEvents);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sends information about the detector model instance and the event which triggered the action to an AWS SQS queue.
+     * </p>
+     * 
+     * @param sqs
+     *        Sends information about the detector model instance and the event which triggered the action to an AWS SQS
+     *        queue.
+     */
+
+    public void setSqs(SqsAction sqs) {
+        this.sqs = sqs;
+    }
+
+    /**
+     * <p>
+     * Sends information about the detector model instance and the event which triggered the action to an AWS SQS queue.
+     * </p>
+     * 
+     * @return Sends information about the detector model instance and the event which triggered the action to an AWS
+     *         SQS queue.
+     */
+
+    public SqsAction getSqs() {
+        return this.sqs;
+    }
+
+    /**
+     * <p>
+     * Sends information about the detector model instance and the event which triggered the action to an AWS SQS queue.
+     * </p>
+     * 
+     * @param sqs
+     *        Sends information about the detector model instance and the event which triggered the action to an AWS SQS
+     *        queue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withSqs(SqsAction sqs) {
+        setSqs(sqs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data
+     * Firehose stream.
+     * </p>
+     * 
+     * @param firehose
+     *        Sends information about the detector model instance and the event which triggered the action to a Kinesis
+     *        Data Firehose stream.
+     */
+
+    public void setFirehose(FirehoseAction firehose) {
+        this.firehose = firehose;
+    }
+
+    /**
+     * <p>
+     * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data
+     * Firehose stream.
+     * </p>
+     * 
+     * @return Sends information about the detector model instance and the event which triggered the action to a Kinesis
+     *         Data Firehose stream.
+     */
+
+    public FirehoseAction getFirehose() {
+        return this.firehose;
+    }
+
+    /**
+     * <p>
+     * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data
+     * Firehose stream.
+     * </p>
+     * 
+     * @param firehose
+     *        Sends information about the detector model instance and the event which triggered the action to a Kinesis
+     *        Data Firehose stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withFirehose(FirehoseAction firehose) {
+        setFirehose(firehose);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -328,7 +536,15 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getClearTimer() != null)
             sb.append("ClearTimer: ").append(getClearTimer()).append(",");
         if (getResetTimer() != null)
-            sb.append("ResetTimer: ").append(getResetTimer());
+            sb.append("ResetTimer: ").append(getResetTimer()).append(",");
+        if (getLambda() != null)
+            sb.append("Lambda: ").append(getLambda()).append(",");
+        if (getIotEvents() != null)
+            sb.append("IotEvents: ").append(getIotEvents()).append(",");
+        if (getSqs() != null)
+            sb.append("Sqs: ").append(getSqs()).append(",");
+        if (getFirehose() != null)
+            sb.append("Firehose: ").append(getFirehose());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +583,22 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResetTimer() != null && other.getResetTimer().equals(this.getResetTimer()) == false)
             return false;
+        if (other.getLambda() == null ^ this.getLambda() == null)
+            return false;
+        if (other.getLambda() != null && other.getLambda().equals(this.getLambda()) == false)
+            return false;
+        if (other.getIotEvents() == null ^ this.getIotEvents() == null)
+            return false;
+        if (other.getIotEvents() != null && other.getIotEvents().equals(this.getIotEvents()) == false)
+            return false;
+        if (other.getSqs() == null ^ this.getSqs() == null)
+            return false;
+        if (other.getSqs() != null && other.getSqs().equals(this.getSqs()) == false)
+            return false;
+        if (other.getFirehose() == null ^ this.getFirehose() == null)
+            return false;
+        if (other.getFirehose() != null && other.getFirehose().equals(this.getFirehose()) == false)
+            return false;
         return true;
     }
 
@@ -381,6 +613,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSetTimer() == null) ? 0 : getSetTimer().hashCode());
         hashCode = prime * hashCode + ((getClearTimer() == null) ? 0 : getClearTimer().hashCode());
         hashCode = prime * hashCode + ((getResetTimer() == null) ? 0 : getResetTimer().hashCode());
+        hashCode = prime * hashCode + ((getLambda() == null) ? 0 : getLambda().hashCode());
+        hashCode = prime * hashCode + ((getIotEvents() == null) ? 0 : getIotEvents().hashCode());
+        hashCode = prime * hashCode + ((getSqs() == null) ? 0 : getSqs().hashCode());
+        hashCode = prime * hashCode + ((getFirehose() == null) ? 0 : getFirehose().hashCode());
         return hashCode;
     }
 

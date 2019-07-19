@@ -27,18 +27,18 @@ public class DeleteInputRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the input to be deleted.
+     * The name of the input to delete.
      * </p>
      */
     private String inputName;
 
     /**
      * <p>
-     * The name of the input to be deleted.
+     * The name of the input to delete.
      * </p>
      * 
      * @param inputName
-     *        The name of the input to be deleted.
+     *        The name of the input to delete.
      */
 
     public void setInputName(String inputName) {
@@ -47,10 +47,10 @@ public class DeleteInputRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the input to be deleted.
+     * The name of the input to delete.
      * </p>
      * 
-     * @return The name of the input to be deleted.
+     * @return The name of the input to delete.
      */
 
     public String getInputName() {
@@ -59,11 +59,11 @@ public class DeleteInputRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the input to be deleted.
+     * The name of the input to delete.
      * </p>
      * 
      * @param inputName
-     *        The name of the input to be deleted.
+     *        The name of the input to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

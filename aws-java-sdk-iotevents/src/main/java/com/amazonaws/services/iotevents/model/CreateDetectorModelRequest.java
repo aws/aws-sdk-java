@@ -60,7 +60,7 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
     private String roleArn;
     /**
      * <p>
-     * Metadata which can be used to manage the detector model.
+     * Metadata that can be used to manage the detector model.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -285,10 +285,10 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Metadata which can be used to manage the detector model.
+     * Metadata that can be used to manage the detector model.
      * </p>
      * 
-     * @return Metadata which can be used to manage the detector model.
+     * @return Metadata that can be used to manage the detector model.
      */
 
     public java.util.List<Tag> getTags() {
@@ -297,11 +297,11 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Metadata which can be used to manage the detector model.
+     * Metadata that can be used to manage the detector model.
      * </p>
      * 
      * @param tags
-     *        Metadata which can be used to manage the detector model.
+     *        Metadata that can be used to manage the detector model.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -315,7 +315,7 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Metadata which can be used to manage the detector model.
+     * Metadata that can be used to manage the detector model.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -324,7 +324,7 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param tags
-     *        Metadata which can be used to manage the detector model.
+     *        Metadata that can be used to manage the detector model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,11 +340,11 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Metadata which can be used to manage the detector model.
+     * Metadata that can be used to manage the detector model.
      * </p>
      * 
      * @param tags
-     *        Metadata which can be used to manage the detector model.
+     *        Metadata that can be used to manage the detector model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

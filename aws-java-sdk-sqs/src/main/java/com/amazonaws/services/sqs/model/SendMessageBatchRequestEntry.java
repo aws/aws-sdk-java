@@ -65,7 +65,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      */
@@ -79,7 +79,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a
      * href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
      * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -150,7 +150,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <p>
      * For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      * >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      */
@@ -187,7 +187,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <p>
      * For best practices of using <code>MessageGroupId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <important>
@@ -443,13 +443,13 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @return Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *         more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
      *         >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -464,14 +464,14 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
      *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -483,14 +483,14 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
      *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -530,7 +530,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a
      * href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
      * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -601,7 +601,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <p>
      * For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      * >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
@@ -612,7 +612,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages
      *        with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more
      *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
      *        > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -684,7 +684,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      *        >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -701,7 +701,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a
      * href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
      * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -772,7 +772,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <p>
      * For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      * >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
@@ -782,7 +782,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages
      *         with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For
      *         more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
      *         > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <ul>
@@ -855,7 +855,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      *         >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -872,7 +872,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a
      * href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
      * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -943,7 +943,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <p>
      * For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      * >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
@@ -954,7 +954,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages
      *        with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more
      *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
      *        > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -1026,7 +1026,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      *        >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1068,7 +1068,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <p>
      * For best practices of using <code>MessageGroupId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <important>
@@ -1108,7 +1108,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageGroupId</code>, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      *        >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <important>
@@ -1153,7 +1153,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <p>
      * For best practices of using <code>MessageGroupId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <important>
@@ -1192,7 +1192,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For best practices of using <code>MessageGroupId</code>, see <a href=
-     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      *         >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <important>
@@ -1237,7 +1237,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <p>
      * For best practices of using <code>MessageGroupId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <important>
@@ -1277,7 +1277,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageGroupId</code>, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      *        >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <important>

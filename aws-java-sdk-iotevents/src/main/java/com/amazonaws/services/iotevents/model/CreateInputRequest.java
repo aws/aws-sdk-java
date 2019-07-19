@@ -45,7 +45,7 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     private InputDefinition inputDefinition;
     /**
      * <p>
-     * Metadata which can be used to manage the input.
+     * Metadata that can be used to manage the input.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -172,10 +172,10 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Metadata which can be used to manage the input.
+     * Metadata that can be used to manage the input.
      * </p>
      * 
-     * @return Metadata which can be used to manage the input.
+     * @return Metadata that can be used to manage the input.
      */
 
     public java.util.List<Tag> getTags() {
@@ -184,11 +184,11 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Metadata which can be used to manage the input.
+     * Metadata that can be used to manage the input.
      * </p>
      * 
      * @param tags
-     *        Metadata which can be used to manage the input.
+     *        Metadata that can be used to manage the input.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -202,7 +202,7 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Metadata which can be used to manage the input.
+     * Metadata that can be used to manage the input.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -211,7 +211,7 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        Metadata which can be used to manage the input.
+     *        Metadata that can be used to manage the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Metadata which can be used to manage the input.
+     * Metadata that can be used to manage the input.
      * </p>
      * 
      * @param tags
-     *        Metadata which can be used to manage the input.
+     *        Metadata that can be used to manage the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

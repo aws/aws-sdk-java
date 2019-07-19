@@ -46,7 +46,7 @@ public class SendMessageResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a
      * href
-     * ="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
+     * ="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
      * >Queue and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      */
@@ -173,14 +173,14 @@ public class SendMessageResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a
      * href
-     * ="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
+     * ="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
      * >Queue and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageId
      *        An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information,
      *        see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
      *        >Queue and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -192,13 +192,13 @@ public class SendMessageResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a
      * href
-     * ="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
+     * ="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
      * >Queue and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @return An attribute containing the <code>MessageId</code> of the message sent to the queue. For more
      *         information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
      *         >Queue and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -210,14 +210,14 @@ public class SendMessageResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a
      * href
-     * ="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
+     * ="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
      * >Queue and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageId
      *        An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information,
      *        see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
      *        >Queue and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

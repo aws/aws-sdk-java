@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
+ * Specifies the actions performed when the <code>"condition"</code> evaluates to TRUE.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/OnInputLifecycle" target="_top">AWS API
@@ -30,23 +30,23 @@ public class OnInputLifecycle implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
+     * Specifies the actions performed when the <code>"condition"</code> evaluates to TRUE.
      * </p>
      */
     private java.util.List<Event> events;
     /**
      * <p>
-     * Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE.
+     * Specifies the actions performed, and the next state entered, when a <code>"condition"</code> evaluates to TRUE.
      * </p>
      */
     private java.util.List<TransitionEvent> transitionEvents;
 
     /**
      * <p>
-     * Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
+     * Specifies the actions performed when the <code>"condition"</code> evaluates to TRUE.
      * </p>
      * 
-     * @return Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
+     * @return Specifies the actions performed when the <code>"condition"</code> evaluates to TRUE.
      */
 
     public java.util.List<Event> getEvents() {
@@ -55,11 +55,11 @@ public class OnInputLifecycle implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
+     * Specifies the actions performed when the <code>"condition"</code> evaluates to TRUE.
      * </p>
      * 
      * @param events
-     *        Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
+     *        Specifies the actions performed when the <code>"condition"</code> evaluates to TRUE.
      */
 
     public void setEvents(java.util.Collection<Event> events) {
@@ -73,7 +73,7 @@ public class OnInputLifecycle implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
+     * Specifies the actions performed when the <code>"condition"</code> evaluates to TRUE.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class OnInputLifecycle implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param events
-     *        Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
+     *        Specifies the actions performed when the <code>"condition"</code> evaluates to TRUE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class OnInputLifecycle implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
+     * Specifies the actions performed when the <code>"condition"</code> evaluates to TRUE.
      * </p>
      * 
      * @param events
-     *        Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
+     *        Specifies the actions performed when the <code>"condition"</code> evaluates to TRUE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,10 +113,10 @@ public class OnInputLifecycle implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE.
+     * Specifies the actions performed, and the next state entered, when a <code>"condition"</code> evaluates to TRUE.
      * </p>
      * 
-     * @return Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to
+     * @return Specifies the actions performed, and the next state entered, when a <code>"condition"</code> evaluates to
      *         TRUE.
      */
 
@@ -126,11 +126,11 @@ public class OnInputLifecycle implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE.
+     * Specifies the actions performed, and the next state entered, when a <code>"condition"</code> evaluates to TRUE.
      * </p>
      * 
      * @param transitionEvents
-     *        Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to
+     *        Specifies the actions performed, and the next state entered, when a <code>"condition"</code> evaluates to
      *        TRUE.
      */
 
@@ -145,7 +145,7 @@ public class OnInputLifecycle implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE.
+     * Specifies the actions performed, and the next state entered, when a <code>"condition"</code> evaluates to TRUE.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -154,7 +154,7 @@ public class OnInputLifecycle implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param transitionEvents
-     *        Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to
+     *        Specifies the actions performed, and the next state entered, when a <code>"condition"</code> evaluates to
      *        TRUE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -171,11 +171,11 @@ public class OnInputLifecycle implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE.
+     * Specifies the actions performed, and the next state entered, when a <code>"condition"</code> evaluates to TRUE.
      * </p>
      * 
      * @param transitionEvents
-     *        Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to
+     *        Specifies the actions performed, and the next state entered, when a <code>"condition"</code> evaluates to
      *        TRUE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
