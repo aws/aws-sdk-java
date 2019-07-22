@@ -5,9 +5,9 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.576-SNAPSHOT</version>
+    <version>1.11.576</version>
   </parent>
-  <groupId>com.amazonaws</groupId>
+  <groupId>mil.af.cce.eai.amazonaws</groupId>
   <artifactId>aws-java-sdk-core</artifactId>
   <name>AWS SDK for Java - Core</name>
   <description>The AWS SDK for Java - Core module holds the classes that are used by the individual service clients to interact with Amazon Web Services. Users need to depend on aws-java-sdk artifact for accessing individual client classes.</description>
