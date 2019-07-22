@@ -27,18 +27,18 @@ public class DisassociateDRTLogBucketRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon S3 bucket that contains your flow logs.
+     * The Amazon S3 bucket that contains your AWS WAF logs.
      * </p>
      */
     private String logBucket;
 
     /**
      * <p>
-     * The Amazon S3 bucket that contains your flow logs.
+     * The Amazon S3 bucket that contains your AWS WAF logs.
      * </p>
      * 
      * @param logBucket
-     *        The Amazon S3 bucket that contains your flow logs.
+     *        The Amazon S3 bucket that contains your AWS WAF logs.
      */
 
     public void setLogBucket(String logBucket) {
@@ -47,10 +47,10 @@ public class DisassociateDRTLogBucketRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon S3 bucket that contains your flow logs.
+     * The Amazon S3 bucket that contains your AWS WAF logs.
      * </p>
      * 
-     * @return The Amazon S3 bucket that contains your flow logs.
+     * @return The Amazon S3 bucket that contains your AWS WAF logs.
      */
 
     public String getLogBucket() {
@@ -59,11 +59,11 @@ public class DisassociateDRTLogBucketRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon S3 bucket that contains your flow logs.
+     * The Amazon S3 bucket that contains your AWS WAF logs.
      * </p>
      * 
      * @param logBucket
-     *        The Amazon S3 bucket that contains your flow logs.
+     *        The Amazon S3 bucket that contains your AWS WAF logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

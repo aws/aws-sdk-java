@@ -1,3 +1,19 @@
+# __1.11.596__ __2019-07-22__
+## __AWS SDK for Java__
+  - ### Features
+    - Update Apache http client version to `4.5.9`.
+
+  - ### Bugfixes
+    - Disable apache normalization to handle breaking change introduced in apache httpclient `4.5.7`. See [aws/aws-sdk-java[[#1919](https://github.com/aws/aws-sdk-java/issues/1919)](https://github.com/aws/aws-sdk-java-v2/issues/1919)](https://github.com/aws/aws-sdk-java/issues/1919) for more information.
+
+## __AWS Shield__
+  - ### Features
+    - Adding new VectorType (HTTP_Reflection) and related top contributor types to describe WordPress Pingback DDoS attacks.
+
+## __AmazonMQ__
+  - ### Features
+    - Adds support for AWS Key Management Service (KMS) to offer server-side encryption. You can now select your own customer managed CMK, or use an AWS managed CMK in your KMS  account.
+
 # __1.11.595__ __2019-07-19__
 ## __AWS IoT Events__
   - ### Features

@@ -85,6 +85,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeBrokerResult.setDeploymentMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("encryptionOptions", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setEncryptionOptions(EncryptionOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("engineType", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setEngineType(context.getUnmarshaller(String.class).unmarshall(context));

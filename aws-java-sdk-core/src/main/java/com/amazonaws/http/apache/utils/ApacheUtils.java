@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016. Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright (c) 2016-2019. Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,6 +19,9 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.util.FakeIOException;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
@@ -28,6 +31,7 @@ import org.apache.http.auth.Credentials;
 import org.apache.http.auth.NTCredentials;
 import org.apache.http.client.AuthCache;
 import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.entity.BufferedHttpEntity;
@@ -42,7 +46,7 @@ import java.util.Map;
 import org.apache.http.protocol.HttpContext;
 
 public class ApacheUtils {
-
+    private static final Log log = LogFactory.getLog(ApacheUtils.class);
     /**
      * Checks if the request was successful or not based on the status code.
      *
@@ -136,9 +140,39 @@ public class ApacheUtils {
 
         addPreemptiveAuthenticationProxy(clientContext, settings);
 
+        RequestConfig.Builder builder = RequestConfig.custom();
+        disableNormalizeUri(builder);
+
+        clientContext.setRequestConfig(builder.build());
         clientContext.setAttribute(HttpContextUtils.DISABLE_SOCKET_PROXY_PROPERTY, settings.disableSocketProxy());
         return clientContext;
 
+    }
+
+    /**
+     * From Apache v4.5.8, normalization should be disabled or AWS requests with special characters in URI path will fail
+     * with Signature Errors.
+     * <p>
+     *    setNormalizeUri is added only in 4.5.8, so customers using the latest version of SDK with old versions (4.5.6 or less)
+     *    of Apache httpclient will see NoSuchMethodError. Hence this method will suppress the error.
+     *
+     *    Do not use Apache version 4.5.7 as it breaks URI paths with special characters and there is no option
+     *    to disable normalization.
+     * </p>
+     *
+     * For more information, See https://github.com/aws/aws-sdk-java/issues/1919
+     */
+    public static void disableNormalizeUri(RequestConfig.Builder requestConfigBuilder) {
+        try {
+            requestConfigBuilder.setNormalizeUri(false);
+        } catch (NoSuchMethodError error) {
+            // setNormalizeUri method was added in httpclient 4.5.8
+            log.warn("NoSuchMethodError was thrown when disabling normalizeUri. This indicates you are using "
+                           + "an old version (< 4.5.8) of Apache http client. It is recommended to use http client "
+                           + "version >= 4.5.9 to avoid the breaking change introduced in apache client 4.5.7 and "
+                           + "the latency in exception handling. See https://github.com/aws/aws-sdk-java/issues/1919"
+                           + " for more information");
+        }
     }
 
     /**

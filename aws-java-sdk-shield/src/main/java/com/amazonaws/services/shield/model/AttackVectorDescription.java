@@ -108,6 +108,21 @@ public class AttackVectorDescription implements Serializable, Cloneable, Structu
      * REQUEST_FLOOD
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * HTTP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UDS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MEMCACHED_REFLECTION
+     * </p>
+     * </li>
      * </ul>
      */
     private String vectorType;
@@ -192,6 +207,21 @@ public class AttackVectorDescription implements Serializable, Cloneable, Structu
      * REQUEST_FLOOD
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * HTTP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UDS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MEMCACHED_REFLECTION
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param vectorType
@@ -270,6 +300,21 @@ public class AttackVectorDescription implements Serializable, Cloneable, Structu
      *        <li>
      *        <p>
      *        REQUEST_FLOOD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HTTP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UDS_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MEMCACHED_REFLECTION
      *        </p>
      *        </li>
      */
@@ -358,6 +403,21 @@ public class AttackVectorDescription implements Serializable, Cloneable, Structu
      * REQUEST_FLOOD
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * HTTP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UDS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MEMCACHED_REFLECTION
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The attack type. Valid values:</p>
@@ -435,6 +495,21 @@ public class AttackVectorDescription implements Serializable, Cloneable, Structu
      *         <li>
      *         <p>
      *         REQUEST_FLOOD
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HTTP_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UDS_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMCACHED_REFLECTION
      *         </p>
      *         </li>
      */
@@ -523,6 +598,21 @@ public class AttackVectorDescription implements Serializable, Cloneable, Structu
      * REQUEST_FLOOD
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * HTTP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UDS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MEMCACHED_REFLECTION
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param vectorType
@@ -601,6 +691,21 @@ public class AttackVectorDescription implements Serializable, Cloneable, Structu
      *        <li>
      *        <p>
      *        REQUEST_FLOOD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HTTP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UDS_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MEMCACHED_REFLECTION
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

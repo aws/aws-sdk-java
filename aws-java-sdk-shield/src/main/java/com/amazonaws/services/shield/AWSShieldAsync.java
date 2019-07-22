@@ -38,8 +38,8 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Authorizes the DDoS Response team (DRT) to access the specified Amazon S3 bucket containing your flow logs. You
-     * can associate up to 10 Amazon S3 buckets with your subscription.
+     * Authorizes the DDoS Response team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs.
+     * You can associate up to 10 Amazon S3 buckets with your subscription.
      * </p>
      * <p>
      * To use the services of the DRT and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed to
@@ -57,8 +57,8 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Authorizes the DDoS Response team (DRT) to access the specified Amazon S3 bucket containing your flow logs. You
-     * can associate up to 10 Amazon S3 buckets with your subscription.
+     * Authorizes the DDoS Response team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs.
+     * You can associate up to 10 Amazon S3 buckets with your subscription.
      * </p>
      * <p>
      * To use the services of the DRT and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed to
@@ -240,6 +240,11 @@ public interface AWSShieldAsync extends AWSShield {
      * to Create Rules and Web ACLs on Your Behalf</a>.
      * </p>
      * <p>
+     * To use the services of the DRT, you must be subscribed to the <a
+     * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
+     * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
+     * </p>
+     * <p>
      * When you initally create a subscription, your subscription is set to be automatically renewed at the end of the
      * existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request.
      * </p>
@@ -261,6 +266,11 @@ public interface AWSShieldAsync extends AWSShield {
      * team (DRT) needed permissions to assist you during a suspected DDoS attack. For more information see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/authorize-DRT.html">Authorize the DDoS Response Team
      * to Create Rules and Web ACLs on Your Behalf</a>.
+     * </p>
+     * <p>
+     * To use the services of the DRT, you must be subscribed to the <a
+     * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
+     * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
      * </p>
      * <p>
      * When you initally create a subscription, your subscription is set to be automatically renewed at the end of the
@@ -509,7 +519,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing your flow logs.
+     * Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.
      * </p>
      * <p>
      * To make a <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
@@ -529,7 +539,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing your flow logs.
+     * Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.
      * </p>
      * <p>
      * To make a <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a

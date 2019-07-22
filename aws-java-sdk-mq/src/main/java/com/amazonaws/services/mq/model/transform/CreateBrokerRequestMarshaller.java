@@ -42,6 +42,8 @@ public class CreateBrokerRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> DEPLOYMENTMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentMode").build();
+    private static final MarshallingInfo<StructuredPojo> ENCRYPTIONOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionOptions").build();
     private static final MarshallingInfo<String> ENGINETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("engineType").build();
     private static final MarshallingInfo<String> ENGINEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -84,6 +86,7 @@ public class CreateBrokerRequestMarshaller {
             protocolMarshaller.marshall(createBrokerRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getCreatorRequestId(), CREATORREQUESTID_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getDeploymentMode(), DEPLOYMENTMODE_BINDING);
+            protocolMarshaller.marshall(createBrokerRequest.getEncryptionOptions(), ENCRYPTIONOPTIONS_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getEngineType(), ENGINETYPE_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getEngineVersion(), ENGINEVERSION_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getHostInstanceType(), HOSTINSTANCETYPE_BINDING);

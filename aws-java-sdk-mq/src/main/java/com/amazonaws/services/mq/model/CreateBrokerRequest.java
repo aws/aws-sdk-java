@@ -47,6 +47,8 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String creatorRequestId;
     /** Required. The deployment mode of the broker. */
     private String deploymentMode;
+    /** Encryption options for the broker. */
+    private EncryptionOptions encryptionOptions;
     /** Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ. */
     private String engineType;
     /**
@@ -305,6 +307,40 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public CreateBrokerRequest withDeploymentMode(DeploymentMode deploymentMode) {
         this.deploymentMode = deploymentMode.toString();
+        return this;
+    }
+
+    /**
+     * Encryption options for the broker.
+     * 
+     * @param encryptionOptions
+     *        Encryption options for the broker.
+     */
+
+    public void setEncryptionOptions(EncryptionOptions encryptionOptions) {
+        this.encryptionOptions = encryptionOptions;
+    }
+
+    /**
+     * Encryption options for the broker.
+     * 
+     * @return Encryption options for the broker.
+     */
+
+    public EncryptionOptions getEncryptionOptions() {
+        return this.encryptionOptions;
+    }
+
+    /**
+     * Encryption options for the broker.
+     * 
+     * @param encryptionOptions
+     *        Encryption options for the broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBrokerRequest withEncryptionOptions(EncryptionOptions encryptionOptions) {
+        setEncryptionOptions(encryptionOptions);
         return this;
     }
 
@@ -840,6 +876,8 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("CreatorRequestId: ").append(getCreatorRequestId()).append(",");
         if (getDeploymentMode() != null)
             sb.append("DeploymentMode: ").append(getDeploymentMode()).append(",");
+        if (getEncryptionOptions() != null)
+            sb.append("EncryptionOptions: ").append(getEncryptionOptions()).append(",");
         if (getEngineType() != null)
             sb.append("EngineType: ").append(getEngineType()).append(",");
         if (getEngineVersion() != null)
@@ -894,6 +932,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getDeploymentMode() != null && other.getDeploymentMode().equals(this.getDeploymentMode()) == false)
             return false;
+        if (other.getEncryptionOptions() == null ^ this.getEncryptionOptions() == null)
+            return false;
+        if (other.getEncryptionOptions() != null && other.getEncryptionOptions().equals(this.getEncryptionOptions()) == false)
+            return false;
         if (other.getEngineType() == null ^ this.getEngineType() == null)
             return false;
         if (other.getEngineType() != null && other.getEngineType().equals(this.getEngineType()) == false)
@@ -947,6 +989,7 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCreatorRequestId() == null) ? 0 : getCreatorRequestId().hashCode());
         hashCode = prime * hashCode + ((getDeploymentMode() == null) ? 0 : getDeploymentMode().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionOptions() == null) ? 0 : getEncryptionOptions().hashCode());
         hashCode = prime * hashCode + ((getEngineType() == null) ? 0 : getEngineType().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getHostInstanceType() == null) ? 0 : getHostInstanceType().hashCode());
