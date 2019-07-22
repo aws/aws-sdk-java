@@ -63,7 +63,8 @@ public enum Base64 {
                 // ignore
             }
         } else {
-            LOG.warn("JAXB is unavailable. Will fallback to SDK implementation which may be less performant");
+            LOG.warn("JAXB is unavailable. Will fallback to SDK implementation which may be less performant." +
+                     "If you are using Java 9+, you will need to include javax.xml.bind:jaxb-api as a dependency.");
         }
     }
 
