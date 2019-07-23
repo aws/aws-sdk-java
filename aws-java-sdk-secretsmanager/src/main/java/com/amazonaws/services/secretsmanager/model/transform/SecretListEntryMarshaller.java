@@ -55,6 +55,8 @@ public class SecretListEntryMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<Map> SECRETVERSIONSTOSTAGES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretVersionsToStages").build();
+    private static final MarshallingInfo<String> OWNINGSERVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwningService").build();
 
     private static final SecretListEntryMarshaller instance = new SecretListEntryMarshaller();
 
@@ -85,6 +87,7 @@ public class SecretListEntryMarshaller {
             protocolMarshaller.marshall(secretListEntry.getDeletedDate(), DELETEDDATE_BINDING);
             protocolMarshaller.marshall(secretListEntry.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(secretListEntry.getSecretVersionsToStages(), SECRETVERSIONSTOSTAGES_BINDING);
+            protocolMarshaller.marshall(secretListEntry.getOwningService(), OWNINGSERVICE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

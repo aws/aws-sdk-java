@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You can have at most 200 active Systems Manager documents.
+ * You can have at most 500 active Systems Manager documents.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -43,7 +43,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * maintenance window runs.
      * </p>
      * <p>
-     * You can specify targets using either instance IDs or tags that have been applied to instances.
+     * You can specify targets using instance IDs, resource group names, or tags that have been applied to instances.
      * </p>
      * <p>
      * <b>Example 1</b>: Specify instance IDs
@@ -63,6 +63,26 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <p>
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
      * </p>
+     * <p>
+     * <b>Example 4</b>: Use resource group names
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Example 5</b>: Use filters for resource group types
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+     * </p>
+     * <note>
+     * <p>
+     * For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+     * </p>
+     * </note>
      * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
@@ -215,7 +235,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * maintenance window runs.
      * </p>
      * <p>
-     * You can specify targets using either instance IDs or tags that have been applied to instances.
+     * You can specify targets using instance IDs, resource group names, or tags that have been applied to instances.
      * </p>
      * <p>
      * <b>Example 1</b>: Specify instance IDs
@@ -236,6 +256,26 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
      * </p>
      * <p>
+     * <b>Example 4</b>: Use resource group names
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Example 5</b>: Use filters for resource group types
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+     * </p>
+     * <note>
+     * <p>
+     * For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+     * </p>
+     * </note>
+     * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
      * >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
@@ -244,7 +284,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * @return The targets to register with the maintenance window. In other words, the instances to run commands on
      *         when the maintenance window runs.</p>
      *         <p>
-     *         You can specify targets using either instance IDs or tags that have been applied to instances.
+     *         You can specify targets using instance IDs, resource group names, or tags that have been applied to
+     *         instances.
      *         </p>
      *         <p>
      *         <b>Example 1</b>: Specify instance IDs
@@ -265,6 +306,26 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *         <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
      *         </p>
      *         <p>
+     *         <b>Example 4</b>: Use resource group names
+     *         </p>
+     *         <p>
+     *         <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+     *         </p>
+     *         <p>
+     *         <b>Example 5</b>: Use filters for resource group types
+     *         </p>
+     *         <p>
+     *         <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format
+     *         </p>
+     *         <p>
+     *         <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+     *         </p>
+     *         </note>
+     *         <p>
      *         For more information about these examples formats, including the best use case for each one, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
      *         >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
@@ -283,7 +344,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * maintenance window runs.
      * </p>
      * <p>
-     * You can specify targets using either instance IDs or tags that have been applied to instances.
+     * You can specify targets using instance IDs, resource group names, or tags that have been applied to instances.
      * </p>
      * <p>
      * <b>Example 1</b>: Specify instance IDs
@@ -304,6 +365,26 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
      * </p>
      * <p>
+     * <b>Example 4</b>: Use resource group names
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Example 5</b>: Use filters for resource group types
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+     * </p>
+     * <note>
+     * <p>
+     * For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+     * </p>
+     * </note>
+     * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
      * >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
@@ -313,7 +394,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *        The targets to register with the maintenance window. In other words, the instances to run commands on when
      *        the maintenance window runs.</p>
      *        <p>
-     *        You can specify targets using either instance IDs or tags that have been applied to instances.
+     *        You can specify targets using instance IDs, resource group names, or tags that have been applied to
+     *        instances.
      *        </p>
      *        <p>
      *        <b>Example 1</b>: Specify instance IDs
@@ -333,6 +415,26 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *        <p>
      *        <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
      *        </p>
+     *        <p>
+     *        <b>Example 4</b>: Use resource group names
+     *        </p>
+     *        <p>
+     *        <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+     *        </p>
+     *        <p>
+     *        <b>Example 5</b>: Use filters for resource group types
+     *        </p>
+     *        <p>
+     *        <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format
+     *        </p>
+     *        <p>
+     *        <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information about these examples formats, including the best use case for each one, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
@@ -354,7 +456,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * maintenance window runs.
      * </p>
      * <p>
-     * You can specify targets using either instance IDs or tags that have been applied to instances.
+     * You can specify targets using instance IDs, resource group names, or tags that have been applied to instances.
      * </p>
      * <p>
      * <b>Example 1</b>: Specify instance IDs
@@ -375,6 +477,26 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
      * </p>
      * <p>
+     * <b>Example 4</b>: Use resource group names
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Example 5</b>: Use filters for resource group types
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+     * </p>
+     * <note>
+     * <p>
+     * For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+     * </p>
+     * </note>
+     * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
      * >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
@@ -389,7 +511,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *        The targets to register with the maintenance window. In other words, the instances to run commands on when
      *        the maintenance window runs.</p>
      *        <p>
-     *        You can specify targets using either instance IDs or tags that have been applied to instances.
+     *        You can specify targets using instance IDs, resource group names, or tags that have been applied to
+     *        instances.
      *        </p>
      *        <p>
      *        <b>Example 1</b>: Specify instance IDs
@@ -409,6 +532,26 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *        <p>
      *        <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
      *        </p>
+     *        <p>
+     *        <b>Example 4</b>: Use resource group names
+     *        </p>
+     *        <p>
+     *        <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+     *        </p>
+     *        <p>
+     *        <b>Example 5</b>: Use filters for resource group types
+     *        </p>
+     *        <p>
+     *        <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format
+     *        </p>
+     *        <p>
+     *        <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information about these examples formats, including the best use case for each one, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
@@ -432,7 +575,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * maintenance window runs.
      * </p>
      * <p>
-     * You can specify targets using either instance IDs or tags that have been applied to instances.
+     * You can specify targets using instance IDs, resource group names, or tags that have been applied to instances.
      * </p>
      * <p>
      * <b>Example 1</b>: Specify instance IDs
@@ -453,6 +596,26 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
      * </p>
      * <p>
+     * <b>Example 4</b>: Use resource group names
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Example 5</b>: Use filters for resource group types
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+     * </p>
+     * <note>
+     * <p>
+     * For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format
+     * </p>
+     * <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+     * </p>
+     * </note>
+     * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
      * >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
@@ -462,7 +625,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *        The targets to register with the maintenance window. In other words, the instances to run commands on when
      *        the maintenance window runs.</p>
      *        <p>
-     *        You can specify targets using either instance IDs or tags that have been applied to instances.
+     *        You can specify targets using instance IDs, resource group names, or tags that have been applied to
+     *        instances.
      *        </p>
      *        <p>
      *        <b>Example 1</b>: Specify instance IDs
@@ -482,6 +646,26 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *        <p>
      *        <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
      *        </p>
+     *        <p>
+     *        <b>Example 4</b>: Use resource group names
+     *        </p>
+     *        <p>
+     *        <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+     *        </p>
+     *        <p>
+     *        <b>Example 5</b>: Use filters for resource group types
+     *        </p>
+     *        <p>
+     *        <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format
+     *        </p>
+     *        <p>
+     *        <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information about these examples formats, including the best use case for each one, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"

@@ -42,7 +42,7 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
     private MaintenanceWindowAutomationParameters automation;
     /**
      * <p>
-     * The parameters for a STEP_FUNCTION task type.
+     * The parameters for a STEP_FUNCTIONS task type.
      * </p>
      */
     private MaintenanceWindowStepFunctionsParameters stepFunctions;
@@ -135,11 +135,11 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a STEP_FUNCTION task type.
+     * The parameters for a STEP_FUNCTIONS task type.
      * </p>
      * 
      * @param stepFunctions
-     *        The parameters for a STEP_FUNCTION task type.
+     *        The parameters for a STEP_FUNCTIONS task type.
      */
 
     public void setStepFunctions(MaintenanceWindowStepFunctionsParameters stepFunctions) {
@@ -148,10 +148,10 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a STEP_FUNCTION task type.
+     * The parameters for a STEP_FUNCTIONS task type.
      * </p>
      * 
-     * @return The parameters for a STEP_FUNCTION task type.
+     * @return The parameters for a STEP_FUNCTIONS task type.
      */
 
     public MaintenanceWindowStepFunctionsParameters getStepFunctions() {
@@ -160,11 +160,11 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a STEP_FUNCTION task type.
+     * The parameters for a STEP_FUNCTIONS task type.
      * </p>
      * 
      * @param stepFunctions
-     *        The parameters for a STEP_FUNCTION task type.
+     *        The parameters for a STEP_FUNCTIONS task type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

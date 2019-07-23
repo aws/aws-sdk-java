@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You attempted to register a LAMBDA or STEP_FUNCTION task in a region where the corresponding service is not
+ * You attempted to register a LAMBDA or STEP_FUNCTIONS task in a region where the corresponding service is not
  * available.
  * </p>
  */

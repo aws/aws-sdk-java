@@ -22,12 +22,10 @@ import javax.annotation.Generated;
  * You do not have permission to access the instance.
  * </p>
  * <p>
- * SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running. On EC2
- * Windows instances, verify that the EC2Config service is running.
+ * SSM Agent is not running. Verify that SSM Agent is running.
  * </p>
  * <p>
- * SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or EC2Config
- * service.
+ * SSM Agent is not registered with the SSM endpoint. Try reinstalling SSM Agent.
  * </p>
  * <p>
  * The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are:

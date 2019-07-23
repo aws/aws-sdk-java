@@ -131,6 +131,8 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      */
     private java.util.Map<String, java.util.List<String>> secretVersionsToStages;
 
+    private String owningService;
+
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the secret.
@@ -846,6 +848,32 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * @param owningService
+     */
+
+    public void setOwningService(String owningService) {
+        this.owningService = owningService;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getOwningService() {
+        return this.owningService;
+    }
+
+    /**
+     * @param owningService
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SecretListEntry withOwningService(String owningService) {
+        setOwningService(owningService);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -882,7 +910,9 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getSecretVersionsToStages() != null)
-            sb.append("SecretVersionsToStages: ").append(getSecretVersionsToStages());
+            sb.append("SecretVersionsToStages: ").append(getSecretVersionsToStages()).append(",");
+        if (getOwningService() != null)
+            sb.append("OwningService: ").append(getOwningService());
         sb.append("}");
         return sb.toString();
     }
@@ -949,6 +979,10 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSecretVersionsToStages() != null && other.getSecretVersionsToStages().equals(this.getSecretVersionsToStages()) == false)
             return false;
+        if (other.getOwningService() == null ^ this.getOwningService() == null)
+            return false;
+        if (other.getOwningService() != null && other.getOwningService().equals(this.getOwningService()) == false)
+            return false;
         return true;
     }
 
@@ -970,6 +1004,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getDeletedDate() == null) ? 0 : getDeletedDate().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSecretVersionsToStages() == null) ? 0 : getSecretVersionsToStages().hashCode());
+        hashCode = prime * hashCode + ((getOwningService() == null) ? 0 : getOwningService().hashCode());
         return hashCode;
     }
 

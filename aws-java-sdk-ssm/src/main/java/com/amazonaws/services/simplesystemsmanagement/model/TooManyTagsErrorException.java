@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Targets parameter includes too many tags. Remove one or more tags and try the command again.
+ * The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try the command again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

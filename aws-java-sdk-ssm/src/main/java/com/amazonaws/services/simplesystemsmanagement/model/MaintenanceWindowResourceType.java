@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MaintenanceWindowResourceType {
 
-    INSTANCE("INSTANCE");
+    INSTANCE("INSTANCE"),
+    RESOURCE_GROUP("RESOURCE_GROUP");
 
     private String value;
 

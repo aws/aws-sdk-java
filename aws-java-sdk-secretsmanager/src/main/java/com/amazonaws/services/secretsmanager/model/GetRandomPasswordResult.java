@@ -83,7 +83,7 @@ public class GetRandomPasswordResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRandomPassword() != null)
-            sb.append("RandomPassword: ").append(getRandomPassword());
+            sb.append("RandomPassword: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

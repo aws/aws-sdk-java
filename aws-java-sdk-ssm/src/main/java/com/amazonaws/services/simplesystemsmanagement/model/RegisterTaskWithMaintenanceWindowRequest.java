@@ -45,7 +45,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * Specify maintenance window targets using the following format:
      * </p>
      * <p>
-     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
@@ -216,7 +216,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * Specify maintenance window targets using the following format:
      * </p>
      * <p>
-     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * 
      * @return The targets (either instances or maintenance window targets).</p>
@@ -230,7 +230,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      *         Specify maintenance window targets using the following format:
      *         </p>
      *         <p>
-     *         <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     *         <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      */
 
     public java.util.List<Target> getTargets() {
@@ -254,7 +254,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * Specify maintenance window targets using the following format:
      * </p>
      * <p>
-     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * 
      * @param targets
@@ -269,7 +269,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      *        Specify maintenance window targets using the following format:
      *        </p>
      *        <p>
-     *        <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     *        <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -295,7 +295,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * Specify maintenance window targets using the following format:
      * </p>
      * <p>
-     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -315,7 +315,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      *        Specify maintenance window targets using the following format:
      *        </p>
      *        <p>
-     *        <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     *        <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,7 +343,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * Specify maintenance window targets using the following format:
      * </p>
      * <p>
-     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * 
      * @param targets
@@ -358,7 +358,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      *        Specify maintenance window targets using the following format:
      *        </p>
      *        <p>
-     *        <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     *        <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

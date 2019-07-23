@@ -50,7 +50,7 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     private String executionId;
     /**
      * <p>
-     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTIONS,
      * AUTOMATION, RUN_COMMAND.
      * </p>
      */
@@ -261,13 +261,13 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTIONS,
      * AUTOMATION, RUN_COMMAND.
      * </p>
      * 
      * @param taskType
-     *        Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
-     *        AUTOMATION, RUN_COMMAND.
+     *        Retrieves the task type for a maintenance window. Task types include the following: LAMBDA,
+     *        STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.
      * @see MaintenanceWindowTaskType
      */
 
@@ -277,12 +277,12 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTIONS,
      * AUTOMATION, RUN_COMMAND.
      * </p>
      * 
      * @return Retrieves the task type for a maintenance window. Task types include the following: LAMBDA,
-     *         STEP_FUNCTION, AUTOMATION, RUN_COMMAND.
+     *         STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.
      * @see MaintenanceWindowTaskType
      */
 
@@ -292,13 +292,13 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTIONS,
      * AUTOMATION, RUN_COMMAND.
      * </p>
      * 
      * @param taskType
-     *        Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
-     *        AUTOMATION, RUN_COMMAND.
+     *        Retrieves the task type for a maintenance window. Task types include the following: LAMBDA,
+     *        STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -310,13 +310,13 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTIONS,
      * AUTOMATION, RUN_COMMAND.
      * </p>
      * 
      * @param taskType
-     *        Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
-     *        AUTOMATION, RUN_COMMAND.
+     *        Retrieves the task type for a maintenance window. Task types include the following: LAMBDA,
+     *        STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */

@@ -44,8 +44,8 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn is the
-     * Systems Manager Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTION tasks,
-     * the value is the state machine ARN.
+     * Systems Manager Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTIONS
+     * tasks, the value is the state machine ARN.
      * </p>
      */
     private String taskArn;
@@ -284,14 +284,14 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn is the
-     * Systems Manager Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTION tasks,
-     * the value is the state machine ARN.
+     * Systems Manager Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTIONS
+     * tasks, the value is the state machine ARN.
      * </p>
      * 
      * @param taskArn
      *        The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn
      *        is the Systems Manager Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For
-     *        STEP_FUNCTION tasks, the value is the state machine ARN.
+     *        STEP_FUNCTIONS tasks, the value is the state machine ARN.
      */
 
     public void setTaskArn(String taskArn) {
@@ -301,13 +301,13 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn is the
-     * Systems Manager Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTION tasks,
-     * the value is the state machine ARN.
+     * Systems Manager Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTIONS
+     * tasks, the value is the state machine ARN.
      * </p>
      * 
      * @return The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn
      *         is the Systems Manager Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For
-     *         STEP_FUNCTION tasks, the value is the state machine ARN.
+     *         STEP_FUNCTIONS tasks, the value is the state machine ARN.
      */
 
     public String getTaskArn() {
@@ -317,14 +317,14 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn is the
-     * Systems Manager Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTION tasks,
-     * the value is the state machine ARN.
+     * Systems Manager Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTIONS
+     * tasks, the value is the state machine ARN.
      * </p>
      * 
      * @param taskArn
      *        The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn
      *        is the Systems Manager Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For
-     *        STEP_FUNCTION tasks, the value is the state machine ARN.
+     *        STEP_FUNCTIONS tasks, the value is the state machine ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

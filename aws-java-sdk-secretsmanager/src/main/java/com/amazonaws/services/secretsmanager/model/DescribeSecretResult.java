@@ -126,6 +126,8 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
      */
     private java.util.Map<String, java.util.List<String>> versionIdsToStages;
 
+    private String owningService;
+
     /**
      * <p>
      * The ARN of the secret.
@@ -851,6 +853,32 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * @param owningService
+     */
+
+    public void setOwningService(String owningService) {
+        this.owningService = owningService;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getOwningService() {
+        return this.owningService;
+    }
+
+    /**
+     * @param owningService
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecretResult withOwningService(String owningService) {
+        setOwningService(owningService);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -887,7 +915,9 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getVersionIdsToStages() != null)
-            sb.append("VersionIdsToStages: ").append(getVersionIdsToStages());
+            sb.append("VersionIdsToStages: ").append(getVersionIdsToStages()).append(",");
+        if (getOwningService() != null)
+            sb.append("OwningService: ").append(getOwningService());
         sb.append("}");
         return sb.toString();
     }
@@ -954,6 +984,10 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getVersionIdsToStages() != null && other.getVersionIdsToStages().equals(this.getVersionIdsToStages()) == false)
             return false;
+        if (other.getOwningService() == null ^ this.getOwningService() == null)
+            return false;
+        if (other.getOwningService() != null && other.getOwningService().equals(this.getOwningService()) == false)
+            return false;
         return true;
     }
 
@@ -975,6 +1009,7 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getDeletedDate() == null) ? 0 : getDeletedDate().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVersionIdsToStages() == null) ? 0 : getVersionIdsToStages().hashCode());
+        hashCode = prime * hashCode + ((getOwningService() == null) ? 0 : getOwningService().hashCode());
         return hashCode;
     }
 
