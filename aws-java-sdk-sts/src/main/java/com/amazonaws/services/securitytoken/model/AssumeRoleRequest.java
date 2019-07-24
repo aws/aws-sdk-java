@@ -56,8 +56,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters. For more information about ARNs,
-     * see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the AWS General Reference.
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
@@ -334,8 +334,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters. For more information about ARNs,
-     * see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the AWS General Reference.
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
@@ -360,8 +360,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that
      *         you use for both inline and managed session policies shouldn't exceed 2048 characters. For more
-     *         information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+     *         information about ARNs, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      *         </p>
      *         <note>
      *         <p>
@@ -393,8 +394,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters. For more information about ARNs,
-     * see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the AWS General Reference.
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
@@ -420,8 +421,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you
      *        use for both inline and managed session policies shouldn't exceed 2048 characters. For more information
-     *        about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     *        AWS Service Namespaces</a> in the AWS General Reference.
+     *        about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      *        </p>
      *        <note>
      *        <p>
@@ -458,8 +460,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters. For more information about ARNs,
-     * see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the AWS General Reference.
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
@@ -490,8 +492,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you
      *        use for both inline and managed session policies shouldn't exceed 2048 characters. For more information
-     *        about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     *        AWS Service Namespaces</a> in the AWS General Reference.
+     *        about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      *        </p>
      *        <note>
      *        <p>
@@ -530,8 +533,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters. For more information about ARNs,
-     * see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the AWS General Reference.
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
@@ -557,8 +560,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you
      *        use for both inline and managed session policies shouldn't exceed 2048 characters. For more information
-     *        about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     *        AWS Service Namespaces</a> in the AWS General Reference.
+     *        about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      *        </p>
      *        <note>
      *        <p>

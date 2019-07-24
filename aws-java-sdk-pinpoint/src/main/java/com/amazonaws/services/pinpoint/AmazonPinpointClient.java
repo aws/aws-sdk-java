@@ -50,7 +50,9 @@ import com.amazonaws.services.pinpoint.model.transform.*;
  * Client for accessing Amazon Pinpoint. All service calls made using this client are blocking, and will not return
  * until the service call completes.
  * <p>
- * Amazon Pinpoint
+ * <p>
+ * Doc Engage API - Amazon Pinpoint API
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -2141,6 +2143,76 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Retrieves (queries) pre-aggregated data for a standard metric that applies to an application.
+     * </p>
+     * 
+     * @param getApplicationDateRangeKpiRequest
+     * @return Result of the GetApplicationDateRangeKpi operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetApplicationDateRangeKpi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetApplicationDateRangeKpiResult getApplicationDateRangeKpi(GetApplicationDateRangeKpiRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetApplicationDateRangeKpi(request);
+    }
+
+    @SdkInternalApi
+    final GetApplicationDateRangeKpiResult executeGetApplicationDateRangeKpi(GetApplicationDateRangeKpiRequest getApplicationDateRangeKpiRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getApplicationDateRangeKpiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetApplicationDateRangeKpiRequest> request = null;
+        Response<GetApplicationDateRangeKpiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetApplicationDateRangeKpiRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getApplicationDateRangeKpiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplicationDateRangeKpi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetApplicationDateRangeKpiResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetApplicationDateRangeKpiResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves information about the settings for an application.
      * </p>
      * 
@@ -2471,6 +2543,76 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<GetCampaignActivitiesResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetCampaignActivitiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign.
+     * </p>
+     * 
+     * @param getCampaignDateRangeKpiRequest
+     * @return Result of the GetCampaignDateRangeKpi operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetCampaignDateRangeKpi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCampaignDateRangeKpiResult getCampaignDateRangeKpi(GetCampaignDateRangeKpiRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCampaignDateRangeKpi(request);
+    }
+
+    @SdkInternalApi
+    final GetCampaignDateRangeKpiResult executeGetCampaignDateRangeKpi(GetCampaignDateRangeKpiRequest getCampaignDateRangeKpiRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCampaignDateRangeKpiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCampaignDateRangeKpiRequest> request = null;
+        Response<GetCampaignDateRangeKpiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCampaignDateRangeKpiRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCampaignDateRangeKpiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCampaignDateRangeKpi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCampaignDateRangeKpiResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCampaignDateRangeKpiResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

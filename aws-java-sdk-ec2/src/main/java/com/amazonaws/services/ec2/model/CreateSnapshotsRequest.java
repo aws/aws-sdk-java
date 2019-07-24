@@ -45,7 +45,7 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
     /**
      * <p>
-     * Copies the tags from the specified instance to all snapshots.
+     * Copies the tags from the specified volume to corresponding snapshot.
      * </p>
      */
     private String copyTagsFromSource;
@@ -205,11 +205,11 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Copies the tags from the specified instance to all snapshots.
+     * Copies the tags from the specified volume to corresponding snapshot.
      * </p>
      * 
      * @param copyTagsFromSource
-     *        Copies the tags from the specified instance to all snapshots.
+     *        Copies the tags from the specified volume to corresponding snapshot.
      * @see CopyTagsFromSource
      */
 
@@ -219,10 +219,10 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Copies the tags from the specified instance to all snapshots.
+     * Copies the tags from the specified volume to corresponding snapshot.
      * </p>
      * 
-     * @return Copies the tags from the specified instance to all snapshots.
+     * @return Copies the tags from the specified volume to corresponding snapshot.
      * @see CopyTagsFromSource
      */
 
@@ -232,11 +232,11 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Copies the tags from the specified instance to all snapshots.
+     * Copies the tags from the specified volume to corresponding snapshot.
      * </p>
      * 
      * @param copyTagsFromSource
-     *        Copies the tags from the specified instance to all snapshots.
+     *        Copies the tags from the specified volume to corresponding snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CopyTagsFromSource
      */
@@ -248,11 +248,11 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Copies the tags from the specified instance to all snapshots.
+     * Copies the tags from the specified volume to corresponding snapshot.
      * </p>
      * 
      * @param copyTagsFromSource
-     *        Copies the tags from the specified instance to all snapshots.
+     *        Copies the tags from the specified volume to corresponding snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CopyTagsFromSource
      */

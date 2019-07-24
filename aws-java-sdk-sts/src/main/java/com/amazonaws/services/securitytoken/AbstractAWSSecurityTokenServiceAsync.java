@@ -80,6 +80,19 @@ public class AbstractAWSSecurityTokenServiceAsync extends AbstractAWSSecurityTok
     }
 
     @Override
+    public java.util.concurrent.Future<GetAccessKeyInfoResult> getAccessKeyInfoAsync(GetAccessKeyInfoRequest request) {
+
+        return getAccessKeyInfoAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessKeyInfoResult> getAccessKeyInfoAsync(GetAccessKeyInfoRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAccessKeyInfoRequest, GetAccessKeyInfoResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCallerIdentityResult> getCallerIdentityAsync(GetCallerIdentityRequest request) {
 
         return getCallerIdentityAsync(request, null);

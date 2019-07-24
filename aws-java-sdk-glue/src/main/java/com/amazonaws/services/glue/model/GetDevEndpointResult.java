@@ -25,18 +25,18 @@ public class GetDevEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A DevEndpoint definition.
+     * A <code>DevEndpoint</code> definition.
      * </p>
      */
     private DevEndpoint devEndpoint;
 
     /**
      * <p>
-     * A DevEndpoint definition.
+     * A <code>DevEndpoint</code> definition.
      * </p>
      * 
      * @param devEndpoint
-     *        A DevEndpoint definition.
+     *        A <code>DevEndpoint</code> definition.
      */
 
     public void setDevEndpoint(DevEndpoint devEndpoint) {
@@ -45,10 +45,10 @@ public class GetDevEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A DevEndpoint definition.
+     * A <code>DevEndpoint</code> definition.
      * </p>
      * 
-     * @return A DevEndpoint definition.
+     * @return A <code>DevEndpoint</code> definition.
      */
 
     public DevEndpoint getDevEndpoint() {
@@ -57,11 +57,11 @@ public class GetDevEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A DevEndpoint definition.
+     * A <code>DevEndpoint</code> definition.
      * </p>
      * 
      * @param devEndpoint
-     *        A DevEndpoint definition.
+     *        A <code>DevEndpoint</code> definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

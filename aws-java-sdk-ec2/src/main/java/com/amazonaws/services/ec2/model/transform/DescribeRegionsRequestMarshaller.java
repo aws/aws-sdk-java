@@ -80,6 +80,10 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
             }
         }
 
+        if (describeRegionsRequest.getAllRegions() != null) {
+            request.addParameter("AllRegions", StringUtils.fromBoolean(describeRegionsRequest.getAllRegions()));
+        }
+
         return request;
     }
 

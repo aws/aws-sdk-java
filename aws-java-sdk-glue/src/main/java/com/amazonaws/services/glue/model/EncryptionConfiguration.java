@@ -30,29 +30,29 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The encryption configuration for S3 data.
+     * The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
      * </p>
      */
     private java.util.List<S3Encryption> s3Encryption;
     /**
      * <p>
-     * The encryption configuration for CloudWatch.
+     * The encryption configuration for Amazon CloudWatch.
      * </p>
      */
     private CloudWatchEncryption cloudWatchEncryption;
     /**
      * <p>
-     * The encryption configuration for Job Bookmarks.
+     * The encryption configuration for job bookmarks.
      * </p>
      */
     private JobBookmarksEncryption jobBookmarksEncryption;
 
     /**
      * <p>
-     * The encryption configuration for S3 data.
+     * The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
      * </p>
      * 
-     * @return The encryption configuration for S3 data.
+     * @return The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
      */
 
     public java.util.List<S3Encryption> getS3Encryption() {
@@ -61,11 +61,11 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The encryption configuration for S3 data.
+     * The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
      * </p>
      * 
      * @param s3Encryption
-     *        The encryption configuration for S3 data.
+     *        The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
      */
 
     public void setS3Encryption(java.util.Collection<S3Encryption> s3Encryption) {
@@ -79,7 +79,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The encryption configuration for S3 data.
+     * The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +88,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param s3Encryption
-     *        The encryption configuration for S3 data.
+     *        The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +104,11 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The encryption configuration for S3 data.
+     * The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
      * </p>
      * 
      * @param s3Encryption
-     *        The encryption configuration for S3 data.
+     *        The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +119,11 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The encryption configuration for CloudWatch.
+     * The encryption configuration for Amazon CloudWatch.
      * </p>
      * 
      * @param cloudWatchEncryption
-     *        The encryption configuration for CloudWatch.
+     *        The encryption configuration for Amazon CloudWatch.
      */
 
     public void setCloudWatchEncryption(CloudWatchEncryption cloudWatchEncryption) {
@@ -132,10 +132,10 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The encryption configuration for CloudWatch.
+     * The encryption configuration for Amazon CloudWatch.
      * </p>
      * 
-     * @return The encryption configuration for CloudWatch.
+     * @return The encryption configuration for Amazon CloudWatch.
      */
 
     public CloudWatchEncryption getCloudWatchEncryption() {
@@ -144,11 +144,11 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The encryption configuration for CloudWatch.
+     * The encryption configuration for Amazon CloudWatch.
      * </p>
      * 
      * @param cloudWatchEncryption
-     *        The encryption configuration for CloudWatch.
+     *        The encryption configuration for Amazon CloudWatch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +159,11 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The encryption configuration for Job Bookmarks.
+     * The encryption configuration for job bookmarks.
      * </p>
      * 
      * @param jobBookmarksEncryption
-     *        The encryption configuration for Job Bookmarks.
+     *        The encryption configuration for job bookmarks.
      */
 
     public void setJobBookmarksEncryption(JobBookmarksEncryption jobBookmarksEncryption) {
@@ -172,10 +172,10 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The encryption configuration for Job Bookmarks.
+     * The encryption configuration for job bookmarks.
      * </p>
      * 
-     * @return The encryption configuration for Job Bookmarks.
+     * @return The encryption configuration for job bookmarks.
      */
 
     public JobBookmarksEncryption getJobBookmarksEncryption() {
@@ -184,11 +184,11 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The encryption configuration for Job Bookmarks.
+     * The encryption configuration for job bookmarks.
      * </p>
      * 
      * @param jobBookmarksEncryption
-     *        The encryption configuration for Job Bookmarks.
+     *        The encryption configuration for job bookmarks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

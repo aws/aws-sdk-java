@@ -30,7 +30,8 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The carrier or service provider that the phone number is currently registered with.
+     * The carrier or service provider that the phone number is currently registered with. In some countries and
+     * regions, this value may be the carrier or service provider that the phone number was originally registered with.
      * </p>
      */
     private String carrier;
@@ -117,11 +118,14 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The carrier or service provider that the phone number is currently registered with.
+     * The carrier or service provider that the phone number is currently registered with. In some countries and
+     * regions, this value may be the carrier or service provider that the phone number was originally registered with.
      * </p>
      * 
      * @param carrier
-     *        The carrier or service provider that the phone number is currently registered with.
+     *        The carrier or service provider that the phone number is currently registered with. In some countries and
+     *        regions, this value may be the carrier or service provider that the phone number was originally registered
+     *        with.
      */
 
     public void setCarrier(String carrier) {
@@ -130,10 +134,13 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The carrier or service provider that the phone number is currently registered with.
+     * The carrier or service provider that the phone number is currently registered with. In some countries and
+     * regions, this value may be the carrier or service provider that the phone number was originally registered with.
      * </p>
      * 
-     * @return The carrier or service provider that the phone number is currently registered with.
+     * @return The carrier or service provider that the phone number is currently registered with. In some countries and
+     *         regions, this value may be the carrier or service provider that the phone number was originally
+     *         registered with.
      */
 
     public String getCarrier() {
@@ -142,11 +149,14 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The carrier or service provider that the phone number is currently registered with.
+     * The carrier or service provider that the phone number is currently registered with. In some countries and
+     * regions, this value may be the carrier or service provider that the phone number was originally registered with.
      * </p>
      * 
      * @param carrier
-     *        The carrier or service provider that the phone number is currently registered with.
+     *        The carrier or service provider that the phone number is currently registered with. In some countries and
+     *        regions, this value may be the carrier or service provider that the phone number was originally registered
+     *        with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -571,7 +571,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Returns a list of resource metadata for a given list of DevEndpoint names. After calling the
+     * Returns a list of resource metadata for a given list of development endpoint names. After calling the
      * <code>ListDevEndpoints</code> operation, you can call this operation to access the data to which you have been
      * granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
      * </p>
@@ -1191,7 +1191,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Creates a new DevEndpoint.
+     * Creates a new development endpoint.
      * </p>
      * 
      * @param createDevEndpointRequest
@@ -1453,7 +1453,11 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Creates a new security configuration.
+     * Creates a new security configuration. A security configuration is a set of security properties that can be used
+     * by AWS Glue. You can use a security configuration to encrypt data at rest. For information about using security
+     * configurations in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting Data Written
+     * by Crawlers, Jobs, and Development Endpoints</a>.
      * </p>
      * 
      * @param createSecurityConfigurationRequest
@@ -2037,7 +2041,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Deletes a specified DevEndpoint.
+     * Deletes a specified development endpoint.
      * </p>
      * 
      * @param deleteDevEndpointRequest
@@ -3367,7 +3371,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Retrieves information about a specified DevEndpoint.
+     * Retrieves information about a specified development endpoint.
      * </p>
      * <note>
      * <p>
@@ -3435,7 +3439,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Retrieves all the DevEndpoints in this AWS account.
+     * Retrieves all the development endpoints in this AWS account.
      * </p>
      * <note>
      * <p>
@@ -6572,7 +6576,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Updates a specified DevEndpoint.
+     * Updates a specified development endpoint.
      * </p>
      * 
      * @param updateDevEndpointRequest

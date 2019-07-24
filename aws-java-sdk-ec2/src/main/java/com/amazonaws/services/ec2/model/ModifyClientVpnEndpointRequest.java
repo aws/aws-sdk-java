@@ -84,6 +84,17 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * Indicates whether the VPN is split-tunnel.
+     * </p>
+     * <p>
+     * For information about split-tunnel VPN endpoints, see <a
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS Client VPN
+     * Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
+     * </p>
+     */
+    private Boolean splitTunnel;
 
     /**
      * <p>
@@ -451,6 +462,94 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Indicates whether the VPN is split-tunnel.
+     * </p>
+     * <p>
+     * For information about split-tunnel VPN endpoints, see <a
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS Client VPN
+     * Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
+     * </p>
+     * 
+     * @param splitTunnel
+     *        Indicates whether the VPN is split-tunnel.</p>
+     *        <p>
+     *        For information about split-tunnel VPN endpoints, see <a
+     *        href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS
+     *        Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
+     */
+
+    public void setSplitTunnel(Boolean splitTunnel) {
+        this.splitTunnel = splitTunnel;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPN is split-tunnel.
+     * </p>
+     * <p>
+     * For information about split-tunnel VPN endpoints, see <a
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS Client VPN
+     * Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether the VPN is split-tunnel.</p>
+     *         <p>
+     *         For information about split-tunnel VPN endpoints, see <a
+     *         href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS
+     *         Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
+     */
+
+    public Boolean getSplitTunnel() {
+        return this.splitTunnel;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPN is split-tunnel.
+     * </p>
+     * <p>
+     * For information about split-tunnel VPN endpoints, see <a
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS Client VPN
+     * Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
+     * </p>
+     * 
+     * @param splitTunnel
+     *        Indicates whether the VPN is split-tunnel.</p>
+     *        <p>
+     *        For information about split-tunnel VPN endpoints, see <a
+     *        href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS
+     *        Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClientVpnEndpointRequest withSplitTunnel(Boolean splitTunnel) {
+        setSplitTunnel(splitTunnel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPN is split-tunnel.
+     * </p>
+     * <p>
+     * For information about split-tunnel VPN endpoints, see <a
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS Client VPN
+     * Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether the VPN is split-tunnel.</p>
+     *         <p>
+     *         For information about split-tunnel VPN endpoints, see <a
+     *         href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS
+     *         Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
+     */
+
+    public Boolean isSplitTunnel() {
+        return this.splitTunnel;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -482,7 +581,9 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         if (getDnsServers() != null)
             sb.append("DnsServers: ").append(getDnsServers()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getSplitTunnel() != null)
+            sb.append("SplitTunnel: ").append(getSplitTunnel());
         sb.append("}");
         return sb.toString();
     }
@@ -517,6 +618,10 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getSplitTunnel() == null ^ this.getSplitTunnel() == null)
+            return false;
+        if (other.getSplitTunnel() != null && other.getSplitTunnel().equals(this.getSplitTunnel()) == false)
+            return false;
         return true;
     }
 
@@ -530,6 +635,7 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getConnectionLogOptions() == null) ? 0 : getConnectionLogOptions().hashCode());
         hashCode = prime * hashCode + ((getDnsServers() == null) ? 0 : getDnsServers().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSplitTunnel() == null) ? 0 : getSplitTunnel().hashCode());
         return hashCode;
     }
 

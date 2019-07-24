@@ -164,6 +164,20 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private NotificationProperty notificationProperty;
     /**
      * <p>
+     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     * indicates the version supported for jobs of type Spark.
+     * </p>
+     * <p>
+     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
+     * </p>
+     * <p>
+     * Jobs that are created without specifying a Glue version default to Glue 0.9.
+     * </p>
+     */
+    private String glueVersion;
+    /**
+     * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      * </p>
      * <p>
@@ -1110,6 +1124,94 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     * indicates the version supported for jobs of type Spark.
+     * </p>
+     * <p>
+     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
+     * </p>
+     * <p>
+     * Jobs that are created without specifying a Glue version default to Glue 0.9.
+     * </p>
+     * 
+     * @param glueVersion
+     *        Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     *        indicates the version supported for jobs of type Spark. </p>
+     *        <p>
+     *        For more information about the available AWS Glue versions and corresponding Spark and Python versions,
+     *        see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
+     *        guide.
+     *        </p>
+     *        <p>
+     *        Jobs that are created without specifying a Glue version default to Glue 0.9.
+     */
+
+    public void setGlueVersion(String glueVersion) {
+        this.glueVersion = glueVersion;
+    }
+
+    /**
+     * <p>
+     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     * indicates the version supported for jobs of type Spark.
+     * </p>
+     * <p>
+     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
+     * </p>
+     * <p>
+     * Jobs that are created without specifying a Glue version default to Glue 0.9.
+     * </p>
+     * 
+     * @return Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python
+     *         version indicates the version supported for jobs of type Spark. </p>
+     *         <p>
+     *         For more information about the available AWS Glue versions and corresponding Spark and Python versions,
+     *         see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
+     *         guide.
+     *         </p>
+     *         <p>
+     *         Jobs that are created without specifying a Glue version default to Glue 0.9.
+     */
+
+    public String getGlueVersion() {
+        return this.glueVersion;
+    }
+
+    /**
+     * <p>
+     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     * indicates the version supported for jobs of type Spark.
+     * </p>
+     * <p>
+     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
+     * </p>
+     * <p>
+     * Jobs that are created without specifying a Glue version default to Glue 0.9.
+     * </p>
+     * 
+     * @param glueVersion
+     *        Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     *        indicates the version supported for jobs of type Spark. </p>
+     *        <p>
+     *        For more information about the available AWS Glue versions and corresponding Spark and Python versions,
+     *        see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
+     *        guide.
+     *        </p>
+     *        <p>
+     *        Jobs that are created without specifying a Glue version default to Glue 0.9.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withGlueVersion(String glueVersion) {
+        setGlueVersion(glueVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
      * </p>
      * <p>
@@ -1210,6 +1312,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
+     * @see WorkerType
      */
 
     public void setWorkerType(String workerType) {
@@ -1262,6 +1365,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *         </p>
      *         </li>
+     * @see WorkerType
      */
 
     public String getWorkerType() {
@@ -1316,10 +1420,67 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkerType
      */
 
     public CreateJobRequest withWorkerType(String workerType) {
         setWorkerType(workerType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param workerType
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or
+     *        G.2X.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk,
+     *        and 2 executors per worker.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkerType
+     */
+
+    public CreateJobRequest withWorkerType(WorkerType workerType) {
+        this.workerType = workerType.toString();
         return this;
     }
 
@@ -1365,6 +1526,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("Tags: ").append(getTags()).append(",");
         if (getNotificationProperty() != null)
             sb.append("NotificationProperty: ").append(getNotificationProperty()).append(",");
+        if (getGlueVersion() != null)
+            sb.append("GlueVersion: ").append(getGlueVersion()).append(",");
         if (getNumberOfWorkers() != null)
             sb.append("NumberOfWorkers: ").append(getNumberOfWorkers()).append(",");
         if (getWorkerType() != null)
@@ -1443,6 +1606,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getNotificationProperty() != null && other.getNotificationProperty().equals(this.getNotificationProperty()) == false)
             return false;
+        if (other.getGlueVersion() == null ^ this.getGlueVersion() == null)
+            return false;
+        if (other.getGlueVersion() != null && other.getGlueVersion().equals(this.getGlueVersion()) == false)
+            return false;
         if (other.getNumberOfWorkers() == null ^ this.getNumberOfWorkers() == null)
             return false;
         if (other.getNumberOfWorkers() != null && other.getNumberOfWorkers().equals(this.getNumberOfWorkers()) == false)
@@ -1474,6 +1641,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getNotificationProperty() == null) ? 0 : getNotificationProperty().hashCode());
+        hashCode = prime * hashCode + ((getGlueVersion() == null) ? 0 : getGlueVersion().hashCode());
         hashCode = prime * hashCode + ((getNumberOfWorkers() == null) ? 0 : getNumberOfWorkers().hashCode());
         hashCode = prime * hashCode + ((getWorkerType() == null) ? 0 : getWorkerType().hashCode());
         return hashCode;

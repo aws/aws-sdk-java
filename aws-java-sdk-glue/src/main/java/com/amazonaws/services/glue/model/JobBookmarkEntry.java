@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a point which a job can resume processing.
+ * Defines a point that a job can resume processing.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JobBookmarkEntry" target="_top">AWS API
@@ -30,13 +30,13 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name of the job in question.
+     * The name of the job in question.
      * </p>
      */
     private String jobName;
     /**
      * <p>
-     * Version of the job.
+     * The version of the job.
      * </p>
      */
     private Integer version;
@@ -61,11 +61,11 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name of the job in question.
+     * The name of the job in question.
      * </p>
      * 
      * @param jobName
-     *        Name of the job in question.
+     *        The name of the job in question.
      */
 
     public void setJobName(String jobName) {
@@ -74,10 +74,10 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name of the job in question.
+     * The name of the job in question.
      * </p>
      * 
-     * @return Name of the job in question.
+     * @return The name of the job in question.
      */
 
     public String getJobName() {
@@ -86,11 +86,11 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name of the job in question.
+     * The name of the job in question.
      * </p>
      * 
      * @param jobName
-     *        Name of the job in question.
+     *        The name of the job in question.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Version of the job.
+     * The version of the job.
      * </p>
      * 
      * @param version
-     *        Version of the job.
+     *        The version of the job.
      */
 
     public void setVersion(Integer version) {
@@ -114,10 +114,10 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Version of the job.
+     * The version of the job.
      * </p>
      * 
-     * @return Version of the job.
+     * @return The version of the job.
      */
 
     public Integer getVersion() {
@@ -126,11 +126,11 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Version of the job.
+     * The version of the job.
      * </p>
      * 
      * @param version
-     *        Version of the job.
+     *        The version of the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

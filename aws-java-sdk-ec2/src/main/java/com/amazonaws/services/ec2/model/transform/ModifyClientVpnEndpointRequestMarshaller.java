@@ -90,6 +90,10 @@ public class ModifyClientVpnEndpointRequestMarshaller implements Marshaller<Requ
             request.addParameter("Description", StringUtils.fromString(modifyClientVpnEndpointRequest.getDescription()));
         }
 
+        if (modifyClientVpnEndpointRequest.getSplitTunnel() != null) {
+            request.addParameter("SplitTunnel", StringUtils.fromBoolean(modifyClientVpnEndpointRequest.getSplitTunnel()));
+        }
+
         return request;
     }
 

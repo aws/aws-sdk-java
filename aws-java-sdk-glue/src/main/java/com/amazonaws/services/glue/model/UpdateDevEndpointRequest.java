@@ -27,61 +27,61 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the DevEndpoint to be updated.
+     * The name of the <code>DevEndpoint</code> to be updated.
      * </p>
      */
     private String endpointName;
     /**
      * <p>
-     * The public key for the DevEndpoint to use.
+     * The public key for the <code>DevEndpoint</code> to use.
      * </p>
      */
     private String publicKey;
     /**
      * <p>
-     * The list of public keys for the DevEndpoint to use.
+     * The list of public keys for the <code>DevEndpoint</code> to use.
      * </p>
      */
     private java.util.List<String> addPublicKeys;
     /**
      * <p>
-     * The list of public keys to be deleted from the DevEndpoint.
+     * The list of public keys to be deleted from the <code>DevEndpoint</code>.
      * </p>
      */
     private java.util.List<String> deletePublicKeys;
     /**
      * <p>
-     * Custom Python or Java libraries to be loaded in the DevEndpoint.
+     * Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.
      * </p>
      */
     private DevEndpointCustomLibraries customLibraries;
     /**
      * <p>
-     * True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or False
-     * otherwise.
+     * <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated,
+     * or <code>False</code> if otherwise.
      * </p>
      */
     private Boolean updateEtlLibraries;
     /**
      * <p>
-     * The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      */
     private java.util.List<String> deleteArguments;
     /**
      * <p>
-     * The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     * The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      */
     private java.util.Map<String, String> addArguments;
 
     /**
      * <p>
-     * The name of the DevEndpoint to be updated.
+     * The name of the <code>DevEndpoint</code> to be updated.
      * </p>
      * 
      * @param endpointName
-     *        The name of the DevEndpoint to be updated.
+     *        The name of the <code>DevEndpoint</code> to be updated.
      */
 
     public void setEndpointName(String endpointName) {
@@ -90,10 +90,10 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the DevEndpoint to be updated.
+     * The name of the <code>DevEndpoint</code> to be updated.
      * </p>
      * 
-     * @return The name of the DevEndpoint to be updated.
+     * @return The name of the <code>DevEndpoint</code> to be updated.
      */
 
     public String getEndpointName() {
@@ -102,11 +102,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the DevEndpoint to be updated.
+     * The name of the <code>DevEndpoint</code> to be updated.
      * </p>
      * 
      * @param endpointName
-     *        The name of the DevEndpoint to be updated.
+     *        The name of the <code>DevEndpoint</code> to be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +117,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The public key for the DevEndpoint to use.
+     * The public key for the <code>DevEndpoint</code> to use.
      * </p>
      * 
      * @param publicKey
-     *        The public key for the DevEndpoint to use.
+     *        The public key for the <code>DevEndpoint</code> to use.
      */
 
     public void setPublicKey(String publicKey) {
@@ -130,10 +130,10 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The public key for the DevEndpoint to use.
+     * The public key for the <code>DevEndpoint</code> to use.
      * </p>
      * 
-     * @return The public key for the DevEndpoint to use.
+     * @return The public key for the <code>DevEndpoint</code> to use.
      */
 
     public String getPublicKey() {
@@ -142,11 +142,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The public key for the DevEndpoint to use.
+     * The public key for the <code>DevEndpoint</code> to use.
      * </p>
      * 
      * @param publicKey
-     *        The public key for the DevEndpoint to use.
+     *        The public key for the <code>DevEndpoint</code> to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,10 +157,10 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of public keys for the DevEndpoint to use.
+     * The list of public keys for the <code>DevEndpoint</code> to use.
      * </p>
      * 
-     * @return The list of public keys for the DevEndpoint to use.
+     * @return The list of public keys for the <code>DevEndpoint</code> to use.
      */
 
     public java.util.List<String> getAddPublicKeys() {
@@ -169,11 +169,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of public keys for the DevEndpoint to use.
+     * The list of public keys for the <code>DevEndpoint</code> to use.
      * </p>
      * 
      * @param addPublicKeys
-     *        The list of public keys for the DevEndpoint to use.
+     *        The list of public keys for the <code>DevEndpoint</code> to use.
      */
 
     public void setAddPublicKeys(java.util.Collection<String> addPublicKeys) {
@@ -187,7 +187,7 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of public keys for the DevEndpoint to use.
+     * The list of public keys for the <code>DevEndpoint</code> to use.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -196,7 +196,7 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param addPublicKeys
-     *        The list of public keys for the DevEndpoint to use.
+     *        The list of public keys for the <code>DevEndpoint</code> to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,11 +212,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of public keys for the DevEndpoint to use.
+     * The list of public keys for the <code>DevEndpoint</code> to use.
      * </p>
      * 
      * @param addPublicKeys
-     *        The list of public keys for the DevEndpoint to use.
+     *        The list of public keys for the <code>DevEndpoint</code> to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,10 +227,10 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of public keys to be deleted from the DevEndpoint.
+     * The list of public keys to be deleted from the <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The list of public keys to be deleted from the DevEndpoint.
+     * @return The list of public keys to be deleted from the <code>DevEndpoint</code>.
      */
 
     public java.util.List<String> getDeletePublicKeys() {
@@ -239,11 +239,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of public keys to be deleted from the DevEndpoint.
+     * The list of public keys to be deleted from the <code>DevEndpoint</code>.
      * </p>
      * 
      * @param deletePublicKeys
-     *        The list of public keys to be deleted from the DevEndpoint.
+     *        The list of public keys to be deleted from the <code>DevEndpoint</code>.
      */
 
     public void setDeletePublicKeys(java.util.Collection<String> deletePublicKeys) {
@@ -257,7 +257,7 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of public keys to be deleted from the DevEndpoint.
+     * The list of public keys to be deleted from the <code>DevEndpoint</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -266,7 +266,7 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param deletePublicKeys
-     *        The list of public keys to be deleted from the DevEndpoint.
+     *        The list of public keys to be deleted from the <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,11 +282,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of public keys to be deleted from the DevEndpoint.
+     * The list of public keys to be deleted from the <code>DevEndpoint</code>.
      * </p>
      * 
      * @param deletePublicKeys
-     *        The list of public keys to be deleted from the DevEndpoint.
+     *        The list of public keys to be deleted from the <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,11 +297,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Custom Python or Java libraries to be loaded in the DevEndpoint.
+     * Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.
      * </p>
      * 
      * @param customLibraries
-     *        Custom Python or Java libraries to be loaded in the DevEndpoint.
+     *        Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.
      */
 
     public void setCustomLibraries(DevEndpointCustomLibraries customLibraries) {
@@ -310,10 +310,10 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Custom Python or Java libraries to be loaded in the DevEndpoint.
+     * Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return Custom Python or Java libraries to be loaded in the DevEndpoint.
+     * @return Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.
      */
 
     public DevEndpointCustomLibraries getCustomLibraries() {
@@ -322,11 +322,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Custom Python or Java libraries to be loaded in the DevEndpoint.
+     * Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.
      * </p>
      * 
      * @param customLibraries
-     *        Custom Python or Java libraries to be loaded in the DevEndpoint.
+     *        Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,13 +337,13 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or False
-     * otherwise.
+     * <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated,
+     * or <code>False</code> if otherwise.
      * </p>
      * 
      * @param updateEtlLibraries
-     *        True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or
-     *        False otherwise.
+     *        <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be
+     *        updated, or <code>False</code> if otherwise.
      */
 
     public void setUpdateEtlLibraries(Boolean updateEtlLibraries) {
@@ -352,12 +352,12 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or False
-     * otherwise.
+     * <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated,
+     * or <code>False</code> if otherwise.
      * </p>
      * 
-     * @return True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or
-     *         False otherwise.
+     * @return <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be
+     *         updated, or <code>False</code> if otherwise.
      */
 
     public Boolean getUpdateEtlLibraries() {
@@ -366,13 +366,13 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or False
-     * otherwise.
+     * <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated,
+     * or <code>False</code> if otherwise.
      * </p>
      * 
      * @param updateEtlLibraries
-     *        True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or
-     *        False otherwise.
+     *        <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be
+     *        updated, or <code>False</code> if otherwise.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,12 +383,12 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or False
-     * otherwise.
+     * <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated,
+     * or <code>False</code> if otherwise.
      * </p>
      * 
-     * @return True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or
-     *         False otherwise.
+     * @return <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be
+     *         updated, or <code>False</code> if otherwise.
      */
 
     public Boolean isUpdateEtlLibraries() {
@@ -397,10 +397,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * @return The list of argument keys to be deleted from the map of arguments used to configure the
+     *         <code>DevEndpoint</code>.
      */
 
     public java.util.List<String> getDeleteArguments() {
@@ -409,11 +410,12 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      * 
      * @param deleteArguments
-     *        The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     *        The list of argument keys to be deleted from the map of arguments used to configure the
+     *        <code>DevEndpoint</code>.
      */
 
     public void setDeleteArguments(java.util.Collection<String> deleteArguments) {
@@ -427,7 +429,7 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -436,7 +438,8 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param deleteArguments
-     *        The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     *        The list of argument keys to be deleted from the map of arguments used to configure the
+     *        <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -452,11 +455,12 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     * The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      * 
      * @param deleteArguments
-     *        The list of argument keys to be deleted from the map of arguments used to configure the DevEndpoint.
+     *        The list of argument keys to be deleted from the map of arguments used to configure the
+     *        <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,10 +471,10 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     * The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     * @return The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.
      */
 
     public java.util.Map<String, String> getAddArguments() {
@@ -479,11 +483,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     * The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      * 
      * @param addArguments
-     *        The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     *        The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.
      */
 
     public void setAddArguments(java.util.Map<String, String> addArguments) {
@@ -492,11 +496,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     * The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      * 
      * @param addArguments
-     *        The map of arguments to add the map of arguments used to configure the DevEndpoint.
+     *        The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

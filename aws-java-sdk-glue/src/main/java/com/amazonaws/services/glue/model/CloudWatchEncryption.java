@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies how CloudWatch data should be encrypted.
+ * Specifies how Amazon CloudWatch data should be encrypted.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CloudWatchEncryption" target="_top">AWS API
@@ -36,7 +36,7 @@ public class CloudWatchEncryption implements Serializable, Cloneable, Structured
     private String cloudWatchEncryptionMode;
     /**
      * <p>
-     * The AWS ARN of the KMS key to be used to encrypt the data.
+     * The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * </p>
      */
     private String kmsKeyArn;
@@ -102,11 +102,11 @@ public class CloudWatchEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The AWS ARN of the KMS key to be used to encrypt the data.
+     * The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The AWS ARN of the KMS key to be used to encrypt the data.
+     *        The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      */
 
     public void setKmsKeyArn(String kmsKeyArn) {
@@ -115,10 +115,10 @@ public class CloudWatchEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The AWS ARN of the KMS key to be used to encrypt the data.
+     * The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * </p>
      * 
-     * @return The AWS ARN of the KMS key to be used to encrypt the data.
+     * @return The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      */
 
     public String getKmsKeyArn() {
@@ -127,11 +127,11 @@ public class CloudWatchEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The AWS ARN of the KMS key to be used to encrypt the data.
+     * The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The AWS ARN of the KMS key to be used to encrypt the data.
+     *        The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

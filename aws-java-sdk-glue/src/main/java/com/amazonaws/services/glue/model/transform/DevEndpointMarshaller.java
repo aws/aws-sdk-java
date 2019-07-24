@@ -47,6 +47,10 @@ public class DevEndpointMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PublicAddress").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> WORKERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkerType").build();
+    private static final MarshallingInfo<Integer> NUMBEROFWORKERS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfWorkers").build();
     private static final MarshallingInfo<Integer> NUMBEROFNODES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfNodes").build();
     private static final MarshallingInfo<String> AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -99,6 +103,8 @@ public class DevEndpointMarshaller {
             protocolMarshaller.marshall(devEndpoint.getZeppelinRemoteSparkInterpreterPort(), ZEPPELINREMOTESPARKINTERPRETERPORT_BINDING);
             protocolMarshaller.marshall(devEndpoint.getPublicAddress(), PUBLICADDRESS_BINDING);
             protocolMarshaller.marshall(devEndpoint.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(devEndpoint.getWorkerType(), WORKERTYPE_BINDING);
+            protocolMarshaller.marshall(devEndpoint.getNumberOfWorkers(), NUMBEROFWORKERS_BINDING);
             protocolMarshaller.marshall(devEndpoint.getNumberOfNodes(), NUMBEROFNODES_BINDING);
             protocolMarshaller.marshall(devEndpoint.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(devEndpoint.getVpcId(), VPCID_BINDING);

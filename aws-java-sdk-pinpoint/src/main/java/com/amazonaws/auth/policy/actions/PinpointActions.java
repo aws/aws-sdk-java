@@ -79,6 +79,8 @@ public enum PinpointActions implements Action {
     GetApnsVoipSandboxChannel("pinpoint:GetApnsVoipSandboxChannel"),
     /** Action for the GetApp operation. */
     GetApp("pinpoint:GetApp"),
+    /** Action for the GetApplicationDateRangeKpi operation. */
+    GetApplicationDateRangeKpi("pinpoint:GetApplicationDateRangeKpi"),
     /** Action for the GetApplicationSettings operation. */
     GetApplicationSettings("pinpoint:GetApplicationSettings"),
     /** Action for the GetApps operation. */
@@ -89,6 +91,8 @@ public enum PinpointActions implements Action {
     GetCampaign("pinpoint:GetCampaign"),
     /** Action for the GetCampaignActivities operation. */
     GetCampaignActivities("pinpoint:GetCampaignActivities"),
+    /** Action for the GetCampaignDateRangeKpi operation. */
+    GetCampaignDateRangeKpi("pinpoint:GetCampaignDateRangeKpi"),
     /** Action for the GetCampaignVersion operation. */
     GetCampaignVersion("pinpoint:GetCampaignVersion"),
     /** Action for the GetCampaignVersions operation. */

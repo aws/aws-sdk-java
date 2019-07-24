@@ -91,7 +91,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was attached to an instance.
+     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      * </p>
      * </li>
      * <li>
@@ -317,7 +317,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was attached to an instance.
+     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      * </p>
      * </li>
      * <li>
@@ -518,7 +518,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>attachment.attach.time</code> - The time that the network interface was attached to an instance.
+     *         <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      *         </p>
      *         </li>
      *         <li>
@@ -728,7 +728,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was attached to an instance.
+     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      * </p>
      * </li>
      * <li>
@@ -930,7 +930,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.attach.time</code> - The time that the network interface was attached to an instance.
+     *        <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      *        </p>
      *        </li>
      *        <li>
@@ -1142,7 +1142,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was attached to an instance.
+     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      * </p>
      * </li>
      * <li>
@@ -1349,7 +1349,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.attach.time</code> - The time that the network interface was attached to an instance.
+     *        <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      *        </p>
      *        </li>
      *        <li>
@@ -1563,7 +1563,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was attached to an instance.
+     * <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      * </p>
      * </li>
      * <li>
@@ -1765,7 +1765,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.attach.time</code> - The time that the network interface was attached to an instance.
+     *        <code>attachment.attach-time</code> - The time that the network interface was attached to an instance.
      *        </p>
      *        </li>
      *        <li>

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies how S3 data should be encrypted.
+ * Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3Encryption" target="_top">AWS API
@@ -30,24 +30,24 @@ public class S3Encryption implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The encryption mode to use for S3 data.
+     * The encryption mode to use for Amazon S3 data.
      * </p>
      */
     private String s3EncryptionMode;
     /**
      * <p>
-     * The AWS ARN of the KMS key to be used to encrypt the data.
+     * The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * </p>
      */
     private String kmsKeyArn;
 
     /**
      * <p>
-     * The encryption mode to use for S3 data.
+     * The encryption mode to use for Amazon S3 data.
      * </p>
      * 
      * @param s3EncryptionMode
-     *        The encryption mode to use for S3 data.
+     *        The encryption mode to use for Amazon S3 data.
      * @see S3EncryptionMode
      */
 
@@ -57,10 +57,10 @@ public class S3Encryption implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The encryption mode to use for S3 data.
+     * The encryption mode to use for Amazon S3 data.
      * </p>
      * 
-     * @return The encryption mode to use for S3 data.
+     * @return The encryption mode to use for Amazon S3 data.
      * @see S3EncryptionMode
      */
 
@@ -70,11 +70,11 @@ public class S3Encryption implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The encryption mode to use for S3 data.
+     * The encryption mode to use for Amazon S3 data.
      * </p>
      * 
      * @param s3EncryptionMode
-     *        The encryption mode to use for S3 data.
+     *        The encryption mode to use for Amazon S3 data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3EncryptionMode
      */
@@ -86,11 +86,11 @@ public class S3Encryption implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The encryption mode to use for S3 data.
+     * The encryption mode to use for Amazon S3 data.
      * </p>
      * 
      * @param s3EncryptionMode
-     *        The encryption mode to use for S3 data.
+     *        The encryption mode to use for Amazon S3 data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3EncryptionMode
      */
@@ -102,11 +102,11 @@ public class S3Encryption implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS ARN of the KMS key to be used to encrypt the data.
+     * The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The AWS ARN of the KMS key to be used to encrypt the data.
+     *        The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      */
 
     public void setKmsKeyArn(String kmsKeyArn) {
@@ -115,10 +115,10 @@ public class S3Encryption implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS ARN of the KMS key to be used to encrypt the data.
+     * The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * </p>
      * 
-     * @return The AWS ARN of the KMS key to be used to encrypt the data.
+     * @return The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      */
 
     public String getKmsKeyArn() {
@@ -127,11 +127,11 @@ public class S3Encryption implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS ARN of the KMS key to be used to encrypt the data.
+     * The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The AWS ARN of the KMS key to be used to encrypt the data.
+     *        The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

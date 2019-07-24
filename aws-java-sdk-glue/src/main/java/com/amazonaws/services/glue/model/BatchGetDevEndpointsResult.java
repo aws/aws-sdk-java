@@ -25,23 +25,23 @@ public class BatchGetDevEndpointsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of DevEndpoint definitions.
+     * A list of <code>DevEndpoint</code> definitions.
      * </p>
      */
     private java.util.List<DevEndpoint> devEndpoints;
     /**
      * <p>
-     * A list of DevEndpoints not found.
+     * A list of <code>DevEndpoints</code> not found.
      * </p>
      */
     private java.util.List<String> devEndpointsNotFound;
 
     /**
      * <p>
-     * A list of DevEndpoint definitions.
+     * A list of <code>DevEndpoint</code> definitions.
      * </p>
      * 
-     * @return A list of DevEndpoint definitions.
+     * @return A list of <code>DevEndpoint</code> definitions.
      */
 
     public java.util.List<DevEndpoint> getDevEndpoints() {
@@ -50,11 +50,11 @@ public class BatchGetDevEndpointsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of DevEndpoint definitions.
+     * A list of <code>DevEndpoint</code> definitions.
      * </p>
      * 
      * @param devEndpoints
-     *        A list of DevEndpoint definitions.
+     *        A list of <code>DevEndpoint</code> definitions.
      */
 
     public void setDevEndpoints(java.util.Collection<DevEndpoint> devEndpoints) {
@@ -68,7 +68,7 @@ public class BatchGetDevEndpointsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of DevEndpoint definitions.
+     * A list of <code>DevEndpoint</code> definitions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class BatchGetDevEndpointsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param devEndpoints
-     *        A list of DevEndpoint definitions.
+     *        A list of <code>DevEndpoint</code> definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class BatchGetDevEndpointsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of DevEndpoint definitions.
+     * A list of <code>DevEndpoint</code> definitions.
      * </p>
      * 
      * @param devEndpoints
-     *        A list of DevEndpoint definitions.
+     *        A list of <code>DevEndpoint</code> definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,10 +108,10 @@ public class BatchGetDevEndpointsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of DevEndpoints not found.
+     * A list of <code>DevEndpoints</code> not found.
      * </p>
      * 
-     * @return A list of DevEndpoints not found.
+     * @return A list of <code>DevEndpoints</code> not found.
      */
 
     public java.util.List<String> getDevEndpointsNotFound() {
@@ -120,11 +120,11 @@ public class BatchGetDevEndpointsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of DevEndpoints not found.
+     * A list of <code>DevEndpoints</code> not found.
      * </p>
      * 
      * @param devEndpointsNotFound
-     *        A list of DevEndpoints not found.
+     *        A list of <code>DevEndpoints</code> not found.
      */
 
     public void setDevEndpointsNotFound(java.util.Collection<String> devEndpointsNotFound) {
@@ -138,7 +138,7 @@ public class BatchGetDevEndpointsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of DevEndpoints not found.
+     * A list of <code>DevEndpoints</code> not found.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -147,7 +147,7 @@ public class BatchGetDevEndpointsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param devEndpointsNotFound
-     *        A list of DevEndpoints not found.
+     *        A list of <code>DevEndpoints</code> not found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +163,11 @@ public class BatchGetDevEndpointsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of DevEndpoints not found.
+     * A list of <code>DevEndpoints</code> not found.
      * </p>
      * 
      * @param devEndpointsNotFound
-     *        A list of DevEndpoints not found.
+     *        A list of <code>DevEndpoints</code> not found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

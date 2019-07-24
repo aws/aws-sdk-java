@@ -27,7 +27,8 @@ public class GetAppsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The maximum number of items to include on each page in a paginated response.
+     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
+     * supported by the App Metrics and Campaign Metrics resources.
      * </p>
      */
     private String pageSize;
@@ -40,11 +41,13 @@ public class GetAppsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The maximum number of items to include on each page in a paginated response.
+     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
+     * supported by the App Metrics and Campaign Metrics resources.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to include on each page in a paginated response.
+     *        The maximum number of items to include in each page of a paginated response. This parameter is currently
+     *        not supported by the App Metrics and Campaign Metrics resources.
      */
 
     public void setPageSize(String pageSize) {
@@ -53,10 +56,12 @@ public class GetAppsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The maximum number of items to include on each page in a paginated response.
+     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
+     * supported by the App Metrics and Campaign Metrics resources.
      * </p>
      * 
-     * @return The maximum number of items to include on each page in a paginated response.
+     * @return The maximum number of items to include in each page of a paginated response. This parameter is currently
+     *         not supported by the App Metrics and Campaign Metrics resources.
      */
 
     public String getPageSize() {
@@ -65,11 +70,13 @@ public class GetAppsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The maximum number of items to include on each page in a paginated response.
+     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
+     * supported by the App Metrics and Campaign Metrics resources.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to include on each page in a paginated response.
+     *        The maximum number of items to include in each page of a paginated response. This parameter is currently
+     *        not supported by the App Metrics and Campaign Metrics resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

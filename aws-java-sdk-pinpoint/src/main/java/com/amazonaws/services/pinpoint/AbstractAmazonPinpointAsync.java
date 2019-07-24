@@ -379,6 +379,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetApplicationDateRangeKpiResult> getApplicationDateRangeKpiAsync(GetApplicationDateRangeKpiRequest request) {
+
+        return getApplicationDateRangeKpiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApplicationDateRangeKpiResult> getApplicationDateRangeKpiAsync(GetApplicationDateRangeKpiRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetApplicationDateRangeKpiRequest, GetApplicationDateRangeKpiResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetApplicationSettingsResult> getApplicationSettingsAsync(GetApplicationSettingsRequest request) {
 
         return getApplicationSettingsAsync(request, null);
@@ -439,6 +452,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<GetCampaignActivitiesResult> getCampaignActivitiesAsync(GetCampaignActivitiesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCampaignActivitiesRequest, GetCampaignActivitiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCampaignDateRangeKpiResult> getCampaignDateRangeKpiAsync(GetCampaignDateRangeKpiRequest request) {
+
+        return getCampaignDateRangeKpiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCampaignDateRangeKpiResult> getCampaignDateRangeKpiAsync(GetCampaignDateRangeKpiRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCampaignDateRangeKpiRequest, GetCampaignDateRangeKpiResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

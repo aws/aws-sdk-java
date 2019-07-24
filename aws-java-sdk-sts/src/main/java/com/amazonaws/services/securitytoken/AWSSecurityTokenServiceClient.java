@@ -1013,6 +1013,82 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Returns the account identifier for the specified access key ID.
+     * </p>
+     * <p>
+     * Access keys consist of two parts: an access key ID (for example, <code>AKIAIOSFODNN7EXAMPLE</code>) and a secret
+     * access key (for example, <code>wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code>). For more information about
+     * access keys, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">Managing Access Keys for
+     * IAM Users</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * When you pass an access key ID to this operation, it returns the ID of the AWS account to which the keys belong.
+     * Access key IDs beginning with <code>AKIA</code> are long-term credentials for an IAM user or the AWS account root
+     * user. Access key IDs beginning with <code>ASIA</code> are temporary credentials that are created using STS
+     * operations. If the account in the response belongs to you, you can sign in as the root user and review your root
+     * user access keys. Then, you can pull a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report">credentials report</a> to
+     * learn which IAM user owns the keys. To learn who requested the temporary credentials for an <code>ASIA</code>
+     * access key, view the STS events in your <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration">CloudTrail logs</a>.
+     * </p>
+     * <p>
+     * This operation does not indicate the state of the access key. The key might be active, inactive, or deleted.
+     * Active keys might not have permissions to perform an operation. Providing a deleted keys might return an error
+     * that the key doesn't exist.
+     * </p>
+     * 
+     * @param getAccessKeyInfoRequest
+     * @return Result of the GetAccessKeyInfo operation returned by the service.
+     * @sample AWSSecurityTokenService.GetAccessKeyInfo
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetAccessKeyInfo" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetAccessKeyInfoResult getAccessKeyInfo(GetAccessKeyInfoRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccessKeyInfo(request);
+    }
+
+    @SdkInternalApi
+    final GetAccessKeyInfoResult executeGetAccessKeyInfo(GetAccessKeyInfoRequest getAccessKeyInfoRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccessKeyInfoRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccessKeyInfoRequest> request = null;
+        Response<GetAccessKeyInfoResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccessKeyInfoRequestMarshaller().marshall(super.beforeMarshalling(getAccessKeyInfoRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessKeyInfo");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetAccessKeyInfoResult> responseHandler = new StaxResponseHandler<GetAccessKeyInfoResult>(
+                    new GetAccessKeyInfoResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns details about the IAM identity whose credentials are used to call the API.
      * </p>
      * 

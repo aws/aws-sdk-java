@@ -1,3 +1,20 @@
+# __1.11.598__ __2019-07-24__
+## __AWS Glue__
+  - ### Features
+    - This release provides GlueVersion option for Job APIs and WorkerType option for DevEndpoint APIs. Job APIs enable users to pick specific GlueVersion for a specific job and pin the job to a specific runtime environment. DevEndpoint APIs enable users to pick different WorkerType for memory intensive workload.
+
+## __AWS Security Token Service__
+  - ### Features
+    - New STS GetAccessKeyInfo API operation that returns the account identifier for the specified access key ID.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release introduces support for split tunnel with AWS Client VPN, and also adds support for opt-in Regions in DescribeRegions API. In addition, customers can now also tag Launch Templates on creation.
+
+## __Amazon Pinpoint__
+  - ### Features
+    - This release adds support for programmatic access to many of the same campaign metrics that are displayed on the Amazon Pinpoint console. You can now use the Amazon Pinpoint API to monitor and assess performance data for campaigns, and integrate metrics data with other reporting tools. We update the metrics data continuously, resulting in a data latency timeframe that is limited to approximately two hours.
+
 # __1.11.597__ __2019-07-23__
 ## __AWS Secrets Manager__
   - ### Features

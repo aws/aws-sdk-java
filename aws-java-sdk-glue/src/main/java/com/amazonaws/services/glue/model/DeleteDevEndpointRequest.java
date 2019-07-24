@@ -27,18 +27,18 @@ public class DeleteDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the DevEndpoint.
+     * The name of the <code>DevEndpoint</code>.
      * </p>
      */
     private String endpointName;
 
     /**
      * <p>
-     * The name of the DevEndpoint.
+     * The name of the <code>DevEndpoint</code>.
      * </p>
      * 
      * @param endpointName
-     *        The name of the DevEndpoint.
+     *        The name of the <code>DevEndpoint</code>.
      */
 
     public void setEndpointName(String endpointName) {
@@ -47,10 +47,10 @@ public class DeleteDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the DevEndpoint.
+     * The name of the <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The name of the DevEndpoint.
+     * @return The name of the <code>DevEndpoint</code>.
      */
 
     public String getEndpointName() {
@@ -59,11 +59,11 @@ public class DeleteDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the DevEndpoint.
+     * The name of the <code>DevEndpoint</code>.
      * </p>
      * 
      * @param endpointName
-     *        The name of the DevEndpoint.
+     *        The name of the <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,7 +25,9 @@ import com.amazonaws.services.pinpoint.model.*;
  * {@link com.amazonaws.services.pinpoint.AbstractAmazonPinpointAsync} instead.
  * </p>
  * <p>
- * Amazon Pinpoint
+ * <p>
+ * Doc Engage API - Amazon Pinpoint API
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonPinpointAsync extends AmazonPinpoint {
@@ -877,6 +879,39 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
+     * Retrieves (queries) pre-aggregated data for a standard metric that applies to an application.
+     * </p>
+     * 
+     * @param getApplicationDateRangeKpiRequest
+     * @return A Java Future containing the result of the GetApplicationDateRangeKpi operation returned by the service.
+     * @sample AmazonPinpointAsync.GetApplicationDateRangeKpi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApplicationDateRangeKpiResult> getApplicationDateRangeKpiAsync(
+            GetApplicationDateRangeKpiRequest getApplicationDateRangeKpiRequest);
+
+    /**
+     * <p>
+     * Retrieves (queries) pre-aggregated data for a standard metric that applies to an application.
+     * </p>
+     * 
+     * @param getApplicationDateRangeKpiRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetApplicationDateRangeKpi operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetApplicationDateRangeKpi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApplicationDateRangeKpiResult> getApplicationDateRangeKpiAsync(
+            GetApplicationDateRangeKpiRequest getApplicationDateRangeKpiRequest,
+            com.amazonaws.handlers.AsyncHandler<GetApplicationDateRangeKpiRequest, GetApplicationDateRangeKpiResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves information about the settings for an application.
      * </p>
      * 
@@ -1029,6 +1064,37 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<GetCampaignActivitiesResult> getCampaignActivitiesAsync(GetCampaignActivitiesRequest getCampaignActivitiesRequest,
             com.amazonaws.handlers.AsyncHandler<GetCampaignActivitiesRequest, GetCampaignActivitiesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign.
+     * </p>
+     * 
+     * @param getCampaignDateRangeKpiRequest
+     * @return A Java Future containing the result of the GetCampaignDateRangeKpi operation returned by the service.
+     * @sample AmazonPinpointAsync.GetCampaignDateRangeKpi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCampaignDateRangeKpiResult> getCampaignDateRangeKpiAsync(GetCampaignDateRangeKpiRequest getCampaignDateRangeKpiRequest);
+
+    /**
+     * <p>
+     * Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign.
+     * </p>
+     * 
+     * @param getCampaignDateRangeKpiRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCampaignDateRangeKpi operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetCampaignDateRangeKpi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCampaignDateRangeKpiResult> getCampaignDateRangeKpiAsync(GetCampaignDateRangeKpiRequest getCampaignDateRangeKpiRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCampaignDateRangeKpiRequest, GetCampaignDateRangeKpiResult> asyncHandler);
 
     /**
      * <p>

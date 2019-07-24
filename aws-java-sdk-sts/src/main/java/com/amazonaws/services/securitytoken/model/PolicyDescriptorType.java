@@ -30,7 +30,8 @@ public class PolicyDescriptorType implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more
-     * information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
@@ -39,13 +40,15 @@ public class PolicyDescriptorType implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more
-     * information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more
-     *        information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
@@ -56,13 +59,15 @@ public class PolicyDescriptorType implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more
-     * information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For
-     *         more information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         more information about ARNs, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getArn() {
@@ -72,13 +77,15 @@ public class PolicyDescriptorType implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more
-     * information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more
-     *        information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -37,6 +37,13 @@ public class Region implements Serializable, Cloneable {
      * </p>
      */
     private String regionName;
+    /**
+     * <p>
+     * The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and
+     * <code>not-opted-in</code>.
+     * </p>
+     */
+    private String optInStatus;
 
     /**
      * <p>
@@ -119,6 +126,52 @@ public class Region implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and
+     * <code>not-opted-in</code>.
+     * </p>
+     * 
+     * @param optInStatus
+     *        The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>,
+     *        and <code>not-opted-in</code>.
+     */
+
+    public void setOptInStatus(String optInStatus) {
+        this.optInStatus = optInStatus;
+    }
+
+    /**
+     * <p>
+     * The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and
+     * <code>not-opted-in</code>.
+     * </p>
+     * 
+     * @return The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>
+     *         , and <code>not-opted-in</code>.
+     */
+
+    public String getOptInStatus() {
+        return this.optInStatus;
+    }
+
+    /**
+     * <p>
+     * The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and
+     * <code>not-opted-in</code>.
+     * </p>
+     * 
+     * @param optInStatus
+     *        The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>,
+     *        and <code>not-opted-in</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Region withOptInStatus(String optInStatus) {
+        setOptInStatus(optInStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +186,9 @@ public class Region implements Serializable, Cloneable {
         if (getEndpoint() != null)
             sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getRegionName() != null)
-            sb.append("RegionName: ").append(getRegionName());
+            sb.append("RegionName: ").append(getRegionName()).append(",");
+        if (getOptInStatus() != null)
+            sb.append("OptInStatus: ").append(getOptInStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +211,10 @@ public class Region implements Serializable, Cloneable {
             return false;
         if (other.getRegionName() != null && other.getRegionName().equals(this.getRegionName()) == false)
             return false;
+        if (other.getOptInStatus() == null ^ this.getOptInStatus() == null)
+            return false;
+        if (other.getOptInStatus() != null && other.getOptInStatus().equals(this.getOptInStatus()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +225,7 @@ public class Region implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
+        hashCode = prime * hashCode + ((getOptInStatus() == null) ? 0 : getOptInStatus().hashCode());
         return hashCode;
     }
 

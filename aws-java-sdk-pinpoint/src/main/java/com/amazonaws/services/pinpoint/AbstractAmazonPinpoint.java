@@ -173,6 +173,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public GetApplicationDateRangeKpiResult getApplicationDateRangeKpi(GetApplicationDateRangeKpiRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetApplicationSettingsResult getApplicationSettings(GetApplicationSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -194,6 +199,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public GetCampaignActivitiesResult getCampaignActivities(GetCampaignActivitiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCampaignDateRangeKpiResult getCampaignDateRangeKpi(GetCampaignDateRangeKpiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

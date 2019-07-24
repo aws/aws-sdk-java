@@ -25,18 +25,18 @@ public class GetSecurityConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The requested security configuration
+     * The requested security configuration.
      * </p>
      */
     private SecurityConfiguration securityConfiguration;
 
     /**
      * <p>
-     * The requested security configuration
+     * The requested security configuration.
      * </p>
      * 
      * @param securityConfiguration
-     *        The requested security configuration
+     *        The requested security configuration.
      */
 
     public void setSecurityConfiguration(SecurityConfiguration securityConfiguration) {
@@ -45,10 +45,10 @@ public class GetSecurityConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The requested security configuration
+     * The requested security configuration.
      * </p>
      * 
-     * @return The requested security configuration
+     * @return The requested security configuration.
      */
 
     public SecurityConfiguration getSecurityConfiguration() {
@@ -57,11 +57,11 @@ public class GetSecurityConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The requested security configuration
+     * The requested security configuration.
      * </p>
      * 
      * @param securityConfiguration
-     *        The requested security configuration
+     *        The requested security configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

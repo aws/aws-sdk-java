@@ -80,6 +80,14 @@ public class CreateDevEndpointResultJsonUnmarshaller implements Unmarshaller<Cre
                     context.nextToken();
                     createDevEndpointResult.setNumberOfNodes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("WorkerType", targetDepth)) {
+                    context.nextToken();
+                    createDevEndpointResult.setWorkerType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NumberOfWorkers", targetDepth)) {
+                    context.nextToken();
+                    createDevEndpointResult.setNumberOfWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
                     context.nextToken();
                     createDevEndpointResult.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));

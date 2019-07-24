@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies how Job bookmark data should be encrypted.
+ * Specifies how job bookmark data should be encrypted.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JobBookmarksEncryption" target="_top">AWS API
@@ -30,24 +30,24 @@ public class JobBookmarksEncryption implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The encryption mode to use for Job bookmarks data.
+     * The encryption mode to use for job bookmarks data.
      * </p>
      */
     private String jobBookmarksEncryptionMode;
     /**
      * <p>
-     * The AWS ARN of the KMS key to be used to encrypt the data.
+     * The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * </p>
      */
     private String kmsKeyArn;
 
     /**
      * <p>
-     * The encryption mode to use for Job bookmarks data.
+     * The encryption mode to use for job bookmarks data.
      * </p>
      * 
      * @param jobBookmarksEncryptionMode
-     *        The encryption mode to use for Job bookmarks data.
+     *        The encryption mode to use for job bookmarks data.
      * @see JobBookmarksEncryptionMode
      */
 
@@ -57,10 +57,10 @@ public class JobBookmarksEncryption implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The encryption mode to use for Job bookmarks data.
+     * The encryption mode to use for job bookmarks data.
      * </p>
      * 
-     * @return The encryption mode to use for Job bookmarks data.
+     * @return The encryption mode to use for job bookmarks data.
      * @see JobBookmarksEncryptionMode
      */
 
@@ -70,11 +70,11 @@ public class JobBookmarksEncryption implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The encryption mode to use for Job bookmarks data.
+     * The encryption mode to use for job bookmarks data.
      * </p>
      * 
      * @param jobBookmarksEncryptionMode
-     *        The encryption mode to use for Job bookmarks data.
+     *        The encryption mode to use for job bookmarks data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobBookmarksEncryptionMode
      */
@@ -86,11 +86,11 @@ public class JobBookmarksEncryption implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The encryption mode to use for Job bookmarks data.
+     * The encryption mode to use for job bookmarks data.
      * </p>
      * 
      * @param jobBookmarksEncryptionMode
-     *        The encryption mode to use for Job bookmarks data.
+     *        The encryption mode to use for job bookmarks data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobBookmarksEncryptionMode
      */
@@ -102,11 +102,11 @@ public class JobBookmarksEncryption implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS ARN of the KMS key to be used to encrypt the data.
+     * The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The AWS ARN of the KMS key to be used to encrypt the data.
+     *        The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      */
 
     public void setKmsKeyArn(String kmsKeyArn) {
@@ -115,10 +115,10 @@ public class JobBookmarksEncryption implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS ARN of the KMS key to be used to encrypt the data.
+     * The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * </p>
      * 
-     * @return The AWS ARN of the KMS key to be used to encrypt the data.
+     * @return The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      */
 
     public String getKmsKeyArn() {
@@ -127,11 +127,11 @@ public class JobBookmarksEncryption implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS ARN of the KMS key to be used to encrypt the data.
+     * The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The AWS ARN of the KMS key to be used to encrypt the data.
+     *        The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,23 +25,23 @@ public class GetDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of DevEndpoint definitions.
+     * A list of <code>DevEndpoint</code> definitions.
      * </p>
      */
     private java.util.List<DevEndpoint> devEndpoints;
     /**
      * <p>
-     * A continuation token, if not all DevEndpoint definitions have yet been returned.
+     * A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of DevEndpoint definitions.
+     * A list of <code>DevEndpoint</code> definitions.
      * </p>
      * 
-     * @return A list of DevEndpoint definitions.
+     * @return A list of <code>DevEndpoint</code> definitions.
      */
 
     public java.util.List<DevEndpoint> getDevEndpoints() {
@@ -50,11 +50,11 @@ public class GetDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of DevEndpoint definitions.
+     * A list of <code>DevEndpoint</code> definitions.
      * </p>
      * 
      * @param devEndpoints
-     *        A list of DevEndpoint definitions.
+     *        A list of <code>DevEndpoint</code> definitions.
      */
 
     public void setDevEndpoints(java.util.Collection<DevEndpoint> devEndpoints) {
@@ -68,7 +68,7 @@ public class GetDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of DevEndpoint definitions.
+     * A list of <code>DevEndpoint</code> definitions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class GetDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param devEndpoints
-     *        A list of DevEndpoint definitions.
+     *        A list of <code>DevEndpoint</code> definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class GetDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of DevEndpoint definitions.
+     * A list of <code>DevEndpoint</code> definitions.
      * </p>
      * 
      * @param devEndpoints
-     *        A list of DevEndpoint definitions.
+     *        A list of <code>DevEndpoint</code> definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class GetDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A continuation token, if not all DevEndpoint definitions have yet been returned.
+     * A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.
      * </p>
      * 
      * @param nextToken
-     *        A continuation token, if not all DevEndpoint definitions have yet been returned.
+     *        A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class GetDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A continuation token, if not all DevEndpoint definitions have yet been returned.
+     * A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.
      * </p>
      * 
-     * @return A continuation token, if not all DevEndpoint definitions have yet been returned.
+     * @return A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class GetDevEndpointsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A continuation token, if not all DevEndpoint definitions have yet been returned.
+     * A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.
      * </p>
      * 
      * @param nextToken
-     *        A continuation token, if not all DevEndpoint definitions have yet been returned.
+     *        A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

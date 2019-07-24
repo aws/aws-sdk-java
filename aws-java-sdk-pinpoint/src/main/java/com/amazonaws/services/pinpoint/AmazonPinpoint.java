@@ -26,7 +26,9 @@ import com.amazonaws.services.pinpoint.model.*;
  * {@link com.amazonaws.services.pinpoint.AbstractAmazonPinpoint} instead.
  * </p>
  * <p>
- * Amazon Pinpoint
+ * <p>
+ * Doc Engage API - Amazon Pinpoint API
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonPinpoint {
@@ -850,6 +852,34 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
+     * Retrieves (queries) pre-aggregated data for a standard metric that applies to an application.
+     * </p>
+     * 
+     * @param getApplicationDateRangeKpiRequest
+     * @return Result of the GetApplicationDateRangeKpi operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetApplicationDateRangeKpi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetApplicationDateRangeKpiResult getApplicationDateRangeKpi(GetApplicationDateRangeKpiRequest getApplicationDateRangeKpiRequest);
+
+    /**
+     * <p>
      * Retrieves information about the settings for an application.
      * </p>
      * 
@@ -987,6 +1017,34 @@ public interface AmazonPinpoint {
      *      API Documentation</a>
      */
     GetCampaignActivitiesResult getCampaignActivities(GetCampaignActivitiesRequest getCampaignActivitiesRequest);
+
+    /**
+     * <p>
+     * Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign.
+     * </p>
+     * 
+     * @param getCampaignDateRangeKpiRequest
+     * @return Result of the GetCampaignDateRangeKpi operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetCampaignDateRangeKpi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCampaignDateRangeKpiResult getCampaignDateRangeKpi(GetCampaignDateRangeKpiRequest getCampaignDateRangeKpiRequest);
 
     /**
      * <p>

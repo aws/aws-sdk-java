@@ -119,6 +119,10 @@ public class CreateClientVpnEndpointRequestMarshaller implements Marshaller<Requ
             request.addParameter("Description", StringUtils.fromString(createClientVpnEndpointRequest.getDescription()));
         }
 
+        if (createClientVpnEndpointRequest.getSplitTunnel() != null) {
+            request.addParameter("SplitTunnel", StringUtils.fromBoolean(createClientVpnEndpointRequest.getSplitTunnel()));
+        }
+
         request.addParameter("ClientToken", IdempotentUtils.resolveString(createClientVpnEndpointRequest.getClientToken()));
 
         com.amazonaws.internal.SdkInternalList<TagSpecification> createClientVpnEndpointRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createClientVpnEndpointRequest

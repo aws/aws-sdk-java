@@ -27,18 +27,18 @@ public class GetDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Name of the DevEndpoint for which to retrieve information.
+     * Name of the <code>DevEndpoint</code> to retrieve information for.
      * </p>
      */
     private String endpointName;
 
     /**
      * <p>
-     * Name of the DevEndpoint for which to retrieve information.
+     * Name of the <code>DevEndpoint</code> to retrieve information for.
      * </p>
      * 
      * @param endpointName
-     *        Name of the DevEndpoint for which to retrieve information.
+     *        Name of the <code>DevEndpoint</code> to retrieve information for.
      */
 
     public void setEndpointName(String endpointName) {
@@ -47,10 +47,10 @@ public class GetDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Name of the DevEndpoint for which to retrieve information.
+     * Name of the <code>DevEndpoint</code> to retrieve information for.
      * </p>
      * 
-     * @return Name of the DevEndpoint for which to retrieve information.
+     * @return Name of the <code>DevEndpoint</code> to retrieve information for.
      */
 
     public String getEndpointName() {
@@ -59,11 +59,11 @@ public class GetDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Name of the DevEndpoint for which to retrieve information.
+     * Name of the <code>DevEndpoint</code> to retrieve information for.
      * </p>
      * 
      * @param endpointName
-     *        Name of the DevEndpoint for which to retrieve information.
+     *        Name of the <code>DevEndpoint</code> to retrieve information for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

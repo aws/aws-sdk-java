@@ -30,7 +30,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * Amazon Pinpoint
+ * <p>
+ * Doc Engage API - Amazon Pinpoint API
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -1133,6 +1135,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetApplicationDateRangeKpiResult> getApplicationDateRangeKpiAsync(GetApplicationDateRangeKpiRequest request) {
+
+        return getApplicationDateRangeKpiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApplicationDateRangeKpiResult> getApplicationDateRangeKpiAsync(final GetApplicationDateRangeKpiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetApplicationDateRangeKpiRequest, GetApplicationDateRangeKpiResult> asyncHandler) {
+        final GetApplicationDateRangeKpiRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetApplicationDateRangeKpiResult>() {
+            @Override
+            public GetApplicationDateRangeKpiResult call() throws Exception {
+                GetApplicationDateRangeKpiResult result = null;
+
+                try {
+                    result = executeGetApplicationDateRangeKpi(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetApplicationSettingsResult> getApplicationSettingsAsync(GetApplicationSettingsRequest request) {
 
         return getApplicationSettingsAsync(request, null);
@@ -1282,6 +1317,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeGetCampaignActivities(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCampaignDateRangeKpiResult> getCampaignDateRangeKpiAsync(GetCampaignDateRangeKpiRequest request) {
+
+        return getCampaignDateRangeKpiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCampaignDateRangeKpiResult> getCampaignDateRangeKpiAsync(final GetCampaignDateRangeKpiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCampaignDateRangeKpiRequest, GetCampaignDateRangeKpiResult> asyncHandler) {
+        final GetCampaignDateRangeKpiRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCampaignDateRangeKpiResult>() {
+            @Override
+            public GetCampaignDateRangeKpiResult call() throws Exception {
+                GetCampaignDateRangeKpiResult result = null;
+
+                try {
+                    result = executeGetCampaignDateRangeKpi(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

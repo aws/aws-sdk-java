@@ -43,6 +43,10 @@ public class CreateDevEndpointRequestMarshaller {
             .marshallLocationName("PublicKeys").build();
     private static final MarshallingInfo<Integer> NUMBEROFNODES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfNodes").build();
+    private static final MarshallingInfo<String> WORKERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkerType").build();
+    private static final MarshallingInfo<Integer> NUMBEROFWORKERS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfWorkers").build();
     private static final MarshallingInfo<String> EXTRAPYTHONLIBSS3PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExtraPythonLibsS3Path").build();
     private static final MarshallingInfo<String> EXTRAJARSS3PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -77,6 +81,8 @@ public class CreateDevEndpointRequestMarshaller {
             protocolMarshaller.marshall(createDevEndpointRequest.getPublicKey(), PUBLICKEY_BINDING);
             protocolMarshaller.marshall(createDevEndpointRequest.getPublicKeys(), PUBLICKEYS_BINDING);
             protocolMarshaller.marshall(createDevEndpointRequest.getNumberOfNodes(), NUMBEROFNODES_BINDING);
+            protocolMarshaller.marshall(createDevEndpointRequest.getWorkerType(), WORKERTYPE_BINDING);
+            protocolMarshaller.marshall(createDevEndpointRequest.getNumberOfWorkers(), NUMBEROFWORKERS_BINDING);
             protocolMarshaller.marshall(createDevEndpointRequest.getExtraPythonLibsS3Path(), EXTRAPYTHONLIBSS3PATH_BINDING);
             protocolMarshaller.marshall(createDevEndpointRequest.getExtraJarsS3Path(), EXTRAJARSS3PATH_BINDING);
             protocolMarshaller.marshall(createDevEndpointRequest.getSecurityConfiguration(), SECURITYCONFIGURATION_BINDING);

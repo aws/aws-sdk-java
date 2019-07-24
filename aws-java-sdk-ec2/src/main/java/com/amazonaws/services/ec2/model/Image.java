@@ -76,7 +76,7 @@ public class Image implements Serializable, Cloneable {
     private String ownerId;
     /**
      * <p>
-     * This value is set for Windows AMIs; otherwise, it is blank.
+     * This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.
      * </p>
      */
     private String platform;
@@ -585,11 +585,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This value is set for Windows AMIs; otherwise, it is blank.
+     * This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.
      * </p>
      * 
      * @param platform
-     *        This value is set for Windows AMIs; otherwise, it is blank.
+     *        This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.
      * @see PlatformValues
      */
 
@@ -599,10 +599,10 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This value is set for Windows AMIs; otherwise, it is blank.
+     * This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.
      * </p>
      * 
-     * @return This value is set for Windows AMIs; otherwise, it is blank.
+     * @return This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.
      * @see PlatformValues
      */
 
@@ -612,11 +612,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This value is set for Windows AMIs; otherwise, it is blank.
+     * This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.
      * </p>
      * 
      * @param platform
-     *        This value is set for Windows AMIs; otherwise, it is blank.
+     *        This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformValues
      */
@@ -628,11 +628,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This value is set for Windows AMIs; otherwise, it is blank.
+     * This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.
      * </p>
      * 
      * @param platform
-     *        This value is set for Windows AMIs; otherwise, it is blank.
+     *        This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.
      * @see PlatformValues
      */
 
@@ -642,11 +642,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This value is set for Windows AMIs; otherwise, it is blank.
+     * This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.
      * </p>
      * 
      * @param platform
-     *        This value is set for Windows AMIs; otherwise, it is blank.
+     *        This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformValues
      */

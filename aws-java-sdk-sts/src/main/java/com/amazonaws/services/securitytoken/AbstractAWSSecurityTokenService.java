@@ -58,6 +58,11 @@ public class AbstractAWSSecurityTokenService implements AWSSecurityTokenService 
     }
 
     @Override
+    public GetAccessKeyInfoResult getAccessKeyInfo(GetAccessKeyInfoRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCallerIdentityResult getCallerIdentity(GetCallerIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

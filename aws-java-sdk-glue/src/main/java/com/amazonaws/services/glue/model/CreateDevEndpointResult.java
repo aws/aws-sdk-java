@@ -25,37 +25,37 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name assigned to the new DevEndpoint.
+     * The name assigned to the new <code>DevEndpoint</code>.
      * </p>
      */
     private String endpointName;
     /**
      * <p>
-     * The current status of the new DevEndpoint.
+     * The current status of the new <code>DevEndpoint</code>.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The security groups assigned to the new DevEndpoint.
+     * The security groups assigned to the new <code>DevEndpoint</code>.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
-     * The subnet ID assigned to the new DevEndpoint.
+     * The subnet ID assigned to the new <code>DevEndpoint</code>.
      * </p>
      */
     private String subnetId;
     /**
      * <p>
-     * The AWS ARN of the role assigned to the new DevEndpoint.
+     * The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * The address of the YARN endpoint used by this DevEndpoint.
+     * The address of the YARN endpoint used by this <code>DevEndpoint</code>.
      * </p>
      */
     private String yarnEndpointAddress;
@@ -73,60 +73,74 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
     private Integer numberOfNodes;
     /**
      * <p>
-     * The AWS availability zone where this DevEndpoint is located.
+     * The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or
+     * G.2X.
+     * </p>
+     */
+    private String workerType;
+    /**
+     * <p>
+     * The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.
+     * </p>
+     */
+    private Integer numberOfWorkers;
+    /**
+     * <p>
+     * The AWS Availability Zone where this <code>DevEndpoint</code> is located.
      * </p>
      */
     private String availabilityZone;
     /**
      * <p>
-     * The ID of the VPC used by this DevEndpoint.
+     * The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.
      * </p>
      */
     private String vpcId;
     /**
      * <p>
-     * Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     * The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.
      * </p>
      */
     private String extraPythonLibsS3Path;
     /**
      * <p>
-     * Path to one or more Java Jars in an S3 bucket that will be loaded in your DevEndpoint.
+     * Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your
+     * <code>DevEndpoint</code>.
      * </p>
      */
     private String extraJarsS3Path;
     /**
      * <p>
-     * The reason for a current failure in this DevEndpoint.
+     * The reason for a current failure in this <code>DevEndpoint</code>.
      * </p>
      */
     private String failureReason;
     /**
      * <p>
-     * The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     * The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.
      * </p>
      */
     private String securityConfiguration;
     /**
      * <p>
-     * The point in time at which this DevEndpoint was created.
+     * The point in time at which this <code>DevEndpoint</code> was created.
      * </p>
      */
     private java.util.Date createdTimestamp;
     /**
      * <p>
-     * The map of arguments used to configure this DevEndpoint.
+     * The map of arguments used to configure this <code>DevEndpoint</code>.
      * </p>
      */
     private java.util.Map<String, String> arguments;
 
     /**
      * <p>
-     * The name assigned to the new DevEndpoint.
+     * The name assigned to the new <code>DevEndpoint</code>.
      * </p>
      * 
      * @param endpointName
-     *        The name assigned to the new DevEndpoint.
+     *        The name assigned to the new <code>DevEndpoint</code>.
      */
 
     public void setEndpointName(String endpointName) {
@@ -135,10 +149,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name assigned to the new DevEndpoint.
+     * The name assigned to the new <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The name assigned to the new DevEndpoint.
+     * @return The name assigned to the new <code>DevEndpoint</code>.
      */
 
     public String getEndpointName() {
@@ -147,11 +161,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name assigned to the new DevEndpoint.
+     * The name assigned to the new <code>DevEndpoint</code>.
      * </p>
      * 
      * @param endpointName
-     *        The name assigned to the new DevEndpoint.
+     *        The name assigned to the new <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +176,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The current status of the new DevEndpoint.
+     * The current status of the new <code>DevEndpoint</code>.
      * </p>
      * 
      * @param status
-     *        The current status of the new DevEndpoint.
+     *        The current status of the new <code>DevEndpoint</code>.
      */
 
     public void setStatus(String status) {
@@ -175,10 +189,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The current status of the new DevEndpoint.
+     * The current status of the new <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The current status of the new DevEndpoint.
+     * @return The current status of the new <code>DevEndpoint</code>.
      */
 
     public String getStatus() {
@@ -187,11 +201,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The current status of the new DevEndpoint.
+     * The current status of the new <code>DevEndpoint</code>.
      * </p>
      * 
      * @param status
-     *        The current status of the new DevEndpoint.
+     *        The current status of the new <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,10 +216,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The security groups assigned to the new DevEndpoint.
+     * The security groups assigned to the new <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The security groups assigned to the new DevEndpoint.
+     * @return The security groups assigned to the new <code>DevEndpoint</code>.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -214,11 +228,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The security groups assigned to the new DevEndpoint.
+     * The security groups assigned to the new <code>DevEndpoint</code>.
      * </p>
      * 
      * @param securityGroupIds
-     *        The security groups assigned to the new DevEndpoint.
+     *        The security groups assigned to the new <code>DevEndpoint</code>.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -232,7 +246,7 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The security groups assigned to the new DevEndpoint.
+     * The security groups assigned to the new <code>DevEndpoint</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -241,7 +255,7 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param securityGroupIds
-     *        The security groups assigned to the new DevEndpoint.
+     *        The security groups assigned to the new <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,11 +271,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The security groups assigned to the new DevEndpoint.
+     * The security groups assigned to the new <code>DevEndpoint</code>.
      * </p>
      * 
      * @param securityGroupIds
-     *        The security groups assigned to the new DevEndpoint.
+     *        The security groups assigned to the new <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,11 +286,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The subnet ID assigned to the new DevEndpoint.
+     * The subnet ID assigned to the new <code>DevEndpoint</code>.
      * </p>
      * 
      * @param subnetId
-     *        The subnet ID assigned to the new DevEndpoint.
+     *        The subnet ID assigned to the new <code>DevEndpoint</code>.
      */
 
     public void setSubnetId(String subnetId) {
@@ -285,10 +299,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The subnet ID assigned to the new DevEndpoint.
+     * The subnet ID assigned to the new <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The subnet ID assigned to the new DevEndpoint.
+     * @return The subnet ID assigned to the new <code>DevEndpoint</code>.
      */
 
     public String getSubnetId() {
@@ -297,11 +311,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The subnet ID assigned to the new DevEndpoint.
+     * The subnet ID assigned to the new <code>DevEndpoint</code>.
      * </p>
      * 
      * @param subnetId
-     *        The subnet ID assigned to the new DevEndpoint.
+     *        The subnet ID assigned to the new <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,11 +326,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS ARN of the role assigned to the new DevEndpoint.
+     * The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.
      * </p>
      * 
      * @param roleArn
-     *        The AWS ARN of the role assigned to the new DevEndpoint.
+     *        The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -325,10 +339,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS ARN of the role assigned to the new DevEndpoint.
+     * The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The AWS ARN of the role assigned to the new DevEndpoint.
+     * @return The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.
      */
 
     public String getRoleArn() {
@@ -337,11 +351,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS ARN of the role assigned to the new DevEndpoint.
+     * The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.
      * </p>
      * 
      * @param roleArn
-     *        The AWS ARN of the role assigned to the new DevEndpoint.
+     *        The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,11 +366,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The address of the YARN endpoint used by this DevEndpoint.
+     * The address of the YARN endpoint used by this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param yarnEndpointAddress
-     *        The address of the YARN endpoint used by this DevEndpoint.
+     *        The address of the YARN endpoint used by this <code>DevEndpoint</code>.
      */
 
     public void setYarnEndpointAddress(String yarnEndpointAddress) {
@@ -365,10 +379,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The address of the YARN endpoint used by this DevEndpoint.
+     * The address of the YARN endpoint used by this <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The address of the YARN endpoint used by this DevEndpoint.
+     * @return The address of the YARN endpoint used by this <code>DevEndpoint</code>.
      */
 
     public String getYarnEndpointAddress() {
@@ -377,11 +391,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The address of the YARN endpoint used by this DevEndpoint.
+     * The address of the YARN endpoint used by this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param yarnEndpointAddress
-     *        The address of the YARN endpoint used by this DevEndpoint.
+     *        The address of the YARN endpoint used by this <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -472,11 +486,119 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS availability zone where this DevEndpoint is located.
+     * The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or
+     * G.2X.
+     * </p>
+     * 
+     * @param workerType
+     *        The type of predefined worker that is allocated to the development endpoint. May be a value of Standard,
+     *        G.1X, or G.2X.
+     * @see WorkerType
+     */
+
+    public void setWorkerType(String workerType) {
+        this.workerType = workerType;
+    }
+
+    /**
+     * <p>
+     * The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or
+     * G.2X.
+     * </p>
+     * 
+     * @return The type of predefined worker that is allocated to the development endpoint. May be a value of Standard,
+     *         G.1X, or G.2X.
+     * @see WorkerType
+     */
+
+    public String getWorkerType() {
+        return this.workerType;
+    }
+
+    /**
+     * <p>
+     * The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or
+     * G.2X.
+     * </p>
+     * 
+     * @param workerType
+     *        The type of predefined worker that is allocated to the development endpoint. May be a value of Standard,
+     *        G.1X, or G.2X.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkerType
+     */
+
+    public CreateDevEndpointResult withWorkerType(String workerType) {
+        setWorkerType(workerType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or
+     * G.2X.
+     * </p>
+     * 
+     * @param workerType
+     *        The type of predefined worker that is allocated to the development endpoint. May be a value of Standard,
+     *        G.1X, or G.2X.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkerType
+     */
+
+    public CreateDevEndpointResult withWorkerType(WorkerType workerType) {
+        this.workerType = workerType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.
+     * </p>
+     * 
+     * @param numberOfWorkers
+     *        The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.
+     */
+
+    public void setNumberOfWorkers(Integer numberOfWorkers) {
+        this.numberOfWorkers = numberOfWorkers;
+    }
+
+    /**
+     * <p>
+     * The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.
+     * </p>
+     * 
+     * @return The number of workers of a defined <code>workerType</code> that are allocated to the development
+     *         endpoint.
+     */
+
+    public Integer getNumberOfWorkers() {
+        return this.numberOfWorkers;
+    }
+
+    /**
+     * <p>
+     * The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.
+     * </p>
+     * 
+     * @param numberOfWorkers
+     *        The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDevEndpointResult withNumberOfWorkers(Integer numberOfWorkers) {
+        setNumberOfWorkers(numberOfWorkers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Availability Zone where this <code>DevEndpoint</code> is located.
      * </p>
      * 
      * @param availabilityZone
-     *        The AWS availability zone where this DevEndpoint is located.
+     *        The AWS Availability Zone where this <code>DevEndpoint</code> is located.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -485,10 +607,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS availability zone where this DevEndpoint is located.
+     * The AWS Availability Zone where this <code>DevEndpoint</code> is located.
      * </p>
      * 
-     * @return The AWS availability zone where this DevEndpoint is located.
+     * @return The AWS Availability Zone where this <code>DevEndpoint</code> is located.
      */
 
     public String getAvailabilityZone() {
@@ -497,11 +619,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS availability zone where this DevEndpoint is located.
+     * The AWS Availability Zone where this <code>DevEndpoint</code> is located.
      * </p>
      * 
      * @param availabilityZone
-     *        The AWS availability zone where this DevEndpoint is located.
+     *        The AWS Availability Zone where this <code>DevEndpoint</code> is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,11 +634,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The ID of the VPC used by this DevEndpoint.
+     * The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the VPC used by this DevEndpoint.
+     *        The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.
      */
 
     public void setVpcId(String vpcId) {
@@ -525,10 +647,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The ID of the VPC used by this DevEndpoint.
+     * The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The ID of the VPC used by this DevEndpoint.
+     * @return The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.
      */
 
     public String getVpcId() {
@@ -537,11 +659,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The ID of the VPC used by this DevEndpoint.
+     * The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the VPC used by this DevEndpoint.
+     *        The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -552,11 +674,12 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     * The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.
      * </p>
      * 
      * @param extraPythonLibsS3Path
-     *        Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     *        The paths to one or more Python libraries in an S3 bucket that will be loaded in your
+     *        <code>DevEndpoint</code>.
      */
 
     public void setExtraPythonLibsS3Path(String extraPythonLibsS3Path) {
@@ -565,10 +688,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     * The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     * @return The paths to one or more Python libraries in an S3 bucket that will be loaded in your
+     *         <code>DevEndpoint</code>.
      */
 
     public String getExtraPythonLibsS3Path() {
@@ -577,11 +701,12 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     * The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.
      * </p>
      * 
      * @param extraPythonLibsS3Path
-     *        Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     *        The paths to one or more Python libraries in an S3 bucket that will be loaded in your
+     *        <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -592,11 +717,13 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Path to one or more Java Jars in an S3 bucket that will be loaded in your DevEndpoint.
+     * Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your
+     * <code>DevEndpoint</code>.
      * </p>
      * 
      * @param extraJarsS3Path
-     *        Path to one or more Java Jars in an S3 bucket that will be loaded in your DevEndpoint.
+     *        Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your
+     *        <code>DevEndpoint</code>.
      */
 
     public void setExtraJarsS3Path(String extraJarsS3Path) {
@@ -605,10 +732,12 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Path to one or more Java Jars in an S3 bucket that will be loaded in your DevEndpoint.
+     * Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your
+     * <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return Path to one or more Java Jars in an S3 bucket that will be loaded in your DevEndpoint.
+     * @return Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your
+     *         <code>DevEndpoint</code>.
      */
 
     public String getExtraJarsS3Path() {
@@ -617,11 +746,13 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Path to one or more Java Jars in an S3 bucket that will be loaded in your DevEndpoint.
+     * Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your
+     * <code>DevEndpoint</code>.
      * </p>
      * 
      * @param extraJarsS3Path
-     *        Path to one or more Java Jars in an S3 bucket that will be loaded in your DevEndpoint.
+     *        Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your
+     *        <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -632,11 +763,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The reason for a current failure in this DevEndpoint.
+     * The reason for a current failure in this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param failureReason
-     *        The reason for a current failure in this DevEndpoint.
+     *        The reason for a current failure in this <code>DevEndpoint</code>.
      */
 
     public void setFailureReason(String failureReason) {
@@ -645,10 +776,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The reason for a current failure in this DevEndpoint.
+     * The reason for a current failure in this <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The reason for a current failure in this DevEndpoint.
+     * @return The reason for a current failure in this <code>DevEndpoint</code>.
      */
 
     public String getFailureReason() {
@@ -657,11 +788,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The reason for a current failure in this DevEndpoint.
+     * The reason for a current failure in this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param failureReason
-     *        The reason for a current failure in this DevEndpoint.
+     *        The reason for a current failure in this <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -672,11 +803,12 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     * The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param securityConfiguration
-     *        The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     *        The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>
+     *        .
      */
 
     public void setSecurityConfiguration(String securityConfiguration) {
@@ -685,10 +817,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     * The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     * @return The name of the <code>SecurityConfiguration</code> structure being used with this
+     *         <code>DevEndpoint</code>.
      */
 
     public String getSecurityConfiguration() {
@@ -697,11 +830,12 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     * The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param securityConfiguration
-     *        The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     *        The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -712,11 +846,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The point in time at which this DevEndpoint was created.
+     * The point in time at which this <code>DevEndpoint</code> was created.
      * </p>
      * 
      * @param createdTimestamp
-     *        The point in time at which this DevEndpoint was created.
+     *        The point in time at which this <code>DevEndpoint</code> was created.
      */
 
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
@@ -725,10 +859,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The point in time at which this DevEndpoint was created.
+     * The point in time at which this <code>DevEndpoint</code> was created.
      * </p>
      * 
-     * @return The point in time at which this DevEndpoint was created.
+     * @return The point in time at which this <code>DevEndpoint</code> was created.
      */
 
     public java.util.Date getCreatedTimestamp() {
@@ -737,11 +871,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The point in time at which this DevEndpoint was created.
+     * The point in time at which this <code>DevEndpoint</code> was created.
      * </p>
      * 
      * @param createdTimestamp
-     *        The point in time at which this DevEndpoint was created.
+     *        The point in time at which this <code>DevEndpoint</code> was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -752,10 +886,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The map of arguments used to configure this DevEndpoint.
+     * The map of arguments used to configure this <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The map of arguments used to configure this DevEndpoint.
+     * @return The map of arguments used to configure this <code>DevEndpoint</code>.
      */
 
     public java.util.Map<String, String> getArguments() {
@@ -764,11 +898,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The map of arguments used to configure this DevEndpoint.
+     * The map of arguments used to configure this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param arguments
-     *        The map of arguments used to configure this DevEndpoint.
+     *        The map of arguments used to configure this <code>DevEndpoint</code>.
      */
 
     public void setArguments(java.util.Map<String, String> arguments) {
@@ -777,11 +911,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The map of arguments used to configure this DevEndpoint.
+     * The map of arguments used to configure this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param arguments
-     *        The map of arguments used to configure this DevEndpoint.
+     *        The map of arguments used to configure this <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -839,6 +973,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("ZeppelinRemoteSparkInterpreterPort: ").append(getZeppelinRemoteSparkInterpreterPort()).append(",");
         if (getNumberOfNodes() != null)
             sb.append("NumberOfNodes: ").append(getNumberOfNodes()).append(",");
+        if (getWorkerType() != null)
+            sb.append("WorkerType: ").append(getWorkerType()).append(",");
+        if (getNumberOfWorkers() != null)
+            sb.append("NumberOfWorkers: ").append(getNumberOfWorkers()).append(",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getVpcId() != null)
@@ -902,6 +1040,14 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getNumberOfNodes() != null && other.getNumberOfNodes().equals(this.getNumberOfNodes()) == false)
             return false;
+        if (other.getWorkerType() == null ^ this.getWorkerType() == null)
+            return false;
+        if (other.getWorkerType() != null && other.getWorkerType().equals(this.getWorkerType()) == false)
+            return false;
+        if (other.getNumberOfWorkers() == null ^ this.getNumberOfWorkers() == null)
+            return false;
+        if (other.getNumberOfWorkers() != null && other.getNumberOfWorkers().equals(this.getNumberOfWorkers()) == false)
+            return false;
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
@@ -950,6 +1096,8 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getYarnEndpointAddress() == null) ? 0 : getYarnEndpointAddress().hashCode());
         hashCode = prime * hashCode + ((getZeppelinRemoteSparkInterpreterPort() == null) ? 0 : getZeppelinRemoteSparkInterpreterPort().hashCode());
         hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode());
+        hashCode = prime * hashCode + ((getWorkerType() == null) ? 0 : getWorkerType().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfWorkers() == null) ? 0 : getNumberOfWorkers().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getExtraPythonLibsS3Path() == null) ? 0 : getExtraPythonLibsS3Path().hashCode());
