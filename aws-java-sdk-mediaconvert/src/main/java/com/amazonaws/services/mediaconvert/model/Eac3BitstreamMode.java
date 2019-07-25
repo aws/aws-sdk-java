@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on
- * these values.
+ * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3
+ * bitstream mode, see ATSC A/52-2012 (Annex E).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Eac3BitstreamMode {

@@ -34,7 +34,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String registryId;
     /**
      * <p>
-     * A list of repositories to describe.
+     * The repository that contains the images to describe.
      * </p>
      */
     private String repositoryName;
@@ -121,11 +121,11 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of repositories to describe.
+     * The repository that contains the images to describe.
      * </p>
      * 
      * @param repositoryName
-     *        A list of repositories to describe.
+     *        The repository that contains the images to describe.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -134,10 +134,10 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of repositories to describe.
+     * The repository that contains the images to describe.
      * </p>
      * 
-     * @return A list of repositories to describe.
+     * @return The repository that contains the images to describe.
      */
 
     public String getRepositoryName() {
@@ -146,11 +146,11 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of repositories to describe.
+     * The repository that contains the images to describe.
      * </p>
      * 
      * @param repositoryName
-     *        A list of repositories to describe.
+     *        The repository that contains the images to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

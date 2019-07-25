@@ -35,6 +35,8 @@ public class AudioCodecSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("aiffSettings").build();
     private static final MarshallingInfo<String> CODEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("codec").build();
+    private static final MarshallingInfo<StructuredPojo> EAC3ATMOSSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eac3AtmosSettings").build();
     private static final MarshallingInfo<StructuredPojo> EAC3SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eac3Settings").build();
     private static final MarshallingInfo<StructuredPojo> MP2SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -62,6 +64,7 @@ public class AudioCodecSettingsMarshaller {
             protocolMarshaller.marshall(audioCodecSettings.getAc3Settings(), AC3SETTINGS_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getAiffSettings(), AIFFSETTINGS_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getCodec(), CODEC_BINDING);
+            protocolMarshaller.marshall(audioCodecSettings.getEac3AtmosSettings(), EAC3ATMOSSETTINGS_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getEac3Settings(), EAC3SETTINGS_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getMp2Settings(), MP2SETTINGS_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getWavSettings(), WAVSETTINGS_BINDING);

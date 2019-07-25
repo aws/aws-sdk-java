@@ -149,7 +149,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     private M2tsScte35Esam scte35Esam;
     /** Specify the packet identifier (PID) of the SCTE-35 stream in the transport stream. */
     private Integer scte35Pid;
-    /** Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output. */
+    /**
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
+     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
+     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the
+     * setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
+     */
     private String scte35Source;
     /**
      * Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit
@@ -1561,10 +1566,17 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
+     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
+     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the
+     * setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
      * 
      * @param scte35Source
-     *        Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     *        For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
+     *        appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
+     *        in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
+     *        XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35
+     *        (include the property scte35Esam).
      * @see M2tsScte35Source
      */
 
@@ -1573,9 +1585,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
+     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
+     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the
+     * setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
      * 
-     * @return Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * @return For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
+     *         appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
+     *         in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
+     *         XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35
+     *         (include the property scte35Esam).
      * @see M2tsScte35Source
      */
 
@@ -1584,10 +1603,17 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
+     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
+     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the
+     * setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
      * 
      * @param scte35Source
-     *        Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     *        For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
+     *        appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
+     *        in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
+     *        XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35
+     *        (include the property scte35Esam).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsScte35Source
      */
@@ -1598,10 +1624,17 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
+     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
+     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the
+     * setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
      * 
      * @param scte35Source
-     *        Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     *        For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
+     *        appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
+     *        in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
+     *        XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35
+     *        (include the property scte35Esam).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsScte35Source
      */

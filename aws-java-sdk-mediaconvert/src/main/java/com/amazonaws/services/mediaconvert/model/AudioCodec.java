@@ -26,6 +26,7 @@ public enum AudioCodec {
     AIFF("AIFF"),
     AC3("AC3"),
     EAC3("EAC3"),
+    EAC3_ATMOS("EAC3_ATMOS"),
     PASSTHROUGH("PASSTHROUGH");
 
     private String value;

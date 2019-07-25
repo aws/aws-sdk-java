@@ -53,8 +53,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental
      * MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and
      * ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime,
-     * Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs that use input clipping, the
-     * service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
+     * Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those
+     * cases, jobPercentComplete returns a null value.
      */
     private Integer jobPercentComplete;
     /** The job template that the job is created from, if it is created from a job template. */
@@ -427,17 +427,16 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental
      * MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and
      * ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime,
-     * Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs that use input clipping, the
-     * service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
+     * Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those
+     * cases, jobPercentComplete returns a null value.
      * 
      * @param jobPercentComplete
      *        An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time
      *        from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS
      *        Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response
      *        to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input
-     *        containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs
-     *        that use input clipping, the service can't provide information about job progress. In those cases,
-     *        jobPercentComplete returns a null value.
+     *        containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide
+     *        information about job progress. In those cases, jobPercentComplete returns a null value.
      */
 
     public void setJobPercentComplete(Integer jobPercentComplete) {
@@ -449,16 +448,15 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental
      * MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and
      * ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime,
-     * Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs that use input clipping, the
-     * service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
+     * Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those
+     * cases, jobPercentComplete returns a null value.
      * 
      * @return An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time
      *         from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS
      *         Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response
      *         to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input
-     *         containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs
-     *         that use input clipping, the service can't provide information about job progress. In those cases,
-     *         jobPercentComplete returns a null value.
+     *         containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide
+     *         information about job progress. In those cases, jobPercentComplete returns a null value.
      */
 
     public Integer getJobPercentComplete() {
@@ -470,17 +468,16 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental
      * MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and
      * ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime,
-     * Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs that use input clipping, the
-     * service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
+     * Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those
+     * cases, jobPercentComplete returns a null value.
      * 
      * @param jobPercentComplete
      *        An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time
      *        from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS
      *        Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response
      *        to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input
-     *        containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, including audio-only jobs and jobs
-     *        that use input clipping, the service can't provide information about job progress. In those cases,
-     *        jobPercentComplete returns a null value.
+     *        containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide
+     *        information about job progress. In those cases, jobPercentComplete returns a null value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -29,6 +29,8 @@ public class HlsSettingsMarshaller {
 
     private static final MarshallingInfo<String> AUDIOGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioGroupId").build();
+    private static final MarshallingInfo<String> AUDIOONLYCONTAINER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioOnlyContainer").build();
     private static final MarshallingInfo<String> AUDIORENDITIONSETS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioRenditionSets").build();
     private static final MarshallingInfo<String> AUDIOTRACKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -55,6 +57,7 @@ public class HlsSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(hlsSettings.getAudioGroupId(), AUDIOGROUPID_BINDING);
+            protocolMarshaller.marshall(hlsSettings.getAudioOnlyContainer(), AUDIOONLYCONTAINER_BINDING);
             protocolMarshaller.marshall(hlsSettings.getAudioRenditionSets(), AUDIORENDITIONSETS_BINDING);
             protocolMarshaller.marshall(hlsSettings.getAudioTrackType(), AUDIOTRACKTYPE_BINDING);
             protocolMarshaller.marshall(hlsSettings.getIFrameOnlyManifest(), IFRAMEONLYMANIFEST_BINDING);

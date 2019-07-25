@@ -46,7 +46,13 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
      * all output groups.
      */
     private MotionImageInserter motionImageInserter;
-    /** Settings for Nielsen Configuration */
+    /**
+     * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
+     * settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging
+     * for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of
+     * nielsenConfiguration in your JSON job specification. Even if you don't include any children of
+     * nielsenConfiguration, you still enable the setting.
+     */
     private NielsenConfiguration nielsenConfiguration;
     /**
      * (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All
@@ -286,10 +292,18 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Settings for Nielsen Configuration
+     * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
+     * settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging
+     * for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of
+     * nielsenConfiguration in your JSON job specification. Even if you don't include any children of
+     * nielsenConfiguration, you still enable the setting.
      * 
      * @param nielsenConfiguration
-     *        Settings for Nielsen Configuration
+     *        Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
+     *        settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3
+     *        tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance
+     *        of nielsenConfiguration in your JSON job specification. Even if you don't include any children of
+     *        nielsenConfiguration, you still enable the setting.
      */
 
     public void setNielsenConfiguration(NielsenConfiguration nielsenConfiguration) {
@@ -297,9 +311,17 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Settings for Nielsen Configuration
+     * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
+     * settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging
+     * for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of
+     * nielsenConfiguration in your JSON job specification. Even if you don't include any children of
+     * nielsenConfiguration, you still enable the setting.
      * 
-     * @return Settings for Nielsen Configuration
+     * @return Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
+     *         settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3
+     *         tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance
+     *         of nielsenConfiguration in your JSON job specification. Even if you don't include any children of
+     *         nielsenConfiguration, you still enable the setting.
      */
 
     public NielsenConfiguration getNielsenConfiguration() {
@@ -307,10 +329,18 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Settings for Nielsen Configuration
+     * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
+     * settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging
+     * for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of
+     * nielsenConfiguration in your JSON job specification. Even if you don't include any children of
+     * nielsenConfiguration, you still enable the setting.
      * 
      * @param nielsenConfiguration
-     *        Settings for Nielsen Configuration
+     *        Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these
+     *        settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3
+     *        tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance
+     *        of nielsenConfiguration in your JSON job specification. Even if you don't include any children of
+     *        nielsenConfiguration, you still enable the setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

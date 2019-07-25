@@ -29,8 +29,8 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     /** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality. */
     private String adaptiveQuantization;
     /**
-     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when
-     * rounded down to the nearest multiple of 1000.
+     * Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be
+     * unique when rounded down to the nearest multiple of 1000.
      */
     private Integer bitrate;
     /** Use Level (Mpeg2CodecLevel) to set the MPEG-2 level for the video output. */
@@ -199,12 +199,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when
-     * rounded down to the nearest multiple of 1000.
+     * Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be
+     * unique when rounded down to the nearest multiple of 1000.
      * 
      * @param bitrate
-     *        Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique
-     *        when rounded down to the nearest multiple of 1000.
+     *        Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates
+     *        must be unique when rounded down to the nearest multiple of 1000.
      */
 
     public void setBitrate(Integer bitrate) {
@@ -212,11 +212,11 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when
-     * rounded down to the nearest multiple of 1000.
+     * Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be
+     * unique when rounded down to the nearest multiple of 1000.
      * 
-     * @return Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique
-     *         when rounded down to the nearest multiple of 1000.
+     * @return Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates
+     *         must be unique when rounded down to the nearest multiple of 1000.
      */
 
     public Integer getBitrate() {
@@ -224,12 +224,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when
-     * rounded down to the nearest multiple of 1000.
+     * Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be
+     * unique when rounded down to the nearest multiple of 1000.
      * 
      * @param bitrate
-     *        Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique
-     *        when rounded down to the nearest multiple of 1000.
+     *        Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates
+     *        must be unique when rounded down to the nearest multiple of 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

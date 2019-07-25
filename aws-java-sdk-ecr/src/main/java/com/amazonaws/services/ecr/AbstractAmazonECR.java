@@ -133,6 +133,11 @@ public class AbstractAmazonECR implements AmazonECR {
     }
 
     @Override
+    public PutImageTagMutabilityResult putImageTagMutability(PutImageTagMutabilityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutLifecyclePolicyResult putLifecyclePolicy(PutLifecyclePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
- * encoding. The settings in this group vary depending on the value you choose for Audio codec (Codec). For each codec
- * enum you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs.
- * * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+ * encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each
+ * codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings
+ * object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings *
+ * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioCodecSettings" target="_top">AWS
  *      API Documentation</a>
@@ -43,6 +44,8 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     private AiffSettings aiffSettings;
     /** Type of Audio codec. */
     private String codec;
+    /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS. */
+    private Eac3AtmosSettings eac3AtmosSettings;
     /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3. */
     private Eac3Settings eac3Settings;
     /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value MP2. */
@@ -228,6 +231,40 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+     * 
+     * @param eac3AtmosSettings
+     *        Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+     */
+
+    public void setEac3AtmosSettings(Eac3AtmosSettings eac3AtmosSettings) {
+        this.eac3AtmosSettings = eac3AtmosSettings;
+    }
+
+    /**
+     * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+     * 
+     * @return Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+     */
+
+    public Eac3AtmosSettings getEac3AtmosSettings() {
+        return this.eac3AtmosSettings;
+    }
+
+    /**
+     * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+     * 
+     * @param eac3AtmosSettings
+     *        Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioCodecSettings withEac3AtmosSettings(Eac3AtmosSettings eac3AtmosSettings) {
+        setEac3AtmosSettings(eac3AtmosSettings);
+        return this;
+    }
+
+    /**
      * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3.
      * 
      * @param eac3Settings
@@ -349,6 +386,8 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
             sb.append("AiffSettings: ").append(getAiffSettings()).append(",");
         if (getCodec() != null)
             sb.append("Codec: ").append(getCodec()).append(",");
+        if (getEac3AtmosSettings() != null)
+            sb.append("Eac3AtmosSettings: ").append(getEac3AtmosSettings()).append(",");
         if (getEac3Settings() != null)
             sb.append("Eac3Settings: ").append(getEac3Settings()).append(",");
         if (getMp2Settings() != null)
@@ -385,6 +424,10 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getCodec() != null && other.getCodec().equals(this.getCodec()) == false)
             return false;
+        if (other.getEac3AtmosSettings() == null ^ this.getEac3AtmosSettings() == null)
+            return false;
+        if (other.getEac3AtmosSettings() != null && other.getEac3AtmosSettings().equals(this.getEac3AtmosSettings()) == false)
+            return false;
         if (other.getEac3Settings() == null ^ this.getEac3Settings() == null)
             return false;
         if (other.getEac3Settings() != null && other.getEac3Settings().equals(this.getEac3Settings()) == false)
@@ -409,6 +452,7 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getAc3Settings() == null) ? 0 : getAc3Settings().hashCode());
         hashCode = prime * hashCode + ((getAiffSettings() == null) ? 0 : getAiffSettings().hashCode());
         hashCode = prime * hashCode + ((getCodec() == null) ? 0 : getCodec().hashCode());
+        hashCode = prime * hashCode + ((getEac3AtmosSettings() == null) ? 0 : getEac3AtmosSettings().hashCode());
         hashCode = prime * hashCode + ((getEac3Settings() == null) ? 0 : getEac3Settings().hashCode());
         hashCode = prime * hashCode + ((getMp2Settings() == null) ? 0 : getMp2Settings().hashCode());
         hashCode = prime * hashCode + ((getWavSettings() == null) ? 0 : getWavSettings().hashCode());

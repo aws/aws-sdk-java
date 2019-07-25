@@ -49,6 +49,8 @@ public class ChannelMarshaller {
             .marshallLocationName("logLevel").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<List> PIPELINEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineDetails").build();
     private static final MarshallingInfo<Integer> PIPELINESRUNNINGCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelinesRunningCount").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -84,6 +86,7 @@ public class ChannelMarshaller {
             protocolMarshaller.marshall(channel.getInputSpecification(), INPUTSPECIFICATION_BINDING);
             protocolMarshaller.marshall(channel.getLogLevel(), LOGLEVEL_BINDING);
             protocolMarshaller.marshall(channel.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(channel.getPipelineDetails(), PIPELINEDETAILS_BINDING);
             protocolMarshaller.marshall(channel.getPipelinesRunningCount(), PIPELINESRUNNINGCOUNT_BINDING);
             protocolMarshaller.marshall(channel.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(channel.getState(), STATE_BINDING);

@@ -91,6 +91,11 @@ public class StartChannelResultJsonUnmarshaller implements Unmarshaller<StartCha
                     context.nextToken();
                     startChannelResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("pipelineDetails", targetDepth)) {
+                    context.nextToken();
+                    startChannelResult.setPipelineDetails(new ListUnmarshaller<PipelineDetail>(PipelineDetailJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("pipelinesRunningCount", targetDepth)) {
                     context.nextToken();
                     startChannelResult.setPipelinesRunningCount(context.getUnmarshaller(Integer.class).unmarshall(context));

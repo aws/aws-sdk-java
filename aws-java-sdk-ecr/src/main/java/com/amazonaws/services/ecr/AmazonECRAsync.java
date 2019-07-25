@@ -25,6 +25,7 @@ import com.amazonaws.services.ecr.model.*;
  * {@link com.amazonaws.services.ecr.AbstractAmazonECRAsync} instead.
  * </p>
  * <p>
+ * <fullname>Amazon Elastic Container Registry</fullname>
  * <p>
  * Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar
  * Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
@@ -760,8 +761,39 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
+     * Updates the image tag mutability settings for a repository.
+     * </p>
+     * 
+     * @param putImageTagMutabilityRequest
+     * @return A Java Future containing the result of the PutImageTagMutability operation returned by the service.
+     * @sample AmazonECRAsync.PutImageTagMutability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutImageTagMutabilityResult> putImageTagMutabilityAsync(PutImageTagMutabilityRequest putImageTagMutabilityRequest);
+
+    /**
+     * <p>
+     * Updates the image tag mutability settings for a repository.
+     * </p>
+     * 
+     * @param putImageTagMutabilityRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutImageTagMutability operation returned by the service.
+     * @sample AmazonECRAsyncHandler.PutImageTagMutability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutImageTagMutabilityResult> putImageTagMutabilityAsync(PutImageTagMutabilityRequest putImageTagMutabilityRequest,
+            com.amazonaws.handlers.AsyncHandler<PutImageTagMutabilityRequest, PutImageTagMutabilityResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates or updates a lifecycle policy. For information about lifecycle policy syntax, see <a
-     * href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy
      * Template</a>.
      * </p>
      * 
@@ -776,7 +808,7 @@ public interface AmazonECRAsync extends AmazonECR {
     /**
      * <p>
      * Creates or updates a lifecycle policy. For information about lifecycle policy syntax, see <a
-     * href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy
      * Template</a>.
      * </p>
      * 
@@ -795,7 +827,9 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Applies a repository policy on a specified repository to control access permissions.
+     * Applies a repository policy on a specified repository to control access permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon ECR Repository
+     * Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param setRepositoryPolicyRequest
@@ -808,7 +842,9 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Applies a repository policy on a specified repository to control access permissions.
+     * Applies a repository policy on a specified repository to control access permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon ECR Repository
+     * Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param setRepositoryPolicyRequest

@@ -61,7 +61,13 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     private Integer programNumber;
     /** Packet Identifier (PID) of the SCTE-35 stream in the transport stream. */
     private Integer scte35Pid;
-    /** Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output. */
+    /**
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
+     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
+     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose
+     * Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases,
+     * also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
+     */
     private String scte35Source;
     /**
      * Applies only to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from
@@ -550,10 +556,19 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
+     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
+     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose
+     * Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases,
+     * also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
      * 
      * @param scte35Source
-     *        Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     *        For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
+     *        appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
+     *        in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want
+     *        manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want
+     *        manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal
+     *        processing notification XML (sccXml).
      * @see M3u8Scte35Source
      */
 
@@ -562,9 +577,18 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
+     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
+     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose
+     * Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases,
+     * also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
      * 
-     * @return Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * @return For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
+     *         appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
+     *         in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want
+     *         manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want
+     *         manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal
+     *         processing notification XML (sccXml).
      * @see M3u8Scte35Source
      */
 
@@ -573,10 +597,19 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
+     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
+     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose
+     * Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases,
+     * also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
      * 
      * @param scte35Source
-     *        Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     *        For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
+     *        appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
+     *        in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want
+     *        manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want
+     *        manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal
+     *        processing notification XML (sccXml).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M3u8Scte35Source
      */
@@ -587,10 +620,19 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
+     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
+     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose
+     * Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases,
+     * also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
      * 
      * @param scte35Source
-     *        Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+     *        For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
+     *        appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
+     *        in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want
+     *        manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want
+     *        manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal
+     *        processing notification XML (sccXml).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M3u8Scte35Source
      */

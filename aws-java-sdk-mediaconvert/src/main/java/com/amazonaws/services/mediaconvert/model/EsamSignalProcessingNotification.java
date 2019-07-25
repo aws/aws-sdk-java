@@ -29,28 +29,28 @@ public class EsamSignalProcessingNotification implements Serializable, Cloneable
     /**
      * Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document
      * as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that
-     * you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. If you want
-     * the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable
-     * SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough.
-     * You can't do both.
+     * you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. For your
+     * MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the
+     * XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML
+     * document or enable SCTE-35 passthrough. You can't do both.
      */
     private String sccXml;
 
     /**
      * Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document
      * as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that
-     * you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. If you want
-     * the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable
-     * SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough.
-     * You can't do both.
+     * you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. For your
+     * MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the
+     * XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML
+     * document or enable SCTE-35 passthrough. You can't do both.
      * 
      * @param sccXml
      *        Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML
      *        document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in
      *        the message that you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON
-     *        job settings. If you want the service to place SCTE-35 markers at the insertion points you specify in the
-     *        XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML
-     *        document or enable SCTE-35 passthrough. You can't do both.
+     *        job settings. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the
+     *        insertion points you specify in the XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note
+     *        that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
      */
 
     public void setSccXml(String sccXml) {
@@ -60,17 +60,17 @@ public class EsamSignalProcessingNotification implements Serializable, Cloneable
     /**
      * Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document
      * as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that
-     * you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. If you want
-     * the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable
-     * SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough.
-     * You can't do both.
+     * you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. For your
+     * MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the
+     * XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML
+     * document or enable SCTE-35 passthrough. You can't do both.
      * 
      * @return Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML
      *         document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in
      *         the message that you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON
-     *         job settings. If you want the service to place SCTE-35 markers at the insertion points you specify in the
-     *         XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM
-     *         XML document or enable SCTE-35 passthrough. You can't do both.
+     *         job settings. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the
+     *         insertion points you specify in the XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note
+     *         that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
      */
 
     public String getSccXml() {
@@ -80,18 +80,18 @@ public class EsamSignalProcessingNotification implements Serializable, Cloneable
     /**
      * Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document
      * as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that
-     * you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. If you want
-     * the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable
-     * SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough.
-     * You can't do both.
+     * you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. For your
+     * MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the
+     * XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML
+     * document or enable SCTE-35 passthrough. You can't do both.
      * 
      * @param sccXml
      *        Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML
      *        document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in
      *        the message that you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON
-     *        job settings. If you want the service to place SCTE-35 markers at the insertion points you specify in the
-     *        XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML
-     *        document or enable SCTE-35 passthrough. You can't do both.
+     *        job settings. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the
+     *        insertion points you specify in the XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note
+     *        that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

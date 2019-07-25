@@ -40,7 +40,9 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
     private String repositoryName;
     /**
      * <p>
-     * The JSON repository policy text to apply to the repository.
+     * The JSON repository policy text to apply to the repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR Repository
+     * Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      */
     private String policyText;
@@ -141,11 +143,15 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The JSON repository policy text to apply to the repository.
+     * The JSON repository policy text to apply to the repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR Repository
+     * Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param policyText
-     *        The JSON repository policy text to apply to the repository.
+     *        The JSON repository policy text to apply to the repository. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR
+     *        Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      */
 
     public void setPolicyText(String policyText) {
@@ -154,10 +160,14 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The JSON repository policy text to apply to the repository.
+     * The JSON repository policy text to apply to the repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR Repository
+     * Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
-     * @return The JSON repository policy text to apply to the repository.
+     * @return The JSON repository policy text to apply to the repository. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR
+     *         Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      */
 
     public String getPolicyText() {
@@ -166,11 +176,15 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The JSON repository policy text to apply to the repository.
+     * The JSON repository policy text to apply to the repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR Repository
+     * Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param policyText
-     *        The JSON repository policy text to apply to the repository.
+     *        The JSON repository policy text to apply to the repository. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR
+     *        Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

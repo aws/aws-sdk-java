@@ -50,6 +50,8 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
     private String logLevel;
     /** The name of the channel. (user-mutable) */
     private String name;
+    /** Runtime details for the pipelines of a running channel. */
+    private java.util.List<PipelineDetail> pipelineDetails;
     /** The number of currently healthy pipelines. */
     private Integer pipelinesRunningCount;
     /** The Amazon Resource Name (ARN) of the role assumed when running the Channel. */
@@ -519,6 +521,68 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * Runtime details for the pipelines of a running channel.
+     * 
+     * @return Runtime details for the pipelines of a running channel.
+     */
+
+    public java.util.List<PipelineDetail> getPipelineDetails() {
+        return pipelineDetails;
+    }
+
+    /**
+     * Runtime details for the pipelines of a running channel.
+     * 
+     * @param pipelineDetails
+     *        Runtime details for the pipelines of a running channel.
+     */
+
+    public void setPipelineDetails(java.util.Collection<PipelineDetail> pipelineDetails) {
+        if (pipelineDetails == null) {
+            this.pipelineDetails = null;
+            return;
+        }
+
+        this.pipelineDetails = new java.util.ArrayList<PipelineDetail>(pipelineDetails);
+    }
+
+    /**
+     * Runtime details for the pipelines of a running channel.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPipelineDetails(java.util.Collection)} or {@link #withPipelineDetails(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param pipelineDetails
+     *        Runtime details for the pipelines of a running channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChannelResult withPipelineDetails(PipelineDetail... pipelineDetails) {
+        if (this.pipelineDetails == null) {
+            setPipelineDetails(new java.util.ArrayList<PipelineDetail>(pipelineDetails.length));
+        }
+        for (PipelineDetail ele : pipelineDetails) {
+            this.pipelineDetails.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Runtime details for the pipelines of a running channel.
+     * 
+     * @param pipelineDetails
+     *        Runtime details for the pipelines of a running channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChannelResult withPipelineDetails(java.util.Collection<PipelineDetail> pipelineDetails) {
+        setPipelineDetails(pipelineDetails);
+        return this;
+    }
+
+    /**
      * The number of currently healthy pipelines.
      * 
      * @param pipelinesRunningCount
@@ -713,6 +777,8 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
             sb.append("LogLevel: ").append(getLogLevel()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPipelineDetails() != null)
+            sb.append("PipelineDetails: ").append(getPipelineDetails()).append(",");
         if (getPipelinesRunningCount() != null)
             sb.append("PipelinesRunningCount: ").append(getPipelinesRunningCount()).append(",");
         if (getRoleArn() != null)
@@ -775,6 +841,10 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getPipelineDetails() == null ^ this.getPipelineDetails() == null)
+            return false;
+        if (other.getPipelineDetails() != null && other.getPipelineDetails().equals(this.getPipelineDetails()) == false)
+            return false;
         if (other.getPipelinesRunningCount() == null ^ this.getPipelinesRunningCount() == null)
             return false;
         if (other.getPipelinesRunningCount() != null && other.getPipelinesRunningCount().equals(this.getPipelinesRunningCount()) == false)
@@ -809,6 +879,7 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getInputSpecification() == null) ? 0 : getInputSpecification().hashCode());
         hashCode = prime * hashCode + ((getLogLevel() == null) ? 0 : getLogLevel().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPipelineDetails() == null) ? 0 : getPipelineDetails().hashCode());
         hashCode = prime * hashCode + ((getPipelinesRunningCount() == null) ? 0 : getPipelinesRunningCount().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());

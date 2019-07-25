@@ -69,6 +69,10 @@ public class DescribeInputResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeInputResult.setInputClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inputSourceType", targetDepth)) {
+                    context.nextToken();
+                    describeInputResult.setInputSourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("mediaConnectFlows", targetDepth)) {
                     context.nextToken();
                     describeInputResult.setMediaConnectFlows(new ListUnmarshaller<MediaConnectFlow>(MediaConnectFlowJsonUnmarshaller.getInstance())

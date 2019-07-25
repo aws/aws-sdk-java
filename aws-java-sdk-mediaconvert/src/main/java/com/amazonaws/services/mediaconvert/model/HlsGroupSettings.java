@@ -26,7 +26,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs. */
+    /**
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether
+     * SCTE-35 markers appear in the outputs themselves.
+     */
     private java.util.List<String> adMarkers;
     /**
      * A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest
@@ -118,9 +121,11 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     private Integer timestampDeltaMilliseconds;
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether
+     * SCTE-35 markers appear in the outputs themselves.
      * 
-     * @return Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
+     * @return Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine
+     *         whether SCTE-35 markers appear in the outputs themselves.
      * @see HlsAdMarkers
      */
 
@@ -129,10 +134,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether
+     * SCTE-35 markers appear in the outputs themselves.
      * 
      * @param adMarkers
-     *        Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
+     *        Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine
+     *        whether SCTE-35 markers appear in the outputs themselves.
      * @see HlsAdMarkers
      */
 
@@ -146,7 +153,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether
+     * SCTE-35 markers appear in the outputs themselves.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAdMarkers(java.util.Collection)} or {@link #withAdMarkers(java.util.Collection)} if you want to
@@ -154,7 +162,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param adMarkers
-     *        Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
+     *        Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine
+     *        whether SCTE-35 markers appear in the outputs themselves.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsAdMarkers
      */
@@ -170,10 +179,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether
+     * SCTE-35 markers appear in the outputs themselves.
      * 
      * @param adMarkers
-     *        Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
+     *        Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine
+     *        whether SCTE-35 markers appear in the outputs themselves.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsAdMarkers
      */
@@ -184,10 +195,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether
+     * SCTE-35 markers appear in the outputs themselves.
      * 
      * @param adMarkers
-     *        Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
+     *        Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine
+     *        whether SCTE-35 markers appear in the outputs themselves.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsAdMarkers
      */

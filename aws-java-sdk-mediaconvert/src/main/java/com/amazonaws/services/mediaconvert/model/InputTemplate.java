@@ -42,6 +42,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.Map<String, CaptionSelector> captionSelectors;
     /**
+     * Use Cropping selection (crop) to specify the video area that the service will include in the output video frame.
+     * If you specify a value here, it will override any value that you specify in the output setting Cropping selection
+     * (crop).
+     */
+    private Rectangle crop;
+    /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
      * controllable for MPEG2 and uncompressed video inputs.
      */
@@ -77,6 +83,14 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
      * them.
      */
     private java.util.List<InputClipping> inputClippings;
+    /**
+     * Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     * rectangle that you specify here is black. If you specify a value here, it will override any value that you
+     * specify in the output setting Selection placement (position). If you specify a value here, this will override any
+     * AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND). If you specify a
+     * value here, this will ignore anything that you specify for the setting Scaling Behavior (scalingBehavior).
+     */
+    private Rectangle position;
     /**
      * Use Program (programNumber) to select a specific program from within a multi-program transport stream. Note that
      * Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you
@@ -279,6 +293,52 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
 
     public InputTemplate clearCaptionSelectorsEntries() {
         this.captionSelectors = null;
+        return this;
+    }
+
+    /**
+     * Use Cropping selection (crop) to specify the video area that the service will include in the output video frame.
+     * If you specify a value here, it will override any value that you specify in the output setting Cropping selection
+     * (crop).
+     * 
+     * @param crop
+     *        Use Cropping selection (crop) to specify the video area that the service will include in the output video
+     *        frame. If you specify a value here, it will override any value that you specify in the output setting
+     *        Cropping selection (crop).
+     */
+
+    public void setCrop(Rectangle crop) {
+        this.crop = crop;
+    }
+
+    /**
+     * Use Cropping selection (crop) to specify the video area that the service will include in the output video frame.
+     * If you specify a value here, it will override any value that you specify in the output setting Cropping selection
+     * (crop).
+     * 
+     * @return Use Cropping selection (crop) to specify the video area that the service will include in the output video
+     *         frame. If you specify a value here, it will override any value that you specify in the output setting
+     *         Cropping selection (crop).
+     */
+
+    public Rectangle getCrop() {
+        return this.crop;
+    }
+
+    /**
+     * Use Cropping selection (crop) to specify the video area that the service will include in the output video frame.
+     * If you specify a value here, it will override any value that you specify in the output setting Cropping selection
+     * (crop).
+     * 
+     * @param crop
+     *        Use Cropping selection (crop) to specify the video area that the service will include in the output video
+     *        frame. If you specify a value here, it will override any value that you specify in the output setting
+     *        Cropping selection (crop).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputTemplate withCrop(Rectangle crop) {
+        setCrop(crop);
         return this;
     }
 
@@ -662,6 +722,67 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     * rectangle that you specify here is black. If you specify a value here, it will override any value that you
+     * specify in the output setting Selection placement (position). If you specify a value here, this will override any
+     * AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND). If you specify a
+     * value here, this will ignore anything that you specify for the setting Scaling Behavior (scalingBehavior).
+     * 
+     * @param position
+     *        Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     *        rectangle that you specify here is black. If you specify a value here, it will override any value that you
+     *        specify in the output setting Selection placement (position). If you specify a value here, this will
+     *        override any AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND).
+     *        If you specify a value here, this will ignore anything that you specify for the setting Scaling Behavior
+     *        (scalingBehavior).
+     */
+
+    public void setPosition(Rectangle position) {
+        this.position = position;
+    }
+
+    /**
+     * Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     * rectangle that you specify here is black. If you specify a value here, it will override any value that you
+     * specify in the output setting Selection placement (position). If you specify a value here, this will override any
+     * AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND). If you specify a
+     * value here, this will ignore anything that you specify for the setting Scaling Behavior (scalingBehavior).
+     * 
+     * @return Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     *         rectangle that you specify here is black. If you specify a value here, it will override any value that
+     *         you specify in the output setting Selection placement (position). If you specify a value here, this will
+     *         override any AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond
+     *         (RESPOND). If you specify a value here, this will ignore anything that you specify for the setting
+     *         Scaling Behavior (scalingBehavior).
+     */
+
+    public Rectangle getPosition() {
+        return this.position;
+    }
+
+    /**
+     * Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     * rectangle that you specify here is black. If you specify a value here, it will override any value that you
+     * specify in the output setting Selection placement (position). If you specify a value here, this will override any
+     * AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND). If you specify a
+     * value here, this will ignore anything that you specify for the setting Scaling Behavior (scalingBehavior).
+     * 
+     * @param position
+     *        Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     *        rectangle that you specify here is black. If you specify a value here, it will override any value that you
+     *        specify in the output setting Selection placement (position). If you specify a value here, this will
+     *        override any AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND).
+     *        If you specify a value here, this will ignore anything that you specify for the setting Scaling Behavior
+     *        (scalingBehavior).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputTemplate withPosition(Rectangle position) {
+        setPosition(position);
+        return this;
+    }
+
+    /**
      * Use Program (programNumber) to select a specific program from within a multi-program transport stream. Note that
      * Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you
      * specify doesn't exist, the transcoding service will use this default.
@@ -905,6 +1026,8 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
             sb.append("AudioSelectors: ").append(getAudioSelectors()).append(",");
         if (getCaptionSelectors() != null)
             sb.append("CaptionSelectors: ").append(getCaptionSelectors()).append(",");
+        if (getCrop() != null)
+            sb.append("Crop: ").append(getCrop()).append(",");
         if (getDeblockFilter() != null)
             sb.append("DeblockFilter: ").append(getDeblockFilter()).append(",");
         if (getDenoiseFilter() != null)
@@ -917,6 +1040,8 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
             sb.append("ImageInserter: ").append(getImageInserter()).append(",");
         if (getInputClippings() != null)
             sb.append("InputClippings: ").append(getInputClippings()).append(",");
+        if (getPosition() != null)
+            sb.append("Position: ").append(getPosition()).append(",");
         if (getProgramNumber() != null)
             sb.append("ProgramNumber: ").append(getProgramNumber()).append(",");
         if (getPsiControl() != null)
@@ -951,6 +1076,10 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCaptionSelectors() != null && other.getCaptionSelectors().equals(this.getCaptionSelectors()) == false)
             return false;
+        if (other.getCrop() == null ^ this.getCrop() == null)
+            return false;
+        if (other.getCrop() != null && other.getCrop().equals(this.getCrop()) == false)
+            return false;
         if (other.getDeblockFilter() == null ^ this.getDeblockFilter() == null)
             return false;
         if (other.getDeblockFilter() != null && other.getDeblockFilter().equals(this.getDeblockFilter()) == false)
@@ -974,6 +1103,10 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
         if (other.getInputClippings() == null ^ this.getInputClippings() == null)
             return false;
         if (other.getInputClippings() != null && other.getInputClippings().equals(this.getInputClippings()) == false)
+            return false;
+        if (other.getPosition() == null ^ this.getPosition() == null)
+            return false;
+        if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
             return false;
         if (other.getProgramNumber() == null ^ this.getProgramNumber() == null)
             return false;
@@ -1002,12 +1135,14 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAudioSelectorGroups() == null) ? 0 : getAudioSelectorGroups().hashCode());
         hashCode = prime * hashCode + ((getAudioSelectors() == null) ? 0 : getAudioSelectors().hashCode());
         hashCode = prime * hashCode + ((getCaptionSelectors() == null) ? 0 : getCaptionSelectors().hashCode());
+        hashCode = prime * hashCode + ((getCrop() == null) ? 0 : getCrop().hashCode());
         hashCode = prime * hashCode + ((getDeblockFilter() == null) ? 0 : getDeblockFilter().hashCode());
         hashCode = prime * hashCode + ((getDenoiseFilter() == null) ? 0 : getDenoiseFilter().hashCode());
         hashCode = prime * hashCode + ((getFilterEnable() == null) ? 0 : getFilterEnable().hashCode());
         hashCode = prime * hashCode + ((getFilterStrength() == null) ? 0 : getFilterStrength().hashCode());
         hashCode = prime * hashCode + ((getImageInserter() == null) ? 0 : getImageInserter().hashCode());
         hashCode = prime * hashCode + ((getInputClippings() == null) ? 0 : getInputClippings().hashCode());
+        hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
         hashCode = prime * hashCode + ((getProgramNumber() == null) ? 0 : getProgramNumber().hashCode());
         hashCode = prime * hashCode + ((getPsiControl() == null) ? 0 : getPsiControl().hashCode());
         hashCode = prime * hashCode + ((getTimecodeSource() == null) ? 0 : getTimecodeSource().hashCode());

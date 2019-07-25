@@ -52,6 +52,10 @@ public class HlsSettingsJsonUnmarshaller implements Unmarshaller<HlsSettings, Js
                     context.nextToken();
                     hlsSettings.setAudioGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("audioOnlyContainer", targetDepth)) {
+                    context.nextToken();
+                    hlsSettings.setAudioOnlyContainer(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("audioRenditionSets", targetDepth)) {
                     context.nextToken();
                     hlsSettings.setAudioRenditionSets(context.getUnmarshaller(String.class).unmarshall(context));

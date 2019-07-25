@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Enables Dynamic Range Compression that restricts the absolute peak level for a signal.
+ * Specify the absolute peak level for a signal with dynamic range compression.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Eac3DynamicRangeCompressionLine {

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.medialive.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,10 @@ public class InputSwitchScheduleActionSettingsMarshaller {
 
     private static final MarshallingInfo<String> INPUTATTACHMENTNAMEREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputAttachmentNameReference").build();
+    private static final MarshallingInfo<StructuredPojo> INPUTCLIPPINGSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputClippingSettings").build();
+    private static final MarshallingInfo<List> URLPATH_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("urlPath").build();
 
     private static final InputSwitchScheduleActionSettingsMarshaller instance = new InputSwitchScheduleActionSettingsMarshaller();
 
@@ -47,6 +52,8 @@ public class InputSwitchScheduleActionSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(inputSwitchScheduleActionSettings.getInputAttachmentNameReference(), INPUTATTACHMENTNAMEREFERENCE_BINDING);
+            protocolMarshaller.marshall(inputSwitchScheduleActionSettings.getInputClippingSettings(), INPUTCLIPPINGSETTINGS_BINDING);
+            protocolMarshaller.marshall(inputSwitchScheduleActionSettings.getUrlPath(), URLPATH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

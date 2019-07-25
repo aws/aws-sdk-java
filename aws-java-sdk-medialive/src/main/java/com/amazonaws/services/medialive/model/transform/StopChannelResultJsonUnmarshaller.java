@@ -91,6 +91,11 @@ public class StopChannelResultJsonUnmarshaller implements Unmarshaller<StopChann
                     context.nextToken();
                     stopChannelResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("pipelineDetails", targetDepth)) {
+                    context.nextToken();
+                    stopChannelResult
+                            .setPipelineDetails(new ListUnmarshaller<PipelineDetail>(PipelineDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("pipelinesRunningCount", targetDepth)) {
                     context.nextToken();
                     stopChannelResult.setPipelinesRunningCount(context.getUnmarshaller(Integer.class).unmarshall(context));

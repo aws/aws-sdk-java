@@ -12,6 +12,7 @@
  */
 
 /**
+ * <fullname>Amazon Elastic Container Registry</fullname>
  * <p>
  * Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar
  * Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon

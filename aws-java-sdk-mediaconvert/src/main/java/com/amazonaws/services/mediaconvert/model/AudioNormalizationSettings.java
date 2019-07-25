@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Advanced audio normalization settings.
+ * Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioNormalizationSettings"
  *      target="_top">AWS API Documentation</a>
@@ -27,8 +27,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class AudioNormalizationSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to the EBU
-     * R-128 specification.
+     * Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of
+     * ungated average loudness for an entire piece of content, suitable for measurement of short-form content under
+     * ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of
+     * gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R
+     * BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak
+     * measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms,
+     * including configurations such as 7.1.
      */
     private String algorithm;
     /**
@@ -46,19 +51,30 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     /** If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness. */
     private String peakCalculation;
     /**
-     * Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the
-     * chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2)
-     * recommends a target of -23 LKFS.
+     * When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target
+     * loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you
+     * choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the
+     * encoder will choose -23 LKFS.
      */
     private Double targetLkfs;
 
     /**
-     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to the EBU
-     * R-128 specification.
+     * Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of
+     * ungated average loudness for an entire piece of content, suitable for measurement of short-form content under
+     * ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of
+     * gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R
+     * BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak
+     * measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms,
+     * including configurations such as 7.1.
      * 
      * @param algorithm
-     *        Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to
-     *        the EBU R-128 specification.
+     *        Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A
+     *        measurement of ungated average loudness for an entire piece of content, suitable for measurement of
+     *        short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2:
+     *        Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128.
+     *        Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm
+     *        as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more
+     *        audio channels than the other algorithms, including configurations such as 7.1.
      * @see AudioNormalizationAlgorithm
      */
 
@@ -67,11 +83,21 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to the EBU
-     * R-128 specification.
+     * Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of
+     * ungated average loudness for an entire piece of content, suitable for measurement of short-form content under
+     * ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of
+     * gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R
+     * BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak
+     * measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms,
+     * including configurations such as 7.1.
      * 
-     * @return Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to
-     *         the EBU R-128 specification.
+     * @return Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A
+     *         measurement of ungated average loudness for an entire piece of content, suitable for measurement of
+     *         short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2:
+     *         Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128.
+     *         Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement
+     *         algorithm as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows
+     *         for more audio channels than the other algorithms, including configurations such as 7.1.
      * @see AudioNormalizationAlgorithm
      */
 
@@ -80,12 +106,22 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to the EBU
-     * R-128 specification.
+     * Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of
+     * ungated average loudness for an entire piece of content, suitable for measurement of short-form content under
+     * ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of
+     * gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R
+     * BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak
+     * measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms,
+     * including configurations such as 7.1.
      * 
      * @param algorithm
-     *        Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to
-     *        the EBU R-128 specification.
+     *        Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A
+     *        measurement of ungated average loudness for an entire piece of content, suitable for measurement of
+     *        short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2:
+     *        Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128.
+     *        Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm
+     *        as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more
+     *        audio channels than the other algorithms, including configurations such as 7.1.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioNormalizationAlgorithm
      */
@@ -96,12 +132,22 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to the EBU
-     * R-128 specification.
+     * Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of
+     * ungated average loudness for an entire piece of content, suitable for measurement of short-form content under
+     * ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of
+     * gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R
+     * BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak
+     * measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms,
+     * including configurations such as 7.1.
      * 
      * @param algorithm
-     *        Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to
-     *        the EBU R-128 specification.
+     *        Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A
+     *        measurement of ungated average loudness for an entire piece of content, suitable for measurement of
+     *        short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2:
+     *        Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128.
+     *        Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm
+     *        as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more
+     *        audio channels than the other algorithms, including configurations such as 7.1.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioNormalizationAlgorithm
      */
@@ -313,14 +359,16 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the
-     * chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2)
-     * recommends a target of -23 LKFS.
+     * When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target
+     * loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you
+     * choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the
+     * encoder will choose -23 LKFS.
      * 
      * @param targetLkfs
-     *        Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according
-     *        to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128
-     *        specification (1770-2) recommends a target of -23 LKFS.
+     *        When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a
+     *        target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the
+     *        algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will
+     *        choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
      */
 
     public void setTargetLkfs(Double targetLkfs) {
@@ -328,13 +376,15 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the
-     * chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2)
-     * recommends a target of -23 LKFS.
+     * When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target
+     * loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you
+     * choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the
+     * encoder will choose -23 LKFS.
      * 
-     * @return Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according
-     *         to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128
-     *         specification (1770-2) recommends a target of -23 LKFS.
+     * @return When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a
+     *         target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the
+     *         algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will
+     *         choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
      */
 
     public Double getTargetLkfs() {
@@ -342,14 +392,16 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the
-     * chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2)
-     * recommends a target of -23 LKFS.
+     * When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target
+     * loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you
+     * choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the
+     * encoder will choose -23 LKFS.
      * 
      * @param targetLkfs
-     *        Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according
-     *        to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128
-     *        specification (1770-2) recommends a target of -23 LKFS.
+     *        When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a
+     *        target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the
+     *        algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will
+     *        choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

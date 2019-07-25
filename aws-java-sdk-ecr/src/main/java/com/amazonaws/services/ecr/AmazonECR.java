@@ -26,6 +26,7 @@ import com.amazonaws.services.ecr.model.*;
  * {@link com.amazonaws.services.ecr.AbstractAmazonECR} instead.
  * </p>
  * <p>
+ * <fullname>Amazon Elastic Container Registry</fullname>
  * <p>
  * Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar
  * Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
@@ -233,7 +234,7 @@ public interface AmazonECR {
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
      *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
      * @sample AmazonECR.CreateRepository
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository" target="_top">AWS API
@@ -580,8 +581,11 @@ public interface AmazonECR {
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
      *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+     * @throws ImageTagAlreadyExistsException
+     *         The specified image is tagged with a tag that already exists. The repository is configured for tag
+     *         immutability.
      * @sample AmazonECR.PutImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage" target="_top">AWS API
      *      Documentation</a>
@@ -590,8 +594,28 @@ public interface AmazonECR {
 
     /**
      * <p>
+     * Updates the image tag mutability settings for a repository.
+     * </p>
+     * 
+     * @param putImageTagMutabilityRequest
+     * @return Result of the PutImageTagMutability operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @sample AmazonECR.PutImageTagMutability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutImageTagMutabilityResult putImageTagMutability(PutImageTagMutabilityRequest putImageTagMutabilityRequest);
+
+    /**
+     * <p>
      * Creates or updates a lifecycle policy. For information about lifecycle policy syntax, see <a
-     * href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy
      * Template</a>.
      * </p>
      * 
@@ -612,7 +636,9 @@ public interface AmazonECR {
 
     /**
      * <p>
-     * Applies a repository policy on a specified repository to control access permissions.
+     * Applies a repository policy on a specified repository to control access permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon ECR Repository
+     * Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param setRepositoryPolicyRequest
@@ -736,7 +762,7 @@ public interface AmazonECR {
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
      *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
      * @sample AmazonECR.UploadLayerPart
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart" target="_top">AWS API

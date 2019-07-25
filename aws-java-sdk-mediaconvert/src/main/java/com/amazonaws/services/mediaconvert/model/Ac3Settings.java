@@ -26,11 +26,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Average bitrate in bits/second. Valid bitrates depend on the coding mode. */
+    /** Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode. */
     private Integer bitrate;
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these
-     * values.
+     * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3
+     * bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     private String bitstreamMode;
     /** Dolby Digital coding mode. Determines number of channels. */
@@ -49,14 +49,14 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
      * audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
      */
     private String metadataControl;
-    /** Sample rate in hz. Sample rate is always 48000. */
+    /** This value is always 48000. It represents the sample rate in Hz. */
     private Integer sampleRate;
 
     /**
-     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
      * 
      * @param bitrate
-     *        Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     *        Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
      */
 
     public void setBitrate(Integer bitrate) {
@@ -64,9 +64,9 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
      * 
-     * @return Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     * @return Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
      */
 
     public Integer getBitrate() {
@@ -74,10 +74,10 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
      * 
      * @param bitrate
-     *        Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     *        Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,12 +87,12 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these
-     * values.
+     * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3
+     * bitstream mode, see ATSC A/52-2012 (Annex E).
      * 
      * @param bitstreamMode
-     *        Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on
-     *        these values.
+     *        Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3
+     *        bitstream mode, see ATSC A/52-2012 (Annex E).
      * @see Ac3BitstreamMode
      */
 
@@ -101,11 +101,11 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these
-     * values.
+     * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3
+     * bitstream mode, see ATSC A/52-2012 (Annex E).
      * 
-     * @return Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on
-     *         these values.
+     * @return Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3
+     *         bitstream mode, see ATSC A/52-2012 (Annex E).
      * @see Ac3BitstreamMode
      */
 
@@ -114,12 +114,12 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these
-     * values.
+     * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3
+     * bitstream mode, see ATSC A/52-2012 (Annex E).
      * 
      * @param bitstreamMode
-     *        Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on
-     *        these values.
+     *        Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3
+     *        bitstream mode, see ATSC A/52-2012 (Annex E).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3BitstreamMode
      */
@@ -130,12 +130,12 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these
-     * values.
+     * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3
+     * bitstream mode, see ATSC A/52-2012 (Annex E).
      * 
      * @param bitstreamMode
-     *        Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on
-     *        these values.
+     *        Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3
+     *        bitstream mode, see ATSC A/52-2012 (Annex E).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3BitstreamMode
      */
@@ -407,10 +407,10 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Sample rate in hz. Sample rate is always 48000.
+     * This value is always 48000. It represents the sample rate in Hz.
      * 
      * @param sampleRate
-     *        Sample rate in hz. Sample rate is always 48000.
+     *        This value is always 48000. It represents the sample rate in Hz.
      */
 
     public void setSampleRate(Integer sampleRate) {
@@ -418,9 +418,9 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Sample rate in hz. Sample rate is always 48000.
+     * This value is always 48000. It represents the sample rate in Hz.
      * 
-     * @return Sample rate in hz. Sample rate is always 48000.
+     * @return This value is always 48000. It represents the sample rate in Hz.
      */
 
     public Integer getSampleRate() {
@@ -428,10 +428,10 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Sample rate in hz. Sample rate is always 48000.
+     * This value is always 48000. It represents the sample rate in Hz.
      * 
      * @param sampleRate
-     *        Sample rate in hz. Sample rate is always 48000.
+     *        This value is always 48000. It represents the sample rate in Hz.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

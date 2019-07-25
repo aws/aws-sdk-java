@@ -35,6 +35,8 @@ public class InputMarshaller {
             .marshallLocationName("audioSelectors").build();
     private static final MarshallingInfo<Map> CAPTIONSELECTORS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("captionSelectors").build();
+    private static final MarshallingInfo<StructuredPojo> CROP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("crop").build();
     private static final MarshallingInfo<String> DEBLOCKFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deblockFilter").build();
     private static final MarshallingInfo<StructuredPojo> DECRYPTIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -51,6 +53,8 @@ public class InputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageInserter").build();
     private static final MarshallingInfo<List> INPUTCLIPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputClippings").build();
+    private static final MarshallingInfo<StructuredPojo> POSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("position").build();
     private static final MarshallingInfo<Integer> PROGRAMNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("programNumber").build();
     private static final MarshallingInfo<String> PSICONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -81,6 +85,7 @@ public class InputMarshaller {
             protocolMarshaller.marshall(input.getAudioSelectorGroups(), AUDIOSELECTORGROUPS_BINDING);
             protocolMarshaller.marshall(input.getAudioSelectors(), AUDIOSELECTORS_BINDING);
             protocolMarshaller.marshall(input.getCaptionSelectors(), CAPTIONSELECTORS_BINDING);
+            protocolMarshaller.marshall(input.getCrop(), CROP_BINDING);
             protocolMarshaller.marshall(input.getDeblockFilter(), DEBLOCKFILTER_BINDING);
             protocolMarshaller.marshall(input.getDecryptionSettings(), DECRYPTIONSETTINGS_BINDING);
             protocolMarshaller.marshall(input.getDenoiseFilter(), DENOISEFILTER_BINDING);
@@ -89,6 +94,7 @@ public class InputMarshaller {
             protocolMarshaller.marshall(input.getFilterStrength(), FILTERSTRENGTH_BINDING);
             protocolMarshaller.marshall(input.getImageInserter(), IMAGEINSERTER_BINDING);
             protocolMarshaller.marshall(input.getInputClippings(), INPUTCLIPPINGS_BINDING);
+            protocolMarshaller.marshall(input.getPosition(), POSITION_BINDING);
             protocolMarshaller.marshall(input.getProgramNumber(), PROGRAMNUMBER_BINDING);
             protocolMarshaller.marshall(input.getPsiControl(), PSICONTROL_BINDING);
             protocolMarshaller.marshall(input.getSupplementalImps(), SUPPLEMENTALIMPS_BINDING);

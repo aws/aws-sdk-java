@@ -42,6 +42,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * this value is not valid because the channel requires two sources in the input.
      */
     private String inputClass;
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during
+     * input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+     */
+    private String inputSourceType;
     /** A list of MediaConnect Flows for this input. */
     private java.util.List<MediaConnectFlow> mediaConnectFlows;
     /** The user-assigned name (This is a mutable value). */
@@ -339,6 +344,65 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     public Input withInputClass(InputClass inputClass) {
         this.inputClass = inputClass.toString();
+        return this;
+    }
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during
+     * input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+     * 
+     * @param inputSourceType
+     *        Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
+     *        during input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+     * @see InputSourceType
+     */
+
+    public void setInputSourceType(String inputSourceType) {
+        this.inputSourceType = inputSourceType;
+    }
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during
+     * input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+     * 
+     * @return Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
+     *         during input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+     * @see InputSourceType
+     */
+
+    public String getInputSourceType() {
+        return this.inputSourceType;
+    }
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during
+     * input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+     * 
+     * @param inputSourceType
+     *        Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
+     *        during input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputSourceType
+     */
+
+    public Input withInputSourceType(String inputSourceType) {
+        setInputSourceType(inputSourceType);
+        return this;
+    }
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during
+     * input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+     * 
+     * @param inputSourceType
+     *        Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
+     *        during input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputSourceType
+     */
+
+    public Input withInputSourceType(InputSourceType inputSourceType) {
+        this.inputSourceType = inputSourceType.toString();
         return this;
     }
 
@@ -753,6 +817,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             sb.append("Id: ").append(getId()).append(",");
         if (getInputClass() != null)
             sb.append("InputClass: ").append(getInputClass()).append(",");
+        if (getInputSourceType() != null)
+            sb.append("InputSourceType: ").append(getInputSourceType()).append(",");
         if (getMediaConnectFlows() != null)
             sb.append("MediaConnectFlows: ").append(getMediaConnectFlows()).append(",");
         if (getName() != null)
@@ -803,6 +869,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInputClass() != null && other.getInputClass().equals(this.getInputClass()) == false)
             return false;
+        if (other.getInputSourceType() == null ^ this.getInputSourceType() == null)
+            return false;
+        if (other.getInputSourceType() != null && other.getInputSourceType().equals(this.getInputSourceType()) == false)
+            return false;
         if (other.getMediaConnectFlows() == null ^ this.getMediaConnectFlows() == null)
             return false;
         if (other.getMediaConnectFlows() != null && other.getMediaConnectFlows().equals(this.getMediaConnectFlows()) == false)
@@ -848,6 +918,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getInputClass() == null) ? 0 : getInputClass().hashCode());
+        hashCode = prime * hashCode + ((getInputSourceType() == null) ? 0 : getInputSourceType().hashCode());
         hashCode = prime * hashCode + ((getMediaConnectFlows() == null) ? 0 : getMediaConnectFlows().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());

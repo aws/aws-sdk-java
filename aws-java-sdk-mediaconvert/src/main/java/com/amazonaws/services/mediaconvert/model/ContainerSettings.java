@@ -47,7 +47,7 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     private M3u8Settings m3u8Settings;
     /** Settings for MOV Container. */
     private MovSettings movSettings;
-    /** Settings for MP4 Container */
+    /** Settings for MP4 container. You can create audio-only AAC outputs with this container. */
     private Mp4Settings mp4Settings;
 
     /**
@@ -282,10 +282,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MP4 Container
+     * Settings for MP4 container. You can create audio-only AAC outputs with this container.
      * 
      * @param mp4Settings
-     *        Settings for MP4 Container
+     *        Settings for MP4 container. You can create audio-only AAC outputs with this container.
      */
 
     public void setMp4Settings(Mp4Settings mp4Settings) {
@@ -293,9 +293,9 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MP4 Container
+     * Settings for MP4 container. You can create audio-only AAC outputs with this container.
      * 
-     * @return Settings for MP4 Container
+     * @return Settings for MP4 container. You can create audio-only AAC outputs with this container.
      */
 
     public Mp4Settings getMp4Settings() {
@@ -303,10 +303,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MP4 Container
+     * Settings for MP4 container. You can create audio-only AAC outputs with this container.
      * 
      * @param mp4Settings
-     *        Settings for MP4 Container
+     *        Settings for MP4 container. You can create audio-only AAC outputs with this container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

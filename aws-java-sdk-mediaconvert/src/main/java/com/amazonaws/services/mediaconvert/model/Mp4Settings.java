@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for MP4 Container
+ * Settings for MP4 container. You can create audio-only AAC outputs with this container.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Mp4Settings" target="_top">AWS API
  *      Documentation</a>

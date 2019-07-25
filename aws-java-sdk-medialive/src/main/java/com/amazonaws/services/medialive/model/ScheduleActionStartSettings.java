@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings to specify the start time for an action.
+ * Settings to specify when an action should occur. Only one of the options must be selected.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ScheduleActionStartSettings"
  *      target="_top">AWS API Documentation</a>
@@ -26,16 +26,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScheduleActionStartSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Holds the start time for the action. */
+    /** Option for specifying the start time for an action. */
     private FixedModeScheduleActionStartSettings fixedModeScheduleActionStartSettings;
-    /** Specifies an action to follow for scheduling this action. */
+    /** Option for specifying an action as relative to another action. */
     private FollowModeScheduleActionStartSettings followModeScheduleActionStartSettings;
+    /** Option for specifying an action that should be applied immediately. */
+    private ImmediateModeScheduleActionStartSettings immediateModeScheduleActionStartSettings;
 
     /**
-     * Holds the start time for the action.
+     * Option for specifying the start time for an action.
      * 
      * @param fixedModeScheduleActionStartSettings
-     *        Holds the start time for the action.
+     *        Option for specifying the start time for an action.
      */
 
     public void setFixedModeScheduleActionStartSettings(FixedModeScheduleActionStartSettings fixedModeScheduleActionStartSettings) {
@@ -43,9 +45,9 @@ public class ScheduleActionStartSettings implements Serializable, Cloneable, Str
     }
 
     /**
-     * Holds the start time for the action.
+     * Option for specifying the start time for an action.
      * 
-     * @return Holds the start time for the action.
+     * @return Option for specifying the start time for an action.
      */
 
     public FixedModeScheduleActionStartSettings getFixedModeScheduleActionStartSettings() {
@@ -53,10 +55,10 @@ public class ScheduleActionStartSettings implements Serializable, Cloneable, Str
     }
 
     /**
-     * Holds the start time for the action.
+     * Option for specifying the start time for an action.
      * 
      * @param fixedModeScheduleActionStartSettings
-     *        Holds the start time for the action.
+     *        Option for specifying the start time for an action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +68,10 @@ public class ScheduleActionStartSettings implements Serializable, Cloneable, Str
     }
 
     /**
-     * Specifies an action to follow for scheduling this action.
+     * Option for specifying an action as relative to another action.
      * 
      * @param followModeScheduleActionStartSettings
-     *        Specifies an action to follow for scheduling this action.
+     *        Option for specifying an action as relative to another action.
      */
 
     public void setFollowModeScheduleActionStartSettings(FollowModeScheduleActionStartSettings followModeScheduleActionStartSettings) {
@@ -77,9 +79,9 @@ public class ScheduleActionStartSettings implements Serializable, Cloneable, Str
     }
 
     /**
-     * Specifies an action to follow for scheduling this action.
+     * Option for specifying an action as relative to another action.
      * 
-     * @return Specifies an action to follow for scheduling this action.
+     * @return Option for specifying an action as relative to another action.
      */
 
     public FollowModeScheduleActionStartSettings getFollowModeScheduleActionStartSettings() {
@@ -87,15 +89,50 @@ public class ScheduleActionStartSettings implements Serializable, Cloneable, Str
     }
 
     /**
-     * Specifies an action to follow for scheduling this action.
+     * Option for specifying an action as relative to another action.
      * 
      * @param followModeScheduleActionStartSettings
-     *        Specifies an action to follow for scheduling this action.
+     *        Option for specifying an action as relative to another action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduleActionStartSettings withFollowModeScheduleActionStartSettings(FollowModeScheduleActionStartSettings followModeScheduleActionStartSettings) {
         setFollowModeScheduleActionStartSettings(followModeScheduleActionStartSettings);
+        return this;
+    }
+
+    /**
+     * Option for specifying an action that should be applied immediately.
+     * 
+     * @param immediateModeScheduleActionStartSettings
+     *        Option for specifying an action that should be applied immediately.
+     */
+
+    public void setImmediateModeScheduleActionStartSettings(ImmediateModeScheduleActionStartSettings immediateModeScheduleActionStartSettings) {
+        this.immediateModeScheduleActionStartSettings = immediateModeScheduleActionStartSettings;
+    }
+
+    /**
+     * Option for specifying an action that should be applied immediately.
+     * 
+     * @return Option for specifying an action that should be applied immediately.
+     */
+
+    public ImmediateModeScheduleActionStartSettings getImmediateModeScheduleActionStartSettings() {
+        return this.immediateModeScheduleActionStartSettings;
+    }
+
+    /**
+     * Option for specifying an action that should be applied immediately.
+     * 
+     * @param immediateModeScheduleActionStartSettings
+     *        Option for specifying an action that should be applied immediately.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleActionStartSettings withImmediateModeScheduleActionStartSettings(
+            ImmediateModeScheduleActionStartSettings immediateModeScheduleActionStartSettings) {
+        setImmediateModeScheduleActionStartSettings(immediateModeScheduleActionStartSettings);
         return this;
     }
 
@@ -114,7 +151,9 @@ public class ScheduleActionStartSettings implements Serializable, Cloneable, Str
         if (getFixedModeScheduleActionStartSettings() != null)
             sb.append("FixedModeScheduleActionStartSettings: ").append(getFixedModeScheduleActionStartSettings()).append(",");
         if (getFollowModeScheduleActionStartSettings() != null)
-            sb.append("FollowModeScheduleActionStartSettings: ").append(getFollowModeScheduleActionStartSettings());
+            sb.append("FollowModeScheduleActionStartSettings: ").append(getFollowModeScheduleActionStartSettings()).append(",");
+        if (getImmediateModeScheduleActionStartSettings() != null)
+            sb.append("ImmediateModeScheduleActionStartSettings: ").append(getImmediateModeScheduleActionStartSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -139,6 +178,11 @@ public class ScheduleActionStartSettings implements Serializable, Cloneable, Str
         if (other.getFollowModeScheduleActionStartSettings() != null
                 && other.getFollowModeScheduleActionStartSettings().equals(this.getFollowModeScheduleActionStartSettings()) == false)
             return false;
+        if (other.getImmediateModeScheduleActionStartSettings() == null ^ this.getImmediateModeScheduleActionStartSettings() == null)
+            return false;
+        if (other.getImmediateModeScheduleActionStartSettings() != null
+                && other.getImmediateModeScheduleActionStartSettings().equals(this.getImmediateModeScheduleActionStartSettings()) == false)
+            return false;
         return true;
     }
 
@@ -149,6 +193,7 @@ public class ScheduleActionStartSettings implements Serializable, Cloneable, Str
 
         hashCode = prime * hashCode + ((getFixedModeScheduleActionStartSettings() == null) ? 0 : getFixedModeScheduleActionStartSettings().hashCode());
         hashCode = prime * hashCode + ((getFollowModeScheduleActionStartSettings() == null) ? 0 : getFollowModeScheduleActionStartSettings().hashCode());
+        hashCode = prime * hashCode + ((getImmediateModeScheduleActionStartSettings() == null) ? 0 : getImmediateModeScheduleActionStartSettings().hashCode());
         return hashCode;
     }
 

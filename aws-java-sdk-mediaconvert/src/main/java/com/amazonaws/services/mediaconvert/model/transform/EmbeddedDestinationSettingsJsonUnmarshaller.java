@@ -52,6 +52,10 @@ public class EmbeddedDestinationSettingsJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     embeddedDestinationSettings.setDestination608ChannelNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("destination708ServiceNumber", targetDepth)) {
+                    context.nextToken();
+                    embeddedDestinationSettings.setDestination708ServiceNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

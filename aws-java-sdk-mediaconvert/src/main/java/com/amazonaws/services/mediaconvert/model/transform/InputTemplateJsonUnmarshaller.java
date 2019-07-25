@@ -63,6 +63,10 @@ public class InputTemplateJsonUnmarshaller implements Unmarshaller<InputTemplate
                     inputTemplate.setCaptionSelectors(new MapUnmarshaller<String, CaptionSelector>(context.getUnmarshaller(String.class),
                             CaptionSelectorJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("crop", targetDepth)) {
+                    context.nextToken();
+                    inputTemplate.setCrop(RectangleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("deblockFilter", targetDepth)) {
                     context.nextToken();
                     inputTemplate.setDeblockFilter(context.getUnmarshaller(String.class).unmarshall(context));
@@ -86,6 +90,10 @@ public class InputTemplateJsonUnmarshaller implements Unmarshaller<InputTemplate
                 if (context.testExpression("inputClippings", targetDepth)) {
                     context.nextToken();
                     inputTemplate.setInputClippings(new ListUnmarshaller<InputClipping>(InputClippingJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("position", targetDepth)) {
+                    context.nextToken();
+                    inputTemplate.setPosition(RectangleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("programNumber", targetDepth)) {
                     context.nextToken();

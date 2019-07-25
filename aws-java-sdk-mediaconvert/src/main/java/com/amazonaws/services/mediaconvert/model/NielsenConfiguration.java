@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for Nielsen Configuration
+ * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings.
+ * When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
+ * in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your
+ * JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NielsenConfiguration" target="_top">AWS
  *      API Documentation</a>
@@ -27,8 +30,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class NielsenConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement system breakout code. Supported
-     * values are 0, 3, 7, and 9.
+     * Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value
+     * to zero.
      */
     private Integer breakoutCode;
     /**
@@ -38,12 +41,12 @@ public class NielsenConfiguration implements Serializable, Cloneable, Structured
     private String distributorId;
 
     /**
-     * Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement system breakout code. Supported
-     * values are 0, 3, 7, and 9.
+     * Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value
+     * to zero.
      * 
      * @param breakoutCode
-     *        Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement system breakout code.
-     *        Supported values are 0, 3, 7, and 9.
+     *        Nielsen has discontinued the use of breakout code functionality. If you must include this property, set
+     *        the value to zero.
      */
 
     public void setBreakoutCode(Integer breakoutCode) {
@@ -51,11 +54,11 @@ public class NielsenConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement system breakout code. Supported
-     * values are 0, 3, 7, and 9.
+     * Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value
+     * to zero.
      * 
-     * @return Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement system breakout code.
-     *         Supported values are 0, 3, 7, and 9.
+     * @return Nielsen has discontinued the use of breakout code functionality. If you must include this property, set
+     *         the value to zero.
      */
 
     public Integer getBreakoutCode() {
@@ -63,12 +66,12 @@ public class NielsenConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement system breakout code. Supported
-     * values are 0, 3, 7, and 9.
+     * Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value
+     * to zero.
      * 
      * @param breakoutCode
-     *        Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement system breakout code.
-     *        Supported values are 0, 3, 7, and 9.
+     *        Nielsen has discontinued the use of breakout code functionality. If you must include this property, set
+     *        the value to zero.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

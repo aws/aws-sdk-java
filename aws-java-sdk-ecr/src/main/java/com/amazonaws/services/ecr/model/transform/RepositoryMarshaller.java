@@ -37,6 +37,8 @@ public class RepositoryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("repositoryUri").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> IMAGETAGMUTABILITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageTagMutability").build();
 
     private static final RepositoryMarshaller instance = new RepositoryMarshaller();
 
@@ -59,6 +61,7 @@ public class RepositoryMarshaller {
             protocolMarshaller.marshall(repository.getRepositoryName(), REPOSITORYNAME_BINDING);
             protocolMarshaller.marshall(repository.getRepositoryUri(), REPOSITORYURI_BINDING);
             protocolMarshaller.marshall(repository.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(repository.getImageTagMutability(), IMAGETAGMUTABILITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

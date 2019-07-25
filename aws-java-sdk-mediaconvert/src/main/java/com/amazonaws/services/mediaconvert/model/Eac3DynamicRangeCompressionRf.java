@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal peaks do not exceed specified levels.
+ * Specify how the service limits the audio dynamic range when compressing the audio.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Eac3DynamicRangeCompressionRf {

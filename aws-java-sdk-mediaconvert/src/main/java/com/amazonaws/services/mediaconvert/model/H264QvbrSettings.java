@@ -31,8 +31,8 @@ public class H264QvbrSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * Use this setting only when Rate control mode is QVBR and Quality tuning level is Multi-pass HQ. For Max average
      * bitrate values suited to the complexity of your input video, the service limits the average bitrate of the video
-     * part of this output to the value you choose. That is, the total size of the video element is less than or equal to
-     * the value you set multiplied by the number of seconds of encoded output.
+     * part of this output to the value that you choose. That is, the total size of the video element is less than or
+     * equal to the value you set multiplied by the number of seconds of encoded output.
      */
     private Integer maxAverageBitrate;
     /**
@@ -45,14 +45,15 @@ public class H264QvbrSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * Use this setting only when Rate control mode is QVBR and Quality tuning level is Multi-pass HQ. For Max average
      * bitrate values suited to the complexity of your input video, the service limits the average bitrate of the video
-     * part of this output to the value you choose. That is, the total size of the video element is less than or equal to
-     * the value you set multiplied by the number of seconds of encoded output.
+     * part of this output to the value that you choose. That is, the total size of the video element is less than or
+     * equal to the value you set multiplied by the number of seconds of encoded output.
      * 
      * @param maxAverageBitrate
      *        Use this setting only when Rate control mode is QVBR and Quality tuning level is Multi-pass HQ. For Max
      *        average bitrate values suited to the complexity of your input video, the service limits the average
-     *        bitrate of the video part of this output to the value you choose. That is, the total size of the video
-     *        element is less than or equal to the value you set multiplied by the number of seconds of encoded output.
+     *        bitrate of the video part of this output to the value that you choose. That is, the total size of the
+     *        video element is less than or equal to the value you set multiplied by the number of seconds of encoded
+     *        output.
      */
 
     public void setMaxAverageBitrate(Integer maxAverageBitrate) {
@@ -62,13 +63,14 @@ public class H264QvbrSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * Use this setting only when Rate control mode is QVBR and Quality tuning level is Multi-pass HQ. For Max average
      * bitrate values suited to the complexity of your input video, the service limits the average bitrate of the video
-     * part of this output to the value you choose. That is, the total size of the video element is less than or equal to
-     * the value you set multiplied by the number of seconds of encoded output.
+     * part of this output to the value that you choose. That is, the total size of the video element is less than or
+     * equal to the value you set multiplied by the number of seconds of encoded output.
      * 
      * @return Use this setting only when Rate control mode is QVBR and Quality tuning level is Multi-pass HQ. For Max
      *         average bitrate values suited to the complexity of your input video, the service limits the average
-     *         bitrate of the video part of this output to the value you choose. That is, the total size of the video
-     *         element is less than or equal to the value you set multiplied by the number of seconds of encoded output.
+     *         bitrate of the video part of this output to the value that you choose. That is, the total size of the
+     *         video element is less than or equal to the value you set multiplied by the number of seconds of encoded
+     *         output.
      */
 
     public Integer getMaxAverageBitrate() {
@@ -78,14 +80,15 @@ public class H264QvbrSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * Use this setting only when Rate control mode is QVBR and Quality tuning level is Multi-pass HQ. For Max average
      * bitrate values suited to the complexity of your input video, the service limits the average bitrate of the video
-     * part of this output to the value you choose. That is, the total size of the video element is less than or equal to
-     * the value you set multiplied by the number of seconds of encoded output.
+     * part of this output to the value that you choose. That is, the total size of the video element is less than or
+     * equal to the value you set multiplied by the number of seconds of encoded output.
      * 
      * @param maxAverageBitrate
      *        Use this setting only when Rate control mode is QVBR and Quality tuning level is Multi-pass HQ. For Max
      *        average bitrate values suited to the complexity of your input video, the service limits the average
-     *        bitrate of the video part of this output to the value you choose. That is, the total size of the video
-     *        element is less than or equal to the value you set multiplied by the number of seconds of encoded output.
+     *        bitrate of the video part of this output to the value that you choose. That is, the total size of the
+     *        video element is less than or equal to the value you set multiplied by the number of seconds of encoded
+     *        output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

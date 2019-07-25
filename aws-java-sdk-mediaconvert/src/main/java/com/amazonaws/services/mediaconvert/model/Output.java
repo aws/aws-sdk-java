@@ -62,8 +62,8 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     private String preset;
     /**
      * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
-     * codec you choose when you specify a value for Video codec (codec). Include one instance of (VideoDescription) per
-     * output.
+     * codec that you choose when you specify a value for Video codec (codec). Include one instance of
+     * (VideoDescription) per output.
      */
     private VideoDescription videoDescription;
 
@@ -435,12 +435,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
-     * codec you choose when you specify a value for Video codec (codec). Include one instance of (VideoDescription) per
-     * output.
+     * codec that you choose when you specify a value for Video codec (codec). Include one instance of
+     * (VideoDescription) per output.
      * 
      * @param videoDescription
      *        (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the
-     *        video codec you choose when you specify a value for Video codec (codec). Include one instance of
+     *        video codec that you choose when you specify a value for Video codec (codec). Include one instance of
      *        (VideoDescription) per output.
      */
 
@@ -450,11 +450,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
-     * codec you choose when you specify a value for Video codec (codec). Include one instance of (VideoDescription) per
-     * output.
+     * codec that you choose when you specify a value for Video codec (codec). Include one instance of
+     * (VideoDescription) per output.
      * 
      * @return (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the
-     *         video codec you choose when you specify a value for Video codec (codec). Include one instance of
+     *         video codec that you choose when you specify a value for Video codec (codec). Include one instance of
      *         (VideoDescription) per output.
      */
 
@@ -464,12 +464,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
-     * codec you choose when you specify a value for Video codec (codec). Include one instance of (VideoDescription) per
-     * output.
+     * codec that you choose when you specify a value for Video codec (codec). Include one instance of
+     * (VideoDescription) per output.
      * 
      * @param videoDescription
      *        (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the
-     *        video codec you choose when you specify a value for Video codec (codec). Include one instance of
+     *        video codec that you choose when you specify a value for Video codec (codec). Include one instance of
      *        (VideoDescription) per output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

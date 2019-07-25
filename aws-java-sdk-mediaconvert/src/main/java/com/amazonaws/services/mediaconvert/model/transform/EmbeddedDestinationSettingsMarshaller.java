@@ -29,6 +29,8 @@ public class EmbeddedDestinationSettingsMarshaller {
 
     private static final MarshallingInfo<Integer> DESTINATION608CHANNELNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destination608ChannelNumber").build();
+    private static final MarshallingInfo<Integer> DESTINATION708SERVICENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destination708ServiceNumber").build();
 
     private static final EmbeddedDestinationSettingsMarshaller instance = new EmbeddedDestinationSettingsMarshaller();
 
@@ -47,6 +49,7 @@ public class EmbeddedDestinationSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(embeddedDestinationSettings.getDestination608ChannelNumber(), DESTINATION608CHANNELNUMBER_BINDING);
+            protocolMarshaller.marshall(embeddedDestinationSettings.getDestination708ServiceNumber(), DESTINATION708SERVICENUMBER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

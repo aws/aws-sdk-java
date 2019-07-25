@@ -50,6 +50,7 @@ import com.amazonaws.services.ecr.model.transform.*;
  * Client for accessing Amazon ECR. All service calls made using this client are blocking, and will not return until the
  * service call completes.
  * <p>
+ * <fullname>Amazon Elastic Container Registry</fullname>
  * <p>
  * Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar
  * Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
@@ -80,17 +81,47 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.TooManyTagsException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LayerPartTooSmallException").withModeledClass(
                                     com.amazonaws.services.ecr.model.LayerPartTooSmallException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNotEmptyException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.RepositoryNotEmptyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LayerAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.LayerAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EmptyUploadException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.EmptyUploadException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.RepositoryAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryPolicyNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.RepositoryPolicyNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ImageAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.ImageAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LayerInaccessibleException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.LayerInaccessibleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UploadNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.UploadNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.TooManyTagsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidLayerPartException").withModeledClass(
                                     com.amazonaws.services.ecr.model.InvalidLayerPartException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ImageTagAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.ImageTagAlreadyExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyPreviewNotFoundException").withModeledClass(
                                     com.amazonaws.services.ecr.model.LifecyclePolicyPreviewNotFoundException.class))
@@ -98,17 +129,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                             new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(
                                     com.amazonaws.services.ecr.model.ServerException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNotEmptyException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.RepositoryNotEmptyException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyNotFoundException").withModeledClass(
                                     com.amazonaws.services.ecr.model.LifecyclePolicyNotFoundException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LayerAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.LayerAlreadyExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EmptyUploadException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.EmptyUploadException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTagParameterException").withModeledClass(
                                     com.amazonaws.services.ecr.model.InvalidTagParameterException.class))
@@ -125,26 +147,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryNotFoundException").withModeledClass(
                                     com.amazonaws.services.ecr.model.RepositoryNotFoundException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.RepositoryAlreadyExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryPolicyNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.RepositoryPolicyNotFoundException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyPreviewInProgressException").withModeledClass(
                                     com.amazonaws.services.ecr.model.LifecyclePolicyPreviewInProgressException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ImageAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.ImageAlreadyExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LayerInaccessibleException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.LayerInaccessibleException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.LimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UploadNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.UploadNotFoundException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.ecr.model.AmazonECRException.class));
 
     /**
@@ -645,7 +649,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
      *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
      * @sample AmazonECR.CreateRepository
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository" target="_top">AWS API
@@ -1558,8 +1562,11 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
      *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+     * @throws ImageTagAlreadyExistsException
+     *         The specified image is tagged with a tag that already exists. The repository is configured for tag
+     *         immutability.
      * @sample AmazonECR.PutImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage" target="_top">AWS API
      *      Documentation</a>
@@ -1608,8 +1615,69 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
     /**
      * <p>
+     * Updates the image tag mutability settings for a repository.
+     * </p>
+     * 
+     * @param putImageTagMutabilityRequest
+     * @return Result of the PutImageTagMutability operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @sample AmazonECR.PutImageTagMutability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutImageTagMutabilityResult putImageTagMutability(PutImageTagMutabilityRequest request) {
+        request = beforeClientExecution(request);
+        return executePutImageTagMutability(request);
+    }
+
+    @SdkInternalApi
+    final PutImageTagMutabilityResult executePutImageTagMutability(PutImageTagMutabilityRequest putImageTagMutabilityRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putImageTagMutabilityRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutImageTagMutabilityRequest> request = null;
+        Response<PutImageTagMutabilityResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutImageTagMutabilityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putImageTagMutabilityRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutImageTagMutability");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutImageTagMutabilityResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PutImageTagMutabilityResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates or updates a lifecycle policy. For information about lifecycle policy syntax, see <a
-     * href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy
      * Template</a>.
      * </p>
      * 
@@ -1670,7 +1738,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
     /**
      * <p>
-     * Applies a repository policy on a specified repository to control access permissions.
+     * Applies a repository policy on a specified repository to control access permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon ECR Repository
+     * Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param setRepositoryPolicyRequest
@@ -1956,7 +2026,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
      *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
      * @sample AmazonECR.UploadLayerPart
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart" target="_top">AWS API

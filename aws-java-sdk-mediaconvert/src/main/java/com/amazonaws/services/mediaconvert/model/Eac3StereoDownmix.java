@@ -15,7 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Stereo downmix preference. Only used for 3/2 coding mode.
+ * Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R,
+ * C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+ * mode, the service ignores Stereo downmix (Eac3StereoDownmix).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Eac3StereoDownmix {

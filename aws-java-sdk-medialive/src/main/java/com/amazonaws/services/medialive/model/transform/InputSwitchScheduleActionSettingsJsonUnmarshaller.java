@@ -52,6 +52,14 @@ public class InputSwitchScheduleActionSettingsJsonUnmarshaller implements Unmars
                     context.nextToken();
                     inputSwitchScheduleActionSettings.setInputAttachmentNameReference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inputClippingSettings", targetDepth)) {
+                    context.nextToken();
+                    inputSwitchScheduleActionSettings.setInputClippingSettings(InputClippingSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("urlPath", targetDepth)) {
+                    context.nextToken();
+                    inputSwitchScheduleActionSettings.setUrlPath(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -34,16 +34,16 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
      */
     private String afdSignaling;
     /**
-     * The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the value
-     * DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     * The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED
+     * for AntiAlias. If you specify that in your job, the service will ignore the setting.
      */
     private String antiAlias;
     /**
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video
-     * encoding. The settings in this group vary depending on the value you choose for Video codec (Codec). For each
-     * codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings
-     * object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings *
-     * FRAME_CAPTURE, FrameCaptureSettings
+     * encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For
+     * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
+     * settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * * FRAME_CAPTURE, FrameCaptureSettings
      */
     private VideoCodecSettings codecSettings;
     /**
@@ -51,12 +51,7 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
      * default.
      */
     private String colorMetadata;
-    /**
-     * Applies only if your input aspect ratio is different from your output aspect ratio. Use Input cropping rectangle
-     * (Crop) to specify the video area the service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. If you crop your input frame size to smaller than your output frame size,
-     * make sure to specify the behavior you want in your output setting "Scaling behavior".
-     */
+    /** Use Cropping selection (crop) to specify the video area that the service will include in the output video frame. */
     private Rectangle crop;
     /**
      * Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on
@@ -75,8 +70,8 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
      */
     private Integer height;
     /**
-     * Use Position (Position) to point to a rectangle object to define your position. This setting overrides any other
-     * aspect ratio.
+     * Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     * rectangle that you specify here is black.
      */
     private Rectangle position;
     /**
@@ -88,9 +83,10 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
      */
     private String respondToAfd;
     /**
-     * Applies only if your input aspect ratio is different from your output aspect ratio. Choose "Stretch to output" to
-     * have the service stretch your video image to fit. Keep the setting "Default" to allow the service to letterbox
-     * your video instead. This setting overrides any positioning value you specify elsewhere in the job.
+     * Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose
+     * Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the setting
+     * Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any value that you
+     * specify for the setting Selection placement (position) in this output.
      */
     private String scalingBehavior;
     /**
@@ -202,12 +198,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the value
-     * DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     * The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED
+     * for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * 
      * @param antiAlias
-     *        The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the
-     *        value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     *        The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value
+     *        DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * @see AntiAlias
      */
 
@@ -216,11 +212,11 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the value
-     * DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     * The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED
+     * for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * 
-     * @return The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the
-     *         value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     * @return The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value
+     *         DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * @see AntiAlias
      */
 
@@ -229,12 +225,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the value
-     * DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     * The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED
+     * for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * 
      * @param antiAlias
-     *        The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the
-     *        value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     *        The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value
+     *        DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AntiAlias
      */
@@ -245,12 +241,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the value
-     * DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     * The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED
+     * for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * 
      * @param antiAlias
-     *        The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the
-     *        value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     *        The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value
+     *        DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AntiAlias
      */
@@ -262,17 +258,17 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video
-     * encoding. The settings in this group vary depending on the value you choose for Video codec (Codec). For each
-     * codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings
-     * object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings *
-     * FRAME_CAPTURE, FrameCaptureSettings
+     * encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For
+     * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
+     * settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * * FRAME_CAPTURE, FrameCaptureSettings
      * 
      * @param codecSettings
      *        Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to
-     *        video encoding. The settings in this group vary depending on the value you choose for Video codec (Codec).
-     *        For each codec enum you choose, define the corresponding settings object. The following lists the codec
-     *        enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     *        ProresSettings * FRAME_CAPTURE, FrameCaptureSettings
+     *        video encoding. The settings in this group vary depending on the value that you choose for Video codec
+     *        (Codec). For each codec enum that you choose, define the corresponding settings object. The following
+     *        lists the codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2,
+     *        Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE, FrameCaptureSettings
      */
 
     public void setCodecSettings(VideoCodecSettings codecSettings) {
@@ -281,16 +277,16 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video
-     * encoding. The settings in this group vary depending on the value you choose for Video codec (Codec). For each
-     * codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings
-     * object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings *
-     * FRAME_CAPTURE, FrameCaptureSettings
+     * encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For
+     * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
+     * settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * * FRAME_CAPTURE, FrameCaptureSettings
      * 
      * @return Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to
-     *         video encoding. The settings in this group vary depending on the value you choose for Video codec
-     *         (Codec). For each codec enum you choose, define the corresponding settings object. The following lists
-     *         the codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings
-     *         * PRORES, ProresSettings * FRAME_CAPTURE, FrameCaptureSettings
+     *         video encoding. The settings in this group vary depending on the value that you choose for Video codec
+     *         (Codec). For each codec enum that you choose, define the corresponding settings object. The following
+     *         lists the codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2,
+     *         Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE, FrameCaptureSettings
      */
 
     public VideoCodecSettings getCodecSettings() {
@@ -299,17 +295,17 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video
-     * encoding. The settings in this group vary depending on the value you choose for Video codec (Codec). For each
-     * codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings
-     * object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings *
-     * FRAME_CAPTURE, FrameCaptureSettings
+     * encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For
+     * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
+     * settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * * FRAME_CAPTURE, FrameCaptureSettings
      * 
      * @param codecSettings
      *        Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to
-     *        video encoding. The settings in this group vary depending on the value you choose for Video codec (Codec).
-     *        For each codec enum you choose, define the corresponding settings object. The following lists the codec
-     *        enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     *        ProresSettings * FRAME_CAPTURE, FrameCaptureSettings
+     *        video encoding. The settings in this group vary depending on the value that you choose for Video codec
+     *        (Codec). For each codec enum that you choose, define the corresponding settings object. The following
+     *        lists the codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2,
+     *        Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE, FrameCaptureSettings
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,17 +374,11 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect ratio. Use Input cropping rectangle
-     * (Crop) to specify the video area the service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. If you crop your input frame size to smaller than your output frame size,
-     * make sure to specify the behavior you want in your output setting "Scaling behavior".
+     * Use Cropping selection (crop) to specify the video area that the service will include in the output video frame.
      * 
      * @param crop
-     *        Applies only if your input aspect ratio is different from your output aspect ratio. Use Input cropping
-     *        rectangle (Crop) to specify the video area the service will include in the output. This will crop the
-     *        input source, causing video pixels to be removed on encode. If you crop your input frame size to smaller
-     *        than your output frame size, make sure to specify the behavior you want in your output setting
-     *        "Scaling behavior".
+     *        Use Cropping selection (crop) to specify the video area that the service will include in the output video
+     *        frame.
      */
 
     public void setCrop(Rectangle crop) {
@@ -396,16 +386,10 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect ratio. Use Input cropping rectangle
-     * (Crop) to specify the video area the service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. If you crop your input frame size to smaller than your output frame size,
-     * make sure to specify the behavior you want in your output setting "Scaling behavior".
+     * Use Cropping selection (crop) to specify the video area that the service will include in the output video frame.
      * 
-     * @return Applies only if your input aspect ratio is different from your output aspect ratio. Use Input cropping
-     *         rectangle (Crop) to specify the video area the service will include in the output. This will crop the
-     *         input source, causing video pixels to be removed on encode. If you crop your input frame size to smaller
-     *         than your output frame size, make sure to specify the behavior you want in your output setting
-     *         "Scaling behavior".
+     * @return Use Cropping selection (crop) to specify the video area that the service will include in the output video
+     *         frame.
      */
 
     public Rectangle getCrop() {
@@ -413,17 +397,11 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect ratio. Use Input cropping rectangle
-     * (Crop) to specify the video area the service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. If you crop your input frame size to smaller than your output frame size,
-     * make sure to specify the behavior you want in your output setting "Scaling behavior".
+     * Use Cropping selection (crop) to specify the video area that the service will include in the output video frame.
      * 
      * @param crop
-     *        Applies only if your input aspect ratio is different from your output aspect ratio. Use Input cropping
-     *        rectangle (Crop) to specify the video area the service will include in the output. This will crop the
-     *        input source, causing video pixels to be removed on encode. If you crop your input frame size to smaller
-     *        than your output frame size, make sure to specify the behavior you want in your output setting
-     *        "Scaling behavior".
+     *        Use Cropping selection (crop) to specify the video area that the service will include in the output video
+     *        frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -581,12 +559,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Use Position (Position) to point to a rectangle object to define your position. This setting overrides any other
-     * aspect ratio.
+     * Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     * rectangle that you specify here is black.
      * 
      * @param position
-     *        Use Position (Position) to point to a rectangle object to define your position. This setting overrides any
-     *        other aspect ratio.
+     *        Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     *        rectangle that you specify here is black.
      */
 
     public void setPosition(Rectangle position) {
@@ -594,11 +572,11 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Use Position (Position) to point to a rectangle object to define your position. This setting overrides any other
-     * aspect ratio.
+     * Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     * rectangle that you specify here is black.
      * 
-     * @return Use Position (Position) to point to a rectangle object to define your position. This setting overrides
-     *         any other aspect ratio.
+     * @return Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     *         rectangle that you specify here is black.
      */
 
     public Rectangle getPosition() {
@@ -606,12 +584,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Use Position (Position) to point to a rectangle object to define your position. This setting overrides any other
-     * aspect ratio.
+     * Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     * rectangle that you specify here is black.
      * 
      * @param position
-     *        Use Position (Position) to point to a rectangle object to define your position. This setting overrides any
-     *        other aspect ratio.
+     *        Use Selection placement (position) to define the video area in your output frame. The area outside of the
+     *        rectangle that you specify here is black.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -708,15 +686,16 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect ratio. Choose "Stretch to output" to
-     * have the service stretch your video image to fit. Keep the setting "Default" to allow the service to letterbox
-     * your video instead. This setting overrides any positioning value you specify elsewhere in the job.
+     * Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose
+     * Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the setting
+     * Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any value that you
+     * specify for the setting Selection placement (position) in this output.
      * 
      * @param scalingBehavior
-     *        Applies only if your input aspect ratio is different from your output aspect ratio. Choose
-     *        "Stretch to output" to have the service stretch your video image to fit. Keep the setting "Default" to
-     *        allow the service to letterbox your video instead. This setting overrides any positioning value you
-     *        specify elsewhere in the job.
+     *        Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio.
+     *        Choose Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the
+     *        setting Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any
+     *        value that you specify for the setting Selection placement (position) in this output.
      * @see ScalingBehavior
      */
 
@@ -725,14 +704,15 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect ratio. Choose "Stretch to output" to
-     * have the service stretch your video image to fit. Keep the setting "Default" to allow the service to letterbox
-     * your video instead. This setting overrides any positioning value you specify elsewhere in the job.
+     * Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose
+     * Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the setting
+     * Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any value that you
+     * specify for the setting Selection placement (position) in this output.
      * 
-     * @return Applies only if your input aspect ratio is different from your output aspect ratio. Choose
-     *         "Stretch to output" to have the service stretch your video image to fit. Keep the setting "Default" to
-     *         allow the service to letterbox your video instead. This setting overrides any positioning value you
-     *         specify elsewhere in the job.
+     * @return Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio.
+     *         Choose Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep
+     *         the setting Default (DEFAULT) to have the service letterbox your video instead. This setting overrides
+     *         any value that you specify for the setting Selection placement (position) in this output.
      * @see ScalingBehavior
      */
 
@@ -741,15 +721,16 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect ratio. Choose "Stretch to output" to
-     * have the service stretch your video image to fit. Keep the setting "Default" to allow the service to letterbox
-     * your video instead. This setting overrides any positioning value you specify elsewhere in the job.
+     * Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose
+     * Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the setting
+     * Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any value that you
+     * specify for the setting Selection placement (position) in this output.
      * 
      * @param scalingBehavior
-     *        Applies only if your input aspect ratio is different from your output aspect ratio. Choose
-     *        "Stretch to output" to have the service stretch your video image to fit. Keep the setting "Default" to
-     *        allow the service to letterbox your video instead. This setting overrides any positioning value you
-     *        specify elsewhere in the job.
+     *        Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio.
+     *        Choose Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the
+     *        setting Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any
+     *        value that you specify for the setting Selection placement (position) in this output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingBehavior
      */
@@ -760,15 +741,16 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect ratio. Choose "Stretch to output" to
-     * have the service stretch your video image to fit. Keep the setting "Default" to allow the service to letterbox
-     * your video instead. This setting overrides any positioning value you specify elsewhere in the job.
+     * Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose
+     * Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the setting
+     * Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any value that you
+     * specify for the setting Selection placement (position) in this output.
      * 
      * @param scalingBehavior
-     *        Applies only if your input aspect ratio is different from your output aspect ratio. Choose
-     *        "Stretch to output" to have the service stretch your video image to fit. Keep the setting "Default" to
-     *        allow the service to letterbox your video instead. This setting overrides any positioning value you
-     *        specify elsewhere in the job.
+     *        Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio.
+     *        Choose Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the
+     *        setting Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any
+     *        value that you specify for the setting Selection placement (position) in this output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingBehavior
      */
