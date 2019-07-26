@@ -33,7 +33,7 @@ public class GetBulkDeploymentStatusResult extends com.amazonaws.AmazonWebServic
     private java.util.List<ErrorDetail> errorDetails;
     /** Error message */
     private String errorMessage;
-    /** The tags for the definition. */
+    /** Tag(s) attached to the resource arn. */
     private java.util.Map<String, String> tags;
 
     /**
@@ -252,9 +252,9 @@ public class GetBulkDeploymentStatusResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      * 
-     * @return The tags for the definition.
+     * @return Tag(s) attached to the resource arn.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -262,10 +262,10 @@ public class GetBulkDeploymentStatusResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      * 
      * @param tags
-     *        The tags for the definition.
+     *        Tag(s) attached to the resource arn.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -273,10 +273,10 @@ public class GetBulkDeploymentStatusResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      * 
      * @param tags
-     *        The tags for the definition.
+     *        Tag(s) attached to the resource arn.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

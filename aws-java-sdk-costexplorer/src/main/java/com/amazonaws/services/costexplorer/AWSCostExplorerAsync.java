@@ -435,6 +435,53 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Creates recommendations that helps you save cost by identifying idle and underutilized Amazon EC2 instances.
+     * </p>
+     * <p>
+     * Recommendations are generated to either downsize or terminate instances, along with providing savings detail and
+     * metrics. For details on calculation and function, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing Your Cost with
+     * Rightsizing Recommendations</a>.
+     * </p>
+     * 
+     * @param getRightsizingRecommendationRequest
+     * @return A Java Future containing the result of the GetRightsizingRecommendation operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsync.GetRightsizingRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRightsizingRecommendationResult> getRightsizingRecommendationAsync(
+            GetRightsizingRecommendationRequest getRightsizingRecommendationRequest);
+
+    /**
+     * <p>
+     * Creates recommendations that helps you save cost by identifying idle and underutilized Amazon EC2 instances.
+     * </p>
+     * <p>
+     * Recommendations are generated to either downsize or terminate instances, along with providing savings detail and
+     * metrics. For details on calculation and function, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing Your Cost with
+     * Rightsizing Recommendations</a>.
+     * </p>
+     * 
+     * @param getRightsizingRecommendationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRightsizingRecommendation operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsyncHandler.GetRightsizingRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRightsizingRecommendationResult> getRightsizingRecommendationAsync(
+            GetRightsizingRecommendationRequest getRightsizingRecommendationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRightsizingRecommendationRequest, GetRightsizingRecommendationResult> asyncHandler);
+
+    /**
+     * <p>
      * Queries for available tag keys and tag values for a specified period. You can search the tag values for an
      * arbitrary string.
      * </p>

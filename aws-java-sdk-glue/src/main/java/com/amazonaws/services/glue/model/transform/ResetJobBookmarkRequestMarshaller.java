@@ -29,6 +29,8 @@ public class ResetJobBookmarkRequestMarshaller {
 
     private static final MarshallingInfo<String> JOBNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("JobName").build();
+    private static final MarshallingInfo<String> RUNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RunId").build();
 
     private static final ResetJobBookmarkRequestMarshaller instance = new ResetJobBookmarkRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class ResetJobBookmarkRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(resetJobBookmarkRequest.getJobName(), JOBNAME_BINDING);
+            protocolMarshaller.marshall(resetJobBookmarkRequest.getRunId(), RUNID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

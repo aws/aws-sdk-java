@@ -22,7 +22,8 @@ public enum UpdateTargetsArchitecture {
 
     Armv7l("armv7l"),
     X86_64("x86_64"),
-    Aarch64("aarch64");
+    Aarch64("aarch64"),
+    Openwrt("openwrt");
 
     private String value;
 

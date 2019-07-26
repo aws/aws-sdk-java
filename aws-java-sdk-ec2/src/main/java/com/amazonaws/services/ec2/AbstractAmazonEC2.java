@@ -1586,6 +1586,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public GetCapacityReservationUsageResult getCapacityReservationUsage(GetCapacityReservationUsageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetConsoleOutputResult getConsoleOutput(GetConsoleOutputRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

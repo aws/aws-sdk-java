@@ -18,6 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * A map of the key-value pairs for the resource tag.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/TagResource" target="_top">AWS API
  *      Documentation</a>
@@ -27,7 +28,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /** The Amazon Resource Name (ARN) of the resource. */
     private String resourceArn;
-    /** A map of the key-value pairs for the resource tag. */
+
     private java.util.Map<String, String> tags;
 
     /**
@@ -65,9 +66,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * A map of the key-value pairs for the resource tag.
-     * 
-     * @return A map of the key-value pairs for the resource tag.
+     * @return
      */
 
     public java.util.Map<String, String> getTags() {
@@ -75,10 +74,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * A map of the key-value pairs for the resource tag.
-     * 
      * @param tags
-     *        A map of the key-value pairs for the resource tag.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -86,10 +82,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * A map of the key-value pairs for the resource tag.
-     * 
      * @param tags
-     *        A map of the key-value pairs for the resource tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

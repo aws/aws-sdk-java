@@ -70,7 +70,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private String imageId;
     /**
      * <p>
-     * The VPC subnets into which the compute resources are launched.
+     * The VPC subnets into which the compute resources are launched. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      */
     private java.util.List<String> subnets;
@@ -485,10 +487,14 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC subnets into which the compute resources are launched.
+     * The VPC subnets into which the compute resources are launched. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
-     * @return The VPC subnets into which the compute resources are launched.
+     * @return The VPC subnets into which the compute resources are launched. For more information, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
+     *         <i>Amazon VPC User Guide</i>.
      */
 
     public java.util.List<String> getSubnets() {
@@ -497,11 +503,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC subnets into which the compute resources are launched.
+     * The VPC subnets into which the compute resources are launched. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param subnets
-     *        The VPC subnets into which the compute resources are launched.
+     *        The VPC subnets into which the compute resources are launched. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
+     *        <i>Amazon VPC User Guide</i>.
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -515,7 +525,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC subnets into which the compute resources are launched.
+     * The VPC subnets into which the compute resources are launched. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -524,7 +536,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param subnets
-     *        The VPC subnets into which the compute resources are launched.
+     *        The VPC subnets into which the compute resources are launched. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
+     *        <i>Amazon VPC User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -540,11 +554,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC subnets into which the compute resources are launched.
+     * The VPC subnets into which the compute resources are launched. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param subnets
-     *        The VPC subnets into which the compute resources are launched.
+     *        The VPC subnets into which the compute resources are launched. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
+     *        <i>Amazon VPC User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

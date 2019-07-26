@@ -160,6 +160,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<ResourceRequirement> resourceRequirements;
+    /**
+     * <p>
+     * Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     * </p>
+     */
+    private LinuxParameters linuxParameters;
 
     /**
      * <p>
@@ -1276,6 +1282,46 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     * </p>
+     * 
+     * @param linuxParameters
+     *        Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     */
+
+    public void setLinuxParameters(LinuxParameters linuxParameters) {
+        this.linuxParameters = linuxParameters;
+    }
+
+    /**
+     * <p>
+     * Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     * </p>
+     * 
+     * @return Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     */
+
+    public LinuxParameters getLinuxParameters() {
+        return this.linuxParameters;
+    }
+
+    /**
+     * <p>
+     * Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     * </p>
+     * 
+     * @param linuxParameters
+     *        Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withLinuxParameters(LinuxParameters linuxParameters) {
+        setLinuxParameters(linuxParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1326,7 +1372,9 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
         if (getNetworkInterfaces() != null)
             sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
         if (getResourceRequirements() != null)
-            sb.append("ResourceRequirements: ").append(getResourceRequirements());
+            sb.append("ResourceRequirements: ").append(getResourceRequirements()).append(",");
+        if (getLinuxParameters() != null)
+            sb.append("LinuxParameters: ").append(getLinuxParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -1421,6 +1469,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getResourceRequirements() != null && other.getResourceRequirements().equals(this.getResourceRequirements()) == false)
             return false;
+        if (other.getLinuxParameters() == null ^ this.getLinuxParameters() == null)
+            return false;
+        if (other.getLinuxParameters() != null && other.getLinuxParameters().equals(this.getLinuxParameters()) == false)
+            return false;
         return true;
     }
 
@@ -1449,6 +1501,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         hashCode = prime * hashCode + ((getResourceRequirements() == null) ? 0 : getResourceRequirements().hashCode());
+        hashCode = prime * hashCode + ((getLinuxParameters() == null) ? 0 : getLinuxParameters().hashCode());
         return hashCode;
     }
 

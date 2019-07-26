@@ -5568,6 +5568,15 @@ public interface AmazonEC2 {
     ExportTransitGatewayRoutesResult exportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest exportTransitGatewayRoutesRequest);
 
     /**
+     * @param getCapacityReservationUsageRequest
+     * @return Result of the GetCapacityReservationUsage operation returned by the service.
+     * @sample AmazonEC2.GetCapacityReservationUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCapacityReservationUsageResult getCapacityReservationUsage(GetCapacityReservationUsageRequest getCapacityReservationUsageRequest);
+
+    /**
      * <p>
      * Gets the console output for the specified instance. For Linux instances, the instance console output displays the
      * exact console output that would normally be displayed on a physical monitor attached to a computer. For Windows

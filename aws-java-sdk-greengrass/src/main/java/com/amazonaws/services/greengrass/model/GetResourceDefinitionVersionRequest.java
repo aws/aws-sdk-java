@@ -27,7 +27,12 @@ public class GetResourceDefinitionVersionRequest extends com.amazonaws.AmazonWeb
 
     /** The ID of the resource definition. */
     private String resourceDefinitionId;
-    /** The ID of the resource definition version. */
+    /**
+     * The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version
+     * is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion''
+     * property of the corresponding ''DefinitionInformation'' object.
+     */
     private String resourceDefinitionVersionId;
 
     /**
@@ -65,10 +70,16 @@ public class GetResourceDefinitionVersionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * The ID of the resource definition version.
+     * The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version
+     * is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion''
+     * property of the corresponding ''DefinitionInformation'' object.
      * 
      * @param resourceDefinitionVersionId
-     *        The ID of the resource definition version.
+     *        The ID of the resource definition version. This value maps to the ''Version'' property of the
+     *        corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions''
+     *        requests. If the version is the last one that was associated with a resource definition, the value also
+     *        maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
      */
 
     public void setResourceDefinitionVersionId(String resourceDefinitionVersionId) {
@@ -76,9 +87,15 @@ public class GetResourceDefinitionVersionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * The ID of the resource definition version.
+     * The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version
+     * is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion''
+     * property of the corresponding ''DefinitionInformation'' object.
      * 
-     * @return The ID of the resource definition version.
+     * @return The ID of the resource definition version. This value maps to the ''Version'' property of the
+     *         corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions''
+     *         requests. If the version is the last one that was associated with a resource definition, the value also
+     *         maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
      */
 
     public String getResourceDefinitionVersionId() {
@@ -86,10 +103,16 @@ public class GetResourceDefinitionVersionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * The ID of the resource definition version.
+     * The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version
+     * is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion''
+     * property of the corresponding ''DefinitionInformation'' object.
      * 
      * @param resourceDefinitionVersionId
-     *        The ID of the resource definition version.
+     *        The ID of the resource definition version. This value maps to the ''Version'' property of the
+     *        corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions''
+     *        requests. If the version is the last one that was associated with a resource definition, the value also
+     *        maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -56,6 +56,10 @@ public class CreateCapacityReservationRequestMarshaller implements Marshaller<Re
             request.addParameter("AvailabilityZone", StringUtils.fromString(createCapacityReservationRequest.getAvailabilityZone()));
         }
 
+        if (createCapacityReservationRequest.getAvailabilityZoneId() != null) {
+            request.addParameter("AvailabilityZoneId", StringUtils.fromString(createCapacityReservationRequest.getAvailabilityZoneId()));
+        }
+
         if (createCapacityReservationRequest.getTenancy() != null) {
             request.addParameter("Tenancy", StringUtils.fromString(createCapacityReservationRequest.getTenancy()));
         }

@@ -626,6 +626,71 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Creates recommendations that helps you save cost by identifying idle and underutilized Amazon EC2 instances.
+     * </p>
+     * <p>
+     * Recommendations are generated to either downsize or terminate instances, along with providing savings detail and
+     * metrics. For details on calculation and function, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing Your Cost with
+     * Rightsizing Recommendations</a>.
+     * </p>
+     * 
+     * @param getRightsizingRecommendationRequest
+     * @return Result of the GetRightsizingRecommendation operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetRightsizingRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetRightsizingRecommendationResult getRightsizingRecommendation(GetRightsizingRecommendationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRightsizingRecommendation(request);
+    }
+
+    @SdkInternalApi
+    final GetRightsizingRecommendationResult executeGetRightsizingRecommendation(GetRightsizingRecommendationRequest getRightsizingRecommendationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRightsizingRecommendationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRightsizingRecommendationRequest> request = null;
+        Response<GetRightsizingRecommendationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRightsizingRecommendationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getRightsizingRecommendationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRightsizingRecommendation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRightsizingRecommendationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetRightsizingRecommendationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Queries for available tag keys and tag values for a specified period. You can search the tag values for an
      * arbitrary string.
      * </p>
@@ -703,7 +768,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      *         The requested data is unavailable.
      * @throws UnresolvableUsageUnitException
      *         Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code> filter
-     *         selections that contain matching units, for example: <code>hours</code>.(
+     *         selections that contain matching units, for example: <code>hours</code>.
      * @sample AWSCostExplorer.GetUsageForecast
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast" target="_top">AWS API
      *      Documentation</a>

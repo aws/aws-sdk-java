@@ -54,7 +54,7 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String streamId;
     /**
      * The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should
-     * in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     private String whitelistCidr;
 
@@ -429,11 +429,11 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should
-     * in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      * 
      * @param whitelistCidr
      *        The range of IP addresses that should be allowed to contribute content to your source. These IP addresses
-     *        should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     *        should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      */
 
     public void setWhitelistCidr(String whitelistCidr) {
@@ -442,10 +442,10 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should
-     * in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      * 
      * @return The range of IP addresses that should be allowed to contribute content to your source. These IP addresses
-     *         should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     *         should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      */
 
     public String getWhitelistCidr() {
@@ -454,11 +454,11 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should
-     * in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      * 
      * @param whitelistCidr
      *        The range of IP addresses that should be allowed to contribute content to your source. These IP addresses
-     *        should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     *        should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

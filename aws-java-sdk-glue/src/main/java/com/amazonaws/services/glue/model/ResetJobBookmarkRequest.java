@@ -31,6 +31,12 @@ public class ResetJobBookmarkRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String jobName;
+    /**
+     * <p>
+     * The unique run identifier associated with this job run.
+     * </p>
+     */
+    private String runId;
 
     /**
      * <p>
@@ -73,6 +79,46 @@ public class ResetJobBookmarkRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The unique run identifier associated with this job run.
+     * </p>
+     * 
+     * @param runId
+     *        The unique run identifier associated with this job run.
+     */
+
+    public void setRunId(String runId) {
+        this.runId = runId;
+    }
+
+    /**
+     * <p>
+     * The unique run identifier associated with this job run.
+     * </p>
+     * 
+     * @return The unique run identifier associated with this job run.
+     */
+
+    public String getRunId() {
+        return this.runId;
+    }
+
+    /**
+     * <p>
+     * The unique run identifier associated with this job run.
+     * </p>
+     * 
+     * @param runId
+     *        The unique run identifier associated with this job run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResetJobBookmarkRequest withRunId(String runId) {
+        setRunId(runId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +131,9 @@ public class ResetJobBookmarkRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobName() != null)
-            sb.append("JobName: ").append(getJobName());
+            sb.append("JobName: ").append(getJobName()).append(",");
+        if (getRunId() != null)
+            sb.append("RunId: ").append(getRunId());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +152,10 @@ public class ResetJobBookmarkRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getJobName() != null && other.getJobName().equals(this.getJobName()) == false)
             return false;
+        if (other.getRunId() == null ^ this.getRunId() == null)
+            return false;
+        if (other.getRunId() != null && other.getRunId().equals(this.getRunId()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +165,7 @@ public class ResetJobBookmarkRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
+        hashCode = prime * hashCode + ((getRunId() == null) ? 0 : getRunId().hashCode());
         return hashCode;
     }
 

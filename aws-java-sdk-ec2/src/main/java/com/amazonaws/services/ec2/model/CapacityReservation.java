@@ -32,6 +32,12 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </p>
      */
     private String capacityReservationId;
+
+    private String ownerId;
+
+    private String capacityReservationArn;
+
+    private String availabilityZoneId;
     /**
      * <p>
      * The type of instance for which the Capacity Reservation reserves capacity.
@@ -233,6 +239,84 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     public CapacityReservation withCapacityReservationId(String capacityReservationId) {
         setCapacityReservationId(capacityReservationId);
+        return this;
+    }
+
+    /**
+     * @param ownerId
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * @param ownerId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CapacityReservation withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * @param capacityReservationArn
+     */
+
+    public void setCapacityReservationArn(String capacityReservationArn) {
+        this.capacityReservationArn = capacityReservationArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getCapacityReservationArn() {
+        return this.capacityReservationArn;
+    }
+
+    /**
+     * @param capacityReservationArn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CapacityReservation withCapacityReservationArn(String capacityReservationArn) {
+        setCapacityReservationArn(capacityReservationArn);
+        return this;
+    }
+
+    /**
+     * @param availabilityZoneId
+     */
+
+    public void setAvailabilityZoneId(String availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getAvailabilityZoneId() {
+        return this.availabilityZoneId;
+    }
+
+    /**
+     * @param availabilityZoneId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CapacityReservation withAvailabilityZoneId(String availabilityZoneId) {
+        setAvailabilityZoneId(availabilityZoneId);
         return this;
     }
 
@@ -1589,6 +1673,12 @@ public class CapacityReservation implements Serializable, Cloneable {
         sb.append("{");
         if (getCapacityReservationId() != null)
             sb.append("CapacityReservationId: ").append(getCapacityReservationId()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
+        if (getCapacityReservationArn() != null)
+            sb.append("CapacityReservationArn: ").append(getCapacityReservationArn()).append(",");
+        if (getAvailabilityZoneId() != null)
+            sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getInstancePlatform() != null)
@@ -1634,6 +1724,18 @@ public class CapacityReservation implements Serializable, Cloneable {
         if (other.getCapacityReservationId() == null ^ this.getCapacityReservationId() == null)
             return false;
         if (other.getCapacityReservationId() != null && other.getCapacityReservationId().equals(this.getCapacityReservationId()) == false)
+            return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
+        if (other.getCapacityReservationArn() == null ^ this.getCapacityReservationArn() == null)
+            return false;
+        if (other.getCapacityReservationArn() != null && other.getCapacityReservationArn().equals(this.getCapacityReservationArn()) == false)
+            return false;
+        if (other.getAvailabilityZoneId() == null ^ this.getAvailabilityZoneId() == null)
+            return false;
+        if (other.getAvailabilityZoneId() != null && other.getAvailabilityZoneId().equals(this.getAvailabilityZoneId()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
@@ -1700,6 +1802,9 @@ public class CapacityReservation implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCapacityReservationId() == null) ? 0 : getCapacityReservationId().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getCapacityReservationArn() == null) ? 0 : getCapacityReservationArn().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getInstancePlatform() == null) ? 0 : getInstancePlatform().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());

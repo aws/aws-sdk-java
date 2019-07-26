@@ -31,9 +31,9 @@ public class CreateResourceDefinitionResult extends com.amazonaws.AmazonWebServi
     private String id;
     /** The time, in milliseconds since the epoch, when the definition was last updated. */
     private String lastUpdatedTimestamp;
-    /** The latest version of the definition. */
+    /** The ID of the latest version associated with the definition. */
     private String latestVersion;
-    /** The ARN of the latest version of the definition. */
+    /** The ARN of the latest version associated with the definition. */
     private String latestVersionArn;
     /** The name of the definition. */
     private String name;
@@ -175,10 +175,10 @@ public class CreateResourceDefinitionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      * 
      * @param latestVersion
-     *        The latest version of the definition.
+     *        The ID of the latest version associated with the definition.
      */
 
     public void setLatestVersion(String latestVersion) {
@@ -186,9 +186,9 @@ public class CreateResourceDefinitionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      * 
-     * @return The latest version of the definition.
+     * @return The ID of the latest version associated with the definition.
      */
 
     public String getLatestVersion() {
@@ -196,10 +196,10 @@ public class CreateResourceDefinitionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      * 
      * @param latestVersion
-     *        The latest version of the definition.
+     *        The ID of the latest version associated with the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,10 +209,10 @@ public class CreateResourceDefinitionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      * 
      * @param latestVersionArn
-     *        The ARN of the latest version of the definition.
+     *        The ARN of the latest version associated with the definition.
      */
 
     public void setLatestVersionArn(String latestVersionArn) {
@@ -220,9 +220,9 @@ public class CreateResourceDefinitionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      * 
-     * @return The ARN of the latest version of the definition.
+     * @return The ARN of the latest version associated with the definition.
      */
 
     public String getLatestVersionArn() {
@@ -230,10 +230,10 @@ public class CreateResourceDefinitionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      * 
      * @param latestVersionArn
-     *        The ARN of the latest version of the definition.
+     *        The ARN of the latest version associated with the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

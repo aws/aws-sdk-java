@@ -50,6 +50,21 @@ public class CapacityReservationStaxUnmarshaller implements Unmarshaller<Capacit
                     continue;
                 }
 
+                if (context.testExpression("ownerId", targetDepth)) {
+                    capacityReservation.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("capacityReservationArn", targetDepth)) {
+                    capacityReservation.setCapacityReservationArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("availabilityZoneId", targetDepth)) {
+                    capacityReservation.setAvailabilityZoneId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("instanceType", targetDepth)) {
                     capacityReservation.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

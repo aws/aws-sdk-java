@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediaconnect.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateFlowOutputRequestMarshaller {
 
+    private static final MarshallingInfo<List> CIDRALLOWLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cidrAllowList").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -43,6 +46,8 @@ public class UpdateFlowOutputRequestMarshaller {
             .marshallLocationName("port").build();
     private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("protocol").build();
+    private static final MarshallingInfo<String> REMOTEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("remoteId").build();
     private static final MarshallingInfo<Integer> SMOOTHINGLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("smoothingLatency").build();
     private static final MarshallingInfo<String> STREAMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +69,7 @@ public class UpdateFlowOutputRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateFlowOutputRequest.getCidrAllowList(), CIDRALLOWLIST_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getEncryption(), ENCRYPTION_BINDING);
@@ -72,6 +78,7 @@ public class UpdateFlowOutputRequestMarshaller {
             protocolMarshaller.marshall(updateFlowOutputRequest.getOutputArn(), OUTPUTARN_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getProtocol(), PROTOCOL_BINDING);
+            protocolMarshaller.marshall(updateFlowOutputRequest.getRemoteId(), REMOTEID_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getSmoothingLatency(), SMOOTHINGLATENCY_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getStreamId(), STREAMID_BINDING);
         } catch (Exception e) {

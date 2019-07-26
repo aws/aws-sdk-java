@@ -22,7 +22,8 @@ public enum Protocol {
 
     ZixiPush("zixi-push"),
     RtpFec("rtp-fec"),
-    Rtp("rtp");
+    Rtp("rtp"),
+    ZixiPull("zixi-pull");
 
     private String value;
 

@@ -27,6 +27,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses
+     * should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    private java.util.List<String> cidrAllowList;
+    /**
      * A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not
      * be seen by the end user.
      */
@@ -48,10 +53,86 @@ public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer port;
     /** The protocol to use for the output. */
     private String protocol;
+    /** The remote ID for the Zixi-pull stream. */
+    private String remoteId;
     /** The smoothing latency in milliseconds for RTP and RTP-FEC streams. */
     private Integer smoothingLatency;
     /** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
     private String streamId;
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses
+     * should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     * 
+     * @return The range of IP addresses that should be allowed to initiate output requests to this flow. These IP
+     *         addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example,
+     *         10.0.0.0/16.
+     */
+
+    public java.util.List<String> getCidrAllowList() {
+        return cidrAllowList;
+    }
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses
+     * should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     * 
+     * @param cidrAllowList
+     *        The range of IP addresses that should be allowed to initiate output requests to this flow. These IP
+     *        addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example,
+     *        10.0.0.0/16.
+     */
+
+    public void setCidrAllowList(java.util.Collection<String> cidrAllowList) {
+        if (cidrAllowList == null) {
+            this.cidrAllowList = null;
+            return;
+        }
+
+        this.cidrAllowList = new java.util.ArrayList<String>(cidrAllowList);
+    }
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses
+     * should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCidrAllowList(java.util.Collection)} or {@link #withCidrAllowList(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param cidrAllowList
+     *        The range of IP addresses that should be allowed to initiate output requests to this flow. These IP
+     *        addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example,
+     *        10.0.0.0/16.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowOutputRequest withCidrAllowList(String... cidrAllowList) {
+        if (this.cidrAllowList == null) {
+            setCidrAllowList(new java.util.ArrayList<String>(cidrAllowList.length));
+        }
+        for (String ele : cidrAllowList) {
+            this.cidrAllowList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses
+     * should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+     * 
+     * @param cidrAllowList
+     *        The range of IP addresses that should be allowed to initiate output requests to this flow. These IP
+     *        addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example,
+     *        10.0.0.0/16.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowOutputRequest withCidrAllowList(java.util.Collection<String> cidrAllowList) {
+        setCidrAllowList(cidrAllowList);
+        return this;
+    }
 
     /**
      * A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not
@@ -355,6 +436,40 @@ public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * The remote ID for the Zixi-pull stream.
+     * 
+     * @param remoteId
+     *        The remote ID for the Zixi-pull stream.
+     */
+
+    public void setRemoteId(String remoteId) {
+        this.remoteId = remoteId;
+    }
+
+    /**
+     * The remote ID for the Zixi-pull stream.
+     * 
+     * @return The remote ID for the Zixi-pull stream.
+     */
+
+    public String getRemoteId() {
+        return this.remoteId;
+    }
+
+    /**
+     * The remote ID for the Zixi-pull stream.
+     * 
+     * @param remoteId
+     *        The remote ID for the Zixi-pull stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowOutputRequest withRemoteId(String remoteId) {
+        setRemoteId(remoteId);
+        return this;
+    }
+
+    /**
      * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
      * 
      * @param smoothingLatency
@@ -434,6 +549,8 @@ public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCidrAllowList() != null)
+            sb.append("CidrAllowList: ").append(getCidrAllowList()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getDestination() != null)
@@ -450,6 +567,8 @@ public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("Port: ").append(getPort()).append(",");
         if (getProtocol() != null)
             sb.append("Protocol: ").append(getProtocol()).append(",");
+        if (getRemoteId() != null)
+            sb.append("RemoteId: ").append(getRemoteId()).append(",");
         if (getSmoothingLatency() != null)
             sb.append("SmoothingLatency: ").append(getSmoothingLatency()).append(",");
         if (getStreamId() != null)
@@ -468,6 +587,10 @@ public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof UpdateFlowOutputRequest == false)
             return false;
         UpdateFlowOutputRequest other = (UpdateFlowOutputRequest) obj;
+        if (other.getCidrAllowList() == null ^ this.getCidrAllowList() == null)
+            return false;
+        if (other.getCidrAllowList() != null && other.getCidrAllowList().equals(this.getCidrAllowList()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -500,6 +623,10 @@ public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
             return false;
+        if (other.getRemoteId() == null ^ this.getRemoteId() == null)
+            return false;
+        if (other.getRemoteId() != null && other.getRemoteId().equals(this.getRemoteId()) == false)
+            return false;
         if (other.getSmoothingLatency() == null ^ this.getSmoothingLatency() == null)
             return false;
         if (other.getSmoothingLatency() != null && other.getSmoothingLatency().equals(this.getSmoothingLatency()) == false)
@@ -516,6 +643,7 @@ public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCidrAllowList() == null) ? 0 : getCidrAllowList().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
@@ -524,6 +652,7 @@ public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getOutputArn() == null) ? 0 : getOutputArn().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
+        hashCode = prime * hashCode + ((getRemoteId() == null) ? 0 : getRemoteId().hashCode());
         hashCode = prime * hashCode + ((getSmoothingLatency() == null) ? 0 : getSmoothingLatency().hashCode());
         hashCode = prime * hashCode + ((getStreamId() == null) ? 0 : getStreamId().hashCode());
         return hashCode;

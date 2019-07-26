@@ -31,13 +31,13 @@ public class GetLoggerDefinitionResult extends com.amazonaws.AmazonWebServiceRes
     private String id;
     /** The time, in milliseconds since the epoch, when the definition was last updated. */
     private String lastUpdatedTimestamp;
-    /** The latest version of the definition. */
+    /** The ID of the latest version associated with the definition. */
     private String latestVersion;
-    /** The ARN of the latest version of the definition. */
+    /** The ARN of the latest version associated with the definition. */
     private String latestVersionArn;
     /** The name of the definition. */
     private String name;
-    /** The tags for the definition. */
+    /** Tag(s) attached to the resource arn. */
     private java.util.Map<String, String> tags;
 
     /**
@@ -177,10 +177,10 @@ public class GetLoggerDefinitionResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      * 
      * @param latestVersion
-     *        The latest version of the definition.
+     *        The ID of the latest version associated with the definition.
      */
 
     public void setLatestVersion(String latestVersion) {
@@ -188,9 +188,9 @@ public class GetLoggerDefinitionResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      * 
-     * @return The latest version of the definition.
+     * @return The ID of the latest version associated with the definition.
      */
 
     public String getLatestVersion() {
@@ -198,10 +198,10 @@ public class GetLoggerDefinitionResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      * 
      * @param latestVersion
-     *        The latest version of the definition.
+     *        The ID of the latest version associated with the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,10 +211,10 @@ public class GetLoggerDefinitionResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      * 
      * @param latestVersionArn
-     *        The ARN of the latest version of the definition.
+     *        The ARN of the latest version associated with the definition.
      */
 
     public void setLatestVersionArn(String latestVersionArn) {
@@ -222,9 +222,9 @@ public class GetLoggerDefinitionResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      * 
-     * @return The ARN of the latest version of the definition.
+     * @return The ARN of the latest version associated with the definition.
      */
 
     public String getLatestVersionArn() {
@@ -232,10 +232,10 @@ public class GetLoggerDefinitionResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      * 
      * @param latestVersionArn
-     *        The ARN of the latest version of the definition.
+     *        The ARN of the latest version associated with the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,9 +279,9 @@ public class GetLoggerDefinitionResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      * 
-     * @return The tags for the definition.
+     * @return Tag(s) attached to the resource arn.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -289,10 +289,10 @@ public class GetLoggerDefinitionResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      * 
      * @param tags
-     *        The tags for the definition.
+     *        Tag(s) attached to the resource arn.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -300,10 +300,10 @@ public class GetLoggerDefinitionResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      * 
      * @param tags
-     *        The tags for the definition.
+     *        Tag(s) attached to the resource arn.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

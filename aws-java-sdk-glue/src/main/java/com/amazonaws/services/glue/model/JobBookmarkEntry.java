@@ -54,6 +54,18 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
     private Integer attempt;
     /**
      * <p>
+     * The unique run identifier associated with the previous job run..
+     * </p>
+     */
+    private String previousRunId;
+    /**
+     * <p>
+     * The unique run identifier associated with this job run.
+     * </p>
+     */
+    private String runId;
+    /**
+     * <p>
      * The bookmark itself.
      * </p>
      */
@@ -221,6 +233,86 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The unique run identifier associated with the previous job run..
+     * </p>
+     * 
+     * @param previousRunId
+     *        The unique run identifier associated with the previous job run..
+     */
+
+    public void setPreviousRunId(String previousRunId) {
+        this.previousRunId = previousRunId;
+    }
+
+    /**
+     * <p>
+     * The unique run identifier associated with the previous job run..
+     * </p>
+     * 
+     * @return The unique run identifier associated with the previous job run..
+     */
+
+    public String getPreviousRunId() {
+        return this.previousRunId;
+    }
+
+    /**
+     * <p>
+     * The unique run identifier associated with the previous job run..
+     * </p>
+     * 
+     * @param previousRunId
+     *        The unique run identifier associated with the previous job run..
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobBookmarkEntry withPreviousRunId(String previousRunId) {
+        setPreviousRunId(previousRunId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique run identifier associated with this job run.
+     * </p>
+     * 
+     * @param runId
+     *        The unique run identifier associated with this job run.
+     */
+
+    public void setRunId(String runId) {
+        this.runId = runId;
+    }
+
+    /**
+     * <p>
+     * The unique run identifier associated with this job run.
+     * </p>
+     * 
+     * @return The unique run identifier associated with this job run.
+     */
+
+    public String getRunId() {
+        return this.runId;
+    }
+
+    /**
+     * <p>
+     * The unique run identifier associated with this job run.
+     * </p>
+     * 
+     * @param runId
+     *        The unique run identifier associated with this job run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobBookmarkEntry withRunId(String runId) {
+        setRunId(runId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The bookmark itself.
      * </p>
      * 
@@ -279,6 +371,10 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
             sb.append("Run: ").append(getRun()).append(",");
         if (getAttempt() != null)
             sb.append("Attempt: ").append(getAttempt()).append(",");
+        if (getPreviousRunId() != null)
+            sb.append("PreviousRunId: ").append(getPreviousRunId()).append(",");
+        if (getRunId() != null)
+            sb.append("RunId: ").append(getRunId()).append(",");
         if (getJobBookmark() != null)
             sb.append("JobBookmark: ").append(getJobBookmark());
         sb.append("}");
@@ -311,6 +407,14 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getAttempt() != null && other.getAttempt().equals(this.getAttempt()) == false)
             return false;
+        if (other.getPreviousRunId() == null ^ this.getPreviousRunId() == null)
+            return false;
+        if (other.getPreviousRunId() != null && other.getPreviousRunId().equals(this.getPreviousRunId()) == false)
+            return false;
+        if (other.getRunId() == null ^ this.getRunId() == null)
+            return false;
+        if (other.getRunId() != null && other.getRunId().equals(this.getRunId()) == false)
+            return false;
         if (other.getJobBookmark() == null ^ this.getJobBookmark() == null)
             return false;
         if (other.getJobBookmark() != null && other.getJobBookmark().equals(this.getJobBookmark()) == false)
@@ -327,6 +431,8 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getRun() == null) ? 0 : getRun().hashCode());
         hashCode = prime * hashCode + ((getAttempt() == null) ? 0 : getAttempt().hashCode());
+        hashCode = prime * hashCode + ((getPreviousRunId() == null) ? 0 : getPreviousRunId().hashCode());
+        hashCode = prime * hashCode + ((getRunId() == null) ? 0 : getRunId().hashCode());
         hashCode = prime * hashCode + ((getJobBookmark() == null) ? 0 : getJobBookmark().hashCode());
         return hashCode;
     }

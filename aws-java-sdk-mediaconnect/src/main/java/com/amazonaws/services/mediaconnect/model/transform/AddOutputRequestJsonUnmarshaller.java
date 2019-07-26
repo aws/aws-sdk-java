@@ -48,6 +48,10 @@ public class AddOutputRequestJsonUnmarshaller implements Unmarshaller<AddOutputR
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("cidrAllowList", targetDepth)) {
+                    context.nextToken();
+                    addOutputRequest.setCidrAllowList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     addOutputRequest.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,6 +79,10 @@ public class AddOutputRequestJsonUnmarshaller implements Unmarshaller<AddOutputR
                 if (context.testExpression("protocol", targetDepth)) {
                     context.nextToken();
                     addOutputRequest.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("remoteId", targetDepth)) {
+                    context.nextToken();
+                    addOutputRequest.setRemoteId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("smoothingLatency", targetDepth)) {
                     context.nextToken();

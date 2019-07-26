@@ -31,7 +31,7 @@ public class CreateLoggerDefinitionRequest extends com.amazonaws.AmazonWebServic
     private LoggerDefinitionVersion initialVersion;
     /** The name of the logger definition. */
     private String name;
-    /** Tag(s) to add to the new resource */
+    /** Tag(s) to add to the new resource. */
     private java.util.Map<String, String> tags;
 
     /**
@@ -137,9 +137,9 @@ public class CreateLoggerDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      * 
-     * @return Tag(s) to add to the new resource
+     * @return Tag(s) to add to the new resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -147,10 +147,10 @@ public class CreateLoggerDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      * 
      * @param tags
-     *        Tag(s) to add to the new resource
+     *        Tag(s) to add to the new resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -158,10 +158,10 @@ public class CreateLoggerDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      * 
      * @param tags
-     *        Tag(s) to add to the new resource
+     *        Tag(s) to add to the new resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

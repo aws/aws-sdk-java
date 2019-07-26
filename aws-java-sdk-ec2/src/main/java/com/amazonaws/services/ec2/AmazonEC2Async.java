@@ -12593,6 +12593,31 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<ExportTransitGatewayRoutesRequest, ExportTransitGatewayRoutesResult> asyncHandler);
 
     /**
+     * @param getCapacityReservationUsageRequest
+     * @return A Java Future containing the result of the GetCapacityReservationUsage operation returned by the service.
+     * @sample AmazonEC2Async.GetCapacityReservationUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCapacityReservationUsageResult> getCapacityReservationUsageAsync(
+            GetCapacityReservationUsageRequest getCapacityReservationUsageRequest);
+
+    /**
+     * @param getCapacityReservationUsageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCapacityReservationUsage operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.GetCapacityReservationUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCapacityReservationUsageResult> getCapacityReservationUsageAsync(
+            GetCapacityReservationUsageRequest getCapacityReservationUsageRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCapacityReservationUsageRequest, GetCapacityReservationUsageResult> asyncHandler);
+
+    /**
      * <p>
      * Gets the console output for the specified instance. For Linux instances, the instance console output displays the
      * exact console output that would normally be displayed on a physical monitor attached to a computer. For Windows

@@ -27,7 +27,12 @@ public class GetGroupVersionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /** The ID of the Greengrass group. */
     private String groupId;
-    /** The ID of the group version. */
+    /**
+     * The ID of the group version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last
+     * one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding
+     * ''GroupInformation'' object.
+     */
     private String groupVersionId;
 
     /**
@@ -65,10 +70,16 @@ public class GetGroupVersionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The ID of the group version.
+     * The ID of the group version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last
+     * one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding
+     * ''GroupInformation'' object.
      * 
      * @param groupVersionId
-     *        The ID of the group version.
+     *        The ID of the group version. This value maps to the ''Version'' property of the corresponding
+     *        ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the
+     *        last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the
+     *        corresponding ''GroupInformation'' object.
      */
 
     public void setGroupVersionId(String groupVersionId) {
@@ -76,9 +87,15 @@ public class GetGroupVersionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The ID of the group version.
+     * The ID of the group version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last
+     * one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding
+     * ''GroupInformation'' object.
      * 
-     * @return The ID of the group version.
+     * @return The ID of the group version. This value maps to the ''Version'' property of the corresponding
+     *         ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the
+     *         last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the
+     *         corresponding ''GroupInformation'' object.
      */
 
     public String getGroupVersionId() {
@@ -86,10 +103,16 @@ public class GetGroupVersionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The ID of the group version.
+     * The ID of the group version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last
+     * one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding
+     * ''GroupInformation'' object.
      * 
      * @param groupVersionId
-     *        The ID of the group version.
+     *        The ID of the group version. This value maps to the ''Version'' property of the corresponding
+     *        ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the
+     *        last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the
+     *        corresponding ''GroupInformation'' object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

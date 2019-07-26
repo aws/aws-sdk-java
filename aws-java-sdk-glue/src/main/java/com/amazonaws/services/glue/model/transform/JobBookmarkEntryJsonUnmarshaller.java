@@ -64,6 +64,14 @@ public class JobBookmarkEntryJsonUnmarshaller implements Unmarshaller<JobBookmar
                     context.nextToken();
                     jobBookmarkEntry.setAttempt(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("PreviousRunId", targetDepth)) {
+                    context.nextToken();
+                    jobBookmarkEntry.setPreviousRunId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RunId", targetDepth)) {
+                    context.nextToken();
+                    jobBookmarkEntry.setRunId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("JobBookmark", targetDepth)) {
                     context.nextToken();
                     jobBookmarkEntry.setJobBookmark(context.getUnmarshaller(String.class).unmarshall(context));

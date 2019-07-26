@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class StartQueryRequestMarshaller {
 
     private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
+    private static final MarshallingInfo<List> LOGGROUPNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("logGroupNames").build();
     private static final MarshallingInfo<Long> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("startTime").build();
     private static final MarshallingInfo<Long> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +58,7 @@ public class StartQueryRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(startQueryRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
+            protocolMarshaller.marshall(startQueryRequest.getLogGroupNames(), LOGGROUPNAMES_BINDING);
             protocolMarshaller.marshall(startQueryRequest.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(startQueryRequest.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(startQueryRequest.getQueryString(), QUERYSTRING_BINDING);

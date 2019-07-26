@@ -731,6 +731,32 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetJobBookmarkResult> getJobBookmarkAsync(GetJobBookmarkRequest request) {
+
+        return getJobBookmarkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJobBookmarkResult> getJobBookmarkAsync(GetJobBookmarkRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetJobBookmarkRequest, GetJobBookmarkResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJobBookmarksResult> getJobBookmarksAsync(GetJobBookmarksRequest request) {
+
+        return getJobBookmarksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJobBookmarksResult> getJobBookmarksAsync(GetJobBookmarksRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetJobBookmarksRequest, GetJobBookmarksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetJobRunResult> getJobRunAsync(GetJobRunRequest request) {
 
         return getJobRunAsync(request, null);

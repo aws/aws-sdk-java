@@ -83,6 +83,7 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
      * is not affected.
      * </p>
      */
+    @Deprecated
     private Long storedBytes;
 
     /**
@@ -400,7 +401,7 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
      *        be reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for
      *        log groups is not affected.
      */
-
+    @Deprecated
     public void setStoredBytes(Long storedBytes) {
         this.storedBytes = storedBytes;
     }
@@ -421,7 +422,7 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
      *         be reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for
      *         log groups is not affected.
      */
-
+    @Deprecated
     public Long getStoredBytes() {
         return this.storedBytes;
     }
@@ -444,7 +445,7 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
      *        log groups is not affected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public LogStream withStoredBytes(Long storedBytes) {
         setStoredBytes(storedBytes);
         return this;

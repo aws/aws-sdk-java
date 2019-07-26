@@ -280,6 +280,29 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
+     * Creates recommendations that helps you save cost by identifying idle and underutilized Amazon EC2 instances.
+     * </p>
+     * <p>
+     * Recommendations are generated to either downsize or terminate instances, along with providing savings detail and
+     * metrics. For details on calculation and function, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing Your Cost with
+     * Rightsizing Recommendations</a>.
+     * </p>
+     * 
+     * @param getRightsizingRecommendationRequest
+     * @return Result of the GetRightsizingRecommendation operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetRightsizingRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRightsizingRecommendationResult getRightsizingRecommendation(GetRightsizingRecommendationRequest getRightsizingRecommendationRequest);
+
+    /**
+     * <p>
      * Queries for available tag keys and tag values for a specified period. You can search the tag values for an
      * arbitrary string.
      * </p>
@@ -317,7 +340,7 @@ public interface AWSCostExplorer {
      *         The requested data is unavailable.
      * @throws UnresolvableUsageUnitException
      *         Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code> filter
-     *         selections that contain matching units, for example: <code>hours</code>.(
+     *         selections that contain matching units, for example: <code>hours</code>.
      * @sample AWSCostExplorer.GetUsageForecast
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast" target="_top">AWS API
      *      Documentation</a>

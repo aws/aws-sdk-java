@@ -29,7 +29,12 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
     private String nextToken;
     /** The ID of the subscription definition. */
     private String subscriptionDefinitionId;
-    /** The ID of the subscription definition version. */
+    /**
+     * The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the
+     * version is the last one that was associated with a subscription definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+     */
     private String subscriptionDefinitionVersionId;
 
     /**
@@ -101,10 +106,16 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * The ID of the subscription definition version.
+     * The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the
+     * version is the last one that was associated with a subscription definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
      * 
      * @param subscriptionDefinitionVersionId
-     *        The ID of the subscription definition version.
+     *        The ID of the subscription definition version. This value maps to the ''Version'' property of the
+     *        corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions''
+     *        requests. If the version is the last one that was associated with a subscription definition, the value
+     *        also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
      */
 
     public void setSubscriptionDefinitionVersionId(String subscriptionDefinitionVersionId) {
@@ -112,9 +123,15 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * The ID of the subscription definition version.
+     * The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the
+     * version is the last one that was associated with a subscription definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
      * 
-     * @return The ID of the subscription definition version.
+     * @return The ID of the subscription definition version. This value maps to the ''Version'' property of the
+     *         corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions''
+     *         requests. If the version is the last one that was associated with a subscription definition, the value
+     *         also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
      */
 
     public String getSubscriptionDefinitionVersionId() {
@@ -122,10 +139,16 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * The ID of the subscription definition version.
+     * The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the
+     * version is the last one that was associated with a subscription definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
      * 
      * @param subscriptionDefinitionVersionId
-     *        The ID of the subscription definition version.
+     *        The ID of the subscription definition version. This value maps to the ''Version'' property of the
+     *        corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions''
+     *        requests. If the version is the last one that was associated with a subscription definition, the value
+     *        also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -4195,7 +4195,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     }
 
     /**
-     * Retrieves the tags for a resource.
+     * Retrieves a list of resource tags for a resource arn.
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
@@ -4413,9 +4413,11 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     }
 
     /**
-     * Add tags to a resource.
+     * Add resource tags to a Greengrass Resource. Valid resources are Group, Connector, Core, Device, Function, Logger,
+     * Subscription, and Resource Defintions, and also BulkDeploymentIds.
      * 
      * @param tagResourceRequest
+     *        A map of the key-value pairs for the resource tag.
      * @return Result of the TagResource operation returned by the service.
      * @throws BadRequestException
      *         invalid request
@@ -4466,7 +4468,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     }
 
     /**
-     * Remove tags with specified keys from a resource.
+     * Remove resource tags from a Greengrass Resource.
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.

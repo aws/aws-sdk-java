@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code> filter selections
- * that contain matching units, for example: <code>hours</code>.(
+ * that contain matching units, for example: <code>hours</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -27,7 +27,12 @@ public class GetFunctionDefinitionVersionRequest extends com.amazonaws.AmazonWeb
 
     /** The ID of the Lambda function definition. */
     private String functionDefinitionId;
-    /** The ID of the function definition version. */
+    /**
+     * The ID of the function definition version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version
+     * is the last one that was associated with a function definition, the value also maps to the ''LatestVersion''
+     * property of the corresponding ''DefinitionInformation'' object.
+     */
     private String functionDefinitionVersionId;
     /** The token for the next set of results, or ''null'' if there are no additional results. */
     private String nextToken;
@@ -67,10 +72,16 @@ public class GetFunctionDefinitionVersionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * The ID of the function definition version.
+     * The ID of the function definition version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version
+     * is the last one that was associated with a function definition, the value also maps to the ''LatestVersion''
+     * property of the corresponding ''DefinitionInformation'' object.
      * 
      * @param functionDefinitionVersionId
-     *        The ID of the function definition version.
+     *        The ID of the function definition version. This value maps to the ''Version'' property of the
+     *        corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions''
+     *        requests. If the version is the last one that was associated with a function definition, the value also
+     *        maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
      */
 
     public void setFunctionDefinitionVersionId(String functionDefinitionVersionId) {
@@ -78,9 +89,15 @@ public class GetFunctionDefinitionVersionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * The ID of the function definition version.
+     * The ID of the function definition version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version
+     * is the last one that was associated with a function definition, the value also maps to the ''LatestVersion''
+     * property of the corresponding ''DefinitionInformation'' object.
      * 
-     * @return The ID of the function definition version.
+     * @return The ID of the function definition version. This value maps to the ''Version'' property of the
+     *         corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions''
+     *         requests. If the version is the last one that was associated with a function definition, the value also
+     *         maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
      */
 
     public String getFunctionDefinitionVersionId() {
@@ -88,10 +105,16 @@ public class GetFunctionDefinitionVersionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * The ID of the function definition version.
+     * The ID of the function definition version. This value maps to the ''Version'' property of the corresponding
+     * ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version
+     * is the last one that was associated with a function definition, the value also maps to the ''LatestVersion''
+     * property of the corresponding ''DefinitionInformation'' object.
      * 
      * @param functionDefinitionVersionId
-     *        The ID of the function definition version.
+     *        The ID of the function definition version. This value maps to the ''Version'' property of the
+     *        corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions''
+     *        requests. If the version is the last one that was associated with a function definition, the value also
+     *        maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

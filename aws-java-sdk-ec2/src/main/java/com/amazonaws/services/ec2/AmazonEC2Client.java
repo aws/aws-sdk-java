@@ -15908,6 +15908,55 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
 
     /**
+     * @param getCapacityReservationUsageRequest
+     * @return Result of the GetCapacityReservationUsage operation returned by the service.
+     * @sample AmazonEC2.GetCapacityReservationUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCapacityReservationUsageResult getCapacityReservationUsage(GetCapacityReservationUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCapacityReservationUsage(request);
+    }
+
+    @SdkInternalApi
+    final GetCapacityReservationUsageResult executeGetCapacityReservationUsage(GetCapacityReservationUsageRequest getCapacityReservationUsageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCapacityReservationUsageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCapacityReservationUsageRequest> request = null;
+        Response<GetCapacityReservationUsageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCapacityReservationUsageRequestMarshaller().marshall(super.beforeMarshalling(getCapacityReservationUsageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCapacityReservationUsage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetCapacityReservationUsageResult> responseHandler = new StaxResponseHandler<GetCapacityReservationUsageResult>(
+                    new GetCapacityReservationUsageResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Gets the console output for the specified instance. For Linux instances, the instance console output displays the
      * exact console output that would normally be displayed on a physical monitor attached to a computer. For Windows

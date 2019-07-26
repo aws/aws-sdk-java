@@ -175,6 +175,10 @@ public interface AWSLogsAsync extends AWSLogs {
      * data for each export task, you can specify a prefix to be used as the Amazon S3 key prefix for all exported
      * objects.
      * </p>
+     * <p>
+     * Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to S3 buckets encrypted with
+     * SSE-KMS is not supported.
+     * </p>
      * 
      * @param createExportTaskRequest
      * @return A Java Future containing the result of the CreateExportTask operation returned by the service.
@@ -198,6 +202,10 @@ public interface AWSLogsAsync extends AWSLogs {
      * You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate out log
      * data for each export task, you can specify a prefix to be used as the Amazon S3 key prefix for all exported
      * objects.
+     * </p>
+     * <p>
+     * Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to S3 buckets encrypted with
+     * SSE-KMS is not supported.
      * </p>
      * 
      * @param createExportTaskRequest
@@ -1139,8 +1147,7 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Returns the results from the specified query. If the query is in progress, partial results of that current
-     * execution are returned.
+     * Returns the results from the specified query.
      * </p>
      * <p>
      * Only the fields requested in the query are returned, along with a <code>@ptr</code> field which is the identifier
@@ -1148,6 +1155,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * <code>GetQueryResults</code> does not start a query execution. To run a query, use .
+     * </p>
+     * <p>
+     * If the value of the <code>Status</code> field in the output is <code>Running</code>, this operation returns only
+     * partial results. If you see a value of <code>Scheduled</code> or <code>Running</code> for the status, you can
+     * retry the operation later to see the final results.
      * </p>
      * 
      * @param getQueryResultsRequest
@@ -1160,8 +1172,7 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Returns the results from the specified query. If the query is in progress, partial results of that current
-     * execution are returned.
+     * Returns the results from the specified query.
      * </p>
      * <p>
      * Only the fields requested in the query are returned, along with a <code>@ptr</code> field which is the identifier
@@ -1169,6 +1180,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * <code>GetQueryResults</code> does not start a query execution. To run a query, use .
+     * </p>
+     * <p>
+     * If the value of the <code>Status</code> field in the output is <code>Running</code>, this operation returns only
+     * partial results. If you see a value of <code>Scheduled</code> or <code>Running</code> for the status, you can
+     * retry the operation later to see the final results.
      * </p>
      * 
      * @param getQueryResultsRequest
@@ -1219,14 +1235,14 @@ public interface AWSLogsAsync extends AWSLogs {
      * <p>
      * Creates or updates a destination. A destination encapsulates a physical resource (such as an Amazon Kinesis
      * stream) and enables you to subscribe to a real-time stream of log events for a different account, ingested using
-     * <a>PutLogEvents</a>. Currently, the only supported physical resource is a Kinesis stream belonging to the same
-     * account as the destination.
+     * <a>PutLogEvents</a>. A destination can be an Amazon Kinesis stream, Amazon Kinesis Data Firehose strea, or an AWS
+     * Lambda function.
      * </p>
      * <p>
-     * Through an access policy, a destination controls what is written to its Kinesis stream. By default,
-     * <code>PutDestination</code> does not set any access policy with the destination, which means a cross-account user
-     * cannot call <a>PutSubscriptionFilter</a> against this destination. To enable this, the destination owner must
-     * call <a>PutDestinationPolicy</a> after <code>PutDestination</code>.
+     * Through an access policy, a destination controls what is written to it. By default, <code>PutDestination</code>
+     * does not set any access policy with the destination, which means a cross-account user cannot call
+     * <a>PutSubscriptionFilter</a> against this destination. To enable this, the destination owner must call
+     * <a>PutDestinationPolicy</a> after <code>PutDestination</code>.
      * </p>
      * 
      * @param putDestinationRequest
@@ -1241,14 +1257,14 @@ public interface AWSLogsAsync extends AWSLogs {
      * <p>
      * Creates or updates a destination. A destination encapsulates a physical resource (such as an Amazon Kinesis
      * stream) and enables you to subscribe to a real-time stream of log events for a different account, ingested using
-     * <a>PutLogEvents</a>. Currently, the only supported physical resource is a Kinesis stream belonging to the same
-     * account as the destination.
+     * <a>PutLogEvents</a>. A destination can be an Amazon Kinesis stream, Amazon Kinesis Data Firehose strea, or an AWS
+     * Lambda function.
      * </p>
      * <p>
-     * Through an access policy, a destination controls what is written to its Kinesis stream. By default,
-     * <code>PutDestination</code> does not set any access policy with the destination, which means a cross-account user
-     * cannot call <a>PutSubscriptionFilter</a> against this destination. To enable this, the destination owner must
-     * call <a>PutDestinationPolicy</a> after <code>PutDestination</code>.
+     * Through an access policy, a destination controls what is written to it. By default, <code>PutDestination</code>
+     * does not set any access policy with the destination, which means a cross-account user cannot call
+     * <a>PutSubscriptionFilter</a> against this destination. To enable this, the destination owner must call
+     * <a>PutDestinationPolicy</a> after <code>PutDestination</code>.
      * </p>
      * 
      * @param putDestinationRequest

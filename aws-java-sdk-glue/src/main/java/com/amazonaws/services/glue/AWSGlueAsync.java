@@ -1859,6 +1859,68 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Returns information on a job bookmark entry.
+     * </p>
+     * 
+     * @param getJobBookmarkRequest
+     * @return A Java Future containing the result of the GetJobBookmark operation returned by the service.
+     * @sample AWSGlueAsync.GetJobBookmark
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmark" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetJobBookmarkResult> getJobBookmarkAsync(GetJobBookmarkRequest getJobBookmarkRequest);
+
+    /**
+     * <p>
+     * Returns information on a job bookmark entry.
+     * </p>
+     * 
+     * @param getJobBookmarkRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetJobBookmark operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetJobBookmark
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmark" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetJobBookmarkResult> getJobBookmarkAsync(GetJobBookmarkRequest getJobBookmarkRequest,
+            com.amazonaws.handlers.AsyncHandler<GetJobBookmarkRequest, GetJobBookmarkResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information on the job bookmark entries. The list is ordered on decreasing version numbers.
+     * </p>
+     * 
+     * @param getJobBookmarksRequest
+     * @return A Java Future containing the result of the GetJobBookmarks operation returned by the service.
+     * @sample AWSGlueAsync.GetJobBookmarks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmarks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetJobBookmarksResult> getJobBookmarksAsync(GetJobBookmarksRequest getJobBookmarksRequest);
+
+    /**
+     * <p>
+     * Returns information on the job bookmark entries. The list is ordered on decreasing version numbers.
+     * </p>
+     * 
+     * @param getJobBookmarksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetJobBookmarks operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetJobBookmarks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmarks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetJobBookmarksResult> getJobBookmarksAsync(GetJobBookmarksRequest getJobBookmarksRequest,
+            com.amazonaws.handlers.AsyncHandler<GetJobBookmarksRequest, GetJobBookmarksResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the metadata for a given job run.
      * </p>
      * 

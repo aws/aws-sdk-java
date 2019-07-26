@@ -102,6 +102,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * group.
      * </p>
      */
+    @Deprecated
     private Boolean interleaved;
 
     /**
@@ -575,7 +576,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      *        to be true. The response from this operation will always interleave events from multiple log streams
      *        within a log group.
      */
-
+    @Deprecated
     public void setInterleaved(Boolean interleaved) {
         this.interleaved = interleaved;
     }
@@ -602,7 +603,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      *         to be true. The response from this operation will always interleave events from multiple log streams
      *         within a log group.
      */
-
+    @Deprecated
     public Boolean getInterleaved() {
         return this.interleaved;
     }
@@ -631,7 +632,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      *        within a log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public FilterLogEventsRequest withInterleaved(Boolean interleaved) {
         setInterleaved(interleaved);
         return this;
@@ -659,7 +660,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      *         to be true. The response from this operation will always interleave events from multiple log streams
      *         within a log group.
      */
-
+    @Deprecated
     public Boolean isInterleaved() {
         return this.interleaved;
     }

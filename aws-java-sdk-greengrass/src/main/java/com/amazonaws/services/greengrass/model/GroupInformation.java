@@ -34,9 +34,9 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     private String id;
     /** The time, in milliseconds since the epoch, when the group was last updated. */
     private String lastUpdatedTimestamp;
-    /** The latest version of the group. */
+    /** The ID of the latest version associated with the group. */
     private String latestVersion;
-    /** The ARN of the latest version of the group. */
+    /** The ARN of the latest version associated with the group. */
     private String latestVersionArn;
     /** The name of the group. */
     private String name;
@@ -178,10 +178,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The latest version of the group.
+     * The ID of the latest version associated with the group.
      * 
      * @param latestVersion
-     *        The latest version of the group.
+     *        The ID of the latest version associated with the group.
      */
 
     public void setLatestVersion(String latestVersion) {
@@ -189,9 +189,9 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The latest version of the group.
+     * The ID of the latest version associated with the group.
      * 
-     * @return The latest version of the group.
+     * @return The ID of the latest version associated with the group.
      */
 
     public String getLatestVersion() {
@@ -199,10 +199,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The latest version of the group.
+     * The ID of the latest version associated with the group.
      * 
      * @param latestVersion
-     *        The latest version of the group.
+     *        The ID of the latest version associated with the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,10 +212,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ARN of the latest version of the group.
+     * The ARN of the latest version associated with the group.
      * 
      * @param latestVersionArn
-     *        The ARN of the latest version of the group.
+     *        The ARN of the latest version associated with the group.
      */
 
     public void setLatestVersionArn(String latestVersionArn) {
@@ -223,9 +223,9 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ARN of the latest version of the group.
+     * The ARN of the latest version associated with the group.
      * 
-     * @return The ARN of the latest version of the group.
+     * @return The ARN of the latest version associated with the group.
      */
 
     public String getLatestVersionArn() {
@@ -233,10 +233,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ARN of the latest version of the group.
+     * The ARN of the latest version associated with the group.
      * 
      * @param latestVersionArn
-     *        The ARN of the latest version of the group.
+     *        The ARN of the latest version associated with the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -70,6 +70,10 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
      * are returned first. The default value is false.
      * </p>
+     * <p>
+     * If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     * <code>startFromHead</code>.
+     * </p>
      */
     private Boolean startFromHead;
 
@@ -363,10 +367,17 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
      * are returned first. The default value is false.
      * </p>
+     * <p>
+     * If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     * <code>startFromHead</code>.
+     * </p>
      * 
      * @param startFromHead
      *        If the value is true, the earliest log events are returned first. If the value is false, the latest log
-     *        events are returned first. The default value is false.
+     *        events are returned first. The default value is false.</p>
+     *        <p>
+     *        If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     *        <code>startFromHead</code>.
      */
 
     public void setStartFromHead(Boolean startFromHead) {
@@ -378,9 +389,16 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
      * are returned first. The default value is false.
      * </p>
+     * <p>
+     * If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     * <code>startFromHead</code>.
+     * </p>
      * 
      * @return If the value is true, the earliest log events are returned first. If the value is false, the latest log
-     *         events are returned first. The default value is false.
+     *         events are returned first. The default value is false.</p>
+     *         <p>
+     *         If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     *         <code>startFromHead</code>.
      */
 
     public Boolean getStartFromHead() {
@@ -392,10 +410,17 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
      * are returned first. The default value is false.
      * </p>
+     * <p>
+     * If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     * <code>startFromHead</code>.
+     * </p>
      * 
      * @param startFromHead
      *        If the value is true, the earliest log events are returned first. If the value is false, the latest log
-     *        events are returned first. The default value is false.
+     *        events are returned first. The default value is false.</p>
+     *        <p>
+     *        If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     *        <code>startFromHead</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,9 +434,16 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
      * are returned first. The default value is false.
      * </p>
+     * <p>
+     * If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     * <code>startFromHead</code>.
+     * </p>
      * 
      * @return If the value is true, the earliest log events are returned first. If the value is false, the latest log
-     *         events are returned first. The default value is false.
+     *         events are returned first. The default value is false.</p>
+     *         <p>
+     *         If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     *         <code>startFromHead</code>.
      */
 
     public Boolean isStartFromHead() {
