@@ -782,6 +782,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("PullRequestStatusRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.PullRequestStatusRequiredException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentReferenceUpdateException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.ConcurrentReferenceUpdateException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("SamePathRequestException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.SamePathRequestException.class))
                     .addErrorMetadata(
@@ -1779,6 +1782,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws MaximumItemsToCompareExceededException
      *         The maximum number of items to compare between the source or destination branches and the merge base has
      *         exceeded the maximum allowed.
+     * @throws ConcurrentReferenceUpdateException
+     *         The merge cannot be completed because the target branch has been modified. Another user might have
+     *         modified the target branch while the merge was in progress. Wait a few minutes, and then try again.
      * @throws FileModeRequiredException
      *         The commit cannot be created because a file mode is required to update mode permissions for an existing
      *         file, but no file mode has been specified.
@@ -3976,6 +3982,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws ManualMergeRequiredException
      *         The pull request cannot be merged automatically into the destination branch. You must manually merge the
      *         branches and resolve any conflicts.
+     * @throws ConcurrentReferenceUpdateException
+     *         The merge cannot be completed because the target branch has been modified. Another user might have
+     *         modified the target branch while the merge was in progress. Wait a few minutes, and then try again.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -4124,6 +4133,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         the maximum number of characters allowed for an email address.
      * @throws CommitMessageLengthExceededException
      *         The commit message is too long. Provide a shorter string.
+     * @throws ConcurrentReferenceUpdateException
+     *         The merge cannot be completed because the target branch has been modified. Another user might have
+     *         modified the target branch while the merge was in progress. Wait a few minutes, and then try again.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -4222,6 +4234,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws ManualMergeRequiredException
      *         The pull request cannot be merged automatically into the destination branch. You must manually merge the
      *         branches and resolve any conflicts.
+     * @throws ConcurrentReferenceUpdateException
+     *         The merge cannot be completed because the target branch has been modified. Another user might have
+     *         modified the target branch while the merge was in progress. Wait a few minutes, and then try again.
      * @throws InvalidConflictDetailLevelException
      *         The specified conflict detail level is not valid.
      * @throws InvalidConflictResolutionStrategyException
@@ -4372,6 +4387,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         </p>
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
+     * @throws ConcurrentReferenceUpdateException
+     *         The merge cannot be completed because the target branch has been modified. Another user might have
+     *         modified the target branch while the merge was in progress. Wait a few minutes, and then try again.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -4484,6 +4502,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         USE_NEW_CONTENT was specified but no replacement content has been provided.
      * @throws MaximumConflictResolutionEntriesExceededException
      *         The number of allowed conflict resolution entries was exceeded.
+     * @throws ConcurrentReferenceUpdateException
+     *         The merge cannot be completed because the target branch has been modified. Another user might have
+     *         modified the target branch while the merge was in progress. Wait a few minutes, and then try again.
      * @throws PathRequiredException
      *         The folderPath for a location cannot be null.
      * @throws InvalidPathException
@@ -4667,6 +4688,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws RepositoryNotAssociatedWithPullRequestException
      *         The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify
      *         the correct repository name for the pull request ID.
+     * @throws ConcurrentReferenceUpdateException
+     *         The merge cannot be completed because the target branch has been modified. Another user might have
+     *         modified the target branch while the merge was in progress. Wait a few minutes, and then try again.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException

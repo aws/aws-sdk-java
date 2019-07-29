@@ -1,3 +1,8 @@
+# __1.11.601__ __2019-07-29__
+## __AWS CodeCommit__
+  - ### Features
+    - This release supports better exception handling for merges.
+
 # __1.11.600__ __2019-07-26__
 ## __AWS Batch__
   - ### Features

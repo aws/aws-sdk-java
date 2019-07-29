@@ -36,8 +36,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
     private String name;
     /**
      * <p>
-     * The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple
-     * Notification Service (SNS).
+     * The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon SNS.
      * </p>
      */
     private String destinationArn;
@@ -55,7 +54,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * While no content is required in the array, you must include the array itself.
+     * Although no content is required in the array, you must include the array itself.
      * </p>
      * </note>
      */
@@ -63,7 +62,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The repository events that will cause the trigger to run actions in another service, such as sending a
-     * notification through Amazon Simple Notification Service (SNS).
+     * notification through Amazon SNS.
      * </p>
      * <note>
      * <p>
@@ -115,13 +114,11 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple
-     * Notification Service (SNS).
+     * The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon SNS.
      * </p>
      * 
      * @param destinationArn
-     *        The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple
-     *        Notification Service (SNS).
+     *        The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon SNS.
      */
 
     public void setDestinationArn(String destinationArn) {
@@ -130,12 +127,10 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple
-     * Notification Service (SNS).
+     * The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon SNS.
      * </p>
      * 
-     * @return The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon
-     *         Simple Notification Service (SNS).
+     * @return The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon SNS.
      */
 
     public String getDestinationArn() {
@@ -144,13 +139,11 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple
-     * Notification Service (SNS).
+     * The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon SNS.
      * </p>
      * 
      * @param destinationArn
-     *        The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple
-     *        Notification Service (SNS).
+     *        The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon SNS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,14 +205,14 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * While no content is required in the array, you must include the array itself.
+     * Although no content is required in the array, you must include the array itself.
      * </p>
      * </note>
      * 
      * @return The branches that will be included in the trigger configuration. If you specify an empty array, the
      *         trigger will apply to all branches.</p> <note>
      *         <p>
-     *         While no content is required in the array, you must include the array itself.
+     *         Although no content is required in the array, you must include the array itself.
      *         </p>
      */
 
@@ -234,7 +227,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * While no content is required in the array, you must include the array itself.
+     * Although no content is required in the array, you must include the array itself.
      * </p>
      * </note>
      * 
@@ -242,7 +235,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      *        The branches that will be included in the trigger configuration. If you specify an empty array, the
      *        trigger will apply to all branches.</p> <note>
      *        <p>
-     *        While no content is required in the array, you must include the array itself.
+     *        Although no content is required in the array, you must include the array itself.
      *        </p>
      */
 
@@ -262,7 +255,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * While no content is required in the array, you must include the array itself.
+     * Although no content is required in the array, you must include the array itself.
      * </p>
      * </note>
      * <p>
@@ -275,7 +268,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      *        The branches that will be included in the trigger configuration. If you specify an empty array, the
      *        trigger will apply to all branches.</p> <note>
      *        <p>
-     *        While no content is required in the array, you must include the array itself.
+     *        Although no content is required in the array, you must include the array itself.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -297,7 +290,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * While no content is required in the array, you must include the array itself.
+     * Although no content is required in the array, you must include the array itself.
      * </p>
      * </note>
      * 
@@ -305,7 +298,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      *        The branches that will be included in the trigger configuration. If you specify an empty array, the
      *        trigger will apply to all branches.</p> <note>
      *        <p>
-     *        While no content is required in the array, you must include the array itself.
+     *        Although no content is required in the array, you must include the array itself.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -318,7 +311,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The repository events that will cause the trigger to run actions in another service, such as sending a
-     * notification through Amazon Simple Notification Service (SNS).
+     * notification through Amazon SNS.
      * </p>
      * <note>
      * <p>
@@ -327,7 +320,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      * </note>
      * 
      * @return The repository events that will cause the trigger to run actions in another service, such as sending a
-     *         notification through Amazon Simple Notification Service (SNS). </p> <note>
+     *         notification through Amazon SNS. </p> <note>
      *         <p>
      *         The valid value "all" cannot be used with any other values.
      *         </p>
@@ -341,7 +334,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The repository events that will cause the trigger to run actions in another service, such as sending a
-     * notification through Amazon Simple Notification Service (SNS).
+     * notification through Amazon SNS.
      * </p>
      * <note>
      * <p>
@@ -351,7 +344,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      * 
      * @param events
      *        The repository events that will cause the trigger to run actions in another service, such as sending a
-     *        notification through Amazon Simple Notification Service (SNS). </p> <note>
+     *        notification through Amazon SNS. </p> <note>
      *        <p>
      *        The valid value "all" cannot be used with any other values.
      *        </p>
@@ -370,7 +363,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The repository events that will cause the trigger to run actions in another service, such as sending a
-     * notification through Amazon Simple Notification Service (SNS).
+     * notification through Amazon SNS.
      * </p>
      * <note>
      * <p>
@@ -385,7 +378,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      * 
      * @param events
      *        The repository events that will cause the trigger to run actions in another service, such as sending a
-     *        notification through Amazon Simple Notification Service (SNS). </p> <note>
+     *        notification through Amazon SNS. </p> <note>
      *        <p>
      *        The valid value "all" cannot be used with any other values.
      *        </p>
@@ -406,7 +399,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The repository events that will cause the trigger to run actions in another service, such as sending a
-     * notification through Amazon Simple Notification Service (SNS).
+     * notification through Amazon SNS.
      * </p>
      * <note>
      * <p>
@@ -416,7 +409,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      * 
      * @param events
      *        The repository events that will cause the trigger to run actions in another service, such as sending a
-     *        notification through Amazon Simple Notification Service (SNS). </p> <note>
+     *        notification through Amazon SNS. </p> <note>
      *        <p>
      *        The valid value "all" cannot be used with any other values.
      *        </p>
@@ -432,7 +425,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The repository events that will cause the trigger to run actions in another service, such as sending a
-     * notification through Amazon Simple Notification Service (SNS).
+     * notification through Amazon SNS.
      * </p>
      * <note>
      * <p>
@@ -442,7 +435,7 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      * 
      * @param events
      *        The repository events that will cause the trigger to run actions in another service, such as sending a
-     *        notification through Amazon Simple Notification Service (SNS). </p> <note>
+     *        notification through Amazon SNS. </p> <note>
      *        <p>
      *        The valid value "all" cannot be used with any other values.
      *        </p>
