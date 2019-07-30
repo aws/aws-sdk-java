@@ -52,7 +52,7 @@ public class MultiFactorAuthentication implements Serializable {
 
     /**
      * Constructs a new {@link MultiFactorAuthentication} object for use in any 
-     * Amazonn S3
+     * Amazon S3
      * operation that accepts requests with Multi-Factor Authentication (MFA).
      * 
      * @param deviceSerialNumber
