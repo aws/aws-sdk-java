@@ -92,6 +92,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setOutputGroupDetails(new ListUnmarshaller<OutputGroupDetail>(OutputGroupDetailJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("priority", targetDepth)) {
+                    context.nextToken();
+                    job.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("queue", targetDepth)) {
                     context.nextToken();
                     job.setQueue(context.getUnmarshaller(String.class).unmarshall(context));

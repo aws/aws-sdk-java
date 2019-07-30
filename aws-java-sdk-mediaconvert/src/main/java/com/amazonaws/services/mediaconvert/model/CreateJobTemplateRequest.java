@@ -38,6 +38,12 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     /** The name of the job template you are creating. */
     private String name;
     /**
+     * Specify the relative priority for this job. In any given queue, the service begins processing the job with the
+     * highest value first. When more than one job has the same priority, the service begins processing the job that you
+     * submitted first. If you don't specify a priority, the service uses the default value 0.
+     */
+    private Integer priority;
+    /**
      * Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go
      * to the default queue.
      */
@@ -201,6 +207,52 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public CreateJobTemplateRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * Specify the relative priority for this job. In any given queue, the service begins processing the job with the
+     * highest value first. When more than one job has the same priority, the service begins processing the job that you
+     * submitted first. If you don't specify a priority, the service uses the default value 0.
+     * 
+     * @param priority
+     *        Specify the relative priority for this job. In any given queue, the service begins processing the job with
+     *        the highest value first. When more than one job has the same priority, the service begins processing the
+     *        job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+     */
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    /**
+     * Specify the relative priority for this job. In any given queue, the service begins processing the job with the
+     * highest value first. When more than one job has the same priority, the service begins processing the job that you
+     * submitted first. If you don't specify a priority, the service uses the default value 0.
+     * 
+     * @return Specify the relative priority for this job. In any given queue, the service begins processing the job
+     *         with the highest value first. When more than one job has the same priority, the service begins processing
+     *         the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+     */
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * Specify the relative priority for this job. In any given queue, the service begins processing the job with the
+     * highest value first. When more than one job has the same priority, the service begins processing the job that you
+     * submitted first. If you don't specify a priority, the service uses the default value 0.
+     * 
+     * @param priority
+     *        Specify the relative priority for this job. In any given queue, the service begins processing the job with
+     *        the highest value first. When more than one job has the same priority, the service begins processing the
+     *        job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobTemplateRequest withPriority(Integer priority) {
+        setPriority(priority);
         return this;
     }
 
@@ -429,6 +481,8 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("Description: ").append(getDescription()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPriority() != null)
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getQueue() != null)
             sb.append("Queue: ").append(getQueue()).append(",");
         if (getSettings() != null)
@@ -467,6 +521,10 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getPriority() == null ^ this.getPriority() == null)
+            return false;
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
+            return false;
         if (other.getQueue() == null ^ this.getQueue() == null)
             return false;
         if (other.getQueue() != null && other.getQueue().equals(this.getQueue()) == false)
@@ -495,6 +553,7 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         hashCode = prime * hashCode + ((getStatusUpdateInterval() == null) ? 0 : getStatusUpdateInterval().hashCode());

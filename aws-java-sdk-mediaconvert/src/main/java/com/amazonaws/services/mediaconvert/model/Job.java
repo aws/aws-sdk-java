@@ -61,6 +61,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private String jobTemplate;
     /** List of output group details */
     private java.util.List<OutputGroupDetail> outputGroupDetails;
+    /** Relative priority on the job. */
+    private Integer priority;
     /**
      * Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to
      * the default queue. For more about queues, see the User Guide topic at
@@ -583,6 +585,40 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Relative priority on the job.
+     * 
+     * @param priority
+     *        Relative priority on the job.
+     */
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    /**
+     * Relative priority on the job.
+     * 
+     * @return Relative priority on the job.
+     */
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * Relative priority on the job.
+     * 
+     * @param priority
+     *        Relative priority on the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withPriority(Integer priority) {
+        setPriority(priority);
+        return this;
+    }
+
+    /**
      * Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to
      * the default queue. For more about queues, see the User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
@@ -989,6 +1025,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("JobTemplate: ").append(getJobTemplate()).append(",");
         if (getOutputGroupDetails() != null)
             sb.append("OutputGroupDetails: ").append(getOutputGroupDetails()).append(",");
+        if (getPriority() != null)
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getQueue() != null)
             sb.append("Queue: ").append(getQueue()).append(",");
         if (getRetryCount() != null)
@@ -1063,6 +1101,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOutputGroupDetails() != null && other.getOutputGroupDetails().equals(this.getOutputGroupDetails()) == false)
             return false;
+        if (other.getPriority() == null ^ this.getPriority() == null)
+            return false;
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
+            return false;
         if (other.getQueue() == null ^ this.getQueue() == null)
             return false;
         if (other.getQueue() != null && other.getQueue().equals(this.getQueue()) == false)
@@ -1114,6 +1156,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJobPercentComplete() == null) ? 0 : getJobPercentComplete().hashCode());
         hashCode = prime * hashCode + ((getJobTemplate() == null) ? 0 : getJobTemplate().hashCode());
         hashCode = prime * hashCode + ((getOutputGroupDetails() == null) ? 0 : getOutputGroupDetails().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
         hashCode = prime * hashCode + ((getRetryCount() == null) ? 0 : getRetryCount().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());

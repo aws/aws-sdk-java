@@ -51,6 +51,8 @@ public class JobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobTemplate").build();
     private static final MarshallingInfo<List> OUTPUTGROUPDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputGroupDetails").build();
+    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("priority").build();
     private static final MarshallingInfo<String> QUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("queue").build();
     private static final MarshallingInfo<Integer> RETRYCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -95,6 +97,7 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getJobPercentComplete(), JOBPERCENTCOMPLETE_BINDING);
             protocolMarshaller.marshall(job.getJobTemplate(), JOBTEMPLATE_BINDING);
             protocolMarshaller.marshall(job.getOutputGroupDetails(), OUTPUTGROUPDETAILS_BINDING);
+            protocolMarshaller.marshall(job.getPriority(), PRIORITY_BINDING);
             protocolMarshaller.marshall(job.getQueue(), QUEUE_BINDING);
             protocolMarshaller.marshall(job.getRetryCount(), RETRYCOUNT_BINDING);
             protocolMarshaller.marshall(job.getRole(), ROLE_BINDING);

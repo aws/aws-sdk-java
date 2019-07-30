@@ -40,6 +40,8 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastUpdated;
     /** A name you create for each job template. Each name must be unique within your account. */
     private String name;
+    /** Relative priority on the job. */
+    private Integer priority;
     /**
      * Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go
      * to the default queue.
@@ -301,6 +303,40 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Relative priority on the job.
+     * 
+     * @param priority
+     *        Relative priority on the job.
+     */
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    /**
+     * Relative priority on the job.
+     * 
+     * @return Relative priority on the job.
+     */
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * Relative priority on the job.
+     * 
+     * @param priority
+     *        Relative priority on the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobTemplate withPriority(Integer priority) {
+        setPriority(priority);
+        return this;
+    }
+
+    /**
      * Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go
      * to the default queue.
      * 
@@ -532,6 +568,8 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
             sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPriority() != null)
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getQueue() != null)
             sb.append("Queue: ").append(getQueue()).append(",");
         if (getSettings() != null)
@@ -582,6 +620,10 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getPriority() == null ^ this.getPriority() == null)
+            return false;
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
+            return false;
         if (other.getQueue() == null ^ this.getQueue() == null)
             return false;
         if (other.getQueue() != null && other.getQueue().equals(this.getQueue()) == false)
@@ -613,6 +655,7 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         hashCode = prime * hashCode + ((getStatusUpdateInterval() == null) ? 0 : getStatusUpdateInterval().hashCode());

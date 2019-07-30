@@ -104,7 +104,7 @@ public interface AmazonPolly {
      * <code>ListLexicon</code> APIs.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+     * For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
      * Lexicons</a>.
      * </p>
      * 
@@ -162,7 +162,7 @@ public interface AmazonPolly {
     /**
      * <p>
      * Returns the content of the specified pronunciation lexicon stored in an AWS Region. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
      * </p>
      * 
      * @param getLexiconRequest
@@ -205,7 +205,7 @@ public interface AmazonPolly {
     /**
      * <p>
      * Returns a list of pronunciation lexicons stored in an AWS Region. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
      * </p>
      * 
      * @param listLexiconsRequest
@@ -245,7 +245,7 @@ public interface AmazonPolly {
      * time before the lexicon is available to the SynthesizeSpeech operation.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+     * For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
      * Lexicons</a>.
      * </p>
      * 
@@ -259,7 +259,7 @@ public interface AmazonPolly {
      *         and <code>ipa</code>.
      * @throws UnsupportedPlsLanguageException
      *         The language specified in the lexicon is unsupported. For a list of supported languages, see <a
-     *         href="http://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.
+     *         href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.
      * @throws LexiconSizeExceededException
      *         The maximum size of the specified lexicon would be exceeded by this operation.
      * @throws MaxLexemeLengthExceededException
@@ -303,6 +303,9 @@ public interface AmazonPolly {
      * @throws InvalidSsmlException
      *         The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values, and then try
      *         again.
+     * @throws EngineNotSupportedException
+     *         This engine is not compatible with the voice that you have designated. Choose a new voice that is
+     *         compatible with the engine or change the engine and restart the operation.
      * @throws LexiconNotFoundException
      *         Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its
      *         name is misspelled or specifying a lexicon that is in a different region.</p>
@@ -329,7 +332,7 @@ public interface AmazonPolly {
      * Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must be valid, well-formed SSML.
      * Some alphabets might not be available with all the voices (for example, Cyrillic might not be read at all by
      * English voices) unless phoneme mapping is used. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it Works</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it Works</a>.
      * </p>
      * 
      * @param synthesizeSpeechRequest
@@ -360,6 +363,9 @@ public interface AmazonPolly {
      *         SSML speech marks are not supported for plain text-type input.
      * @throws LanguageNotSupportedException
      *         The language specified is not currently supported by Amazon Polly in this capacity.
+     * @throws EngineNotSupportedException
+     *         This engine is not compatible with the voice that you have designated. Choose a new voice that is
+     *         compatible with the engine or change the engine and restart the operation.
      * @sample AmazonPolly.SynthesizeSpeech
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech" target="_top">AWS API
      *      Documentation</a>

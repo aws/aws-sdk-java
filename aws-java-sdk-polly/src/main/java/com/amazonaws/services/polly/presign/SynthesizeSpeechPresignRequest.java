@@ -49,6 +49,8 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
 
     private String languageCode;
 
+    private String engine;
+
     /**
      * @return Expiration of the presigned request. Default is {@link AmazonPollyPresigners#SYNTHESIZE_SPEECH_DEFAULT_EXPIRATION_MINUTES}
      * minutes if not overridden.
@@ -381,6 +383,28 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
      */
     public SynthesizeSpeechPresignRequest withLanguageCode(String languageCode) {
         setLanguageCode(languageCode);
+        return this;
+    }
+
+    /**
+     * @see SynthesizeSpeechRequest#getEngine()
+     */
+    public String getEngine() {
+        return engine;
+    }
+
+    /**
+     * @see SynthesizeSpeechRequest#setEngine(String)
+     */
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
+    /**
+     * @see SynthesizeSpeechRequest#withEngine(String)
+     */
+    public SynthesizeSpeechPresignRequest withEngine(String engine) {
+        setEngine(engine);
         return this;
     }
 }

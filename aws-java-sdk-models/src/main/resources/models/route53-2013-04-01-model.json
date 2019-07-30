@@ -1268,6 +1268,7 @@
         "eu-west-2",
         "eu-west-3",
         "ap-east-1",
+        "me-south-1",
         "ap-south-1",
         "ap-southeast-1",
         "ap-southeast-2",
@@ -3347,7 +3348,7 @@
         },
         "StartRecordIdentifier":{
           "shape":"ResourceRecordSetIdentifier",
-          "documentation":"<p> <i>Weighted resource record sets only:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>",
+          "documentation":"<p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>",
           "location":"querystring",
           "locationName":"identifier"
         },
@@ -4261,6 +4262,7 @@
         "cn-north-1",
         "cn-northwest-1",
         "ap-east-1",
+        "me-south-1",
         "ap-south-1"
       ],
       "max":64,
@@ -5069,6 +5071,7 @@
         "eu-west-3",
         "eu-central-1",
         "ap-east-1",
+        "me-south-1",
         "ap-southeast-1",
         "ap-southeast-2",
         "ap-south-1",

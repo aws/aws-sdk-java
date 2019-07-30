@@ -40,6 +40,8 @@ public class VoiceMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<List> ADDITIONALLANGUAGECODES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalLanguageCodes").build();
+    private static final MarshallingInfo<List> SUPPORTEDENGINES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupportedEngines").build();
 
     private static final VoiceMarshaller instance = new VoiceMarshaller();
 
@@ -63,6 +65,7 @@ public class VoiceMarshaller {
             protocolMarshaller.marshall(voice.getLanguageName(), LANGUAGENAME_BINDING);
             protocolMarshaller.marshall(voice.getName(), NAME_BINDING);
             protocolMarshaller.marshall(voice.getAdditionalLanguageCodes(), ADDITIONALLANGUAGECODES_BINDING);
+            protocolMarshaller.marshall(voice.getSupportedEngines(), SUPPORTEDENGINES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

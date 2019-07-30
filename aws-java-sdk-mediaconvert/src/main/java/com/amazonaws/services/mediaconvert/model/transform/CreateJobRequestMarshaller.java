@@ -40,6 +40,8 @@ public class CreateJobRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> JOBTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobTemplate").build();
+    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("priority").build();
     private static final MarshallingInfo<String> QUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("queue").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -71,6 +73,7 @@ public class CreateJobRequestMarshaller {
             protocolMarshaller.marshall(createJobRequest.getBillingTagsSource(), BILLINGTAGSSOURCE_BINDING);
             protocolMarshaller.marshall(createJobRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createJobRequest.getJobTemplate(), JOBTEMPLATE_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getPriority(), PRIORITY_BINDING);
             protocolMarshaller.marshall(createJobRequest.getQueue(), QUEUE_BINDING);
             protocolMarshaller.marshall(createJobRequest.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(createJobRequest.getSettings(), SETTINGS_BINDING);

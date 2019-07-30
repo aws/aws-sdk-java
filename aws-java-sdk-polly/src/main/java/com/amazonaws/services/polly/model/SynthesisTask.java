@@ -30,6 +30,13 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input
+     * text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.
+     * </p>
+     */
+    private String engine;
+    /**
+     * <p>
      * The Amazon Polly generated identifier for a speech synthesis task.
      * </p>
      */
@@ -89,7 +96,8 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
      * The audio frequency specified in Hz.
      * </p>
      * <p>
-     * The valid values for mp3 and ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".
+     * The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard
+     * voices is "22050". The default value for neural voices is "24000".
      * </p>
      * <p>
      * Valid values for pcm are "8000" and "16000" The default value is "16000".
@@ -128,6 +136,77 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String languageCode;
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input
+     * text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.
+     * </p>
+     * 
+     * @param engine
+     *        Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when
+     *        processing input text for speech synthesis. Using a voice that is not supported for the engine selected
+     *        will result in an error.
+     * @see Engine
+     */
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input
+     * text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.
+     * </p>
+     * 
+     * @return Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when
+     *         processing input text for speech synthesis. Using a voice that is not supported for the engine selected
+     *         will result in an error.
+     * @see Engine
+     */
+
+    public String getEngine() {
+        return this.engine;
+    }
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input
+     * text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.
+     * </p>
+     * 
+     * @param engine
+     *        Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when
+     *        processing input text for speech synthesis. Using a voice that is not supported for the engine selected
+     *        will result in an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Engine
+     */
+
+    public SynthesisTask withEngine(String engine) {
+        setEngine(engine);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input
+     * text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.
+     * </p>
+     * 
+     * @param engine
+     *        Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when
+     *        processing input text for speech synthesis. Using a voice that is not supported for the engine selected
+     *        will result in an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Engine
+     */
+
+    public SynthesisTask withEngine(Engine engine) {
+        this.engine = engine.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -581,7 +660,8 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
      * The audio frequency specified in Hz.
      * </p>
      * <p>
-     * The valid values for mp3 and ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".
+     * The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard
+     * voices is "22050". The default value for neural voices is "24000".
      * </p>
      * <p>
      * Valid values for pcm are "8000" and "16000" The default value is "16000".
@@ -590,7 +670,8 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
      * @param sampleRate
      *        The audio frequency specified in Hz.</p>
      *        <p>
-     *        The valid values for mp3 and ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".
+     *        The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
+     *        standard voices is "22050". The default value for neural voices is "24000".
      *        </p>
      *        <p>
      *        Valid values for pcm are "8000" and "16000" The default value is "16000".
@@ -605,7 +686,8 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
      * The audio frequency specified in Hz.
      * </p>
      * <p>
-     * The valid values for mp3 and ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".
+     * The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard
+     * voices is "22050". The default value for neural voices is "24000".
      * </p>
      * <p>
      * Valid values for pcm are "8000" and "16000" The default value is "16000".
@@ -613,7 +695,8 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The audio frequency specified in Hz.</p>
      *         <p>
-     *         The valid values for mp3 and ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".
+     *         The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
+     *         standard voices is "22050". The default value for neural voices is "24000".
      *         </p>
      *         <p>
      *         Valid values for pcm are "8000" and "16000" The default value is "16000".
@@ -628,7 +711,8 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
      * The audio frequency specified in Hz.
      * </p>
      * <p>
-     * The valid values for mp3 and ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".
+     * The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard
+     * voices is "22050". The default value for neural voices is "24000".
      * </p>
      * <p>
      * Valid values for pcm are "8000" and "16000" The default value is "16000".
@@ -637,7 +721,8 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
      * @param sampleRate
      *        The audio frequency specified in Hz.</p>
      *        <p>
-     *        The valid values for mp3 and ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".
+     *        The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
+     *        standard voices is "22050". The default value for neural voices is "24000".
      *        </p>
      *        <p>
      *        Valid values for pcm are "8000" and "16000" The default value is "16000".
@@ -996,6 +1081,8 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEngine() != null)
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getTaskId() != null)
             sb.append("TaskId: ").append(getTaskId()).append(",");
         if (getTaskStatus() != null)
@@ -1038,6 +1125,10 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof SynthesisTask == false)
             return false;
         SynthesisTask other = (SynthesisTask) obj;
+        if (other.getEngine() == null ^ this.getEngine() == null)
+            return false;
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
+            return false;
         if (other.getTaskId() == null ^ this.getTaskId() == null)
             return false;
         if (other.getTaskId() != null && other.getTaskId().equals(this.getTaskId()) == false)
@@ -1102,6 +1193,7 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
         hashCode = prime * hashCode + ((getTaskId() == null) ? 0 : getTaskId().hashCode());
         hashCode = prime * hashCode + ((getTaskStatus() == null) ? 0 : getTaskStatus().hashCode());
         hashCode = prime * hashCode + ((getTaskStatusReason() == null) ? 0 : getTaskStatusReason().hashCode());

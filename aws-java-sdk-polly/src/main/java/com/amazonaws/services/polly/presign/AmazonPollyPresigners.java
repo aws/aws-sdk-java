@@ -98,6 +98,10 @@ public final class AmazonPollyPresigners {
         if (synthesizeSpeechRequest.getLanguageCode() != null) {
             request.addParameter("LanguageCode", synthesizeSpeechRequest.getLanguageCode());
         }
+
+        if (synthesizeSpeechRequest.getEngine() != null) {
+            request.addParameter("Engine", synthesizeSpeechRequest.getEngine());
+        }
     }
 
     private Request<?> newRequest(AWSCredentialsProvider credentials) {

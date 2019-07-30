@@ -37,6 +37,8 @@ public class CreateJobTemplateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("priority").build();
     private static final MarshallingInfo<String> QUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("queue").build();
     private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -66,6 +68,7 @@ public class CreateJobTemplateRequestMarshaller {
             protocolMarshaller.marshall(createJobTemplateRequest.getCategory(), CATEGORY_BINDING);
             protocolMarshaller.marshall(createJobTemplateRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createJobTemplateRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createJobTemplateRequest.getPriority(), PRIORITY_BINDING);
             protocolMarshaller.marshall(createJobTemplateRequest.getQueue(), QUEUE_BINDING);
             protocolMarshaller.marshall(createJobTemplateRequest.getSettings(), SETTINGS_BINDING);
             protocolMarshaller.marshall(createJobTemplateRequest.getStatusUpdateInterval(), STATUSUPDATEINTERVAL_BINDING);

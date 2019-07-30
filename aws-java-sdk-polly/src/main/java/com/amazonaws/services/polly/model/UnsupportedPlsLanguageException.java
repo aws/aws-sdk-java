@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The language specified in the lexicon is unsupported. For a list of supported languages, see <a
- * href="http://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.
+ * href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

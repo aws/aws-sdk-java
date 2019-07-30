@@ -48,6 +48,10 @@ public class SynthesisTaskJsonUnmarshaller implements Unmarshaller<SynthesisTask
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Engine", targetDepth)) {
+                    context.nextToken();
+                    synthesisTask.setEngine(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("TaskId", targetDepth)) {
                     context.nextToken();
                     synthesisTask.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));

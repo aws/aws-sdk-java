@@ -103,9 +103,9 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
     private String startRecordType;
     /**
      * <p>
-     * <i>Weighted resource record sets only:</i> If results were truncated for a given DNS name and type, specify the
-     * value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that
-     * has the current DNS name and type.
+     * <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+     * DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the
+     * next resource record set that has the current DNS name and type.
      * </p>
      */
     private String startRecordIdentifier;
@@ -838,15 +838,15 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * <i>Weighted resource record sets only:</i> If results were truncated for a given DNS name and type, specify the
-     * value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that
-     * has the current DNS name and type.
+     * <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+     * DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the
+     * next resource record set that has the current DNS name and type.
      * </p>
      * 
      * @param startRecordIdentifier
-     *        <i>Weighted resource record sets only:</i> If results were truncated for a given DNS name and type,
-     *        specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource
-     *        record set that has the current DNS name and type.
+     *        <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a
+     *        given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response
+     *        to get the next resource record set that has the current DNS name and type.
      */
 
     public void setStartRecordIdentifier(String startRecordIdentifier) {
@@ -855,14 +855,14 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * <i>Weighted resource record sets only:</i> If results were truncated for a given DNS name and type, specify the
-     * value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that
-     * has the current DNS name and type.
+     * <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+     * DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the
+     * next resource record set that has the current DNS name and type.
      * </p>
      * 
-     * @return <i>Weighted resource record sets only:</i> If results were truncated for a given DNS name and type,
-     *         specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next
-     *         resource record set that has the current DNS name and type.
+     * @return <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a
+     *         given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous
+     *         response to get the next resource record set that has the current DNS name and type.
      */
 
     public String getStartRecordIdentifier() {
@@ -871,15 +871,15 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * <i>Weighted resource record sets only:</i> If results were truncated for a given DNS name and type, specify the
-     * value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that
-     * has the current DNS name and type.
+     * <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+     * DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the
+     * next resource record set that has the current DNS name and type.
      * </p>
      * 
      * @param startRecordIdentifier
-     *        <i>Weighted resource record sets only:</i> If results were truncated for a given DNS name and type,
-     *        specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource
-     *        record set that has the current DNS name and type.
+     *        <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a
+     *        given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response
+     *        to get the next resource record set that has the current DNS name and type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

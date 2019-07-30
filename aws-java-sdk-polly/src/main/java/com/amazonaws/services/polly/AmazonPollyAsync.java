@@ -44,7 +44,7 @@ public interface AmazonPollyAsync extends AmazonPolly {
      * <code>ListLexicon</code> APIs.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+     * For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
      * Lexicons</a>.
      * </p>
      * 
@@ -63,7 +63,7 @@ public interface AmazonPollyAsync extends AmazonPolly {
      * <code>ListLexicon</code> APIs.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+     * For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
      * Lexicons</a>.
      * </p>
      * 
@@ -150,7 +150,7 @@ public interface AmazonPollyAsync extends AmazonPolly {
     /**
      * <p>
      * Returns the content of the specified pronunciation lexicon stored in an AWS Region. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
      * </p>
      * 
      * @param getLexiconRequest
@@ -164,7 +164,7 @@ public interface AmazonPollyAsync extends AmazonPolly {
     /**
      * <p>
      * Returns the content of the specified pronunciation lexicon stored in an AWS Region. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
      * </p>
      * 
      * @param getLexiconRequest
@@ -218,7 +218,7 @@ public interface AmazonPollyAsync extends AmazonPolly {
     /**
      * <p>
      * Returns a list of pronunciation lexicons stored in an AWS Region. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
      * </p>
      * 
      * @param listLexiconsRequest
@@ -232,7 +232,7 @@ public interface AmazonPollyAsync extends AmazonPolly {
     /**
      * <p>
      * Returns a list of pronunciation lexicons stored in an AWS Region. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
      * </p>
      * 
      * @param listLexiconsRequest
@@ -288,7 +288,7 @@ public interface AmazonPollyAsync extends AmazonPolly {
      * time before the lexicon is available to the SynthesizeSpeech operation.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+     * For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
      * Lexicons</a>.
      * </p>
      * 
@@ -307,7 +307,7 @@ public interface AmazonPollyAsync extends AmazonPolly {
      * time before the lexicon is available to the SynthesizeSpeech operation.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+     * For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
      * Lexicons</a>.
      * </p>
      * 
@@ -368,7 +368,7 @@ public interface AmazonPollyAsync extends AmazonPolly {
      * Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must be valid, well-formed SSML.
      * Some alphabets might not be available with all the voices (for example, Cyrillic might not be read at all by
      * English voices) unless phoneme mapping is used. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it Works</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it Works</a>.
      * </p>
      * 
      * @param synthesizeSpeechRequest
@@ -384,7 +384,7 @@ public interface AmazonPollyAsync extends AmazonPolly {
      * Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must be valid, well-formed SSML.
      * Some alphabets might not be available with all the voices (for example, Cyrillic might not be read at all by
      * English voices) unless phoneme mapping is used. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it Works</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it Works</a>.
      * </p>
      * 
      * @param synthesizeSpeechRequest

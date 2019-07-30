@@ -27,6 +27,13 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
+     * text for speech synthesis.
+     * </p>
+     */
+    private String engine;
+    /**
+     * <p>
      * The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list
      * of voices returned. If you don't specify this optional parameter, all available voices are returned.
      * </p>
@@ -48,6 +55,89 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String nextToken;
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
+     * text for speech synthesis.
+     * </p>
+     * 
+     * @param engine
+     *        Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
+     *        input text for speech synthesis.
+     * @see Engine
+     */
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
+     * text for speech synthesis.
+     * </p>
+     * 
+     * @return Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
+     *         input text for speech synthesis.
+     * @see Engine
+     */
+
+    public String getEngine() {
+        return this.engine;
+    }
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
+     * text for speech synthesis.
+     * </p>
+     * 
+     * @param engine
+     *        Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
+     *        input text for speech synthesis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Engine
+     */
+
+    public DescribeVoicesRequest withEngine(String engine) {
+        setEngine(engine);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
+     * text for speech synthesis.
+     * </p>
+     * 
+     * @param engine
+     *        Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
+     *        input text for speech synthesis.
+     * @see Engine
+     */
+
+    public void setEngine(Engine engine) {
+        withEngine(engine);
+    }
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
+     * text for speech synthesis.
+     * </p>
+     * 
+     * @param engine
+     *        Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
+     *        input text for speech synthesis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Engine
+     */
+
+    public DescribeVoicesRequest withEngine(Engine engine) {
+        this.engine = engine.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -271,6 +361,8 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEngine() != null)
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getIncludeAdditionalLanguageCodes() != null)
@@ -291,6 +383,10 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof DescribeVoicesRequest == false)
             return false;
         DescribeVoicesRequest other = (DescribeVoicesRequest) obj;
+        if (other.getEngine() == null ^ this.getEngine() == null)
+            return false;
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
+            return false;
         if (other.getLanguageCode() == null ^ this.getLanguageCode() == null)
             return false;
         if (other.getLanguageCode() != null && other.getLanguageCode().equals(this.getLanguageCode()) == false)
@@ -312,6 +408,7 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getIncludeAdditionalLanguageCodes() == null) ? 0 : getIncludeAdditionalLanguageCodes().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
