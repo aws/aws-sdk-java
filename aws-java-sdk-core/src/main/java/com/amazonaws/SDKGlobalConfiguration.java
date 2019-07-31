@@ -250,22 +250,23 @@ public class SDKGlobalConfiguration {
     public static final String ALTERNATE_ACCESS_KEY_ENV_VAR = "AWS_ACCESS_KEY";
 
     /** Environment variable name for the AWS secret key */
-    public static final String SECRET_KEY_ENV_VAR = "AWS_SECRET_KEY";
+    public static final String SECRET_KEY_ENV_VAR = "AWS_SECRET_ACCESS_KEY";
 
     /** Alternate environment variable name for the AWS secret key */
-    public static final String ALTERNATE_SECRET_KEY_ENV_VAR = "AWS_SECRET_ACCESS_KEY";
+    public static final String ALTERNATE_SECRET_KEY_ENV_VAR = "AWS_SECRET_KEY";
 
     /** Environment variable name for the AWS session token */
     public static final String AWS_SESSION_TOKEN_ENV_VAR = "AWS_SESSION_TOKEN";
 
-    /**
-     * Environment variable containing region used to configure clients.
-     */
-    public static final String AWS_REGION_ENV_VAR = "AWS_REGION";
+    /** * Environment variable containing region used to configure clients */
+    public static final String AWS_REGION_ENV_VAR = "AWS_DEFAULT_REGION";
+
+    /** * Alternate environment variable name for the AWS region */
+    public static final String ALTERNATE_AWS_REGION_ENV_VAR = "AWS_REGION";
 
     /**
-     * Environment variable to set an alternate path to the shared config file (default path is
-     * ~/.aws/config).
+     * Environment variable to set an alternate path to the shared config file
+     * (default path is ~/.aws/config).
      */
     public static final String AWS_CONFIG_FILE_ENV_VAR = "AWS_CONFIG_FILE";
 
