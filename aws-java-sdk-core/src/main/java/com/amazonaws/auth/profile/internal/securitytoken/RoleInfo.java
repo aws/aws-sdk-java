@@ -14,7 +14,6 @@
  */
 package com.amazonaws.auth.profile.internal.securitytoken;
 
-import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -62,6 +61,12 @@ public class RoleInfo implements Cloneable {
      * </p>
      */
     private String externalId;
+
+    /**
+     * The absolute path to a JWT token file to be used when assuming a role
+     * via Web Identity Tokens.
+     */
+    private String webIdentityTokenFilePath;
 
     /**
      * <p>
@@ -309,6 +314,30 @@ public class RoleInfo implements Cloneable {
      */
     public RoleInfo withExternalId(String externalId) {
         setExternalId(externalId);
+        return this;
+    }
+
+    /**
+     * Set the absolute path to the JWT file that contains a web identity token.
+     */
+    public void setWebIdentityTokenFilePath(String webIdentityTokenFilePath) {
+        this.webIdentityTokenFilePath = webIdentityTokenFilePath;
+    }
+
+    /**
+     * Get the absolute path to the JWT file that contains a web identity token.
+     * @return
+     */
+    public String getWebIdentityTokenFilePath() {
+        return webIdentityTokenFilePath;
+    }
+
+    /**
+     * Similar to {@link #setWebIdentityTokenFilePath(String)} but returns this for
+     * method chaining.
+     */
+    public RoleInfo withWebIdentityTokenFilePath(String webIdentityTokenFilePath) {
+        setWebIdentityTokenFilePath(webIdentityTokenFilePath);
         return this;
     }
 

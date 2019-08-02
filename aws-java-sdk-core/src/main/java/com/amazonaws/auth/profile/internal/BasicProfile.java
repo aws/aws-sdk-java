@@ -105,6 +105,10 @@ public class BasicProfile {
         return getPropertyValue(ProfileKeyConstants.CREDENTIAL_PROCESS);
     }
 
+    public String getWebIdentityTokenFilePath() {
+        return getPropertyValue(ProfileKeyConstants.WEB_IDENTITY_TOKEN);
+    }
+
     public boolean isRoleBasedProfile() {
         return getRoleArn() != null;
     }

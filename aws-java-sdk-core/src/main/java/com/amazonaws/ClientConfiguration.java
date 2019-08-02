@@ -29,6 +29,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Client configuration options such as proxy settings, user agent string, max retry attempts, etc.
@@ -356,6 +357,8 @@ public class ClientConfiguration {
      */
     private boolean disableHostPrefixInjection;
 
+    private final AtomicReference<URLHolder> httpProxyHolder = new AtomicReference<URLHolder>();
+
     public ClientConfiguration() {
         apacheHttpClientConfig = new ApacheHttpClientConfig();
     }
@@ -403,6 +406,7 @@ public class ClientConfiguration {
         this.headers.putAll(other.getHeaders());
         this.maxConsecutiveRetriesBeforeThrottling = other.getMaxConsecutiveRetriesBeforeThrottling();
         this.disableHostPrefixInjection = other.disableHostPrefixInjection;
+        this.httpProxyHolder.set(other.httpProxyHolder.get());
     }
 
     /**
@@ -682,13 +686,11 @@ public class ClientConfiguration {
      * variable HTTP_PROXY/http_proxy.
      */
     private String getProxyHostEnvironment() {
-        try {
-            return getProtocol() == Protocol.HTTPS
-                    ? new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY")).getHost()
-                    : new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY")).getHost();
-        } catch (MalformedURLException e) {
-            return null;
+        URL httpProxy = getHttpProxyEnvironmentVariable();
+        if (httpProxy != null) {
+            return httpProxy.getHost();
         }
+        return null;
     }
 
     /**
@@ -764,13 +766,11 @@ public class ClientConfiguration {
      * variable HTTP_PROXY/http_proxy.
      */
     private int getProxyPortEnvironment() {
-        try {
-            return getProtocol() == Protocol.HTTPS
-                    ? new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY")).getPort()
-                    : new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY")).getPort();
-        } catch (MalformedURLException e) {
-            return proxyPort;
+        URL httpProxy = getHttpProxyEnvironmentVariable();
+        if (httpProxy != null) {
+            return httpProxy.getPort();
         }
+        return proxyPort;
     }
 
     /**
@@ -869,13 +869,11 @@ public class ClientConfiguration {
      * the value of the environment variable HTTP_PROXY/http_proxy.
      */
     private String getProxyUsernameEnvironment() {
-        try {
-            return getProtocol() == Protocol.HTTPS
-                    ? new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY")).getUserInfo().split(":", 2)[0]
-                    : new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY")).getUserInfo().split(":", 2)[0];
-        } catch (Exception e) {
-            return null;
+        URL httpProxy = getHttpProxyEnvironmentVariable();
+        if (httpProxy != null) {
+            return httpProxy.getUserInfo().split(":", 2)[0];
         }
+        return null;
     }
 
     /**
@@ -947,13 +945,11 @@ public class ClientConfiguration {
      * variable HTTP_PROXY/http_proxy.
      */
     private String getProxyPasswordEnvironment() {
-        try {
-            return getProtocol() == Protocol.HTTPS
-                    ? new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY")).getUserInfo().split(":", 2)[1]
-                    : new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY")).getUserInfo().split(":", 2)[1];
-        } catch (Exception e) {
-            return null;
+        URL httpProxy = getHttpProxyEnvironmentVariable();
+        if (httpProxy != null) {
+            return httpProxy.getUserInfo().split(":", 2)[1];
         }
+        return null;
     }
 
     /**
@@ -2385,5 +2381,25 @@ public class ClientConfiguration {
     public ClientConfiguration withDisableHostPrefixInjection(boolean disableHostPrefixInjection) {
         setDisableHostPrefixInjection(disableHostPrefixInjection);
         return this;
+    }
+
+    private URL getHttpProxyEnvironmentVariable() {
+        if (httpProxyHolder.get() == null) {
+            URLHolder holder = new URLHolder();
+            try {
+                if (getProtocol() == Protocol.HTTPS) {
+                    holder.url = new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY"));
+                } else {
+                    holder.url = new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY"));
+                }
+            } catch (MalformedURLException ignored) {
+            }
+            httpProxyHolder.compareAndSet(null, holder);
+        }
+        return httpProxyHolder.get().url;
+    }
+
+    static class URLHolder {
+        private URL url;
     }
 }

@@ -87,8 +87,9 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
      * specify up to 10 managed policies to use as managed session policies. The plain text that you use for both inline
      * and managed session policies shouldn't exceed 2048 characters. You can provide up to 10 managed policy ARNs. For
-     * more information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+     * more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <p>
      * This parameter is optional. However, if you do not pass any session policies, then the resulting federated user
@@ -474,8 +475,9 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
      * specify up to 10 managed policies to use as managed session policies. The plain text that you use for both inline
      * and managed session policies shouldn't exceed 2048 characters. You can provide up to 10 managed policy ARNs. For
-     * more information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+     * more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <p>
      * This parameter is optional. However, if you do not pass any session policies, then the resulting federated user
@@ -510,8 +512,8 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *         policy. You can also specify up to 10 managed policies to use as managed session policies. The plain text
      *         that you use for both inline and managed session policies shouldn't exceed 2048 characters. You can
      *         provide up to 10 managed policy ARNs. For more information about ARNs, see <a
-     *         href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     *         Namespaces</a> in the AWS General Reference.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      *         </p>
      *         <p>
      *         This parameter is optional. However, if you do not pass any session policies, then the resulting
@@ -551,8 +553,9 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
      * specify up to 10 managed policies to use as managed session policies. The plain text that you use for both inline
      * and managed session policies shouldn't exceed 2048 characters. You can provide up to 10 managed policy ARNs. For
-     * more information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+     * more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <p>
      * This parameter is optional. However, if you do not pass any session policies, then the resulting federated user
@@ -588,8 +591,8 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        policy. You can also specify up to 10 managed policies to use as managed session policies. The plain text
      *        that you use for both inline and managed session policies shouldn't exceed 2048 characters. You can
      *        provide up to 10 managed policy ARNs. For more information about ARNs, see <a
-     *        href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     *        Namespaces</a> in the AWS General Reference.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      *        </p>
      *        <p>
      *        This parameter is optional. However, if you do not pass any session policies, then the resulting federated
@@ -634,8 +637,9 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
      * specify up to 10 managed policies to use as managed session policies. The plain text that you use for both inline
      * and managed session policies shouldn't exceed 2048 characters. You can provide up to 10 managed policy ARNs. For
-     * more information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+     * more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <p>
      * This parameter is optional. However, if you do not pass any session policies, then the resulting federated user
@@ -676,8 +680,8 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        policy. You can also specify up to 10 managed policies to use as managed session policies. The plain text
      *        that you use for both inline and managed session policies shouldn't exceed 2048 characters. You can
      *        provide up to 10 managed policy ARNs. For more information about ARNs, see <a
-     *        href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     *        Namespaces</a> in the AWS General Reference.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      *        </p>
      *        <p>
      *        This parameter is optional. However, if you do not pass any session policies, then the resulting federated
@@ -724,8 +728,9 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
      * specify up to 10 managed policies to use as managed session policies. The plain text that you use for both inline
      * and managed session policies shouldn't exceed 2048 characters. You can provide up to 10 managed policy ARNs. For
-     * more information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+     * more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <p>
      * This parameter is optional. However, if you do not pass any session policies, then the resulting federated user
@@ -761,8 +766,8 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        policy. You can also specify up to 10 managed policies to use as managed session policies. The plain text
      *        that you use for both inline and managed session policies shouldn't exceed 2048 characters. You can
      *        provide up to 10 managed policy ARNs. For more information about ARNs, see <a
-     *        href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     *        Namespaces</a> in the AWS General Reference.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
      *        </p>
      *        <p>
      *        This parameter is optional. However, if you do not pass any session policies, then the resulting federated

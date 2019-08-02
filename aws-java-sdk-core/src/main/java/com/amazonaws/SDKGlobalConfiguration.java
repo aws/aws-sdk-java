@@ -258,6 +258,15 @@ public class SDKGlobalConfiguration {
     /** Environment variable name for the AWS session token */
     public static final String AWS_SESSION_TOKEN_ENV_VAR = "AWS_SESSION_TOKEN";
 
+    /** Environment variable name for the AWS Web Identity Token File Path */
+    public static final String AWS_WEB_IDENTITY_ENV_VAR = "AWS_WEB_IDENTITY_TOKEN_FILE";
+
+    /** Environment variable name for the AWS role arn */
+    public static final String AWS_ROLE_ARN_ENV_VAR = "AWS_ROLE_ARN";
+
+    /** Environment variable name for the AWS role arn */
+    public static final String AWS_ROLE_SESSION_NAME_ENV_VAR = "AWS_ROLE_SESSION_NAME";
+
     /**
      * Environment variable containing region used to configure clients.
      */

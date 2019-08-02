@@ -51,10 +51,10 @@ public class MultiFactorAuthentication implements Serializable {
     private String token;
 
     /**
-     * Constructs a new {@link MultiFactorAuthentication} object for use in any 
+     * Constructs a new {@link MultiFactorAuthentication} object for use in any
      * Amazon S3
      * operation that accepts requests with Multi-Factor Authentication (MFA).
-     * 
+     *
      * @param deviceSerialNumber
      *            The serial number identifying the MFA device associated with
      *            the caller's AWS account.

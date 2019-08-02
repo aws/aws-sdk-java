@@ -74,4 +74,9 @@ public class ProfileKeyConstants {
      * @see ProcessCredentialsProvider
      */
     public static final String CREDENTIAL_PROCESS = "credential_process";
+
+    /**
+     * Absolute path to a JWT file containing a web identity token.
+     */
+    public static final String WEB_IDENTITY_TOKEN = "web_identity_token_file";
 }

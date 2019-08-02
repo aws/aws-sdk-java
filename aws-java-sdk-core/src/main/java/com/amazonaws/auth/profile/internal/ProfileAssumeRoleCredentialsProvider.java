@@ -79,7 +79,8 @@ public class ProfileAssumeRoleCredentialsProvider implements AWSCredentialsProvi
         RoleInfo roleInfo = new RoleInfo().withRoleArn(this.profile.getRoleArn())
                 .withRoleSessionName(roleSessionName)
                 .withExternalId(this.profile.getRoleExternalId())
-                .withLongLivedCredentials(sourceCredentials);
+                .withLongLivedCredentials(sourceCredentials)
+                .withWebIdentityTokenFilePath(this.profile.getWebIdentityTokenFilePath());
         return profileCredentialsService.getAssumeRoleCredentialsProvider(roleInfo);
     }
 }

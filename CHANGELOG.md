@@ -1,3 +1,12 @@
+# __1.11.603__ __2019-08-02__
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fixed a performance regression that increased the time to call the `getProxyHost()`, `getProxyPort()`, `getProxyUsername()` and `getProxyPassword()` methods of `ClientConfiguration`.
+
+## __AWS Security Token Service__
+  - ### Features
+    - Documentation updates for sts
+
 # __1.11.602__ __2019-07-30__
 ## __AWS Elemental MediaConvert__
   - ### Features
