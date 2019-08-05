@@ -22,10 +22,10 @@ public class DescribeAccountAuditConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     * certificates and other items as necessary when performing an audit.
+     * certificates, and other items as required when performing an audit.
      * </p>
      * <p>
-     * On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required.
+     * On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.
      * </p>
      */
     private String roleArn;
@@ -45,17 +45,17 @@ public class DescribeAccountAuditConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     * certificates and other items as necessary when performing an audit.
+     * certificates, and other items as required when performing an audit.
      * </p>
      * <p>
-     * On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required.
+     * On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.
      * </p>
      * 
      * @param roleArn
      *        The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     *        certificates and other items as necessary when performing an audit.</p>
+     *        certificates, and other items as required when performing an audit.</p>
      *        <p>
-     *        On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required.
+     *        On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.
      */
 
     public void setRoleArn(String roleArn) {
@@ -65,16 +65,16 @@ public class DescribeAccountAuditConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     * certificates and other items as necessary when performing an audit.
+     * certificates, and other items as required when performing an audit.
      * </p>
      * <p>
-     * On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required.
+     * On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.
      * </p>
      * 
      * @return The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     *         certificates and other items as necessary when performing an audit.</p>
+     *         certificates, and other items as required when performing an audit.</p>
      *         <p>
-     *         On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required.
+     *         On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.
      */
 
     public String getRoleArn() {
@@ -84,17 +84,17 @@ public class DescribeAccountAuditConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     * certificates and other items as necessary when performing an audit.
+     * certificates, and other items as required when performing an audit.
      * </p>
      * <p>
-     * On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required.
+     * On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.
      * </p>
      * 
      * @param roleArn
      *        The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     *        certificates and other items as necessary when performing an audit.</p>
+     *        certificates, and other items as required when performing an audit.</p>
      *        <p>
-     *        On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required.
+     *        On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

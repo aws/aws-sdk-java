@@ -48,6 +48,10 @@ public class PrivateLinkConfigJsonUnmarshaller implements Unmarshaller<PrivateLi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("VpcEndpointId", targetDepth)) {
+                    context.nextToken();
+                    privateLinkConfig.setVpcEndpointId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("PrivateLinkEndpoint", targetDepth)) {
                     context.nextToken();
                     privateLinkConfig.setPrivateLinkEndpoint(context.getUnmarshaller(String.class).unmarshall(context));

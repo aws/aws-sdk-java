@@ -51,13 +51,13 @@ public class TaskStatistics implements Serializable, Cloneable, StructuredPojo {
     private Integer compliantChecks;
     /**
      * <p>
-     * The number of checks that found non-compliant resources.
+     * The number of checks that found noncompliant resources.
      * </p>
      */
     private Integer nonCompliantChecks;
     /**
      * <p>
-     * The number of checks
+     * The number of checks.
      * </p>
      */
     private Integer failedChecks;
@@ -230,11 +230,11 @@ public class TaskStatistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of checks that found non-compliant resources.
+     * The number of checks that found noncompliant resources.
      * </p>
      * 
      * @param nonCompliantChecks
-     *        The number of checks that found non-compliant resources.
+     *        The number of checks that found noncompliant resources.
      */
 
     public void setNonCompliantChecks(Integer nonCompliantChecks) {
@@ -243,10 +243,10 @@ public class TaskStatistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of checks that found non-compliant resources.
+     * The number of checks that found noncompliant resources.
      * </p>
      * 
-     * @return The number of checks that found non-compliant resources.
+     * @return The number of checks that found noncompliant resources.
      */
 
     public Integer getNonCompliantChecks() {
@@ -255,11 +255,11 @@ public class TaskStatistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of checks that found non-compliant resources.
+     * The number of checks that found noncompliant resources.
      * </p>
      * 
      * @param nonCompliantChecks
-     *        The number of checks that found non-compliant resources.
+     *        The number of checks that found noncompliant resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,11 +270,11 @@ public class TaskStatistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of checks
+     * The number of checks.
      * </p>
      * 
      * @param failedChecks
-     *        The number of checks
+     *        The number of checks.
      */
 
     public void setFailedChecks(Integer failedChecks) {
@@ -283,10 +283,10 @@ public class TaskStatistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of checks
+     * The number of checks.
      * </p>
      * 
-     * @return The number of checks
+     * @return The number of checks.
      */
 
     public Integer getFailedChecks() {
@@ -295,11 +295,11 @@ public class TaskStatistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of checks
+     * The number of checks.
      * </p>
      * 
      * @param failedChecks
-     *        The number of checks
+     *        The number of checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

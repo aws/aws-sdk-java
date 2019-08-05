@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the resource that was non-compliant with the audit check.
+ * Information about the resource that was noncompliant with the audit check.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,30 +27,30 @@ public class NonCompliantResource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of the non-compliant resource.
+     * The type of the noncompliant resource.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * Information identifying the non-compliant resource.
+     * Information that identifies the noncompliant resource.
      * </p>
      */
     private ResourceIdentifier resourceIdentifier;
     /**
      * <p>
-     * Additional information about the non-compliant resource.
+     * Other information about the noncompliant resource.
      * </p>
      */
     private java.util.Map<String, String> additionalInfo;
 
     /**
      * <p>
-     * The type of the non-compliant resource.
+     * The type of the noncompliant resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of the non-compliant resource.
+     *        The type of the noncompliant resource.
      * @see ResourceType
      */
 
@@ -60,10 +60,10 @@ public class NonCompliantResource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of the non-compliant resource.
+     * The type of the noncompliant resource.
      * </p>
      * 
-     * @return The type of the non-compliant resource.
+     * @return The type of the noncompliant resource.
      * @see ResourceType
      */
 
@@ -73,11 +73,11 @@ public class NonCompliantResource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of the non-compliant resource.
+     * The type of the noncompliant resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of the non-compliant resource.
+     *        The type of the noncompliant resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -89,11 +89,11 @@ public class NonCompliantResource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of the non-compliant resource.
+     * The type of the noncompliant resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of the non-compliant resource.
+     *        The type of the noncompliant resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -105,11 +105,11 @@ public class NonCompliantResource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Information identifying the non-compliant resource.
+     * Information that identifies the noncompliant resource.
      * </p>
      * 
      * @param resourceIdentifier
-     *        Information identifying the non-compliant resource.
+     *        Information that identifies the noncompliant resource.
      */
 
     public void setResourceIdentifier(ResourceIdentifier resourceIdentifier) {
@@ -118,10 +118,10 @@ public class NonCompliantResource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Information identifying the non-compliant resource.
+     * Information that identifies the noncompliant resource.
      * </p>
      * 
-     * @return Information identifying the non-compliant resource.
+     * @return Information that identifies the noncompliant resource.
      */
 
     public ResourceIdentifier getResourceIdentifier() {
@@ -130,11 +130,11 @@ public class NonCompliantResource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Information identifying the non-compliant resource.
+     * Information that identifies the noncompliant resource.
      * </p>
      * 
      * @param resourceIdentifier
-     *        Information identifying the non-compliant resource.
+     *        Information that identifies the noncompliant resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,10 +145,10 @@ public class NonCompliantResource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Additional information about the non-compliant resource.
+     * Other information about the noncompliant resource.
      * </p>
      * 
-     * @return Additional information about the non-compliant resource.
+     * @return Other information about the noncompliant resource.
      */
 
     public java.util.Map<String, String> getAdditionalInfo() {
@@ -157,11 +157,11 @@ public class NonCompliantResource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Additional information about the non-compliant resource.
+     * Other information about the noncompliant resource.
      * </p>
      * 
      * @param additionalInfo
-     *        Additional information about the non-compliant resource.
+     *        Other information about the noncompliant resource.
      */
 
     public void setAdditionalInfo(java.util.Map<String, String> additionalInfo) {
@@ -170,11 +170,11 @@ public class NonCompliantResource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Additional information about the non-compliant resource.
+     * Other information about the noncompliant resource.
      * </p>
      * 
      * @param additionalInfo
-     *        Additional information about the non-compliant resource.
+     *        Other information about the noncompliant resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

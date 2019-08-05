@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Sends messge data to an AWS IoT Analytics channel.
+ * Sends message data to an AWS IoT Analytics channel.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

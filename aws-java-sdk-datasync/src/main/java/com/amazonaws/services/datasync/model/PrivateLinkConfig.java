@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The VPC endpoint, subnet and security group that an agent uses to access IP addresses in a VPC (Virtual Private
+ * Cloud).
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/PrivateLinkConfig" target="_top">AWS API
  *      Documentation</a>
@@ -25,14 +29,93 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will
+     * not be accessible over the public Internet.
+     * </p>
+     */
+    private String vpcEndpointId;
+    /**
+     * <p>
+     * The private endpoint that is configured for an agent that has access to IP addresses in a <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is
+     * configured with this endpoint will not be accessible over the public Internet.
+     * </p>
+     */
     private String privateLinkEndpoint;
-
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent
+     * that has access to a VPC endpoint.
+     * </p>
+     */
     private java.util.List<String> subnetArns;
-
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an
+     * agent activated in a VPC or an agent that has access to a VPC endpoint.
+     * </p>
+     */
     private java.util.List<String> securityGroupArns;
 
     /**
+     * <p>
+     * The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will
+     * not be accessible over the public Internet.
+     * </p>
+     * 
+     * @param vpcEndpointId
+     *        The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC
+     *        endpoint will not be accessible over the public Internet.
+     */
+
+    public void setVpcEndpointId(String vpcEndpointId) {
+        this.vpcEndpointId = vpcEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will
+     * not be accessible over the public Internet.
+     * </p>
+     * 
+     * @return The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC
+     *         endpoint will not be accessible over the public Internet.
+     */
+
+    public String getVpcEndpointId() {
+        return this.vpcEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will
+     * not be accessible over the public Internet.
+     * </p>
+     * 
+     * @param vpcEndpointId
+     *        The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC
+     *        endpoint will not be accessible over the public Internet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PrivateLinkConfig withVpcEndpointId(String vpcEndpointId) {
+        setVpcEndpointId(vpcEndpointId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The private endpoint that is configured for an agent that has access to IP addresses in a <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is
+     * configured with this endpoint will not be accessible over the public Internet.
+     * </p>
+     * 
      * @param privateLinkEndpoint
+     *        The private endpoint that is configured for an agent that has access to IP addresses in a <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent
+     *        that is configured with this endpoint will not be accessible over the public Internet.
      */
 
     public void setPrivateLinkEndpoint(String privateLinkEndpoint) {
@@ -40,7 +123,15 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The private endpoint that is configured for an agent that has access to IP addresses in a <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is
+     * configured with this endpoint will not be accessible over the public Internet.
+     * </p>
+     * 
+     * @return The private endpoint that is configured for an agent that has access to IP addresses in a <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent
+     *         that is configured with this endpoint will not be accessible over the public Internet.
      */
 
     public String getPrivateLinkEndpoint() {
@@ -48,7 +139,16 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The private endpoint that is configured for an agent that has access to IP addresses in a <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is
+     * configured with this endpoint will not be accessible over the public Internet.
+     * </p>
+     * 
      * @param privateLinkEndpoint
+     *        The private endpoint that is configured for an agent that has access to IP addresses in a <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent
+     *        that is configured with this endpoint will not be accessible over the public Internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +158,13 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent
+     * that has access to a VPC endpoint.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an
+     *         agent that has access to a VPC endpoint.
      */
 
     public java.util.List<String> getSubnetArns() {
@@ -66,7 +172,14 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent
+     * that has access to a VPC endpoint.
+     * </p>
+     * 
      * @param subnetArns
+     *        The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an
+     *        agent that has access to a VPC endpoint.
      */
 
     public void setSubnetArns(java.util.Collection<String> subnetArns) {
@@ -80,12 +193,18 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent
+     * that has access to a VPC endpoint.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnetArns(java.util.Collection)} or {@link #withSubnetArns(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param subnetArns
+     *        The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an
+     *        agent that has access to a VPC endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,7 +219,14 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent
+     * that has access to a VPC endpoint.
+     * </p>
+     * 
      * @param subnetArns
+     *        The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an
+     *        agent that has access to a VPC endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +236,13 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an
+     * agent activated in a VPC or an agent that has access to a VPC endpoint.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that
+     *         hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.
      */
 
     public java.util.List<String> getSecurityGroupArns() {
@@ -118,7 +250,14 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an
+     * agent activated in a VPC or an agent that has access to a VPC endpoint.
+     * </p>
+     * 
      * @param securityGroupArns
+     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that
+     *        hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.
      */
 
     public void setSecurityGroupArns(java.util.Collection<String> securityGroupArns) {
@@ -132,12 +271,18 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an
+     * agent activated in a VPC or an agent that has access to a VPC endpoint.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroupArns(java.util.Collection)} or {@link #withSecurityGroupArns(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param securityGroupArns
+     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that
+     *        hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,7 +297,14 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an
+     * agent activated in a VPC or an agent that has access to a VPC endpoint.
+     * </p>
+     * 
      * @param securityGroupArns
+     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that
+     *        hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,6 +325,8 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getVpcEndpointId() != null)
+            sb.append("VpcEndpointId: ").append(getVpcEndpointId()).append(",");
         if (getPrivateLinkEndpoint() != null)
             sb.append("PrivateLinkEndpoint: ").append(getPrivateLinkEndpoint()).append(",");
         if (getSubnetArns() != null)
@@ -193,6 +347,10 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof PrivateLinkConfig == false)
             return false;
         PrivateLinkConfig other = (PrivateLinkConfig) obj;
+        if (other.getVpcEndpointId() == null ^ this.getVpcEndpointId() == null)
+            return false;
+        if (other.getVpcEndpointId() != null && other.getVpcEndpointId().equals(this.getVpcEndpointId()) == false)
+            return false;
         if (other.getPrivateLinkEndpoint() == null ^ this.getPrivateLinkEndpoint() == null)
             return false;
         if (other.getPrivateLinkEndpoint() != null && other.getPrivateLinkEndpoint().equals(this.getPrivateLinkEndpoint()) == false)
@@ -213,6 +371,7 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getVpcEndpointId() == null) ? 0 : getVpcEndpointId().hashCode());
         hashCode = prime * hashCode + ((getPrivateLinkEndpoint() == null) ? 0 : getPrivateLinkEndpoint().hashCode());
         hashCode = prime * hashCode + ((getSubnetArns() == null) ? 0 : getSubnetArns().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupArns() == null) ? 0 : getSecurityGroupArns().hashCode());

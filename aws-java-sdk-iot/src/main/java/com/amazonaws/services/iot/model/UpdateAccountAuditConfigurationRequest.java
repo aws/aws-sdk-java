@@ -23,7 +23,7 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     * certificates and other items as necessary when performing an audit.
+     * certificates and other items as required when performing an audit.
      * </p>
      */
     private String roleArn;
@@ -36,19 +36,19 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are currently
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently
      * enabled.
      * </p>
      * <p>
-     * Note that some data collection may begin immediately when certain checks are enabled. When a check is disabled,
-     * any data collected so far in relation to the check is deleted.
+     * Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data
+     * collected so far in relation to the check is deleted.
      * </p>
      * <p>
      * You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
      * scheduled audit or delete the scheduled audit itself.
      * </p>
      * <p>
-     * On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required and must specify at
+     * On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at
      * least one enabled check.
      * </p>
      */
@@ -57,12 +57,12 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     * certificates and other items as necessary when performing an audit.
+     * certificates and other items as required when performing an audit.
      * </p>
      * 
      * @param roleArn
      *        The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     *        certificates and other items as necessary when performing an audit.
+     *        certificates and other items as required when performing an audit.
      */
 
     public void setRoleArn(String roleArn) {
@@ -72,11 +72,11 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     * certificates and other items as necessary when performing an audit.
+     * certificates and other items as required when performing an audit.
      * </p>
      * 
      * @return The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     *         certificates and other items as necessary when performing an audit.
+     *         certificates and other items as required when performing an audit.
      */
 
     public String getRoleArn() {
@@ -86,12 +86,12 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     * certificates and other items as necessary when performing an audit.
+     * certificates and other items as required when performing an audit.
      * </p>
      * 
      * @param roleArn
      *        The ARN of the role that grants permission to AWS IoT to access information about your devices, policies,
-     *        certificates and other items as necessary when performing an audit.
+     *        certificates and other items as required when performing an audit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,35 +165,35 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are currently
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently
      * enabled.
      * </p>
      * <p>
-     * Note that some data collection may begin immediately when certain checks are enabled. When a check is disabled,
-     * any data collected so far in relation to the check is deleted.
+     * Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data
+     * collected so far in relation to the check is deleted.
      * </p>
      * <p>
      * You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
      * scheduled audit or delete the scheduled audit itself.
      * </p>
      * <p>
-     * On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required and must specify at
+     * On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at
      * least one enabled check.
      * </p>
      * 
      * @return Specifies which audit checks are enabled and disabled for this account. Use
-     *         <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are
+     *         <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are
      *         currently enabled.</p>
      *         <p>
-     *         Note that some data collection may begin immediately when certain checks are enabled. When a check is
-     *         disabled, any data collected so far in relation to the check is deleted.
+     *         Some data collection might start immediately when certain checks are enabled. When a check is disabled,
+     *         any data collected so far in relation to the check is deleted.
      *         </p>
      *         <p>
      *         You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
      *         scheduled audit or delete the scheduled audit itself.
      *         </p>
      *         <p>
-     *         On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required and must
+     *         On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must
      *         specify at least one enabled check.
      */
 
@@ -204,36 +204,36 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are currently
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently
      * enabled.
      * </p>
      * <p>
-     * Note that some data collection may begin immediately when certain checks are enabled. When a check is disabled,
-     * any data collected so far in relation to the check is deleted.
+     * Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data
+     * collected so far in relation to the check is deleted.
      * </p>
      * <p>
      * You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
      * scheduled audit or delete the scheduled audit itself.
      * </p>
      * <p>
-     * On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required and must specify at
+     * On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at
      * least one enabled check.
      * </p>
      * 
      * @param auditCheckConfigurations
      *        Specifies which audit checks are enabled and disabled for this account. Use
-     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are
+     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are
      *        currently enabled.</p>
      *        <p>
-     *        Note that some data collection may begin immediately when certain checks are enabled. When a check is
-     *        disabled, any data collected so far in relation to the check is deleted.
+     *        Some data collection might start immediately when certain checks are enabled. When a check is disabled,
+     *        any data collected so far in relation to the check is deleted.
      *        </p>
      *        <p>
      *        You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
      *        scheduled audit or delete the scheduled audit itself.
      *        </p>
      *        <p>
-     *        On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required and must
+     *        On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must
      *        specify at least one enabled check.
      */
 
@@ -244,36 +244,36 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are currently
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently
      * enabled.
      * </p>
      * <p>
-     * Note that some data collection may begin immediately when certain checks are enabled. When a check is disabled,
-     * any data collected so far in relation to the check is deleted.
+     * Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data
+     * collected so far in relation to the check is deleted.
      * </p>
      * <p>
      * You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
      * scheduled audit or delete the scheduled audit itself.
      * </p>
      * <p>
-     * On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required and must specify at
+     * On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at
      * least one enabled check.
      * </p>
      * 
      * @param auditCheckConfigurations
      *        Specifies which audit checks are enabled and disabled for this account. Use
-     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are
+     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are
      *        currently enabled.</p>
      *        <p>
-     *        Note that some data collection may begin immediately when certain checks are enabled. When a check is
-     *        disabled, any data collected so far in relation to the check is deleted.
+     *        Some data collection might start immediately when certain checks are enabled. When a check is disabled,
+     *        any data collected so far in relation to the check is deleted.
      *        </p>
      *        <p>
      *        You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the
      *        scheduled audit or delete the scheduled audit itself.
      *        </p>
      *        <p>
-     *        On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required and must
+     *        On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must
      *        specify at least one enabled check.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

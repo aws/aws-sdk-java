@@ -10,46 +10,43 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.datasync.model.transform;
+package com.amazonaws.services.iot.model.transform;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.services.datasync.model.*;
+import com.amazonaws.services.iot.model.*;
 
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * EndpointOptionsMarshaller
+ * DescribeAuditFindingRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class EndpointOptionsMarshaller {
+public class DescribeAuditFindingRequestMarshaller {
 
-    private static final MarshallingInfo<Boolean> FIPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Fips").build();
-    private static final MarshallingInfo<Boolean> PRIVATELINK_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrivateLink").build();
+    private static final MarshallingInfo<String> FINDINGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("findingId").build();
 
-    private static final EndpointOptionsMarshaller instance = new EndpointOptionsMarshaller();
+    private static final DescribeAuditFindingRequestMarshaller instance = new DescribeAuditFindingRequestMarshaller();
 
-    public static EndpointOptionsMarshaller getInstance() {
+    public static DescribeAuditFindingRequestMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(EndpointOptions endpointOptions, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(DescribeAuditFindingRequest describeAuditFindingRequest, ProtocolMarshaller protocolMarshaller) {
 
-        if (endpointOptions == null) {
+        if (describeAuditFindingRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(endpointOptions.getFips(), FIPS_BINDING);
-            protocolMarshaller.marshall(endpointOptions.getPrivateLink(), PRIVATELINK_BINDING);
+            protocolMarshaller.marshall(describeAuditFindingRequest.getFindingId(), FINDINGID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

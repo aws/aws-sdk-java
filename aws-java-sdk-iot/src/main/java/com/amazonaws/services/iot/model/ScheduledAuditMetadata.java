@@ -39,7 +39,7 @@ public class ScheduledAuditMetadata implements Serializable, Cloneable, Structur
     private String scheduledAuditArn;
     /**
      * <p>
-     * How often the scheduled audit takes place.
+     * How often the scheduled audit occurs.
      * </p>
      */
     private String frequency;
@@ -141,11 +141,11 @@ public class ScheduledAuditMetadata implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * How often the scheduled audit takes place.
+     * How often the scheduled audit occurs.
      * </p>
      * 
      * @param frequency
-     *        How often the scheduled audit takes place.
+     *        How often the scheduled audit occurs.
      * @see AuditFrequency
      */
 
@@ -155,10 +155,10 @@ public class ScheduledAuditMetadata implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * How often the scheduled audit takes place.
+     * How often the scheduled audit occurs.
      * </p>
      * 
-     * @return How often the scheduled audit takes place.
+     * @return How often the scheduled audit occurs.
      * @see AuditFrequency
      */
 
@@ -168,11 +168,11 @@ public class ScheduledAuditMetadata implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * How often the scheduled audit takes place.
+     * How often the scheduled audit occurs.
      * </p>
      * 
      * @param frequency
-     *        How often the scheduled audit takes place.
+     *        How often the scheduled audit occurs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditFrequency
      */
@@ -184,11 +184,11 @@ public class ScheduledAuditMetadata implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * How often the scheduled audit takes place.
+     * How often the scheduled audit occurs.
      * </p>
      * 
      * @param frequency
-     *        How often the scheduled audit takes place.
+     *        How often the scheduled audit occurs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditFrequency
      */

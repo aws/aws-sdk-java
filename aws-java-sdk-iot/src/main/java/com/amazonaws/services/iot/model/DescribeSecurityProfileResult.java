@@ -51,7 +51,7 @@ public class DescribeSecurityProfileResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
      */
     private java.util.List<String> additionalMetricsToRetain;
@@ -331,11 +331,11 @@ public class DescribeSecurityProfileResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
      * 
      * @return A list of metrics whose data is retained (stored). By default, data is retained for any metric used in
-     *         the profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     *         the profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      */
 
     public java.util.List<String> getAdditionalMetricsToRetain() {
@@ -345,12 +345,12 @@ public class DescribeSecurityProfileResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
      * 
      * @param additionalMetricsToRetain
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      */
 
     public void setAdditionalMetricsToRetain(java.util.Collection<String> additionalMetricsToRetain) {
@@ -365,7 +365,7 @@ public class DescribeSecurityProfileResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -375,7 +375,7 @@ public class DescribeSecurityProfileResult extends com.amazonaws.AmazonWebServic
      * 
      * @param additionalMetricsToRetain
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,12 +392,12 @@ public class DescribeSecurityProfileResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
      * 
      * @param additionalMetricsToRetain
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

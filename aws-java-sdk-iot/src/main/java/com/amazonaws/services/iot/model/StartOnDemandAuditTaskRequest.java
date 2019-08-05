@@ -23,7 +23,7 @@ public class StartOnDemandAuditTaskRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Which checks are performed during the audit. The checks you specify must be enabled for your account or an
-     * exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including
+     * exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including
      * those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.
      * </p>
      */
@@ -32,12 +32,12 @@ public class StartOnDemandAuditTaskRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Which checks are performed during the audit. The checks you specify must be enabled for your account or an
-     * exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including
+     * exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including
      * those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.
      * </p>
      * 
      * @return Which checks are performed during the audit. The checks you specify must be enabled for your account or
-     *         an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
+     *         an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
      *         including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks
      *         are enabled.
      */
@@ -49,13 +49,13 @@ public class StartOnDemandAuditTaskRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Which checks are performed during the audit. The checks you specify must be enabled for your account or an
-     * exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including
+     * exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including
      * those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.
      * </p>
      * 
      * @param targetCheckNames
      *        Which checks are performed during the audit. The checks you specify must be enabled for your account or an
-     *        exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
+     *        exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
      *        including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks
      *        are enabled.
      */
@@ -72,7 +72,7 @@ public class StartOnDemandAuditTaskRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Which checks are performed during the audit. The checks you specify must be enabled for your account or an
-     * exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including
+     * exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including
      * those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.
      * </p>
      * <p>
@@ -83,7 +83,7 @@ public class StartOnDemandAuditTaskRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param targetCheckNames
      *        Which checks are performed during the audit. The checks you specify must be enabled for your account or an
-     *        exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
+     *        exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
      *        including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks
      *        are enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -102,13 +102,13 @@ public class StartOnDemandAuditTaskRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Which checks are performed during the audit. The checks you specify must be enabled for your account or an
-     * exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including
+     * exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including
      * those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.
      * </p>
      * 
      * @param targetCheckNames
      *        Which checks are performed during the audit. The checks you specify must be enabled for your account or an
-     *        exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
+     *        exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
      *        including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks
      *        are enabled.
      * @return Returns a reference to this object so that method calls can be chained together.

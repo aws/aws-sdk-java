@@ -20,8 +20,8 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual start
-     * time of each audit is determined by the system.
+     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start time of
+     * each audit is determined by the system.
      * </p>
      */
     private String frequency;
@@ -34,16 +34,16 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
     private String dayOfMonth;
     /**
      * <p>
-     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI" or
+     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI", or
      * "SAT".
      * </p>
      */
     private String dayOfWeek;
     /**
      * <p>
-     * Which checks are performed during the scheduled audit. (Note that checks must be enabled for your account. (Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or
-     * <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     * Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or
+     * use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * </p>
      */
     private java.util.List<String> targetCheckNames;
@@ -62,13 +62,13 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual start
-     * time of each audit is determined by the system.
+     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start time of
+     * each audit is determined by the system.
      * </p>
      * 
      * @param frequency
-     *        How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual
-     *        start time of each audit is determined by the system.
+     *        How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start
+     *        time of each audit is determined by the system.
      * @see AuditFrequency
      */
 
@@ -78,12 +78,12 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual start
-     * time of each audit is determined by the system.
+     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start time of
+     * each audit is determined by the system.
      * </p>
      * 
-     * @return How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual
-     *         start time of each audit is determined by the system.
+     * @return How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start
+     *         time of each audit is determined by the system.
      * @see AuditFrequency
      */
 
@@ -93,13 +93,13 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual start
-     * time of each audit is determined by the system.
+     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start time of
+     * each audit is determined by the system.
      * </p>
      * 
      * @param frequency
-     *        How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual
-     *        start time of each audit is determined by the system.
+     *        How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start
+     *        time of each audit is determined by the system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditFrequency
      */
@@ -111,13 +111,13 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual start
-     * time of each audit is determined by the system.
+     * How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start time of
+     * each audit is determined by the system.
      * </p>
      * 
      * @param frequency
-     *        How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual
-     *        start time of each audit is determined by the system.
+     *        How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start
+     *        time of each audit is determined by the system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditFrequency
      */
@@ -178,13 +178,13 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI" or
+     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI", or
      * "SAT".
      * </p>
      * 
      * @param dayOfWeek
      *        The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU",
-     *        "FRI" or "SAT".
+     *        "FRI", or "SAT".
      * @see DayOfWeek
      */
 
@@ -194,12 +194,12 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI" or
+     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI", or
      * "SAT".
      * </p>
      * 
      * @return The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU",
-     *         "FRI" or "SAT".
+     *         "FRI", or "SAT".
      * @see DayOfWeek
      */
 
@@ -209,13 +209,13 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI" or
+     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI", or
      * "SAT".
      * </p>
      * 
      * @param dayOfWeek
      *        The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU",
-     *        "FRI" or "SAT".
+     *        "FRI", or "SAT".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DayOfWeek
      */
@@ -227,13 +227,13 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI" or
+     * The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU", "FRI", or
      * "SAT".
      * </p>
      * 
      * @param dayOfWeek
      *        The day of the week on which the scheduled audit takes place. One of "SUN", "MON", "TUE", "WED", "THU",
-     *        "FRI" or "SAT".
+     *        "FRI", or "SAT".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DayOfWeek
      */
@@ -245,15 +245,14 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Which checks are performed during the scheduled audit. (Note that checks must be enabled for your account. (Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or
-     * <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     * Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or
+     * use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * </p>
      * 
-     * @return Which checks are performed during the scheduled audit. (Note that checks must be enabled for your
-     *         account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including
-     *         those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are
-     *         enabled.)
+     * @return Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
+     *         <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are
+     *         enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      */
 
     public java.util.List<String> getTargetCheckNames() {
@@ -262,15 +261,15 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Which checks are performed during the scheduled audit. (Note that checks must be enabled for your account. (Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or
-     * <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     * Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or
+     * use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * </p>
      * 
      * @param targetCheckNames
-     *        Which checks are performed during the scheduled audit. (Note that checks must be enabled for your account.
-     *        (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are
-     *        enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     *        Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
+     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are
+     *        enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      */
 
     public void setTargetCheckNames(java.util.Collection<String> targetCheckNames) {
@@ -284,9 +283,9 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Which checks are performed during the scheduled audit. (Note that checks must be enabled for your account. (Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or
-     * <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     * Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or
+     * use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -295,9 +294,9 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param targetCheckNames
-     *        Which checks are performed during the scheduled audit. (Note that checks must be enabled for your account.
-     *        (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are
-     *        enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     *        Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
+     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are
+     *        enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,15 +312,15 @@ public class DescribeScheduledAuditResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Which checks are performed during the scheduled audit. (Note that checks must be enabled for your account. (Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or
-     * <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     * Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or
+     * use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * </p>
      * 
      * @param targetCheckNames
-     *        Which checks are performed during the scheduled audit. (Note that checks must be enabled for your account.
-     *        (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are
-     *        enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     *        Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
+     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are
+     *        enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

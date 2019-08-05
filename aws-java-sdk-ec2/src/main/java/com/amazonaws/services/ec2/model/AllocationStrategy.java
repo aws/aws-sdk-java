@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum AllocationStrategy {
 
     LowestPrice("lowestPrice"),
-    Diversified("diversified");
+    Diversified("diversified"),
+    CapacityOptimized("capacityOptimized");
 
     private String value;
 

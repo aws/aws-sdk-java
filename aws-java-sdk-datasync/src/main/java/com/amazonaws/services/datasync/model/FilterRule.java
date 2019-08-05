@@ -18,9 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
  * <p>
- * A pattern that determines which files to include in the transfer or which files to exclude.
+ * Specifies which files, folders and objects to include or exclude when transferring files from source to destination.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/FilterRule" target="_top">AWS API
@@ -30,29 +29,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class FilterRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * <p/>
      * <p>
-     * Specifies the type of filter rule pattern to apply. DataSync only supports the SIMPLE_PATTERN rule type.
+     * The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule type.
      * </p>
      */
     private String filterType;
     /**
-     * <p/>
      * <p>
-     * A pattern that defines the filter. The filter might include or exclude files is a transfer.
+     * A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|"
+     * (that is, a pipe), for example: <code>/folder1|/folder2</code>
+     * </p>
+     * <p>
      * </p>
      */
     private String value;
 
     /**
-     * <p/>
      * <p>
-     * Specifies the type of filter rule pattern to apply. DataSync only supports the SIMPLE_PATTERN rule type.
+     * The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule type.
      * </p>
      * 
      * @param filterType
-     *        <p>
-     *        Specifies the type of filter rule pattern to apply. DataSync only supports the SIMPLE_PATTERN rule type.
+     *        The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule type.
      * @see FilterType
      */
 
@@ -61,13 +59,11 @@ public class FilterRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
      * <p>
-     * Specifies the type of filter rule pattern to apply. DataSync only supports the SIMPLE_PATTERN rule type.
+     * The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule type.
      * </p>
      * 
-     * @return <p>
-     *         Specifies the type of filter rule pattern to apply. DataSync only supports the SIMPLE_PATTERN rule type.
+     * @return The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule type.
      * @see FilterType
      */
 
@@ -76,14 +72,12 @@ public class FilterRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
      * <p>
-     * Specifies the type of filter rule pattern to apply. DataSync only supports the SIMPLE_PATTERN rule type.
+     * The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule type.
      * </p>
      * 
      * @param filterType
-     *        <p>
-     *        Specifies the type of filter rule pattern to apply. DataSync only supports the SIMPLE_PATTERN rule type.
+     *        The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterType
      */
@@ -94,14 +88,12 @@ public class FilterRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
      * <p>
-     * Specifies the type of filter rule pattern to apply. DataSync only supports the SIMPLE_PATTERN rule type.
+     * The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule type.
      * </p>
      * 
      * @param filterType
-     *        <p>
-     *        Specifies the type of filter rule pattern to apply. DataSync only supports the SIMPLE_PATTERN rule type.
+     *        The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterType
      */
@@ -112,14 +104,17 @@ public class FilterRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
      * <p>
-     * A pattern that defines the filter. The filter might include or exclude files is a transfer.
+     * A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|"
+     * (that is, a pipe), for example: <code>/folder1|/folder2</code>
+     * </p>
+     * <p>
      * </p>
      * 
      * @param value
+     *        A single filter string that consists of the patterns to include or exclude. The patterns are delimited by
+     *        "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p>
      *        <p>
-     *        A pattern that defines the filter. The filter might include or exclude files is a transfer.
      */
 
     public void setValue(String value) {
@@ -127,13 +122,16 @@ public class FilterRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
      * <p>
-     * A pattern that defines the filter. The filter might include or exclude files is a transfer.
+     * A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|"
+     * (that is, a pipe), for example: <code>/folder1|/folder2</code>
+     * </p>
+     * <p>
      * </p>
      * 
-     * @return <p>
-     *         A pattern that defines the filter. The filter might include or exclude files is a transfer.
+     * @return A single filter string that consists of the patterns to include or exclude. The patterns are delimited by
+     *         "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p>
+     *         <p>
      */
 
     public String getValue() {
@@ -141,14 +139,17 @@ public class FilterRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
      * <p>
-     * A pattern that defines the filter. The filter might include or exclude files is a transfer.
+     * A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|"
+     * (that is, a pipe), for example: <code>/folder1|/folder2</code>
+     * </p>
+     * <p>
      * </p>
      * 
      * @param value
+     *        A single filter string that consists of the patterns to include or exclude. The patterns are delimited by
+     *        "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p>
      *        <p>
-     *        A pattern that defines the filter. The filter might include or exclude files is a transfer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

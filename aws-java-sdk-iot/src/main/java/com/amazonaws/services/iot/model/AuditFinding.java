@@ -27,7 +27,14 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the audit that generated this result (finding)
+     * A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to one or
+     * more sets of findings.
+     * </p>
+     */
+    private String findingId;
+    /**
+     * <p>
+     * The ID of the audit that generated this result (finding).
      * </p>
      */
     private String taskId;
@@ -57,7 +64,7 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
     private String severity;
     /**
      * <p>
-     * The resource that was found to be non-compliant with the audit check.
+     * The resource that was found to be noncompliant with the audit check.
      * </p>
      */
     private NonCompliantResource nonCompliantResource;
@@ -69,24 +76,70 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<RelatedResource> relatedResources;
     /**
      * <p>
-     * The reason the resource was non-compliant.
+     * The reason the resource was noncompliant.
      * </p>
      */
     private String reasonForNonCompliance;
     /**
      * <p>
-     * A code which indicates the reason that the resource was non-compliant.
+     * A code that indicates the reason that the resource was noncompliant.
      * </p>
      */
     private String reasonForNonComplianceCode;
 
     /**
      * <p>
-     * The ID of the audit that generated this result (finding)
+     * A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to one or
+     * more sets of findings.
+     * </p>
+     * 
+     * @param findingId
+     *        A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to
+     *        one or more sets of findings.
+     */
+
+    public void setFindingId(String findingId) {
+        this.findingId = findingId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to one or
+     * more sets of findings.
+     * </p>
+     * 
+     * @return A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to
+     *         one or more sets of findings.
+     */
+
+    public String getFindingId() {
+        return this.findingId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to one or
+     * more sets of findings.
+     * </p>
+     * 
+     * @param findingId
+     *        A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to
+     *        one or more sets of findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuditFinding withFindingId(String findingId) {
+        setFindingId(findingId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the audit that generated this result (finding).
      * </p>
      * 
      * @param taskId
-     *        The ID of the audit that generated this result (finding)
+     *        The ID of the audit that generated this result (finding).
      */
 
     public void setTaskId(String taskId) {
@@ -95,10 +148,10 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the audit that generated this result (finding)
+     * The ID of the audit that generated this result (finding).
      * </p>
      * 
-     * @return The ID of the audit that generated this result (finding)
+     * @return The ID of the audit that generated this result (finding).
      */
 
     public String getTaskId() {
@@ -107,11 +160,11 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the audit that generated this result (finding)
+     * The ID of the audit that generated this result (finding).
      * </p>
      * 
      * @param taskId
-     *        The ID of the audit that generated this result (finding)
+     *        The ID of the audit that generated this result (finding).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,11 +354,11 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource that was found to be non-compliant with the audit check.
+     * The resource that was found to be noncompliant with the audit check.
      * </p>
      * 
      * @param nonCompliantResource
-     *        The resource that was found to be non-compliant with the audit check.
+     *        The resource that was found to be noncompliant with the audit check.
      */
 
     public void setNonCompliantResource(NonCompliantResource nonCompliantResource) {
@@ -314,10 +367,10 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource that was found to be non-compliant with the audit check.
+     * The resource that was found to be noncompliant with the audit check.
      * </p>
      * 
-     * @return The resource that was found to be non-compliant with the audit check.
+     * @return The resource that was found to be noncompliant with the audit check.
      */
 
     public NonCompliantResource getNonCompliantResource() {
@@ -326,11 +379,11 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource that was found to be non-compliant with the audit check.
+     * The resource that was found to be noncompliant with the audit check.
      * </p>
      * 
      * @param nonCompliantResource
-     *        The resource that was found to be non-compliant with the audit check.
+     *        The resource that was found to be noncompliant with the audit check.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -411,11 +464,11 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason the resource was non-compliant.
+     * The reason the resource was noncompliant.
      * </p>
      * 
      * @param reasonForNonCompliance
-     *        The reason the resource was non-compliant.
+     *        The reason the resource was noncompliant.
      */
 
     public void setReasonForNonCompliance(String reasonForNonCompliance) {
@@ -424,10 +477,10 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason the resource was non-compliant.
+     * The reason the resource was noncompliant.
      * </p>
      * 
-     * @return The reason the resource was non-compliant.
+     * @return The reason the resource was noncompliant.
      */
 
     public String getReasonForNonCompliance() {
@@ -436,11 +489,11 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason the resource was non-compliant.
+     * The reason the resource was noncompliant.
      * </p>
      * 
      * @param reasonForNonCompliance
-     *        The reason the resource was non-compliant.
+     *        The reason the resource was noncompliant.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -451,11 +504,11 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A code which indicates the reason that the resource was non-compliant.
+     * A code that indicates the reason that the resource was noncompliant.
      * </p>
      * 
      * @param reasonForNonComplianceCode
-     *        A code which indicates the reason that the resource was non-compliant.
+     *        A code that indicates the reason that the resource was noncompliant.
      */
 
     public void setReasonForNonComplianceCode(String reasonForNonComplianceCode) {
@@ -464,10 +517,10 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A code which indicates the reason that the resource was non-compliant.
+     * A code that indicates the reason that the resource was noncompliant.
      * </p>
      * 
-     * @return A code which indicates the reason that the resource was non-compliant.
+     * @return A code that indicates the reason that the resource was noncompliant.
      */
 
     public String getReasonForNonComplianceCode() {
@@ -476,11 +529,11 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A code which indicates the reason that the resource was non-compliant.
+     * A code that indicates the reason that the resource was noncompliant.
      * </p>
      * 
      * @param reasonForNonComplianceCode
-     *        A code which indicates the reason that the resource was non-compliant.
+     *        A code that indicates the reason that the resource was noncompliant.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -501,6 +554,8 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFindingId() != null)
+            sb.append("FindingId: ").append(getFindingId()).append(",");
         if (getTaskId() != null)
             sb.append("TaskId: ").append(getTaskId()).append(",");
         if (getCheckName() != null)
@@ -533,6 +588,10 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof AuditFinding == false)
             return false;
         AuditFinding other = (AuditFinding) obj;
+        if (other.getFindingId() == null ^ this.getFindingId() == null)
+            return false;
+        if (other.getFindingId() != null && other.getFindingId().equals(this.getFindingId()) == false)
+            return false;
         if (other.getTaskId() == null ^ this.getTaskId() == null)
             return false;
         if (other.getTaskId() != null && other.getTaskId().equals(this.getTaskId()) == false)
@@ -577,6 +636,7 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFindingId() == null) ? 0 : getFindingId().hashCode());
         hashCode = prime * hashCode + ((getTaskId() == null) ? 0 : getTaskId().hashCode());
         hashCode = prime * hashCode + ((getCheckName() == null) ? 0 : getCheckName().hashCode());
         hashCode = prime * hashCode + ((getTaskStartTime() == null) ? 0 : getTaskStartTime().hashCode());

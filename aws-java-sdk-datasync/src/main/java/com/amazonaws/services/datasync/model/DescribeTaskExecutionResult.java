@@ -43,27 +43,30 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * The status of the task execution.
      * </p>
      * <p>
-     * For detailed information about task execution statuses, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     * (Understanding Task Statuses).
+     * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
+     * User Guide.</i>
      * </p>
      */
     private String status;
 
     private Options options;
     /**
-     * <p/>
      * <p>
-     * Specifies that the task execution excludes files from the transfer based on the specified pattern in the filter.
-     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      */
     private java.util.List<FilterRule> excludes;
     /**
-     * <p/>
      * <p>
-     * Specifies that the task execution excludes files in the transfer based on the specified pattern in the filter.
-     * When multiple include filters are set, they are interpreted as an OR.
+     * A list of filter rules that determines which files to include when running a task. The list should contain a
+     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
+     * pipe), for example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      */
     private java.util.List<FilterRule> includes;
@@ -202,17 +205,15 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * The status of the task execution.
      * </p>
      * <p>
-     * For detailed information about task execution statuses, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     * (Understanding Task Statuses).
+     * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
+     * User Guide.</i>
      * </p>
      * 
      * @param status
      *        The status of the task execution. </p>
      *        <p>
-     *        For detailed information about task execution statuses, see
-     *        "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     *        (Understanding Task Statuses).
+     *        For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS
+     *        DataSync User Guide.</i>
      * @see TaskExecutionStatus
      */
 
@@ -225,16 +226,14 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * The status of the task execution.
      * </p>
      * <p>
-     * For detailed information about task execution statuses, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     * (Understanding Task Statuses).
+     * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
+     * User Guide.</i>
      * </p>
      * 
      * @return The status of the task execution. </p>
      *         <p>
-     *         For detailed information about task execution statuses, see
-     *         "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     *         (Understanding Task Statuses).
+     *         For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS
+     *         DataSync User Guide.</i>
      * @see TaskExecutionStatus
      */
 
@@ -247,17 +246,15 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * The status of the task execution.
      * </p>
      * <p>
-     * For detailed information about task execution statuses, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     * (Understanding Task Statuses).
+     * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
+     * User Guide.</i>
      * </p>
      * 
      * @param status
      *        The status of the task execution. </p>
      *        <p>
-     *        For detailed information about task execution statuses, see
-     *        "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     *        (Understanding Task Statuses).
+     *        For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS
+     *        DataSync User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskExecutionStatus
      */
@@ -272,17 +269,15 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * The status of the task execution.
      * </p>
      * <p>
-     * For detailed information about task execution statuses, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     * (Understanding Task Statuses).
+     * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
+     * User Guide.</i>
      * </p>
      * 
      * @param status
      *        The status of the task execution. </p>
      *        <p>
-     *        For detailed information about task execution statuses, see
-     *        "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     *        (Understanding Task Statuses).
+     *        For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS
+     *        DataSync User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskExecutionStatus
      */
@@ -319,15 +314,18 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
      * <p>
-     * Specifies that the task execution excludes files from the transfer based on the specified pattern in the filter.
-     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * 
-     * @return <p>
-     *         Specifies that the task execution excludes files from the transfer based on the specified pattern in the
-     *         filter. Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * @return A list of filter rules that determines which files to exclude from a task. The list should contain a
+     *         single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that
+     *         is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
+     *         <p>
      */
 
     public java.util.List<FilterRule> getExcludes() {
@@ -335,16 +333,19 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
      * <p>
-     * Specifies that the task execution excludes files from the transfer based on the specified pattern in the filter.
-     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * 
      * @param excludes
+     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
+     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
+     *        a pipe), for example: <code>"/folder1|/folder2"</code> </p>
      *        <p>
-     *        Specifies that the task execution excludes files from the transfer based on the specified pattern in the
-     *        filter. Transfers all files in the task’s subdirectory, except files that match the filter that is set.
      */
 
     public void setExcludes(java.util.Collection<FilterRule> excludes) {
@@ -357,10 +358,12 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
      * <p>
-     * Specifies that the task execution excludes files from the transfer based on the specified pattern in the filter.
-     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -369,9 +372,10 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param excludes
+     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
+     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
+     *        a pipe), for example: <code>"/folder1|/folder2"</code> </p>
      *        <p>
-     *        Specifies that the task execution excludes files from the transfer based on the specified pattern in the
-     *        filter. Transfers all files in the task’s subdirectory, except files that match the filter that is set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,16 +390,19 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
      * <p>
-     * Specifies that the task execution excludes files from the transfer based on the specified pattern in the filter.
-     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * 
      * @param excludes
+     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
+     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
+     *        a pipe), for example: <code>"/folder1|/folder2"</code> </p>
      *        <p>
-     *        Specifies that the task execution excludes files from the transfer based on the specified pattern in the
-     *        filter. Transfers all files in the task’s subdirectory, except files that match the filter that is set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,15 +412,18 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
      * <p>
-     * Specifies that the task execution excludes files in the transfer based on the specified pattern in the filter.
-     * When multiple include filters are set, they are interpreted as an OR.
+     * A list of filter rules that determines which files to include when running a task. The list should contain a
+     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
+     * pipe), for example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * 
-     * @return <p>
-     *         Specifies that the task execution excludes files in the transfer based on the specified pattern in the
-     *         filter. When multiple include filters are set, they are interpreted as an OR.
+     * @return A list of filter rules that determines which files to include when running a task. The list should
+     *         contain a single filter string that consists of the patterns to include. The patterns are delimited by
+     *         "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
+     *         <p>
      */
 
     public java.util.List<FilterRule> getIncludes() {
@@ -421,16 +431,19 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
      * <p>
-     * Specifies that the task execution excludes files in the transfer based on the specified pattern in the filter.
-     * When multiple include filters are set, they are interpreted as an OR.
+     * A list of filter rules that determines which files to include when running a task. The list should contain a
+     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
+     * pipe), for example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * 
      * @param includes
+     *        A list of filter rules that determines which files to include when running a task. The list should contain
+     *        a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
+     *        is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
      *        <p>
-     *        Specifies that the task execution excludes files in the transfer based on the specified pattern in the
-     *        filter. When multiple include filters are set, they are interpreted as an OR.
      */
 
     public void setIncludes(java.util.Collection<FilterRule> includes) {
@@ -443,10 +456,12 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
      * <p>
-     * Specifies that the task execution excludes files in the transfer based on the specified pattern in the filter.
-     * When multiple include filters are set, they are interpreted as an OR.
+     * A list of filter rules that determines which files to include when running a task. The list should contain a
+     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
+     * pipe), for example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -455,9 +470,10 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param includes
+     *        A list of filter rules that determines which files to include when running a task. The list should contain
+     *        a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
+     *        is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
      *        <p>
-     *        Specifies that the task execution excludes files in the transfer based on the specified pattern in the
-     *        filter. When multiple include filters are set, they are interpreted as an OR.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -472,16 +488,19 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
      * <p>
-     * Specifies that the task execution excludes files in the transfer based on the specified pattern in the filter.
-     * When multiple include filters are set, they are interpreted as an OR.
+     * A list of filter rules that determines which files to include when running a task. The list should contain a
+     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
+     * pipe), for example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * 
      * @param includes
+     *        A list of filter rules that determines which files to include when running a task. The list should contain
+     *        a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
+     *        is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
      *        <p>
-     *        Specifies that the task execution excludes files in the transfer based on the specified pattern in the
-     *        filter. When multiple include filters are set, they are interpreted as an OR.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

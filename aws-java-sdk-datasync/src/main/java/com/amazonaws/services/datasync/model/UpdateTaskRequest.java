@@ -37,10 +37,12 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     private Options options;
     /**
-     * <p/>
      * <p>
-     * A filter that determines which files to exclude from a task based on the specified pattern in the filter.
-     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      */
     private java.util.List<FilterRule> excludes;
@@ -124,15 +126,18 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
      * <p>
-     * A filter that determines which files to exclude from a task based on the specified pattern in the filter.
-     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * 
-     * @return <p>
-     *         A filter that determines which files to exclude from a task based on the specified pattern in the filter.
-     *         Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * @return A list of filter rules that determines which files to exclude from a task. The list should contain a
+     *         single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that
+     *         is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
+     *         <p>
      */
 
     public java.util.List<FilterRule> getExcludes() {
@@ -140,16 +145,19 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
      * <p>
-     * A filter that determines which files to exclude from a task based on the specified pattern in the filter.
-     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * 
      * @param excludes
+     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
+     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
+     *        a pipe), for example: <code>"/folder1|/folder2"</code> </p>
      *        <p>
-     *        A filter that determines which files to exclude from a task based on the specified pattern in the filter.
-     *        Transfers all files in the task’s subdirectory, except files that match the filter that is set.
      */
 
     public void setExcludes(java.util.Collection<FilterRule> excludes) {
@@ -162,10 +170,12 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
      * <p>
-     * A filter that determines which files to exclude from a task based on the specified pattern in the filter.
-     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -174,9 +184,10 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param excludes
+     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
+     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
+     *        a pipe), for example: <code>"/folder1|/folder2"</code> </p>
      *        <p>
-     *        A filter that determines which files to exclude from a task based on the specified pattern in the filter.
-     *        Transfers all files in the task’s subdirectory, except files that match the filter that is set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,16 +202,19 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
      * <p>
-     * A filter that determines which files to exclude from a task based on the specified pattern in the filter.
-     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example: <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * 
      * @param excludes
+     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
+     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
+     *        a pipe), for example: <code>"/folder1|/folder2"</code> </p>
      *        <p>
-     *        A filter that determines which files to exclude from a task based on the specified pattern in the filter.
-     *        Transfers all files in the task’s subdirectory, except files that match the filter that is set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

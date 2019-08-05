@@ -65,9 +65,8 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * (CIDR range) or security group.
      * </p>
      * <p>
-     * For information about security groups and mount targets, see
-     * "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access" (Security Groups for
-     * Amazon EC2 Instances and Mount Targets) in the <i>Amazon EFS User Guide</i>.
+     * For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and Mount
+     * Targets in the <i>Amazon EFS User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -195,9 +194,8 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * (CIDR range) or security group.
      * </p>
      * <p>
-     * For information about security groups and mount targets, see
-     * "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access" (Security Groups for
-     * Amazon EC2 Instances and Mount Targets) in the <i>Amazon EFS User Guide</i>.
+     * For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and Mount
+     * Targets in the <i>Amazon EFS User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -224,9 +222,8 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        IP address (CIDR range) or security group.
      *        </p>
      *        <p>
-     *        For information about security groups and mount targets, see
-     *        "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access" (Security Groups
-     *        for Amazon EC2 Instances and Mount Targets) in the <i>Amazon EFS User Guide</i>.
+     *        For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and
+     *        Mount Targets in the <i>Amazon EFS User Guide.</i>
      *        </p>
      *        </li>
      */
@@ -259,9 +256,8 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * (CIDR range) or security group.
      * </p>
      * <p>
-     * For information about security groups and mount targets, see
-     * "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access" (Security Groups for
-     * Amazon EC2 Instances and Mount Targets) in the <i>Amazon EFS User Guide</i>.
+     * For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and Mount
+     * Targets in the <i>Amazon EFS User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -287,9 +283,8 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         connections either by IP address (CIDR range) or security group.
      *         </p>
      *         <p>
-     *         For information about security groups and mount targets, see
-     *         "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access" (Security Groups
-     *         for Amazon EC2 Instances and Mount Targets) in the <i>Amazon EFS User Guide</i>.
+     *         For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and
+     *         Mount Targets in the <i>Amazon EFS User Guide.</i>
      *         </p>
      *         </li>
      */
@@ -322,9 +317,8 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * (CIDR range) or security group.
      * </p>
      * <p>
-     * For information about security groups and mount targets, see
-     * "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access" (Security Groups for
-     * Amazon EC2 Instances and Mount Targets) in the <i>Amazon EFS User Guide</i>.
+     * For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and Mount
+     * Targets in the <i>Amazon EFS User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -351,9 +345,8 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        IP address (CIDR range) or security group.
      *        </p>
      *        <p>
-     *        For information about security groups and mount targets, see
-     *        "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access" (Security Groups
-     *        for Amazon EC2 Instances and Mount Targets) in the <i>Amazon EFS User Guide</i>.
+     *        For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and
+     *        Mount Targets in the <i>Amazon EFS User Guide.</i>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

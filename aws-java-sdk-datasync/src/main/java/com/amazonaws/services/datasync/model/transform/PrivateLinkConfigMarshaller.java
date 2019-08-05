@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PrivateLinkConfigMarshaller {
 
+    private static final MarshallingInfo<String> VPCENDPOINTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcEndpointId").build();
     private static final MarshallingInfo<String> PRIVATELINKENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrivateLinkEndpoint").build();
     private static final MarshallingInfo<List> SUBNETARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -51,6 +53,7 @@ public class PrivateLinkConfigMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(privateLinkConfig.getVpcEndpointId(), VPCENDPOINTID_BINDING);
             protocolMarshaller.marshall(privateLinkConfig.getPrivateLinkEndpoint(), PRIVATELINKENDPOINT_BINDING);
             protocolMarshaller.marshall(privateLinkConfig.getSubnetArns(), SUBNETARNS_BINDING);
             protocolMarshaller.marshall(privateLinkConfig.getSecurityGroupArns(), SECURITYGROUPARNS_BINDING);

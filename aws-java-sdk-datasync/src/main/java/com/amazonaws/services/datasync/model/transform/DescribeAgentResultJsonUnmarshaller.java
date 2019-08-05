@@ -68,9 +68,9 @@ public class DescribeAgentResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeAgentResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
-                if (context.testExpression("EndpointOptions", targetDepth)) {
+                if (context.testExpression("EndpointType", targetDepth)) {
                     context.nextToken();
-                    describeAgentResult.setEndpointOptions(EndpointOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                    describeAgentResult.setEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateLinkConfig", targetDepth)) {
                     context.nextToken();

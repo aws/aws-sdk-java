@@ -27,14 +27,14 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The completion status of this check, one of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
+     * The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
      * "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".
      * </p>
      */
     private String checkRunStatus;
     /**
      * <p>
-     * True if the check completed and found all resources compliant.
+     * True if the check is complete and found all resources compliant.
      * </p>
      */
     private Boolean checkCompliant;
@@ -46,32 +46,32 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
     private Long totalResourcesCount;
     /**
      * <p>
-     * The number of resources that the check found non-compliant.
+     * The number of resources that were found noncompliant during the check.
      * </p>
      */
     private Long nonCompliantResourcesCount;
     /**
      * <p>
-     * The code of any error encountered when performing this check during this audit. One of
-     * "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".
+     * The code of any error encountered when this check is performed during this audit. One of
+     * "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * The message associated with any error encountered when performing this check during this audit.
+     * The message associated with any error encountered when this check is performed during this audit.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * The completion status of this check, one of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
+     * The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
      * "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".
      * </p>
      * 
      * @param checkRunStatus
-     *        The completion status of this check, one of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
+     *        The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
      *        "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".
      * @see AuditCheckRunStatus
      */
@@ -82,11 +82,11 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The completion status of this check, one of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
+     * The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
      * "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".
      * </p>
      * 
-     * @return The completion status of this check, one of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
+     * @return The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
      *         "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".
      * @see AuditCheckRunStatus
      */
@@ -97,12 +97,12 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The completion status of this check, one of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
+     * The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
      * "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".
      * </p>
      * 
      * @param checkRunStatus
-     *        The completion status of this check, one of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
+     *        The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
      *        "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditCheckRunStatus
@@ -115,12 +115,12 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The completion status of this check, one of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
+     * The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
      * "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".
      * </p>
      * 
      * @param checkRunStatus
-     *        The completion status of this check, one of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
+     *        The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED",
      *        "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditCheckRunStatus
@@ -133,11 +133,11 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the check completed and found all resources compliant.
+     * True if the check is complete and found all resources compliant.
      * </p>
      * 
      * @param checkCompliant
-     *        True if the check completed and found all resources compliant.
+     *        True if the check is complete and found all resources compliant.
      */
 
     public void setCheckCompliant(Boolean checkCompliant) {
@@ -146,10 +146,10 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the check completed and found all resources compliant.
+     * True if the check is complete and found all resources compliant.
      * </p>
      * 
-     * @return True if the check completed and found all resources compliant.
+     * @return True if the check is complete and found all resources compliant.
      */
 
     public Boolean getCheckCompliant() {
@@ -158,11 +158,11 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the check completed and found all resources compliant.
+     * True if the check is complete and found all resources compliant.
      * </p>
      * 
      * @param checkCompliant
-     *        True if the check completed and found all resources compliant.
+     *        True if the check is complete and found all resources compliant.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,10 +173,10 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the check completed and found all resources compliant.
+     * True if the check is complete and found all resources compliant.
      * </p>
      * 
-     * @return True if the check completed and found all resources compliant.
+     * @return True if the check is complete and found all resources compliant.
      */
 
     public Boolean isCheckCompliant() {
@@ -225,11 +225,11 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The number of resources that the check found non-compliant.
+     * The number of resources that were found noncompliant during the check.
      * </p>
      * 
      * @param nonCompliantResourcesCount
-     *        The number of resources that the check found non-compliant.
+     *        The number of resources that were found noncompliant during the check.
      */
 
     public void setNonCompliantResourcesCount(Long nonCompliantResourcesCount) {
@@ -238,10 +238,10 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The number of resources that the check found non-compliant.
+     * The number of resources that were found noncompliant during the check.
      * </p>
      * 
-     * @return The number of resources that the check found non-compliant.
+     * @return The number of resources that were found noncompliant during the check.
      */
 
     public Long getNonCompliantResourcesCount() {
@@ -250,11 +250,11 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The number of resources that the check found non-compliant.
+     * The number of resources that were found noncompliant during the check.
      * </p>
      * 
      * @param nonCompliantResourcesCount
-     *        The number of resources that the check found non-compliant.
+     *        The number of resources that were found noncompliant during the check.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,13 +265,13 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The code of any error encountered when performing this check during this audit. One of
-     * "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".
+     * The code of any error encountered when this check is performed during this audit. One of
+     * "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".
      * </p>
      * 
      * @param errorCode
-     *        The code of any error encountered when performing this check during this audit. One of
-     *        "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".
+     *        The code of any error encountered when this check is performed during this audit. One of
+     *        "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".
      */
 
     public void setErrorCode(String errorCode) {
@@ -280,12 +280,12 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The code of any error encountered when performing this check during this audit. One of
-     * "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".
+     * The code of any error encountered when this check is performed during this audit. One of
+     * "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".
      * </p>
      * 
-     * @return The code of any error encountered when performing this check during this audit. One of
-     *         "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".
+     * @return The code of any error encountered when this check is performed during this audit. One of
+     *         "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".
      */
 
     public String getErrorCode() {
@@ -294,13 +294,13 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The code of any error encountered when performing this check during this audit. One of
-     * "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".
+     * The code of any error encountered when this check is performed during this audit. One of
+     * "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".
      * </p>
      * 
      * @param errorCode
-     *        The code of any error encountered when performing this check during this audit. One of
-     *        "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".
+     *        The code of any error encountered when this check is performed during this audit. One of
+     *        "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,11 +311,11 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The message associated with any error encountered when performing this check during this audit.
+     * The message associated with any error encountered when this check is performed during this audit.
      * </p>
      * 
      * @param message
-     *        The message associated with any error encountered when performing this check during this audit.
+     *        The message associated with any error encountered when this check is performed during this audit.
      */
 
     public void setMessage(String message) {
@@ -324,10 +324,10 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The message associated with any error encountered when performing this check during this audit.
+     * The message associated with any error encountered when this check is performed during this audit.
      * </p>
      * 
-     * @return The message associated with any error encountered when performing this check during this audit.
+     * @return The message associated with any error encountered when this check is performed during this audit.
      */
 
     public String getMessage() {
@@ -336,11 +336,11 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The message associated with any error encountered when performing this check during this audit.
+     * The message associated with any error encountered when this check is performed during this audit.
      * </p>
      * 
      * @param message
-     *        The message associated with any error encountered when performing this check during this audit.
+     *        The message associated with any error encountered when this check is performed during this audit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

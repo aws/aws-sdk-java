@@ -264,8 +264,8 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Associates a Device Defender security profile with a thing group or with this account. Each thing group or
-     * account can have up to five security profiles associated with it.
+     * Associates a Device Defender security profile with a thing group or this account. Each thing group or account can
+     * have up to five security profiles associated with it.
      * </p>
      * 
      * @param attachSecurityProfileRequest
@@ -276,8 +276,8 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Associates a Device Defender security profile with a thing group or with this account. Each thing group or
-     * account can have up to five security profiles associated with it.
+     * Associates a Device Defender security profile with a thing group or this account. Each thing group or account can
+     * have up to five security profiles associated with it.
      * </p>
      * 
      * @param attachSecurityProfileRequest
@@ -321,6 +321,39 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<AttachThingPrincipalResult> attachThingPrincipalAsync(AttachThingPrincipalRequest attachThingPrincipalRequest,
             com.amazonaws.handlers.AsyncHandler<AttachThingPrincipalRequest, AttachThingPrincipalResult> asyncHandler);
+
+    /**
+     * <p>
+     * Cancels a mitigation action task that is in progress. If the task is not in progress, an InvalidRequestException
+     * occurs.
+     * </p>
+     * 
+     * @param cancelAuditMitigationActionsTaskRequest
+     * @return A Java Future containing the result of the CancelAuditMitigationActionsTask operation returned by the
+     *         service.
+     * @sample AWSIotAsync.CancelAuditMitigationActionsTask
+     */
+    java.util.concurrent.Future<CancelAuditMitigationActionsTaskResult> cancelAuditMitigationActionsTaskAsync(
+            CancelAuditMitigationActionsTaskRequest cancelAuditMitigationActionsTaskRequest);
+
+    /**
+     * <p>
+     * Cancels a mitigation action task that is in progress. If the task is not in progress, an InvalidRequestException
+     * occurs.
+     * </p>
+     * 
+     * @param cancelAuditMitigationActionsTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelAuditMitigationActionsTask operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.CancelAuditMitigationActionsTask
+     */
+    java.util.concurrent.Future<CancelAuditMitigationActionsTaskResult> cancelAuditMitigationActionsTaskAsync(
+            CancelAuditMitigationActionsTaskRequest cancelAuditMitigationActionsTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelAuditMitigationActionsTaskRequest, CancelAuditMitigationActionsTaskResult> asyncHandler);
 
     /**
      * <p>
@@ -752,6 +785,35 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<CreateKeysAndCertificateResult> createKeysAndCertificateAsync(CreateKeysAndCertificateRequest createKeysAndCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateKeysAndCertificateRequest, CreateKeysAndCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Each mitigation
+     * action can apply only one type of change.
+     * </p>
+     * 
+     * @param createMitigationActionRequest
+     * @return A Java Future containing the result of the CreateMitigationAction operation returned by the service.
+     * @sample AWSIotAsync.CreateMitigationAction
+     */
+    java.util.concurrent.Future<CreateMitigationActionResult> createMitigationActionAsync(CreateMitigationActionRequest createMitigationActionRequest);
+
+    /**
+     * <p>
+     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Each mitigation
+     * action can apply only one type of change.
+     * </p>
+     * 
+     * @param createMitigationActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMitigationAction operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateMitigationAction
+     */
+    java.util.concurrent.Future<CreateMitigationActionResult> createMitigationActionAsync(CreateMitigationActionRequest createMitigationActionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMitigationActionRequest, CreateMitigationActionResult> asyncHandler);
 
     /**
      * <p>
@@ -1243,8 +1305,8 @@ public interface AWSIotAsync extends AWSIot {
      * Deletes the specified certificate.
      * </p>
      * <p>
-     * A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a
-     * certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the
+     * A certificate cannot be deleted if it has a policy or IoT thing attached to it or if its status is set to ACTIVE.
+     * To delete a certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the
      * <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.
      * </p>
      * 
@@ -1260,8 +1322,8 @@ public interface AWSIotAsync extends AWSIot {
      * Deletes the specified certificate.
      * </p>
      * <p>
-     * A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a
-     * certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the
+     * A certificate cannot be deleted if it has a policy or IoT thing attached to it or if its status is set to ACTIVE.
+     * To delete a certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the
      * <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.
      * </p>
      * 
@@ -1373,6 +1435,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeleteJobExecutionResult> deleteJobExecutionAsync(DeleteJobExecutionRequest deleteJobExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteJobExecutionRequest, DeleteJobExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a defined mitigation action from your AWS account.
+     * </p>
+     * 
+     * @param deleteMitigationActionRequest
+     * @return A Java Future containing the result of the DeleteMitigationAction operation returned by the service.
+     * @sample AWSIotAsync.DeleteMitigationAction
+     */
+    java.util.concurrent.Future<DeleteMitigationActionResult> deleteMitigationActionAsync(DeleteMitigationActionRequest deleteMitigationActionRequest);
+
+    /**
+     * <p>
+     * Deletes a defined mitigation action from your AWS account.
+     * </p>
+     * 
+     * @param deleteMitigationActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMitigationAction operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteMitigationAction
+     */
+    java.util.concurrent.Future<DeleteMitigationActionResult> deleteMitigationActionAsync(DeleteMitigationActionRequest deleteMitigationActionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMitigationActionRequest, DeleteMitigationActionResult> asyncHandler);
 
     /**
      * <p>
@@ -1835,6 +1924,70 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Gets information about a single audit finding. Properties include the reason for noncompliance, the severity of
+     * the issue, and when the audit that returned the finding was started.
+     * </p>
+     * 
+     * @param describeAuditFindingRequest
+     * @return A Java Future containing the result of the DescribeAuditFinding operation returned by the service.
+     * @sample AWSIotAsync.DescribeAuditFinding
+     */
+    java.util.concurrent.Future<DescribeAuditFindingResult> describeAuditFindingAsync(DescribeAuditFindingRequest describeAuditFindingRequest);
+
+    /**
+     * <p>
+     * Gets information about a single audit finding. Properties include the reason for noncompliance, the severity of
+     * the issue, and when the audit that returned the finding was started.
+     * </p>
+     * 
+     * @param describeAuditFindingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAuditFinding operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeAuditFinding
+     */
+    java.util.concurrent.Future<DescribeAuditFindingResult> describeAuditFindingAsync(DescribeAuditFindingRequest describeAuditFindingRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAuditFindingRequest, DescribeAuditFindingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about an audit mitigation task that is used to apply mitigation actions to a set of audit
+     * findings. Properties include the actions being applied, the audit checks to which they're being applied, the task
+     * status, and aggregated task statistics.
+     * </p>
+     * 
+     * @param describeAuditMitigationActionsTaskRequest
+     * @return A Java Future containing the result of the DescribeAuditMitigationActionsTask operation returned by the
+     *         service.
+     * @sample AWSIotAsync.DescribeAuditMitigationActionsTask
+     */
+    java.util.concurrent.Future<DescribeAuditMitigationActionsTaskResult> describeAuditMitigationActionsTaskAsync(
+            DescribeAuditMitigationActionsTaskRequest describeAuditMitigationActionsTaskRequest);
+
+    /**
+     * <p>
+     * Gets information about an audit mitigation task that is used to apply mitigation actions to a set of audit
+     * findings. Properties include the actions being applied, the audit checks to which they're being applied, the task
+     * status, and aggregated task statistics.
+     * </p>
+     * 
+     * @param describeAuditMitigationActionsTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAuditMitigationActionsTask operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.DescribeAuditMitigationActionsTask
+     */
+    java.util.concurrent.Future<DescribeAuditMitigationActionsTaskResult> describeAuditMitigationActionsTaskAsync(
+            DescribeAuditMitigationActionsTaskRequest describeAuditMitigationActionsTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAuditMitigationActionsTaskRequest, DescribeAuditMitigationActionsTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a Device Defender audit.
      * </p>
      * 
@@ -2139,6 +2292,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DescribeJobExecutionResult> describeJobExecutionAsync(DescribeJobExecutionRequest describeJobExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeJobExecutionRequest, DescribeJobExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about a mitigation action.
+     * </p>
+     * 
+     * @param describeMitigationActionRequest
+     * @return A Java Future containing the result of the DescribeMitigationAction operation returned by the service.
+     * @sample AWSIotAsync.DescribeMitigationAction
+     */
+    java.util.concurrent.Future<DescribeMitigationActionResult> describeMitigationActionAsync(DescribeMitigationActionRequest describeMitigationActionRequest);
+
+    /**
+     * <p>
+     * Gets information about a mitigation action.
+     * </p>
+     * 
+     * @param describeMitigationActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMitigationAction operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeMitigationAction
+     */
+    java.util.concurrent.Future<DescribeMitigationActionResult> describeMitigationActionAsync(DescribeMitigationActionRequest describeMitigationActionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMitigationActionRequest, DescribeMitigationActionResult> asyncHandler);
 
     /**
      * <p>
@@ -2954,6 +3134,68 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Gets the status of audit mitigation action tasks that were executed.
+     * </p>
+     * 
+     * @param listAuditMitigationActionsExecutionsRequest
+     * @return A Java Future containing the result of the ListAuditMitigationActionsExecutions operation returned by the
+     *         service.
+     * @sample AWSIotAsync.ListAuditMitigationActionsExecutions
+     */
+    java.util.concurrent.Future<ListAuditMitigationActionsExecutionsResult> listAuditMitigationActionsExecutionsAsync(
+            ListAuditMitigationActionsExecutionsRequest listAuditMitigationActionsExecutionsRequest);
+
+    /**
+     * <p>
+     * Gets the status of audit mitigation action tasks that were executed.
+     * </p>
+     * 
+     * @param listAuditMitigationActionsExecutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAuditMitigationActionsExecutions operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.ListAuditMitigationActionsExecutions
+     */
+    java.util.concurrent.Future<ListAuditMitigationActionsExecutionsResult> listAuditMitigationActionsExecutionsAsync(
+            ListAuditMitigationActionsExecutionsRequest listAuditMitigationActionsExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAuditMitigationActionsExecutionsRequest, ListAuditMitigationActionsExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of audit mitigation action tasks that match the specified filters.
+     * </p>
+     * 
+     * @param listAuditMitigationActionsTasksRequest
+     * @return A Java Future containing the result of the ListAuditMitigationActionsTasks operation returned by the
+     *         service.
+     * @sample AWSIotAsync.ListAuditMitigationActionsTasks
+     */
+    java.util.concurrent.Future<ListAuditMitigationActionsTasksResult> listAuditMitigationActionsTasksAsync(
+            ListAuditMitigationActionsTasksRequest listAuditMitigationActionsTasksRequest);
+
+    /**
+     * <p>
+     * Gets a list of audit mitigation action tasks that match the specified filters.
+     * </p>
+     * 
+     * @param listAuditMitigationActionsTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAuditMitigationActionsTasks operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.ListAuditMitigationActionsTasks
+     */
+    java.util.concurrent.Future<ListAuditMitigationActionsTasksResult> listAuditMitigationActionsTasksAsync(
+            ListAuditMitigationActionsTasksRequest listAuditMitigationActionsTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAuditMitigationActionsTasksRequest, ListAuditMitigationActionsTasksResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the Device Defender audits that have been performed during a given time period.
      * </p>
      * 
@@ -3245,6 +3487,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest listJobsRequest,
             com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of all mitigation actions that match the specified filter criteria.
+     * </p>
+     * 
+     * @param listMitigationActionsRequest
+     * @return A Java Future containing the result of the ListMitigationActions operation returned by the service.
+     * @sample AWSIotAsync.ListMitigationActions
+     */
+    java.util.concurrent.Future<ListMitigationActionsResult> listMitigationActionsAsync(ListMitigationActionsRequest listMitigationActionsRequest);
+
+    /**
+     * <p>
+     * Gets a list of all mitigation actions that match the specified filter criteria.
+     * </p>
+     * 
+     * @param listMitigationActionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMitigationActions operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListMitigationActions
+     */
+    java.util.concurrent.Future<ListMitigationActionsResult> listMitigationActionsAsync(ListMitigationActionsRequest listMitigationActionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMitigationActionsRequest, ListMitigationActionsResult> asyncHandler);
 
     /**
      * <p>
@@ -4017,7 +4286,7 @@ public interface AWSIotAsync extends AWSIot {
     /**
      * <p>
      * Lists the Device Defender security profile violations discovered during the given time period. You can use
-     * filters to limit the results to those alerts issued for a particular security profile, behavior or thing
+     * filters to limit the results to those alerts issued for a particular security profile, behavior, or thing
      * (device).
      * </p>
      * 
@@ -4030,7 +4299,7 @@ public interface AWSIotAsync extends AWSIot {
     /**
      * <p>
      * Lists the Device Defender security profile violations discovered during the given time period. You can use
-     * filters to limit the results to those alerts issued for a particular security profile, behavior or thing
+     * filters to limit the results to those alerts issued for a particular security profile, behavior, or thing
      * (device).
      * </p>
      * 
@@ -4453,6 +4722,37 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<SetV2LoggingOptionsResult> setV2LoggingOptionsAsync(SetV2LoggingOptionsRequest setV2LoggingOptionsRequest,
             com.amazonaws.handlers.AsyncHandler<SetV2LoggingOptionsRequest, SetV2LoggingOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a task that applies a set of mitigation actions to the specified target.
+     * </p>
+     * 
+     * @param startAuditMitigationActionsTaskRequest
+     * @return A Java Future containing the result of the StartAuditMitigationActionsTask operation returned by the
+     *         service.
+     * @sample AWSIotAsync.StartAuditMitigationActionsTask
+     */
+    java.util.concurrent.Future<StartAuditMitigationActionsTaskResult> startAuditMitigationActionsTaskAsync(
+            StartAuditMitigationActionsTaskRequest startAuditMitigationActionsTaskRequest);
+
+    /**
+     * <p>
+     * Starts a task that applies a set of mitigation actions to the specified target.
+     * </p>
+     * 
+     * @param startAuditMitigationActionsTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartAuditMitigationActionsTask operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.StartAuditMitigationActionsTask
+     */
+    java.util.concurrent.Future<StartAuditMitigationActionsTaskResult> startAuditMitigationActionsTaskAsync(
+            StartAuditMitigationActionsTaskRequest startAuditMitigationActionsTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StartAuditMitigationActionsTaskRequest, StartAuditMitigationActionsTaskResult> asyncHandler);
 
     /**
      * <p>
@@ -4983,6 +5283,33 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Updates the definition for the specified mitigation action.
+     * </p>
+     * 
+     * @param updateMitigationActionRequest
+     * @return A Java Future containing the result of the UpdateMitigationAction operation returned by the service.
+     * @sample AWSIotAsync.UpdateMitigationAction
+     */
+    java.util.concurrent.Future<UpdateMitigationActionResult> updateMitigationActionAsync(UpdateMitigationActionRequest updateMitigationActionRequest);
+
+    /**
+     * <p>
+     * Updates the definition for the specified mitigation action.
+     * </p>
+     * 
+     * @param updateMitigationActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMitigationAction operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateMitigationAction
+     */
+    java.util.concurrent.Future<UpdateMitigationActionResult> updateMitigationActionAsync(UpdateMitigationActionRequest updateMitigationActionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMitigationActionRequest, UpdateMitigationActionResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a role alias.
      * </p>
      * 
@@ -5010,7 +5337,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Updates a scheduled audit, including what checks are performed and how often the audit takes place.
+     * Updates a scheduled audit, including which checks are performed and how often the audit takes place.
      * </p>
      * 
      * @param updateScheduledAuditRequest
@@ -5021,7 +5348,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Updates a scheduled audit, including what checks are performed and how often the audit takes place.
+     * Updates a scheduled audit, including which checks are performed and how often the audit takes place.
      * </p>
      * 
      * @param updateScheduledAuditRequest

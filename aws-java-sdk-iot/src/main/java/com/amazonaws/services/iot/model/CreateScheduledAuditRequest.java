@@ -22,8 +22,8 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual
-     * start time of each audit is determined by the system.
+     * How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The start
+     * time of each audit is determined by the system.
      * </p>
      */
     private String frequency;
@@ -38,40 +38,40 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED", "THU",
-     * "FRI" or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".
+     * "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".
      * </p>
      */
     private String dayOfWeek;
     /**
      * <p>
      * Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or
-     * <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or
+     * use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * </p>
      */
     private java.util.List<String> targetCheckNames;
-    /**
-     * <p>
-     * Metadata which can be used to manage the scheduled audit.
-     * </p>
-     */
-    private java.util.List<Tag> tags;
     /**
      * <p>
      * The name you want to give to the scheduled audit. (Max. 128 chars)
      * </p>
      */
     private String scheduledAuditName;
+    /**
+     * <p>
+     * Metadata that can be used to manage the scheduled audit.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual
-     * start time of each audit is determined by the system.
+     * How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The start
+     * time of each audit is determined by the system.
      * </p>
      * 
      * @param frequency
      *        How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The
-     *        actual start time of each audit is determined by the system.
+     *        start time of each audit is determined by the system.
      * @see AuditFrequency
      */
 
@@ -81,12 +81,12 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual
-     * start time of each audit is determined by the system.
+     * How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The start
+     * time of each audit is determined by the system.
      * </p>
      * 
      * @return How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The
-     *         actual start time of each audit is determined by the system.
+     *         start time of each audit is determined by the system.
      * @see AuditFrequency
      */
 
@@ -96,13 +96,13 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual
-     * start time of each audit is determined by the system.
+     * How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The start
+     * time of each audit is determined by the system.
      * </p>
      * 
      * @param frequency
      *        How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The
-     *        actual start time of each audit is determined by the system.
+     *        start time of each audit is determined by the system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditFrequency
      */
@@ -114,13 +114,13 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The actual
-     * start time of each audit is determined by the system.
+     * How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The start
+     * time of each audit is determined by the system.
      * </p>
      * 
      * @param frequency
      *        How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The
-     *        actual start time of each audit is determined by the system.
+     *        start time of each audit is determined by the system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditFrequency
      */
@@ -185,12 +185,12 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED", "THU",
-     * "FRI" or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".
+     * "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".
      * </p>
      * 
      * @param dayOfWeek
      *        The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED",
-     *        "THU", "FRI" or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or
+     *        "THU", "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or
      *        "BIWEEKLY".
      * @see DayOfWeek
      */
@@ -202,11 +202,11 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED", "THU",
-     * "FRI" or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".
+     * "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".
      * </p>
      * 
      * @return The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED",
-     *         "THU", "FRI" or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or
+     *         "THU", "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or
      *         "BIWEEKLY".
      * @see DayOfWeek
      */
@@ -218,12 +218,12 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED", "THU",
-     * "FRI" or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".
+     * "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".
      * </p>
      * 
      * @param dayOfWeek
      *        The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED",
-     *        "THU", "FRI" or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or
+     *        "THU", "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or
      *        "BIWEEKLY".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DayOfWeek
@@ -237,12 +237,12 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED", "THU",
-     * "FRI" or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".
+     * "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".
      * </p>
      * 
      * @param dayOfWeek
      *        The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED",
-     *        "THU", "FRI" or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or
+     *        "THU", "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or
      *        "BIWEEKLY".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DayOfWeek
@@ -256,13 +256,13 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or
-     * <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or
+     * use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * </p>
      * 
      * @return Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
-     *         <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are
-     *         enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     *         <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are
+     *         enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      */
 
     public java.util.List<String> getTargetCheckNames() {
@@ -272,14 +272,14 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or
-     * <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or
+     * use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * </p>
      * 
      * @param targetCheckNames
      *        Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
-     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are
-     *        enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are
+     *        enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      */
 
     public void setTargetCheckNames(java.util.Collection<String> targetCheckNames) {
@@ -294,8 +294,8 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or
-     * <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or
+     * use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -305,8 +305,8 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param targetCheckNames
      *        Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
-     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are
-     *        enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are
+     *        enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,89 +323,19 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or
-     * <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or
+     * use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * </p>
      * 
      * @param targetCheckNames
      *        Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use
-     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are
-     *        enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
+     *        <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are
+     *        enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateScheduledAuditRequest withTargetCheckNames(java.util.Collection<String> targetCheckNames) {
         setTargetCheckNames(targetCheckNames);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Metadata which can be used to manage the scheduled audit.
-     * </p>
-     * 
-     * @return Metadata which can be used to manage the scheduled audit.
-     */
-
-    public java.util.List<Tag> getTags() {
-        return tags;
-    }
-
-    /**
-     * <p>
-     * Metadata which can be used to manage the scheduled audit.
-     * </p>
-     * 
-     * @param tags
-     *        Metadata which can be used to manage the scheduled audit.
-     */
-
-    public void setTags(java.util.Collection<Tag> tags) {
-        if (tags == null) {
-            this.tags = null;
-            return;
-        }
-
-        this.tags = new java.util.ArrayList<Tag>(tags);
-    }
-
-    /**
-     * <p>
-     * Metadata which can be used to manage the scheduled audit.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param tags
-     *        Metadata which can be used to manage the scheduled audit.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateScheduledAuditRequest withTags(Tag... tags) {
-        if (this.tags == null) {
-            setTags(new java.util.ArrayList<Tag>(tags.length));
-        }
-        for (Tag ele : tags) {
-            this.tags.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Metadata which can be used to manage the scheduled audit.
-     * </p>
-     * 
-     * @param tags
-     *        Metadata which can be used to manage the scheduled audit.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateScheduledAuditRequest withTags(java.util.Collection<Tag> tags) {
-        setTags(tags);
         return this;
     }
 
@@ -450,6 +380,76 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Metadata that can be used to manage the scheduled audit.
+     * </p>
+     * 
+     * @return Metadata that can be used to manage the scheduled audit.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Metadata that can be used to manage the scheduled audit.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata that can be used to manage the scheduled audit.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Metadata that can be used to manage the scheduled audit.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata that can be used to manage the scheduled audit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateScheduledAuditRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metadata that can be used to manage the scheduled audit.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata that can be used to manage the scheduled audit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateScheduledAuditRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -469,10 +469,10 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("DayOfWeek: ").append(getDayOfWeek()).append(",");
         if (getTargetCheckNames() != null)
             sb.append("TargetCheckNames: ").append(getTargetCheckNames()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
         if (getScheduledAuditName() != null)
-            sb.append("ScheduledAuditName: ").append(getScheduledAuditName());
+            sb.append("ScheduledAuditName: ").append(getScheduledAuditName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -503,13 +503,13 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getTargetCheckNames() != null && other.getTargetCheckNames().equals(this.getTargetCheckNames()) == false)
             return false;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
         if (other.getScheduledAuditName() == null ^ this.getScheduledAuditName() == null)
             return false;
         if (other.getScheduledAuditName() != null && other.getScheduledAuditName().equals(this.getScheduledAuditName()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -523,8 +523,8 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getDayOfMonth() == null) ? 0 : getDayOfMonth().hashCode());
         hashCode = prime * hashCode + ((getDayOfWeek() == null) ? 0 : getDayOfWeek().hashCode());
         hashCode = prime * hashCode + ((getTargetCheckNames() == null) ? 0 : getTargetCheckNames().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getScheduledAuditName() == null) ? 0 : getScheduledAuditName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

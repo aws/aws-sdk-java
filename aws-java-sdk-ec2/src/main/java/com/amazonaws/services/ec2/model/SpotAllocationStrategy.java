@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum SpotAllocationStrategy {
 
     LowestPrice("lowest-price"),
-    Diversified("diversified");
+    Diversified("diversified"),
+    CapacityOptimized("capacity-optimized");
 
     private String value;
 

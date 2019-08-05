@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.datasync.model.transform;
+package com.amazonaws.services.iot.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.datasync.model.*;
+import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * EndpointOptions JSON Unmarshaller
+ * ListAuditMitigationActionsTasksResult JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EndpointOptionsJsonUnmarshaller implements Unmarshaller<EndpointOptions, JsonUnmarshallerContext> {
+public class ListAuditMitigationActionsTasksResultJsonUnmarshaller implements Unmarshaller<ListAuditMitigationActionsTasksResult, JsonUnmarshallerContext> {
 
-    public EndpointOptions unmarshall(JsonUnmarshallerContext context) throws Exception {
-        EndpointOptions endpointOptions = new EndpointOptions();
+    public ListAuditMitigationActionsTasksResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        ListAuditMitigationActionsTasksResult listAuditMitigationActionsTasksResult = new ListAuditMitigationActionsTasksResult();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -40,7 +40,7 @@ public class EndpointOptionsJsonUnmarshaller implements Unmarshaller<EndpointOpt
         if (token == null)
             token = context.nextToken();
         if (token == VALUE_NULL) {
-            return null;
+            return listAuditMitigationActionsTasksResult;
         }
 
         while (true) {
@@ -48,13 +48,14 @@ public class EndpointOptionsJsonUnmarshaller implements Unmarshaller<EndpointOpt
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Fips", targetDepth)) {
+                if (context.testExpression("tasks", targetDepth)) {
                     context.nextToken();
-                    endpointOptions.setFips(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    listAuditMitigationActionsTasksResult.setTasks(new ListUnmarshaller<AuditMitigationActionsTaskMetadata>(
+                            AuditMitigationActionsTaskMetadataJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("PrivateLink", targetDepth)) {
+                if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
-                    endpointOptions.setPrivateLink(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    listAuditMitigationActionsTasksResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -65,14 +66,14 @@ public class EndpointOptionsJsonUnmarshaller implements Unmarshaller<EndpointOpt
             token = context.nextToken();
         }
 
-        return endpointOptions;
+        return listAuditMitigationActionsTasksResult;
     }
 
-    private static EndpointOptionsJsonUnmarshaller instance;
+    private static ListAuditMitigationActionsTasksResultJsonUnmarshaller instance;
 
-    public static EndpointOptionsJsonUnmarshaller getInstance() {
+    public static ListAuditMitigationActionsTasksResultJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new EndpointOptionsJsonUnmarshaller();
+            instance = new ListAuditMitigationActionsTasksResultJsonUnmarshaller();
         return instance;
     }
 }

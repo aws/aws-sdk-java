@@ -46,13 +46,12 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * task.
      * </p>
      * <p>
-     * For more information on these groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html" (Working with
-     * Log Groups and Log Streams) in the <i>Amazon CloudWatch User Guide</i>.
+     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
+     * User Guide.</i>
      * </p>
      * <p>
-     * For more information about how to useCloudWatchLogs with DataSync, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html" (Monitoring Your Task)
+     * For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS
+     * DataSync User Guide.</i>
      * </p>
      */
     private String cloudWatchLogGroupArn;
@@ -75,10 +74,12 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
     private Options options;
     /**
-     * <p/>
      * <p>
-     * A filter that determines which files to exclude from a task based on the specified pattern. Transfers all files
-     * in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      */
     private java.util.List<FilterRule> excludes;
@@ -176,26 +177,24 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * task.
      * </p>
      * <p>
-     * For more information on these groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html" (Working with
-     * Log Groups and Log Streams) in the <i>Amazon CloudWatch User Guide</i>.
+     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
+     * User Guide.</i>
      * </p>
      * <p>
-     * For more information about how to useCloudWatchLogs with DataSync, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html" (Monitoring Your Task)
+     * For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS
+     * DataSync User Guide.</i>
      * </p>
      * 
      * @param cloudWatchLogGroupArn
      *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events
      *        in the task. </p>
      *        <p>
-     *        For more information on these groups, see
-     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     *        (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User Guide</i>.
+     *        For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon
+     *        CloudWatch User Guide.</i>
      *        </p>
      *        <p>
-     *        For more information about how to useCloudWatchLogs with DataSync, see
-     *        "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html" (Monitoring Your Task)
+     *        For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the
+     *        <i>AWS DataSync User Guide.</i>
      */
 
     public void setCloudWatchLogGroupArn(String cloudWatchLogGroupArn) {
@@ -208,25 +207,23 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * task.
      * </p>
      * <p>
-     * For more information on these groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html" (Working with
-     * Log Groups and Log Streams) in the <i>Amazon CloudWatch User Guide</i>.
+     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
+     * User Guide.</i>
      * </p>
      * <p>
-     * For more information about how to useCloudWatchLogs with DataSync, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html" (Monitoring Your Task)
+     * For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS
+     * DataSync User Guide.</i>
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events
      *         in the task. </p>
      *         <p>
-     *         For more information on these groups, see
-     *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     *         (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User Guide</i>.
+     *         For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon
+     *         CloudWatch User Guide.</i>
      *         </p>
      *         <p>
-     *         For more information about how to useCloudWatchLogs with DataSync, see
-     *         "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html" (Monitoring Your Task)
+     *         For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the
+     *         <i>AWS DataSync User Guide.</i>
      */
 
     public String getCloudWatchLogGroupArn() {
@@ -239,26 +236,24 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * task.
      * </p>
      * <p>
-     * For more information on these groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html" (Working with
-     * Log Groups and Log Streams) in the <i>Amazon CloudWatch User Guide</i>.
+     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
+     * User Guide.</i>
      * </p>
      * <p>
-     * For more information about how to useCloudWatchLogs with DataSync, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html" (Monitoring Your Task)
+     * For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS
+     * DataSync User Guide.</i>
      * </p>
      * 
      * @param cloudWatchLogGroupArn
      *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events
      *        in the task. </p>
      *        <p>
-     *        For more information on these groups, see
-     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     *        (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User Guide</i>.
+     *        For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon
+     *        CloudWatch User Guide.</i>
      *        </p>
      *        <p>
-     *        For more information about how to useCloudWatchLogs with DataSync, see
-     *        "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html" (Monitoring Your Task)
+     *        For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the
+     *        <i>AWS DataSync User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,15 +379,18 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
      * <p>
-     * A filter that determines which files to exclude from a task based on the specified pattern. Transfers all files
-     * in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * 
-     * @return <p>
-     *         A filter that determines which files to exclude from a task based on the specified pattern. Transfers all
-     *         files in the task’s subdirectory, except files that match the filter that is set.
+     * @return A list of filter rules that determines which files to exclude from a task. The list should contain a
+     *         single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that
+     *         is, a pipe), for example, <code>"/folder1|/folder2"</code> </p>
+     *         <p>
      */
 
     public java.util.List<FilterRule> getExcludes() {
@@ -400,16 +398,19 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
      * <p>
-     * A filter that determines which files to exclude from a task based on the specified pattern. Transfers all files
-     * in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * 
      * @param excludes
+     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
+     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
+     *        a pipe), for example, <code>"/folder1|/folder2"</code> </p>
      *        <p>
-     *        A filter that determines which files to exclude from a task based on the specified pattern. Transfers all
-     *        files in the task’s subdirectory, except files that match the filter that is set.
      */
 
     public void setExcludes(java.util.Collection<FilterRule> excludes) {
@@ -422,10 +423,12 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
      * <p>
-     * A filter that determines which files to exclude from a task based on the specified pattern. Transfers all files
-     * in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -434,9 +437,10 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param excludes
+     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
+     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
+     *        a pipe), for example, <code>"/folder1|/folder2"</code> </p>
      *        <p>
-     *        A filter that determines which files to exclude from a task based on the specified pattern. Transfers all
-     *        files in the task’s subdirectory, except files that match the filter that is set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -451,16 +455,19 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
      * <p>
-     * A filter that determines which files to exclude from a task based on the specified pattern. Transfers all files
-     * in the task’s subdirectory, except files that match the filter that is set.
+     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>
+     * </p>
+     * <p>
      * </p>
      * 
      * @param excludes
+     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
+     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
+     *        a pipe), for example, <code>"/folder1|/folder2"</code> </p>
      *        <p>
-     *        A filter that determines which files to exclude from a task based on the specified pattern. Transfers all
-     *        files in the task’s subdirectory, except files that match the filter that is set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

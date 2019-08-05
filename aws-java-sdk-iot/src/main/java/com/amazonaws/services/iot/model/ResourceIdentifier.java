@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information identifying the non-compliant resource.
+ * Information that identifies the noncompliant resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -39,7 +39,7 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
     private String caCertificateId;
     /**
      * <p>
-     * The ID of the Cognito Identity Pool.
+     * The ID of the Amazon Cognito identity pool.
      * </p>
      */
     private String cognitoIdentityPoolId;
@@ -144,11 +144,11 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the Cognito Identity Pool.
+     * The ID of the Amazon Cognito identity pool.
      * </p>
      * 
      * @param cognitoIdentityPoolId
-     *        The ID of the Cognito Identity Pool.
+     *        The ID of the Amazon Cognito identity pool.
      */
 
     public void setCognitoIdentityPoolId(String cognitoIdentityPoolId) {
@@ -157,10 +157,10 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the Cognito Identity Pool.
+     * The ID of the Amazon Cognito identity pool.
      * </p>
      * 
-     * @return The ID of the Cognito Identity Pool.
+     * @return The ID of the Amazon Cognito identity pool.
      */
 
     public String getCognitoIdentityPoolId() {
@@ -169,11 +169,11 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the Cognito Identity Pool.
+     * The ID of the Amazon Cognito identity pool.
      * </p>
      * 
      * @param cognitoIdentityPoolId
-     *        The ID of the Cognito Identity Pool.
+     *        The ID of the Amazon Cognito identity pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

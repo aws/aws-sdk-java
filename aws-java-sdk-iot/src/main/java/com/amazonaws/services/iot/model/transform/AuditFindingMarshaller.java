@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AuditFindingMarshaller {
 
+    private static final MarshallingInfo<String> FINDINGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("findingId").build();
     private static final MarshallingInfo<String> TASKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("taskId").build();
     private static final MarshallingInfo<String> CHECKNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,6 +65,7 @@ public class AuditFindingMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(auditFinding.getFindingId(), FINDINGID_BINDING);
             protocolMarshaller.marshall(auditFinding.getTaskId(), TASKID_BINDING);
             protocolMarshaller.marshall(auditFinding.getCheckName(), CHECKNAME_BINDING);
             protocolMarshaller.marshall(auditFinding.getTaskStartTime(), TASKSTARTTIME_BINDING);

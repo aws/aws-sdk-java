@@ -34,6 +34,12 @@ public class CreateAgentRequestMarshaller {
             .marshallLocationName("AgentName").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> VPCENDPOINTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcEndpointId").build();
+    private static final MarshallingInfo<List> SUBNETARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubnetArns").build();
+    private static final MarshallingInfo<List> SECURITYGROUPARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityGroupArns").build();
 
     private static final CreateAgentRequestMarshaller instance = new CreateAgentRequestMarshaller();
 
@@ -54,6 +60,9 @@ public class CreateAgentRequestMarshaller {
             protocolMarshaller.marshall(createAgentRequest.getActivationKey(), ACTIVATIONKEY_BINDING);
             protocolMarshaller.marshall(createAgentRequest.getAgentName(), AGENTNAME_BINDING);
             protocolMarshaller.marshall(createAgentRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createAgentRequest.getVpcEndpointId(), VPCENDPOINTID_BINDING);
+            protocolMarshaller.marshall(createAgentRequest.getSubnetArns(), SUBNETARNS_BINDING);
+            protocolMarshaller.marshall(createAgentRequest.getSecurityGroupArns(), SECURITYGROUPARNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

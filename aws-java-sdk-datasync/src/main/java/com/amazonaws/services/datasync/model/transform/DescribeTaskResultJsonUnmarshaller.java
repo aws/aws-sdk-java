@@ -76,6 +76,15 @@ public class DescribeTaskResultJsonUnmarshaller implements Unmarshaller<Describe
                     context.nextToken();
                     describeTaskResult.setCloudWatchLogGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SourceNetworkInterfaceArns", targetDepth)) {
+                    context.nextToken();
+                    describeTaskResult.setSourceNetworkInterfaceArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("DestinationNetworkInterfaceArns", targetDepth)) {
+                    context.nextToken();
+                    describeTaskResult.setDestinationNetworkInterfaceArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
                 if (context.testExpression("Options", targetDepth)) {
                     context.nextToken();
                     describeTaskResult.setOptions(OptionsJsonUnmarshaller.getInstance().unmarshall(context));

@@ -40,9 +40,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.
      * </p>
      * <p>
-     * For more information, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent" (Activating a
-     * Agent) in the <i>AWS DataSync User Guide.</i>
+     * For more information, see Activating an Agent in the <i>AWS DataSync User Guide.</i>
      * </p>
      */
     private String activationKey;
@@ -66,6 +64,35 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      */
     private java.util.List<TagListEntry> tags;
+    /**
+     * <p>
+     * The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side VPC
+     * endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a
+     * VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.
+     * </p>
+     * <p>
+     * VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     * </p>
+     */
+    private String vpcEndpointId;
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces (ENIs)
+     * for each data transfer task. The agent that runs a task must be private. When you start a task that is associated
+     * with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private.
+     * In this case, DataSync creates four ENIs for each task in your subnet. For a data transfer to work, the agent
+     * must be able to route to all these four ENIs.
+     * </p>
+     */
+    private java.util.List<String> subnetArns;
+    /**
+     * <p>
+     * The ARNs of the security groups used to protect your data transfer task subnets. See
+     * <a>CreateAgentRequest$SubnetArns</a>.
+     * </p>
+     */
+    private java.util.List<String> securityGroupArns;
 
     /**
      * <p>
@@ -79,15 +106,13 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.
      * </p>
      * <p>
-     * For more information, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent" (Activating a
-     * Agent) in the <i>AWS DataSync User Guide.</i>
+     * For more information, see Activating an Agent in the <i>AWS DataSync User Guide.</i>
      * </p>
      * 
      * @param activationKey
      *        Your agent activation key. You can get the activation key either by sending an HTTP GET request with
      *        redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the
-     *        AWS DataSync console. </p>
+     *        AWS DataSync console.</p>
      *        <p>
      *        The redirect URL returned in the response provides you the activation key for your agent in the query
      *        string parameter <code>activationKey</code>. It might also include other activation-related parameters;
@@ -95,9 +120,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        configuration of your agent.
      *        </p>
      *        <p>
-     *        For more information, see
-     *        "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
-     *        (Activating a Agent) in the <i>AWS DataSync User Guide.</i>
+     *        For more information, see Activating an Agent in the <i>AWS DataSync User Guide.</i>
      */
 
     public void setActivationKey(String activationKey) {
@@ -116,14 +139,12 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.
      * </p>
      * <p>
-     * For more information, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent" (Activating a
-     * Agent) in the <i>AWS DataSync User Guide.</i>
+     * For more information, see Activating an Agent in the <i>AWS DataSync User Guide.</i>
      * </p>
      * 
      * @return Your agent activation key. You can get the activation key either by sending an HTTP GET request with
      *         redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the
-     *         AWS DataSync console. </p>
+     *         AWS DataSync console.</p>
      *         <p>
      *         The redirect URL returned in the response provides you the activation key for your agent in the query
      *         string parameter <code>activationKey</code>. It might also include other activation-related parameters;
@@ -131,9 +152,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         configuration of your agent.
      *         </p>
      *         <p>
-     *         For more information, see
-     *         "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
-     *         (Activating a Agent) in the <i>AWS DataSync User Guide.</i>
+     *         For more information, see Activating an Agent in the <i>AWS DataSync User Guide.</i>
      */
 
     public String getActivationKey() {
@@ -152,15 +171,13 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.
      * </p>
      * <p>
-     * For more information, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent" (Activating a
-     * Agent) in the <i>AWS DataSync User Guide.</i>
+     * For more information, see Activating an Agent in the <i>AWS DataSync User Guide.</i>
      * </p>
      * 
      * @param activationKey
      *        Your agent activation key. You can get the activation key either by sending an HTTP GET request with
      *        redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the
-     *        AWS DataSync console. </p>
+     *        AWS DataSync console.</p>
      *        <p>
      *        The redirect URL returned in the response provides you the activation key for your agent in the query
      *        string parameter <code>activationKey</code>. It might also include other activation-related parameters;
@@ -168,9 +185,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        configuration of your agent.
      *        </p>
      *        <p>
-     *        For more information, see
-     *        "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
-     *        (Activating a Agent) in the <i>AWS DataSync User Guide.</i>
+     *        For more information, see Activating an Agent in the <i>AWS DataSync User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,6 +359,259 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side VPC
+     * endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a
+     * VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.
+     * </p>
+     * <p>
+     * VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     * </p>
+     * 
+     * @param vpcEndpointId
+     *        The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side
+     *        VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service"
+     *        >Creating a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p>
+     *        <p>
+     *        VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     */
+
+    public void setVpcEndpointId(String vpcEndpointId) {
+        this.vpcEndpointId = vpcEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side VPC
+     * endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a
+     * VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.
+     * </p>
+     * <p>
+     * VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     * </p>
+     * 
+     * @return The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side
+     *         VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service"
+     *         >Creating a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p>
+     *         <p>
+     *         VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     */
+
+    public String getVpcEndpointId() {
+        return this.vpcEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side VPC
+     * endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a
+     * VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.
+     * </p>
+     * <p>
+     * VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     * </p>
+     * 
+     * @param vpcEndpointId
+     *        The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side
+     *        VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service"
+     *        >Creating a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p>
+     *        <p>
+     *        VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAgentRequest withVpcEndpointId(String vpcEndpointId) {
+        setVpcEndpointId(vpcEndpointId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces (ENIs)
+     * for each data transfer task. The agent that runs a task must be private. When you start a task that is associated
+     * with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private.
+     * In this case, DataSync creates four ENIs for each task in your subnet. For a data transfer to work, the agent
+     * must be able to route to all these four ENIs.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces
+     *         (ENIs) for each data transfer task. The agent that runs a task must be private. When you start a task
+     *         that is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then
+     *         the task is also private. In this case, DataSync creates four ENIs for each task in your subnet. For a
+     *         data transfer to work, the agent must be able to route to all these four ENIs.
+     */
+
+    public java.util.List<String> getSubnetArns() {
+        return subnetArns;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces (ENIs)
+     * for each data transfer task. The agent that runs a task must be private. When you start a task that is associated
+     * with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private.
+     * In this case, DataSync creates four ENIs for each task in your subnet. For a data transfer to work, the agent
+     * must be able to route to all these four ENIs.
+     * </p>
+     * 
+     * @param subnetArns
+     *        The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces
+     *        (ENIs) for each data transfer task. The agent that runs a task must be private. When you start a task that
+     *        is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the
+     *        task is also private. In this case, DataSync creates four ENIs for each task in your subnet. For a data
+     *        transfer to work, the agent must be able to route to all these four ENIs.
+     */
+
+    public void setSubnetArns(java.util.Collection<String> subnetArns) {
+        if (subnetArns == null) {
+            this.subnetArns = null;
+            return;
+        }
+
+        this.subnetArns = new java.util.ArrayList<String>(subnetArns);
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces (ENIs)
+     * for each data transfer task. The agent that runs a task must be private. When you start a task that is associated
+     * with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private.
+     * In this case, DataSync creates four ENIs for each task in your subnet. For a data transfer to work, the agent
+     * must be able to route to all these four ENIs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetArns(java.util.Collection)} or {@link #withSubnetArns(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param subnetArns
+     *        The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces
+     *        (ENIs) for each data transfer task. The agent that runs a task must be private. When you start a task that
+     *        is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the
+     *        task is also private. In this case, DataSync creates four ENIs for each task in your subnet. For a data
+     *        transfer to work, the agent must be able to route to all these four ENIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAgentRequest withSubnetArns(String... subnetArns) {
+        if (this.subnetArns == null) {
+            setSubnetArns(new java.util.ArrayList<String>(subnetArns.length));
+        }
+        for (String ele : subnetArns) {
+            this.subnetArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces (ENIs)
+     * for each data transfer task. The agent that runs a task must be private. When you start a task that is associated
+     * with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private.
+     * In this case, DataSync creates four ENIs for each task in your subnet. For a data transfer to work, the agent
+     * must be able to route to all these four ENIs.
+     * </p>
+     * 
+     * @param subnetArns
+     *        The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces
+     *        (ENIs) for each data transfer task. The agent that runs a task must be private. When you start a task that
+     *        is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the
+     *        task is also private. In this case, DataSync creates four ENIs for each task in your subnet. For a data
+     *        transfer to work, the agent must be able to route to all these four ENIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAgentRequest withSubnetArns(java.util.Collection<String> subnetArns) {
+        setSubnetArns(subnetArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARNs of the security groups used to protect your data transfer task subnets. See
+     * <a>CreateAgentRequest$SubnetArns</a>.
+     * </p>
+     * 
+     * @return The ARNs of the security groups used to protect your data transfer task subnets. See
+     *         <a>CreateAgentRequest$SubnetArns</a>.
+     */
+
+    public java.util.List<String> getSecurityGroupArns() {
+        return securityGroupArns;
+    }
+
+    /**
+     * <p>
+     * The ARNs of the security groups used to protect your data transfer task subnets. See
+     * <a>CreateAgentRequest$SubnetArns</a>.
+     * </p>
+     * 
+     * @param securityGroupArns
+     *        The ARNs of the security groups used to protect your data transfer task subnets. See
+     *        <a>CreateAgentRequest$SubnetArns</a>.
+     */
+
+    public void setSecurityGroupArns(java.util.Collection<String> securityGroupArns) {
+        if (securityGroupArns == null) {
+            this.securityGroupArns = null;
+            return;
+        }
+
+        this.securityGroupArns = new java.util.ArrayList<String>(securityGroupArns);
+    }
+
+    /**
+     * <p>
+     * The ARNs of the security groups used to protect your data transfer task subnets. See
+     * <a>CreateAgentRequest$SubnetArns</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupArns(java.util.Collection)} or {@link #withSecurityGroupArns(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param securityGroupArns
+     *        The ARNs of the security groups used to protect your data transfer task subnets. See
+     *        <a>CreateAgentRequest$SubnetArns</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAgentRequest withSecurityGroupArns(String... securityGroupArns) {
+        if (this.securityGroupArns == null) {
+            setSecurityGroupArns(new java.util.ArrayList<String>(securityGroupArns.length));
+        }
+        for (String ele : securityGroupArns) {
+            this.securityGroupArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARNs of the security groups used to protect your data transfer task subnets. See
+     * <a>CreateAgentRequest$SubnetArns</a>.
+     * </p>
+     * 
+     * @param securityGroupArns
+     *        The ARNs of the security groups used to protect your data transfer task subnets. See
+     *        <a>CreateAgentRequest$SubnetArns</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAgentRequest withSecurityGroupArns(java.util.Collection<String> securityGroupArns) {
+        setSecurityGroupArns(securityGroupArns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -360,7 +628,13 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getAgentName() != null)
             sb.append("AgentName: ").append(getAgentName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getVpcEndpointId() != null)
+            sb.append("VpcEndpointId: ").append(getVpcEndpointId()).append(",");
+        if (getSubnetArns() != null)
+            sb.append("SubnetArns: ").append(getSubnetArns()).append(",");
+        if (getSecurityGroupArns() != null)
+            sb.append("SecurityGroupArns: ").append(getSecurityGroupArns());
         sb.append("}");
         return sb.toString();
     }
@@ -387,6 +661,18 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getVpcEndpointId() == null ^ this.getVpcEndpointId() == null)
+            return false;
+        if (other.getVpcEndpointId() != null && other.getVpcEndpointId().equals(this.getVpcEndpointId()) == false)
+            return false;
+        if (other.getSubnetArns() == null ^ this.getSubnetArns() == null)
+            return false;
+        if (other.getSubnetArns() != null && other.getSubnetArns().equals(this.getSubnetArns()) == false)
+            return false;
+        if (other.getSecurityGroupArns() == null ^ this.getSecurityGroupArns() == null)
+            return false;
+        if (other.getSecurityGroupArns() != null && other.getSecurityGroupArns().equals(this.getSecurityGroupArns()) == false)
+            return false;
         return true;
     }
 
@@ -398,6 +684,9 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getActivationKey() == null) ? 0 : getActivationKey().hashCode());
         hashCode = prime * hashCode + ((getAgentName() == null) ? 0 : getAgentName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVpcEndpointId() == null) ? 0 : getVpcEndpointId().hashCode());
+        hashCode = prime * hashCode + ((getSubnetArns() == null) ? 0 : getSubnetArns().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupArns() == null) ? 0 : getSecurityGroupArns().hashCode());
         return hashCode;
     }
 

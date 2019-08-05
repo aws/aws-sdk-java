@@ -1,3 +1,16 @@
+# __1.11.604__ __2019-08-05__
+## __AWS DataSync__
+  - ### Features
+    - Support VPC endpoints.
+
+## __AWS IoT__
+  - ### Features
+    - In this release, AWS IoT Device Defender introduces audit mitigation actions that can be applied to audit findings to help mitigate security issues.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon EC2 now supports a new Spot allocation strategy "Capacity-optimized" that fulfills your request using Spot Instance pools that are optimally chosen based on the available Spot capacity.
+
 # __1.11.603__ __2019-08-02__
 ## __AWS SDK for Java__
   - ### Bugfixes

@@ -46,9 +46,8 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * the files. For the agent to access directories, you must additionally enable all execute access.
      * </p>
      * <p>
-     * For information about NFS export configuration, see
-     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html" (18.7. The
-     * /etc/exports Configuration File).
+     * For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat
+     * Enterprise Linux documentation.
      * </p>
      */
     private String subdirectory;
@@ -102,9 +101,8 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * the files. For the agent to access directories, you must additionally enable all execute access.
      * </p>
      * <p>
-     * For information about NFS export configuration, see
-     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html" (18.7. The
-     * /etc/exports Configuration File).
+     * For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat
+     * Enterprise Linux documentation.
      * </p>
      * 
      * @param subdirectory
@@ -126,9 +124,8 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        execute access.
      *        </p>
      *        <p>
-     *        For information about NFS export configuration, see
-     *        "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
-     *        (18.7. The /etc/exports Configuration File).
+     *        For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     *        Hat Enterprise Linux documentation.
      */
 
     public void setSubdirectory(String subdirectory) {
@@ -153,9 +150,8 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * the files. For the agent to access directories, you must additionally enable all execute access.
      * </p>
      * <p>
-     * For information about NFS export configuration, see
-     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html" (18.7. The
-     * /etc/exports Configuration File).
+     * For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat
+     * Enterprise Linux documentation.
      * </p>
      * 
      * @return The subdirectory in the NFS file system that is used to read data from the NFS source location or write
@@ -176,9 +172,8 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         all execute access.
      *         </p>
      *         <p>
-     *         For information about NFS export configuration, see
-     *         "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
-     *         (18.7. The /etc/exports Configuration File).
+     *         For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     *         Hat Enterprise Linux documentation.
      */
 
     public String getSubdirectory() {
@@ -203,9 +198,8 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * the files. For the agent to access directories, you must additionally enable all execute access.
      * </p>
      * <p>
-     * For information about NFS export configuration, see
-     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html" (18.7. The
-     * /etc/exports Configuration File).
+     * For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat
+     * Enterprise Linux documentation.
      * </p>
      * 
      * @param subdirectory
@@ -227,9 +221,8 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        execute access.
      *        </p>
      *        <p>
-     *        For information about NFS export configuration, see
-     *        "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
-     *        (18.7. The /etc/exports Configuration File).
+     *        For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     *        Hat Enterprise Linux documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

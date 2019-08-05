@@ -33,13 +33,13 @@ public class AuditTaskMetadata implements Serializable, Cloneable, StructuredPoj
     private String taskId;
     /**
      * <p>
-     * The status of this audit: one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".
+     * The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".
      * </p>
      */
     private String taskStatus;
     /**
      * <p>
-     * The type of this audit: one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
+     * The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
      * </p>
      */
     private String taskType;
@@ -86,11 +86,11 @@ public class AuditTaskMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of this audit: one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".
+     * The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".
      * </p>
      * 
      * @param taskStatus
-     *        The status of this audit: one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".
+     *        The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".
      * @see AuditTaskStatus
      */
 
@@ -100,10 +100,10 @@ public class AuditTaskMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of this audit: one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".
+     * The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".
      * </p>
      * 
-     * @return The status of this audit: one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".
+     * @return The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".
      * @see AuditTaskStatus
      */
 
@@ -113,11 +113,11 @@ public class AuditTaskMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of this audit: one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".
+     * The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".
      * </p>
      * 
      * @param taskStatus
-     *        The status of this audit: one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".
+     *        The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditTaskStatus
      */
@@ -129,11 +129,11 @@ public class AuditTaskMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of this audit: one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".
+     * The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".
      * </p>
      * 
      * @param taskStatus
-     *        The status of this audit: one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".
+     *        The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditTaskStatus
      */
@@ -145,11 +145,11 @@ public class AuditTaskMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of this audit: one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
+     * The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
      * </p>
      * 
      * @param taskType
-     *        The type of this audit: one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
+     *        The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
      * @see AuditTaskType
      */
 
@@ -159,10 +159,10 @@ public class AuditTaskMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of this audit: one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
+     * The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
      * </p>
      * 
-     * @return The type of this audit: one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
+     * @return The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
      * @see AuditTaskType
      */
 
@@ -172,11 +172,11 @@ public class AuditTaskMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of this audit: one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
+     * The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
      * </p>
      * 
      * @param taskType
-     *        The type of this audit: one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
+     *        The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditTaskType
      */
@@ -188,11 +188,11 @@ public class AuditTaskMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of this audit: one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
+     * The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
      * </p>
      * 
      * @param taskType
-     *        The type of this audit: one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
+     *        The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditTaskType
      */

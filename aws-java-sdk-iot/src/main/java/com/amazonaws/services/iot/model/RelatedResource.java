@@ -33,13 +33,13 @@ public class RelatedResource implements Serializable, Cloneable, StructuredPojo 
     private String resourceType;
     /**
      * <p>
-     * Information identifying the resource.
+     * Information that identifies the resource.
      * </p>
      */
     private ResourceIdentifier resourceIdentifier;
     /**
      * <p>
-     * Additional information about the resource.
+     * Other information about the resource.
      * </p>
      */
     private java.util.Map<String, String> additionalInfo;
@@ -105,11 +105,11 @@ public class RelatedResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Information identifying the resource.
+     * Information that identifies the resource.
      * </p>
      * 
      * @param resourceIdentifier
-     *        Information identifying the resource.
+     *        Information that identifies the resource.
      */
 
     public void setResourceIdentifier(ResourceIdentifier resourceIdentifier) {
@@ -118,10 +118,10 @@ public class RelatedResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Information identifying the resource.
+     * Information that identifies the resource.
      * </p>
      * 
-     * @return Information identifying the resource.
+     * @return Information that identifies the resource.
      */
 
     public ResourceIdentifier getResourceIdentifier() {
@@ -130,11 +130,11 @@ public class RelatedResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Information identifying the resource.
+     * Information that identifies the resource.
      * </p>
      * 
      * @param resourceIdentifier
-     *        Information identifying the resource.
+     *        Information that identifies the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,10 +145,10 @@ public class RelatedResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Additional information about the resource.
+     * Other information about the resource.
      * </p>
      * 
-     * @return Additional information about the resource.
+     * @return Other information about the resource.
      */
 
     public java.util.Map<String, String> getAdditionalInfo() {
@@ -157,11 +157,11 @@ public class RelatedResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Additional information about the resource.
+     * Other information about the resource.
      * </p>
      * 
      * @param additionalInfo
-     *        Additional information about the resource.
+     *        Other information about the resource.
      */
 
     public void setAdditionalInfo(java.util.Map<String, String> additionalInfo) {
@@ -170,11 +170,11 @@ public class RelatedResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Additional information about the resource.
+     * Other information about the resource.
      * </p>
      * 
      * @param additionalInfo
-     *        Additional information about the resource.
+     *        Other information about the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

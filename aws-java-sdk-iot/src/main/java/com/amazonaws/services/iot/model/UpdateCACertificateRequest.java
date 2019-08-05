@@ -54,7 +54,7 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
     private RegistrationConfig registrationConfig;
     /**
      * <p>
-     * If true, remove auto registration.
+     * If true, removes auto registration.
      * </p>
      */
     private Boolean removeAutoRegistration;
@@ -312,11 +312,11 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If true, remove auto registration.
+     * If true, removes auto registration.
      * </p>
      * 
      * @param removeAutoRegistration
-     *        If true, remove auto registration.
+     *        If true, removes auto registration.
      */
 
     public void setRemoveAutoRegistration(Boolean removeAutoRegistration) {
@@ -325,10 +325,10 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If true, remove auto registration.
+     * If true, removes auto registration.
      * </p>
      * 
-     * @return If true, remove auto registration.
+     * @return If true, removes auto registration.
      */
 
     public Boolean getRemoveAutoRegistration() {
@@ -337,11 +337,11 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If true, remove auto registration.
+     * If true, removes auto registration.
      * </p>
      * 
      * @param removeAutoRegistration
-     *        If true, remove auto registration.
+     *        If true, removes auto registration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,10 +352,10 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If true, remove auto registration.
+     * If true, removes auto registration.
      * </p>
      * 
-     * @return If true, remove auto registration.
+     * @return If true, removes auto registration.
      */
 
     public Boolean isRemoveAutoRegistration() {

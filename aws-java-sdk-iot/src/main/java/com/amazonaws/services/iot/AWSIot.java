@@ -269,8 +269,8 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Associates a Device Defender security profile with a thing group or with this account. Each thing group or
-     * account can have up to five security profiles associated with it.
+     * Associates a Device Defender security profile with a thing group or this account. Each thing group or account can
+     * have up to five security profiles associated with it.
      * </p>
      * 
      * @param attachSecurityProfileRequest
@@ -316,6 +316,26 @@ public interface AWSIot {
      * @sample AWSIot.AttachThingPrincipal
      */
     AttachThingPrincipalResult attachThingPrincipal(AttachThingPrincipalRequest attachThingPrincipalRequest);
+
+    /**
+     * <p>
+     * Cancels a mitigation action task that is in progress. If the task is not in progress, an InvalidRequestException
+     * occurs.
+     * </p>
+     * 
+     * @param cancelAuditMitigationActionsTaskRequest
+     * @return Result of the CancelAuditMitigationActionsTask operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CancelAuditMitigationActionsTask
+     */
+    CancelAuditMitigationActionsTaskResult cancelAuditMitigationActionsTask(CancelAuditMitigationActionsTaskRequest cancelAuditMitigationActionsTaskRequest);
 
     /**
      * <p>
@@ -630,6 +650,28 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Each mitigation
+     * action can apply only one type of change.
+     * </p>
+     * 
+     * @param createMitigationActionRequest
+     * @return Result of the CreateMitigationAction operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateMitigationAction
+     */
+    CreateMitigationActionResult createMitigationAction(CreateMitigationActionRequest createMitigationActionRequest);
+
+    /**
+     * <p>
      * Creates an AWS IoT OTAUpdate on a target group of things or groups.
      * </p>
      * 
@@ -753,6 +795,8 @@ public interface AWSIot {
      * @return Result of the CreateScheduledAudit operation returned by the service.
      * @throws InvalidRequestException
      *         The request is not valid.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws InternalFailureException
@@ -1020,8 +1064,8 @@ public interface AWSIot {
      * Deletes the specified certificate.
      * </p>
      * <p>
-     * A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a
-     * certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the
+     * A certificate cannot be deleted if it has a policy or IoT thing attached to it or if its status is set to ACTIVE.
+     * To delete a certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the
      * <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.
      * </p>
      * 
@@ -1121,6 +1165,23 @@ public interface AWSIot {
      * @sample AWSIot.DeleteJobExecution
      */
     DeleteJobExecutionResult deleteJobExecution(DeleteJobExecutionRequest deleteJobExecutionRequest);
+
+    /**
+     * <p>
+     * Deletes a defined mitigation action from your AWS account.
+     * </p>
+     * 
+     * @param deleteMitigationActionRequest
+     * @return Result of the DeleteMitigationAction operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteMitigationAction
+     */
+    DeleteMitigationActionResult deleteMitigationAction(DeleteMitigationActionRequest deleteMitigationActionRequest);
 
     /**
      * <p>
@@ -1481,6 +1542,48 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Gets information about a single audit finding. Properties include the reason for noncompliance, the severity of
+     * the issue, and when the audit that returned the finding was started.
+     * </p>
+     * 
+     * @param describeAuditFindingRequest
+     * @return Result of the DescribeAuditFinding operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeAuditFinding
+     */
+    DescribeAuditFindingResult describeAuditFinding(DescribeAuditFindingRequest describeAuditFindingRequest);
+
+    /**
+     * <p>
+     * Gets information about an audit mitigation task that is used to apply mitigation actions to a set of audit
+     * findings. Properties include the actions being applied, the audit checks to which they're being applied, the task
+     * status, and aggregated task statistics.
+     * </p>
+     * 
+     * @param describeAuditMitigationActionsTaskRequest
+     * @return Result of the DescribeAuditMitigationActionsTask operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeAuditMitigationActionsTask
+     */
+    DescribeAuditMitigationActionsTaskResult describeAuditMitigationActionsTask(
+            DescribeAuditMitigationActionsTaskRequest describeAuditMitigationActionsTaskRequest);
+
+    /**
+     * <p>
      * Gets information about a Device Defender audit.
      * </p>
      * 
@@ -1706,6 +1809,25 @@ public interface AWSIot {
      * @sample AWSIot.DescribeJobExecution
      */
     DescribeJobExecutionResult describeJobExecution(DescribeJobExecutionRequest describeJobExecutionRequest);
+
+    /**
+     * <p>
+     * Gets information about a mitigation action.
+     * </p>
+     * 
+     * @param describeMitigationActionRequest
+     * @return Result of the DescribeMitigationAction operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeMitigationAction
+     */
+    DescribeMitigationActionResult describeMitigationAction(DescribeMitigationActionRequest describeMitigationActionRequest);
 
     /**
      * <p>
@@ -2335,6 +2457,41 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Gets the status of audit mitigation action tasks that were executed.
+     * </p>
+     * 
+     * @param listAuditMitigationActionsExecutionsRequest
+     * @return Result of the ListAuditMitigationActionsExecutions operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListAuditMitigationActionsExecutions
+     */
+    ListAuditMitigationActionsExecutionsResult listAuditMitigationActionsExecutions(
+            ListAuditMitigationActionsExecutionsRequest listAuditMitigationActionsExecutionsRequest);
+
+    /**
+     * <p>
+     * Gets a list of audit mitigation action tasks that match the specified filters.
+     * </p>
+     * 
+     * @param listAuditMitigationActionsTasksRequest
+     * @return Result of the ListAuditMitigationActionsTasks operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListAuditMitigationActionsTasks
+     */
+    ListAuditMitigationActionsTasksResult listAuditMitigationActionsTasks(ListAuditMitigationActionsTasksRequest listAuditMitigationActionsTasksRequest);
+
+    /**
+     * <p>
      * Lists the Device Defender audits that have been performed during a given time period.
      * </p>
      * 
@@ -2541,6 +2698,23 @@ public interface AWSIot {
      * @sample AWSIot.ListJobs
      */
     ListJobsResult listJobs(ListJobsRequest listJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of all mitigation actions that match the specified filter criteria.
+     * </p>
+     * 
+     * @param listMitigationActionsRequest
+     * @return Result of the ListMitigationActions operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListMitigationActions
+     */
+    ListMitigationActionsResult listMitigationActions(ListMitigationActionsRequest listMitigationActionsRequest);
 
     /**
      * <p>
@@ -3093,7 +3267,7 @@ public interface AWSIot {
     /**
      * <p>
      * Lists the Device Defender security profile violations discovered during the given time period. You can use
-     * filters to limit the results to those alerts issued for a particular security profile, behavior or thing
+     * filters to limit the results to those alerts issued for a particular security profile, behavior, or thing
      * (device).
      * </p>
      * 
@@ -3435,6 +3609,28 @@ public interface AWSIot {
      * @sample AWSIot.SetV2LoggingOptions
      */
     SetV2LoggingOptionsResult setV2LoggingOptions(SetV2LoggingOptionsRequest setV2LoggingOptionsRequest);
+
+    /**
+     * <p>
+     * Starts a task that applies a set of mitigation actions to the specified target.
+     * </p>
+     * 
+     * @param startAuditMitigationActionsTaskRequest
+     * @return Result of the StartAuditMitigationActionsTask operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws TaskAlreadyExistsException
+     *         This exception occurs if you attempt to start a task with the same task-id as an existing task but with a
+     *         different clientRequestToken.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.StartAuditMitigationActionsTask
+     */
+    StartAuditMitigationActionsTaskResult startAuditMitigationActionsTask(StartAuditMitigationActionsTaskRequest startAuditMitigationActionsTaskRequest);
 
     /**
      * <p>
@@ -3835,6 +4031,25 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Updates the definition for the specified mitigation action.
+     * </p>
+     * 
+     * @param updateMitigationActionRequest
+     * @return Result of the UpdateMitigationAction operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateMitigationAction
+     */
+    UpdateMitigationActionResult updateMitigationAction(UpdateMitigationActionRequest updateMitigationActionRequest);
+
+    /**
+     * <p>
      * Updates a role alias.
      * </p>
      * 
@@ -3858,7 +4073,7 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Updates a scheduled audit, including what checks are performed and how often the audit takes place.
+     * Updates a scheduled audit, including which checks are performed and how often the audit takes place.
      * </p>
      * 
      * @param updateScheduledAuditRequest

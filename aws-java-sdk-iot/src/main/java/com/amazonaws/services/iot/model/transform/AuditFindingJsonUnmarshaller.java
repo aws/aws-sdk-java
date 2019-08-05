@@ -48,6 +48,10 @@ public class AuditFindingJsonUnmarshaller implements Unmarshaller<AuditFinding, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("findingId", targetDepth)) {
+                    context.nextToken();
+                    auditFinding.setFindingId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("taskId", targetDepth)) {
                     context.nextToken();
                     auditFinding.setTaskId(context.getUnmarshaller(String.class).unmarshall(context));

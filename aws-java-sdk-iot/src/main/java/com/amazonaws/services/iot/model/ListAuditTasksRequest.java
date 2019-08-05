@@ -22,8 +22,8 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The beginning of the time period. Note that audit information is retained for a limited time (180 days).
-     * Requesting a start time prior to what is retained results in an "InvalidRequestException".
+     * The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting a start
+     * time prior to what is retained results in an "InvalidRequestException".
      * </p>
      */
     private java.util.Date startTime;
@@ -43,7 +43,7 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS",
-     * "COMPLETED", "FAILED" or "CANCELED".
+     * "COMPLETED", "FAILED", or "CANCELED".
      * </p>
      */
     private String taskStatus;
@@ -62,13 +62,13 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The beginning of the time period. Note that audit information is retained for a limited time (180 days).
-     * Requesting a start time prior to what is retained results in an "InvalidRequestException".
+     * The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting a start
+     * time prior to what is retained results in an "InvalidRequestException".
      * </p>
      * 
      * @param startTime
-     *        The beginning of the time period. Note that audit information is retained for a limited time (180 days).
-     *        Requesting a start time prior to what is retained results in an "InvalidRequestException".
+     *        The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting
+     *        a start time prior to what is retained results in an "InvalidRequestException".
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -77,12 +77,12 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The beginning of the time period. Note that audit information is retained for a limited time (180 days).
-     * Requesting a start time prior to what is retained results in an "InvalidRequestException".
+     * The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting a start
+     * time prior to what is retained results in an "InvalidRequestException".
      * </p>
      * 
-     * @return The beginning of the time period. Note that audit information is retained for a limited time (180 days).
-     *         Requesting a start time prior to what is retained results in an "InvalidRequestException".
+     * @return The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting
+     *         a start time prior to what is retained results in an "InvalidRequestException".
      */
 
     public java.util.Date getStartTime() {
@@ -91,13 +91,13 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The beginning of the time period. Note that audit information is retained for a limited time (180 days).
-     * Requesting a start time prior to what is retained results in an "InvalidRequestException".
+     * The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting a start
+     * time prior to what is retained results in an "InvalidRequestException".
      * </p>
      * 
      * @param startTime
-     *        The beginning of the time period. Note that audit information is retained for a limited time (180 days).
-     *        Requesting a start time prior to what is retained results in an "InvalidRequestException".
+     *        The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting
+     *        a start time prior to what is retained results in an "InvalidRequestException".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,12 +216,12 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS",
-     * "COMPLETED", "FAILED" or "CANCELED".
+     * "COMPLETED", "FAILED", or "CANCELED".
      * </p>
      * 
      * @param taskStatus
      *        A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS",
-     *        "COMPLETED", "FAILED" or "CANCELED".
+     *        "COMPLETED", "FAILED", or "CANCELED".
      * @see AuditTaskStatus
      */
 
@@ -232,11 +232,11 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS",
-     * "COMPLETED", "FAILED" or "CANCELED".
+     * "COMPLETED", "FAILED", or "CANCELED".
      * </p>
      * 
      * @return A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS",
-     *         "COMPLETED", "FAILED" or "CANCELED".
+     *         "COMPLETED", "FAILED", or "CANCELED".
      * @see AuditTaskStatus
      */
 
@@ -247,12 +247,12 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS",
-     * "COMPLETED", "FAILED" or "CANCELED".
+     * "COMPLETED", "FAILED", or "CANCELED".
      * </p>
      * 
      * @param taskStatus
      *        A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS",
-     *        "COMPLETED", "FAILED" or "CANCELED".
+     *        "COMPLETED", "FAILED", or "CANCELED".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditTaskStatus
      */
@@ -265,12 +265,12 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS",
-     * "COMPLETED", "FAILED" or "CANCELED".
+     * "COMPLETED", "FAILED", or "CANCELED".
      * </p>
      * 
      * @param taskStatus
      *        A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS",
-     *        "COMPLETED", "FAILED" or "CANCELED".
+     *        "COMPLETED", "FAILED", or "CANCELED".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditTaskStatus
      */

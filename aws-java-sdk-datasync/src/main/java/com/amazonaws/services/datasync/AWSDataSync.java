@@ -81,14 +81,13 @@ public interface AWSDataSync {
      * Amazon EFS) reside. Your tasks are created in this AWS Region.
      * </p>
      * <p>
+     * You can activate the agent in a VPC (Virtual private Cloud) or provide the agent access to a VPC endpoint so you
+     * can run tasks without going over the public Internet.
+     * </p>
+     * <p>
      * You can use an agent for more than one location. If a task uses multiple agents, all of them need to have status
      * AVAILABLE for the task to run. If you use multiple agents for a source location, the status of all the agents
      * must be AVAILABLE for the task to run.
-     * </p>
-     * <p>
-     * For more information, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent" (Activating an
-     * Agent) in the <i>AWS DataSync User Guide.</i>
      * </p>
      * <p>
      * Agents are automatically updated by AWS on a regular basis, using a mechanism that ensures minimal interruption
@@ -156,9 +155,7 @@ public interface AWSDataSync {
      * examples section.
      * </p>
      * <p>
-     * For more information, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location"
-     * (Configuring Amazon S3 Location Settings) in the <i>AWS DataSync User Guide</i>.
+     * For more information, see Configuring Amazon S3 Location Settings in the <i>AWS DataSync User Guide.</i>
      * </p>
      * 
      * @param createLocationS3Request
@@ -486,9 +483,8 @@ public interface AWSDataSync {
      * VERIFYING | SUCCESS/FAILURE.
      * </p>
      * <p>
-     * For detailed information, see <i>Task Execution</i> in
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-works.html#terminology" (Components and
-     * Terminology) in the <i>AWS DataSync User Guide</i>.
+     * For detailed information, see the Task Execution section in the Components and Terminology topic in the <i>AWS
+     * DataSync User Guide</i>.
      * </p>
      * 
      * @param startTaskExecutionRequest
