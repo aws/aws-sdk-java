@@ -22,8 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import com.amazonaws.SignableRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -31,26 +29,6 @@ import com.amazonaws.http.HttpMethodName;
 public class SdkHttpUtils {
 
     private static final String DEFAULT_ENCODING = "UTF-8";
-
-    /**
-     * Regex which matches any of the sequences that we need to fix up after
-     * URLEncoder.encode().
-     */
-    private static final Pattern ENCODED_CHARACTERS_PATTERN;
-    static {
-        StringBuilder pattern = new StringBuilder();
-
-        pattern
-            .append(Pattern.quote("+"))
-            .append("|")
-            .append(Pattern.quote("*"))
-            .append("|")
-            .append(Pattern.quote("%7E"))
-            .append("|")
-            .append(Pattern.quote("%2F"));
-
-        ENCODED_CHARACTERS_PATTERN = Pattern.compile(pattern.toString());
-    }
 
     /**
      * Encode a string for use in the path of a URL; uses URLEncoder.encode,
@@ -67,31 +45,16 @@ public class SdkHttpUtils {
         if (value == null) {
             return "";
         }
-
         try {
-            String encoded = URLEncoder.encode(value, DEFAULT_ENCODING);
-
-            Matcher matcher = ENCODED_CHARACTERS_PATTERN.matcher(encoded);
-            StringBuffer buffer = new StringBuffer(encoded.length());
-
-            while (matcher.find()) {
-                String replacement = matcher.group(0);
-
-                if ("+".equals(replacement)) {
-                    replacement = "%20";
-                } else if ("*".equals(replacement)) {
-                    replacement = "%2A";
-                } else if ("%7E".equals(replacement)) {
-                    replacement = "~";
-                } else if (path && "%2F".equals(replacement)) {
-                    replacement = "/";
-                }
-
-                matcher.appendReplacement(buffer, replacement);
+            // Some sequences need to be fixed up after URLEncoder.encode().
+            String encoded = URLEncoder.encode(value, DEFAULT_ENCODING)
+                .replace("+", "%20")
+                .replace("*", "%2A")
+                .replace("%7E", "~");
+            if (path) {
+                encoded = encoded.replace("%2F", "/");
             }
-
-            matcher.appendTail(buffer);
-            return buffer.toString();
+            return encoded;
 
         } catch (UnsupportedEncodingException ex) {
             throw new RuntimeException(ex);
