@@ -35,7 +35,8 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     private String hostPath;
     /**
      * <p>
-     * The path inside the container at which to expose the host device.
+     * The path inside the container at which to expose the host device. By default the <code>hostPath</code> value is
+     * used.
      * </p>
      */
     private String containerPath;
@@ -89,11 +90,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path inside the container at which to expose the host device.
+     * The path inside the container at which to expose the host device. By default the <code>hostPath</code> value is
+     * used.
      * </p>
      * 
      * @param containerPath
-     *        The path inside the container at which to expose the host device.
+     *        The path inside the container at which to expose the host device. By default the <code>hostPath</code>
+     *        value is used.
      */
 
     public void setContainerPath(String containerPath) {
@@ -102,10 +105,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path inside the container at which to expose the host device.
+     * The path inside the container at which to expose the host device. By default the <code>hostPath</code> value is
+     * used.
      * </p>
      * 
-     * @return The path inside the container at which to expose the host device.
+     * @return The path inside the container at which to expose the host device. By default the <code>hostPath</code>
+     *         value is used.
      */
 
     public String getContainerPath() {
@@ -114,11 +119,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path inside the container at which to expose the host device.
+     * The path inside the container at which to expose the host device. By default the <code>hostPath</code> value is
+     * used.
      * </p>
      * 
      * @param containerPath
-     *        The path inside the container at which to expose the host device.
+     *        The path inside the container at which to expose the host device. By default the <code>hostPath</code>
+     *        value is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

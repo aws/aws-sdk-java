@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+ * Linux-specific modifications that are applied to the container, such as details for device mappings.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/LinuxParameters" target="_top">AWS API

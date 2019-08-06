@@ -200,7 +200,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     private java.util.List<ResourceRequirement> resourceRequirements;
     /**
      * <p>
-     * Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     * Linux-specific modifications that are applied to the container, such as details for device mappings.
      * </p>
      */
     private LinuxParameters linuxParameters;
@@ -1551,11 +1551,11 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     * Linux-specific modifications that are applied to the container, such as details for device mappings.
      * </p>
      * 
      * @param linuxParameters
-     *        Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     *        Linux-specific modifications that are applied to the container, such as details for device mappings.
      */
 
     public void setLinuxParameters(LinuxParameters linuxParameters) {
@@ -1564,10 +1564,10 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     * Linux-specific modifications that are applied to the container, such as details for device mappings.
      * </p>
      * 
-     * @return Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     * @return Linux-specific modifications that are applied to the container, such as details for device mappings.
      */
 
     public LinuxParameters getLinuxParameters() {
@@ -1576,11 +1576,11 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     * Linux-specific modifications that are applied to the container, such as details for device mappings.
      * </p>
      * 
      * @param linuxParameters
-     *        Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.
+     *        Linux-specific modifications that are applied to the container, such as details for device mappings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
