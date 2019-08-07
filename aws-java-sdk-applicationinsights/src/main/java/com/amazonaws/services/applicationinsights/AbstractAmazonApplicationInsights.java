@@ -99,6 +99,11 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
     }
 
     @Override
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateComponentResult updateComponent(UpdateComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

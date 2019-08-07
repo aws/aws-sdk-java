@@ -46,7 +46,7 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB_TIER</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
      * </p>
      */
     private String tier;
@@ -196,12 +196,12 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB_TIER</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
      * </p>
      * 
      * @param tier
      *        The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     *        <code>DOT_NET_WEB_TIER</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     *        <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
      */
 
     public void setTier(String tier) {
@@ -211,11 +211,11 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB_TIER</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
      * </p>
      * 
      * @return The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     *         <code>DOT_NET_WEB_TIER</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     *         <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
      */
 
     public String getTier() {
@@ -225,12 +225,12 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB_TIER</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
      * </p>
      * 
      * @param tier
      *        The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     *        <code>DOT_NET_WEB_TIER</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     *        <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

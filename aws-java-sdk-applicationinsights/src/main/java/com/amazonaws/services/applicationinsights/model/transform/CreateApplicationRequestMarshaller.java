@@ -29,6 +29,10 @@ public class CreateApplicationRequestMarshaller {
 
     private static final MarshallingInfo<String> RESOURCEGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceGroupName").build();
+    private static final MarshallingInfo<Boolean> OPSCENTERENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpsCenterEnabled").build();
+    private static final MarshallingInfo<String> OPSITEMSNSTOPICARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpsItemSNSTopicArn").build();
 
     private static final CreateApplicationRequestMarshaller instance = new CreateApplicationRequestMarshaller();
 
@@ -47,6 +51,8 @@ public class CreateApplicationRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createApplicationRequest.getResourceGroupName(), RESOURCEGROUPNAME_BINDING);
+            protocolMarshaller.marshall(createApplicationRequest.getOpsCenterEnabled(), OPSCENTERENABLED_BINDING);
+            protocolMarshaller.marshall(createApplicationRequest.getOpsItemSNSTopicArn(), OPSITEMSNSTOPICARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

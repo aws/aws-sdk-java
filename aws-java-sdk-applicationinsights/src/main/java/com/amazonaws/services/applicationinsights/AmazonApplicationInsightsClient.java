@@ -89,14 +89,14 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                                    com.amazonaws.services.applicationinsights.model.ValidationException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
                                     com.amazonaws.services.applicationinsights.model.ResourceInUseException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
                                     com.amazonaws.services.applicationinsights.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
+                                    com.amazonaws.services.applicationinsights.model.ValidationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withModeledClass(
                                     com.amazonaws.services.applicationinsights.model.InternalServerException.class))
@@ -982,6 +982,65 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
 
             HttpResponseHandler<AmazonWebServiceResponse<ListProblemsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProblemsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the application.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return Result of the UpdateApplication operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @sample AmazonApplicationInsights.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplication(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationResult executeUpdateApplication(UpdateApplicationRequest updateApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateApplicationRequest> request = null;
+        Response<UpdateApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateApplicationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

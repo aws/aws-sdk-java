@@ -329,6 +329,25 @@ public interface AmazonApplicationInsights {
 
     /**
      * <p>
+     * Updates the application.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return Result of the UpdateApplication operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @sample AmazonApplicationInsights.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest);
+
+    /**
+     * <p>
      * Updates the custom component name and/or the list of resources that make up the component.
      * </p>
      * 

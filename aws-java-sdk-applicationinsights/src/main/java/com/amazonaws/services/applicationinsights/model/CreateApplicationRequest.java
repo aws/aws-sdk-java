@@ -31,6 +31,19 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String resourceGroupName;
+    /**
+     * <p>
+     * When set to <code>true</code>, creates opsItems for any problems detected on an application.
+     * </p>
+     */
+    private Boolean opsCenterEnabled;
+    /**
+     * <p>
+     * The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive
+     * notifications for updates to the opsItem.
+     * </p>
+     */
+    private String opsItemSNSTopicArn;
 
     /**
      * <p>
@@ -73,6 +86,104 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * When set to <code>true</code>, creates opsItems for any problems detected on an application.
+     * </p>
+     * 
+     * @param opsCenterEnabled
+     *        When set to <code>true</code>, creates opsItems for any problems detected on an application.
+     */
+
+    public void setOpsCenterEnabled(Boolean opsCenterEnabled) {
+        this.opsCenterEnabled = opsCenterEnabled;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, creates opsItems for any problems detected on an application.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, creates opsItems for any problems detected on an application.
+     */
+
+    public Boolean getOpsCenterEnabled() {
+        return this.opsCenterEnabled;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, creates opsItems for any problems detected on an application.
+     * </p>
+     * 
+     * @param opsCenterEnabled
+     *        When set to <code>true</code>, creates opsItems for any problems detected on an application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withOpsCenterEnabled(Boolean opsCenterEnabled) {
+        setOpsCenterEnabled(opsCenterEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, creates opsItems for any problems detected on an application.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, creates opsItems for any problems detected on an application.
+     */
+
+    public Boolean isOpsCenterEnabled() {
+        return this.opsCenterEnabled;
+    }
+
+    /**
+     * <p>
+     * The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive
+     * notifications for updates to the opsItem.
+     * </p>
+     * 
+     * @param opsItemSNSTopicArn
+     *        The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
+     *        receive notifications for updates to the opsItem.
+     */
+
+    public void setOpsItemSNSTopicArn(String opsItemSNSTopicArn) {
+        this.opsItemSNSTopicArn = opsItemSNSTopicArn;
+    }
+
+    /**
+     * <p>
+     * The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive
+     * notifications for updates to the opsItem.
+     * </p>
+     * 
+     * @return The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
+     *         receive notifications for updates to the opsItem.
+     */
+
+    public String getOpsItemSNSTopicArn() {
+        return this.opsItemSNSTopicArn;
+    }
+
+    /**
+     * <p>
+     * The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive
+     * notifications for updates to the opsItem.
+     * </p>
+     * 
+     * @param opsItemSNSTopicArn
+     *        The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
+     *        receive notifications for updates to the opsItem.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withOpsItemSNSTopicArn(String opsItemSNSTopicArn) {
+        setOpsItemSNSTopicArn(opsItemSNSTopicArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +196,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceGroupName() != null)
-            sb.append("ResourceGroupName: ").append(getResourceGroupName());
+            sb.append("ResourceGroupName: ").append(getResourceGroupName()).append(",");
+        if (getOpsCenterEnabled() != null)
+            sb.append("OpsCenterEnabled: ").append(getOpsCenterEnabled()).append(",");
+        if (getOpsItemSNSTopicArn() != null)
+            sb.append("OpsItemSNSTopicArn: ").append(getOpsItemSNSTopicArn());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +219,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getResourceGroupName() != null && other.getResourceGroupName().equals(this.getResourceGroupName()) == false)
             return false;
+        if (other.getOpsCenterEnabled() == null ^ this.getOpsCenterEnabled() == null)
+            return false;
+        if (other.getOpsCenterEnabled() != null && other.getOpsCenterEnabled().equals(this.getOpsCenterEnabled()) == false)
+            return false;
+        if (other.getOpsItemSNSTopicArn() == null ^ this.getOpsItemSNSTopicArn() == null)
+            return false;
+        if (other.getOpsItemSNSTopicArn() != null && other.getOpsItemSNSTopicArn().equals(this.getOpsItemSNSTopicArn()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +236,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());
+        hashCode = prime * hashCode + ((getOpsCenterEnabled() == null) ? 0 : getOpsCenterEnabled().hashCode());
+        hashCode = prime * hashCode + ((getOpsItemSNSTopicArn() == null) ? 0 : getOpsItemSNSTopicArn().hashCode());
         return hashCode;
     }
 

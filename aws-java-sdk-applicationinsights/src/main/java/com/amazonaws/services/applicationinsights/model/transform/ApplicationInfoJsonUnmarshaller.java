@@ -56,6 +56,14 @@ public class ApplicationInfoJsonUnmarshaller implements Unmarshaller<Application
                     context.nextToken();
                     applicationInfo.setLifeCycle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OpsItemSNSTopicArn", targetDepth)) {
+                    context.nextToken();
+                    applicationInfo.setOpsItemSNSTopicArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OpsCenterEnabled", targetDepth)) {
+                    context.nextToken();
+                    applicationInfo.setOpsCenterEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Remarks", targetDepth)) {
                     context.nextToken();
                     applicationInfo.setRemarks(context.getUnmarshaller(String.class).unmarshall(context));

@@ -42,7 +42,21 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     private String lifeCycle;
     /**
      * <p>
-     * The issues on the user side that are blocking Application Insights from fully monitoring the application.
+     * The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS
+     * notifications for opsItem updates.
+     * </p>
+     */
+    private String opsItemSNSTopicArn;
+    /**
+     * <p>
+     * Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for
+     * an application.
+     * </p>
+     */
+    private Boolean opsCenterEnabled;
+    /**
+     * <p>
+     * The issues on the user side that block Application Insights from successfully monitoring an application.
      * </p>
      */
     private String remarks;
@@ -129,11 +143,117 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The issues on the user side that are blocking Application Insights from fully monitoring the application.
+     * The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS
+     * notifications for opsItem updates.
+     * </p>
+     * 
+     * @param opsItemSNSTopicArn
+     *        The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS
+     *        notifications for opsItem updates.
+     */
+
+    public void setOpsItemSNSTopicArn(String opsItemSNSTopicArn) {
+        this.opsItemSNSTopicArn = opsItemSNSTopicArn;
+    }
+
+    /**
+     * <p>
+     * The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS
+     * notifications for opsItem updates.
+     * </p>
+     * 
+     * @return The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS
+     *         notifications for opsItem updates.
+     */
+
+    public String getOpsItemSNSTopicArn() {
+        return this.opsItemSNSTopicArn;
+    }
+
+    /**
+     * <p>
+     * The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS
+     * notifications for opsItem updates.
+     * </p>
+     * 
+     * @param opsItemSNSTopicArn
+     *        The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS
+     *        notifications for opsItem updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationInfo withOpsItemSNSTopicArn(String opsItemSNSTopicArn) {
+        setOpsItemSNSTopicArn(opsItemSNSTopicArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for
+     * an application.
+     * </p>
+     * 
+     * @param opsCenterEnabled
+     *        Indicates whether Application Insights will create opsItems for any problem detected by Application
+     *        Insights for an application.
+     */
+
+    public void setOpsCenterEnabled(Boolean opsCenterEnabled) {
+        this.opsCenterEnabled = opsCenterEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for
+     * an application.
+     * </p>
+     * 
+     * @return Indicates whether Application Insights will create opsItems for any problem detected by Application
+     *         Insights for an application.
+     */
+
+    public Boolean getOpsCenterEnabled() {
+        return this.opsCenterEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for
+     * an application.
+     * </p>
+     * 
+     * @param opsCenterEnabled
+     *        Indicates whether Application Insights will create opsItems for any problem detected by Application
+     *        Insights for an application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationInfo withOpsCenterEnabled(Boolean opsCenterEnabled) {
+        setOpsCenterEnabled(opsCenterEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for
+     * an application.
+     * </p>
+     * 
+     * @return Indicates whether Application Insights will create opsItems for any problem detected by Application
+     *         Insights for an application.
+     */
+
+    public Boolean isOpsCenterEnabled() {
+        return this.opsCenterEnabled;
+    }
+
+    /**
+     * <p>
+     * The issues on the user side that block Application Insights from successfully monitoring an application.
      * </p>
      * 
      * @param remarks
-     *        The issues on the user side that are blocking Application Insights from fully monitoring the application.
+     *        The issues on the user side that block Application Insights from successfully monitoring an application.
      */
 
     public void setRemarks(String remarks) {
@@ -142,10 +262,10 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The issues on the user side that are blocking Application Insights from fully monitoring the application.
+     * The issues on the user side that block Application Insights from successfully monitoring an application.
      * </p>
      * 
-     * @return The issues on the user side that are blocking Application Insights from fully monitoring the application.
+     * @return The issues on the user side that block Application Insights from successfully monitoring an application.
      */
 
     public String getRemarks() {
@@ -154,11 +274,11 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The issues on the user side that are blocking Application Insights from fully monitoring the application.
+     * The issues on the user side that block Application Insights from successfully monitoring an application.
      * </p>
      * 
      * @param remarks
-     *        The issues on the user side that are blocking Application Insights from fully monitoring the application.
+     *        The issues on the user side that block Application Insights from successfully monitoring an application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,6 +303,10 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
             sb.append("ResourceGroupName: ").append(getResourceGroupName()).append(",");
         if (getLifeCycle() != null)
             sb.append("LifeCycle: ").append(getLifeCycle()).append(",");
+        if (getOpsItemSNSTopicArn() != null)
+            sb.append("OpsItemSNSTopicArn: ").append(getOpsItemSNSTopicArn()).append(",");
+        if (getOpsCenterEnabled() != null)
+            sb.append("OpsCenterEnabled: ").append(getOpsCenterEnabled()).append(",");
         if (getRemarks() != null)
             sb.append("Remarks: ").append(getRemarks());
         sb.append("}");
@@ -207,6 +331,14 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLifeCycle() != null && other.getLifeCycle().equals(this.getLifeCycle()) == false)
             return false;
+        if (other.getOpsItemSNSTopicArn() == null ^ this.getOpsItemSNSTopicArn() == null)
+            return false;
+        if (other.getOpsItemSNSTopicArn() != null && other.getOpsItemSNSTopicArn().equals(this.getOpsItemSNSTopicArn()) == false)
+            return false;
+        if (other.getOpsCenterEnabled() == null ^ this.getOpsCenterEnabled() == null)
+            return false;
+        if (other.getOpsCenterEnabled() != null && other.getOpsCenterEnabled().equals(this.getOpsCenterEnabled()) == false)
+            return false;
         if (other.getRemarks() == null ^ this.getRemarks() == null)
             return false;
         if (other.getRemarks() != null && other.getRemarks().equals(this.getRemarks()) == false)
@@ -221,6 +353,8 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());
         hashCode = prime * hashCode + ((getLifeCycle() == null) ? 0 : getLifeCycle().hashCode());
+        hashCode = prime * hashCode + ((getOpsItemSNSTopicArn() == null) ? 0 : getOpsItemSNSTopicArn().hashCode());
+        hashCode = prime * hashCode + ((getOpsCenterEnabled() == null) ? 0 : getOpsCenterEnabled().hashCode());
         hashCode = prime * hashCode + ((getRemarks() == null) ? 0 : getRemarks().hashCode());
         return hashCode;
     }

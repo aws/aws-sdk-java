@@ -496,6 +496,37 @@ public interface AmazonApplicationInsightsAsync extends AmazonApplicationInsight
 
     /**
      * <p>
+     * Updates the application.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest);
+
+    /**
+     * <p>
+     * Updates the application.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the custom component name and/or the list of resources that make up the component.
      * </p>
      * 
