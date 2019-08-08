@@ -30,8 +30,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key
- * according to your security requirements. For example, you might want only admin users to have decrypt permission on
- * the password key.
+ * according to your security requirements. For example, you might want only administrators to have decrypt permission
+ * on the password key.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ConnectionPasswordEncryption" target="_top">AWS

@@ -60,6 +60,11 @@ public class ColumnJsonUnmarshaller implements Unmarshaller<Column, JsonUnmarsha
                     context.nextToken();
                     column.setComment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Parameters", targetDepth)) {
+                    context.nextToken();
+                    column.setParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

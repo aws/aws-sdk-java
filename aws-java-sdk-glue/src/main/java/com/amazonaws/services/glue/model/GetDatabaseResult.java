@@ -25,18 +25,18 @@ public class GetDatabaseResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The definition of the specified database in the catalog.
+     * The definition of the specified database in the Data Catalog.
      * </p>
      */
     private Database database;
 
     /**
      * <p>
-     * The definition of the specified database in the catalog.
+     * The definition of the specified database in the Data Catalog.
      * </p>
      * 
      * @param database
-     *        The definition of the specified database in the catalog.
+     *        The definition of the specified database in the Data Catalog.
      */
 
     public void setDatabase(Database database) {
@@ -45,10 +45,10 @@ public class GetDatabaseResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The definition of the specified database in the catalog.
+     * The definition of the specified database in the Data Catalog.
      * </p>
      * 
-     * @return The definition of the specified database in the catalog.
+     * @return The definition of the specified database in the Data Catalog.
      */
 
     public Database getDatabase() {
@@ -57,11 +57,11 @@ public class GetDatabaseResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The definition of the specified database in the catalog.
+     * The definition of the specified database in the Data Catalog.
      * </p>
      * 
      * @param database
-     *        The definition of the specified database in the catalog.
+     *        The definition of the specified database in the Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

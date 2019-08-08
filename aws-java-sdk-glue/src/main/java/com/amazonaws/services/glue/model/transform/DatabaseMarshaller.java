@@ -13,7 +13,7 @@
 package com.amazonaws.services.glue.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +39,8 @@ public class DatabaseMarshaller {
             .marshallLocationName("Parameters").build();
     private static final MarshallingInfo<java.util.Date> CREATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> CREATETABLEDEFAULTPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTableDefaultPermissions").build();
 
     private static final DatabaseMarshaller instance = new DatabaseMarshaller();
 
@@ -61,6 +63,7 @@ public class DatabaseMarshaller {
             protocolMarshaller.marshall(database.getLocationUri(), LOCATIONURI_BINDING);
             protocolMarshaller.marshall(database.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(database.getCreateTime(), CREATETIME_BINDING);
+            protocolMarshaller.marshall(database.getCreateTableDefaultPermissions(), CREATETABLEDEFAULTPERMISSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

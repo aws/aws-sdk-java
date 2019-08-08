@@ -31,7 +31,7 @@ public class GetPartitionsResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.List<Partition> partitions;
     /**
      * <p>
-     * A continuation token, if the returned list of partitions does not does not include the last one.
+     * A continuation token, if the returned list of partitions does not include the last one.
      * </p>
      */
     private String nextToken;
@@ -108,11 +108,11 @@ public class GetPartitionsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A continuation token, if the returned list of partitions does not does not include the last one.
+     * A continuation token, if the returned list of partitions does not include the last one.
      * </p>
      * 
      * @param nextToken
-     *        A continuation token, if the returned list of partitions does not does not include the last one.
+     *        A continuation token, if the returned list of partitions does not include the last one.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class GetPartitionsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A continuation token, if the returned list of partitions does not does not include the last one.
+     * A continuation token, if the returned list of partitions does not include the last one.
      * </p>
      * 
-     * @return A continuation token, if the returned list of partitions does not does not include the last one.
+     * @return A continuation token, if the returned list of partitions does not include the last one.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class GetPartitionsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A continuation token, if the returned list of partitions does not does not include the last one.
+     * A continuation token, if the returned list of partitions does not include the last one.
      * </p>
      * 
      * @param nextToken
-     *        A continuation token, if the returned list of partitions does not does not include the last one.
+     *        A continuation token, if the returned list of partitions does not include the last one.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

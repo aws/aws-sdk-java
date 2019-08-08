@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The <code>Database</code> object represents a logical grouping of tables that may reside in a Hive metastore or an
+ * The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an
  * RDBMS.
  * </p>
  * 
@@ -31,13 +31,13 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
+     * The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Description of the database.
+     * A description of the database.
      * </p>
      */
     private String description;
@@ -59,14 +59,20 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date createTime;
+    /**
+     * <p>
+     * Creates a set of default permissions on the table for principals.
+     * </p>
+     */
+    private java.util.List<PrincipalPermissions> createTableDefaultPermissions;
 
     /**
      * <p>
-     * Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
+     * The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      * </p>
      * 
      * @param name
-     *        Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
+     *        The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      */
 
     public void setName(String name) {
@@ -75,10 +81,10 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
+     * The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      * </p>
      * 
-     * @return Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
+     * @return The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      */
 
     public String getName() {
@@ -87,11 +93,11 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
+     * The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      * </p>
      * 
      * @param name
-     *        Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
+     *        The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +108,11 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the database.
+     * A description of the database.
      * </p>
      * 
      * @param description
-     *        Description of the database.
+     *        A description of the database.
      */
 
     public void setDescription(String description) {
@@ -115,10 +121,10 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the database.
+     * A description of the database.
      * </p>
      * 
-     * @return Description of the database.
+     * @return A description of the database.
      */
 
     public String getDescription() {
@@ -127,11 +133,11 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the database.
+     * A description of the database.
      * </p>
      * 
      * @param description
-     *        Description of the database.
+     *        A description of the database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,6 +288,76 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Creates a set of default permissions on the table for principals.
+     * </p>
+     * 
+     * @return Creates a set of default permissions on the table for principals.
+     */
+
+    public java.util.List<PrincipalPermissions> getCreateTableDefaultPermissions() {
+        return createTableDefaultPermissions;
+    }
+
+    /**
+     * <p>
+     * Creates a set of default permissions on the table for principals.
+     * </p>
+     * 
+     * @param createTableDefaultPermissions
+     *        Creates a set of default permissions on the table for principals.
+     */
+
+    public void setCreateTableDefaultPermissions(java.util.Collection<PrincipalPermissions> createTableDefaultPermissions) {
+        if (createTableDefaultPermissions == null) {
+            this.createTableDefaultPermissions = null;
+            return;
+        }
+
+        this.createTableDefaultPermissions = new java.util.ArrayList<PrincipalPermissions>(createTableDefaultPermissions);
+    }
+
+    /**
+     * <p>
+     * Creates a set of default permissions on the table for principals.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCreateTableDefaultPermissions(java.util.Collection)} or
+     * {@link #withCreateTableDefaultPermissions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param createTableDefaultPermissions
+     *        Creates a set of default permissions on the table for principals.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Database withCreateTableDefaultPermissions(PrincipalPermissions... createTableDefaultPermissions) {
+        if (this.createTableDefaultPermissions == null) {
+            setCreateTableDefaultPermissions(new java.util.ArrayList<PrincipalPermissions>(createTableDefaultPermissions.length));
+        }
+        for (PrincipalPermissions ele : createTableDefaultPermissions) {
+            this.createTableDefaultPermissions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Creates a set of default permissions on the table for principals.
+     * </p>
+     * 
+     * @param createTableDefaultPermissions
+     *        Creates a set of default permissions on the table for principals.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Database withCreateTableDefaultPermissions(java.util.Collection<PrincipalPermissions> createTableDefaultPermissions) {
+        setCreateTableDefaultPermissions(createTableDefaultPermissions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -302,7 +378,9 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getCreateTime() != null)
-            sb.append("CreateTime: ").append(getCreateTime());
+            sb.append("CreateTime: ").append(getCreateTime()).append(",");
+        if (getCreateTableDefaultPermissions() != null)
+            sb.append("CreateTableDefaultPermissions: ").append(getCreateTableDefaultPermissions());
         sb.append("}");
         return sb.toString();
     }
@@ -337,6 +415,11 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false)
             return false;
+        if (other.getCreateTableDefaultPermissions() == null ^ this.getCreateTableDefaultPermissions() == null)
+            return false;
+        if (other.getCreateTableDefaultPermissions() != null
+                && other.getCreateTableDefaultPermissions().equals(this.getCreateTableDefaultPermissions()) == false)
+            return false;
         return true;
     }
 
@@ -350,6 +433,7 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLocationUri() == null) ? 0 : getLocationUri().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getCreateTableDefaultPermissions() == null) ? 0 : getCreateTableDefaultPermissions().hashCode());
         return hashCode;
     }
 

@@ -27,7 +27,7 @@ public class CreateUserDefinedFunctionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the Data Catalog in which to create the function. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which to create the function. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      */
@@ -47,12 +47,12 @@ public class CreateUserDefinedFunctionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the Data Catalog in which to create the function. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which to create the function. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog in which to create the function. If none is supplied, the AWS account ID is
+     *        The ID of the Data Catalog in which to create the function. If none is provided, the AWS account ID is
      *        used by default.
      */
 
@@ -62,11 +62,11 @@ public class CreateUserDefinedFunctionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the Data Catalog in which to create the function. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which to create the function. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      * 
-     * @return The ID of the Data Catalog in which to create the function. If none is supplied, the AWS account ID is
+     * @return The ID of the Data Catalog in which to create the function. If none is provided, the AWS account ID is
      *         used by default.
      */
 
@@ -76,12 +76,12 @@ public class CreateUserDefinedFunctionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the Data Catalog in which to create the function. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which to create the function. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog in which to create the function. If none is supplied, the AWS account ID is
+     *        The ID of the Data Catalog in which to create the function. If none is provided, the AWS account ID is
      *        used by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

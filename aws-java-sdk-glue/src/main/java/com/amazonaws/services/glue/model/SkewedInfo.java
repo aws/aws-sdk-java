@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies skewed values in a table. Skewed are ones that occur with very high frequency.
+ * Specifies skewed values in a table. Skewed values are those that occur with very high frequency.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SkewedInfo" target="_top">AWS API

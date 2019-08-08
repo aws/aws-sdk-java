@@ -15,7 +15,7 @@ package com.amazonaws.services.opsworkscm.model;
 import javax.annotation.Generated;
 
 /**
- * Base exception for all service exceptions thrown by AWS OpsWorks for Chef Automate
+ * Base exception for all service exceptions thrown by AWS OpsWorks CM
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSOpsWorksCMException extends com.amazonaws.AmazonServiceException {

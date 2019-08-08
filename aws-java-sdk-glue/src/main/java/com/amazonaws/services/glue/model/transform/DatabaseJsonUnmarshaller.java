@@ -69,6 +69,11 @@ public class DatabaseJsonUnmarshaller implements Unmarshaller<Database, JsonUnma
                     context.nextToken();
                     database.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("CreateTableDefaultPermissions", targetDepth)) {
+                    context.nextToken();
+                    database.setCreateTableDefaultPermissions(new ListUnmarshaller<PrincipalPermissions>(PrincipalPermissionsJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

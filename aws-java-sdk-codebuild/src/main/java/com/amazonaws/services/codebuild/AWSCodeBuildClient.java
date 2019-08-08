@@ -891,6 +891,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      *         The input value that was provided is not valid.
      * @throws AccountLimitExceededException
      *         An AWS service limit was exceeded for the calling AWS account.
+     * @throws ResourceAlreadyExistsException
+     *         The specified AWS resource cannot be created, because an AWS resource with the same settings already
+     *         exists.
      * @sample AWSCodeBuild.ImportSourceCredentials
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials"
      *      target="_top">AWS API Documentation</a>

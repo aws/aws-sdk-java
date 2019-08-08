@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a serialization/deserialization program (SerDe) which serves as an extractor and loader.
+ * Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SerDeInfo" target="_top">AWS API
@@ -36,7 +36,7 @@ public class SerDeInfo implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Usually the class that implements the SerDe. An example is:
+     * Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
      * </p>
      */
@@ -90,12 +90,12 @@ public class SerDeInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Usually the class that implements the SerDe. An example is:
+     * Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
      * </p>
      * 
      * @param serializationLibrary
-     *        Usually the class that implements the SerDe. An example is:
+     *        Usually the class that implements the SerDe. An example is
      *        <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
      */
 
@@ -105,11 +105,11 @@ public class SerDeInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Usually the class that implements the SerDe. An example is:
+     * Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
      * </p>
      * 
-     * @return Usually the class that implements the SerDe. An example is:
+     * @return Usually the class that implements the SerDe. An example is
      *         <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
      */
 
@@ -119,12 +119,12 @@ public class SerDeInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Usually the class that implements the SerDe. An example is:
+     * Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
      * </p>
      * 
      * @param serializationLibrary
-     *        Usually the class that implements the SerDe. An example is:
+     *        Usually the class that implements the SerDe. An example is
      *        <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

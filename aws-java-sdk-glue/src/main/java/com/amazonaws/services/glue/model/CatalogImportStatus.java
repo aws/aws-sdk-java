@@ -30,7 +30,7 @@ public class CatalogImportStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * True if the migration has completed, or False otherwise.
+     * <code>True</code> if the migration has completed, or <code>False</code> otherwise.
      * </p>
      */
     private Boolean importCompleted;
@@ -49,11 +49,11 @@ public class CatalogImportStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * True if the migration has completed, or False otherwise.
+     * <code>True</code> if the migration has completed, or <code>False</code> otherwise.
      * </p>
      * 
      * @param importCompleted
-     *        True if the migration has completed, or False otherwise.
+     *        <code>True</code> if the migration has completed, or <code>False</code> otherwise.
      */
 
     public void setImportCompleted(Boolean importCompleted) {
@@ -62,10 +62,10 @@ public class CatalogImportStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * True if the migration has completed, or False otherwise.
+     * <code>True</code> if the migration has completed, or <code>False</code> otherwise.
      * </p>
      * 
-     * @return True if the migration has completed, or False otherwise.
+     * @return <code>True</code> if the migration has completed, or <code>False</code> otherwise.
      */
 
     public Boolean getImportCompleted() {
@@ -74,11 +74,11 @@ public class CatalogImportStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * True if the migration has completed, or False otherwise.
+     * <code>True</code> if the migration has completed, or <code>False</code> otherwise.
      * </p>
      * 
      * @param importCompleted
-     *        True if the migration has completed, or False otherwise.
+     *        <code>True</code> if the migration has completed, or <code>False</code> otherwise.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,10 +89,10 @@ public class CatalogImportStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * True if the migration has completed, or False otherwise.
+     * <code>True</code> if the migration has completed, or <code>False</code> otherwise.
      * </p>
      * 
-     * @return True if the migration has completed, or False otherwise.
+     * @return <code>True</code> if the migration has completed, or <code>False</code> otherwise.
      */
 
     public Boolean isImportCompleted() {

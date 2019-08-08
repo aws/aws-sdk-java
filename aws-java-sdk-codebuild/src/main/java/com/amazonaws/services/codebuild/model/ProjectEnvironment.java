@@ -87,12 +87,12 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     private java.util.List<EnvironmentVariable> environmentVariables;
     /**
      * <p>
-     * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be used to
-     * build Docker images, and the specified build environment image is not provided by AWS CodeBuild with Docker
-     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon fail. You must also
-     * start the Docker daemon so that builds can interact with it. One way to do this is to initialize the Docker
-     * daemon during the install phase of your build spec by running the following build commands. (Do not run these
-     * commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
+     * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to
+     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.
+     * </p>
+     * <p>
+     * You can initialize the Docker daemon during the install phase of your build by adding one of the following sets
+     * of commands to the install phase of your buildspec file:
      * </p>
      * <p>
      * If the operating system's base image is Ubuntu Linux:
@@ -667,12 +667,12 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be used to
-     * build Docker images, and the specified build environment image is not provided by AWS CodeBuild with Docker
-     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon fail. You must also
-     * start the Docker daemon so that builds can interact with it. One way to do this is to initialize the Docker
-     * daemon during the install phase of your build spec by running the following build commands. (Do not run these
-     * commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
+     * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to
+     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.
+     * </p>
+     * <p>
+     * You can initialize the Docker daemon during the install phase of your build by adding one of the following sets
+     * of commands to the install phase of your buildspec file:
      * </p>
      * <p>
      * If the operating system's base image is Ubuntu Linux:
@@ -695,13 +695,12 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param privilegedMode
-     *        Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be
-     *        used to build Docker images, and the specified build environment image is not provided by AWS CodeBuild
-     *        with Docker support. Otherwise, all associated builds that attempt to interact with the Docker daemon
-     *        fail. You must also start the Docker daemon so that builds can interact with it. One way to do this is to
-     *        initialize the Docker daemon during the install phase of your build spec by running the following build
-     *        commands. (Do not run these commands if the specified build environment image is provided by AWS CodeBuild
-     *        with Docker support.)</p>
+     *        Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used
+     *        to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.</p>
+     *        <p>
+     *        You can initialize the Docker daemon during the install phase of your build by adding one of the following
+     *        sets of commands to the install phase of your buildspec file:
+     *        </p>
      *        <p>
      *        If the operating system's base image is Ubuntu Linux:
      *        </p>
@@ -728,12 +727,12 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be used to
-     * build Docker images, and the specified build environment image is not provided by AWS CodeBuild with Docker
-     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon fail. You must also
-     * start the Docker daemon so that builds can interact with it. One way to do this is to initialize the Docker
-     * daemon during the install phase of your build spec by running the following build commands. (Do not run these
-     * commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
+     * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to
+     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.
+     * </p>
+     * <p>
+     * You can initialize the Docker daemon during the install phase of your build by adding one of the following sets
+     * of commands to the install phase of your buildspec file:
      * </p>
      * <p>
      * If the operating system's base image is Ubuntu Linux:
@@ -755,13 +754,13 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
-     * @return Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be
-     *         used to build Docker images, and the specified build environment image is not provided by AWS CodeBuild
-     *         with Docker support. Otherwise, all associated builds that attempt to interact with the Docker daemon
-     *         fail. You must also start the Docker daemon so that builds can interact with it. One way to do this is to
-     *         initialize the Docker daemon during the install phase of your build spec by running the following build
-     *         commands. (Do not run these commands if the specified build environment image is provided by AWS
-     *         CodeBuild with Docker support.)</p>
+     * @return Enables running the Docker daemon inside a Docker container. Set to true only if the build project is
+     *         used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon
+     *         fails.</p>
+     *         <p>
+     *         You can initialize the Docker daemon during the install phase of your build by adding one of the
+     *         following sets of commands to the install phase of your buildspec file:
+     *         </p>
      *         <p>
      *         If the operating system's base image is Ubuntu Linux:
      *         </p>
@@ -788,12 +787,12 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be used to
-     * build Docker images, and the specified build environment image is not provided by AWS CodeBuild with Docker
-     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon fail. You must also
-     * start the Docker daemon so that builds can interact with it. One way to do this is to initialize the Docker
-     * daemon during the install phase of your build spec by running the following build commands. (Do not run these
-     * commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
+     * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to
+     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.
+     * </p>
+     * <p>
+     * You can initialize the Docker daemon during the install phase of your build by adding one of the following sets
+     * of commands to the install phase of your buildspec file:
      * </p>
      * <p>
      * If the operating system's base image is Ubuntu Linux:
@@ -816,13 +815,12 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param privilegedMode
-     *        Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be
-     *        used to build Docker images, and the specified build environment image is not provided by AWS CodeBuild
-     *        with Docker support. Otherwise, all associated builds that attempt to interact with the Docker daemon
-     *        fail. You must also start the Docker daemon so that builds can interact with it. One way to do this is to
-     *        initialize the Docker daemon during the install phase of your build spec by running the following build
-     *        commands. (Do not run these commands if the specified build environment image is provided by AWS CodeBuild
-     *        with Docker support.)</p>
+     *        Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used
+     *        to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.</p>
+     *        <p>
+     *        You can initialize the Docker daemon during the install phase of your build by adding one of the following
+     *        sets of commands to the install phase of your buildspec file:
+     *        </p>
      *        <p>
      *        If the operating system's base image is Ubuntu Linux:
      *        </p>
@@ -851,12 +849,12 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be used to
-     * build Docker images, and the specified build environment image is not provided by AWS CodeBuild with Docker
-     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon fail. You must also
-     * start the Docker daemon so that builds can interact with it. One way to do this is to initialize the Docker
-     * daemon during the install phase of your build spec by running the following build commands. (Do not run these
-     * commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
+     * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to
+     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.
+     * </p>
+     * <p>
+     * You can initialize the Docker daemon during the install phase of your build by adding one of the following sets
+     * of commands to the install phase of your buildspec file:
      * </p>
      * <p>
      * If the operating system's base image is Ubuntu Linux:
@@ -878,13 +876,13 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
-     * @return Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be
-     *         used to build Docker images, and the specified build environment image is not provided by AWS CodeBuild
-     *         with Docker support. Otherwise, all associated builds that attempt to interact with the Docker daemon
-     *         fail. You must also start the Docker daemon so that builds can interact with it. One way to do this is to
-     *         initialize the Docker daemon during the install phase of your build spec by running the following build
-     *         commands. (Do not run these commands if the specified build environment image is provided by AWS
-     *         CodeBuild with Docker support.)</p>
+     * @return Enables running the Docker daemon inside a Docker container. Set to true only if the build project is
+     *         used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon
+     *         fails.</p>
+     *         <p>
+     *         You can initialize the Docker daemon during the install phase of your build by adding one of the
+     *         following sets of commands to the install phase of your buildspec file:
+     *         </p>
      *         <p>
      *         If the operating system's base image is Ubuntu Linux:
      *         </p>

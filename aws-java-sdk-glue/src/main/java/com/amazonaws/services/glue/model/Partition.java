@@ -36,13 +36,13 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> values;
     /**
      * <p>
-     * The name of the catalog database where the table in question is located.
+     * The name of the catalog database in which to create the partition.
      * </p>
      */
     private String databaseName;
     /**
      * <p>
-     * The name of the table in question.
+     * The name of the database table in which to create the partition.
      * </p>
      */
     private String tableName;
@@ -149,11 +149,11 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the catalog database where the table in question is located.
+     * The name of the catalog database in which to create the partition.
      * </p>
      * 
      * @param databaseName
-     *        The name of the catalog database where the table in question is located.
+     *        The name of the catalog database in which to create the partition.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -162,10 +162,10 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the catalog database where the table in question is located.
+     * The name of the catalog database in which to create the partition.
      * </p>
      * 
-     * @return The name of the catalog database where the table in question is located.
+     * @return The name of the catalog database in which to create the partition.
      */
 
     public String getDatabaseName() {
@@ -174,11 +174,11 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the catalog database where the table in question is located.
+     * The name of the catalog database in which to create the partition.
      * </p>
      * 
      * @param databaseName
-     *        The name of the catalog database where the table in question is located.
+     *        The name of the catalog database in which to create the partition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,11 +189,11 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the table in question.
+     * The name of the database table in which to create the partition.
      * </p>
      * 
      * @param tableName
-     *        The name of the table in question.
+     *        The name of the database table in which to create the partition.
      */
 
     public void setTableName(String tableName) {
@@ -202,10 +202,10 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the table in question.
+     * The name of the database table in which to create the partition.
      * </p>
      * 
-     * @return The name of the table in question.
+     * @return The name of the database table in which to create the partition.
      */
 
     public String getTableName() {
@@ -214,11 +214,11 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the table in question.
+     * The name of the database table in which to create the partition.
      * </p>
      * 
      * @param tableName
-     *        The name of the table in question.
+     *        The name of the database table in which to create the partition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

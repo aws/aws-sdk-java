@@ -27,7 +27,7 @@ public class GetPartitionRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partition in question resides. If none is supplied, the AWS account ID is
+     * The ID of the Data Catalog where the partition in question resides. If none is provided, the AWS account ID is
      * used by default.
      * </p>
      */
@@ -53,12 +53,12 @@ public class GetPartitionRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partition in question resides. If none is supplied, the AWS account ID is
+     * The ID of the Data Catalog where the partition in question resides. If none is provided, the AWS account ID is
      * used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the partition in question resides. If none is supplied, the AWS account
+     *        The ID of the Data Catalog where the partition in question resides. If none is provided, the AWS account
      *        ID is used by default.
      */
 
@@ -68,11 +68,11 @@ public class GetPartitionRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partition in question resides. If none is supplied, the AWS account ID is
+     * The ID of the Data Catalog where the partition in question resides. If none is provided, the AWS account ID is
      * used by default.
      * </p>
      * 
-     * @return The ID of the Data Catalog where the partition in question resides. If none is supplied, the AWS account
+     * @return The ID of the Data Catalog where the partition in question resides. If none is provided, the AWS account
      *         ID is used by default.
      */
 
@@ -82,12 +82,12 @@ public class GetPartitionRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partition in question resides. If none is supplied, the AWS account ID is
+     * The ID of the Data Catalog where the partition in question resides. If none is provided, the AWS account ID is
      * used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the partition in question resides. If none is supplied, the AWS account
+     *        The ID of the Data Catalog where the partition in question resides. If none is provided, the AWS account
      *        ID is used by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

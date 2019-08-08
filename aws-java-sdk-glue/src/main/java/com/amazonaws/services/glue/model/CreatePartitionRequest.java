@@ -27,7 +27,7 @@ public class CreatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the catalog in which the partion is to be created. Currently, this should be the AWS account ID.
+     * The AWS account ID of the catalog in which the partition is to be created.
      * </p>
      */
     private String catalogId;
@@ -52,11 +52,11 @@ public class CreatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the catalog in which the partion is to be created. Currently, this should be the AWS account ID.
+     * The AWS account ID of the catalog in which the partition is to be created.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the catalog in which the partion is to be created. Currently, this should be the AWS account ID.
+     *        The AWS account ID of the catalog in which the partition is to be created.
      */
 
     public void setCatalogId(String catalogId) {
@@ -65,11 +65,10 @@ public class CreatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the catalog in which the partion is to be created. Currently, this should be the AWS account ID.
+     * The AWS account ID of the catalog in which the partition is to be created.
      * </p>
      * 
-     * @return The ID of the catalog in which the partion is to be created. Currently, this should be the AWS account
-     *         ID.
+     * @return The AWS account ID of the catalog in which the partition is to be created.
      */
 
     public String getCatalogId() {
@@ -78,11 +77,11 @@ public class CreatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the catalog in which the partion is to be created. Currently, this should be the AWS account ID.
+     * The AWS account ID of the catalog in which the partition is to be created.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the catalog in which the partion is to be created. Currently, this should be the AWS account ID.
+     *        The AWS account ID of the catalog in which the partition is to be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +35,8 @@ public class ColumnMarshaller {
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Comment").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Parameters").build();
 
     private static final ColumnMarshaller instance = new ColumnMarshaller();
 
@@ -53,6 +57,7 @@ public class ColumnMarshaller {
             protocolMarshaller.marshall(column.getName(), NAME_BINDING);
             protocolMarshaller.marshall(column.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(column.getComment(), COMMENT_BINDING);
+            protocolMarshaller.marshall(column.getParameters(), PARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

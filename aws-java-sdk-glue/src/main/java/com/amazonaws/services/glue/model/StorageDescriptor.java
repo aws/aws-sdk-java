@@ -36,7 +36,7 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
     private java.util.List<Column> columns;
     /**
      * <p>
-     * The physical location of the table. By default this takes the form of the warehouse location, followed by the
+     * The physical location of the table. By default, this takes the form of the warehouse location, followed by the
      * database location in the warehouse, followed by the table name.
      * </p>
      */
@@ -57,7 +57,7 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
     private String outputFormat;
     /**
      * <p>
-     * True if the data in the table is compressed, or False if not.
+     * <code>True</code> if the data in the table is compressed, or <code>False</code> if not.
      * </p>
      */
     private Boolean compressed;
@@ -69,7 +69,7 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
     private Integer numberOfBuckets;
     /**
      * <p>
-     * Serialization/deserialization (SerDe) information.
+     * The serialization/deserialization (SerDe) information.
      * </p>
      */
     private SerDeInfo serdeInfo;
@@ -87,19 +87,19 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
     private java.util.List<Order> sortColumns;
     /**
      * <p>
-     * User-supplied properties in key-value form.
+     * The user-supplied properties in key-value form.
      * </p>
      */
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * Information about values that appear very frequently in a column (skewed values).
+     * The information about values that appear frequently in a column (skewed values).
      * </p>
      */
     private SkewedInfo skewedInfo;
     /**
      * <p>
-     * True if the table data is stored in subdirectories, or False if not.
+     * <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.
      * </p>
      */
     private Boolean storedAsSubDirectories;
@@ -176,12 +176,12 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The physical location of the table. By default this takes the form of the warehouse location, followed by the
+     * The physical location of the table. By default, this takes the form of the warehouse location, followed by the
      * database location in the warehouse, followed by the table name.
      * </p>
      * 
      * @param location
-     *        The physical location of the table. By default this takes the form of the warehouse location, followed by
+     *        The physical location of the table. By default, this takes the form of the warehouse location, followed by
      *        the database location in the warehouse, followed by the table name.
      */
 
@@ -191,12 +191,12 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The physical location of the table. By default this takes the form of the warehouse location, followed by the
+     * The physical location of the table. By default, this takes the form of the warehouse location, followed by the
      * database location in the warehouse, followed by the table name.
      * </p>
      * 
-     * @return The physical location of the table. By default this takes the form of the warehouse location, followed by
-     *         the database location in the warehouse, followed by the table name.
+     * @return The physical location of the table. By default, this takes the form of the warehouse location, followed
+     *         by the database location in the warehouse, followed by the table name.
      */
 
     public String getLocation() {
@@ -205,12 +205,12 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The physical location of the table. By default this takes the form of the warehouse location, followed by the
+     * The physical location of the table. By default, this takes the form of the warehouse location, followed by the
      * database location in the warehouse, followed by the table name.
      * </p>
      * 
      * @param location
-     *        The physical location of the table. By default this takes the form of the warehouse location, followed by
+     *        The physical location of the table. By default, this takes the form of the warehouse location, followed by
      *        the database location in the warehouse, followed by the table name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -314,11 +314,11 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the data in the table is compressed, or False if not.
+     * <code>True</code> if the data in the table is compressed, or <code>False</code> if not.
      * </p>
      * 
      * @param compressed
-     *        True if the data in the table is compressed, or False if not.
+     *        <code>True</code> if the data in the table is compressed, or <code>False</code> if not.
      */
 
     public void setCompressed(Boolean compressed) {
@@ -327,10 +327,10 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the data in the table is compressed, or False if not.
+     * <code>True</code> if the data in the table is compressed, or <code>False</code> if not.
      * </p>
      * 
-     * @return True if the data in the table is compressed, or False if not.
+     * @return <code>True</code> if the data in the table is compressed, or <code>False</code> if not.
      */
 
     public Boolean getCompressed() {
@@ -339,11 +339,11 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the data in the table is compressed, or False if not.
+     * <code>True</code> if the data in the table is compressed, or <code>False</code> if not.
      * </p>
      * 
      * @param compressed
-     *        True if the data in the table is compressed, or False if not.
+     *        <code>True</code> if the data in the table is compressed, or <code>False</code> if not.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,10 +354,10 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the data in the table is compressed, or False if not.
+     * <code>True</code> if the data in the table is compressed, or <code>False</code> if not.
      * </p>
      * 
-     * @return True if the data in the table is compressed, or False if not.
+     * @return <code>True</code> if the data in the table is compressed, or <code>False</code> if not.
      */
 
     public Boolean isCompressed() {
@@ -406,11 +406,11 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Serialization/deserialization (SerDe) information.
+     * The serialization/deserialization (SerDe) information.
      * </p>
      * 
      * @param serdeInfo
-     *        Serialization/deserialization (SerDe) information.
+     *        The serialization/deserialization (SerDe) information.
      */
 
     public void setSerdeInfo(SerDeInfo serdeInfo) {
@@ -419,10 +419,10 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Serialization/deserialization (SerDe) information.
+     * The serialization/deserialization (SerDe) information.
      * </p>
      * 
-     * @return Serialization/deserialization (SerDe) information.
+     * @return The serialization/deserialization (SerDe) information.
      */
 
     public SerDeInfo getSerdeInfo() {
@@ -431,11 +431,11 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Serialization/deserialization (SerDe) information.
+     * The serialization/deserialization (SerDe) information.
      * </p>
      * 
      * @param serdeInfo
-     *        Serialization/deserialization (SerDe) information.
+     *        The serialization/deserialization (SerDe) information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -586,10 +586,10 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * User-supplied properties in key-value form.
+     * The user-supplied properties in key-value form.
      * </p>
      * 
-     * @return User-supplied properties in key-value form.
+     * @return The user-supplied properties in key-value form.
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -598,11 +598,11 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * User-supplied properties in key-value form.
+     * The user-supplied properties in key-value form.
      * </p>
      * 
      * @param parameters
-     *        User-supplied properties in key-value form.
+     *        The user-supplied properties in key-value form.
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -611,11 +611,11 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * User-supplied properties in key-value form.
+     * The user-supplied properties in key-value form.
      * </p>
      * 
      * @param parameters
-     *        User-supplied properties in key-value form.
+     *        The user-supplied properties in key-value form.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -647,11 +647,11 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Information about values that appear very frequently in a column (skewed values).
+     * The information about values that appear frequently in a column (skewed values).
      * </p>
      * 
      * @param skewedInfo
-     *        Information about values that appear very frequently in a column (skewed values).
+     *        The information about values that appear frequently in a column (skewed values).
      */
 
     public void setSkewedInfo(SkewedInfo skewedInfo) {
@@ -660,10 +660,10 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Information about values that appear very frequently in a column (skewed values).
+     * The information about values that appear frequently in a column (skewed values).
      * </p>
      * 
-     * @return Information about values that appear very frequently in a column (skewed values).
+     * @return The information about values that appear frequently in a column (skewed values).
      */
 
     public SkewedInfo getSkewedInfo() {
@@ -672,11 +672,11 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Information about values that appear very frequently in a column (skewed values).
+     * The information about values that appear frequently in a column (skewed values).
      * </p>
      * 
      * @param skewedInfo
-     *        Information about values that appear very frequently in a column (skewed values).
+     *        The information about values that appear frequently in a column (skewed values).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -687,11 +687,11 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the table data is stored in subdirectories, or False if not.
+     * <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.
      * </p>
      * 
      * @param storedAsSubDirectories
-     *        True if the table data is stored in subdirectories, or False if not.
+     *        <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.
      */
 
     public void setStoredAsSubDirectories(Boolean storedAsSubDirectories) {
@@ -700,10 +700,10 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the table data is stored in subdirectories, or False if not.
+     * <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.
      * </p>
      * 
-     * @return True if the table data is stored in subdirectories, or False if not.
+     * @return <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.
      */
 
     public Boolean getStoredAsSubDirectories() {
@@ -712,11 +712,11 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the table data is stored in subdirectories, or False if not.
+     * <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.
      * </p>
      * 
      * @param storedAsSubDirectories
-     *        True if the table data is stored in subdirectories, or False if not.
+     *        <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -727,10 +727,10 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * True if the table data is stored in subdirectories, or False if not.
+     * <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.
      * </p>
      * 
-     * @return True if the table data is stored in subdirectories, or False if not.
+     * @return <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.
      */
 
     public Boolean isStoredAsSubDirectories() {

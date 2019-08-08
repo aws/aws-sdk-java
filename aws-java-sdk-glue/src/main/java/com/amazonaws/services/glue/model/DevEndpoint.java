@@ -110,6 +110,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code>
+     * configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB
+     * disk.
+     * </p>
      */
     private String workerType;
     /**
@@ -658,6 +663,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code>
+     * configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB
+     * disk.
+     * </p>
      * 
      * @param workerType
      *        The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard,
@@ -681,6 +691,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code>
+     *        configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a
+     *        64 GB disk.
      * @see WorkerType
      */
 
@@ -713,6 +728,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code>
+     * configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB
+     * disk.
+     * </p>
      * 
      * @return The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard,
      *         G.1X, or G.2X.</p>
@@ -735,6 +755,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      *         and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code>
+     *         configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a
+     *         64 GB disk.
      * @see WorkerType
      */
 
@@ -767,6 +792,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code>
+     * configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB
+     * disk.
+     * </p>
      * 
      * @param workerType
      *        The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard,
@@ -790,6 +820,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code>
+     *        configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a
+     *        64 GB disk.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkerType
      */
@@ -824,6 +859,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code>
+     * configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB
+     * disk.
+     * </p>
      * 
      * @param workerType
      *        The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard,
@@ -847,6 +887,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code>
+     *        configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a
+     *        64 GB disk.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkerType
      */

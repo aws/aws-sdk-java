@@ -51,6 +51,13 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String authType;
+    /**
+     * <p>
+     * Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to
+     * overwrite the repository source credentials. The default value is <code>true</code>.
+     * </p>
+     */
+    private Boolean shouldOverwrite;
 
     /**
      * <p>
@@ -268,6 +275,66 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to
+     * overwrite the repository source credentials. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @param shouldOverwrite
+     *        Set to <code>false</code> to prevent overwriting the repository source credentials. Set to
+     *        <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>.
+     */
+
+    public void setShouldOverwrite(Boolean shouldOverwrite) {
+        this.shouldOverwrite = shouldOverwrite;
+    }
+
+    /**
+     * <p>
+     * Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to
+     * overwrite the repository source credentials. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @return Set to <code>false</code> to prevent overwriting the repository source credentials. Set to
+     *         <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>.
+     */
+
+    public Boolean getShouldOverwrite() {
+        return this.shouldOverwrite;
+    }
+
+    /**
+     * <p>
+     * Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to
+     * overwrite the repository source credentials. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @param shouldOverwrite
+     *        Set to <code>false</code> to prevent overwriting the repository source credentials. Set to
+     *        <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportSourceCredentialsRequest withShouldOverwrite(Boolean shouldOverwrite) {
+        setShouldOverwrite(shouldOverwrite);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to
+     * overwrite the repository source credentials. The default value is <code>true</code>.
+     * </p>
+     * 
+     * @return Set to <code>false</code> to prevent overwriting the repository source credentials. Set to
+     *         <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>.
+     */
+
+    public Boolean isShouldOverwrite() {
+        return this.shouldOverwrite;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -286,7 +353,9 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
         if (getServerType() != null)
             sb.append("ServerType: ").append(getServerType()).append(",");
         if (getAuthType() != null)
-            sb.append("AuthType: ").append(getAuthType());
+            sb.append("AuthType: ").append(getAuthType()).append(",");
+        if (getShouldOverwrite() != null)
+            sb.append("ShouldOverwrite: ").append(getShouldOverwrite());
         sb.append("}");
         return sb.toString();
     }
@@ -317,6 +386,10 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getAuthType() != null && other.getAuthType().equals(this.getAuthType()) == false)
             return false;
+        if (other.getShouldOverwrite() == null ^ this.getShouldOverwrite() == null)
+            return false;
+        if (other.getShouldOverwrite() != null && other.getShouldOverwrite().equals(this.getShouldOverwrite()) == false)
+            return false;
         return true;
     }
 
@@ -329,6 +402,7 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getToken() == null) ? 0 : getToken().hashCode());
         hashCode = prime * hashCode + ((getServerType() == null) ? 0 : getServerType().hashCode());
         hashCode = prime * hashCode + ((getAuthType() == null) ? 0 : getAuthType().hashCode());
+        hashCode = prime * hashCode + ((getShouldOverwrite() == null) ? 0 : getShouldOverwrite().hashCode());
         return hashCode;
     }
 

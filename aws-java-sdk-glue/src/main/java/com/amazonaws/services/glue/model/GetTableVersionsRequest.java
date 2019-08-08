@@ -27,7 +27,7 @@ public class GetTableVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the Data Catalog where the tables reside. If none is supplied, the AWS account ID is used by default.
+     * The ID of the Data Catalog where the tables reside. If none is provided, the AWS account ID is used by default.
      * </p>
      */
     private String catalogId;
@@ -58,11 +58,11 @@ public class GetTableVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the Data Catalog where the tables reside. If none is supplied, the AWS account ID is used by default.
+     * The ID of the Data Catalog where the tables reside. If none is provided, the AWS account ID is used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the tables reside. If none is supplied, the AWS account ID is used by
+     *        The ID of the Data Catalog where the tables reside. If none is provided, the AWS account ID is used by
      *        default.
      */
 
@@ -72,10 +72,10 @@ public class GetTableVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the Data Catalog where the tables reside. If none is supplied, the AWS account ID is used by default.
+     * The ID of the Data Catalog where the tables reside. If none is provided, the AWS account ID is used by default.
      * </p>
      * 
-     * @return The ID of the Data Catalog where the tables reside. If none is supplied, the AWS account ID is used by
+     * @return The ID of the Data Catalog where the tables reside. If none is provided, the AWS account ID is used by
      *         default.
      */
 
@@ -85,11 +85,11 @@ public class GetTableVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the Data Catalog where the tables reside. If none is supplied, the AWS account ID is used by default.
+     * The ID of the Data Catalog where the tables reside. If none is provided, the AWS account ID is used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the tables reside. If none is supplied, the AWS account ID is used by
+     *        The ID of the Data Catalog where the tables reside. If none is provided, the AWS account ID is used by
      *        default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

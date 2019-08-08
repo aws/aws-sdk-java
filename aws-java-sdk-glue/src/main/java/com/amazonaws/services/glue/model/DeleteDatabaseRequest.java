@@ -27,26 +27,26 @@ public class DeleteDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Data Catalog in which the database resides. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which the database resides. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      */
     private String catalogId;
     /**
      * <p>
-     * The name of the Database to delete. For Hive compatibility, this must be all lowercase.
+     * The name of the database to delete. For Hive compatibility, this must be all lowercase.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The ID of the Data Catalog in which the database resides. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which the database resides. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog in which the database resides. If none is supplied, the AWS account ID is used
+     *        The ID of the Data Catalog in which the database resides. If none is provided, the AWS account ID is used
      *        by default.
      */
 
@@ -56,11 +56,11 @@ public class DeleteDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Data Catalog in which the database resides. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which the database resides. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      * 
-     * @return The ID of the Data Catalog in which the database resides. If none is supplied, the AWS account ID is used
+     * @return The ID of the Data Catalog in which the database resides. If none is provided, the AWS account ID is used
      *         by default.
      */
 
@@ -70,12 +70,12 @@ public class DeleteDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Data Catalog in which the database resides. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which the database resides. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog in which the database resides. If none is supplied, the AWS account ID is used
+     *        The ID of the Data Catalog in which the database resides. If none is provided, the AWS account ID is used
      *        by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -87,11 +87,11 @@ public class DeleteDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the Database to delete. For Hive compatibility, this must be all lowercase.
+     * The name of the database to delete. For Hive compatibility, this must be all lowercase.
      * </p>
      * 
      * @param name
-     *        The name of the Database to delete. For Hive compatibility, this must be all lowercase.
+     *        The name of the database to delete. For Hive compatibility, this must be all lowercase.
      */
 
     public void setName(String name) {
@@ -100,10 +100,10 @@ public class DeleteDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the Database to delete. For Hive compatibility, this must be all lowercase.
+     * The name of the database to delete. For Hive compatibility, this must be all lowercase.
      * </p>
      * 
-     * @return The name of the Database to delete. For Hive compatibility, this must be all lowercase.
+     * @return The name of the database to delete. For Hive compatibility, this must be all lowercase.
      */
 
     public String getName() {
@@ -112,11 +112,11 @@ public class DeleteDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the Database to delete. For Hive compatibility, this must be all lowercase.
+     * The name of the database to delete. For Hive compatibility, this must be all lowercase.
      * </p>
      * 
      * @param name
-     *        The name of the Database to delete. For Hive compatibility, this must be all lowercase.
+     *        The name of the database to delete. For Hive compatibility, this must be all lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

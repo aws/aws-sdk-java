@@ -89,7 +89,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file that contains the JDBC driver to use.
+     * <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that
+     * contains the JDBC driver to use.
      * </p>
      * </li>
      * <li>
@@ -109,7 +110,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CONFIG_FILES</code> - (Reserved for future use).
+     * <code>CONFIG_FILES</code> - (Reserved for future use.)
      * </p>
      * </li>
      * <li>
@@ -125,7 +126,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL) with
-     * hostname matching will be enforced for the JDBC connection on the client. The default is false.
+     * hostname matching is enforced for the JDBC connection on the client. The default is false.
      * </p>
      * </li>
      * </ul>
@@ -403,7 +404,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file that contains the JDBC driver to use.
+     * <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that
+     * contains the JDBC driver to use.
      * </p>
      * </li>
      * <li>
@@ -423,7 +425,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CONFIG_FILES</code> - (Reserved for future use).
+     * <code>CONFIG_FILES</code> - (Reserved for future use.)
      * </p>
      * </li>
      * <li>
@@ -439,7 +441,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL) with
-     * hostname matching will be enforced for the JDBC connection on the client. The default is false.
+     * hostname matching is enforced for the JDBC connection on the client. The default is false.
      * </p>
      * </li>
      * </ul>
@@ -478,8 +480,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file that contains the JDBC driver to
-     *         use.
+     *         <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file
+     *         that contains the JDBC driver to use.
      *         </p>
      *         </li>
      *         <li>
@@ -499,7 +501,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CONFIG_FILES</code> - (Reserved for future use).
+     *         <code>CONFIG_FILES</code> - (Reserved for future use.)
      *         </p>
      *         </li>
      *         <li>
@@ -515,8 +517,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer
-     *         (SSL) with hostname matching will be enforced for the JDBC connection on the client. The default is
-     *         false.
+     *         (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.
      *         </p>
      *         </li>
      */
@@ -562,7 +563,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file that contains the JDBC driver to use.
+     * <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that
+     * contains the JDBC driver to use.
      * </p>
      * </li>
      * <li>
@@ -582,7 +584,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CONFIG_FILES</code> - (Reserved for future use).
+     * <code>CONFIG_FILES</code> - (Reserved for future use.)
      * </p>
      * </li>
      * <li>
@@ -598,7 +600,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL) with
-     * hostname matching will be enforced for the JDBC connection on the client. The default is false.
+     * hostname matching is enforced for the JDBC connection on the client. The default is false.
      * </p>
      * </li>
      * </ul>
@@ -638,8 +640,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file that contains the JDBC driver to
-     *        use.
+     *        <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that
+     *        contains the JDBC driver to use.
      *        </p>
      *        </li>
      *        <li>
@@ -659,7 +661,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CONFIG_FILES</code> - (Reserved for future use).
+     *        <code>CONFIG_FILES</code> - (Reserved for future use.)
      *        </p>
      *        </li>
      *        <li>
@@ -675,7 +677,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer
-     *        (SSL) with hostname matching will be enforced for the JDBC connection on the client. The default is false.
+     *        (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.
      *        </p>
      *        </li>
      */
@@ -721,7 +723,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file that contains the JDBC driver to use.
+     * <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that
+     * contains the JDBC driver to use.
      * </p>
      * </li>
      * <li>
@@ -741,7 +744,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CONFIG_FILES</code> - (Reserved for future use).
+     * <code>CONFIG_FILES</code> - (Reserved for future use.)
      * </p>
      * </li>
      * <li>
@@ -757,7 +760,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL) with
-     * hostname matching will be enforced for the JDBC connection on the client. The default is false.
+     * hostname matching is enforced for the JDBC connection on the client. The default is false.
      * </p>
      * </li>
      * </ul>
@@ -797,8 +800,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file that contains the JDBC driver to
-     *        use.
+     *        <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that
+     *        contains the JDBC driver to use.
      *        </p>
      *        </li>
      *        <li>
@@ -818,7 +821,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CONFIG_FILES</code> - (Reserved for future use).
+     *        <code>CONFIG_FILES</code> - (Reserved for future use.)
      *        </p>
      *        </li>
      *        <li>
@@ -834,7 +837,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer
-     *        (SSL) with hostname matching will be enforced for the JDBC connection on the client. The default is false.
+     *        (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

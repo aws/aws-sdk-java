@@ -25,17 +25,17 @@ public class BatchCreatePartitionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Errors encountered when trying to create the requested partitions.
+     * The errors encountered when trying to create the requested partitions.
      * </p>
      */
     private java.util.List<PartitionError> errors;
 
     /**
      * <p>
-     * Errors encountered when trying to create the requested partitions.
+     * The errors encountered when trying to create the requested partitions.
      * </p>
      * 
-     * @return Errors encountered when trying to create the requested partitions.
+     * @return The errors encountered when trying to create the requested partitions.
      */
 
     public java.util.List<PartitionError> getErrors() {
@@ -44,11 +44,11 @@ public class BatchCreatePartitionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Errors encountered when trying to create the requested partitions.
+     * The errors encountered when trying to create the requested partitions.
      * </p>
      * 
      * @param errors
-     *        Errors encountered when trying to create the requested partitions.
+     *        The errors encountered when trying to create the requested partitions.
      */
 
     public void setErrors(java.util.Collection<PartitionError> errors) {
@@ -62,7 +62,7 @@ public class BatchCreatePartitionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Errors encountered when trying to create the requested partitions.
+     * The errors encountered when trying to create the requested partitions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class BatchCreatePartitionResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param errors
-     *        Errors encountered when trying to create the requested partitions.
+     *        The errors encountered when trying to create the requested partitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class BatchCreatePartitionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Errors encountered when trying to create the requested partitions.
+     * The errors encountered when trying to create the requested partitions.
      * </p>
      * 
      * @param errors
-     *        Errors encountered when trying to create the requested partitions.
+     *        The errors encountered when trying to create the requested partitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

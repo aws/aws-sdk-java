@@ -43,7 +43,7 @@ public class TableVersionError implements Serializable, Cloneable, StructuredPoj
     private String versionId;
     /**
      * <p>
-     * Detail about the error.
+     * The details about the error.
      * </p>
      */
     private ErrorDetail errorDetail;
@@ -136,11 +136,11 @@ public class TableVersionError implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Detail about the error.
+     * The details about the error.
      * </p>
      * 
      * @param errorDetail
-     *        Detail about the error.
+     *        The details about the error.
      */
 
     public void setErrorDetail(ErrorDetail errorDetail) {
@@ -149,10 +149,10 @@ public class TableVersionError implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Detail about the error.
+     * The details about the error.
      * </p>
      * 
-     * @return Detail about the error.
+     * @return The details about the error.
      */
 
     public ErrorDetail getErrorDetail() {
@@ -161,11 +161,11 @@ public class TableVersionError implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Detail about the error.
+     * The details about the error.
      * </p>
      * 
      * @param errorDetail
-     *        Detail about the error.
+     *        The details about the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

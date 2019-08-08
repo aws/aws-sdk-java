@@ -54,13 +54,13 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
     private Integer attempt;
     /**
      * <p>
-     * The unique run identifier associated with the previous job run..
+     * The unique run identifier associated with the previous job run.
      * </p>
      */
     private String previousRunId;
     /**
      * <p>
-     * The unique run identifier associated with this job run.
+     * The run ID number.
      * </p>
      */
     private String runId;
@@ -233,11 +233,11 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unique run identifier associated with the previous job run..
+     * The unique run identifier associated with the previous job run.
      * </p>
      * 
      * @param previousRunId
-     *        The unique run identifier associated with the previous job run..
+     *        The unique run identifier associated with the previous job run.
      */
 
     public void setPreviousRunId(String previousRunId) {
@@ -246,10 +246,10 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unique run identifier associated with the previous job run..
+     * The unique run identifier associated with the previous job run.
      * </p>
      * 
-     * @return The unique run identifier associated with the previous job run..
+     * @return The unique run identifier associated with the previous job run.
      */
 
     public String getPreviousRunId() {
@@ -258,11 +258,11 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unique run identifier associated with the previous job run..
+     * The unique run identifier associated with the previous job run.
      * </p>
      * 
      * @param previousRunId
-     *        The unique run identifier associated with the previous job run..
+     *        The unique run identifier associated with the previous job run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +273,11 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unique run identifier associated with this job run.
+     * The run ID number.
      * </p>
      * 
      * @param runId
-     *        The unique run identifier associated with this job run.
+     *        The run ID number.
      */
 
     public void setRunId(String runId) {
@@ -286,10 +286,10 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unique run identifier associated with this job run.
+     * The run ID number.
      * </p>
      * 
-     * @return The unique run identifier associated with this job run.
+     * @return The run ID number.
      */
 
     public String getRunId() {
@@ -298,11 +298,11 @@ public class JobBookmarkEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unique run identifier associated with this job run.
+     * The run ID number.
      * </p>
      * 
      * @param runId
-     *        The unique run identifier associated with this job run.
+     *        The run ID number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

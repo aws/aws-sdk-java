@@ -35,16 +35,22 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The datatype of data in the <code>Column</code>.
+     * The data type of the <code>Column</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * Free-form text comment.
+     * A free-form text comment.
      * </p>
      */
     private String comment;
+    /**
+     * <p>
+     * These key-value pairs define properties associated with the column.
+     * </p>
+     */
+    private java.util.Map<String, String> parameters;
 
     /**
      * <p>
@@ -88,11 +94,11 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The datatype of data in the <code>Column</code>.
+     * The data type of the <code>Column</code>.
      * </p>
      * 
      * @param type
-     *        The datatype of data in the <code>Column</code>.
+     *        The data type of the <code>Column</code>.
      */
 
     public void setType(String type) {
@@ -101,10 +107,10 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The datatype of data in the <code>Column</code>.
+     * The data type of the <code>Column</code>.
      * </p>
      * 
-     * @return The datatype of data in the <code>Column</code>.
+     * @return The data type of the <code>Column</code>.
      */
 
     public String getType() {
@@ -113,11 +119,11 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The datatype of data in the <code>Column</code>.
+     * The data type of the <code>Column</code>.
      * </p>
      * 
      * @param type
-     *        The datatype of data in the <code>Column</code>.
+     *        The data type of the <code>Column</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,11 +134,11 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Free-form text comment.
+     * A free-form text comment.
      * </p>
      * 
      * @param comment
-     *        Free-form text comment.
+     *        A free-form text comment.
      */
 
     public void setComment(String comment) {
@@ -141,10 +147,10 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Free-form text comment.
+     * A free-form text comment.
      * </p>
      * 
-     * @return Free-form text comment.
+     * @return A free-form text comment.
      */
 
     public String getComment() {
@@ -153,16 +159,77 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Free-form text comment.
+     * A free-form text comment.
      * </p>
      * 
      * @param comment
-     *        Free-form text comment.
+     *        A free-form text comment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Column withComment(String comment) {
         setComment(comment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * These key-value pairs define properties associated with the column.
+     * </p>
+     * 
+     * @return These key-value pairs define properties associated with the column.
+     */
+
+    public java.util.Map<String, String> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * <p>
+     * These key-value pairs define properties associated with the column.
+     * </p>
+     * 
+     * @param parameters
+     *        These key-value pairs define properties associated with the column.
+     */
+
+    public void setParameters(java.util.Map<String, String> parameters) {
+        this.parameters = parameters;
+    }
+
+    /**
+     * <p>
+     * These key-value pairs define properties associated with the column.
+     * </p>
+     * 
+     * @param parameters
+     *        These key-value pairs define properties associated with the column.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Column withParameters(java.util.Map<String, String> parameters) {
+        setParameters(parameters);
+        return this;
+    }
+
+    public Column addParametersEntry(String key, String value) {
+        if (null == this.parameters) {
+            this.parameters = new java.util.HashMap<String, String>();
+        }
+        if (this.parameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.parameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Parameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Column clearParametersEntries() {
+        this.parameters = null;
         return this;
     }
 
@@ -183,7 +250,9 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getComment() != null)
-            sb.append("Comment: ").append(getComment());
+            sb.append("Comment: ").append(getComment()).append(",");
+        if (getParameters() != null)
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -210,6 +279,10 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
             return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
+            return false;
         return true;
     }
 
@@ -221,6 +294,7 @@ public class Column implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         return hashCode;
     }
 

@@ -27,7 +27,7 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partition to be updated resides. If none is supplied, the AWS account ID is
+     * The ID of the Data Catalog where the partition to be updated resides. If none is provided, the AWS account ID is
      * used by default.
      * </p>
      */
@@ -40,7 +40,7 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
     private String databaseName;
     /**
      * <p>
-     * The name of the table where the partition to be updated is located.
+     * The name of the table in which the partition to be updated is located.
      * </p>
      */
     private String tableName;
@@ -52,19 +52,19 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<String> partitionValueList;
     /**
      * <p>
-     * The new partition object to which to update the partition.
+     * The new partition object to update the partition to.
      * </p>
      */
     private PartitionInput partitionInput;
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partition to be updated resides. If none is supplied, the AWS account ID is
+     * The ID of the Data Catalog where the partition to be updated resides. If none is provided, the AWS account ID is
      * used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the partition to be updated resides. If none is supplied, the AWS account
+     *        The ID of the Data Catalog where the partition to be updated resides. If none is provided, the AWS account
      *        ID is used by default.
      */
 
@@ -74,11 +74,11 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partition to be updated resides. If none is supplied, the AWS account ID is
+     * The ID of the Data Catalog where the partition to be updated resides. If none is provided, the AWS account ID is
      * used by default.
      * </p>
      * 
-     * @return The ID of the Data Catalog where the partition to be updated resides. If none is supplied, the AWS
+     * @return The ID of the Data Catalog where the partition to be updated resides. If none is provided, the AWS
      *         account ID is used by default.
      */
 
@@ -88,12 +88,12 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partition to be updated resides. If none is supplied, the AWS account ID is
+     * The ID of the Data Catalog where the partition to be updated resides. If none is provided, the AWS account ID is
      * used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the partition to be updated resides. If none is supplied, the AWS account
+     *        The ID of the Data Catalog where the partition to be updated resides. If none is provided, the AWS account
      *        ID is used by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -145,11 +145,11 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the table where the partition to be updated is located.
+     * The name of the table in which the partition to be updated is located.
      * </p>
      * 
      * @param tableName
-     *        The name of the table where the partition to be updated is located.
+     *        The name of the table in which the partition to be updated is located.
      */
 
     public void setTableName(String tableName) {
@@ -158,10 +158,10 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the table where the partition to be updated is located.
+     * The name of the table in which the partition to be updated is located.
      * </p>
      * 
-     * @return The name of the table where the partition to be updated is located.
+     * @return The name of the table in which the partition to be updated is located.
      */
 
     public String getTableName() {
@@ -170,11 +170,11 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the table where the partition to be updated is located.
+     * The name of the table in which the partition to be updated is located.
      * </p>
      * 
      * @param tableName
-     *        The name of the table where the partition to be updated is located.
+     *        The name of the table in which the partition to be updated is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,11 +255,11 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new partition object to which to update the partition.
+     * The new partition object to update the partition to.
      * </p>
      * 
      * @param partitionInput
-     *        The new partition object to which to update the partition.
+     *        The new partition object to update the partition to.
      */
 
     public void setPartitionInput(PartitionInput partitionInput) {
@@ -268,10 +268,10 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new partition object to which to update the partition.
+     * The new partition object to update the partition to.
      * </p>
      * 
-     * @return The new partition object to which to update the partition.
+     * @return The new partition object to update the partition to.
      */
 
     public PartitionInput getPartitionInput() {
@@ -280,11 +280,11 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new partition object to which to update the partition.
+     * The new partition object to update the partition to.
      * </p>
      * 
      * @param partitionInput
-     *        The new partition object to which to update the partition.
+     *        The new partition object to update the partition to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

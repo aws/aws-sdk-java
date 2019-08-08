@@ -74,7 +74,7 @@
     "requiresApiKey" : false,
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "OpsWorksCM",
-    "serviceFullName" : "AWS OpsWorks for Chef Automate",
+    "serviceFullName" : "AWS OpsWorks CM",
     "serviceId" : "OpsWorksCM",
     "serviceName" : "OpsWorksCM",
     "signingName" : "opsworks-cm",

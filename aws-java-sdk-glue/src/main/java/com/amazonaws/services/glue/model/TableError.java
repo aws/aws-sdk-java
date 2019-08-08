@@ -30,24 +30,24 @@ public class TableError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table. For Hive compatibility, this must be entirely lowercase.
+     * The name of the table. For Hive compatibility, this must be entirely lowercase.
      * </p>
      */
     private String tableName;
     /**
      * <p>
-     * Detail about the error.
+     * The details about the error.
      * </p>
      */
     private ErrorDetail errorDetail;
 
     /**
      * <p>
-     * Name of the table. For Hive compatibility, this must be entirely lowercase.
+     * The name of the table. For Hive compatibility, this must be entirely lowercase.
      * </p>
      * 
      * @param tableName
-     *        Name of the table. For Hive compatibility, this must be entirely lowercase.
+     *        The name of the table. For Hive compatibility, this must be entirely lowercase.
      */
 
     public void setTableName(String tableName) {
@@ -56,10 +56,10 @@ public class TableError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table. For Hive compatibility, this must be entirely lowercase.
+     * The name of the table. For Hive compatibility, this must be entirely lowercase.
      * </p>
      * 
-     * @return Name of the table. For Hive compatibility, this must be entirely lowercase.
+     * @return The name of the table. For Hive compatibility, this must be entirely lowercase.
      */
 
     public String getTableName() {
@@ -68,11 +68,11 @@ public class TableError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table. For Hive compatibility, this must be entirely lowercase.
+     * The name of the table. For Hive compatibility, this must be entirely lowercase.
      * </p>
      * 
      * @param tableName
-     *        Name of the table. For Hive compatibility, this must be entirely lowercase.
+     *        The name of the table. For Hive compatibility, this must be entirely lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class TableError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Detail about the error.
+     * The details about the error.
      * </p>
      * 
      * @param errorDetail
-     *        Detail about the error.
+     *        The details about the error.
      */
 
     public void setErrorDetail(ErrorDetail errorDetail) {
@@ -96,10 +96,10 @@ public class TableError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Detail about the error.
+     * The details about the error.
      * </p>
      * 
-     * @return Detail about the error.
+     * @return The details about the error.
      */
 
     public ErrorDetail getErrorDetail() {
@@ -108,11 +108,11 @@ public class TableError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Detail about the error.
+     * The details about the error.
      * </p>
      * 
      * @param errorDetail
-     *        Detail about the error.
+     *        The details about the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class GetUserDefinedFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the Data Catalog where the function to be retrieved is located. If none is supplied, the AWS account ID
+     * The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the AWS account ID
      * is used by default.
      * </p>
      */
@@ -47,12 +47,12 @@ public class GetUserDefinedFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the Data Catalog where the function to be retrieved is located. If none is supplied, the AWS account ID
+     * The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the AWS account ID
      * is used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the function to be retrieved is located. If none is supplied, the AWS
+     *        The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the AWS
      *        account ID is used by default.
      */
 
@@ -62,11 +62,11 @@ public class GetUserDefinedFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the Data Catalog where the function to be retrieved is located. If none is supplied, the AWS account ID
+     * The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the AWS account ID
      * is used by default.
      * </p>
      * 
-     * @return The ID of the Data Catalog where the function to be retrieved is located. If none is supplied, the AWS
+     * @return The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the AWS
      *         account ID is used by default.
      */
 
@@ -76,12 +76,12 @@ public class GetUserDefinedFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the Data Catalog where the function to be retrieved is located. If none is supplied, the AWS account ID
+     * The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the AWS account ID
      * is used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the function to be retrieved is located. If none is supplied, the AWS
+     *        The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the AWS
      *        account ID is used by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

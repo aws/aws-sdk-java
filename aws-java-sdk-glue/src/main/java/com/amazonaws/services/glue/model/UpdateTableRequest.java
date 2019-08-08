@@ -27,7 +27,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Data Catalog where the table resides. If none is supplied, the AWS account ID is used by default.
+     * The ID of the Data Catalog where the table resides. If none is provided, the AWS account ID is used by default.
      * </p>
      */
     private String catalogId;
@@ -46,19 +46,19 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     private TableInput tableInput;
     /**
      * <p>
-     * By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. If
-     * <code>skipArchive</code> is set to true, however, <code>UpdateTable</code> does not create the archived version.
+     * By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However,
+     * if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.
      * </p>
      */
     private Boolean skipArchive;
 
     /**
      * <p>
-     * The ID of the Data Catalog where the table resides. If none is supplied, the AWS account ID is used by default.
+     * The ID of the Data Catalog where the table resides. If none is provided, the AWS account ID is used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the table resides. If none is supplied, the AWS account ID is used by
+     *        The ID of the Data Catalog where the table resides. If none is provided, the AWS account ID is used by
      *        default.
      */
 
@@ -68,10 +68,10 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Data Catalog where the table resides. If none is supplied, the AWS account ID is used by default.
+     * The ID of the Data Catalog where the table resides. If none is provided, the AWS account ID is used by default.
      * </p>
      * 
-     * @return The ID of the Data Catalog where the table resides. If none is supplied, the AWS account ID is used by
+     * @return The ID of the Data Catalog where the table resides. If none is provided, the AWS account ID is used by
      *         default.
      */
 
@@ -81,11 +81,11 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Data Catalog where the table resides. If none is supplied, the AWS account ID is used by default.
+     * The ID of the Data Catalog where the table resides. If none is provided, the AWS account ID is used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the table resides. If none is supplied, the AWS account ID is used by
+     *        The ID of the Data Catalog where the table resides. If none is provided, the AWS account ID is used by
      *        default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -183,13 +183,13 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. If
-     * <code>skipArchive</code> is set to true, however, <code>UpdateTable</code> does not create the archived version.
+     * By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However,
+     * if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.
      * </p>
      * 
      * @param skipArchive
      *        By default, <code>UpdateTable</code> always creates an archived version of the table before updating it.
-     *        If <code>skipArchive</code> is set to true, however, <code>UpdateTable</code> does not create the archived
+     *        However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived
      *        version.
      */
 
@@ -199,12 +199,12 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. If
-     * <code>skipArchive</code> is set to true, however, <code>UpdateTable</code> does not create the archived version.
+     * By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However,
+     * if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.
      * </p>
      * 
      * @return By default, <code>UpdateTable</code> always creates an archived version of the table before updating it.
-     *         If <code>skipArchive</code> is set to true, however, <code>UpdateTable</code> does not create the
+     *         However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the
      *         archived version.
      */
 
@@ -214,13 +214,13 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. If
-     * <code>skipArchive</code> is set to true, however, <code>UpdateTable</code> does not create the archived version.
+     * By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However,
+     * if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.
      * </p>
      * 
      * @param skipArchive
      *        By default, <code>UpdateTable</code> always creates an archived version of the table before updating it.
-     *        If <code>skipArchive</code> is set to true, however, <code>UpdateTable</code> does not create the archived
+     *        However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived
      *        version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -232,12 +232,12 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. If
-     * <code>skipArchive</code> is set to true, however, <code>UpdateTable</code> does not create the archived version.
+     * By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However,
+     * if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.
      * </p>
      * 
      * @return By default, <code>UpdateTable</code> always creates an archived version of the table before updating it.
-     *         If <code>skipArchive</code> is set to true, however, <code>UpdateTable</code> does not create the
+     *         However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the
      *         archived version.
      */
 

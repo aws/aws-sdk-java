@@ -36,7 +36,7 @@ public class PartitionError implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> partitionValues;
     /**
      * <p>
-     * Details about the partition error.
+     * The details about the partition error.
      * </p>
      */
     private ErrorDetail errorDetail;
@@ -113,11 +113,11 @@ public class PartitionError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the partition error.
+     * The details about the partition error.
      * </p>
      * 
      * @param errorDetail
-     *        Details about the partition error.
+     *        The details about the partition error.
      */
 
     public void setErrorDetail(ErrorDetail errorDetail) {
@@ -126,10 +126,10 @@ public class PartitionError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the partition error.
+     * The details about the partition error.
      * </p>
      * 
-     * @return Details about the partition error.
+     * @return The details about the partition error.
      */
 
     public ErrorDetail getErrorDetail() {
@@ -138,11 +138,11 @@ public class PartitionError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the partition error.
+     * The details about the partition error.
      * </p>
      * 
      * @param errorDetail
-     *        Details about the partition error.
+     *        The details about the partition error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

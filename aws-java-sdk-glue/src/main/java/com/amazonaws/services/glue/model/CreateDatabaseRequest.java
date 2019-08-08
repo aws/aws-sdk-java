@@ -27,26 +27,26 @@ public class CreateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Data Catalog in which to create the database. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which to create the database. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      */
     private String catalogId;
     /**
      * <p>
-     * A <code>DatabaseInput</code> object defining the metadata database to create in the catalog.
+     * The metadata for the database.
      * </p>
      */
     private DatabaseInput databaseInput;
 
     /**
      * <p>
-     * The ID of the Data Catalog in which to create the database. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which to create the database. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog in which to create the database. If none is supplied, the AWS account ID is
+     *        The ID of the Data Catalog in which to create the database. If none is provided, the AWS account ID is
      *        used by default.
      */
 
@@ -56,11 +56,11 @@ public class CreateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Data Catalog in which to create the database. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which to create the database. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      * 
-     * @return The ID of the Data Catalog in which to create the database. If none is supplied, the AWS account ID is
+     * @return The ID of the Data Catalog in which to create the database. If none is provided, the AWS account ID is
      *         used by default.
      */
 
@@ -70,12 +70,12 @@ public class CreateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Data Catalog in which to create the database. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which to create the database. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog in which to create the database. If none is supplied, the AWS account ID is
+     *        The ID of the Data Catalog in which to create the database. If none is provided, the AWS account ID is
      *        used by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -87,11 +87,11 @@ public class CreateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A <code>DatabaseInput</code> object defining the metadata database to create in the catalog.
+     * The metadata for the database.
      * </p>
      * 
      * @param databaseInput
-     *        A <code>DatabaseInput</code> object defining the metadata database to create in the catalog.
+     *        The metadata for the database.
      */
 
     public void setDatabaseInput(DatabaseInput databaseInput) {
@@ -100,10 +100,10 @@ public class CreateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A <code>DatabaseInput</code> object defining the metadata database to create in the catalog.
+     * The metadata for the database.
      * </p>
      * 
-     * @return A <code>DatabaseInput</code> object defining the metadata database to create in the catalog.
+     * @return The metadata for the database.
      */
 
     public DatabaseInput getDatabaseInput() {
@@ -112,11 +112,11 @@ public class CreateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A <code>DatabaseInput</code> object defining the metadata database to create in the catalog.
+     * The metadata for the database.
      * </p>
      * 
      * @param databaseInput
-     *        A <code>DatabaseInput</code> object defining the metadata database to create in the catalog.
+     *        The metadata for the database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

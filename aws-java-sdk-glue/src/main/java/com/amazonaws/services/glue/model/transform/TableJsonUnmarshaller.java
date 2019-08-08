@@ -113,6 +113,10 @@ public class TableJsonUnmarshaller implements Unmarshaller<Table, JsonUnmarshall
                     context.nextToken();
                     table.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("IsRegisteredWithLakeFormation", targetDepth)) {
+                    context.nextToken();
+                    table.setIsRegisteredWithLakeFormation(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

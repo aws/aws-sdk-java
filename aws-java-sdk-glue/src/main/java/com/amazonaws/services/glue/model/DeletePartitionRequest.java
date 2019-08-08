@@ -27,7 +27,7 @@ public class DeletePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partition to be deleted resides. If none is supplied, the AWS account ID is
+     * The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the AWS account ID is
      * used by default.
      * </p>
      */
@@ -40,7 +40,7 @@ public class DeletePartitionRequest extends com.amazonaws.AmazonWebServiceReques
     private String databaseName;
     /**
      * <p>
-     * The name of the table where the partition to be deleted is located.
+     * The name of the table that contains the partition to be deleted.
      * </p>
      */
     private String tableName;
@@ -53,12 +53,12 @@ public class DeletePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partition to be deleted resides. If none is supplied, the AWS account ID is
+     * The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the AWS account ID is
      * used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the partition to be deleted resides. If none is supplied, the AWS account
+     *        The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the AWS account
      *        ID is used by default.
      */
 
@@ -68,11 +68,11 @@ public class DeletePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partition to be deleted resides. If none is supplied, the AWS account ID is
+     * The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the AWS account ID is
      * used by default.
      * </p>
      * 
-     * @return The ID of the Data Catalog where the partition to be deleted resides. If none is supplied, the AWS
+     * @return The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the AWS
      *         account ID is used by default.
      */
 
@@ -82,12 +82,12 @@ public class DeletePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partition to be deleted resides. If none is supplied, the AWS account ID is
+     * The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the AWS account ID is
      * used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the partition to be deleted resides. If none is supplied, the AWS account
+     *        The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the AWS account
      *        ID is used by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -139,11 +139,11 @@ public class DeletePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the table where the partition to be deleted is located.
+     * The name of the table that contains the partition to be deleted.
      * </p>
      * 
      * @param tableName
-     *        The name of the table where the partition to be deleted is located.
+     *        The name of the table that contains the partition to be deleted.
      */
 
     public void setTableName(String tableName) {
@@ -152,10 +152,10 @@ public class DeletePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the table where the partition to be deleted is located.
+     * The name of the table that contains the partition to be deleted.
      * </p>
      * 
-     * @return The name of the table where the partition to be deleted is located.
+     * @return The name of the table that contains the partition to be deleted.
      */
 
     public String getTableName() {
@@ -164,11 +164,11 @@ public class DeletePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the table where the partition to be deleted is located.
+     * The name of the table that contains the partition to be deleted.
      * </p>
      * 
      * @param tableName
-     *        The name of the table where the partition to be deleted is located.
+     *        The name of the table that contains the partition to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

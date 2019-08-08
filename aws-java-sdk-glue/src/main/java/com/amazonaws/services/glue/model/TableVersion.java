@@ -30,7 +30,7 @@ public class TableVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The table in question
+     * The table in question.
      * </p>
      */
     private Table table;
@@ -44,11 +44,11 @@ public class TableVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The table in question
+     * The table in question.
      * </p>
      * 
      * @param table
-     *        The table in question
+     *        The table in question.
      */
 
     public void setTable(Table table) {
@@ -57,10 +57,10 @@ public class TableVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The table in question
+     * The table in question.
      * </p>
      * 
-     * @return The table in question
+     * @return The table in question.
      */
 
     public Table getTable() {
@@ -69,11 +69,11 @@ public class TableVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The table in question
+     * The table in question.
      * </p>
      * 
      * @param table
-     *        The table in question
+     *        The table in question.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

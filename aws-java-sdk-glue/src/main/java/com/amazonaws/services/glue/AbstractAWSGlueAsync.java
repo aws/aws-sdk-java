@@ -183,6 +183,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<CancelMLTaskRunResult> cancelMLTaskRunAsync(CancelMLTaskRunRequest request) {
+
+        return cancelMLTaskRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelMLTaskRunResult> cancelMLTaskRunAsync(CancelMLTaskRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelMLTaskRunRequest, CancelMLTaskRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClassifierResult> createClassifierAsync(CreateClassifierRequest request) {
 
         return createClassifierAsync(request, null);
@@ -256,6 +269,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMLTransformResult> createMLTransformAsync(CreateMLTransformRequest request) {
+
+        return createMLTransformAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMLTransformResult> createMLTransformAsync(CreateMLTransformRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateMLTransformRequest, CreateMLTransformResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -425,6 +451,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(DeleteJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteJobRequest, DeleteJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMLTransformResult> deleteMLTransformAsync(DeleteMLTransformRequest request) {
+
+        return deleteMLTransformAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMLTransformResult> deleteMLTransformAsync(DeleteMLTransformRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteMLTransformRequest, DeleteMLTransformResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -791,6 +830,58 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<GetJobsResult> getJobsAsync(GetJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetJobsRequest, GetJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMLTaskRunResult> getMLTaskRunAsync(GetMLTaskRunRequest request) {
+
+        return getMLTaskRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMLTaskRunResult> getMLTaskRunAsync(GetMLTaskRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMLTaskRunRequest, GetMLTaskRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMLTaskRunsResult> getMLTaskRunsAsync(GetMLTaskRunsRequest request) {
+
+        return getMLTaskRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMLTaskRunsResult> getMLTaskRunsAsync(GetMLTaskRunsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMLTaskRunsRequest, GetMLTaskRunsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMLTransformResult> getMLTransformAsync(GetMLTransformRequest request) {
+
+        return getMLTransformAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMLTransformResult> getMLTransformAsync(GetMLTransformRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMLTransformRequest, GetMLTransformResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMLTransformsResult> getMLTransformsAsync(GetMLTransformsRequest request) {
+
+        return getMLTransformsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMLTransformsResult> getMLTransformsAsync(GetMLTransformsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMLTransformsRequest, GetMLTransformsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1188,6 +1279,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<SearchTablesResult> searchTablesAsync(SearchTablesRequest request) {
+
+        return searchTablesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchTablesResult> searchTablesAsync(SearchTablesRequest request,
+            com.amazonaws.handlers.AsyncHandler<SearchTablesRequest, SearchTablesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartCrawlerResult> startCrawlerAsync(StartCrawlerRequest request) {
 
         return startCrawlerAsync(request, null);
@@ -1214,6 +1318,32 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<StartExportLabelsTaskRunResult> startExportLabelsTaskRunAsync(StartExportLabelsTaskRunRequest request) {
+
+        return startExportLabelsTaskRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartExportLabelsTaskRunResult> startExportLabelsTaskRunAsync(StartExportLabelsTaskRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartExportLabelsTaskRunRequest, StartExportLabelsTaskRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportLabelsTaskRunResult> startImportLabelsTaskRunAsync(StartImportLabelsTaskRunRequest request) {
+
+        return startImportLabelsTaskRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportLabelsTaskRunResult> startImportLabelsTaskRunAsync(StartImportLabelsTaskRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartImportLabelsTaskRunRequest, StartImportLabelsTaskRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartJobRunResult> startJobRunAsync(StartJobRunRequest request) {
 
         return startJobRunAsync(request, null);
@@ -1222,6 +1352,34 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<StartJobRunResult> startJobRunAsync(StartJobRunRequest request,
             com.amazonaws.handlers.AsyncHandler<StartJobRunRequest, StartJobRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMLEvaluationTaskRunResult> startMLEvaluationTaskRunAsync(StartMLEvaluationTaskRunRequest request) {
+
+        return startMLEvaluationTaskRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMLEvaluationTaskRunResult> startMLEvaluationTaskRunAsync(StartMLEvaluationTaskRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartMLEvaluationTaskRunRequest, StartMLEvaluationTaskRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMLLabelingSetGenerationTaskRunResult> startMLLabelingSetGenerationTaskRunAsync(
+            StartMLLabelingSetGenerationTaskRunRequest request) {
+
+        return startMLLabelingSetGenerationTaskRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMLLabelingSetGenerationTaskRunResult> startMLLabelingSetGenerationTaskRunAsync(
+            StartMLLabelingSetGenerationTaskRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartMLLabelingSetGenerationTaskRunRequest, StartMLLabelingSetGenerationTaskRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1404,6 +1562,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<UpdateJobResult> updateJobAsync(UpdateJobRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateJobRequest, UpdateJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMLTransformResult> updateMLTransformAsync(UpdateMLTransformRequest request) {
+
+        return updateMLTransformAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMLTransformResult> updateMLTransformAsync(UpdateMLTransformRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateMLTransformRequest, UpdateMLTransformResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
