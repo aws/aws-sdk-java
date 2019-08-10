@@ -16,6 +16,7 @@ package com.amazonaws.http.settings;
 
 import com.amazonaws.Protocol;
 import com.amazonaws.ProxyAuthenticationMethod;
+import com.amazonaws.http.TlsKeyManagersProvider;
 import java.net.InetAddress;
 import java.security.SecureRandom;
 
@@ -25,6 +26,7 @@ import com.amazonaws.DnsResolver;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.ValidationUtils;
 import java.util.List;
+import javax.net.ssl.KeyManager;
 
 /**
  * A convienient class that expose all settings in {@link ClientConfiguration} and other internal settings to the
@@ -184,5 +186,13 @@ public class HttpClientSettings {
 
     public Protocol getProxyProtocol() {
         return config.getProxyProtocol();
+    }
+
+    public KeyManager[] getKeyManagers() {
+        TlsKeyManagersProvider provider = config.getTlsKeyManagersProvider();
+        if (provider != null) {
+            return provider.getKeyManagers();
+        }
+        return null;
     }
 }

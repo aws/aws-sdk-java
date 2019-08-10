@@ -3933,7 +3933,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Returns the total amount of snapshot usage and provisioned storage for a user in megabytes.
+     * Returns the total amount of snapshot usage and provisioned storage in megabytes.
      * </p>
      * 
      * @param describeStorageRequest

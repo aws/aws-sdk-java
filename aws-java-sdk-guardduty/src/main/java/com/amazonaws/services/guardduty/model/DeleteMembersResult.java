@@ -25,18 +25,17 @@ public class DeleteMembersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * The accounts that could not be processed.
      * </p>
      */
     private java.util.List<UnprocessedAccount> unprocessedAccounts;
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * The accounts that could not be processed.
      * </p>
      * 
-     * @return A list of objects containing the unprocessed account and a result string explaining why it was
-     *         unprocessed.
+     * @return The accounts that could not be processed.
      */
 
     public java.util.List<UnprocessedAccount> getUnprocessedAccounts() {
@@ -45,12 +44,11 @@ public class DeleteMembersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * The accounts that could not be processed.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
-     *        unprocessed.
+     *        The accounts that could not be processed.
      */
 
     public void setUnprocessedAccounts(java.util.Collection<UnprocessedAccount> unprocessedAccounts) {
@@ -64,7 +62,7 @@ public class DeleteMembersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * The accounts that could not be processed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,8 +71,7 @@ public class DeleteMembersResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
-     *        unprocessed.
+     *        The accounts that could not be processed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,12 +87,11 @@ public class DeleteMembersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * The accounts that could not be processed.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
-     *        unprocessed.
+     *        The accounts that could not be processed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

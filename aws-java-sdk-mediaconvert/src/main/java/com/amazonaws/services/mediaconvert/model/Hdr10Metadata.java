@@ -18,13 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR metadata or to provide missing
- * metadata. These values vary depending on the input video and must be provided by a color grader. Range is 0 to
- * 50,000; each increment represents 0.00002 in CIE1931 color coordinate. Note that these settings are not color
- * correction. Note that if you are creating HDR outputs inside of an HLS CMAF package, to comply with the Apple
- * specification, you must use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to HVC1 (HVC1).
- * Set "Profile" (H265Settings > codecProfile) to Main10/High (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to
- * 5 (LEVEL_5).
+ * Use these settings to specify static color calibration metadata, as defined by SMPTE ST 2086. These values don't
+ * affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player
+ * display content in a way that reflects the intentions of the the content creator.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Hdr10Metadata" target="_top">AWS API
  *      Documentation</a>
@@ -56,9 +52,15 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
      * correction.
      */
     private Integer greenPrimaryY;
-    /** Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. */
+    /**
+     * Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This
+     * setting doesn't have a default value; you must specify a value that is suitable for the content.
+     */
     private Integer maxContentLightLevel;
-    /** Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter. */
+    /**
+     * Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter. This
+     * setting doesn't have a default value; you must specify a value that is suitable for the content.
+     */
     private Integer maxFrameAverageLightLevel;
     /** Nominal maximum mastering display luminance in units of of 0.0001 candelas per square meter. */
     private Integer maxLuminance;
@@ -274,10 +276,12 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum light level among all samples in the coded video sequence, in units of candelas per square meter.
+     * Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This
+     * setting doesn't have a default value; you must specify a value that is suitable for the content.
      * 
      * @param maxContentLightLevel
      *        Maximum light level among all samples in the coded video sequence, in units of candelas per square meter.
+     *        This setting doesn't have a default value; you must specify a value that is suitable for the content.
      */
 
     public void setMaxContentLightLevel(Integer maxContentLightLevel) {
@@ -285,9 +289,11 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum light level among all samples in the coded video sequence, in units of candelas per square meter.
+     * Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This
+     * setting doesn't have a default value; you must specify a value that is suitable for the content.
      * 
      * @return Maximum light level among all samples in the coded video sequence, in units of candelas per square meter.
+     *         This setting doesn't have a default value; you must specify a value that is suitable for the content.
      */
 
     public Integer getMaxContentLightLevel() {
@@ -295,10 +301,12 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum light level among all samples in the coded video sequence, in units of candelas per square meter.
+     * Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This
+     * setting doesn't have a default value; you must specify a value that is suitable for the content.
      * 
      * @param maxContentLightLevel
      *        Maximum light level among all samples in the coded video sequence, in units of candelas per square meter.
+     *        This setting doesn't have a default value; you must specify a value that is suitable for the content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,11 +316,13 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter.
+     * Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter. This
+     * setting doesn't have a default value; you must specify a value that is suitable for the content.
      * 
      * @param maxFrameAverageLightLevel
      *        Maximum average light level of any frame in the coded video sequence, in units of candelas per square
-     *        meter.
+     *        meter. This setting doesn't have a default value; you must specify a value that is suitable for the
+     *        content.
      */
 
     public void setMaxFrameAverageLightLevel(Integer maxFrameAverageLightLevel) {
@@ -320,10 +330,12 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter.
+     * Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter. This
+     * setting doesn't have a default value; you must specify a value that is suitable for the content.
      * 
      * @return Maximum average light level of any frame in the coded video sequence, in units of candelas per square
-     *         meter.
+     *         meter. This setting doesn't have a default value; you must specify a value that is suitable for the
+     *         content.
      */
 
     public Integer getMaxFrameAverageLightLevel() {
@@ -331,11 +343,13 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter.
+     * Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter. This
+     * setting doesn't have a default value; you must specify a value that is suitable for the content.
      * 
      * @param maxFrameAverageLightLevel
      *        Maximum average light level of any frame in the coded video sequence, in units of candelas per square
-     *        meter.
+     *        meter. This setting doesn't have a default value; you must specify a value that is suitable for the
+     *        content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

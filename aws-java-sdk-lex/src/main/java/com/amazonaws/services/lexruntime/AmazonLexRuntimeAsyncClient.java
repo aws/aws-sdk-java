@@ -70,6 +70,72 @@ public class AmazonLexRuntimeAsyncClient extends AmazonLexRuntimeClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSessionResult> deleteSessionAsync(DeleteSessionRequest request) {
+
+        return deleteSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSessionResult> deleteSessionAsync(final DeleteSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSessionRequest, DeleteSessionResult> asyncHandler) {
+        final DeleteSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSessionResult>() {
+            @Override
+            public DeleteSessionResult call() throws Exception {
+                DeleteSessionResult result = null;
+
+                try {
+                    result = executeDeleteSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSessionResult> getSessionAsync(GetSessionRequest request) {
+
+        return getSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSessionResult> getSessionAsync(final GetSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSessionRequest, GetSessionResult> asyncHandler) {
+        final GetSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSessionResult>() {
+            @Override
+            public GetSessionResult call() throws Exception {
+                GetSessionResult result = null;
+
+                try {
+                    result = executeGetSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PostContentResult> postContentAsync(PostContentRequest request) {
 
         return postContentAsync(request, null);
@@ -120,6 +186,39 @@ public class AmazonLexRuntimeAsyncClient extends AmazonLexRuntimeClient implemen
 
                 try {
                     result = executePostText(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSessionResult> putSessionAsync(PutSessionRequest request) {
+
+        return putSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSessionResult> putSessionAsync(final PutSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutSessionRequest, PutSessionResult> asyncHandler) {
+        final PutSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutSessionResult>() {
+            @Override
+            public PutSessionResult call() throws Exception {
+                PutSessionResult result = null;
+
+                try {
+                    result = executePutSession(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

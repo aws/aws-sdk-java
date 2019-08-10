@@ -41,6 +41,68 @@ public interface AmazonLexRuntimeAsync extends AmazonLexRuntime {
 
     /**
      * <p>
+     * Removes session information for a specified bot, alias, and user ID.
+     * </p>
+     * 
+     * @param deleteSessionRequest
+     * @return A Java Future containing the result of the DeleteSession operation returned by the service.
+     * @sample AmazonLexRuntimeAsync.DeleteSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSessionResult> deleteSessionAsync(DeleteSessionRequest deleteSessionRequest);
+
+    /**
+     * <p>
+     * Removes session information for a specified bot, alias, and user ID.
+     * </p>
+     * 
+     * @param deleteSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSession operation returned by the service.
+     * @sample AmazonLexRuntimeAsyncHandler.DeleteSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSessionResult> deleteSessionAsync(DeleteSessionRequest deleteSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSessionRequest, DeleteSessionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns session information for a specified bot, alias, and user ID.
+     * </p>
+     * 
+     * @param getSessionRequest
+     * @return A Java Future containing the result of the GetSession operation returned by the service.
+     * @sample AmazonLexRuntimeAsync.GetSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSessionResult> getSessionAsync(GetSessionRequest getSessionRequest);
+
+    /**
+     * <p>
+     * Returns session information for a specified bot, alias, and user ID.
+     * </p>
+     * 
+     * @param getSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSession operation returned by the service.
+     * @sample AmazonLexRuntimeAsyncHandler.GetSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSessionResult> getSessionAsync(GetSessionRequest getSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSessionRequest, GetSessionResult> asyncHandler);
+
+    /**
+     * <p>
      * Sends user input (text or speech) to Amazon Lex. Clients use this API to send text and audio requests to Amazon
      * Lex at runtime. Amazon Lex interprets the user input using the machine learning model that it built for the bot.
      * </p>
@@ -122,7 +184,7 @@ public interface AmazonLexRuntimeAsync extends AmazonLexRuntime {
      * </ul>
      * <p>
      * In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>. For more
-     * information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation
+     * information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation
      * Context</a>.
      * </p>
      * 
@@ -217,7 +279,7 @@ public interface AmazonLexRuntimeAsync extends AmazonLexRuntime {
      * </ul>
      * <p>
      * In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>. For more
-     * information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation
+     * information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation
      * Context</a>.
      * </p>
      * 
@@ -236,8 +298,8 @@ public interface AmazonLexRuntimeAsync extends AmazonLexRuntime {
 
     /**
      * <p>
-     * Sends user input (text-only) to Amazon Lex. Client applications can use this API to send requests to Amazon Lex
-     * at runtime. Amazon Lex then interprets the user input using the machine learning model it built for the bot.
+     * Sends user input (text or SSML) to Amazon Lex. Client applications can use this API to send requests to Amazon
+     * Lex at runtime. Amazon Lex then interprets the user input using the machine learning model it built for the bot.
      * </p>
      * <p>
      * In response, Amazon Lex returns the next <code>message</code> to convey to the user an optional
@@ -314,7 +376,7 @@ public interface AmazonLexRuntimeAsync extends AmazonLexRuntime {
      * </ul>
      * <p>
      * In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>. For more
-     * information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation
+     * information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation
      * Context</a>.
      * </p>
      * 
@@ -328,8 +390,8 @@ public interface AmazonLexRuntimeAsync extends AmazonLexRuntime {
 
     /**
      * <p>
-     * Sends user input (text-only) to Amazon Lex. Client applications can use this API to send requests to Amazon Lex
-     * at runtime. Amazon Lex then interprets the user input using the machine learning model it built for the bot.
+     * Sends user input (text or SSML) to Amazon Lex. Client applications can use this API to send requests to Amazon
+     * Lex at runtime. Amazon Lex then interprets the user input using the machine learning model it built for the bot.
      * </p>
      * <p>
      * In response, Amazon Lex returns the next <code>message</code> to convey to the user an optional
@@ -406,7 +468,7 @@ public interface AmazonLexRuntimeAsync extends AmazonLexRuntime {
      * </ul>
      * <p>
      * In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>. For more
-     * information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation
+     * information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation
      * Context</a>.
      * </p>
      * 
@@ -422,5 +484,46 @@ public interface AmazonLexRuntimeAsync extends AmazonLexRuntime {
      */
     java.util.concurrent.Future<PostTextResult> postTextAsync(PostTextRequest postTextRequest,
             com.amazonaws.handlers.AsyncHandler<PostTextRequest, PostTextResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new session or modifies an existing session with an Amazon Lex bot. Use this operation to enable your
+     * application to set the state of the bot.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing
+     * Sessions</a>.
+     * </p>
+     * 
+     * @param putSessionRequest
+     * @return A Java Future containing the result of the PutSession operation returned by the service.
+     * @sample AmazonLexRuntimeAsync.PutSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutSessionResult> putSessionAsync(PutSessionRequest putSessionRequest);
+
+    /**
+     * <p>
+     * Creates a new session or modifies an existing session with an Amazon Lex bot. Use this operation to enable your
+     * application to set the state of the bot.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing
+     * Sessions</a>.
+     * </p>
+     * 
+     * @param putSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutSession operation returned by the service.
+     * @sample AmazonLexRuntimeAsyncHandler.PutSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutSessionResult> putSessionAsync(PutSessionRequest putSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<PutSessionRequest, PutSessionResult> asyncHandler);
 
 }

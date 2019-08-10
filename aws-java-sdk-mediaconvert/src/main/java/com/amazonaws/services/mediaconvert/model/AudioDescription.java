@@ -80,8 +80,9 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     /** Advanced audio remixing settings. */
     private RemixSettings remixSettings;
     /**
-     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director
-     * Commentary). Alphanumeric characters, spaces, and underscore are legal.
+     * Specify a label for this output audio stream. For example, "English", "Director commentary", or "track_2". For
+     * streaming outputs, MediaConvert passes this information into destination manifests for display on the
+     * end-viewer's player device. For outputs in other output groups, the service ignores this setting.
      */
     private String streamName;
 
@@ -589,12 +590,14 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director
-     * Commentary). Alphanumeric characters, spaces, and underscore are legal.
+     * Specify a label for this output audio stream. For example, "English", "Director commentary", or "track_2". For
+     * streaming outputs, MediaConvert passes this information into destination manifests for display on the
+     * end-viewer's player device. For outputs in other output groups, the service ignores this setting.
      * 
      * @param streamName
-     *        Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or
-     *        Director Commentary). Alphanumeric characters, spaces, and underscore are legal.
+     *        Specify a label for this output audio stream. For example, "English", "Director commentary", or "track_2".
+     *        For streaming outputs, MediaConvert passes this information into destination manifests for display on the
+     *        end-viewer's player device. For outputs in other output groups, the service ignores this setting.
      */
 
     public void setStreamName(String streamName) {
@@ -602,11 +605,14 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director
-     * Commentary). Alphanumeric characters, spaces, and underscore are legal.
+     * Specify a label for this output audio stream. For example, "English", "Director commentary", or "track_2". For
+     * streaming outputs, MediaConvert passes this information into destination manifests for display on the
+     * end-viewer's player device. For outputs in other output groups, the service ignores this setting.
      * 
-     * @return Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or
-     *         Director Commentary). Alphanumeric characters, spaces, and underscore are legal.
+     * @return Specify a label for this output audio stream. For example, "English", "Director commentary", or
+     *         "track_2". For streaming outputs, MediaConvert passes this information into destination manifests for
+     *         display on the end-viewer's player device. For outputs in other output groups, the service ignores this
+     *         setting.
      */
 
     public String getStreamName() {
@@ -614,12 +620,14 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director
-     * Commentary). Alphanumeric characters, spaces, and underscore are legal.
+     * Specify a label for this output audio stream. For example, "English", "Director commentary", or "track_2". For
+     * streaming outputs, MediaConvert passes this information into destination manifests for display on the
+     * end-viewer's player device. For outputs in other output groups, the service ignores this setting.
      * 
      * @param streamName
-     *        Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or
-     *        Director Commentary). Alphanumeric characters, spaces, and underscore are legal.
+     *        Specify a label for this output audio stream. For example, "English", "Director commentary", or "track_2".
+     *        For streaming outputs, MediaConvert passes this information into destination manifests for display on the
+     *        end-viewer's player device. For outputs in other output groups, the service ignores this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

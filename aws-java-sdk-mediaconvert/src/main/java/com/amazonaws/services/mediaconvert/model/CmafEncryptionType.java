@@ -15,8 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
- * interface also disables encryption.
+ * For DRM with CMAF, the encryption type is always sample AES.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CmafEncryptionType {

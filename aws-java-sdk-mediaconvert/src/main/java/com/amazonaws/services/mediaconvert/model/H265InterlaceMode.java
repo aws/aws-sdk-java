@@ -15,14 +15,15 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and
- * Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity
- * (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use
- * the same field polarity as the source. Therefore, behavior depends on the input scan type. - If the source is
- * interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The
- * output could therefore be a mix of "top field first" and "bottom field first". - If the source is progressive, the
- * output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow
- * options you chose.
+ * Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to create a progressive output, regardless
+ * of the scan type of your input. Choose Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an
+ * output that's interlaced with the same field polarity throughout. Choose Follow, Default Top (FOLLOW_TOP_FIELD) or
+ * Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) to create an interlaced output with the same field polarity as the
+ * source. If the source is interlaced, the output will be interlaced with the same polarity as the source (it will
+ * follow the source). The output could therefore be a mix of "top field first" and "bottom field first". If the source
+ * is progressive, your output will be interlaced with "top field first" or "bottom field first" polarity, depending on
+ * which of the Follow options you chose. If you don't choose a value, the service will default to Progressive
+ * (PROGRESSIVE).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H265InterlaceMode {

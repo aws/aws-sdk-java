@@ -200,8 +200,14 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Archives Amazon GuardDuty findings specified by the list of finding IDs.
+     * Archives GuardDuty findings specified by the list of finding IDs.
      * </p>
+     * <note>
+     * <p>
+     * Only the master account can archive findings. Member accounts do not have permission to archive findings from
+     * their accounts.
+     * </p>
+     * </note>
      * 
      * @param archiveFindingsRequest
      * @return Result of the ArchiveFindings operation returned by the service.
@@ -257,8 +263,9 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a single Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A
-     * detector must be created in order for GuardDuty to become operational.
+     * Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To
+     * start using GuardDuty, you must create a detector in each region that you enable the service. You can have only
+     * one detector per account per region.
      * </p>
      * 
      * @param createDetectorRequest
@@ -1463,7 +1470,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Provides the details for the GuardDuty master account to the current GuardDuty member account.
+     * Provides the details for the GuardDuty master account associated with the current GuardDuty member account.
      * </p>
      * 
      * @param getMasterAccountRequest

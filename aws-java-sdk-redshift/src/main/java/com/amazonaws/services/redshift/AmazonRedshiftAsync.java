@@ -2596,7 +2596,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Returns the total amount of snapshot usage and provisioned storage for a user in megabytes.
+     * Returns the total amount of snapshot usage and provisioned storage in megabytes.
      * </p>
      * 
      * @param describeStorageRequest
@@ -2609,7 +2609,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Returns the total amount of snapshot usage and provisioned storage for a user in megabytes.
+     * Returns the total amount of snapshot usage and provisioned storage in megabytes.
      * </p>
      * 
      * @param describeStorageRequest

@@ -24,6 +24,8 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.unitils.reflectionassert.ReflectionAssert.assertReflectionEquals;
 
+import com.amazonaws.http.SystemPropertyTlsKeyManagersProvider;
+import com.amazonaws.http.TlsKeyManagersProvider;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.ImmutableMapParameter;
@@ -40,6 +42,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.mockito.Mockito;
 import utils.EnvironmentVariableHelper;
@@ -557,6 +560,8 @@ public class ClientConfigurationTest {
                 if (field.getName().equals("httpProxyHolder")) {
                     field.set(customConfig, new AtomicReference<ClientConfiguration.URLHolder>(new ClientConfiguration.URLHolder()));
                 }
+            } else if (clzz.isAssignableFrom(TlsKeyManagersProvider.class)) {
+                field.set(customConfig, new SystemPropertyTlsKeyManagersProvider());
             } else {
                 throw new RuntimeException(
                         String.format("Field %s of type %s is not supported",
@@ -587,6 +592,11 @@ public class ClientConfigurationTest {
            }
        };
        assertThat(new ClientConfiguration(config).getSocketTimeout(), equalTo(Integer.MAX_VALUE));
+    }
+
+    @Test
+    public void defaultTlsKeyManagersProviderIsSystemPropertiesProvider() {
+        assertThat(new ClientConfiguration().getTlsKeyManagersProvider(), Matchers.<TlsKeyManagersProvider>instanceOf(SystemPropertyTlsKeyManagersProvider.class));
     }
 
     private boolean isStaticField(Field field) {

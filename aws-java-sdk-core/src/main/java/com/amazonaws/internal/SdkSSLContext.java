@@ -14,6 +14,7 @@
  */
 package com.amazonaws.internal;
 
+import javax.net.ssl.KeyManager;
 import org.apache.http.conn.ssl.SSLContexts;
 import org.apache.http.conn.ssl.SSLInitializationException;
 
@@ -23,15 +24,18 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
 public class SdkSSLContext {
+    public static final SSLContext getPreferredSSLContext(final SecureRandom secureRandom) {
+        return getPreferredSSLContext(null, secureRandom);
+    }
 
     /**
      * @see SSLContexts#createDefault()
      */
-    public static final SSLContext getPreferredSSLContext(final SecureRandom secureRandom) {
+    public static final SSLContext getPreferredSSLContext(KeyManager[] keyManagers, final SecureRandom secureRandom) {
         try {
             final SSLContext sslcontext = SSLContext.getInstance("TLS");
             // http://download.java.net/jdk9/docs/technotes/guides/security/jsse/JSSERefGuide.html
-            sslcontext.init(null, null, secureRandom);
+            sslcontext.init(keyManagers, null, secureRandom);
             return sslcontext;
         } catch (final NoSuchAlgorithmException ex) {
             throw new SSLInitializationException(ex.getMessage(), ex);

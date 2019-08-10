@@ -16,11 +16,12 @@ import javax.annotation.Generated;
 
 /**
  * If your input video has accurate color space metadata, or if you don't know about color space, leave this set to the
- * default value FOLLOW. The service will automatically detect your input color space. If your input video has metadata
- * indicating the wrong color space, or if your input video is missing color space metadata that should be there,
- * specify the accurate color space here. If you choose HDR10, you can also correct inaccurate color space coefficients,
- * using the HDR master display information controls. You must also set Color space usage (ColorSpaceUsage) to FORCE for
- * the service to use these values.
+ * default value Follow (FOLLOW). The service will automatically detect your input color space. If your input video has
+ * metadata indicating the wrong color space, specify the accurate color space here. If your input video is HDR 10 and
+ * the SMPTE ST 2086 Mastering Display Color Volume static metadata isn't present in your video stream, or if that
+ * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and specify correct values in the input
+ * HDR 10 metadata (Hdr10Metadata) settings. For more information about MediaConvert HDR jobs, see
+ * https://docs.aws.amazon.com/console/mediaconvert/hdr.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ColorSpace {

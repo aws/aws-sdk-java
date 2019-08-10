@@ -31,6 +31,8 @@ public class RepublishActionMarshaller {
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> TOPIC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("topic").build();
+    private static final MarshallingInfo<Integer> QOS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("qos").build();
 
     private static final RepublishActionMarshaller instance = new RepublishActionMarshaller();
 
@@ -50,6 +52,7 @@ public class RepublishActionMarshaller {
         try {
             protocolMarshaller.marshall(republishAction.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(republishAction.getTopic(), TOPIC_BINDING);
+            protocolMarshaller.marshall(republishAction.getQos(), QOS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

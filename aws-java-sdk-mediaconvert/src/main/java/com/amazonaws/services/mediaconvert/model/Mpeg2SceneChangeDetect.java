@@ -15,7 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Scene change detection (inserts I-frames on scene changes).
+ * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video
+ * quality and is enabled by default.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Mpeg2SceneChangeDetect {

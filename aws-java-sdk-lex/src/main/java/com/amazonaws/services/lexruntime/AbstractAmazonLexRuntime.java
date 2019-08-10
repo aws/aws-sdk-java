@@ -28,12 +28,27 @@ public class AbstractAmazonLexRuntime implements AmazonLexRuntime {
     }
 
     @Override
+    public DeleteSessionResult deleteSession(DeleteSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSessionResult getSession(GetSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PostContentResult postContent(PostContentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PostTextResult postText(PostTextRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutSessionResult putSession(PutSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

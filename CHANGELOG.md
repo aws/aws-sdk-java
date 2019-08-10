@@ -1,3 +1,28 @@
+# __1.11.608__ __2019-08-09__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert has added support for multi-DRM SPEKE with CMAF outputs, MP3 ingest, and options for improved video quality. 
+
+## __AWS IoT__
+  - ### Features
+    - This release adds Quality of Service (QoS) support for AWS IoT rules engine republish action.
+
+## __AWS SDK for Java__
+  - ### Features
+    - Enable TLS client authentication by allowing customers to specify a `KeyManagersProvider` within `ClientConfiguration`. The `KeyManager`s provided will be used when the remote server wants to authenticate the client.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - New "evidence" field in the finding model to provide evidence information explaining why the finding has been triggered. Currently only threat-intelligence findings have this field. Some documentation updates.
+
+## __Amazon Lex Runtime Service__
+  - ### Features
+    - Manage Amazon Lex session state using APIs on the client
+
+## __Amazon Redshift__
+  - ### Features
+    - Add expectedNextSnapshotScheduleTime and expectedNextSnapshotScheduleTimeStatus to redshift cluster object.
+
 # __1.11.607__ __2019-08-08__
 ## __AWS CodeBuild__
   - ### Features

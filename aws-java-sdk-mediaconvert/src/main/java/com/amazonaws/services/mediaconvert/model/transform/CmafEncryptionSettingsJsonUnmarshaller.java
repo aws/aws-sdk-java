@@ -60,6 +60,10 @@ public class CmafEncryptionSettingsJsonUnmarshaller implements Unmarshaller<Cmaf
                     context.nextToken();
                     cmafEncryptionSettings.setInitializationVectorInManifest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("spekeKeyProvider", targetDepth)) {
+                    context.nextToken();
+                    cmafEncryptionSettings.setSpekeKeyProvider(SpekeKeyProviderCmafJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("staticKeyProvider", targetDepth)) {
                     context.nextToken();
                     cmafEncryptionSettings.setStaticKeyProvider(StaticKeyProviderJsonUnmarshaller.getInstance().unmarshall(context));

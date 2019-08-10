@@ -152,7 +152,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     private String rateControlMode;
     /** Places a PPS header on each encoded picture, even if repeated. */
     private String repeatPps;
-    /** Scene change detection (inserts I-frames on scene changes). */
+    /**
+     * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
+     * video quality and is enabled by default. If this output uses QVBR, choose Transition detection
+     * (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+     */
     private String sceneChangeDetect;
     /**
      * Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive
@@ -1747,10 +1752,16 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
+     * video quality and is enabled by default. If this output uses QVBR, choose Transition detection
+     * (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      * 
      * @param sceneChangeDetect
-     *        Scene change detection (inserts I-frames on scene changes).
+     *        Enable this setting to insert I-frames at scene changes that the service automatically detects. This
+     *        improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection
+     *        (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see
+     *        https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      * @see H264SceneChangeDetect
      */
 
@@ -1759,9 +1770,15 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
+     * video quality and is enabled by default. If this output uses QVBR, choose Transition detection
+     * (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      * 
-     * @return Scene change detection (inserts I-frames on scene changes).
+     * @return Enable this setting to insert I-frames at scene changes that the service automatically detects. This
+     *         improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection
+     *         (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see
+     *         https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      * @see H264SceneChangeDetect
      */
 
@@ -1770,10 +1787,16 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
+     * video quality and is enabled by default. If this output uses QVBR, choose Transition detection
+     * (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      * 
      * @param sceneChangeDetect
-     *        Scene change detection (inserts I-frames on scene changes).
+     *        Enable this setting to insert I-frames at scene changes that the service automatically detects. This
+     *        improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection
+     *        (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see
+     *        https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264SceneChangeDetect
      */
@@ -1784,10 +1807,16 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
+     * video quality and is enabled by default. If this output uses QVBR, choose Transition detection
+     * (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      * 
      * @param sceneChangeDetect
-     *        Scene change detection (inserts I-frames on scene changes).
+     *        Enable this setting to insert I-frames at scene changes that the service automatically detects. This
+     *        improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection
+     *        (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see
+     *        https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264SceneChangeDetect
      */

@@ -16,6 +16,8 @@ package com.amazonaws;
 
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.http.IdleConnectionReaper;
+import com.amazonaws.http.SystemPropertyTlsKeyManagersProvider;
+import com.amazonaws.http.TlsKeyManagersProvider;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.ValidationUtils;
@@ -359,6 +361,8 @@ public class ClientConfiguration {
 
     private final AtomicReference<URLHolder> httpProxyHolder = new AtomicReference<URLHolder>();
 
+    private TlsKeyManagersProvider tlsKeyManagersProvider = new SystemPropertyTlsKeyManagersProvider();
+
     public ClientConfiguration() {
         apacheHttpClientConfig = new ApacheHttpClientConfig();
     }
@@ -407,6 +411,7 @@ public class ClientConfiguration {
         this.maxConsecutiveRetriesBeforeThrottling = other.getMaxConsecutiveRetriesBeforeThrottling();
         this.disableHostPrefixInjection = other.disableHostPrefixInjection;
         this.httpProxyHolder.set(other.httpProxyHolder.get());
+        this.tlsKeyManagersProvider = other.tlsKeyManagersProvider;
     }
 
     /**
@@ -2381,6 +2386,37 @@ public class ClientConfiguration {
     public ClientConfiguration withDisableHostPrefixInjection(boolean disableHostPrefixInjection) {
         setDisableHostPrefixInjection(disableHostPrefixInjection);
         return this;
+    }
+
+    /**
+     * @return {@link TlsKeyManagersProvider} that will provide the {@link javax.net.ssl.KeyManager}s to use when
+     * constructing the client's SSL context.
+     * <p>
+     * The default is {@link SystemPropertyTlsKeyManagersProvider}.
+     */
+    public TlsKeyManagersProvider getTlsKeyManagersProvider() {
+        return tlsKeyManagersProvider;
+    }
+
+    /**
+     * Sets {@link TlsKeyManagersProvider} that will provide the {@link javax.net.ssl.KeyManager}s to use when
+     * constructing the client's SSL context.
+     * <p>
+     * The default is {@link SystemPropertyTlsKeyManagersProvider}.
+     */
+    public ClientConfiguration withTlsKeyManagersProvider(TlsKeyManagersProvider tlsKeyManagersProvider) {
+        this.tlsKeyManagersProvider = tlsKeyManagersProvider;
+        return this;
+    }
+
+    /**
+     * Sets {@link TlsKeyManagersProvider} that will provide the {@link javax.net.ssl.KeyManager}s to use when
+     * constructing the client's SSL context.
+     * <p>
+     * The default is {@link SystemPropertyTlsKeyManagersProvider}.
+     */
+    public void setTlsKeyManagersProvider(TlsKeyManagersProvider tlsKeyManagersProvider) {
+        withTlsKeyManagersProvider(tlsKeyManagersProvider);
     }
 
     private URL getHttpProxyEnvironmentVariable() {

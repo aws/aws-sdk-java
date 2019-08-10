@@ -40,7 +40,7 @@
         {"shape":"BadRequestException"},
         {"shape":"InternalServerErrorException"}
       ],
-      "documentation":"<p>Archives Amazon GuardDuty findings specified by the list of finding IDs.</p>"
+      "documentation":"<p>Archives GuardDuty findings specified by the list of finding IDs.</p> <note> <p>Only the master account can archive findings. Member accounts do not have permission to archive findings from their accounts.</p> </note>"
     },
     "CreateDetector":{
       "name":"CreateDetector",
@@ -55,7 +55,7 @@
         {"shape":"BadRequestException"},
         {"shape":"InternalServerErrorException"}
       ],
-      "documentation":"<p>Creates a single Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector must be created in order for GuardDuty to become operational.</p>"
+      "documentation":"<p>Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To start using GuardDuty, you must create a detector in each region that you enable the service. You can have only one detector per account per region.</p>"
     },
     "CreateFilter":{
       "name":"CreateFilter",
@@ -370,7 +370,7 @@
         {"shape":"BadRequestException"},
         {"shape":"InternalServerErrorException"}
       ],
-      "documentation":"<p>Provides the details for the GuardDuty master account to the current GuardDuty member account.</p>"
+      "documentation":"<p>Provides the details for the GuardDuty master account associated with the current GuardDuty member account.</p>"
     },
     "GetMembers":{
       "name":"GetMembers",
@@ -743,7 +743,8 @@
           "documentation":"<p>The type of the user.</p>",
           "locationName":"userType"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the access keys.</p>"
     },
     "AccountDetail":{
       "type":"structure",
@@ -762,7 +763,8 @@
           "documentation":"<p>Member account's email address.</p>",
           "locationName":"email"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the account.</p>"
     },
     "AccountDetails":{
       "type":"list",
@@ -809,7 +811,8 @@
           "documentation":"<p>Information about the PORT_PROBE action described in this finding.</p>",
           "locationName":"portProbeAction"
         }
-      }
+      },
+      "documentation":"<p>Contains information about action.</p>"
     },
     "ArchiveFindingsRequest":{
       "type":"structure",
@@ -864,7 +867,8 @@
           "documentation":"<p>AWS service name whose API was invoked.</p>",
           "locationName":"serviceName"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the API operation.</p>"
     },
     "BadRequestException":{
       "type":"structure",
@@ -893,7 +897,8 @@
           "documentation":"<p>City name of the remote IP address.</p>",
           "locationName":"cityName"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the city associated with the IP address.</p>"
     },
     "ClientToken":{
       "type":"string",
@@ -905,46 +910,48 @@
       "members":{
         "Eq":{
           "shape":"Eq",
-          "documentation":"<p>Represents the equal condition to be applied to a single field when querying for findings.</p>",
+          "documentation":"<p>Deprecated. Represents the equal condition to be applied to a single field when querying for findings.</p>",
           "deprecated":true,
           "locationName":"eq"
         },
         "Neq":{
           "shape":"Neq",
-          "documentation":"<p>Represents the not equal condition to be applied to a single field when querying for findings.</p>",
+          "documentation":"<p>Deprecated. Represents the not equal condition to be applied to a single field when querying for findings.</p>",
           "deprecated":true,
           "locationName":"neq"
         },
         "Gt":{
           "shape":"Integer",
-          "documentation":"<p>Represents a greater than condition to be applied to a single field when querying for findings.</p>",
+          "documentation":"<p>Deprecated. Represents a greater than condition to be applied to a single field when querying for findings.</p>",
           "deprecated":true,
           "locationName":"gt"
         },
         "Gte":{
           "shape":"Integer",
-          "documentation":"<p>Represents a greater than equal condition to be applied to a single field when querying for findings.</p>",
+          "documentation":"<p>Deprecated. Represents a greater than equal condition to be applied to a single field when querying for findings.</p>",
           "deprecated":true,
           "locationName":"gte"
         },
         "Lt":{
           "shape":"Integer",
-          "documentation":"<p>Represents a less than condition to be applied to a single field when querying for findings.</p>",
+          "documentation":"<p>Deprecated. Represents a less than condition to be applied to a single field when querying for findings.</p>",
           "deprecated":true,
           "locationName":"lt"
         },
         "Lte":{
           "shape":"Integer",
-          "documentation":"<p>Represents a less than equal condition to be applied to a single field when querying for findings.</p>",
+          "documentation":"<p>Deprecated. Represents a less than equal condition to be applied to a single field when querying for findings.</p>",
           "deprecated":true,
           "locationName":"lte"
         },
         "Equals":{
           "shape":"Equals",
+          "documentation":"<p>Represents an <b>equal</b> condition to be applied to a single field when querying for findings.</p>",
           "locationName":"equals"
         },
         "NotEquals":{
           "shape":"NotEquals",
+          "documentation":"<p>Represents an <b>not equal</b> condition to be applied to a single field when querying for findings.</p>",
           "locationName":"notEquals"
         },
         "GreaterThan":{
@@ -967,7 +974,8 @@
           "documentation":"<p>Represents a less than equal condition to be applied to a single field when querying for findings.</p>",
           "locationName":"lessThanOrEqual"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the condition.</p>"
     },
     "CountBySeverity":{
       "type":"map",
@@ -987,7 +995,8 @@
           "documentation":"<p>Country name of the remote IP address.</p>",
           "locationName":"countryName"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the country.</p>"
     },
     "CreateDetectorRequest":{
       "type":"structure",
@@ -1406,7 +1415,7 @@
       "members":{
         "UnprocessedAccounts":{
           "shape":"UnprocessedAccounts",
-          "documentation":"<p>A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.</p>",
+          "documentation":"<p>The accounts that could not be processed.</p>",
           "locationName":"unprocessedAccounts"
         }
       }
@@ -1513,7 +1522,8 @@
           "documentation":"<p>Domain information for the DNS request.</p>",
           "locationName":"domain"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the DNS request.</p>"
     },
     "DomainDetails":{
       "type":"structure",
@@ -1523,7 +1533,8 @@
           "documentation":"<p>Domain information for the AWS API call.</p>",
           "locationName":"domain"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the domain.</p>"
     },
     "Double":{"type":"double"},
     "Email":{
@@ -1538,6 +1549,17 @@
     "Equals":{
       "type":"list",
       "member":{"shape":"String"}
+    },
+    "Evidence":{
+      "type":"structure",
+      "members":{
+        "ThreatIntelligenceDetails":{
+          "shape":"ThreatIntelligenceDetails",
+          "documentation":"<p>A list of threat intelligence details related to the evidence.</p>",
+          "locationName":"threatIntelligenceDetails"
+        }
+      },
+      "documentation":"<p>Contains information about the reason that the finding was generated.</p>"
     },
     "Feedback":{
       "type":"string",
@@ -1593,80 +1615,79 @@
       "members":{
         "AccountId":{
           "shape":"String",
-          "documentation":"<p>AWS account ID where the activity occurred that prompted GuardDuty to generate a finding.</p>",
+          "documentation":"<p>The ID of the account in which the finding was generated.</p>",
           "locationName":"accountId"
         },
         "Arn":{
           "shape":"String",
-          "documentation":"<p>The ARN of a finding described by the action.</p>",
+          "documentation":"<p>The ARN for the finding.</p>",
           "locationName":"arn"
         },
         "Confidence":{
           "shape":"Double",
-          "documentation":"<p>The confidence level of a finding.</p>",
+          "documentation":"<p>The confidence score for the finding.</p>",
           "locationName":"confidence"
         },
         "CreatedAt":{
           "shape":"String",
-          "documentation":"<p>The time stamp at which a finding was generated.</p>",
+          "documentation":"<p>The time and date at which the finding was created.</p>",
           "locationName":"createdAt"
         },
         "Description":{
           "shape":"String",
-          "documentation":"<p>The description of a finding.</p>",
+          "documentation":"<p>The description of the finding.</p>",
           "locationName":"description"
         },
         "Id":{
           "shape":"String",
-          "documentation":"<p>The identifier that corresponds to a finding described by the action.</p>",
+          "documentation":"<p>The ID of the finding.</p>",
           "locationName":"id"
         },
         "Partition":{
           "shape":"String",
-          "documentation":"<p>The AWS resource partition.</p>",
+          "documentation":"<p>The partition associated with the finding.</p>",
           "locationName":"partition"
         },
         "Region":{
           "shape":"String",
-          "documentation":"<p>The AWS region where the activity occurred that prompted GuardDuty to generate a finding.</p>",
+          "documentation":"<p>The Region in which the finding was generated.</p>",
           "locationName":"region"
         },
         "Resource":{
           "shape":"Resource",
-          "documentation":"<p>The AWS resource associated with the activity that prompted GuardDuty to generate a finding.</p>",
           "locationName":"resource"
         },
         "SchemaVersion":{
           "shape":"String",
-          "documentation":"<p>Findings' schema version.</p>",
+          "documentation":"<p>The version of the schema used for the finding.</p>",
           "locationName":"schemaVersion"
         },
         "Service":{
           "shape":"Service",
-          "documentation":"<p>Additional information assigned to the generated finding by GuardDuty.</p>",
           "locationName":"service"
         },
         "Severity":{
           "shape":"Double",
-          "documentation":"<p>The severity of a finding.</p>",
+          "documentation":"<p>The severity of the finding.</p>",
           "locationName":"severity"
         },
         "Title":{
           "shape":"String",
-          "documentation":"<p>The title of a finding.</p>",
+          "documentation":"<p>The title for the finding.</p>",
           "locationName":"title"
         },
         "Type":{
           "shape":"FindingType",
-          "documentation":"<p>The type of a finding described by the action.</p>",
+          "documentation":"<p>The type of the finding.</p>",
           "locationName":"type"
         },
         "UpdatedAt":{
           "shape":"String",
-          "documentation":"<p>The time stamp at which a finding was last updated.</p>",
+          "documentation":"<p>The time and date at which the finding was laste updated.</p>",
           "locationName":"updatedAt"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the finding.</p>"
     },
     "FindingCriteria":{
       "type":"structure",
@@ -1676,7 +1697,8 @@
           "documentation":"<p>Represents a map of finding properties that match specified conditions and values when querying findings.</p>",
           "locationName":"criterion"
         }
-      }
+      },
+      "documentation":"<p>Contains finding criteria information.</p>"
     },
     "FindingId":{
       "type":"string",
@@ -1715,7 +1737,8 @@
           "documentation":"<p>Represents a map of severity to count statistic for a set of findings</p>",
           "locationName":"countBySeverity"
         }
-      }
+      },
+      "documentation":"<p>Contains information about finding statistics.</p>"
     },
     "FindingType":{
       "type":"string",
@@ -1747,7 +1770,8 @@
           "documentation":"<p>Longitude information of remote IP address.</p>",
           "locationName":"lon"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the </p>"
     },
     "GetDetectorRequest":{
       "type":"structure",
@@ -2141,7 +2165,8 @@
           "documentation":"<p>AWS EC2 instance profile ID.</p>",
           "locationName":"id"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the instance profile.</p>"
     },
     "InstanceDetails":{
       "type":"structure",
@@ -2206,7 +2231,8 @@
           "documentation":"<p>The tags of the EC2 instance.</p>",
           "locationName":"tags"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the details of an instance.</p>"
     },
     "Integer":{"type":"integer"},
     "InternalServerErrorException":{
@@ -2250,7 +2276,8 @@
           "documentation":"<p>Timestamp at which the invitation was sent</p>",
           "locationName":"invitedAt"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the invitation.</p>"
     },
     "Invitations":{
       "type":"list",
@@ -2591,6 +2618,7 @@
       "members":{
         "Tags":{
           "shape":"TagMap",
+          "documentation":"<p>The tags associated with the resource.</p>",
           "locationName":"tags"
         }
       }
@@ -2648,7 +2676,8 @@
           "documentation":"<p>Port name of the local connection.</p>",
           "locationName":"portName"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the port for the local connection.</p>"
     },
     "Location":{
       "type":"string",
@@ -2661,7 +2690,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>Master account ID</p>",
+          "documentation":"<p>The ID of the account used as the Master account.</p>",
           "locationName":"accountId"
         },
         "InvitationId":{
@@ -2676,10 +2705,11 @@
         },
         "InvitedAt":{
           "shape":"String",
-          "documentation":"<p>Timestamp at which the invitation was sent</p>",
+          "documentation":"<p>Timestamp at which the invitation was sent.</p>",
           "locationName":"invitedAt"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the Master account and invitation.</p>"
     },
     "MaxResults":{
       "type":"integer",
@@ -2731,7 +2761,8 @@
           "documentation":"<p>Member last updated timestamp.</p>",
           "locationName":"updatedAt"
         }
-      }
+      },
+      "documentation":"<p>Continas information about the member account </p>"
     },
     "Members":{
       "type":"list",
@@ -2781,7 +2812,8 @@
           "documentation":"<p>Remote port information of the connection.</p>",
           "locationName":"remotePortDetails"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the network connection.</p>"
     },
     "NetworkInterface":{
       "type":"structure",
@@ -2836,7 +2868,8 @@
           "documentation":"<p>The VPC ID of the EC2 instance.</p>",
           "locationName":"vpcId"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the network interface.</p>"
     },
     "NetworkInterfaces":{
       "type":"list",
@@ -2876,7 +2909,8 @@
           "documentation":"<p>Name of the internet provider.</p>",
           "locationName":"org"
         }
-      }
+      },
+      "documentation":"<p>Continas information about the organization.</p>"
     },
     "PortProbeAction":{
       "type":"structure",
@@ -2891,7 +2925,8 @@
           "documentation":"<p>A list of port probe details objects.</p>",
           "locationName":"portProbeDetails"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the port probe.</p>"
     },
     "PortProbeDetail":{
       "type":"structure",
@@ -2906,7 +2941,8 @@
           "documentation":"<p>Remote IP information of the connection.</p>",
           "locationName":"remoteIpDetails"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the port probe details.</p>"
     },
     "PortProbeDetails":{
       "type":"list",
@@ -2925,7 +2961,8 @@
           "documentation":"<p>Private IP address of the EC2 instance.</p>",
           "locationName":"privateIpAddress"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the private IP address.</p>"
     },
     "PrivateIpAddresses":{
       "type":"list",
@@ -2944,7 +2981,8 @@
           "documentation":"<p>Product code type.</p>",
           "locationName":"productType"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the product code.</p>"
     },
     "ProductCodes":{
       "type":"list",
@@ -2978,7 +3016,8 @@
           "documentation":"<p>ISP Organization information of the remote IP address.</p>",
           "locationName":"organization"
         }
-      }
+      },
+      "documentation":"<p>Continas information about the remote IP address.</p>"
     },
     "RemotePortDetails":{
       "type":"structure",
@@ -2993,7 +3032,8 @@
           "documentation":"<p>Port name of the remote connection.</p>",
           "locationName":"portName"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the remote port.</p>"
     },
     "Resource":{
       "type":"structure",
@@ -3013,7 +3053,8 @@
           "documentation":"<p>The type of the AWS resource.</p>",
           "locationName":"resourceType"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the resource.</p>"
     },
     "SecurityGroup":{
       "type":"structure",
@@ -3028,7 +3069,8 @@
           "documentation":"<p>EC2 instance's security group name.</p>",
           "locationName":"groupName"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the security group.</p>"
     },
     "SecurityGroups":{
       "type":"list",
@@ -3041,6 +3083,11 @@
           "shape":"Action",
           "documentation":"<p>Information about the activity described in a finding.</p>",
           "locationName":"action"
+        },
+        "Evidence":{
+          "shape":"Evidence",
+          "documentation":"<p>An evidence object associated with the service.</p>",
+          "locationName":"evidence"
         },
         "Archived":{
           "shape":"Boolean",
@@ -3082,7 +3129,8 @@
           "documentation":"<p>Feedback left about the finding.</p>",
           "locationName":"userFeedback"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the service.</p>"
     },
     "SortCriteria":{
       "type":"structure",
@@ -3097,7 +3145,8 @@
           "documentation":"<p>Order by which the sorted findings are to be displayed.</p>",
           "locationName":"orderBy"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the criteria for sorting.</p>"
     },
     "StartMonitoringMembersRequest":{
       "type":"structure",
@@ -3175,7 +3224,8 @@
           "documentation":"<p>EC2 instance tag value.</p>",
           "locationName":"value"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the tag associated with the resource.</p>"
     },
     "TagKey":{
       "type":"string",
@@ -3262,6 +3312,30 @@
       "max":300,
       "min":1
     },
+    "ThreatIntelligenceDetail":{
+      "type":"structure",
+      "members":{
+        "ThreatListName":{
+          "shape":"String",
+          "documentation":"<p>The name of the threat intelligence list that triggered the finding.</p>",
+          "locationName":"threatListName"
+        },
+        "ThreatNames":{
+          "shape":"ThreatNames",
+          "documentation":"<p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>",
+          "locationName":"threatNames"
+        }
+      },
+      "documentation":"<p>An instance of a threat intelligence detail that constitutes evidence for the finding.</p>"
+    },
+    "ThreatIntelligenceDetails":{
+      "type":"list",
+      "member":{"shape":"ThreatIntelligenceDetail"}
+    },
+    "ThreatNames":{
+      "type":"list",
+      "member":{"shape":"String"}
+    },
     "UnarchiveFindingsRequest":{
       "type":"structure",
       "required":[
@@ -3304,7 +3378,8 @@
           "documentation":"<p>A reason why the account hasn't been processed.</p>",
           "locationName":"result"
         }
-      }
+      },
+      "documentation":"<p>Contains information about the accounts that were not processed.</p>"
     },
     "UnprocessedAccounts":{
       "type":"list",

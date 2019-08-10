@@ -125,7 +125,10 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
      * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant (cbr).
      */
     private String rateControlMode;
-    /** Scene change detection (inserts I-frames on scene changes). */
+    /**
+     * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
+     * video quality and is enabled by default.
+     */
     private String sceneChangeDetect;
     /**
      * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
@@ -1398,10 +1401,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
+     * video quality and is enabled by default.
      * 
      * @param sceneChangeDetect
-     *        Scene change detection (inserts I-frames on scene changes).
+     *        Enable this setting to insert I-frames at scene changes that the service automatically detects. This
+     *        improves video quality and is enabled by default.
      * @see Mpeg2SceneChangeDetect
      */
 
@@ -1410,9 +1415,11 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
+     * video quality and is enabled by default.
      * 
-     * @return Scene change detection (inserts I-frames on scene changes).
+     * @return Enable this setting to insert I-frames at scene changes that the service automatically detects. This
+     *         improves video quality and is enabled by default.
      * @see Mpeg2SceneChangeDetect
      */
 
@@ -1421,10 +1428,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
+     * video quality and is enabled by default.
      * 
      * @param sceneChangeDetect
-     *        Scene change detection (inserts I-frames on scene changes).
+     *        Enable this setting to insert I-frames at scene changes that the service automatically detects. This
+     *        improves video quality and is enabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mpeg2SceneChangeDetect
      */
@@ -1435,10 +1444,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
+     * video quality and is enabled by default.
      * 
      * @param sceneChangeDetect
-     *        Scene change detection (inserts I-frames on scene changes).
+     *        Enable this setting to insert I-frames at scene changes that the service automatically detects. This
+     *        improves video quality and is enabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mpeg2SceneChangeDetect
      */

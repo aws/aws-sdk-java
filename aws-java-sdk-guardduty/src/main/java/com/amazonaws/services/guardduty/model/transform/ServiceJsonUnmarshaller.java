@@ -52,6 +52,10 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                     context.nextToken();
                     service.setAction(ActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("evidence", targetDepth)) {
+                    context.nextToken();
+                    service.setEvidence(EvidenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("archived", targetDepth)) {
                     context.nextToken();
                     service.setArchived(context.getUnmarshaller(Boolean.class).unmarshall(context));

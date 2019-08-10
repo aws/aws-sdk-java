@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains information about the service.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Service" target="_top">AWS API
  *      Documentation</a>
@@ -31,6 +34,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Action action;
+    /**
+     * <p>
+     * An evidence object associated with the service.
+     * </p>
+     */
+    private Evidence evidence;
     /**
      * <p>
      * Indicates whether this finding is archived.
@@ -117,6 +126,46 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     public Service withAction(Action action) {
         setAction(action);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An evidence object associated with the service.
+     * </p>
+     * 
+     * @param evidence
+     *        An evidence object associated with the service.
+     */
+
+    public void setEvidence(Evidence evidence) {
+        this.evidence = evidence;
+    }
+
+    /**
+     * <p>
+     * An evidence object associated with the service.
+     * </p>
+     * 
+     * @return An evidence object associated with the service.
+     */
+
+    public Evidence getEvidence() {
+        return this.evidence;
+    }
+
+    /**
+     * <p>
+     * An evidence object associated with the service.
+     * </p>
+     * 
+     * @param evidence
+     *        An evidence object associated with the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withEvidence(Evidence evidence) {
+        setEvidence(evidence);
         return this;
     }
 
@@ -466,6 +515,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
+        if (getEvidence() != null)
+            sb.append("Evidence: ").append(getEvidence()).append(",");
         if (getArchived() != null)
             sb.append("Archived: ").append(getArchived()).append(",");
         if (getCount() != null)
@@ -499,6 +550,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (other.getAction() == null ^ this.getAction() == null)
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
+            return false;
+        if (other.getEvidence() == null ^ this.getEvidence() == null)
+            return false;
+        if (other.getEvidence() != null && other.getEvidence().equals(this.getEvidence()) == false)
             return false;
         if (other.getArchived() == null ^ this.getArchived() == null)
             return false;
@@ -541,6 +596,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getEvidence() == null) ? 0 : getEvidence().hashCode());
         hashCode = prime * hashCode + ((getArchived() == null) ? 0 : getArchived().hashCode());
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());

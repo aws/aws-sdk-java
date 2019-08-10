@@ -47,7 +47,8 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
      */
     private VideoCodecSettings codecSettings;
     /**
-     * Enable Insert color metadata (ColorMetadata) to include color metadata in this output. This setting is enabled by
+     * Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE) to
+     * exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by
      * default.
      */
     private String colorMetadata;
@@ -315,12 +316,14 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Enable Insert color metadata (ColorMetadata) to include color metadata in this output. This setting is enabled by
+     * Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE) to
+     * exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by
      * default.
      * 
      * @param colorMetadata
-     *        Enable Insert color metadata (ColorMetadata) to include color metadata in this output. This setting is
-     *        enabled by default.
+     *        Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE)
+     *        to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert
+     *        by default.
      * @see ColorMetadata
      */
 
@@ -329,11 +332,13 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Enable Insert color metadata (ColorMetadata) to include color metadata in this output. This setting is enabled by
+     * Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE) to
+     * exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by
      * default.
      * 
-     * @return Enable Insert color metadata (ColorMetadata) to include color metadata in this output. This setting is
-     *         enabled by default.
+     * @return Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE)
+     *         to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert
+     *         by default.
      * @see ColorMetadata
      */
 
@@ -342,12 +347,14 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Enable Insert color metadata (ColorMetadata) to include color metadata in this output. This setting is enabled by
+     * Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE) to
+     * exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by
      * default.
      * 
      * @param colorMetadata
-     *        Enable Insert color metadata (ColorMetadata) to include color metadata in this output. This setting is
-     *        enabled by default.
+     *        Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE)
+     *        to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert
+     *        by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorMetadata
      */
@@ -358,12 +365,14 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Enable Insert color metadata (ColorMetadata) to include color metadata in this output. This setting is enabled by
+     * Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE) to
+     * exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by
      * default.
      * 
      * @param colorMetadata
-     *        Enable Insert color metadata (ColorMetadata) to include color metadata in this output. This setting is
-     *        enabled by default.
+     *        Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE)
+     *        to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert
+     *        by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorMetadata
      */

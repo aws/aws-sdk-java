@@ -32,6 +32,12 @@ public class TeletextDestinationSettings implements Serializable, Cloneable, Str
      * Teletext data, do not use this field.
      */
     private String pageNumber;
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type
+     * to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+     */
+    private java.util.List<String> pageTypes;
 
     /**
      * Set pageNumber to the Teletext page number for the destination captions for this output. This value must be a
@@ -80,6 +86,119 @@ public class TeletextDestinationSettings implements Serializable, Cloneable, Str
     }
 
     /**
+     * Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type
+     * to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+     * 
+     * @return Specify the page types for this Teletext page. If you don't specify a value here, the service sets the
+     *         page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of
+     *         Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the
+     *         same page types as your input.
+     * @see TeletextPageType
+     */
+
+    public java.util.List<String> getPageTypes() {
+        return pageTypes;
+    }
+
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type
+     * to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+     * 
+     * @param pageTypes
+     *        Specify the page types for this Teletext page. If you don't specify a value here, the service sets the
+     *        page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of
+     *        Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the
+     *        same page types as your input.
+     * @see TeletextPageType
+     */
+
+    public void setPageTypes(java.util.Collection<String> pageTypes) {
+        if (pageTypes == null) {
+            this.pageTypes = null;
+            return;
+        }
+
+        this.pageTypes = new java.util.ArrayList<String>(pageTypes);
+    }
+
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type
+     * to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPageTypes(java.util.Collection)} or {@link #withPageTypes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param pageTypes
+     *        Specify the page types for this Teletext page. If you don't specify a value here, the service sets the
+     *        page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of
+     *        Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the
+     *        same page types as your input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TeletextPageType
+     */
+
+    public TeletextDestinationSettings withPageTypes(String... pageTypes) {
+        if (this.pageTypes == null) {
+            setPageTypes(new java.util.ArrayList<String>(pageTypes.length));
+        }
+        for (String ele : pageTypes) {
+            this.pageTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type
+     * to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+     * 
+     * @param pageTypes
+     *        Specify the page types for this Teletext page. If you don't specify a value here, the service sets the
+     *        page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of
+     *        Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the
+     *        same page types as your input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TeletextPageType
+     */
+
+    public TeletextDestinationSettings withPageTypes(java.util.Collection<String> pageTypes) {
+        setPageTypes(pageTypes);
+        return this;
+    }
+
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type
+     * to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+     * 
+     * @param pageTypes
+     *        Specify the page types for this Teletext page. If you don't specify a value here, the service sets the
+     *        page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of
+     *        Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the
+     *        same page types as your input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TeletextPageType
+     */
+
+    public TeletextDestinationSettings withPageTypes(TeletextPageType... pageTypes) {
+        java.util.ArrayList<String> pageTypesCopy = new java.util.ArrayList<String>(pageTypes.length);
+        for (TeletextPageType value : pageTypes) {
+            pageTypesCopy.add(value.toString());
+        }
+        if (getPageTypes() == null) {
+            setPageTypes(pageTypesCopy);
+        } else {
+            getPageTypes().addAll(pageTypesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -92,7 +211,9 @@ public class TeletextDestinationSettings implements Serializable, Cloneable, Str
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPageNumber() != null)
-            sb.append("PageNumber: ").append(getPageNumber());
+            sb.append("PageNumber: ").append(getPageNumber()).append(",");
+        if (getPageTypes() != null)
+            sb.append("PageTypes: ").append(getPageTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -111,6 +232,10 @@ public class TeletextDestinationSettings implements Serializable, Cloneable, Str
             return false;
         if (other.getPageNumber() != null && other.getPageNumber().equals(this.getPageNumber()) == false)
             return false;
+        if (other.getPageTypes() == null ^ this.getPageTypes() == null)
+            return false;
+        if (other.getPageTypes() != null && other.getPageTypes().equals(this.getPageTypes()) == false)
+            return false;
         return true;
     }
 
@@ -120,6 +245,7 @@ public class TeletextDestinationSettings implements Serializable, Cloneable, Str
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPageNumber() == null) ? 0 : getPageNumber().hashCode());
+        hashCode = prime * hashCode + ((getPageTypes() == null) ? 0 : getPageTypes().hashCode());
         return hashCode;
     }
 

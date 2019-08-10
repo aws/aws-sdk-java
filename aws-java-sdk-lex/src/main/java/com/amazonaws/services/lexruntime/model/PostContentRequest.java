@@ -87,7 +87,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session
      * Attributes</a>.
      * </p>
      */
@@ -107,7 +107,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request
      * Attributes</a>.
      * </p>
      */
@@ -189,6 +189,14 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For
      * example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian
+     * format.
+     * </p>
+     * </li>
+     * <li>
      * <p>
      * The following are the accepted values:
      * </p>
@@ -555,7 +563,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session
      * Attributes</a>.
      * </p>
      * <p>
@@ -576,7 +584,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      *        Session Attributes</a>.
      */
 
@@ -595,7 +603,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session
      * Attributes</a>.
      * </p>
      * <p>
@@ -611,7 +619,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     *         href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      *         Session Attributes</a>.
      */
 
@@ -630,7 +638,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session
      * Attributes</a>.
      * </p>
      * <p>
@@ -651,7 +659,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      *        Session Attributes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -676,7 +684,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request
      * Attributes</a>.
      * </p>
      * <p>
@@ -701,7 +709,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      *        Request Attributes</a>.
      */
 
@@ -724,7 +732,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request
      * Attributes</a>.
      * </p>
      * <p>
@@ -744,7 +752,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     *         href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      *         Request Attributes</a>.
      */
 
@@ -767,7 +775,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request
      * Attributes</a>.
      * </p>
      * <p>
@@ -792,7 +800,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      *        Request Attributes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1165,6 +1173,14 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For
      * example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian
+     * format.
+     * </p>
+     * </li>
+     * <li>
      * <p>
      * The following are the accepted values:
      * </p>
@@ -1217,6 +1233,14 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in
      *        the MPEG format.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little
+     *        endian format.
+     *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        The following are the accepted values:
      *        </p>
@@ -1274,6 +1298,14 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For
      * example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian
+     * format.
+     * </p>
+     * </li>
+     * <li>
      * <p>
      * The following are the accepted values:
      * </p>
@@ -1325,6 +1357,14 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in
      *         the MPEG format.
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little
+     *         endian format.
+     *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         The following are the accepted values:
      *         </p>
@@ -1382,6 +1422,14 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For
      * example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian
+     * format.
+     * </p>
+     * </li>
+     * <li>
      * <p>
      * The following are the accepted values:
      * </p>
@@ -1434,6 +1482,14 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in
      *        the MPEG format.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little
+     *        endian format.
+     *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        The following are the accepted values:
      *        </p>

@@ -33,6 +33,8 @@ public class NoiseReducerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterSettings").build();
     private static final MarshallingInfo<StructuredPojo> SPATIALFILTERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spatialFilterSettings").build();
+    private static final MarshallingInfo<StructuredPojo> TEMPORALFILTERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("temporalFilterSettings").build();
 
     private static final NoiseReducerMarshaller instance = new NoiseReducerMarshaller();
 
@@ -53,6 +55,7 @@ public class NoiseReducerMarshaller {
             protocolMarshaller.marshall(noiseReducer.getFilter(), FILTER_BINDING);
             protocolMarshaller.marshall(noiseReducer.getFilterSettings(), FILTERSETTINGS_BINDING);
             protocolMarshaller.marshall(noiseReducer.getSpatialFilterSettings(), SPATIALFILTERSETTINGS_BINDING);
+            protocolMarshaller.marshall(noiseReducer.getTemporalFilterSettings(), TEMPORALFILTERSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

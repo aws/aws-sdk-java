@@ -15,11 +15,13 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Indicates which type of key provider is used for encryption.
+ * Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more
+ * information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CmafKeyProviderType {
 
+    SPEKE("SPEKE"),
     STATIC_KEY("STATIC_KEY");
 
     private String value;

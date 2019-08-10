@@ -31,19 +31,24 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
      * the Initialization Vector will follow the segment number by default.
      */
     private String constantInitializationVector;
-    /**
-     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
-     * interface also disables encryption.
-     */
+    /** For DRM with CMAF, the encryption type is always sample AES. */
     private String encryptionMethod;
     /**
-     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
-     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization
+     * vector in the HLS and DASH manifests.
      */
     private String initializationVectorInManifest;
+    /**
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group type is
+     * CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     */
+    private SpekeKeyProviderCmaf spekeKeyProvider;
     /** Use these settings to set up encryption with a static key provider. */
     private StaticKeyProvider staticKeyProvider;
-    /** Indicates which type of key provider is used for encryption. */
+    /**
+     * Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For
+     * more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
+     */
     private String type;
 
     /**
@@ -87,12 +92,10 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
-     * interface also disables encryption.
+     * For DRM with CMAF, the encryption type is always sample AES.
      * 
      * @param encryptionMethod
-     *        Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in
-     *        the web interface also disables encryption.
+     *        For DRM with CMAF, the encryption type is always sample AES.
      * @see CmafEncryptionType
      */
 
@@ -101,11 +104,9 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
-     * interface also disables encryption.
+     * For DRM with CMAF, the encryption type is always sample AES.
      * 
-     * @return Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in
-     *         the web interface also disables encryption.
+     * @return For DRM with CMAF, the encryption type is always sample AES.
      * @see CmafEncryptionType
      */
 
@@ -114,12 +115,10 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
-     * interface also disables encryption.
+     * For DRM with CMAF, the encryption type is always sample AES.
      * 
      * @param encryptionMethod
-     *        Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in
-     *        the web interface also disables encryption.
+     *        For DRM with CMAF, the encryption type is always sample AES.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafEncryptionType
      */
@@ -130,12 +129,10 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web
-     * interface also disables encryption.
+     * For DRM with CMAF, the encryption type is always sample AES.
      * 
      * @param encryptionMethod
-     *        Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in
-     *        the web interface also disables encryption.
+     *        For DRM with CMAF, the encryption type is always sample AES.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafEncryptionType
      */
@@ -146,13 +143,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
-     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization
+     * vector in the HLS and DASH manifests.
      * 
      * @param initializationVectorInManifest
-     *        The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If
-     *        set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in
-     *        the manifest.
+     *        When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption
+     *        initialization vector in the HLS and DASH manifests.
      * @see CmafInitializationVectorInManifest
      */
 
@@ -161,12 +157,11 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
-     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization
+     * vector in the HLS and DASH manifests.
      * 
-     * @return The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If
-     *         set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not
-     *         in the manifest.
+     * @return When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption
+     *         initialization vector in the HLS and DASH manifests.
      * @see CmafInitializationVectorInManifest
      */
 
@@ -175,13 +170,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
-     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization
+     * vector in the HLS and DASH manifests.
      * 
      * @param initializationVectorInManifest
-     *        The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If
-     *        set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in
-     *        the manifest.
+     *        When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption
+     *        initialization vector in the HLS and DASH manifests.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafInitializationVectorInManifest
      */
@@ -192,19 +186,61 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to
-     * INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+     * When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization
+     * vector in the HLS and DASH manifests.
      * 
      * @param initializationVectorInManifest
-     *        The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If
-     *        set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in
-     *        the manifest.
+     *        When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption
+     *        initialization vector in the HLS and DASH manifests.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafInitializationVectorInManifest
      */
 
     public CmafEncryptionSettings withInitializationVectorInManifest(CmafInitializationVectorInManifest initializationVectorInManifest) {
         this.initializationVectorInManifest = initializationVectorInManifest.toString();
+        return this;
+    }
+
+    /**
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group type is
+     * CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * 
+     * @param spekeKeyProvider
+     *        Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group
+     *        type is CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings
+     *        instead.
+     */
+
+    public void setSpekeKeyProvider(SpekeKeyProviderCmaf spekeKeyProvider) {
+        this.spekeKeyProvider = spekeKeyProvider;
+    }
+
+    /**
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group type is
+     * CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * 
+     * @return Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group
+     *         type is CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings
+     *         instead.
+     */
+
+    public SpekeKeyProviderCmaf getSpekeKeyProvider() {
+        return this.spekeKeyProvider;
+    }
+
+    /**
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group type is
+     * CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * 
+     * @param spekeKeyProvider
+     *        Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group
+     *        type is CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings
+     *        instead.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CmafEncryptionSettings withSpekeKeyProvider(SpekeKeyProviderCmaf spekeKeyProvider) {
+        setSpekeKeyProvider(spekeKeyProvider);
         return this;
     }
 
@@ -243,10 +279,13 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For
+     * more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      * 
      * @param type
-     *        Indicates which type of key provider is used for encryption.
+     *        Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard.
+     *        For more information about SPEKE, see
+     *        https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      * @see CmafKeyProviderType
      */
 
@@ -255,9 +294,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For
+     * more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      * 
-     * @return Indicates which type of key provider is used for encryption.
+     * @return Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard.
+     *         For more information about SPEKE, see
+     *         https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      * @see CmafKeyProviderType
      */
 
@@ -266,10 +308,13 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For
+     * more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      * 
      * @param type
-     *        Indicates which type of key provider is used for encryption.
+     *        Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard.
+     *        For more information about SPEKE, see
+     *        https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafKeyProviderType
      */
@@ -280,10 +325,13 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For
+     * more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      * 
      * @param type
-     *        Indicates which type of key provider is used for encryption.
+     *        Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard.
+     *        For more information about SPEKE, see
+     *        https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafKeyProviderType
      */
@@ -311,6 +359,8 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
             sb.append("EncryptionMethod: ").append(getEncryptionMethod()).append(",");
         if (getInitializationVectorInManifest() != null)
             sb.append("InitializationVectorInManifest: ").append(getInitializationVectorInManifest()).append(",");
+        if (getSpekeKeyProvider() != null)
+            sb.append("SpekeKeyProvider: ").append(getSpekeKeyProvider()).append(",");
         if (getStaticKeyProvider() != null)
             sb.append("StaticKeyProvider: ").append(getStaticKeyProvider()).append(",");
         if (getType() != null)
@@ -342,6 +392,10 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
         if (other.getInitializationVectorInManifest() != null
                 && other.getInitializationVectorInManifest().equals(this.getInitializationVectorInManifest()) == false)
             return false;
+        if (other.getSpekeKeyProvider() == null ^ this.getSpekeKeyProvider() == null)
+            return false;
+        if (other.getSpekeKeyProvider() != null && other.getSpekeKeyProvider().equals(this.getSpekeKeyProvider()) == false)
+            return false;
         if (other.getStaticKeyProvider() == null ^ this.getStaticKeyProvider() == null)
             return false;
         if (other.getStaticKeyProvider() != null && other.getStaticKeyProvider().equals(this.getStaticKeyProvider()) == false)
@@ -361,6 +415,7 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getConstantInitializationVector() == null) ? 0 : getConstantInitializationVector().hashCode());
         hashCode = prime * hashCode + ((getEncryptionMethod() == null) ? 0 : getEncryptionMethod().hashCode());
         hashCode = prime * hashCode + ((getInitializationVectorInManifest() == null) ? 0 : getInitializationVectorInManifest().hashCode());
+        hashCode = prime * hashCode + ((getSpekeKeyProvider() == null) ? 0 : getSpekeKeyProvider().hashCode());
         hashCode = prime * hashCode + ((getStaticKeyProvider() == null) ? 0 : getStaticKeyProvider().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;

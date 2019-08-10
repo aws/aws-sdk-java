@@ -50,6 +50,52 @@ public interface AmazonLexRuntime {
 
     /**
      * <p>
+     * Removes session information for a specified bot, alias, and user ID.
+     * </p>
+     * 
+     * @param deleteSessionRequest
+     * @return Result of the DeleteSession operation returned by the service.
+     * @throws NotFoundException
+     *         The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
+     * @throws BadRequestException
+     *         Request validation failed, there is no usable message in the context, or the bot build failed, is still
+     *         in progress, or contains unbuilt changes.
+     * @throws LimitExceededException
+     *         Exceeded a limit.
+     * @throws InternalFailureException
+     *         Internal service error. Retry the call.
+     * @throws ConflictException
+     *         Two clients are using the same AWS account, Amazon Lex bot, and user ID.
+     * @sample AmazonLexRuntime.DeleteSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteSessionResult deleteSession(DeleteSessionRequest deleteSessionRequest);
+
+    /**
+     * <p>
+     * Returns session information for a specified bot, alias, and user ID.
+     * </p>
+     * 
+     * @param getSessionRequest
+     * @return Result of the GetSession operation returned by the service.
+     * @throws NotFoundException
+     *         The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
+     * @throws BadRequestException
+     *         Request validation failed, there is no usable message in the context, or the bot build failed, is still
+     *         in progress, or contains unbuilt changes.
+     * @throws LimitExceededException
+     *         Exceeded a limit.
+     * @throws InternalFailureException
+     *         Internal service error. Retry the call.
+     * @sample AmazonLexRuntime.GetSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetSessionResult getSession(GetSessionRequest getSessionRequest);
+
+    /**
+     * <p>
      * Sends user input (text or speech) to Amazon Lex. Clients use this API to send text and audio requests to Amazon
      * Lex at runtime. Amazon Lex interprets the user input using the machine learning model that it built for the bot.
      * </p>
@@ -131,7 +177,7 @@ public interface AmazonLexRuntime {
      * </ul>
      * <p>
      * In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>. For more
-     * information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation
+     * information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation
      * Context</a>.
      * </p>
      * 
@@ -186,8 +232,8 @@ public interface AmazonLexRuntime {
 
     /**
      * <p>
-     * Sends user input (text-only) to Amazon Lex. Client applications can use this API to send requests to Amazon Lex
-     * at runtime. Amazon Lex then interprets the user input using the machine learning model it built for the bot.
+     * Sends user input (text or SSML) to Amazon Lex. Client applications can use this API to send requests to Amazon
+     * Lex at runtime. Amazon Lex then interprets the user input using the machine learning model it built for the bot.
      * </p>
      * <p>
      * In response, Amazon Lex returns the next <code>message</code> to convey to the user an optional
@@ -264,7 +310,7 @@ public interface AmazonLexRuntime {
      * </ul>
      * <p>
      * In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>. For more
-     * information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation
+     * information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation
      * Context</a>.
      * </p>
      * 
@@ -310,6 +356,59 @@ public interface AmazonLexRuntime {
      *      Documentation</a>
      */
     PostTextResult postText(PostTextRequest postTextRequest);
+
+    /**
+     * <p>
+     * Creates a new session or modifies an existing session with an Amazon Lex bot. Use this operation to enable your
+     * application to set the state of the bot.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing
+     * Sessions</a>.
+     * </p>
+     * 
+     * @param putSessionRequest
+     * @return Result of the PutSession operation returned by the service.
+     * @throws NotFoundException
+     *         The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
+     * @throws BadRequestException
+     *         Request validation failed, there is no usable message in the context, or the bot build failed, is still
+     *         in progress, or contains unbuilt changes.
+     * @throws LimitExceededException
+     *         Exceeded a limit.
+     * @throws InternalFailureException
+     *         Internal service error. Retry the call.
+     * @throws ConflictException
+     *         Two clients are using the same AWS account, Amazon Lex bot, and user ID.
+     * @throws NotAcceptableException
+     *         The accept header in the request does not have a valid value.
+     * @throws DependencyFailedException
+     *         One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If Amazon Lex does not have sufficient permissions to call a Lambda function.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a Lambda function takes longer than 30 seconds to execute.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot
+     *         values.
+     *         </p>
+     *         </li>
+     * @throws BadGatewayException
+     *         Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda)
+     *         failed with an internal service error.
+     * @sample AmazonLexRuntime.PutSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutSessionResult putSession(PutSessionRequest putSessionRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
