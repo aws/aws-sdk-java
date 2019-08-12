@@ -27,7 +27,8 @@ public enum EmotionName {
     DISGUSTED("DISGUSTED"),
     SURPRISED("SURPRISED"),
     CALM("CALM"),
-    UNKNOWN("UNKNOWN");
+    UNKNOWN("UNKNOWN"),
+    FEAR("FEAR");
 
     private String value;
 

@@ -29,7 +29,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
@@ -48,8 +48,8 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -112,7 +112,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -173,14 +173,14 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      *        provided by your own application or service. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
@@ -193,13 +193,13 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a
      *         resource provided by your own application or service. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *         >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
@@ -212,14 +212,14 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      *        provided by your own application or service. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
@@ -234,14 +234,14 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      *        provided by your own application or service. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
@@ -254,14 +254,14 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      * provided by your own application or service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
      *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
      *        provided by your own application or service. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
@@ -286,8 +286,8 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -348,8 +348,8 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
-     *        Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *        Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+     *        Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -416,8 +416,8 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -477,8 +477,8 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is
-     *         the Spot fleet request ID. Example:
+     *         Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is
+     *         the Spot Fleet request ID. Example:
      *         <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      *         </p>
      *         </li>
@@ -546,8 +546,8 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -608,8 +608,8 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
-     *        Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *        Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+     *        Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -677,7 +677,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -743,7 +743,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
@@ -816,7 +816,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -881,7 +881,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *         <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      *         </p>
      *         </li>
      *         <li>
@@ -954,7 +954,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -1020,7 +1020,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
@@ -1095,7 +1095,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -1161,7 +1161,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
@@ -1234,7 +1234,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -1300,7 +1300,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>

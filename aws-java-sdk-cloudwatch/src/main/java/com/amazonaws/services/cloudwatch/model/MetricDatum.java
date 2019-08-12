@@ -91,6 +91,8 @@ public class MetricDatum implements Serializable, Cloneable {
     /**
      * <p>
      * When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.
+     * </p>
+     * <p>
      * In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * </p>
      */
@@ -634,12 +636,16 @@ public class MetricDatum implements Serializable, Cloneable {
     /**
      * <p>
      * When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.
+     * </p>
+     * <p>
      * In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * </p>
      * 
      * @param unit
      *        When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the
-     *        metric. In a <code>Get</code> operation, this displays the unit that is used for the metric.
+     *        metric.</p>
+     *        <p>
+     *        In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * @see StandardUnit
      */
 
@@ -650,11 +656,15 @@ public class MetricDatum implements Serializable, Cloneable {
     /**
      * <p>
      * When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.
+     * </p>
+     * <p>
      * In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * </p>
      * 
      * @return When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the
-     *         metric. In a <code>Get</code> operation, this displays the unit that is used for the metric.
+     *         metric.</p>
+     *         <p>
+     *         In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * @see StandardUnit
      */
 
@@ -665,12 +675,16 @@ public class MetricDatum implements Serializable, Cloneable {
     /**
      * <p>
      * When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.
+     * </p>
+     * <p>
      * In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * </p>
      * 
      * @param unit
      *        When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the
-     *        metric. In a <code>Get</code> operation, this displays the unit that is used for the metric.
+     *        metric.</p>
+     *        <p>
+     *        In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardUnit
      */
@@ -683,12 +697,16 @@ public class MetricDatum implements Serializable, Cloneable {
     /**
      * <p>
      * When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.
+     * </p>
+     * <p>
      * In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * </p>
      * 
      * @param unit
      *        When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the
-     *        metric. In a <code>Get</code> operation, this displays the unit that is used for the metric.
+     *        metric.</p>
+     *        <p>
+     *        In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * @see StandardUnit
      */
 
@@ -699,12 +717,16 @@ public class MetricDatum implements Serializable, Cloneable {
     /**
      * <p>
      * When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.
+     * </p>
+     * <p>
      * In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * </p>
      * 
      * @param unit
      *        When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the
-     *        metric. In a <code>Get</code> operation, this displays the unit that is used for the metric.
+     *        metric.</p>
+     *        <p>
+     *        In a <code>Get</code> operation, this displays the unit that is used for the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardUnit
      */

@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it
- * launches instances or whenever it terminates instances. Used in response to <a>DescribeLifecycleHooks</a>.
+ * launches instances or terminates instances. Used in response to <a>DescribeLifecycleHooks</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHook" target="_top">AWS API

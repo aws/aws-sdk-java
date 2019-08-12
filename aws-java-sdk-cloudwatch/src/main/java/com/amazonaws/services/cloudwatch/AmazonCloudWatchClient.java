@@ -306,7 +306,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Deletes the specified alarms. In the event of an error, no alarms are deleted.
+     * Deletes the specified alarms. You can delete up to 50 alarms in one operation. In the event of an error, no
+     * alarms are deleted.
      * </p>
      * 
      * @param deleteAlarmsRequest
@@ -935,6 +936,12 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * example, if you collect data using a period of 1 minute, the data remains available for 15 days with 1-minute
      * resolution. After 15 days, this data is still available, but is aggregated and retrievable only with a resolution
      * of 5 minutes. After 63 days, the data is further aggregated and is available with a resolution of 1 hour.
+     * </p>
+     * <p>
+     * If you omit <code>Unit</code> in your request, all data that was collected with any unit is returned, along with
+     * the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the
+     * operation returns only data data that was collected with that unit specified. If you specify a unit that does not
+     * match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.
      * </p>
      * 
      * @param getMetricDataRequest

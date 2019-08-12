@@ -39,7 +39,7 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
     private String scheduledActionName;
     /**
      * <p>
-     * This parameter is deprecated.
+     * This parameter is no longer used.
      * </p>
      */
     private java.util.Date time;
@@ -178,11 +178,11 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * This parameter is deprecated.
+     * This parameter is no longer used.
      * </p>
      * 
      * @param time
-     *        This parameter is deprecated.
+     *        This parameter is no longer used.
      */
 
     public void setTime(java.util.Date time) {
@@ -191,10 +191,10 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * This parameter is deprecated.
+     * This parameter is no longer used.
      * </p>
      * 
-     * @return This parameter is deprecated.
+     * @return This parameter is no longer used.
      */
 
     public java.util.Date getTime() {
@@ -203,11 +203,11 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * This parameter is deprecated.
+     * This parameter is no longer used.
      * </p>
      * 
      * @param time
-     *        This parameter is deprecated.
+     *        This parameter is no longer used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

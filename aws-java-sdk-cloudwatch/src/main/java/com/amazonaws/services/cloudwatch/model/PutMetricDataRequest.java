@@ -30,8 +30,8 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The namespace for the metric data.
      * </p>
      * <p>
-     * You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
-     * Amazon Web Services products.
+     * To avoid conflicts with AWS service namespaces, you should not specify a namespace that begins with
+     * <code>AWS/</code>
      * </p>
      */
     private String namespace;
@@ -47,15 +47,15 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The namespace for the metric data.
      * </p>
      * <p>
-     * You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
-     * Amazon Web Services products.
+     * To avoid conflicts with AWS service namespaces, you should not specify a namespace that begins with
+     * <code>AWS/</code>
      * </p>
      * 
      * @param namespace
      *        The namespace for the metric data.</p>
      *        <p>
-     *        You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for
-     *        use by Amazon Web Services products.
+     *        To avoid conflicts with AWS service namespaces, you should not specify a namespace that begins with
+     *        <code>AWS/</code>
      */
 
     public void setNamespace(String namespace) {
@@ -67,14 +67,14 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The namespace for the metric data.
      * </p>
      * <p>
-     * You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
-     * Amazon Web Services products.
+     * To avoid conflicts with AWS service namespaces, you should not specify a namespace that begins with
+     * <code>AWS/</code>
      * </p>
      * 
      * @return The namespace for the metric data.</p>
      *         <p>
-     *         You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved
-     *         for use by Amazon Web Services products.
+     *         To avoid conflicts with AWS service namespaces, you should not specify a namespace that begins with
+     *         <code>AWS/</code>
      */
 
     public String getNamespace() {
@@ -86,15 +86,15 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The namespace for the metric data.
      * </p>
      * <p>
-     * You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
-     * Amazon Web Services products.
+     * To avoid conflicts with AWS service namespaces, you should not specify a namespace that begins with
+     * <code>AWS/</code>
      * </p>
      * 
      * @param namespace
      *        The namespace for the metric data.</p>
      *        <p>
-     *        You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for
-     *        use by Amazon Web Services products.
+     *        To avoid conflicts with AWS service namespaces, you should not specify a namespace that begins with
+     *        <code>AWS/</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

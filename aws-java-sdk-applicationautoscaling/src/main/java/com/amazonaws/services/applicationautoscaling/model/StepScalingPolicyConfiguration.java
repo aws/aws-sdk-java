@@ -31,8 +31,8 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The adjustment type, which specifies how the <code>ScalingAdjustment</code> parameter in a <a>StepAdjustment</a>
-     * is interpreted.
+     * Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute number or a
+     * percentage of the current capacity.
      * </p>
      */
     private String adjustmentType;
@@ -88,13 +88,13 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The adjustment type, which specifies how the <code>ScalingAdjustment</code> parameter in a <a>StepAdjustment</a>
-     * is interpreted.
+     * Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute number or a
+     * percentage of the current capacity.
      * </p>
      * 
      * @param adjustmentType
-     *        The adjustment type, which specifies how the <code>ScalingAdjustment</code> parameter in a
-     *        <a>StepAdjustment</a> is interpreted.
+     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute
+     *        number or a percentage of the current capacity.
      * @see AdjustmentType
      */
 
@@ -104,12 +104,12 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The adjustment type, which specifies how the <code>ScalingAdjustment</code> parameter in a <a>StepAdjustment</a>
-     * is interpreted.
+     * Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute number or a
+     * percentage of the current capacity.
      * </p>
      * 
-     * @return The adjustment type, which specifies how the <code>ScalingAdjustment</code> parameter in a
-     *         <a>StepAdjustment</a> is interpreted.
+     * @return Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute
+     *         number or a percentage of the current capacity.
      * @see AdjustmentType
      */
 
@@ -119,13 +119,13 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The adjustment type, which specifies how the <code>ScalingAdjustment</code> parameter in a <a>StepAdjustment</a>
-     * is interpreted.
+     * Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute number or a
+     * percentage of the current capacity.
      * </p>
      * 
      * @param adjustmentType
-     *        The adjustment type, which specifies how the <code>ScalingAdjustment</code> parameter in a
-     *        <a>StepAdjustment</a> is interpreted.
+     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute
+     *        number or a percentage of the current capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdjustmentType
      */
@@ -137,13 +137,13 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The adjustment type, which specifies how the <code>ScalingAdjustment</code> parameter in a <a>StepAdjustment</a>
-     * is interpreted.
+     * Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute number or a
+     * percentage of the current capacity.
      * </p>
      * 
      * @param adjustmentType
-     *        The adjustment type, which specifies how the <code>ScalingAdjustment</code> parameter in a
-     *        <a>StepAdjustment</a> is interpreted.
+     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute
+     *        number or a percentage of the current capacity.
      * @see AdjustmentType
      */
 
@@ -153,13 +153,13 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The adjustment type, which specifies how the <code>ScalingAdjustment</code> parameter in a <a>StepAdjustment</a>
-     * is interpreted.
+     * Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute number or a
+     * percentage of the current capacity.
      * </p>
      * 
      * @param adjustmentType
-     *        The adjustment type, which specifies how the <code>ScalingAdjustment</code> parameter in a
-     *        <a>StepAdjustment</a> is interpreted.
+     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute
+     *        number or a percentage of the current capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdjustmentType
      */

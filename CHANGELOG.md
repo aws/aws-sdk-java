@@ -1,3 +1,20 @@
+# __1.11.609__ __2019-08-12__
+## __Amazon CloudWatch__
+  - ### Features
+    - Documentation updates for monitoring
+
+## __Amazon Rekognition__
+  - ### Features
+    - Adding new Emotion, Fear
+
+## __Application Auto Scaling__
+  - ### Features
+    - Documentation updates for Application Auto Scaling
+
+## __Auto Scaling__
+  - ### Features
+    - Amazon EC2 Auto Scaling now supports a new Spot allocation strategy "capacity-optimized" that fulfills your request using Spot Instance pools that are optimally chosen based on the available Spot capacity.
+
 # __1.11.608__ __2019-08-09__
 ## __AWS Elemental MediaConvert__
   - ### Features
