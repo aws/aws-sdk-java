@@ -31,6 +31,8 @@ public class LogConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fieldLogLevel").build();
     private static final MarshallingInfo<String> CLOUDWATCHLOGSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cloudWatchLogsRoleArn").build();
+    private static final MarshallingInfo<Boolean> EXCLUDEVERBOSECONTENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("excludeVerboseContent").build();
 
     private static final LogConfigMarshaller instance = new LogConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class LogConfigMarshaller {
         try {
             protocolMarshaller.marshall(logConfig.getFieldLogLevel(), FIELDLOGLEVEL_BINDING);
             protocolMarshaller.marshall(logConfig.getCloudWatchLogsRoleArn(), CLOUDWATCHLOGSROLEARN_BINDING);
+            protocolMarshaller.marshall(logConfig.getExcludeVerboseContent(), EXCLUDEVERBOSECONTENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

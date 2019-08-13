@@ -86,6 +86,13 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String cloudWatchLogsRoleArn;
+    /**
+     * <p>
+     * Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping
+     * templates, regardless of logging level.
+     * </p>
+     */
+    private Boolean excludeVerboseContent;
 
     /**
      * <p>
@@ -551,6 +558,66 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping
+     * templates, regardless of logging level.
+     * </p>
+     * 
+     * @param excludeVerboseContent
+     *        Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping
+     *        templates, regardless of logging level.
+     */
+
+    public void setExcludeVerboseContent(Boolean excludeVerboseContent) {
+        this.excludeVerboseContent = excludeVerboseContent;
+    }
+
+    /**
+     * <p>
+     * Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping
+     * templates, regardless of logging level.
+     * </p>
+     * 
+     * @return Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping
+     *         templates, regardless of logging level.
+     */
+
+    public Boolean getExcludeVerboseContent() {
+        return this.excludeVerboseContent;
+    }
+
+    /**
+     * <p>
+     * Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping
+     * templates, regardless of logging level.
+     * </p>
+     * 
+     * @param excludeVerboseContent
+     *        Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping
+     *        templates, regardless of logging level.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LogConfig withExcludeVerboseContent(Boolean excludeVerboseContent) {
+        setExcludeVerboseContent(excludeVerboseContent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping
+     * templates, regardless of logging level.
+     * </p>
+     * 
+     * @return Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping
+     *         templates, regardless of logging level.
+     */
+
+    public Boolean isExcludeVerboseContent() {
+        return this.excludeVerboseContent;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -565,7 +632,9 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
         if (getFieldLogLevel() != null)
             sb.append("FieldLogLevel: ").append(getFieldLogLevel()).append(",");
         if (getCloudWatchLogsRoleArn() != null)
-            sb.append("CloudWatchLogsRoleArn: ").append(getCloudWatchLogsRoleArn());
+            sb.append("CloudWatchLogsRoleArn: ").append(getCloudWatchLogsRoleArn()).append(",");
+        if (getExcludeVerboseContent() != null)
+            sb.append("ExcludeVerboseContent: ").append(getExcludeVerboseContent());
         sb.append("}");
         return sb.toString();
     }
@@ -588,6 +657,10 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCloudWatchLogsRoleArn() != null && other.getCloudWatchLogsRoleArn().equals(this.getCloudWatchLogsRoleArn()) == false)
             return false;
+        if (other.getExcludeVerboseContent() == null ^ this.getExcludeVerboseContent() == null)
+            return false;
+        if (other.getExcludeVerboseContent() != null && other.getExcludeVerboseContent().equals(this.getExcludeVerboseContent()) == false)
+            return false;
         return true;
     }
 
@@ -598,6 +671,7 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getFieldLogLevel() == null) ? 0 : getFieldLogLevel().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLogsRoleArn() == null) ? 0 : getCloudWatchLogsRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getExcludeVerboseContent() == null) ? 0 : getExcludeVerboseContent().hashCode());
         return hashCode;
     }
 

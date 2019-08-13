@@ -1,3 +1,12 @@
+# __1.11.610__ __2019-08-13__
+## __AWS AppSync__
+  - ### Features
+    - Adds a configuration option for AppSync GraphQL APIs
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fix a bug where `ClientConfiguration#getProxyPassword()` and `ClientConfiguration#getProxyUsername()` can fail with a `NullPointException` if `HTTP_PROXY` or `HTTPS_PROXY` is set and does not contain a user info part. Fixes [#2070](https://github.com/aws/aws-sdk-java/issues/2070).
+
 # __1.11.609__ __2019-08-12__
 ## __Amazon CloudWatch__
   - ### Features

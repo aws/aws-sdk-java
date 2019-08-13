@@ -56,6 +56,10 @@ public class LogConfigJsonUnmarshaller implements Unmarshaller<LogConfig, JsonUn
                     context.nextToken();
                     logConfig.setCloudWatchLogsRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("excludeVerboseContent", targetDepth)) {
+                    context.nextToken();
+                    logConfig.setExcludeVerboseContent(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

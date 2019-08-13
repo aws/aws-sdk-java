@@ -32,6 +32,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Client configuration options such as proxy settings, user agent string, max retry attempts, etc.
@@ -40,6 +42,7 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 @NotThreadSafe
 public class ClientConfiguration {
+    private static final Log log = LogFactory.getLog(ClientConfiguration.class);
 
     /** The default timeout for creating new connections. */
     public static final int DEFAULT_CONNECTION_TIMEOUT = 10 * 1000;
@@ -361,6 +364,8 @@ public class ClientConfiguration {
 
     private final AtomicReference<URLHolder> httpProxyHolder = new AtomicReference<URLHolder>();
 
+    private final AtomicReference<URLHolder> httpsProxyHolder = new AtomicReference<URLHolder>();
+
     private TlsKeyManagersProvider tlsKeyManagersProvider = new SystemPropertyTlsKeyManagersProvider();
 
     public ClientConfiguration() {
@@ -411,6 +416,7 @@ public class ClientConfiguration {
         this.maxConsecutiveRetriesBeforeThrottling = other.getMaxConsecutiveRetriesBeforeThrottling();
         this.disableHostPrefixInjection = other.disableHostPrefixInjection;
         this.httpProxyHolder.set(other.httpProxyHolder.get());
+        this.httpsProxyHolder.set(other.httpsProxyHolder.get());
         this.tlsKeyManagersProvider = other.tlsKeyManagersProvider;
     }
 
@@ -876,7 +882,10 @@ public class ClientConfiguration {
     private String getProxyUsernameEnvironment() {
         URL httpProxy = getHttpProxyEnvironmentVariable();
         if (httpProxy != null) {
-            return httpProxy.getUserInfo().split(":", 2)[0];
+            try {
+                return httpProxy.getUserInfo().split(":", 2)[0];
+            } catch (Exception ignored) {
+            }
         }
         return null;
     }
@@ -952,7 +961,10 @@ public class ClientConfiguration {
     private String getProxyPasswordEnvironment() {
         URL httpProxy = getHttpProxyEnvironmentVariable();
         if (httpProxy != null) {
-            return httpProxy.getUserInfo().split(":", 2)[1];
+            try {
+                return httpProxy.getUserInfo().split(":", 2)[1];
+            } catch (Exception ignored) {
+            }
         }
         return null;
     }
@@ -2420,19 +2432,29 @@ public class ClientConfiguration {
     }
 
     private URL getHttpProxyEnvironmentVariable() {
-        if (httpProxyHolder.get() == null) {
-            URLHolder holder = new URLHolder();
-            try {
-                if (getProtocol() == Protocol.HTTPS) {
-                    holder.url = new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY"));
-                } else {
-                    holder.url = new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY"));
-                }
-            } catch (MalformedURLException ignored) {
-            }
-            httpProxyHolder.compareAndSet(null, holder);
+        if (getProtocol() == Protocol.HTTP) {
+            return getUrlEnvVar(httpProxyHolder, "HTTP_PROXY");
         }
-        return httpProxyHolder.get().url;
+        return getUrlEnvVar(httpsProxyHolder, "HTTPS_PROXY");
+    }
+
+    private URL getUrlEnvVar(AtomicReference<URLHolder> cache, String name) {
+        if (cache.get() == null) {
+            URLHolder holder = new URLHolder();
+            String value = getEnvironmentVariableCaseInsensitive(name);
+            if (value != null) {
+                try {
+                    holder.url = new URL(value);
+                } catch (MalformedURLException e) {
+                    if (log.isWarnEnabled()) {
+                        log.warn(String.format("Unable to parse %s environment variable value '%s' as URL. It is " +
+                                "malformed.", name, value), e);
+                    }
+                }
+            }
+            cache.compareAndSet(null, holder);
+        }
+        return cache.get().url;
     }
 
     static class URLHolder {

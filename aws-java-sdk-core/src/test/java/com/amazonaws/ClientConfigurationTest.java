@@ -599,6 +599,51 @@ public class ClientConfigurationTest {
         assertThat(new ClientConfiguration().getTlsKeyManagersProvider(), Matchers.<TlsKeyManagersProvider>instanceOf(SystemPropertyTlsKeyManagersProvider.class));
     }
 
+    @Test
+    public void getProxyUserName_envVarSet_noUserName_doesNotThrow() {
+        EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
+
+        environmentVariableHelper.set("HTTPS_PROXY", "http://localhost");
+        new ClientConfiguration().getProxyUsername();
+        environmentVariableHelper.reset();
+
+        environmentVariableHelper.set("HTTP_PROXY", "http://localhost");
+        ClientConfiguration cfg = new ClientConfiguration();
+        cfg.setProtocol(Protocol.HTTP);
+        cfg.getProxyUsername();
+        environmentVariableHelper.reset();
+    }
+
+    @Test
+    public void getProxyPassword_envVarSet_noPassword_doesNotThrow() {
+        EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
+
+        environmentVariableHelper.set("HTTPS_PROXY", "http://localhost");
+        new ClientConfiguration().getProxyPassword();
+        environmentVariableHelper.reset();
+
+        environmentVariableHelper.set("HTTP_PROXY", "http://localhost");
+        ClientConfiguration cfg = new ClientConfiguration();
+        cfg.setProtocol(Protocol.HTTP);
+        cfg.getProxyPassword();
+        environmentVariableHelper.reset();
+    }
+
+    @Test
+    public void protocolChanged_resolvesCorrectProxyVar() {
+        EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
+        environmentVariableHelper.set("HTTP_PROXY", "http://http-proxy");
+        environmentVariableHelper.set("HTTPS_PROXY", "http://https-proxy");
+
+        ClientConfiguration cfg = new ClientConfiguration();
+        assertThat(cfg.getProxyHost(), equalTo("https-proxy"));
+
+        cfg.setProtocol(Protocol.HTTP);
+        assertThat(cfg.getProxyHost(), equalTo("http-proxy"));
+
+        environmentVariableHelper.reset();
+    }
+
     private boolean isStaticField(Field field) {
         return (field.getModifiers() & Modifier.STATIC) == Modifier.STATIC;
     }
