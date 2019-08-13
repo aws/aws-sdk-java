@@ -190,7 +190,7 @@
     - Update Apache http client version to `4.5.9`.
 
   - ### Bugfixes
-    - Disable apache normalization to handle breaking change introduced in apache httpclient `4.5.7`. See [aws/aws-sdk-java[[#1919](https://github.com/aws/aws-sdk-java/issues/1919)](https://github.com/aws/aws-sdk-java-v2/issues/1919)](https://github.com/aws/aws-sdk-java/issues/1919) for more information.
+    - Disable Apache normalization to handle breaking change introduced in Apache httpclient `4.5.7`. See [aws/aws-sdk-java #1919](https://github.com/aws/aws-sdk-java/issues/1919) for more information.
 
 ## __AWS Shield__
   - ### Features
