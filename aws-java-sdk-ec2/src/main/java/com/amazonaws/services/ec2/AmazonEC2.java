@@ -38,7 +38,7 @@ import com.amazonaws.services.ec2.waiters.AmazonEC2Waiters;
  * <ul>
  * <li>
  * <p>
- * Amazon EC2: <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>, <a
+ * Amazon EC2: <a href="http://aws.amazon.com/ec2">AmazonEC2 product page</a>, <a
  * href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a>
  * </p>
  * </li>
@@ -5568,6 +5568,12 @@ public interface AmazonEC2 {
     ExportTransitGatewayRoutesResult exportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest exportTransitGatewayRoutesRequest);
 
     /**
+     * <p>
+     * Gets usage information about a Capacity Reservation. If the Capacity Reservation is shared, it shows usage
+     * information for the Capacity Reservation owner and each AWS account that is currently using the shared capacity.
+     * If the Capacity Reservation is not shared, it shows only the Capacity Reservation owner's usage.
+     * </p>
+     * 
      * @param getCapacityReservationUsageRequest
      * @return Result of the GetCapacityReservationUsage operation returned by the service.
      * @sample AmazonEC2.GetCapacityReservationUsage
@@ -5964,7 +5970,33 @@ public interface AmazonEC2 {
      * Modifies the specified EC2 Fleet.
      * </p>
      * <p>
+     * You can only modify an EC2 Fleet request of type <code>maintain</code>.
+     * </p>
+     * <p>
      * While the EC2 Fleet is being modified, it is in the <code>modifying</code> state.
+     * </p>
+     * <p>
+     * To scale up your EC2 Fleet, increase its target capacity. The EC2 Fleet launches the additional Spot Instances
+     * according to the allocation strategy for the EC2 Fleet request. If the allocation strategy is
+     * <code>lowestPrice</code>, the EC2 Fleet launches instances using the Spot Instance pool with the lowest price. If
+     * the allocation strategy is <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot
+     * Instance pools. If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from
+     * Spot Instance pools that are optimally chosen based on the available Spot Instance capacity.
+     * </p>
+     * <p>
+     * To scale down your EC2 Fleet, decrease its target capacity. First, the EC2 Fleet cancels any open requests that
+     * exceed the new target capacity. You can request that the EC2 Fleet terminate Spot Instances until the size of the
+     * fleet no longer exceeds the new target capacity. If the allocation strategy is <code>lowestPrice</code>, the EC2
+     * Fleet terminates the instances with the highest price per unit. If the allocation strategy is
+     * <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the Spot Instance pools that have the
+     * least available Spot Instance capacity. If the allocation strategy is <code>diversified</code>, the EC2 Fleet
+     * terminates instances across the Spot Instance pools. Alternatively, you can request that the EC2 Fleet keep the
+     * fleet at its current size, but not replace any Spot Instances that are interrupted or that you terminate
+     * manually.
+     * </p>
+     * <p>
+     * If you are finished with your EC2 Fleet for now, but will use it again later, you can set the target capacity to
+     * 0.
      * </p>
      * 
      * @param modifyFleetRequest
@@ -6282,7 +6314,8 @@ public interface AmazonEC2 {
      * <p>
      * Adds or removes permission settings for the specified snapshot. You may add or remove specified AWS account IDs
      * from a snapshot's list of create volume permissions, but you cannot do both in a single operation. If you need to
-     * both add and remove account IDs for a snapshot, you must use multiple operations.
+     * both add and remove account IDs for a snapshot, you must use multiple operations. You can make up to 500
+     * modifications to a snapshot in a single operation.
      * </p>
      * <p>
      * Encrypted snapshots and snapshots with AWS Marketplace product codes cannot be made public. Snapshots encrypted
@@ -6316,17 +6349,21 @@ public interface AmazonEC2 {
      * <p>
      * To scale up your Spot Fleet, increase its target capacity. The Spot Fleet launches the additional Spot Instances
      * according to the allocation strategy for the Spot Fleet request. If the allocation strategy is
-     * <code>lowestPrice</code>, the Spot Fleet launches instances using the Spot pool with the lowest price. If the
-     * allocation strategy is <code>diversified</code>, the Spot Fleet distributes the instances across the Spot pools.
+     * <code>lowestPrice</code>, the Spot Fleet launches instances using the Spot Instance pool with the lowest price.
+     * If the allocation strategy is <code>diversified</code>, the Spot Fleet distributes the instances across the Spot
+     * Instance pools. If the allocation strategy is <code>capacityOptimized</code>, Spot Fleet launches instances from
+     * Spot Instance pools that are optimally chosen based on the available Spot Instance capacity.
      * </p>
      * <p>
      * To scale down your Spot Fleet, decrease its target capacity. First, the Spot Fleet cancels any open requests that
      * exceed the new target capacity. You can request that the Spot Fleet terminate Spot Instances until the size of
      * the fleet no longer exceeds the new target capacity. If the allocation strategy is <code>lowestPrice</code>, the
      * Spot Fleet terminates the instances with the highest price per unit. If the allocation strategy is
-     * <code>diversified</code>, the Spot Fleet terminates instances across the Spot pools. Alternatively, you can
-     * request that the Spot Fleet keep the fleet at its current size, but not replace any Spot Instances that are
-     * interrupted or that you terminate manually.
+     * <code>capacityOptimized</code>, the Spot Fleet terminates the instances in the Spot Instance pools that have the
+     * least available Spot Instance capacity. If the allocation strategy is <code>diversified</code>, the Spot Fleet
+     * terminates instances across the Spot Instance pools. Alternatively, you can request that the Spot Fleet keep the
+     * fleet at its current size, but not replace any Spot Instances that are interrupted or that you terminate
+     * manually.
      * </p>
      * <p>
      * If you are finished with your Spot Fleet for now, but will use it again later, you can set the target capacity to
@@ -7149,9 +7186,9 @@ public interface AmazonEC2 {
      * Availability Zone, or subnet.
      * </p>
      * <p>
-     * By default, the Spot Fleet requests Spot Instances in the Spot pool where the price per unit is the lowest. Each
-     * launch specification can include its own instance weighting that reflects the value of the instance type to your
-     * application workload.
+     * By default, the Spot Fleet requests Spot Instances in the Spot Instance pool where the price per unit is the
+     * lowest. Each launch specification can include its own instance weighting that reflects the value of the instance
+     * type to your application workload.
      * </p>
      * <p>
      * Alternatively, you can specify that the Spot Fleet distribute the target capacity across the Spot pools included
@@ -7519,6 +7556,38 @@ public interface AmazonEC2 {
      *      API Documentation</a>
      */
     SearchTransitGatewayRoutesResult searchTransitGatewayRoutes(SearchTransitGatewayRoutesRequest searchTransitGatewayRoutesRequest);
+
+    /**
+     * <p>
+     * Sends a diagnostic interrupt to the specified Amazon EC2 instance to trigger a <i>kernel panic</i> (on Linux
+     * instances), or a <i>blue screen</i>/<i>stop error</i> (on Windows instances). For instances based on Intel and
+     * AMD processors, the interrupt is received as a <i>non-maskable interrupt</i> (NMI).
+     * </p>
+     * <p>
+     * In general, the operating system crashes and reboots when a kernel panic or stop error is triggered. The
+     * operating system can also be configured to perform diagnostic tasks, such as generating a memory dump file,
+     * loading a secondary kernel, or obtaining a call trace.
+     * </p>
+     * <p>
+     * Before sending a diagnostic interrupt to your instance, ensure that its operating system is configured to perform
+     * the required diagnostic tasks.
+     * </p>
+     * <p>
+     * For more information about configuring your operating system to generate a crash dump when a kernel panic or stop
+     * error occurs, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#diagnostic-interrupt">Send a
+     * Diagnostic Interrupt</a> (Linux instances) or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/unreachable-instance.html#diagnostic-interrupt">Send
+     * a Diagnostic Interrupt</a> (Windows instances).
+     * </p>
+     * 
+     * @param sendDiagnosticInterruptRequest
+     * @return Result of the SendDiagnosticInterrupt operation returned by the service.
+     * @sample AmazonEC2.SendDiagnosticInterrupt
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt" target="_top">AWS
+     *      API Documentation</a>
+     */
+    SendDiagnosticInterruptResult sendDiagnosticInterrupt(SendDiagnosticInterruptRequest sendDiagnosticInterruptRequest);
 
     /**
      * <p>

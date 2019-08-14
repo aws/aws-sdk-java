@@ -81,7 +81,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
+     * <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).
      * </p>
      * </li>
      * </ul>
@@ -183,7 +183,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
+     * <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).
      * </p>
      * </li>
      * </ul>
@@ -236,7 +236,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
+     *         <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).
      *         </p>
      *         </li>
      */
@@ -297,7 +297,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
+     * <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).
      * </p>
      * </li>
      * </ul>
@@ -350,7 +350,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
+     *        <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).
      *        </p>
      *        </li>
      */
@@ -413,7 +413,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
+     * <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).
      * </p>
      * </li>
      * </ul>
@@ -471,7 +471,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
+     *        <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -536,7 +536,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
+     * <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).
      * </p>
      * </li>
      * </ul>
@@ -589,7 +589,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of roue (<code>propagated</code> | <code>static</code>).
+     *        <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

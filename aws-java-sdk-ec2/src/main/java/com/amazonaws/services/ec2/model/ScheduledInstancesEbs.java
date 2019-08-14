@@ -79,7 +79,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      */
     private String volumeType;
@@ -416,7 +416,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
@@ -424,7 +424,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      *        Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for
      *        Magnetic.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Default: <code>gp2</code>
      */
 
     public void setVolumeType(String volumeType) {
@@ -437,14 +437,14 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @return The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD,
      *         Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code>
      *         for Magnetic.</p>
      *         <p>
-     *         Default: <code>standard</code>
+     *         Default: <code>gp2</code>
      */
 
     public String getVolumeType() {
@@ -457,7 +457,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
@@ -465,7 +465,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      *        Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for
      *        Magnetic.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Default: <code>gp2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

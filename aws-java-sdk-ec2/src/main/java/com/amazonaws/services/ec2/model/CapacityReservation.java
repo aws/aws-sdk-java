@@ -32,11 +32,23 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </p>
      */
     private String capacityReservationId;
-
+    /**
+     * <p>
+     * The ID of the AWS account that owns the Capacity Reservation.
+     * </p>
+     */
     private String ownerId;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Capacity Reservation.
+     * </p>
+     */
     private String capacityReservationArn;
-
+    /**
+     * <p>
+     * The Availability Zone ID of the Capacity Reservation.
+     * </p>
+     */
     private String availabilityZoneId;
     /**
      * <p>
@@ -78,7 +90,7 @@ public class CapacityReservation implements Serializable, Cloneable {
     private String tenancy;
     /**
      * <p>
-     * The number of instances for which the Capacity Reservation reserves capacity.
+     * The total number of instances for which the Capacity Reservation reserves capacity.
      * </p>
      */
     private Integer totalInstanceCount;
@@ -115,13 +127,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation expired automatically at the date and time specified in your
+     * <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your
      * request. The reserved capacity is no longer available for your use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>expired</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
      * available for your use.
      * </p>
      * </li>
@@ -243,7 +255,12 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the AWS account that owns the Capacity Reservation.
+     * </p>
+     * 
      * @param ownerId
+     *        The ID of the AWS account that owns the Capacity Reservation.
      */
 
     public void setOwnerId(String ownerId) {
@@ -251,7 +268,11 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the AWS account that owns the Capacity Reservation.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the Capacity Reservation.
      */
 
     public String getOwnerId() {
@@ -259,7 +280,12 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the AWS account that owns the Capacity Reservation.
+     * </p>
+     * 
      * @param ownerId
+     *        The ID of the AWS account that owns the Capacity Reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,7 +295,12 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Capacity Reservation.
+     * </p>
+     * 
      * @param capacityReservationArn
+     *        The Amazon Resource Name (ARN) of the Capacity Reservation.
      */
 
     public void setCapacityReservationArn(String capacityReservationArn) {
@@ -277,7 +308,11 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the Capacity Reservation.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Capacity Reservation.
      */
 
     public String getCapacityReservationArn() {
@@ -285,7 +320,12 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Capacity Reservation.
+     * </p>
+     * 
      * @param capacityReservationArn
+     *        The Amazon Resource Name (ARN) of the Capacity Reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,7 +335,12 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Availability Zone ID of the Capacity Reservation.
+     * </p>
+     * 
      * @param availabilityZoneId
+     *        The Availability Zone ID of the Capacity Reservation.
      */
 
     public void setAvailabilityZoneId(String availabilityZoneId) {
@@ -303,7 +348,11 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Availability Zone ID of the Capacity Reservation.
+     * </p>
+     * 
+     * @return The Availability Zone ID of the Capacity Reservation.
      */
 
     public String getAvailabilityZoneId() {
@@ -311,7 +360,12 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Availability Zone ID of the Capacity Reservation.
+     * </p>
+     * 
      * @param availabilityZoneId
+     *        The Availability Zone ID of the Capacity Reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -632,11 +686,11 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances for which the Capacity Reservation reserves capacity.
+     * The total number of instances for which the Capacity Reservation reserves capacity.
      * </p>
      * 
      * @param totalInstanceCount
-     *        The number of instances for which the Capacity Reservation reserves capacity.
+     *        The total number of instances for which the Capacity Reservation reserves capacity.
      */
 
     public void setTotalInstanceCount(Integer totalInstanceCount) {
@@ -645,10 +699,10 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances for which the Capacity Reservation reserves capacity.
+     * The total number of instances for which the Capacity Reservation reserves capacity.
      * </p>
      * 
-     * @return The number of instances for which the Capacity Reservation reserves capacity.
+     * @return The total number of instances for which the Capacity Reservation reserves capacity.
      */
 
     public Integer getTotalInstanceCount() {
@@ -657,11 +711,11 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances for which the Capacity Reservation reserves capacity.
+     * The total number of instances for which the Capacity Reservation reserves capacity.
      * </p>
      * 
      * @param totalInstanceCount
-     *        The number of instances for which the Capacity Reservation reserves capacity.
+     *        The total number of instances for which the Capacity Reservation reserves capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -853,13 +907,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation expired automatically at the date and time specified in your
+     * <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your
      * request. The reserved capacity is no longer available for your use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>expired</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
      * available for your use.
      * </p>
      * </li>
@@ -888,14 +942,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Capacity Reservation expired automatically at the date and time specified in
+     *        <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in
      *        your request. The reserved capacity is no longer available for your use.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>expired</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     *        available for your use.
+     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
+     *        longer available for your use.
      *        </p>
      *        </li>
      *        <li>
@@ -930,13 +984,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation expired automatically at the date and time specified in your
+     * <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your
      * request. The reserved capacity is no longer available for your use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>expired</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
      * available for your use.
      * </p>
      * </li>
@@ -964,13 +1018,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cancelled</code> - The Capacity Reservation expired automatically at the date and time specified in
+     *         <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in
      *         your request. The reserved capacity is no longer available for your use.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>expired</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
+     *         <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
      *         longer available for your use.
      *         </p>
      *         </li>
@@ -1006,13 +1060,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation expired automatically at the date and time specified in your
+     * <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your
      * request. The reserved capacity is no longer available for your use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>expired</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
      * available for your use.
      * </p>
      * </li>
@@ -1041,14 +1095,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Capacity Reservation expired automatically at the date and time specified in
+     *        <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in
      *        your request. The reserved capacity is no longer available for your use.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>expired</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     *        available for your use.
+     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
+     *        longer available for your use.
      *        </p>
      *        </li>
      *        <li>
@@ -1085,13 +1139,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation expired automatically at the date and time specified in your
+     * <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your
      * request. The reserved capacity is no longer available for your use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>expired</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
      * available for your use.
      * </p>
      * </li>
@@ -1120,14 +1174,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Capacity Reservation expired automatically at the date and time specified in
+     *        <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in
      *        your request. The reserved capacity is no longer available for your use.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>expired</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     *        available for your use.
+     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
+     *        longer available for your use.
      *        </p>
      *        </li>
      *        <li>

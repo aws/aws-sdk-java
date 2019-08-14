@@ -23,22 +23,90 @@ import com.amazonaws.AmazonWebServiceResult;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     */
     private String nextToken;
-
+    /**
+     * <p>
+     * The ID of the Capacity Reservation.
+     * </p>
+     */
     private String capacityReservationId;
-
+    /**
+     * <p>
+     * The type of instance for which the Capacity Reservation reserves capacity.
+     * </p>
+     */
     private String instanceType;
-
+    /**
+     * <p>
+     * The number of instances for which the Capacity Reservation reserves capacity.
+     * </p>
+     */
     private Integer totalInstanceCount;
-
+    /**
+     * <p>
+     * The remaining capacity. Indicates the number of instances that can be launched in the Capacity Reservation.
+     * </p>
+     */
     private Integer availableInstanceCount;
-
+    /**
+     * <p>
+     * The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
+     * available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still
+     * pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request
+     * parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String state;
-
+    /**
+     * <p>
+     * Information about the Capacity Reservation usage.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<InstanceUsage> instanceUsages;
 
     /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
      * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -46,7 +114,13 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * @return
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
      */
 
     public String getNextToken() {
@@ -54,7 +128,14 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
      * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,7 +145,12 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The ID of the Capacity Reservation.
+     * </p>
+     * 
      * @param capacityReservationId
+     *        The ID of the Capacity Reservation.
      */
 
     public void setCapacityReservationId(String capacityReservationId) {
@@ -72,7 +158,11 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the Capacity Reservation.
+     * </p>
+     * 
+     * @return The ID of the Capacity Reservation.
      */
 
     public String getCapacityReservationId() {
@@ -80,7 +170,12 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The ID of the Capacity Reservation.
+     * </p>
+     * 
      * @param capacityReservationId
+     *        The ID of the Capacity Reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,7 +185,12 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The type of instance for which the Capacity Reservation reserves capacity.
+     * </p>
+     * 
      * @param instanceType
+     *        The type of instance for which the Capacity Reservation reserves capacity.
      */
 
     public void setInstanceType(String instanceType) {
@@ -98,7 +198,11 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * @return
+     * <p>
+     * The type of instance for which the Capacity Reservation reserves capacity.
+     * </p>
+     * 
+     * @return The type of instance for which the Capacity Reservation reserves capacity.
      */
 
     public String getInstanceType() {
@@ -106,7 +210,12 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The type of instance for which the Capacity Reservation reserves capacity.
+     * </p>
+     * 
      * @param instanceType
+     *        The type of instance for which the Capacity Reservation reserves capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,7 +225,12 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The number of instances for which the Capacity Reservation reserves capacity.
+     * </p>
+     * 
      * @param totalInstanceCount
+     *        The number of instances for which the Capacity Reservation reserves capacity.
      */
 
     public void setTotalInstanceCount(Integer totalInstanceCount) {
@@ -124,7 +238,11 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * @return
+     * <p>
+     * The number of instances for which the Capacity Reservation reserves capacity.
+     * </p>
+     * 
+     * @return The number of instances for which the Capacity Reservation reserves capacity.
      */
 
     public Integer getTotalInstanceCount() {
@@ -132,7 +250,12 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The number of instances for which the Capacity Reservation reserves capacity.
+     * </p>
+     * 
      * @param totalInstanceCount
+     *        The number of instances for which the Capacity Reservation reserves capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,7 +265,13 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The remaining capacity. Indicates the number of instances that can be launched in the Capacity Reservation.
+     * </p>
+     * 
      * @param availableInstanceCount
+     *        The remaining capacity. Indicates the number of instances that can be launched in the Capacity
+     *        Reservation.
      */
 
     public void setAvailableInstanceCount(Integer availableInstanceCount) {
@@ -150,7 +279,12 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * @return
+     * <p>
+     * The remaining capacity. Indicates the number of instances that can be launched in the Capacity Reservation.
+     * </p>
+     * 
+     * @return The remaining capacity. Indicates the number of instances that can be launched in the Capacity
+     *         Reservation.
      */
 
     public Integer getAvailableInstanceCount() {
@@ -158,7 +292,13 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The remaining capacity. Indicates the number of instances that can be launched in the Capacity Reservation.
+     * </p>
+     * 
      * @param availableInstanceCount
+     *        The remaining capacity. Indicates the number of instances that can be launched in the Capacity
+     *        Reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,7 +308,75 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
+     * available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still
+     * pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request
+     * parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param state
+     *        The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following
+     *        states:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in
+     *        your request. The reserved capacity is no longer available for your use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
+     *        longer available for your use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is
+     *        still pending.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid
+     *        request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for
+     *        60 minutes.
+     *        </p>
+     *        </li>
      * @see CapacityReservationState
      */
 
@@ -177,7 +385,74 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * @return
+     * <p>
+     * The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
+     * available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still
+     * pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request
+     * parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following
+     *         states:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in
+     *         your request. The reserved capacity is no longer available for your use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
+     *         longer available for your use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is
+     *         still pending.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid
+     *         request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for
+     *         60 minutes.
+     *         </p>
+     *         </li>
      * @see CapacityReservationState
      */
 
@@ -186,7 +461,75 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
+     * available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still
+     * pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request
+     * parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param state
+     *        The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following
+     *        states:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in
+     *        your request. The reserved capacity is no longer available for your use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
+     *        longer available for your use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is
+     *        still pending.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid
+     *        request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for
+     *        60 minutes.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityReservationState
      */
@@ -197,7 +540,75 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
+     * available for your use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still
+     * pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request
+     * parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param state
+     *        The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following
+     *        states:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in
+     *        your request. The reserved capacity is no longer available for your use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
+     *        longer available for your use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is
+     *        still pending.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid
+     *        request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for
+     *        60 minutes.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityReservationState
      */
@@ -208,7 +619,11 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the Capacity Reservation usage.
+     * </p>
+     * 
+     * @return Information about the Capacity Reservation usage.
      */
 
     public java.util.List<InstanceUsage> getInstanceUsages() {
@@ -219,7 +634,12 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Information about the Capacity Reservation usage.
+     * </p>
+     * 
      * @param instanceUsages
+     *        Information about the Capacity Reservation usage.
      */
 
     public void setInstanceUsages(java.util.Collection<InstanceUsage> instanceUsages) {
@@ -233,12 +653,16 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
+     * Information about the Capacity Reservation usage.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInstanceUsages(java.util.Collection)} or {@link #withInstanceUsages(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param instanceUsages
+     *        Information about the Capacity Reservation usage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,7 +677,12 @@ public class GetCapacityReservationUsageResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Information about the Capacity Reservation usage.
+     * </p>
+     * 
      * @param instanceUsages
+     *        Information about the Capacity Reservation usage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

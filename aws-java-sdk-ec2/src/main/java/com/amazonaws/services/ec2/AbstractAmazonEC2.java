@@ -2039,6 +2039,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public SendDiagnosticInterruptResult sendDiagnosticInterrupt(SendDiagnosticInterruptRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartInstancesResult startInstances(StartInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

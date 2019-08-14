@@ -28,8 +28,20 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The
-     * default is <code>lowestPrice</code>.
+     * Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2
+     * Fleet.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance pools
+     * with the lowest price. This is the default allocation strategy.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot Instance
+     * pools that you specify.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
+     * pools that are optimally chosen based on the available Spot Instance capacity.
      * </p>
      */
     private String allocationStrategy;
@@ -75,13 +87,36 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The
-     * default is <code>lowestPrice</code>.
+     * Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2
+     * Fleet.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance pools
+     * with the lowest price. This is the default allocation strategy.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot Instance
+     * pools that you specify.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
+     * pools that are optimally chosen based on the available Spot Instance capacity.
      * </p>
      * 
      * @param allocationStrategy
-     *        Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request.
-     *        The default is <code>lowestPrice</code>.
+     *        Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by
+     *        the EC2 Fleet.</p>
+     *        <p>
+     *        If the allocation strategy is <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot
+     *        Instance pools with the lowest price. This is the default allocation strategy.
+     *        </p>
+     *        <p>
+     *        If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot
+     *        Instance pools that you specify.
+     *        </p>
+     *        <p>
+     *        If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot
+     *        Instance pools that are optimally chosen based on the available Spot Instance capacity.
      * @see SpotAllocationStrategy
      */
 
@@ -91,12 +126,35 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The
-     * default is <code>lowestPrice</code>.
+     * Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2
+     * Fleet.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance pools
+     * with the lowest price. This is the default allocation strategy.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot Instance
+     * pools that you specify.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
+     * pools that are optimally chosen based on the available Spot Instance capacity.
      * </p>
      * 
-     * @return Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request.
-     *         The default is <code>lowestPrice</code>.
+     * @return Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by
+     *         the EC2 Fleet.</p>
+     *         <p>
+     *         If the allocation strategy is <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot
+     *         Instance pools with the lowest price. This is the default allocation strategy.
+     *         </p>
+     *         <p>
+     *         If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot
+     *         Instance pools that you specify.
+     *         </p>
+     *         <p>
+     *         If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot
+     *         Instance pools that are optimally chosen based on the available Spot Instance capacity.
      * @see SpotAllocationStrategy
      */
 
@@ -106,13 +164,36 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The
-     * default is <code>lowestPrice</code>.
+     * Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2
+     * Fleet.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance pools
+     * with the lowest price. This is the default allocation strategy.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot Instance
+     * pools that you specify.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
+     * pools that are optimally chosen based on the available Spot Instance capacity.
      * </p>
      * 
      * @param allocationStrategy
-     *        Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request.
-     *        The default is <code>lowestPrice</code>.
+     *        Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by
+     *        the EC2 Fleet.</p>
+     *        <p>
+     *        If the allocation strategy is <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot
+     *        Instance pools with the lowest price. This is the default allocation strategy.
+     *        </p>
+     *        <p>
+     *        If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot
+     *        Instance pools that you specify.
+     *        </p>
+     *        <p>
+     *        If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot
+     *        Instance pools that are optimally chosen based on the available Spot Instance capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotAllocationStrategy
      */
@@ -124,13 +205,36 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The
-     * default is <code>lowestPrice</code>.
+     * Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2
+     * Fleet.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance pools
+     * with the lowest price. This is the default allocation strategy.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot Instance
+     * pools that you specify.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
+     * pools that are optimally chosen based on the available Spot Instance capacity.
      * </p>
      * 
      * @param allocationStrategy
-     *        Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request.
-     *        The default is <code>lowestPrice</code>.
+     *        Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by
+     *        the EC2 Fleet.</p>
+     *        <p>
+     *        If the allocation strategy is <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot
+     *        Instance pools with the lowest price. This is the default allocation strategy.
+     *        </p>
+     *        <p>
+     *        If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances from all the Spot
+     *        Instance pools that you specify.
+     *        </p>
+     *        <p>
+     *        If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot
+     *        Instance pools that are optimally chosen based on the available Spot Instance capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotAllocationStrategy
      */

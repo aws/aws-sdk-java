@@ -139,9 +139,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Magnetic volumes.
      * </p>
      * <p>
-     * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
-     * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to <code>gp2</code>.
+     * Default: <code>gp2</code>
      * </p>
      */
     private String volumeType;
@@ -880,9 +878,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Magnetic volumes.
      * </p>
      * <p>
-     * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
-     * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to <code>gp2</code>.
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
@@ -890,10 +886,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *        <code>standard</code> for Magnetic volumes.</p>
      *        <p>
-     *        Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
-     *        eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to
-     *        <code>gp2</code>.
+     *        Default: <code>gp2</code>
      * @see VolumeType
      */
 
@@ -908,19 +901,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Magnetic volumes.
      * </p>
      * <p>
-     * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
-     * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to <code>gp2</code>.
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @return The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned
      *         IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *         <code>standard</code> for Magnetic volumes.</p>
      *         <p>
-     *         Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
-     *         eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *         ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to
-     *         <code>gp2</code>.
+     *         Default: <code>gp2</code>
      * @see VolumeType
      */
 
@@ -935,9 +923,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Magnetic volumes.
      * </p>
      * <p>
-     * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
-     * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to <code>gp2</code>.
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
@@ -945,10 +931,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *        <code>standard</code> for Magnetic volumes.</p>
      *        <p>
-     *        Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
-     *        eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to
-     *        <code>gp2</code>.
+     *        Default: <code>gp2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -965,9 +948,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Magnetic volumes.
      * </p>
      * <p>
-     * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
-     * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to <code>gp2</code>.
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
@@ -975,10 +956,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *        <code>standard</code> for Magnetic volumes.</p>
      *        <p>
-     *        Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
-     *        eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to
-     *        <code>gp2</code>.
+     *        Default: <code>gp2</code>
      * @see VolumeType
      */
 
@@ -993,9 +971,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Magnetic volumes.
      * </p>
      * <p>
-     * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
-     * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to <code>gp2</code>.
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
@@ -1003,10 +979,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *        <code>standard</code> for Magnetic volumes.</p>
      *        <p>
-     *        Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
-     *        eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to
-     *        <code>gp2</code>.
+     *        Default: <code>gp2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */

@@ -58,7 +58,11 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      * </p>
      */
     private String availabilityZone;
-
+    /**
+     * <p>
+     * The ID of the Availability Zone in which to create the Capacity Reservation.
+     * </p>
+     */
     private String availabilityZoneId;
     /**
      * <p>
@@ -396,7 +400,12 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The ID of the Availability Zone in which to create the Capacity Reservation.
+     * </p>
+     * 
      * @param availabilityZoneId
+     *        The ID of the Availability Zone in which to create the Capacity Reservation.
      */
 
     public void setAvailabilityZoneId(String availabilityZoneId) {
@@ -404,7 +413,11 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the Availability Zone in which to create the Capacity Reservation.
+     * </p>
+     * 
+     * @return The ID of the Availability Zone in which to create the Capacity Reservation.
      */
 
     public String getAvailabilityZoneId() {
@@ -412,7 +425,12 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The ID of the Availability Zone in which to create the Capacity Reservation.
+     * </p>
+     * 
      * @param availabilityZoneId
+     *        The ID of the Availability Zone in which to create the Capacity Reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

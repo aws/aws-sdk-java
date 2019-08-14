@@ -115,7 +115,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     private Integer secondaryPrivateIpAddressCount;
     /**
      * <p>
-     * The ID of the subnet associated with the network string. Applies only if creating a network interface when
+     * The ID of the subnet associated with the network interface. Applies only if creating a network interface when
      * launching an instance.
      * </p>
      */
@@ -854,13 +854,13 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the subnet associated with the network string. Applies only if creating a network interface when
+     * The ID of the subnet associated with the network interface. Applies only if creating a network interface when
      * launching an instance.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet associated with the network string. Applies only if creating a network interface when
-     *        launching an instance.
+     *        The ID of the subnet associated with the network interface. Applies only if creating a network interface
+     *        when launching an instance.
      */
 
     public void setSubnetId(String subnetId) {
@@ -869,11 +869,11 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the subnet associated with the network string. Applies only if creating a network interface when
+     * The ID of the subnet associated with the network interface. Applies only if creating a network interface when
      * launching an instance.
      * </p>
      * 
-     * @return The ID of the subnet associated with the network string. Applies only if creating a network interface
+     * @return The ID of the subnet associated with the network interface. Applies only if creating a network interface
      *         when launching an instance.
      */
 
@@ -883,13 +883,13 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the subnet associated with the network string. Applies only if creating a network interface when
+     * The ID of the subnet associated with the network interface. Applies only if creating a network interface when
      * launching an instance.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet associated with the network string. Applies only if creating a network interface when
-     *        launching an instance.
+     *        The ID of the subnet associated with the network interface. Applies only if creating a network interface
+     *        when launching an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

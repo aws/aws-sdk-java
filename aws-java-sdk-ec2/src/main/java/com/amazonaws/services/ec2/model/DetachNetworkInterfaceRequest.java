@@ -38,6 +38,29 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * <p>
      * Specifies whether to force a detachment.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use the <code>Force</code> parameter to detach a network interface, you might not be able to attach a
+     * different network interface to the same index on the instance without first stopping and starting the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you force the detachment of a network interface, the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance metadata</a> might
+     * not get updated. This means that the attributes associated with the detached network interface might still be
+     * visible. The instance metadata will get updated when you stop and start the instance.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      */
     private Boolean force;
 
@@ -85,9 +108,56 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * <p>
      * Specifies whether to force a detachment.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use the <code>Force</code> parameter to detach a network interface, you might not be able to attach a
+     * different network interface to the same index on the instance without first stopping and starting the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you force the detachment of a network interface, the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance metadata</a> might
+     * not get updated. This means that the attributes associated with the detached network interface might still be
+     * visible. The instance metadata will get updated when you stop and start the instance.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param force
-     *        Specifies whether to force a detachment.
+     *        Specifies whether to force a detachment.</p> <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed
+     *        instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you use the <code>Force</code> parameter to detach a network interface, you might not be able to attach
+     *        a different network interface to the same index on the instance without first stopping and starting the
+     *        instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you force the detachment of a network interface, the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance
+     *        metadata</a> might not get updated. This means that the attributes associated with the detached network
+     *        interface might still be visible. The instance metadata will get updated when you stop and start the
+     *        instance.
+     *        </p>
+     *        </li>
+     *        </ul>
      */
 
     public void setForce(Boolean force) {
@@ -98,8 +168,55 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * <p>
      * Specifies whether to force a detachment.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use the <code>Force</code> parameter to detach a network interface, you might not be able to attach a
+     * different network interface to the same index on the instance without first stopping and starting the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you force the detachment of a network interface, the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance metadata</a> might
+     * not get updated. This means that the attributes associated with the detached network interface might still be
+     * visible. The instance metadata will get updated when you stop and start the instance.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
-     * @return Specifies whether to force a detachment.
+     * @return Specifies whether to force a detachment.</p> <note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed
+     *         instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you use the <code>Force</code> parameter to detach a network interface, you might not be able to
+     *         attach a different network interface to the same index on the instance without first stopping and
+     *         starting the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you force the detachment of a network interface, the <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance
+     *         metadata</a> might not get updated. This means that the attributes associated with the detached network
+     *         interface might still be visible. The instance metadata will get updated when you stop and start the
+     *         instance.
+     *         </p>
+     *         </li>
+     *         </ul>
      */
 
     public Boolean getForce() {
@@ -110,9 +227,56 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * <p>
      * Specifies whether to force a detachment.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use the <code>Force</code> parameter to detach a network interface, you might not be able to attach a
+     * different network interface to the same index on the instance without first stopping and starting the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you force the detachment of a network interface, the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance metadata</a> might
+     * not get updated. This means that the attributes associated with the detached network interface might still be
+     * visible. The instance metadata will get updated when you stop and start the instance.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param force
-     *        Specifies whether to force a detachment.
+     *        Specifies whether to force a detachment.</p> <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed
+     *        instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you use the <code>Force</code> parameter to detach a network interface, you might not be able to attach
+     *        a different network interface to the same index on the instance without first stopping and starting the
+     *        instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you force the detachment of a network interface, the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance
+     *        metadata</a> might not get updated. This means that the attributes associated with the detached network
+     *        interface might still be visible. The instance metadata will get updated when you stop and start the
+     *        instance.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,8 +289,55 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * <p>
      * Specifies whether to force a detachment.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use the <code>Force</code> parameter to detach a network interface, you might not be able to attach a
+     * different network interface to the same index on the instance without first stopping and starting the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you force the detachment of a network interface, the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance metadata</a> might
+     * not get updated. This means that the attributes associated with the detached network interface might still be
+     * visible. The instance metadata will get updated when you stop and start the instance.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
-     * @return Specifies whether to force a detachment.
+     * @return Specifies whether to force a detachment.</p> <note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed
+     *         instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you use the <code>Force</code> parameter to detach a network interface, you might not be able to
+     *         attach a different network interface to the same index on the instance without first stopping and
+     *         starting the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you force the detachment of a network interface, the <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance
+     *         metadata</a> might not get updated. This means that the attributes associated with the detached network
+     *         interface might still be visible. The instance metadata will get updated when you stop and start the
+     *         instance.
+     *         </p>
+     *         </li>
+     *         </ul>
      */
 
     public Boolean isForce() {

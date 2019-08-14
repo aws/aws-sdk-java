@@ -25,18 +25,18 @@ public class ModifyCapacityReservationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the Capacity Reservation.
+     * Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
      * </p>
      */
     private Boolean returnValue;
 
     /**
      * <p>
-     * Information about the Capacity Reservation.
+     * Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
      * </p>
      * 
      * @param returnValue
-     *        Information about the Capacity Reservation.
+     *        Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
      */
 
     public void setReturn(Boolean returnValue) {
@@ -45,10 +45,10 @@ public class ModifyCapacityReservationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the Capacity Reservation.
+     * Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
      * </p>
      * 
-     * @return Information about the Capacity Reservation.
+     * @return Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
      */
 
     public Boolean getReturn() {
@@ -57,11 +57,11 @@ public class ModifyCapacityReservationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the Capacity Reservation.
+     * Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
      * </p>
      * 
      * @param returnValue
-     *        Information about the Capacity Reservation.
+     *        Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,10 +72,10 @@ public class ModifyCapacityReservationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the Capacity Reservation.
+     * Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
      * </p>
      * 
-     * @return Information about the Capacity Reservation.
+     * @return Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
      */
 
     public Boolean isReturn() {

@@ -26,14 +26,36 @@ import com.amazonaws.services.ec2.model.transform.GetCapacityReservationUsageReq
 public class GetCapacityReservationUsageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<GetCapacityReservationUsageRequest> {
 
+    /**
+     * <p>
+     * The ID of the Capacity Reservation.
+     * </p>
+     */
     private String capacityReservationId;
-
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     */
     private String nextToken;
-
+    /**
+     * <p>
+     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
+     * sending another request with the returned nextToken value.
+     * </p>
+     * <p>
+     * Valid range: Minimum value of 1. Maximum value of 1000.
+     * </p>
+     */
     private Integer maxResults;
 
     /**
+     * <p>
+     * The ID of the Capacity Reservation.
+     * </p>
+     * 
      * @param capacityReservationId
+     *        The ID of the Capacity Reservation.
      */
 
     public void setCapacityReservationId(String capacityReservationId) {
@@ -41,7 +63,11 @@ public class GetCapacityReservationUsageRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the Capacity Reservation.
+     * </p>
+     * 
+     * @return The ID of the Capacity Reservation.
      */
 
     public String getCapacityReservationId() {
@@ -49,7 +75,12 @@ public class GetCapacityReservationUsageRequest extends AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The ID of the Capacity Reservation.
+     * </p>
+     * 
      * @param capacityReservationId
+     *        The ID of the Capacity Reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -59,7 +90,12 @@ public class GetCapacityReservationUsageRequest extends AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
      * @param nextToken
+     *        The token to retrieve the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -67,7 +103,11 @@ public class GetCapacityReservationUsageRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @return The token to retrieve the next page of results.
      */
 
     public String getNextToken() {
@@ -75,7 +115,12 @@ public class GetCapacityReservationUsageRequest extends AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
      * @param nextToken
+     *        The token to retrieve the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,7 +130,19 @@ public class GetCapacityReservationUsageRequest extends AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
+     * sending another request with the returned nextToken value.
+     * </p>
+     * <p>
+     * Valid range: Minimum value of 1. Maximum value of 1000.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of results to return for the request in a single page. The remaining results can be
+     *        seen by sending another request with the returned nextToken value.</p>
+     *        <p>
+     *        Valid range: Minimum value of 1. Maximum value of 1000.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -93,7 +150,18 @@ public class GetCapacityReservationUsageRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
+     * sending another request with the returned nextToken value.
+     * </p>
+     * <p>
+     * Valid range: Minimum value of 1. Maximum value of 1000.
+     * </p>
+     * 
+     * @return The maximum number of results to return for the request in a single page. The remaining results can be
+     *         seen by sending another request with the returned nextToken value.</p>
+     *         <p>
+     *         Valid range: Minimum value of 1. Maximum value of 1000.
      */
 
     public Integer getMaxResults() {
@@ -101,7 +169,19 @@ public class GetCapacityReservationUsageRequest extends AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
+     * sending another request with the returned nextToken value.
+     * </p>
+     * <p>
+     * Valid range: Minimum value of 1. Maximum value of 1000.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of results to return for the request in a single page. The remaining results can be
+     *        seen by sending another request with the returned nextToken value.</p>
+     *        <p>
+     *        Valid range: Minimum value of 1. Maximum value of 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

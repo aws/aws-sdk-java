@@ -83,8 +83,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS
-     * servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with Client VPN
-     * endpoint is used as the DNS server.
+     * servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS server.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> dnsServers;
@@ -105,7 +104,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     private String description;
     /**
      * <p>
-     * Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint endpoint.
+     * Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.
      * </p>
      * <p>
      * By default, split-tunnel on a VPN endpoint is disabled.
@@ -506,13 +505,12 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS
-     * servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with Client VPN
-     * endpoint is used as the DNS server.
+     * servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS server.
      * </p>
      * 
      * @return Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two
-     *         DNS servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with
-     *         Client VPN endpoint is used as the DNS server.
+     *         DNS servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS
+     *         server.
      */
 
     public java.util.List<String> getDnsServers() {
@@ -525,14 +523,13 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS
-     * servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with Client VPN
-     * endpoint is used as the DNS server.
+     * servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS server.
      * </p>
      * 
      * @param dnsServers
      *        Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two
-     *        DNS servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with
-     *        Client VPN endpoint is used as the DNS server.
+     *        DNS servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS
+     *        server.
      */
 
     public void setDnsServers(java.util.Collection<String> dnsServers) {
@@ -547,8 +544,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS
-     * servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with Client VPN
-     * endpoint is used as the DNS server.
+     * servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS server.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -558,8 +554,8 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
      * 
      * @param dnsServers
      *        Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two
-     *        DNS servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with
-     *        Client VPN endpoint is used as the DNS server.
+     *        DNS servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS
+     *        server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -576,14 +572,13 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS
-     * servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with Client VPN
-     * endpoint is used as the DNS server.
+     * servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS server.
      * </p>
      * 
      * @param dnsServers
      *        Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two
-     *        DNS servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with
-     *        Client VPN endpoint is used as the DNS server.
+     *        DNS servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS
+     *        server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -713,7 +708,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint endpoint.
+     * Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.
      * </p>
      * <p>
      * By default, split-tunnel on a VPN endpoint is disabled.
@@ -725,7 +720,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
      * </p>
      * 
      * @param splitTunnel
-     *        Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint endpoint.</p>
+     *        Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
      *        <p>
      *        By default, split-tunnel on a VPN endpoint is disabled.
      *        </p>
@@ -741,7 +736,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint endpoint.
+     * Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.
      * </p>
      * <p>
      * By default, split-tunnel on a VPN endpoint is disabled.
@@ -752,7 +747,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
      * Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
      * </p>
      * 
-     * @return Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint endpoint.</p>
+     * @return Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
      *         <p>
      *         By default, split-tunnel on a VPN endpoint is disabled.
      *         </p>
@@ -768,7 +763,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint endpoint.
+     * Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.
      * </p>
      * <p>
      * By default, split-tunnel on a VPN endpoint is disabled.
@@ -780,7 +775,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
      * </p>
      * 
      * @param splitTunnel
-     *        Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint endpoint.</p>
+     *        Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
      *        <p>
      *        By default, split-tunnel on a VPN endpoint is disabled.
      *        </p>
@@ -798,7 +793,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint endpoint.
+     * Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.
      * </p>
      * <p>
      * By default, split-tunnel on a VPN endpoint is disabled.
@@ -809,7 +804,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
      * Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
      * </p>
      * 
-     * @return Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint endpoint.</p>
+     * @return Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
      *         <p>
      *         By default, split-tunnel on a VPN endpoint is disabled.
      *         </p>

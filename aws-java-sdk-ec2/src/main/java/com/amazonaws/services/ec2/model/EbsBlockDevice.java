@@ -78,10 +78,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     private Integer volumeSize;
     /**
      * <p>
-     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     * supports.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      */
     private String volumeType;
@@ -448,16 +449,18 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     * supports.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     *        supports.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Default: <code>gp2</code>
      * @see VolumeType
      */
 
@@ -467,15 +470,17 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     * supports.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      * 
-     * @return The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
+     * @return The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     *         supports.</p>
      *         <p>
-     *         Default: <code>standard</code>
+     *         Default: <code>gp2</code>
      * @see VolumeType
      */
 
@@ -485,16 +490,18 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     * supports.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     *        supports.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Default: <code>gp2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -506,16 +513,18 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     * supports.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     *        supports.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Default: <code>gp2</code>
      * @see VolumeType
      */
 
@@ -525,16 +534,18 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     * supports.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     *        supports.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Default: <code>gp2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */

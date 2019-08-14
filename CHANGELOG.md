@@ -1,3 +1,8 @@
+# __1.11.611__ __2019-08-14__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds a new API called SendDiagnosticInterrupt, which allows you to send diagnostic interrupts to your EC2 instance.
+
 # __1.11.610__ __2019-08-13__
 ## __AWS AppSync__
   - ### Features
@@ -190,7 +195,7 @@
     - Update Apache http client version to `4.5.9`.
 
   - ### Bugfixes
-    - Disable Apache normalization to handle breaking change introduced in Apache httpclient `4.5.7`. See [aws/aws-sdk-java #1919](https://github.com/aws/aws-sdk-java/issues/1919) for more information.
+    - Disable apache normalization to handle breaking change introduced in apache httpclient `4.5.7`. See [aws/aws-sdk-java[[#1919](https://github.com/aws/aws-sdk-java/issues/1919)](https://github.com/aws/aws-sdk-java-v2/issues/1919)](https://github.com/aws/aws-sdk-java/issues/1919) for more information.
 
 ## __AWS Shield__
   - ### Features

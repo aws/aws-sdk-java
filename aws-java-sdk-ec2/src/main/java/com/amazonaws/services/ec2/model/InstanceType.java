@@ -131,6 +131,7 @@ public enum InstanceType {
     I3en6xlarge("i3en.6xlarge"),
     I3en12xlarge("i3en.12xlarge"),
     I3en24xlarge("i3en.24xlarge"),
+    I3enMetal("i3en.metal"),
     Hi14xlarge("hi1.4xlarge"),
     Hs18xlarge("hs1.8xlarge"),
     C1Medium("c1.medium"),
